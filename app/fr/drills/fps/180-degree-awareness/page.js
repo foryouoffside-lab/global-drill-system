@@ -7,7 +7,7 @@ import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
   title: "Entraînement demi-tour 180° | Visée FPS | SkillDrills",
-  description: "Entraînement gratuit au demi-tour 180° dans le navigateur : repérez la cible en vision périphérique, tournez et freinez proprement.",
+  description: "Entraînement gratuit au demi-tour 180° en FPS dans le navigateur : des cibles surgissent aux bords gauche et droit de l'écran, visez-les d'un grand flick et freinez net. Souris requise.",
   keywords: [
     "entraînement demi-tour 180 degrés",
     "vision périphérique FPS",
@@ -64,7 +64,7 @@ export default function AwarenessDrillFrPage() {
     "description": "Simulateur interactif de demi-tour 180 degrés pour FPS. Améliorez votre vitesse de bras, votre réaction aux attaques dorsales et votre vision périphérique.",
     "genre": "Entraînement FPS / Conscience Spatiale",
     "url": "https://skilldrills.online/fr/drills/fps/180-degree-awareness",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -85,7 +85,7 @@ export default function AwarenessDrillFrPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Aim trainer 180 degrés gratuit dans le navigateur. Entraînez vos rotations rapides, l'esquive de flashbangs et le freinage souris pour CS2 et Valorant."
+    "description": "Entraînement gratuit au demi-tour 180° en FPS dans le navigateur. Travaillez les grands flicks vers les bords de l'écran et le freinage souris pour CS2 et Valorant."
   };
 
   const videoGameSchema = {
@@ -98,13 +98,13 @@ export default function AwarenessDrillFrPage() {
     "applicationCategory": "Game",
     "url": "https://skilldrills.online/fr/drills/fps/180-degree-awareness",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -116,10 +116,10 @@ export default function AwarenessDrillFrPage() {
       },
       {
         "@type": "Question",
-        "name": "Comment les joueurs professionnels développent-ils leur repérage spatial à 360° ?",
+        "name": "Comment développer son repérage spatial à 360° ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les athlètes e-sport s'entraînent avec des scénarios de wide flick, le placement du réticule et l'écoute audio 3D pour construire une carte mentale immédiate de l'espace virtuel."
+          "text": "En combinant des exercices de wide flick, le placement du réticule et l'écoute audio 3D, on construit peu à peu une carte mentale de l'espace de jeu."
         }
       },
       {
@@ -127,7 +127,7 @@ export default function AwarenessDrillFrPage() {
         "name": "Les exercices de demi-tour 180° améliorent-ils le temps de réaction ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. La détection périphérique stimule directement les bâtonnets rétiniens et le colliculus supérieur, réduisant l'hésitation cognitive avant de lancer le balayage balistique."
+          "text": "Cela peut aider. Repérer une cible en vision périphérique avant de lancer le balayage est exactement ce que le drill fait répéter, mais aucun gain n'est garanti."
         }
       },
       {
@@ -159,7 +159,7 @@ export default function AwarenessDrillFrPage() {
         "name": "Cet exercice est-il adapté pour CS2, Valorant et d'autres jeux de tir ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. Dans les shooters tactiques comme CS2 et Valorant, pivoter à 180° est indispensable pour esquiver les flashbangs et vérifier les angles. En fast FPS, c'est vital au corps à corps."
+          "text": "En partie. Dans CS2 et Valorant, un retournement rapide sert à éviter une flash ou à vérifier un angle. Le drill ne simule pas les flashs ni une caméra 3D : il fait répéter le grand flick vers les bords de l'écran et l'arrêt net, utiles à ces gestes."
         }
       },
       {
@@ -167,7 +167,7 @@ export default function AwarenessDrillFrPage() {
         "name": "À quelle fréquence faut-il s'entraîner aux demi-tours à 180 degrés ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Une session de 10 à 15 minutes par jour optimise la consolidation motrice sans provoquer de fatigue musculaire au niveau du poignet ou du coude."
+          "text": "Une session de 10 à 15 minutes par jour suffit, sans provoquer de fatigue musculaire au niveau du poignet ou du coude."
         }
       },
       {
@@ -211,7 +211,7 @@ export default function AwarenessDrillFrPage() {
         "@type": "HowToStep",
         "position": 3,
         "name": "Exécutez le balayage balistique avec l'avant-bras",
-        "text": "Lancez un swipe horizontal rapide initié par le coude et l'épaule correspondant à votre angle de 180°."
+        "text": "Lancez un swipe horizontal rapide initié par le coude et l'épaule pour amener le réticule jusqu'au bord opposé de l'écran."
       },
       {
         "@type": "HowToStep",
@@ -225,9 +225,9 @@ export default function AwarenessDrillFrPage() {
   const awarenessGuideFr = {
     heading: "Guide d'Entraînement Demi-Tour 180° et Repères Psychomoteurs",
     intro: [
-      "L'entraînement au demi-tour 180° suit une séquence simple : repérer une cible au bord de l'écran en vision périphérique, tourner avec le bras puis arrêter le viseur sur la cible. Il reproduit la réponse à une attaque dans le dos sans confondre vitesse de rotation et précision finale.",
+      "L'entraînement au demi-tour 180° en FPS suit une séquence simple : repérer une cible au bord de l'écran en vision périphérique, tourner avec le bras puis arrêter le viseur sur la cible. Il reproduit la réponse à une attaque dans le dos sans confondre vitesse de rotation et précision finale.",
       "Transformer cette détection en un demi-tour virtuel de 180° repose sur le modèle moteur à deux composantes (Elliott et al., 2010) : un balayage balistique en boucle ouverte initié par l'épaule et le coude couvrant 80% à 90% de la trajectoire, suivi immédiatement du freinage musculaire antagoniste pour neutraliser tout dépassement (Schmidt et al., 1979). Selon la loi de Fitts (Fitts, 1954), l'amplitude angulaire accrue élève l'indice de difficulté, rendant le pouvoir d'arrêt (stopping power) et l'espace sur le tapis prépondérants.",
-      "La chronométrie numérique repose sur performance.now() et l'API HTML5 Pointer Lock. Les différences inférieures à 5 ms relèvent du bruit de quantification standard. Un taux d'interrogation de 1000 Hz et un moniteur à rafraîchissement élevé garantissent une mesure rigoureuse de votre vitesse d'acquisition spatiale (Woods et al., 2015).",
+      "La chronométrie numérique repose sur performance.now() et l'API HTML5 Pointer Lock. Les différences inférieures à 5 ms relèvent du bruit de mesure. Un taux d'interrogation de 1000 Hz et un moniteur à rafraîchissement élevé réduisent cette marge (Woods et al., 2015).",
       "Mesure de la performance : chaque rotation et tir est chronométré localement sur votre machine sans téléversement. Conservez la même sensibilité (cm/360°) et un positionnement stable pour forger des automatismes musculaires durables."
     ],
     benchmarks: {
@@ -238,10 +238,10 @@ export default function AwarenessDrillFrPage() {
         ["Balayage Balistique du Bras (Rotation 180°)", "180 – 260 ms", "Propulsion de l'avant-bras, coude et épaule", "Accélération cinématique en boucle ouverte (Elliott 2010)"],
         ["Décélération et Freinage du Réticule", "60 – 110 ms", "Freinage des muscles antagonistes (stopping power)", "Amortissement de l'impulsion de freinage (Schmidt 1979)"],
         ["Micro-Correction Terminale et Clic", "70 – 130 ms", "Rétroaction visuelle fovéale et déclenchement du tir", "Phase d'approche selon la loi de Fitts (Fitts 1954)"],
-        ["Temps Total de Réacquisition 180°", "450 – 690 ms", "Boucle sensorimotrice complète de rotation", "Ligne de base compétitive standard tous joueurs"],
-        ["Exécution Subconsciente Avancée 180°", "320 – 420 ms", "Synergie sensibilité et mémoire musculaire en un geste", "Entraîne les rotations à 180° avec une sensibilité et une mémoire musculaire stables"]
+        ["Temps Total de Réacquisition 180°", "450 – 690 ms", "Boucle sensorimotrice complète de rotation", "Repère d'entraînement SkillDrills"],
+        ["Exécution Subconsciente Avancée 180°", "320 – 420 ms", "Synergie sensibilité et mémoire musculaire en un geste", "Repère d'entraînement SkillDrills avancé"]
       ],
-      note: "Données compilées selon les standards de la biomécanique et des sciences visuelles (Rayner 1998; Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) et de la chronométrie numérique (Woods et al. 2015). Les latences réelles dépendent de la sensibilité (cm/360°), du frottement du tapis et des hertz de l'écran."
+      note: "Ces valeurs sont des repères d'entraînement SkillDrills, pas des normes de recherche ni des données d'utilisateurs ; les références de la colonne de droite expliquent seulement la phase du mouvement (Rayner 1998; Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010; Woods et al. 2015). Les latences réelles dépendent de la sensibilité (cm/360°), du frottement du tapis et des hertz de l'écran."
     },
     techniques: {
       title: "Biomécanique et Astuces pour des Demi-Tours 180° Éclairs",
@@ -253,12 +253,12 @@ export default function AwarenessDrillFrPage() {
         },
         {
           name: "Calibration des cm/360° et Sensibilité",
-          desc: "Dans les shooters tactiques comme Valorant et CS2, les compétiteurs calibrent généralement entre 35 et 55 cm par 360° (soit 18 à 28 cm pour 180°). Veillez à ce qu'un geste du centre au bord du tapis corresponde précisément à un demi-tour.",
+          desc: "La distance d'un demi-tour vaut la moitié de vos cm/360° : à 40 cm/360°, un 180° demande 20 cm. Veillez à ce qu'un geste du centre au bord du tapis corresponde précisément à un demi-tour.",
           tips: "Évitez de changer fréquemment de DPI afin de stabiliser votre cartographie kinesthésique."
         },
         {
           name: "Esquive de Flashbangs et Rétablissement",
-          desc: "En FPS tactique, le demi-tour instantané à 180° est essentiel pour éviter d'être aveuglé par les grenades flash. Pivoter pour fuir la grenade et se réaligner immédiatement exige un contrôle parfait de la décélération.",
+          desc: "En FPS tactique, un demi-tour rapide permet d'éviter d'être aveuglé par une flash (le drill ne simule pas les flashs). Pivoter pour fuir la grenade et se réaligner immédiatement exige un contrôle parfait de la décélération.",
           tips: "Entraînez-vous à replacer le réticule au niveau de la tête adverse immédiatement après le demi-tour d'évitement."
         },
         {
@@ -271,9 +271,9 @@ export default function AwarenessDrillFrPage() {
     steps: [
       "Cliquez sur Démarrer pour passer en plein écran et verrouiller le pointeur.",
       "Gardez le réticule centré tout en maintenant une attention visuelle périphérique large.",
-      "Lorsqu'une cible apparaît sur un bord extrême, effectuez un swipe horizontal dynamique vers elle.",
+      "Lorsqu'une cible apparaît sur le bord gauche ou droit (de plus en plus souvent à mesure que le niveau monte), effectuez un swipe horizontal dynamique vers elle.",
       "Freinez fermement à proximité de la cible, confirmez l'alignement et cliquez immédiatement.",
-      "Consultez votre précision, votre temps d'acquisition et votre meilleure série sur le bilan final."
+      "Chaque touche ajoute 2 s (max. 60 s), chaque tir manqué, clic dans le vide ou expiration retire 1 s. La partie démarre à 45 s et s'arrête à 0 ; consultez ensuite précision, temps d'acquisition et meilleure série."
     ],
     audience: "Joueurs de CS2, Valorant, Apex Legends, Overwatch et tout FPS cherchant à perfectionner leurs demi-tours, leur défense contre les flancs et leur vitesse de rotation.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -288,27 +288,27 @@ export default function AwarenessDrillFrPage() {
 
   const copyFr = {
     h1Keyword: "Entraînement demi-tour 180°",
-    h1Suffix: " — Visée et Réflexes FPS",
-    subtitle: "Repérez la menace en vision périphérique, tournez largement et freinez le viseur sur la cible.",
+    h1Suffix: " — Retournement rapide en FPS",
+    subtitle: "Repérez la cible aux bords de l'écran en vision périphérique, lancez un grand flick et freinez le viseur dessus : le geste d'un retournement rapide en FPS.",
     statScore: "Score",
     statTime: "Temps",
     statAccuracy: "Précision",
     statBestScore: "Meilleur Score",
     startTitle: "Entraînement Demi-Tour 180°",
-    startSubtitle: "Pointer Lock • Niveaux Infinis",
-    stageCaption: "Repérez les cibles sur les bords par vision périphérique et effectuez des demi-tours à 180° avant la fin du chronomètre.",
+    startSubtitle: "Souris + Pointer Lock • 45 s au départ • Niveaux infinis",
+    stageCaption: "Repérez les cibles sur les bords par vision périphérique et touchez-les d'un grand flick avant qu'elles ne disparaissent.",
     rulesTitle: "Règles d'Entraînement et Système de Points",
     rulesItems: [
-      { num: "1", text: "Cible Périphérique", highlight: "Grand Angle (+100 PTS / +0,6s)", result: "×Mult de Combo" },
-      { num: "2", text: "Apparitions à 180°", highlight: "Vision Périphérique Extrême", result: "Plus Rapide & Petit" },
+      { num: "1", text: "Cible Périphérique", highlight: "+100 PTS (+2 s, max. 60 s)", result: "×Mult de Combo" },
+      { num: "2", text: "Apparitions à 180°", highlight: "Plus fréquentes aux bords", result: "Plus petites & plus brèves" },
       { num: "3", text: "Progression de Niveau", highlight: "+1 Niveau / 1 750 PTS", result: "Échelle Adaptative" },
-      { num: "4", text: "Tir Manqué / Expiration", highlight: "Pénalité d'Échec", result: "Reset Combo (-0,8s)" }
+      { num: "4", text: "Tir Manqué / Expiration", highlight: "Clics dans le vide inclus", result: "Reset Combo (-1 s)" }
     ],
     aboutTitle: "À Propos de l'Entraînement Demi-Tour 180°",
     aboutHeading: "Pourquoi entraîner les demi-tours à 180 degrés ?",
     aboutText1: "Un demi-tour à 180 degrés représente le mouvement physique le plus ample dans un jeu de tir. Selon la loi de Fitts (1954), la durée du mouvement dépend de la distance et de la taille de la cible : la difficulté majeure réside dans le freinage et l'arrêt net sur la cible après la rotation.",
     aboutText2: "180° Awareness Pro isole et affine votre capacité à traiter les informations visuelles en dehors de votre champ fovéal. Contrairement aux drills de micro-ajustement, cet exercice sollicite une grande amplitude motrice sur votre tapis.",
-    aboutText3: "En répétant régulièrement ces grands demi-tours, vous synchronisez l'espace physique de votre tapis avec l'espace 3D du jeu, facilitant les réactions réflexes face aux ennemis dans votre dos sur CS2 et Valorant."
+    aboutText3: "Le drill reproduit le demi-tour par des cibles aux bords de l'écran, sans caméra 3D. Avec une sensibilité constante, la répétition vous aide à mémoriser la distance sur le tapis, ce qui peut servir face aux ennemis dans votre dos sur CS2 et Valorant."
   };
 
   return (

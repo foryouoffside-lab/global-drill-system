@@ -6,13 +6,12 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Treino de Mira | Posicionamento de Mira | SkillDrills",
-  description: "Treino de mira grátis no navegador: pratique posicionamento de mira, retenção de ângulos, espaçamento da parede e reação ao peek.",
+  title: "Posicionamento de Mira: Segurar Ângulo no FPS | SkillDrills",
+  description: "Posicionamento de mira grátis: segure o ângulo na altura da cabeça e clique quando o alvo sair da parede. Distância da quina e reação ao peek (Valorant, CS2).",
   keywords: [
-    "treino de mira",
-    "treino de mira online",
-    "treino de mira valorant",
     "posicionamento de mira",
+    "crosshair placement",
+    "segurar ângulo",
     "como segurar angulo fps",
     "treino de marcar pixel valorant",
     "pre aim treino cs2",
@@ -30,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Treino de Mira | Posicionamento de Mira | SkillDrills",
-    description: "Treino de mira grátis no navegador: pratique posicionamento de mira, retenção de ângulos, espaçamento da parede e reação ao peek.",
+    title: "Posicionamento de Mira: Segurar Ângulo no FPS | SkillDrills",
+    description: "Posicionamento de mira grátis: segure o ângulo na altura da cabeça e clique quando o alvo sair da parede. Distância da quina e reação ao peek (Valorant, CS2).",
     url: "https://skilldrills.online/pt/drills/fps/angle-hold-trainer",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -39,8 +38,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Treino de Mira | Posicionamento de Mira | SkillDrills",
-    description: "Treino de mira grátis no navegador: pratique posicionamento de mira, retenção de ângulos, espaçamento da parede e reação ao peek.",
+    title: "Posicionamento de Mira: Segurar Ângulo no FPS | SkillDrills",
+    description: "Posicionamento de mira grátis: segure o ângulo na altura da cabeça e clique quando o alvo sair da parede. Distância da quina e reação ao peek (Valorant, CS2).",
   },
 };
 
@@ -51,21 +50,21 @@ export default function PortugueseAngleHoldPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos de FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Treino de mira - posicionamento de mira", "item": "https://skilldrills.online/pt/drills/fps/angle-hold-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "Posicionamento de mira - segurar ângulo", "item": "https://skilldrills.online/pt/drills/fps/angle-hold-trainer" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treino de mira - posicionamento de mira",
+    "name": "Posicionamento de mira - segurar ângulo",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Treinador online de posicionamento de mira, marcação defensiva de cantos e pré-mira para jogadores de FPS tático.",
     "genre": "Treino de FPS / Posicionamento de Mira",
     "url": "https://skilldrills.online/pt/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -76,14 +75,14 @@ export default function PortugueseAngleHoldPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "Treino de mira - posicionamento de mira",
+    "name": "Posicionamento de mira - segurar ângulo",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Simulador interativo de retenção de ângulos e disciplina de mira para neutralizar a vantagem do peeker em CS2 e Valorant.",
     "genre": "Treino de FPS / Posicionamento de Mira",
     "url": "https://skilldrills.online/pt/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -94,7 +93,7 @@ export default function PortugueseAngleHoldPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Treino de mira - posicionamento de mira",
+    "name": "Posicionamento de mira - segurar ângulo",
     "url": "https://skilldrills.online/pt/drills/fps/angle-hold-trainer",
     "description": "Treinador interativo de mira e reação a cantos para jogos de tiro tático.",
     "gamePlatform": "Web Browser",
@@ -102,13 +101,13 @@ export default function PortugueseAngleHoldPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -120,10 +119,18 @@ export default function PortugueseAngleHoldPage() {
       },
       {
         "@type": "Question",
+        "name": "Como funciona este treino de posicionamento de mira?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ao iniciar, a tela cheia e o Pointer Lock são ativados e o relógio começa em 45 segundos. Os alvos saem da borda esquerda ou direita da parede em altura aleatória e voltam a se esconder. Cada acerto vale 100 pontos multiplicados pelo combo e pelo nível e soma 2 segundos (máximo de 60). A cada 1400 pontos o nível sobe: os peeks ficam mais curtos e os alvos menores, e em níveis altos surgem fake peeks laranja. Errar, atirar sem alvo ou atirar em um fake peek zera o combo e tira 1 segundo se a penalidade de tempo estiver ativada. A rodada termina quando o tempo chega a 0."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "O que é peeker's advantage em jogos de tiro tático?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "É o atraso de latência de rede cliente-servidor. Quem abre o pixel envia seus dados antes de o defensor parado receber a informação, concedendo ao atacante uma janela de 40 a 90 ms onde ele vê primeiro."
+          "text": "É o atraso de latência de rede cliente-servidor. Quem abre o pixel envia seus dados antes de o defensor parado receber a informação, concedendo ao atacante uma pequena janela em que ele vê primeiro; o tamanho depende de ping, tickrate e interpolação."
         }
       },
       {
@@ -147,7 +154,7 @@ export default function PortugueseAngleHoldPage() {
         "name": "O que faz os jogadores atirarem antes da hora (pre-fire acidental)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ansiedade motora e falha na discriminação visual Go/No-Go diante de feintes ou utilitários. Treinar disciplina de gatilho ensina o cérebro a disparar apenas quando o alvo se compromete com a abertura."
+          "text": "Ansiedade motora e falha na discriminação visual Go/No-Go diante de feintes ou utilitários. Neste drill, fake peeks laranja bem curtos aparecem nos níveis altos e atirar neles conta como pre-fire. Assim você pratica disparar apenas quando o alvo se compromete com a abertura."
         }
       },
       {
@@ -171,7 +178,7 @@ export default function PortugueseAngleHoldPage() {
         "name": "A taxa de atualização do monitor afeta a reação ao segurar ângulos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim. Telas de 240 Hz exibem quadros a cada 4,17 ms contra 16,67 ms em 60 Hz, revelando os primeiros pixels do corpo do adversário muito mais cedo e reduzindo a latência do sistema."
+          "text": "Sim. Telas de 240 Hz exibem quadros a cada 4,17 ms contra 16,67 ms em 60 Hz, o que mostra em média mais cedo o primeiro quadro do adversário; o ganho não passa da diferença entre os intervalos de quadro."
         }
       },
       {
@@ -179,7 +186,7 @@ export default function PortugueseAngleHoldPage() {
         "name": "Com que frequência devo treinar posicionamento de mira e marcação de pixel?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sessões diárias de 10 a 15 minutos combinadas com treinos de deathmatch no jogo são suficientes para fixar a resposta reflexa nos dedos sem fadiga tendínea."
+          "text": "Não existe regra fixa. Sessões de 10 a 15 minutos antes de jogar, junto com deathmatch, são um formato razoável. Compare seu tempo médio de reação e sua precisão no mesmo equipamento ao longo dos dias."
         }
       },
       {
@@ -187,7 +194,7 @@ export default function PortugueseAngleHoldPage() {
         "name": "Como o simulador captura o movimento do mouse?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim. Funciona com a API Pointer Lock do HTML5 com cronometria de alta resolução via performance.now(), eliminando qualquer aceleração ou suavização artificial do sistema."
+          "text": "O drill usa a API Pointer Lock do HTML5 para ler o movimento relativo do mouse e marca os cliques com performance.now(). Não é solicitada entrada sem aceleração, então as configurações de ponteiro do sistema ainda podem valer. É preciso um mouse; o drill não inicia em aparelhos só com toque."
         }
       }
     ]
@@ -231,24 +238,23 @@ export default function PortugueseAngleHoldPage() {
   };
 
   const angleHoldGuidePt = {
-    heading: "Treino de Mira para Posicionamento e Retenção de Ângulos",
+    heading: "Posicionamento de mira: segurar ângulo no FPS",
     intro: [
-      "O treino de mira para posicionamento pratica deixar o retículo na altura da cabeça antes do inimigo aparecer na esquina. Este drill mede espaçamento da parede, retenção de ângulos e reação ao peek para tornar os duelos de Valorant e CS2 mais consistentes.",
-      "Em arquiteturas de rede multijogador (como o sub-tick do CS2 e os servidores de 128 ticks do Valorant), a latência gera a assimetria conhecida como peeker's advantage: T_advantage = (RTT_peeker / 2) + (RTT_holder / 2) + T_interp. Para neutralizar esse déficit, o defensor deve afastar a mira da quina em D_offset = v_peeker × T_reação, permitindo que o atacante cruze o retículo exatamente no instante em que o clique mecânico ocorre.",
-      "A precisão motora segue os princípios da Lei de Fitts (Fitts, 1954): microcorreções introduzidas durante a espera geram ruído neuromuscular. O Angle Hold Pro emprega marcas de tempo de performance.now() e sincronização com a taxa de quadros da tela para oferecer uma avaliação rigorosa de disciplina de gatilho e discriminação de fake peeks (Hick, 1952; Woods et al., 2015).",
+      "Este drill de posicionamento de mira pratica deixar o retículo na altura da cabeça antes do inimigo sair da esquina. Os alvos aparecem na borda esquerda ou direita de uma parede e você clica assim que entram no retículo: distância da quina, segurar ângulo e reação ao peek, para quem joga Valorant e CS2.",
+      "Em arquiteturas de rede multijogador a latência gera a assimetria conhecida como peeker's advantage: T_advantage = (RTT_peeker / 2) + (RTT_holder / 2) + T_interp. Para neutralizar esse déficit, o defensor deve afastar a mira da quina em D_offset = v_peeker × T_reação, permitindo que o atacante cruze o retículo exatamente no instante em que o clique mecânico ocorre.",
+      "A precisão motora segue os princípios da Lei de Fitts (Fitts, 1954): cada microcorreção durante a espera custa tempo. O Angle Hold Pro marca os cliques com performance.now(); a taxa de atualização da tela e o polling do mouse do seu equipamento continuam influenciando os valores, e os fake peeks acrescentam uma decisão Go/No-Go (Hick, 1952; Woods et al., 2015).",
       "Como medir seu desempenho: cada tiro é registrado localmente com o relógio de alta precisão do navegador. Diferenças menores que 5 ms são ruídos esperados de temporização. Mantenha as mesmas configurações de sensibilidade física e espaço no mousepad para consolidar respostas confiáveis."
     ],
     benchmarks: {
-      title: "Benchmarks de Retenção Defensiva e Reação ao Peek",
-      headers: ["Fase do Combate / Métrica", "Latência Típica (ms)", "Fator Sensoriomotor e de Rede", "Classificação de Desempenho"],
+      title: "Referências de reação e rede ao segurar ângulo",
+      headers: ["Fase / Métrica", "Referência (ms)", "Fator", "Leitura"],
       rows: [
-        ["Latência de Disparo Visual Simples", "150 – 190 ms", "Ativação retiniana foveal e clique no córtex motor", "Gatilho motor inconsciente em estímulo antecipado (Donders, 1868)"],
-        ["Latência de Discriminação (Fake/Jiggle Peek)", "210 – 280 ms", "Identificação cognitiva Go/No-Go do avanço real", "Disciplina de gatilho sob pressão de isca (Hick, 1952)"],
-        ["Déficit de Latência do Peeker's Advantage", "40 – 90 ms", "Trânsito de pacotes RTT cliente-servidor + buffer de interpolação", "Vantagem de transmissão do atacante em movimento"],
-        ["Janela Efetiva de Resposta Defensiva Líquida", "250 – 340 ms", "Latência visual combinada + compensação de déficit de rede", "Linha de base padrão para defensores em FPS táticos"],
-        ["Precisão Avançada na Marcação com Pré-Mira", "170 – 220 ms", "Espaçamento ótimo alinhado à velocidade do swing", "Marcação defensiva refinada; prática de pré-mira com espaçamento estável"]
+        ["Reação visual simples", "cerca de 200 – 250 ms (faixa da pesquisa)", "Ver o estímulo e clicar", "Reação simples a um estímulo esperado (Woods et al., 2015)"],
+        ["Reação de discriminação (fake / jiggle peek)", "algumas dezenas de ms a mais", "Decisão Go/No-Go", "Mais alternativas, reação mais lenta (Hick, 1952)"],
+        ["Peeker's advantage", "varia com servidor e ping", "RTT cliente-servidor + buffer de interpolação", "Vantagem de rede do atacante em movimento"],
+        ["Distância da quina estável", "referência", "Retículo na altura da cabeça à frente da quina antes do peek", "Compare seus próprios valores no mesmo aparelho"]
       ],
-      note: "Métricas sintetizadas a partir de estudos de cronometria cognitiva (Donders, 1868; Hick, 1952; Woods et al., 2015) e pesquisas de engenharia de rede em FPS táticos. Os tempos variam com a taxa de quadros da tela, taxa de amostragem do mouse e estado de alerta."
+      note: "Valores explicativos baseados em faixas gerais da pesquisa sobre tempo de reação (Donders, 1868; Hick, 1952; Woods et al., 2015); não são estatísticas de usuários nem ranques. Os tempos variam com a taxa de atualização da tela, a taxa de amostragem do mouse e o estado de alerta."
     },
     techniques: {
       title: "Geometria de Posicionamento e Diretrizes de Marcação",
@@ -256,7 +262,7 @@ export default function PortugueseAngleHoldPage() {
         {
           name: "Calibração de Espaçamento da Quina",
           desc: "Não cole a mira diretamente na borda da parede. Deixe uma margem horizontal proporcional ao seu reflexo: segure mais aberto contra corridas amplas e mais fechado contra aproximações lentas.",
-          tips: "Se os adversários costumam ultrapassar sua mira antes do tiro, amplie o afastamento em 15-20%."
+          tips: "Se os adversários costumam ultrapassar sua mira antes do tiro, amplie um pouco o afastamento; se você atira cedo demais e erra, segure mais fechado."
         },
         {
           name: "Disciplina Horizontal na Altura da Cabeça",
@@ -265,7 +271,7 @@ export default function PortugueseAngleHoldPage() {
         },
         {
           name: "A Regra 'Clique, Não Ajuste'",
-          desc: "Ao segurar um ângulo calibrado com pré-mira, comprometa-se a clicar no instante em que o inimigo entrar na retícula, em vez de tentar microflicks que acrescentam de 80 a 120 ms de atraso.",
+          desc: "Ao segurar um ângulo calibrado com pré-mira, comprometa-se a clicar no instante em que o inimigo entrar na retícula, em vez de tentar microflicks, que acrescentam um movimento de correção e, portanto, atraso.",
           tips: "Confie na sua colocação de mira e fixe o foco visual ligeiramente à frente do retículo."
         },
         {
@@ -296,32 +302,36 @@ export default function PortugueseAngleHoldPage() {
   const copyPt = {
     h1Prefix: null,
     bottomCaption: "Mantenha a mira no canto e clique assim que o alvo aparecer.",
-    h1Keyword: "Treino de mira",
-    h1Suffix: " — posicionamento e ângulos",
+    h1Keyword: "Posicionamento de mira",
+    h1Suffix: " — segurar ângulo no FPS",
+    aboutIntro: [
+      "Este drill de posicionamento de mira (crosshair placement) treina segurar ângulo: retículo na altura da cabeça perto da borda de uma parede e clique assim que um alvo sair. É para quem joga Valorant e CS2 e quer segurar ângulos com disciplina, e mostra no fim o tempo médio de reação, a precisão, o combo e o nível.",
+      "Cada peek sai pela esquerda ou pela direita em altura aleatória, então não dá para decorar um ritmo. Conforme o nível sobe, os peeks ficam mais curtos e os alvos menores, e fake peeks laranja punem cliques apressados. O drill não reproduz o netcode nem o ranque de um jogo real: use-o como complemento de treino."
+    ],
     subtitle: "Treino de Marcação de Pixel e Defesa contra Peeker's Advantage",
     rulesItems: [
-      { num: "1", text: "Acerto no Peek", highlight: "+100 PTS (+0,6s)", result: "×Multiplicador" },
-      { num: "2", text: "Surgimento em Cantos", highlight: "Aparicão Rápida", result: "Menor Janela" },
+      { num: "1", text: "Acerto no Peek", highlight: "+100 PTS (+2s, máx. 60s)", result: "×Multiplicador" },
+      { num: "2", text: "Surgimento em Cantos", highlight: "Borda esquerda/direita da parede", result: "Mais curto e menor" },
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Escala Adaptativa" },
-      { num: "4", text: "Erro / Pre-Fire", highlight: "Penalidade", result: "Reset Combo (-0,8s)" }
+      { num: "4", text: "Erro / Pre-Fire / Fake Peek", highlight: "Penalidade", result: "Reset Combo (-1s com penalidade de tempo)" }
     ],
     aboutCards: [
       { iconBg: "bg-blue-600", title: "Recomendado para", text: "Defensores de bombsite em Valorant, âncoras de CS2, operadores de R6 Siege e quem deseja cravar mira com disciplina." },
       { iconBg: "bg-orange-600", title: "Habilidades Treinadas", text: "Calibração de distância da quina, disciplina de gatilho contra jiggle peeks, tempo de reação e consistência na altura da cabeça." },
-      { iconBg: "bg-purple-600", title: "Detecção de Fake Peek", text: "Níveis altos simulam jiggle e bait peeks. Treine o discernimento Go/No-Go para atirar apenas quando o alvo se comprometer." }
+      { iconBg: "bg-purple-600", title: "Detecção de Fake Peek", text: "Níveis altos acrescentam fake peeks laranja bem curtos. Treine o discernimento Go/No-Go para atirar apenas quando o alvo se comprometer." }
     ],
     aboutSections: [
       {
         title: "Espaçamento Ideal da Parede (Geometria de Offset)",
         paragraphs: [
-          "O erro mais frequente ao marcar um ângulo é colar a mira diretamente na quina da parede. Como o processamento visual e a resposta muscular levam de 180 a 220 ms, um inimigo correndo passa direto pela mira colada antes que o dedo consiga disparar.",
+          "O erro mais frequente ao marcar um ângulo é colar a mira diretamente na quina da parede. Como existe um tempo de reação entre ver e clicar, um inimigo correndo passa direto pela mira colada antes que o dedo consiga disparar.",
           "Ao deixar um espaço horizontal entre a parede e o retículo (D_offset = v_peeker × T_reação), o adversário corre exatamente para o ponto onde seu tiro é acionado, eliminando a necessidade de microajustes desesperados."
         ]
       },
       {
-        title: "Neutralização Matemática do Peeker's Advantage",
+        title: "Compensando o Peeker's Advantage",
         paragraphs: [
-          "Devido à latência de rede entre cliente e servidor (RTT), o atacante em movimento enxerga o defensor parado de 40 a 90 ms mais cedo. Essa desvantagem só é neutralizada posicionando a mira mais afastada da quina para compensar a aceleração transversal do inimigo."
+          "Devido à latência de rede entre cliente e servidor (RTT), o atacante em movimento enxerga o defensor parado um pouco mais cedo, dependendo do ping e do servidor. Essa desvantagem pode ser atenuada posicionando a mira mais afastada da quina para compensar a aceleração transversal do inimigo."
         ]
       },
       {

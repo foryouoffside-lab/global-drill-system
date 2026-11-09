@@ -7,38 +7,21 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — ko-KR (fps / strafe-tracking)
-// PRIMARY DOMESTIC: "에임 트래킹 연습"         — Top Korean gaming query (Winner)
-//                   "트래킹 연습 사이트"        — High conversion intent
-//                   "에임 트래킹 테스트"        — Diagnostic intent
-//                   "에임 트래킹"              — Core tactical term (15 autocomplete suggestions)
-//                   "트래킹 에임 연습"         — Symmetrical query
-// SECONDARY / LSI:
-//                   "에임 트래킹 잘하는법"     — Instructional intent
-//                   "오버워치 트래킹 연습"      — Game specific demand
-//                   "에이펙스 트래킹 연습"      — Game specific demand
-//                   "발로란트 트래킹 연습"      — Game specific demand
-//                   "무료 에임 연습 사이트"     — Platform intent phrase
-// WINNER TITLE:     에임 트래킹 연습 – 브라우저 무료 FPS 무빙 추적 트레이너 | SkillDrills
+// PRIMARY (2026-11 Phase B): "무빙 에임 연습" — 트래킹 에임 연습 is owned by reaction fps-tracking-trainer,
+//                   에임 트래킹 연습 by fps/pro-smooth-pursuit, 트래킹 연습 사이트 by fps/anti-strafe-jitter-duel
+// SECONDARY:        "좌우 무빙 에임", "AD 무빙 트래킹" (autocomplete only; Bing 0)
 // ============================================================
 
 export const metadata = {
-  title: "트래킹 에임 연습 | FPS 좌우 무빙 추적 | SkillDrills",
-  description: "무료 트래킹 에임 연습: ADAD 좌우 무빙과 방향 전환을 따라가며 오버워치·에이펙스식 추적 조준을 브라우저에서 훈련하세요.",
+  title: "무빙 에임 연습 | 좌우 AD 무빙 트래킹 | SkillDrills",
+  description: "무료 무빙 에임 연습: 좌우 AD 무빙으로 수시로 방향을 바꾸는 타깃에 조준선을 계속 올려 두세요. 설치 없이 브라우저에서 마우스로 바로 시작합니다.",
   keywords: [
-    "트래킹 에임 연습",
-    "트래킹 에임",
-    "에임 트래킹 연습",
-    "에임 트래킹 연습 사이트",
-    "에임 트래킹 테스트",
-    "에임 트래킹",
-    "트래킹 에임 연습",
-    "오버워치 에임 트래킹 연습",
-    "에이펙스 트래킹 연습",
-    "발로란트 트래킹 연습",
-    "스트레이프 트래킹",
     "무빙 에임 연습",
-    "방향 전환 트래킹",
-    "무료 에임 연습 사이트"
+    "좌우 무빙 에임",
+    "AD 무빙 트래킹",
+    "ad무빙 에임",
+    "스트레이프 트래킹",
+    "방향 전환 트래킹"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/strafe-tracking",
@@ -49,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "트래킹 에임 연습 | FPS 좌우 무빙 추적 | SkillDrills",
-    description: "무료 트래킹 에임 연습: ADAD 좌우 무빙과 방향 전환을 따라가며 오버워치·에이펙스식 추적 조준을 브라우저에서 훈련하세요.",
+    title: "무빙 에임 연습 | 좌우 AD 무빙 트래킹 | SkillDrills",
+    description: "무료 무빙 에임 연습: 좌우 AD 무빙으로 수시로 방향을 바꾸는 타깃에 조준선을 계속 올려 두세요. 설치 없이 브라우저에서 마우스로 바로 시작합니다.",
     url: "https://skilldrills.online/ko/drills/fps/strafe-tracking",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -58,8 +41,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "트래킹 에임 연습 | FPS 좌우 무빙 추적 | SkillDrills",
-    description: "무료 트래킹 에임 연습: ADAD 좌우 무빙과 방향 전환을 따라가며 오버워치·에이펙스식 추적 조준을 브라우저에서 훈련하세요.",
+    title: "무빙 에임 연습 | 좌우 AD 무빙 트래킹 | SkillDrills",
+    description: "무료 무빙 에임 연습: 좌우 AD 무빙으로 수시로 방향을 바꾸는 타깃에 조준선을 계속 올려 두세요. 설치 없이 브라우저에서 마우스로 바로 시작합니다.",
   },
 };
 
@@ -70,31 +53,31 @@ export default function StrafeTrackingPageKo() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/" },
       { "@type": "ListItem", "position": 2, "name": "FPS 훈련", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "에임 트래킹 연습", "item": "https://skilldrills.online/ko/drills/fps/strafe-tracking" }
+      { "@type": "ListItem", "position": 3, "name": "무빙 에임 연습", "item": "https://skilldrills.online/ko/drills/fps/strafe-tracking" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "에임 트래킹 연습 (Strafe Tracking Aim Trainer)",
+    "name": "무빙 에임 연습 (Strafe Tracking)",
     "url": "https://skilldrills.online/ko/drills/fps/strafe-tracking",
-    "description": "불규칙한 좌우 스트레이프 무빙과 급격한 방향 전환에 조준선을 고정하는 FPS 에임 트래킹(안구 추종) 브라우저 무료 훈련 도구.",
+    "description": "불규칙한 좌우 AD 무빙과 급격한 방향 전환에 조준선을 유지하는 브라우저 무료 무빙 에임 연습 도구.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requires HTML5 Canvas and Pointer Lock API support",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "에임 트래킹 연습 (Strafe Tracking Aim Trainer)",
+    "name": "무빙 에임 연습 (Strafe Tracking)",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "불규칙한 좌우 스트레이프 무빙과 급격한 방향 전환에 조준선을 고정하는 FPS 에임 트래킹(안구 추종) 브라우저 무료 훈련 도구.",
+    "description": "불규칙한 좌우 AD 무빙과 급격한 방향 전환에 조준선을 유지하는 브라우저 무료 무빙 에임 연습 도구.",
     "genre": "FPS Training / Strafe Tracking Aim",
     "url": "https://skilldrills.online/ko/drills/fps/strafe-tracking",
     "publisher": {
@@ -107,10 +90,10 @@ export default function StrafeTrackingPageKo() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "에임 트래킹 연습 (Strafe Tracking Aim Trainer)",
+    "name": "무빙 에임 연습 (Strafe Tracking)",
     "url": "https://skilldrills.online/ko/drills/fps/strafe-tracking",
-    "description": "불규칙한 좌우 스트레이프 무빙과 급격한 방향 전환에 조준선을 고정하는 FPS 에임 트래킹(안구 추종) 브라우저 무료 훈련 도구.",
-    "dateModified": "2026-09-20",
+    "description": "불규칙한 좌우 AD 무빙과 급격한 방향 전환에 조준선을 유지하는 브라우저 무료 무빙 에임 연습 도구.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Strafe Tracking", "Tracking Aim"],
     "playMode": "SinglePlayer",
@@ -122,14 +105,14 @@ export default function StrafeTrackingPageKo() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "FPS 게임에서 '에임 트래킹(트래킹 에임)'이란 무엇인가요?",
+        "name": "무빙 에임 연습은 어떤 훈련인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "에임 트래킹(트래킹 / 부드러운 안구 추종, Smooth Pursuit)이란 빠르게 불규칙하게 움직이는 적 목표물에 조준선(크로스헤어)을 지속적으로 일치시키는 운동-시각 추적 기술입니다. 에이펙스 레전드나 오버워치 2와 같이 TTK(킬에 필요한 시간)가 긴 슈터 게임에서 교전 승률을 결정하는 핵심 능력입니다."
+          "text": "좌우로만 움직이는 캡슐형 타깃이 약 0.2~0.8초 간격으로 무작위로 방향을 바꾸고, 플레이어는 마우스로 조준선을 그 위에 계속 올려 두는 트래킹 훈련입니다. 클릭은 필요 없으며, 조준선이 타깃 위에 있는 시간만큼 점수가 쌓입니다. 에이펙스 레전드나 오버워치 2처럼 TTK가 긴 게임의 무빙 추적 연습에 맞춰져 있습니다."
         }
       },
       {
@@ -174,10 +157,10 @@ export default function StrafeTrackingPageKo() {
       },
       {
         "@type": "Question",
-        "name": "타깃에서 1초 이상 벗어나면 콤보가 리셋되는 이유는 무엇인가요?",
+        "name": "점수, 콤보, 시간은 어떻게 계산되나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "실전 교전에서 타깃 추적이 완전히 끊기면 DPS(초당 피해량)가 급감하여 교전에서 패배하기 때문입니다. 타깃을 화면 중앙에 끝까지 유지하는 지속적 주의 집중력과 방향 전환 직후 신속하게 조준선을 복구하는 회복력을 기르기 위해 설계된 규율 규칙입니다."
+          "text": "조준선이 타깃 위에 있으면 0.25초마다 기본 50점(콤보 배율과 레벨 배율 적용)과 0.1초가 추가됩니다(남은 시간 최대 60초). 1초를 끊김 없이 따라가면 콤보가 1 오르고 배율은 최대 3.0배까지 커집니다. 타깃에서 벗어나는 순간 콤보는 0으로 초기화되며, 시간 페널티 설정을 켠 경우 1초 이탈할 때마다 0.6초가 줄어듭니다. 45초에서 시작해 시간이 0이 되면 끝납니다."
         }
       },
       {
@@ -185,7 +168,7 @@ export default function StrafeTrackingPageKo() {
         "name": "144Hz / 240Hz 고주사율 모니터가 에임 트래킹 성능에 영향을 주나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "매우 큰 영향을 미칩니다. 60Hz(약 16.7ms 간격)에서는 빠르게 움직이는 적의 윤곽 잔상으로 인해 망막 슬립 감지가 지연되지만, 144Hz(약 6.9ms)나 240Hz(약 4.1ms) 디스플레이에서는 타깃의 방향 전환과 미세 가속이 실시간으로 명확하게 전달되어 훨씬 부드러운 손 조작이 가능해집니다(Woods et al., 2015)."
+          "text": "영향을 줄 수 있습니다. 60Hz는 프레임 간격이 약 16.7ms, 144Hz는 약 6.9ms, 240Hz는 약 4.1ms라서 주사율이 높을수록 타깃의 방향 전환이 더 촘촘한 화면으로 보입니다. 다만 점수 차이는 장비보다 연습량과 개인차가 더 크게 좌우할 수 있습니다."
         }
       },
       {
@@ -198,10 +181,10 @@ export default function StrafeTrackingPageKo() {
       },
       {
         "@type": "Question",
-        "name": "이 에임 트래킹 연습 도구는 브라우저에서 완전 무료로 이용할 수 있나요?",
+        "name": "이 무빙 에임 연습은 브라우저에서 무료로 이용할 수 있나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "네, 무료입니다. 별도의 프로그램 설치나 회원가입, 결제 없이 웹 브라우저에서 바로 트래킹 에임 연습을 시작할 수 있습니다."
+          "text": "네, 무료입니다. 별도의 프로그램 설치나 회원가입, 결제 없이 웹 브라우저에서 바로 무빙 에임 연습을 시작할 수 있습니다. 포인터 잠금을 쓰는 마우스 전용 훈련이라 PC에서 이용하세요."
         }
       }
     ]
@@ -210,14 +193,14 @@ export default function StrafeTrackingPageKo() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "에임 트래킹(스트레이프 추적) 마스터 4단계 훈련법",
-    "description": "불규칙한 좌우 무빙과 급격한 방향 전환에 정확하게 조준선을 고정하는 에임 트래킹 기술을 습득하는 절차.",
+    "name": "무빙 에임 연습 4단계 훈련법",
+    "description": "불규칙한 좌우 무빙과 급격한 방향 전환에 조준선을 유지하는 무빙 에임 연습 절차.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "게임 감도 동기화 및 포인터 잠금 활성화",
-        "text": "설정 메뉴에서 플레이 중인 게임의 DPI와 인게임 감도를 맞추고 화면을 클릭하여 포인터 잠금을 적용합니다.",
+        "name": "감도 맞추고 시작",
+        "text": "드릴 목록(/drills)의 설정에서 마우스 감도 배율을 평소 게임과 비슷하게 맞춘 뒤 훈련 시작을 누릅니다. 카운트다운이 끝나면 포인터 잠금이 적용됩니다.",
         "url": "https://skilldrills.online/ko/drills/fps/strafe-tracking#step-1"
       },
       {
@@ -245,16 +228,16 @@ export default function StrafeTrackingPageKo() {
   };
 
   const strafeGuideKo = {
-    heading: "에임 트래킹 연습과 무빙 추적 가이드",
+    heading: "무빙 에임 연습 가이드: 좌우 AD 무빙 트래킹",
     intro: [
-      "에임 트래킹 연습은 ADAD로 좌우 이동하고 방향을 바꾸는 적에게 조준선을 계속 맞추는 FPS 훈련입니다. 에이펙스 레전드와 오버워치 2처럼 움직임이 빠른 게임에서는 순간 플릭보다 무빙 추적과 지속적인 적중 시간이 교전 결과를 좌우합니다.",
+      "무빙 에임 연습은 AD로 좌우 이동하며 방향을 바꾸는 적에게 조준선을 계속 맞추는 FPS 훈련입니다. 에이펙스 레전드와 오버워치 2처럼 TTK가 긴 게임에서는 순간 플릭보다 좌우 무빙 에임과 지속적인 적중 시간이 교전 결과에 영향을 줍니다.",
       "인간의 안구 및 손의 운동 추적 메커니즘은 Cyril Rashbass(1961)의 '독립 이중 시각 제어 기제'와 Richard J. Krauzlis(2004)의 '부드러운 안구 추종과 사케드 통합 모델'을 통해 연구되어 왔습니다. 인간이 대상을 매끄럽게 추종할 수 있는 안구 각속도의 상한선은 약 30°/초이며, 목표가 불규칙하게 반전하는 순간 약 100~130밀리초의 불가피한 신경 신호 전달 지연이 발생합니다. 이 지연 시간을 최소화하고 뒤처진 조준선을 신속한 교정 사케드(Catch-up Saccade)로 재배치하는 능력이 트래킹 정확도에 영향을 줍니다.",
       "시각 유도형 마우스 제어에서는 Michael F. Land & David N. Horwood(1995)의 이중 주시점 모델과 C.S. Green & D. Bavelier(2003)의 액션 비디오 게임 시각 인지 이론이 적용됩니다. 시선은 단순히 타깃의 외곽선만을 쫓는 것이 아니라 이동 궤적의 미세한 예비 동작과 가감속(속도 신호)을 인지하여, 전두안야와 소뇌를 거쳐 매끄러운 근육 출력 제어로 변환됩니다.",
-      "측정 방식: 본 도구는 브라우저의 performance.now() 타이머를 활용하여 매 프레임 조준선 위치와 히트박스의 일치도를 기록합니다. 모든 연산과 점수는 기기 내부에서 안전하게 처리되며 외부로 전송되지 않습니다(Woods et al., 2015).",
-      "디스플레이 및 입력 장비 최적화: 일반적인 60Hz 모니터에서는 약 16.7ms의 프레임 지연이 발생하여 급격한 방향 전환 시 타깃이 뚝뚝 끊겨 보일 수 있습니다. 144Hz(약 6.9ms) 또는 240Hz(약 4.1ms) 고주사율 모니터와 폴링레이트가 높은 마우스를 사용하면 장비 지연이 줄어 타깃의 속도 변화가 더 잘 보이고 입력이 더 빠르게 반영됩니다(Woods et al., 2015)."
+      "측정 방식: 매 프레임 조준선이 타깃 히트박스 안에 있는지 확인해 정확도(%)와 타깃 이탈 시간을 기록합니다. 점수와 최고 기록은 이 브라우저에만 저장되며 외부로 전송되지 않습니다.",
+      "디스플레이 및 입력 장비 최적화: 일반적인 60Hz 모니터에서는 약 16.7ms의 프레임 지연이 발생하여 급격한 방향 전환 시 타깃이 뚝뚝 끊겨 보일 수 있습니다. 144Hz(약 6.9ms) 또는 240Hz(약 4.1ms) 고주사율 모니터와 폴링레이트가 높은 마우스를 사용하면 화면 갱신 간격이 짧아 타깃의 방향 전환이 더 촘촘하게 보입니다."
     ],
     benchmarks: {
-      title: "에임 트래킹 정확도 등급 & 퍼포먼스 벤치마크 기준",
+      title: "무빙 에임 정확도 참고 구간 (SkillDrills 기준)",
       headers: ["평가 티어", "트래킹 정확도 %", "최대 록온 유지 시간", "해석(참고용)"],
       rows: [
         ["티어 1 (최상위)", "82% – 95%+", "5.0초 이상", "빠른 ADAD 무빙과 방향 반전에도 조준선이 표적 안에 오래 머뭅니다. 반전 직후 회복이 빠른 구간입니다."],
@@ -263,10 +246,10 @@ export default function StrafeTrackingPageKo() {
         ["티어 4 (중급)", "38% – 53%", "1.0초 – 1.9초", "방향 전환에 반응이 늦어 조준선이 표적 뒤에 남는 일이 잦습니다."],
         ["티어 5 (입문)", "38% 미만", "1.0초 미만", "불규칙 무빙에 시선이 따라가지 못하거나 손 힘이 들어가 조준선이 흔들리는 단계입니다."]
       ],
-      note: "정확도는 세션 프레임 중 조준선이 표적 히트박스 안에 있던 비율입니다(Woods et al., 2015). 구간은 SkillDrills가 정한 참고용 구분이며 게임 랭크나 사용자 통계와 무관합니다."
+      note: "정확도는 세션 프레임 중 조준선이 표적 히트박스 안에 있던 비율이고, 최대 록온 시간은 끊김 없이 따라간 최장 시간(초)입니다. 구간은 SkillDrills가 정한 참고용 구분이며 게임 랭크나 사용자 통계와 무관합니다."
     },
     techniques: {
-      title: "스포츠 과학 에비던스 기반 에임 트래킹 4대 향상 프로토콜",
+      title: "무빙 에임을 다듬는 4가지 포인트",
       items: [
         {
           name: "각속도 일치(Velocity Matching)와 손목 이완",
@@ -291,28 +274,28 @@ export default function StrafeTrackingPageKo() {
       ]
     },
     steps: [
-      "설정 메뉴에서 플레이 중인 게임, DPI, 인게임 감도를 맞추고 포인터 잠금을 활성화합니다.",
+      "/drills 설정에서 마우스 감도 배율을 맞추고 훈련 시작을 누릅니다(카운트다운 후 포인터 잠금 적용).",
       "화면 중앙에 출현한 이동 타깃에 신속하게 조준선을 올리고 추적을 시작합니다.",
       "타깃의 좌우 이동 속도에 마우스 조작을 부드럽게 일치시켜 조준선을 중심에 고정합니다.",
       "타깃이 급반전할 때는 침착하게 작은 미세 플릭으로 조준선을 재배치하여 록온 지속 시간을 늘립니다.",
       "훈련 종료 후 추적 정확도(%), 최대 록온 시간, 타깃 이탈 시간을 확인하고 약점을 분석합니다."
     ],
-    audience: "에이펙스 레전드, 오버워치 2, 더 파이널스, 발로란트 등에서 적의 격렬한 좌우 무빙에 흔들리지 않고 자석처럼 흡착되는 에임 트래킹 실력을 기르고 싶은 모든 PC 게이머.",
+    audience: "에이펙스 레전드, 오버워치 2, 더 파이널스, 발로란트 등에서 적의 격렬한 좌우 무빙에 흔들리지 않고 조준선을 오래 붙여 두는 무빙 에임을 연습하고 싶은 PC 게이머.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'posner1990', 'green2003', 'rashbass1961', 'land2000'),
     related: [
       { href: "/ko/drills/fps/recoil-control", label: "리코일 연습 (Recoil Control Trainer)" },
       { href: "/ko/drills/fps/angle-hold-trainer", label: "각도 홀드 연습 (Angle Hold Trainer)" },
-      { href: "/ko/drills/fps/pro-smooth-pursuit", label: "스무스 퍼슈트 연습 (Smooth Pursuit Trainer)" },
-      { href: "/ko/drills/fps/anti-strafe-jitter-duel", label: "안티 스트레이프 지터 연습 (Anti-Strafe Jitter)" },
+      { href: "/ko/drills/fps/pro-smooth-pursuit", label: "에임 트래킹 연습 (스무스 트래킹)" },
+      { href: "/ko/drills/fps/anti-strafe-jitter-duel", label: "트래킹 연습 사이트 (ADAD 무빙 대응)" },
       { href: "/ko/drills/fps/micro-correction-precision", label: "마이크로 에임 연습 (Micro-Correction)" }
     ]
   };
 
   const copyKo = {
-    h1Keyword: "트래킹 에임 연습",
-    h1Suffix: " - FPS 좌우 무빙 추적",
-    caption: "에임 트래킹은 불규칙하게 움직이는 적에게 조준선을 유지하는 운동 시각 제어 기술입니다. 인간의 부드러운 안구 추종은 각속도 약 30°/초가 한계이며, 급격한 방향 전환 시 약 100~130ms의 신경 인지 지연이 발생합니다(Rashbass, 1961; Krauzlis, 2004). 침착한 속도 동기화와 신속한 에임 복구 능력을 기르세요.",
+    h1Keyword: "무빙 에임 연습",
+    h1Suffix: " - 좌우 AD 무빙 트래킹",
+    caption: "무빙 에임 연습은 좌우로 불규칙하게 움직이는 적에게 조준선을 유지하는 운동 시각 제어 기술입니다. 인간의 부드러운 안구 추종은 각속도 약 30°/초가 한계이며, 급격한 방향 전환 시 약 100~130ms의 신경 인지 지연이 발생합니다(Rashbass, 1961; Krauzlis, 2004). 침착한 속도 동기화와 신속한 에임 복구 능력을 기르세요.",
     statStatus: "상태",
     statusTracking: "추적 중",
     statusComplete: "완료",
@@ -323,8 +306,8 @@ export default function StrafeTrackingPageKo() {
     statScore: "점수",
     pausedTitle: "일시 정지됨",
     pausedPrompt: "화면을 클릭하여 마우스 커서를 고정하고 훈련을 재개하세요.",
-    startTitle: "에임 트래킹 연습",
-    startSubtitle: "불규칙 좌우 무빙 추적 • 포인터 잠금 • 무제한 난이도 가속",
+    startTitle: "무빙 에임 연습",
+    startSubtitle: "좌우 AD 무빙 추적 • 포인터 잠금 • 무제한 난이도 상승",
     startButtonText: "훈련 시작",
     getReady: "준비하세요",
     statLockStreak: "최대 록온 시간",
@@ -336,14 +319,14 @@ export default function StrafeTrackingPageKo() {
     bottomCaption: "좌우로 격렬하게 무빙하는 타깃을 조준선 중심에 유지하며 방향 전환에 대한 반응 추적력을 단련하세요.",
     rulesTitle: "훈련 규칙 및 설정",
     rulesItems: [
-      { num: "1", text: "조준선 정렬", highlight: "+50점 (+0.4초/초)", result: "콤보 배율 적용" },
-      { num: "2", text: "연속 록온", highlight: "최대 3.0배", result: "최대 배율" },
+      { num: "1", text: "타깃 위 유지", highlight: "0.25초마다 +50점 (+0.4초/초)", result: "콤보 배율 적용" },
+      { num: "2", text: "1초 연속 추적", highlight: "콤보 +1, 최대 3.0배", result: "최대 배율" },
       { num: "3", text: "레벨 상승", highlight: "+1 레벨 / 1400점", result: "가변 무빙 가속" },
-      { num: "4", text: "이탈 페널티", highlight: "1.0초 타깃 이탈", result: "콤보 초기화 (-0.6초)" }
+      { num: "4", text: "타깃 이탈", highlight: "즉시 콤보 초기화", result: "1초당 -0.6초 (페널티 ON)" }
     ],
-    aboutTitle: "에임 트래킹과 무빙 추적 정보",
-    whatIsTitle: "에임 트래킹(Tracking Aim) 훈련이란?",
-    whatIsLead: "에임 트래킹이란 예측 불가능하게 움직이는 적에게 조준선을 일치시켜 유지하는 운동 시각 제어 기술입니다. 인간의 부드러운 안구 추종은 각속도 약 30°/초까지 정확히 기능하며, 반전 시마다 약 100~130밀리초의 불가피한 신경 전달 지연(교정 사케드)이 발생합니다(Rashbass, 1961; Krauzlis, 2004).",
+    aboutTitle: "무빙 에임 연습 정보",
+    whatIsTitle: "무빙 에임 연습이란?",
+    whatIsLead: "무빙 에임(좌우 무빙 트래킹)이란 예측 불가능하게 움직이는 적에게 조준선을 일치시켜 유지하는 운동 시각 제어 기술입니다. 인간의 부드러운 안구 추종은 각속도 약 30°/초까지 정확히 기능하며, 반전 시마다 약 100~130밀리초의 불가피한 신경 전달 지연(교정 사케드)이 발생합니다(Rashbass, 1961; Krauzlis, 2004).",
     aboutIntro: [
       "본 훈련은 에이펙스 레전드, 오버워치 2, 발로란트 등에서 적의 격렬한 ADAD 좌우 무빙과 회피 기동을 놓치지 않고 데미지를 누적시키는 에임 추적력을 집중적으로 단련합니다."
     ],

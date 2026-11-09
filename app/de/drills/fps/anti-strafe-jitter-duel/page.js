@@ -1,24 +1,24 @@
 import AntiStrafeJitterClient from '@/app/drills/fps/anti-strafe-jitter-duel/AntiStrafeJitterClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import DrillFooter from '@/components/drill/DrillFooter';
-import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
+const TITLE = "ADAD-Tracking: Anti-Strafe-Training im Browser | SkillDrills";
+const DESCRIPTION = "Kostenloses ADAD-Tracking im Browser: Halte das Fadenkreuz auf einem Ziel mit zufälligen Links-rechts-Wechseln. Punkte alle 0,25 s, Combo pro gehaltener Sekunde.";
+const NAME = "ADAD-Tracking – Anti-Strafe-Training";
+
 export const metadata = {
-  title: "Aim Trainer | Reaktives Tracking & Strafe | SkillDrills",
-  description: "Kostenloser Aim Trainer im Browser: Trainiere reaktives Tracking gegen unberechenbare ADAD-Strafes in Apex, Overwatch 2 und Warzone.",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "Aim Trainer",
-    "Aim Trainer Browser",
-    "Aim Trainer Apex",
+    "ADAD-Tracking",
+    "ADAD Tracking Training",
+    "Anti-Strafe",
+    "Anti-Strafe Training",
     "reaktives Tracking",
-    "ADAD Strafe Tracking",
-    "Strafe Aiming",
-    "Richtungswechsel Aiming",
-    "Nahkampf Tracking",
-    "Anti-Mirroring",
-    "Jitter Strafe"
+    "Strafe Tracking",
+    "Nahkampf Tracking"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel",
@@ -29,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-      title: "Aim Trainer | Reaktives Tracking & Strafe | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser: Trainiere reaktives Tracking gegen unberechenbare ADAD-Strafes in Apex, Overwatch 2 und Warzone.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -38,8 +38,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-      title: "Aim Trainer | Reaktives Tracking & Strafe | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser: Trainiere reaktives Tracking gegen unberechenbare ADAD-Strafes in Apex, Overwatch 2 und Warzone.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
@@ -50,19 +50,19 @@ export default function AntiStrafeJitterDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Drills", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - reaktives Tracking", "item": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel" }
+      { "@type": "ListItem", "position": 3, "name": NAME, "item": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "Aim Trainer - reaktives Tracking",
+    "@type": "SoftwareApplication",
+    "name": NAME,
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "description": "Kostenloses Browsertraining für reaktives Tracking und Fadenkreuzkontrolle gegen hochfrequente ADAD-Strafes.",
+    "description": "Kostenloses ADAD-Tracking-Training im Browser: Halte das Fadenkreuz auf einem Ziel, das zufällig die Richtung wechselt.",
     "genre": "FPS Training / Anti-Strafe",
     "url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel",
     "publisher": {
@@ -75,28 +75,28 @@ export default function AntiStrafeJitterDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer - reaktives Tracking",
+    "name": NAME,
     "url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
-    "browserRequirements": "Erfordert Pointer Lock API, JavaScript und HTML5 Canvas Unterstützung",
+    "browserRequirements": "Requires JavaScript, HTML5 Canvas, a mouse and Pointer Lock support",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "EUR"
     },
-    "description": "Kostenloses Browsertraining für reaktives Tracking und Fadenkreuzkontrolle gegen hochfrequente ADAD-Strafes."
+    "description": "Anti-Strafe-Training im Browser: reaktives Tracking gegen ein Ziel, das wie ein ADAD-Strafe links-rechts wechselt."
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer - reaktives Tracking",
+    "name": NAME,
     "url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel",
-    "description": "Kostenloses Browsertraining für reaktives Tracking und Fadenkreuzkontrolle gegen hochfrequente ADAD-Strafes.",
-    "dateModified": "2026-09-20",
+    "description": "Kostenloses ADAD-Tracking-Training im Browser: Halte das Fadenkreuz auf einem Ziel, das zufällig die Richtung wechselt.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
-    "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
+    "genre": ["FPS Training", "Reactive Tracking"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
@@ -106,86 +106,62 @@ export default function AntiStrafeJitterDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Was versteht man unter reaktivem Tracking in Shooter-Spielen?",
+        "name": "Wie funktioniert dieses ADAD-Tracking-Training?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Reaktives Tracking beschreibt die mechanische Fähigkeit, das Fadenkreuz kontinuierlich auf einem unvorhersehbar ausweichenden Ziel zu halten. Es erfordert ständige sensorische Fehlererkennung auf der Netzhaut und unmittelbare feinmotorische Richtungsanpassungen der Hand."
+          "text": "Eine Zielkugel bewegt sich auf mittlerer Bildschirmhöhe nur nach links und rechts und wechselt in zufälligen Abständen Richtung und Tempo. Du klickst nicht, sondern hältst das Fadenkreuz mit der Maus auf dem Ziel. Die Runde startet mit 45 Sekunden und endet, wenn die Zeit abgelaufen ist."
         }
       },
       {
         "@type": "Question",
-        "name": "Wie verfolgt man schnelle ADAD-Strafes ohne Fadenkreuz-Verzögerung?",
+        "name": "Wie werden Punkte und Combo berechnet?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Schnelle ADAD-Strafes meistert man durch entspannte Unterarmmuskulatur, visuelle Fokussierung auf den Torso des Gegners statt auf das eigene Fadenkreuz und durch weiche, geschwindigkeitsangepasste Mikro-Umkehrbewegungen aus Handgelenk und Fingern statt aggressiver Über-Flicks."
+          "text": "Solange das Fadenkreuz auf dem Ziel liegt, gibt es alle 0,25 Sekunden 10 Punkte mal Combo-Multiplikator und Level-Bonus, und die Restzeit steigt um 0,1 Sekunden (maximal 60 Sekunden). Jede ununterbrochen gehaltene Sekunde erhöht die Combo um 1; der Multiplikator liegt bei Combo 3 bei 1,1x und erreicht bei Combo 50 maximal 3,0x."
         }
       },
       {
         "@type": "Question",
-        "name": "Warum beginnt das Fadenkreuz bei Jitter-Strafes oft zu zittern?",
+        "name": "Was passiert, wenn ich das Ziel verliere?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Zittriges Aiming entsteht durch zu hohe Griffspannung (Death Gripping) und Co-Kontraktion von Agonisten- und Antagonistenmuskeln. Verkrampft der Unterarm, arbeiten die Muskeln gegeneinander, was zu abgehackten Sprüngen statt geschmeidigem Gleiten führt."
+          "text": "Bist du länger als 1 Sekunde vom Ziel weg, fällt die Combo auf 0. Wenn du in den Drill-Einstellungen die Zeitstrafe aktiviert hast, werden dabei zusätzlich 0,6 Sekunden abgezogen. Standardmäßig ist sie aus."
         }
       },
       {
         "@type": "Question",
-        "name": "Worin liegt der Unterschied zwischen Smooth Pursuit und reaktivem Tracking?",
+        "name": "Wie steigt die Schwierigkeit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Smooth Pursuit folgt vorhersehbaren Zielen mit gleichmäßiger Flugbahn, deren Bewegung das Gehirn antizipieren kann. Reaktives Tracking bewältigt plötzliche, unberechenbare Geschwindigkeits- und Richtungsumkehrungen, bei denen Antizipation versagt und das okulomotorische System rein auf retinalen Schlupf reagieren muss."
+          "text": "Alle 1400 Punkte steigt das Level um 1, ohne Obergrenze. Mit jedem Level wird das Ziel kleiner, der Strafe schneller und die Abstände zwischen den Richtungswechseln kürzer. Eine hohe Combo zieht die Schwierigkeit zusätzlich leicht an."
         }
       },
       {
         "@type": "Question",
-        "name": "Wie trainieren Apex-Legends-Profis reaktives Anti-Strafe-Tracking?",
+        "name": "Hilft Anti-Strafe-Training in echten Spielen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Apex-Profis trainieren Nahkampf-Strafes mit unregelmäßigen Richtungswechseln, schulen die Anpassung an Zielgeschwindigkeiten und richten ihren Blick auf Hüfte und Beine des Gegners, um Beschleunigungsmuster vor dem eigentlichen Richtungswechsel zu antizipieren."
+          "text": "Der Drill vereinfacht die Situation, in der ein Gegner auf kurze Distanz A und D abwechselnd drückt. Du übst gezielt, das Fadenkreuz direkt nach einem Richtungswechsel wieder aufs Ziel zu bringen, etwa für Valorant, CS2, Apex Legends oder Overwatch 2. Wie stark sich das auf dein Spiel überträgt, ist individuell verschieden."
         }
       },
       {
         "@type": "Question",
-        "name": "Welche Mausgriffart eignet sich am besten für hochfrequente Richtungswechsel?",
+        "name": "Mein Aim hängt bei Richtungswechseln hinterher. Was tun?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ein lockerer Fingertip- oder entspannter Claw-Grip gilt als optimal für hochfrequentes Anti-Strafe-Tracking, da Finger- und Handgelenk minimale Richtungswechsel ohne Trägheitswiderstand des schwereren Unterarms ausführen können."
+          "text": "Greif die Maus locker und schau auf das Ziel statt auf das Fadenkreuz. Statt bei jedem Wechsel weit hinterherzuflicken, kurz abbremsen und dann im Tempo des Ziels wieder anlegen – so bleibt die Zeit neben dem Ziel meist kürzer."
         }
       },
       {
         "@type": "Question",
-        "name": "Wie bewältigt man Anti-Strafe-Situationen in Overwatch 2?",
+        "name": "Funktioniert das auf Handy oder Touchscreen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In Overwatch 2 besitzen Spielfiguren sofortige Richtungswechsel ohne Beschleunigungsphasen. Gegen Helden wie Tracer oder Genji müssen Spieler verzögerungsfreie Umkehrreflexe trainieren, ohne Muster blind zu erraten."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Verbessert eine höhere Polling-Rate (1000 Hz+) reaktives Tracking?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja. Eine Polling-Rate von 1000 Hz oder mehr überträgt Sensorpositionen im 1-ms-Takt, eliminiert Eingabe-Jitter und liefert den feinsten Datenstrom für subtile Mikro-Korrekturen bei Richtungswechseln."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wie lange benötigt das Gehirn, um auf einen abrupten Richtungswechsel zu reagieren?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Die sensomotorische Reaktionszeit auf eine unerwartete Bewegungsumkehr beträgt 160 bis 210 ms für die Reizerkennung im visuellen Kortex (V1/MT), gefolgt von 80 bis 130 ms für motorische Abbremsung und Richtungswechsel der Hand."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Können reaktive Tracking-Drills Nahkampfduelle mit SMGs und Shotguns verbessern?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja. Im Nahkampf ist die Winkelgeschwindigkeit auf dem Bildschirm am höchsten. Reaktives Tracking konditioniert das Sehsystem, ruhig zu bleiben, den fovealen Fokus auf dem Ziel zu halten und das Fadenkreuz mittig auf der Hitbox zu zentrieren."
+          "text": "Nein. Der Drill liest Mausbewegungen über Pointer Lock und braucht deshalb eine Maus. Auf reinen Touch-Geräten erscheint statt des Start-Buttons ein Hinweis. Mit Esc beendest du den Drill jederzeit."
         }
       }
     ]
@@ -194,100 +170,82 @@ export default function AntiStrafeJitterDePage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Anti-Strafe Jitter Aim trainieren",
-    "description": "Schritt-für-Schritt-Anleitung zur Entwicklung reaktiver Zielverfolgung und Richtungswechselkontrolle gegen hochfrequente ADAD-Strafes.",
+    "name": "ADAD-Tracking trainieren",
+    "description": "Schritte für das Anti-Strafe-Training gegen ein links-rechts wechselndes Ziel.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "In-Game-Empfindlichkeit einstellen",
-        "text": "Stimme deine Spiel-Sensitivität in den Session-Einstellungen ab, um dein Muskelgedächtnis konsistent zu halten.",
-        "url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel#step-1"
+        "name": "Sensitivität einstellen",
+        "text": "Stelle auf der Drill-Übersicht die gemeinsame Maus-Sensitivität so ein, dass sie sich wie gewohnt anfühlt."
       },
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "Mauszeigersperre aktivieren",
-        "text": "Klicke auf Start, um den Vollbildmodus zu starten und den Mauszeiger ohne Windows-Beschleunigungskurven direkt im Canvas zu sperren.",
-        "url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel#step-2"
+        "name": "Starten",
+        "text": "Klicke auf Start: Der Drill geht in den Vollbildmodus und aktiviert nach dem Countdown Pointer Lock."
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "Blick auf die Zielkugel fixieren",
-        "text": "Halte deinen visuellen Fokus zentriert auf dem Zielkörper statt auf dem Fadenkreuz, um Richtungswechsel verzögerungsfrei wahrzunehmen.",
-        "url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel#step-3"
+        "name": "Ziel verfolgen",
+        "text": "Halte das Fadenkreuz auf dem Ziel und lege nach jedem Richtungswechsel sofort wieder an."
       },
       {
         "@type": "HowToStep",
         "position": 4,
-        "name": "Weiche Mikro-Umkehrbewegungen ausführen",
-        "text": "Halte deine Hand locker und vollziehe Richtungswechsel geschmeidig über Handgelenk und Fingerkuppen nach, ohne hektisch zu überschwingen.",
-        "url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel#step-4"
+        "name": "Auswerten",
+        "text": "Prüfe nach der Runde Tracking-Genauigkeit, Zeit neben dem Ziel, beste Combo und erreichtes Level."
       }
     ]
   };
 
   const antiStrafeGuide = {
-    heading: "Aim Trainer für reaktives Tracking gegen ADAD-Strafes",
+    heading: "ADAD-Tracking: Anleitung zum Anti-Strafe-Training",
     intro: [
-      "Ein Aim Trainer für reaktives Tracking übt, das Fadenkreuz bei unberechenbaren ADAD-Strafes auf dem Ziel zu halten. Dieser Drill misst Nahkampf-Tracking, Richtungswechsel und Overshoot-Kontrolle für Apex, Overwatch 2 und Warzone.",
-      "Ändert ein Gegner blitzschnell die Richtung, wandert das Zielbild aus der Fovea zentralis ab – es entsteht retinaler Schlupf. Das Gehirn kann diese Umkehr nicht voraussehen: Es muss die Abbremsung des Ziels erfassen, den Richtungswechsel im motorischen Kortex verarbeiten, die bestehende Mausbewegung abbremsen und eine gegenläufige Muskelkontraktion einleiten. In Spielen mit hoher Time-to-Kill (TTK) – wie Apex Legends, Overwatch 2 und Call of Duty: Warzone – gewinnt derjenige das Duell, der seine Fadenkreuz-Uptime auf der ausweichenden Hitbox maximiert.",
-      "Der Anti-Strafe Jitter Trainer nutzt die HTML5 Pointer Lock API und hochauflösender performance.now()-Chronometrie. Es fordert keine unbeschleunigte Eingabe an, daher solltest du die Zeigerbeschleunigung des Betriebssystems ausschalten. Der Drill ist darauf ausgelegt, Brems- und Beschleunigungsmuster der Antagonistenmuskeln zu üben (Woods et al., 2015).",
-      "Messmethodik: Alle Tracking-Ereignisse werden clientseitig über die performance.now()-Hochpräzisionsuhr deines Browsers gemessen – vollkommen ohne Server-Latenz. Zu berücksichtigen: Browser runden Zeitstempel aus Sicherheitsgründen (Spectre-Schutz) auf ca. 1 ms; Bildschirme quantisieren Bildfolgen über die Bildwiederholrate (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,1 ms bei 240 Hz). Die USB-Abfragerate fügt bei 1000 Hz ca. 1 ms hinzu. Unterschiede unter 5 ms stellen messtechnisches Rauschen dar; vergleiche Trainingsläufe stets auf identischer Hardware."
+      "Dieses ADAD-Tracking-Training von SkillDrills lässt dich das Fadenkreuz auf einem Ziel halten, das wie bei einem ADAD-Strafe zufällig nach links und rechts wechselt. Du klickst nicht – gewertet wird allein, wie lange das Fadenkreuz auf dem Ziel bleibt.",
+      "Das Ziel bewegt sich nur horizontal und wechselt in unregelmäßigen Abständen Richtung und Tempo; manche Wechsel schießen schneller heraus als andere. Vorhersagen hilft kaum, entscheidend ist reaktives Tracking direkt nach dem Wechsel.",
+      "Eine Runde beginnt mit 45 Sekunden. Solange du auf dem Ziel bist, kommen pro Sekunde 0,4 Sekunden dazu (maximal 60 Sekunden). Punkte und Level haben keine Obergrenze."
     ],
-    benchmarks: {
-      title: "Benchmarks für reaktives Tracking & Richtungswechsel-Latenz",
-      headers: ["Verarbeitungsphase / Leistungsstufe", "Typischer Latenzbereich", "Neuronale Bahn & Biomechanische Funktion", "Wettkampf-Implikation"],
-      rows: [
-        ["Visuelle Richtungserkennung", "160 – 210 ms", "Retinaler Schlupf im visuellen Kortex (V1) und Bewegungsareal MT/V5", "Erste Latenzphase vor bewusster Wahrnehmung der Bewegungsumkehr"],
-        ["Motorischer Umkehrimpuls", "80 – 130 ms", "Kortikospinale Signalübertragung & antagonistische Unterarm-Aktivierung", "Physische Zeitspanne zum Abstoppen und Richtungsumkehren der Maus"],
-        ["Terminale Mikro-Zentrierung", "60 – 100 ms", "Feinmotorische foveale Nachjustierung der Hitbox-Position", "Beseitigung von Überschwingern und Einrasten des Fadenkreuzes"],
-        ["Unvorbereitetes Gesamtreaktionsfenster", "300 – 440 ms", "Kumulative Summe aus Erkennung, Bremsung und Re-Zentrierung", "Standard-Latenzverlust bei unvorhersehbaren ADAD-Strafes"],
-        ["Stufe 4: Reaktives Tracking", "210 – 290 ms", "Antizipatorische Geschwindigkeitsanpassung & entspannte Muskelkontrolle", "Fokus: Geschwindigkeitswechsel früh antizipieren und entspannt nachführen"]
-      ],
-      note: "Metriken synthetisiert aus okulomotorischer Grundlagenforschung (Rashbass, 1961; Krauzlis, 2004), visueller Kognitionswissenschaft (Green & Bavelier, 2003) und digitaler Chronometrie (Woods et al., 2015)."
-    },
     techniques: {
-      title: "Evidenzbasierte Protokolle für reaktives Tracking & Anti-Strafe",
+      title: "Tipps für Anti-Strafe-Tracking",
       items: [
         {
-          name: "Entspannung der Antagonisten (Death Gripping abbauen)",
-          desc: "Der häufigste Fehler bei hektischen Ausweichbewegungen ist das übermäßige Verkrampfen der Unterarmmuskeln. Die Co-Kontraktion von Beugern und Streckern blockiert das Handgelenk und führt zu ruckartigen Korrekturen und weitem Überschießen.",
-          tips: "Halte die Maus locker in der Hand. Lass Fingerkuppen und Handgelenk hochfrequente Zickzack-Bewegungen abfedern."
+          name: "Locker greifen",
+          desc: "Wer die Maus zu fest hält, verkrampft beim Richtungswechsel und das Fadenkreuz ruckelt.",
+          tips: "Nur so fest greifen, dass Finger und Handgelenk frei arbeiten, und zwischen längeren Runden die Hand lockern."
         },
         {
-          name: "Fokussierung auf das gegnerische Modell (Nicht aufs Fadenkreuz)",
-          desc: "Fixiere deinen Blick nicht auf das eigene Fadenkreuz, sondern fest auf den Torso des Ziels. Dein Gehirn berechnet Geschwindigkeitsvektoren über Kantenkontraste automatisch im dorsalen Sehstrom.",
-          tips: "Fällt dein Fadenkreuz hinter schnellen Ausweichbewegungen zurück, richte 100% deiner visuellen Aufmerksamkeit auf Hüfte und Brustkorb des Gegners."
+          name: "Aufs Ziel schauen",
+          desc: "Wer auf die Kugel statt aufs Fadenkreuz schaut, erkennt den Richtungswechsel früher.",
+          tips: "Wird das Ziel rot, bist du daneben – nutze den Farbwechsel als Signal."
         },
         {
-          name: "Geschmeidige Richtungsumkehr statt hektischem Über-Flicken",
-          desc: "Wechselt das Ziel die Richtung, neigen Einsteiger dazu, mit gewaltsamen Flicks hinterherzureißen, was zum Überschießen führt. Spitzen-Tracker bremsen kontrolliert ab und gleiten geschmeidig zurück auf das Ziel.",
-          tips: "Betrachte Richtungswechsel als fließenden Brems- und Beschleunigungszyklus, nicht als zwei getrennte Ruckbewegungen."
+          name: "Überflicken vermeiden",
+          desc: "Ein großer Flick beim Wechsel schießt oft auf die andere Seite hinaus.",
+          tips: "Verbinde den Wechsel zu einem Abbremsen und Wiederbeschleunigen statt zu zwei Flicks."
         },
         {
-          name: "Hüftvektoren und Verzögerungs-Frames lesen",
-          desc: "In Shootern mit Bewegungsphysik (wie Apex Legends oder Warzone) müssen Charaktere vor einer Richtungsumkehr kurz abbremsen. Das Beobachten der Fußstellung und Neigung verschafft 30–50 ms wertvollen Vorsprung.",
-          tips: "Achte auf Modellneigungen und minimale Verzögerungen, um den motorischen Kortex auf die Richtungsänderung vorzubereiten."
+          name: "Die 1-Sekunden-Regel",
+          desc: "Jede gehaltene Sekunde bringt +1 Combo, mehr als 1 Sekunde daneben löscht sie.",
+          tips: "Nach einem Verlust gilt: innerhalb einer Sekunde wieder aufs Ziel."
         }
       ]
     },
     steps: [
-      "Stimme In-Game-Sensitivität und DPI in den Session-Einstellungen ab, um deine Hand-zu-Cursor-Zuordnung konsistent zu halten.",
-      "Klicke auf Start, um den Vollbildmodus zu aktivieren und den Hardware-Mauszeiger ohne Glättung zu sperren.",
-      "Fixiere deinen Blick auf der unberechenbar ausweichenden Zielkugel bei hochfrequenten ADAD-Strafes.",
-      "Halte dauerhaften Fadenkreuzkontakt und federe Richtungswechsel mit entspannten Handgelenksbewegungen ab.",
-      "Baue Tracking-Uptime auf, um höhere Schwierigkeitsstufen zu meistern und deine Scorecard-Präzision zu maximieren."
+      "Gemeinsame Maus-Sensitivität auf der Drill-Übersicht einstellen.",
+      "Start klicken, um Vollbild und Pointer Lock zu aktivieren.",
+      "Das Fadenkreuz auf dem links-rechts wechselnden Ziel halten.",
+      "Bei Richtungswechseln kurz abbremsen statt weit zu flicken.",
+      "Nach der Runde Tracking-Genauigkeit (%), Zeit neben dem Ziel, beste Combo und Level vergleichen."
     ],
-    audience: "Wettkampforientierte FPS-Spieler in Apex Legends, Overwatch 2, Call of Duty: Warzone, The Finals und Team Fortress 2, die zittriges Aiming überwinden und hochfrequente Nahkampf-Strafes meistern möchten.",
+    audience: "Spieler, die in Valorant, CS2, Apex Legends oder Overwatch 2 auf kurze Distanz ADAD-Strafes verlieren, und alle, die reaktives Tracking kostenlos im Browser üben wollen.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('woods2015', 'krauzlis2004', 'green2003', 'rashbass1961'),
     related: [
+      { href: "/de/drills/fps/anti-zigzag-movement-trainer", label: "Zickzack-Tracking" },
       { href: "/de/drills/fps/target-switching-swarm", label: "Target Switching Aim Trainer" },
       { href: "/de/drills/fps/pro-smooth-pursuit", label: "Smooth Pursuit Aim Trainer" },
       { href: "/de/drills/fps/flick-shot-training", label: "Flick Shot Training" },
-      { href: "/de/drills/fps/180-degree-awareness", label: "180 Grad Aiming" },
       { href: "/de/drills/fps/instant-response", label: "FPS Reaktionszeit Test" }
     ]
   };
@@ -320,26 +278,27 @@ export default function AntiStrafeJitterDePage() {
       />
       <AntiStrafeJitterClient
         copy={{
-          h1Keyword: "Aim Trainer",
-          h1Suffix: " – Reaktives Tracking & ADAD",
+          h1Keyword: "ADAD-Tracking",
+          h1Suffix: " – Anti-Strafe-Training im Browser",
           statScore: "Punkte",
           statTime: "Zeit",
-          statAccuracy: "Präzision",
-          statBestScore: "Highscore",
-          startTitle: "Aim Trainer - reaktives Tracking",
-          startSubtitle: "Reaktives Tracking • Endlose Levelprogression",
-          getReady: "BEREIT MACHEN",
+          statAccuracy: "Genauigkeit",
+          statBestScore: "Bestwert",
+          startTitle: NAME,
+          startSubtitle: "Reaktives Tracking gegen Strafes • Endlose Level",
+          getReady: "BEREIT",
           pausedTitle: "PAUSIERT",
-          pausedSubtitle: "Klicken zum Fortsetzen — Mauszeiger wird wieder gesperrt.",
-          stageCaption: "Halte dein Fadenkreuz auf unberechenbaren, schnellen ADAD-Zielen. Vermeide Verkrampfung für geschmeidige Richtungswechsel!",
-          rulesTitle: "Trainingsregeln & Punktesystem",
+          pausedSubtitle: "Klicken zum Fortsetzen – der Mauszeiger wird wieder gesperrt",
+          stageCaption: "Halte das Fadenkreuz auf dem Ziel, das zufällig links und rechts die Richtung wechselt. Klicken ist nicht nötig.",
+          rulesTitle: "Regeln & Punktesystem",
           rulesItems: [
-            { num: "1", text: "Zielerfassung", highlight: "+50 PKT (+0,4s/s)", result: "×Combo-Multiplikator" },
-            { num: "2", text: "Kontinuierlicher Lock", highlight: "Bis zu 3,0×", result: "Maximal-Multiplikator" },
-            { num: "3", text: "Levelprogression", highlight: "+1 Stufe / 1400 PKT", result: "Adaptives Jitter-Strafing" },
-            { num: "4", text: "Abreiß-Strafe", highlight: "1,0s Zielverlust", result: "Setzt Combo zurück (-0,6s)" }
+            { num: "1", text: "Auf dem Ziel bleiben", highlight: "10 Pkt. / 0,25 s (+0,1 s)", result: "×Combo-Multiplikator" },
+            { num: "2", text: "1 s am Stück halten", highlight: "Combo +1", result: "Bis 3,0×" },
+            { num: "3", text: "Level-Aufstieg", highlight: "+1 Level / 1400 Pkt.", result: "Kleiner & schneller" },
+            { num: "4", text: "Über 1 s daneben", highlight: "Combo-Reset", result: "Mit Zeitstrafe -0,6 s" }
           ],
-          aboutTitle: "Über Aim Trainer und reaktives Tracking"
+          aboutTitle: "Über ADAD-Tracking und Anti-Strafe",
+          aboutHeading: "Was ist reaktives Tracking?"
         }}
       />
       <DrillGuide guide={antiStrafeGuide} />

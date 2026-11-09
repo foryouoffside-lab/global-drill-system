@@ -21,7 +21,7 @@ import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
   title: "180-Grad-Aim-Training | FPS-Drehung | SkillDrills",
-  description: "Kostenloses 180-Grad-Aim-Training im Browser: Übe peripheres Sehen, schnelle Drehungen und sauberes Abstoppen für FPS-Spiele.",
+  description: "Kostenloses 180-Grad-Aim-Training im Browser: Ziele erscheinen am linken und rechten Bildschirmrand. Übe weite Arm-Flicks und sauberes Abstoppen. Maus nötig.",
   keywords: [
     "180 Grad Aim Training",
     "180-Grad-Drehung FPS",
@@ -32,7 +32,7 @@ export const metadata = {
     "schnelle Drehung FPS Maus",
     "180 Grad Flick Training",
     "Flashbang ausweichen CS2",
-    "Aim Trainer online"
+    "180 Flick"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/180-degree-awareness",
@@ -99,22 +99,22 @@ export default function AwarenessDrillDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "Was versteht man unter 180-Grad-Aiming in modernen FPS-Spielen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "180-Grad-Aiming bezeichnet die biomechanische Fähigkeit, periphere oder hinter der Spielfigur auftauchende akustische und optische Reize blitzschnell zu erfassen, das Blickfeld um 180 Grad herumzureißen und das Fadenkreuz ohne Überschwingen punktgenau auf den Gegner zu setzen."
+          "text": "Gemeint ist das Herumdrehen auf einen Gegner, der seitlich oder hinter dir auftaucht, und das Fadenkreuz ohne Überschwingen auf ihn zu setzen. Dieser Drill dreht keine 3D-Kamera: Er bildet den weiten Flick nach, indem Ziele am linken und rechten Bildschirmrand erscheinen, zu denen du das Fadenkreuz quer über den Bildschirm ziehst und sauber stoppst."
         }
       },
       {
         "@type": "Question",
-        "name": "Wie trainieren Profis ihre 180-Grad-Drehungen und Raumorientierung?",
+        "name": "Wie trainiert man 180-Grad-Drehungen und Raumorientierung?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Professionelle Spieler verankern ihre exakte Distanz für eine 360°-Drehung (cm/360°) im Muskelgedächtnis. Sie nutzen den Unterarm und die Schulter für den weiten Schwung und kombinieren dies mit kontrollierter Handballenbremsung, um das Fadenkreuz im Zielbereich sofort zu arretieren."
+          "text": "Verankere deine Distanz für eine 360°-Drehung (cm/360°) im Muskelgedächtnis. Nutze den Unterarm und die Schulter für den weiten Schwung und kombinieren dies mit kontrollierter Handballenbremsung, um das Fadenkreuz im Zielbereich sofort zu arretieren."
         }
       },
       {
@@ -146,7 +146,7 @@ export default function AwarenessDrillDePage() {
         "name": "Hilft dieses Training beim Ausweichen von Flashbangs in CS2 und Valorant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja, in hohem Maße. Ein zentraler Spielzug auf hohem Niveau ist das blitzschnelle Wegdrehen um 180 Grad bei herannahenden Blendgranaten mit anschließender sofortiger Rückkehr auf die ursprüngliche Kopflinie."
+          "text": "Nur indirekt. Der Drill simuliert keine Blendgranaten, er trainiert nur weite Flicks mit sauberem Stopp. Das kann beim Wegdrehen vor einer Flash und der Rückkehr auf die ursprüngliche Kopflinie helfen."
         }
       },
       {
@@ -206,7 +206,7 @@ export default function AwarenessDrillDePage() {
         "@type": "HowToStep",
         "position": 3,
         "name": "Dynamischer Armschwung aus Schulter und Ellenbogen",
-        "text": "Vollführe einen raumgreifenden, schnellen Schwung mit dem gesamten Unterarm, um die 180-Grad-Distanz in einer einzigen Bewegung zu überbrücken."
+        "text": "Vollführe einen raumgreifenden, schnellen Schwung mit dem gesamten Unterarm, um das Fadenkreuz in einer einzigen Bewegung zum gegenüberliegenden Bildschirmrand zu bringen."
       },
       {
         "@type": "HowToStep",
@@ -223,7 +223,7 @@ export default function AwarenessDrillDePage() {
     intro: [
       "180-Grad-Aim-Training bedeutet: einen Reiz am Bildschirmrand peripher wahrnehmen, mit einer großen Mausbewegung drehen und das Fadenkreuz auf dem Ziel sauber stoppen. Der Drill zerlegt die Reaktion auf Flanken in erkennbare Schritte und macht vor allem die Qualität des Abbremsens messbar; eine schnelle Drehung allein ist kein guter Treffer.",
       "Die biomechanische Ausführung einer 180-Grad-Drehung folgt dem Zwei-Komponenten-Modell zielgerichteter Bewegungen (Elliott et al., 2010). Aus Schulter und Ellenbogen wird ein ungeführter, ballistischer Schwung (Open-Loop) generiert, der rund 80 bis 90 Prozent der Gesamtdistanz abdeckt. Unmittelbar vor Erreichen der Zielzone greift die Antagonisten-Muskulatur (Schmidt et al., 1979) und bremst die Trägheit des Arms ab. Nach Fitts' Gesetz (Fitts, 1954) steigt die Schwierigkeit mit der Weite des Sprungs logarithmisch an: Je größer der Drehwinkel, desto kritischer ist eine exakt dosierte Bremsung zur Vermeidung zeitraubender Korrekturen.",
-      "Dieser Trainer schult die synchrone Abstimmung von physischem Mauspad-Raum und virtuellem Raum. Das Gehirn lernt, wie viele Zentimeter Mausweg auf dem Pad exakt einer 180-Grad-Drehung im Spiel entsprechen. Dies ermöglicht blinde Instinkt-Flicks auf Flankenangreifer und blitzschnelles Abwenden von Flashbangs mit verlässlicher Rückkehr auf die Kopflinie.",
+      "Dieser Trainer schult die synchrone Abstimmung von physischem Mauspad-Raum und virtuellem Raum. Das Gehirn lernt, wie viele Zentimeter Mausweg auf dem Pad exakt einer 180-Grad-Drehung im Spiel entsprechen. Der Drill nutzt dafür Ziele am Bildschirmrand statt einer echten 3D-Drehung; mit gleichbleibender Sensitivität kann das Gefühl für den Mausweg bei Flankenangriffen helfen.",
       "Messpräzision & Hardware-Transparenz: Alle Reaktionszeiten werden direkt im Browser über performance.now() erfasst (Woods et al., 2015). Die Pointer-Lock-API erfasst die Mausbewegung, fordert aber keine unbeschleunigte Eingabe an; schalte die Zeigerbeschleunigung des Betriebssystems aus. Beachte die Bildwiederholrate deines Monitors: Ein 144-Hz-Display aktualisiert alle 6,9 ms, ein 240-Hz-Display alle 4,1 ms. Abweichungen unter 5 ms spiegeln systembedingte Frame-Intervalle wider."
     ],
     benchmarks: {
@@ -234,10 +234,10 @@ export default function AwarenessDrillDePage() {
         ["Ballistischer 180°-Swipe (Armschwung)", "180 – 260 ms", "Vorantrieb aus Schulter-Ellenbogen-Achse über das Mauspad", "Open-Loop Bewegungsimpuls (Elliott et al., 2010)"],
         ["Endphasen-Bremsung & Verzögerung", "60 – 110 ms", "Antagonistische Muskelbremsung stoppt die Armträgheit ab", "Dämpfungskontrolle (Schmidt et al., 1979)"],
         ["Foveale Feinjustierung & Klick", "70 – 130 ms", "Optische Zentrierung auf Zielmitte und Schussabgabe", "Fitts' Homing-Phase (Fitts, 1954)"],
-        ["Gesamte 180°-Zielerfassungszeit", "450 – 690 ms", "Vollständiger Zyklus von Reizwahrnehmung bis Treffer", "Standardbereich für engagierte Shooter-Spieler"],
+        ["Gesamte 180°-Zielerfassungszeit", "450 – 690 ms", "Vollständiger Zyklus von Reizwahrnehmung bis Treffer", "SkillDrills-Übungsbereich"],
         ["Stufe 4: Fortgeschrittener Turn", "320 – 420 ms", "Vollautomatisierter Einzelschwung mit perfektem Stopp", "Fokus: Schwung und Stopp als eine einzige Bewegung halten"]
       ],
-      note: "Die Benchmark-Werte basieren auf empirischen motorischen Reaktionsdaten und bewegungswissenschaftlicher Literatur (Rayner, 1998; Fitts, 1954; Schmidt et al., 1979; Elliott et al., 2010; Woods et al., 2015)."
+      note: "Diese Werte sind SkillDrills-Übungsbereiche, keine Forschungsnormen und keine Nutzerdaten. Die Literatur in der rechten Spalte erklärt nur die jeweilige Bewegungsphase. Vergleiche deine Werte auf demselben Gerät."
     },
     techniques: {
       title: "Biomechanische Schlüsseltechniken für maximale 180°-Konsistenz",
@@ -249,12 +249,12 @@ export default function AwarenessDrillDePage() {
         },
         {
           name: "cm/360°-Sensitivitätsverankerung",
-          desc: "Taktische FPS-Profis nutzen meist Empfindlichkeiten zwischen 35 und 55 cm pro 360-Grad-Drehung (ca. 18 bis 28 cm für einen 180°-Turn). Präge dir den nötigen Mausweg physisch ein, anstatt die Sensitivität ständig zu ändern.",
+          desc: "Der Mausweg für einen 180°-Turn ist die Hälfte deines cm/360-Werts: bei 40 cm/360 also 20 cm. Präge dir den nötigen Mausweg physisch ein, anstatt die Sensitivität ständig zu ändern.",
           tips: "Eine fixe Mausempfindlichkeit ist das Fundament für verlässliche Muskelgedächtnis-Muster bei Blind-Flicks."
         },
         {
           name: "Flashbang-Ausweich- & Rückkehrbewegung",
-          desc: "Trainiere das blitzschnelle Wegdrehen um 180 Grad bei herannahenden Blendgranaten mit sofortiger Rückkehr auf den ursprünglichen Winkel. So vermeidest du Blindheit und bleibst sofort feuerbereit.",
+          desc: "Im Spiel: schnelles Wegdrehen um 180 Grad vor einer Blendgranate und sofortige Rückkehr auf den ursprünglichen Winkel. Dieser Drill simuliert keine Flashes, übt aber den weiten Schwung mit sauberem Stopp, den das Manöver braucht.",
           tips: "Übe den Hin- und Rückschwung als zusammenhängende Doppelbewegung in unter 400 Millisekunden."
         },
         {
@@ -267,9 +267,9 @@ export default function AwarenessDrillDePage() {
     steps: [
       "Aktiviere den Trainer mit Klick ins Spielfeld, um die hardwarenahe Pointer-Lock-Mauseingabe zu starten.",
       "Platziere deine Maus exakt in der Mitte des Mauspads und halte das Fadenkreuz im Vorfeld ruhig.",
-      "Sobald an den Bildschirmecken ein Ziel aufleuchtet, reiße die Maus mit weitem Armschwung in Richtung des Reizes.",
+      "Sobald am linken oder rechten Bildschirmrand ein Ziel erscheint (mit steigendem Level immer häufiger am Rand), reiße die Maus mit weitem Armschwung in Richtung des Reizes.",
       "Bremse den Mausschwung vor dem Ziel ab und klicke erst, wenn das Fadenkreuz zentriert auf dem Target ruht.",
-      "Nutze Trefferserien für maximale Combo-Punkte und meistere immer kleinere, schneller verschwindende Ziele."
+      "Jeder Treffer gibt +2 s (max. 60 s), jeder Fehlschuss, Leerklick oder Timeout kostet 1 s. Die Runde startet mit 45 s und endet bei 0; Trefferserien erhöhen den Combo-Multiplikator, Ziele werden kleiner und verschwinden schneller."
     ],
     audience: "Spieler in Counter-Strike 2, Valorant, Apex Legends, Overwatch 2 und Rainbow Six Siege, die Flanken-Überraschungen eliminieren und Blind-Turns perfektionieren wollen.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -283,7 +283,7 @@ export default function AwarenessDrillDePage() {
   };
 
   const copyDe = {
-    h1Keyword: "180 Grad Aim Training",
+    h1Keyword: "180-Grad-Aim-Training",
     h1Suffix: " – FPS-Drehungs-Trainer",
     subtitle: "Übe peripheres Sehen, große Arm-Flicks und sauberes Abbremsen bei 180-Grad-Drehungen.",
     statScore: "Punkte",
@@ -291,20 +291,20 @@ export default function AwarenessDrillDePage() {
     statAccuracy: "Präzision",
     statBestScore: "Highscore",
     startTitle: "180° Awareness Pro",
-    startSubtitle: "Pointer Lock • Endlose Levelprogression & Raumwahrnehmung",
-    stageCaption: "Erfasse Ziele an den Bildschirmrändern über dein peripheres Sehen und führe präzise 180-Grad-Flicks aus, bevor der Timer abläuft.",
+    startSubtitle: "Maus + Pointer Lock • Start mit 45 s • Endlose Levelprogression",
+    stageCaption: "Erfasse Ziele an den Bildschirmrändern über dein peripheres Sehen und triff sie mit einem weiten Flick, bevor sie verschwinden.",
     rulesTitle: "Trainingsregeln & Punktesystem",
     rulesItems: [
-      { num: "1", text: "Rand-Zieltreffer", highlight: "Großwinkel-Ziel (+100 PKT / +0,6s)", result: "×Combo-Mult" },
-      { num: "2", text: "180° Randzonen", highlight: "Extrem periphär", result: "Schneller & Kleiner" },
+      { num: "1", text: "Rand-Zieltreffer", highlight: "+100 PKT (+2 s, max. 60 s)", result: "×Combo-Mult" },
+      { num: "2", text: "180° Randzonen", highlight: "Randziele werden häufiger", result: "Kleiner & kürzer sichtbar" },
       { num: "3", text: "Level-Progression", highlight: "+1 Level / 1.750 PKT", result: "Adaptive Skalierung" },
-      { num: "4", text: "Fehlschuss / Timeout", highlight: "Fehlerstrafe", result: "Combo-Reset (-0,8s)" }
+      { num: "4", text: "Fehlschuss / Timeout", highlight: "Auch Leerklicks", result: "Combo-Reset (-1 s)" }
     ],
     aboutTitle: "Über das 180-Grad-Aim-Training",
     aboutHeading: "Was ist 180-Grad-Awareness-Training?",
     aboutText1: "Eine 180-Grad-Drehung ist die längste Mausbewegung im Shooter. Nach Fitts' Gesetz hängt die benötigte Zeit von der Distanz und der Zielgröße ab (Fitts, 1954). Die größte Herausforderung liegt im präzisen Abstoppen und blitzschnellen Einrasten auf dem Ziel.",
     aboutText2: "180° Awareness Pro trainiert gezielt die Verarbeitung visueller Reize außerhalb deines primären Blickfelds. Im Gegensatz zu reinen Mikrokorrektur-Übungen fordert dieser Drill weite räumliche Koordinatensprünge.",
-    aboutText3: "Regelmäßiges Raumorientierungstraining verbindet deine physische Mauspad-Fläche nahtlos mit der virtuellen Spielwelt. Das ermöglicht instinktive Blind-Flicks und sofortige Reaktionen bei Flankenangriffen in CS2 und Valorant."
+    aboutText3: "Regelmäßiges Raumorientierungstraining verbindet deine physische Mauspad-Fläche nahtlos mit der virtuellen Spielwelt. Der Drill nutzt dafür Ziele am Bildschirmrand statt einer 3D-Drehung; das kann bei Flankenangriffen in CS2 und Valorant helfen."
   };
 
   return (

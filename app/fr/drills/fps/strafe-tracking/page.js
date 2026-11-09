@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Tracking aim : entraînement strafe FPS | SkillDrills",
-  description: "Entraînement gratuit au tracking dans le navigateur : pratiquez la visée en mouvement, les strafes et les changements de direction.",
+  description: "Tracking aim gratuit dans le navigateur : gardez le réticule sur une cible qui strafe à gauche et à droite et change sans cesse de direction, à la souris.",
   keywords: [
     "entraînement tracking FPS",
     "tracking de strafe",
@@ -32,7 +32,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Tracking aim : entraînement strafe FPS | SkillDrills",
-    description: "Entraînement gratuit au tracking dans le navigateur : pratiquez la visée en mouvement, les strafes et les changements de direction.",
+    description: "Tracking aim gratuit dans le navigateur : gardez le réticule sur une cible qui strafe à gauche et à droite et change sans cesse de direction, à la souris.",
     url: "https://skilldrills.online/fr/drills/fps/strafe-tracking",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -41,7 +41,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Tracking aim : entraînement strafe FPS | SkillDrills",
-    description: "Entraînement gratuit au tracking dans le navigateur : pratiquez la visée en mouvement, les strafes et les changements de direction.",
+    description: "Tracking aim gratuit dans le navigateur : gardez le réticule sur une cible qui strafe à gauche et à droite et change sans cesse de direction, à la souris.",
   },
 };
 
@@ -65,7 +65,7 @@ export default function StrafeTrackingFrPage() {
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Nécessite le support HTML5 Canvas et Pointer Lock API",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const softwareSchema = {
@@ -74,7 +74,7 @@ export default function StrafeTrackingFrPage() {
     "name": "Entraîneur de Strafe Tracking FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Entraîneur en ligne de strafe tracking réactif, lecture des changements de trajectoire et poursuite oculaire fluide pour shooters compétitifs.",
     "genre": "Entraînement FPS / Tracking Réactif",
@@ -92,7 +92,7 @@ export default function StrafeTrackingFrPage() {
     "name": "Entraîneur de Strafe Tracking FPS",
     "url": "https://skilldrills.online/fr/drills/fps/strafe-tracking",
     "description": "Entraîneur en ligne de strafe tracking réactif, lecture des changements de trajectoire et poursuite oculaire fluide pour shooters compétitifs.",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["Entraînement FPS", "Aim Trainer", "Tracking Réactif"],
     "playMode": "SinglePlayer",
@@ -104,7 +104,7 @@ export default function StrafeTrackingFrPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -167,7 +167,7 @@ export default function StrafeTrackingFrPage() {
         "name": "Le strafe tracking dans un navigateur se transfère-t-il efficacement en jeu ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En partie. L'exercice utilise le verrouillage du pointeur et les mouvements bruts de la souris, ce qui se rapproche d'un jeu de tir. Il ne reproduit ni le recul, ni le champ de vision, ni le réseau : vérifiez le transfert dans votre propre jeu."
+          "text": "En partie. L'exercice utilise le verrouillage du pointeur et les déplacements relatifs de la souris, ce qui se rapproche d'un jeu de tir. Il ne reproduit ni le recul, ni le champ de vision, ni le réseau : vérifiez le transfert dans votre propre jeu."
         }
       },
       {
@@ -185,6 +185,14 @@ export default function StrafeTrackingFrPage() {
           "@type": "Answer",
           "text": "Des séances de 10 à 20 minutes avec de courtes pauses suffisent pour suivre votre progression sans fatiguer le bras ni la concentration. Arrêtez-vous en cas de douleur au poignet."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment sont calculés les points, le combo et le temps ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tant que le réticule est sur la cible, vous gagnez 50 points de base toutes les 0,25 s (multipliés par le combo et le niveau) et 0,1 s de temps (60 s restantes au maximum). Chaque seconde sans décrocher ajoute 1 au combo, dont le multiplicateur monte jusqu'à 3,0×. Dès que vous quittez la cible, le combo retombe à 0 ; si la pénalité de temps est activée, chaque seconde hors cible retire 0,6 s. La partie démarre à 45 s et s'arrête à 0. Aucun clic : seule la souris compte."
+        }
       }
     ]
   };
@@ -199,7 +207,7 @@ export default function StrafeTrackingFrPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Étalonner sa Sensibilité en Jeu",
-        "text": "Configurez votre sensibilité et vos DPI dans les réglages de session pour retrouver votre rapport habituel et verrouiller le curseur.",
+        "text": "Réglez le multiplicateur de sensibilité dans les paramètres de /drills, puis lancez le drill : le curseur est verrouillé à la fin du compte à rebours.",
         "url": "https://skilldrills.online/fr/drills/fps/strafe-tracking#step-1"
       },
       {
@@ -236,16 +244,16 @@ export default function StrafeTrackingFrPage() {
       "Mesure de la performance : chaque événement est horodaté par l'horloge haute résolution performance.now() du navigateur, s'exécutant localement sur votre terminal sans transmission externe. Contraintes techniques : les minuteurs des navigateurs sont volontairement arrondis à environ 1 ms par mesure de sécurité, et l'affichage quantifie les images selon sa fréquence de rafraîchissement — environ 16,7 ms à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015). Le taux de rafraîchissement de la souris ajoute 8 ms à 125 Hz contre 1 ms à 1000 Hz. Considérez les écarts de moins de 5 ms comme du bruit de mesure et évaluez votre progression sur un équipement identique."
     ],
     benchmarks: {
-      title: "Barèmes Scientifiques de Strafe Tracking et Latence d'Inversion",
-      headers: ["Niveau de Performance", "% Temps sur Cible", "Latence d'Inversion", "Impact Compétitif en Match"],
+      title: "Repères de tracking aim (paliers SkillDrills)",
+      headers: ["Palier", "% Temps sur Cible", "Plus Longue Série", "Ce que l'on observe"],
       rows: [
-        ["Palier 1 (Très régulier)", "85% – 95%+", "<180 ms", "Suivi très régulier ; adaptation rapide de la vitesse sans dépassement lors des inversions"],
-        ["Palier 2 (Régulier)", "72% – 85%", "180 – 220 ms", "Bon temps sur cible ; reprise rapide lors des virages"],
-        ["Palier 3 (Correct)", "58% – 72%", "220 – 270 ms", "Tracking assez constant ; perte momentanée de contact face aux inversions imprévues"],
-        ["Palier 4 (En progression)", "42% – 58%", "270 – 330 ms", "Anticipation excessive récurrente ; le viseur dépasse la cible avant de se corriger"],
-        ["Palier 5 (Débutant)", "<42%", ">330 ms", "Corrections heurtées ; difficulté à soutenir la vitesse latérale ; le réticule reste en retard"]
+        ["Palier 1 (Très régulier)", "85% – 95%+", "> 7 s", "Suivi très régulier ; adaptation rapide de la vitesse sans dépassement lors des inversions"],
+        ["Palier 2 (Régulier)", "72% – 85%", "4,5 – 7 s", "Bon temps sur cible ; reprise rapide lors des virages"],
+        ["Palier 3 (Correct)", "58% – 72%", "2,5 – 4,5 s", "Tracking assez constant ; perte momentanée de contact face aux inversions imprévues"],
+        ["Palier 4 (En progression)", "42% – 58%", "1,2 – 2,5 s", "Anticipation excessive récurrente ; le viseur dépasse la cible avant de se corriger"],
+        ["Palier 5 (Débutant)", "<42%", "< 1,2 s", "Corrections heurtées ; difficulté à soutenir la vitesse latérale ; le réticule reste en retard"]
       ],
-      note: "Repères éditoriaux propres à cet exercice, sans lien avec un rang en jeu ni norme de population. Le pourcentage sur cible correspond au temps de contact effectif divisé par la durée active du drill ; la latence d'inversion mesure le délai entre le changement de trajectoire de la cible et la réacquisition du réticule (Woods et al., 2015)."
+      note: "Paliers SkillDrills propres à cet exercice, sans lien avec un rang en jeu ni norme de population. Le pourcentage sur cible est la part des images où le réticule touche la cible ; la plus longue série est la durée maximale de suivi sans décrocher."
     },
     techniques: {
       title: "Protocoles Fondés sur la Science pour le Strafe Tracking Réactif",
@@ -273,17 +281,17 @@ export default function StrafeTrackingFrPage() {
       ]
     },
     steps: [
-      "Indiquez votre jeu de référence, votre sensibilité et vos DPI dans les réglages de session pour retrouver votre rapport habituel et verrouiller le curseur.",
+      "Réglez le multiplicateur de sensibilité dans les paramètres de /drills, puis lancez le drill ; le curseur se verrouille après le compte à rebours.",
       "Concentrez votre regard sur la cible lumineuse dès qu'elle entame ses déplacements latéraux imprévisibles.",
       "Accompagnez la cible par un balayage fluide de l'avant-bras, en synchronisant la vitesse horizontale sans marquer d'arrêt.",
-      "Restez au contact de la cible pour faire grimper le multiplicateur de combo jusqu'à 3,0x et franchir des paliers tous les 1400 points.",
+      "Restez au contact de la cible : chaque seconde sans décrocher fait monter le combo (multiplicateur jusqu'à 3,0x) et chaque tranche de 1400 points ajoute un niveau.",
       "Consultez votre taux de précision et le temps hors cible sur le bilan final pour cibler vos points d'amélioration dans les virages."
     ],
     audience: "Joueurs de jeux de tir qui veulent travailler le suivi de cibles en strafe, la réaction aux changements de direction et la régularité du geste.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'posner1990', 'green2003', 'rashbass1961', 'land2000'),
     related: [
-      { href: "/fr/drills/fps/pro-smooth-pursuit", label: "Entraînement Smooth Pursuit Pro" },
+      { href: "/fr/drills/fps/pro-smooth-pursuit", label: "Smooth Tracking : suivi fluide" },
       { href: "/fr/drills/fps/anti-strafe-jitter-duel", label: "Duel Anti-Strafe Jitter" },
       { href: "/fr/drills/fps/anti-zigzag-movement-trainer", label: "Entraînement de Visée Anti-Zigzag" },
       { href: "/fr/drills/fps/micro-correction-precision", label: "Entraînement de Micro-Correction" },
@@ -307,7 +315,7 @@ export default function StrafeTrackingFrPage() {
     pausedTitle: "Partie en Pause",
     pausedPrompt: "Cliquez pour reprendre — le verrouillage du curseur sera réactivé.",
     startTitle: "Tracking aim",
-    startSubtitle: "Entrée Matérielle Brute · Progression Dynamique par Niveaux",
+    startSubtitle: "Verrouillage du Pointeur · Progression Sans Fin par Niveaux",
     startButtonText: "Lancer le Drill",
     getReady: "PRÉPAREZ-VOUS",
     statLockStreak: "Plus Longue Série",
@@ -319,10 +327,10 @@ export default function StrafeTrackingFrPage() {
     bottomCaption: "Maintenez votre réticule sur la cible en mouvement pendant qu'elle alterne des counter-strafes vifs et des accélérations latérales.",
     rulesTitle: "Consignes de l'Exercice et Paramètres",
     rulesItems: [
-      { num: "1", text: "Alignement de Visée", highlight: "+50 PTS (+0.4s/s)", result: "×Mult de Combo" },
-      { num: "2", text: "Combo Continu", highlight: "Jusqu'à 3.0×", result: "Multiplicateur Max" },
+      { num: "1", text: "Sur la Cible", highlight: "+50 PTS / 0,25s (+0,4s/s)", result: "×Mult de Combo" },
+      { num: "2", text: "1s Sans Décrocher", highlight: "Combo +1, jusqu'à 3,0×", result: "Multiplicateur Max" },
       { num: "3", text: "Progression de Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Strafe Adaptatif" },
-      { num: "4", text: "Pénalité Hors Cible", highlight: "1.0s Hors Cible", result: "Réinitialise Combo (-0.6s)" }
+      { num: "4", text: "Hors Cible", highlight: "Combo remis à 0", result: "-0,6s / s (pénalité ON)" }
     ],
     aboutTitle: "À propos du Tracking et de la Visée en Mouvement",
     whatIsTitle: "Qu'est-ce que l'Entraînement au Strafe Tracking ?",
@@ -334,7 +342,7 @@ export default function StrafeTrackingFrPage() {
     aboutCards: [
       {
         title: "Poursuite Oculaire Fluide",
-        description: "Stimule les aires corticales spécialisées (MT/MST) afin d'adapter fidèlement la vitesse manuelle au mouvement affiché."
+        description: "Fait travailler l'ajustement de la vitesse de la main au mouvement de la cible affichée."
       },
       {
         title: "Diminution de la Latence de Virage",

@@ -7,19 +7,18 @@ import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
   title: "Valorant Aim Trainer - Zielerfassung & First Shot",
-  description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",
+  description: "Kostenloser Valorant Aim Trainer im Browser: Triff 3–8 unterschiedlich helle Ziele vom hellsten zum dunkelsten und übe Zielerfassung und den ersten Schuss.",
   keywords: [
     "Valorant Aim Trainer",
-    "Aim Trainer",
+    "Aim Trainer Valorant",
+    "Valorant Aim Training",
     "Zielerfassung",
     "Zielerkennung FPS",
     "Erster Schuss Genauigkeit",
     "First Shot Accuracy",
     "Gegner schneller erkennen",
-    "Target Switching",
     "Kontrast-Erkennung",
     "Fadenkreuz Platzierung",
-    "CS2 Aim Training",
     "FPS Zielerfassung"
   ],
   alternates: {
@@ -32,7 +31,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Valorant Aim Trainer - Zielerfassung & First Shot",
-    description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",
+    description: "Kostenloser Valorant Aim Trainer im Browser: Triff 3–8 unterschiedlich helle Ziele vom hellsten zum dunkelsten und übe Zielerfassung und den ersten Schuss.",
     url: "https://skilldrills.online/de/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -41,7 +40,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Valorant Aim Trainer - Zielerfassung & First Shot",
-    description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",
+    description: "Kostenloser Valorant Aim Trainer im Browser: Triff 3–8 unterschiedlich helle Ziele vom hellsten zum dunkelsten und übe Zielerfassung und den ersten Schuss.",
   },
 };
 
@@ -87,8 +86,16 @@ export default function TargetAcquisitionDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie funktioniert dieser Valorant Aim Trainer für Zielerfassung?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ein Durchgang dauert 60 Sekunden. Es erscheinen Sets aus 3 bis 8 unterschiedlich hellen Zielen, die du vom hellsten zum dunkelsten treffen musst. Ein richtiger Treffer bringt +100 Punkte mal Combo- und Level-Multiplikator, ein geräumtes Set +400 Punkte mal Level-Multiplikator und ein neues Set. Ein Klick auf das falsche Ziel oder ins Leere setzt die Combo zurück und kostet 0,6 Sekunden, wenn die Zeitstrafe aktiviert ist. Gespielt wird mit Maus und Pointer Lock, Esc beendet den Drill. SkillDrills ist ein unabhängiges Übungstool ohne Verbindung zu Riot Games."
+        }
+      },
       {
         "@type": "Question",
         "name": "Was bedeutet Zielerfassung (Target Acquisition) in taktischen Ego-Shootern?",
@@ -115,10 +122,10 @@ export default function TargetAcquisitionDePage() {
       },
       {
         "@type": "Question",
-        "name": "Warum können Profi-Spieler Ziele so viel schneller erkennen und anvisieren?",
+        "name": "Wie setze ich die Augen ein, um Ziele schneller zu erfassen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Profis nutzen das Guided Search Modell (Wolfe, 2007) und periphere Kontrastwahrnehmung: Sie scannen den Bildschirm nicht zeilenweise ab, sondern koppeln Sakkaden unmittelbar an die auffälligsten Bedrohungsmerkmale und vollziehen den Flick synchron."
+          "text": "Nach dem Guided-Search-Modell (Wolfe, 2007) lenken auffällige Merkmale die Aufmerksamkeit zuerst. Statt den Bildschirm zeilenweise abzusuchen, hältst du den Blick in der Mitte, findest das auffälligste Ziel und führst die Maus dorthin, wo dein Blick schon ist. Genau diese Abfolge wiederholst du in diesem Drill."
         }
       },
       {
@@ -126,7 +133,7 @@ export default function TargetAcquisitionDePage() {
         "name": "Warum entscheidet der erste Schuss (First Shot Accuracy) in CS2 und Valorant über den Duellsieg?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bei extrem niedriger Time-to-Kill (TTK) führt ein Kopfschuss mit dem ersten Projektil zum sofortigen Rundengewinn. Verfehlt der erste Schuss, zwingt der einsetzende Waffenrückstoß zu ungenauem Dauerfeuer und erhöht das Risiko, selbst eliminiert zu werden."
+          "text": "Bei niedriger Time-to-Kill (TTK) entscheidet oft der erste Treffer das Duell. Verfehlt der erste Schuss, bekommt der Gegner Zeit zum Kontern. Dieser Drill simuliert keine echten Kopfschüsse, isoliert aber die Gewohnheit, erst das richtige Ziel zu wählen und dann sauber den ersten Klick zu setzen."
         }
       },
       {
@@ -142,7 +149,7 @@ export default function TargetAcquisitionDePage() {
         "name": "Wie beeinflusst visuelle Unruhe (Visual Clutter) die Zielerfassungszeit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Partikeleffekte, Rauch und komplexe Texturen stören den automatischen Pop-Out-Effekt. Das Gehirn wird gezwungen, von paralleler Reizverarbeitung auf zeitraubende serielle Suche umzuschalten, was 100 bis 200 ms Verzögerung verursacht."
+          "text": "Partikeleffekte, Rauch und komplexe Texturen stören den automatischen Pop-Out-Effekt. Das Gehirn muss dann eher seriell suchen, und das Finden des Ziels dauert länger (Treisman & Gelade, 1980). In diesem Drill steigt mit dem Level die Zielanzahl und die Helligkeitsunterschiede sinken, sodass du diesen Effekt direkt spürst."
         }
       },
       {
@@ -158,7 +165,7 @@ export default function TargetAcquisitionDePage() {
         "name": "Welche Rolle spielen Monitor-Kontrast und Black-Equalizer-Einstellungen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ein sauber eingestellter Gamma- und Kontrastwert sowie Gaming-Features wie Black eQualizer heben dunkle Spielermodelle vor schattigen Hintergründen hervor und verkürzen die biologische Erkennungslatenz signifikant."
+          "text": "Ein sauber eingestellter Gamma- und Kontrastwert sowie Gaming-Features wie Black eQualizer können dunkle Spielermodelle vor schattigen Hintergründen sichtbarer machen. Wie groß der Effekt ist, hängt von Monitor und Spiel ab."
         }
       },
       {
@@ -166,7 +173,7 @@ export default function TargetAcquisitionDePage() {
         "name": "Warum führt ein Klick auf das falsche Ziel in diesem Trainer zum Combo-Verlust?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Der Trainer belohnt Zielpriorisierung: Das Ziel mit der höchsten Helligkeit symbolisiert die unmittelbare Bedrohung. Unkontrolliertes Klicken ohne visuelle Differenzierung wird konsequent sanktioniert."
+          "text": "Der Trainer belohnt Zielpriorisierung: Das Ziel mit der höchsten Helligkeit symbolisiert die unmittelbare Bedrohung. Unkontrolliertes Klicken ohne visuelle Unterscheidung setzt deshalb die Combo zurück; mit aktivierter Zeitstrafe kostet es zusätzlich 0,6 Sekunden."
         }
       }
     ]
@@ -176,13 +183,13 @@ export default function TargetAcquisitionDePage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Zielerfassung & First-Shot-Präzision in 4 Schritten trainieren",
-    "description": "Systematische Anleitung zur Steigerung von Zielidentifikations-Geschwindigkeit und Erstschuss-Präzision.",
+    "description": "Vier Schritte, um im Zielerfassungs-Drill Zielerkennung und den ersten Schuss zu üben.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
         "name": "Mausempfindlichkeit kalibrieren & Pointer Lock aktivieren",
-        "text": "Klicke ins Spielfeld, um die Pointer-Lock-API zu starten. Halte deine gewohnte Ingame-Sensibilität für konsistentes Muskellernen."
+        "text": "Stelle die Sensitivität auf der /drills-Seite auf deine gewohnte Ingame-Sensitivität ein. Beim Start wird der Mauszeiger automatisch per Pointer Lock gesperrt."
       },
       {
         "@type": "HowToStep",
@@ -207,25 +214,25 @@ export default function TargetAcquisitionDePage() {
 
   const targetAcquisitionGuideDe = {
     heading: "Valorant Aim Trainer: Zielerfassung und First-Shot-Accuracy",
-    subtitle: "Visuelle Erkennungsgeschwindigkeit, Kontrastdiskriminierung und fehlerfreie Erstschuss-Präzision für CS2 und Valorant",
+    subtitle: "Ziele über Helligkeit priorisieren und den ersten Schuss sauber setzen – Übung für Valorant- und CS2-Spieler",
     intro: [
-      "Wer einen Valorant Aim Trainer für Zielerfassung sucht, trainiert hier den Ablauf vom visuellen Erkennen einer Bedrohung bis zum präzisen ersten Schuss. Das Drill misst Zielerkennung, Bedrohungsentscheidung und First-Shot-Accuracy für Valorant, Counter-Strike 2 und Rainbow Six Siege, wo die ersten 300 Millisekunden des Sichtkontakts den Duellausgang prägen.",
+      "Dieser kostenlose Valorant Aim Trainer im Browser übt Zielerfassung: 60 Sekunden lang erscheinen 3 bis 8 unterschiedlich helle Ziele, die du vom hellsten zum dunkelsten treffen musst. So trainierst du, erst das richtige Ziel zu wählen und dann den ersten Schuss sauber zu setzen – nützlich für Valorant, CS2 und andere Shooter, in denen der erste Treffer zählt. SkillDrills ist ein unabhängiges Tool ohne Verbindung zu Riot Games.",
       "Die theoretische Grundlage der visuellen Objekterkennung und Zielsuche formulierten Anne Treisman und Garry Gelade (1980) in ihrer Merkmals-Integrations-Theorie (Feature-Integration Theory). Treisman wies nach, dass elementare optische Merkmale wie Leuchtdichtekontrast, Farbunterschiede (Pop-Out) und Kantenorientierung zunächst vorattentiv und vollkommen parallel über das gesamte Sehfeld extrahiert werden. Erst wenn die fokussierte räumliche Aufmerksamkeit auf eine präzise Koordinate gerichtet wird, verschmelzen diese Einzeleigenschaften zu einer identifizierbaren Bedrohung.",
-      "In Erweiterung der parallelen Informationsverarbeitung beschreibt Jeremy M. Wolfes (1994, 2007) Guided-Search-Modell, wie kognitive Erwartungshaltungen (Top-Down) und sensorische Salienz-Karten (Bottom-Up) interagieren, um die visuelle Aufmerksamkeit zu priorisieren. Durch gezieltes Training der Kontrastdiskriminierung lernt der primäre visuelle Kortex, irrelevante visuelle Störsignale und Hintergrundelemente schlagartig zu verwerfen, wodurch die Latenz zwischen Zielerscheinen und motorischem Bewegungsantritt signifikant sinkt.",
-      "Unter Einbeziehung von Paul M. Fitts’ (1954) motorischem Index of Difficulty, David E. Meyer et al.s (1988) Stochastic Optimized Submovement Model und digitaler Präzisionschronometrie (Woods et al., 2015) trainiert dieser Drill Spieler darin, kognitive Zögerlichkeit zu eliminieren, messerscharfe primäre Flicks auszuführen und eine unerschütterliche Erstschuss-Präzision unter Matchdruck zu verankern.",
-      "Messpräzision & Hardware-Latenz: Jedes Erfassungs- und Trefferereignis wird clientseitig über die hochauflösende Systemuhr performance.now() erfasst – es erfolgt kein Upload von Daten. Zwei physikalische Rahmenbedingungen sind zu beachten: Browser-Timer werden zum Schutz vor Spectre-Angriffen auf rund 1 ms gerundet, und der Monitor quantisiert Bildreize auf sein Bildwiederholintervall (~16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz; Woods et al., 2015). Die USB-Abtastrate der Maus addiert etwa 8 ms bei 125 Hz gegenüber 1 ms bei 1000 Hz. Zeitunterschiede unter 5 ms stellen messtechnisches Rauschen dar; vergleiche daher deine Messreihen auf identischer Hardware."
+      "In Erweiterung der parallelen Informationsverarbeitung beschreibt Jeremy M. Wolfes (1994, 2007) Guided-Search-Modell, wie kognitive Erwartungshaltungen (Top-Down) und sensorische Salienz-Karten (Bottom-Up) interagieren, um die visuelle Aufmerksamkeit zu priorisieren. Durch gezieltes Training der Kontrastdiskriminierung lernt der primäre visuelle Kortex, irrelevante visuelle Störsignale und Hintergrundelemente schlagartig zu verwerfen, was die Zeit zwischen Zielerscheinen und Bewegungsbeginn in dieser Aufgabe verkürzen kann (ohne Garantie für das Match).",
+      "Unter Einbeziehung von Paul M. Fitts’ (1954) motorischem Index of Difficulty, David E. Meyer et al.s (1988) Stochastic Optimized Submovement Model und digitaler Präzisionschronometrie (Woods et al., 2015) konzentriert sich dieser Drill darauf, ohne Zögern den ersten Flick zu starten und im Ziel sauber abzubremsen. Eine Verbesserung im Match ist nicht garantiert; der Drill dient dazu, deine eigenen Werte über die Zeit zu vergleichen.",
+      "Hinweis zu den Werten: Der Ergebnisbildschirm zeigt Punkte, Präzision (richtige Treffer ÷ alle Klicks), geräumte Sets, maximale Combo und erreichtes Level. Dein Highscore wird nur in diesem Browser gespeichert. Reaktionszeiten in Millisekunden misst dieser Drill nicht. Bildwiederholrate und Maus-Abtastrate beeinflussen das Spielgefühl, vergleiche deshalb deine Werte auf derselben Hardware statt mit anderen Setups."
     ],
     benchmarks: {
-      title: "Zielerfassungs-Latenz & Erstschuss-Benchmarks (Millisekunden & Trefferquote)",
-      headers: ["Leistungsstufe (Tier)", "Erfassungs-Latenz", "Erstschuss-Präzision", "Wettkampf-Einfluss im Match"],
+      title: "Präzisions-Übungsbereiche im Zielerfassungs-Drill",
+      headers: ["Übungsbereich", "Präzision", "Bedeutung"],
       rows: [
-        ["Stufe 5", "< 260 ms", "95% – 99%+", "Reflexartiges Bedrohungsscreening; fehlerfreie One-Tap-Kopfschüsse ohne Zögern."],
-        ["Stufe 4", "260 – 320 ms", "88% – 95%", "Hervorragende Zielerkennung; schaltet Primärziele auch in dichten Szenarien blitzschnell aus."],
-        ["Tier 3 (Erfahren / Diamant & Ascendant)", "320 – 400 ms", "80% – 88%", "Solide Erstschussquote; bei mehreren Zielen entsteht gelegentlich eine kurze Orientierungslatenz."],
-        ["Tier 4 (Fortgeschritten / Gold & Platin)", "400 – 500 ms", "70% – 80%", "Verzögerte Zielselektion; neigt zu Fehlklicks auf sekundäre Ziele oder leichten Überrissen."],
-        ["Tier 5 (Einsteiger / Silber & Bronze)", "> 500 ms", "< 70%", "Suchbewegungen der Augen dauern zu lange; verliert Peek-Duelle durch verspätete Schussabgabe."]
+        ["Bereich 1", "ab 95 %", "Kaum Reihenfolgefehler oder Klicks ins Leere"],
+        ["Bereich 2", "88 – 95 %", "Auch auf hohen Leveln meist zuerst das hellste Ziel gewählt"],
+        ["Bereich 3", "80 – 88 %", "Bei vielen Zielen schleichen sich Reihenfolgefehler ein"],
+        ["Bereich 4", "70 – 80 %", "Ähnlich helle Ziele werden oft verwechselt"],
+        ["Bereich 5", "unter 70 %", "Erst Reihenfolge sichern, dann Tempo erhöhen"]
       ],
-      note: "Die Erfassungs-Latenz bemisst die Zeit vom Erscheinen der Zielgruppe bis zum erfolgreichen Treffer auf das hellste Primärziel (Woods et al., 2015)."
+      note: "Präzision ist der Wert auf dem Ergebnisbildschirm (richtige Treffer ÷ alle Klicks). Die Bereiche sind SkillDrills-Übungsbereiche, keine Forschungsnormen, Spielränge oder Nutzerstatistiken."
     },
     techniques: {
       title: "Biomechanische & kognitive Methoden für maximale Erfassungsgeschwindigkeit",
@@ -238,7 +245,7 @@ export default function TargetAcquisitionDePage() {
         {
           name: "Sakkadische Blickkopplung",
           desc: "Kopple Augen- und Handbewegung: Zuerst springt der Blick (Sakkade) auf das Zielzentrum, gefolgt vom sofortigen Mausschwung entlang desselben Vektors.",
-          tips: "Die Augen sollten 30 bis 50 ms vor dem Fadenkreuz am Ziel ankommen, um die Trefferfläche foveal scharfzustellen."
+          tips: "Achte darauf, dass dein Blick schon auf dem Zielzentrum liegt, bevor du die Maus bewegst."
         },
         {
           name: "Helligkeits-Diskriminierungsschwelle",
@@ -253,13 +260,13 @@ export default function TargetAcquisitionDePage() {
       ]
     },
     steps: [
-      "Passe DPI und Ingame-Sensibilität identisch an und aktiviere die Pointer-Lock-Mauseingabe.",
+      "Stelle die Sensitivität auf der /drills-Seite auf deine Ingame-Sensitivität ein und starte; Pointer Lock wird automatisch aktiviert.",
       "Halte das Fadenkreuz in ruhiger Bereitschaft und scanne das Display mit entspanntem Soft Focus.",
       "Erfasse im erscheinenden Cluster sofort das Ziel mit der höchsten Helligkeit/Deckkraft.",
-      "Führe einen präzisen ballistischen Flick auf das Ziel aus und sichere dir +100 Punkte (+0,4s Zeitzugewinn).",
-      "Räume verbleibende Ziele nach Helligkeit ab, um den Multiplikator-Bonus (+400 Punkte × Level) zu maximieren."
+      "Führe einen präzisen Flick auf das Ziel aus und sichere dir +100 Punkte × Combo- und Level-Multiplikator. Die Zeit ist auf 60 Sekunden fest und verlängert sich durch Treffer nicht.",
+      "Räume die übrigen Ziele nach Helligkeit ab, um den Set-Bonus (+400 Punkte × Level-Multiplikator) zu holen."
     ],
-    audience: "Wettkampfspieler in Counter-Strike 2, Valorant, Rainbow Six Siege, Apex Legends und Overwatch 2, die ihre visuelle Reaktionsschnelligkeit und Erstschuss-Präzision perfektionieren wollen.",
+    audience: "Wettkampfspieler in Counter-Strike 2, Valorant, Rainbow Six Siege, Apex Legends und Overwatch 2, die Zielauswahl und den ersten Schuss gezielt üben wollen. Eine Maus wird benötigt.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -273,7 +280,7 @@ export default function TargetAcquisitionDePage() {
   const copyDe = {
     h1Keyword: "Valorant Aim Trainer",
     h1Suffix: " – Zielerfassung & First Shot",
-    subtitle: "Trainiere Zielerkennung, Bedrohungsentscheidung und präzise erste Schüsse direkt im Browser.",
+    subtitle: "Kostenlos für Valorant-Spieler: Triff Ziele vom hellsten zum dunkelsten und übe den präzisen ersten Schuss im Browser.",
     statScore: "Punkte",
     statTime: "Zeit",
     statAccuracy: "Präzision",
@@ -291,14 +298,14 @@ export default function TargetAcquisitionDePage() {
     stageCaption: "Finde und klicke in jedem Ziel-Cluster das hellste Ziel (höchste Deckkraft) mit maximaler Geschwindigkeit und Präzision.",
     rulesTitle: "Trainingsregeln & Punktesystem",
     rulesItems: [
-      { num: "1", text: "Zieltreffer", highlight: "+100 PKT (+0,4s)", result: "×Combo-Multiplikator" },
+      { num: "1", text: "Zieltreffer", highlight: "+100 PKT × Level", result: "×Combo-Multiplikator" },
       { num: "2", text: "Set geräumt", highlight: "+400 PKT × Level", result: "Neues Cluster" },
       { num: "3", text: "Levelaufstieg", highlight: "+1 / 1400 PKT", result: "Dynamische Dichte & Tempo" },
-      { num: "4", text: "Fehlklick / Miss", highlight: "Strafe", result: "Combo-Reset (-0,6s)" }
+      { num: "4", text: "Fehlklick / Miss", highlight: "Strafe", result: "Combo-Reset (mit Zeitstrafe -0,6s)" }
     ],
     aboutTitle: "Über das Zielerfassungs-Training",
     aboutHeading: "Was bedeutet Zielerfassung (Target Acquisition) im Shooter?",
-    aboutText: "Zielerfassung ist der kognitive und motorische Prozess, feindliche Ziele in komplexen Szenarien sofort zu erkennen und mit dem ersten Schuss auszuschalten. Da Helligkeitsunterschiede im Sehsystem parallel verarbeitet werden (Treisman & Gelade, 1980), trainiert dieser Drill dein Gehirn auf unfehlbare Erstschuss-Reflexe."
+    aboutText: "Zielerfassung ist der kognitive und motorische Prozess, feindliche Ziele in komplexen Szenarien sofort zu erkennen und mit dem ersten Schuss auszuschalten. Da Helligkeitsunterschiede im Sehsystem parallel verarbeitet werden (Treisman & Gelade, 1980), übt dieser Drill, das wichtigste Ziel über den Helligkeitsunterschied zu wählen und es mit dem ersten Klick zu treffen."
   };
 
   return (

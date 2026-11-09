@@ -1,24 +1,23 @@
 import AntiStrafeJitterClient from '@/app/drills/fps/anti-strafe-jitter-duel/AntiStrafeJitterClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import DrillFooter from '@/components/drill/DrillFooter';
-import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
+const TITLE = "Tracking anti-strafe ADAD : suivi réactif | SkillDrills";
+const DESCRIPTION = "Tracking anti-strafe ADAD gratuit : gardez le réticule sur une cible qui change de sens au hasard. Points toutes les 0,25 s, combo par seconde tenue.";
+const NAME = "Tracking anti-strafe ADAD";
+
 export const metadata = {
-  title: "Aim Trainer | Tracking Réactif & Strafe | SkillDrills",
-  description: "Aim trainer gratuit dans le navigateur : suivez des strafes ADAD imprévisibles et entraînez le tracking réactif à courte portée.",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "aim trainer",
-    "aim trainer en ligne",
-    "aim trainer apex",
+    "tracking anti-strafe ADAD",
+    "tracking anti strafe",
     "tracking réactif",
-    "anti strafe entraînement",
-    "suivre un strafe adad",
-    "tracking courte distance",
-    "jitter aim",
-    "visée contre strafe",
-    "tracking overwatch"
+    "tracking ADAD",
+    "entraînement tracking",
+    "suivi de cible FPS"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/anti-strafe-jitter-duel",
@@ -29,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-      title: "Aim Trainer | Tracking Réactif & Strafe | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur : suivez des strafes ADAD imprévisibles et entraînez le tracking réactif à courte portée.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "https://skilldrills.online/fr/drills/fps/anti-strafe-jitter-duel",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -38,8 +37,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-      title: "Aim Trainer | Tracking Réactif & Strafe | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur : suivez des strafes ADAD imprévisibles et entraînez le tracking réactif à courte portée.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
@@ -50,36 +49,20 @@ export default function AntiStrafeJitterFrPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
       { "@type": "ListItem", "position": 2, "name": "Drills de FPS", "item": "https://skilldrills.online/fr/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - tracking réactif", "item": "https://skilldrills.online/fr/drills/fps/anti-strafe-jitter-duel" }
+      { "@type": "ListItem", "position": 3, "name": NAME, "item": "https://skilldrills.online/fr/drills/fps/anti-strafe-jitter-duel" }
     ]
-  };
-
-  const webAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Aim Trainer - tracking réactif",
-    "url": "https://skilldrills.online/fr/drills/fps/anti-strafe-jitter-duel",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Nécessite JavaScript et HTML5 Canvas avec Pointer Lock",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "description": "Simulateur gratuit de tracking réactif contre les strafes ADAD rapides. Maîtrisez la visée sur cibles imprévisibles pour Apex Legends et Overwatch 2."
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "Aim Trainer - tracking réactif",
+    "@type": "SoftwareApplication",
+    "name": NAME,
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Améliorez le tracking réactif, la visée anti-strafe et le suivi à courte portée avec Pointer Lock.",
-    "genre": "Entraînement FPS / Anti-Strafe",
+    "dateModified": "2026-11-09",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "description": "Exercice gratuit de tracking anti-strafe ADAD dans le navigateur : gardez le réticule sur une cible qui change de sens au hasard.",
+    "genre": "FPS Training / Anti-Strafe",
     "url": "https://skilldrills.online/fr/drills/fps/anti-strafe-jitter-duel",
     "publisher": {
       "@type": "Organization",
@@ -88,102 +71,96 @@ export default function AntiStrafeJitterFrPage() {
     }
   };
 
+  const webAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": NAME,
+    "url": "https://skilldrills.online/fr/drills/fps/anti-strafe-jitter-duel",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript, HTML5 Canvas, a mouse and Pointer Lock support",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "description": "Tracking réactif dans le navigateur contre une cible qui strafe de gauche à droite comme un adversaire en ADAD."
+  };
+
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer - tracking réactif",
+    "name": NAME,
+    "url": "https://skilldrills.online/fr/drills/fps/anti-strafe-jitter-duel",
+    "description": "Exercice gratuit de tracking anti-strafe ADAD dans le navigateur : gardez le réticule sur une cible qui change de sens au hasard.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
-    "genre": ["Entraînement FPS", "Aim Trainer"],
+    "genre": ["FPS Training", "Reactive Tracking"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
-    "url": "https://skilldrills.online/fr/drills/fps/anti-strafe-jitter-duel",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-20"
+    "operatingSystem": "Web Browser",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Qu'est-ce que le tracking réactif dans les jeux de tir ?",
+        "name": "Comment fonctionne cet exercice de tracking anti-strafe ADAD ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "C'est l'aptitude neuromusculaire à réajuster immédiatement le réticule lorsqu'une cible change brusquement de sens sans suivre de trajectoire linéaire continue."
+          "text": "Une sphère se déplace uniquement de gauche à droite, à mi-hauteur de l'écran, et change de sens et de vitesse à intervalles aléatoires. Vous ne cliquez pas : vous gardez le réticule sur la cible avec la souris. La partie démarre avec 45 secondes et s'arrête quand le chrono tombe à zéro."
         }
       },
       {
         "@type": "Question",
-        "name": "Comment battre des adversaires qui effectuent des strafes ADAD rapides ?",
+        "name": "Comment sont calculés les points et le combo ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En évitant de crisper la main sur la souris (death grip) et en fixant le centre du modèle adverse. L'avant-bras effectue des décélérations fluides sans à-coups."
+          "text": "Tant que le réticule est sur la cible, vous gagnez toutes les 0,25 seconde 10 points multipliés par le combo et un bonus de niveau, et le chrono gagne 0,1 seconde (60 secondes maximum). Chaque seconde tenue sans interruption ajoute 1 au combo ; le multiplicateur vaut 1,1× à 3 de combo et atteint 3,0× au maximum à 50."
         }
       },
       {
         "@type": "Question",
-        "name": "Pourquoi est-il si difficile de suivre les changements rapides de direction ?",
+        "name": "Que se passe-t-il si je perds la cible ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En raison du délai de traitement visuel (glissement rétinien), le cerveau a besoin de 160 à 200 ms rien que pour détecter que la cible a inversé sa trajectoire."
+          "text": "Après plus d'une seconde hors de la cible, le combo retombe à 0. Si vous avez activé la pénalité de temps dans les réglages des drills, 0,6 seconde est aussi retirée du chrono. Elle est désactivée par défaut."
         }
       },
       {
         "@type": "Question",
-        "name": "Qu'est-ce que le 'death grip' et pourquoi nuit-il à la visée ?",
+        "name": "Comment la difficulté augmente-t-elle ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "C'est l'habitude de serrer la souris trop fort sous le stress. Cela bloque le poignet et contracte les muscles antagonistes, rendant la visée rigide et imprécise."
+          "text": "Le niveau monte de 1 tous les 1400 points, sans plafond. À chaque niveau, la cible rétrécit, le strafe accélère et les changements de sens se rapprochent. Un combo élevé durcit aussi légèrement l'exercice."
         }
       },
       {
         "@type": "Question",
-        "name": "Cet exercice aide-t-il sur Apex Legends, Overwatch 2 et Warzone ?",
+        "name": "Le tracking réactif sert-il en jeu ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. Dans les jeux à temps pour éliminer (TTK) élevé, les duels à courte distance se gagnent en maintenant le réticule collé sur la hitbox pendant les strafes."
+          "text": "L'exercice simplifie la situation où un adversaire alterne A et D à courte distance. Vous répétez le recalage du réticule juste après un changement de sens, utile par exemple pour Valorant, CS2, Apex Legends ou Overwatch 2. Le transfert vers votre jeu varie d'une personne à l'autre."
         }
       },
       {
         "@type": "Question",
-        "name": "Dois-je regarder mon réticule ou directement l'adversaire ?",
+        "name": "Ma visée décroche à chaque changement de sens, que faire ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Fixez toujours le regard sur le modèle adverse. Le cortex visuel évalue la vitesse par les contours de la cible et guide la main via la voie visuelle dorsale."
+          "text": "Tenez la souris sans crispation et regardez la cible plutôt que le réticule. Au lieu de flicker loin à chaque inversion, freinez brièvement puis recalez-vous sur la vitesse de la cible : le temps hors cible baisse en général."
         }
       },
       {
         "@type": "Question",
-        "name": "Quelle est la sensibilité idéale pour le tracking à courte portée ?",
+        "name": "Est-ce jouable sur mobile ou écran tactile ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Des sensibilités moyennes situées entre 28 et 38 cm pour un 360° assurent la réactivité nécessaire au poignet tout en conservant la stabilité du bras."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "À quelle fréquence faut-il pratiquer le tracking réactif ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Une pratique quotidienne de 10 à 15 minutes ancre les réflexes neuromusculaires sans provoquer de fatigue tendineuse ni d'inconfort au poignet."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quelle est la différence entre le tracking lisse et le tracking réactif ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le tracking lisse suit des mouvements réguliers et prévisibles. Le tracking réactif gère les accélérations brusques, feintes et arrêts nets inattendus."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Comment le simulateur capture-t-il le mouvement de la souris ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui. Le drill fonctionne avec l'API HTML5 Pointer Lock et le chronométrage performance.now(), le résultat dépend des réglages de votre système et de votre souris."
+          "text": "Non. L'exercice lit les mouvements de la souris via le Pointer Lock, une souris est donc nécessaire. Sur un appareil uniquement tactile, un message remplace le bouton de départ. La touche Échap quitte l'exercice à tout moment."
         }
       }
     ]
@@ -192,121 +169,84 @@ export default function AntiStrafeJitterFrPage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Comment Travailler la Visée Anti-Strafe et le Tracking Réactif",
-    "description": "Instructions pas à pas pour développer un tracking haute fréquence face aux strafes rapides.",
+    "name": "S'entraîner au tracking anti-strafe ADAD",
+    "description": "Étapes pour garder le réticule sur une cible qui change de sens de gauche à droite.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Calibrez la sensibilité de votre jeu",
-        "text": "Ajustez votre sensibilité pour vous rapprocher de celle de votre jeu compétitif."
+        "name": "Régler la sensibilité",
+        "text": "Sur la page des drills, ajustez la sensibilité souris commune pour retrouver vos sensations habituelles."
       },
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "Activez le Pointer Lock dans le navigateur",
-        "text": "Cliquez sur Démarrer pour verrouiller le curseur et supprimer toute accélération logicielle parasite."
+        "name": "Lancer",
+        "text": "Cliquez sur Démarrer : l'exercice passe en plein écran et active le Pointer Lock après le compte à rebours."
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "Verrouillez votre attention visuelle sur la cible",
-        "text": "Gardez le regard fixé sur la masse centrale de la cible pour détecter les changements de sens sans délai."
+        "name": "Suivre la cible",
+        "text": "Gardez le réticule sur la cible et recalez-vous immédiatement après chaque changement de sens."
       },
       {
         "@type": "HowToStep",
         "position": 4,
-        "name": "Exécutez des micro-inversions fluides sans crispation",
-        "text": "Conservez une prise souple et absorbez les oscillations avec les doigts et le poignet sans coups secs."
+        "name": "Analyser",
+        "text": "Après la partie, comparez la précision de tracking, le temps hors cible, le meilleur combo et le niveau atteint."
       }
     ]
   };
 
-  const antiStrafeGuideFr = {
-    heading: "Aim Trainer pour Tracking Réactif contre les Strafes ADAD",
+  const antiStrafeGuide = {
+    heading: "Tracking anti-strafe ADAD : guide de l'exercice",
     intro: [
-      "Un aim trainer pour le tracking réactif apprend à garder le viseur sur la cible lorsque l'adversaire alterne rapidement entre ADAD. Ce drill mesure les changements de direction, le contrôle de l'overshoot et le contact à courte portée sur Apex et Overwatch 2.",
-      "Lorsqu'une cible change brutalement de sens, l'image glisse hors de la fovéa. Le cerveau ne peut pas anticiper l'inversion : il doit détecter le ralentissement, envoyer l'ordre moteur de freinage, arrêter la main en mouvement et relancer l'accélération en sens inverse. Dans les jeux à TTK élevé — comme Apex Legends, Overwatch 2 et Warzone — la victoire revient au joueur qui maintient son réticule le plus longtemps collé sur la hitbox ennemie.",
-      "Anti-Strafe Jitter Trainer s'appuie sur l'API HTML5 Pointer Lock et une chronométrie via performance.now(). Le simulateur permet de s’exercer au contrôle des muscles antagonistes et de réduire les saccades et tremblements sur la cible (Woods et al., 2015).",
-      "Mesure de la progression : chaque dixième de seconde de visée est mesuré localement sur votre ordinateur sans transmission réseau. Conservez la même sensibilité et la même prise en main pour développer des réflexes solides."
+      "Cet exercice de tracking anti-strafe ADAD de SkillDrills vous demande de garder le réticule sur une cible qui part au hasard à gauche ou à droite. Aucun clic : seul compte le temps passé sur la cible.",
+      "La cible ne bouge qu'à l'horizontale et change de sens et de vitesse à intervalles irréguliers ; certains changements partent plus vite que d'autres. Anticiper aide peu : c'est le tracking réactif juste après l'inversion qui fait la différence.",
+      "Une partie commence avec 45 secondes. Tant que vous êtes sur la cible, le chrono gagne 0,4 seconde par seconde (60 secondes maximum). Les points et les niveaux n'ont pas de plafond."
     ],
-    benchmarks: {
-      title: "Benchmarks de Latence en Changement de Direction et Tracking",
-      headers: ["Phase de Traitement / Palier", "Plage Typique de Latence", "Voie Neurale et Rôle Biomécanique", "Implication en Combat"],
-      rows: [
-        ["Détection Visuelle de l'Inversion de Sens", "160 – 210 ms", "Signaux de glissement rétinien traités par V1 et l'aire visuelle MT/V5", "Délai initial avant de percevoir que la cible a inversé sa direction"],
-        ["Latence d'Inversion Motrice du Bras", "80 – 130 ms", "Transmission corticospinale aux fléchisseurs/extenseurs et freinage", "Temps physique nécessaire pour arrêter la souris et inverser le geste"],
-        ["Micro-Alignement Fovéal Terminal", "60 – 100 ms", "Recentrage fovéal fin et ajustement correctif sous-cortical", "Suppression du dépassement et verrouillage net du réticule sur la hitbox"],
-        ["Fenêtre Totale de Réacquisition Imprévue", "300 – 440 ms", "Cumul de détection visuelle, inversion motrice et recentrage", "Pénalité humaine incompressible sur changement de direction inattendu"],
-        ["Tracking Réactif Avancé avec Préparation", "210 – 290 ms", "Amortissement anticipé et suppression motrice antagoniste décontractée", "Entraîne l’amortissement anticipé et le relâchement moteur"]
-      ],
-      note: "Données synthétisées d'après les recherches oculomotrices (Rashbass, 1961; Krauzlis, 2004), la science cognitive des jeux vidéo (Green & Bavelier, 2003) et la chronométrie numérique (Woods et al., 2015). Les performances réelles dépendent des hertz de l'écran et du relâchement musculaire."
-    },
     techniques: {
-      title: "Méthodes Validées de Tracking et d'Anti-Strafe",
+      title: "Conseils de tracking anti-strafe",
       items: [
         {
-          name: "Relâchement des Muscles Antagonistes (Pas de Death Grip)",
-          desc: "L'erreur la plus fréquente lors de strafes rapides consiste à crisper les muscles du bras. La co-contraction des muscles antagonistes bloque le poignet, produisant des trajectoires hachées et des dépassements importants.",
-          tips: "Gardez une prise légère. Laissez les doigts et le poignet absorber les oscillations rapides pendant que le bras gère les décalages amples."
+          name: "Une prise souple",
+          desc: "Serrer la souris crispe le poignet à chaque inversion et rend le réticule saccadé.",
+          tips: "Serrez juste assez pour garder doigts et poignet libres, et relâchez la main entre les longues parties."
         },
         {
-          name: "Point d'Ancrage Visuel Centré sur la Cible",
-          desc: "Ne regardez pas votre réticule. Fixez intensément le torse de la cible. Le cortex visuel évalue automatiquement les vecteurs de vitesse grâce au contraste des contours.",
-          tips: "Si votre visée décroche sur les strafes rapides, placez 100% de votre attention sur les hanches et le torse de l'adversaire."
+          name: "Regarder la cible",
+          desc: "Fixer la sphère plutôt que le réticule permet de voir plus tôt le changement de sens.",
+          tips: "Si la cible devient rouge, vous êtes à côté : servez-vous du changement de couleur comme signal."
         },
         {
-          name: "Inversions Fluides (Évitez les Flicks Excessifs)",
-          desc: "Quand la cible repart dans l'autre sens, les débutants ont tendance à lancer un grand flick réactif qui dépasse la cible. Les joueurs expérimentés décélèrent en douceur et glissent vers le centre.",
-          tips: "Envisagez chaque changement de sens comme une transition continue de freinage et d'accélération."
+          name: "Éviter le sur-flick",
+          desc: "Un grand flick à l'inversion vous envoie souvent de l'autre côté de la cible.",
+          tips: "Enchaînez l'inversion comme un freinage puis une réaccélération, pas comme deux flicks."
         },
         {
-          name: "Lecture des Hanches et Frames de Ralentissement",
-          desc: "Dans les shooters avec physique d'inertie (comme Apex Legends), le personnage ralentit avant de changer de sens. Observer l'orientation du bassin offre 30 à 50 ms d'anticipation visuelle.",
-          tips: "Surveillez l'inclinaison du corps pour préparer votre commande motrice avant l'inversion complète."
+          name: "La règle d'une seconde",
+          desc: "Chaque seconde tenue ajoute +1 au combo ; plus d'une seconde hors cible l'efface.",
+          tips: "Après une perte, visez un retour sur la cible en moins d'une seconde."
         }
       ]
     },
     steps: [
-      "Paramétrez votre sensibilité pour conserver la mémoire musculaire exacte de votre jeu habituel.",
-      "Cliquez sur Démarrer pour passer en plein écran et verrouiller le curseur.",
-      "Fixez la sphère mobile qui effectue des déplacements latéraux haute fréquence en ADAD.",
-      "Gardez le réticule sur la cible en absorbant les inversions par de légères corrections du poignet.",
-      "Prolongez le temps de contact pour gravir les niveaux et consultez votre bilan de précision final."
+      "Ajuster la sensibilité souris commune sur la page des drills.",
+      "Cliquer sur Démarrer pour activer le plein écran et le Pointer Lock.",
+      "Garder le réticule sur la cible qui va de gauche à droite.",
+      "À chaque inversion, freiner brièvement au lieu de flicker loin.",
+      "Après la partie, comparer précision (%), temps hors cible, meilleur combo et niveau."
     ],
-    audience: "Joueurs d'Apex Legends, Overwatch 2, Warzone, The Finals et shooters à TTK élevé cherchant à perfectionner leur tracking rapproché et éliminer les tremblements à la souris.",
+    audience: "Joueurs de Valorant, CS2, Apex Legends ou Overwatch 2 qui perdent leurs duels rapprochés face aux strafes ADAD, et tous ceux qui veulent travailler le tracking réactif gratuitement dans le navigateur.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('woods2015', 'krauzlis2004', 'green2003', 'rashbass1961'),
     related: [
+      { href: "/fr/drills/fps/anti-zigzag-movement-trainer", label: "Tracking en zigzag" },
       { href: "/fr/drills/reaction-speed/fps-tracking-trainer", label: "Entraîneur de Tracking FPS" },
       { href: "/fr/drills/fps/pro-smooth-pursuit", label: "Entraîneur de Poursuite Lisse" },
       { href: "/fr/drills/fps/flick-shot-training", label: "Entraînement au Flick Shot" },
-      { href: "/fr/drills/fps/180-degree-awareness", label: "Entraînement Demi-Tour 180°" },
       { href: "/fr/drills/visual/reaction-speed/light-reaction", label: "Test de Temps de Réaction" }
     ]
-  };
-
-  const copyFr = {
-    h1Keyword: "Aim Trainer",
-    h1Suffix: " — tracking réactif et ADAD",
-    statScore: "Score",
-    statTime: "Temps",
-    statAccuracy: "Précision",
-    statBestScore: "Meilleur Score",
-    startTitle: "Aim Trainer - tracking réactif",
-    startSubtitle: "Tracking Réactif • Niveaux Infinis",
-    getReady: "PRÊT",
-    pausedTitle: "PAUSE",
-    pausedSubtitle: "Cliquez pour reprendre — le curseur sera de nouveau verrouillé.",
-    stageCaption: "Maintenez le réticule sur les cibles rapides en ADAD. Relâchez la main pour inverser la trajectoire en souplesse !",
-    rulesTitle: "Règles d'Entraînement et Points",
-    rulesItems: [
-      { num: "1", text: "Alignement de Visée", highlight: "+50 PTS (+0.4s/s)", result: "×Mult de Combo" },
-      { num: "2", text: "Combo Continu", highlight: "Jusqu'à 3.0×", result: "Multiplicateur Max" },
-      { num: "3", text: "Progression de Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Jitter Adaptatif" },
-      { num: "4", text: "Pénalité Hors Cible", highlight: "1.0s Hors Cible", result: "Réinitialise Combo (-0.6s)" }
-    ],
-    aboutTitle: "À propos de l'aim trainer et du tracking réactif"
   };
 
   return (
@@ -335,8 +275,31 @@ export default function AntiStrafeJitterFrPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <AntiStrafeJitterClient copy={copyFr} />
-      <DrillGuide guide={antiStrafeGuideFr} />
+      <AntiStrafeJitterClient
+        copy={{
+          h1Keyword: "Tracking anti-strafe ADAD",
+          h1Suffix: " — suivi réactif dans le navigateur",
+          statScore: "Score",
+          statTime: "Temps",
+          statAccuracy: "Précision",
+          statBestScore: "Meilleur score",
+          startTitle: NAME,
+          startSubtitle: "Tracking réactif • Niveaux infinis",
+          getReady: "PRÊT",
+          pausedTitle: "PAUSE",
+          pausedSubtitle: "Cliquez pour reprendre — le curseur sera de nouveau verrouillé.",
+          stageCaption: "Gardez le réticule sur la cible qui change de sens au hasard. Aucun clic nécessaire.",
+          rulesTitle: "Règles et points",
+          rulesItems: [
+            { num: "1", text: "Rester sur la cible", highlight: "10 pts / 0,25 s (+0,1 s)", result: "×Combo" },
+            { num: "2", text: "Tenir 1 s d'affilée", highlight: "Combo +1", result: "Jusqu'à 3,0×" },
+            { num: "3", text: "Progression", highlight: "+1 niveau / 1400 pts", result: "Plus petite, plus rapide" },
+            { num: "4", text: "Plus d'1 s hors cible", highlight: "Combo remis à 0", result: "-0,6 s si pénalité activée" }
+          ],
+          aboutTitle: "À propos du tracking anti-strafe ADAD"
+        }}
+      />
+      <DrillGuide guide={antiStrafeGuide} />
       <RelatedDrills />
       <DrillFooter />
     </>

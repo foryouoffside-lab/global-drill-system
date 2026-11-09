@@ -6,13 +6,13 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Aim Trainer | Placement du Viseur | SkillDrills",
-  description: "Aim trainer gratuit dans le navigateur : entraînez le placement du viseur, la tenue d'angle, l'écart au mur et la réaction au peek.",
+  title: "Placement du Viseur : Tenir un Angle en FPS | SkillDrills",
+  description: "Placement du viseur gratuit : tenez un angle à hauteur de tête et cliquez quand la cible sort du mur. Écart au mur et réaction au peek, pour Valorant et CS2.",
   keywords: [
-    "aim trainer",
-    "aim trainer en ligne",
-    "aim trainer gratuit",
+    "placement du viseur",
     "placement du viseur entraînement",
+    "crosshair placement",
+    "tenir un angle",
     "comment tenir une ligne valorant",
     "tenir un angle cs2",
     "peeker advantage comment contrer",
@@ -30,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer | Placement du Viseur | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur : entraînez le placement du viseur, la tenue d'angle, l'écart au mur et la réaction au peek.",
+    title: "Placement du Viseur : Tenir un Angle en FPS | SkillDrills",
+    description: "Placement du viseur gratuit : tenez un angle à hauteur de tête et cliquez quand la cible sort du mur. Écart au mur et réaction au peek, pour Valorant et CS2.",
     url: "https://skilldrills.online/fr/drills/fps/angle-hold-trainer",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -39,8 +39,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer | Placement du Viseur | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur : entraînez le placement du viseur, la tenue d'angle, l'écart au mur et la réaction au peek.",
+    title: "Placement du Viseur : Tenir un Angle en FPS | SkillDrills",
+    description: "Placement du viseur gratuit : tenez un angle à hauteur de tête et cliquez quand la cible sort du mur. Écart au mur et réaction au peek, pour Valorant et CS2.",
   },
 };
 
@@ -51,21 +51,21 @@ export default function FrenchAngleHoldPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
       { "@type": "ListItem", "position": 2, "name": "Drills de FPS", "item": "https://skilldrills.online/fr/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - placement du viseur", "item": "https://skilldrills.online/fr/drills/fps/angle-hold-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "Placement du viseur - tenir un angle", "item": "https://skilldrills.online/fr/drills/fps/angle-hold-trainer" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer - placement du viseur",
+    "name": "Placement du viseur - tenir un angle",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Entraîneur en ligne de placement de viseur, de tenue de ligne défensive et de pré-visée pour les jeux de tir tactiques.",
     "genre": "Entraînement FPS / Placement du Viseur",
     "url": "https://skilldrills.online/fr/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -76,14 +76,14 @@ export default function FrenchAngleHoldPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "Aim Trainer - placement du viseur",
+    "name": "Placement du viseur - tenir un angle",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Simulateur interactif de tenue de ligne et de discipline de tir pour contrer le peeker's advantage sur CS2 et Valorant.",
     "genre": "Entraînement FPS / Placement du Viseur",
     "url": "https://skilldrills.online/fr/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -94,7 +94,7 @@ export default function FrenchAngleHoldPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer - placement du viseur",
+    "name": "Placement du viseur - tenir un angle",
     "url": "https://skilldrills.online/fr/drills/fps/angle-hold-trainer",
     "description": "Simulateur interactif de réflexes et de placement de réticule aux angles pour les jeux de tir compétitifs.",
     "gamePlatform": "Web Browser",
@@ -102,13 +102,13 @@ export default function FrenchAngleHoldPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -120,10 +120,18 @@ export default function FrenchAngleHoldPage() {
       },
       {
         "@type": "Question",
+        "name": "Comment se déroule ce drill de placement du viseur ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Au départ, le plein écran et le verrouillage du pointeur s'activent et le chrono démarre à 45 secondes. Les cibles sortent du bord gauche ou droit du mur à une hauteur aléatoire puis se retirent. Un tir réussi rapporte 100 points multipliés par le combo et le niveau, et ajoute 2 secondes (60 maximum). Tous les 1400 points, le niveau monte : les peeks durent moins longtemps et les cibles rétrécissent, et des faux peeks orange apparaissent aux niveaux élevés. Un tir raté, un tir sans cible ou un tir sur un faux peek remet le combo à zéro et coûte 1 seconde si la pénalité de temps est activée. La partie s'arrête à 0 seconde."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Qu'est-ce que l'avantage du peeker (peeker's advantage) en FPS tactique ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "C'est le délai de transmission réseau client-serveur. L'attaquant qui décale envoie ses données avant que le défenseur immobile ne les reçoive, offrant un avantage de 40 à 90 ms."
+          "text": "C'est le délai de transmission réseau client-serveur. L'attaquant qui décale envoie ses données avant que le défenseur immobile ne les reçoive, offrant un avantage dont la durée dépend du ping, du tickrate et de l'interpolation."
         }
       },
       {
@@ -147,7 +155,7 @@ export default function FrenchAngleHoldPage() {
         "name": "Pourquoi certains joueurs tirent-ils trop tôt (pre-fire involontaire) ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "À cause de la tension anticipatoire et d'un échec de discrimination cognitive Go/No-Go face à des feintes. Travailler la discipline de tir apprend à déclencher uniquement sur cible confirmée."
+          "text": "À cause de la tension anticipatoire et d'un échec de discrimination cognitive Go/No-Go face à des feintes. Dans ce drill, des faux peeks orange très courts apparaissent aux niveaux élevés ; tirer dessus compte comme un tir précipité. Vous apprenez ainsi à déclencher uniquement sur cible confirmée."
         }
       },
       {
@@ -171,7 +179,7 @@ export default function FrenchAngleHoldPage() {
         "name": "La fréquence de rafraîchissement de l'écran influence-t-elle la tenue de ligne ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. Un écran à 240 Hz rafraîchit l'affichage toutes les 4,17 ms contre 16,67 ms à 60 Hz, affichant les premiers pixels de l'adversaire bien plus tôt et abaissant la latence globale."
+          "text": "Oui. Un écran à 240 Hz rafraîchit l'affichage toutes les 4,17 ms contre 16,67 ms à 60 Hz, ce qui affiche en moyenne plus tôt la première image de l'adversaire ; le gain ne dépasse pas l'écart entre les intervalles d'image."
         }
       },
       {
@@ -179,7 +187,7 @@ export default function FrenchAngleHoldPage() {
         "name": "À quelle fréquence faut-il entraîner son placement de viseur ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Une session de 10 à 15 minutes par jour combinée à des parties de deathmatch permet d'ancrer les réflexes neuromusculaires sans surcharger le poignet ni les tendons."
+          "text": "Il n'y a pas de règle fixe. Une session de 10 à 15 minutes avant de jouer, combinée à du deathmatch, est un format raisonnable. Comparez votre temps de réaction moyen et votre précision sur le même matériel d'un jour à l'autre."
         }
       },
       {
@@ -187,7 +195,7 @@ export default function FrenchAngleHoldPage() {
         "name": "Comment ce simulateur capture-t-il le mouvement de la souris ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. Le simulateur exploite l'API HTML5 Pointer Lock avec chronométrie performance.now() pour garantir une réponse brute directe sans lissage ni accélération logicielle."
+          "text": "Le drill utilise l'API HTML5 Pointer Lock pour lire les déplacements relatifs de la souris et horodate les clics avec performance.now(). Aucune entrée non accélérée n'est demandée, donc les réglages de pointeur du système peuvent encore s'appliquer. Une souris est nécessaire ; le drill ne démarre pas sur un appareil uniquement tactile."
         }
       }
     ]
@@ -231,24 +239,23 @@ export default function FrenchAngleHoldPage() {
   };
 
   const angleHoldGuideFr = {
-    heading: "Aim Trainer pour Placement du Viseur et Tenue d'Angle",
+    heading: "Placement du viseur : tenir un angle en FPS",
     intro: [
-      "Un aim trainer pour le placement du viseur travaille le réticule à hauteur de tête avant l'apparition de l'adversaire à l'angle. Ce drill mesure l'écart au mur, la tenue d'angle et la réaction au peek pour stabiliser les duels sur Valorant et CS2.",
-      "Sur les réseaux multijoueurs (tels que le sub-tick de CS2 et l'infrastructure de Valorant), le délai d'acheminement des paquets engendre le peeker's advantage : T_advantage = (RTT_peeker / 2) + (RTT_holder / 2) + T_interp. Pour compenser ce déficit, le défenseur doit écarter son viseur de l'arête du mur selon D_offset = v_peeker × T_reaction, permettant à l'attaquant d'entrer dans le réticule pile au moment où le tir se déclenche.",
-      "La précision motrice obéit à la loi de Fitts (Fitts, 1954) : rajouter des microcorrections de dernière seconde produit du bruit moteur parasite. Angle Hold Pro s'appuie sur des horodatages de haute précision via performance.now() et une synchronisation à l'écran pour mesurer avec rigueur votre discipline de tir et votre discernement face aux feintes (Hick, 1952; Woods et al., 2015).",
+      "Ce drill de placement du viseur travaille le réticule à hauteur de tête avant que l'adversaire sorte de l'angle. Les cibles apparaissent au bord gauche ou droit d'un mur et vous cliquez dès qu'elles entrent dans le réticule : écart au mur, tenue d'angle et réaction au peek, pour les joueurs de Valorant et CS2.",
+      "Sur les réseaux multijoueurs le délai d'acheminement des paquets engendre le peeker's advantage : T_advantage = (RTT_peeker / 2) + (RTT_holder / 2) + T_interp. Pour compenser ce déficit, le défenseur doit écarter son viseur de l'arête du mur selon D_offset = v_peeker × T_reaction, permettant à l'attaquant d'entrer dans le réticule pile au moment où le tir se déclenche.",
+      "La précision motrice obéit à la loi de Fitts (Fitts, 1954) : chaque microcorrection de dernière seconde coûte du temps. Angle Hold Pro horodate les clics avec performance.now() ; la fréquence d'écran et le polling de la souris de votre machine influencent toujours les valeurs, et les faux peeks ajoutent une décision Go/No-Go (Hick, 1952; Woods et al., 2015).",
       "Évaluation des performances : chaque tir et chaque réaction sont mesurés en local sur votre appareil. Maintenez les mêmes réglages de sensibilité et d'espace de bureau d'une session à l'autre pour forger une mémoire kinesthésique durable."
     ],
     benchmarks: {
-      title: "Benchmarks de Tenue Défensive et Temps de Réaction au Peek",
-      headers: ["Phase d'Engagement / Métrique", "Latence Moyenne (ms)", "Facteur Sensorimoteur et Réseau", "Classification de Performance"],
+      title: "Repères de réaction et de réseau pour tenir un angle",
+      headers: ["Phase / Métrique", "Repère (ms)", "Facteur", "Lecture"],
       rows: [
-        ["Latence de Déclenchement Visuel Simple", "150 – 190 ms", "Activation rétinienne fovéale et clic du cortex moteur", "Déclenchement moteur inconscient sur stimulus anticipé (Donders, 1868)"],
-        ["Latence de Discrimination (Fake/Jiggle Peek)", "210 – 280 ms", "Identification cognitive Go/No-Go de l'engagement réel", "Discipline de tir sous pression de feinte (Hick, 1952)"],
-        ["Déficit de Latence du Peeker's Advantage", "40 – 90 ms", "Transit réseau RTT client-serveur + tampon d'interpolation", "Avantage de transmission pour l'attaquant en mouvement"],
-        ["Fenêtre Efficace de Réponse Défensive Nette", "250 – 340 ms", "Latence visuelle cumulée + compensation du déficit réseau", "Ligne de base standard pour défenseurs en FPS tactique"],
-        ["Précision Avancée en Tenue avec Pré-Visée", "170 – 220 ms", "Écartement optimal en phase avec la vitesse adverse", "Tenue défensive affinée ; travail du pré-visée avec écartement stable"]
+        ["Réaction visuelle simple", "env. 200 – 250 ms (plage de la recherche)", "Voir le stimulus puis cliquer", "Réaction simple à un stimulus attendu (Woods et al., 2015)"],
+        ["Réaction de discrimination (faux peek / jiggle)", "quelques dizaines de ms de plus", "Décision Go/No-Go", "Plus d'alternatives, réaction plus longue (Hick, 1952)"],
+        ["Peeker's advantage", "variable selon serveur et ping", "RTT client-serveur + tampon d'interpolation", "Avance réseau de l'attaquant en mouvement"],
+        ["Écart au mur stable", "référence", "Réticule à hauteur de tête devant l'arête avant le peek", "Comparer ses propres valeurs sur le même appareil"]
       ],
-      note: "Données compilées selon les standards de la chronométrie cognitive (Donders, 1868; Hick, 1952; Woods et al., 2015) et des analyses réseau de Riot Games et Valve. Les latences effectives dépendent des hertz de l'écran, du polling de la souris et de la vigilance."
+      note: "Valeurs indicatives tirées des plages générales de la recherche sur le temps de réaction (Donders, 1868; Hick, 1952; Woods et al., 2015) ; ce ne sont ni des statistiques d'utilisateurs ni des rangs. Les latences effectives dépendent des hertz de l'écran, du polling de la souris et de la vigilance."
     },
     techniques: {
       title: "Géométrie de Placement et Règles de Tenue d'Angle",
@@ -256,7 +263,7 @@ export default function FrenchAngleHoldPage() {
         {
           name: "Calibration de l'Écartement par Rapport au Coin",
           desc: "Ne collez pas le viseur directement contre l'arête du mur. Laissez un espacement horizontal proportionnel à votre temps de réaction : plus large face aux courses rapides et plus resserré face aux décalages lents.",
-          tips: "Si les adversaires dépassent souvent votre viseur avant le tir, augmentez l'écartement de 15 à 20%."
+          tips: "Si les adversaires dépassent souvent votre viseur avant le tir, élargissez un peu l'écartement ; si vous tirez trop tôt à côté, resserrez-le."
         },
         {
           name: "Discipline Horizontale à Hauteur de Tête",
@@ -265,7 +272,7 @@ export default function FrenchAngleHoldPage() {
         },
         {
           name: "La Règle 'Cliquez, N'Ajustez Pas'",
-          desc: "En tenant une ligne pré-visée calibrée, engagez-vous à cliquer dès que l'ennemi franchit le réticule, sans chercher à faire un microflick réactif qui rajouterait 80 à 120 ms de latence.",
+          desc: "En tenant une ligne pré-visée calibrée, engagez-vous à cliquer dès que l'ennemi franchit le réticule, sans chercher à faire un microflick réactif, qui ajoute un mouvement de correction et donc du retard.",
           tips: "Ayez confiance en votre placement et fixez votre regard légèrement en avant du réticule."
         },
         {
@@ -296,32 +303,36 @@ export default function FrenchAngleHoldPage() {
   const copyFr = {
     h1Prefix: null,
     bottomCaption: "Gardez votre viseur sur l’angle et cliquez dès que la cible apparaît.",
-    h1Keyword: "Aim Trainer",
-    h1Suffix: " — placement du viseur et angles",
+    h1Keyword: "Placement du viseur",
+    h1Suffix: " — tenir un angle en FPS",
+    aboutIntro: [
+      "Ce drill de placement du viseur (crosshair placement) vous apprend à tenir un angle : réticule à hauteur de tête près du bord d'un mur, clic dès qu'une cible sort. Il s'adresse aux joueurs de Valorant et CS2 qui veulent tenir les angles avec discipline, et affiche à la fin le temps de réaction moyen, la précision, le combo et le niveau.",
+      "Chaque peek sort à gauche ou à droite à une hauteur aléatoire, impossible donc d'apprendre un rythme. Plus le niveau monte, plus les peeks sont courts et les cibles petites, et des faux peeks orange punissent les clics précipités. Le drill ne reproduit ni le netcode ni le classement d'un vrai jeu : utilisez-le comme complément d'entraînement."
+    ],
     subtitle: "Entraînement à la Tenue d'Angle et Défense contre le Peeker's Advantage",
     rulesItems: [
-      { num: "1", text: "Tir Réussi", highlight: "+100 PTS (+0,6s)", result: "×Combo Mult" },
-      { num: "2", text: "Apparitions d'Angle", highlight: "Coins de Mur", result: "Fenêtre Réduite" },
+      { num: "1", text: "Tir Réussi", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
+      { num: "2", text: "Apparitions d'Angle", highlight: "Bord gauche/droit du mur", result: "Plus court, plus petit" },
       { num: "3", text: "Progression de Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Échelle Adaptative" },
-      { num: "4", text: "Tir Raté / Précipité", highlight: "Pénalité", result: "Reset Combo (-0,8s)" }
+      { num: "4", text: "Tir Raté / Précipité / Faux Peek", highlight: "Pénalité", result: "Reset Combo (-1s si pénalité de temps)" }
     ],
     aboutCards: [
       { iconBg: "bg-blue-600", title: "Recommandé pour", text: "Les défenseurs de site sur Valorant, les anchors sur CS2, les joueurs de R6 Siege et quiconque veut tenir une ligne avec rigueur." },
       { iconBg: "bg-orange-600", title: "Compétences Développées", text: "Calibration de l'écartement au mur, discipline de tir contre les jiggle peeks, temps de réaction et régularité à hauteur de tête." },
-      { iconBg: "bg-purple-600", title: "Détection des Fausses Décalages", text: "Les niveaux supérieurs simulent des feintes. Entraînez votre décision Go/No-Go pour ne tirer que sur décalage complet." }
+      { iconBg: "bg-purple-600", title: "Détection des Fausses Décalages", text: "Les niveaux supérieurs ajoutent de courts faux peeks orange. Entraînez votre décision Go/No-Go pour ne tirer que sur décalage complet." }
     ],
     aboutSections: [
       {
         title: "Écartement Idéal par Rapport au Mur (Géométrie d'Offset)",
         paragraphs: [
-          "L'erreur la plus fréquente en tenant une ligne est de coller son viseur au ras de l'arête du mur. Comme le traitement visuel et la commande motrice prennent de 180 à 220 ms, un ennemi décalant en course dépasse le viseur avant que le doigt ne puisse cliquer.",
+          "L'erreur la plus fréquente en tenant une ligne est de coller son viseur au ras de l'arête du mur. Comme il faut un temps de réaction entre voir et cliquer, un ennemi décalant en course dépasse le viseur avant que le doigt ne puisse cliquer.",
           "En laissant un écart horizontal (D_offset = v_peeker × T_reaction), l'assaillant se jette exactement dans la trajectoire de votre balle sans nécessiter de micro-ajustement d'urgence."
         ]
       },
       {
-        title: "Neutralisation Mathématique du Peeker's Advantage",
+        title: "Compenser le Peeker's Advantage",
         paragraphs: [
-          "En raison de la latence réseau (RTT), l'attaquant en mouvement perçoit le défenseur immobile 40 à 90 ms plus tôt. Ce déficit ne peut être comblé qu'en élargissant l'angle de visée pour compenser l'accélération transversale adverse."
+          "En raison de la latence réseau (RTT), l'attaquant en mouvement perçoit le défenseur immobile un peu plus tôt, selon le ping et le serveur. Ce déficit peut être atténué en élargissant l'écart du viseur pour compenser l'accélération transversale adverse."
         ]
       },
       {

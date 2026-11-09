@@ -6,21 +6,19 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Aim Trainer – Entraînement de visée | SkillDrills",
-  description: "Aim trainer gratuit dans le navigateur pour travailler les flicks et le premier tir sur Valorant et CS2. Mesurez score, temps et précision.",
+  title: "Aim Test : flicks et précision dans le navigateur | SkillDrills",
+  description: "Aim test en ligne : flickez sur des cibles placées au hasard. 45 s au départ, +2 s par touche, -1 s par erreur. Score et précision, pour Valorant et CS2.",
   keywords: [
-    "aim trainer",
-    "aim training",
-    "aim trainer Valorant",
-    "aim trainer en ligne",
+    "aim test",
+    "aim test en ligne",
+    "flick aim trainer",
     "entraînement de visée",
     "entraîneur de visée",
     "entraînement flick",
     "précision premier tir",
     "visée FPS",
     "flick aim",
-    "test de visée",
-    "aim trainer gratuit"
+    "test de visée"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/flick-shot-training",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer – Entraînement de visée | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur pour travailler les flicks et le premier tir sur Valorant et CS2. Mesurez score, temps et précision.",
+    title: "Aim Test : flicks et précision dans le navigateur | SkillDrills",
+    description: "Aim test en ligne : flickez sur des cibles placées au hasard. 45 s au départ, +2 s par touche, -1 s par erreur. Score et précision, pour Valorant et CS2.",
     url: "https://skilldrills.online/fr/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer – Entraînement de visée | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur pour travailler les flicks et le premier tir sur Valorant et CS2. Mesurez score, temps et précision.",
+    title: "Aim Test : flicks et précision dans le navigateur | SkillDrills",
+    description: "Aim test en ligne : flickez sur des cibles placées au hasard. 45 s au départ, +2 s par touche, -1 s par erreur. Score et précision, pour Valorant et CS2.",
   },
 };
 
@@ -52,14 +50,14 @@ export default function FlickShotFrPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
       { "@type": "ListItem", "position": 2, "name": "Entraînements FPS", "item": "https://skilldrills.online/fr/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer et Flick", "item": "https://skilldrills.online/fr/drills/fps/flick-shot-training" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Test et Flicks", "item": "https://skilldrills.online/fr/drills/fps/flick-shot-training" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer et Flick",
+    "name": "Aim Test et Flicks",
     "url": "https://skilldrills.online/fr/drills/fps/flick-shot-training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -69,20 +67,20 @@ export default function FlickShotFrPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Aim trainer gratuit dans le navigateur pour travailler la précision, le freinage de souris et le premier tir en FPS."
+    "description": "Aim test gratuit dans le navigateur : flicks sur des cibles placées au hasard, avec score, précision et temps moyen de flick."
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "Aim Trainer et Flick SkillDrills",
+    "name": "Aim Test et Flicks SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Outil d'entraînement de visée et de flick pour joueurs compétitifs de FPS, avec score, temps et précision.",
     "genre": "Entraînement FPS / Tir Réflexe",
     "url": "https://skilldrills.online/fr/drills/fps/flick-shot-training",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -93,7 +91,7 @@ export default function FlickShotFrPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer et Flick FPS",
+    "name": "Aim Test et Flicks FPS",
     "url": "https://skilldrills.online/fr/drills/fps/flick-shot-training",
     "description": "Entraîneur interactif de visée avec cibles dynamiques pour travailler le temps d'acquisition et la précision du premier tir.",
     "gamePlatform": "Web Browser",
@@ -101,13 +99,13 @@ export default function FlickShotFrPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -186,7 +184,15 @@ export default function FlickShotFrPage() {
         "name": "L'exercice augmente-t-il la difficulté lors des séries ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. En plus des 15 niveaux de progression, un algorithme adaptatif réduit la taille des cibles et resserre les intervalles d'apparition lors de séries ininterrompues de tirs réussis."
+          "text": "Oui. Le niveau monte de 1 tous les 1 800 points, sans plafond : le rayon des cibles (32 px au départ) et leur durée de vie (1,3 s au départ) diminuent. En plus, une série de touches consécutives rend les cibles encore plus petites et plus rapides. Une erreur remet le combo à 0 et la difficulté au niveau actuel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de temps dure une partie de l'aim test ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La partie commence avec 45 secondes. Chaque touche ajoute 2 secondes (60 secondes maximum au compteur). Un clic dans le vide, un tir manqué ou une cible expirée retire 1 seconde et remet le combo à zéro. La partie s'arrête à 0 seconde : plus vous êtes précis, plus elle dure. Chaque touche rapporte 100 points multipliés par le combo (jusqu'à 3,0×) et par le niveau."
         }
       }
     ]
@@ -226,24 +232,24 @@ export default function FlickShotFrPage() {
   };
 
   const flickGuide = {
-    heading: "Aim Trainer : entraînement au flick et précision FPS",
+    heading: "Aim Test : flicks et précision dans le navigateur",
     intro: [
-      "Pour qui cherche un aim trainer, le flick est le mouvement rapide qui amène le réticule sur une cible avant un freinage propre et le premier tir. Dans les FPS comme Valorant, CS2 et Apex Legends, cette combinaison de vitesse et de précision aide à répondre quand la cible apparaît hors du centre.",
+      "Cet aim test mesure le flick : le mouvement rapide qui amène le réticule sur une cible avant un freinage propre et le premier tir. Dans les FPS comme Valorant, CS2 et Apex Legends, cette combinaison de vitesse et de précision aide à répondre quand la cible apparaît hors du centre.",
       "Selon la loi de Fitts (Fitts, 1954), la durée du mouvement dépend de la difficulté de la tâche : ID = log2(2D/W), où la distance (D) et le diamètre de la cible (W) déterminent le temps nécessaire. Un entraînement méthodique développe la décélération coordonnée des muscles antagonistes (Schmidt et al., 1979), permettant au joueur de stopper net sur la cible sans rebond ni dépassement.",
       "La latence du matériel et la chronométrie numérique du navigateur influencent directement les mesures temporelles. Cet outil s'appuie sur performance.now() pour horodater chaque tir à la milliseconde près. Avec une souris à 1000 Hz (1,0 ms) et un écran à haut rafraîchissement (144 Hz à 6,94 ms, 240 Hz à 4,17 ms), le bruit de quantification est minimisé pour isoler le pur temps d'acquisition neuromusculaire (Woods et al., 2015).",
       "Mesure technique sur votre appareil : chaque événement de clic est horodaté localement par le navigateur, sans envoi de données vers des serveurs distants. Les navigateurs limitent la précision temporelle à environ 1 ms pour des raisons de sécurité liées à Spectre, et les écrans affichent les images par intervalles réguliers (16,7 ms à 60 Hz contre 4,1 ms à 240 Hz). Suivez vos progrès en comparant vos sessions sur un même poste de travail."
     ],
     benchmarks: {
-      title: "Repères d'Acquisition de Cible et Temps de Mouvement (TM)",
+      title: "Plages d'entraînement SkillDrills par phase du flick (repères)",
       headers: ["Phase du Mouvement / Métrique", "Latence Typique (ms)", "Mécanisme de Contrôle Moteur", "Niveau et Loi de Fitts"],
       rows: [
         ["Saccade Visuelle Initiale et Latence", "180 – 220 ms", "Fovéation oculaire et latence du cortex visuel", "Détection du stimulus avant l'amorce de l'impulsion (Woods et al. 2015)"],
         ["Mouvement Balistique Principal (Impulsion)", "120 – 180 ms", "Activation musculaire agoniste-antagoniste", "Trajectoire balistique en boucle ouverte couvrant 80–90% du trajet (Elliott et al. 2010)"],
         ["Micro-Correction Secondaire (Guidage)", "60 – 120 ms", "Rétroaction visuelle et freinage mécanique", "Phase finale en boucle fermée résolvant l'indice de difficulté (Fitts 1954)"],
-        ["Temps Total d'Acquisition (Brut)", "360 – 520 ms", "Boucle sensorimotrice complète + déclenchement du clic", "Norme compétitive standard chez les joueurs réguliers"],
+        ["Temps Total d'Acquisition (Brut)", "360 – 520 ms", "Boucle sensorimotrice complète + déclenchement du clic", "Repère pour les premières séances"],
         ["Acquisition Subconsciente Avancée", "240 – 320 ms", "Synergie motrice automatisée sans corrections superflues", "Entraîne l’arrêt net sur cible avec des micro-ajustements minimaux"]
       ],
-      note: "Données synthétisées d'après la recherche en contrôle moteur (Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) et la chronométrie numérique (Woods et al. 2015). Les résultats varient selon le rafraîchissement de l'écran, le taux d'interrogation de la souris et l'amplitude de la cible."
+      note: "Les valeurs en ms sont des plages d'entraînement SkillDrills, pas des normes de recherche ni des données d'utilisateurs. Les sources (Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010; Woods et al. 2015) étayent les concepts de chaque phase. Les résultats varient selon le rafraîchissement de l'écran, le taux d'interrogation de la souris et l'amplitude de la cible."
     },
     techniques: {
       title: "Sensibilités eDPI Recommandées par Jeu",
@@ -279,7 +285,7 @@ export default function FlickShotFrPage() {
         },
         {
           name: "Modèle de Double Boucle d'Elliott",
-          desc: "Les joueurs d'élite éliminent la quasi-totalité de la phase de correction secondaire en atteignant la cible en un seul mouvement fluide."
+          desc: "Un flick combine une impulsion balistique qui couvre l'essentiel de la distance et une correction finale plus courte. L'entraînement vise à réduire cette correction."
         },
         {
           name: "Freinage Mécanique et Co-Contraction Antagoniste",
@@ -292,7 +298,7 @@ export default function FlickShotFrPage() {
       "Fixez votre regard au centre du réticule.",
       "Dès l'apparition de la cible, propulsez vivement la souris vers son centre et cliquez instantanément.",
       "Évitez les glissements lents : focalisez-vous sur une accélération franche suivie d'un freinage net sur la cible.",
-      "Analysez votre taux de précision, votre temps moyen d'acquisition et votre rang sur le récapitulatif."
+      "Consultez sur le récapitulatif votre score, votre précision, votre temps moyen de flick, votre combo maximal, votre niveau atteint et votre note."
     ],
     audience: "Compétiteurs de FPS tactiques (Valorant, CS2, Rainbow Six Siege), joueurs de Battle Royale (Apex Legends, Fortnite) et tout joueur cherchant une précision chirurgicale sur le premier tir.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -333,9 +339,9 @@ export default function FlickShotFrPage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "Aim Trainer",
-          h1Suffix: " – Entraînement de visée",
-          subtitle: "Travaillez les flicks et le premier tir pour Valorant et CS2 directement dans le navigateur.",
+          h1Keyword: "Aim Test",
+          h1Suffix: " : flicks et précision dans le navigateur",
+          subtitle: "Un aim test pour joueurs de Valorant et CS2 : flickez à la souris sur des cibles qui apparaissent au hasard et mesurez votre précision.",
           statScore: "Score",
           statTime: "Temps Restant",
           statAccuracy: "Précision",
@@ -356,7 +362,7 @@ export default function FlickShotFrPage() {
             { num: "1", text: "Cible Touchée", highlight: "+100 PTS (+2,0s)", result: "×Multiplicateur Combo" },
             { num: "2", text: "Série de Combos", highlight: "Jusqu'à 3.0×", result: "Cibles Plus Rapides" },
             { num: "3", text: "Niveau Supérieur", highlight: "+1 / 1800 PTS", result: "Progression Adaptative" },
-            { num: "4", text: "Tir Manqué / Expiration", highlight: "Pénalité", result: "Réinitialise Combo (-0,8s)" }
+            { num: "4", text: "Tir Manqué / Expiration", highlight: "Pénalité", result: "Réinitialise Combo (-1,0s)" }
           ],
           aboutTitle: "À Propos du Pro Flick Trainer",
           aboutHeading: "Qu'est-ce que le Flick Aim ?",

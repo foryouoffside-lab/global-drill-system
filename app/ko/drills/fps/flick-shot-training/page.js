@@ -6,16 +6,17 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "에임 연습 사이트 - 플릭샷 트레이너 | SkillDrills",
-  description: "브라우저에서 바로 하는 무료 에임 연습 사이트. 발로란트·CS2에서 쓰는 플릭샷과 끌어치기, 스냅 에임을 실제 점수와 정확도로 훈련하세요.",
+  title: "플릭샷 연습 사이트 | 끌어치기 에임 트레이너 | SkillDrills",
+  description: "플릭샷 연습 사이트: 화면 무작위 위치에 뜨는 타겟을 마우스로 끌어치기하세요. 45초로 시작해 명중마다 +2초(최대 60초), 미스와 시간 초과는 -1초. 발로란트·CS2 플레이어를 위한 무료 브라우저 플릭샷 연습.",
   keywords: [
-    "에임 연습 사이트",
-    "발로란트 에임 연습 사이트",
-    "에임연습 사이트",
+    "플릭샷 연습 사이트",
+    "플릭샷 연습",
+    "끌어치기 연습",
+    "fps 플릭샷",
+    "발로란트 플릭샷 연습",
     "플릭샷",
     "끌어치기",
     "스냅 에임",
-    "플릭샷 연습",
     "무료 에임 트레이너",
     "초탄 헤드샷 연습",
     "마우스 제동력 훈련",
@@ -31,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "에임 연습 사이트 - 플릭샷 트레이너 | SkillDrills",
-    description: "브라우저에서 바로 하는 무료 에임 연습 사이트. 발로란트·CS2에서 쓰는 플릭샷과 끌어치기, 스냅 에임을 실제 점수와 정확도로 훈련하세요.",
+    title: "플릭샷 연습 사이트 | 끌어치기 에임 트레이너 | SkillDrills",
+    description: "플릭샷 연습 사이트: 화면 무작위 위치에 뜨는 타겟을 마우스로 끌어치기하세요. 45초로 시작해 명중마다 +2초(최대 60초), 미스와 시간 초과는 -1초. 발로란트·CS2 플레이어를 위한 무료 브라우저 플릭샷 연습.",
     url: "https://skilldrills.online/ko/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "에임 연습 사이트 - 플릭샷 트레이너 | SkillDrills",
-    description: "브라우저에서 바로 하는 무료 에임 연습 사이트. 발로란트·CS2에서 쓰는 플릭샷과 끌어치기, 스냅 에임을 실제 점수와 정확도로 훈련하세요.",
+    title: "플릭샷 연습 사이트 | 끌어치기 에임 트레이너 | SkillDrills",
+    description: "플릭샷 연습 사이트: 화면 무작위 위치에 뜨는 타겟을 마우스로 끌어치기하세요. 45초로 시작해 명중마다 +2초(최대 60초), 미스와 시간 초과는 -1초. 발로란트·CS2 플레이어를 위한 무료 브라우저 플릭샷 연습.",
   },
 };
 
@@ -62,9 +63,9 @@ export default function FlickShotKoPage() {
     "name": "플릭샷 에임 연습",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "브라우저에서 플릭샷과 끌어치기, 스냅 에임을 연습하고 점수와 정확도를 확인하는 무료 FPS 에임 연습 사이트.",
+    "description": "브라우저에서 무작위 위치의 타겟을 끌어치기로 맞히며 점수, 정확도, 평균 플릭 시간을 확인하는 무료 플릭샷 연습 사이트.",
     "genre": "FPS Training / Flick Shot",
     "url": "https://skilldrills.online/ko/drills/fps/flick-shot-training",
     "publisher": {
@@ -87,7 +88,7 @@ export default function FlickShotKoPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "브라우저에서 플릭샷과 끌어치기, 스냅 에임을 연습하고 점수와 정확도를 확인하는 무료 FPS 에임 연습 사이트."
+    "description": "브라우저에서 무작위 위치의 타겟을 끌어치기로 맞히며 점수, 정확도, 평균 플릭 시간을 확인하는 무료 플릭샷 연습 사이트."
   };
 
   const videoGameSchema = {
@@ -95,8 +96,8 @@ export default function FlickShotKoPage() {
     "@type": "VideoGame",
     "name": "플릭샷 에임 연습",
     "url": "https://skilldrills.online/ko/drills/fps/flick-shot-training",
-    "description": "브라우저에서 플릭샷과 끌어치기, 스냅 에임을 연습하고 점수와 정확도를 확인하는 무료 FPS 에임 연습 사이트.",
-    "dateModified": "2026-09-20",
+    "description": "브라우저에서 무작위 위치의 타겟을 끌어치기로 맞히며 점수, 정확도, 평균 플릭 시간을 확인하는 무료 플릭샷 연습 사이트.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Flick Shot"],
     "playMode": "SinglePlayer",
@@ -108,7 +109,7 @@ export default function FlickShotKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -163,7 +164,7 @@ export default function FlickShotKoPage() {
         "name": "피츠의 법칙(Fitts's Law)은 플릭 에임에 어떻게 적용되나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "목표 거리가 멀고 타겟 크기가 작을수록 난이도 지수(ID)가 로그 함수 형태로 증가합니다(Fitts, 1954). 고수들은 전체 거리의 80~90%를 초기 탄도 비행으로 한 번에 메우고 나머지 미세 거리를 찰나에 보정합니다."
+          "text": "목표 거리가 멀고 타겟 크기가 작을수록 난이도 지수(ID)가 로그 함수 형태로 증가합니다(Fitts, 1954). 2단계 모델(Elliott et al., 2010)에서는 초기 탄도 운동이 거리의 대부분을 메우고, 남은 짧은 거리를 미세 보정으로 맞춥니다."
         }
       },
       {
@@ -187,7 +188,15 @@ export default function FlickShotKoPage() {
         "name": "점수가 높아지면 훈련 난이도가 자동으로 상승하나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "네, 매 1,400점마다 레벨이 상승하며, 타겟의 유지 시간(타이머 링)이 축소되고 크기가 작아지며 동적으로 난이도가 심화됩니다."
+          "text": "네. 1,800점마다 레벨이 1씩 오르며 레벨 상한은 없습니다. 레벨이 오를수록 타겟 반지름(32px에서 시작)과 유지 시간(1.3초에서 시작)이 줄어들고, 연속 명중(콤보)이 길어질수록 타겟이 더 작고 빨라집니다. 미스하면 콤보가 0으로 돌아가고 현재 레벨 난이도로 복귀합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "플릭샷 연습은 몇 초 동안 진행되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "45초로 시작하며 타겟을 맞힐 때마다 +2초가 추가됩니다(최대 60초). 빈 곳 클릭, 빗나간 클릭, 시간 초과는 각각 -1초이며 콤보가 초기화됩니다. 시간이 0이 되면 종료되므로 정확하게 맞힐수록 오래 플레이할 수 있습니다. 점수는 명중당 100점에 콤보 배수(최대 3.0배)와 레벨 배수가 곱해집니다."
         }
       }
     ]
@@ -227,25 +236,25 @@ export default function FlickShotKoPage() {
   };
 
   const flickGuide = {
-    heading: "에임 연습 사이트: 플릭샷 측정과 FPS 조준 가이드",
+    heading: "플릭샷 연습 사이트: 끌어치기 측정과 FPS 조준 가이드",
     subtitle: "스냅 에임 초기 가속, 근육 운동 기억, 그리고 조준선을 목표 위에 즉각 멈추는 마찰 제동력을 완성하는 과학적 방법론",
     intro: [
-      "에임 연습 사이트를 찾는 FPS 플레이어에게 플릭샷은 시선이 포착한 목표 좌표로 조준선을 빠르게 옮겨 최단 시간 내에 초탄을 적중시키는 핵심 기술입니다. 발로란트, CS2, 에이펙스 레전드에서 돌발적인 피킹 교전을 제압하려면 플릭 속도와 정확도를 함께 훈련해야 합니다.",
+      "플릭샷 연습 사이트에서 다루는 플릭샷(끌어치기)은 시선이 포착한 목표 좌표로 조준선을 빠르게 옮겨 최단 시간 내에 초탄을 적중시키는 핵심 기술입니다. 발로란트, CS2, 에이펙스 레전드에서 돌발적인 피킹 교전을 제압하려면 플릭 속도와 정확도를 함께 훈련해야 합니다.",
       "생체운동학에서 인간의 목표 지향적 조준 운동은 '2단계 모델'(Elliott et al., 2010)을 따릅니다. 초기 개루프(Open-loop) 탄도 운동을 통해 전체 거리의 80~90%를 단숨에 주파한 뒤, 착탄 직전 폐루프(Closed-loop) 시각 피드백을 통해 미세한 종단 수렴 보정을 완수합니다.",
       "Paul M. Fitts(1954)의 운동 법칙(Fitts's Law)에 따라 이동 거리가 멀고 타겟 크기가 작을수록 운동 난이도 지수(ID)가 가파르게 상승합니다. 본 드릴은 Richard A. Schmidt 등(1979)의 주동근·길항근 펄스 제어 이론과 고해상도 디지털 시간 측정(Woods et al., 2015)을 결합하여 오버슈트 없는 기계적 브레이킹 감각을 완성합니다.",
       "측정 정확도 안내: 본 드릴은 브라우저의 performance.now() 고해상도 타이머를 활용하여 기기 내부에서 밀리초 단위로 정확히 실행됩니다. 디스플레이 주사율(60Hz/144Hz/240Hz)에 따른 프레임 지연이 발생하므로 5ms 미만의 미세 편차는 하드웨어 측정 노이즈로 간주하시기 바랍니다."
     ],
     benchmarks: {
-      title: "목표 포착 및 운동 시간(Movement Time) 벤치마크 기준",
+      title: "플릭 단계별 SkillDrills 연습 구간 (참고용)",
       headers: ["동작 단계 / 측정 항목", "표준 레이턴시", "운동 제어 메커니즘", "숙련도 단계 및 평가"],
       rows: [
         ["초기 도약 안구 운동 (사카드)", "180 – 220 ms", "중심와 포착 및 시각 피질 반응", "물리적 동작 개시 전의 자극 감지 (Woods et al., 2015)"],
         ["탄도학적 주 운동 (초기 펄스)", "120 – 180 ms", "주동근-길항근 폭발적 근육 출력", "목표 거리의 80~90%를 주파하는 탄도 비행 (Elliott et al., 2010)"],
         ["종단 미세 보정 (호밍 브레이킹)", "60 – 120 ms", "시각 피드백 및 패드 마찰 감속", "난이도 지수를 해결하는 폐루프 제어 (Fitts, 1954)"],
-        ["총 타겟 획득 시간 (일반 유저)", "360 – 520 ms", "지각-운동 루프 전체 합산 시간", "일반적인 경쟁전 랭크의 표준 기준치"],
-        ["상급 단계의 무의식 포착", "240 – 320 ms", "미세 수정을 극소화한 자동화 운동 시너지", "eDPI에 맞춘 제동력을 중점적으로 연습하는 단계"]
+        ["총 타겟 획득 시간 (연습 초기 구간)", "360 – 520 ms", "지각-운동 루프 전체 합산 시간", "처음 연습할 때의 참고 구간"],
+        ["숙련 연습 구간", "240 – 320 ms", "미세 수정을 극소화한 자동화 운동 시너지", "eDPI에 맞춘 제동력을 중점적으로 연습하는 단계"]
       ],
-      note: "스포츠 심리학 및 운동 제어 문헌(Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010; Woods et al. 2015)에 기반한 통합 벤치마크입니다."
+      note: "ms 수치는 SkillDrills 연습용 참고 구간이며 연구 규범이나 사용자 데이터가 아닙니다. 인용 문헌(Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010; Woods et al. 2015)은 각 단계의 개념 출처입니다."
     },
     techniques: {
       title: "게임별 최적 eDPI 감도 세팅 가이드",
@@ -277,7 +286,7 @@ export default function FlickShotKoPage() {
       "화면 중앙 조준선에 시선을 편안히 둡니다.",
       "타겟이 생성되는 순간 목표 중심점으로 마우스를 빠르고 예리하게 플릭하여 클릭합니다.",
       "느리게 조준선을 옮기지 말고 빠른 가속과 정확한 정지 브레이킹에 집중하세요.",
-      "결과 카드에서 정확도, 평균 플릭 반응 시간, 랭크 티어를 확인하고 반복 훈련하세요."
+      "결과 카드에서 점수, 정확도, 평균 플릭 시간, 최대 콤보, 최고 레벨, 등급을 확인하고 반복 훈련하세요."
     ],
     audience: "발로란트, 카운터스트라이크 2, 에이펙스 레전드, 오버워치 2에서 즉각적인 초탄 헤드샷과 스냅 에임을 극대화하고자 하는 모든 FPS 게이머.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -318,9 +327,9 @@ export default function FlickShotKoPage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "에임 연습 사이트",
-          h1Suffix: " - 플릭샷 트레이너",
-          subtitle: "발로란트·CS2용 플릭샷과 끌어치기를 브라우저에서 바로 훈련하세요.",
+          h1Keyword: "플릭샷 연습 사이트",
+          h1Suffix: " - 끌어치기 에임 트레이너",
+          subtitle: "발로란트·CS2 플레이어를 위한 플릭샷 연습 사이트. 화면 무작위 위치에 뜨는 타겟을 마우스로 끌어치기해 맞히세요.",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "정확도",
@@ -341,7 +350,7 @@ export default function FlickShotKoPage() {
             { num: "1", text: "타겟 명중", highlight: "+100점 (+2.0초)", result: "콤보 배수 적용" },
             { num: "2", text: "콤보 스트릭", highlight: "최대 3.0배", result: "타겟 가속 및 축소" },
             { num: "3", text: "레벨 상승", highlight: "+1 / 1800점", result: "적응형 난이도" },
-            { num: "4", text: "미스 / 시간 초과", highlight: "페널티", result: "콤보 초기화 (-0.8초)" }
+            { num: "4", text: "미스 / 시간 초과", highlight: "페널티", result: "콤보 초기화 (-1.0초)" }
           ],
           aboutTitle: "Pro 플릭 트레이너 소개",
           aboutHeading: "플릭 에임(Flick Aim)이란?",

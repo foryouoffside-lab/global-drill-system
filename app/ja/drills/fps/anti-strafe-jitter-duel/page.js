@@ -1,34 +1,25 @@
 import AntiStrafeJitterClient from '@/app/drills/fps/anti-strafe-jitter-duel/AntiStrafeJitterClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import DrillFooter from '@/components/drill/DrillFooter';
-import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
+const TITLE = "レレレ撃ち対策｜左右に揺れる敵に当てる練習 | SkillDrills";
+const DESCRIPTION = "無料のレレレ撃ち対策ドリル。左右にランダムで切り返すターゲットに照準を合わせ続けると0.25秒ごとにスコア、1秒維持ごとにコンボが加算され、レベルに上限はありません。マウスとポインターロックでブラウザからすぐ練習できます。";
+const NAME = "レレレ撃ち対策 - 左右切り返しトラッキング";
+
 export const metadata = {
-  title: "エイム練習 | レレレ撃ち・トラッキング | SkillDrills",
-  description: "無料ブラウザのエイム練習で、ADAD移動やレレレ撃ちの方向転換を追い、近距離トラッキングの反応を測定します。",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "エイム練習",
-    "エイム練習 ブラウザ",
-    "エイム練習 apex",
-    "レレレ撃ち",
+    "レレレ撃ち対策",
+    "レレレ撃ち 当て方",
     "レレレ撃ち 練習",
-    "トラッキング エイム 練習",
-    "ジッターエイム",
+    "レレレ撃ち 当たらない",
+    "ADAD 対策",
+    "切り返し トラッキング",
     "近距離 トラッキング",
-    "リアクティブ トラッキング",
-    "ADAD 移動 エイム",
-    "ジッターエイム 練習",
-    "近距離 トラッキング",
-    "VALORANT レレレ撃ち",
-    "Apex レレレ撃ち 練習",
-    "Overwatch2 トラッキング",
-    "リアクティブ トラッキング",
-    "切り返し エイム練習",
-    "近距離 エイム 合わせ方",
-    "ADAD 移動 エイム",
-    "エイムトレーナー 無料"
+    "リアクティブ トラッキング"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel",
@@ -39,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-      title: "エイム練習 | レレレ撃ち・トラッキング | SkillDrills",
-    description: "無料ブラウザのエイム練習で、ADAD移動やレレレ撃ちの方向転換を追い、近距離トラッキングの反応を測定します。",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -48,8 +39,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-      title: "エイム練習 | レレレ撃ち・トラッキング | SkillDrills",
-    description: "無料ブラウザのエイム練習で、ADAD移動やレレレ撃ちの方向転換を追い、近距離トラッキングの反応を測定します。",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
@@ -60,19 +51,19 @@ export default function AntiStrafeJitterJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "エイム練習 - レレレ撃ち", "item": "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel" }
+      { "@type": "ListItem", "position": 3, "name": NAME, "item": "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "エイム練習 - レレレ撃ち・トラッキング",
+    "@type": "SoftwareApplication",
+    "name": NAME,
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "急激な左右ADAD切り返し移動（レレレ撃ち）に対するリアクティブトラッキングと微小修正能力を向上させる無料ブラウザFPSエイムドリル。",
+    "description": "左右にランダムで切り返すターゲットに照準を合わせ続ける、無料ブラウザのレレレ撃ち対策トラッキングドリル。",
     "genre": "FPS Training / Anti-Strafe",
     "url": "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel",
     "publisher": {
@@ -85,28 +76,28 @@ export default function AntiStrafeJitterJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "エイム練習 - レレレ撃ち・トラッキング",
+    "name": NAME,
     "url": "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
+    "browserRequirements": "Requires JavaScript, HTML5 Canvas, a mouse and Pointer Lock support",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "ブラウザで動作する無料レレレ撃ちエイム練習。近距離ADAD移動に対するリアクティブトラッキングを極限まで強化します。"
+    "description": "ブラウザで動く無料のレレレ撃ち対策練習。近距離のADAD移動のように左右へ切り返すターゲットを追いかけます。"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "エイム練習 - レレレ撃ち・トラッキング",
+    "name": NAME,
     "url": "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel",
-    "description": "急激な左右ADAD切り返し移動（レレレ撃ち）に対するリアクティブトラッキングと微小修正能力を向上させる無料ブラウザFPSエイムドリル。",
-    "dateModified": "2026-09-20",
+    "description": "左右にランダムで切り返すターゲットに照準を合わせ続ける、無料ブラウザのレレレ撃ち対策トラッキングドリル。",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
-    "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
+    "genre": ["FPS Training", "Reactive Tracking"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
@@ -116,86 +107,62 @@ export default function AntiStrafeJitterJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "FPSにおけるリアクティブトラッキング（反応追従）とは何ですか？",
+        "name": "このレレレ撃ち対策ドリルはどう遊ぶのですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "不規則かつ予測不能に移動方向を反転させる標的に対し、視覚的な網膜スリップ（位置ズレ）をリアルタイムに検知して照準を追従させ続ける高度なエイム技術です。"
+          "text": "画面中央の高さでターゲットの球が左右だけに動き、ランダムな間隔で向きと速さを切り返します。クリックは不要で、マウスで照準をターゲットに重ねている間スコアが入ります。開始時の残り時間は45秒で、0になるとセッション終了です。"
         }
       },
       {
         "@type": "Question",
-        "name": "高速なADAD移動（レレレ撃ち）を正確に追跡するコツは？",
+        "name": "スコアとコンボの仕組みは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "前腕と手首の筋肉をリラックスさせ、照準線ではなく敵キャラクターの中心（胴体）に視線を固定します。大振りのフリックで追うのではなく、敵の移動速度に合わせた滑らかな微小反転を行うことが重要です。"
+          "text": "照準がターゲットに重なっていると0.25秒ごとに10点×コンボ倍率×レベル補正が入り、残り時間が0.1秒増えます（上限60秒）。1秒連続で合わせ続けるたびにコンボが1増え、倍率はコンボ3で1.1倍、コンボ50で最大3.0倍です。"
         }
       },
       {
         "@type": "Question",
-        "name": "ジッタートラッキング中にエイムがガタつく（震える）原因は何ですか？",
+        "name": "ターゲットから外れるとどうなりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "マウスを強く握り込みすぎる「デスグリップ」と、屈筋と伸筋（拮抗筋）の過度な同時収縮が原因です。力みがあると方向転換のたびに筋肉同士が反発し、滑らかな追従が阻害されてしまいます。"
+          "text": "1秒以上外れるとコンボが0に戻ります。ドリル設定でタイムペナルティをオンにしている場合は、このとき残り時間が0.6秒減ります。初期設定はオフです。"
         }
       },
       {
         "@type": "Question",
-        "name": "スムーズパースート（滑動性眼球運動）とリアクティブトラッキングの違いは？",
+        "name": "難易度はどう上がりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "スムーズパースートは等速で一定方向に動く予測可能な標的を追う運動です。一方、リアクティブトラッキングは突然の切り返しに対応するため、脳の予測が働かず純粋な視覚反射によって修正されます。"
+          "text": "1400点ごとにレベルが1上がり、上限はありません。レベルが上がるほどターゲットが小さく、左右移動が速く、切り返しの間隔が短くなります。コンボが高いときも少しずつ難しくなります。"
         }
       },
       {
         "@type": "Question",
-        "name": "Apex Legendsのプロ選手はどのようにトラッキングを鍛えていますか？",
+        "name": "レレレ撃ちの当て方の練習になりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "プロ選手は近距離での切り返し練習を反復し、敵の腰や足元の傾き（慣性減速フレーム）から切り返しの予兆を読み取る訓練を行っています。"
+          "text": "近距離で相手がA・Dを交互に押して左右に揺れる動きを単純化したドリルです。切り返した直後に照準を合わせ直すトラッキングを繰り返せるので、VALORANT、Apex Legends、Overwatch 2などでレレレ撃ちが当たらないと感じる人の反復練習に使えます。上達の度合いには個人差があります。"
         }
       },
       {
         "@type": "Question",
-        "name": "レレレ撃ち対策にはどのマウスマウス持ち方が最適ですか？",
+        "name": "切り返しでエイムが置いていかれるときのコツは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "手首や指先の可動域を広く活用できるリラックスした「つかみ持ち（Claw）」や「つまみ持ち（Fingertip）」が推奨されます。手のひらを固定しないことで高頻度な微小反転を素早く処理できます。"
+          "text": "マウスを強く握りすぎず、照準ではなくターゲット自体を見てください。向きが変わった瞬間に大きくフリックで追うより、一瞬止めてからターゲットの速さに合わせて重ね直すほうが外れている時間を減らしやすくなります。"
         }
       },
       {
         "@type": "Question",
-        "name": "オーバーウォッチ2の高速切り返しにどう対応すべきですか？",
+        "name": "スマホやタッチ画面でも使えますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "オーバーウォッチ2は加速フレームが存在せず慣性なしで即座に切り返せるため、ヤマを張らずに反転を目視した瞬間の減速ブレーキ反射を徹底的に磨く必要があります。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "マウスポーリングレートはトラッキングに影響しますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "はい。1000Hz以上の高ポーリングレートはミリ秒単位で位置座標を送信するため、ジッター微調整時の入力カクつきを抑え、滑らかなトラッキング軌道を実現します。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "脳が敵の切り返しを認識して方向転換するまでに何秒かかりますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "網膜での刺激検知に約160〜210ms、運動野からの筋収縮指令・減速反転実行に約80〜130msかかるため、無予測の切り返しには生理学的に約240〜340msの遅延が生じます。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "このドリルは近距離のショットガンやSMG撃ち合いに有効ですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "極めて有効です。近距離戦闘は画面内の角速度が最も高くなるため、本ドリルで動体視力と脱力追従を身につけることで至近距離での命中率の向上に役立つ可能性があります。"
+          "text": "いいえ。マウスの移動量を読むポインターロック方式のため、マウスが必要です。タッチ専用端末ではスタートボタンの代わりに案内が表示されます。プレイ中はEscキーでドリルを終了できます。"
         }
       }
     ]
@@ -204,96 +171,82 @@ export default function AntiStrafeJitterJaPage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "レレレ撃ち・ジッタートラッキングの練習方法",
-    "description": "高速ADAD移動に対するリアクティブトラッキングを鍛えるステップバイステップ手順。",
+    "name": "レレレ撃ち対策トラッキングの練習手順",
+    "description": "左右に切り返すターゲットに照準を合わせ続けるトラッキング練習の手順。",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "感度設定の確認とマッピング",
-        "text": "セッション設定でプレイ中のゲーム感度と一致させ、筋肉記憶の定着に役立てます。"
+        "name": "感度を合わせる",
+        "text": "ドリル一覧ページの共通マウス感度を、普段の感覚に近づけます。"
       },
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "ポインタロックの有効化",
-        "text": "「ドリル開始」をクリックして全画面表示とPointer Lockを有効にします。"
+        "name": "スタート",
+        "text": "スタートを押すと全画面になり、カウントダウン後にポインターロックがかかります。"
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "標的球体への中心視野アンカー",
-        "text": "クロスヘアを見つめるのではなく、激しく左右に切り返す標的そのものへ視線を強く固定します。"
+        "name": "ターゲットを追う",
+        "text": "左右に揺れるターゲットに照準を重ね続け、切り返したらすぐに合わせ直します。"
       },
       {
         "@type": "HowToStep",
         "position": 4,
-        "name": "脱力した手首・指先による微小反転追従",
-        "text": "グリップの力みを抜き、急激な方向転換に対して大振りのフリックを行わず、速度を合わせた滑らかな切り返しで照準を吸い付かせます。"
+        "name": "結果を確認する",
+        "text": "終了後に追従精度、外れていた時間、最大コンボ、到達レベルを確認します。"
       }
     ]
   };
 
   const antiStrafeGuide = {
-    heading: "エイム練習とレレレ撃ち・リアクティブトラッキングガイド",
+    heading: "レレレ撃ち対策：左右に揺れる敵に当てる練習ガイド",
     intro: [
-      "エイム練習の中でもレレレ撃ち対策は、ADADの切り返しを追いながらレティクルを敵に保つ練習です。このドリルは近距離のジッターと方向反転を測定し、Apex・Overwatch 2のリアクティブトラッキングを安定させます。",
-      "標的が急激に進行方向を反転させた瞬間、視覚情報が網膜の中心窩から外れる「網膜スリップ」が発生します。脳は反転を予知できないため、減速検知、皮質指令、手の制動ブレーキ、そして逆方向への運動加速というサイクルをミリ秒単位で処理しなければなりません。Apex LegendsやOverwatch 2のようにTTK（Time to Kill）が長いゲームでは、単発のフリックよりも標的への継続照準時間（Uptime）が直接的な勝率を決定します。",
-      "本ドリルはHTML5 Pointer Lock API配下で performance.now() 高分解能タイマーを用いて動作します (Woods et al., 2015)。力みを抑制した拮抗筋の滑らかな制御と、切り返し時の行き過ぎ（オーバーシュート）防止を徹底的に鍛え上げます。",
-      "測定仕様について：すべてのイベントはお使いの端末の performance.now() 高分解能クロックによって完全にローカルで記録され、外部へスコアが送信されることはありません。ブラウザのタイマー解像度制限（Spectre対策で通常約1ms）およびディスプレイのリフレッシュ間隔（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）による量子化誤差が生じるため、5ms未満の微小な差異は測定誤差として扱い、他者の環境との比較よりも同一環境での自己記録の推移を重視してください (Woods et al., 2015)。"
+      "SkillDrillsのレレレ撃ち対策ドリルは、左右にランダムで切り返すターゲットに照準を合わせ続ける練習です。クリックはせず、マウスの動きだけでターゲットに重なっている時間を伸ばします。",
+      "ターゲットは横方向だけに動き、決まっていない間隔で向きと速さを変えます。一部の切り返しはより速く飛び出すため、先読みよりも切り返した直後に合わせ直すリアクティブトラッキングが中心になります。",
+      "セッションは45秒から始まり、ターゲットに重なっている間は1秒あたり0.4秒ずつ時間が延びます（上限60秒）。スコアとレベルに上限はありません。"
     ],
-    benchmarks: {
-      title: "リアクティブトラッキング & 切り返し反応潜時指標",
-      headers: ["処理段階 / 潜時ティア", "標準レイテンシ範囲", "神経経路 & 生体力学的機能", "実戦FPSへの影響"],
-      rows: [
-        ["切り返し視覚検知潜時", "160 – 210 ms", "網膜スリップ信号が一次視覚野(V1)およびMT/V5運動野で処理される時間", "敵の反転を目視で知覚するまでの初期知覚遅延"],
-        ["運動反転出力潜時", "80 – 130 ms", "皮質脊髄路から前腕屈筋・伸筋への伝達と拮抗筋ブレーキ", "クロスヘアの流れを停止させマウスを逆転させるまでの物理時間"],
-        ["終末微小リアルタイム補正", "60 – 100 ms", "微小中心窩センタリングと閾値下での精密位置合わせ", "行き過ぎを解消し標的中心へクロスヘアを再吸着させる補正"],
-        ["総無予測再捕捉ウィンドウ", "300 – 440 ms", "視覚検知、運動反転、終末補正を合算した全累積遅延", "予測不能な切り返しを受けた際に発生する標準的な人間遅延"],
-        ["上級段階の脱力リアクティブ追従", "210 – 290 ms", "力みのない拮抗筋抑制と予兆読みによる高速制動", "至近距離でのトラッキング精度を重点的に練習する段階"]
-      ],
-      note: "数値は眼球運動科学文献 (Rashbass 1961; Krauzlis 2004; Green & Bavelier 2003; Woods et al. 2015) に基づく客観的基準です。"
-    },
     techniques: {
-      title: "レレレ撃ち追従と照準ブレ克服のための実践テクニック",
+      title: "レレレ撃ちの当て方のコツ",
       items: [
         {
-          name: "拮抗筋の脱力（デスグリップの排除）",
-          desc: "切り返し時に最も多いミスは、マウスを強く握りしめることです。屈筋と伸筋が同時に緊張すると手首が硬直してガタつきが発生し、方向転換で大きく行き過ぎてしまいます。",
-          tips: "軽く添える程度のリラックスしたグリップを保ち、指先と手首で高頻度な微小振動を吸収してください。"
+          name: "軽く握る",
+          desc: "マウスを強く握ると、切り返しで手首が固まり照準がカクつきやすくなります。",
+          tips: "指先と手首が自由に動く程度の力で握り、長めのセッションの合間には手をほぐしてください。"
         },
         {
-          name: "標的中心への視線アンカー固定",
-          desc: "自分のクロスヘアを見つめるのをやめ、標的の胴体や中心モデルに視線をピン留めしてください。網膜の動き検出機能が働き、移動ベクトルの変化を無意識に計算できます。",
-          tips: "エイムが遅れると感じたら、意識の100%を相手キャラクターの腰周辺に集中させましょう。"
+          name: "ターゲットを見る",
+          desc: "照準ではなく球の中心を見ると、向きが変わる瞬間に早く気づけます。",
+          tips: "ターゲットが赤くなったら照準が外れています。色の変化を合図にしてください。"
         },
         {
-          name: "滑らかな速度同調（オーバーフリックの抑止）",
-          desc: "標的が左から右へ反転した際、焦って急激に右へフリックすると必ず行き過ぎます。フリックではなく、スムーズに減速して滑らかに標的の移動速度と同調させてください。",
-          tips: "切り返しを「2回のフリック」ではなく「1つの減速・加速サイクル」として滑らかに捉えましょう。"
+          name: "オーバーフリックを減らす",
+          desc: "切り返しで大きくフリックすると反対側へ行き過ぎやすくなります。",
+          tips: "切り返しを2回のフリックではなく、1回の減速と再加速としてつなげてみてください。"
         },
         {
-          name: "腰の向きと減速フレームの予兆読取",
-          desc: "ApexやWarzoneなど慣性物理のあるゲームでは、切り返す直前にキャラクターモデルがわずかに減速・傾斜します。この予兆フレームを見逃さないことで反応を30〜50ms短縮できます。",
-          tips: "モデルの足元や傾きに注目し、反転の予兆を捉える感覚を身につけましょう。"
+          name: "1秒ルールを意識する",
+          desc: "1秒連続で合わせるたびにコンボが増え、1秒以上外れるとコンボが消えます。",
+          tips: "外れたら1秒以内に合わせ直すことを目標にしましょう。"
         }
       ]
     },
     steps: [
-      "セッション設定でお使いの感度を合わせ、筋肉記憶の定着に役立てます。",
-      "「ドリル開始」をクリックして全画面表示とPointer Lockを有効化します。",
-      "激しく左右に切り返すターゲット球体へ視線を集中させます。",
-      "力みを抜いた手首と指先で微小反転を吸収し、照準接触時間を最大化します。",
-      "セッション終了後にトラッキング精度（%）、照準外れ時間、最大コンボを確認し、脱力制御の上達を評価します。"
+      "ドリル一覧ページで共通マウス感度を普段の感覚に合わせます。",
+      "スタートを押して全画面とポインターロックを有効にします。",
+      "左右に揺れるターゲットに照準を重ね続けます。",
+      "切り返したら大きくフリックせず、短く減速してから合わせ直します。",
+      "終了後、追従精度（%）、外れていた時間、最大コンボ、到達レベルで次の目標を決めます。"
     ],
-    audience: "Apex Legends、Overwatch 2、Call of Duty、THE FINALSなどの高速近距離戦でレレレ撃ちに対処したいすべてのFPSプレイヤー、手首のエイムのガタつきをなくしたいゲーマー。",
+    audience: "VALORANT、Apex Legends、Overwatch 2などで近距離のレレレ撃ちが当たらないプレイヤー、ブラウザで手軽にレレレ撃ちの練習をしたいPCゲーマー。",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('woods2015', 'krauzlis2004', 'green2003', 'rashbass1961'),
     related: [
+      { href: "/ja/drills/fps/anti-zigzag-movement-trainer", label: "ジグザグ移動の敵に当てる練習" },
       { href: "/ja/drills/fps/vertical-air-track", label: "空中垂直トラッキング" },
       { href: "/ja/drills/fps/pro-smooth-pursuit", label: "スムーズパースート・エイム練習" },
       { href: "/ja/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
-      { href: "/ja/drills/fps/180-degree-awareness", label: "180度 振り向き 練習" },
       { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "反応速度測定テスト" }
     ]
   };
@@ -326,27 +279,27 @@ export default function AntiStrafeJitterJaPage() {
       />
       <AntiStrafeJitterClient
         copy={{
-          h1Keyword: "エイム練習",
-          h1Suffix: " - レレレ撃ち・トラッキング",
+          h1Keyword: "レレレ撃ち対策",
+          h1Suffix: "｜左右に揺れる敵に当てる練習",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "追従精度",
           statBestScore: "自己ベスト",
-          startTitle: "エイム練習 - レレレ撃ち",
-          startSubtitle: "リアクティブ敵動作読取 • エンドレス難易度進行",
-          getReady: "準備完了",
+          startTitle: NAME,
+          startSubtitle: "左右切り返しターゲット追従 • エンドレスレベル",
+          getReady: "準備",
           pausedTitle: "一時停止中",
           pausedSubtitle: "クリックして再開 — カーソルロックが再適用されます",
-          stageCaption: "急激に左右切り返し（レレレ撃ち）を繰り返す近距離ターゲットに照準を維持し続けてください。",
-          rulesTitle: "ドリル手順 & スコアリングシステム",
+          stageCaption: "左右にランダムで切り返すターゲットに照準を重ね続けてください。クリックは不要です。",
+          rulesTitle: "ドリル手順 & スコアリング",
           rulesItems: [
-            { num: "1", text: "照準のアライメント", highlight: "+50 PTS (+0.4秒/秒)", result: "×コンボ倍率" },
-            { num: "2", text: "連続トラッキング", highlight: "最大 3.0×", result: "最大倍率" },
-            { num: "3", text: "レベル進行", highlight: "+1 レベル / 1400 PTS", result: "可変ジッター加速" },
-            { num: "4", text: "ロック外れペナルティ", highlight: "1.0秒 ロック外れ", result: "コンボリセット (-0.6秒)" }
+            { num: "1", text: "ターゲットに重ねる", highlight: "0.25秒ごとに10点 (+0.1秒)", result: "×コンボ倍率" },
+            { num: "2", text: "1秒連続で維持", highlight: "コンボ +1", result: "最大 3.0×" },
+            { num: "3", text: "レベル進行", highlight: "+1 レベル / 1400点", result: "小さく速いターゲット" },
+            { num: "4", text: "1秒以上外れる", highlight: "コンボリセット", result: "ペナルティ設定時 -0.6秒" }
           ],
-          aboutTitle: "エイム練習とレレレ撃ちについて",
-          aboutHeading: "リアクティブトラッキング（レレレ撃ち追従）とは？"
+          aboutTitle: "レレレ撃ち対策とトラッキングについて",
+          aboutHeading: "リアクティブトラッキングとは？"
         }}
       />
       <DrillGuide guide={antiStrafeGuide} />

@@ -6,21 +6,20 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Treino de Mira Valorant - Aquisição de Alvos | SkillDrills",
-  description: "Treino de mira gratuito no navegador para Valorant e CS2: pratique aquisição de alvos, detecção visual e precisão do primeiro tiro com métricas reais.",
+  title: "Treinar Mira no Valorant: Aquisição de Alvos | SkillDrills",
+  description: "Quer treinar mira no Valorant de graça no navegador? Acerte 3 a 8 alvos do mais claro ao mais escuro e pratique aquisição de alvos e o primeiro tiro.",
   keywords: [
-    "treino de mira Valorant",
-    "treino de mira",
+    "treinar mira no Valorant",
+    "treinar mira valorant",
+    "aim trainer valorant",
     "aquisição de alvos",
     "detecção de alvos",
     "primeiro tiro",
     "precisão do primeiro tiro",
     "treino de mira FPS",
-    "aim trainer",
     "reconhecimento visual",
     "identificação de ameaças",
-    "pré-mira Valorant",
-    "teste de mira"
+    "pré-mira Valorant"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/target-acquisition",
@@ -31,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Treino de Mira Valorant - Aquisição de Alvos | SkillDrills",
-    description: "Treino de mira gratuito no navegador para Valorant e CS2: pratique aquisição de alvos, detecção visual e precisão do primeiro tiro com métricas reais.",
+    title: "Treinar Mira no Valorant: Aquisição de Alvos | SkillDrills",
+    description: "Quer treinar mira no Valorant de graça no navegador? Acerte 3 a 8 alvos do mais claro ao mais escuro e pratique aquisição de alvos e o primeiro tiro.",
     url: "https://skilldrills.online/pt/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Treino de Mira Valorant - Aquisição de Alvos | SkillDrills",
-    description: "Treino de mira gratuito no navegador para Valorant e CS2: pratique aquisição de alvos, detecção visual e precisão do primeiro tiro com métricas reais.",
+    title: "Treinar Mira no Valorant: Aquisição de Alvos | SkillDrills",
+    description: "Quer treinar mira no Valorant de graça no navegador? Acerte 3 a 8 alvos do mais claro ao mais escuro e pratique aquisição de alvos e o primeiro tiro.",
   },
 };
 
@@ -59,12 +58,12 @@ export default function TargetAcquisitionPtPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Reaction_time"],
-    "name": "Treino de Mira Valorant - Aquisição de Alvos",
+    "name": "Treinar Mira no Valorant: Aquisição de Alvos",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Treinador online de aquisição de alvos, detecção visual rápida e precisão do primeiro disparo para shooters táticos como CS2 e Valorant.",
+    "description": "Drill gratuito de aquisição de alvos para quem quer treinar mira no Valorant: acerte os alvos por ordem de brilho e pratique o primeiro disparo.",
     "genre": "Treinamento FPS / Precisão do Primeiro Tiro",
     "url": "https://skilldrills.online/pt/drills/fps/target-acquisition",
     "publisher": {
@@ -77,22 +76,22 @@ export default function TargetAcquisitionPtPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treino de Mira Valorant - Aquisição de Alvos",
+    "name": "Treinar Mira no Valorant: Aquisição de Alvos",
     "url": "https://skilldrills.online/pt/drills/fps/target-acquisition",
-    "description": "Treinador online de aquisição de alvos, detecção visual rápida e precisão do primeiro disparo para shooters táticos como CS2 e Valorant.",
+    "description": "Drill gratuito de aquisição de alvos para quem quer treinar mira no Valorant: acerte os alvos por ordem de brilho e pratique o primeiro disparo.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requer suporte a HTML5 Canvas e Pointer Lock API",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Treino de Mira Valorant - Aquisição de Alvos",
+    "name": "Treinar Mira no Valorant: Aquisição de Alvos",
     "url": "https://skilldrills.online/pt/drills/fps/target-acquisition",
-    "description": "Treinador online de aquisição de alvos, detecção visual rápida e precisão do primeiro disparo para shooters táticos como CS2 e Valorant.",
-    "dateModified": "2026-09-20",
+    "description": "Drill gratuito de aquisição de alvos para quem quer treinar mira no Valorant: acerte os alvos por ordem de brilho e pratique o primeiro disparo.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["Treinamento FPS", "Aim Trainer", "Aquisição de Alvos"],
     "playMode": "SinglePlayer",
@@ -104,8 +103,16 @@ export default function TargetAcquisitionPtPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Como funciona este drill para treinar mira no Valorant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cada sessão dura 60 segundos. Aparecem grupos de 3 a 8 alvos com brilhos diferentes, e você precisa acertá-los do mais claro ao mais escuro. Um alvo correto vale +100 pontos multiplicados pelo combo e pelo nível; limpar o grupo soma +400 pontos multiplicados pelo nível e gera um novo grupo. Acertar o alvo errado ou clicar no vazio zera o combo e tira 0,6 segundo se a penalidade de tempo estiver ativada. Joga-se com mouse e travamento do ponteiro; Esc encerra o drill. O SkillDrills é uma ferramenta independente, sem vínculo com a Riot Games."
+        }
+      },
       {
         "@type": "Question",
         "name": "O que é aquisição de alvos em jogos FPS competitivos?",
@@ -132,10 +139,10 @@ export default function TargetAcquisitionPtPage() {
       },
       {
         "@type": "Question",
-        "name": "Por que jogadores profissionais detectam e disparam mais rápido que amadores?",
+        "name": "Como usar o olhar para adquirir alvos mais rápido?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Profissionais possuem filtragem de saliência visual superior (Wolfe, 2007) e programas motores otimizados de submovimentos (Meyer et al., 1988). O córtex visual deles ignora varreduras em série e dispara diretamente para o ponto de maior contraste sem hesitação."
+          "text": "Segundo o modelo Guided Search (Wolfe, 2007), a atenção vai primeiro para o que mais se destaca. Em vez de varrer a tela linha por linha, mantenha o olhar no centro, encontre o alvo mais visível e leve o mouse para onde seu olhar já está. É exatamente essa sequência que o drill faz repetir."
         }
       },
       {
@@ -143,7 +150,7 @@ export default function TargetAcquisitionPtPage() {
         "name": "Qual o impacto da precisão do primeiro tiro em jogos táticos como CS2 e Valorant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Em jogos de TTK ultracurto com headshots letais de um disparo (Vandal ou AK-47), o jogador que detecta a cabeça e clica primeiro vence o confronto. Errar o flick inicial significa perder a janela de precisão do primeiro disparo."
+          "text": "Em jogos de TTK ultracurto com headshots letais de um disparo (Vandal ou AK-47), o primeiro acerto muitas vezes decide o duelo, e errar o primeiro tiro dá tempo ao adversário de responder. Este drill não simula headshots reais, mas isola o hábito de escolher o alvo certo e depois colocar o primeiro clique com precisão."
         }
       },
       {
@@ -159,7 +166,7 @@ export default function TargetAcquisitionPtPage() {
         "name": "Como a poluição visual e múltiplos alvos afetam o tempo de aquisição?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Quando múltiplos alvos ou elementos de fundo compartilham características com o inimigo, a busca visual passa de paralela para serial, aumentando o tempo de reação em 40 a 120 ms por elemento visual adicional."
+          "text": "Quando múltiplos alvos ou elementos de fundo compartilham características com o inimigo, a busca visual passa de paralela para serial, o que aumenta o tempo para encontrar o alvo (Treisman & Gelade, 1980). Neste drill, o número de alvos aumenta e a diferença de brilho diminui conforme o nível sobe."
         }
       },
       {
@@ -183,7 +190,7 @@ export default function TargetAcquisitionPtPage() {
         "name": "Quantos minutos diários de treino de aquisição de alvos são indicados?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "De 10 a 15 minutos diários no início do seu aquecimento ativam a sensibilidade ao contraste visual e refinam a memória muscular do primeiro disparo sem provocar fadiga neuromuscular."
+          "text": "Não há uma duração ideal comprovada. Algumas sessões de 60 segundos bem focadas no aquecimento são um bom começo; pare antes da fadiga visual e compare seus resultados no mesmo equipamento."
         }
       }
     ]
@@ -199,7 +206,7 @@ export default function TargetAcquisitionPtPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrar Sensibilidade",
-        "text": "Configure sua sensibilidade exata e DPI nas opções de sessão para aproximar o movimento do mouse ao do seu jogo e travar o cursor.",
+        "text": "Ajuste a sensibilidade na página /drills para ficar igual à do seu jogo. O ponteiro é travado automaticamente ao começar.",
         "url": "https://skilldrills.online/pt/drills/fps/target-acquisition#step-1"
       },
       {
@@ -227,25 +234,25 @@ export default function TargetAcquisitionPtPage() {
   };
 
   const targetAcquisitionGuide = {
-    heading: "Treino de Mira Valorant: aquisição de alvos e primeiro tiro",
+    heading: "Treinar mira no Valorant: aquisição de alvos e primeiro tiro",
     intro: [
-      "Para quem procura treino de mira Valorant, este drill mede o caminho entre detectar uma ameaça na tela, identificar o alvo e acertar o primeiro tiro. Ele combina aquisição de alvos, detecção visual e precisão do primeiro disparo para Valorant, Counter-Strike 2 e Rainbow Six Siege, em que o primeiro contato visual pesa no duelo.",
+      "Para quem quer treinar mira no Valorant direto no navegador e de graça: durante 60 segundos aparecem de 3 a 8 alvos com brilhos diferentes, que devem ser acertados do mais claro ao mais escuro. Assim você repete o caminho entre escolher o alvo certo e acertar o primeiro tiro, útil para Valorant, CS2 e outros FPS táticos. O SkillDrills é uma ferramenta independente, sem vínculo com a Riot Games.",
       "A base teórica da busca visual e identificação de objetos foi formulada por Anne Treisman & Garry Gelade (1980) na Teoria de Integração de Características. Treisman provou que características visuais primárias — como contraste de luminância, cores salientes e orientação de bordas — são extraídas em paralelo por todo o campo visual. Apenas quando a atenção espacial focada é direcionada à coordenada, esses traços são fundidos em uma ameaça inimiga identificável.",
-      "Expandindo o processamento visual paralelo, o modelo Guided Search de Jeremy M. Wolfe (1994, 2007) detalha como mapas sensoriais de saliência se combinam com expectativas cognitivas para priorizar a atenção. Quando os jogadores treinam discriminação de contraste, o córtex visual aprende a rejeitar distrações de fundo instantaneamente, encurtando o tempo entre o surgimento do alvo e a ação motora.",
-      "Integrando as leis motoras de Paul M. Fitts (1954), a teoria de submovimentos otimizados de David E. Meyer et al. (1988) e a cronometria digital de alta resolução (Woods et al., 2015), este exercício condiciona os reflexos a eliminarem hesitações cognitivas e executarem disparos rápidos e certeiros.",
-      "Como isto é medido: cada evento é registrado pelo relógio de alta precisão performance.now() do navegador no seu próprio dispositivo — nenhum dado é transmitido externamente. Fatores de hardware: os temporizadores web operam com resolução em torno de 1 ms, e o monitor exibe imagens na frequência de atualização — 16,7 ms a 60 Hz, 6,9 ms a 144 Hz e 4,1 ms a 240 Hz (Woods et al., 2015). O polling rate do mouse soma cerca de 8 ms a 125 Hz contra 1 ms a 1000 Hz. Avalie seu progresso no mesmo equipamento."
+      "Expandindo o processamento visual paralelo, o modelo Guided Search de Jeremy M. Wolfe (1994, 2007) detalha como mapas sensoriais de saliência se combinam com expectativas cognitivas para priorizar a atenção. Quando os jogadores treinam discriminação de contraste, o córtex visual aprende a rejeitar distrações de fundo instantaneamente, o que pode encurtar o tempo entre o surgimento do alvo e o início do movimento nesta tarefa, sem garantia de melhora na partida.",
+      "Integrando as leis motoras de Paul M. Fitts (1954), a teoria de submovimentos otimizados de David E. Meyer et al. (1988) e a cronometria digital de alta resolução (Woods et al., 2015), este exercício foca em iniciar o primeiro flick sem hesitar e parar com precisão no centro do alvo. Ele não garante melhora em partidas; serve para acompanhar a evolução dos seus próprios resultados.",
+      "Sobre os resultados: a tela final mostra pontuação, precisão (acertos no alvo certo ÷ total de cliques), grupos limpos, combo máximo e nível alcançado. Seu recorde fica salvo apenas neste navegador. Este drill não mede tempo de reação em milissegundos. A taxa de atualização do monitor e o polling rate do mouse mudam a sensação, então compare-se no mesmo equipamento."
     ],
     benchmarks: {
-      title: "Faixas de Referência de Aquisição de Alvos e Latência de Discriminação",
-      headers: ["Nível de Desempenho", "Latência de Aquisição", "Precisão do Primeiro Tiro", "Impacto Competitivo no Jogo"],
+      title: "Faixas de treino de precisão na aquisição de alvos",
+      headers: ["Faixa", "Precisão", "O que indica"],
       rows: [
-        ["Faixa 1 (Muito alta)", "<260 ms", "95% – 99%+", "Detecção instantânea de ameaças; headshots perfeitos na primeira bala sem qualquer hesitação de discriminação"],
-        ["Faixa 2 (Alta)", "260 – 320 ms", "88% – 95%", "Excelente velocidade de localização visual; disparo prioritário assertivo com interferência mínima de distrações"],
-        ["Faixa 3 (Boa)", "320 – 400 ms", "80% – 88%", "Precisão sólida no primeiro tiro; apresenta leve atraso de 50 a 80 ms ao lidar com múltiplos alvos densos"],
-        ["Faixa 4 (Intermediária)", "400 – 500 ms", "70% – 80%", "Propenso a varreduras em série lentas; ocasionalmente clica em distrações secundárias ou ultrapassa o alvo"],
-        ["Faixa 5 (Inicial)", ">500 ms", "<70%", "Confusão em cenários visuais poluídos; lentidão na aquisição resultando em derrotas frequentes em duelos de abertura"]
+        ["Faixa 1", "95% ou mais", "Quase nenhum erro de ordem ou clique no vazio"],
+        ["Faixa 2", "88% – 95%", "Mesmo em níveis altos, o alvo mais claro costuma ser escolhido primeiro"],
+        ["Faixa 3", "80% – 88%", "Erros de ordem começam a aparecer com muitos alvos"],
+        ["Faixa 4", "70% – 80%", "Alvos de brilho parecido são confundidos com frequência"],
+        ["Faixa 5", "abaixo de 70%", "Firme a ordem antes de aumentar a velocidade"]
       ],
-      note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. A latência de aquisição representa o tempo decorrido entre a exibição do cluster e o primeiro clique validado no alvo prioritário, registrado com cronometria digital (Woods et al., 2015)."
+      note: "Precisão é o valor da tela final (acertos no alvo certo ÷ total de cliques). As faixas são referências de treino do SkillDrills, não normas científicas, ranques de jogo nem estatísticas de usuários."
     },
     techniques: {
       title: "Protocolos Baseados em Evidências para Aperfeiçoar a Aquisição de Alvos",
@@ -258,7 +265,7 @@ export default function TargetAcquisitionPtPage() {
         {
           name: "Acoplamento Sacádico-Motor no Flick",
           desc: "Desacople o movimento dos olhos e das mãos: execute sacadas fóveas primeiro para identificar o centro do alvo, permitindo que a propriocepção impulsione a mira na trajetória correta.",
-          tips: "Seus olhos devem atingir o alvo de 30 a 50 ms antes do cursor chegar, confirmando a coordenada antes do tiro."
+          tips: "Garanta que seu olhar já esteja no centro do alvo antes de mover o mouse."
         },
         {
           name: "Discriminação Rápida de Limiar de Contraste",
@@ -273,13 +280,13 @@ export default function TargetAcquisitionPtPage() {
       ]
     },
     steps: [
-      "Configure o jogo de referência, DPI e sensibilidade exata nas opções de sessão para aproximar o movimento do mouse ao do seu jogo e travar o cursor.",
+      "Ajuste a sensibilidade na página /drills para ficar igual à do seu jogo e comece; o ponteiro é travado automaticamente.",
       "Fixe a visão em um olhar central suave, aguardando o aparecimento do conjunto de alvos pela tela.",
       "Identifique visualmente o alvo mais brilhante e prioritário através da filtragem de contraste em paralelo.",
-      "Execute um flick balístico limpo até o centro do alvo e clique para somar +100 PTS (+0,4s de tempo bônus).",
-      "Elimine os alvos restantes em ordem decrescente de brilho para ganhar o bônus de +400 PTS e avançar de nível."
+      "Execute um flick limpo até o centro do alvo e clique para somar +100 PTS × multiplicadores de combo e nível. O tempo é fixo em 60 segundos e não aumenta com acertos.",
+      "Elimine os alvos restantes em ordem decrescente de brilho para ganhar o bônus de grupo de +400 PTS × multiplicador de nível."
     ],
-    audience: "Jogadores competitivos de Valorant, Counter-Strike 2, Apex Legends e Overwatch 2 que buscam reconhecimento veloz de inimigos, headshots certeiros no primeiro tiro e eliminação de distrações visuais.",
+    audience: "Jogadores competitivos de Valorant, Counter-Strike 2, Apex Legends e Overwatch 2 que querem praticar a escolha do alvo e o primeiro tiro de forma isolada. É preciso usar mouse.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -292,9 +299,9 @@ export default function TargetAcquisitionPtPage() {
   };
 
   const copyPt = {
-    h1Keyword: "Treino de Mira Valorant",
-    h1Suffix: " - Aquisição de Alvos",
-    subtitle: "Pratique detectar o alvo e acertar o primeiro tiro em Valorant e CS2 direto no navegador.",
+    h1Keyword: "Treinar Mira no Valorant",
+    h1Suffix: ": Aquisição de Alvos",
+    subtitle: "Treine mira para o Valorant de graça: acerte os alvos do mais claro ao mais escuro e pratique o primeiro tiro no navegador.",
     statScore: "Pontuação",
     statTime: "Tempo",
     statAccuracy: "Precisão",
@@ -312,10 +319,10 @@ export default function TargetAcquisitionPtPage() {
     stageCaption: "Identifique e clique no alvo mais brilhante (maior opacidade) de cada conjunto o mais rápido e preciso possível.",
     rulesTitle: "Instruções do Treino e Pontuação",
     rulesItems: [
-      { num: "1", text: "Alvo Atingido", highlight: "+100 PTS (+0,4s)", result: "×Multiplicador Combo" },
+      { num: "1", text: "Alvo Atingido", highlight: "+100 PTS × Nível", result: "×Multiplicador Combo" },
       { num: "2", text: "Conjunto Limpo", highlight: "+400 PTS × Nível", result: "Novo Agrupamento" },
       { num: "3", text: "Subir de Nível", highlight: "+1 / 1400 PTS", result: "Escalonamento Contínuo" },
-      { num: "4", text: "Alvo Incorreto / Erro", highlight: "Penalidade", result: "Zera Combo (-0,6s)" }
+      { num: "4", text: "Alvo Incorreto / Erro", highlight: "Penalidade", result: "Zera Combo (-0,6s com penalidade ativa)" }
     ],
     aboutTitle: "Sobre o Treino de Aquisição de Alvos",
     aboutHeading: "O que é Aquisição de Alvos?",

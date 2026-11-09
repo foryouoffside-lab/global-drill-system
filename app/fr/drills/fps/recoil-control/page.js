@@ -117,7 +117,7 @@ export default function RecoilControlPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -132,7 +132,7 @@ export default function RecoilControlPage() {
         "name": "Pourquoi les 8 à 10 premières balles sont-elles la phase cruciale d'un spray ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dans la majorité des shooters tactiques, les 8 à 10 premiers tirs présentent une ascension purement verticale hautement prévisible. La maîtrise de cette phase assure des éliminations nettes dès la première seconde du combat."
+          "text": "Dans la majorité des shooters tactiques, les 8 à 10 premiers tirs présentent une ascension purement verticale hautement prévisible. Le motif de cet exercice suit la même logique : environ 10 balles de montée verticale, puis des oscillations latérales. Maîtriser cette première phase est donc la priorité."
         }
       },
       {
@@ -140,7 +140,7 @@ export default function RecoilControlPage() {
         "name": "Comment le recul diffère-t-il entre CS2, Valorant et Apex Legends ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dans CS2, chaque arme possède un spray pattern fixe et rigoureusement reproductible. Dans Valorant, la montée verticale est fixe mais les oscillations horizontales terminales intègrent de l'aléatoire. Dans Apex Legends, le recuo est continu et conçu pour le suivi sur cibles mobiles."
+          "text": "Dans CS2, chaque arme possède un spray pattern fixe et rigoureusement reproductible. Dans Valorant, la montée verticale est fixe mais les oscillations horizontales terminales intègrent de l'aléatoire. Dans Apex Legends, le recul est continu et conçu pour le suivi sur cibles mobiles."
         }
       },
       {
@@ -148,7 +148,7 @@ export default function RecoilControlPage() {
         "name": "Comment la théorie du Programme Moteur Généralisé (GMP) théorise-t-elle le spray ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Selon Schmidt & Lee (2011), le système nerveux encode le schéma inverse de recul sous forme de programme moteur en boucle ouverte. La cadence de tir dépassant la vitesse de rétroaction visuelle (environ 200 ms), la compensation s'effectue par pure anticipation musculaire."
+          "text": "Selon Schmidt & Lee (2011), le système nerveux encode le schéma inverse de recul sous forme de programme moteur en boucle ouverte. Comme le motif est fixe, la descente peut commencer par anticipation, sans attendre de voir chaque impact."
         }
       },
       {
@@ -185,10 +185,10 @@ export default function RecoilControlPage() {
       },
       {
         "@type": "Question",
-        "name": "Cet entraîneur de recul est-il accessible gratuitement en ligne ?",
+        "name": "Cet entraînement au contrôle du recul est-il gratuit, et que faut-il ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui, il s'exécute directement dans le navigateur moderne avec la Pointer Lock API, sans téléchargement, abonnement ni latence superflue."
+          "text": "Oui, il est gratuit et tourne dans un navigateur PC récent, sans téléchargement ni compte. Il faut une souris : au démarrage, le curseur est verrouillé (Pointer Lock) et Échap ou la perte du verrouillage termine la session. Les appareils uniquement tactiles ne sont pas pris en charge."
         }
       },
       {
@@ -196,7 +196,15 @@ export default function RecoilControlPage() {
         "name": "À quelle fréquence s'entraîner au contrôle du recul ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Une pratique quotidienne de 10 à 15 minutes avant les matchs classés consolide la mémoire motrice sans fatiguer excessivement les tendons fléchisseurs de l'avant-bras."
+          "text": "Quelques sessions de 10 à 15 minutes avant les parties classées suffisent en général. Des séances courtes et régulières valent mieux qu'une longue séance quand le bras fatigue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quel motif de spray et quelles règles utilise cet exercice ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un seul motif de 30 balles de type AK-47 : environ 10 balles de montée verticale, puis des oscillations gauche-droite. Ce n'est pas la copie exacte d'une arme d'un jeu précis. Le clic gauche maintenu tire toutes les 120 ms (500 coups/min) ; relâcher remet le motif à zéro. Après 30 balles, rechargement automatique en 1,2 s. Tête 100, poitrine 40, membres 20 points, multipliés par le combo et le niveau ; un tir manqué remet le combo à zéro. Le chrono démarre à 45 s et les touches ne l'allongent pas. Tous les 1400 points, le niveau monte et la cible accélère avec un recul plus fort."
         }
       }
     ]
@@ -212,7 +220,7 @@ export default function RecoilControlPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Configuration et Verrouillage du Curseur",
-        "text": "Paramétrez votre sensibilité et vos DPI exacts et verrouillez le pointeur avec la Pointer Lock API."
+        "text": "Réglez la sensibilité globale sur la page /drills puis cliquez sur Démarrer ; le pointeur se verrouille après le compte à rebours."
       },
       {
         "@type": "HowToStep",
@@ -238,7 +246,7 @@ export default function RecoilControlPage() {
   const copyFr = {
     h1Keyword: "Contrôle du Recul",
     h1Suffix: " – Entraînement Spray FPS",
-    caption: "Contrôlez le recul vertical et horizontal en déplaçant la souris à l'opposé du motif de dispersion pour maintenir les tirs sur la cible.",
+    caption: "Entraînement gratuit au contrôle du recul : maintenez le clic sur une cible mobile et descendez la souris à l'opposé du motif de spray pour garder vos balles sur la tête et le torse.",
     statScore: "Score",
     statTime: "Temps",
     statAccuracy: "Précision",
@@ -248,7 +256,7 @@ export default function RecoilControlPage() {
     pausedTitle: "Jeu en Pause",
     pausedPrompt: "Cliquez sur la zone de jeu pour réactiver le verrouillage du curseur.",
     startTitle: "Entraînement au Contrôle du Recul",
-    startSubtitle: "Motifs de Spray et Compensation Motrice • Progression Continue",
+    startSubtitle: "Motif de Spray type AK-47 et Compensation • Progression Continue",
     startButtonText: "DÉMARRER L'ENTRAÎNEMENT",
     getReady: "PRÊT ?",
     statHeadshots: "Headshots",
@@ -258,10 +266,10 @@ export default function RecoilControlPage() {
     shareText: "PARTAGER LE RÉSULTAT",
     rulesTitle: "Consignes d'Entraînement et Barème",
     rulesItems: [
-      { num: "1", text: "Tir à la Tête Précis", highlight: "+100 PTS / +0,25s", result: "Zone Cible Prioritaire" },
+      { num: "1", text: "Tir à la Tête Précis", highlight: "+100 PTS (sans bonus de temps)", result: "×Multiplicateur de Combo" },
       { num: "2", text: "Tirs Poitrine & Membres", highlight: "+40 / +20 PTS", result: "Maintient la Série de Combo" },
       { num: "3", text: "Progression de Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Accélère Vitesse & Recul" },
-      { num: "4", text: "Discipline de Chargeur", highlight: "<40% Pénalité", result: "Réinitialise le Combo (-0,6s)" }
+      { num: "4", text: "Discipline de Chargeur", highlight: "<40% Pénalité", result: "Réinitialise le Combo (-0,6s si pénalité activée)" }
     ],
     aboutTitle: "À propos du Contrôle du Recul et du Spray",
     aboutHeading: "Qu'est-ce que le Contrôle du Recul (Recoil) ?",
@@ -271,23 +279,23 @@ export default function RecoilControlPage() {
   const recoilControlGuide = {
     heading: "Guide du Contrôle du Recul et des Motifs de Spray FPS",
     intro: [
-      "Cet entraînement au contrôle du recul développe la compensation verticale et horizontale nécessaire pour garder des motifs de spray compacts. Dans CS2, Valorant, Apex Legends et PUBG, le groupement des tirs influence directement l'issue du duel.",
-      "Contrairement aux micro-ajustements calmes, les fusils automatiques tirent à des cadences de 600 à 900 balles par minute, expulsant un tir tous les 66 à 100 ms. Comme le délai de réaction visuelle humaine est d'environ 200 ms, compenser le recul relève de Programmes Moteurs Généralisés (GMP) en boucle ouverte (Schmidt & Lee, 2011 ; Wolpert & Kawato, 1998) préenregistrés dans la mémoire musculaire.",
-      "L'exercice structure le geste en deux séquences indispensables : une traction verticale fluide sur la première moitié du chargeur, puis une modulation latérale corrective sur la seconde moitié, reflétant la dynamique réelle des fusils d'assaut majeurs.",
-      "Grâce à la Pointer Lock API et à une chronométrie haute précision via performance.now() (Woods et al., 2015), le simulateur calcule la précision balistique de chaque impact par rapport au centre de la cible, permettant d'éliminer les à-coups et les tractions excessives.",
+      "Cet entraînement au contrôle du recul se joue dans le navigateur : vous maintenez le clic gauche sur une cible qui se déplace latéralement et compensez un spray de 30 balles de type AK-47 en descendant la souris puis en corrigeant à gauche et à droite. Si moins de 40 % d'un chargeur touche, le combo tombe. Un échauffement de spray control pour CS2, Valorant, Apex Legends et PUBG.",
+      "Les fusils automatiques des jeux tirent souvent à plusieurs centaines de balles par minute (500 coups/min ici, une balle toutes les 120 ms). Comme le motif est fixe, la compensation peut s'appuyer sur un programme moteur en boucle ouverte appris à l'avance (Schmidt & Lee, 2011) plutôt que sur une correction balle par balle.",
+      "L'exercice structure le geste en deux séquences indispensables : une traction verticale fluide sur les 10 premières balles environ, puis une modulation latérale corrective sur le reste du chargeur, sur le modèle des fusils d'assaut courants.",
+      "Avec la Pointer Lock API, chaque balle est comptée en zone tête, poitrine ou membres selon l'endroit où elle tombe (réticule + décalage du recul). Une traction trop forte fait passer les balles sous la cible, une traction trop faible au-dessus.",
       "Mode de mesure : la précision globale par chargeur et la concentration des tirs sont mesurées localement en temps réel dans votre navigateur. Les variations inférieures à 5 ms relèvent des marges usuelles de rafraîchissement d'écran et d'échantillonnage de souris."
     ],
     benchmarks: {
-      title: "Paliers de Performance de Précision par Chargeur et Contrôle de Spray",
+      title: "Paliers d'entraînement SkillDrills : précision par chargeur",
       headers: ["Niveau de Maîtrise", "Précision par Chargeur (%)", "Caractéristiques du Contrôle Moteur", "Impact Compétitif en Match"],
       rows: [
         ["Tier 1 (Laser Apex)", "78% – 90%+", "Vitesse de compensation quasi parfaite ; micro-ajustements latéraux constants sur les 30 balles", "Entraîne les spray transfers entre plusieurs cibles avec une compensation stable"],
-        ["Tier 2 (Palier Intermédiaire-Haut)", "62% – 78%", "Groupement chirurgical sur les 10 premières balles ; recentrage rapide lors des inversions de spray", "Entraîne les duels de fusil à moyenne distance avec régularité en spray transfers doubles"],
+        ["Tier 2 (Palier Intermédiaire-Haut)", "62% – 78%", "Groupement chirurgical sur les 10 premières balles ; recentrage rapide lors des inversions de spray", "Sprays stables à moyenne distance ; prêt à travailler les spray transfers"],
         ["Tier 3 (Haut Niveau FPS)", "48% – 62%", "Bonne traction verticale ; légères hésitations ou surcompensation entre les balles 12 et 25", "Sprays fiables à courte et moyenne distance ; légère difficulté sur transferts lointains"],
         ["Tier 4 (Intermédiaire)", "35% – 48%", "Vitesse de descente instable ; hésitation vers la septième balle laissant le canon dépasser la tête", "Vulnérable lors des duels directs en tir continu ; contraint de privilégier de courtes rafales"],
         ["Tier 5 (En Progression)", "Moins de 35%", "Traction verticale tardive ou excessive ; absence d'ajustement latéral créant une dispersion anarchique", "Pertes fréquentes de duels directs ; dispersion totale des tirs autour de la cible"]
       ],
-      note: "Ces paliers mesurent le pourcentage de tirs réussis sur la silhouette centrale sur des chargeurs complets de 30 balles via performance.now() (Woods et al., 2015)."
+      note: "Paliers propres à SkillDrills, pas des normes scientifiques, des statistiques d'utilisateurs ni des rangs de jeu. Précision = balles touchées ÷ balles tirées."
     },
     techniques: {
       title: "Protocoles Scientifiques pour Perfectionner le Contrôle du Recul",
@@ -310,17 +318,17 @@ export default function RecoilControlPage() {
         {
           name: "Fixation Visuelle sur la Cible et Non sur le Réticule",
           desc: "Gardez le regard rivé sur la silhouette ennemie. Laissez la main réaliser le geste inverse de façon automatisée.",
-          tips: "Suivre des yeux le réticule induit un retard de réaction de 200 ms qui dégrade la compacité de la rafale."
+          tips: "Suivre des yeux le réticule plutôt que la cible retarde les corrections et disperse la rafale."
         }
       ]
     },
     steps: [
-      "Paramétrez vos réglages réels de sensibilité et DPI pour préserver votre distance cm/360 habituelle et activez le Pointer Lock.",
+      "Réglez la sensibilité globale sur la page /drills (1,00x = 30 cm/360), puis cliquez sur Démarrer pour activer le Pointer Lock.",
       "Dès le départ du tir, abaissez la souris de façon continue pour neutraliser la montée verticale initiale.",
       "Après la dixième balle, modulez le geste latéralement à l'opposé des oscillations du spray.",
       "Maintenez le groupement serré au centre de la silhouette pour faire grimper votre multiplicateur et progresser de niveau."
     ],
-    audience: "Compétiteurs de CS2, Valorant, Apex Legends et PUBG cherchant à dominer les tirs automatiques complets, supprimer le recul et réussir des spray transfers nets.",
+    audience: "Joueurs PC de CS2, Valorant, Apex Legends et PUBG qui veulent travailler le contrôle du recul en tir automatique dans le navigateur.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'woodworth1899'),
     related: [

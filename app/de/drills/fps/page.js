@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 export const metadata = {
-  title: 'Aim-Training & kostenloser FPS-Trainer | SkillDrills',
-  description: 'Kostenlose FPS-Aim-Übungen für Valorant, CS2 und Apex: Flicks, Tracking, Recoil Control und Reaktion direkt im Browser.',
+  title: 'Aim Training & kostenloser FPS-Trainer | SkillDrills',
+  description: 'Kostenloses Aim Training für Valorant, CS2 und Apex: 15 FPS-Übungen für Flicks, Tracking, Recoil Control und Reaktion direkt im Browser.',
   keywords: [
-    'Aim Trainer kostenlos', 'Aim-Training', 'Aiming verbessern',
+    'Aim Training', 'Aim Training kostenlos', 'Aiming verbessern',
     'Valorant Aim Training', 'CS2 Aim Training', 'Flick-Shots üben',
-    'Tracking trainieren', 'Recoil Kontrolle', 'Reaktionszeit testen',
+    'Tracking trainieren', 'Recoil Kontrolle', 'Aim Übungen',
     'Fadenkreuz Platzierung', 'Maus Sensitivität', 'Zielgenauigkeit Test',
-    'Maus Präzision verbessern', 'eDPI Rechner Shooter', 'Browser Aim Trainer'
+    'Maus Präzision verbessern', 'eDPI Rechner Shooter', 'FPS Trainer'
   ],
   openGraph: {
-    title: 'Aim-Training & kostenloser FPS-Trainer | SkillDrills',
-    description: 'Kostenlose FPS-Aim-Übungen für Valorant, CS2 und Apex: Flicks, Tracking, Recoil Control und Reaktion direkt im Browser.',
+    title: 'Aim Training & kostenloser FPS-Trainer | SkillDrills',
+    description: 'Kostenloses Aim Training für Valorant, CS2 und Apex: 15 FPS-Übungen für Flicks, Tracking, Recoil Control und Reaktion direkt im Browser.',
     type: 'website',
     url: 'https://skilldrills.online/de/drills/fps',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aim-Training & kostenloser FPS-Trainer | SkillDrills',
-    description: 'Kostenlose FPS-Aim-Übungen für Valorant, CS2 und Apex direkt im Browser.',
+    title: 'Aim Training & kostenloser FPS-Trainer | SkillDrills',
+    description: 'Kostenloses Aim Training mit 15 FPS-Übungen für Valorant, CS2 und Apex direkt im Browser.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -51,10 +51,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
-  "name": "Aim-Training & kostenloser FPS-Trainer (15 Übungen)",
+  "dateModified": "2026-11-09",
+  "name": "Aim Training & kostenloser FPS-Trainer (15 Übungen)",
   "url": "https://skilldrills.online/de/drills/fps",
-  "description": `Kostenlose FPS-Aim-Übungen für Valorant, CS2 und Apex: Flicks, Tracking, Recoil Control, Target Switching und Reaktion direkt im Browser.`,
+  "description": `Kostenloses Aim Training für Valorant, CS2 und Apex: Flicks, Tracking, Recoil Control, Target Switching und Reaktion direkt im Browser.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": fpsDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'de', drill.name);
@@ -70,14 +70,14 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "Wie überträgt sich gezieltes Aim-Training auf taktische Shooter wie Valorant und CS2?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In taktischen Shootern wie Valorant und CS2 liegt die Time-to-Kill (TTK) oft unter 200 Millisekunden, wodurch der erste Schuss und präzise Mikroadjustierungen spielentscheidend sind. Ein reines Deathmatch im Spiel beinhaltet lange Respawn-Zeiten und Laufwege, während ein dedizierter Browser-Aim-Trainer in 10 Minuten hunderte reine Flick- und Bremsbewegungen isoliert. Dies automatisiert die neuromuskuläre Bewegungskontrolle im motorischen Kortex, sodass im Match kognitive Kapazitäten für Fadenkreuz-Platzierung (Crosshair Placement) und Spielübersicht frei bleiben."
+        "text": "In Valorant und CS2 entscheiden oft die ersten Schüsse ein Duell, deshalb zählen Treffsicherheit beim ersten Schuss und kleine Korrekturen. Ein Deathmatch im Spiel hat Respawn- und Laufzeiten, während ein Browser-Aim-Training in kurzer Zeit viel mehr Flicks und saubere Stopps wiederholt. Wird die Bewegung gleichmäßiger, bleibt im Match mehr Aufmerksamkeit für Crosshair Placement und Spielübersicht. Wie gut sich das überträgt, ist individuell, vergleiche deshalb auch deine Ergebnisse im Spiel."
       }
     },
     {
@@ -93,7 +93,7 @@ const faqSchema = {
       "name": "Sollte man mit dem Handgelenk, dem Unterarm oder einer Hybridtechnik zielen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Im professionellen E-Sport dominiert die Hybrid-Aiming-Technik: Der Unterarm und die Schulter führen weite 180°-Drehungen und großräumige Schwenks aus, das Handgelenk steuert mittlere Zielerfassungen, und die Fingerspitzen übernehmen subpixelgenaue Mikroadjustierungen sowie vertikale Rückstoßkontrolle. Reines Handgelenk-Zielen schränkt den Bewegungsradius ein und erhöht das Risiko für ein Karpaltunnelsyndrom, während reines Arm-Zielen oft die Feinkoordination für präzise Headshots vermissen lässt."
+        "text": "Viele Spieler nutzen eine Hybridtechnik: Unterarm und Schulter übernehmen große Bewegungen wie 180°-Drehungen, das Handgelenk mittlere Distanzen und die Finger kleine Korrekturen auf Kopfhöhe. Reines Handgelenk-Zielen schränkt den Bewegungsradius ein, reines Arm-Zielen erschwert sehr kleine Korrekturen. Wähle, was sich angenehm anfühlt, und pausiere, wenn Schmerzen auftreten."
       }
     },
     {
@@ -125,7 +125,7 @@ const faqSchema = {
       "name": "Was ist wichtiger: Fadenkreuz-Platzierung (Crosshair Placement) oder rohes Flick-Aiming?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In taktischen Shootern entscheidet das proaktive Fadenkreuz-Platzieren (Vorzielen auf Kopfhöhe an Kanten vor dem Peeken) etwa 70% aller Duelle. Allerdings eröffnen unvorhersehbare gegnerische Off-Angles, weite Swings und unübersichtliche Retake-Situationen Momente, in denen kein Vorzielen möglich ist. In diesen verbleibenden 30% entscheidet die ballistische Flick-Präzision und Mikroadjustierungs-Geschwindigkeit unter 200ms über Sieg oder Niederlage."
+        "text": "Gutes Crosshair Placement (Vorzielen auf Kopfhöhe an der Stelle, an der ein Gegner erscheinen wird) hilft häufiger, weil dann kaum noch ein großer Flick nötig ist. Bei unerwarteten Off-Angles, weiten Swings oder mehreren Gegnern gleichzeitig reicht Vorzielen aber nicht, und schnelle Flicks mit Mikrokorrekturen entscheiden. Trainiere beides getrennt: Placement im Crosshair Placement Training, Flicks im Flick-Training."
       }
     },
     {
@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "Wie lange sollte man täglich Aim-Drills für optimalen Fortschritt trainieren?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Neurowissenschaftliche Studien zur motorischen Plastizität zeigen, dass nach etwa 30 bis 35 Minuten intensiven Zieltrainings neuromuskuläre Ermüdung einsetzt und die Lerneffizienz sinkt. Die ideale Routine besteht aus 15 bis 25 Minuten fokussiertem Training an 4 bis 6 Tagen pro Woche. Kurze, hochkonzentrierte Einheiten mit anschließendem erholsamem Schlaf fördern die Myelinisierung der Nervenbahnen und festigen das Muskelgedächtnis deutlich effektiver als mehrstündige Marathonsitzungen am Wochenende."
+        "text": "Kurze, konzentrierte Einheiten lassen sich leichter regelmäßig durchhalten als stundenlange Sessions am Wochenende. Ein praktischer Startpunkt sind 15 bis 25 Minuten an mehreren Tagen pro Woche; hör auf, wenn die Trefferquote sinkt oder die Hand ermüdet. Eine feste Zahl, die für alle passt, gibt es nicht, orientiere dich an deinen eigenen Werten."
       }
     }
   ]

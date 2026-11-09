@@ -6,19 +6,17 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Aim Trainer Online - Adquisición de objetivos | SkillDrills",
-  description: "Aim trainer online gratuito para practicar adquisición de objetivos, detección visual y primer disparo en Valorant y CS2. Mide tiempo y precisión.",
+  title: "Aim Trainer para Valorant: Adquisición de Objetivos | SkillDrills",
+  description: "Aim trainer para Valorant gratis en el navegador: acierta de 3 a 8 objetivos del más claro al más oscuro y practica la adquisición y el primer disparo.",
   keywords: [
-    "aim trainer online",
-    "aim trainer",
+    "aim trainer valorant",
+    "aim trainer para valorant",
     "adquisición de objetivos",
-    "entrenamiento de puntería",
     "primer disparo",
     "precisión primer disparo",
     "detección visual FPS",
     "identificación de amenazas",
     "puntería Valorant",
-    "target switching",
     "entrenador de puntería",
     "test de puntería"
   ],
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer Online - Adquisición de objetivos | SkillDrills",
-    description: "Aim trainer online gratuito para practicar adquisición de objetivos, detección visual y primer disparo en Valorant y CS2. Mide tiempo y precisión.",
+    title: "Aim Trainer para Valorant: Adquisición de Objetivos | SkillDrills",
+    description: "Aim trainer para Valorant gratis en el navegador: acierta de 3 a 8 objetivos del más claro al más oscuro y practica la adquisición y el primer disparo.",
     url: "https://skilldrills.online/es/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer Online - Adquisición de objetivos | SkillDrills",
-    description: "Aim trainer online gratuito para practicar adquisición de objetivos, detección visual y primer disparo en Valorant y CS2. Mide tiempo y precisión.",
+    title: "Aim Trainer para Valorant: Adquisición de Objetivos | SkillDrills",
+    description: "Aim trainer para Valorant gratis en el navegador: acierta de 3 a 8 objetivos del más claro al más oscuro y practica la adquisición y el primer disparo.",
   },
 };
 
@@ -59,12 +57,12 @@ export default function TargetAcquisitionEsPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Reaction_time"],
-    "name": "Aim Trainer Online - Adquisición de objetivos",
+    "name": "Aim Trainer para Valorant: Adquisición de Objetivos",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entrenador online de adquisición de objetivos, detección visual rápida y precisión del primer disparo para shooters tácticos como CS2 y Valorant.",
+    "description": "Drill gratuito de adquisición de objetivos para jugadores de Valorant: acierta los objetivos por orden de brillo y practica el primer disparo.",
     "genre": "Entrenamiento FPS / Precisión Primer Disparo",
     "url": "https://skilldrills.online/es/drills/fps/target-acquisition",
     "publisher": {
@@ -77,22 +75,22 @@ export default function TargetAcquisitionEsPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer Online - Adquisición de objetivos",
+    "name": "Aim Trainer para Valorant: Adquisición de Objetivos",
     "url": "https://skilldrills.online/es/drills/fps/target-acquisition",
-    "description": "Entrenador online de adquisición de objetivos, detección visual rápida y precisión del primer disparo para shooters tácticos como CS2 y Valorant.",
+    "description": "Drill gratuito de adquisición de objetivos para jugadores de Valorant: acierta los objetivos por orden de brillo y practica el primer disparo.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requiere soporte de HTML5 Canvas y Pointer Lock API",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer Online - Adquisición de objetivos",
+    "name": "Aim Trainer para Valorant: Adquisición de Objetivos",
     "url": "https://skilldrills.online/es/drills/fps/target-acquisition",
-    "description": "Entrenador online de adquisición de objetivos, detección visual rápida y precisión del primer disparo para shooters tácticos como CS2 y Valorant.",
-    "dateModified": "2026-09-20",
+    "description": "Drill gratuito de adquisición de objetivos para jugadores de Valorant: acierta los objetivos por orden de brillo y practica el primer disparo.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["Entrenamiento FPS", "Aim Trainer", "Adquisición de Objetivos"],
     "playMode": "SinglePlayer",
@@ -104,8 +102,16 @@ export default function TargetAcquisitionEsPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cómo funciona este aim trainer para Valorant de adquisición de objetivos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cada sesión dura 60 segundos. Aparecen grupos de 3 a 8 objetivos con distinto brillo y hay que acertarlos del más claro al más oscuro. Un objetivo correcto vale +100 puntos multiplicados por el combo y el nivel; limpiar el grupo suma +400 puntos multiplicados por el nivel y genera un grupo nuevo. Acertar el objetivo equivocado o hacer clic en el vacío reinicia el combo y resta 0,6 segundos si la penalización de tiempo está activada. Se juega con ratón y bloqueo del puntero; Esc termina el drill. SkillDrills es una herramienta independiente, sin relación con Riot Games."
+        }
+      },
       {
         "@type": "Question",
         "name": "¿Qué es la adquisición de objetivos en shooters FPS competitivos?",
@@ -132,10 +138,10 @@ export default function TargetAcquisitionEsPage() {
       },
       {
         "@type": "Question",
-        "name": "¿Por qué los profesionales adquieren y disparan a objetivos más rápido que los novatos?",
+        "name": "¿Cómo usar la mirada para adquirir objetivos más rápido?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Los profesionales cuentan con un filtrado de prominencia visual superior (Wolfe, 2007) y programas motores optimizados (Meyer et al., 1988). Su sistema visual evita el rastreo secuencial y dirige el cursor directamente al elemento de mayor amenaza sin titubear."
+          "text": "Según el modelo Guided Search (Wolfe, 2007), la atención va primero a lo que más destaca. En vez de recorrer la pantalla línea por línea, mantén la mirada en el centro, localiza el objetivo más visible y lleva el ratón a donde ya está tu mirada. Es justo la secuencia que este drill te hace repetir."
         }
       },
       {
@@ -143,7 +149,7 @@ export default function TargetAcquisitionEsPage() {
         "name": "¿Qué impacto tiene la precisión del primer disparo en CS2 y Valorant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En shooters tácticos donde un único impacto a la cabeza es mortal (como Vandal o AK-47), el duelista que identifica y acierta el primer tiro gana el asalto. Fallar el flick inicial supone desaprovechar la ventana de máxima precisión."
+          "text": "En shooters tácticos donde un único impacto a la cabeza es mortal (como Vandal o AK-47), el primer impacto suele decidir el duelo, y fallar el primer tiro da tiempo al rival para responder. Este drill no simula disparos a la cabeza reales, pero aísla el hábito de elegir el objetivo correcto y luego colocar con precisión el primer clic."
         }
       },
       {
@@ -159,7 +165,7 @@ export default function TargetAcquisitionEsPage() {
         "name": "¿De qué forma afecta la densidad visual de elementos a la velocidad de puntería?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cuando varios distractores comparten atributos con el blanco principal, la búsqueda cambia de procesamiento paralelo rápido a búsqueda secuencial lenta, añadiendo de 40 a 120 ms de retardo por cada distractor presente."
+          "text": "Cuando varios distractores comparten atributos con el blanco principal, la búsqueda cambia de procesamiento paralelo rápido a búsqueda secuencial lenta, lo que alarga el tiempo para encontrar el objetivo (Treisman & Gelade, 1980). En este drill, el número de objetivos aumenta y la diferencia de brillo disminuye al subir de nivel."
         }
       },
       {
@@ -183,7 +189,7 @@ export default function TargetAcquisitionEsPage() {
         "name": "¿Cuánto tiempo se aconseja entrenar adquisición de blancos al día?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "De 10 a 15 minutos diarios antes de empezar las partidas es suficiente para agudizar la sensibilidad al contraste y afianzar la memoria muscular del primer disparo sin sobrecargar los músculos."
+          "text": "No hay una duración ideal demostrada. Unas cuantas sesiones de 60 segundos bien concentradas al calentar son un buen punto de partida; para antes de la fatiga visual y compara tus resultados en el mismo equipo."
         }
       }
     ]
@@ -199,7 +205,7 @@ export default function TargetAcquisitionEsPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrar Sensibilidad con Entrada Directa",
-        "text": "Ajusta tu sensibilidad y DPI exactos en la configuración de sesión para mantener tu relación habitual y bloquear el ratón.",
+        "text": "Ajusta la sensibilidad en la página /drills para que coincida con la de tu juego. El puntero se bloquea automáticamente al empezar.",
         "url": "https://skilldrills.online/es/drills/fps/target-acquisition#step-1"
       },
       {
@@ -227,25 +233,25 @@ export default function TargetAcquisitionEsPage() {
   };
 
   const targetAcquisitionGuide = {
-    heading: "Aim Trainer Online: adquisición de objetivos y primer disparo",
+    heading: "Aim trainer para Valorant: adquisición de objetivos y primer disparo",
     intro: [
-      "Para quien busca un aim trainer online, este drill mide el recorrido desde detectar una amenaza hasta identificarla y acertar el primer disparo. Entrena adquisición de objetivos, detección visual y precisión del primer tiro para Valorant, Counter-Strike 2 y Rainbow Six Siege, donde los primeros 300 milisegundos de contacto visual condicionan el duelo.",
+      "Este aim trainer para Valorant, gratis en el navegador, entrena la adquisición de objetivos: durante 60 segundos aparecen de 3 a 8 objetivos con distinto brillo que debes acertar del más claro al más oscuro. Así repites el paso de elegir el objetivo correcto a acertar el primer disparo, útil para Valorant, CS2 y otros shooters tácticos. SkillDrills es una herramienta independiente, sin relación con Riot Games.",
       "La base científica de la búsqueda visual y la identificación de objetivos fue formulada por Anne Treisman y Garry Gelade (1980) en su Teoría de Integración de Características. Treisman demostró que las propiedades visuales elementales —como contraste de luminancia, tono y orientación de bordes— se extraen de forma simultánea y paralela por todo el campo de visión. Solo cuando la atención focalizada apunta a una coordenada exacta, estos atributos se unen en una amenaza reconocible.",
-      "Ampliando el procesamiento paralelo, el modelo Guided Search de Jeremy M. Wolfe (1994, 2007) explica cómo los mapas sensoriales de prominencia se coordinan con las expectativas del jugador para dirigir la atención. Al entrenar la discriminación de contrastes, la corteza visual aprende a ignorar ruidos y elementos secundarios de forma instantánea, recortando el tiempo entre el estímulo visual y el movimiento manual.",
-      "Integrando las leyes psicomotoras de Paul M. Fitts (1954), la teoría de submovimientos balísticos de David E. Meyer et al. (1988) y la cronometría digital de alta precisión (Woods et al., 2015), este ejercicio prepara los reflejos para erradicar dudas cognitivas y conectar tiros firmes y precisos bajo presión.",
-      "Cómo se evalúa: cada registro se calcula mediante el reloj de alta resolución performance.now() en tu navegador de forma estrictamente local — ningún registro sale de tu dispositivo. Parámetros de hardware: los cronómetros web operan con una resolución habitual de 1 ms, y los monitores muestran los cambios según su tasa de refresco — 16,7 ms a 60 Hz, 6,9 ms a 144 Hz y 4,1 ms a 240 Hz (Woods et al., 2015). El polling rate del ratón añade 8 ms a 125 Hz frente a 1 ms a 1000 Hz. Compara tus avances usando el mismo equipo."
+      "Ampliando el procesamiento paralelo, el modelo Guided Search de Jeremy M. Wolfe (1994, 2007) explica cómo los mapas sensoriales de prominencia se coordinan con las expectativas del jugador para dirigir la atención. Al entrenar la discriminación de contrastes, la corteza visual aprende a ignorar ruidos y elementos secundarios de forma instantánea, lo que puede recortar el tiempo entre la aparición del objetivo y el inicio del movimiento en esta tarea, sin garantía de mejora en partida.",
+      "Integrando las leyes psicomotoras de Paul M. Fitts (1954), la teoría de submovimientos balísticos de David E. Meyer et al. (1988) y la cronometría digital de alta precisión (Woods et al., 2015), este ejercicio se centra en iniciar el primer flick sin dudar y frenar con precisión en el centro del objetivo. No garantiza mejoras en partida; sirve para seguir la evolución de tus propios resultados.",
+      "Sobre los resultados: la pantalla final muestra puntuación, precisión (aciertos en el objetivo correcto ÷ clics totales), grupos limpiados, combo máximo y nivel alcanzado. Tu récord se guarda solo en este navegador. Este drill no mide tiempo de reacción en milisegundos. La tasa de refresco del monitor y el polling rate del ratón cambian la sensación, así que compárate en el mismo equipo."
     ],
     benchmarks: {
-      title: "Baremos Científicos de Adquisición de Blancos y Latencia de Discriminación",
-      headers: ["Nivel de Rendimiento", "Latencia de Adquisición", "Precisión de Primer Tiro", "Impacto Competitivo en Partida"],
+      title: "Rangos de práctica de precisión en adquisición de objetivos",
+      headers: ["Rango", "Precisión", "Qué indica"],
       rows: [
-        ["Tier 1 (Etapa Avanzada)", "<260 ms", "95% – 99%+", "Detección inmediata de blancos; tiros a la cabeza impecables a la primera bala sin vacilaciones de discriminación"],
-        ["Tier 2 (Etapa Intermedia-Alta)", "260 – 320 ms", "88% – 95%", "Gran velocidad de detección; acierto decisivo sobre la amenaza prioritaria con mínima distracción periférica"],
-        ["Tier 3 (Diamante / Ascendente)", "320 – 400 ms", "80% – 88%", "Precisión sólida de primer disparo; manifiesta leves demoras de 50 a 80 ms ante múltiples blancos agrupados"],
-        ["Tier 4 (Intermedio / Oro / Platino)", "400 – 500 ms", "70% – 80%", "Inclinación a búsquedas secuenciales lentas; en ocasiones dispara a distractores secundarios o sobrepasa el blanco"],
-        ["Tier 5 (Iniciación / Novato)", ">500 ms", "<70%", "Confusión ante elementos visuales complejos; lentitud en la fijación de objetivos que causa derrotas en los primeros intercambios"]
+        ["Rango 1", "95% o más", "Casi ningún error de orden ni clic en el vacío"],
+        ["Rango 2", "88% – 95%", "Incluso en niveles altos sueles elegir primero el objetivo más claro"],
+        ["Rango 3", "80% – 88%", "Aparecen errores de orden cuando hay muchos objetivos"],
+        ["Rango 4", "70% – 80%", "Confundes a menudo objetivos de brillo parecido"],
+        ["Rango 5", "menos de 70%", "Asegura el orden antes de subir la velocidad"]
       ],
-      note: "La latencia de adquisición representa el tiempo transcurrido desde la aparición del conjunto hasta el primer clic válido en el objetivo prioritario, medido con cronometría digital (Woods et al., 2015)."
+      note: "La precisión es el valor de la pantalla final (aciertos en el objetivo correcto ÷ clics totales). Los rangos son referencias de práctica de SkillDrills, no normas científicas, rangos de juego ni estadísticas de usuarios."
     },
     techniques: {
       title: "Protocolos Respaldados por Evidencia para Perfeccionar la Adquisición",
@@ -258,7 +264,7 @@ export default function TargetAcquisitionEsPage() {
         {
           name: "Acoplamiento Sacádico-Motor en el Flick",
           desc: "Desvincula el movimiento de ojos y manos: realiza primero la sacada ocular para fijar el centro del blanco, permitiendo que la memoria muscular dirija el cursor velozmente hacia él.",
-          tips: "Tus ojos deben alcanzar el objetivo 30 o 50 ms antes que el ratón, confirmando el blanco antes del clic."
+          tips: "Asegúrate de que tu mirada ya esté en el centro del objetivo antes de mover el ratón."
         },
         {
           name: "Filtrado Rápido del Umbral de Contraste",
@@ -273,13 +279,13 @@ export default function TargetAcquisitionEsPage() {
       ]
     },
     steps: [
-      "Indica tu juego de referencia, DPI y sensibilidad en los ajustes de sesión para mantener tu relación habitual y bloquear el cursor.",
+      "Ajusta la sensibilidad en la página /drills para que coincida con la de tu juego y empieza; el puntero se bloquea automáticamente.",
       "Mantén la vista descansada en el centro de la pantalla, esperando la aparición del conjunto de objetivos.",
       "Identifica al instante el blanco de mayor brillo y prioridad mediante el filtrado visual de contrastes en paralelo.",
-      "Ejecuta un flick limpio y rápido al centro del blanco y dispara para sumar +100 PTS (+0,4s de tiempo adicional).",
-      "Elimina los blancos restantes en orden decreciente de luminancia para conseguir el bono de +400 PTS y superar el nivel."
+      "Ejecuta un flick limpio al centro del objetivo y dispara para sumar +100 PTS × multiplicadores de combo y nivel. El tiempo es fijo de 60 segundos y no aumenta con los aciertos.",
+      "Elimina los blancos restantes en orden decreciente de luminancia para conseguir el bono de grupo de +400 PTS × multiplicador de nivel."
     ],
-    audience: "Jugadores competitivos de Valorant, Counter-Strike 2, Apex Legends y Overwatch 2 que buscan mejorar la detección de rivales, conectar primeros tiros letales a la cabeza y evitar distracciones en pantalla.",
+    audience: "Jugadores competitivos de Valorant, Counter-Strike 2, Apex Legends y Overwatch 2 que quieren practicar por separado la elección del objetivo y el primer disparo. Se necesita ratón.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -292,9 +298,9 @@ export default function TargetAcquisitionEsPage() {
   };
 
   const copyEs = {
-    h1Keyword: "Aim Trainer Online",
-    h1Suffix: " - Adquisición de objetivos",
-    subtitle: "Practica detectar el objetivo y acertar el primer disparo para Valorant y CS2 en el navegador.",
+    h1Keyword: "Aim Trainer para Valorant",
+    h1Suffix: ": Adquisición de Objetivos",
+    subtitle: "Gratis para jugadores de Valorant: acierta los objetivos del más claro al más oscuro y practica el primer disparo en el navegador.",
     statScore: "Puntuación",
     statTime: "Tiempo",
     statAccuracy: "Precisión",
@@ -312,10 +318,10 @@ export default function TargetAcquisitionEsPage() {
     stageCaption: "Localiza y haz clic en el blanco más brillante (mayor opacidad) de cada grupo con la mayor rapidez y precisión posible.",
     rulesTitle: "Instrucciones del Ejercicio y Puntuación",
     rulesItems: [
-      { num: "1", text: "Impacto en Diana", highlight: "+100 PTS (+0,4s)", result: "×Multiplicador Combo" },
+      { num: "1", text: "Impacto en Diana", highlight: "+100 PTS × Nivel", result: "×Multiplicador Combo" },
       { num: "2", text: "Serie Despejada", highlight: "+400 PTS × Nivel", result: "Nuevo Grupo" },
       { num: "3", text: "Subida de Nivel", highlight: "+1 / 1400 PTS", result: "Escalado Dinámico Continuo" },
-      { num: "4", text: "Blanco Erróneo / Fallo", highlight: "Penalización", result: "Reinicio Combo (-0,6s)" }
+      { num: "4", text: "Blanco Erróneo / Fallo", highlight: "Penalización", result: "Reinicio Combo (-0,6s con penalización activa)" }
     ],
     aboutTitle: "Acerca del Entrenamiento de Adquisición",
     aboutHeading: "¿Qué es la Adquisición de Objetivos?",

@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 export const metadata = {
-  title: 'Entraînement de visée FPS gratuit | SkillDrills',
-  description: '15 exercices gratuits pour Valorant, CS2 et Apex : flick, tracking, contrôle du recul et réflexes dans le navigateur.',
+  title: 'Aim Training FPS : entraînement de visée gratuit | SkillDrills',
+  description: 'Aim Training FPS gratuit : 15 exercices de visée pour Valorant, CS2 et Apex (flick, tracking, contrôle du recul, réflexes) dans le navigateur.',
   keywords: [
-    'entraînement de visée', 'améliorer son aim FPS', 'aim trainer gratuit',
+    'aim training', 'aim train', 'aim practice', 'entraînement de visée', 'améliorer son aim FPS', 
     'entraînement visée Valorant', 'aim trainer CS2', 'exercices de flick',
     'tracking visée FPS', 'placement du réticule', 'sensibilité souris shooter',
-    'test réflexe gaming', 'contrôle du recul', 'viser bras ou poignet',
-    'micro-ajustements visée', 'eDPI Valorant', 'aim trainer navigateur gratuit'
+    'contrôle du recul', 'viser bras ou poignet',
+    'micro-ajustements visée', 'eDPI Valorant', 'entraînement de visée FPS'
   ],
   openGraph: {
-    title: 'Entraînement de visée FPS gratuit | SkillDrills',
-    description: '15 exercices gratuits pour Valorant, CS2 et Apex : flick, tracking, contrôle du recul et réflexes dans le navigateur.',
+    title: 'Aim Training FPS : entraînement de visée gratuit | SkillDrills',
+    description: 'Aim Training FPS gratuit : 15 exercices de visée pour Valorant, CS2 et Apex (flick, tracking, contrôle du recul, réflexes) dans le navigateur.',
     type: 'website',
     url: 'https://skilldrills.online/fr/drills/fps',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Entraînement de visée FPS gratuit | SkillDrills',
-    description: '15 exercices gratuits de visée pour Valorant, CS2 et Apex dans le navigateur.',
+    title: 'Aim Training FPS : entraînement de visée gratuit | SkillDrills',
+    description: 'Aim Training FPS gratuit : 15 exercices de visée pour Valorant, CS2 et Apex dans le navigateur.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -51,10 +51,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "name": "Entraînement de visée FPS gratuit (15 exercices)",
+  "dateModified": "2026-11-09",
+  "name": "Aim Training FPS : entraînement de visée gratuit (15 exercices)",
   "url": "https://skilldrills.online/fr/drills/fps",
-  "description": `15 exercices gratuits pour Valorant, CS2 et Apex : flick, tracking, contrôle du recul, changement de cible et réflexes dans le navigateur.`,
+  "description": `Aim Training FPS gratuit : 15 exercices de visée pour Valorant, CS2 et Apex : flick, tracking, contrôle du recul, changement de cible et réflexes dans le navigateur.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": fpsDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'fr', drill.name);
@@ -70,14 +70,14 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "Comment l'entraînement sur navigateur se transfère-t-il concrètement sur Valorant et CS2 ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dans les jeux de tir tactiques comme Valorant et Counter-Strike 2, le TTK moyen est souvent inférieur à 200 ms : le premier tir et la micro-correction décident de l'issue du duel. Les parties de Deathmatch en jeu imposent de longs temps morts (réapparitions, déplacements passifs), alors qu'un aim trainer dédié concentre plusieurs centaines de mouvements balistiques (flicks) et de freinages précis en seulement 10 minutes. Cette répétition à haute densité consolide les engrammes moteurs au niveau du cortex moteur, libérant l'attention cognitive du joueur pour le placement de réticule (crosshair placement) et la prise d'information tactique en partie compétitive."
+        "text": "Sur Valorant et CS2, les premières balles décident souvent du duel : la précision du premier tir et les petites corrections comptent beaucoup. Un Deathmatch en jeu impose des temps morts (réapparitions, déplacements), alors qu'un aim training dans le navigateur enchaîne bien plus de flicks et d'arrêts précis en peu de temps. Un geste plus régulier laisse plus d'attention pour le placement du réticule et la lecture du jeu en match. Le transfert varie d'un joueur à l'autre : comparez aussi vos résultats en jeu."
       }
     },
     {
@@ -93,7 +93,7 @@ const faqSchema = {
       "name": "Vaut-il mieux viser avec le bras, le poignet ou adopter une technique hybride ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Au niveau compétitif international, l'approche hybride est la norme physiologique : le bras et l'épaule gèrent les grands déplacements spatiaux, les virages à 180° et les recentrages d'urgence ; le poignet effectue les balayages d'amplitude moyenne ; et les doigts (en prise Claw ou Fingertip) exécutent les micro-ajustements sub-pixels ainsi que le contrôle fin du recul vertical. Viser uniquement avec le poignet restreint le champ d'action et augmente drastiquement les risques de tendinite ou de syndrome du canal carpien, tandis que viser uniquement avec le bras manque de la dextérité fine nécessaire aux headshots précis à longue portée."
+        "text": "Beaucoup de joueurs utilisent une approche hybride : le bras et l'épaule pour les grands déplacements et les demi-tours à 180°, le poignet pour les distances moyennes, et les doigts pour les petites corrections à hauteur de tête. Viser uniquement au poignet limite l'amplitude, viser uniquement au bras rend les toutes petites corrections plus difficiles. Choisissez ce qui est confortable et faites une pause en cas de douleur."
       }
     },
     {
@@ -125,7 +125,7 @@ const faqSchema = {
       "name": "Qu'est-ce qui prime en match : le placement du réticule (crosshair placement) ou le flick réflexe ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Statistiquement, environ 70 % des duels en jeu de tir tactique sont remportés grâce à un placement préventif rigoureux du réticule à hauteur de tête (crosshair placement) avant même de franchir un angle. Cependant, face à des lignes décalées imprévues (off-angles), des sauts d'agression ou des attaques coordonnées à plusieurs, le pré-aim ne suffit plus. C'est dans ces 30 % de situations dynamiques imprévisibles que la vélocité du flick balistique et la précision de la micro-décélération en moins de 200 ms font la différence entre la survie et l'élimination."
+        "text": "Un bon placement du réticule (viser à l'avance la hauteur de tête là où l'adversaire va apparaître) aide plus souvent, car il évite presque tout grand flick. Mais face à des off-angles inattendus, des swings larges ou plusieurs adversaires à la fois, le pré-aim ne suffit plus et ce sont la vitesse du flick et les micro-corrections qui comptent. Entraînez les deux séparément : le placement avec Placement du Viseur, les flicks avec l'exercice de flick."
       }
     },
     {
@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "Combien de minutes par jour faut-il s'entraîner pour progresser sans fatigue nerveuse ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les recherches en neurobiologie de l'apprentissage moteur indiquent qu'au-delà de 30 à 40 minutes d'exercices intensifs de motricité fine, la fatigue du système nerveux central entraîne une régression de la précision et favorise l'ancrage de mauvaises habitudes posturales. Le protocole d'entraînement optimal consiste en des sessions quotidiennes ciblées de 15 à 25 minutes, 4 à 5 fois par semaine. Des séances brèves suivies de repos sont en général plus faciles à tenir que des sessions marathons de plusieurs heures."
+        "text": "Des séances courtes et concentrées sont plus faciles à tenir dans la durée que des sessions marathons de plusieurs heures. Un bon point de départ : 15 à 25 minutes, plusieurs fois par semaine, en arrêtant quand la précision baisse ou que la main fatigue. Il n'existe pas de durée idéale valable pour tout le monde : ajustez selon vos propres résultats."
       }
     }
   ]

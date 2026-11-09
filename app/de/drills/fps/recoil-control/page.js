@@ -75,7 +75,7 @@ export default function RecoilControlDePage() {
     "name": "Recoil Control Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Kostenloser Browser-Trainer zur Beherrschung von Waffen-Rückstoß, vertikaler Mauskompensation und Spray-Mustern.",
     "genre": "FPS Training / Recoil Control",
@@ -109,7 +109,7 @@ export default function RecoilControlDePage() {
     "name": "Recoil Control Trainer",
     "url": "https://skilldrills.online/de/drills/fps/recoil-control",
     "description": "Kostenloser Browser-Trainer zur Beherrschung von Waffen-Rückstoß, vertikaler Mauskompensation und Spray-Mustern.",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Recoil Control", "Spray Pattern"],
     "playMode": "SinglePlayer",
@@ -121,7 +121,7 @@ export default function RecoilControlDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -200,7 +200,15 @@ export default function RecoilControlDePage() {
         "name": "Wie lange dauert es, bis ein Waffen-Spray-Pattern im Muskelgedächtnis verankert ist?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Durch tägliches 15-minütiges isoliertes Wiederholen des Musters bildet das motorische Nervensystem innerhalb von 2 bis 3 Wochen hochgradig automatisierte Open-Loop-Programme aus."
+          "text": "Dafür gibt es keinen festen Zeitraum, er hängt von Ausgangsniveau, Sensitivität und Trainingsmenge ab. Kurze, regelmäßige Einheiten (z. B. 10–15 Minuten vor dem Spielen) sind meist sinnvoller als seltene lange Sessions. Vergleiche deine Magazin-Trefferquote über mehrere Wochen auf demselben Setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welches Spray Pattern und welche Regeln nutzt dieses Recoil-Control-Training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ein einziges AK-47-artiges 30-Schuss-Muster: etwa die ersten 10 Schüsse steigen vertikal, danach pendelt der Spray nach links und rechts. Es ist keine exakte Kopie einer Waffe aus einem bestimmten Spiel. Gedrückte linke Maustaste feuert alle 120 ms (500 Schuss/min); Loslassen setzt das Muster zurück. Nach 30 Schuss wird automatisch 1,2 s nachgeladen. Kopf 100, Brust 40, Gliedmaßen 20 Punkte, multipliziert mit Kombo- und Level-Faktor; ein Fehlschuss setzt die Kombo zurück. Die Startzeit beträgt 45 s, Treffer verlängern sie nicht. Alle 1400 Punkte steigt das Level, Zieltempo und Rückstoß nehmen zu. Gespielt wird mit Maus und Pointer Lock; Esc beendet die Runde, reine Touch-Geräte werden nicht unterstützt."
         }
       }
     ]
@@ -243,23 +251,23 @@ export default function RecoilControlDePage() {
     heading: "Leitfaden für Rückstoßkontrolle und Spray Control",
     subtitle: "Wissenschaftliche Trainingsmethodik für ballistische Zugkompensation, Muskelgedächtnis und maximale Trefferdichte bei Dauerfeuer",
     intro: [
-      "Dieser Recoil-Control-Trainer trainiert Rückstoßkontrolle, Spray Patterns und vertikale Mauskompensation als zusammenhängende sensomotorische Fähigkeit. In CS2, VALORANT, Apex Legends und PUBG entscheidet eine enge Geschossgruppierung auch dann über das Duell, wenn Gegner unvorhersehbar ausweichen.",
-      "Das motorische Lernframework zur Beherrschung schneller Rückstoßkompensation basiert auf der Theorie des Generalisierten Motorischen Programms (GMP) von Richard A. Schmidt und Timothy D. Lee (Schmidt & Lee, 2011). Da 10-Schuss-Feuerstöße in weniger als 700 Millisekunden ablaufen – weitaus schneller, als die geschlossene visuelle Feedbackschleife des menschlichen Gehirns einzelne Einschläge verarbeiten kann –, aktivieren Spitzenspieler ein vorstrukturiertes Open-Loop-Bewegungsprogramm mit unveränderlichen relativen Timing- und Kraftparametern.",
+      "Mit diesem kostenlosen Browser-Drill kannst du Rückstoßkontrolle lernen: Du hältst die linke Maustaste auf ein seitlich ausweichendes Ziel gedrückt und gleichst ein AK-47-artiges 30-Schuss-Spray Pattern mit Abwärtszug und seitlicher Gegenlenkung aus. Liegt die Trefferquote eines Magazins unter 40 %, verfällt die Kombo. Spray Control und Recoil Control für CS2, VALORANT, Apex Legends und PUBG als kurzes Warm-up.",
+      "Das motorische Lernframework zur Beherrschung schneller Rückstoßkompensation basiert auf der Theorie des Generalisierten Motorischen Programms (GMP) von Richard A. Schmidt und Timothy D. Lee (Schmidt & Lee, 2011). Weil ein festes Spray Pattern sich jedes Mal gleich verhält, muss nicht jeder Einschlag einzeln visuell korrigiert werden: Der Abwärtszug kann als gelerntes Open-Loop-Bewegungsprogramm mit festen relativen Timing- und Kraftparametern beginnen.",
       "Dieser Bewegungsablauf folgt Robert S. Woodworths (1899) klassischem Zwei-Komponenten-Modell des Zielens sowie David E. Meyers (1988) optimiertem Submovement-Modell: Auf eine initiale, ballistische Abwärtszugbewegung der Maus (Open-Loop-Phase) folgen feinmotorische Korrekturbewegungen (Submovements), um horizontale Abweichungen und dynamische Bewegungen des Ziels in Echtzeit auszugleichen.",
-      "Die motorische Treffsicherheit unterliegt Fitts' Gesetz (Fitts, 1954) sowie der Impuls-Variabilitäts-Theorie von Schmidt et al. (1979): Mit steigender Geschwindigkeit und Kraftanstrengung beim Herunterziehen der Maus nimmt die neuromuskuläre Streuung logarithmisch zu. Durch hochauflösende digitale Chronometrie mittels performance.now() (Woods et al., 2015) isoliert dieser Drill exakt jene konstante, feinfühlige Zuggeschwindigkeit, die erforderlich ist, um das Streubild auf ein Minimum zu komprimieren.",
+      "Die motorische Treffsicherheit unterliegt Fitts' Gesetz (Fitts, 1954) sowie der Impuls-Variabilitäts-Theorie von Schmidt et al. (1979): Mit steigender Geschwindigkeit und Kraftanstrengung beim Herunterziehen der Maus nimmt die neuromuskuläre Streuung logarithmisch zu. Deshalb lohnt es sich, eine gleichmäßige, ruhige Zuggeschwindigkeit zu üben statt ruckartig zu ziehen.",
       "Messmethodik & Hardware-Latenzen: Jede Mauseingabe wird lokal über die Schnittstelle performance.now() des Browsers horodatiert – es werden keinerlei Daten an externe Server übertragen. Browser-Timer werden zum Schutz vor Spectre-Angriffen meist auf ca. 1 ms gerundet, während Monitore die visuelle Darstellung an ihre Bildwiederholrate koppeln (ca. 16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz) (Woods et al., 2015). Die USB-Abfragerate der Maus trägt ca. 8 ms bei 125 Hz gegenüber 1 ms bei 1000 Hz bei. Betrachte Unterschiede von unter 5 ms als technisches Messrauschen und vergleiche deine Resultate stets auf demselben Hardware-Setup."
     ],
     benchmarks: {
-      title: "Rückstoß-Kompensation & Trefferdichte-Benchmarks (Accuracy Norms)",
-      headers: ["Leistungsstufe / Rang", "Trefferquote (Kompensation)", "Streuradius (Erste 10 Schuss)", "Physiologischer Motorik-Status"],
+      title: "Magazin-Trefferquote: SkillDrills-Übungsstufen",
+      headers: ["Übungsstufe", "Trefferquote pro Magazin", "Typisches Bild"],
       rows: [
-        ["Anfänger / Casual", "< 45 % Treffer", "> 85 Pixel Streuung", "Unkoordinierter Abwärtszug, spätes Gegensteuern, starkes Überreißen"],
-        ["Fortgeschritten (Gold / Platin)", "45 – 65 % Treffer", "50 – 85 Pixel Streuung", "Zuverlässiges vertikales Abfangen der ersten 5 Schüsse; Probleme im Kurvenverlauf"],
-        ["Diamant / Master", "65 – 80 % Treffer", "30 – 50 Pixel Streuung", "Vollständig automatisiertes Abzugsmuster; saubere Kompensation der ersten 15 Kugeln"],
-        ["Stufe 4", "80 – 90 % Treffer", "18 – 30 Pixel Streuung", "Exzellente horizontale Driftkontrolle, flüssiger Übergang in Spray Transfers"],
-        ["Stufe 5", "> 90 % Treffer", "< 18 Pixel Streuung", "Perfekte kinästhetische Motorsynergie; punktgenaue Bündelung kompletter Magazine"]
+        ["Stufe 1", "< 40 %", "Unter der Magazin-Disziplin-Grenze; Abwärtszug zu spät oder ungleichmäßig, Kombo verfällt"],
+        ["Stufe 2", "40 – 55 %", "Die ersten Schüsse sitzen, die seitliche Pendelbewegung wird kaum ausgeglichen"],
+        ["Stufe 3", "55 – 70 %", "Sauberer vertikaler Zug, kleine Überkorrekturen beim Richtungswechsel"],
+        ["Stufe 4", "70 – 85 %", "Gute horizontale Gegenlenkung auch bei schnellerem Ziel"],
+        ["Stufe 5", "> 85 %", "Fast ganze Magazine im Ziel, auch auf höheren Levels"]
       ],
-      note: "Wissenschaftliche Richtwerte basierend auf motorischer Bewegungsvariabilität (Schmidt et al. 1979, Meyer et al. 1988, Woodworth 1899)."
+      note: "Eigene Übungsstufen von SkillDrills, keine wissenschaftlichen Normwerte, Nutzerstatistiken oder Spielränge. Trefferquote = Treffer ÷ abgefeuerte Schüsse."
     },
     techniques: {
       title: "Waffenspezifische Rückstoß-Kalibrierung nach Spiel",
@@ -287,13 +295,13 @@ export default function RecoilControlDePage() {
       ]
     },
     steps: [
-      "Wähle deine bevorzugte Mausempfindlichkeit und klicke in das Spielfeld, um den Zeiger zu sperren.",
-      "Starte das Feuergefecht mit gedrückter linker Maustaste auf das zentrale Ziel.",
+      "Stelle auf der /drills-Seite die globale Mausempfindlichkeit ein und klicke auf Start; nach dem Countdown wird der Zeiger gesperrt (Pointer Lock).",
+      "Halte die linke Maustaste auf das seitlich ausweichende Ziel gedrückt.",
       "Ziehe die Maus simultan mit dem einsetzenden Rückstoß gleichmäßig und feinfühlig nach unten.",
       "Gleiche horizontale Seitwärtsbewegungen mit minimalen Mikrokorrekturen aus.",
-      "Analysiere auf der Auswertungskarte deine prozentuale Kompensationsgenauigkeit und Headshot-Rate."
+      "Prüfe auf der Ergebniskarte Präzision, Headshots, Max Combo und erreichtes Level."
     ],
-    audience: "Shooter-Spieler in CS2, Valorant, Apex Legends, PUBG und Call of Duty, die ihre Trefferdichte bei Dauerfeuer maximieren und Waffenrückstoß systematisch neutralisieren wollen.",
+    audience: "PC-Spieler in CS2, Valorant, Apex Legends, PUBG und Call of Duty, die Spray Control bei Dauerfeuer im Browser üben wollen.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'schmidtLee2011', 'schmidt1979', 'woodworth1899'),
     related: [
@@ -307,7 +315,7 @@ export default function RecoilControlDePage() {
   const copyDe = {
     h1Keyword: "Rückstoßkontrolle lernen",
     h1Suffix: " – FPS Spray Control",
-    caption: "Rückstoßkontrolle ist ein hochgradig automatisiertes Open-Loop-Bewegungsprogramm. Weil motorische Streuung mit zunehmender Kraftanstrengung steigt (Schmidt et al., 1979), führt eine gleichmäßige, sanfte Abwärtsbewegung zu signifikant besserer Trefferdichte als ruckartiges Ziehen.",
+    caption: "Rückstoßkontrolle lernen im Browser: Das Spray Pattern ist fest, also ziehst du die Maus gleich mit dem ersten Schuss gleichmäßig nach unten. Weil motorische Streuung mit der Kraft steigt (Schmidt et al., 1979), ist ein ruhiger Zug besser als ein ruckartiger.",
     statScore: "Punkte",
     statTime: "Verbleibende Zeit",
     statAccuracy: "Präzision",
@@ -317,7 +325,7 @@ export default function RecoilControlDePage() {
     pausedTitle: "Pausiert",
     pausedPrompt: "Klicke in den Bildschirm, um die Mauszeiger-Sperre zu reaktivieren und fortzufahren.",
     startTitle: "Recoil Control lernen",
-    startSubtitle: "Reale Waffen-Spray-Muster & ballistische Zugkompensation • Dynamische Levelprogression",
+    startSubtitle: "AK-47-artiges Spray Pattern & Zugkompensation • Endlose Levelprogression",
     startButtonText: "Training starten",
     getReady: "Bereithalten",
     statHeadshots: "Headshots",
@@ -329,21 +337,21 @@ export default function RecoilControlDePage() {
     bottomCaption: "Ziehe die Maus synchron zum einsetzenden Waffenrückstoß gleichmäßig nach unten, um die Schüsse präzise im Zielzentrum zu bündeln.",
     rulesTitle: "Trainingsregeln & Punktesystem",
     rulesItems: [
-      { num: "1", text: "Kopftreffer-Präzision", highlight: "+100 PKT / +0,25s", result: "Höchste Prioritätszone" },
+      { num: "1", text: "Kopftreffer-Präzision", highlight: "+100 PKT (kein Zeitbonus)", result: "×Kombo-Faktor" },
       { num: "2", text: "Brust- & Beintreffer", highlight: "+40 / +20 PKT", result: "Hält Kombo-Serie" },
       { num: "3", text: "Level-Progression", highlight: "+1 Level / 1400 PKT", result: "Tempo & Rückstoß steigen" },
-      { num: "4", text: "Magazin-Disziplin", highlight: "<40% Treffer-Strafe", result: "Setzt Kombo zurück (-0,6s)" }
+      { num: "4", text: "Magazin-Disziplin", highlight: "<40% Treffer-Strafe", result: "Setzt Kombo zurück (-0,6s bei aktivierter Strafe)" }
     ],
     aboutTitle: "Über Rückstoßkontrolle und Spray Control",
     whyMattersTitle: "Warum Rückstoßkontrolle über den Duellausgang entscheidet",
-    whyMattersLead: "Rückstoßkontrolle ist ein vorprogrammiertes motorisches Bewegungsmuster. Da die Schusskadenz moderner Sturmgewehre viel zu hoch für visuelle Echtzeitkorrekturen ist (Latenz > 180 ms), muss die Ausgleichsbewegung fest im motorischen Kortex verankert sein.",
+    whyMattersLead: "Rückstoßkontrolle ist ein gelerntes Bewegungsmuster. Weil das Spray Pattern fest ist, kannst du die Ausgleichsbewegung starten, ohne jeden Einschlag abzuwarten.",
     aboutIntro: [
       "Dieser Trainer schult die feindosierte Muskulatur deines Unterarms und deiner Finger, um dem Aufsteigen der Waffe bei Dauerfeuer punktgenau entgegenzuwirken. Während Einzelschüsse primär reaktive Flicks erfordern, verlangt Recoil Control eine kontrollierte, langanhaltende Zugbewegung.",
-      "Durch das wiederholte Einprägen der vertikalen Anfangsbremsung und der seitlichen Gegenlenkung erzielst du in CS2, Valorant und Apex Legends selbst auf mittlere und weite Distanzen extrem dichte Treffergruppen."
+      "Durch das wiederholte Einprägen der vertikalen Anfangsbremsung und der seitlichen Gegenlenkung übst du die Spray Control, die du in CS2, Valorant und Apex Legends brauchst."
     ],
     aboutCards: [
       { iconBg: "bg-blue-600", title: "Zielgruppe", text: "FPS-Spieler in CS2, Valorant, Apex Legends und CoD, die ihre Dauerfeuer-Präzision und Spray Transfers verbessern wollen." },
-      { iconBg: "bg-red-600", title: "Schüsse 1–8 sind entscheidend", text: "Die ersten Schüsse steigen linear an. Wer dieses Zeitfenster perfekt kompensiert, beendet das Duell, bevor zufällige Streuung einsetzt." },
+      { iconBg: "bg-red-600", title: "Schüsse 1–8 sind entscheidend", text: "Im Muster dieses Drills steigen etwa die ersten 10 Schüsse vertikal. Diesen Abschnitt gleichmäßig auszugleichen ist das erste Ziel." },
       { iconBg: "bg-orange-600", title: "Abzugskontrolle wahren", text: "Verhindert sinnloses Verballern kompletter Magazine. Gezieltes Absetzen und Zurücksetzen des Musters spart Munition und Trefferzeit." }
     ],
     aboutSections: [

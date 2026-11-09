@@ -7,7 +7,7 @@ import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
     title: "180도 에임 연습 | 180도 턴 트레이너 | SkillDrills",
-  description: "무료 브라우저 180도 에임 연습. 주변 시야로 가장자리 표적을 찾고 팔 전체로 빠르게 화면을 전환한 뒤 정확히 멈추는 훈련입니다.",
+  description: "무료 브라우저 180도 에임 연습. 화면 좌우 끝에 뜨는 표적을 주변 시야로 찾고, 팔 전체 플릭으로 크게 이동해 정확히 멈추는 180도 턴·뒤돌아 쏘기 대비 훈련입니다. 마우스 필요.",
   keywords: [
     "180도 에임 연습",
     "180도 화면 전환",
@@ -18,6 +18,7 @@ export const metadata = {
     "카스2 에임 연습",
     "에임 트레이너 온라인",
     "후방 인지 FPS",
+    "뒤돌아 쏘기",
     "마우스 패드 공간 활용"
   ],
   alternates: {
@@ -64,7 +65,7 @@ export default function AwarenessDrillKoPage() {
     "description": "대각도 시야 반전 에임, 주변시야 자극에 대한 즉각적 반응, 고속 감속 제동력을 단련하는 무료 브라우저 FPS 에임 트레이너.",
     "genre": "FPS Training / Situational Awareness",
     "url": "https://skilldrills.online/ko/drills/fps/180-degree-awareness",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -98,20 +99,20 @@ export default function AwarenessDrillKoPage() {
     "applicationCategory": "Game",
     "url": "https://skilldrills.online/ko/drills/fps/180-degree-awareness",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "FPS에서 180도 플릭 에임 훈련이란 무엇인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "중심 시야를 벗어난 주변 시야나 후방에서 나타난 적을 인지하고, 번개처럼 시야를 180도 회전시켜 목표에 정밀하게 조준선을 안착시키는 감각운동 훈련입니다."
+          "text": "게임에서 측면이나 뒤에서 나타난 적을 보고 크게 돌아 조준하는 동작을 브라우저로 분리해 연습하는 훈련입니다. 이 드릴은 3D 시점 회전이 아니라 화면 좌우 끝에 뜨는 표적까지 조준선을 크게 이동해 정확히 멈추는 방식으로 그 큰 플릭을 반복합니다."
         }
       },
       {
@@ -151,7 +152,7 @@ export default function AwarenessDrillKoPage() {
         "name": "발로란트나 카스2의 섬광 회피에도 도움이 되나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "네. 플래시뱅이 터지는 찰나의 순간에 180도 뒤를 돌아보고, 섬광이 터진 직후 즉각 원래 사선으로 에임을 복귀시키는 민첩성과 제동 스트로크 능력이 향상됩니다."
+          "text": "직접적인 섬광 회피 연습은 아닙니다. 이 드릴은 섬광탄을 재현하지 않으며, 크게 이동한 뒤 조준선을 정확히 멈추는 동작만 반복합니다. 뒤로 돌았다가 원래 사선으로 복귀하는 동작의 제동 감각에 도움이 될 수 있습니다."
         }
       },
       {
@@ -159,7 +160,7 @@ export default function AwarenessDrillKoPage() {
         "name": "180도 에임 훈련은 얼마나 자주 해야 하나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "랭크 경기 전 5~10분 정도 워밍업으로 진행하면 마우스패드 위 공간 좌표 감각을 예리하게 유지할 수 있으며, 팔 피로 누적 없이 중추신경계를 활성화할 수 있습니다."
+          "text": "랭크 경기 전 5~10분 정도 워밍업으로 진행하면 마우스패드 위 공간 좌표 감각을 예리하게 유지할 수 있으며, 팔 피로가 쌓이기 전에 마칠 수 있습니다."
         }
       },
       {
@@ -211,7 +212,7 @@ export default function AwarenessDrillKoPage() {
         "@type": "HowToStep",
         "position": 3,
         "name": "팔꿈치와 어깨를 활용한 폭발적 스와이프",
-        "text": "손목에만 의존하지 않고 팔 전체를 신속하게 회전시켜 180도 회전 궤적을 단번에 주파합니다."
+        "text": "손목에만 의존하지 않고 팔 전체로 조준선을 화면 반대편 끝까지 한 번에 이동시킵니다."
       },
       {
         "@type": "HowToStep",
@@ -238,10 +239,10 @@ export default function AwarenessDrillKoPage() {
         ["대각도 탄도 스와이프 (180° 회전)", "180 – 260 ms", "어깨-팔꿈치 축을 활용한 전완 추진 회전 아크", "개루프 운동학적 가속 (Elliott et al. 2010)"],
         ["종단 감속 & 조준선 제동 브레이크", "60 – 110 ms", "길항근 제동력 (스토핑 파워)", "임펄스 감속 댐핑 (Schmidt et al. 1979)"],
         ["착탄 미세보정 & 클릭 격발", "70 – 130 ms", "중심와 시각 피드백 기반 미세 보정 및 격발", "피츠의 법칙 호밍 단계 (Fitts 1954)"],
-        ["총 180도 표적 재획득 소요 시간", "450 – 690 ms", "감지부터 격발 완료까지의 다감각 전 과정", "초보~중급 플레이어 표준 평균 수치"],
-        ["상급 단계의 무의식 180도 주파", "320 – 420 ms", "체화된 감도 근육 기억과 일체화된 단일 스와이프", "클러치 상황을 가정한 상급 단계 참고치"]
+        ["총 180도 표적 재획득 소요 시간", "450 – 690 ms", "감지부터 격발 완료까지의 다감각 전 과정", "SkillDrills 연습 참고 구간"],
+        ["상급 단계의 무의식 180도 주파", "320 – 420 ms", "체화된 감도 근육 기억과 일체화된 단일 스와이프", "SkillDrills 상급 연습 참고 구간"]
       ],
-      note: "수치는 센서모터 및 시각과학 문헌 (Rayner 1998; Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010; Woods et al. 2015)을 기반으로 산출되었습니다."
+      note: "이 수치는 SkillDrills 연습 참고 구간입니다. 연구 규준이나 사용자 데이터가 아니며, 오른쪽 열의 문헌은 각 단계의 운동 메커니즘 설명 출처입니다. 자신의 기록은 같은 기기에서 비교하세요."
     },
     techniques: {
       title: "대각도 회전 및 공간 인지력 향상을 위한 실전 테크닉",
@@ -253,7 +254,7 @@ export default function AwarenessDrillKoPage() {
         },
         {
           name: "cm/360° 감도 고정 및 공간 각인",
-          desc: "발로란트나 카스2 프로 선수들은 360도 회전에 35cm~55cm(180도 회전에 약 18cm~28cm)를 필요로 하는 감도를 주로 사용합니다. 패드 중앙에서 끝까지의 거리를 신체에 각인시키세요.",
+          desc: "360도 회전에 필요한 마우스 이동 거리(cm/360)의 절반이 180도 턴 거리입니다. 예를 들어 cm/360이 40cm라면 180도는 20cm입니다. 패드 중앙에서 그 거리를 몸에 익히세요.",
           tips: "DPI나 인게임 감도를 수시로 바꾸면 공간 좌표의 근육 기억이 파괴되므로 고정된 설정을 유지하세요."
         },
         {
@@ -271,9 +272,9 @@ export default function AwarenessDrillKoPage() {
     steps: [
       "훈련 시작을 클릭하여 전체화면과 Pointer Lock을 활성화합니다.",
       "물리적 마우스를 패드 중앙에 두고, 시선을 중앙에 유지한 채 시야를 넓게 엽니다.",
-      "화면의 좌우 극단 가장자리에 표적이 생성되면, 전완을 신속하게 스와이프하여 조준선을 날립니다.",
+      "화면 좌우 끝에 표적이 생성되면(레벨이 오를수록 가장자리 생성 확률 증가), 전완을 신속하게 스와이프하여 조준선을 보냅니다.",
       "표적 직전에서 근육 브레이크를 걸고, 조준선이 중심을 포착하는 즉시 정확하게 클릭합니다.",
-      "종료 후 평균 반응시간, 명중률, 최대 콤보를 확인하여 오버슈팅 경향을 분석합니다."
+      "명중마다 2초가 추가되고(최대 60초) 미스·빈 클릭·시간 초과마다 1초가 줄어듭니다. 시간이 0이 되면 종료되며, 평균 반응시간, 명중률, 최대 콤보로 오버슈팅 경향을 분석합니다."
     ],
     audience: "발로란트, 카스2, 에이펙스 레전드, 오버워치 등 전술 FPS 및 하이퍼 FPS에서 후방 기습 대처 능력과 광각 시야 회전 정밀도를 높이고자 하는 모든 게이머.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -316,27 +317,27 @@ export default function AwarenessDrillKoPage() {
       <AwarenessDrillClient
         copy={{
           h1Keyword: "180도 에임 연습",
-          h1Suffix: " - 180도 화면전환·주변시야 트레이너",
-          subtitle: "주변 시야로 표적을 찾고 큰 플릭으로 180도 화면을 전환한 뒤 정확히 멈추세요.",
+          h1Suffix: " - 180도 턴·주변시야 트레이너",
+          subtitle: "화면 좌우 끝에 뜨는 표적을 주변 시야로 찾고, 큰 플릭으로 조준선을 보낸 뒤 정확히 멈추세요. 180도 턴과 뒤돌아 쏘기에 필요한 큰 이동·정지 감각을 반복합니다.",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "명중률",
           statBestScore: "최고 점수",
           startTitle: "180도 플릭 에임 연습",
-          startSubtitle: "Pointer Lock 입력 • 무한 난이도 진행",
-          stageCaption: "화면 가장자리에 생성되는 목표를 주변시야로 포착하고, 타이머가 만료되기 전에 180도 플릭으로 격추하세요.",
+          startSubtitle: "마우스 + Pointer Lock • 45초 시작 • 무한 난이도 진행",
+          stageCaption: "화면 가장자리에 생성되는 목표를 주변시야로 포착하고, 목표가 사라지기 전에 큰 플릭으로 맞히세요.",
           rulesTitle: "훈련 규칙 & 점수 체계",
           rulesItems: [
-            { num: "1", text: "가장자리 표적 격추", highlight: "대각도 표적 (+100점 / +0.6초)", result: "×콤보 배수" },
-            { num: "2", text: "180° 주변부 생성", highlight: "극단적 주변시야", result: "소형화 & 가속" },
+            { num: "1", text: "가장자리 표적 격추", highlight: "+100점 (+2초, 최대 60초)", result: "×콤보 배수" },
+            { num: "2", text: "180° 주변부 생성", highlight: "가장자리 생성 확률 증가", result: "표적 소형화 & 짧은 노출" },
             { num: "3", text: "레벨 난이도 상승", highlight: "+1 레벨 / 1750점", result: "적응형 스케일링" },
-            { num: "4", text: "미스 / 시간 초과", highlight: "실패 페널티", result: "콤보 리셋 (-0.8초)" }
+            { num: "4", text: "미스 / 시간 초과", highlight: "빈 클릭 포함", result: "콤보 리셋 (-1초)" }
           ],
           aboutTitle: "180도 플릭 에임 훈련 정보",
           aboutHeading: "180도 플릭 훈련이란 무엇인가요?",
           aboutText1: "180도 회전은 슈팅 게임에서 가장 이동 거리가 긴 마우스 조작입니다. 피츠의 법칙(Fitts, 1954)에 따르면 이동 시간이 이동 거리와 목표 크기에 의해 결정되므로, 회전 자체보다도 회전 직후 에임을 즉각 정지시켜 재조준하는 능력이 승패를 결정합니다.",
           aboutText2: "180도 플릭 에임 연습은 중심 시야 바깥의 시각 정보를 신속하게 처리하는 능력을 집중적으로 단련합니다. 미세 조정을 주로 하는 일반적인 에임 연습과 달리, 공간 좌표를 크게 횡단하는 대각도 플릭을 요구합니다.",
-          aboutText3: "지속적인 공간 인지 훈련을 통해 마우스패드 위의 물리적 공간과 게임 내 가상 공간이 완벽하게 일치하게 되며, 블라인드 플릭과 기습 대처 속도 향상에 도움이 될 수 있습니다."
+          aboutText3: "이 드릴은 3D 시점 회전 대신 화면 좌우 끝의 표적으로 큰 플릭을 재현합니다. 같은 감도로 꾸준히 반복하면 마우스패드 위 이동 거리 감각을 익혀 기습 대처에 도움이 될 수 있습니다."
         }}
       />
       <DrillGuide guide={awarenessGuide} />

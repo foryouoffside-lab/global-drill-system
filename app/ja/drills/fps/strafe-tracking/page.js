@@ -7,28 +7,17 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — ja-JP (fps / strafe-tracking)
-// PRIMARY DOMESTIC: "追いエイム 練習"          — High domestic intent (Winner)
-//                   "追いエイム 練習 ブラウザ"   — #1 Google Suggest autocomplete query
-//                   "追いエイム"                — Core Japanese tactical tracking term
-//                   "トラッキング エイム 練習"   — Technical category search
-//                   "ストレイフ 練習 サイト"     — Movement tracking intent
-// SECONDARY / LSI:
-//                   "ストレイフトラッキング"     — Pure mechanical phrase
-//                   "ストレイフ 練習"           — Apex / tactical movement phrase
-//                   "FPS 追いエイム"            — High-intent genre search
-//                   "apex 追いエイム 練習"      — Game specific demand
-//                   "エイム練習 無料 ブラウザ"   — Category intent phrase
-// WINNER TITLE:     追いエイム練習 – ブラウザで無料FPSトラッキング・ストレイフ追従トレーナー | SkillDrills
+// PRIMARY (2026-11 Phase B): "ストレイフ追いエイム練習" (GSC 44 impr, pos 6.9) — keep.
+// トラッキングエイム練習 is owned by fps/pro-smooth-pursuit, 動く的のエイム練習 by reaction fps-tracking-trainer.
 // ============================================================
 
 export const metadata = {
   title: "ストレイフ追いエイム練習｜ADAD切り返し | SkillDrills",
-  description: "無料のストレイフ追いエイム練習。ADADで左右に切り返す標的へ照準を合わせ続け、Apex・OW2向けのトラッキング精度をブラウザで確認できます。",
+  description: "無料のストレイフ追いエイム練習。ADADで左右に切り返す標的へマウスで照準を合わせ続け、Apex・OW2向けの追いエイム精度をブラウザで確認できます。",
   keywords: [
     "追いエイム 練習",
     "追いエイム 練習 ブラウザ",
     "追いエイム",
-    "トラッキング エイム 練習",
     "ストレイフ 練習",
     "ストレイフ 練習 サイト",
     "ストレイフトラッキング",
@@ -36,7 +25,7 @@ export const metadata = {
     "apex 追いエイム 練習",
     "ow2 追いエイム 練習",
     "エイム練習 無料 ブラウザ",
-    "トラッキング 練習 ブラウザ"
+    "ADAD 切り返し"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/strafe-tracking",
@@ -48,7 +37,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "ストレイフ追いエイム練習｜ADAD切り返し | SkillDrills",
-    description: "無料のストレイフ追いエイム練習。ADADで左右に切り返す標的へ照準を合わせ続け、Apex・OW2向けのトラッキング精度をブラウザで確認できます。",
+    description: "無料のストレイフ追いエイム練習。ADADで左右に切り返す標的へマウスで照準を合わせ続け、Apex・OW2向けの追いエイム精度をブラウザで確認できます。",
     url: "https://skilldrills.online/ja/drills/fps/strafe-tracking",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -57,7 +46,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "ストレイフ追いエイム練習｜ADAD切り返し | SkillDrills",
-    description: "無料のストレイフ追いエイム練習。ADADで左右に切り返す標的へ照準を合わせ続け、Apex・OW2向けのトラッキング精度をブラウザで確認できます。",
+    description: "無料のストレイフ追いエイム練習。ADADで左右に切り返す標的へマウスで照準を合わせ続け、Apex・OW2向けの追いエイム精度をブラウザで確認できます。",
   },
 };
 
@@ -68,29 +57,29 @@ export default function StrafeTrackingPageJa() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/" },
       { "@type": "ListItem", "position": 2, "name": "FPSトレーニング", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "追いエイム練習", "item": "https://skilldrills.online/ja/drills/fps/strafe-tracking" }
+      { "@type": "ListItem", "position": 3, "name": "ストレイフ追いエイム練習", "item": "https://skilldrills.online/ja/drills/fps/strafe-tracking" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "追いエイム練習 (Strafe Tracking Aim Trainer)",
+    "name": "ストレイフ追いエイム練習 (Strafe Tracking)",
     "url": "https://skilldrills.online/ja/drills/fps/strafe-tracking",
     "description": "ブラウザ上で不規則な左右ストレイフと切り返しに対する追いエイム（トラッキング）を反復トレーニングできる無料FPSエイム練習ツール。",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requires HTML5 Canvas and Pointer Lock API support",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "追いエイム練習 (Strafe Tracking Aim Trainer)",
+    "name": "ストレイフ追いエイム練習 (Strafe Tracking)",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "ブラウザ上で不規則な左右ストレイフと切り返しに対する追いエイム（トラッキング）を反復トレーニングできる無料FPSエイム練習ツール。",
     "genre": "FPS Training / Strafe Tracking Aim",
@@ -105,10 +94,10 @@ export default function StrafeTrackingPageJa() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "追いエイム練習 (Strafe Tracking Aim Trainer)",
+    "name": "ストレイフ追いエイム練習 (Strafe Tracking)",
     "url": "https://skilldrills.online/ja/drills/fps/strafe-tracking",
     "description": "ブラウザ上で不規則な左右ストレイフと切り返しに対する追いエイム（トラッキング）を反復トレーニングできる無料FPSエイム練習ツール。",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Strafe Tracking", "Tracking Aim"],
     "playMode": "SinglePlayer",
@@ -120,7 +109,7 @@ export default function StrafeTrackingPageJa() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -175,15 +164,15 @@ export default function StrafeTrackingPageJa() {
         "name": "本ツールはApex LegendsやOverwatch 2の実戦練習になりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。本ツールはポインターロックを使用し、ゲーム内のDPIや感度に合わせて設定することで、ADADストレイフ（左右不規則運動）への反応追従を練習できます。ブラウザの入力はOSのポインター設定を経由します。"
+          "text": "補助練習として役立ちます。本ツールはポインターロックを使い、/drillsの設定で決めたマウス感度倍率でADADストレイフ（左右不規則運動）への追従を練習できます。ブラウザの入力はOSのポインター設定を経由するため、実戦での伸び方には個人差があります。"
         }
       },
       {
         "@type": "Question",
-        "name": "なぜ標的から1秒以上外れるとコンボが途切れるのですか？",
+        "name": "スコア・コンボ・残り時間はどう計算されますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "実戦において追従が完全に途切れるとDPS（秒間ダメージ）が激減するためです。常にターゲットを視界中央に捉え続ける持続的注意集中と、切り返し直後の素早い復帰（リカバリー）能力を養成するために規律ペナルティが設定されています。"
+          "text": "照準が標的に重なっている間、0.25秒ごとに基本50点（コンボ倍率とレベル倍率を適用）と0.1秒が加算されます（残り時間の上限は60秒）。1秒途切れずに追うとコンボが1上がり、倍率は最大3.0倍です。標的から外れた瞬間にコンボは0に戻り、時間ペナルティ設定がオンなら1秒外れるごとに0.6秒減ります。45秒から始まり、残り時間が0で終了です。クリックは不要です。"
         }
       },
       {
@@ -191,7 +180,7 @@ export default function StrafeTrackingPageJa() {
         "name": "高リフレッシュレートモニター（144Hz/240Hz）はトラッキング精度に影響しますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "極めて大きく影響します。60Hz（約16.7ms間隔）では高速移動するターゲットの輪郭がブレて網膜スリップの検出が遅れますが、144Hz（約6.9ms）や240Hz（約4.1ms）では標的の微細な加減速が正確に視覚入力され、より滑らかな追従が可能になります（Woods et al., 2015）。"
+          "text": "影響する場合があります。フレーム間隔は60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1msなので、高リフレッシュレートほど切り返しが細かいコマで表示されます。ただしスコア差は機材より練習量や個人差の影響が大きいこともあります。"
         }
       },
       {
@@ -199,7 +188,7 @@ export default function StrafeTrackingPageJa() {
         "name": "本追いエイム練習ツールはブラウザ上で無料で利用できますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい、完全無料です。インストールや会員登録、課金などは一切不要で、Webブラウザを開くだけで即座に本格的なトラッキングエイムトレーニングを開始できます。"
+          "text": "はい、完全無料です。インストールや会員登録、課金などは一切不要で、Webブラウザを開くだけでストレイフ追いエイム練習を始められます。ポインターロックを使うマウス専用ドリルなのでPCで利用してください。"
         }
       }
     ]
@@ -214,8 +203,8 @@ export default function StrafeTrackingPageJa() {
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "ゲーム感度とポインターロックの設定",
-        "text": "設定メニューで使用中のFPSタイトル、マウスDPI、ゲーム内感度を一致させ、ポインターロックを有効化します。",
+        "name": "感度を合わせて開始",
+        "text": "ドリル一覧（/drills）の設定でマウス感度倍率を普段のゲームに近づけ、トレーニング開始を押します。カウントダウン後にポインターロックがかかります。",
         "url": "https://skilldrills.online/ja/drills/fps/strafe-tracking#step-1"
       },
       {
@@ -243,28 +232,28 @@ export default function StrafeTrackingPageJa() {
   };
 
   const strafeGuideJa = {
-    heading: "追いエイム練習とFPSトラッキングガイド",
+    heading: "ストレイフ追いエイム練習ガイド：ADAD切り返しを追う",
     intro: [
-      "追いエイム練習は、ADADで左右に切り返す標的へ照準を合わせ続けるFPSトレーニングです。Apex LegendsやOverwatch 2では、一瞬のフリックだけでなく、数秒間ターゲットを追い続けるトラッキング精度が重要になります。",
+      "ストレイフ追いエイム練習は、ADADで左右に切り返す標的へ照準を合わせ続けるFPSトレーニングです。Apex LegendsやOverwatch 2では、一瞬のフリックだけでなく、数秒間ターゲットを追い続けるトラッキング精度が重要になります。",
       "滑らかな追従（スムーズパシュート）は標的の速度が上がりすぎると追いつけず、追いつきサッケードで補う必要があります（Krauzlis, 2004; Rashbass, 1961）。標的が不意に反転した直後には、認知と反応の遅れが生じます。この遅れで生じたズレをすばやく戻す練習が追いエイムの土台になります。",
       "視覚誘導型ハンドコントロールにおいては、 Michael F. Land & David N. Horwood（1995）の二重注視点モデルおよび C.S. Green & D. Bavelier（2003）のアクションビデオゲーム視覚認知理論が適用されます。視線はターゲットの輪郭そのものだけでなく、進行方向のわずかな予備動作や速度変化（速度シグナル）を先読み知覚し、前頭眼野および小脳を通じて滑らかな手の連続補正動作を生成します。",
-      "計測について：このドリルは、ブラウザのperformance.now()タイマーでフレームごとの照準位置と標的の重なりを記録し、計算は端末内で行います（Woods et al., 2015）。表示のリフレッシュレートや入力機器の遅延で結果は変わるため、同じ環境での自己記録の推移を見てください。",
-      "ディスプレイと入力環境の最適化について：通常の60Hzモニターでは約16.7msのフレーム遅延が生じ、高速な反転時にターゲットの像が不連続に飛んで見えます。144Hz（約6.9ms）や240Hz（約4.1ms）の高リフレッシュレートモニターとポーリングレート1000Hz以上のゲーミングマウスを併用することで、標的の切り返しを鮮明に捉え、微細なハンドコントロールを反映しやすくなります（Woods et al., 2015）。"
+      "計測について：このドリルはフレームごとに照準が標的のヒットボックス内にあるかを判定し、精度（%）とターゲット外時間を端末内で計算します。表示のリフレッシュレートや入力機器の遅延で結果は変わるため、同じ環境での自己記録の推移を見てください。",
+      "ディスプレイと入力環境の最適化について：通常の60Hzモニターでは約16.7msのフレーム遅延が生じ、高速な反転時にターゲットの像が不連続に飛んで見えます。144Hz（約6.9ms）や240Hz（約4.1ms）の高リフレッシュレートモニターとポーリングレート1000Hz以上のゲーミングマウスを併用することで、標的の切り返しを鮮明に捉え、微細なハンドコントロールを反映しやすくなります。"
     ],
     benchmarks: {
-      title: "追いエイム（トラッキング）精度ランク＆パフォーマンス階層基準",
-      headers: ["評価ティア", "トラッキング精度 %", "最大吸い付き継続時間", "実戦FPS（Apex / OW2 / VALORANT）での適応力"],
+      title: "ストレイフ追いエイム精度の目安（SkillDrills練習基準）",
+      headers: ["目安ティア", "追従精度 %", "最大吸い付き時間", "状態の目安"],
       rows: [
-        ["ティア1 (最上位段階)", "82% – 95%+", "5.0秒以上", "敵の不規則な高速レレレ（ADAD）や屈伸移動に対しても照準が全く離れず、切り返し時のリカバリー遅延が110ms未満。"],
-        ["ティア2 (Competitive Master)", "68% – 81%", "3.5秒 – 4.9秒", "一定速度の追従が極めて滑らか。切り返し時の追従遅れを最小限の微小フリックで即座にリカバリー可能。中近距離の激しい撃ち合いで安定して優位に立つ。"],
-        ["ティア3 (High-Skill FPS)", "54% – 67%", "2.0秒 – 3.4秒", "通常の左右移動は安定して追従可能。標的の移動速度が加速した際や急激な反転時にわずかなオーバーシュート（行き過ぎ）が生じる。"],
-        ["ティア4 (Intermediate)", "38% – 53%", "1.0秒 – 1.9秒", "標的の切り返しに反応が遅れ、照準が敵の背後を取り残される現象が発生。直線追従でも手のブレや力みによる細かいカクつきが見られる。"],
-        ["ティア5 (Developing / Jitter)", "38% 未満", "1.0秒未満", "ターゲットの不規則運動に目が追いつかず、過剰補正のジッター（手の震え）が発生。実戦で敵のストレイフに翻弄され弾を外してしまう状態。"]
+        ["ティア1", "82% – 95%+", "5.0秒以上", "速いADADの切り返しでも照準が標的から離れにくく、反転直後の戻りが早い段階。"],
+        ["ティア2", "68% – 81%", "3.5秒 – 4.9秒", "一定速度の追従が滑らかで、切り返しの遅れを小さな修正で戻せる段階。"],
+        ["ティア3", "54% – 67%", "2.0秒 – 3.4秒", "通常の左右移動は安定して追従可能。標的の移動速度が加速した際や急激な反転時にわずかなオーバーシュート（行き過ぎ）が生じる。"],
+        ["ティア4", "38% – 53%", "1.0秒 – 1.9秒", "標的の切り返しに反応が遅れ、照準が敵の背後を取り残される現象が発生。直線追従でも手のブレや力みによる細かいカクつきが見られる。"],
+        ["ティア5", "38% 未満", "1.0秒未満", "ターゲットの不規則運動に目が追いつかず、過剰補正のジッター（手の震え）が発生。実戦で敵のストレイフに翻弄され弾を外してしまう状態。"]
       ],
-      note: "精度はセッション全体のフレーム中、照準が標的ヒットボックス内に完全にロックオンされていたフレームの割合をperformance.now()で測定したものです（Woods et al., 2015）。"
+      note: "精度はセッション全体のフレームのうち照準が標的ヒットボックス内にあった割合、最大吸い付き時間は途切れずに追えた最長秒数です。区分はSkillDrillsが決めた練習用の目安で、研究基準やユーザー統計ではありません。"
     },
     techniques: {
-      title: "科学的エビデンスに基づく追いエイム4大上達プロトコル",
+      title: "ストレイフ追いエイムを安定させる4つのポイント",
       items: [
         {
           name: "角速度マッチング（速度同期）と脱力",
@@ -278,7 +267,7 @@ export default function StrafeTrackingPageJa() {
         },
         {
           name: "前腕グライドと手首のハイブリッド分担",
-          desc: "近距離の小刻みな切り返しは手首の可動域で高速処理し、横に長い大ストレイフや追いかけ動作は肘を支点にした前腕スライド（アームグライド）で処理します。関節の役割を分担することで、可動域の端で手首がロックする現象を完全に排除します。",
+          desc: "近距離の小刻みな切り返しは手首の可動域で高速処理し、横に長い大ストレイフや追いかけ動作は肘を支点にした前腕スライド（アームグライド）で処理します。関節の役割を分担すると、可動域の端で手首が引っかかる場面を減らせます。",
           tips: "前腕が机に張り付かないよう、アームカバーの使用や十分なマウスパッド面積の確保が効果的です。"
         },
         {
@@ -289,7 +278,7 @@ export default function StrafeTrackingPageJa() {
       ]
     },
     steps: [
-      "セッション設定で使用中のゲーム、DPI、ゲーム内感度を合わせ、ポインターロックを有効化します。",
+      "/drillsの設定でマウス感度倍率を合わせ、トレーニング開始を押します（カウントダウン後にポインターロック）。",
       "ステージ中央に出現した移動ターゲットに素早く照準を重ね、追従を開始します。",
       "標的の左右移動速度に合わせてマウスを滑らかに動かし、レティクルを中心部に固定し続けます。",
       "標的が急反転した際は素早い微小修正で即座にリカバリーし、最大吸い付き継続時間を伸ばします。",
@@ -301,8 +290,8 @@ export default function StrafeTrackingPageJa() {
     related: [
       { href: "/ja/drills/fps/recoil-control", label: "リコイル練習 (Recoil Control Trainer)" },
       { href: "/ja/drills/fps/angle-hold-trainer", label: "置きエイム練習 (Angle Hold Trainer)" },
-      { href: "/ja/drills/fps/pro-smooth-pursuit", label: "スムーズパシュート練習 (Smooth Pursuit Trainer)" },
-      { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "対ストレイフジッター練習 (Anti-Strafe Jitter)" },
+      { href: "/ja/drills/fps/pro-smooth-pursuit", label: "トラッキングエイム練習（なめらかな追従）" },
+      { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "レレレ撃ち対策" },
       { href: "/ja/drills/fps/micro-correction-precision", label: "マイクロフリック練習 (Micro-Correction)" }
     ]
   };
@@ -321,8 +310,8 @@ export default function StrafeTrackingPageJa() {
     statScore: "スコア",
     pausedTitle: "一時停止中",
     pausedPrompt: "画面をクリックしてカーソルを固定し、再開してください。",
-    startTitle: "追いエイム練習",
-    startSubtitle: "不規則左右ストレイフ追従 • エンドレス難易度進行",
+    startTitle: "ストレイフ追いエイム練習",
+    startSubtitle: "左右ADAD追従 • ポインターロック • エンドレス難易度進行",
     startButtonText: "トレーニング開始",
     getReady: "構えてください",
     statLockStreak: "最大吸い付き時間",
@@ -334,13 +323,13 @@ export default function StrafeTrackingPageJa() {
     bottomCaption: "フロア上を左右に激しく切り返すターゲットに照準を合わせ続け、不規則なストレイフへの追従力を鍛えてください。",
     rulesTitle: "ドリルルールと設定",
     rulesItems: [
-      { num: "1", text: "照準のアライメント", highlight: "+50 PTS (+0.4秒/秒)", result: "×コンボ倍率" },
-      { num: "2", text: "連続トラッキング", highlight: "最大 3.0×", result: "最大倍率" },
+      { num: "1", text: "標的に重ねる", highlight: "0.25秒ごと +50 PTS (+0.4秒/秒)", result: "×コンボ倍率" },
+      { num: "2", text: "1秒連続追従", highlight: "コンボ+1・最大 3.0×", result: "最大倍率" },
       { num: "3", text: "レベル進行", highlight: "+1 レベル / 1400 PTS", result: "可変ストレイフ加速" },
-      { num: "4", text: "ロック外れペナルティ", highlight: "1.0秒 ロック外れ", result: "コンボリセット (-0.6秒)" }
+      { num: "4", text: "標的から外れる", highlight: "即コンボリセット", result: "1秒ごと -0.6秒（ペナルティON）" }
     ],
-    aboutTitle: "追いエイムとFPSトラッキングについて",
-    whatIsTitle: "追いエイム（トラッキング）トレーニングとは？",
+    aboutTitle: "ストレイフ追いエイム練習について",
+    whatIsTitle: "ストレイフ追いエイム練習とは？",
     whatIsLead: "追いエイムとは、予測不能に動く標的に照準を重ね合わせ続ける技術です。人間の滑らかな視覚追従は角速度約30°/秒まで正確に機能し、反転のたびに約100〜130ミリ秒の不可避な遅れ（キャッチアップサッケード）が発生します（Rashbass, 1961; Krauzlis, 2004）。",
     aboutIntro: [
       "追いエイム練習は、画面上を左右不規則に動き回る敵に対して照準を吸い付かせるための持続的な運動補正能力を徹底的に強化します。"

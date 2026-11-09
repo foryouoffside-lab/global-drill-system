@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Aim Trainer Valorant - Acquisition de cibles | SkillDrills",
-  description: "Aim trainer gratuit dans le navigateur pour Valorant et CS2 : travaillez l'acquisition de cibles, la détection visuelle et la précision du premier tir.",
+  description: "Aim trainer Valorant gratuit dans le navigateur : touchez 3 à 8 cibles de la plus claire à la plus sombre pour travailler l'acquisition et le premier tir.",
   keywords: [
     "aim trainer Valorant",
-    "aim trainer",
-    "aim training",
+    "valorant aim trainer",
+    "valorant aim training",
     "acquisition de cibles",
     "entraînement de visée",
     "premier tir",
@@ -19,8 +19,7 @@ export const metadata = {
     "détection visuelle FPS",
     "identification des menaces",
     "flick premier tir",
-    "réticule",
-    "test de visée"
+    "réticule"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/target-acquisition",
@@ -32,7 +31,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim Trainer Valorant - Acquisition de cibles | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur pour Valorant et CS2 : travaillez l'acquisition de cibles, la détection visuelle et la précision du premier tir.",
+    description: "Aim trainer Valorant gratuit dans le navigateur : touchez 3 à 8 cibles de la plus claire à la plus sombre pour travailler l'acquisition et le premier tir.",
     url: "https://skilldrills.online/fr/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -41,7 +40,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim Trainer Valorant - Acquisition de cibles | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur pour Valorant et CS2 : travaillez l'acquisition de cibles, la détection visuelle et la précision du premier tir.",
+    description: "Aim trainer Valorant gratuit dans le navigateur : touchez 3 à 8 cibles de la plus claire à la plus sombre pour travailler l'acquisition et le premier tir.",
   },
 };
 
@@ -62,9 +61,9 @@ export default function TargetAcquisitionFrPage() {
     "name": "Aim Trainer Valorant - Acquisition de cibles",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entraîneur en ligne d'acquisition de cibles, détection visuelle et précision du premier tir pour shooters tactiques comme CS2 et Valorant.",
+    "description": "Drill gratuit d'acquisition de cibles pour joueurs de Valorant : touchez les cibles par ordre de luminosité et travaillez la précision du premier tir.",
     "genre": "Entraînement FPS / Précision du Premier Tir",
     "url": "https://skilldrills.online/fr/drills/fps/target-acquisition",
     "publisher": {
@@ -79,11 +78,11 @@ export default function TargetAcquisitionFrPage() {
     "@type": "WebApplication",
     "name": "Aim Trainer Valorant - Acquisition de cibles",
     "url": "https://skilldrills.online/fr/drills/fps/target-acquisition",
-    "description": "Entraîneur en ligne d'acquisition de cibles, détection visuelle et précision du premier tir pour shooters tactiques comme CS2 et Valorant.",
+    "description": "Drill gratuit d'acquisition de cibles pour joueurs de Valorant : touchez les cibles par ordre de luminosité et travaillez la précision du premier tir.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Nécessite le support HTML5 Canvas et Pointer Lock API",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const videoGameSchema = {
@@ -91,8 +90,8 @@ export default function TargetAcquisitionFrPage() {
     "@type": "VideoGame",
     "name": "Aim Trainer Valorant - Acquisition de cibles",
     "url": "https://skilldrills.online/fr/drills/fps/target-acquisition",
-    "description": "Entraîneur en ligne d'acquisition de cibles, détection visuelle et précision du premier tir pour shooters tactiques comme CS2 et Valorant.",
-    "dateModified": "2026-09-20",
+    "description": "Drill gratuit d'acquisition de cibles pour joueurs de Valorant : touchez les cibles par ordre de luminosité et travaillez la précision du premier tir.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["Entraînement FPS", "Aim Trainer", "Acquisition de Cibles"],
     "playMode": "SinglePlayer",
@@ -104,8 +103,16 @@ export default function TargetAcquisitionFrPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment fonctionne cet aim trainer Valorant d'acquisition de cibles ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Une session dure 60 secondes. Des groupes de 3 à 8 cibles de luminosité différente apparaissent et il faut les toucher de la plus claire à la plus sombre. Une bonne cible rapporte +100 points multipliés par le combo et le niveau ; vider un groupe ajoute +400 points multipliés par le niveau et fait apparaître un nouveau groupe. Toucher la mauvaise cible ou cliquer dans le vide remet le combo à zéro et retire 0,6 seconde si la pénalité de temps est activée. Le drill se joue à la souris avec verrouillage du pointeur ; Échap le quitte. SkillDrills est un outil indépendant, non affilié à Riot Games."
+        }
+      },
       {
         "@type": "Question",
         "name": "Qu'est-ce que l'acquisition de cibles dans les FPS compétitifs ?",
@@ -132,10 +139,10 @@ export default function TargetAcquisitionFrPage() {
       },
       {
         "@type": "Question",
-        "name": "Pourquoi les joueurs professionnels acquièrent-ils les cibles bien plus vite que les amateurs ?",
+        "name": "Comment utiliser son regard pour acquérir les cibles plus vite ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les pros bénéficient d'un filtrage de saillance visuelle affûté (Wolfe, 2007) et de programmes moteurs de sous-mouvements optimisés (Meyer et al., 1988). Leur cerveau court-circuite le balayage séquentiel pour cibler sans hésiter la silhouette la plus menaçante."
+          "text": "Selon le modèle Guided Search (Wolfe, 2007), l'attention va d'abord vers les éléments les plus saillants. Plutôt que de balayer l'écran ligne par ligne, gardez le regard au centre, repérez la cible la plus visible et amenez la souris là où votre regard se trouve déjà. C'est exactement l'enchaînement que ce drill fait répéter."
         }
       },
       {
@@ -143,7 +150,7 @@ export default function TargetAcquisitionFrPage() {
         "name": "Quel est l'impact de la précision du premier tir dans CS2 et Valorant ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dans les shooters tactiques où un tir à la tête élimine instantanément (Vandal ou AK-47), le joueur qui repère la tête et fait mouche en premier remporte le round. Manquer son premier coup équivaut à perdre l'avantage de précision initial."
+          "text": "Dans les shooters tactiques où un tir à la tête élimine instantanément (Vandal ou AK-47), le premier tir réussi décide souvent du duel, et un premier tir manqué laisse à l'adversaire le temps de répliquer. Ce drill ne simule pas de vrais tirs à la tête, mais isole l'habitude de choisir la bonne cible puis de placer proprement le premier clic."
         }
       },
       {
@@ -159,7 +166,7 @@ export default function TargetAcquisitionFrPage() {
         "name": "En quoi l'encombrement visuel influence-t-il la vitesse d'acquisition ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Lorsque plusieurs éléments partagent des propriétés visuelles avec l'opposant, le traitement visuel passe d'une analyse parallèle instantanée à un balayage séquentiel laborieux, ajoutant 40 à 120 ms par distracteur présent."
+          "text": "Lorsque plusieurs éléments partagent des propriétés visuelles avec l'opposant, le traitement visuel passe d'une analyse parallèle instantanée à un balayage séquentiel laborieux, ce qui allonge le temps nécessaire pour trouver la cible (Treisman & Gelade, 1980). Dans ce drill, le nombre de cibles augmente et les écarts de luminosité diminuent avec le niveau."
         }
       },
       {
@@ -183,7 +190,7 @@ export default function TargetAcquisitionFrPage() {
         "name": "Combien de temps consacrer chaque jour au drill d'acquisition de cibles ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "De 10 à 15 minutes quotidiennes en début d'échauffement suffisent à aiguiser la discrimination visuelle et calibrer la mémoire musculaire du premier tir sans saturer le système nerveux."
+          "text": "Il n'y a pas de durée idéale prouvée. Quelques sessions de 60 secondes bien concentrées en échauffement sont un bon point de départ ; arrêtez-vous avant la fatigue visuelle et comparez vos scores sur le même matériel."
         }
       }
     ]
@@ -199,7 +206,7 @@ export default function TargetAcquisitionFrPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrer sa Sensibilité",
-        "text": "Paramétrez vos DPI et votre sensibilité dans les réglages de session pour retrouver votre rapport habituel et verrouiller le pointeur.",
+        "text": "Réglez la sensibilité sur la page /drills pour retrouver votre sensibilité habituelle en jeu. Le pointeur est verrouillé automatiquement au démarrage.",
         "url": "https://skilldrills.online/fr/drills/fps/target-acquisition#step-1"
       },
       {
@@ -229,23 +236,23 @@ export default function TargetAcquisitionFrPage() {
   const targetAcquisitionGuide = {
     heading: "Aim Trainer Valorant : acquisition de cibles et premier tir",
     intro: [
-      "Pour qui cherche un aim trainer Valorant, ce drill mesure le passage de la détection d'une menace au placement du réticule et au premier tir précis. Il travaille l'acquisition de cibles, la détection visuelle et la précision du premier tir comme on le rencontre dans les FPS tactiques. Il ne reproduit ni le recul, ni le réseau, ni la carte d'un jeu précis.",
+      "Cet aim trainer Valorant gratuit dans le navigateur travaille l'acquisition de cibles : pendant 60 secondes, 3 à 8 cibles de luminosité différente apparaissent et doivent être touchées de la plus claire à la plus sombre. Vous répétez ainsi le passage du choix de la bonne cible au premier tir précis, utile pour Valorant, CS2 et les autres FPS tactiques. Il ne reproduit ni le recul, ni le réseau, ni la carte d'un jeu précis.",
       "Le socle théorique de la prospection visuelle et de l'identification a été posé par Anne Treisman et Garry Gelade (1980) au travers de la Théorie de l'Intégration des Traits. Treisman a prouvé que les propriétés visuelles primaires — comme le contraste de brillance, les couleurs saillantes et l'orientation des bordures — sont perçues en parallèle sur tout le champ oculaire. Ce n'est qu'avec la focalisation de l'attention spatiale que ces éléments fusionnent en une cible ennemie distincte.",
-      "En prolongeant le traitement parallèle, le modèle Guided Search de Jeremy M. Wolfe (1994, 2007) décrit l'interaction entre cartes de saillance sensorielle et attentes cognitives. En s'exerçant au tri de contrastes, le cortex visuel apprend à écarter immédiatement les distracteurs d'arrière-plan, réduisant le délai entre stimulus visuel et amorce motrice.",
-      "En synthétisant les lois biomécaniques de Paul M. Fitts (1954), la théorie des sous-mouvements optimisés de David E. Meyer et al. (1988) et la chronométrie numérique à haute résolution (Woods et al., 2015), cet exercice prépare les réflexes à bannir toute hésitation pour enchaîner des tirs précis sous pression compétitive.",
-      "Mode d'évaluation : chaque action est mesurée localement par l'horloge haute résolution performance.now() de votre navigateur sans aucun transfert distant. Contraintes matérielles : les minuteurs web intègrent une granularité de sécurité de l'ordre de 1 ms, et les écrans rafraîchissent l'image selon leur fréquence — environ 16,7 ms à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015). Le polling rate de la souris induit un décalage de 8 ms à 125 Hz contre 1 ms à 1000 Hz. Évaluez votre évolution sur une configuration fixe."
+      "En prolongeant le traitement parallèle, le modèle Guided Search de Jeremy M. Wolfe (1994, 2007) décrit l'interaction entre cartes de saillance sensorielle et attentes cognitives. En s'exerçant au tri de contrastes, le cortex visuel apprend à écarter immédiatement les distracteurs d'arrière-plan, ce qui peut réduire le délai entre l'apparition de la cible et le début du mouvement dans cette tâche, sans garantie de transfert en match.",
+      "En synthétisant les lois biomécaniques de Paul M. Fitts (1954), la théorie des sous-mouvements optimisés de David E. Meyer et al. (1988) et la chronométrie numérique à haute résolution (Woods et al., 2015), cet exercice se concentre sur le lancement du premier flick sans hésitation et sur un arrêt net au centre de la cible. Il ne garantit aucun progrès en match ; il sert à suivre l'évolution de vos propres scores.",
+      "À propos des résultats : l'écran de fin affiche le score, la précision (bonnes cibles touchées ÷ clics totaux), les groupes vidés, le combo max et le niveau atteint. Votre meilleur score est enregistré uniquement dans ce navigateur. Ce drill ne mesure pas de temps de réaction en millisecondes. La fréquence de l'écran et le polling rate de la souris changent les sensations : comparez-vous sur la même configuration."
     ],
     benchmarks: {
-      title: "Barèmes Scientifiques d'Acquisition de Cibles et Latence de Discrimination",
-      headers: ["Niveau de Performance", "Latence d'Acquisition", "Précision du Premier Tir", "Impact Compétitif en Match"],
+      title: "Paliers d'entraînement de précision en acquisition de cibles",
+      headers: ["Palier", "Précision", "Signification"],
       rows: [
-        ["Palier 1 (Très rapide)", "<260 ms", "95% – 99%+", "Détection immédiate, premier clic précis sans hésitation de tri"],
-        ["Palier 2 (Rapide)", "260 – 320 ms", "88% – 95%", "Identification rapide ; engagement prioritaire précis malgré les distracteurs"],
-        ["Palier 3 (Correct)", "320 – 400 ms", "80% – 88%", "Précision solide au premier clic ; léger retard quand les cibles sont nombreuses"],
-        ["Palier 4 (En progression)", "400 – 500 ms", "70% – 80%", "Balayage séquentiel lent ; clics sur des distracteurs ou dépassements de cible"],
-        ["Palier 5 (Débutant)", ">500 ms", "<70%", "Difficulté face aux décors chargés ; acquisition lente de la cible"]
+        ["Palier 1", "95 % et plus", "Presque aucune erreur d'ordre ni clic dans le vide"],
+        ["Palier 2", "88 – 95 %", "La cible la plus claire est presque toujours choisie en premier, même à haut niveau"],
+        ["Palier 3", "80 – 88 %", "Des erreurs d'ordre apparaissent quand les cibles sont nombreuses"],
+        ["Palier 4", "70 – 80 %", "Les cibles de luminosité proche sont souvent confondues"],
+        ["Palier 5", "moins de 70 %", "Sécuriser l'ordre avant d'augmenter la vitesse"]
       ],
-      note: "La latence d'acquisition correspond au temps écoulé entre l'apparition de la grappe et le premier clic validé sur la cible prioritaire, chronométré avec précision numérique (Woods et al., 2015)."
+      note: "La précision est la valeur de l'écran de fin (bonnes cibles touchées ÷ clics totaux). Ces paliers sont des repères d'entraînement SkillDrills, pas des normes scientifiques, des rangs de jeu ni des statistiques d'utilisateurs."
     },
     techniques: {
       title: "Protocoles Fondés sur la Science pour Perfectionner l'Acquisition",
@@ -258,7 +265,7 @@ export default function TargetAcquisitionFrPage() {
         {
           name: "Couplage Saccadique et Moteur lors du Flick",
           desc: "Désolidarisez le regard de la main : déclenchez d'abord la saccade oculaire fovéale pour caler le centre de la cible, puis laissez la proprioception fouetter le pointeur sur la bonne ligne.",
-          tips: "Vos yeux doivent se caler sur le blanc 30 à 50 ms avant l'arrivée du réticule pour verrouiller la coordonnée."
+          tips: "Veillez à ce que votre regard soit déjà sur le centre de la cible avant de bouger la souris."
         },
         {
           name: "Filtrage Rapide du Seuil de Contraste",
@@ -273,11 +280,11 @@ export default function TargetAcquisitionFrPage() {
       ]
     },
     steps: [
-      "Renseignez votre jeu, vos DPI et votre sensibilité dans les réglages de session pour retrouver votre rapport habituel et verrouiller le pointeur.",
+      "Réglez la sensibilité sur la page /drills selon votre sensibilité en jeu, puis lancez ; le pointeur est verrouillé automatiquement.",
       "Posez votre regard au centre sans forcer, en guettant l'apparition du groupe de cibles sur l'écran.",
       "Repérez sans délai la cible la plus lumineuse grâce au pré-filtrage visuel de contraste en parallèle.",
-      "Réalisez un flick net vers le centre du blanc et tirez pour engranger +100 PTS (+0,4s de temps bonus).",
-      "Neutralisez les cibles restantes par ordre décroissant de brillance pour remporter le bonus de +400 PTS et valider le palier."
+      "Réalisez un flick net vers le centre de la cible et tirez pour gagner +100 PTS × multiplicateurs de combo et de niveau. Le temps est fixé à 60 secondes et n'augmente pas avec les touches.",
+      "Neutralisez les cibles restantes par ordre décroissant de brillance pour remporter le bonus de groupe de +400 PTS × multiplicateur de niveau."
     ],
     audience: "Joueurs de FPS tactiques qui veulent s'exercer à repérer une cible parmi des distracteurs et à réussir leur premier clic. Aim trainer indépendant, non affilié à Riot Games ni à Valve.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -294,7 +301,7 @@ export default function TargetAcquisitionFrPage() {
   const copyFr = {
     h1Keyword: "Aim Trainer Valorant",
     h1Suffix: " – Acquisition de cibles",
-    subtitle: "Travaillez la détection des cibles et la précision du premier tir pour Valorant et CS2 dans le navigateur.",
+    subtitle: "Gratuit pour les joueurs de Valorant : touchez les cibles de la plus claire à la plus sombre et travaillez le premier tir.",
     statScore: "Score",
     statTime: "Temps",
     statAccuracy: "Précision",
@@ -312,10 +319,10 @@ export default function TargetAcquisitionFrPage() {
     stageCaption: "Repérez et cliquez sur la cible la plus brillante (plus forte opacité) de chaque grappe le plus vite et le plus précisément possible.",
     rulesTitle: "Consignes de l'Exercice et Barème",
     rulesItems: [
-      { num: "1", text: "Cible Touchée", highlight: "+100 PTS (+0,4s)", result: "×Multiplicateur Combo" },
+      { num: "1", text: "Cible Touchée", highlight: "+100 PTS × Niveau", result: "×Multiplicateur Combo" },
       { num: "2", text: "Série Neutralisée", highlight: "+400 PTS × Niveau", result: "Nouvelle Grappe" },
       { num: "3", text: "Niveau Supérieur", highlight: "+1 / 1400 PTS", result: "Progression Dynamique Continue" },
-      { num: "4", text: "Tir Erroné / Manqué", highlight: "Pénalité", result: "Réinitialise Combo (-0,6s)" }
+      { num: "4", text: "Tir Erroné / Manqué", highlight: "Pénalité", result: "Réinitialise Combo (-0,6s si pénalité active)" }
     ],
     aboutTitle: "À Propos de l'Acquisition de Cibles",
     aboutHeading: "Qu'est-ce que l'Acquisition de Cibles ?",

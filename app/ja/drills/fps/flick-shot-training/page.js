@@ -6,12 +6,13 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "エイム練習 - フリックエイムトレーナー | SkillDrills",
-  description: "ブラウザですぐできる無料のエイム練習。VALORANT・CS2向けにフリックとスナップエイムを練習し、スコアと命中率を確認できます。",
+  title: "フリックエイム練習｜ブラウザで素早く当てる | SkillDrills",
+  description: "フリックエイム練習をブラウザで。画面のランダムな位置に出るターゲットへマウスで素早くフリックして当てます。開始45秒、命中ごとに+2秒（最大60秒）、ミスとタイムアウトは-1秒。VALORANT・CS2プレイヤー向けの無料フリック練習で、スコア・命中率・平均フリック時間を確認できます。",
   keywords: [
-    "エイム練習",
-    "エイム練習 無料 ブラウザ",
-    "VALORANT エイム練習",
+    "フリックエイム練習",
+    "フリック エイム 練習 ブラウザ",
+    "フリック コツ",
+    "VALORANT フリック練習",
     "フリック練習",
     "フリックエイム",
     "スナップエイム",
@@ -29,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "エイム練習 - フリックエイムトレーナー | SkillDrills",
-    description: "ブラウザですぐできる無料のエイム練習。VALORANT・CS2向けにフリックとスナップエイムを練習し、スコアと命中率を確認できます。",
+    title: "フリックエイム練習｜ブラウザで素早く当てる | SkillDrills",
+    description: "フリックエイム練習をブラウザで。画面のランダムな位置に出るターゲットへマウスで素早くフリックして当てます。開始45秒、命中ごとに+2秒（最大60秒）、ミスとタイムアウトは-1秒。VALORANT・CS2プレイヤー向けの無料フリック練習で、スコア・命中率・平均フリック時間を確認できます。",
     url: "https://skilldrills.online/ja/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -38,8 +39,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "エイム練習 - フリックエイムトレーナー | SkillDrills",
-    description: "ブラウザですぐできる無料のエイム練習。VALORANT・CS2向けにフリックとスナップエイムを練習し、スコアと命中率を確認できます。",
+    title: "フリックエイム練習｜ブラウザで素早く当てる | SkillDrills",
+    description: "フリックエイム練習をブラウザで。画面のランダムな位置に出るターゲットへマウスで素早くフリックして当てます。開始45秒、命中ごとに+2秒（最大60秒）、ミスとタイムアウトは-1秒。VALORANT・CS2プレイヤー向けの無料フリック練習で、スコア・命中率・平均フリック時間を確認できます。",
   },
 };
 
@@ -50,19 +51,19 @@ export default function FlickShotJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "エイム練習・フリック", "item": "https://skilldrills.online/ja/drills/fps/flick-shot-training" }
+      { "@type": "ListItem", "position": 3, "name": "フリックエイム練習", "item": "https://skilldrills.online/ja/drills/fps/flick-shot-training" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "エイム練習・フリックトレーナー",
+    "name": "フリックエイム練習",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "ブラウザでフリックとスナップエイムを練習し、スコアと命中率を確認できる無料のFPSエイム練習サイト。",
+    "description": "ランダムに出現するターゲットへフリックして当て、スコア・命中率・平均フリック時間を確認できる無料のブラウザ用フリックエイム練習。",
     "genre": "FPS Training / Flick Shot",
     "url": "https://skilldrills.online/ja/drills/fps/flick-shot-training",
     "publisher": {
@@ -75,7 +76,7 @@ export default function FlickShotJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "エイム練習・フリックトレーナー",
+    "name": "フリックエイム練習",
     "url": "https://skilldrills.online/ja/drills/fps/flick-shot-training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -85,16 +86,16 @@ export default function FlickShotJaPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "ブラウザでフリックとスナップエイムを練習し、スコアと命中率を確認できる無料のFPSエイム練習サイト。"
+    "description": "ランダムに出現するターゲットへフリックして当て、スコア・命中率・平均フリック時間を確認できる無料のブラウザ用フリックエイム練習。"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "エイム練習・フリックトレーナー",
+    "name": "フリックエイム練習",
     "url": "https://skilldrills.online/ja/drills/fps/flick-shot-training",
-    "description": "ブラウザでフリックとスナップエイムを練習し、スコアと命中率を確認できる無料のFPSエイム練習サイト。",
-    "dateModified": "2026-09-20",
+    "description": "ランダムに出現するターゲットへフリックして当て、スコア・命中率・平均フリック時間を確認できる無料のブラウザ用フリックエイム練習。",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Flick Shot"],
     "playMode": "SinglePlayer",
@@ -106,7 +107,7 @@ export default function FlickShotJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -161,7 +162,7 @@ export default function FlickShotJaPage() {
         "name": "フィッツの法則（Fitts's Law）はフリックエイムにどう当てはまりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "標的までの距離が長く標的サイズが小さいほど難易度指数（ID）が対数関数的に跳ね上がります（Fitts, 1954）。熟練者は動作の80〜90%を一気に跳躍し、残りの10%で瞬時に閉ループ修正を完了させます。"
+          "text": "標的までの距離が長く標的サイズが小さいほど難易度指数（ID）が対数関数的に跳ね上がります（Fitts, 1954）。二段階モデル（Elliott et al., 2010）では、最初の弾道運動が距離の大部分を移動し、残りを閉ループの微修正で合わせます。"
         }
       },
       {
@@ -185,7 +186,15 @@ export default function FlickShotJaPage() {
         "name": "スコアが上がるとドリル難易度は自動で上昇しますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい、1,400点ごとにレベルが上昇し、ターゲットの出現時間（タイマーリング）が短縮され、サイズが縮小することで動的に難易度がスケールします。"
+          "text": "はい。1,800点ごとにレベルが1つ上がり、レベルの上限はありません。レベルが上がるほどターゲットの半径（32pxから開始）と表示時間（1.3秒から開始）が小さくなり、連続命中（コンボ）が続くほどさらに小さく速くなります。ミスするとコンボが0に戻り、現在のレベルの難易度に戻ります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "フリックエイム練習は何秒間続きますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "開始時は45秒で、ターゲットに命中するたびに+2秒されます（最大60秒）。何もない場所のクリック、外れたクリック、タイムアウトはそれぞれ-1秒でコンボもリセットされます。残り時間が0になると終了するため、正確に当てるほど長く続けられます。スコアは1命中100点にコンボ倍率（最大3.0倍）とレベル倍率を掛けた値です。"
         }
       }
     ]
@@ -225,25 +234,25 @@ export default function FlickShotJaPage() {
   };
 
   const flickGuide = {
-    heading: "エイム練習：フリックエイム測定とFPS照準ガイド",
+    heading: "フリックエイム練習：測定とコツのガイド",
     subtitle: "スナップエイムの初速加速、筋運動記憶、そして標的上でピタリと止める終末制動力を科学的に極める",
     intro: [
-      "エイム練習を始めたいFPSプレイヤーにとって、フリックエイムは視覚で捉えた標的へ照準を素早く移し、最短時間で初弾を当てる基本スキルです。VALORANTやCS2、Apex Legendsで想定外の角度から現れる敵に対応するには、フリックの速さと命中率を一緒に鍛える必要があります。",
+      "フリックエイム練習で鍛えるフリックエイムは、視覚で捉えた標的へ照準を素早く移し、最短時間で初弾を当てる基本スキルです。VALORANTやCS2、Apex Legendsで想定外の角度から現れる敵に対応するには、フリックの速さと命中率を一緒に鍛える必要があります。",
       "精神運動科学において、人間の目標指向運動は「二段階モデル」（Elliott et al., 2010）に従います。最初の開ループ（オープンループ）弾道運動で距離の大部分（約80〜90%）を一気に跳躍し、標的直前の閉ループ（クローズドループ）視覚フィードバックによって微細な終末修正を完了させます。",
       "Paul M. Fitts（1954）の運動制御法則（Fitts's Law）が証明するように、移動距離が長く標的が小さいほど難易度指数（ID）は対数関数的に増大します。本ドリルでは、Richard A. Schmidtら（1979）の主動筋・拮抗筋パルス制御論と高精度デジタル時間計測（Woods et al., 2015）を融合し、オーバーシュートのない機械的ブレーキング能力を養います。",
       "計測精度について：本ドリルはブラウザの performance.now() 高分解能タイマーを用い、デバイス上で完結して測定されます。ディスプレイのリフレッシュレート（60Hzなら約16.7ms、144Hzなら約6.9ms、240Hzなら約4.1ms）による表示遅延が生じるため、5ms未満の微小なブレはハードウェア起因の測定ノイズとして扱い、同一環境での推移を比較してください。"
     ],
     benchmarks: {
-      title: "目標捕捉・運動時間（Movement Time）ベンチマーク基準",
+      title: "フリック段階別 SkillDrills 練習目安（参考）",
       headers: ["動作フェーズ / 指標", "標準的レイテンシ", "運動制御メカニズム", "習熟段階とスキル評価"],
       rows: [
         ["視覚的サッカード（跳躍眼球運動）", "180 – 220 ms", "中心窩捕捉と視覚皮質の知覚処理", "物理的動作開始前の刺激検出（Woods et al., 2015）"],
         ["弾道的主運動（一次インパルス）", "120 – 180 ms", "主動筋・拮抗筋の爆発的筋出力", "目標距離の80〜90%をカバーする開ループ飛行（Elliott et al., 2010）"],
         ["終末微小修正（ホーミング・制動）", "60 – 120 ms", "視覚フィードバックと摩擦ブレーキ", "難易度指数を解決する閉ループ減速制御（Fitts, 1954）"],
-        ["総合標的捕捉時間（一般水準）", "360 – 520 ms", "知覚・運動ループ全体の合計時間", "標準的な目安となるベースライン"],
-        ["上級段階の無意識捕捉", "240 – 320 ms", "微小修正を極小化した自動化運動シナジー", "調整されたeDPI制動力を備えた競技FPS最上位プレイヤー"]
+        ["総合標的捕捉時間（練習初期の目安）", "360 – 520 ms", "知覚・運動ループ全体の合計時間", "練習を始めたときの参考ライン"],
+        ["熟練した練習段階", "240 – 320 ms", "微小修正を極小化した自動化運動シナジー", "eDPIに合った制動を重点的に練習する段階"]
       ],
-      note: "文献値（Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010; Woods et al. 2015）を統合した基準です。"
+      note: "ms値はSkillDrillsの練習用の目安で、研究上の基準値やユーザーデータではありません。引用文献（Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010; Woods et al. 2015）は各段階の概念の出典です。"
     },
     techniques: {
       title: "ゲーム別 推奨eDPI感度アライメント",
@@ -275,7 +284,7 @@ export default function FlickShotJaPage() {
       "画面中央のクロスヘアに視線をリラックスさせて置きます。",
       "ターゲットが出現した瞬間、目標の中心に向けて素早くフリックし、クリックします。",
       "ゆっくり視線を動かすのではなく、鋭い加速と目標上での確実な停止を意識してください。",
-      "スコアカードで命中率、平均フリック速度、ランク評価を確認し、反復練習を行いましょう。"
+      "結果カードでスコア、命中率、平均フリック時間、最大コンボ、最高レベル、評価を確認し、反復練習を行いましょう。"
     ],
     audience: "VALORANT、CS2、Apex Legends、Overwatch 2などで、初弾のヘッドショット精度と瞬時のスナップエイムを極限まで高めたいすべてのFPSプレイヤー。",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -316,9 +325,9 @@ export default function FlickShotJaPage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "エイム練習",
-          h1Suffix: " - フリックエイムトレーナー",
-          subtitle: "VALORANT・CS2向けのフリックと初弾エイムをブラウザですぐ練習できます。",
+          h1Keyword: "フリックエイム練習",
+          h1Suffix: "｜ブラウザで素早く当てる",
+          subtitle: "VALORANT・CS2プレイヤー向けのフリックエイム練習。画面のランダムな位置に出るターゲットへマウスで素早くフリックして当てましょう。",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "命中率",
@@ -339,7 +348,7 @@ export default function FlickShotJaPage() {
             { num: "1", text: "ターゲット命中", highlight: "+100点 (+2.0秒)", result: "コンボ倍率適用" },
             { num: "2", text: "コンボストリーク", highlight: "最大3.0倍", result: "高速ターゲット" },
             { num: "3", text: "レベル上昇", highlight: "+1 / 1800点", result: "適応型スケーリング" },
-            { num: "4", text: "ミス / タイムアウト", highlight: "ペナルティ", result: "コンボリセット (-0.8秒)" }
+            { num: "4", text: "ミス / タイムアウト", highlight: "ペナルティ", result: "コンボリセット (-1.0秒)" }
           ],
           aboutTitle: "Pro フリック トレーナーについて",
           aboutHeading: "フリックエイム（Flick Aim）とは？",

@@ -7,17 +7,17 @@ const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 export const metadata = {
   title: 'Entrenamiento de puntería FPS | SkillDrills',
-  description: '15 ejercicios gratis para Valorant, CS2 y Apex: flicks, tracking, control de retroceso y reflejos en tu navegador.',
+  description: 'Entrenamiento de puntería FPS gratis (aim training): 15 ejercicios para Valorant, CS2 y Apex con flicks, tracking, control de retroceso y reflejos.',
   keywords: [
-    'entrenamiento de puntería', 'mejorar puntería FPS', 'aim trainer gratis',
+    'entrenamiento de puntería', 'mejorar puntería FPS', 'aim training',
     'puntería Valorant', 'puntería CS2', 'ejercicios de flicks',
     'tracking de puntería', 'colocación de la mira', 'sensibilidad ratón shooter',
-    'test de reflejos gaming', 'control de retroceso', 'apuntar con brazo o muñeca',
-    'microajustes de puntería', 'eDPI shooter', 'aim trainer navegador gratis'
+    'entrenar puntería', 'control de retroceso', 'apuntar con brazo o muñeca',
+    'microajustes de puntería', 'eDPI shooter', 'aim training gratis'
   ],
   openGraph: {
     title: 'Entrenamiento de puntería FPS | SkillDrills',
-    description: '15 ejercicios gratis para Valorant, CS2 y Apex: flicks, tracking, control de retroceso y reflejos en tu navegador.',
+    description: 'Entrenamiento de puntería FPS gratis (aim training): 15 ejercicios para Valorant, CS2 y Apex con flicks, tracking, control de retroceso y reflejos.',
     type: 'website',
     url: 'https://skilldrills.online/es/drills/fps',
     siteName: 'SkillDrills',
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Entrenamiento de puntería FPS | SkillDrills',
-    description: '15 ejercicios gratis de puntería para Valorant, CS2 y Apex en tu navegador.',
+    description: 'Entrenamiento de puntería FPS (aim training): 15 ejercicios gratis para Valorant, CS2 y Apex en tu navegador.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -51,10 +51,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "name": "Entrenamiento de puntería FPS (15 ejercicios)",
   "url": "https://skilldrills.online/es/drills/fps",
-  "description": `15 ejercicios gratis para Valorant, CS2 y Apex: flicks, tracking, control de retroceso, cambio de objetivos y reflejos en tu navegador.`,
+  "description": `Entrenamiento de puntería FPS (aim training): 15 ejercicios gratis para Valorant, CS2 y Apex: flicks, tracking, control de retroceso, cambio de objetivos y reflejos en tu navegador.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": fpsDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'es', drill.name);
@@ -70,14 +70,14 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "¿Cómo se transfiere el entrenamiento de puntería en navegador a shooters tácticos como Valorant y CS2?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En shooters tácticos como Valorant y CS2, el tiempo para matar (TTK) suele ser inferior a 200 ms, por lo que la precisión del primer impacto y los microajustes finales deciden cada duelo. Las partidas de combate a muerte (Deathmatch) en el juego conllevan tiempos muertos de reaparición y desplazamientos pasivos, mientras que un aim trainer dedicado aísla cientos de movimientos balísticos (flicks) y mecánicas de frenado en solo 10 minutos. Esto automatiza los patrones neuromusculares en la corteza motora, liberando ancho de banda cognitivo para la colocación de la mira (crosshair placement) y la toma de decisiones tácticas."
+        "text": "En Valorant y CS2 los primeros disparos suelen decidir el duelo, así que la precisión del primer tiro y los pequeños ajustes importan mucho. Una partida de Deathmatch tiene tiempos de reaparición y desplazamiento, mientras que el entrenamiento de puntería en el navegador repite muchos más flicks y frenadas precisas en poco tiempo. Con un movimiento más constante queda más atención para la colocación de la mira y la lectura de la partida. La transferencia varía según el jugador, así que compara también tus resultados en el juego."
       }
     },
     {
@@ -93,7 +93,7 @@ const faqSchema = {
       "name": "¿Es mejor apuntar con la muñeca, con el antebrazo o usar una técnica híbrida?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En el ámbito competitivo profesional predomina la técnica de puntería híbrida: el antebrazo y el hombro ejecutan los giros amplios de 180 grados y las transiciones espaciales mayores; la muñeca gestiona la adquisición de blancos a media distancia; y los dedos aportan los microajustes subpíxel y el control fino del retroceso vertical. Apuntar exclusivamente con la muñeca limita el ángulo de giro y eleva el riesgo de sufrir síndrome del túnel carpiano, mientras que usar solo el brazo carece de la destreza motora fina necesaria para tiros a la cabeza milimétricos."
+        "text": "Muchos jugadores usan una técnica híbrida: antebrazo y hombro para los movimientos amplios y los giros de 180 grados, la muñeca para las distancias medias y los dedos para los pequeños ajustes a la altura de la cabeza. Apuntar solo con la muñeca limita el recorrido, y apuntar solo con el brazo dificulta los ajustes muy pequeños. Elige lo que te resulte cómodo y descansa si notas dolor."
       }
     },
     {
@@ -125,7 +125,7 @@ const faqSchema = {
       "name": "¿Qué es más determinante en partida: la colocación de la mira (pre-aim) o el flick reactivo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En los shooters tácticos, aproximadamente el 70% de los enfrentamientos se ganan gracias a una correcta colocación de la mira (pre-aiming a la altura de la cabeza) antes de asomarse a una esquina. Sin embargo, cuando los rivales se colocan en ángulos inesperados (off-angles), realizan picos abiertos o entran en juego varios enemigos a la vez, el pre-aim no basta. En ese 30% crítico de situaciones impredecibles, la velocidad de flick balístico y la microcorrección refleja en menos de 200 ms marcan la diferencia entre sobrevivir o ser eliminado."
+        "text": "Una buena colocación de la mira (dejarla a la altura de la cabeza donde va a aparecer el rival) ayuda con más frecuencia, porque casi evita los flicks grandes. Pero ante off-angles inesperados, picos abiertos o varios enemigos a la vez, el pre-aim no basta y deciden la velocidad del flick y los microajustes. Entrena ambas cosas por separado: la colocación en Colocación de Mira y los flicks en el ejercicio de flicks."
       }
     },
     {
@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "¿Cuántos minutos al día se debe practicar puntería para progresar de manera óptima?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La neurociencia del aprendizaje motor sugiere que tras unos 30 o 35 minutos de práctica continua de motricidad fina, la fatiga neuromuscular reduce notablemente la consolidación del aprendizaje. Por ello, la rutina más efectiva consiste en sesiones concentradas de 15 a 25 minutos al día, de 4 a 6 días por semana. Las sesiones breves seguidas de un descanso adecuado suelen resultar más llevaderas que las maratones esporádicas de fin de semana."
+        "text": "Las sesiones cortas y concentradas son más fáciles de mantener que las maratones de varias horas. Un buen punto de partida son 15 a 25 minutos varias veces por semana, parando cuando baje la precisión o se canse la mano. No hay una duración ideal que sirva para todos; ajústala según tus propios resultados."
       }
     }
   ]

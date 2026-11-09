@@ -7,7 +7,7 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
   title: "Controle de Recoil | Treino de Spray FPS | SkillDrills",
-  description: "Treino grátis de controle de recoil no navegador: pratique padrões de spray e compensação para CS2, Valorant e outros FPS.",
+  description: "Treino grátis de controle de recoil no navegador: segure o clique, puxe o mouse contra um spray de 30 tiros e pratique controle de spray para CS2 e Valorant.",
   keywords: [
     "controle de recoil",
     "controle de recuo",
@@ -32,7 +32,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Controle de Recoil | Treino de Spray FPS | SkillDrills",
-    description: "Treino grátis de controle de recoil no navegador: pratique padrões de spray e compensação para CS2, Valorant e outros FPS.",
+    description: "Treino grátis de controle de recoil no navegador: segure o clique, puxe o mouse contra um spray de 30 tiros e pratique controle de spray para CS2 e Valorant.",
     url: "https://skilldrills.online/pt/drills/fps/recoil-control",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -41,7 +41,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Controle de Recoil | Treino de Spray FPS | SkillDrills",
-    description: "Treino grátis de controle de recoil no navegador: pratique padrões de spray e compensação para CS2, Valorant e outros FPS.",
+    description: "Treino grátis de controle de recoil no navegador: segure o clique, puxe o mouse contra um spray de 30 tiros e pratique controle de spray para CS2 e Valorant.",
   },
 };
 
@@ -117,7 +117,7 @@ export default function RecoilControlPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -132,7 +132,7 @@ export default function RecoilControlPage() {
         "name": "Por que os primeiros 8 a 10 tiros são a fase mais crítica de um spray?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Na maioria dos atiradores táticos, os primeiros 8 a 10 disparos apresentam recuo quase puramente vertical e alta previsibilidade antes que a dispersão horizontal aleatória se intensifique. Dominar esse início ajuda a ganhar duelos no primeiro segundo do confronto."
+          "text": "Na maioria dos atiradores táticos, os primeiros 8 a 10 disparos apresentam recuo quase puramente vertical e alta previsibilidade antes que a dispersão horizontal aleatória se intensifique. O padrão deste exercício segue a mesma lógica: cerca de 10 tiros subindo na vertical e depois oscilações laterais. Por isso a puxada inicial é a prioridade."
         }
       },
       {
@@ -148,7 +148,7 @@ export default function RecoilControlPage() {
         "name": "Como a teoria do Programa Motor Generalizado (GMP) explica o controle de spray?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Segundo a teoria de Schmidt & Lee (2011), o cérebro armazena a curva inversa de recoil como um programa motor de circuito aberto na memória muscular. A velocidade do disparo supera a latência do feedback visual humano (cerca de 200 ms), exigindo execução motora antecipatória pré-programada."
+          "text": "Segundo a teoria de Schmidt & Lee (2011), o cérebro armazena a curva inversa de recoil como um programa motor de circuito aberto na memória muscular. Como o padrão é fixo, a puxada pode começar por antecipação, sem esperar ver cada impacto."
         }
       },
       {
@@ -185,10 +185,10 @@ export default function RecoilControlPage() {
       },
       {
         "@type": "Question",
-        "name": "Este treinador de recoil funciona gratuitamente direto no navegador?",
+        "name": "Este controle de recoil é um macro ou programa anti-recoil?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim, o treinador roda inteiramente no navegador web com captura do mouse via Pointer Lock API, sem necessidade de downloads, contas ou taxas."
+          "text": "Não. É um exercício de habilidade com o mouse: quem compensa o recuo é a sua mão. A página não instala nada, não cria macro, não mexe no mouse nem em jogos e não é hardware anti-recoil. É grátis, roda no navegador do PC sem download nem conta, e exige mouse: ao começar, o cursor é travado (Pointer Lock), e Esc ou a perda da trava encerra a sessão. Aparelhos só de toque não são suportados."
         }
       },
       {
@@ -196,7 +196,15 @@ export default function RecoilControlPage() {
         "name": "Com que frequência devo treinar exercícios de controle de recoil?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Rotinas diárias de 10 a 15 minutos focando em grupos de 10 tiros e sprays completos consolidam a memória muscular sem sobrecarregar os tendões flexores do antebraço e da mão."
+          "text": "Algumas sessões de 10 a 15 minutos antes das partidas costumam bastar. Sessões curtas e frequentes rendem mais do que uma longa com o braço cansado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual padrão de spray e quais regras este treino de controle de recoil usa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Um único padrão de 30 tiros estilo AK-47: cerca de 10 tiros subindo na vertical, depois oscilações para esquerda e direita. Não é cópia exata da arma de um jogo específico. Segurar o clique esquerdo dispara a cada 120 ms (500 tiros/min); soltar reinicia o padrão. Após 30 tiros, recarga automática em 1,2 s. Cabeça 100, tronco 40, membros 20 pontos, multiplicados por combo e nível; errar zera o combo. O tempo começa em 45 s e acertos não aumentam o tempo. A cada 1400 pontos o nível sobe, com alvo mais rápido e recuo mais forte."
         }
       }
     ]
@@ -212,7 +220,7 @@ export default function RecoilControlPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibração e Bloqueio de Ponteiro",
-        "text": "Ajuste sua sensibilidade real de jogo e trave o cursor com a Pointer Lock API para manter sua sensibilidade habitual."
+        "text": "Ajuste a sensibilidade global na página /drills e clique em Iniciar; o cursor é travado após a contagem."
       },
       {
         "@type": "HowToStep",
@@ -238,7 +246,7 @@ export default function RecoilControlPage() {
   const copyPt = {
     h1Keyword: "Controle de Recoil",
     h1Suffix: " – Treino de Spray FPS",
-    caption: "Controle o recuo vertical e horizontal da arma arrastando o mouse no padrão inverso para manter a dispersão no alvo.",
+    caption: "Treino grátis de controle de recoil: segure o clique num alvo em movimento e puxe o mouse no sentido inverso ao padrão de spray para manter os tiros na cabeça e no tronco.",
     statScore: "Pontuação",
     statTime: "Tempo",
     statAccuracy: "Precisão",
@@ -248,7 +256,7 @@ export default function RecoilControlPage() {
     pausedTitle: "Jogo Pausado",
     pausedPrompt: "Clique na tela para reengajar a trava do cursor do mouse.",
     startTitle: "Treino de Controle de Recoil",
-    startSubtitle: "Padrões de Spray e Compensação Motora • Progressão Contínua",
+    startSubtitle: "Padrão de Spray estilo AK-47 e Compensação • Progressão Contínua",
     startButtonText: "INICIAR TREINO DE RECOIL",
     getReady: "PREPARE-SE",
     statHeadshots: "Headshots",
@@ -258,10 +266,10 @@ export default function RecoilControlPage() {
     shareText: "COMPARTILHAR RESULTADO",
     rulesTitle: "Instruções do Treino e Sistema de Pontos",
     rulesItems: [
-      { num: "1", text: "Tiro na Cabeça Preciso", highlight: "+100 PTS / +0,25s", result: "Zona Alvo Prioritária" },
+      { num: "1", text: "Tiro na Cabeça Preciso", highlight: "+100 PTS (sem bônus de tempo)", result: "×Multiplicador de Combo" },
       { num: "2", text: "Acertos em Tronco e Membros", highlight: "+40 / +20 PTS", result: "Mantém Sequência de Combo" },
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Escala Velocidade e Recoil" },
-      { num: "4", text: "Disciplina de Carregador", highlight: "<40% Penalidade", result: "Zera Combo (-0,6s)" }
+      { num: "4", text: "Disciplina de Carregador", highlight: "<40% Penalidade", result: "Zera Combo (-0,6s se a penalidade estiver ativa)" }
     ],
     aboutTitle: "Sobre o Controle de Recoil e Spray",
     aboutHeading: "O que é o Controle de Recoil (Recuo)?",
@@ -271,23 +279,23 @@ export default function RecoilControlPage() {
   const recoilControlGuide = {
     heading: "Guia de Controle de Recoil e Padrões de Spray FPS",
     intro: [
-      "Este treino de controle de recoil desenvolve a compensação vertical e horizontal necessária para manter padrões de spray compactos. Em CS2, Valorant, Apex Legends e PUBG, o agrupamento dos disparos define a eficiência do confronto direto.",
-      "Ao contrário de ajustes pontuais guiados por feedback visual contínuo, a cadência de fogo de fuzis automáticos (600 a 900 tiros por minuto) produz impactos a cada 66 a 100 milissegundos. Como a latência do reflexo visual humano é de aproximadamente 200 ms, compensar o recuo depende prioritariamente de Programas Motores Generalizados (GMP) de circuito aberto (Schmidt & Lee, 2011; Wolpert & Kawato, 1998) pré-programados na memória muscular.",
-      "A dinâmica do exercício ensina a modular duas fases críticas: uma descida vertical uniforme na primeira metade do carregador e micro-ajustes horizontais com inversão direcional na segunda metade. Isso reproduz a cinemática autêntica dos padrões de spray mais emblemáticos dos eSports competitivos.",
-      "Utilizando a API de Pointer Lock aliada à cronometria de alta resolução via performance.now() (Woods et al., 2015), o simulador calcula a precisão balística de cada projétil em relação ao centro de massa do alvo, permitindo refinar a suavidade do arrasto e erradicar sobrecompensações desnecessárias.",
-      "Como é medido: a taxa de acerto por carregador e o agrupamento milimétrico são processados localmente em tempo real no relógio do seu navegador. Pequenas discrepâncias inferiores a 5 ms correspondem a latências normais de amostragem de hardware e exibição gráfica."
+      "Este treino de controle de recoil roda no navegador: você segura o clique esquerdo num alvo que se move para os lados e compensa um spray de 30 tiros estilo AK-47 puxando o mouse para baixo e corrigindo para os lados. Se menos de 40 % de um carregador acertar, o combo zera. É um aquecimento de controle de spray para CS2, Valorant, Apex Legends e PUBG, feito só com a mão, sem macro.",
+      "Fuzis automáticos dos jogos disparam centenas de tiros por minuto (aqui, 500 tiros/min, um a cada 120 ms). Como o padrão é fixo, a compensação pode se apoiar num programa motor de circuito aberto aprendido antes (Schmidt & Lee, 2011), em vez de uma correção tiro a tiro.",
+      "A dinâmica do exercício ensina a modular duas fases críticas: uma descida vertical uniforme nos primeiros 10 tiros, aproximadamente, e micro-ajustes horizontais com inversão de direção no resto do carregador, no modelo dos fuzis de assalto mais comuns.",
+      "Com a API de Pointer Lock, cada tiro conta como cabeça, tronco ou membros conforme onde cai (mira + deslocamento do recuo). Puxar demais joga os tiros para baixo do alvo; puxar de menos, para cima.",
+      "Como é medido: a taxa de acerto por carregador é processada localmente em tempo real no relógio do seu navegador. Pequenas discrepâncias inferiores a 5 ms correspondem a latências normais de amostragem de hardware e exibição gráfica."
     ],
     benchmarks: {
-      title: "Tiers de Desempenho de Precisão por Carregador e Controle de Recoil",
+      title: "Faixas de treino SkillDrills: precisão por carregador",
       headers: ["Nível de Habilidade", "Precisão no Carregador (%)", "Características de Controle Motor", "Implicação Competitiva no Jogo"],
       rows: [
         ["Tier 1 (Laser Apex)", "78% – 90%+", "Correspondência de velocidade quase perfeita; micro-compensações horizontais em todos os 30 tiros sem desperdício", "Treina spray transfers entre vários alvos com compensação estável"],
-        ["Tier 2 (Faixa Intermediária-Alta)", "62% – 78%", "Agrupamento cirúrgico nos primeiros 10 tiros; recentralização rápida nas inversões horizontais do spray", "Prática de duelos de fuzil em média distância com consistência em spray transfers duplos"],
+        ["Tier 2 (Faixa Intermediária-Alta)", "62% – 78%", "Agrupamento cirúrgico nos primeiros 10 tiros; recentralização rápida nas inversões horizontais do spray", "Sprays estáveis em média distância; pronto para treinar spray transfers"],
         ["Tier 3 (Alto Nível FPS)", "48% – 62%", "Boa puxada vertical; pequenas oscilações de atraso entre os tiros 12 e 25 nas variações laterais", "Sprays confiáveis em curta e média distância; ligeira dificuldade em transferências de longo alcance"],
         ["Tier 4 (Intermediário)", "35% – 48%", "Velocidade de descida inconsistente; hesitação por volta do tiro 7 permitindo que o cano suba além da cabeça", "Vulnerável em tiroteios diretos de fuzil; forçado a depender de rajadas curtas para pontuar"],
         ["Tier 5 (Em Desenvolvimento)", "Abaixo de 35%", "Arrasto vertical atrasado ou excessivo; ausência de compensação lateral provocando dispersão descontrolada", "Perda consistente de duelos diretos; projéteis disparam aleatoriamente em torno do alvo"]
       ],
-      note: "As faixas de habilidade avaliam a porcentagem de tiros conectados na silhueta em sprays completos de 30 tiros registrados via performance.now() (Woods et al., 2015)."
+      note: "Faixas próprias do SkillDrills, não normas científicas, estatísticas de usuários nem ranks de jogos. Precisão = tiros acertados ÷ tiros disparados."
     },
     techniques: {
       title: "Protocolos Baseados em Evidências para Aperfeiçoar o Controle de Recoil",
@@ -310,17 +318,17 @@ export default function RecoilControlPage() {
         {
           name: "Fixação Visual no Alvo e Não na Retícula",
           desc: "Mantenha seus olhos fixos no ponto do inimigo onde os projéteis devem acertar. Deixe a compensação do mouse ocorrer por memória muscular automatizada.",
-          tips: "Ficar olhando a retícula subir e descer induz correções visuais atrasadas de 200 ms que prejudicam o controle."
+          tips: "Ficar olhando a retícula em vez do alvo atrasa as correções e espalha o spray."
         }
       ]
     },
     steps: [
-      "Ajuste sua sensibilidade real de jogo e DPI para garantir correspondência neuromuscular idêntica de cm/360 e trave o cursor.",
+      "Ajuste a sensibilidade global na página /drills (1,00x = 30 cm/360) e clique em Iniciar para travar o cursor.",
       "Ao iniciar o disparo, aplique imediatamente uma puxada suave para baixo compensando a subida vertical inicial.",
       "Após o décimo disparo, module o mouse lateralmente na direção oposta ao padrão de dispersão da arma.",
       "Mantenha o agrupamento estrito no centro da silhueta para elevar seu multiplicador de combo e progredir pelos níveis."
     ],
-    audience: "Jogadores de CS2, Valorant, Apex Legends e PUBG que buscam dominar sprays completos de armas, erradicar recuo excessivo e executar transferências de alvo implacáveis.",
+    audience: "Jogadores de PC de CS2, Valorant, Apex Legends e PUBG que querem treinar controle de recoil e controle de spray com o mouse, no navegador.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'woodworth1899'),
     related: [

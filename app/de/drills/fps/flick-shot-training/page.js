@@ -6,17 +6,15 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Aim Trainer – Flick-Training im Browser | SkillDrills",
-  description: "Kostenloser Aim Trainer im Browser für Flicks und präzise Erstschüsse in Valorant und CS2. Trainiere Zielerfassung, Bremsung, Score und Trefferquote.",
+  title: "Aim Test: Flick-Training & Trefferquote im Browser | SkillDrills",
+  description: "Aim Test im Browser: Flicke auf zufällig erscheinende Ziele. Start mit 45 s, +2 s pro Treffer, -1 s pro Fehler. Score und Trefferquote, für Valorant und CS2.",
   keywords: [
-    "Aim Trainer",
-    "Aim Trainer online",
-    "Aim Training",
-    "Valorant Aim Trainer",
-    "Flick Training",
+    "Aim Test",
+    "Aim Test online",
+    "Flick-Training",
+    "Flick Aim Trainer",
+    "Trefferquote",
     "Flick Aim lernen",
-    "CS2 Aim Training",
-    "Valorant Aim Training",
     "Zielgenauigkeit FPS",
     "Fadenkreuz stoppen",
     "Headshot Präzision"
@@ -30,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer – Flick-Training im Browser | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser für Flicks und präzise Erstschüsse in Valorant und CS2. Trainiere Zielerfassung, Bremsung, Score und Trefferquote.",
+    title: "Aim Test: Flick-Training & Trefferquote im Browser | SkillDrills",
+    description: "Aim Test im Browser: Flicke auf zufällig erscheinende Ziele. Start mit 45 s, +2 s pro Treffer, -1 s pro Fehler. Score und Trefferquote, für Valorant und CS2.",
     url: "https://skilldrills.online/de/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -39,8 +37,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer – Flick-Training im Browser | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser für Flicks und präzise Erstschüsse in Valorant und CS2. Trainiere Zielerfassung, Bremsung, Score und Trefferquote.",
+    title: "Aim Test: Flick-Training & Trefferquote im Browser | SkillDrills",
+    description: "Aim Test im Browser: Flicke auf zufällig erscheinende Ziele. Start mit 45 s, +2 s pro Treffer, -1 s pro Fehler. Score und Trefferquote, für Valorant und CS2.",
   },
 };
 
@@ -51,19 +49,19 @@ export default function FlickShotDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Aim Training", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer – Flick-Training", "item": "https://skilldrills.online/de/drills/fps/flick-shot-training" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Test – Flick-Training", "item": "https://skilldrills.online/de/drills/fps/flick-shot-training" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "Aim Trainer – Flick-Training",
+    "name": "Aim Test – Flick-Training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "description": "Kostenloser Browser-Aim-Trainer für Flicks, Zielerfassung, präzise Bremsung und messbare Trefferquote.",
+    "description": "Kostenloser Aim Test im Browser: Flicks auf zufällig erscheinende Ziele mit Score, Trefferquote und durchschnittlicher Flick-Zeit.",
     "genre": "FPS Training / Flick Shot",
     "url": "https://skilldrills.online/de/drills/fps/flick-shot-training",
     "publisher": {
@@ -76,7 +74,7 @@ export default function FlickShotDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer – Flick-Training",
+    "name": "Aim Test – Flick-Training",
     "url": "https://skilldrills.online/de/drills/fps/flick-shot-training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -86,16 +84,16 @@ export default function FlickShotDePage() {
       "price": "0",
       "priceCurrency": "EUR"
     },
-    "description": "Kostenloser Browser-Aim-Trainer für Flicks, Zielerfassung, präzise Bremsung und messbare Trefferquote."
+    "description": "Kostenloser Aim Test im Browser: Flicks auf zufällig erscheinende Ziele mit Score, Trefferquote und durchschnittlicher Flick-Zeit."
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer – Flick-Training",
+    "name": "Aim Test – Flick-Training",
     "url": "https://skilldrills.online/de/drills/fps/flick-shot-training",
-    "description": "Kostenloser Browser-Aim-Trainer für Flicks, Zielerfassung, präzise Bremsung und messbare Trefferquote.",
-    "dateModified": "2026-09-20",
+    "description": "Kostenloser Aim Test im Browser: Flicks auf zufällig erscheinende Ziele mit Score, Trefferquote und durchschnittlicher Flick-Zeit.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Flick Shot"],
     "playMode": "SinglePlayer",
@@ -107,7 +105,7 @@ export default function FlickShotDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -146,7 +144,7 @@ export default function FlickShotDePage() {
         "name": "Wie wirkt sich das Fitts'sche Gesetz (Fitts's Law) auf das Flick-Aiming aus?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Das Fitts'sche Gesetz besagt, dass die Bewegungszeit logarithmisch mit zunehmender Distanz und kleiner werdender Zielgröße ansteigt. Profis optimieren die Bewegung, indem sie 85 % der Strecke im ersten Bewegungsimpuls zurücklegen."
+          "text": "Das Fitts'sche Gesetz besagt, dass die Bewegungszeit logarithmisch mit zunehmender Distanz und kleiner werdender Zielgröße ansteigt. Nach dem Zwei-Komponenten-Modell (Elliott et al., 2010) legt der erste ballistische Impuls den Großteil der Strecke zurück, der Rest ist Feinkorrektur."
         }
       },
       {
@@ -186,7 +184,15 @@ export default function FlickShotDePage() {
         "name": "Steigt der Schwierigkeitsgrad des Trainers mit zunehmender Punktzahl automatisch an?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja, alle 1.400 Punkte steigt der Trainer um ein Level. Dabei schrumpfen die Zielkreise kontinuierlich und die Lebensdauer der Ziele verkürzt sich, um das Reaktionszeitfenster dynamisch zu verengen."
+          "text": "Ja. Alle 1.800 Punkte steigt das Level um 1, ohne Obergrenze. Mit jedem Level werden Zielradius (Start 32 px) und Lebensdauer der Ziele (Start 1,3 s) kleiner, und eine laufende Trefferserie macht die Ziele zusätzlich kleiner und schneller. Ein Fehler setzt die Combo auf 0 und die Schwierigkeit auf das aktuelle Level zurück."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie lange dauert ein Durchgang im Aim Test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Durchgang startet mit 45 Sekunden. Jeder Treffer gibt +2 Sekunden (maximal 60 Sekunden auf der Uhr). Klicks ins Leere, Fehlschüsse und abgelaufene Ziele kosten je 1 Sekunde und setzen die Combo zurück. Bei 0 Sekunden endet der Durchgang, wer genau trifft, spielt also länger. Pro Treffer gibt es 100 Punkte mal Combo-Multiplikator (bis 3,0×) mal Level-Multiplikator."
         }
       }
     ]
@@ -226,25 +232,25 @@ export default function FlickShotDePage() {
   };
 
   const flickGuide = {
-    heading: "Aim Trainer: Flick-Training und FPS-Zielgenauigkeit",
+    heading: "Aim Test: Flick-Training und Trefferquote im Browser",
     subtitle: "Wissenschaftliche Trainingsmethodik für ballistische Zielbeschleunigung, Muskelgedächtnis und millimetergenaue Mausbremsung",
     intro: [
-      "Wer einen Aim Trainer für FPS sucht, trainiert mit Flick Aiming die schnelle Bewegung des Fadenkreuzes von der Ausgangsposition zum Ziel und das saubere Abstoppen vor dem ersten Schuss. In Counter-Strike 2, Valorant und Apex Legends hilft diese Kombination aus Geschwindigkeit und Trefferquote bei unerwarteten Winkeln.",
+      "Dieser Aim Test misst Flick Aiming: die schnelle Bewegung des Fadenkreuzes von der Ausgangsposition zum Ziel und das saubere Abstoppen vor dem ersten Schuss. In Counter-Strike 2, Valorant und Apex Legends hilft diese Kombination aus Geschwindigkeit und Trefferquote bei unerwarteten Winkeln.",
       "In der Biomechanik und Neurowissenschaft folgt zielgerichtetes manuelles Zeigen dem Zwei-Phasen-Modell motorischer Kontrolle (Elliott et al., 2010). In der ersten Phase überwindet ein ballistischer, offener Impuls (Open-Loop) etwa 80 bis 90 Prozent der Distanz. Die zweite Phase erfordert eine geschlossene visuelle Rückkopplung (Closed-Loop), um das Ziel foveal einzufangen und den Schuss präzise zu setzen.",
       "Gemäß dem Fitts'schen Gesetz (Fitts, 1954) steigt der Schwierigkeitsindex (Index of Difficulty) logarithmisch mit zunehmender Entfernung und abnehmender Zielgröße. Dieser Trainer konditioniert die Reziproke Innervation und antagonistische Muskelimpulse (Schmidt et al., 1979), wodurch das berüchtigte Übersteuern (Overshooting) systematisch eliminiert wird.",
       "Hinweis zur Messgenauigkeit: Dieser Drill nutzt die hochauflösende Browser-Schnittstelle performance.now() für Zeitmessungen. Die Bildausgabe unterliegt der Bildwiederholrate deines Monitors (60Hz, 144Hz, 240Hz), weshalb Abweichungen unter 5 ms auf hardwarebedingte Framerate-Toleranzen zurückzuführen sind."
     ],
     benchmarks: {
-      title: "Zielerfassungs- & Reaktionszeit-Benchmarks (Movement Time)",
+      title: "SkillDrills-Übungsbereiche für Flick-Phasen (Richtwerte)",
       headers: ["Bewegungsphase / Messgröße", "Standard-Latenz", "Motorischer Kontrollmechanismus", "Leistungsstufe & Bewertung"],
       rows: [
         ["Initiale Blicksakkade (Augensprung)", "180 – 220 ms", "Foveale Zielerfassung im visuellen Kortex", "Visuelle Reizidentifikation vor Mausbewegung (Woods et al., 2015)"],
         ["Ballistische Hauptbewegung (Initialimpuls)", "120 – 180 ms", "Agonistischer Muskelkraftstoß (Arm/Handgelenk)", "Überwindet 80–90 % der Gesamtdistanz (Elliott et al., 2010)"],
         ["Korrektives Abbremsen (Homing-Bremsung)", "60 – 120 ms", "Visuelle Rückkopplung & Mauspad-Reibung", "Closed-Loop Feinjustierung zur Zielerfassung (Fitts, 1954)"],
-        ["Gesamte Zielerfassungszeit (Durchschnitt)", "360 – 520 ms", "Kompletter sensomotorischer Reaktionskreis", "Solide Basis für kompetitive Ranked-Matches"],
+        ["Gesamte Zielerfassungszeit (Einstieg)", "360 – 520 ms", "Kompletter sensomotorischer Reaktionskreis", "Richtwert für die ersten Übungsdurchgänge"],
         ["Stufe 4: Hohe Präzision", "240 – 320 ms", "Nahezu fehlerfreie automatisierte Motorsynergie", "Fokus: Mausbremsung und Klick sauber synchronisieren"]
       ],
-      note: "Wissenschaftliche Benchmark-Werte basierend auf Fitts (1954), Schmidt et al. (1979), Elliott et al. (2010) und Woods et al. (2015)."
+      note: "Die ms-Werte sind SkillDrills-Übungsrichtwerte, keine Forschungsnormen und keine Nutzerdaten. Die zitierten Quellen (Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010; Woods et al. 2015) belegen die jeweiligen Konzepte."
     },
     techniques: {
       title: "Optimale eDPI-Sensitivitäts-Kalibrierung nach Spiel",
@@ -276,7 +282,7 @@ export default function FlickShotDePage() {
       "Richte deinen Blick entspannt auf das zentrale Fadenkreuz.",
       "Sobald ein Ziel erscheint, bewege die Maus blitzschnell und ohne Zögern direkt in das Zielzentrum und klicke.",
       "Vermeide langsames Nachkorrigieren — konzentriere dich auf maximale Beschleunigung und scharfes Abstoppen.",
-      "Analysiere auf der Auswertungskarte deine durchschnittliche Flick-Latenz sowie Trefferquote und starte den nächsten Durchgang."
+      "Prüfe auf der Auswertungskarte Score, Trefferquote, durchschnittliche Flick-Zeit, maximale Combo, höchstes Level und Note und starte den nächsten Durchgang."
     ],
     audience: "Ambitionierte FPS-Spieler in CS2, Valorant, Apex Legends und Overwatch 2, die ihre Erstschusspräzision, Snap-Aim-Reaktionszeiten und mechanische Mausbeherrschung systematisch maximieren wollen.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -317,9 +323,9 @@ export default function FlickShotDePage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "Aim Trainer",
-          h1Suffix: " – Flick-Training im Browser",
-          subtitle: "Trainiere Flicks und präzise Erstschüsse für Valorant und CS2 direkt im Browser.",
+          h1Keyword: "Aim Test",
+          h1Suffix: ": Flick-Training & Trefferquote im Browser",
+          subtitle: "Der Aim Test für Valorant- und CS2-Spieler: Flicke mit der Maus auf Ziele, die an zufälligen Stellen erscheinen, und miss deine Trefferquote.",
           statScore: "Punkte",
           statTime: "Verbleibende Zeit",
           statAccuracy: "Präzision",
@@ -340,7 +346,7 @@ export default function FlickShotDePage() {
             { num: "1", text: "Zieltreffer", highlight: "+100 PTS (+2,0s)", result: "×Combo-Multiplikator" },
             { num: "2", text: "Trefferserie", highlight: "Bis zu 3,0×", result: "Schnellere Ziele" },
             { num: "3", text: "Levelaufstieg", highlight: "+1 / 1800 PTS", result: "Adaptive Skalierung" },
-            { num: "4", text: "Fehlschuss / Timeout", highlight: "Strafe", result: "Combo-Reset (-0,8s)" }
+            { num: "4", text: "Fehlschuss / Timeout", highlight: "Strafe", result: "Combo-Reset (-1,0s)" }
           ],
           aboutTitle: "Über den Pro Flick Trainer",
           aboutHeading: "Was ist Flick Aiming?",

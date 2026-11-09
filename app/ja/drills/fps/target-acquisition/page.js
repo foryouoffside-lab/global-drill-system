@@ -7,7 +7,7 @@ import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
   title: "VALORANT エイム練習 - ターゲット捕捉トレーナー | SkillDrills",
-  description: "ブラウザですぐできる無料のVALORANTエイム練習。敵の発見・識別から初弾クリックまでの速さと命中率を測定します。",
+  description: "ブラウザですぐできる無料のVALORANT エイム練習。明るさの違う3〜8個のターゲットを明るい順に撃ち抜く60秒のターゲット捕捉ドリルで、優先目標の見極めと初弾の命中率を鍛えます。インストール不要でマウスだけで練習できます。",
   keywords: [
     "VALORANT エイム練習",
     "ヴァロラント エイム練習",
@@ -17,10 +17,8 @@ export const metadata = {
     "置きエイム 練習",
     "敵 発見 FPS",
     "ターゲット識別",
-    "エイムトレーナー",
     "初弾ヘッドショット",
-    "エイム練習 無料 ブラウザ",
-    "ターゲットスイッチング"
+    "valorant エイム練習 ブラウザ"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/target-acquisition",
@@ -32,7 +30,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "VALORANT エイム練習 - ターゲット捕捉トレーナー | SkillDrills",
-    description: "ブラウザですぐできる無料のVALORANTエイム練習。敵の発見・識別から初弾クリックまでの速さと命中率を測定します。",
+    description: "ブラウザですぐできる無料のVALORANT エイム練習。明るさの違う3〜8個のターゲットを明るい順に撃ち抜く60秒のターゲット捕捉ドリルで、優先目標の見極めと初弾の命中率を鍛えます。インストール不要でマウスだけで練習できます。",
     url: "https://skilldrills.online/ja/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -41,7 +39,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "VALORANT エイム練習 - ターゲット捕捉トレーナー | SkillDrills",
-    description: "ブラウザですぐできる無料のVALORANTエイム練習。敵の発見・識別から初弾クリックまでの速さと命中率を測定します。",
+    description: "ブラウザですぐできる無料のVALORANT エイム練習。明るさの違う3〜8個のターゲットを明るい順に撃ち抜く60秒のターゲット捕捉ドリルで、優先目標の見極めと初弾の命中率を鍛えます。インストール不要でマウスだけで練習できます。",
   },
 };
 
@@ -62,9 +60,9 @@ export default function TargetAcquisitionJaPage() {
     "name": "VALORANT エイム練習 - ターゲット捕捉トレーナー",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "視覚的ターゲット識別速度、脅威の優先順位判定、初弾ヘッドショット精度を鍛える無料ブラウザFPSエイムトレーナー。",
+    "description": "VALORANTプレイヤー向けの無料ブラウザ用ターゲット捕捉ドリル。明るい順にターゲットを撃ち、優先目標の識別と初弾精度を練習します。",
     "genre": "FPS Training / Target Acquisition",
     "url": "https://skilldrills.online/ja/drills/fps/target-acquisition",
     "publisher": {
@@ -87,7 +85,7 @@ export default function TargetAcquisitionJaPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "視覚的ターゲット識別速度、脅威の優先順位判定、初弾ヘッドショット精度を鍛える無料ブラウザFPSエイムトレーナー。"
+    "description": "VALORANTプレイヤー向けの無料ブラウザ用ターゲット捕捉ドリル。明るい順にターゲットを撃ち、優先目標の識別と初弾精度を練習します。"
   };
 
   const videoGameSchema = {
@@ -95,8 +93,8 @@ export default function TargetAcquisitionJaPage() {
     "@type": "VideoGame",
     "name": "VALORANT エイム練習 - ターゲット捕捉トレーナー",
     "url": "https://skilldrills.online/ja/drills/fps/target-acquisition",
-    "description": "視覚的ターゲット識別速度、脅威の優先順位判定、初弾ヘッドショット精度を鍛える無料ブラウザFPSエイムトレーナー。",
-    "dateModified": "2026-09-20",
+    "description": "VALORANTプレイヤー向けの無料ブラウザ用ターゲット捕捉ドリル。明るい順にターゲットを撃ち、優先目標の識別と初弾精度を練習します。",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Acquisition"],
     "playMode": "SinglePlayer",
@@ -108,8 +106,16 @@ export default function TargetAcquisitionJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "このVALORANT エイム練習ドリルはどのようなルールですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "60秒間、明るさの異なるターゲットが3〜8個ずつセットで表示され、最も明るいものから暗い順に撃つ必要があります。正しいターゲットは+100点にコンボ倍率とレベル倍率が掛かり、セットを全て消すと+400点×レベル倍率のボーナスと共に次のセットが出現します。順番違いのターゲットや何もない場所をクリックするとコンボがリセットされ、ペナルティ設定をオンにしている場合は0.6秒減ります。マウスとポインターロックで操作し、Escキーで終了します。SkillDrillsはRiot Gamesとは無関係の独立した練習ツールです。"
+        }
+      },
       {
         "@type": "Question",
         "name": "競技FPSにおける「ターゲット捕捉（Target Acquisition）」とは何ですか？",
@@ -147,7 +153,7 @@ export default function TargetAcquisitionJaPage() {
         "name": "VALORANTやCS2などのタクティカルシューターにおいて、初弾精度は撃ち合いの勝敗にどう影響しますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "低TTK（Time to Kill）ゲームでは初弾ヘッドショットが交戦結果をほぼ100%決定づけます。初弾の捕捉が遅れたりミスショットしたりすると、相手の反撃を受けるかリコイル制御中に撃破されるリスクが跳ね上がります。"
+          "text": "TTK（Time to Kill）が短いゲームでは、初弾を外すと相手に反撃の時間を与えてしまいます。このドリルは実際のヘッドショットを再現するものではありませんが、正しい目標を選んでから最初のクリックを正確に入れる習慣を切り出して練習できます。"
         }
       },
       {
@@ -163,7 +169,7 @@ export default function TargetAcquisitionJaPage() {
         "name": "視界内のオブジェクト密度やクラッター（散乱要素）は捕捉速度をどう低下させますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "クラッターが増えると前注意的なポップアウト効果が阻害され、脳がシリアル（直列的）な視線スキャンを強いられるため、目標特定までの認知的潜時が100〜200ms以上延長します。"
+          "text": "妨害刺激が増え、目標と似てくるほどポップアウト効果が弱まり、一つずつ確認する直列的な探索に近づくため、目標を見つけるまでの時間が長くなります（Treisman & Gelade, 1980）。このドリルではレベルが上がるほどターゲット数が増え、明るさの差が小さくなるため、この効果を体感できます。"
         }
       },
       {
@@ -187,7 +193,7 @@ export default function TargetAcquisitionJaPage() {
         "name": "ターゲット捕捉ドリルは毎日どのくらいの時間練習すべきですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "毎日15〜20分間の高集中セッションが最適です。視覚疲労が蓄積する前のクリアな状態で短時間反復することが、集中して取り組みやすくなります。"
+          "text": "決まった正解はありませんが、60秒のセッションを短く集中して数回繰り返す方法がおすすめです。目が疲れる前にやめ、同じ環境で自己記録の変化を比べてください。"
         }
       }
     ]
@@ -197,13 +203,13 @@ export default function TargetAcquisitionJaPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "ターゲット捕捉エイムの効率的練習手順",
-    "description": "視覚的識別スピードと初弾フリック精度を最大化するための4段階トレーニングステップ。",
+    "description": "ターゲット捕捉ドリルで視覚識別と初弾精度を練習する4つのステップ。",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
         "name": "センシビリティのキャリブレーション",
-        "text": "普段プレイしているゲームのDPI・ゲーム内感度を合わせ、ポインターロックを有効化します。"
+        "text": "/drills ページの感度設定を普段のゲーム感度に合わせます。開始するとポインターロックが自動でかかります。"
       },
       {
         "@type": "HowToStep",
@@ -228,25 +234,25 @@ export default function TargetAcquisitionJaPage() {
 
   const targetAcquisitionGuide = {
     title: "VALORANT エイム練習：ターゲット捕捉と初弾精度ガイド",
-    subtitle: "視覚識別スピード、特徴対比の判別力、そして初弾ヘッドショット精度を科学的プロトコルで極限まで高める",
+    subtitle: "明るさの差で優先目標を見極め、初弾を正確に当てる練習のためのガイド",
     intro: [
-      "VALORANT エイム練習を探しているFPSプレイヤー向けに、このドリルは敵の発見・識別から初弾クリックまでの時間と命中率を測定します。ターゲット捕捉と初弾精度を一緒に鍛え、VALORANT、Counter-Strike 2、Rainbow Six Siegeで射線が通った最初の300ミリ秒の判断と照準を安定させます。",
+      "VALORANT エイム練習をブラウザで探しているプレイヤー向けの無料ドリルです。60秒間、明るさの違うターゲットが3〜8個表示され、最も明るいものから順番に撃つ必要があるため、正しい目標を先に選んでから初弾を正確に入れる流れを繰り返し練習できます。VALORANTやCS2のように初弾が重要なゲーム向けの練習で、SkillDrillsはRiot Gamesとは無関係の独立ツールです。",
       "視覚探索と物体認識の理論的基盤は、Anne TreismanとGarry Gelade（1980）が提唱した「特徴統合理論（Feature-Integration Theory）」によって確立されました。トレイスマンは、輝度コントラストや色相のポップアウト、輪郭のエッジ方向といった低次視覚特徴が、視野全体にわたって前注意的（Preattentively）かつ並列に抽出されることを実証しました。焦点を絞った空間的注意が特定の座標に向けられて初めて、これらの特徴が統合され、認識可能な敵性脅威として把握されます。",
       "この並列処理メカニズムを発展させたJeremy M. Wolfe（1994, 2007）の「ガイド探索モデル（Guided Search）」は、トップダウンの認知的予測とボトムアップの感覚的顕著性マップが融合して視覚的注意の優先順位を決定するプロセスを詳述しています。明暗コントラストの識別訓練を反復することで、視覚野は背景の雑音や低コントラストの妨害刺激を瞬時に遮断することを学習し、標的の出現から動作開始までの時間を縮められる可能性があります（効果はこの課題に特化したもので、実戦での上達を保証しません）。",
       "Paul M. Fitts（1954）の運動難易度法則、David E. Meyerら（1988）の確率的最適化サブムーブメント理論、そして高分解能デジタル時間計測（Woods et al., 2015）を統合することで、本ドリルは、発見から初弾までの判断のためらいと初弾精度を、同じ環境で繰り返し確認できるようにしています。",
-      "測定精度とハードウェア遅延について：すべての判定イベントはブラウザの performance.now() 高分解能クロックを用いてデバイス内でタイムスタンプが記録され、判定は端末内で行われます。ブラウザ仕様としてSpectre対策のためタイマー分解能が約1msに丸められている点、およびディスプレイのリフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms; Woods et al., 2015）による物理的表示量子化が存在します。さらにマウスのポーリングレート（125Hzで約8ms、1000Hzで1ms）も加わるため、5ms未満の微小な差異は測定ノイズとして扱い、他者の環境ではなく同一ハードウェア環境での自己記録比較を行ってください。"
+      "記録について：結果画面にはスコア、命中率（正しいターゲットへの命中数 ÷ 総クリック数）、クリアセット数、最大コンボ、最高レベルが表示され、自己ベストはこのブラウザ内にのみ保存されます。反応時間（ms）は計測しません。モニターのリフレッシュレートやマウスのポーリングレートで体感が変わるため、他人と比べるより同じ環境で自分の記録の変化を追ってください。"
     ],
     benchmarks: {
-      title: "ターゲット捕捉・識別レイテンシ ベンチマーク基準",
-      headers: ["スキル帯", "捕捉レイテンシ", "初弾命中率", "実戦における競技的影響"],
+      title: "ターゲット捕捉 命中率の練習目安",
+      headers: ["練習帯", "命中率", "目安"],
       rows: [
-        ["Tier 1（最上位段階）", "260 ms 未満", "95% – 99%+", "前注意的で瞬時な敵検出；迷いのない初弾ワンタップヘッドショットの実現"],
-        ["Tier 2（上級段階）", "260 – 320 ms", "88% – 95%", "卓越した索敵スピード；視覚ノイズに惑わされず優先ターゲットを素早く撃破"],
-        ["Tier 3（中上級段階）", "320 – 400 ms", "80% – 88%", "堅実な初弾精度；複数ターゲットが密集した際に50〜80ms程度の認識遅延が発生"],
-        ["Tier 4（ゴールド・プラチナ級）", "400 – 500 ms", "70% – 80%", "シリアル（直列的）な視線走査に依存；優先順位の低い目標を誤って撃つ傾向"],
-        ["Tier 5（ビギナー・シルバー以下）", "500 ms 以上", "70% 未満", "視覚クラッターによる混乱；初弾の撃ち合いで反応負けすることが多い"]
+        ["帯 1", "95% 以上", "順番ミスや空撃ちがほとんどない状態"],
+        ["帯 2", "88% – 95%", "高レベルでも最も明るいターゲットを概ね先に選べている状態"],
+        ["帯 3", "80% – 88%", "ターゲットが増えると順番ミスが出始める状態"],
+        ["帯 4", "70% – 80%", "明るさの近いターゲットをよく誤って撃つ状態"],
+        ["帯 5", "70% 未満", "速さより順番の正確さを先に固めたい状態"]
       ],
-      note: "捕捉レイテンシはクラスタ出現から最優先ターゲットがクリックされるまでの経過時間を示します（Woods et al., 2015）。"
+      note: "命中率は結果画面の値（正しいターゲットへの命中数 ÷ 総クリック数）です。帯はSkillDrillsが定めた練習用の目安で、研究上の基準、ゲームのランク、ユーザー統計とは関係ありません。"
     },
     techniques: {
       title: "ターゲット捕捉を高めるための科学的実践テクニック",
@@ -259,7 +265,7 @@ export default function TargetAcquisitionJaPage() {
         {
           name: "サッカード・モーター結合による初弾スナップ",
           desc: "視線と手の動きを協調させます。まず跳躍眼球運動（サッカード）でターゲットの中心点を捉え、その眼球ベクトルに追従させるようにマウスを鋭くフリックします。",
-          tips: "クロスヘアが到着する30〜50ms前に視線がターゲットに着弾している状態を意識してください。"
+          tips: "マウスを動かす前に、視線が先にターゲットの中心に届いている状態を意識してください。"
         },
         {
           name: "コントラスト識別の閾値コントロール",
@@ -274,13 +280,13 @@ export default function TargetAcquisitionJaPage() {
       ]
     },
     steps: [
-      "設定メニューで普段のゲーム感度・DPIを正確に設定し、ポインターロックを開始します。",
+      "/drills ページの感度設定を普段のゲーム感度に合わせて開始します。ポインターロックは自動でかかります。",
       "画面中央に視線を置き、ターゲットクラスタの出現に備えます。",
       "並列視覚フィルタを働かせ、最も明るい優先ターゲットを瞬時に見分けます。",
-      "目標の中心に向けて素早くフリックし、クリックして+100点（時間+0.4秒ボーナス）を獲得します。",
+      "目標の中心へフリックしてクリックし、+100点×コンボ・レベル倍率を獲得します。制限時間は60秒固定で、命中しても延長されません。",
       "残りのターゲットを輝度順に連続処理して、+400点×レベルのセットボーナスを狙いましょう。"
     ],
-    audience: "VALORANT、Counter-Strike 2、Apex Legends、Overwatch 2などで、初弾のヘッドショット精度と索敵反応速度を劇的に向上させたいFPSプレイヤー。",
+    audience: "VALORANT、Counter-Strike 2、Apex Legends、Overwatch 2などをプレイし、目標の見極めと初弾精度を個別に練習したいFPSプレイヤー。マウスが必要です。",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -321,7 +327,7 @@ export default function TargetAcquisitionJaPage() {
         copy={{
           h1Keyword: "VALORANT エイム練習",
           h1Suffix: " - ターゲット捕捉トレーナー",
-          subtitle: "敵の発見から初弾クリックまでをブラウザで測定・練習できます。",
+          subtitle: "VALORANTプレイヤー向けの無料練習：最も明るいターゲットから順に撃ち、初弾の精度を鍛えます。",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "命中率",
@@ -339,14 +345,14 @@ export default function TargetAcquisitionJaPage() {
           stageCaption: "各クラスタ内で最も輝度（不透明度）の高いターゲットを素早く見極めて正確に撃ち抜いてください。",
           rulesTitle: "ドリル手順 & スコアリングシステム",
           rulesItems: [
-            { num: "1", text: "ターゲット命中", highlight: "+100点 (+0.4秒)", result: "コンボ倍率適用" },
+            { num: "1", text: "ターゲット命中", highlight: "+100点 × レベル倍率", result: "コンボ倍率適用" },
             { num: "2", text: "セットクリア", highlight: "+400点 × レベル", result: "クラスタ即時生成" },
             { num: "3", text: "レベル進行", highlight: "+1 / 1400点", result: "シームレス難易度深化" },
-            { num: "4", text: "誤クリック / ミス", highlight: "ペナルティ", result: "コンボリセット (-0.6秒)" }
+            { num: "4", text: "誤クリック / ミス", highlight: "ペナルティ", result: "コンボリセット (ペナルティ設定時 -0.6秒)" }
           ],
           aboutTitle: "ターゲット捕捉 エイム練習について",
           aboutHeading: "ターゲット捕捉（Target Acquisition）とは？",
-          aboutText: "ターゲット捕捉とは、視野内の乱雑な情報から瞬時に敵を特定し、照準を合わせる一連の視覚認知・運動プロセスです。色や輝度などの基本特徴は並列処理（Treisman & Gelade, 1980）されるため、明暗差の識別訓練を重ねることで索敵ディレイを極限まで削ぎ落とせます。"
+          aboutText: "ターゲット捕捉とは、視野内の乱雑な情報から瞬時に敵を特定し、照準を合わせる一連の視覚認知・運動プロセスです。色や輝度などの基本特徴は並列処理（Treisman & Gelade, 1980）されるため、このドリルでは明るさの差で優先目標を選び、初弾を当てる流れを繰り返し練習します。"
         }}
       />
       <DrillGuide guide={targetAcquisitionGuide} />

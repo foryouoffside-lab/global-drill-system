@@ -6,21 +6,21 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "발로란트 에임 연습 - 타겟 포착 트레이너 | SkillDrills",
-  description: "브라우저에서 바로 하는 무료 발로란트 에임 연습. 화면에 나타난 위협을 빠르게 식별하고 초탄 정확도와 타겟 포착 속도를 측정하세요.",
+  title: "발로란트 에임 연습 사이트 - 첫 발 타겟 포착 | SkillDrills",
+  description: "발로란트 에임 연습 사이트를 찾는다면 설치 없이 브라우저에서 시작하세요. 밝기가 다른 3~8개 타겟을 가장 밝은 것부터 맞히는 60초 무료 타겟 포착 드릴로 첫 발 정확도와 판단 속도를 반복 연습합니다.",
   keywords: [
+    "발로란트 에임 연습 사이트",
+    "발로 에임 연습 사이트",
     "발로란트 에임 연습",
-    "발로란트 에임",
+    "발로란트 연습 사이트",
     "타겟 포착",
     "초탄 정확도",
     "적 식별 연습",
     "위협 식별",
-    "에임 트레이너",
     "FPS 타겟 포착",
     "시각 탐지 훈련",
     "초탄 헤드샷",
-    "무료 에임 연습",
-    "타겟 스위칭"
+    "무료 에임 연습"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/target-acquisition",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "발로란트 에임 연습 - 타겟 포착 트레이너 | SkillDrills",
-    description: "브라우저에서 바로 하는 무료 발로란트 에임 연습. 화면에 나타난 위협을 빠르게 식별하고 초탄 정확도와 타겟 포착 속도를 측정하세요.",
+    title: "발로란트 에임 연습 사이트 - 첫 발 타겟 포착 | SkillDrills",
+    description: "발로란트 에임 연습 사이트를 찾는다면 설치 없이 브라우저에서 시작하세요. 밝기가 다른 3~8개 타겟을 가장 밝은 것부터 맞히는 60초 무료 타겟 포착 드릴로 첫 발 정확도와 판단 속도를 반복 연습합니다.",
     url: "https://skilldrills.online/ko/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "발로란트 에임 연습 - 타겟 포착 트레이너 | SkillDrills",
-    description: "브라우저에서 바로 하는 무료 발로란트 에임 연습. 화면에 나타난 위협을 빠르게 식별하고 초탄 정확도와 타겟 포착 속도를 측정하세요.",
+    title: "발로란트 에임 연습 사이트 - 첫 발 타겟 포착 | SkillDrills",
+    description: "발로란트 에임 연습 사이트를 찾는다면 설치 없이 브라우저에서 시작하세요. 밝기가 다른 3~8개 타겟을 가장 밝은 것부터 맞히는 60초 무료 타겟 포착 드릴로 첫 발 정확도와 판단 속도를 반복 연습합니다.",
   },
 };
 
@@ -52,19 +52,19 @@ export default function TargetAcquisitionKoPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
       { "@type": "ListItem", "position": 2, "name": "FPS 에임 훈련", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "타겟 획득", "item": "https://skilldrills.online/ko/drills/fps/target-acquisition" }
+      { "@type": "ListItem", "position": 3, "name": "타겟 포착", "item": "https://skilldrills.online/ko/drills/fps/target-acquisition" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Reaction_time"],
-    "name": "발로란트 에임 연습 - 타겟 포착 트레이너",
+    "name": "발로란트 에임 연습 사이트 - 첫 발 타겟 포착",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "시각적 타겟 식별 속도, 위협 우선순위 판단, 초탄 헤드샷 정확도를 극대화하는 무료 브라우저 FPS 에임 트레이너.",
+    "description": "발로란트 플레이어를 위한 무료 브라우저 타겟 포착 드릴. 밝기 순서대로 타겟을 맞히며 시각 식별과 첫 발 정확도를 연습합니다.",
     "genre": "FPS Training / Target Acquisition",
     "url": "https://skilldrills.online/ko/drills/fps/target-acquisition",
     "publisher": {
@@ -77,7 +77,7 @@ export default function TargetAcquisitionKoPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "발로란트 에임 연습 - 타겟 포착 트레이너",
+    "name": "발로란트 에임 연습 사이트 - 첫 발 타겟 포착",
     "url": "https://skilldrills.online/ko/drills/fps/target-acquisition",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -87,16 +87,16 @@ export default function TargetAcquisitionKoPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "시각적 타겟 식별 속도, 위협 우선순위 판단, 초탄 헤드샷 정확도를 극대화하는 무료 브라우저 FPS 에임 트레이너."
+    "description": "발로란트 플레이어를 위한 무료 브라우저 타겟 포착 드릴. 밝기 순서대로 타겟을 맞히며 시각 식별과 첫 발 정확도를 연습합니다."
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "발로란트 에임 연습 - 타겟 포착 트레이너",
+    "name": "발로란트 에임 연습 사이트 - 첫 발 타겟 포착",
     "url": "https://skilldrills.online/ko/drills/fps/target-acquisition",
-    "description": "시각적 타겟 식별 속도, 위협 우선순위 판단, 초탄 헤드샷 정확도를 극대화하는 무료 브라우저 FPS 에임 트레이너.",
-    "dateModified": "2026-09-20",
+    "description": "발로란트 플레이어를 위한 무료 브라우저 타겟 포착 드릴. 밝기 순서대로 타겟을 맞히며 시각 식별과 첫 발 정확도를 연습합니다.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Acquisition"],
     "playMode": "SinglePlayer",
@@ -108,8 +108,16 @@ export default function TargetAcquisitionKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "이 발로란트 에임 연습 사이트의 타겟 포착 드릴은 어떻게 진행되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "60초 동안 밝기가 서로 다른 타겟 3~8개가 한 세트로 나타나며, 가장 밝은 타겟부터 어두운 순서대로 맞혀야 합니다. 올바른 타겟은 +100점에 콤보·레벨 배수가 붙고, 세트를 모두 지우면 +400점 × 레벨 배수 보너스와 함께 새 세트가 생성됩니다. 순서가 틀린 타겟이나 빈 공간을 클릭하면 콤보가 초기화되고, 페널티 옵션을 켠 경우 0.6초가 차감됩니다. 마우스와 포인터 락으로 플레이하며 Esc로 종료합니다. SkillDrills는 Riot Games와 무관한 독립 연습 도구입니다."
+        }
+      },
       {
         "@type": "Question",
         "name": "경쟁전 FPS 게임에서 '타겟 획득(Target Acquisition)'이란 무엇인가요?",
@@ -136,10 +144,10 @@ export default function TargetAcquisitionKoPage() {
       },
       {
         "@type": "Question",
-        "name": "프로 선수들이 일반 유저보다 훨씬 빠르게 적을 포착하고 사격하는 비결은 무엇인가요?",
+        "name": "적을 더 빠르게 포착하려면 시선을 어떻게 써야 하나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "프로들은 안내 탐색 모델(Wolfe, 2007)과 주변시 대비 감도를 극대화하여, 화면을 하나씩 훑어보는 직렬 스캔 없이 가장 위험한 위협 대상으로 단번에 도약 안구 운동(사카드)과 플릭을 연결하기 때문입니다."
+          "text": "안내 탐색 모델(Wolfe, 2007)에 따르면 주의는 눈에 띄는 특징 쪽으로 먼저 끌립니다. 화면을 한 칸씩 훑기보다 중앙에 시선을 두고 가장 두드러지는 대상을 찾은 뒤, 시선이 닿은 곳으로 마우스를 옮기는 습관을 이 드릴에서 반복해 보세요."
         }
       },
       {
@@ -147,7 +155,7 @@ export default function TargetAcquisitionKoPage() {
         "name": "발로란트나 카운터스트라이크 2 같은 전술 FPS에서 초탄 정확도가 왜 결정적인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "TTK가 극히 짧은 게임에서는 초탄 헤드샷이 교전 승패를 90% 이상 좌우합니다. 초탄 포착이 늦거나 빗나가면 상대방에게 반격 기회를 주거나 반동 제어 중 역으로 제압당할 확률이 급증합니다."
+          "text": "TTK가 짧은 전술 FPS에서는 첫 발이 빗나가면 상대에게 반격할 시간을 주게 됩니다. 이 드릴은 실제 게임의 헤드샷을 재현하지는 않지만, 올바른 대상을 고른 뒤 첫 클릭을 정확히 넣는 습관을 따로 떼어 연습하게 해 줍니다."
         }
       },
       {
@@ -163,7 +171,7 @@ export default function TargetAcquisitionKoPage() {
         "name": "시야 내의 오브젝트 밀도와 시각적 혼란 요소는 포착 속도에 어떤 영향을 주나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "시각적 혼란 요소가 많아지면 자동 팝아웃 효과가 방해받아 뇌가 순차적 직렬 스캔을 강요받게 되며, 목표 식별까지의 인지 지연 시간이 100~200ms 이상 증가합니다."
+          "text": "방해 요소가 많고 목표와 비슷할수록 팝아웃 효과가 약해져 하나씩 살펴보는 직렬 탐색에 가까워지고, 목표를 찾는 시간이 길어집니다(Treisman & Gelade, 1980). 이 드릴은 레벨이 오를수록 타겟 수가 늘고 밝기 차이가 줄어 이 효과를 체감할 수 있습니다."
         }
       },
       {
@@ -187,7 +195,7 @@ export default function TargetAcquisitionKoPage() {
         "name": "타겟 획득 훈련은 매일 얼마나 연습하는 것이 좋은가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "매일 15~20분 정도의 고집중 세션이 가장 효과적입니다. 시각적 피로가 쌓이기 전 맑은 정신 상태에서 집중 훈련하는 것이 집중을 유지하기에 좋습니다."
+          "text": "정해진 정답은 없지만 60초 세션을 여러 번, 짧게 집중해서 하는 방식을 권합니다. 눈이 피로해지기 전에 멈추고 같은 장비에서 본인 기록 변화를 비교하세요."
         }
       }
     ]
@@ -197,13 +205,13 @@ export default function TargetAcquisitionKoPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "타겟 획득 에임 트레이닝 효율적 연습 단계",
-    "description": "시각적 식별 속도와 초탄 플릭 정확도를 극대화하기 위한 4단계 과학적 가이드.",
+    "description": "타겟 포착 드릴에서 시각 식별과 첫 발 정확도를 연습하는 4단계.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
         "name": "감도 캘리브레이션",
-        "text": "실제 플레이하는 게임의 DPI 및 인게임 감도를 동일하게 설정하고, 포인터 락을 활성화합니다."
+        "text": "/drills 페이지의 감도 설정을 평소 게임 감도에 맞춥니다. 시작하면 포인터 락이 자동으로 걸립니다."
       },
       {
         "@type": "HowToStep",
@@ -230,23 +238,23 @@ export default function TargetAcquisitionKoPage() {
     title: "발로란트 에임 연습: 타겟 포착과 초탄 정확도 가이드",
     subtitle: "시각적 식별 속도, 특징 대비 판별력, 그리고 빗나가지 않는 초탄 헤드샷 정확도를 완성하는 과학적 방법론",
     intro: [
-      "발로란트 에임 연습을 찾는 FPS 플레이어라면, 이 드릴은 화면에 나타난 위협을 발견하고 식별한 뒤 조준선을 첫 탄에 맞추는 과정을 측정합니다. 타겟 포착 속도와 초탄 정확도를 함께 훈련해 발로란트, 카운터스트라이크 2, 레인보우 식스 시즈에서 시야가 열린 뒤 300밀리초 안에 내리는 판단과 조준을 안정화합니다.",
+      "발로란트 에임 연습 사이트를 찾는 플레이어를 위한 무료 브라우저 드릴입니다. 60초 동안 밝기가 다른 타겟 3~8개가 나타나면 가장 밝은 것부터 순서대로 맞혀야 하므로, 올바른 대상을 먼저 고른 뒤 첫 발을 정확히 넣는 과정을 반복하게 됩니다. 발로란트나 CS2처럼 첫 발이 중요한 게임을 하는 사람에게 맞춘 연습이며, SkillDrills는 Riot Games와 무관한 독립 연습 도구입니다.",
       "시각 탐색 및 객체 식별의 이론적 토대는 Anne Treisman과 Garry Gelade(1980)의 '특징 통합 이론(Feature-Integration Theory)'에서 수립되었습니다. 트레이스먼은 휘도 대비, 색상 팝아웃, 모서리 방향성과 같은 저차원 시각 특징들이 시야 전체에 걸쳐 전주의적(Preattentive)으로 병렬 추출됨을 입증했습니다. 오직 초점화된 공간 주의가 특정 좌표로 유도될 때에만 이러한 개별 특징들이 하나의 인지 가능한 적의 위협으로 결합됩니다.",
       "병렬 시각 정보 처리를 확장한 Jeremy M. Wolfe(1994, 2007)의 '안내 탐색(Guided Search)' 모델은 하향식(Top-down) 인지 기대와 상향식(Bottom-up) 감각 현저성 지도가 상호작용하여 주의의 우선순위를 부여하는 기전을 규명합니다. 시각 대비 식별을 집중 훈련하면 시각 피질이 낮은 대비의 배경 잡음과 방해 요소를 즉시 기각하도록 적응하여, 표적 출현과 운동 개시 사이의 인지 지연 시간을 획기적으로 줄여줍니다.",
-      "Paul M. Fitts(1954)의 운동 난이도 법칙, David E. Meyer 등(1988)의 확률적 최적화 하위운동 모델, 그리고 고정밀 디지털 시간 측정(Woods et al., 2015)을 유기적으로 융합한 본 드릴은 인지적 망설임을 제거하고 신속한 1차 탄도 플릭을 구사하여 실전 매치의 압박 속에서도 초탄 명중력을 확고히 정착시킵니다.",
-      "측정 기준 및 하드웨어 지연 투명성: 모든 타겟 식별 및 격발 이벤트는 브라우저 내부의 performance.now() 고해상도 시계를 통해 사용자 기기 내에서 즉각 타임스탬프 처리되며 외부로 점수가 전송되지 않습니다. 다만 브라우저의 Spectre 보안 완화 조치로 타이머가 약 1ms 단위로 양자화되며, 모니터 주사율에 따른 화면 갱신 주기(60Hz 약 16.7ms, 144Hz 6.9ms, 240Hz 4.1ms; Woods et al., 2015)와 마우스 폴링레이트(125Hz 8ms 대 1000Hz 1ms)가 물리적 변수로 작용합니다. 따라서 5ms 미만의 미세 차이는 측정 노이즈로 간주하고, 서로 다른 장비 간 단순 비교보다는 동일한 장비 환경에서 본인의 기록 변화를 추적하는 지표로 활용하시기 바랍니다."
+      "Paul M. Fitts(1954)의 운동 난이도 법칙, David E. Meyer 등(1988)의 확률적 최적화 하위운동 모델, 그리고 고정밀 디지털 시간 측정(Woods et al., 2015)을 유기적으로 융합한 본 드릴은 망설임 없이 1차 플릭을 시작하고 목표에서 정확히 멈추는 연습에 초점을 맞춥니다. 실전 실력 향상을 보장하지는 않으며, 꾸준한 반복으로 본인 기록을 비교하는 용도입니다.",
+      "기록 안내: 결과 화면에는 점수, 정확도(올바른 타겟 명중 수 ÷ 전체 클릭 수), 클리어 세트, 최대 콤보, 최고 레벨이 표시되며 최고 기록은 이 브라우저에만 저장됩니다. 반응 시간(ms)은 측정하지 않습니다. 모니터 주사율과 마우스 폴링레이트에 따라 체감이 달라지므로, 다른 장비와 비교하기보다 같은 환경에서 본인 기록 변화를 추적하세요."
     ],
     benchmarks: {
-      title: "타겟 획득 및 식별 레이턴시 벤치마크 기준",
-      headers: ["스킬 티어", "포착 레이턴시", "초탄 정확도", "실전 인게임 교전 결과"],
+      title: "타겟 포착 정확도 연습 구간",
+      headers: ["연습 구간", "정확도", "의미"],
       rows: [
-        ["Tier 1 (최상위)", "260 ms 미만", "95% – 99%+", "위협을 거의 즉시 감지하고 망설임 없이 초탄을 맞히는 구간"],
-        ["Tier 2 (상급)", "260 – 320 ms", "88% – 95%", "시각 노이즈 속에서도 우선순위 표적을 빠르게 포착하는 구간"],
-        ["Tier 3 (숙련)", "320 – 400 ms", "80% – 88%", "초탄 정확도가 안정적이며 표적이 여러 개일 때 판단 지연이 생기는 구간"],
-        ["Tier 4 (중급)", "400 – 500 ms", "70% – 80%", "순차적 시선 탐색에 의존하며 우선순위가 낮은 표적을 잘못 누르기 쉬운 구간"],
-        ["Tier 5 (입문)", "500 ms 이상", "70% 미만", "시각적 혼란으로 반응이 늦어지는 구간"]
+        ["구간 1", "95% 이상", "순서 실수와 빈 클릭이 거의 없는 상태"],
+        ["구간 2", "88% – 95%", "높은 레벨에서도 가장 밝은 타겟을 대부분 먼저 고르는 상태"],
+        ["구간 3", "80% – 88%", "타겟이 많아지면 순서 실수가 생기기 시작하는 상태"],
+        ["구간 4", "70% – 80%", "밝기가 비슷한 타겟을 자주 잘못 누르는 상태"],
+        ["구간 5", "70% 미만", "속도보다 순서 정확도를 먼저 잡아야 하는 상태"]
       ],
-      note: "포착 레이턴시는 표적 생성 순간부터 최우선 표적에 유효 클릭이 들어갈 때까지의 시간입니다(Woods et al., 2015). 구간은 SkillDrills가 정한 참고용 구분이며 게임 랭크나 사용자 통계와 무관합니다."
+      note: "정확도는 결과 화면의 값(올바른 타겟 명중 수 ÷ 전체 클릭 수)입니다. 구간은 SkillDrills가 정한 연습용 구분이며 연구 기준, 게임 랭크, 사용자 통계와 무관합니다."
     },
     techniques: {
       title: "타겟 획득력을 극대화하는 실전 테크닉",
@@ -259,7 +267,7 @@ export default function TargetAcquisitionKoPage() {
         {
           name: "도약 안구-운동 신경 커플링을 통한 초탄 스냅",
           desc: "눈과 손의 움직임을 정밀 결합합니다. 먼저 도약 안구 운동(사카드)으로 타겟 중심점을 확보하고, 그 시선 벡터를 따라 마우스를 신속하게 플릭합니다.",
-          tips: "조준선이 도착하기 30~50ms 전에 시선이 목표 중심에 먼저 도달해 있어야 합니다."
+          tips: "마우스를 움직이기 전에 시선이 먼저 목표 중심에 가 있도록 의식하세요."
         },
         {
           name: "명도 대비 식별 임계값 제어",
@@ -274,13 +282,13 @@ export default function TargetAcquisitionKoPage() {
       ]
     },
     steps: [
-      "세션 설정에서 사용하는 DPI와 인게임 감도를 동일하게 맞추고 포인터 락을 활성화합니다.",
+      "/drills 페이지의 감도 설정을 평소 게임 감도에 맞추고 시작합니다. 포인터 락은 자동으로 걸립니다.",
       "화면 중앙에 편안히 시선을 유지한 채 타겟 클러스터의 출현을 기다립니다.",
       "병렬 시각 필터를 활용하여 가장 밝은 최우선 타겟을 순간적으로 판별합니다.",
-      "목표 중심점으로 날카롭게 플릭하고 클릭하여 +100점(+0.4초 추가 시간)을 획득합니다.",
-      "남은 타겟들을 명도 순서대로 빠르게 처리하여 +400점 × 레벨 보너스를 챙기세요."
+      "목표 중심점으로 플릭하고 클릭하여 +100점 × 콤보·레벨 배수를 얻습니다. 시간은 60초로 고정이며 명중해도 늘어나지 않습니다.",
+      "남은 타겟을 밝기 순서대로 모두 지워 +400점 × 레벨 배수 세트 보너스를 받으세요."
     ],
-    audience: "발로란트, 오버워치 2, 카운터스트라이크 2, 에이펙스 레전드에서 적 포착 반응속도와 초탄 헤드샷 적중률을 획기적으로 개선하고자 하는 FPS 게이머.",
+    audience: "발로란트, CS2, 오버워치 2, 에이펙스 레전드를 하며 적을 고르는 판단과 첫 발 정확도를 따로 연습하고 싶은 FPS 플레이어. 마우스가 필요합니다.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -318,9 +326,9 @@ export default function TargetAcquisitionKoPage() {
       />
       <TargetAcquisitionClient
         copy={{
-          h1Keyword: "발로란트 에임 연습",
-          h1Suffix: " - 타겟 포착 트레이너",
-          subtitle: "발로란트·CS2에서 적을 빠르게 식별하고 초탄을 맞히는 능력을 브라우저에서 훈련하세요.",
+          h1Keyword: "발로란트 에임 연습 사이트",
+          h1Suffix: " - 첫 발 타겟 포착",
+          subtitle: "발로란트 플레이어를 위한 무료 연습: 가장 밝은 타겟부터 순서대로 맞히며 첫 발 정확도를 훈련하세요.",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "정확도",
@@ -328,7 +336,7 @@ export default function TargetAcquisitionKoPage() {
           statSetsCleared: "클리어 세트",
           statMaxCombo: "최대 콤보",
           statPeakLevel: "최고 레벨",
-          startTitle: "타겟 획득 Pro",
+          startTitle: "타겟 포착 Pro",
           startSubtitle: "시각적 식별 속도 • 무한 레벨 난이도 진행",
           getReady: "준비",
           toggleFlash: "미스 플래시 켜기/끄기",
@@ -338,14 +346,14 @@ export default function TargetAcquisitionKoPage() {
           stageCaption: "각 타겟 클러스터에서 가장 밝은(불투명도가 높은) 목표를 가장 빠르고 정확하게 찾아 클릭하세요.",
           rulesTitle: "훈련 규칙 및 점수 산정 방식",
           rulesItems: [
-            { num: "1", text: "타겟 명중", highlight: "+100점 (+0.4초)", result: "콤보 배수 적용" },
+            { num: "1", text: "타겟 명중", highlight: "+100점 × 레벨 배수", result: "콤보 배수 적용" },
             { num: "2", text: "세트 클리어", highlight: "+400점 × 레벨", result: "클러스터 즉시 생성" },
             { num: "3", text: "레벨 상승", highlight: "+1 / 1400점", result: "적응형 난이도 진행" },
-            { num: "4", text: "오클릭 / 미스", highlight: "페널티", result: "콤보 초기화 (-0.6초)" }
+            { num: "4", text: "오클릭 / 미스", highlight: "페널티", result: "콤보 초기화 (페널티 옵션 시 -0.6초)" }
           ],
-          aboutTitle: "타겟 획득 에임 트레이너 소개",
+          aboutTitle: "타겟 포착 드릴 소개",
           aboutHeading: "타겟 획득(Target Acquisition)이란?",
-          aboutText: "타겟 획득은 시야 내 수많은 시각 정보 속에서 적을 즉각 식별하고 초탄 조준을 완료하는 인지-운동 과정입니다. 색상과 명도 같은 시각 특성은 병렬적으로 처리되므로(Treisman & Gelade, 1980), 명도 차 식별 훈련을 통해 실전에서 망설임 없는 번개 같은 초탄 사격이 가능해집니다."
+          aboutText: "타겟 획득은 시야 내 수많은 시각 정보 속에서 적을 즉각 식별하고 초탄 조준을 완료하는 인지-운동 과정입니다. 색상과 명도 같은 시각 특성은 병렬적으로 처리되므로(Treisman & Gelade, 1980), 이 드릴은 밝기 차이로 우선 대상을 고른 뒤 첫 발을 맞히는 과정을 반복 연습하게 합니다."
         }}
       />
       <DrillGuide guide={targetAcquisitionGuide} />

@@ -20,7 +20,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Tracking Aim Training | Strafe-Übung | SkillDrills",
-  description: "Kostenloses Tracking-Aim-Training im Browser: Übe AD-Strafes, Richtungswechsel und reaktives Zielen für Apex und CS2.",
+  description: "Kostenloses Tracking Aim Training im Browser: Halte das Fadenkreuz auf einem Ziel, das per AD-Strafe ständig die Richtung wechselt – für Apex, OW2 und CS2.",
   keywords: [
     "Tracking Aim Training",
     "Strafe Tracking Übung",
@@ -45,7 +45,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Tracking Aim Training | Strafe-Übung | SkillDrills",
-    description: "Kostenloses Tracking-Aim-Training im Browser: Übe AD-Strafes, Richtungswechsel und reaktives Zielen für Apex und CS2.",
+    description: "Kostenloses Tracking Aim Training im Browser: Halte das Fadenkreuz auf einem Ziel, das per AD-Strafe ständig die Richtung wechselt – für Apex, OW2 und CS2.",
     url: "https://skilldrills.online/de/drills/fps/strafe-tracking",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -54,7 +54,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Tracking Aim Training | Strafe-Übung | SkillDrills",
-    description: "Kostenloses Tracking-Aim-Training im Browser: Übe AD-Strafes, Richtungswechsel und reaktives Zielen für Apex und CS2.",
+    description: "Kostenloses Tracking Aim Training im Browser: Halte das Fadenkreuz auf einem Ziel, das per AD-Strafe ständig die Richtung wechselt – für Apex, OW2 und CS2.",
   },
 };
 
@@ -75,7 +75,7 @@ export default function StrafeTrackingDePage() {
     "name": "Strafe Tracking Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Kostenloser Browser-Trainer zur Beherrschung von Strafe-Tracking, Blickfolgebewegungen und Richtungswechseln.",
     "genre": "FPS Training / Strafe Tracking",
@@ -109,7 +109,7 @@ export default function StrafeTrackingDePage() {
     "name": "Strafe Tracking Trainer",
     "url": "https://skilldrills.online/de/drills/fps/strafe-tracking",
     "description": "Kostenloser Browser-Trainer zur Beherrschung von Strafe-Tracking, Blickfolgebewegungen und Richtungswechseln.",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Strafe Tracking", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -121,7 +121,7 @@ export default function StrafeTrackingDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -200,7 +200,15 @@ export default function StrafeTrackingDePage() {
         "name": "Wie integriert man Strafe Tracking am besten in die tägliche Aufwärmroutine?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolviere 10 bis 15 Minuten Strafe-Tracking vor deiner Spielsession. Konzentriere dich auf maximale kontinuierliche Lock-on-Zeit (Time on Target) statt auf Hektik, um den motorischen Kortex zu kalibrieren."
+          "text": "Ein bis zwei Runden Strafe-Tracking vor deiner Spielsession reichen als Aufwärmen. Konzentriere dich auf möglichst lange ununterbrochene Lock-on-Zeit (Time on Target) statt auf Hektik."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie werden Punkte, Combo und Zeit in diesem Tracking Aim Training berechnet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solange das Fadenkreuz auf der Kapsel liegt, gibt es alle 0,25 Sekunden 50 Basispunkte (mal Combo- und Level-Multiplikator) und 0,1 Sekunden Zusatzzeit (maximal 60 Sekunden Restzeit). Jede volle Sekunde ohne Unterbrechung erhöht die Combo um 1, der Multiplikator steigt bis 3,0×. Sobald du das Ziel verlässt, fällt die Combo auf 0; mit aktivierter Zeitstrafe kostet jede Sekunde außerhalb 0,6 Sekunden. Die Runde startet mit 45 Sekunden und endet bei 0. Geklickt wird nicht – nur die Maus zählt."
         }
       }
     ]
@@ -246,20 +254,20 @@ export default function StrafeTrackingDePage() {
       "Dieses Tracking-Aim-Training isoliert reaktives laterales Tracking gegen unberechenbare ADAD-Ausweichbewegungen. In Apex Legends, Overwatch 2, The Finals und Call of Duty entscheidet die Zeit, in der das Fadenkreuz trotz Richtungswechseln auf dem Gegner bleibt, über die Trefferleistung.",
       "Das neurophysiologische Fundament der visuellen Bewegungsfolge wurde maßgeblich von Richard J. Krauzlis (2004) entschlüsselt. Er zeigte auf, wie das Gehirn glatte Blickfolgebewegungen (Smooth Pursuit) über reziproke neuronale Schaltkreise zwischen dem primären visuellen Bewegungskortex (MT/V5), dem medialen superioren temporalen Areal (MST) und dem frontalen Augenfeld (FEF) steuert. Registrieren diese Areale Zielbewegungen, berechnen sie in Echtzeit den retinalen Geschwindigkeitsfehler (Retinal Velocity Error), um okulomotorische und manuelle motorische Systeme synchron auf Verfolgungskurs zu halten.",
       "In einer klassischen Entdeckung der visuellen Psychophysik bewies Cyril Rashbass (1961), dass glatte Blickfolgebewegungen und Sakkaden von fundamental getrennten physiologischen Subsystemen gesteuert werden: Sakkaden reagieren auf Positionsverschiebungen, wohingegen Smooth Pursuit ausschließlich auf retinale Geschwindigkeitsdifferenzen (Retinal Slip) anspricht. Versuchen Spieler im Schusswechsel, gegnerische Richtungswechsel vorab zu 'erraten', provozieren sie unwillkürliche Aufholsakkaden, die unweigerlich zu massivem Übersteuern (Overshoot) und ruckartigem Zielzittern führen.",
-      "Durch die Synthese von Michael I. Posners (1990) Modell der orientierenden Aufmerksamkeit, den räumlichen Tracking-Paradigmen von C. Shawn Green & Daphne Bavelier (2003) sowie digitaler Niedriglatenz-Chronometrie (Woods et al., 2015) trainiert dieser Drill Spieler darauf, voreiliges Raten konsequent zu unterdrücken, isometrische Unterarmspannungen abzubauen und rein reaktive, seidenweiche Blickfolgebewegungen über hochdynamische Geschwindigkeitsvektoren zu etablieren.",
+      "Durch die Synthese von Michael I. Posners (1990) Modell der orientierenden Aufmerksamkeit, den räumlichen Tracking-Paradigmen von C. Shawn Green & Daphne Bavelier (2003) sowie digitaler Niedriglatenz-Chronometrie (Woods et al., 2015) zielt dieser Drill darauf ab, voreiliges Raten zu unterdrücken, Unterarmspannung abzubauen und reaktives, ruhiges Mitführen der Maus zu üben.",
       "Messmethodik & Hardware-Einflüsse: Jedes Ereignis wird über die hochauflösende Schnittstelle performance.now() des Browsers lokal auf deinem Endgerät erfasst – es werden keinerlei Leistungsdaten übertragen. Browser-Timer werden aus Sicherheitsgründen (Spectre-Schutz) meist auf ca. 1 ms gerundet, während dein Bildschirm jeden Stimulus entsprechend seiner Bildwiederholrate quantisiert – etwa 16,7 ms pro Frame bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz (Woods et al., 2015). Die Abfragerate der Maus (Polling Rate) steuert ca. 8 ms bei 125 Hz gegenüber 1 ms bei 1000 Hz bei. Betrachte Abweichungen unter 5 ms daher als normales Messrauschen und vergleiche Fortschritte stets auf demselben Hardware-Setup."
     ],
     benchmarks: {
-      title: "Strafe-Tracking & Verweildauer-Benchmarks (Time on Target Norms)",
-      headers: ["Leistungsstufe / Rang", "Trefferquote (Time on Target)", "Max. Lock-on Streak", "Physiologische Umkehrlatenz & Status"],
+      title: "Tracking Aim Training: SkillDrills-Übungsstufen",
+      headers: ["Übungsstufe", "Trefferquote (Time on Target)", "Max. Lock-on Serie", "Typisches Bild"],
       rows: [
-        ["Anfänger / Casual", "< 40 % Verweildauer", "< 1,2 Sekunden", "Häufiges Überreißen, starkes Zittern, Richtungswechsel-Latenz > 240 ms"],
-        ["Fortgeschritten (Gold / Platin)", "40 – 58 % Verweildauer", "1,2 – 2,5 Sekunden", "Stabiles Verfolgen auf geraden Bahnen; verliert das Ziel bei schnellen AD-Cuts"],
-        ["Diamant / Master", "58 – 74 % Verweildauer", "2,5 – 4,5 Sekunden", "Sehr gute Smoothness; zügige Korrektursakkaden mit Latenz von ca. 160–180 ms"],
-        ["Stufe 4", "74 – 86 % Verweildauer", "4,5 – 7,5 Sekunden", "Nahezu verzögerungsfreie Richtungsumkehr; exzellente Geschwindigkeitsanpassung"],
-        ["Stufe 5", "> 86 % Verweildauer", "> 7,5 Sekunden", "Perfekte okulomotorische Synchronisation; Fadenkreuz klebt förmlich am Zielzentrum"]
+        ["Stufe 1", "< 40 % Verweildauer", "< 1,2 Sekunden", "Häufiges Überreißen und Zittern, das Ziel geht bei fast jedem Richtungswechsel verloren"],
+        ["Stufe 2", "40 – 58 % Verweildauer", "1,2 – 2,5 Sekunden", "Stabiles Verfolgen auf geraden Bahnen; verliert das Ziel bei schnellen AD-Cuts"],
+        ["Stufe 3", "58 – 74 % Verweildauer", "2,5 – 4,5 Sekunden", "Gute Smoothness; Richtungswechsel werden mit kleinen Korrekturen schnell aufgeholt"],
+        ["Stufe 4", "74 – 86 % Verweildauer", "4,5 – 7,5 Sekunden", "Schnelle Richtungsumkehr; sehr gute Geschwindigkeitsanpassung"],
+        ["Stufe 5", "> 86 % Verweildauer", "> 7,5 Sekunden", "Fadenkreuz bleibt auch bei schnellen AD-Cuts fast durchgehend auf dem Ziel"]
       ],
-      note: "Wissenschaftliche Richtwerte basierend auf Blickfolgestudien und sensomotorischer Reaktionsforschung (Rashbass 1961, Krauzlis 2004, Lisberger 2010)."
+      note: "Übungsstufen von SkillDrills zur Selbsteinschätzung – keine Forschungsnormen und keine Nutzerstatistik. Die Lock-on-Serie ist die längste ununterbrochene Zeit auf dem Ziel."
     },
     techniques: {
       title: "Disziplinspezifische Tracking-Kalibrierung nach Spiel",
@@ -287,7 +295,7 @@ export default function StrafeTrackingDePage() {
       ]
     },
     steps: [
-      "Wähle deine bevorzugte Mausempfindlichkeit und klicke in das Spielfeld, um den Mauszeiger zu sperren.",
+      "Stelle die Mausempfindlichkeit in den Einstellungen auf /drills ein und klicke auf „Training starten“ – nach dem Countdown wird der Mauszeiger gesperrt (Pointer Lock).",
       "Richte das Fadenkreuz auf das zentrale Startziel und beginne das Tracking.",
       "Halte das Fadenkreuz kontinuierlich auf dem unberechenbar nach links und rechts ausweichenden Ziel.",
       "Reagiere geschmeidig auf plötzliche Richtungswechsel und bringe das Fadenkreuz sofort wieder ins Zentrum.",
@@ -331,10 +339,10 @@ export default function StrafeTrackingDePage() {
     bottomCaption: "Halte das Fadenkreuz kontinuierlich auf dem Target, während es am Boden unregelmäßig die Richtung wechselt, um deine Tracking-Ausdauer zu maximieren.",
     rulesTitle: "Trainingsregeln & Punktesystem",
     rulesItems: [
-      { num: "1", text: "Zielerfassung", highlight: "+50 PKT (+0,4s/s)", result: "×Combo-Multiplikator" },
-      { num: "2", text: "Kontinuierlicher Lock", highlight: "Bis zu 3,0×", result: "Maximal-Multiplikator" },
+      { num: "1", text: "Auf dem Ziel", highlight: "+50 PKT je 0,25s (+0,4s/s)", result: "×Combo-Multiplikator" },
+      { num: "2", text: "1s ununterbrochen", highlight: "Combo +1, bis 3,0×", result: "Maximal-Multiplikator" },
       { num: "3", text: "Levelprogression", highlight: "+1 Stufe / 1400 PKT", result: "Adaptives Strafing" },
-      { num: "4", text: "Abreiß-Strafe", highlight: "1,0s Zielverlust", result: "Setzt Combo zurück (-0,6s)" }
+      { num: "4", text: "Ziel verlassen", highlight: "Combo sofort auf 0", result: "-0,6s je 1s (Strafe AN)" }
     ],
     aboutTitle: "Über Tracking Aim und Strafe-Training",
     whatIsTitle: "Was ist Strafe Tracking (Aim Tracking)?",

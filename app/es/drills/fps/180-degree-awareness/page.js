@@ -6,18 +6,17 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Entrenamiento giro 180° | Puntería FPS | SkillDrills",
-  description: "Entrenamiento gratis de giro 180° en navegador: detecta objetivos con visión periférica, gira rápido y frena el ratón con precisión.",
+  title: "Entrenamiento de Giro de 180° en FPS | SkillDrills",
+  description: "Giro de 180° en FPS, gratis en el navegador: los objetivos aparecen en los bordes izquierdo y derecho; llévales la mira con un flick amplio y frena. Requiere ratón.",
   keywords: [
     "entrenamiento de giro 180 grados",
     "giro de 180 grados mira",
     "visión periférica FPS",
-    "puntería FPS",
-    "entrenamiento de puntería online",
+    "giro de 180 en FPS",
+    "giro rápido FPS",
     "girar rápido en FPS con el ratón",
     "reacción a flancos FPS",
     "control de espacio alfombrilla ratón",
-    "entrenamiento de reflejos Valorant",
     "aim trainer 180 grados"
   ],
   alternates: {
@@ -29,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Entrenamiento giro 180° | Puntería FPS | SkillDrills",
-    description: "Detecta objetivos con visión periférica, gira 180° y frena el ratón con precisión en este entrenamiento FPS gratuito.",
+    title: "Entrenamiento de Giro de 180° en FPS | SkillDrills",
+    description: "Giro de 180° en FPS: detecta objetivos en los bordes con visión periférica, haz un giro rápido y frena el ratón con precisión. Gratis en el navegador.",
     url: "https://skilldrills.online/es/drills/fps/180-degree-awareness",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -38,8 +37,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Entrenamiento giro 180° | Puntería FPS | SkillDrills",
-    description: "Detecta objetivos con visión periférica, gira 180° y frena el ratón con precisión en este entrenamiento FPS gratuito.",
+    title: "Entrenamiento de Giro de 180° en FPS | SkillDrills",
+    description: "Giro de 180° en FPS: detecta objetivos en los bordes con visión periférica, haz un giro rápido y frena el ratón con precisión. Gratis en el navegador.",
   },
 };
 
@@ -50,21 +49,21 @@ export default function AwarenessDrillEsPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
       { "@type": "ListItem", "position": 2, "name": "Drills de FPS", "item": "https://skilldrills.online/es/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Entrenamiento de Giro 180°", "item": "https://skilldrills.online/es/drills/fps/180-degree-awareness" }
+      { "@type": "ListItem", "position": 3, "name": "Giro de 180° en FPS", "item": "https://skilldrills.online/es/drills/fps/180-degree-awareness" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination", "https://en.wikipedia.org/wiki/Reaction_time"],
-    "name": "Entrenamiento de Giro 180°",
+    "name": "Giro de 180° en FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Navegador Web",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Simulador interactivo de giros de 180 grados para FPS. Desarrolla velocidad de brazo, reflejos contra flancos y visión periférica.",
     "genre": "Entrenamiento FPS / Percepción Espacial",
     "url": "https://skilldrills.online/es/drills/fps/180-degree-awareness",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -75,7 +74,7 @@ export default function AwarenessDrillEsPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entrenamiento de Giro 180°",
+    "name": "Giro de 180° en FPS",
     "url": "https://skilldrills.online/es/drills/fps/180-degree-awareness",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -85,26 +84,26 @@ export default function AwarenessDrillEsPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Entrenador de puntería 180 grados gratuito en navegador. Practica giros bruscos, esquivar flashbangs y frenado de ratón para CS2 y Valorant."
+    "description": "Entrenamiento gratuito de giro de 180° en FPS en el navegador. Practica flicks amplios hacia los bordes de la pantalla y el frenado del ratón para CS2 y Valorant."
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entrenamiento de Giro 180°",
+    "name": "Giro de 180° en FPS",
     "gamePlatform": "Web Browser",
     "genre": ["Entrenamiento de FPS", "Entrenador de Puntería"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "url": "https://skilldrills.online/es/drills/fps/180-degree-awareness",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -116,10 +115,10 @@ export default function AwarenessDrillEsPage() {
       },
       {
         "@type": "Question",
-        "name": "¿Cómo mejoran los jugadores profesionales la orientación espacial de 360°?",
+        "name": "¿Cómo se mejora la orientación espacial de 360°?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Los profesionales de e-sports entrenan con escenarios de wide flick, posicionamiento de mira y sonido posicional 3D para mantener un mapa mental constante del entorno virtual."
+          "text": "Combinando ejercicios de wide flick, posicionamiento de mira y atención al sonido posicional 3D, construyes poco a poco un mapa mental del escenario."
         }
       },
       {
@@ -127,7 +126,7 @@ export default function AwarenessDrillEsPage() {
         "name": "¿Pueden los ejercicios de 180° mejorar el tiempo de reacción?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Responder a estímulos en los bordes de la pantalla activa más rápido los bastones de la retina y el colículo superior, reduciendo la duda antes de iniciar el movimiento del brazo."
+          "text": "Pueden ayudar. Detectar el objetivo en los bordes antes de iniciar el movimiento del brazo es justo lo que repite el drill, pero no hay una mejora garantizada."
         }
       },
       {
@@ -143,7 +142,7 @@ export default function AwarenessDrillEsPage() {
         "name": "¿Cómo evitar que me flanqueen o eliminen por la espalda en FPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Combinando información auditiva con giros rápidos y precisos de 180 grados. Entrenar la distancia exacta en la alfombrilla asegura neutralizar enemigos a la espalda antes de caer eliminado."
+          "text": "Combinando información auditiva con giros rápidos y precisos de 180 grados. Entrenar la distancia exacta en la alfombrilla ayuda a girarte y apuntar antes."
         }
       },
       {
@@ -159,7 +158,7 @@ export default function AwarenessDrillEsPage() {
         "name": "¿Sirve este ejercicio para CS2, Valorant y otros shooters?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. En juegos tácticos como CS2 y Valorant, girar 180° es crucial para esquivar flashbangs y cubrir ángulos ciegos. En Apex Legends y Overwatch 2, resulta vital para el combate cerrado."
+          "text": "En parte. En CS2 y Valorant, un giro rápido sirve para esquivar flashbangs y cubrir ángulos ciegos. El drill no simula flashes ni una cámara 3D: repite el flick amplio hacia los bordes de la pantalla y el frenado preciso que esos gestos necesitan."
         }
       },
       {
@@ -211,7 +210,7 @@ export default function AwarenessDrillEsPage() {
         "@type": "HowToStep",
         "position": 3,
         "name": "Ejecuta el barrido balístico de antebrazo",
-        "text": "Realiza un movimiento horizontal rápido con codo y hombro que cubra la distancia calibrada para girar 180°."
+        "text": "Realiza un movimiento horizontal rápido con codo y hombro que lleve la cruceta hasta el borde opuesto de la pantalla."
       },
       {
         "@type": "HowToStep",
@@ -223,9 +222,9 @@ export default function AwarenessDrillEsPage() {
   };
 
   const awarenessGuideEs = {
-    heading: "Guía de Entrenamiento de Giro 180° y Benchmarks Psicomotores",
+    heading: "Guía del Giro de 180° en FPS y Benchmarks Psicomotores",
     intro: [
-      "El entrenamiento de giro 180° sigue una secuencia clara: detectar un objetivo en el borde con visión periférica, girar con el brazo y detener la mira sobre el blanco. Así se practica la respuesta a un flanco sin premiar un giro rápido que termine fuera del objetivo.",
+      "El entrenamiento del giro de 180° en FPS sigue una secuencia clara: detectar un objetivo en el borde con visión periférica, girar con el brazo y detener la mira sobre el blanco. Así se practica la respuesta a un flanco sin premiar un giro rápido que termine fuera del objetivo.",
       "La ejecución de un giro de 180° responde al modelo de impulso motor en dos fases (Elliott et al., 2010): un barrido balístico en bucle abierto ejecutado por hombro y codo que cubre entre el 80% y el 90% del arco de giro, seguido por el frenado muscular antagonista para evitar el sobreimpulso (Schmidt et al., 1979). Bajo la Ley de Fitts (Fitts, 1954), la gran amplitud angular eleva el índice de dificultad, por lo que el stopping power y el espacio en la alfombrilla son fundamentales.",
       "La medición cronométrica se efectúa con la función de alta resolución performance.now() mediante la API Pointer Lock de HTML5. Las diferencias menores a 5 ms corresponden a fluctuaciones normales de temporizadores y refresco de pantalla. Disponer de un ratón a 1000 Hz de sondeo y monitor de altos hercios minimiza la cuantización de entrada y refleja fielmente tu velocidad de reacción (Woods et al., 2015).",
       "Medición de rendimiento: cada movimiento y clic se procesa en tu propio ordenador con reloj de alta precisión. Mantener constantes el DPI, la sensibilidad y el espacio físico entre sesiones te permitirá asentar una memoria muscular sólida."
@@ -238,10 +237,10 @@ export default function AwarenessDrillEsPage() {
         ["Barrido Balístico del Brazo (Giro 180°)", "180 – 260 ms", "Propulsión de antebrazo, codo y hombro", "Aceleración cinemática de bucle abierto (Elliott 2010)"],
         ["Desaceleración y Frenado de Mira", "60 – 110 ms", "Frenado de músculos antagonistas (stopping power)", "Amortiguación de impulso de frenado (Schmidt 1979)"],
         ["Microcorrección Terminal y Clic", "70 – 130 ms", "Retroalimentación visual foveal y clic", "Fase de aproximación de la Ley de Fitts (Fitts 1954)"],
-        ["Tiempo Total de Reincorporación 180°", "450 – 690 ms", "Bucle sensoriomotor completo de giro", "Línea base competitiva estándar entre jugadores"],
-        ["Ejecución Subconsciente Avanzada 180°", "320 – 420 ms", "Sinergia de sensibilidad y memoria muscular pura", "Práctica de giros de 180° con sensibilidad y memoria muscular estables"]
+        ["Tiempo Total de Reincorporación 180°", "450 – 690 ms", "Bucle sensoriomotor completo de giro", "Rango de práctica SkillDrills"],
+        ["Ejecución Subconsciente Avanzada 180°", "320 – 420 ms", "Sinergia de sensibilidad y memoria muscular pura", "Rango de práctica SkillDrills avanzado"]
       ],
-      note: "Datos extraídos de estudios biomecánicos y psicomotores (Rayner 1998; Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) y cronometría digital (Woods et al. 2015). La latencia final varía según la sensibilidad (cm/360°), la fricción de la alfombrilla y los hercios del monitor."
+      note: "Estos valores son rangos de práctica SkillDrills, no normas de investigación ni datos de usuarios; las referencias de la columna derecha solo explican la fase del movimiento (Rayner 1998; Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010; Woods et al. 2015). La latencia final varía según la sensibilidad (cm/360°), la fricción de la alfombrilla y los hercios del monitor."
     },
     techniques: {
       title: "Biomecánica y Consejos para Giros de 180° a Gran Velocidad",
@@ -253,12 +252,12 @@ export default function AwarenessDrillEsPage() {
         },
         {
           name: "Calibración de cm/360° y Sensibilidad",
-          desc: "En juegos como Valorant y CS2, los profesionales suelen calibrar entre 35 y 55 cm para un giro de 360° (unos 18 a 28 cm para 180°). Ajusta tu sensibilidad de modo que el recorrido desde el centro al borde de la alfombrilla equivalga a media vuelta exacta.",
+          desc: "La distancia de media vuelta es la mitad de tu cm/360°: con 40 cm/360°, un giro de 180° pide 20 cm. Ajusta tu sensibilidad de modo que el recorrido desde el centro al borde de la alfombrilla equivalga a media vuelta exacta.",
           tips: "Evita cambiar el DPI frecuentemente; el cerebro necesita un mapa espacial constante entre sesiones."
         },
         {
           name: "Esquiva de Flashbangs y Giro Inverso",
-          desc: "En shooters competitivos, girar 180° de inmediato es esencial para evitar el cegado por granadas aturdidoras. Girar para evadir el destello y reincorporarse enseguida requiere un frenado impecable.",
+          desc: "En shooters competitivos, girar 180° de inmediato ayuda a evitar el cegado por granadas aturdidoras (el drill no simula flashes). Girar para evadir el destello y reincorporarse enseguida requiere un frenado impecable.",
           tips: "Practica devolver la cruceta a la altura de la cabeza de inmediato tras completar el giro de evasión."
         },
         {
@@ -271,9 +270,9 @@ export default function AwarenessDrillEsPage() {
     steps: [
       "Haz clic en Iniciar Drill para bloquear el cursor y pasar a pantalla completa.",
       "Mantén la cruceta en el centro con la mirada abierta a ambos lados.",
-      "Cuando aparezca un objetivo en el borde extremo, lanza un barrido horizontal explosivo hacia él.",
+      "Cuando aparezca un objetivo en el borde izquierdo o derecho (cada vez más a menudo según sube el nivel), lanza un barrido horizontal explosivo hacia él.",
       "Frena en seco junto al objetivo, alinea la cruceta y pulsa el botón del ratón.",
-      "Consulta tu precisión, tiempo de adquisición y mejor racha en el panel final."
+      "Cada acierto suma 2 s (máx. 60 s); cada fallo, clic al vacío u objetivo expirado resta 1 s. La partida empieza con 45 s y termina en 0; después consulta precisión, tiempo de adquisición y mejor racha."
     ],
     audience: "Jugadores de CS2, Valorant, Apex Legends, Overwatch y shooters que deseen mejorar sus giros de 180°, defensa contra ataques traseros y rapidez con el ratón.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -287,28 +286,28 @@ export default function AwarenessDrillEsPage() {
   };
 
   const copyEs = {
-    h1Keyword: "Entrenamiento de giro 180°",
-    h1Suffix: " — Puntería y Reflejos FPS",
-    subtitle: "Detecta amenazas con visión periférica, gira con amplitud y frena la mira sobre el objetivo.",
+    h1Keyword: "Giro de 180° en FPS",
+    h1Suffix: " — Entrenamiento de giro rápido",
+    subtitle: "Detecta objetivos en los bordes de la pantalla con visión periférica, haz un giro rápido con un flick amplio y frena la mira sobre el objetivo.",
     statScore: "Puntos",
     statTime: "Tiempo",
     statAccuracy: "Precisión",
     statBestScore: "Récord",
     startTitle: "Entrenamiento de Giro 180°",
-    startSubtitle: "Entrada Directa de Ratón • Niveles Infinitos",
-    stageCaption: "Localiza objetivos en los bordes con visión periférica y realiza giros rápidos de 180° antes de que expire el temporizador.",
+    startSubtitle: "Ratón + Pointer Lock • 45 s iniciales • Niveles infinitos",
+    stageCaption: "Localiza objetivos en los bordes con visión periférica y acierta con un flick amplio antes de que desaparezcan.",
     rulesTitle: "Reglas de Entrenamiento y Puntuación",
     rulesItems: [
-      { num: "1", text: "Impacto en Objetivo", highlight: "Gran Ángulo (+100 PTS / +0,6s)", result: "×Mult de Combo" },
-      { num: "2", text: "Bordes de 180°", highlight: "Visión Periférica Extrema", result: "Más Rápido y Pequeño" },
+      { num: "1", text: "Impacto en Objetivo", highlight: "+100 PTS (+2 s, máx. 60 s)", result: "×Mult de Combo" },
+      { num: "2", text: "Bordes de 180°", highlight: "Más frecuentes en los bordes", result: "Más pequeños y breves" },
       { num: "3", text: "Progresión de Nivel", highlight: "+1 Nivel / 1.750 PTS", result: "Escalado Adaptativo" },
-      { num: "4", text: "Fallo / Tiempo Límite", highlight: "Penalización", result: "Reinicio Combo (-0,8s)" }
+      { num: "4", text: "Fallo / Tiempo Límite", highlight: "Incluye clic al vacío", result: "Reinicio Combo (-1 s)" }
     ],
     aboutTitle: "Sobre el Entrenamiento de Giro 180°",
     aboutHeading: "¿Por qué entrenar giros de 180 grados?",
     aboutText1: "El giro de 180 grados es el movimiento físico más amplio en un shooter de primera persona. Según la Ley de Fitts (1954), el tiempo necesario depende de la distancia y el tamaño del blanco; por ello, la verdadera dificultad radica en detener el ratón justo sobre la cabeza tras el giro.",
     aboutText2: "180° Awareness Pro aisla y entrena la capacidad de procesar estímulos fuera del foco central. A diferencia de los ejercicios estándar de microcorrección, este drill reta tus límites de desplazamiento lateral.",
-    aboutText3: "Al entrenar grandes giros con frecuencia, sincronizas el espacio físico de tu alfombrilla con el espacio 3D del juego, logrando reacciones instintivas cuando te disparan por la espalda en CS2 y Valorant."
+    aboutText3: "El drill reproduce el giro con objetivos en los bordes de la pantalla, sin cámara 3D. Con la misma sensibilidad, repetirlo te ayuda a memorizar la distancia en la alfombrilla, algo útil cuando te disparan por la espalda en CS2 y Valorant."
   };
 
   return (

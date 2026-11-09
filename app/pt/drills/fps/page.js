@@ -7,17 +7,17 @@ const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 export const metadata = {
   title: 'Treino de mira FPS grátis | SkillDrills',
-  description: '15 exercícios grátis para Valorant, CS2 e Apex: flick, tracking, controle de recoil e reflexos no navegador.',
+  description: 'Treino de mira FPS grátis: 15 exercícios para treinar mira no Valorant, CS2 e Apex com flick, tracking, controle de recoil e reflexos no navegador.',
   keywords: [
-    'treino de mira', 'treino de mira FPS', 'aim trainer online',
+    'treino de mira', 'treino de mira FPS', 'treinar mira',
     'como melhorar a mira no Valorant', 'treino de mira CS2', 'flick treino',
     'tracking de mira', 'posicionamento da mira', 'sensibilidade do mouse gamer',
-    'teste de reflexo gamer', 'controle de recoil', 'mirar com braço ou pulso',
+    'jogo de treinar a mira', 'controle de recoil', 'mirar com braço ou pulso',
     'microajustes de mira', 'eDPI Valorant', 'treino de mira sem download'
   ],
   openGraph: {
     title: 'Treino de mira FPS grátis | SkillDrills',
-    description: '15 exercícios grátis para Valorant, CS2 e Apex: flick, tracking, controle de recoil e reflexos no navegador.',
+    description: 'Treino de mira FPS grátis: 15 exercícios para treinar mira no Valorant, CS2 e Apex com flick, tracking, controle de recoil e reflexos no navegador.',
     type: 'website',
     url: 'https://skilldrills.online/pt/drills/fps',
     siteName: 'SkillDrills',
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Treino de mira FPS grátis | SkillDrills',
-    description: '15 exercícios grátis de mira para Valorant, CS2 e Apex no navegador.',
+    description: 'Treino de mira FPS grátis: 15 exercícios para treinar mira no Valorant, CS2 e Apex no navegador.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -51,10 +51,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "name": "Treino de mira FPS grátis (15 exercícios)",
   "url": "https://skilldrills.online/pt/drills/fps",
-  "description": `15 exercícios grátis para Valorant, CS2 e Apex: flick, tracking, controle de recoil, troca de alvos e reflexos no navegador.`,
+  "description": `Treino de mira FPS grátis: 15 exercícios para treinar mira no Valorant, CS2 e Apex: flick, tracking, controle de recoil, troca de alvos e reflexos no navegador.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": fpsDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'pt', drill.name);
@@ -70,14 +70,14 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "Como o treino de mira no navegador se transfere para jogos táticos como Valorant e CS2?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em jogos táticos de tiro como Valorant e CS2, o tempo para eliminar (TTK) é frequentemente inferior a 200 ms: a precisão da primeira bala e o microajuste de fração de segundo determinam o vencedor do confronto. Partidas normais de Deathmatch no jogo contêm longos períodos ociosos de renascimento e deslocamento passivo pelo mapa, enquanto um treinador de mira dedicado isola centenas de movimentos balísticos (flicks) e frenagens precisas em apenas 10 minutos. Essa repetição de alta densidade consolida os engramas motores no córtex motor do cérebro, liberando a capacidade cognitiva do jogador para o posicionamento de mira (crosshair placement) e a leitura tática durante as partidas competitivas."
+        "text": "Em Valorant e CS2, os primeiros tiros costumam decidir o confronto, por isso a precisão da primeira bala e os pequenos ajustes importam muito. Uma partida de Deathmatch tem tempo de renascimento e deslocamento, enquanto o treino de mira no navegador repete muito mais flicks e paradas precisas em pouco tempo. Com o movimento mais consistente, sobra mais atenção para o posicionamento de mira e a leitura do jogo na partida. O ganho varia de pessoa para pessoa, então compare também seus resultados dentro do jogo."
       }
     },
     {
@@ -93,7 +93,7 @@ const faqSchema = {
       "name": "É melhor mirar usando o braço, o pulso ou adotar uma pegada híbrida?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No cenário profissional de alto rendimento, o padrão biomecânico consagrado é o estilo híbrido: o antebraço e o ombro executam os movimentos amplos, checagens de canto e giros rápidos de 180 graus; o pulso ajusta alvos em distâncias intermediárias; e os dedos (em pegadas Claw ou Fingertip) controlam os microajustes sub-pixel e a compensação fina do recuo vertical. Mirar exclusivamente com o pulso limita o campo de visão e eleva o risco de lesões por esforço repetitivo (LER) e síndrome do túnel do carpo, enquanto usar unicamente o braço carece da agilidade fina necessária para acertos milimétricos na cabeça a longa distância."
+        "text": "Muitos jogadores usam um estilo híbrido: antebraço e ombro fazem os movimentos amplos e giros de 180 graus, o pulso cuida das distâncias médias e os dedos fazem os pequenos ajustes na altura da cabeça. Mirar só com o pulso limita a amplitude, e mirar só com o braço dificulta os ajustes muito pequenos. Escolha o que for confortável e pare para descansar se sentir dor."
       }
     },
     {
@@ -125,7 +125,7 @@ const faqSchema = {
       "name": "O que faz mais diferença em partida: posicionamento de mira (pre-aim) ou flick reativo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em termos de taxa de vitória em shooters táticos, cerca de 70% dos confrontos são decididos por um bom posicionamento prévio de mira (pre-aim na altura da cabeça ao abrir cantos). No entanto, quando os adversários utilizam posições incomuns (off-angles), aberturas agressivas pulando ou quando surgem inimigos adicionais, o pre-aim isolado falha. É exatamente nesses 30% de situações dinâmicas e imprevisíveis que o flick rápido e a microcorreção precisa em menos de 200 ms ajudam a sobreviver e podem decidir o round."
+        "text": "Um bom posicionamento de mira (deixar a mira na altura da cabeça onde o inimigo vai aparecer) ajuda com mais frequência, porque quase dispensa flicks grandes. Mas contra off-angles inesperados, aberturas largas ou vários inimigos ao mesmo tempo, o pre-aim não basta e a velocidade do flick e os microajustes decidem. Treine os dois separadamente: o posicionamento em Posicionamento de Mira e os flicks no exercício de flick."
       }
     },
     {
@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "Quantos minutos por dia devo treinar mira para evoluir sem fadiga mental e muscular?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Estudos de neurociência motora sugerem que, após 30 a 35 minutos de exercícios intensivos de coordenação motora fina, a fadiga do sistema nervoso central degrada a precisão e favorece o vício em vícios posturais incorretos. A metodologia ideal consiste em sessões concentradas de 15 a 25 minutos diários, realizadas de 4 a 6 dias por semana. Treinos curtos e consistentes seguidos de um bom descanso costumam ser mais fáceis de manter do que longas maratonas de fim de semana."
+        "text": "Sessões curtas e concentradas são mais fáceis de manter com regularidade do que maratonas de várias horas. Um bom ponto de partida é treinar mira de 15 a 25 minutos, algumas vezes por semana, parando quando a precisão cair ou a mão cansar. Não existe um tempo ideal que sirva para todos; ajuste pelos seus próprios resultados."
       }
     }
   ]

@@ -117,7 +117,7 @@ export default function RecoilControlPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -132,7 +132,7 @@ export default function RecoilControlPage() {
         "name": "¿Por qué los primeros 8 a 10 disparos son la fase más crítica del spray?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En la mayoría de shooters tácticos, las primeras 8 a 10 balas siguen un retroceso principalmente vertical altamente predecible. Controlar esta fase inicial ayuda a ganar duelos en su fracción inicial."
+          "text": "En la mayoría de shooters tácticos, las primeras 8 a 10 balas siguen un retroceso principalmente vertical altamente predecible. El patrón de este ejercicio sigue la misma lógica: unas 10 balas de subida vertical y después oscilaciones laterales, así que el tirón inicial es la prioridad."
         }
       },
       {
@@ -148,7 +148,7 @@ export default function RecoilControlPage() {
         "name": "¿Cómo explica el Programa Motor Generalizado (GMP) la memoria muscular del spray?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Según Schmidt & Lee (2011), el cerebro almacena la trayectoria compensatoria en programas motores de bucle abierto. Como las armas disparan cada 70 ms y la visión tarda unos 200 ms en reaccionar, el control del spray se ejecuta por memoria anticipada sin esperar la vista."
+          "text": "Según Schmidt & Lee (2011), el cerebro almacena la trayectoria compensatoria en programas motores de bucle abierto. Como el patrón es fijo, la bajada puede empezar por anticipación, sin esperar a ver cada impacto."
         }
       },
       {
@@ -185,10 +185,10 @@ export default function RecoilControlPage() {
       },
       {
         "@type": "Question",
-        "name": "¿Este simulador de retroceso es totalmente gratuito en navegador?",
+        "name": "¿Este entrenamiento de control de retroceso es gratis y qué necesito?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, funciona directamente en el navegador con soporte de Pointer Lock API de baja latencia sin registros ni descargas."
+          "text": "Sí, es gratis y funciona en un navegador de PC sin descargas ni registro. Necesitas ratón: al empezar, el cursor se bloquea (Pointer Lock) y Esc o la pérdida del bloqueo terminan la sesión. No funciona en dispositivos solo táctiles. Es un ejercicio de habilidad con el ratón, no un macro anti-retroceso."
         }
       },
       {
@@ -196,7 +196,15 @@ export default function RecoilControlPage() {
         "name": "¿Con qué frecuencia se debe practicar el control de retroceso?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Se recomiendan entre 10 y 15 minutos diarios antes de competir para consolidar la memoria motora fina sin sobrecargar los tendones flexores de la mano."
+          "text": "Unas sesiones de 10 a 15 minutos antes de jugar suelen bastar. Mejor sesiones cortas y frecuentes que una larga con el brazo cansado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué patrón de spray y qué reglas usa este ejercicio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un único patrón de 30 balas tipo AK-47: unas 10 balas de retroceso vertical y después oscilaciones a izquierda y derecha (retroceso horizontal). No es una copia exacta del arma de un juego concreto. Mantener el clic izquierdo dispara cada 120 ms (500 disparos/min); soltarlo reinicia el patrón. Tras 30 balas, recarga automática de 1,2 s. Cabeza 100, pecho 40, extremidades 20 puntos, multiplicados por combo y nivel; fallar reinicia el combo. El tiempo empieza en 45 s y los aciertos no lo alargan. Cada 1400 puntos sube el nivel, con un objetivo más rápido y más retroceso."
         }
       }
     ]
@@ -212,7 +220,7 @@ export default function RecoilControlPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Configuración y Bloqueo de Puntero",
-        "text": "Ajusta tus parámetros exactos de DPI y sensibilidad y activa el Pointer Lock para mantener tu sensibilidad habitual."
+        "text": "Ajusta la sensibilidad global en la página /drills y pulsa Iniciar; el cursor se bloquea tras la cuenta atrás."
       },
       {
         "@type": "HowToStep",
@@ -238,7 +246,7 @@ export default function RecoilControlPage() {
   const copyEs = {
     h1Keyword: "Control de Retroceso",
     h1Suffix: " – Entrenamiento de Spray FPS",
-    caption: "Controla el retroceso vertical y lateral arrastrando el ratón en la dirección opuesta al patrón de disparo.",
+    caption: "Entrenamiento gratis de control de retroceso: mantén el clic sobre un objetivo en movimiento y baja el ratón en sentido contrario al patrón de spray para dejar las balas en cabeza y pecho.",
     statScore: "Puntuación",
     statTime: "Tiempo",
     statAccuracy: "Precisión",
@@ -248,7 +256,7 @@ export default function RecoilControlPage() {
     pausedTitle: "Juego Pausado",
     pausedPrompt: "Haz clic en la pantalla para reactivar el bloqueo de cursor.",
     startTitle: "Entrenamiento de Control de Retroceso",
-    startSubtitle: "Patrones de Spray y Compensación Motora • Progresión Continua",
+    startSubtitle: "Patrón de Spray tipo AK-47 y Compensación • Progresión Continua",
     startButtonText: "INICIAR ENTRENAMIENTO",
     getReady: "PREPÁRATE",
     statHeadshots: "Headshots",
@@ -258,10 +266,10 @@ export default function RecoilControlPage() {
     shareText: "COMPARTIR RESULTADO",
     rulesTitle: "Instrucciones de Entrenamiento y Puntuación",
     rulesItems: [
-      { num: "1", text: "Disparo a la Cabeza", highlight: "+100 PTS / +0.25s", result: "Zona de Mayor Prioridad" },
+      { num: "1", text: "Disparo a la Cabeza", highlight: "+100 PTS (sin bonus de tiempo)", result: "×Multiplicador de Combo" },
       { num: "2", text: "Tiro a Pecho y Extremidades", highlight: "+40 / +20 PTS", result: "Mantiene Racha de Combo" },
       { num: "3", text: "Progresión de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Escala Velocidad y Retroceso" },
-      { num: "4", text: "Disciplina de Cargador", highlight: "<40% Penalización", result: "Reinicia Combo (-0.6s)" }
+      { num: "4", text: "Disciplina de Cargador", highlight: "<40% Penalización", result: "Reinicia Combo (-0.6s si la penalización está activa)" }
     ],
     aboutTitle: "Sobre el Control de Retroceso y Spray",
     aboutHeading: "¿Qué es el Control de Retroceso (Recoil)?",
@@ -271,23 +279,23 @@ export default function RecoilControlPage() {
   const recoilControlGuide = {
     heading: "Guía de Control de Retroceso y Patrones de Spray FPS",
     intro: [
-      "Este entrenamiento de control de retroceso desarrolla la compensación vertical y horizontal necesaria para mantener patrones de spray compactos. En CS2, Valorant, Apex Legends y PUBG, la agrupación de los disparos decide muchos enfrentamientos.",
-      "A diferencia de los ajustes finos pausados, las armas de fuego sostenido operan a cadencias de entre 600 y 900 disparos por minuto, expulsando un proyectil cada 66 a 100 ms. Puesto que la respuesta visual humana promedia los 200 ms, compensar el retroceso depende de Programas Motores Generalizados (GMP) de circuito abierto (Schmidt & Lee, 2011; Wolpert & Kawato, 1998) grabados en la memoria muscular.",
-      "El módulo condiciona al tirador en dos etapas críticas: un arrastre vertical uniforme durante los primeros 10 tiros y una modulación lateral compensatoria durante el resto del cargador, simulando las dinámicas auténticas del armamento de competición.",
-      "Mediante la API de Pointer Lock y cronometría de alta resolución con performance.now() (Woods et al., 2015), la herramienta mide el agrupamiento milimétrico de los impactos respecto al centro de masa para eliminar sobrecompensaciones y tirones involuntarios.",
-      "Cómo se mide: el porcentaje de impactos y el agrupamiento se computan localmente en tu navegador. Variaciones menores a 5 ms corresponden a tolerancias habituales de frecuencia de monitor y tasa de sondeo del sensor."
+      "Este entrenamiento de control de retroceso funciona en el navegador: mantienes el clic izquierdo sobre un objetivo que se mueve de lado a lado y compensas un spray de 30 balas tipo AK-47 bajando el ratón (control de retroceso vertical) y corrigiendo a los lados (horizontal). Si acierta menos del 40 % de un cargador, se pierde el combo. Un calentamiento de spray para CS2, Valorant, Apex Legends y PUBG.",
+      "Las armas automáticas de los juegos disparan cientos de balas por minuto (aquí, 500 por minuto, una cada 120 ms). Como el patrón es fijo, la compensación puede apoyarse en un programa motor de circuito abierto aprendido de antemano (Schmidt & Lee, 2011) en lugar de corregir bala a bala.",
+      "El módulo condiciona al tirador en dos etapas críticas: un arrastre vertical uniforme durante los primeros 10 tiros y una modulación lateral compensatoria durante el resto del cargador, siguiendo el modelo de los fusiles de asalto habituales.",
+      "Con la API de Pointer Lock, cada bala cuenta como cabeza, pecho o extremidades según dónde cae (mira + desplazamiento del retroceso). Bajar de más deja las balas por debajo del objetivo; bajar de menos, por encima.",
+      "Cómo se mide: el porcentaje de impactos se calcula localmente en tu navegador. Variaciones menores a 5 ms corresponden a tolerancias habituales de frecuencia de monitor y tasa de sondeo del sensor."
     ],
     benchmarks: {
-      title: "Niveles de Rendimiento de Precisión por Cargador y Control de Spray",
+      title: "Niveles de práctica SkillDrills: precisión por cargador",
       headers: ["Nivel de Habilidad", "Precisión por Cargador (%)", "Características de Control Motor", "Impacto Competitivo en Juego"],
       rows: [
         ["Tier 1 (Láser Apex)", "78% – 90%+", "Ajuste de velocidad casi perfecto; micro compensaciones laterales a lo largo de las 30 balas sin dispersión", "Práctica de spray transfers entre varios blancos con compensación estable"],
-        ["Tier 2 (Etapa Intermedia-Alta)", "62% – 78%", "Agrupación precisa en los primeros 10 disparos; recentrado ágil en oscilaciones laterales del spray", "Práctica de duelos de fusil a media distancia con regularidad en spray transfers dobles"],
+        ["Tier 2 (Etapa Intermedia-Alta)", "62% – 78%", "Agrupación precisa en los primeros 10 disparos; recentrado ágil en oscilaciones laterales del spray", "Sprays estables a media distancia; listo para practicar spray transfers"],
         ["Tier 3 (Nivel Avanzado FPS)", "48% – 62%", "Buena bajada vertical; ligeras vacilaciones o sobrecompensación entre las balas 12 y 25", "Sprays consistentes a corta y media distancia; leve dificultad en transferencias lejanas"],
         ["Tier 4 (Intermedio)", "35% – 48%", "Velocidad de bajada desigual; dudas en torno a la séptima bala permitiendo que la mira supere la cabeza", "Vulnerable en intercambios directos de fuego continuo; obligado a recurrir a ráfagas cortas"],
         ["Tier 5 (En Desarrollo)", "Menos de 35%", "Arrastre vertical tardío o errático; falta de ajuste lateral que produce dispersión descontrolada", "Pérdida continua de duelos directos; la ráfaga se dispersa por completo alrededor del blanco"]
       ],
-      note: "Los niveles valoran el porcentaje de impactos logrados en la silueta central en sprays completos de 30 balas medidos con performance.now() (Woods et al., 2015)."
+      note: "Niveles propios de SkillDrills, no normas científicas, estadísticas de usuarios ni rangos de juegos. Precisión = balas acertadas ÷ balas disparadas."
     },
     techniques: {
       title: "Protocolos Basados en Evidencia para Optimizar el Control de Retroceso",
@@ -310,17 +318,17 @@ export default function RecoilControlPage() {
         {
           name: "Fijación Visual en el Objetivo y no en la Retícula",
           desc: "Mantén tu mirada clavada en la silueta del adversario. Deja que la mano ejecute la trayectoria inversa de forma automatizada.",
-          tips: "Intentar seguir la retícula genera correcciones tardías de 200 ms que empeoran el agrupamiento de los tiros."
+          tips: "Seguir la retícula en lugar del objetivo retrasa las correcciones y abre el spray."
         }
       ]
     },
     steps: [
-      "Configura tu sensibilidad y DPI habituales para mantener tu cm/360 habitual y bloquea el cursor.",
+      "Ajusta la sensibilidad global en la página /drills (1,00x = 30 cm/360) y pulsa Iniciar para bloquear el cursor.",
       "Al iniciar el fuego, aplica una bajada suave y constante que neutralice la subida inicial del cañón.",
       "Superada la décima bala, modula el ratón a los lados en sentido opuesto a la desviación horizontal del arma.",
       "Mantén todos los disparos agrupados en la diana central para elevar el multiplicador de combo y avanzar de nivel."
     ],
-    audience: "Jugadores de CS2, Valorant, Apex Legends y PUBG interesados en dominar sprays prolongados, suprimir el retroceso y transferir fuego con solvencia.",
+    audience: "Jugadores de PC de CS2, Valorant, Apex Legends y PUBG que quieren practicar el control de retroceso en fuego automático desde el navegador.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'woodworth1899'),
     related: [
