@@ -6,39 +6,16 @@ import { buildVisualTrackingHubMetadata, getVisualTrackingHubCollectionFields, g
 
 const trackingDrills = DRILLS.filter((d) => d.category === 'visual-tracking');
 
-const legacyMetadata = {
-  title: 'Rastreamento Visual & Acuidade Dinâmica | SkillDrills',
-  description: 'Exercícios de rastreamento visual e acuidade dinâmica online grátis. 14 treinos científicos de perseguição ocular suave, sacadas e visão periférica.',
-  keywords: [
-    'exercicios de rastreamento visual', 'acuidade visual dinamica teste', 'treino de motilidade ocular',
-    'movimentos sacadicos exercicios', 'rastreamento ocular suave smooth pursuit', 'exercicios de visao para gamers',
-    'treino de mira tracking fps', 'estabilidade do olhar reflexo vestibulo ocular', 'visao periferica exercicios online',
-    'ginastica ocular cansaco visual', 'predicao de trajetoria visual', 'exercicios ortopticos em casa',
-    'treino de foco e reflexo visual', 'teste de visao dinamica gratis', 'jogos de rastreamento ocular online'
-  ],
-  openGraph: {
-    title: 'Rastreamento Visual & Acuidade Dinâmica | SkillDrills',
-    description: 'Exercícios de rastreamento visual e acuidade dinâmica online grátis. 14 treinos científicos de perseguição ocular suave, sacadas e visão periférica.',
-    type: 'website',
-    url: 'https://skilldrills.online/pt/drills/visual-tracking',
-    siteName: 'SkillDrills',
-    locale: 'pt_BR',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Exercícios de Rastreamento Visual e Acuidade Dinâmica' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Rastreamento Visual & Acuidade Dinâmica | SkillDrills',
-    description: 'De perseguição suave a previsões balísticas: 14 exercícios científicos de motilidade ocular grátis.',
-    images: ['https://skilldrills.online/icons/icon-512x512.png'],
-  },
-  robots: { index: true, follow: true },
-  alternates: {
-    canonical: 'https://skilldrills.online/pt/drills/visual-tracking',
-    languages: getAlternateLanguages('/pt/drills/visual-tracking'),
-  },
-};
+const baseMetadata = buildVisualTrackingHubMetadata('pt', 'https://skilldrills.online/pt/drills/visual-tracking', trackingDrills.length, getAlternateLanguages('/drills/visual-tracking'));
 
-export const metadata = { ...legacyMetadata, ...buildVisualTrackingHubMetadata('pt', 'https://skilldrills.online/pt/drills/visual-tracking', trackingDrills.length, getAlternateLanguages('/pt/drills/visual-tracking')) };
+export const metadata = {
+  ...baseMetadata,
+  title: 'Treino de rastreamento visual | SkillDrills',
+  description: 'Treino de rastreamento visual no navegador: 15 exercícios grátis com alvos em onda senoidal, em oito, em zigue-zague e com saltos. Sem cadastro.',
+  keywords: ['treino de rastreamento visual', 'rastreamento visual jogo', 'perseguição ocular', 'seguir alvos móveis', 'previsão de trajetória', 'visão periférica', 'exercícios no navegador', 'treino visual grátis'],
+  openGraph: { ...baseMetadata.openGraph, title: 'Treino de rastreamento visual | SkillDrills', description: 'Treino de rastreamento visual no navegador: 15 exercícios grátis com alvos em onda senoidal, em oito, em zigue-zague e com saltos. Sem cadastro.', images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Treino de rastreamento visual' }] },
+  twitter: { ...baseMetadata.twitter, title: 'Treino de rastreamento visual | SkillDrills', description: 'Treino de rastreamento visual no navegador: 15 exercícios grátis com alvos em onda senoidal, em oito, em zigue-zague e com saltos. Sem cadastro.' },
+};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -53,11 +30,12 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Exercícios de Rastreamento Visual e Acuidade Dinâmica Grátis (14 Drills)",
   "url": "https://skilldrills.online/pt/drills/visual-tracking",
-  "description": "14 treinos científicos de perseguição ocular contínua (Smooth Pursuit), ondas senoidais, antecipação balística e visão periférica.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   ...getVisualTrackingHubCollectionFields('pt', trackingDrills.length),
+  "description": "15 exercícios grátis no navegador para rastreamento visual: onda senoidal, oito, zigue-zague, triângulo, degraus, mudanças de direção, alvo que salta, tela dividida e sinais periféricos.",
+  "dateModified": "2026-11-12",
+  "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Peripheral_vision"],
   "hasPart": trackingDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'pt', drill.name);
     return {
@@ -74,73 +52,49 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qual é a diferença fisiológica entre a perseguição ocular suave (Smooth Pursuit) e os movimentos sacádicos?",
+      "name": "Qual a diferença entre perseguição ocular suave e sacadas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A perseguição ocular suave (Smooth Pursuit Eye Movement) é um movimento contínuo e orgânico dos olhos para manter um objeto móvel estabilizado sobre a fóvea central da retina, onde a resolução óptica é máxima. Já as sacadas são disparos balísticos extremamente velozes (atingindo até 900 graus por segundo) entre dois pontos de fixação. Em esportes dinâmicos e tiroteios virtuais (FPS), o Smooth Pursuit ajuda a acompanhar trajetórias e desacelerações do alvo com mais nitidez."
+        "text": "Na perseguição suave os olhos seguem um alvo em movimento de forma contínua; sacadas são saltos rápidos do olhar de um ponto a outro. Os exercícios pedem sobretudo perseguição, mas o site não mede seus movimentos oculares."
       }
     },
     {
       "@type": "Question",
-      "name": "Como o treinamento da acuidade visual dinâmica melhora a performance em esportes e jogos FPS?",
+      "name": "O treino de rastreamento visual ajuda no esporte ou em jogos FPS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Possuir nitidez visual em repouso não assegura clareza durante movimentações em alta velocidade. O treino da acuidade visual dinâmica (DVA) calibra a coordenação dos seis músculos extraoculares, reduzindo o borrão de movimento retiniano e encurtando o atraso de processamento cortical em 50 a 80 milissegundos. No tênis ou futebol, isso amplia o tempo hábil para ler trajetórias de bola; em jogos de tiro, possibilita um tracking contínuo (mira colada) imbatível."
+        "text": "Os exercícios praticam acompanhar alvos em movimento com o olhar e o mouse e reagir a mudanças de trajetória. Uma melhora no esporte ou em FPS não é garantida. Use-os como prática extra e compare seus resultados no mesmo aparelho."
       }
     },
     {
       "@type": "Question",
-      "name": "O que é a perseguição visual preditiva (Predictive Pursuit) quando o alvo sofre oclusão temporária?",
+      "name": "Quais exercícios de rastreamento existem?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A perseguição preditiva é uma operação cerebral do cerebelo: quando o alvo se oculta temporariamente atrás de um obstáculo (oclusão estroboscópica), o cérebro extrapola a velocidade e a aceleração anteriores para estimar onde e quando ele reaparecerá. Ao condicionar esse reflexo, a linha de visão do jogador avança antes do próprio alvo, possibilitando disparos pré-alinhados certeiros no instante milimétrico da reemergência."
+        "text": "15 trajetórias e tarefas: onda senoidal, oito (infinito), zigue-zague, triângulo, degraus verticais, mudanças de direção imprevisíveis, alvo teleportado, tela dividida, previsão estroboscópica, sinais periféricos e outros. Eles diferem na forma do trajeto e nas mudanças de velocidade."
       }
     },
     {
       "@type": "Question",
-      "name": "Por que ocorrem sacadas de recuperação (Catch-up Saccades) durante o tracking e como eliminá-las?",
+      "name": "A taxa de atualização do monitor afeta os resultados?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sacadas de recuperação ocorrem quando a velocidade ocular é inferior à velocidade do alvo (ganho de perseguição < 1,0). O olhar se atrasa e os olhos são forçados a realizar um sobressalto corretivo brusco, provocando oscilação no campo visual. A correção é alcançada iniciando por treinos de velocidade lenta constante (Constant Slow Pursuit) e arcos senoidais previsíveis, aumentando a velocidade progressivamente enquanto se relaxa a musculatura craniofacial."
+        "text": "Sim. Uma tela atualiza a cada 16,7 ms a 60 Hz, 6,9 ms a 144 Hz e 4,1 ms a 240 Hz, então alvos rápidos parecem mais ou menos fluidos. Compare sessões com a mesma tela, o mesmo mouse e o mesmo navegador."
       }
     },
     {
       "@type": "Question",
-      "name": "Em que medida os exercícios de motilidade ocular auxiliam na terapia visual e pós-concussão cerebral?",
+      "name": "Quanto tempo devo treinar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em ortóptica e neurotraumatologia esportiva, exercícios de perseguição lenta e fixação do olhar são indispensáveis na reabilitação da síndrome pós-concussional (PCS). O estímulo metódico ativa a neuroplasticidade no tronco encefálico e no cerebelo, reequilibrando a visão binocular e atenuando cefaleias, tonturas dinâmicas e desconfortos visuais induzidos por telas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual o papel do reflexo vestíbulo-ocular (RVO) na estabilidade da mira durante movimentação corporal?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O reflexo vestíbulo-ocular (RVO ou VOR) é o circuito neurológico que conecta o labirinto do ouvido interno aos músculos dos olhos. Diante de rotações cefálicas ou corporais, o RVO comanda os olhos na direção diametralmente oposta na exata velocidade do movimento, fixando o horizonte visual. Esse condicionamento assegura que mesmo durante manobras evasivas em alta intensidade, a retícula permaneça firme e estável sobre o alvo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quantos minutos por dia é recomendado treinar rastreamento visual para evitar fadiga dos olhos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A musculatura extraocular é altamente especializada e sujeita à fadiga por esforço repetitivo. A dosagem diária ideal é de 10 a 15 minutos por sessão, 3 a 5 vezes na semana. Para prevenir espasmos de acomodação e tensão ciliar, recomenda-se a regra '20-20-20': a cada 20 minutos de tela, relaxe a visão focando um ponto distante a mais de 6 metros (20 pés) por 20 segundos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que monitores com alta taxa de atualização (144Hz a 360Hz) são essenciais no treino de motilidade ocular?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Monitores de 60Hz atualizam a cada 16,7 ms, fragmentando o movimento do alvo em saltos discretos com efeito fantasma (ghosting), o que força o cérebro a adotar sacadas compensatórias inadequadas. Telas de 144Hz a 360Hz comprimem o tempo de quadro para 2,8 ms, espelhando a continuidade física do mundo real e permitindo um aprendizado motor orgânico e genuíno das fibras oculares."
+        "text": "Não existe duração ideal comprovada. Faça sessões curtas e regulares, olhe para longe nas pausas e pare se sentir cansaço, dor de cabeça ou tontura."
       }
     }
   ]
 };
 
 const { additions, ...faqFields } = getVisualTrackingHubFaqFields('pt');
-const enrichedFaqSchema = { ...faqSchema, ...faqFields, mainEntity: [...faqSchema.mainEntity, ...additions] };
+const enrichedFaqSchema = { ...faqSchema, ...faqFields, dateModified: "2026-11-12", mainEntity: [...faqSchema.mainEntity, ...additions] };
 
 export default function LocalizedVisualTrackingDrillsClientPage() {
   return (

@@ -6,153 +6,33 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Suivi de Plusieurs Objets | Test MOT | SkillDrills",
-  description: "Test MOT gratuit : suivez des objets mobiles parmi des distracteurs. Entraînez attention divisée, vision périphérique et mémoire spatiale.",
+  description: "Test de suivi d'objets multiples (MOT) gratuit : retenez 3 boules marquées et suivez-les 60 s parmi des boules identiques. Pas un test médical.",
   keywords: [
-    "suivi d'objets multiples",
-    "test de suivi multi-objets",
+    "test de suivi d'objets multiples",
+    "suivi de plusieurs objets",
     "test MOT",
-    "attention divisée",
-    "vision périphérique",
-    "suivi visuel multiple",
-    "objets en mouvement",
-    "mémoire de travail spatiale",
-    "attention visuelle",
-    "entraînement visuel",
-    "cibles multiples",
-    "MOT visuel"
+    "multiple object tracking",
+    "suivre plusieurs objets",
+    "attention divisée"
   ],
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
+    title: "Suivi de Plusieurs Objets | Test MOT | SkillDrills",
+    description: "Retenez 3 boules marquées et retrouvez-les après 60 secondes de mouvement. Test MOT gratuit dans le navigateur, sans diagnostic.",
+    type: 'article',
+    url: 'https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets',
+    siteName: 'SkillDrills',
+    locale: 'fr_FR',
+  },
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
+    card: 'summary_large_image',
+    title: "Suivi de Plusieurs Objets | Test MOT | SkillDrills",
+    description: "Suivi de plusieurs objets : gardez 3 cibles en vue pendant 60 s parmi des boules identiques.",
+  },
+  robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets",
+    canonical: 'https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets',
     languages: getAlternateLanguages('/drills/visual/tracking-accuracy/multiple-targets'),
   },
-  openGraph: {
-    title: "Suivi de Plusieurs Objets | Test MOT | SkillDrills",
-    description: "Test MOT gratuit : suivez plusieurs objets mobiles parmi des distracteurs et entraînez attention divisée et vision périphérique.",
-    url: "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets",
-    type: "website",
-    locale: "fr_FR",
-    alternateLocale: ["en_US", "de_DE", "ko_KR", "ja_JP", "pt_PT", "es_ES"],
-    images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Suivi de Plusieurs Objets | Test MOT | SkillDrills",
-    description: "Suivez plusieurs objets mobiles et pratiquez attention divisée, vision périphérique et mémoire spatiale.",
-    images: ["https://skilldrills.online/opengraph-image"],
-  },
-};
-
-const multipleTargetsGuide = {
-  heading: "Suivi de plusieurs objets : attention divisée et vision périphérique",
-  intro: [
-    "Le paradigme de Poursuite d'Objets Multiples (MOT - Multiple Object Tracking), initialement formalisé par Zenon Pylyshyn et Ron Storm (1988), constitue la référence fondamentale en psychophysique cognitive pour explorer la manière dont l'architecture visuelle humaine maintient des représentations spatiales en temps réel de plusieurs entités mobiles indépendantes. Les contextes visuels réels — qu'il s'agisse des sports collectifs rapides, du trafic routier dense ou du jeu tactique compétitif — ne présentent que rarement des stimuli focaux isolés ; ils exigent au contraire une surveillance parallèle continue de multiples cibles réparties dans tout le champ visuel.",
-    "Avant l'avènement du modèle MOT, les théories classiques de l'attention visuelle postulaient l'existence d'un unique 'faisceau' mobile qui balayait les éléments de façon strictement séquentielle. Pylyshyn et Storm ont démontré que le cerveau humain peut suivre en parallèle 4 à 5 objets rigoureusement identiques sans balayage saccadique, établissant ainsi la théorie de l'indexation visuelle ('FINSTs' ou Fingers of Instantiation). Les FINSTs agissent comme des pointeurs mentaux pré-attentionnels qui s'arriment aux objets et traquent en continu leurs coordonnées spatiales à travers des trajectoires denses, indépendamment de leurs attributs visuels tels que la forme ou la couleur.",
-    "Les recherches psychophysiques et d'imagerie cérébrale menées par Patrick Cavanagh et George Alvarez (2004, 2005) ont par la suite mis en évidence que le suivi attentionnel s'appuie sur des foyers multifocaux indépendants répartis bilatéralement entre les hémisphères cérébraux gauche et droit. Lorsque les cibles sont distribuées sur les deux hémichamps visuels, la capacité de poursuite est nettement supérieure à celle observée lorsque tous les objets sont confinés dans un seul hémichamp, prouvant que chaque hémisphère dispose de ressources de suivi dédiées.",
-    "En sciences appliquées à la performance, Daphne Bavelier et C. Shawn Green (2006) ont révélé que les joueurs réguliers de jeux d'action manifestent une capacité de suivi MOT considérablement accrue, atteignant 6 à 7 cibles simultanées contre 3 à 4 chez les non-joueurs. De façon analogue, Jocelyn Faubert (2013) a démontré que les athlètes professionnels de haut niveau (LNH, Premier League) possèdent d'extraordinaires aptitudes de suivi dynamique en 3D-MOT s'adaptant instantanément aux accélérations cinématiques extrêmes, établissant une corrélation directe entre l'efficience du MOT et la prise de décision spatiale d'élite sous forte pression."
-  ],
-  benchmarks: {
-    title: "Repères de suivi multiple et d'attention visuelle",
-    headers: ["Palier de Performance", "Capacité Effective", "Score & Seuil de Précision", "Profil d'Attention Visuelle et Cognition"],
-    rows: [
-      ["Palier 1 : Suiveur Multifocal Apex", "5+ Cibles en Parallèle", "Score : 60 PTS (3/3) | Précision 100% (Vitesse Max)", "Indexation visuelle parallèle ; répartition hémisphérique sans perte lors des collisions denses. Demande de l’entraînement et varie beaucoup d’une personne à l’autre."],
-      ["Palier 2 : Indexeur Parallèle Avancé", "4 Cibles en Parallèle", "Score : 50 – 59 PTS | Précision 85 – 99%", "Poursuite multifocale solide ; maintient la distinction cible-distracteur lors de trajectoires denses avec une dérive centroïde négligeable."],
-      ["Palier 3 : Attention Divisée Compétente", "3 Cibles en Parallèle", "Score : 40 – 49 PTS | Précision 70 – 84%", "Norme de référence chez l'adulte en bonne santé ; suivi fiable de 3 cibles à vitesse moyenne, sensible aux échanges d'identité lors des croisements rapprochés."],
-      ["Palier 4 : Mémoire Spatiale en Progression", "2 Cibles en Parallèle", "Score : 20 – 39 PTS | Précision 50 – 69%", "Tendance à replier l'attention multifocale sur un unique point fovéal ; difficultés à filtrer les distracteurs lors des rebonds à forte accélération."],
-      ["Palier 5 : Foyer Initial / Cible Unique", "1 Cible Baseline", "Score : < 20 PTS | Précision < 50%", "Perte fréquente des cibles dès les premiers rebonds ; nécessite une vitesse réduite et un nombre restreint de sphères pour développer l'ancrage pré-attentionnel."]
-    ],
-    note: "Ces paliers constituent un repère éditorial fondé sur la littérature psychophysique de la poursuite d'objets multiples et de la mémoire de travail visuelle (Pylyshyn & Storm, 1988 ; Cavanagh & Alvarez, 2005 ; Alvarez & Cavanagh, 2004 ; Green & Bavelier, 2006 ; Faubert, 2013). La performance varie selon la vitesse, la densité de distracteurs et la durée du test."
-  },
-  techniques: {
-    title: "Comment suivre plusieurs objets et ignorer les distracteurs",
-    items: [
-      {
-        name: "Stratégie du Centroïde (Regard Global)",
-        desc: "Plutôt que d'enchaîner des saccades oculaires précipitées entre les sphères, ancrez votre regard sur le barycentre géométrique (centre virtuel) formé par l'ensemble des cibles. Laissez la vision périphérique traiter les trajectoires.",
-        tips: "Ne fixez jamais une cible unique plus de 200 millisecondes ; la rétine périphérique est spécifiquement adaptée à la détection du mouvement dynamique."
-      },
-      {
-        name: "Indépendance des Hémisphères Visuels",
-        desc: "Le cerveau traite le champ visuel gauche (hémisphère droit) et le champ visuel droit (hémisphère gauche) via des circuits pariétaux quasi indépendants. Répartir les cibles de part et d'autre divise la charge par deux.",
-        tips: "Centrez votre écran confortablement en face de vous pour permettre une allocation équilibrée de l'attention entre les deux hémisphères."
-      },
-      {
-        name: "Index Preattentionnels (FINSTs de Pylyshyn)",
-        desc: "Faites confiance à la capacité automatique de votre cortex visuel primaire à maintenir des 'étiquettes virtuelles' sur les cibles. Lors d'un croisement dense, projetez la continuation linéaire du vecteur de vitesse plutôt que d'analyser le contact.",
-        tips: "En cas de collision serrée, suivez l'inertie du mouvement au lieu de scruter le rebond exact au millimètre près."
-      },
-      {
-        name: "Inhibition Active des Distracteurs",
-        desc: "La réussite au test MOT dépend tout autant de la focalisation sur les cibles que du rejet proactif des leurres. Le cortex préfrontal atténue les signaux parasites pour éviter les confusions d'identité.",
-        tips: "Adoptez une respiration régulière et une posture relâchée pour prévenir l'effet de tunnel attentionnel provoqué par le stress."
-      }
-    ]
-  },
-  steps: [
-    "Configurez la durée du test (15s à 60s), la vitesse et le nombre total de sphères dans les options de la session.",
-    "Cliquez sur Démarrer l'Exercice et mémorisez précisément les sphères surlignées en vert durant l'aperçu de 2 secondes.",
-    "Dès que les cibles reprennent leur couleur neutre et se déplacent, ancrez votre regard au centre et suivez-les en parallèle.",
-    "Lorsque tout mouvement s'arrête, cliquez ou touchez chaque sphère que vous identifiez comme étant une cible initiale (+20 PTS par bonne réponse).",
-    "Consultez votre bilan détaillé comprenant le score total, le pourcentage de précision et le palier de capacité cognitive atteint."
-  ],
-  audience: "Indispensable pour les athlètes de sports d'équipe (football, rugby, basket-ball), les joueurs d'esport compétitifs (FPS tactiques comme Valorant ou CS2, MOBAs), les pilotes de ligne et tout professionnel devant maintenir une vigilance visuelle globale sur de multiples flux d'information simultanés.",
-  faqs: [
-    {
-        "q": "Qu'évalue exactement le test de Multiple Object Tracking (MOT) ?",
-        "a": "Le test MOT mesure l'attention visuelle divisée, la mémoire de travail spatio-temporelle et la capacité d'indexation dynamique parallèle. Il quantifie le nombre d'objets en mouvement simultané que votre cerveau parvient à suivre en temps réel au milieu de distracteurs identiques."
-    },
-    {
-        "q": "Combien d'objets en mouvement un être humain peut-il suivre simultanément ?",
-        "a": "En moyenne, un adulte en bonne santé peut suivre de manière fiable entre 3 et 4 cibles à vitesse modérée. Dépasser cette plage demande de l’entraînement et varie beaucoup d’une personne à l’autre (Cavanagh & Alvarez, 2005)."
-    },
-    {
-        "q": "Pourquoi échoue-t-on si l'on regarde chaque sphère l'une après l'autre ?",
-        "a": "Chaque saccade oculaire prend entre 20 et 40 ms et déclenche une suppression saccadique (une brève cécité fonctionnelle transitoire). Sauter d'une balle à l'autre accumule des retards de plusieurs centaines de millisecondes, au cours desquels les cibles croisent des distracteurs et se perdent. Le succès exige une attention périphérique globale."
-    },
-    {
-        "q": "Qu'appelle-t-on la Stratégie du Centroïde (Centroid Gaze) dans le suivi multifocal ?",
-        "a": "Il s'agit de poser son regard sur le centre de gravité géométrique imaginaire reliant les différentes cibles. En stabilisant son axe visuel sur ce point médian, toutes les sphères cibles restent dans la zone parafovéale et périphérique, permettant un suivi simultané sans mouvements oculaires intempestifs."
-    },
-    {
-        "q": "Que signifie l'indépendance des hémisphères visuels (Hemifield Independence) ?",
-        "a": "Les recherches démontrent que le champ visuel gauche (géré par l'hémisphère droit) et le champ droit (géré par l'hémisphère gauche) disposent de capacités attentionnelles distinctes. Suivre 2 cibles à gauche et 2 cibles à droite est nettement plus facile que de suivre 4 cibles regroupées d'un seul côté de l'écran."
-    },
-    {
-        "q": "En quoi le test MOT profite-t-il aux sportifs collectifs (football, basket-ball) ?",
-        "a": "Dans les sports d'équipe, le joueur doit surveiller simultanément le ballon, les déplacements des adversaires et les appels de balle de ses coéquipiers. Le MOT élargit le champ visuel utile (UFOV) et accélère la prise de décision spatiale sous forte pression (Faubert, 2013)."
-    },
-    {
-        "q": "Quels sont les bénéfices du suivi multifocal pour les joueurs de FPS et de MOBA ?",
-        "a": "Dans des jeux comme Valorant ou CS2, le joueur doit maintenir son réticule tout en analysant les informations en vision périphérique (minimap, flashs, déplacements latéraux). Le test MOT élimine l'effet tunnel et renforce la conscience situationnelle globale."
-    },
-    {
-        "q": "Comment éviter les échanges d'identité (Identity Swaps) lors des croisements denses ?",
-        "a": "Les échanges d'identité surviennent lorsque deux sphères passent sous la limite de résolution spatiale de l'attention. Pour pallier cela, anticipez la continuité de la trajectoire inertielle avant et après l'impact au lieu de vous focaliser sur le point précis de contact."
-    },
-    {
-        "q": "À quelle fréquence faut-il s'entraîner à la poursuite d'objets multiples ?",
-        "a": "Il est recommandé d'effectuer 3 à 5 séances de 10 à 15 minutes par semaine. Des sessions courtes mais intenses stimulent la plasticité cérébrale sans générer de fatigue oculaire musculaire ou de surmenage attentionnel."
-    },
-    {
-        "q": "Mes données de session ou de performance sont-elles transmises à des serveurs tiers ?",
-        "a": "Non. Toute la simulation physique vectorielle, le rendu canvas et le calcul des scores sont exécutés intégralement dans votre navigateur via JavaScript local. Aucune donnée personnelle ou statistique n'est envoyée ou collectée sur des serveurs externes."
-    }
-],
-  sources: pickSources([
-    "pylyshyn1988tracking",
-    "cavanagh2005tracking",
-    "faubert2013professional",
-    "green2006action",
-    "alvarez2004capacity",
-    "scialfa2002visual"
-  ]),
-  related: [
-    { href: "/fr/drills/visual/tracking-accuracy/moving-target", label: "Poursuite de Cibles Mobiles" },
-    { href: "/fr/drills/visual-tracking/split-screen-tracking", label: "Poursuite sur Écran Partagé" },
-    { href: "/fr/drills/visual/reaction-speed/go/no-go", label: "Test Go/No-Go" },
-    { href: "/fr/drills/visual/reaction-speed/light-reaction", label: "Réaction aux Stimuli Lumineux" },
-    { href: "/fr/drills/fps/target-prioritization", label: "Priorisation des Cibles FPS" },
-    { href: "/fr/drills/visual-tracking/peripheral-ping-pursuit", label: "Poursuite Périphérique" }
-  ]
 };
 
 const breadcrumbSchema = {
@@ -163,138 +43,291 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Entraînements", "item": "https://skilldrills.online/fr/drills" },
     { "@type": "ListItem", "position": 3, "name": "Perception Visuelle", "item": "https://skilldrills.online/fr/drills/visual" },
     { "@type": "ListItem", "position": 4, "name": "Précision de Poursuite", "item": "https://skilldrills.online/fr/drills/visual/tracking-accuracy" },
-    { "@type": "ListItem", "position": 5, "name": "Poursuite d'Objets Multiples", "item": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets" }
+    { "@type": "ListItem", "position": 5, "name": "Suivi d'Objets Multiples", "item": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Multiple_object_tracking"],
-  "name": "Test de Poursuite d'Objets Multiples (MOT)",
+  "@type": "SoftwareApplication",
+  "name": "Test de Suivi d'Objets Multiples (MOT)",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Web Browser",
-  "applicationCategory": "HealthApplication",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "publisher": { "@type": "Organization", "name": "SkillDrills" }
+  "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Exercice dans le navigateur : parmi des boules identiques, 3 cibles s'allument en vert pendant 2 secondes. Toutes les boules bougent ensuite pendant 60 secondes en rebondissant les unes sur les autres, puis vous désignez les 3 cibles. Ce n'est pas un test diagnostique de la vue ou de l'attention.",
+  "featureList": [
+    "Départ avec 8 boules, dont 3 marquées en vert pendant 2 secondes",
+    "60 secondes de mouvement : toutes les boules sont identiques et rebondissent sur les bords et entre elles",
+    "Ensuite, choisir 3 boules et valider : 20 points par cible correcte (60 max), aucune pénalité en cas d'erreur",
+    "Plus votre record monte, plus il y a de boules et plus elles vont vite ; données uniquement dans le stockage local"
+  ],
+  "dateModified": "2026-11-12"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test de Poursuite d'Objets Multiples (MOT)",
+  "name": "Test de Suivi d'Objets Multiples (MOT) | SkillDrills",
+  "alternateName": "GhostLink MOT",
   "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets",
-  "applicationCategory": "SportsApplication",
-  "browserRequirements": "Requires JavaScript. Canvas support required.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-11-12",
+  "description": "Test MOT gratuit en ligne : suivez 3 cibles pendant 60 secondes parmi des boules identiques.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Navigateur moderne compatible HTML5 Canvas.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "isAccessibleForFree": true,
+  "learningResourceType": "Educational Game",
+  "teaches": "Suivre plusieurs objets en mouvement avec l'attention, attention divisée"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Entraînement de Poursuite Multi-Cibles (MOT)",
-  "gamePlatform": "Web Browser",
-  "genre": ["Vision Sportive", "Entraînement Cognitif", "Perception Visuelle"],
-  "numberOfPlayers": { "@type": "QuantitativeValue", "value": 1 }
+  "name": "Test de Suivi d'Objets Multiples (MOT)",
+  "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets",
+  "description": "Retenez 3 boules marquées, suivez-les parmi des boules identiques et retrouvez-les à la fin. Jeu MOT gratuit.",
+  "genre": [
+    "Puzzle",
+    "Visual Tracking"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment réaliser le test de suivi d'objets multiples (MOT)",
-  "description": "Protocole étape par étape pour évaluer et entraîner l'attention visuelle divisée et la vision périphérique via le test MOT.",
+  "name": "Comment se déroule le test MOT",
+  "dateModified": "2026-11-12",
+  "description": "Les quatre étapes d'une manche.",
   "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Étape 1", "text": "Configurez la durée du test (15s à 60s), la vitesse et le nombre total de sphères dans les options de la session." },
-    { "@type": "HowToStep", "position": 2, "name": "Étape 2", "text": "Cliquez sur Démarrer l'Exercice et mémorisez précisément les sphères surlignées en vert durant l'aperçu de 2 secondes." },
-    { "@type": "HowToStep", "position": 3, "name": "Étape 3", "text": "Dès que les cibles reprennent leur couleur neutre et se déplacent, ancrez votre regard au centre et suivez-les en parallèle." },
-    { "@type": "HowToStep", "position": 4, "name": "Étape 4", "text": "Lorsque tout mouvement s'arrête, cliquez ou touchez chaque sphère que vous identifiez comme étant une cible initiale (+20 PTS par bonne réponse)." },
-    { "@type": "HowToStep", "position": 5, "name": "Étape 5", "text": "Consultez votre bilan détaillé comprenant le score total, le pourcentage de précision et le palier de capacité cognitive atteint." }
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Retenir 3 cibles",
+      "text": "Après le compte à rebours, les boules apparaissent et 3 d'entre elles s'allument en vert pendant 2 secondes. Mémorisez leur position.",
+      "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Suivre pendant 60 secondes",
+      "text": "Ensuite, toutes les boules deviennent identiques et bougent pendant 60 secondes. Elles rebondissent sur les bords et entre elles.",
+      "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Choisir 3 boules",
+      "text": "À la fin, les boules s'arrêtent. Cliquez (touchez) les 3 boules que vous pensez être les cibles. Un second clic annule la sélection.",
+      "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Valider",
+      "text": "Avec 3 boules choisies, appuyez sur Valider : 20 points par cible correcte, un mauvais choix vaut 0 point, sans pénalité.",
+      "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets#step-4"
+    }
   ]
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
-        "@type": "Question",
-        "name": "Qu'évalue exactement le test de Multiple Object Tracking (MOT) ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le test MOT mesure l'attention visuelle divisée, la mémoire de travail spatio-temporelle et la capacité d'indexation dynamique parallèle. Il quantifie le nombre d'objets en mouvement simultané que votre cerveau parvient à suivre en temps réel au milieu de distracteurs identiques."
-        }
+      "@type": "Question",
+      "name": "Comment se déroule le test de suivi d'objets multiples (MOT) ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parmi des boules identiques, 3 cibles s'allument en vert pendant 2 secondes. Toutes les boules bougent ensuite pendant 60 secondes ; quand elles s'arrêtent, vous désignez les 3 cibles et validez. Chaque cible correcte rapporte 20 points, 60 au maximum par manche. Ce n'est pas un examen médical de la vue ou de l'attention."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Combien d'objets en mouvement un être humain peut-il suivre simultanément ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "En moyenne, un adulte en bonne santé peut suivre de manière fiable entre 3 et 4 cibles à vitesse modérée. Dépasser cette plage demande de l’entraînement et varie beaucoup d’une personne à l’autre (Cavanagh & Alvarez, 2005)."
-        }
+      "@type": "Question",
+      "name": "Combien y a-t-il de boules et la difficulté augmente-t-elle ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vous commencez avec 8 boules. Chaque tranche de 30 points de record ajoute une boule, et la vitesse augmente légèrement avec le record. Il y a toujours exactement 3 cibles."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Pourquoi échoue-t-on si l'on regarde chaque sphère l'une après l'autre ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Chaque saccade oculaire prend entre 20 et 40 ms et déclenche une suppression saccadique (une brève cécité fonctionnelle transitoire). Sauter d'une balle à l'autre accumule des retards de plusieurs centaines de millisecondes, au cours desquels les cibles croisent des distracteurs et se perdent. Le succès exige une attention périphérique globale."
-        }
+      "@type": "Question",
+      "name": "Que se passe-t-il si je choisis une mauvaise boule ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une mauvaise boule vaut 0 point, sans pénalité. Un nouveau clic annule la sélection, vous pouvez donc changer d'avis jusqu'à la validation."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Qu'appelle-t-on la Stratégie du Centroïde (Centroid Gaze) dans le suivi multifocal ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Il s'agit de poser son regard sur le centre de gravité géométrique imaginaire reliant les différentes cibles. En stabilisant son axe visuel sur ce point médian, toutes les sphères cibles restent dans la zone parafovéale et périphérique, permettant un suivi simultané sans mouvements oculaires intempestifs."
-        }
+      "@type": "Question",
+      "name": "Combien d'objets peut-on suivre en même temps ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depuis la première expérience MOT de Pylyshyn & Storm (1988), on rapporte que la limite pour des objets identiques se situe autour de quatre et baisse quand la vitesse augmente (Cavanagh & Alvarez, 2005). Ce test utilise toujours 3 cibles."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Que signifie l'indépendance des hémisphères visuels (Hemifield Independence) ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Les recherches démontrent que le champ visuel gauche (géré par l'hémisphère droit) et le champ droit (géré par l'hémisphère gauche) disposent de capacités attentionnelles distinctes. Suivre 2 cibles à gauche et 2 cibles à droite est nettement plus facile que de suivre 4 cibles regroupées d'un seul côté de l'écran."
-        }
+      "@type": "Question",
+      "name": "Faut-il regarder les boules l'une après l'autre ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pendant que votre regard saute vers une boule, une autre cible peut croiser une boule distractrice et vous perdez la correspondance. Beaucoup trouvent plus simple de regarder à peu près au milieu des cibles et de garder les trois en vue ensemble."
+      }
     },
     {
-        "@type": "Question",
-        "name": "En quoi le test MOT profite-t-il aux sportifs collectifs (football, basket-ball) ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dans les sports d'équipe, le joueur doit surveiller simultanément le ballon, les déplacements des adversaires et les appels de balle de ses coéquipiers. Le MOT élargit le champ visuel utile (UFOV) et accélère la prise de décision spatiale sous forte pression (Faubert, 2013)."
-        }
+      "@type": "Question",
+      "name": "Comment ne pas perdre une cible lors des collisions ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les boules rebondissent les unes sur les autres. Repérez la direction juste avant le choc et celle qu'elle prendra après : vous confondrez moins souvent cible et distracteur."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Quels sont les bénéfices du suivi multifocal pour les joueurs de FPS et de MOBA ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dans des jeux comme Valorant ou CS2, le joueur doit maintenir son réticule tout en analysant les informations en vision périphérique (minimap, flashs, déplacements latéraux). Le test MOT élimine l'effet tunnel et renforce la conscience situationnelle globale."
-        }
+      "@type": "Question",
+      "name": "Cet entraînement améliore-t-il mes performances en jeu ou en sport ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un meilleur score montre que vous maîtrisez mieux cette tâche précise. Un transfert vers les jeux, le sport ou la conduite n'est pas garanti, et l'exercice ne remplace pas un avis médical."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Comment éviter les échanges d'identité (Identity Swaps) lors des croisements denses ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Les échanges d'identité surviennent lorsque deux sphères passent sous la limite de résolution spatiale de l'attention. Pour pallier cela, anticipez la continuité de la trajectoire inertielle avant et après l'impact au lieu de vous focaliser sur le point précis de contact."
-        }
-    },
-    {
-        "@type": "Question",
-        "name": "À quelle fréquence faut-il s'entraîner à la poursuite d'objets multiples ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Il est recommandé d'effectuer 3 à 5 séances de 10 à 15 minutes par semaine. Des sessions courtes mais intenses stimulent la plasticité cérébrale sans générer de fatigue oculaire musculaire ou de surmenage attentionnel."
-        }
-    },
-    {
-        "@type": "Question",
-        "name": "Mes données de session ou de performance sont-elles transmises à des serveurs tiers ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non. Toute la simulation physique vectorielle, le rendu canvas et le calcul des scores sont exécutés intégralement dans votre navigateur via JavaScript local. Aucune donnée personnelle ou statistique n'est envoyée ou collectée sur des serveurs externes."
-        }
+      "@type": "Question",
+      "name": "Le test est-il gratuit et où sont stockées mes données ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, il est gratuit et sans compte. Les records restent uniquement dans le stockage local de votre navigateur."
+      }
     }
-]
+  ]
+};
+
+const guideData = {
+  heading: "Test de suivi d'objets multiples : déroulement et conseils",
+  intro: [
+    "Dans ce test de suivi d'objets multiples (MOT), vous suivez 3 cibles marquées parmi des boules identiques, puis vous les désignez à la fin. La tâche reprend l'expérience de Pylyshyn & Storm (1988) sous forme de petit jeu dans le navigateur.",
+    "Après le compte à rebours, 3 boules s'allument en vert pendant 2 secondes, puis toutes les boules, devenues identiques, bougent pendant 60 secondes en rebondissant sur les bords et entre elles. Quand elles s'arrêtent, vous choisissez 3 boules et validez : 20 points par cible correcte (60 max), sans pénalité pour une erreur. Plus votre record monte, plus il y a de boules et plus elles vont vite.",
+    "Suivre plusieurs objets à la fois ne repose pas sur des allers-retours rapides du regard, mais sur une attention répartie entre plusieurs positions (Cavanagh & Alvarez, 2005). Ce test est un jeu d'entraînement : il ne mesure ni ne diagnostique l'attention ou la vue."
+  ],
+  benchmarks: {
+    "title": "Paliers d'entraînement SkillDrills (propres à ce jeu)",
+    "headers": [
+      "Palier",
+      "Cibles correctes",
+      "Points",
+      "Description"
+    ],
+    "rows": [
+      [
+        "Parfait",
+        "3 / 3",
+        "60",
+        "Les 3 cibles gardées pendant 60 secondes."
+      ],
+      [
+        "Bon",
+        "2 / 3",
+        "40",
+        "Une cible perdue lors d'une collision."
+      ],
+      [
+        "En progrès",
+        "1 / 3",
+        "20",
+        "Plusieurs confusions en cours de route."
+      ],
+      [
+        "Découverte",
+        "0 / 3",
+        "0",
+        "Prise en main du jeu."
+      ]
+    ],
+    "note": "Paliers définis par SkillDrills pour ce jeu, pas des normes scientifiques ni une évaluation des capacités cognitives."
+  },
+  techniques: {
+    "title": "Conseils pour ne pas perdre plusieurs cibles",
+    "items": [
+      {
+        "name": "Regarder au centre",
+        "desc": "Suivre une seule cible des yeux fait facilement perdre les autres.",
+        "tips": "Regardez à peu près au milieu des 3 cibles et gardez-les en vue ensemble."
+      },
+      {
+        "name": "Anticiper les rebonds",
+        "desc": "Les boules rebondissent sur les bords et entre elles.",
+        "tips": "Fixez moins le point d'impact que la direction prise ensuite."
+      },
+      {
+        "name": "Recompter après un croisement",
+        "desc": "Le moment le plus trompeur est celui où cible et distracteur se séparent.",
+        "tips": "Vérifiez rapidement que vous avez toujours vos 3 cibles."
+      },
+      {
+        "name": "Choisir calmement",
+        "desc": "Une fois les boules arrêtées, il n'y a pas de limite de temps.",
+        "tips": "En cas de doute, annulez la sélection d'un clic et choisissez à nouveau."
+      }
+    ]
+  },
+  steps: [
+    "Appuyez sur Démarrer et retenez, après le compte à rebours, les 3 boules marquées en vert.",
+    "Suivez les 3 cibles des yeux pendant 60 secondes.",
+    "Quand les boules s'arrêtent, cliquez les 3 boules que vous pensez être les cibles.",
+    "Validez et consultez cibles trouvées et points (20 par cible correcte).",
+    "Regardez la précision et la note sur l'écran de résultats, puis rejouez."
+  ],
+  audience: "Pour tous ceux qui veulent essayer de suivre plusieurs objets en mouvement à la fois, par exemple les joueurs de FPS et de MOBA, ou qui cherchent un court jeu de concentration.",
+  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
+  sources: pickSources('pylyshyn1988', 'cavanagh2005'),
+  related: [
+    {
+      "href": "/fr/drills/visual/tracking-accuracy/moving-target",
+      "label": "Intercepter des cibles mobiles"
+    },
+    {
+      "href": "/fr/drills/visual/tracking-accuracy/pursuit-tracker",
+      "label": "Poursuite Lisse au Curseur"
+    },
+    {
+      "href": "/fr/drills/visual-tracking/split-screen-tracking",
+      "label": "Poursuite sur Écran Partagé"
+    },
+    {
+      "href": "/fr/drills/visual/reaction-speed/go/no-go",
+      "label": "Test Go/No-Go"
+    },
+    {
+      "href": "/fr/drills/visual-tracking/peripheral-ping-pursuit",
+      "label": "Poursuite Périphérique"
+    }
+  ]
 };
 
 export default function MultipleTargetsPage() {
@@ -303,15 +336,12 @@ export default function MultipleTargetsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-
-      <main className="container mx-auto px-4 py-8 max-w-5xl">
-        <GhostLinkClient copy={{ title: "Suivi d'Objets Multiples", subtitle: "Attention divisée et vision périphérique" }} />
-        <DrillGuide guide={multipleTargetsGuide} />
-        <RelatedDrills related={multipleTargetsGuide.related} />
-      </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <GhostLinkClient copy={{  "title": "Suivi d'Objets Multiples" }} />
+      <DrillGuide guide={guideData} />
+      <RelatedDrills />
     </>
   );
 }

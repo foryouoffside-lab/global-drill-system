@@ -4,33 +4,22 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — distance-judgment (German native search)
-// PRIMARY:  "räumliches Sehen Test"          — Natural optometry phrasing
-//           "Tiefensehen Test"               — Direct depth-perception intent
-// SECONDARY / LSI:
-//           "Stereosehen"                    — Clinical stereopsis search
-//           "Entfernung einschätzen"         — Practical distance estimation
-//           "Sehtest räumliches Sehen online" — Browser intent
-//           "Tiefenwahrnehmung testen"       — Plain-language query
-// ============================================================
-
 export const metadata = {
-  title: 'Entfernung schätzen: Tiefenwahrnehmung üben | SkillDrills',
-  description: 'Kein Sehtest: Schätze die Annäherung einer Kugel und klicke bei Deckung mit dem Zielring. Kostenlos im Browser, Auswertung als Timing-Fehler in Prozent.',
+  title: 'Tiefenwahrnehmung testen: Entfernung schätzen | SkillDrills',
+  description: 'Tiefenwahrnehmung testen im Browser: Klicke, wenn die herannahende Kugel den Zielring deckt. Kostenlos, Auswertung als Fehler in Prozent. Kein Sehtest.',
   keywords: [
+    'Tiefenwahrnehmung testen',
+    'Tiefenwahrnehmung Test',
+    'Tiefenwahrnehmung üben',
     'Entfernung schätzen',
     'Entfernung einschätzen',
-    'Entfernungsschätzung üben',
-    'Tiefenwahrnehmung üben',
-    'Tiefenwahrnehmung Test',
     'Time-to-Contact',
     'räumliche Wahrnehmung',
     'Abfang-Timing üben',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Entfernung schätzen: Tiefenwahrnehmung üben | SkillDrills',
-    description: 'Kein Sehtest: Schätze die Annäherung einer Kugel und klicke bei Deckung mit dem Zielring. Kostenlos im Browser, Auswertung als Timing-Fehler in Prozent.',
+    title: 'Tiefenwahrnehmung testen: Entfernung schätzen | SkillDrills',
+    description: 'Tiefenwahrnehmung testen im Browser: Klicke, wenn die herannahende Kugel den Zielring deckt. Kostenlos, Auswertung als Fehler in Prozent. Kein Sehtest.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -38,8 +27,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Entfernung schätzen: Tiefenwahrnehmung üben | SkillDrills',
-    description: 'Kein Sehtest: Schätze die Annäherung einer Kugel und klicke bei Deckung mit dem Zielring. Kostenlos im Browser, Auswertung als Timing-Fehler in Prozent.',
+    title: 'Tiefenwahrnehmung testen: Entfernung schätzen | SkillDrills',
+    description: 'Tiefenwahrnehmung testen im Browser: Klicke, wenn die herannahende Kugel den Zielring deckt. Kostenlos, Auswertung als Fehler in Prozent. Kein Sehtest.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -55,33 +44,33 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://skilldrills.online/de' },
     { '@type': 'ListItem', position: 2, name: 'Visuelle Wahrnehmung', item: 'https://skilldrills.online/de/drills/visual' },
     { '@type': 'ListItem', position: 3, name: 'Tiefenwahrnehmung', item: 'https://skilldrills.online/de/drills/visual/depth-perception' },
-    { '@type': 'ListItem', position: 4, name: 'Entfernung schätzen', item: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment' },
+    { '@type': 'ListItem', position: 4, name: 'Tiefenwahrnehmung testen', item: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Depth_perception"],
-  name: 'Entfernung schätzen: Tiefenwahrnehmung üben',
+  name: 'Tiefenwahrnehmung testen: Entfernung schätzen',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description: 'Browser-Übung zur Entfernungsschätzung: Eine Kugel nähert sich, der Klick im Moment der Deckung mit dem Zielring wird als Timing-Fehler in Prozent ausgewertet. Kein Sehtest.',
   url: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Entfernung schätzen Online',
+  name: 'Tiefenwahrnehmung testen online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Moderner Webbrowser mit HTML5 Canvas und kontinuierlicher Pointer-Event-Unterstützung',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment',
-  dateModified: '2026-09-05',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
@@ -120,7 +109,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 3,
       name: 'Exakter Koinzidenz-Abfang',
-      text: 'Drücke die Leertaste oder klicke in dem Moment, in dem die Kugel den Zielring schneidet.',
+      text: 'Klicke oder tippe in dem Moment, in dem der Rand der Kugel den Zielring deckt.',
       url: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment#step-3'
     },
     {
@@ -158,7 +147,7 @@ const faqSchema = {
       name: 'Was versteht man unter optischem Looming und Time-to-Contact (TTC)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Wenn sich ein Objekt nähert, wächst sein Bild auf der Netzhaut exponentiell. David Lee (1976) beschrieb mit der Tau-Variable, wie sich die verbleibende Zeit bis zur Kollision aus dem Verhältnis von Bildgröße zu Expansionsrate ableiten lässt, ohne die absolute Größe oder Distanz zu kennen.',
+        text: 'Wenn sich ein Objekt nähert, wächst sein Bild auf der Netzhaut immer schneller. David Lee (1976) beschrieb mit der Tau-Variable, wie sich die verbleibende Zeit bis zur Kollision aus dem Verhältnis von Bildgröße zu Expansionsrate ableiten lässt, ohne die absolute Größe oder Distanz zu kennen.',
       },
     },
     {
@@ -190,7 +179,7 @@ const faqSchema = {
       name: 'Wie wird die Fehlerabweichung im Test berechnet?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Die Abweichung wird als relativer prozentualer Fehler zwischen dem Durchmesser des Objekts beim Klick und dem Durchmesser des Referenzrings berechnet. Ein Fehler unter 5 % gilt als perfekte Koinzidenz.',
+        text: 'Gewertet wird der Abstand zwischen der Tiefe der Kugel beim Klick und der Tiefe des Zielrings in Prozent. Bis 7 % gibt es 150 Punkte, bis 16 % 100 Punkte; mit steigendem Level schrumpfen diese Grenzen auf 4 % und 10 %. Alle 750 Punkte steigt das Level und die Kugel wird schneller. Ein Fehlklick kostet keine Punkte.',
       },
     },
     {
@@ -225,48 +214,48 @@ const distanceGuideDe = {
   intro: [
     'Tiefenwahrnehmung ist die Fähigkeit, Entfernungen und die räumliche Reihenfolge von Objekten zu beurteilen. Dazu nutzt das Gehirn binokulare Hinweise (Stereosehen) und monokulare Hinweise wie Größenänderung, Überdeckung und Bewegungsparallaxe. Diese Übung ist kein Test des Stereosehens und keine augenärztliche Untersuchung.',
     'Auf deinem flachen Bildschirm fehlt die binokulare Disparität, die der klassische Howard-Dolman-Apparat (Howard, 1919) misst. Hier siehst du nur einen monokularen Hinweis: Eine Kugel wächst entlang eines virtuellen Tunnels auf den Zielring zu. Aus dieser Größenzunahme lässt sich die Time-to-Contact (τ) ableiten (Lee, 1976; Regan & Beverley, 1978). Du übst, den Klick genau in dem Moment zu setzen, in dem die Kugel den Ring ausfüllt, bei stetig steigendem Tempo.',
-    'Präzision & Messmethodik: Sämtliche Zeitstempel werden lokal über die hochauflösende performance.now()-Schnittstelle des Browsers erfasst. Die Abweichung wird als relativer prozentualer Durchmesserfehler errechnet (|Tatsächlicher Durchmesser - Zieldurchmesser| / Zieldurchmesser). Physikalische Latenzen wie Monitor-Quantisierungszeiten (~16,7 ms bei 60 Hz, ~6,9 ms bei 144 Hz, ~4,1 ms bei 240 Hz) und USB-Abtastraten (125 Hz vs. 1000 Hz) bedingen messtechnische Toleranzen (Woods et al., 2015). Differenzen unter 5 ms stellen Messrauschen dar; vergleichen Sie Ergebnisse primär auf demselben Hardwaresetup.',
-    'Datenschutz & Transparenz: SkillDrills erfasst keinerlei personenbezogene Daten, diagnostische Sehprofile oder zentrale Telemetrie. Sämtliche Bestleistungen, Fehlerquoten und Levelstufen verbleiben ausschließlich im lokalen Speicher (LocalStorage) Ihres Webbrowsers.'
+    'Eine Runde dauert 45 Sekunden. Der Zielring liegt jedes Mal auf einer anderen Tiefe. Bis 7 % Abweichung gibt es 150 Punkte, bis 16 % 100 Punkte; alle 750 Punkte steigt das Level, die Kugel kommt schneller und die Grenzen schrumpfen bis auf 4 % und 10 %. Fehlklicks kosten nichts.',
+    'Bildwiederholrate und Eingabelatenz beeinflussen den Klickzeitpunkt (Woods et al., 2015). Vergleiche Ergebnisse daher nur auf demselben Gerät. Bestwerte bleiben im lokalen Speicher deines Browsers.'
   ],
   benchmarks: {
-    title: 'Orientierungswerte für Tiefensehen und Zielgenauigkeit',
-    headers: ['Übungsstufe', 'Mittlere Tiefenabweichung', 'Punkte & Level', 'Einordnung'],
-    note: 'Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik und kein Sehbefund.',
+    title: 'Übungsstufen (SkillDrills)',
+    headers: ['Übungsstufe', 'Typische Abweichung', 'Einordnung'],
+    note: 'SkillDrills-Übungsstufen: keine Bevölkerungsstatistik, keine Perzentile und kein Sehbefund.',
     rows: [
-      ['Stufe 1', 'Unter 5,0 % Fehler', '1500+ Pkt | Level 7+', 'Sehr genaues Timing, Klick fast exakt bei Deckung.'],
-      ['Stufe 2', '5,0 % – 9,9 % Fehler', '1100 – 1499 Pkt | Level 5–6', 'Gutes Timing, stabile Anpassung an höheres Tempo.'],
-      ['Stufe 3', '10,0 % – 15,9 % Fehler', '750 – 1099 Pkt | Level 3–4', 'Solides Timing, leichte Verzögerung bei hohem Tempo.'],
-      ['Stufe 4', '16,0 % – 25,0 % Fehler', '450 – 749 Pkt | Level 2', 'Klick oft vor der vollständigen Deckung.'],
-      ['Stufe 5', 'Über 25,0 % Fehler', 'Unter 450 Pkt | Level 1', 'Große Schätzfehler; mehr Wiederholungen und langsamere Stufen helfen.'],
+      ['Stufe 1', 'Über 25 %', 'Klick oft deutlich vor der Deckung.'],
+      ['Stufe 2', '16 – 25 %', 'Am Rand des Zielrings orientieren und warten.'],
+      ['Stufe 3', '7 – 16 %', 'Treffer im 100-Punkte-Bereich, gleichmäßiger Rhythmus.'],
+      ['Stufe 4', '4 – 7 %', 'Timing hält auch bei höherem Tempo.'],
+      ['Stufe 5', 'Unter 4 %', 'Diese Genauigkeit über viele Runden halten.'],
     ],
   },
-  protocols: {
-    title: 'Übungen zur Entfernungsschätzung',
+  techniques: {
+    title: 'Tipps zur Entfernungsschätzung',
     items: [
       {
-        title: 'Protokoll 1: Optische Expansion & TTC-Kalkulation (Lee 1976)',
-        description: 'Fokussiere nicht die Kugelmitte, sondern achte auf die Wachstumsgeschwindigkeit des äußeren Rands im Verhältnis zum Zielring.',
+        name: 'Auf die Ausdehnung achten (Lee, 1976)',
+        desc: 'Fokussiere nicht die Kugelmitte, sondern achte auf die Wachstumsgeschwindigkeit des äußeren Rands im Verhältnis zum Zielring.',
       },
       {
-        title: 'Protokoll 2: Unterdrückung von vorzeitigem Auslösedrang',
-        description: 'Widerstehe dem Impuls, bei Beschleunigung zu früh zu klicken. Warte auf die vollständige geometrische Überlappung.',
+        name: 'Nicht zu früh klicken',
+        desc: 'Widerstehe dem Impuls, bei Beschleunigung zu früh zu klicken. Warte auf die vollständige geometrische Überlappung.',
       },
       {
-        title: 'Protokoll 3: Blickverankerung auf der Zielebene',
-        description: 'Halte den Blick fest auf dem Zielring verankert, anstatt mit den Augen der herannahenden Kugel hinterherzuspringen.',
+        name: 'Blick auf dem Zielring',
+        desc: 'Halte den Blick fest auf dem Zielring verankert, anstatt mit den Augen der herannahenden Kugel hinterherzuspringen.',
       },
       {
-        title: 'Protokoll 4: Rhythmische Atmung & okuläre Entspannung',
-        description: 'Vermeide Verkrampfung der Augenlider; blinzle zwischen den Versuchen, um den Tränenfilm stabil zu halten.',
+        name: 'Augen entspannen',
+        desc: 'Vermeide Verkrampfung der Augenlider; blinzle zwischen den Versuchen, um den Tränenfilm stabil zu halten.',
       },
     ],
   },
   steps: [
-    'Klicken Sie auf "Test starten", um die 45-sekündige Sitzung zur Tiefenwahrnehmung zu beginnen.',
-    'Fixieren Sie den Blick stabil auf dem zyanfarbenen Zielring in der mittleren Tiefenebene.',
-    'Beobachten Sie die 3D-Kugel, die am fernen Ende des Tunnels erscheint und auf Sie zubeschleunigt.',
-    'Klicken Sie mit der Maus, tippen Sie auf den Bildschirm oder drücken Sie die Leertaste genau in dem Moment, in dem die Kugel den Zielring perfekt ausfüllt.',
-    'Verfolgen Sie Ihre Präzisionsauswertung (<5% Fehler: Perfekt / +150 PKT) und passen Sie sich den steigenden Geschwindigkeiten über 45 Sekunden an.'
+    'Klicke auf "Test starten", um die 45-Sekunden-Runde zu beginnen.',
+    'Richte den Blick auf den gestrichelten Zielring; seine Größe wechselt jede Runde.',
+    'Beobachte die Kugel, die aus der Tiefe des Tunnels auf dich zukommt.',
+    'Klicke oder tippe genau in dem Moment, in dem die Kugel den Zielring ausfüllt.',
+    'Bis 7 % Abweichung gibt es 150 Punkte, bis 16 % 100 Punkte. Mit jedem Level wird die Kugel schneller.'
   ],
   audience: 'Gamer, Ballsportler und alle, die ihr Abfang-Timing und ihre Entfernungsschätzung am Bildschirm üben möchten. Wer sein Sehvermögen prüfen lassen will, geht zum Augenarzt oder Optiker.',
   faqs: {
@@ -288,14 +277,14 @@ const distanceGuideDe = {
 };
 
 const copyDe = {
-  title: 'Entfernung schätzen',
-  subtitle: 'Tiefenwahrnehmung & Abfang-Timing üben',
-  caption: 'Kein Sehtest: Auf einem flachen Bildschirm übst du, die Größenzunahme einer Kugel (optische Expansion, Lee, 1976; Regan & Beverley, 1978) zu nutzen, um den Zeitpunkt der Deckung mit dem Zielring einzuschätzen.',
+  title: 'Tiefenwahrnehmung testen',
+  subtitle: 'Entfernung schätzen & Abfang-Timing üben',
+  caption: 'Tiefenwahrnehmung testen, aber kein Sehtest: Auf einem flachen Bildschirm übst du, die Größenzunahme einer Kugel (optische Expansion, Lee, 1976; Regan & Beverley, 1978) zu nutzen, um den Zeitpunkt der Deckung mit dem Zielring einzuschätzen.',
   statScore: 'Punkte',
   statTime: 'Zeit',
   statLevel: 'Level',
   statBestScore: 'Rekord',
-  startTitle: 'Entfernung schätzen',
+  startTitle: 'Tiefenwahrnehmung testen',
   startSubtitle: 'Bewegtes Ziel: Entfernung einschätzen und treffen',
   startBtn: 'Test starten',
   getReady: 'BEREITMACHEN',
@@ -310,14 +299,14 @@ const copyDe = {
   rulesTitle: 'Testregeln & Bewertung',
   rule1Text: 'Perfekter Koinzidenz-Abfang',
   rule1Highlight: '+150 PKT',
-  rule1Result: 'Unter 5% Tiefenfehler',
+  rule1Result: 'Bis 7 % Tiefenfehler (später 4 %)',
   rule2Text: 'Guter Koinzidenz-Abfang',
   rule2Highlight: '+100 PKT',
-  rule2Result: 'Unter 12% Tiefenfehler',
+  rule2Result: 'Bis 16 % Tiefenfehler (später 10 %)',
   rule3Text: 'Stufenweise Beschleunigung',
   rule3Highlight: 'Höheres Tempo',
-  rule3Result: 'Objekt nähert sich schneller',
-  rule4Text: 'Verfehlen / Zeitüberschreitung',
+  rule3Result: 'Alle 750 Punkte: Kugel wird schneller',
+  rule4Text: 'Verfehlt',
   rule4Highlight: 'Kein Punktabzug',
   rule4Result: 'Nächstes Objekt startet sofort',
   aboutTitle: 'Über die Übung zur Entfernungsschätzung',

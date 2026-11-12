@@ -518,7 +518,7 @@ export default function DistanceJudgmentClient({ copy = null }) {
     } catch (e) {
       const text = copy?.shareText
         ? copy.shareText.replace('{score}', uiScore).replace('{level}', analytics.finalLevel).replace('{accuracy}', analytics.accuracy)
-        : `🎯 I scored ${uiScore} PTS (Peak Level: Lvl ${analytics.finalLevel}) on ${drillName}! Accuracy: ${analytics.accuracy}%. Train stereoscopic depth perception at skilldrills.online!`;
+        : `🎯 I scored ${uiScore} PTS (Peak Level: Lvl ${analytics.finalLevel}) on ${drillName}! Accuracy: ${analytics.accuracy}%. Train distance judgment at skilldrills.online!`;
       if (typeof navigator !== 'undefined' && navigator.share) {
         navigator.share({ title: copy?.shareTitle || 'My Depth Score', text, url }).catch(() => {});
       } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
@@ -537,10 +537,10 @@ export default function DistanceJudgmentClient({ copy = null }) {
           <div className="flex flex-col">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white mb-2">
               {copy?.title || "Depth Perception Test"}
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1">
-                {copy?.subtitle || "Distance Judgment & Visual Intercept Lab"}
-              </span>
             </h1>
+            <p data-seo-kw="1" className="block text-sm font-semibold text-slate-400 -mt-1 mb-2">
+              {copy?.subtitle || "Distance Judgment & Visual Intercept Lab"}
+            </p>
             <p className="text-sm text-slate-400 mb-4 leading-relaxed">
               {copy?.caption || "Depth perception is judging how far away things are and in what order."}
             </p>
@@ -647,7 +647,7 @@ export default function DistanceJudgmentClient({ copy = null }) {
               icon={Eye}
               accent="cyan"
               title={copy?.startTitle || "Distance Judgment Pro"}
-              subtitle={copy?.startSubtitle || "3D Stereoscopic Intercept • Depth Estimation"}
+              subtitle={copy?.startSubtitle || "Looming Intercept • Distance Judgment"}
               startButtonText={copy?.startBtn || "Start Drill"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
@@ -744,8 +744,8 @@ export default function DistanceJudgmentClient({ copy = null }) {
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <DrillRuleItem num="1" text={copy?.rule1Text || "Perfect Intercept Match"} highlight={copy?.rule1Highlight || "+150 PTS"} result={copy?.rule1Result || "<5% Depth Error"} />
-                <DrillRuleItem num="2" text={copy?.rule2Text || "Close Intercept Match"} highlight={copy?.rule2Highlight || "+100 PTS"} result={copy?.rule2Result || "<12% Depth Error"} />
+                <DrillRuleItem num="1" text={copy?.rule1Text || "Perfect Intercept Match"} highlight={copy?.rule1Highlight || "+150 PTS"} result={copy?.rule1Result || "≤7% depth error (4% at high levels)"} />
+                <DrillRuleItem num="2" text={copy?.rule2Text || "Close Intercept Match"} highlight={copy?.rule2Highlight || "+100 PTS"} result={copy?.rule2Result || "≤16% depth error (10% at high levels)"} />
                 <DrillRuleItem num="3" text={copy?.rule3Text || "Accelerating Approach"} highlight={copy?.rule3Highlight || "Faster Speeds"} result={copy?.rule3Result || "Sphere velocity increases with level"} />
                 <DrillRuleItem num="4" text={copy?.rule4Text || "Miss / Timeout"} highlight={copy?.rule4Highlight || "Zero Penalties"} result={copy?.rule4Result || "No score or time loss"} />
               </div>
@@ -795,10 +795,10 @@ export default function DistanceJudgmentClient({ copy = null }) {
                       <Brain className="w-4 h-4 text-cyan-400" /> What Is Distance Judgment Training?
                     </h3>
                     <p className="text-sm leading-relaxed mb-3">
-                      <strong>Distance Judgment Training</strong> develops binocular stereoscopic depth perception and visual intercept timing. The drill projects a 3D sphere along a deep visual tunnel toward a target depth plane. Two cues carry most of it: binocular disparity, the small difference between the images from your two eyes — which random-dot stereograms showed is enough on its own, with no other cue present, to produce a sense of depth (Julesz, 1971) — and optical expansion, the rate at which an approaching object's image grows on the retina, which specifies time-to-contact without your needing to know the object's size or speed (Lee, 1976; Regan & Beverley, 1978). A flat monitor removes the first cue, so a browser test measures the second: this drill times your judgement of expansion and intercept, not your stereo acuity, which needs the two-rod apparatus Howard (1919) described.
+                      <strong>Distance Judgment Training</strong> practises judging an approaching target's distance and your intercept timing. The drill projects a 3D sphere along a deep visual tunnel toward a target depth plane. Two cues carry most of it: binocular disparity, the small difference between the images from your two eyes — which random-dot stereograms showed is enough on its own, with no other cue present, to produce a sense of depth (Julesz, 1971) — and optical expansion, the rate at which an approaching object's image grows on the retina, which specifies time-to-contact without your needing to know the object's size or speed (Lee, 1976; Regan & Beverley, 1978). A flat monitor removes the first cue, so a browser test measures the second: this drill times your judgement of expansion and intercept, not your stereo acuity, which needs the two-rod apparatus Howard (1919) described.
                     </p>
                     <p className="text-sm leading-relaxed">
-                      By training your visual cortex to calculate looming velocity and relative depth cues under accelerating speeds, you enhance spatial awareness and intercept precision.
+                      Approach speed increases as you level up, so the drill keeps asking you to time your click against a faster-growing target.
                     </p>
                   </section>
 

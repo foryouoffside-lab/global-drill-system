@@ -5,278 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// PORTUGUESE SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "rastreamento de alvo teleportado" / "treino de mira alvos teleportados"
-// Secondary:    "reaquisição sacádica treino", "rastreamento visual com inércia", "exercício ocular de sacadas rápidas"
-// LSI / Domain:  "movimento sacádico ocular", "perseguição visual suave", "recuperação foveal rápida",
-//               "mira reflexa para fps", "visão dinâmica mira rápida", "estabilidade ocular em saltos", "antecipação motora ocular"
-// Authentic Domain Terms: Alvo Teleportado（Teleported Target）, Inércia Cinética（Momentum Preservation）, Reaquisição Sacádica（Saccadic Re-acquisition）, Supressão Sacádica（Saccadic Suppression）, Perseguição Suave Pós-Sacádica（Post-saccadic Smooth Pursuit）, Salto Balístico Ocular（Ballistic Saccade）
-// ============================================================
+const url = 'https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit';
+const title = "Rastreamento de Alvo Teleportado | SkillDrills";
+const description = "Exercício ocular grátis: o alvo avança em linha reta e teleporta-se a cada 1,2 s para um ponto aleatório, sem mudar de rumo. Reencontre-o com o olhar.";
 
 export const metadata = {
-  title: "Rastreamento de Alvo Teleportado | SkillDrills",
-  description: "Pratique rastreamento ocular, reacquisição visual e sacadas rápidas quando um alvo muda de posição e mantém seu movimento.",
-  keywords: [
-    "alvo teleportado rastreamento ocular",
-    "sacadas rastreamento ocular",
-    "reaquisição visual",
-    "movimento sacádico",
-    "fixação visual",
-    "seguimento ocular",
-    "treino de visão dinâmica",
-    "alvo móvel mudança súbita",
-    "exercício oculomotor online",
-    "treino de mira com alvo móvel",
-    "recaptura visual rápida",
-    "perseguição ocular contínua"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Rastreamento de Alvo Teleportado | SkillDrills",
-    description: "Pratique rastreamento ocular, reacquisição visual e sacadas rápidas quando um alvo muda de posição e mantém seu movimento.",
-    type: "website",
-    url: "https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit",
-    siteName: "SkillDrills",
-    locale: "pt_BR",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Rastreamento de Alvo Teleportado | SkillDrills",
-    description: "Pratique reacquisição visual e sacadas rápidas quando um alvo muda de posição e mantém seu movimento.",
-  },
+  title,
+  description,
+  keywords: ["rastreamento de alvo teleportado", "alvo teleportado", "exercício para os olhos online", "sacadas exercício", "rastreamento visual", "exercício ocular grátis"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/momentum-teleport-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_BR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: "https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/momentum-teleport-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://skilldrills.online/pt" },
-    { "@type": "ListItem", "position": 2, "name": "Treinos", "item": "https://skilldrills.online/pt/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Rastreamento Visual", "item": "https://skilldrills.online/pt/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "Rastreamento de Alvo Teleportado", "item": "https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit" }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Início", item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: "Treinos", item: 'https://skilldrills.online/pt/drills' },
+    { '@type': 'ListItem', position: 3, name: "Rastreamento Visual", item: 'https://skilldrills.online/pt/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "Rastreamento de Alvo Teleportado", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "Treino de Rastreamento de Alvo Teleportado com Inércia",
-  "dateModified": "2026-09-20",
-  "operatingSystem": "Navegador Web",
-  "applicationCategory": "GameApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD"
-  },
-  "description": "Exercício oculomotor interativo para treinar a reaquisição foveal rápida por sacadas e perseguição suave em alvos com inércia e teletransporte."
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Aplicativo de Rastreamento de Alvos Teleportados",
-  "dateModified": "2026-09-20",
-  "url": "https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Navegador",
-  "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Rastreamento de Alvo Teleportado com Inércia",
-  "dateModified": "2026-09-20",
-  "description": "Exercício de precisão visual onde alvos móveis saltam subitamente pelo espaço preservando seus vetores de aceleração e direção.",
-  "genre": ["Treino de Mira", "Avaliação Oculomotora", "Treino de Reflexos"],
-  "playMode": "Um jogador",
-  "gamePlatform": "Navegador"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Rastreamento de Alvo Teleportado",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Como Treinar a Reaquisição Sacádica com Alvos Teleportados",
-  "description": "Protocolo neurofisiológico passo a passo para recapturar alvos com saltos espaciais preservando velocidade e continuidade visual.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Fixação Foveal Inicial",
-      "text": "Sente-se a uma distância de 50 a 70 cm da tela com a cabeça estabilizada. Acompanhe o ponto luminoso mantendo perseguição contínua."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Detecção Periférica do Salto",
-      "text": "Quando o alvo teleportar subitamente, detecte a nova coordenada pela retina periférica sem girar o pescoço."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Disparo da Sacada Balística",
-      "text": "Lance uma sacada ocular retilínea de alta velocidade diretamente para a nova coordenada para reenquadrar a fóvea no alvo."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Reconexão de Velocidade Imediata",
-      "text": "Como o vetor de inércia é preservado, conecte imediatamente a perseguição suave na aterrissagem sem oscilações de busca."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Como fazer o rastreamento de alvo teleportado",
+  description: "Quatro passos para reencontrar um alvo que mudou de lugar e continuar a seguir o seu movimento na mesma direção.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Postura confortável",
+    "text": "Sente-se a uma distância confortável do ecrã e relaxe ombros e pescoço."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Seguir o movimento",
+    "text": "Siga o alvo com calma enquanto ele avança em linha reta e ressalta nas margens do ecrã."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Reencontrar após o salto",
+    "text": "Quando o alvo se teleportar, leve o olhar de uma só vez até à nova posição e continue a segui-lo na mesma direção."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Um ajuste de cada vez",
+    "text": "Quando ficar fácil, aumente a velocidade ou ative Ocultar linha e Velocidade aleatória, um de cada vez."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Como funciona o rastreamento de alvo teleportado?",
+    "a": "O alvo avança em linha reta com direção e velocidade constantes e ressalta nas margens. À velocidade 1,0x, teleporta-se cerca de cada 1,2 segundos para uma posição aleatória, mantendo a direção e a velocidade. Reencontra-o com o olhar e continua a segui-lo. É um exercício no navegador, não um exame de visão nem uma terapia."
+  },
+  {
+    "q": "Dá para prever para onde o alvo vai saltar?",
+    "a": "Não. A nova posição é aleatória em cada salto. O que se sabe é que, depois do salto, o alvo continua na mesma direção e à mesma velocidade. Uma linha curta mostra a direção do movimento; a opção Hide Line esconde-a."
+  },
+  {
+    "q": "O que muda com mais velocidade?",
+    "a": "O alvo fica mais rápido e salta mais vezes: cerca de cada 0,6 segundos a 2,0x. Com Random Speed, a velocidade oscila sempre e os saltos tornam-se irregulares."
+  },
+  {
+    "q": "O exercício mede os movimentos dos olhos ou dá pontuação?",
+    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. Não existe pontuação: apenas o número de sessões concluídas fica guardado neste navegador. Manter o olhar onde o exercício pede depende de si."
+  },
+  {
+    "q": "Que definições posso mudar?",
+    "a": "Depois de uma contagem 3-2-1, a sessão dura 30, 45, 60, 90 ou 120 segundos (60 por defeito). Pode ajustar a velocidade de 0,5x a 9,0x, o tamanho do alvo de 10 a 50 px, a cor, as opções Hide Line (ocultar linha), Random Speed (velocidade aleatória), Gaze Trail (rasto), Neon Glow e Scanlines, e fundo claro ou escuro. A tecla Esc termina a sessão a qualquer momento."
+  },
+  {
+    "q": "Isto melhora a minha visão ou a minha mira?",
+    "a": "Não há garantia. Não é um exame de visão nem uma terapia, mas uma ferramenta para praticar o olhar sobre um alvo. Não promete melhor acuidade nem melhor pontaria. Se notar algum problema nos olhos, consulte um profissional."
+  },
+  {
+    "q": "Quanto tempo devo praticar?",
+    "a": "Algumas sessões de 1 a 2 minutos com pausas chegam. Se os olhos ficarem cansados ou secos, pisque e olhe ao longe; pare se sentir dor, tontura, náusea ou dor de cabeça."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "O que é o treino de rastreamento de alvo teleportado?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É um exercício oculomotor avançado que condiciona a transição imediata entre uma sacada rápida de recuperação e a perseguição suave sobre um alvo que salta preservando sua inércia (Rashbass, 1961)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual a diferença biológica entre sacada e perseguição suave?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A sacada é um salto balístico ocular explosivo (até 700 graus/s) para reposicionar o olhar, enquanto a perseguição suave é um ajuste contínuo (até 40 graus/s) para manter a imagem estável na fóvea."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como este exercício se relaciona com jogos de tiro (FPS)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Em jogos como Valorant, Overwatch e Apex Legends, oponentes usam deslocamentos bruscos e teletransportes. Praticar a reaquisição imediata pode ajudar a reduzir a hesitação ao reenquadrar a mira, sem garantia de transferência."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como a inércia do alvo ajuda no treino de antecipação?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ao manter a mesma velocidade e ângulo após o salto, o cérebro é obrigado a utilizar modelos internos cerebelares para prever o deslocamento contínuo durante a supressão sacádica (Barnes, 2008)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que acontece com a visão durante o salto sacádico?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O cérebro ativa a supressão sacádica, reduzindo temporariamente a sensibilidade neural para evitar borrões visuais. A nitidez reaparece no instante da aterrissagem foveal (Findlay & Walker, 1999)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que a estabilidade da cabeça é indispensável neste exercício?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Girar a cabeça dispara o reflexo vestíbulo-ocular (RVO), que gera contra-rotações oculares e atrasa a ancoragem no alvo. Mantenha o queixo firme e utilize apenas os músculos extraoculares (Leigh & Zee, 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que é erro de aterrissagem sacádica (dysmetria)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É quando o primeiro movimento do olhar chega antes ou depois do alvo e precisa de uma correção. A página registra esse desvio para comparação entre sessões; não promete eliminar o erro nem diagnosticar dismetria."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual a influência da taxa de atualização do monitor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Telas de alta frequência (144Hz a 360Hz) fornecem atualizações a cada 2,7ms a 6,9ms, reduzindo a incerteza temporal e permitindo reaquisições mais precisas (Woods et al., 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Este teste de rastreamento é gratuito e sem anúncios?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim, o SkillDrills oferece este treino de forma 100% gratuita, sem registros, downloads ou assinaturas, diretamente no navegador."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como o treino frequente estimula a conforto visual ocular?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A repetição pode ajudar a familiarizar você com a tarefa, mas esta página não mede conforto visual nem comprova melhora de acuidade ou velocidade de reação. Compare sessões nas mesmas condições e pare se houver desconforto."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Diretrizes Neurofisiológicas de Rastreamento com Inércia e Teletransporte",
-  intro: [
-    "Quando um alvo muda de posição de forma repentina, o olhar precisa encontrá-lo novamente e depois acompanhar seu movimento. A sacada é o salto rápido entre pontos de fixação; a perseguição ocular é o movimento contínuo que acompanha um alvo. O exercício pratica a transição entre os dois, sem ser um exame clínico.",
-    "O alvo desta tarefa muda de coordenada e mantém uma indicação de movimento. Observe se você o reencontra diretamente ou faz pequenas correções antes de retomar o acompanhamento. Esse resultado depende da tela, da distância, da velocidade e do estado de atenção.",
-    "A latência de exibição pode alterar o tempo percebido, por isso compare apenas sessões feitas no mesmo dispositivo e configuração. As métricas ficam no navegador; reduza a velocidade ou pare se surgirem dor, visão dupla, náusea ou tontura."
+  ...{
+  "heading": "Rastreamento de Alvo Teleportado: guia",
+  "intro": [
+    "O rastreamento de alvo teleportado é um exercício no navegador em que reencontra com o olhar um alvo que muda de lugar de repente. O alvo avança em linha reta, ressalta nas margens e, à velocidade 1,0x, teleporta-se cerca de cada 1,2 segundos para um ponto aleatório, mantendo a direção e a velocidade.",
+    "Acompanhar suavemente um alvo em movimento e levar o olhar depressa até um alvo distante (sacada) são descritos como movimentos oculares diferentes (Rashbass, 1961; Krauzlis, 2004). Aqui, os dois alternam constantemente.",
+    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Não há pontuação nem percentagem de precisão: compare antes o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
   ],
-  benchmarks: {
-    title: "Métricas de Reaquisição de Alvo e Sincronização de Inércia",
-    headers: ["Nível", "Tempo para reencontrar o alvo", "Erro ao chegar", "Sincronização do movimento", "Leitura prática"],
-    rows: [
-      ["Faixa 1 (Muito alta)", "< 140 ms", "< 3% (bloqueio milimétrico)", "97%+", "Precisão balística impecável. Conexão imediata à perseguição suave sem hesitações ou busca oscilatória."],
-      ["Faixa 2 (Alta)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Reaquisição espacial veloz. Micro-sacada corretiva mínima com alta fidelidade de vetor de velocidade."],
-      ["Faixa 3 (Boa)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Padrão de referência saudável. Pequeno intervalo refratário após a sacada seguido de condução estável."],
-      ["Faixa 4 (Intermediária)", "241 – 320 ms", "15% – 24%", "68% – 79%", "Atraso perceptível na deflagração do salto ocular. Erros por excesso frequentes exigindo múltiplas correções."],
-      ["Faixa 5 (Inicial)", "> 320 ms", "> 24%", "< 68%", "Dificuldade severa em saltos de grande amplitude. Presença de compensação cervical indesejada."]
+  "benchmarks": {
+    "title": "Etapas de prática (referência SkillDrills)",
+    "headers": [
+      "Etapa",
+      "Objetivo de prática"
     ],
-    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. ※ Valores de referência obtidos em testes a 50–70 cm de distância com velocidades de 1,0x a 2,0x ao longo de 60 segundos. A latência de reaquisição afere o intervalo entre o teletransporte e o reenquadramento estável da fóvea."
+    "rows": [
+      [
+        "Etapa 1",
+        "1,0x, linha de direção visível, reencontrar sem esforço"
+      ],
+      [
+        "Etapa 2",
+        "Após cada salto, encontrar o alvo num só olhar"
+      ],
+      [
+        "Etapa 3",
+        "Subir a velocidade e habituar-se a saltos mais frequentes"
+      ],
+      [
+        "Etapa 4",
+        "Juntar Hide Line ou Random Speed, um de cada vez"
+      ]
+    ],
+    "note": "Etapas de prática sugeridas pela SkillDrills: não são normas de teste, estatísticas de utilizadores nem percentis."
   },
-  techniques: {
-    title: "Quatro Princípios Essenciais para Reaquisição Visual Instantânea",
-    items: [
+  "techniques": {
+    "title": "Dicas de execução",
+    "items": [
       {
-        name: "Trajetória Balística Retilínea Direta",
-        desc: "Execute o salto sacádico pela menor distância retilínea entre o ponto de fuga e as novas coordenadas. Qualquer curva ou desvio atrasa drasticamente a reaquisição foveal (Findlay & Walker, 1999).",
-        tips: "Confie na percepção da retina periférica e lance o foco com firmeza diretamente no ponto visual."
+        "name": "Um só movimento, depois seguir",
+        "desc": "Depois de um salto, não procure por todo o ecrã: leve o olhar de uma vez até à nova posição e siga o alvo na mesma direção de antes.",
+        "tips": "Se o perder muitas vezes, baixe a velocidade e mantenha a linha de direção visível."
       },
       {
-        name: "Retenção Mental do Vetor de Inércia",
-        desc: "Embora a posição se altere de forma instantânea, o vetor de velocidade e direção permanece inalterado. Mantenha o modelo preditivo cerebelar ativo durante a supressão sacádica (Barnes, 2008).",
-        tips: "Não espere um alvo estático no ponto de aterrissagem; prepare os olhos para deslizar assim que tocar as coordenadas."
+        "name": "Olhar para o alvo, não para o cursor",
+        "desc": "O rato não é usado. Pouse a mão e siga apenas com os olhos.",
+        "tips": "Confirme de vez em quando que a cabeça e o pescoço não acompanham o movimento."
       },
       {
-        name: "Avanço Preditivo de Aterrissagem",
-        desc: "Como a sacada consome entre 20 e 40 ms de deslocamento, o alvo continua se movendo durante o voo ocular. Posicione seu olhar ligeiramente à frente das coordenadas de chegada.",
-        tips: "Um leve avanço de poucos pixels impede que o olhar aterrissar atrás da posição real do alvo móvel."
+        "name": "Dificultar uma coisa de cada vez",
+        "desc": "Aumente separadamente a velocidade, Ocultar linha e Velocidade aleatória. Se o conforto se perder, volte à definição anterior.",
+        "tips": "Depois de mudar uma definição, não compare diretamente com sessões antigas."
       },
       {
-        name: "Isolamento Cervical Completo",
-        desc: "Grandes saltos estimulam a movimentação involuntária do pescoço. O reflexo vestíbulo-ocular gera instabilidade na focalização rápida (Leigh & Zee, 2015).",
-        tips: "Mantenha o queixo apoiado ou perfeitamente estático, exercitando exclusivamente a musculatura dos olhos."
+        "name": "Sessões curtas e pausas",
+        "desc": "Entre sessões curtas, pisque e olhe ao longe. Mais tempo não é melhor.",
+        "tips": "Pare de imediato se sentir dor ou tontura."
       }
     ]
   },
-  steps: [
-    "Posicione-se confortavelmente a 50–70 cm da tela, mantendo o queixo estável e a cabeça ereta.",
-    "Ajuste a duração da sessão (30 a 120 segundos) e o multiplicador de velocidade (0,5x a 9,0x).",
-    "Mantenha a fóvea centrada no alvo em movimento acompanhando sua trajetória inicial.",
-    "Ao ocorrer o teletransporte súbito, lance uma sacada direta para a nova localização.",
-    "Ao pousar, engate imediatamente a perseguição suave acompanhando a inércia contínua do alvo."
+  "steps": [
+    "Sente-se a uma distância confortável do ecrã e relaxe ombros e pescoço.",
+    "Comece com 30 a 60 segundos, velocidade 1,0x e linha visível.",
+    "Quando o alvo se teleportar, leve o olhar até à nova posição e continue a segui-lo na mesma direção.",
+    "Depois aumente a velocidade ou ative Ocultar linha e Velocidade aleatória, um de cada vez."
   ],
-  audience: "Jogadores de FPS (Valorant, CS2, Apex Legends, Overwatch), e quem quer praticar o acompanhamento visual de alvos que saltam, sem substituir avaliação profissional.",
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "Quem quer praticar, de forma simples, reencontrar com o olhar um alvo em movimento que muda de lugar de repente."
+},
+  faqs,
   sources: pickSources('rashbass1961', 'bahill1980', 'findlay1999', 'krauzlis2004', 'barnes2008', 'woods2015'),
   related: [
     { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição ocular suave contínua" },
@@ -285,26 +192,18 @@ const guideProps = {
     { href: "/pt/drills/visual-tracking/ghosting-suppress-pursuit", label: "Estabilidade da fixação ocular" },
     { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Exercício ocular em oito" },
     { href: "/pt/drills/visual-tracking/predictive-pursuit", label: "Rastreamento ocular preditivo" }
-  ]
+  ],
 };
 
-export default function PortugueseMomentumTeleportPage() {
+export default function PortugueseMomentumTeleportPursuitPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <MomentumTeleportPursuitClient
-        copy={{
-          title: "Rastreamento de Alvo Teleportado",
-          subtitle: "Reaquisição visual e seguimento do movimento",
-          description: "Encontre novamente um alvo que muda de posição e retome o acompanhamento do seu movimento. Compare tempo, precisão e conforto sem transformar o resultado em diagnóstico."
-        }}
-      />
+      <MomentumTeleportPursuitClient copy={{"title": "Rastreamento de Alvo Teleportado", "subtitle": "Reencontrar um alvo que salta mas mantém o rumo", "description": "Rastreamento de alvo teleportado: o alvo avança em linha reta e teleporta-se cerca de cada 1,2 segundos (a 1,0x) para um ponto aleatório, mantendo direção e velocidade. Sem cliques nem pontuação, só o olhar; o navegador não regista os seus olhos."}} />
 
       <DrillGuide guide={guideProps} />
 

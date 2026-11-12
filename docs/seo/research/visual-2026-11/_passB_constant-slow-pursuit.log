@@ -1,0 +1,6 @@
+ko | 부드러운 시각 추적 훈련 | map no-demand descriptive; GSC 0; old title 동체시력 훈련 collided w/ visual-tracking hub PROTECTED primary | title/desc/kw/introTitle/intro/FAQ1 retargeted (lib/i18n/drills/constantSlowPursuitNative.js), 주변시 훈련 kw dropped, dateModified 2026-11-12 | audit OK
+de | Augenfolgebewegung üben | map keep (GSC 5i p19, augenfolgebewegung 0) | title kept; primary added to description+intro, false 'Score' claims -> Sitzung/Ergebnis (no score in client), 'Augentraining' kw dropped, dateModified 2026-11-12 | audit OK
+ja | ゆっくり動く点を目で追う練習 | map no-demand descriptive; GSC 0; old 動体視力トレーニング = visual hub only (ja.md decision) | UI+SEO title, desc, kw, introTitle, intro, FAQ1 retargeted; false 'スコア' -> 結果; dateModified 2026-11-12 | audit OK
+fr | Exercice de Poursuite Visuelle | map unchanged descriptive (not measured) | no change (copy already honest, no score claims) | audit OK
+pt | Exercício de Perseguição Visual | map keep (no-demand descriptive) | no change (copy honest) | audit OK
+es | Ejercicio de Seguimiento Lento Constante | map retarget: 'seguimiento suave' = fps pro-smooth-pursuit secondary; AC ejercicios de seguimiento visual | UI+SEO title, desc, kw (+seguimiento visual lento, -visión dinámica = reaction), introTitle, intro, FAQ1; dateModified 2026-11-12 | audit OK

@@ -6,45 +6,30 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const visualDrills = DRILLS.filter((d) => d.category === 'visual');
 
 export const metadata = {
-  title: 'Test de Agudeza Visual & Percepción | SkillDrills',
-  description: 'Entrenamiento visual online: 9 ejercicios científicos de agudeza visual dinámica, percepción de profundidad, seguimiento ocular y velocidad de reacción.',
-  keywords: [
-    'test de agudeza visual online', 'ejercicios para mejorar la vista', 'test de vision estereoscopica',
-    'percepcion de profundidad prueba', 'entrenamiento de vision periferica', 'tiempo de reaccion visual online',
-    'test de reflejo de luz', 'seguimiento de objetos multiples', 'ejercicios oculares de seguimiento',
-    'busqueda visual atencion selectiva', 'gimnasia visual para ojos cansados', 'evaluacion de agudeza visual dinamica',
-    'movimientos oculares sacadicos', 'discriminacion temporal visual', 'entrenamiento de vision deportiva'
-  ],
+  title: 'Ejercicios de percepción visual online | SkillDrills',
+  description: 'Ejercicios de percepción visual online: 9 ejercicios gratis en el navegador para reacción visual, seguimiento de objetivos, búsqueda visual y distancias.',
+  keywords: ['ejercicios de percepción visual online', 'percepción visual', 'búsqueda visual', 'seguimiento de objetivos', 'atención visual', 'percepción de profundidad', 'reacción a la luz', 'seguimiento de múltiples objetos'],
   openGraph: {
-    title: 'Test de Agudeza Visual & Percepción | SkillDrills',
-    description: 'Entrenamiento visual online: 9 ejercicios científicos de agudeza visual dinámica, percepción de profundidad, seguimiento ocular y velocidad de reacción.',
+    title: 'Ejercicios de percepción visual online | SkillDrills',
+    description: 'Ejercicios de percepción visual online: 9 ejercicios gratis en el navegador para reacción visual, seguimiento de objetivos, búsqueda visual y distancias.',
     type: 'website',
     url: 'https://skilldrills.online/es/drills/visual',
     siteName: 'SkillDrills',
     locale: 'es_ES',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Entrenamiento de Agudeza Visual y Rendimiento Óptico en SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Ejercicios de percepción visual online en SkillDrills' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test de Agudeza Visual & Percepción | SkillDrills',
-    description: '9 ejercicios científicos de agudeza visual dinámica, percepción de profundidad, seguimiento ocular y velocidad de reacción.',
+    title: 'Ejercicios de percepción visual online | SkillDrills',
+    description: 'Ejercicios de percepción visual online: 9 ejercicios gratis en el navegador para reacción visual, seguimiento de objetivos, búsqueda visual y distancias.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/visual',
-    languages: getAlternateLanguages('/es/drills/visual'),
+    languages: getAlternateLanguages('/drills/visual'),
   },
 };
-
-Object.assign(metadata, {
-  title: 'Agudeza visual dinámica | Búsqueda visual | SkillDrills',
-  description: '9 ejercicios gratuitos en el navegador para agudeza visual dinámica, búsqueda visual, tiempo de reacción, seguimiento de objetivos y profundidad.',
-  keywords: ['agudeza visual dinámica', 'búsqueda visual test', 'tiempo de reacción visual', 'visión periférica entrenamiento', 'seguimiento ocular', 'percepción de profundidad', 'reacción visual', 'seguimiento de varios objetos', 'entrenamiento visual gratis'],
-  openGraph: { ...metadata.openGraph, title: 'Agudeza visual dinámica | Búsqueda visual | SkillDrills', description: '9 ejercicios gratuitos para agudeza visual dinámica, búsqueda visual, tiempo de reacción y seguimiento de objetivos.' },
-  twitter: { ...metadata.twitter, title: 'Agudeza visual dinámica | Búsqueda visual | SkillDrills', description: 'Entrena agudeza visual dinámica y búsqueda visual con 9 ejercicios gratuitos.' },
-  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -52,7 +37,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
     { "@type": "ListItem", "position": 2, "name": "Ejercicios de Rendimiento", "item": "https://skilldrills.online/es/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Percepción Visual & Profundidad", "item": "https://skilldrills.online/es/drills/visual" }
+    { "@type": "ListItem", "position": 3, "name": "Percepción Visual", "item": "https://skilldrills.online/es/drills/visual" }
   ]
 };
 
@@ -60,10 +45,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "es",
-  "dateModified": "2026-09-20",
-  "name": "Entrenamiento de Percepción Visual & Profundidad (9 Ejercicios)",
+  "dateModified": "2026-11-12",
+  "name": "Ejercicios de percepción visual online (9 ejercicios)",
   "url": "https://skilldrills.online/es/drills/visual",
-  "description": "9 ejercicios interactivos para agudeza visual dinámica, visión estereoscópica, seguimiento ocular continuo, búsqueda visual y tiempo de reacción.",
+  "description": "9 ejercicios gratis en el navegador para reacción visual, control de impulsos, objetivos en movimiento, varios objetos, búsqueda visual y cálculo de distancias.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": visualDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'es', drill.name);
@@ -83,70 +68,70 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "es",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cómo mejora el entrenamiento de agudeza visual dinámica (DVA) el rendimiento en deportes y videojuegos?",
+      "name": "¿El entrenamiento visual en el navegador ayuda en deportes o juegos FPS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A diferencia de la agudeza estática en optotipos, la agudeza visual dinámica evalúa la capacidad de la fóvea central de mantener enfocada la imagen retiniana de un blanco en rápido movimiento. Interceptar trayectorias balísticas entrena los seis músculos extraoculares y la corteza visual, optimizando el tiempo de impacto en tenis, béisbol y la precisión de rastreo en shooters en primera persona."
+        "text": "Los ejercicios practican seguir objetivos en movimiento con la mirada y el ratón, reaccionar a señales visuales y buscar objetivos. No se garantiza una mejora en deportes ni en juegos FPS. Úsalos como práctica extra y compara tus propios resultados en el mismo equipo."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué evalúa la prueba de percepción de profundidad basada en el método de las tres varillas?",
+      "name": "¿El ejercicio de distancias mide la visión en profundidad (3D)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Esta prueba mide la estereopsis mediante la disparidad binocular: las sutiles diferencias angulares proyectadas en cada retina. Detectar con precisión milimétrica cuándo las varillas móviles se alinean con la fija es crucial para calcular distancias de frenado en conducción y juzgar pases en profundidad en deportes de equipo."
+        "text": "No. Una pantalla plana no tiene disparidad binocular, así que no evalúa la visión estereoscópica. Una esfera se acerca y crece en pantalla; haces clic cuando llega a la profundidad marcada. Se practica calcular distancia y timing."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Por qué el seguimiento de objetos múltiples (MOT) es clave para ampliar la visión periférica?",
+      "name": "¿Qué entrena el seguimiento de objetos múltiples (MOT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El paradigma MOT estimula intensamente la atención espacial dividida en el lóbulo parietal y la memoria de trabajo visoespacial. Al fijar la mirada en el centro mientras se vigilan varios objetivos errantes en la periferia, se expande el campo visual útil (UFOV), mejorando la anticipación táctica y el control situacional."
+        "text": "Sigues objetivos marcados entre objetos idénticos en movimiento. Exige atención dividida y memoria de trabajo visual. No está demostrado que amplíe el campo visual ni que mejore la conducción."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuál es la diferencia entre el seguimiento ocular suave (Smooth Pursuit) y los saltos sacádicos?",
+      "name": "¿Qué diferencia hay entre el seguimiento ocular suave y las sacadas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El seguimiento suave permite a los ojos deslizarse de forma continua tras un objeto en movimiento sin interrupciones visuales. Los movimientos sacádicos, en cambio, son saltos bruscos que generan breves supresiones de la visión. Entrenar el seguimiento continuo evita que los detalles dinámicos se desenfoquen en momentos críticos."
+        "text": "En el seguimiento suave los ojos siguen un objetivo en movimiento de forma continua; las sacadas son saltos rápidos de la mirada. Los ejercicios de seguimiento piden sobre todo seguimiento suave, pero el sitio no mide tus movimientos oculares."
       }
     },
     {
       "@type": "Question",
-      "name": "¿En qué se diferencia el test de reacción a la luz de una prueba de reflejos común?",
+      "name": "¿Qué mide el ejercicio de reacción a la luz?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Las pruebas de reacción estándar implican procesamiento cognitivo complejo como discriminación de formas o colores. El test de reacción a la luz aísla la latencia visuomotora primaria: mide estrictamente el tiempo desde la fototransducción retiniana del destello estroboscópico hasta la primera contracción muscular en el dedo."
+        "text": "El tiempo entre la señal luminosa en pantalla y tu clic. Incluye retrasos de la pantalla, el ratón y el navegador; no es un tiempo neural puro."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué procesos cognitivos se activan con el ejercicio de búsqueda visual en matrices densas?",
+      "name": "¿Qué entrena la búsqueda visual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Las tareas de búsqueda entre distractores activan la integración de rasgos en la corteza visual primaria y el filtrado inhibitorio en la corteza prefrontal dorsolateral. Este entrenamiento enseña al cerebro a ignorar el ruido ambiental caótico y localizar patrones relevantes en fracciones de segundo."
+        "text": "Buscas un objetivo entre elementos que distraen. Practica la atención selectiva y la rapidez de búsqueda en esa tarea; la transferencia a la vida diaria varía y no está garantizada."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuál es la frecuencia y duración óptima para los ejercicios de entrenamiento visual?",
+      "name": "¿Mis resultados dependen del equipo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Se recomienda realizar sesiones de 15 a 20 minutos de alta concentración, entre 3 y 5 veces por semana. Los músculos ciliares y extraoculares sufren fatiga rápida si se sobrepasan los 25 minutos continuos, lo que reduce la plasticidad neural. Las sesiones cortas y regulares ayudan a limitar la fatiga ocular."
+        "text": "Sí. Una pantalla se actualiza cada 16,7 ms a 60 Hz, 6,9 ms a 144 Hz y 4,1 ms a 240 Hz. Compara sesiones con la misma pantalla, el mismo ratón y el mismo navegador."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Pueden los ejercicios visuales en el navegador reemplazar las consultas con el optometrista u oftalmólogo?",
+      "name": "¿Cuánto debe durar una sesión?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Estas herramientas están diseñadas para el acondicionamiento sensoriomotor y la agilidad visual funcional en personas sanas o deportistas, pero no sustituyen los exámenes clínicos de refracción, patología ocular o salud retiniana periódicos con un especialista médico."
+        "text": "No hay una duración ideal demostrada. Haz sesiones cortas y regulares, mira a lo lejos en las pausas y para si notas cansancio, dolor de cabeza o molestias."
       }
     }
   ]

@@ -4,340 +4,256 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
+import { breadcrumbItems } from '@/lib/i18n/breadcrumbLabels';
 
-// ============================================================
-// JAPANESE SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "動体視力 トレーニング" / "追従性眼球運動"
-// Secondary:    "視線再捕捉", "急旋回", "反射神経ゲーム", "回避運動"
-// LSI / Domain:  "急旋回 視線再捕捉", "サッケード反射 トレーニング", "動体視力 反射神経",
-//               "エイム トラッキング 練習", "補正サッケード 速度", "中心窩 捕捉力", "FPS エイム 安定性"
-// Authentic Domain Terms: 標的回避追従, 補正サッケード, 滑動追従ゲイン, 網膜スリップ, 前頭眼野（FEF）, 上丘
-// ============================================================
+const url = 'https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit';
+const name = "急に向きを変える標的を目で追う練習";
+const title = `${name} | SkillDrills`;
+const description = "急に向きを変える標的を目で追う練習をブラウザで無料で。標的は直線で進み、約0.5秒ごとにランダムな方向と速さへ切り替わります。時間と速度を調整できます。";
 
 export const metadata = {
-  title: "動体視力・急旋回ターゲット訓練 | SkillDrills",
-  description: "急旋回する標的を視線で再捕捉。補正サッケードと動体視力、追従性眼球運動を鍛える無料ブラウザトレーニング。",
-  keywords: [
-    "動体視力 トレーニング",
-    "追従性眼球運動",
-    "動体視力 テスト",
-    "視線再捕捉",
-    "急旋回 標的追跡",
-    "反射神経ゲーム",
-    "回避運動 トレーニング",
-    "補正サッケード",
-    "中心窩 再捕捉",
-    "視覚反応 トレーニング",
-    "スポーツビジョン",
-    "無料 視覚トレーニング"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "動体視力・急旋回ターゲット訓練 | SkillDrills",
-    description: "急旋回する標的を視線で再捕捉。補正サッケードと動体視力、追従性眼球運動を鍛える無料ブラウザトレーニング。",
-    type: "website",
-    url: "https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit",
-    siteName: "SkillDrills",
-    locale: "ja_JP",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "動体視力・急旋回ターゲット訓練 | SkillDrills",
-    description: "急旋回する標的を眼球で再捕捉し、視覚反応と補正サッケードを鍛える無料オンラインドリル。",
-  },
+  title,
+  description,
+  keywords: ["急に向きを変える 標的 目で追う","方向転換 目で追う 練習","視線の再捕捉","眼球運動 練習","急な方向転換 追従","ブラウザ 目の練習"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/dynamic-evasion-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ja_JP', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: "https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/dynamic-evasion-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://skilldrills.online/ja" },
-    { "@type": "ListItem", "position": 2, "name": "ドリル一覧", "item": "https://skilldrills.online/ja/drills" },
-    { "@type": "ListItem", "position": 3, "name": "視覚追従・眼球運動トレーニング", "item": "https://skilldrills.online/ja/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "標的回避追従トレーニング", "item": "https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit" }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems('ja', url, 'visual-tracking', name, true),
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "標的回避追従トレーニング・動体視力テスト",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "ブラウザ",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "直線移動から突発的に急旋回して照準を逃れる標的を眼球運動で瞬時に再捕捉する、無料ブラウザ完結型リアクティブ動体視力＆サッケードリカバリー測定ツール。",
-  "featureList": [
-    "直線等速巡航と突発的高角度回避ブレイクを融合したリアルタイム回避シミュレーション",
-    "0.5倍速〜9.0倍速の可変スピード設定とミリ秒単位の視線捕捉保持タイマー",
-    "ターゲット残像トレイル・CRTスキャンライン・グロー効果の視覚カスタマイズ",
-    "外部サーバー通信一切なしの完全クライアントサイドローカルデータ管理"
-  ],
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ja' },
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "標的回避追従トレーニング – 動体視力リアクティブエイム オンライントレーナー | SkillDrills",
-  "alternateName": "標的回避追従トレーニング",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit",
-  "dateModified": "2026-09-20",
-  "description": "無料オンライン動体視力・リアクティブ追従トレーニング。急激な回避旋回に対して即座に補正サッケードを発動し、中心窩ロックと追従ゲインを回復する反射神経ドリル。",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "ブラウザ",
-  "browserRequirements": "HTML5 Canvas対応の最新モダンウェブブラウザ",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "isAccessibleForFree": true,
-  "learningResourceType": "視覚トレーニングゲーム",
-  "teaches": "回避運動追従, 補正サッケード, 滑動追従ゲイン復帰, 網膜スリップ抑制, リアクティブエイム"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "急に向きを変える標的を目で追う練習 Webアプリ",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "HTML5 Canvas対応の最新ブラウザ",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "標的回避追従トレーニング・動体視力テスト",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit",
-  "description": "無料リアクティブ追従ゲーム。急旋回・回避行動を繰り返すターゲットを視線と照準で捉え続け、視覚反射神経とリカバリー俊敏性を鍛えます。",
-  "genre": ["眼球運動トレーニング", "視覚トレーニング", "反応速度ゲーム"],
-  "gamePlatform": ["ブラウザ", "パソコン", "スマートフォン"],
-  "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name,
+  url,
+  description,
+  genre: ['Visual training', 'Eye tracking exercise'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "標的回避追従・リアクティブ視線再捕捉の正しい練習手順",
-  "dateModified": "2026-09-20",
-  "description": "突発的に急旋回する回避標的に対して、視線を素早く引き戻し追従ゲインを回復するための公式トレーニング手順ガイド。",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "基準速度とセッション時間の設定",
-      "text": "最初は急旋回のタイミングを見極めるため、1.0倍速の標準速度と60秒のセッション時間を選択します。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "頭部固定と直線軌道での滑動追従の確立",
-      "text": "画面から約50〜70cmの距離を保ち、頭部を完全に静止させた状態で、標的が直線を進む間スムーズに追従します。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "急激な回避旋回に対する鋭い補正サッケードの発動",
-      "text": "標的が予告なく鋭角に方向転換した瞬間、無理に滑動追従を引っ張らず、瞬時の短い跳躍（サッケード）で標的を中心窩へ引き戻します。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "着弾直後の新ベクトル滑動追従（ゲイン復帰）の維持",
-      "text": "補正跳躍が着弾した直後に視線を止めず、標的の新しい進行速度と角度に即座に同調して滑動追従を再開します。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/dynamic-evasion-pursuit#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "急に向きを変える標的を目で追う練習のやり方",
+  description: "急に向きを変える標的を目で追う練習を無理なく進める4つのステップです。",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "楽な姿勢を作る",
+    "text": "画面から楽な距離に座り、肩と手の力を抜きます。"
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "方向転換を見る",
+    "text": "標的が向きを変えた瞬間を見逃さず、新しい方向へ視線を合わせ直します。"
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "目で追い続ける",
+    "text": "カーソルではなく標的を目で追い、30〜120秒のセッションを最後まで続けます。"
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "設定を一つずつ変える",
+    "text": "慣れたら速度を上げるか、ライン非表示・ランダム速度を一つずつ追加します。"
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "急に向きを変える標的を目で追う練習とは何ですか？",
+    "a": "直線で進み、一定間隔で突然向きを変える標的を目で追うブラウザ練習です。時間(30〜120秒)、速度、標的の大きさ、ライン表示を調整できます。視力検査や治療ではなく練習用のツールです。"
+  },
+  {
+    "q": "標的はカーソルから逃げるのですか？",
+    "a": "いいえ。方向転換は約0.5秒ごとにランダムに起こり、カーソルの位置とは関係ありません。ライン表示がオンのときは、進む方向を示す短い線が出ます。"
+  },
+  {
+    "q": "目の動きを直接測定しますか？",
+    "a": "いいえ。ブラウザは視線の位置を知ることができず、標的を描いた位置と設定だけを扱います。ポインターは補助で、カーソル位置が視線を示すわけではありません。スコアもありません。"
+  },
+  {
+    "q": "ランダム速度をオンにすると何が変わりますか？",
+    "a": "標的の速さが時間とともに不規則に変わり、先読みしにくくなります。基準速度で楽に追えるようになってから、ライン非表示とは別々に追加してください。"
+  },
+  {
+    "q": "ラインは表示したほうがよいですか？",
+    "a": "ラインがあると標的の動きを予想しやすく、最初は助けになります。慣れたら非表示にして難しくできます。どちらが正解ということはないので、同じ設定どうしで比べてください。"
+  },
+  {
+    "q": "最初はどんな設定で始めればよいですか？",
+    "a": "30〜60秒の短いセッション、遅い速度(0.5〜1.0倍)、ライン表示から始めます。速度は0.5〜9.0倍、標的の大きさは10〜50pxで調整でき、慣れたら一つずつ変えます。"
+  },
+  {
+    "q": "この練習で視力やゲームの腕が上がりますか？",
+    "a": "保証はできません。これは動く標的を目で追う練習で、視力の改善、目の病気の治療、FPSのエイム向上を約束するものではありません。目の不調が気になる場合は専門家に相談してください。"
+  },
+  {
+    "q": "画面や環境は結果に影響しますか？",
+    "a": "リフレッシュレート、明るさ、コントラスト、画面の大きさと距離、ブラウザで標的の見え方が変わります。入力機器や表示の遅延も影響するので(Woods et al., 2015)、同じ環境で比べてください。"
+  },
+  {
+    "q": "どのくらい練習すればよいですか？",
+    "a": "5〜10分ほどの短いブロックで行い、休憩を入れます。目が疲れたり乾いたりしたら止めて遠くを見てまばたきします。痛み、めまい、吐き気、頭痛があれば中止してください。"
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "標的回避追従テストとは何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "標的回避追従テストは、直線軌道を巡航する標的が突発的に高角度の急旋回を行う動的ターゲットを眼球運動のみで追跡し続ける視線追従ドリルです。連続的な予測追従が遮断されるため、網膜スリップの即時感知、補正サッケードの発動、そして新ベクトルへの滑動追従ゲイン復帰という一連の視覚運動ループを限界まで鍛錬します（Rashbass, 1961; Bahill et al., 1980）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "通常のスムーズパシュート（円運動やリサージュ）と標的回避追従の決定的な違いは何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "円運動やリサージュ曲線のような周期的追従では、小脳が内部前進モデルを構築して感覚遅延をほぼゼロにする「先読み追従」が可能になります（Robinson, 1965）。一方、標的回避追従では標的が不意に鋭角へブレイクするため先読みが破綻し、視覚フィードバックに基づく純粋な反応型の再捕捉反射が強制されます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "回避急旋回時に発動する補正サッケードのメカニズムは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "標的が急角度に曲がると、滑動追従の生理的限界速度（約30°/秒）を超過し、像が網膜中心窩から外れます。この位置誤差信号を受け取った前頭眼野（FEF）と上丘が、約150〜200msの遅延で目標位置へ視線を瞬間ジャンプさせて視界中心に捉え直す補正動作が「補正サッケード」です（Krauzlis, 2004; Barnes, 2008）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "カオス方向追従と本ドリルの違いは何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "カオス方向追従は毎フレーム微小なランダム加速度が加わる連続的曲線ドリフトであるのに対し、標的回避追従は明瞭な直線ベクトルと数周期ごとの離散的な高角度急旋回で構成されます。微小な手振れ補正ではなく、激しい方向切り返しに対するダイナミックな再捕捉速度に特化しています。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "競技FPS（Apex Legends, Overwatch 2, VALORANT）のストレイフ追従にどう役立ちますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "近接戦闘で敵が急激な左右屈伸・レレレ移動やスライディング回避を仕掛けてきた際、敵の切り返しに対して照準が置き去りにされる「切り返しラグ」を大幅に削減できます。急旋回を検知してから補正サッケードを着弾させるまでの時間を短縮し、標的へ即座に照準を復帰させられます（Yang et al., 2025）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "テニス、サッカー、バスケ等の球技スポーツにおける動体視力にどう効果がありますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "相手ディフェンダーの急なフェイント・方向転換や、イレギュラーバウンドするボールに対して、視界ブレを瞬時に収束させて対象を再凝視する視覚敏捷性（アジリティ）が向上します（Appelbaum & Erickson, 2018）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "頭部を動かさずに目だけで追う必要がある神経学的理由は何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "頭部を激しく振ると前庭動眼反射（VOR）が介入し、外眼筋自体の運動制御系や大脳皮質・上丘の補正サッケード回路に十分な負荷がかかりません（Leigh & Zee, 2015）。独立した眼球運動の瞬発力を高めるため、頭部は固定して行う必要があります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "1日の推奨練習時間とセッション頻度はどのくらいですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "1セッション60秒を、間に30秒の休憩を挟んで5〜8セット（計5〜10分）行うのが最適です。突発的な再捕捉は眼筋と中枢神経への負荷が非常に高いため、長時間の無理な連取は避け、日々の継続によって神経伝達を最適化することが推奨されます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "回避転換が速すぎてターゲットを完全に見失ってしまう場合の調整法は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "設定パネルから速度倍率を0.6x〜0.8xに落とし、ターゲットサイズを24px以上に広げてください。旋回の初動ベクトルを落ち着いて捉えられるようになってから徐々に標準速度（1.0x以上）へ戻す段階的トレーニングが効果的です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "モニターのリフレッシュレート（Hz）やマウスのポーリングレートは測定にどう影響しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "高リフレッシュレート環境は急旋回知覚に極めて大きな差を生みます。60Hzモニターでは方向転換の初動が最大16.7ms遅れて表示されますが、144Hz〜240Hzであれば4ms前後で急転換フレームが網膜に届くため、サッケード発動が物理的に前倒しされます（Woods et al., 2015）。"
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'ja',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "標的回避運動追従とサッケードリカバリーの神経運動科学基準",
-  intro: [
-    "標的回避追従とは、直線軌道を移動する動的対象が不意に鋭角の回避旋回を起こした際、視覚運動系がリアルタイムで即応して視線を再整合させる高度な動体視力課題です。直線や円運動のように予測可能な運動経路とは異なり、小脳の予測的内部モデルを破綻させ、純粋な感覚フィードバックに基づく反応的再捕捉能力を練習します（Bahill, Iandolo, & Troost, 1980; Robinson, 1965）。",
-    "網膜スリップの発生と補正サッケード・追従ゲインの二重運動制御：標的が突然の回避角を曲がった瞬間、滑動性追従眼球運動の物理的追従速度限界（約30°/秒）を超過し、標的像が中心窩から急激に脱落します（網膜スリップ）。この位置誤差および速度誤差を受信した視覚前頭眼野（FEF）と上丘は、約150〜200msの潜時を経て目標位置へ視線を瞬間跳躍させる補正サッケードを強制発動します（Rashbass, 1961; Krauzlis, 2004）。跳躍着弾直後に視界ブレを抑制し、即座に新しい進行方向への滑動追従ゲインを回復できるかが動体視力の敏捷性を決定づけます（Barnes, 2008）。",
-    "競技eスポーツおよび対人スポーツにおける実戦応用：FPSにおける敵の突発的な左右移動やスライディング回避、テニスやサッカーにおける急激な切り返しやボールの急変では、視覚的脱落時間をミリ秒単位で削減することが重要です（Yang et al., 2025; Appelbaum & Erickson, 2018）。本ドリルは高角の急旋回を不規則に浴びせることで、外眼筋群の反射的協調と中枢視覚野の情報処理を鍛えます。",
-    "ハードウェア遅延と計測環境の標準化：急旋回知覚において、モニターのフレーム更新レートは極めて重要です。一般的な60Hzモニターではフレーム間隔が16.7msと長く、急転換の瞬間がブレて網膜に届きますが、144Hzまたは240Hzの高リフレッシュレート環境では4ms前後で急旋回の初動フレームを視認可能です（Woods et al., 2015）。また、頭部を静止させて前庭動眼反射（VOR）を抑えることで、純粋な外眼筋の瞬発力が鍛えられます（Leigh & Zee, 2015）。すべてのセッション記録はブラウザ内に保存されます。"
+  ...{
+  "heading": "急に向きを変える標的を目で追う練習ガイド",
+  "intro": [
+    "急に向きを変える標的を目で追う練習では、標的がまっすぐ進んだあと約0.5秒ごと(ランダム速度オン時は0.35〜0.65秒)に新しいランダムな方向と速さへ切り替わり、画面の端では跳ね返ります。急な切り替えで視線が遅れたら、素早く標的へ戻してまた滑らかに追う、という流れをくり返し体験できます(Rashbass, 1961; Krauzlis, 2004)。",
+    "ブラウザが分かるのは標的を描いた位置と設定だけで、目が実際にどこを見ているかは記録しません。スコアはなく、残るのは完了したセッション数です。結果は臨床的な追従能力や視力ではなく、同じ条件で繰り返せる練習記録として扱ってください。",
+    "楽な距離と姿勢で、同じ画面とブラウザで比べてください。リフレッシュレートや入力機器も見え方に影響します(Woods et al., 2015)。痛み、めまい、吐き気、続くぼやけなどがあれば中止してください。"
   ],
-  benchmarks: {
-    title: "標的回避追従・リアクティブ視線再捕捉評価基準（エディトリアルガイド）",
-    headers: ["習熟度", "設定速度帯", "回避旋回時のサッケード回復特性", "神経反応・動体視力プロファイル"],
-    rows: [
-      ["段階1：神速・反応型", "2.0x 以上の超高速域", "回避転換直後に最短潜時（150ms未満）で補正サッケードが着弾し、オーバーシュートなく追従ゲインを即復帰。", "動体への反射的な追従を重点的に練習する段階。"],
-      ["段階2：卓越・俊敏回復", "1.4x – 1.9x 高速域", "急激な回避旋回に対しても1〜2フレームの遅延で視線を戻し、滑らかに追従を継続可能。", "優れた外眼筋瞬発力と網膜スリップ感知力。激しい左右移動への対応を練習する段階。"],
-      ["段階3：標準・健常成人基準", "1.0x – 1.3x 標準域", "標準速度の回避運動を追従可能。急旋回時に一時的な視界の見失いや追いつき遅延が発生。", "一般的な若年成人の標準的視覚運動協調レベル。カジュアルゲームや日常スポーツに十分。"],
-      ["段階4：再捕捉遅延・要反復", "0.7x – 0.9x 低速域", "標的が回避行動を取るたびに視界から外れ、複数回のサッケードを要して復帰が遅れる。", "突発的な方向変化に対する神経伝達の遅延。低速域で素早く視線を跳躍させる反復練習が必要。"],
-      ["段階5：追尾困難・初学者", "0.7x 未満", "標的の急転換に目がついていかず、画面の旧軌道上に視線が取り残されてしまう。", "まずは頭部を完全固定し、低速での急旋回標的を目だけで追う基礎からスタート。"]
+  "benchmarks": {
+    "title": "練習段階の目安",
+    "headers": [
+      "段階",
+      "練習の目標"
     ],
-    note: "本基準値は回避標的運動下のサッケード力学および追従ゲイン回復研究（Bahill et al., 1980; Rashbass, 1961; Krauzlis, 2004; Barnes, 2008）に基づき策定された編集基準です。"
+    "rows": [
+      [
+        "1",
+        "遅い速度・ライン表示"
+      ],
+      [
+        "2",
+        "基準速度で楽に追える"
+      ],
+      [
+        "3",
+        "方向転換のあとすぐ標的に戻れる"
+      ],
+      [
+        "4",
+        "ライン非表示を追加"
+      ],
+      [
+        "5",
+        "ランダム速度を追加"
+      ]
+    ],
+    "note": "この表はSkillDrillsの練習段階の目安です。視機能検査の基準、利用者統計、パーセンタイルではありません。"
   },
-  techniques: {
-    title: "回避標的の再捕捉精度と追従ゲインを高める4大テクニック",
-    items: [
+  "techniques": {
+    "title": "練習のコツ4つ",
+    "items": [
       {
-        name: "頭部の完全固定によるVOR抑制と外眼筋の独立駆動",
-        desc: "Leigh & Zee（2015）の知見の通り、突発的な急旋回に驚いて首を振ると前庭動眼反射（VOR）が混入し、皮質サッケード回路の強化が妨げられます。",
-        tips: "顎を軽く引き、頭部を完全に静止させた状態で、眼球のみの独立した回転力で急転換を迎撃しましょう。"
+        "name": "切り替わったら一度で戻る",
+        "desc": "方向が変わったら大きく目を振り回さず、新しい方向を確認してから滑らかに追い直します。毎回先読みする必要はありません。",
+        "tips": "つらいときは速度を下げ、ラインを表示した状態に戻します。"
       },
       {
-        name: "回避初動の網膜スリップ検知と最短ショートサッケード",
-        desc: "Krauzlis（2004）が示すように、急変時に無理に滑動追従を引き延ばそうとせず、短い跳躍サッケードで即座に位置誤差をリセットするのが最適解です。",
-        tips: "標的が方向を変えた瞬間に粘らず、ピッと鋭く視線を飛ばして新軌道の中心へ跳躍させます。"
+        "name": "カーソルではなく標的を見る",
+        "desc": "ポインターは補助にすぎません。カーソルではなく標的を目で追い、肩と手の力を抜きます。",
+        "tips": "首や頭が一緒に動いていないかときどき確認します。"
       },
       {
-        name: "着弾直後の滑動追従ゲイン即時復帰（オーバーシュート抑制）",
-        desc: "Rashbass（1961）およびBarnes（2008）が指摘するように、サッケード着弾後に視線を行き過ぎさせず、即座に標的速度と同調させることが鍵です。",
-        tips: "跳躍直後に視線を固まらせず、そのまま標的の新しい進行速度へ滑らかに乗り継ぐ意識を持ちます。"
+        "name": "一度に一つだけ難しくする",
+        "desc": "速度、ライン非表示、ランダム速度は別々に上げます。快適さが崩れたら前の設定に戻します。",
+        "tips": "設定を変えたら新しい記録として比べます。"
       },
       {
-        name: "144Hz+ 高リフレッシュレート環境による旋回初動の視認",
-        desc: "Woods et al.（2015）の通り、144Hz以上のディスプレイは方向転換の第1フレームを鮮明に描画し、脳の初動知覚を物理的に約10ms早めます。",
-        tips: "ゲーミングモニターを使用し、適切な作業照明を維持して外眼筋の疲労をコントロールしてください。"
+        "name": "短く区切って休む",
+        "desc": "5〜10分を目安にし、まばたきして遠くを見て休みます。長くやるほど良いわけではありません。",
+        "tips": "痛み、めまい、吐き気があればすぐ中止します。"
       }
     ]
   },
-  steps: [
-    "速度倍率（0.5x〜2.0x）とセッション時間（60秒）を設定し、ドリルを開始します。",
-    "画面から約50〜70cm離れ、頭部を完全に動かさない姿勢を確立します。",
-    "直線軌道を移動するターゲットを滑らかに追従します。",
-    "ターゲットが急旋回・回避行動を起こした瞬間、即座に補正サッケードを発射して中心視野へ戻します。",
-    "セッション終了後、回避旋回への即応性と視線保持率を振り返り、次回セッションに活かします。"
+  "steps": [
+    "画面から楽な距離に座り、肩と手の力を抜きます。",
+    "30〜60秒、遅い速度、ライン表示で始めます。",
+    "カーソルではなく標的を目で追います。",
+    "慣れたら速度を上げるか、設定を一つずつ追加します。"
   ],
-  audience: "競技FPS（Apex Legends, Overwatch, VALORANT）プレイヤー、格闘ゲーム選手、球技アスリート（テニス、卓球、サッカー、バスケットボール）、突発的な回避運動に対する動体視力と反射神経を高めたいすべての実践者。",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
+  "audience": "急に向きを変える標的を目で追う練習を気軽に試したい人、動く標的を目で追う感覚をゲーム感覚で練習したい人。"
+},
+  faqs,
   sources: pickSources('bahill1980', 'rashbass1961', 'krauzlis2004', 'robinson1965', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング" },
-    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "カオス方向追従テスト" },
-    { href: "/ja/drills/visual-tracking/sine-wave-pursuit", label: "正弦波追従トレーニング" },
-    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字ループ追従運動" },
-    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "予測視線追従トレーニング" },
-    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "視線固視安定性トレーニング" }
-  ]
+  {
+    "href": "/ja/drills/visual-tracking/constant-slow-pursuit",
+    "label": "ゆっくり動く点を目で追う練習"
+  },
+  {
+    "href": "/ja/drills/visual-tracking/directional-chaos-pursuit",
+    "label": "ランダムに揺れ動く標的を目で追う練習"
+  },
+  {
+    "href": "/ja/drills/visual-tracking/ghosting-suppress-pursuit",
+    "label": "残像トレイルに惑わされず標的を追う練習"
+  },
+  {
+    "href": "/ja/drills/visual-tracking/infinity-pursuit",
+    "label": "8の字眼球運動トレーニング"
+  }
+],
 };
 
 export default function LocalizedPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <DynamicEvasionPursuitClient
         copy={{
-          title: "標的回避追従トレーニング",
-          subtitle: "急旋回ターゲット再捕捉＆サッケード反射訓練",
-          description: "回避行動を取る標的の追従では、直線軌道中の滑動追従と、急激な方向転換時の補正サッケードの素早い切り替えが求められます（Rashbass, 1961）。標的が照準を逃れるように急転換した瞬間、約150〜200msの神経遅延を最小化して即座に中心窩へ引き戻し、追従ゲインを再確立します（Krauzlis, 2004; Barnes, 2008）。"
+          title: name,
+          subtitle: "直線移動と突然の方向転換",
+          description: "急に向きを変える標的を目で追う練習です。標的は約0.5秒ごとに方向を変えます。ブラウザは視線を記録せずスコアもないため、結果は練習の記録として見てください。",
         }}
       />
       <DrillGuide guide={guideProps} />

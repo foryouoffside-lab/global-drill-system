@@ -4,330 +4,256 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
+import { breadcrumbItems } from '@/lib/i18n/breadcrumbLabels';
+
+const url = 'https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit';
+const name = "Exercice de poursuite oculaire chaotique";
+const title = `${name} | SkillDrills`;
+const description = "Exercice de poursuite oculaire chaotique gratuit : la cible change sans cesse de direction et de vitesse et rebondit sur les bords. Vitesse et durée réglables.";
 
 export const metadata = {
-  title: "Exercice de poursuite oculaire chaotique | SkillDrills",
-  description: "Rattrapez une cible qui change de direction et de vitesse. Travaillez la réactivité visuelle, les saccades et la vision dynamique en ligne.",
-  keywords: [
-    "poursuite oculaire",
-    "suivi visuel réactif",
-    "saccades de rattrapage",
-    "trajectoire imprévisible",
-    "réactivité visuelle",
-    "vision dynamique exercice",
-    "refixation fovéale",
-    "mouvements oculaires exercice",
-    "agilité visuelle en ligne",
-    "coordination œil-main",
-    "suivi de cible",
-    "test visuel gratuit"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit",
-    languages: getAlternateLanguages("/drills/visual-tracking/directional-chaos-pursuit"),
-  },
+  title,
+  description,
+  keywords: ["exercice de poursuite oculaire chaotique","poursuite oculaire chaotique","cible imprévisible","suivre une cible des yeux","changements de direction","exercice des yeux navigateur"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/directional-chaos-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'fr_FR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Exercice de poursuite oculaire chaotique | SkillDrills",
-    description: "Rattrapez une cible qui change de direction et de vitesse. Travaillez la réactivité visuelle, les saccades et la vision dynamique en ligne.",
-    url: "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit",
-    siteName: "SkillDrills",
-    locale: "fr_FR",
-    type: "website",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Exercice de poursuite oculaire chaotique | SkillDrills",
-    description: "Rattrapez une cible imprévisible et entraînez la réactivité du regard gratuitement en ligne.",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Poursuite Visuelle",
-      "item": "https://skilldrills.online/fr/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Poursuite Chaotique Directionnelle",
-      "item": "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems('fr', url, 'visual-tracking', name, true),
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "Poursuite Chaotique Directionnelle – Entraînement Oculaire",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Navigateur",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Test de Poursuite Oculaire Chaotique et Récupération Saccadique",
-  "url": "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "JavaScript et Canvas HTML5 requis",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Exercice de poursuite oculaire chaotique (application web)",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navigateur récent compatible HTML5 Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Poursuite Chaotique Directionnelle – Entraîneur de Motricité Oculaire",
-  "description": "Entraîneur visuel réflexe sur navigateur pour suivre des cibles aux trajectoires imprévisibles sans anticipation motrice.",
-  "genre": ["Entraînement de la motricité oculaire", "Entraînement visuel sportif", "Entraînement à la visée"],
-  "playMode": "Un joueur",
-  "applicationCategory": "Game",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name,
+  url,
+  description,
+  genre: ['Visual training', 'Eye tracking exercise'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Comment Entraîner la Récupération Saccadique en Poursuite Chaotique",
-  "description": "Protocole pour conditionner des réflexes visuo-moteurs réactifs rapides face à des mouvements erratiques.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Stabilisez Votre Posture et Isolez les Yeux",
-      "text": "Asseyez-vous le dos droit à 50-60 cm de l'écran. Gardez la tête et le cou parfaitement immobiles pour forcer le travail exclusif des muscles oculomoteurs sans réflexe vestibulo-oculaire.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Sélectionnez Votre Vitesse de Référence",
-      "text": "Commencez à 1.0x pour habituer la rétine périphérique aux rebonds et aux accélérations stochastiques sans saturation.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Déclenchez des Saccades de Rattrapage Immédiates",
-      "text": "Lorsqu'une brusque rupture survient, n'essayez pas de deviner la trajectoire. Laissez la rétine détecter le glissement et déclenchez une microsaccade pour replacer la fovéa.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Maintenez des Séries Courtes et Intenses",
-      "text": "Effectuez 5 à 8 séries de 60 secondes avec des pauses pour préserver la réactivité synaptique maximale de vos centres visuels.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Comment faire : Exercice de poursuite oculaire chaotique",
+  description: "Exercice de poursuite oculaire chaotique en quatre étapes simples.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Installez-vous confortablement",
+    "text": "Asseyez-vous à une distance confortable de l'écran, épaules et main détendues."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Repérer les changements",
+    "text": "Quand la cible change de direction, recalez calmement le regard sur elle."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Suivez avec les yeux",
+    "text": "Suivez la cible des yeux, pas le curseur, et terminez la séance de 30 à 120 secondes."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Changez un réglage à la fois",
+    "text": "Augmentez ensuite la vitesse, ou ajoutez Masquer la ligne ou la vitesse aléatoire, un réglage à la fois."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Qu'est-ce que l'exercice de poursuite oculaire chaotique ?",
+    "a": "Un exercice dans le navigateur où vous suivez des yeux une cible aux changements de direction imprévisibles. Durée (30 à 120 secondes), vitesse, taille et ligne sont réglables. Ce n'est ni un test de vue ni une thérapie."
+  },
+  {
+    "q": "Comment la cible se déplace-t-elle ?",
+    "a": "À chaque image, une petite impulsion aléatoire s'ajoute à sa vitesse, dans la limite d'une vitesse maximale. Au bord, elle rebondit et accélère légèrement. Elle ne réagit pas au curseur."
+  },
+  {
+    "q": "Mesure-t-il le mouvement de mes yeux ?",
+    "a": "Non. Le navigateur ne voit pas votre regard ; il connaît seulement la position dessinée de la cible et vos réglages. Le curseur n'est qu'une aide et ne prouve pas où vous regardez. Il n'y a pas de score."
+  },
+  {
+    "q": "Que change la vitesse aléatoire ?",
+    "a": "La vitesse de la cible varie de façon irrégulière, elle devient plus difficile à anticiper. Activez-la une fois la vitesse de base confortable, et pas en même temps que le masquage de la ligne."
+  },
+  {
+    "q": "Faut-il laisser la ligne visible ?",
+    "a": "Une ligne visible aide à anticiper le mouvement au début. Vous pourrez la masquer ensuite pour corser l'exercice. Il n'y a pas de bon choix : comparez uniquement des réglages identiques."
+  },
+  {
+    "q": "Quels réglages pour commencer ?",
+    "a": "Des séances de 30 à 60 secondes, une vitesse lente (0,5 à 1,0×) et la ligne visible. La vitesse va de 0,5 à 9,0× et la taille de cible de 10 à 50 px ; changez un seul réglage à la fois."
+  },
+  {
+    "q": "Cet exercice améliore-t-il ma vue ou mon aim ?",
+    "a": "Rien ne le garantit. C'est un exercice pour suivre une cible des yeux ; il ne promet ni meilleure vue, ni traitement d'un trouble visuel, ni meilleure visée en FPS. En cas de gêne oculaire, consultez un professionnel."
+  },
+  {
+    "q": "L'écran et l'environnement comptent-ils ?",
+    "a": "Oui. Fréquence d'affichage, luminosité, contraste, taille et distance de l'écran et navigateur changent l'apparence de la cible. La latence d'entrée et d'affichage joue aussi (Woods et al., 2015) : comparez dans les mêmes conditions."
+  },
+  {
+    "q": "Combien de temps pratiquer ?",
+    "a": "Par blocs courts de 5 à 10 minutes avec des pauses. Si les yeux fatiguent ou sèchent, arrêtez, clignez et regardez au loin. Douleur, vertige, nausée ou mal de tête : arrêtez."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Qu’est-ce que l’exercice de poursuite chaotique directionnelle ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "C’est un exercice de motricité oculaire avancée où la cible subit des variations de vitesse imprévisibles et des rebonds stochastiques, neutralisant les modèles prédictifs cérébelleux pour forcer un contrôle réflexe en boucle fermée."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qu’appelle-t-on une saccade de rattrapage ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Lorsqu’une cible change brutalement de vecteur, sa vitesse dépasse les limites de la poursuite fluide (~30°/s), créant un glissement rétinien. Le colliculus supérieur déclenche alors un saut oculaire balistique de 150 à 200 ms pour replacer la cible sur la fovéa."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "En quoi ce test chaotique diffère-t-il d’un suivi de trajectoire prévisible (cercle, Lissajous) ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sur des trajectoires prévisibles, le cervelet anticipe le mouvement avec une latence quasi nulle (Bahill et al., 1980). Dans le mouvement chaotique, aucune trajectoire ne se répète : l'anticipation échoue, exigeant un traitement visuel réactif en temps réel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quel est l’intérêt direct de cet entraînement pour le suivi dans les jeux de tir (FPS) ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dans les jeux de tir, les adversaires changent de direction pour casser la visée. Cet exercice fait travailler la reprise de cible après un changement brusque ; le transfert vers le jeu n’est pas démontré par ce test."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi est-il indispensable de garder la tête immobile pendant l’exercice ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bouger la tête active le réflexe vestibulo-oculaire (RVO) issu de l’oreille interne, ce qui soulage artificiellement les muscles oculaires. L’immobilité de la tête fait peser davantage de charge sur les muscles extraoculaires."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quel est le volume d’entraînement quotidien conseillé ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nous préconisons 5 à 10 minutes par jour (5 à 8 sessions de 60 secondes). En raison de la forte sollicitation attentionnelle et des saccades répétées, des sessions concises évitent la fatigue oculaire et maximisent l'apprentissage moteur."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que faire si la cible accélère et que je perds totalement son suivi ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Si vous perdez la cible, évitez de balayer l’écran au hasard. Fixez le regard au centre, détectez l'apparition périphérique du mouvement et lancez une saccade nette vers le nouveau vecteur. Réduisez à 0.8x si nécessaire."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quel est l’impact de la fréquence de rafraîchissement de l’écran (Hz) sur la performance de suivi ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un écran gamer à 144 Hz ou 240 Hz abaisse le délai d’affichage sous les 4 ms (Woods et al., 2015). Cela permet à l'œil d'enregistrer les ruptures de trajectoire avec une clarté temporelle supérieure, optimisant le timing des saccades correctives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cet entraînement apporte-t-il des bénéfices concrets dans les sports réels (tennis, football) ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les balles à effet et les rebonds irréguliers sollicitent le même type de reprise du regard. Cet exercice reproduit ce mécanisme sur écran, mais il ne prouve pas de gain en tennis ou en football."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ce test de poursuite chaotique est-il gratuit et sans risque pour les yeux ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, l’outil est 100 % gratuit, fonctionne directement dans votre navigateur web sans inscription, et toutes vos données de vitesse et scores restent strictement enregistrés dans la mémoire locale de votre appareil."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'fr',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Bases Neuroscientifiques de la Poursuite Oculaire Chaotique et des Saccades",
-  intro: [
-    "Cet exercice de poursuite oculaire chaotique vous demande de suivre du regard une cible dont la direction et la vitesse changent sans prévenir. Vous ne pouvez pas anticiper : chaque virage oblige l’œil à rattraper la cible par une saccade. Ce n’est pas un test médical ; il sert d’entraînement et de repère personnel.",
-    "La plupart des exercices de suivi visuel recourent à des figures géométriques prévisibles, ce qui permet aux circuits cérébelleux de remplacer la boucle sensorielle en temps réel par une commande motrice prédictive (Bahill, Iandolo, & Troost, 1980). La Poursuite Chaotique Directionnelle élimine ce raccourci : des perturbations vectorielles continues et des rebonds aléatoires empêchent toute prédiction, contraignant les centres oculomoteurs à opérer dans une boucle réflexe de rétroaction.",
-    "Dynamique des Saccades de Rattrapage et Glissement Rétinien : dès qu'une rupture ou une accélération imprévue survient, la vitesse angulaire dépasse la capacité de la poursuite fluide (~30°/s), projetant l'image hors de la fovéa centrale. Le cortex visuel et le colliculus supérieur mesurent l'erreur de position et déclenchent une saccade corrective en 150 à 200 ms (Rashbass, 1961 ; Krauzlis, 2004 ; Barnes, 2008). La rapidité avec laquelle le regard recentre la cible et rétablit le niveau de poursuite définit l'agilité oculomotrice de haut niveau.",
-    "Latence Matérielle et Échantillonnage Temporel : les écrans standards à 60 Hz ajoutent jusqu'à 16,7 ms de latence d'affichage, tandis que les dalles à 144 Hz ou 240 Hz réduisent ce délai sous 4,2 ms (Woods et al., 2015). Cet outil fonctionne intégralement dans le navigateur, assurant la protection absolue de vos données avec un stockage exclusivement local."
+  ...{
+  "heading": "Guide : Exercice de poursuite oculaire chaotique",
+  "intro": [
+    "Dans cet exercice de poursuite oculaire chaotique, la cible reçoit à chaque image une petite impulsion aléatoire : sa direction et sa vitesse changent en permanence et elle rebondit sur les bords. Sans trajectoire fixe, impossible de l'anticiper vraiment ; quand elle prend de l'avance, une saccade de rattrapage la ramène en général dans le regard central (Krauzlis, 2004).",
+    "Le navigateur connaît seulement la position dessinée de la cible et vos réglages, pas l'endroit où regardent vos yeux. Il n'y a pas de score : seules les séances terminées sont comptées. Le résultat est un repère d'entraînement reproductible, pas une mesure clinique ni un test de vue.",
+    "Gardez une distance confortable et comparez toujours le même écran et le même navigateur. La fréquence d'affichage et le périphérique d'entrée changent le rendu (Woods et al., 2015). Arrêtez en cas de douleur, vertige, nausée ou vision floue persistante."
   ],
-  benchmarks: {
-    title: "Normes de Performance en Poursuite Chaotique et Récupération Saccadique",
-    headers: ["Niveau de Performance", "Multiplicateur de Vitesse", "Délai de Refixation et Stabilité du Regard", "Profil Neuromoteur et Oculaire"],
-    rows: [
-      ["Niveau 1 : Apex Réactif – Réflexes Avancés", "2.0x+ Ultra-Vitesse", "La saccade corrective intervient dès la rupture de trajectoire ; refixation fluide et immédiate sur le nouveau vecteur.", "Vitesse de transmission synaptique optimale entre rétine et noyaux oculomoteurs. Niveau de référence de l’exercice, sans valeur de classement."],
-      ["Niveau 2 : Récupération Saccadique Supérieure", "1.4x – 1.9x Haute Vitesse", "Recentrage fovéal rapide avec dépassement oscillatoire minime ; poursuite fluide rétablie en moins de 180 ms.", "Coordination remarquable des muscles oculomoteurs externes. Excellente réactivité face aux variations d’angles brutales."],
-      ["Niveau 3 : Standard Fonctionnel Solide", "1.0x – 1.3x Vitesse Standard", "Poursuite régulière de la trajectoire ; bref délai de latence lors des rebonds à angles très aigus.", "Profil habituel de l’adulte sain. Parfaitement adapté à la conduite, aux sports de loisir et aux jeux vidéo."],
-      ["Niveau 4 : Refixation Retardée – Pratique Recommandée", "0.7x – 0.9x Vitesse Modérée", "La cible s’échappe fréquemment de la zone fovéale ; plusieurs saccades successives sont nécessaires pour retrouver l’alignement.", "Latence sensori-motrice accrue lors des changements de cap. Entraînement recommandé à vitesses réduites."],
-      ["Niveau 5 : Instabilité Oculaire – Débutant", "< 0.7x Basse Vitesse", "Décrochage oculaire fréquent ; le regard balaie l’écran de manière désordonnée au lieu d’accompagner la cible.", "Le contrôle fondamental de motilité doit d’abord être renforcé sur des trajectoires sinusoïdales prévisibles avant cet exercice."]
+  "benchmarks": {
+    "title": "Repères d'entraînement",
+    "headers": [
+      "Étape",
+      "Objectif"
     ],
-    note: "Barèmes établis d’après la cinématique oculomotrice et la correction saccadique sous perturbations chaotiques (Bahill et al., 1980 ; Barnes, 2008 ; Krauzlis, 2004 ; Robinson, 1965)."
+    "rows": [
+      [
+        "1",
+        "Vitesse lente, ligne visible"
+      ],
+      [
+        "2",
+        "Tenir la vitesse de base sans effort"
+      ],
+      [
+        "3",
+        "Rester sur la cible malgré les changements"
+      ],
+      [
+        "4",
+        "Masquer la ligne"
+      ],
+      [
+        "5",
+        "Ajouter la vitesse aléatoire"
+      ]
+    ],
+    "note": "Ce tableau est un repère d'entraînement SkillDrills. Ce n'est ni une norme visuelle, ni une statistique d'utilisateurs, ni un percentile."
   },
-  techniques: {
-    title: "Quatre techniques pour améliorer la récupération saccadique",
-    items: [
+  "techniques": {
+    "title": "4 conseils pratiques",
+    "items": [
       {
-        name: "Stabilisez la tête pour isoler la motricité oculaire",
-        desc: "Garder la tête et la mâchoire immobiles réduit la participation du réflexe vestibulo-oculaire et laisse la correction du regard aux muscles oculomoteurs externes.",
-        tips: "Asseyez-vous à 50–70 cm de l’écran, posez les pieds au sol et faites une pause en cas de brûlure ou de vision double."
+        "name": "Ne pas trop anticiper",
+        "desc": "La trajectoire change à chaque fois. N'essayez pas de deviner la prochaine position : gardez la cible au centre du regard et revenez dessus d'un seul mouvement.",
+        "tips": "Si c’est inconfortable, baissez la vitesse et réaffichez la ligne."
       },
       {
-        name: "Lisez le nouveau vecteur avant de refixer le regard",
-        desc: "Après un virage, la rétine périphérique détecte le glissement avant que la fovéa ne retrouve la cible. Une saccade brève et dirigée est plus efficace qu’un balayage de l’écran.",
-        tips: "Observez le premier déplacement après le changement puis sautez vers le centre probable de la cible sans suivre sa traînée."
+        "name": "Regarder la cible, pas le curseur",
+        "desc": "Le pointeur n’est qu’une aide. Suivez la cible des yeux et relâchez épaules et main.",
+        "tips": "Vérifiez de temps en temps que la tête et le cou ne tournent pas avec."
       },
       {
-        name: "Réagissez au mouvement visible sans anticiper",
-        desc: "La trajectoire ne répétant pas un schéma fiable, deviner le prochain virage augmente les erreurs directionnelles. L’exercice doit s’appuyer sur l’information qui vient d’apparaître.",
-        tips: "Si vous attendez une courbe connue, réduisez la vitesse et réagissez uniquement au déplacement réellement observé."
+        "name": "Une difficulté à la fois",
+        "desc": "Augmentez séparément la vitesse, le masquage de la ligne et la vitesse aléatoire. Si le confort baisse, revenez au réglage précédent.",
+        "tips": "Après chaque changement, comparez à nouveau."
       },
       {
-        name: "Progressez par vitesse et repos mesurés",
-        desc: "La qualité de la refixation compte davantage qu’une vitesse élevée avec des pertes constantes. Des séries courtes permettent de comparer la stabilité sans accumuler la fatigue.",
-        tips: "Commencez à 1.0x, augmentez par petits paliers lorsque la cible est récupérée régulièrement et reposez vos yeux entre les séries."
+        "name": "Séances courtes, pauses régulières",
+        "desc": "Travaillez par blocs de 5 à 10 minutes, clignez des yeux et regardez au loin. Plus long n’est pas forcément mieux.",
+        "tips": "Douleur, vertige ou nausée : arrêtez immédiatement."
       }
     ]
   },
-  steps: [
-    "Asseyez-vous à 50–70 cm de l’écran, alignez votre posture et gardez la tête et la mâchoire immobiles.",
-    "Commencez à 1.0x pendant une série de 60 secondes pour observer la fréquence des pertes de cible.",
-    "Lorsque la cible tourne, détectez le nouveau vecteur en vision périphérique et déclenchez une courte saccade pour recentrer la fovéa.",
-    "Reprenez la poursuite continue dès que la cible est retrouvée ; ne balayez pas l’écran au hasard.",
-    "Effectuez 5 à 8 séries avec des pauses, notez la vitesse à laquelle la stabilité baisse et utilisez-la pour régler la séance suivante."
+  "steps": [
+    "Asseyez-vous à une distance confortable, épaules et main détendues.",
+    "Commencez par 30 à 60 secondes, vitesse lente, ligne visible.",
+    "Suivez la cible des yeux, pas le curseur.",
+    "Augmentez ensuite la vitesse ou un seul réglage à la fois."
   ],
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
+  "audience": "Toute personne qui veut essayer « Exercice de poursuite oculaire chaotique » dans le navigateur et s'exercer à suivre une cible mobile de façon ludique."
+},
+  faqs,
   sources: pickSources('bahill1980', 'barnes2008', 'krauzlis2004', 'robinson1965', 'rashbass1961', 'woods2015'),
   related: [
-    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite Oculaire Lente" },
-    { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite en Onde Sinusoïdale" },
-    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Poursuite en Huit Infini" },
-    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite Évasive Dynamique" }
-  ]
+  {
+    "href": "/fr/drills/visual-tracking/constant-slow-pursuit",
+    "label": "Exercice de Poursuite Visuelle"
+  },
+  {
+    "href": "/fr/drills/visual-tracking/dynamic-evasion-pursuit",
+    "label": "Poursuite oculaire : cible qui esquive"
+  },
+  {
+    "href": "/fr/drills/visual-tracking/ghosting-suppress-pursuit",
+    "label": "Poursuite avec traînée visuelle"
+  },
+  {
+    "href": "/fr/drills/visual-tracking/infinity-pursuit",
+    "label": "Exercice des yeux en huit couché"
+  }
+],
 };
 
-export default function DirectionalChaosPursuitPageFr() {
+export default function LocalizedPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <DirectionalChaosPursuitClient
         copy={{
-          title: "Exercice de poursuite oculaire chaotique",
-          subtitle: "Entraînement aux Saccades de Rattrapage et Refixation Visuelle",
-          description: "Face à des trajectoires imprévisibles et des rebonds stochastiques, le cerveau ne peut exploiter les modèles prédictifs du cervelet. Le système oculomoteur bascule en boucle réflexe fermée, déclenchant des saccades de rattrapage rapides pour ramener immédiatement la cible sur la fovéa centrale (Bahill et al., 1980; Krauzlis, 2004)."
+          title: name,
+          subtitle: "Garder des yeux une cible imprévisible",
+          description: "Exercice de poursuite oculaire chaotique : la cible change sans cesse de direction et de vitesse. Le navigateur n'enregistre pas votre regard et il n'y a pas de score ; voyez le résultat comme un repère d'entraînement, pas comme un examen médical.",
         }}
       />
       <DrillGuide guide={guideProps} />

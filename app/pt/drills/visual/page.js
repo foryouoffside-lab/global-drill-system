@@ -6,45 +6,30 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const visualDrills = DRILLS.filter((d) => d.category === 'visual');
 
 export const metadata = {
-  title: 'Treino Visual & Teste de Visão Online | SkillDrills',
-  description: 'Treino visual online: 9 exercícios de acuidade visual dinâmica, percepção de profundidade, rastreamento ocular e velocidade de reação.',
-  keywords: [
-    'teste de visao online gratis', 'exercicios de ginastica ocular', 'teste de acuidade visual dinamica',
-    'percepcao de profundidade teste', 'teste de visao estereoscopica', 'tempo de reacao visual online',
-    'teste de reflexo de luz', 'rastreamento ocular continuo', 'movimentos oculares sacadicos',
-    'busca visual atencao seletiva', 'campo visual util treinamento', 'exercicios para fadiga ocular tela',
-    'discriminacao temporal visual', 'rastreamento de multiplos objetos mot', 'treinamento de visao esportiva'
-  ],
+  title: 'Treino visual online: reação e rastreamento | SkillDrills',
+  description: 'Treino visual online: 9 exercícios grátis no navegador para reação visual, rastreamento de alvos, busca visual e noção de distância. Não é exame de vista.',
+  keywords: ['treino visual online', 'exercícios visuais', 'rastreamento de alvos', 'busca visual', 'jogos de atenção visual', 'percepção de profundidade', 'reação à luz', 'rastreamento de múltiplos objetos'],
   openGraph: {
-    title: 'Treino Visual & Teste de Visão Online | SkillDrills',
-    description: 'Treino visual online: 9 exercícios de acuidade visual dinâmica, percepção de profundidade, rastreamento ocular e velocidade de reação.',
+    title: 'Treino visual online: reação e rastreamento | SkillDrills',
+    description: 'Treino visual online: 9 exercícios grátis no navegador para reação visual, rastreamento de alvos, busca visual e noção de distância. Não é exame de vista.',
     type: 'website',
     url: 'https://skilldrills.online/pt/drills/visual',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Treinamento de Visão e Acuidade Visual no SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Treino visual online no SkillDrills' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Treino Visual & Teste de Visão Online | SkillDrills',
-    description: '9 exercícios de acuidade visual dinâmica, percepção de profundidade, rastreamento ocular e velocidade de reação.',
+    title: 'Treino visual online: reação e rastreamento | SkillDrills',
+    description: 'Treino visual online: 9 exercícios grátis no navegador para reação visual, rastreamento de alvos, busca visual e noção de distância. Não é exame de vista.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/visual',
-    languages: getAlternateLanguages('/pt/drills/visual'),
+    languages: getAlternateLanguages('/drills/visual'),
   },
 };
-
-Object.assign(metadata, {
-  title: 'Visão dinâmica e busca visual | SkillDrills',
-  description: '9 exercícios gratuitos no navegador para visão dinâmica, busca visual, tempo de reação, rastreamento de alvos e percepção de profundidade.',
-  keywords: ['teste de visão dinâmica', 'busca visual teste', 'tempo de reação visual', 'visão periférica treino', 'movimento ocular', 'percepção de profundidade', 'reação visual', 'rastreamento de múltiplos objetos', 'treino visual grátis'],
-  openGraph: { ...metadata.openGraph, title: 'Visão dinâmica e busca visual | SkillDrills', description: '9 exercícios gratuitos para visão dinâmica, busca visual, tempo de reação e rastreamento de alvos.' },
-  twitter: { ...metadata.twitter, title: 'Visão dinâmica e busca visual | SkillDrills', description: 'Treine visão dinâmica e busca visual com 9 exercícios gratuitos.' },
-  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -52,7 +37,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
     { "@type": "ListItem", "position": 2, "name": "Exercícios de Desempenho", "item": "https://skilldrills.online/pt/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Percepção Visual & Profundidade", "item": "https://skilldrills.online/pt/drills/visual" }
+    { "@type": "ListItem", "position": 3, "name": "Treino Visual", "item": "https://skilldrills.online/pt/drills/visual" }
   ]
 };
 
@@ -60,10 +45,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "name": "Treinamento de Percepção Visual & Profundidade (9 Exercícios)",
+  "dateModified": "2026-11-12",
+  "name": "Treino visual online (9 exercícios)",
   "url": "https://skilldrills.online/pt/drills/visual",
-  "description": "9 exercícios interativos de acuidade visual dinâmica, visão estereoscópica, perseguição ocular suave, busca visual e reflexo luminoso.",
+  "description": "9 exercícios grátis no navegador para reação visual, controle de impulsos, alvos em movimento, vários objetos, busca visual e estimativa de distância.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": visualDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'pt', drill.name);
@@ -83,70 +68,70 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Como o treinamento da acuidade visual dinâmica (AVD) melhora o desempenho esportivo e nos eSports?",
+      "name": "O treino visual no navegador ajuda no esporte ou em jogos FPS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ao contrário da acuidade estática na tabela de Snellen, a acuidade visual dinâmica avalia a capacidade da fóvea central de manter imagens retinianas nítidas de objetos em movimento rápido. Rastrear trajetórias imprevisíveis na tela pratica a atenção visual ao movimento; os efeitos em esportes ou jogos não são garantidos."
+        "text": "Os exercícios praticam acompanhar alvos em movimento com o olhar e o mouse, reagir a sinais visuais e procurar alvos. Uma melhora no esporte ou em jogos FPS não é garantida. Use-os como prática extra e compare seus próprios resultados no mesmo aparelho."
       }
     },
     {
       "@type": "Question",
-      "name": "O que avalia o teste de percepção de profundidade baseado no princípio das três hastes?",
+      "name": "O exercício de distância testa a visão em profundidade (3D)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Este exercício usa pistas de profundidade e disparidade binocular — a sutil discrepância geométrica projetada na retina de cada olho. Identificar o momento exato em que objetos móveis se alinham no mesmo plano espacial ajuda a estimar distâncias, mas o exercício na tela não substitui exames de visão nem avalia a condução."
+        "text": "Não. Uma tela plana não tem disparidade binocular, então a visão estereoscópica não é avaliada. Uma esfera se aproxima e cresce na tela; você clica quando ela chega à profundidade marcada. O que se pratica é estimar distância e timing."
       }
     },
     {
       "@type": "Question",
-      "name": "Por que o rastreamento de múltiplos objetos (MOT) expande a visão periférica?",
+      "name": "O que treina o rastreamento de múltiplos objetos (MOT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O protocolo MOT recruta a atenção visuoespacial dividida no córtex parietal posterior e a memória de trabalho visual. Fixar a visão central enquanto se rastreia simultaneamente alvos circundantes exercita a atenção distribuída no campo visual (UFOV); os efeitos fora da tela não são garantidos."
+        "text": "Você acompanha alvos marcados entre objetos idênticos em movimento. Isso exige atenção dividida e memória de trabalho visual. Não há prova de que amplie o campo visual ou melhore o desempenho no trânsito."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual é a diferença funcional entre a perseguição ocular suave (Smooth Pursuit) e os movimentos sacádicos?",
+      "name": "Qual a diferença entre perseguição ocular suave e sacadas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A perseguição contínua (Smooth Pursuit) permite que os olhos deslizem suavemente acompanhando a trajetória contínua de um objeto sem perda de nitidez fóvea. Já as sacadas são saltos balísticos rápidos durante os quais ocorre supressão sacádica momentânea. Praticar perseguição ocular na tela ajuda a perceber quando você precisa de sacadas corretivas."
+        "text": "Na perseguição suave os olhos seguem um alvo em movimento de forma contínua; sacadas são saltos rápidos do olhar. Os exercícios de rastreamento pedem sobretudo perseguição, mas o site não mede seus movimentos oculares."
       }
     },
     {
       "@type": "Question",
-      "name": "Como o teste de reação à luz isola a velocidade reflexa pura?",
+      "name": "O que mede o exercício de reação à luz?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Diferente de testes cognitivos que exigem escolha ou resolução mental, o teste de reação à luz mede o intervalo entre o aparecimento do estímulo na tela e o seu clique, em milissegundos, incluindo atrasos de tela e mouse."
+        "text": "O tempo entre o sinal luminoso na tela e o seu clique. O resultado inclui atrasos da tela, do mouse e do navegador; não é um tempo neural puro."
       }
     },
     {
       "@type": "Question",
-      "name": "Quais circuitos neurais são condicionados pelos exercícios de busca visual em matrizes densas?",
+      "name": "O que treina a busca visual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tarefas de busca visual em meio a distratores rotacionados ativam o córtex visual associativo (V4) e os mecanismos de controle inibitório no córtex pré-frontal dorsolateral. Essa prática exercita a busca de padrões geométricos relevantes entre distratores."
+        "text": "Você procura um alvo entre elementos que distraem. Isso pratica atenção seletiva e rapidez de busca nessa tarefa; a transferência para o dia a dia varia e não é garantida."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual é a frequência e duração ideal para sessões de condicionamento visual?",
+      "name": "Meus resultados dependem do equipamento?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Recomenda-se realizar sessões curtas de 15 a 20 minutos de alta intensidade e concentração, de 3 a 5 vezes por semana. Esforço contínuo em telas cansa os olhos; faça pausas e interrompa se sentir desconforto. Sessões breves e frequentes são mais confortáveis."
+        "text": "Sim. Uma tela atualiza a cada 16,7 ms a 60 Hz, 6,9 ms a 144 Hz e 4,1 ms a 240 Hz. Compare sessões usando a mesma tela, o mesmo mouse e o mesmo navegador."
       }
     },
     {
       "@type": "Question",
-      "name": "Os exercícios de treino visual online substituem consultas regulares com oftalmologista?",
+      "name": "Quanto tempo deve durar uma sessão?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. Nossos testes e exercícios interativos são ferramentas de aprimoramento sensoriomotor e agilidade visual para atletas, gamers e profissionais, não constituindo exames médicos de refração, diagnóstico clínico de patologias ou avaliação da saúde do fundo de olho, os quais exigem acompanhamento com médico oftalmologista credenciado."
+        "text": "Não existe duração ideal comprovada. Faça sessões curtas e regulares, olhe para longe nas pausas e pare se sentir cansaço, dor de cabeça ou desconforto."
       }
     }
   ]

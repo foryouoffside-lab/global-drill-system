@@ -4,40 +4,36 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
+const URL = "https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid";
+const TITLE = "Codes im Raster finden – visuelles Suchspiel | SkillDrills";
+const DESCRIPTION = "Codes im Raster finden: Klicke in 45 Sekunden jede Kopie des Zielcodes in einem 10 × 10-Raster aus zweistelligen Codes, während sich Ablenker ständig ändern.";
+
 export const metadata = {
-  title: "Visuelle Suche | Selektive Aufmerksamkeit | SkillDrills",
-  description: "Kostenloses visuelles Suchtraining: Finde Zielzeichen in einer 10×10-Matrix trotz wechselnder Ablenker. Übe selektive Aufmerksamkeit. Kein Diagnosetest.",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "visuelle Suche",
-    "visuelle Aufmerksamkeit",
-    "selektive Aufmerksamkeit",
-    "visuelles Scannen",
-    "Konzentration Raster",
-    "Aufmerksamkeitstest",
-    "Störreize filtern",
-    "Merkmalsintegration",
-    "visuelle Suchgeschwindigkeit",
-    "Informationsverarbeitungsgeschwindigkeit",
-    "peripheres Sehen",
-    "kognitives Training"
+    "Codes im Raster finden",
+    "Suchraster",
+    "visuelles Abtasten",
+    "Suchspiel online",
+    "Zeichencode finden",
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Visuelle Suche | Selektive Aufmerksamkeit | SkillDrills",
-    description: "Finde Zielzeichen in einer wechselnden 10×10-Matrix und übe selektive Aufmerksamkeit und visuelles Scannen.",
-    type: 'article',
-    url: 'https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid',
-    siteName: 'SkillDrills',
-    locale: 'de_DE',
+    title: TITLE,
+    description: DESCRIPTION,
+    type: "website",
+    url: URL,
+    siteName: "SkillDrills",
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Visuelle Suche | Selektive Aufmerksamkeit | SkillDrills",
-    description: "Finde Zielzeichen im wechselnden Raster und trainiere visuelle Aufmerksamkeit und Reizfilterung im Browser.",
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid',
-    languages: getAlternateLanguages('/drills/visual/visual-recognition/entropic-grid'),
+    canonical: URL,
+    languages: getAlternateLanguages('/drills/visual/visual-recognition/entropic-grid', 'de'),
   },
 };
 
@@ -45,294 +41,147 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Trainings-Hub",
-      "item": "https://skilldrills.online/de/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Visuelles Training",
-      "item": "https://skilldrills.online/de/drills/visual"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Visuelle Erkennung & Suche",
-      "item": "https://skilldrills.online/de/drills/visual/visual-recognition"
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "Visuelle Suche (wechselndes Raster)",
-      "item": "https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de/" },
+    { "@type": "ListItem", "position": 2, "name": "Visuelles Training", "item": "https://skilldrills.online/de/drills/visual" },
+    { "@type": "ListItem", "position": 3, "name": "Visuelle Erkennung", "item": "https://skilldrills.online/de/drills/visual/visual-recognition" },
+    { "@type": "ListItem", "position": 4, "name": "Codes im Raster finden", "item": URL }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Feature_integration_theory"],
-  "name": "SkillDrills Visuelle Suche und selektive Aufmerksamkeit",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Any",
-  "browserRequirements": "HTML5 Canvas fähiger Webbrowser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR"
-  },
-  "description": "Wissenschaftlich fundiertes Online-Instrument zur präzisen Erfassung der visuellen Suchlatenz, selektiven Aufmerksamkeit und sensorischen Reizfilterung in dynamischen Entropie-Rastern."
-};
-
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Kostenloses Training für visuelle Suche",
-  "url": "https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid",
+  "@type": "SoftwareApplication",
+  "name": "Codes im Raster finden",
   "applicationCategory": "GameApplication",
-  "genre": ["Visuelle Suche Test", "Selektive Aufmerksamkeit Test", "Kognitives Training", "Periphere Wahrnehmung"],
-  "browserRequirements": "Requires HTML5 Canvas and JavaScript",
-  "inLanguage": "de-DE"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Visuelle-Suche-Challenge im wechselnden Raster",
-  "description": "Finde und klicke vorgegebene alphanumerische Zielcodes in einer 100-Zellen-Matrix gegen dynamisch wechselndes Hintergrundrauschen unter Zeitdruck.",
-  "genre": ["Visuelle Suche", "Selektive Aufmerksamkeit", "Visuelles Scannen"],
-  "playMode": "SinglePlayer",
-  "applicationCategory": "Game"
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was ist der Entropic Grid Visuelle Suche Test (Visual Search Task)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dieser Test basiert auf dem kognitionspsychologischen Paradigma der visuellen Suche (Visual Search Paradigm), übertragen auf ein dynamisches Umfeld. In einer dichten Matrix aus 100 Zellen wechseln alle 700 Millisekunden zufällige alphanumerische Hintergrunddistraktoren. Der Nutzer muss einen oben angezeigten Zielcode (z. B. 'K7') unter stetig flimmerndem Rauschen blitzschnell identifizieren und anklicken. Anders als statische Zahlentabellen (wie der Schulte-Tisch) fordert dieser Drill die aktive zerebrale Reizfilterung und selektive visuelle Aufmerksamkeit (Selective Visual Attention) auf höchstem Niveau."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was unterscheidet parallele Pop-Out-Suche von serieller Suche?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Gemäß Anne Treismans Merkmalsintegrationstheorie (Treisman & Gelade, 1980) werden isolierte physikalische Eigenschaften wie Farben oder Orientierungen präattentiv und parallel über das gesamte Blickfeld erfasst ('Pop-Out'). Müssen jedoch mehrere Merkmale zu komplexen Formen (wie Buchstaben und Ziffern) verknüpft werden, erfordert dies eine serielle Verlagerung des Aufmerksamkeitsfokus. Fortgeschrittene Anwender nutzen das Guided-Search-Modell (Wolfe, 2007), um durch grobe Vorfilterung und gezielte Sakkaden die Suchlatenz auf ein Minimum zu reduzieren."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Vorteile bietet das Training für taktische Shooter (Valorant, CS2, Apex Legends)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wettkampforientierte FPS-Spiele zeichnen sich durch visuellen Clutter aus: Partikeleffekte, wechselnde Schatten, Rauchgranaten und komplexe Wandtexturen. Das Training stärkt die Fähigkeit des Gehirns, irrelevante optische Unruhe auszublenden und gegnerische Konturen (wie Köpfe an Peeking-Winkeln) augenblicklich hervorzuheben. Die Latenz zwischen dem Auftauchen des Ziels und dem Initiieren der Mausbewegung (Target Acquisition Latency) wird spürbar verkürzt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie lässt sich das 100-Zellen-Raster am schnellsten und fehlerfreiesten scannen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das schrittweise Ablesen Zelle für Zelle ist ineffizient. Teilen Sie die Matrix mental in vier Quadranten (oben links, oben rechts, unten links, unten rechts) ein. Fixieren Sie jeweils die Mitte eines Quadranten und erfassen Sie mit der peripheren Sicht Blöcke von 4 bis 9 Zellen gleichzeitig. Diese '4-Quadranten-Rasterabtastung' halbiert die Anzahl nötiger Mikrosakkaden und spart wertvolle Millisekunden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie verhindert man, dass das 700-ms-Flimmern der Hintergrundzeichen die Aufmerksamkeit stört?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Durch die Aktivierung des dorsalen Aufmerksamkeitsnetzwerks für eine robuste Top-Down-Steuerung. Der präfrontale Kortex muss den reflexartigen, stimulusgetriebenen Blickwechsel (Bottom-Up-Capture) aktiv hemmen. Konzentrieren Sie sich ausschließlich auf die geometrischen Schlüsselmerkmale des Zielsymbols (z. B. diagonale Striche bei 'K', Rundungen bei '8'), um irrelevante Flackerreize im visuellen Kortex herauszufiltern (Duncan & Humphreys, 1989)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie unterscheidet sich der Entropic Grid von einem klassischen Schulte-Tisch (Schulte Table)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Klassische Schulte-Tabellen bestehen aus festen Zahlen von 1 bis 25, die in aufsteigender Reihenfolge gesucht werden. Das Raster bleibt statisch und vorhersehbar. Im Entropic Grid hingegen generiert das System fortlaufend dynamisches Rauschen, und nach jedem Treffer wird sofort ein neuer, zufälliger Code generiert. Positionsgedächtnis nützt hier nichts – gemessen wird die reine visuelle Verarbeitungsgeschwindigkeit unter dynamischer Störung."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Verbessert die visuelle Suche auch die Lesegeschwindigkeit und Bildschirmarbeit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, signifikant. Das Training verkürzt die durchschnittliche Fixationsdauer der Augen und erweitert die perzeptuelle Spanne (Visual Span). Dies erleichtert das schnelle Überfliegen umfangreicher Tabellen, Programmcodes, Verträge oder wissenschaftlicher Berichte, indem relevante Schlüsselbegriffe ohne zeilenweises Verharren erfasst werden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum sinkt die visuelle Suchgeschwindigkeit mit dem Alter und wie lässt sich gegensteuern?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mit zunehmendem Alter verengt sich das sogenannte nützliche Sehfeld (UFOV: Useful Field of View), und die Hemmung irrelevanter visueller Reize lässt nach (Woods et al., 2015). Regelmäßiges dynamisches Suchtraining stimuliert die neuronale Plastizität in okzipitalen und parietalen Arealen, wodurch das UFOV erweitert und Reaktionsgeschwindigkeiten auf hohem Niveau konserviert werden können."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was ist das optimale tägliche Trainingspensum für maximale neuroplastische Anpassung?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "3 bis 5 konzentrierte Durchgänge à 45 Sekunden (Gesamtdauer ca. 5 bis 8 Minuten) sind optimal. Da maximale selektive Aufmerksamkeit viel zerebrale Energie verbraucht, führt Übermüdung rasch zu Frustration und fehlerhafter Reizunterdrückung. Trainieren Sie am besten morgens oder als 5-minütiges Warm-up vor kompetitiven Gaming-Sessions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Werden meine Reaktionszeiten und Klickdaten auf externen Servern gespeichert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Sämtliche Messwerte, Trefferanzahlen und Latenzen werden ausschließlich lokal im verschlüsselten localStorage Ihres Webbrowsers verarbeitet und gespeichert. Es erfolgt keinerlei Übertragung personenbezogener Daten oder Koordinaten an zentrale Tracking-Server."
-      }
-    }
-  ]
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": DESCRIPTION,
+  "url": URL,
+  "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
+  "dateModified": "2026-11-12"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Anleitung für die visuelle Suche im wechselnden Raster",
-  "description": "Schritt-für-Schritt-Anleitung zur Erzielung von Spitzenwerten im dynamischen 100-Zellen-Suchtest.",
+  "name": "So funktioniert „Codes im Raster finden“",
+  "dateModified": "2026-11-12",
   "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Zielcode ablesen", "text": "Oben steht unter „FIND TARGET CODE“ ein zweistelliger Code aus Buchstaben und Ziffern, zum Beispiel K7." },
+    { "@type": "HowToStep", "position": 2, "name": "Raster absuchen", "text": "Das 10 × 10-Raster zeigt 100 zweistellige Codes. Der Zielcode steht darin mindestens zweimal." },
+    { "@type": "HowToStep", "position": 3, "name": "Alle Kopien anklicken", "text": "Jede angeklickte Kopie bringt 150 Punkte. Sind alle gefunden, erscheinen ein neuer Zielcode und ein neues Raster." },
+    { "@type": "HowToStep", "position": 4, "name": "45 Sekunden durchhalten", "text": "Alle 700 ms wechseln drei Ablenker-Zellen ihren Code, und spätestens alle 12 Sekunden kommt ein neuer Zielcode." }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "dateModified": "2026-11-12",
+  "mainEntity": [
     {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Zielcode visuell verankern",
-      "text": "Lies den oben angezeigten zweistelligen Zielcode (z. B. 'X4') ab und vergegenwärtige dir die charakteristischen geometrischen Kanten und Linien.",
-      "url": "https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid#step-1"
+      "@type": "Question",
+      "name": "Wie funktioniert „Codes im Raster finden“?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oben wird ein zweistelliger Zielcode angezeigt. Im 10 × 10-Raster aus 100 Codes steht er mehrmals; du klickst jede Kopie an. Sind alle gefunden oder sind 12 Sekunden vergangen, kommen ein neuer Zielcode und ein neues Raster. Eine Runde dauert 45 Sekunden." }
     },
     {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "4-Quadranten-Rasterscan anwenden",
-      "text": "Unterteile das Raster gedanklich in vier Blöcke und bewege den Blick systematisch über die Blockzentren, um periphere Cluster zu erfassen.",
-      "url": "https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid#step-2"
+      "@type": "Question",
+      "name": "Wie viele Kopien des Zielcodes gibt es?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Zu Beginn zwei. Mit steigendem Level werden es mehr: drei ab Level 3, vier ab Level 6, fünf ab Level 9 und höchstens sechs ab Level 12." }
     },
     {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Dynamisches Rauschen aktiv ignorieren",
-      "text": "Lass dich vom 700-ms-Takt des Hintergrundflimmerns nicht ablenken; halte den Aufmerksamkeitsfilter rein auf das Zielmuster ausgerichtet.",
-      "url": "https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid#step-3"
+      "@type": "Question",
+      "name": "Was bedeutet das Rauschen im Raster?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Alle 700 Millisekunden bekommen drei zufällige Ablenker-Zellen einen neuen Code. Kopien des Zielcodes bleiben dabei stehen. So kannst du dir das Raster nicht einprägen." }
     },
     {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Präziser Klick und sofortiger Fokuswechsel",
-      "text": "Klicke das Zielsymbol auf dem kürzesten Bewegungspfad an und richte die Aufmerksamkeit sofort auf den nächsten generierten Code.",
-      "url": "https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid#step-4"
+      "@type": "Question",
+      "name": "Wie wird gepunktet?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Jede gefundene Kopie bringt 150 Punkte, alle 750 Punkte (5 Funde) steigt das Level. Am Ende siehst du Punktzahl, Trefferquote, höchstes Level und Anzahl der Funde." }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es Strafen für Fehlklicks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nein. Ein Fehlklick färbt die Zelle kurz rot, kostet aber weder Punkte noch Zeit. Er senkt nur die Trefferquote." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist das ein Konzentrationstest oder Sehtest?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nein. Es ist ein kostenloses Übungsspiel im Browser, kein normierter psychologischer Test und kein Sehtest. Vergleiche deine Punktzahl nur mit deinen eigenen früheren Runden." }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie finde ich die Codes schneller?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Merke dir den Code als Paar, nicht als zwei Einzelzeichen, und suche das Raster in Vierteln oder Zeile für Zeile ab. Weil sich Ablenker ändern, lohnt es nicht, sich Positionen zu merken." }
     }
   ]
 };
 
-const guideData = {
-  eyebrow: "Kognitionspsychologie & Selektive Aufmerksamkeitskontrolle",
-  heading: "Visuelle Suche: Selektive Aufmerksamkeit im wechselnden Raster trainieren",
-  intro: [
-    "Die visuelle Suche (Visual Search) beschreibt die fundamentale menschliche Fähigkeit, ein definiertes Zielobjekt (Target) inmitten zahlreicher ablenkender Störreize (Distraktoren) präzise und zeitnah zu lokalisieren. Laut Anne Treismans bahnbrechender Merkmalsintegrationstheorie (Feature Integration Theory: FIT, Treisman & Gelade, 1980) verarbeitet das visuelle System elementare Attribute wie Farbe oder Linienneigung zunächst unbewusst und parallel in einer präattentiven Phase. Erst die fokussierte, ortsbezogene Aufmerksamkeit bindet diese Merkmale zusammen, um komplexe Konfigurationen wie Buchstaben und Zahlen zweifelsfrei zu entschlüsseln.",
-    "Im Guided-Search-Modell (Wolfe, 1994; Wolfe, 2007) interagieren stimulusgetriebene Bottom-Up-Auffälligkeiten mit zielorientierten Top-Down-Vorgaben, um im Gehirn eine sogenannte 'Prioritätskarte' (Priority Map) aufzubauen. Im Entropic-Grid-Szenario erzeugen 100 Zellen mit zyklisch wechselndem Rauschen eine extrem hohe visuelle Entropie, die das Bottom-Up-System massiv überflutet. Um hier erfolgreich zu agieren, müssen der dorsolaterale präfrontale Kortex und parietale Netzwerke starke inhibitorische Signale aussenden, die irrelevante Rauschreize aktiv tilgen (Duncan & Humphreys, 1989).",
-    "Die kontinuierliche 700-ms-Hintergrundregeneration im Entropic Grid modelliert reale kognitive Ablenkung nach Nilli Lavies Perceptual Load Theory (Lavie, 1995). Selektive Aufmerksamkeit operiert unter einer strikten strukturellen Kapazitätsgrenze: Bei geringer visueller Belastung diffundieren freie Ressourcen unwillkürlich in irrelevante Störreize ab. Unter hoher perzeptiver Last – wie dem synchronen Scannen einer 100-Zellen-Matrix nach dynamischen Alphanumerik-Digraphen – bindet die aufgabenrelevante Reizverarbeitung die gesamte kortikale Bandbreite, wodurch Hintergrundrauschen neurochemisch effizient blockiert wird.",
-    "Das menschliche Aufmerksamkeitsfeld verhält sich nicht wie ein starrer Scheinwerfer, sondern als elastisches Zoom-Objektiv (Zoom Lens Model, Eriksen & St. James, 1986). Trainierte Beobachter passen ihren Fokus flexibel an – vom weiten 10x10-Überblick bis zur scharfen 2x2-Clusterprüfung. Durch gezieltes parafoveales Scanning außerhalb des fovealen 2-Grad-Zentrums lassen sich unpassende Zellmuster blitzschnell eliminieren, ohne für jedes einzelne Element zeitraubende Korrektursakkaden ausführen zu müssen (Posner, 1980; Woods et al., 2015).",
-    "Dieses webbasierte Trainingssystem erfasst anhand moderner performance.now()-Mikrotimer die individuelle Suchlatenz, Trefferrate und Fehlerquoten über 45-Sekunden-Zyklen. Ein regelmäßiges Training im Entropic Grid stärkt die sensorische Filterkapazität unter extremem visuellem Clutter – mit direktem Transfer auf das Scanning in taktischen Shootern, die Gefahrenerkennung im Straßenverkehr sowie die effiziente Auswertung komplexer Datenstrukturen."
-  ],
-  benchmarks: {
-    title: "Orientierungswerte für visuelle Suche und selektive Aufmerksamkeit",
-    headers: ["Leistungsstufe / Rang", "Erfolgreiche Treffer (45 Sek.)", "Mittlere Suchfixations-Latenz", "Rauschfilter-Genauigkeit", "Neurokognitive Verarbeitungsstufe"],
-    rows: [
-      ["Stufe 1: Höchste Übungsstufe", "18+ Treffer", "< 180 ms", "> 96%", "Perfekte Synthese aus paralleler Pop-out-Erkennung und zielgerichteter Top-Down-Suche (Wolfe, 2007)"],
-      ["Stufe 2: Fortgeschrittene Suche", "14 – 17 Treffer", "180 – 230 ms", "88 – 95%", "Hocheffiziente Unterdrückung dynamischer Distraktoren und optimierter Quadranten-Rasterscan"],
-      ["Stufe 3: Durchschnittliches Niveau", "10 – 13 Treffer", "230 – 300 ms", "76 – 87%", "Solide kognitive Verarbeitungsgeschwindigkeit; Kombination aus seriellem Abgleich und partieller Parallelerfassung"],
-      ["Stufe 4: Anfänger-Niveau", "7 – 9 Treffer", "300 – 400 ms", "65 – 75%", "Erhöhte Ablenkbarkeit durch visuelles Rauschen; verzögerte Zielerfassung (Visual Clutter Latenz)"],
-      ["Basis-Entwicklungsstufe (Baseline)", "< 7 Treffer", "> 400 ms", "< 65%", "Irreguläre Sakkadenwanderung und Informationsverlust im Arbeitsgedächtnis während des Flackerns"]
-    ],
-    note: "Objektive Leistungswerte basierend auf der kognitionswissenschaftlichen Literatur zur visuellen Aufmerksamkeit (Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
-  },
-  techniques: {
-    title: "Zielzeichen schneller finden und Ablenker ausblenden",
-    items: [
-      {
-        name: "Parallele Pop-Out-Merkmalsextraktion (Parallel Pop-Out Feature Extraction)",
-        desc: "Versuche nicht, den gesamten Buchstaben buchstabierend zu lesen. Richte den sensorischen Filter primär auf markante geometrische Kanten (z. B. Diagonalen, Rundungen oder rechte Winkel) aus, um das Symbol aus dem Rauschen hervortreten zu lassen.",
-        tips: "Achte bei 'K' auf die schrägen Äste, bei '8' auf die Doppelrundung – Kanten heben sich schneller vom Rauschen ab als ganze Formen."
-      },
-      {
-        name: "Systematischer 4-Quadranten-Rasterscan (Quadrant Systematic Raster Scan)",
-        desc: "Teile die 100 Zellen in vier 25er-Blöcke (oben links, oben rechts, unten links, unten rechts). Fixiere die Blockmitten und erfasse mehrere Zellen auf einen Blick.",
-        tips: "Halte ein geordnetes Z-Muster beim Blickverlauf ein, anstatt die Augen unkontrolliert über das Feld wandern zu lassen."
-      },
-      {
-        name: "Aktive sensorische Rauschunterdrückung (Dynamic Noise Perceptual Filtering)",
-        desc: "Das 700-ms-Flimmern triggert primitive Orientierungsreflexe. Unterdrücke diesen Reiz bewusst und synchronisiere die Informationsaufnahme mit der stabilen Phase zwischen den Wechseln.",
-        tips: "Vermeide hektische Augenbewegungen genau in dem Moment, in dem die Symbole neu ausgewürfelt werden."
-      },
-      {
-        name: "Erweiterung des Aufmerksamkeits-Fokus (Attentional Spotlight Broadening)",
-        desc: "Ein extrem enger Tunnelblick auf Einzelzellen verlangsamt die Gesamtsuche massiv. Öffne das Aufmerksamkeitsfenster auf etwa 3x3 Zellen rund um den Fixationspunkt.",
-        tips: "Halte einen gesunden Bildschirmabstand von mindestens 50 cm ein und entspanne die periorbitalen Gesichtsmuskeln."
-      }
-    ]
-  },
-  steps: [
-    "Klicke auf Start und präge dir den zweistelligen alphanumerischen Zielcode im Kopfbereich augenblicklich ein.",
-    "Überfliege die vier Quadranten der Matrix und nutze deine periphere Sicht zur Identifikation charakteristischer Linienmerkmale.",
-    "Blende das rhythmische Flackern der Hintergrunddistraktoren aus und klicke das Zielsymbol ohne Umwege an.",
-    "Sobald ein Treffer erfolgt, erscheint sofort der nächste Code – halte den Rhythmus über die gesamten 45 Sekunden aufrecht.",
-    "Analysiere nach Ablauf der Zeit deine Trefferanzahl, durchschnittliche Latenz für dein gezieltes Training."
-  ],
-  audience: "FPS-Gamer (Valorant, CS2, Apex Legends, Overwatch), die ihre Zielerfassungszeit und Gegneridentifikation unter extremem visuellen Clutter perfektionieren wollen, Fluglotsen, Radiologen, Sicherheitskräfte sowie Fachkräfte, die große Datenmengen fehlerfrei scannen müssen.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('treisman1980', 'wolfe2007', 'duncan1989', 'posner1980', 'green2006', 'woods2015'),
-  related: [
-    { href: "/de/drills/visual/visual-recognition/visual-search", label: "Visuelle Suche Test (Peripheres Scanning)" },
-    { href: "/de/drills/visual/tracking-accuracy/multiple-targets", label: "Multiple Object Tracking MOT Test" },
-    { href: "/de/drills/visual/tracking-accuracy/moving-target", label: "Dynamische Sehkraft (Bewegungsziel-Test)" },
-    { href: "/de/drills/visual/reaction-speed/go/no-go", label: "Go / No-Go Reaktionszeittest" }
-  ]
-};
+export default function EntropicGridLocalePage() {
+  const sources = pickSources('treisman1980', 'wolfe1994', 'duncan1989');
 
-export default function LocalizedEntropicGridDePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <EntropicGridClient copy={{ title: "Codes im Raster finden", subtitle: "Zielcode in einem sich verändernden 100-Zellen-Raster" }} />
+      <DrillGuide
+        eyebrow="Visuelles Suchspiel"
+        title="Codes im Raster finden: Ablauf, Punkte und Tipps"
+        sources={sources}
+      >
+        <p>Bei <strong>Codes im Raster finden</strong> suchst du in einem 10 × 10-Raster aus 100 zweistelligen Codes jede Kopie eines Zielcodes. Die Runde dauert 45 Sekunden, und das Raster bleibt nie gleich: Ablenker wechseln laufend ihren Code. Eine kostenlose Übung im Browser, bedienbar mit Maus oder Touch.</p>
 
-      <EntropicGridClient copy={{ title: "Visuelle Suche", subtitle: "Selektive Aufmerksamkeit und visuelles Scannen" }} />
-      <DrillGuide guide={guideData} />
+        <h3>Was im Raster passiert</h3>
+        <ul className="list-disc pl-5 space-y-2 my-3 text-slate-300">
+          <li><strong>Zielcode:</strong> zwei Zeichen aus Buchstaben (ohne I und O) und den Ziffern 2 bis 9.</li>
+          <li><strong>Mehrere Kopien:</strong> anfangs zwei, je nach Level bis zu sechs gleichzeitig im Raster.</li>
+          <li><strong>Rauschen:</strong> alle 700 ms erhalten drei Ablenker-Zellen einen neuen Code.</li>
+          <li><strong>Zielwechsel:</strong> neuer Zielcode, sobald alle Kopien gefunden sind, spätestens nach 12 Sekunden.</li>
+        </ul>
+
+        <h3>Warum die Suche Mühe macht</h3>
+        <p>Ein zweistelliger Code unterscheidet sich von den Ablenkern nicht durch ein einzelnes auffälliges Merkmal, sondern nur durch die Kombination zweier Zeichen. Solche Suchen laufen eher Element für Element ab (Treisman &amp; Gelade, 1980; Wolfe, 1994), und sie werden langsamer, je ähnlicher Ziel und Ablenker sind (Duncan &amp; Humphreys, 1989). Das wechselnde Rauschen verhindert zusätzlich, dass du dich auf auswendig gelernte Positionen verlässt.</p>
+
+        <h3>SkillDrills-Übungsstufen (45 Sekunden)</h3>
+        <p>Die Stufen sind Orientierungswerte von SkillDrills für dieses Raster, keine wissenschaftlichen Normen.</p>
+        <div className="overflow-x-auto my-6">
+          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr className="border-b border-white/10 text-slate-400">
+                <th className="py-2.5 px-3 font-semibold">Übungsstufe</th>
+                <th className="py-2.5 px-3 font-semibold">Funde</th>
+                <th className="py-2.5 px-3 font-semibold">Punkte</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-white/5 text-slate-300">
+              <tr><td className="py-2.5 px-3">Einstieg</td><td className="py-2.5 px-3 tabular-nums">0–2</td><td className="py-2.5 px-3 tabular-nums">0–300</td></tr>
+              <tr><td className="py-2.5 px-3">Solide</td><td className="py-2.5 px-3 tabular-nums">3–4</td><td className="py-2.5 px-3 tabular-nums">450–600</td></tr>
+              <tr><td className="py-2.5 px-3">Stark</td><td className="py-2.5 px-3 tabular-nums">5–6</td><td className="py-2.5 px-3 tabular-nums">750–900</td></tr>
+              <tr><td className="py-2.5 px-3">Top</td><td className="py-2.5 px-3 tabular-nums">7+</td><td className="py-2.5 px-3 tabular-nums">1.050+</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Tipps</h3>
+        <ol className="list-decimal pl-5 space-y-2 my-4 text-slate-300">
+          <li><strong>Code als Paar lesen:</strong> Suche nach der Zeichenfolge, nicht nach einem einzelnen Buchstaben.</li>
+          <li><strong>In Vierteln suchen:</strong> Gehe das Raster Viertel für Viertel durch, statt kreuz und quer zu springen.</li>
+          <li><strong>Nach dem Treffer weitersuchen:</strong> Es gibt fast immer noch eine weitere Kopie desselben Codes.</li>
+        </ol>
+
+        <h3>Häufig gestellte Fragen (FAQ)</h3>
+        <div className="space-y-4 my-6">
+          {faqSchema.mainEntity.map((q) => (
+            <div key={q.name}>
+              <h4 className="font-semibold text-white">{q.name}</h4>
+              <p className="text-slate-300 mt-1">{q.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </DrillGuide>
       <RelatedDrills />
     </>
   );

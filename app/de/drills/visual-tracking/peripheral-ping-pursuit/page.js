@@ -5,272 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// GERMAN SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "peripheres sehen trainieren" (Train peripheral vision) / "peripheres blickfeld uebungen"
-// Secondary:    "tunnelblick abbauen training", "gesichtsfeld erweitern uebungen", "augentraining peripheres sehen", "blickfeld vergroessern"
-// LSI / Domain:  "verdeckte raumaufmerksamkeit", "foveale fixation", "nutzbares gesichtsfeld ufov",
-//               "visuelle aufmerksamkeit verteilen", "reaktionszeit randbereich", "dual-task blicksteuerung"
-// Authentic Domain Terms: Peripheres Sehen Trainieren, Verdeckte Raumaufmerksamkeit (Covert Spatial Attention), Foveale Fixation (Foveal Fixation), Nutzbarkeit des Gesichtsfelds (Useful Field of View / UFOV), Netzhaut-Stäbchen (Retinal Rods), Sakkadische Unterdrückung (Saccadic Suppression), Zoom-Lens-Modell
-// ============================================================
+const url = 'https://skilldrills.online/de/drills/visual-tracking/peripheral-ping-pursuit';
+const title = "Randreize erkennen, Blick in der Mitte | SkillDrills";
+const description = "Kostenlose Browserübung: Blick aufs Fadenkreuz in der Mitte, während irgendwo kurz Punkte aufblinken – bemerke sie, ohne hinzuschauen.";
 
 export const metadata = {
-  title: "Peripheres Sehen üben | Randreize erkennen | SkillDrills",
-  description: "Verfolge ein zentrales Ziel und reagiere auf kurze Randreize, ohne den Blick abzuwenden. Kostenlose Browserübung mit Reaktionszeit und Blickstabilität.",
-  keywords: [
-    "peripheres sehen trainieren",
-    "peripheres blickfeld übung",
-    "peripheres sehen sport",
-    "periphere wahrnehmung üben",
-    "zentrales sehen peripher wahrnehmen",
-    "reaktionszeit randbereich",
-    "blick auf punkt halten übung",
-    "visuelle aufmerksamkeit verteilen",
-    "nutzbares gesichtsfeld übung",
-    "peripheres sehen online üben"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Peripheres Sehen üben | Randreize erkennen | SkillDrills",
-    description: "Zentrales Ziel verfolgen und Randreize erkennen, ohne den Blick abzuwenden. Kostenlose Übung direkt im Browser.",
-    type: "website",
-    url: "https://skilldrills.online/de/drills/visual-tracking/peripheral-ping-pursuit",
-    siteName: "SkillDrills",
-    locale: "de_DE",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Peripheres Sehen üben | Randreize erkennen | SkillDrills",
-    description: "Übe zentrale Blickverfolgung und die Wahrnehmung kurzer Randreize direkt im Browser.",
-  },
+  title,
+  description,
+  keywords: ["Randreize erkennen", "peripheres Sehen üben", "Blick fixieren Übung", "Fadenkreuz fixieren", "Augenübung Browser", "Wahrnehmung am Rand"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/peripheral-ping-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'de_DE', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: "https://skilldrills.online/de/drills/visual-tracking/peripheral-ping-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/peripheral-ping-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://skilldrills.online/de" },
-    { "@type": "ListItem", "position": 2, "name": "Übungen", "item": "https://skilldrills.online/de/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Visuelles Tracking", "item": "https://skilldrills.online/de/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "Peripheres Sehen: zentrale Verfolgung und Randreize", "item": "https://skilldrills.online/de/drills/visual-tracking/peripheral-ping-pursuit" }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Startseite", item: 'https://skilldrills.online/de' },
+    { '@type': 'ListItem', position: 2, name: "Übungen", item: 'https://skilldrills.online/de/drills' },
+    { '@type': 'ListItem', position: 3, name: "Visuelles Tracking", item: 'https://skilldrills.online/de/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "Randreize erkennen, Blick in der Mitte", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "Peripheres Sehen: zentrale Verfolgung und Randreize",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Webbrowser",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Browserübung zur gleichzeitigen Verfolgung eines zentralen Ziels und Erkennung kurzer Randreize. Ergebnisse dienen dem persönlichen Sitzungsvergleich.",
-  "url": "https://skilldrills.online/de/drills/visual-tracking/peripheral-ping-pursuit",
-  "dateModified": "2026-09-20",
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Peripherer Ping-Tracker",
-  "url": "https://skilldrills.online/de/drills/visual-tracking/peripheral-ping-pursuit",
-  "browserRequirements": "Unterstützung für HTML5-Canvas und modernes JavaScript",
-  "applicationCategory": "SportsApplication",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Peripheres Sehen Ping Pursuit",
-  "description": "Interaktive Übung zur zentralen Blickverfolgung und zur Wahrnehmung kurzer Reize am Rand des Bildschirms.",
-  "genre": ["Visuelles Training", "Peripheres Sehen", "Aufmerksamkeitsübung"],
-  "playMode": "SinglePlayer",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Randreize erkennen, Blick in der Mitte",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
+  inLanguage: 'de',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Anleitung für zentrales Verfolgen und periphere Wahrnehmung",
-  "description": "Praktischer Trainingsablauf zur Verankerung der fovealen Fixation bei gleichzeitiger verdeckter Aufmerksamkeitsverteilung auf Randreize.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Zentrales Ziel fixieren",
-      "text": "Richte den Blick auf das sich sanft bewegende Hauptziel in der Bildschirmmitte und verfolge es mit einer gleichmäßigen Blickfolge."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Verdeckte Aufmerksamkeit aufspannen",
-      "text": "Halte die Augen starr auf dem Hauptziel, weite jedoch deinen mentalen Wahrnehmungsfokus auf die gesamten Außenränder des Monitors aus."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Periphere Pings per Leertaste bestätigen",
-      "text": "Sobald am äußeren Rand ein kurzer Lichtimpuls aufleuchtet, drücke blitzschnell die Leertaste – ohne die Augen dorthin zu bewegen."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Auswertung des nutzbaren Gesichtsfelds analysieren",
-      "text": "Überprüfe nach Abschluss der Sitzung Erkennungsrate, Reaktionszeiten und Blickstabilität, um die eigenen Durchgänge zu vergleichen."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "So übst du, Randreize mit festem Blick zu erkennen",
+  description: "In vier Schritten den Blick auf das Fadenkreuz halten und kurz aufblinkende Punkte am Rand bemerken.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Bequem hinsetzen",
+    "text": "Setz dich in angenehmem Abstand vor den Bildschirm und entspanne Schultern und Nacken."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Fadenkreuz fixieren",
+    "text": "Schau nach dem Start auf das Fadenkreuz in der Bildschirmmitte und lass den Blick dort."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Bemerken ohne hinzuschauen",
+    "text": "Blinkt irgendwo ein Punkt auf, nimm ihn nur aus dem Augenwinkel wahr, ohne die Augen hinzubewegen."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Eine Einstellung nach der anderen",
+    "text": "Wenn es sich leicht anfühlt, erhöhe das Tempo oder schalte Linie ausblenden bzw. Zufallstempo einzeln zu."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Wie läuft „Randreize erkennen“ ab?",
+    "a": "In der Mitte steht ein festes Fadenkreuz. An zufälligen Stellen des Bildschirms erscheint jeweils ein Punkt kurz und verschwindet wieder – bei Tempo 1,0 etwa 0,75 Sekunden lang, danach folgt nach einer kurzen Pause der nächste. Die Punkte bewegen sich nicht. Ziel ist, sie mit dem Blick auf dem Fadenkreuz zu bemerken; geklickt wird nicht. Es ist kein Gesichtsfeldtest."
+  },
+  {
+    "q": "Was bewirken Tempo und Hide Line?",
+    "a": "Höheres Tempo lässt die Punkte häufiger und kürzer erscheinen (minimal etwa 0,25 Sekunden). Random Speed lässt Häufigkeit und Dauer laufend schwanken. Hide Line blendet das Fadenkreuz aus, sodass du die Mitte ohne Markierung halten musst."
+  },
+  {
+    "q": "Darf ich zu den Punkten hinschauen?",
+    "a": "Der Sinn der Übung ist, den Blick in der Mitte zu halten. Der Browser zeichnet deinen Blick nicht auf, also prüfst du selbst, ob die Augen den Punkten folgen. Passiert das oft, senke das Tempo."
+  },
+  {
+    "q": "Misst die Übung meine Augenbewegungen oder einen Score?",
+    "a": "Nein. Der Browser weiß nicht, wohin du schaust, und es gibt weder Klicks noch Trefferwertung. Es gibt keinen Score; gespeichert wird nur die Zahl abgeschlossener Durchgänge in diesem Browser. Ob dein Blick wie geplant bleibt, kontrollierst du selbst."
+  },
+  {
+    "q": "Welche Einstellungen gibt es?",
+    "a": "Nach einem 3-2-1-Countdown läuft ein Durchgang von 30, 45, 60, 90 oder 120 Sekunden (Standard 60). Einstellbar sind Tempo 0,5- bis 9,0-fach, Zielgröße 10–50 px, Zielfarbe, die Schalter Hide Line (Linie ausblenden), Random Speed (Zufallstempo), Gaze Trail (Spur), Neon Glow und Scanlines sowie heller oder dunkler Hintergrund. Mit Esc beendest du jederzeit."
+  },
+  {
+    "q": "Werden meine Sehkraft oder mein Aim besser?",
+    "a": "Das ist nicht garantiert. Die Übung ist kein Sehtest und keine Therapie, sondern ein Werkzeug zum Üben des Hinschauens. Sie verspricht weder bessere Sehschärfe noch besseres Zielen. Bei Beschwerden an den Augen wende dich an eine Fachperson."
+  },
+  {
+    "q": "Wie lange sollte ich üben?",
+    "a": "Ein paar Durchgänge von 1–2 Minuten mit Pausen reichen. Bei müden oder trockenen Augen blinzeln und in die Ferne schauen; bei Schmerzen, Schwindel, Übelkeit oder Kopfschmerzen sofort aufhören."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was versteht man unter peripherem Sehen und warum trainiert man es mit zentralem Fixpunkt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das Zentrum verarbeitet feine Details, während die Netzhautperipherie besonders auf Bewegung und Helligkeitswechsel reagiert. Diese Übung hält ein bewegtes Ziel im Zentrum und ergänzt kurze Reize am Rand, damit beide Anforderungen in einer Sitzung beobachtet werden können."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum verliert man Punkte, wenn man mit den Augen direkt zum peripheren Ping springt (Sakkade)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wenn Sie die Augen direkt auf den Ping richten, verlassen sie das zentrale Ziel und die beiden Aufgaben sind nicht mehr vergleichbar. Die Übung verwendet deshalb die bewusste Aufmerksamkeit für den Rand, während die Blickrichtung in der Mitte bleibt. So wird die zentrale Blickverfolgung nicht durch eine zusätzliche Blickbewegung unterbrochen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie hängt konzentriertes Sehen mit peripheren Reizen zusammen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hohe Belastung kann die Aufmerksamkeit auf einen kleineren Bereich bündeln. Dieses Format mit zwei gleichzeitigen Aufgaben macht sichtbar, ob Randreize während der zentralen Blickverfolgung erkannt werden. Es behauptet nicht, einen Tunnelblick zu behandeln oder eine dauerhafte Änderung des Gesichtsfelds zu bewirken."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welchen spürbaren Vorteil bietet ein trainiertes peripheres Sichtfeld in E-Sports und Shootern?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Aufgabe ähnelt einer Spielsituation, in der ein zentrales Ziel verfolgt und eine Randveränderung bemerkt wird. Sie garantiert weder eine bestimmte Reaktionszeit noch bessere Trefferquoten; Spieleleistung hängt auch von Eingabegerät, Anzeige, Erfahrung und Taktik ab."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Worin liegt der Unterschied zwischen verdeckter und offener Aufmerksamkeit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Offene Aufmerksamkeit begleitet eine tatsächliche Ausrichtung der Augen auf ein Objekt. Verdeckte Aufmerksamkeit beschreibt dagegen, dass sich der mentale Fokus verschiebt, während die Augen am zentralen Ziel bleiben. Diese Unterscheidung wird Posners räumlicher Aufmerksamkeitsforschung zugerechnet."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Rolle spielen Stäbchen und Zapfen der Netzhaut bei der peripheren Signalerkennung?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Während die Zapfen in der Fovea für Farberkennung und Detailschärfe zuständig sind, dominieren in der peripheren Retina hochsensible Stäbchen und großzellige Ganglienzellen (magnozelluläres System). Sie reagieren extrem empfindlich auf kleinste Helligkeitsschwankungen und schnelle Bewegungen, eignen sich jedoch nicht zum Lesen von Text."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie oft und wie lange sollte das Training des peripheren Sehens durchgeführt werden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Beginnen Sie mit kurzen Einheiten von etwa 1 bis 5 Minuten und machen Sie Pausen zwischen den Durchgängen. Die passende Häufigkeit hängt von Konzentration, Bildschirm und persönlicher Belastbarkeit ab. Bei Augenmüdigkeit, Kopfschmerz oder Unwohlsein bitte abbrechen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Haben Monitorgröße und Sitzabstand Einfluss auf den Trainingseffekt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Ein idealer Sehabstand beträgt ca. 50 bis 70 cm bei einem 24- bis 27-Zoll-Monitor, sodass der Bildschirm ca. 35 bis 45 Grad des horizontalen Gesichtsfelds abdeckt. Sitzt man zu weit entfernt, rücken die Randreize zu nahe an die Fovea heran, was den Trainingseffekt für das echte periphere Feld verringert."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum ist die Reaktionszeit bei peripheren Reizen anfangs oft spürbar verzögert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das Gehirn teilt seine Aufmerksamkeit auf zwei konkurrierende Aufgaben auf: die kontinuierliche Steuerung der Augen für das Verfolgen und die Überwachung des Randbereichs. Zu Beginn kann dadurch ein kognitiver Engpass entstehen; vergleiche die eigenen Sitzungen, statt eine automatische Verbesserung anzunehmen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Bringt das Training des peripheren Blicks auch Vorteile im Straßenverkehr und im Alltag?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Diese Browserübung ersetzt weder eine augenärztliche Untersuchung noch eine Fahrkompetenzprüfung und belegt keine Verringerung des Unfallrisikos. Sie misst nur Reaktionen auf Bildschirmreize während einer zentralen Blickaufgabe."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'de',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Wissenschaftliche Grundlagen des peripheren Sehens und Trainingsleitfaden",
-  intro: [
-    "Das Zentrum des Sehens verarbeitet feine Details, während die Netzhautperipherie besonders empfindlich auf Bewegung und Helligkeitswechsel reagiert. Die Übung „Peripherer Ping“ verbindet deshalb die Blickverfolgung eines zentralen Ziels mit kurzen Reizen am Rand. Sie dient dem Vergleich eigener Sitzungen und ist keine Untersuchung des Gesichtsfelds.",
-    "Posner (1980) beschrieb räumliche Aufmerksamkeit als eine Verschiebung des mentalen Fokus, die auch ohne Blickbewegung möglich ist. Im Drill bleibt der Blick beim zentralen Ziel, während die Aufmerksamkeit auf den Rand gerichtet wird. Das macht die zentrale Verfolgung und die periphere Erkennung als getrennte, aber gleichzeitig ausgeführte Aufgaben beobachtbar.",
-    "Kognitive Belastung kann beeinflussen, wie viele Randreize während einer zentralen Aufgabe erkannt werden. Die Übung bildet diesen Aufmerksamkeitskonflikt in einer kontrollierten Browserumgebung ab; sie beweist nicht, dass sich das anatomische Gesichtsfeld erweitert oder eine medizinische Einschränkung verbessert.",
-    "Für Spiele und Sport kann die Aufgabe als zusätzliche Wahrnehmungsübung dienen. Ergebnisse hängen von Anzeige, Eingabegerät, Sitzabstand, Müdigkeit und Erfahrung ab; deshalb sollten Nutzer die eigenen Sitzungen vergleichen und keine Leistungs- oder Sicherheitsgarantie aus den Werten ableiten."
+  ...{
+  "heading": "Randreize erkennen, Blick in der Mitte – Anleitung",
+  "intro": [
+    "Bei „Randreize erkennen, Blick in der Mitte“ hältst du den Blick auf einem Fadenkreuz in der Bildschirmmitte und bemerkst kurz aufblinkende Punkte, ohne die Augen zu bewegen. Die Punkte erscheinen einzeln an zufälligen Stellen und sind bei Tempo 1,0 etwa 0,75 Sekunden sichtbar.",
+    "Das zentrale Sehen erfasst Details dort, wohin du schaust; das periphere Sehen bemerkt Veränderungen außerhalb davon. Taucht am Rand etwas auf, wollen die Augen schnell dorthin springen (Findlay & Walker, 1999). Diese Übung wiederholt Situationen, in denen du diesem Impuls widerstehst.",
+    "Der Browser kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen – nicht, wohin deine Augen tatsächlich blicken. Es gibt keinen Score und keinen Genauigkeitswert. Vergleiche deshalb dein Gefühl von Ruhe und Konzentration bei gleichem Bildschirm, Abstand und gleichen Einstellungen. Bildwiederholrate und Anzeigeverzögerung beeinflussen, wie die Bewegung aussieht (Woods et al., 2015)."
   ],
-  benchmarks: {
-    title: "Standard-Benchmarks für Peripheres Gesichtsfeld & Reaktionslatenz (UFOV & Latenz)",
-    headers: ["Leistungsstufe", "Nutzbares Gesichtsfeld (UFOV %)", "Reaktionszeit am Rand", "Blickstabilität", "Lesehilfe"],
-    rows: [
-      ["Höchste Übungsstufe", "Über 92%", "Unter 280 ms", "Über 95%", "Perfekte foveale Entkopplung & maximale periphere Sensitivität"],
-      ["Meister", "85% – 92%", "280 ms – 340 ms", "90% – 95%", "Exzellente Aufmerksamkeitsverteilung & minimale Latenzen"],
-      ["Diamant", "75% – 84%", "341 ms – 410 ms", "82% – 89%", "Solide Leistung bei zwei Aufgaben; bei höherem Tempo können Randreize übersehen werden"],
-      ["Gold", "60% – 74%", "411 ms – 500 ms", "70% – 81%", "Verzögerte Reizweiterleitung & gelegentliche Blickabrisse"],
-      ["Basis", "Unter 60%", "Über 500 ms", "Unter 70%", "Starker Tunnelblick & Dominanz offener Blickkorrekturen"]
+  "benchmarks": {
+    "title": "Übungsstufen (SkillDrills-Orientierung)",
+    "headers": [
+      "Stufe",
+      "Übungsziel"
     ],
-    note: "※ Messwerte basieren auf standardisierten Tests bei 60 cm Sehabstand und 1080p-Bildschirmauflösung. Nur Messungen mit stabiler zentraler Verfolgung werden gewertet."
+    "rows": [
+      [
+        "Stufe 1",
+        "Tempo 1,0, Fadenkreuz sichtbar, Blick in der Mitte halten"
+      ],
+      [
+        "Stufe 2",
+        "Die meisten Punkte bemerken, ohne hinzuschauen"
+      ],
+      [
+        "Stufe 3",
+        "Tempo erhöhen: kürzere, häufigere Punkte"
+      ],
+      [
+        "Stufe 4",
+        "Hide Line oder Random Speed einzeln dazunehmen"
+      ]
+    ],
+    "note": "Übungsstufen von SkillDrills zur Orientierung – keine Testnormen, Nutzerstatistiken oder Perzentile."
   },
-  techniques: {
-    title: "Vier Kernstrategien zur Erweiterung des peripheren Blickfelds",
-    items: [
+  "techniques": {
+    "title": "Tipps zur Ausführung",
+    "items": [
       {
-        name: "Zentrale Blickverankerung",
-        desc: "Diszipliniere deine Augenmuskeln darauf, strikt auf dem grünen Kern des Hauptziels zu verweilen. Sobald der Rand aufleuchtet, widerstehe dem Reflex, die Pupille dorthin zu bewegen. Jeder Blicksprung unterbricht die Kontinuität der Spurführung.",
-        tips: "Stelle dir vor, deine Sehachse sei ein Magnet auf dem Ziel, während dein Bewusstsein wie ein weiter Nebel den gesamten Monitor umhüllt."
+        "name": "Blick in der Mitte, Aufmerksamkeit weit",
+        "desc": "Schau entspannt auf das Fadenkreuz und nimm den ganzen Bildschirm wahr. Such die Punkte nicht mit den Augen.",
+        "tips": "Wandern die Augen oft mit, senke das Tempo und lass das Fadenkreuz eingeblendet."
       },
       {
-        name: "Aufmerksamkeit zu den Rändern ausweiten",
-        desc: "Weite den mentalen Fokus vom Zentrum bis zu den Bildschirmrändern aus. Versuche nicht, Details zu lesen, sondern achte auf kurze Helligkeits- oder Kontrastwechsel.",
-        tips: "Versuche nicht zu erkennen, welche Farbe der Ping hat – drücke die Taste in dem Moment, in dem deine Netzhautrandbereiche 'Licht' melden."
+        "name": "Das Ziel ansehen, nicht den Cursor",
+        "desc": "Die Maus wird nicht gebraucht. Lass die Hand ruhen und folge nur mit den Augen.",
+        "tips": "Prüfe ab und zu, ob Kopf oder Nacken mitdrehen."
       },
       {
-        name: "Verarbeitung von Bewegung und Position",
-        desc: "Das Sehsystem leitet Signale entweder über den ventralen Pfad ('Was ist es?') oder den dorsalen Pfad ('Wo ist es und bewegt es sich?'). Die periphere Signalerkennung profitiert vom dorsalen System: Verzichte auf Identifikation zugunsten reiner räumlicher Bewegungswahrnehmung.",
-        tips: "Vermeide aktives Nachdenken. Lass den Reflex der Hand direkt durch den Helligkeitsimpuls triggern."
+        "name": "Nur eine Sache schwerer machen",
+        "desc": "Erhöhe Tempo, Linie ausblenden und Zufallstempo getrennt voneinander. Wird es unangenehm, geh zur vorigen Einstellung zurück.",
+        "tips": "Nach einer Änderung nicht direkt mit älteren Durchgängen vergleichen."
       },
       {
-        name: "Parasympathische Atemregulierung (Anti-Tunnel-Breathing)",
-        desc: "Hyperarousal und flache Atmung aktivieren den Sympathikus, was unmittelbar zur Verengung des Gesichtsfelds führt. Eine ruhige, tiefe Bauchatmung senkt den Puls und hält das Gesichtsfeld weit geöffnet.",
-        tips: "Atme 4 Sekunden durch die Nase ein und 6 Sekunden ruhig aus, um Augeninnendruck und Nackenspannung zu minimieren."
+        "name": "Kurz üben, Pausen machen",
+        "desc": "Zwischen kurzen Durchgängen blinzeln und in die Ferne schauen. Länger ist nicht besser.",
+        "tips": "Bei Schmerzen oder Schwindel sofort stoppen."
       }
     ]
   },
-  steps: [
-    "Arbeitsplatz optimal einrichten: Positioniere dich in ca. 60 cm Entfernung mittig vor dem Bildschirm und stelle eine entspannte Sitzhaltung sicher.",
-    "Zentrale Blickverfolgung starten: Klicke auf [Übung starten] und folge der sanft schwebenden Kugel mit gleichmäßigen Augenbewegungen.",
-    "Peripheren Wahrnehmungsraum aktivieren: Halte den Blick im Zentrum, richte deine Aufmerksamkeit jedoch auf das gesamte Displayfeld.",
-    "Impulse verzögerungsfrei bestätigen: Sobald im Augenwinkel ein Lichtimpuls aufleuchtet, betätige ohne Blickwechsel sofort die [Leertaste].",
-    "Auswertung analysieren: Überprüfe die Aufschlüsselung nach Quadranten (oben, unten, links, rechts), um persönliche tote Winkel und Reaktionsdefizite zu erkennen."
+  "steps": [
+    "Setz dich in angenehmem Abstand vor den Bildschirm und entspanne Schultern und Nacken.",
+    "Starte mit 30–60 Sekunden, Tempo 1,0 und sichtbarer Linie.",
+    "Lass den Blick auf dem Fadenkreuz und bemerke aufblinkende Punkte nur aus dem Augenwinkel.",
+    "Erhöhe danach das Tempo oder schalte Linie ausblenden bzw. Zufallstempo einzeln zu."
   ],
-  audience: "FPS- und Battle-Royale-Spieler zur Minimap- und Flankenüberwachung, Ballsportler zur Raum- und Mitspielerwahrnehmung, Autofahrer zur Früherkennung von Kreuzungsgefahren.",
-  faqs: faqSchema.mainEntity.map(q => ({
-    q: q.name,
-    a: q.acceptedAnswer.text
-  })),
+  "audience": "Alle, die locker üben möchten, mit festem Blick Veränderungen am Rand wahrzunehmen."
+},
+  faqs,
   sources: pickSources('posner1980', 'eriksen1986', 'wolfe1994', 'findlay1999', 'leigh2015', 'woods2015'),
   related: [
     { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Konstantes langsames Blickfolgetraining" },
@@ -279,44 +192,18 @@ const guideProps = {
     { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Nachbild-Unterdrückung beim Blickfolgen" },
     { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Liegende Acht: Augentraining" },
     { href: "/de/drills/visual-tracking/momentum-teleport-pursuit", label: "Blickverfolgung eines versetzten Ziels" }
-  ]
+  ],
 };
 
-export default function DePeripheralPingPursuitPage() {
+export default function GermanPeripheralPingPursuitPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <PeripheralPingPursuitClient
-        copy={{
-          title: "Peripheres Sehen: zentrale Verfolgung und Randreize",
-          subtitle: "Zentrales Ziel verfolgen und kurze Lichtreize am Rand erkennen",
-          description: "Kostenlose Browserübung: Verfolge das zentrale Ziel und erfasse kurze Randreize ohne Blicksprung. Vergleiche Reaktionszeit und Blickstabilität; die Übung ersetzt keine Augenuntersuchung."
-        }}
-      />
+      <PeripheralPingPursuitClient copy={{"title": "Randreize erkennen, Blick in der Mitte", "subtitle": "Fadenkreuz fixieren, kurze Lichtpunkte am Rand bemerken", "description": "Blick aufs Fadenkreuz in der Mitte: An zufälligen Stellen blinken Punkte etwa 0,75 Sekunden (Tempo 1,0) auf. Bemerke sie, ohne hinzuschauen. Kein Klicken, kein Score; der Browser zeichnet deinen Blick nicht auf."}} />
 
       <DrillGuide guide={guideProps} />
 

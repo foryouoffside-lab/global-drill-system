@@ -626,7 +626,7 @@ export default function VisualSearchClient({ copy } = {}) {
         {/* Drill Caption */}
         {!isFullscreen && locale === 'en' && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            Scan the dense grid and click the target letter C hidden among rotated distractor shapes.
+            Scan the 96-cell grid and click the one target character shown above it, hidden among 95 rotated look-alikes.
           </p>
         )}
 
@@ -663,10 +663,10 @@ export default function VisualSearchClient({ copy } = {}) {
                       A conjunction search is looking for something that no single feature identifies &mdash; a red square among red circles and blue squares, where colour alone and shape alone both fail. Searches like that get slower roughly in proportion to the number of distractors on screen, while a target defined by one unique feature &quot;pops out&quot; in about the same time no matter how many distractors there are (Treisman &amp; Gelade, 1980; Wolfe, 1994).
                     </p>
                     <p className="text-sm leading-relaxed mb-3">
-                      <strong>Visual Search Training</strong> is an advanced selective attention drill based on classic conjunctive search paradigms. The <strong>Visual Search drill</strong> challenges you to locate a single target letter (&apos;C&apos;) hidden among rotated distractor letters (&apos;O&apos;).
+                      <strong>Visual Search Training</strong> is a visual search practice drill modelled on classic search tasks. The <strong>Visual Search drill</strong> challenges you to locate a single target character (for example &apos;C&apos;) hidden among rotated look-alike distractors (&apos;O&apos;, &apos;Q&apos;, &apos;G&apos;). The target changes after every find.
                     </p>
                     <p className="text-sm leading-relaxed">
-                      Unlike simple feature search where targets pop out automatically, conjunctive search requires active serial scanning across rotated distractors, training visual processing speed and selective visual focus.
+                      Unlike simple feature search where targets pop out automatically, conjunctive search requires active serial scanning across rotated distractors, so you have to check characters one by one.
                     </p>
                   </section>
   
@@ -676,21 +676,21 @@ export default function VisualSearchClient({ copy } = {}) {
                         <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
                         <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                       </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Gamers improving target detection speed, proofreaders & inspectors enhancing visual accuracy, and cognitive training enthusiasts.</p>
+                      <p className="text-xs text-gray-300 leading-relaxed">Gamers and anyone who wants a short, repeatable visual search exercise in the browser.</p>
                     </div>
                     <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">
                         <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
                         <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                       </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Conjunctive visual search speed, selective attention, feature discrimination, target isolation, and visual scanning stamina.</p>
+                      <p className="text-xs text-gray-300 leading-relaxed">Practises visual search, telling look-alike characters apart and systematic scanning.</p>
                     </div>
                     <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">
                         <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
                         <h4 className="text-xs font-bold text-white">Z-Pattern Scanning</h4>
                       </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Scan the grid systematically in Z-pattern rows to locate the target &apos;C&apos; efficiently without missing cells.</p>
+                      <p className="text-xs text-gray-300 leading-relaxed">Scan the grid systematically in Z-pattern rows to locate the target character without missing cells.</p>
                     </div>
                   </div>
   

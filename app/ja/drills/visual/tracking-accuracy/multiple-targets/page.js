@@ -8,22 +8,17 @@ export const metadata = {
   title: "複数対象追跡テスト | 周辺視野トレーニング | SkillDrills",
   description: "複数の動く標的を同時に追う無料MOTテスト。周辺視野と分割的視覚注意を練習できます。医療検査ではありません。",
   keywords: [
+    "複数対象追跡テスト",
     "複数対象追跡",
-    "多目標追跡",
+    "複数物体追跡",
     "MOT テスト",
-    "複数オブジェクト追跡",
-    "周辺視野 トレーニング",
-    "視覚的注意",
-    "空間ワーキングメモリ",
+    "多目標追跡",
     "動くもの 同時に追う",
-    "MOT トレーニング",
-    "動体視力 トレーニング",
-    "視野 注意力",
-    "複数物体追跡"
+    "分割的注意"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "複数対象追跡テスト | 周辺視野トレーニング | SkillDrills",
-    description: "複数の動く標的を同時に追う無料MOTテスト。周辺視野と分割的視覚注意を練習できます。",
+    description: "複数の動く標的を同時に追う無料MOTテスト。同じ見た目の球の中から3つの標的を最後まで追いかけます。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets',
     siteName: 'SkillDrills',
@@ -32,7 +27,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "複数対象追跡テスト | 周辺視野トレーニング | SkillDrills",
-    description: "複数の動く標的を同時に追う無料MOTテスト。視覚的注意と空間ワーキングメモリを練習できます。",
+    description: "同じ見た目の球の中から3つの標的を60秒間追い続ける、無料の複数対象追跡（MOT）テストです。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -45,292 +40,307 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills ホーム",
-      "item": "https://skilldrills.online/ja"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "訓練ハブ",
-      "item": "https://skilldrills.online/ja/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "視覚・動体視力トレーニング",
-      "item": "https://skilldrills.online/ja/drills/visual"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "動体追従・トラッキング",
-      "item": "https://skilldrills.online/ja/drills/visual/tracking-accuracy"
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "複数対象追跡テスト (周辺視野トレーニング)",
-      "item": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills ホーム", "item": "https://skilldrills.online/ja" },
+    { "@type": "ListItem", "position": 2, "name": "訓練ハブ", "item": "https://skilldrills.online/ja/drills" },
+    { "@type": "ListItem", "position": 3, "name": "視覚・動体視力トレーニング", "item": "https://skilldrills.online/ja/drills/visual" },
+    { "@type": "ListItem", "position": 4, "name": "動体追従・トラッキング", "item": "https://skilldrills.online/ja/drills/visual/tracking-accuracy" },
+    { "@type": "ListItem", "position": 5, "name": "複数対象追跡テスト", "item": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Multiple_object_tracking"],
-  "name": "SkillDrills 複数対象追跡・周辺視野トレーナー",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Any",
-  "browserRequirements": "HTML5 Canvas対応の最新ウェブブラウザ",
+  "@type": "SoftwareApplication",
+  "name": "複数対象追跡テスト",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Web Browser",
+  "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "description": "認知科学の標準MOT（Multiple Object Tracking）パラダイムに基づき、複数目標の同時追跡能力、視野の広さ、空間ワーキングメモリ容量を厳密に測定する無料オンライントレーニング。"
+  "description": "同じ見た目の球のうち、最初の2秒間だけ緑色で示される3つの標的を覚え、球が60秒間ぶつかり合いながら動いた後にその3つを選び直すブラウザ練習です。視力や注意力を診断する検査ではありません。",
+  "featureList": [
+    "球8個でスタートし、そのうち3個が2秒間だけ緑色で表示",
+    "60秒間、すべての球が同じ見た目で壁や他の球に跳ね返りながら移動",
+    "停止後に3個を選んで確定：正解1個につき20点（最大60点）、不正解の減点なし",
+    "ベストスコアが上がるほど球の数と速さが少しずつ増加、記録はブラウザのローカルストレージにのみ保存"
+  ],
+  "dateModified": "2026-11-12"
 };
 
-const webApplicationSchema = {
+const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "無料オンライン複数対象追跡 MOT テスト",
+  "name": "複数対象追跡テスト | SkillDrills",
+  "alternateName": "GhostLink MOT",
   "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets",
-  "applicationCategory": "GameApplication",
-  "genre": ["周辺視野トレーニング", "多目標追跡", "視覚的注意検査", "動体視力ゲーム"],
-  "browserRequirements": "Requires HTML5 Canvas and JavaScript",
-  "inLanguage": "ja-JP"
+  "dateModified": "2026-11-12",
+  "description": "無料オンライン複数対象追跡テスト：同じ見た目の球の中から3つの標的を60秒間見失わずに追いかけます。",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "HTML5 Canvas対応のモダンブラウザ",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "isAccessibleForFree": true,
+  "learningResourceType": "Educational Game",
+  "teaches": "複数の動く物体を同時に注意で追う、分割的注意"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "複数対象追跡 MOT チャレンジ (GhostLink)",
-  "description": "画面内を跳ね回る複数の同一球体の中から指定されたターゲット群を同時に見失わずに追尾する本格ビジョントレーニングゲーム。",
-  "genre": ["周辺視野トレーニング", "視覚的注意", "認知トレーニング"],
-  "playMode": "SinglePlayer",
-  "applicationCategory": "Game"
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "MOT（Multiple Object Tracking / 複数物体追跡）テストとはどのような検査ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "認知心理学者ゼノン・ピリシン（Zenon Pylyshyn, 1988）が提唱した視覚的注意の基礎研究課題です。画面上の同一形状をした複数のオブジェクトのうち、最初に点滅などで指定された複数の『目標』を、ランダムに動き回る多数の『妨害球』と交差しながらも同時に見失わずに追跡し続ける能力を測定します。単一の物体を目で追う通常の動体視力とは異なり、脳内の空間的ワーキングメモリと注意の並列分配能力が直接評価されます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "健常成人が同時に追尾できる物体の限界数はいくつですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "認知科学の広範な実証データによれば、一般的な成人の追跡限界容量は3個から4個とされています（Cavanagh & Alvarez, 2005）。これを超える負荷では注意のリソースが飽和し、オブジェクト交差時に追跡が外れやすくなります。ただし、練習や経験によってより多くのターゲットを追尾できるようになる可能性が報告されています（Green & Bavelier, 2006; Faubert, 2013）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "1個ずつ順番に視線を動かして確認する方法（順次サッケード）では失敗する理由は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "眼球を特定の目標から別の目標へとジャンプさせる『サッケード（急速眼球運動）』には、約200msの神経生理学的遅延（潜時）が発生します。さらにサッケードの跳躍中には一時的な視覚マスキング（サッケード抑制）が生じます。時速数百ピクセルで移動する物体を順番に見ていると、視線を外した瞬間に交差した別のターゲットを見失うため、個別の注視ではなく視野全体を均一に捉える並列処理が不可欠となります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "重心注視法（Centroid Strategy）とはどのようなテクニックですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "追尾対象となる複数の目標球が形成する仮想の多角形の幾何学的中心（重心：Centroid）に視線の焦点をリラックスして置き、個々の球を中心窩ではなく高感度な『周辺視野（Peripheral Vision）』で捉える高度な追跡技法です。視線を動かさずに多角形の外枠の変形をゲシュタルト的に知覚することで、サッケードによる視覚中断を防ぎ、交差時にもターゲットを見失う確率を劇的に低減させます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "左半球と右半球の視野分離（Hemifield Independence）はどのように活用すべきですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "神経科学の研究（Alvarez & Cavanagh, 2005）により、左視野の情報は右脳で、右視野の情報は左脳で独立して処理される『半球間リソース独立性』が実証されています。ターゲットが左右どちらか片側の視野に偏るよりも、画面の左右にバランス良く分散している方が追跡精度が向上します。画面の中央縦軸を意識し、左右の脳へ均等にタスクを分配する感覚を持つことが極めて効果的です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "サッカー、バスケ、バレーボールなどの球技スポーツで周辺視野がどう活かされますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "球技における『コートビジョン（広い視野）』の本体はまさにこのMOT能力です。一流のミッドフィールダーやポイントガードは、ボールを保持しながらも視線を一点に固定せず、周囲を走る味方と敵ディフェンダーの複数人のポジショニング変化を同時に把握しています。Faubert (2013) などの研究では、MOT課題の学習曲線や限界速度が練習や経験によって変わる可能性が示されています。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "VALORANT、Apex Legends、OverwatchなどFPSゲームにおける実戦的メリットは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "照準（クロスヘア）を中心視野で敵に合わせつつ、ミニマップの戦況変化、アビリティ投擲物の飛来、味方の射線、周囲の足音ベクトルを周辺視野で同時に処理できるようになります。いわゆる『視野が狭いトンネルビジョン』を克服し、乱戦時の状況判断速度（Situational Awareness）と生存率が飛躍的に高まります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "球体が重なって交差（オクルージョン）する瞬間に見失わないための秘訣は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "接触の瞬間を見つめるのではなく、衝突直前の『進行ベクトルの運動慣性』を脳内でシミュレーションします。物理的に直線運動を維持して交差を通り抜けるベクトルをあらかじめ予測しておくことで、交差直後にターゲットとは異なる妨害球に注意が吸着されてしまう『アイデンティティ・スワップ（誤認エラー）』を防ぐことができます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "周辺視野とMOT能力を高めるための推奨練習頻度とセッション時間は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "多目標追跡は頭頂葉のワーキングメモリをフル稼働させるため、過度の疲労が蓄積しやすい認知タスクです。1日10〜15分（5〜8ラウンド程度）を週4〜5日継続するのがおすすめのプロトコルです。疲労を感じた状態で無理に続けると注意が散漫になり誤ったサッケード癖がつくため、集中力が高い状態で行うことが推奨されます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "測定データやテスト記録は安全に管理されますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "はい、完全にお使いのブラウザ（localStorage）内でのみ完結します。追尾スコア、最大追跡数、反応履歴などが外部サーバーに送信されたり収集されたりすることは一切ありません。完全無料かつログイン不要で安心してご利用いただけます。"
-      }
-    }
-  ]
+  "name": "複数対象追跡テスト",
+  "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets",
+  "description": "同じ見た目の球の中から示された3つの標的を覚えて追い続け、最後に選び直す無料の複数対象追跡ゲーム。",
+  "genre": [
+    "Puzzle",
+    "Visual Tracking"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "複数対象追跡テストの実践ステップ",
-  "description": "複数の移動ターゲットを同時に見失わずに追跡し、最高スコアと周辺視野認知能力を獲得するための4段階実践ガイド。",
+  "name": "複数対象追跡テストのやり方",
+  "dateModified": "2026-11-12",
+  "description": "1ラウンドを進める4ステップ。",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "指定ターゲットの幾何学的グループ化",
-      "text": "開始時にハイライト表示されるターゲット球同士を結ぶ仮想の多角形（三角形や四角形）を脳内でイメージし、ひとつの面として認識します。",
+      "name": "3つの標的を覚える",
+      "text": "カウントダウン後に球が現れ、そのうち3個が2秒間だけ緑色で表示されます。位置を覚えてください。",
       "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "視線を中央重心に固定（ソフトフォーカス）",
-      "text": "個別の球を凝視せず、ターゲット群の幾何学的重心に焦点を緩やかに置き、周辺視野を最大開放して全体の広がりを捉えます。",
+      "name": "60秒間追いかける",
+      "text": "表示が消えるとすべての球が同じ見た目になり、60秒間動き続けます。球は壁や他の球にぶつかると跳ね返ります。",
       "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "交差時の慣性ベクトル予測補完",
-      "text": "妨害球とターゲットが複雑に交差する瞬間、直前の運動ベクトルの方向を予測し、交差後の離脱コースを冷静に追尾します。",
+      "name": "3個を選ぶ",
+      "text": "時間が終わると球が止まります。標的だと思う球を3個クリック（タップ）します。もう一度押すと選択を取り消せます。",
       "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "停止後の正確な全ターゲット選択",
-      "text": "運動が停止した瞬間、記憶に保持された注意アンカーを再確認し、迷いなく正解の球を順にクリックして回答します。",
+      "name": "確定して結果を見る",
+      "text": "3個選んだら確定ボタンを押します。正解1個につき20点、不正解は0点で減点はありません。",
       "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets#step-4"
     }
   ]
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "dateModified": "2026-11-12",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "複数対象追跡（MOT）テストはどのように進みますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "同じ見た目の球のうち3個が最初の2秒間だけ緑色で示されます。その後すべての球が同じ見た目で60秒間動き、止まったら最初に示された3個を選んで確定します。正解1個につき20点、1ラウンド最大60点です。視力や注意力を診断する医療検査ではありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "球はいくつあり、だんだん難しくなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最初は球8個です。ベストスコアが30点上がるごとに球が1個増え、球の速さもベストスコアに応じて少しずつ上がります。標的の数は常に3個です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "違う球を選ぶとどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不正解の選択は0点になるだけで、減点はありません。選んだ球をもう一度押すと選択を取り消せるので、確定ボタンを押すまでは選び直せます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "人は一度にいくつまで追えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MOTの手法を最初に示した Pylyshyn & Storm（1988）以降、同じ見た目の物体を同時に追える数はおおむね4個前後が限界で、動きが速いほど少なくなると報告されています（Cavanagh & Alvarez, 2005）。このテストの標的は3個に固定されています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "球を1個ずつ順番に見てはいけませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1個に視線を移している間に、ほかの標的が妨害の球と重なると、どちらが標的か分からなくなりやすくなります。標的どうしの真ん中あたりを見て、3個をまとめて意識する方法が楽だと感じる人が多いようです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "球どうしがぶつかったときに見失わないコツは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "球はぶつかると跳ね返ります。ぶつかる直前の向きを覚えておき、跳ね返った後にどちらへ進むかを先に意識すると、標的と妨害の球の取り違えを減らせます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "このトレーニングでゲームやスポーツが上達しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "スコアが上がるのは、この課題に慣れたことを示します。ゲーム、スポーツ、運転など別の場面への効果は保証されず、医療的な評価の代わりにもなりません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "無料ですか？記録はどこに保存されますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "登録不要・無料で使えます。ベストスコアなどの記録はお使いのブラウザのローカルストレージにのみ保存されます。"
+      }
+    }
+  ]
+};
+
 const guideData = {
-  eyebrow: "視覚認知心理学＆周辺視野神経科学ガイド",
-  heading: "複数対象追跡テスト：周辺視野と視覚的注意を鍛える方法",
+  heading: "複数対象追跡テスト：やり方とコツ",
   intro: [
-    "多目標追従課題（Multiple Object Tracking, MOT）は、認知心理学者ゼノン・ピリシン（Zenon Pylyshyn, 1988）によって考案された、人間の並列的視覚情報処理の限界を測る金字塔的パラダイムです。外見が完全に同一の複数の移動オブジェクト群の中で、事前に指定された複数の目標（ターゲット）を、ランダムな交差運動を繰り返す多数の妨害刺激（ディストラクター）の中から一度も見失うことなく追尾し続ける能力を評価します。",
-    "認知神経科学の研究によると、MOTの遂行は大脳皮質の広範な注意ネットワーク、特に後頭頂皮質（Intraparietal Sulcus: IPS）、前頭眼野（Frontal Eye Fields: FEF）、上丘の協調的な同期発火によって支えられています（Cavanagh & Alvarez, 2005）。人間は個々の物体を言語的・特徴的に記憶しているのではなく、網膜上の座標とは独立した注意のポインタ（FINST: Feature-blind Visual Index）を同時に最大3〜4箇所へ投射することで並列追跡を可能にしています。",
-    "さらに重要な知見として、左視野と右視野は独立した脳半球（右脳と左脳）の注意リソースによって別々に並列処理される『半球間独立性（Hemifield Independence）』が実証されています（Alvarez & Cavanagh, 2004）。物体を1つずつ視線で追う逐次的なサッケード運動（急速眼球運動）を行っていると、約200msのサッケード潜時とサッケード抑制によって情報が脱落します。複数のターゲットが作る多角形の幾何学的重心に視線を置き、周辺視野で全体の変形を捉える『重心注視法（Centroid Strategy）』を実践しています（Green & Bavelier, 2006; Faubert, 2013）。",
-    "本テストは、最新のHTML5 Canvasグラフィックパイプラインを用い、オブジェクト数、移動速度、交差頻度をミリ秒単位で動的に制御します。日々のシステマティックなMOTトレーニングは、視野狭窄（トンネルビジョン）を解消し、球技スポーツにおけるコートビジョン、FPSゲームでの索敵・乱戦状況判断力（Situational Awareness）、さらには日常の自動車運転における危険察知速度の向上に役立つ可能性があります。"
+    "複数対象追跡テスト（Multiple Object Tracking, MOT）は、同じ見た目の球の中から最初に示された3つの標的を最後まで追い、選び直す課題です。Pylyshyn & Storm（1988）が最初に紹介した実験の手法を、シンプルなブラウザゲームにしたものです。",
+    "カウントダウン後、3個の球が2秒間だけ緑色で示され、その後すべての球が同じ見た目で60秒間、壁や他の球に跳ね返りながら動きます。球が止まったら3個を選んで確定し、正解1個につき20点（最大60点）、不正解は減点なしの0点です。ベストスコアが上がるほど球の数と速さが少しずつ増えます。",
+    "複数の物体を同時に追うことは、目を1つずつ動かすのではなく、注意を複数の位置に分けて保つことで行われると説明されています（Cavanagh & Alvarez, 2005）。このテストはその状況を練習するゲームで、注意力や視力を測定・診断するものではありません。"
   ],
   benchmarks: {
-    title: "複数対象追跡と周辺視野の参考基準",
-    headers: ["評価ランク / 階級", "同時追尾可能ターゲット数", "最大追跡速度適応", "正答率 / 精度", "神経生理学的到達レベル"],
-    rows: [
-      ["最上位段階 (段階 5)", "5 – 6個", "高速（400 px/s以上）", "92% 以上", "幾何学的重心固定と大脳半球リソースの完全分離並列処理 (Cavanagh & Alvarez, 2005)"],
-      ["上級視覚認知 (段階 4)", "4 – 5個", "中高速（300 – 400 px/s）", "82 – 91%", "高密度交差時の一時的予測補完と安定した周辺視野アンカリング"],
-      ["中級標準水準 (段階 3)", "3 – 4個", "中速（200 – 300 px/s）", "72 – 81%", "標準的な成人視覚認知限界。緩やかな軌道での複数把握が可能"],
-      ["初級一般段階 (段階 2)", "2 – 3個", "低中速（150 – 200 px/s）", "60 – 71%", "視線の順次サッケードによる情報脱落（単一オブジェクトへの注視固執）"],
-      ["未熟練 / 基礎段階 (Baseline)", "2個 未満", "低速（150 px/s未満）", "60% 未満", "交差直後のターゲット識別混乱と視空間ワーキングメモリの過負荷"]
+    "title": "SkillDrills 練習バンド（このゲーム専用の目安）",
+    "headers": [
+      "バンド",
+      "正解した標的",
+      "スコア",
+      "説明"
     ],
-    note: "認知神経科学およびスポーツ視覚認知文献（Pylyshyn 1988; Cavanagh & Alvarez 2005; Green & Bavelier 2006; Faubert 2013）に基づく客観的パフォーマンス基準です。"
+    "rows": [
+      [
+        "パーフェクト",
+        "3 / 3",
+        "60点",
+        "60秒間、3つの標的をすべて保てた。"
+      ],
+      [
+        "良好",
+        "2 / 3",
+        "40点",
+        "衝突や重なりで1つ見失った。"
+      ],
+      [
+        "練習中",
+        "1 / 3",
+        "20点",
+        "途中で標的が何度か入れ替わった。"
+      ],
+      [
+        "スタート",
+        "0 / 3",
+        "0点",
+        "ゲームに慣れていく段階。"
+      ]
+    ],
+    "note": "SkillDrills がこのゲーム用に設定した練習の目安で、研究に基づく基準値や認知能力の評価ではありません。"
   },
   techniques: {
-    title: "複数の標的を見失わずに追う4つの方法",
-    items: [
+    "title": "複数の標的を見失わないコツ",
+    "items": [
       {
-        name: "幾何学的重心注視ソフトフォーカス法 (Centroid Soft-Focus Fixation)",
-        desc: "個々のターゲット球を凝視するのではなく、ターゲット群が形成する多角形（ポリゴン）の空間的中心点に視線を緩やかに固定し、周辺視野全体で境界線の拡縮を知覚します。",
-        tips: "画面の特定の一点に焦点を凝らさず、ディスプレイ全体を一枚の絵としてリラックスして眺める視野感覚を意識してください。"
+        "name": "真ん中を見る",
+        "desc": "標的を1つだけ目で追うと、残りを見失いやすくなります。",
+        "tips": "3つの標的の真ん中あたりに視線を置き、3つをまとめて意識してみましょう。"
       },
       {
-        name: "視野半球間リソース分散 (Hemifield Resource Allocation)",
-        desc: "左視野と右視野は別々の脳半球で独立処理されるため、ターゲットが画面の左右にバランス良く分散している状態を保つよう意識の配分を調整します。",
-        tips: "画面中央の垂直ラインを意識し、左半球と右半球の注意リソースを均等に稼働させるイメージを持ちましょう。"
+        "name": "跳ね返る向きを先読みする",
+        "desc": "球は壁や他の球にぶつかると跳ね返ります。",
+        "tips": "ぶつかる地点よりも、跳ね返って進む向きを先に意識します。"
       },
       {
-        name: "交差衝突ベクトル予測補完モデル (Collision Vector Extrapolation)",
-        desc: "ターゲット同士、または妨害球とターゲットが重なり合う瞬間、直前の進行方向と運動量を脳内で線形予測し、交差後の離脱軌道を先回りして把握します。",
-        tips: "球体が接触した瞬間を見るのではなく、通り抜けた後の空間へ注意のアンカーをあらかじめ逃がします。"
+        "name": "重なった直後に確認する",
+        "desc": "標的と妨害の球が重なって離れる瞬間がいちばん紛らわしくなります。",
+        "tips": "重なりがほどけたら、標的が3つそろっているか素早く数え直します。"
       },
       {
-        name: "注意アンカーの能動的リフレッシュ (Attentional Anchor Active Refresh)",
-        desc: "追跡中に注意の保持強度が低下してきたと感じたら、心の中でターゲット群の輪郭を素早く1巡スキャンし、各オブジェクトのIDポインタを再同期します。",
-        tips: "視線を激しく動かすのではなく、心的な注意のスポットライトだけをミリ秒単位で素早く巡回させます。"
+        "name": "選ぶときは落ち着いて",
+        "desc": "球が止まった後は時間制限なく選べます。",
+        "tips": "自信のない球はもう一度押して取り消し、選び直しても構いません。"
       }
     ]
   },
   steps: [
-    "テスト開始ボタンを押し、画面上に点滅表示される指定ターゲット群の位置と配置を記憶します。",
-    "ターゲットが通常の球体と同化して動き始めたら、ターゲット群の中心（重心）に視線を固定します。",
-    "視線を動かさずに周辺視野を活用し、他の妨害球との交差運動を冷静にトラッキングし続けます。",
-    "球体の運動が完全に停止したら、記憶しているターゲット球を正確に順番にクリック（タップ）します。",
-    "正解率、追尾ターゲット数、到達ランクを確認し、毎日の周辺視野トレーニングとして継続します。"
+    "スタートボタンを押し、カウントダウン後に緑色で示される3つの球を覚えます。",
+    "表示が消えたら60秒間、3つの標的を目で追います。",
+    "球が止まったら、標的だと思う3個をクリックします。",
+    "確定ボタンを押して、正解数とスコア（正解1個につき20点）を確認します。",
+    "結果画面で正確さと評価を見て、もう一度挑戦します。"
   ],
-  audience: "VALORANT、Apex Legends、CS2、Overwatchで索敵力と乱戦状況判断を高めたいFPSプレイヤー、サッカー・バスケ・テニス・モータースポーツ等で広い視野（コートビジョン）を養いたいアスリート、および航空管制官志望者全般。",
+  audience: "複数の動くものを同時に追う練習をしてみたい人、FPSやMOBAのプレイヤー、短い集中ゲームを探している方。",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('pylyshyn1988', 'cavanagh2005', 'alvarez2004', 'green2006', 'faubert2013', 'woods2015'),
+  sources: pickSources('pylyshyn1988', 'cavanagh2005'),
   related: [
-    { href: "/ja/drills/visual/tracking-accuracy/moving-target", label: "動体視力テスト (移動目標迎撃)" },
-    { href: "/ja/drills/visual/visual-recognition/visual-search", label: "視覚探索テスト (周辺視野スキャン)" },
-    { href: "/ja/drills/visual/depth-perception/distance-judgment", label: "深視力検査 (三桿法立体視)" },
-    { href: "/ja/drills/reaction-speed/visual-tracking-speed-test", label: "視覚追従スピードテスト" }
+    {
+      "href": "/ja/drills/visual/tracking-accuracy/moving-target",
+      "label": "動体視力を鍛えるゲーム"
+    },
+    {
+      "href": "/ja/drills/visual/tracking-accuracy/pursuit-tracker",
+      "label": "スムースパシュート・視線追従トレーニング"
+    },
+    {
+      "href": "/ja/drills/visual/visual-recognition/visual-search",
+      "label": "視覚探索ゲーム"
+    },
+    {
+      "href": "/ja/drills/visual/depth-perception/distance-judgment",
+      "label": "深視力トレーニング"
+    },
+    {
+      "href": "/ja/drills/reaction-speed/visual-tracking-speed-test",
+      "label": "動体視力テスト"
+    }
   ]
 };
 
 export default function LocalizedMultipleTargetsJaPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
-      <GhostLinkClient copy={{ title: "複数対象追跡", subtitle: "周辺視野トレーニング" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <GhostLinkClient copy={{  "title": "複数対象追跡" }} />
       <DrillGuide guide={guideData} />
       <RelatedDrills />
     </>

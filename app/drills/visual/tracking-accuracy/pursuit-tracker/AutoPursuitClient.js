@@ -745,10 +745,10 @@ export default function AutoPursuitClient({ copy } = {}) {
                       <Brain className="w-4 h-4 text-emerald-400" /> What Is Smooth Pursuit Tracking?
                     </h3>
                     <p className="text-sm leading-relaxed mb-3">
-                      <strong>Smooth Pursuit Training</strong> measures how accurately your eyes and cursor can continuously follow a moving object, rather than reacting to a single discrete event. The <strong>Pursuit Tracker drill</strong> presents an orb that accelerates and changes direction unpredictably, requiring your cursor to stay locked onto it in real time over a <strong>45-second round</strong>. It tracks accurately up to about 30&deg;/s, and beyond that the eye lags and needs catch-up saccades (Krauzlis, 2004; Rashbass, 1961). Pursuit also cannot be produced voluntarily on a blank screen &mdash; it needs a moving stimulus to lock onto.
+                      <strong>Smooth Pursuit Training</strong> practises keeping your cursor on a moving object continuously, rather than reacting to a single discrete event. Only the cursor is scored; your eye movements are not recorded. The <strong>Pursuit Tracker drill</strong> presents an orb that accelerates and changes direction unpredictably, requiring your cursor to stay locked onto it in real time over a <strong>45-second round</strong>. It tracks accurately up to about 30&deg;/s, and beyond that the eye lags and needs catch-up saccades (Krauzlis, 2004; Rashbass, 1961). Pursuit also cannot be produced voluntarily on a blank screen &mdash; it needs a moving stimulus to lock onto.
                     </p>
                     <p className="text-sm leading-relaxed">
-                      Unlike discrete reaction tests, this continuously scores how much of every second your cursor stays in contact with the target — building the sustained visual-motor coordination used in tracking moving objects, opponents, or vehicles.
+                      Unlike discrete reaction tests, this scores sustained contact: every unbroken second (about 60 frames, so roughly 1 s on a 60 Hz screen) with the cursor on the orb adds 5 points, and drifting off for more than 2 seconds only resets your streak.
                     </p>
                   </section>
   

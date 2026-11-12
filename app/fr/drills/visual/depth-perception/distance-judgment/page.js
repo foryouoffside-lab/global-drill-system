@@ -4,36 +4,20 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — distance-judgment (French native search)
-// PRIMARY:  "test de perception de la profondeur" — Consumer utility intent
-//           "vision stéréoscopique"                — Clinical vision term
-// SECONDARY / LSI:
-//           "stéréopsie"                           — Ophthalmic terminology
-//           "appréciation des distances"           — Natural practical phrase
-//           "test de profondeur en ligne"           — Browser intent
-//           "vision en relief"                      — Common supporting term
-// ============================================================
-
 export const metadata = {
   title: 'Test de perception de la profondeur en ligne | SkillDrills',
-  description: 'Jeu gratuit d’appréciation des distances : cliquez quand la sphère qui grossit épouse l’anneau. Ne teste pas la vision stéréoscopique ni la vue.',
+  description: 'Test de perception de la profondeur en ligne : cliquez quand la sphère qui approche épouse l’anneau. Gratuit, écart en %. Pas un examen de la vue.',
   keywords: [
     'test de perception de la profondeur',
-    'vision stéréoscopique',
-    'stéréopsie',
+    'test de perception de la profondeur en ligne',
     'appréciation des distances',
-    'test de profondeur en ligne',
-    'vision en relief',
-    'test de stéréopsie en ligne',
-    'estimation de distance visuelle',
-    'vision tridimensionnelle',
-    'perception spatiale',
-    'test de Howard-Dolman',
+    'estimer une distance',
+    'temps avant contact',
+    'cible qui approche',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de perception de la profondeur en ligne | SkillDrills',
-    description: 'Jeu gratuit d’appréciation des distances : cliquez quand la sphère qui grossit épouse l’anneau. Ne teste pas la vision stéréoscopique ni la vue.',
+    description: 'Test de perception de la profondeur en ligne : cliquez quand la sphère qui approche épouse l’anneau. Gratuit, écart en %. Pas un examen de la vue.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -42,7 +26,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de perception de la profondeur en ligne | SkillDrills',
-    description: 'Jeu gratuit d’appréciation des distances : cliquez quand la sphère qui grossit épouse l’anneau. Ne teste pas la vision stéréoscopique ni la vue.',
+    description: 'Test de perception de la profondeur en ligne : cliquez quand la sphère qui approche épouse l’anneau. Gratuit, écart en %. Pas un examen de la vue.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -81,14 +65,14 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-11-12"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Appréciation des distances en ligne",
-  "description": "Jeu d’appréciation du temps avant contact sur écran, jouable à la souris, au toucher ou au clavier.",
+  "description": "Jeu d’appréciation du temps avant contact sur écran, jouable à la souris ou au toucher.",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Navigateur moderne avec JavaScript",
@@ -99,7 +83,7 @@ const webAppSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -119,7 +103,7 @@ const videoGameSchema = {
   ],
   "applicationCategory": "Game",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -131,7 +115,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
@@ -186,7 +170,7 @@ const faqSchema = {
       "name": "Comment l’erreur est-elle calculée ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le jeu compare le diamètre de la sphère au moment du clic à celui de l’anneau et exprime l’écart en pourcentage. Moins de 5 % d’erreur donne le score maximal de +150 points."
+        "text": "L’écart est mesuré entre la profondeur de la sphère au moment du clic et celle de l’anneau, en pourcentage de la longueur du tunnel. Jusqu’à 7 % : +150 points ; jusqu’à 16 % : +100 points. Ces marges se resserrent avec le niveau jusqu’à 4 % et 10 %. Un niveau est gagné tous les 750 points et un clic raté ne coûte aucun point."
       }
     },
     {
@@ -194,7 +178,7 @@ const faqSchema = {
       "name": "Faut-il une souris, ou le tactile suffit-il ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Vous pouvez cliquer avec la souris, toucher l’écran ou appuyer sur la barre d’espace."
+        "text": "Les deux fonctionnent : cliquez avec la souris ou touchez l’écran. Le clavier ne sert pas à jouer."
       }
     },
     {
@@ -240,7 +224,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Cliquez à la superposition",
-      "text": "Cliquez, touchez l’écran ou appuyez sur la barre d’espace quand la sphère coïncide avec l’anneau.",
+      "text": "Cliquez ou touchez l’écran quand la sphère coïncide avec l’anneau.",
       "url": "https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment#step-3"
     },
     {
@@ -256,59 +240,34 @@ const howToSchema = {
 const distanceGuideFr = {
   "heading": "Test de perception de la profondeur : appréciation des distances",
   "intro": [
-    "Ce jeu d’appréciation des distances vous montre une sphère qui grossit dans un tunnel ; vous cliquez quand elle épouse l’anneau fixe. Le jeu calcule l’écart en pourcentage. Il s’appuie sur l’agrandissement de l’image et ne teste ni la vision stéréoscopique ni la vue : ce n’est pas un diagnostic.",
+    "Ce test de perception de la profondeur en ligne est un jeu d’appréciation des distances : il vous montre une sphère qui grossit dans un tunnel ; vous cliquez quand elle épouse l’anneau fixe. Le jeu calcule l’écart en pourcentage. Il s’appuie sur l’agrandissement de l’image et ne teste ni la vision stéréoscopique ni la vue : ce n’est pas un diagnostic.",
     "La perception de la profondeur combine plusieurs indices : disparité binoculaire, perspective, taille relative et agrandissement de l’image. L’appareil de Howard-Dolman (Howard, 1919) étudie la disparité avec des tiges réelles. Ici, vous utilisez surtout l’indice d’agrandissement décrit par Lee (1976) et Regan et Beverley (1978), qui donne une estimation du temps avant contact.",
-    "Mesure et matériel : l’écart est calculé comme |diamètre de la sphère − diamètre de l’anneau| / diamètre de l’anneau. Les temps sont mesurés dans votre navigateur avec l’horloge performance.now(), dont la résolution est limitée. L’affichage ajoute un délai (16,7 ms à 60 Hz, 6,9 ms à 144 Hz, 4,1 ms à 240 Hz ; Woods et al., 2015) : comparez vos séances sur le même matériel.",
+    "Une séance dure 45 secondes et l’anneau change de profondeur à chaque essai. Jusqu’à 7 % d’écart : +150 points ; jusqu’à 16 % : +100 points. Tous les 750 points, vous montez d’un niveau : la sphère arrive plus vite et les marges se resserrent jusqu’à 4 % et 10 %. Un clic raté ne coûte aucun point.",
+    "L’affichage ajoute un délai (16,7 ms à 60 Hz, 6,9 ms à 144 Hz, 4,1 ms à 240 Hz ; Woods et al., 2015) : comparez vos séances sur le même matériel.",
     "Confidentialité : vos scores et vos records restent dans le stockage local (LocalStorage) de votre navigateur."
   ],
   "benchmarks": {
-    "title": "Paliers du test de perception de la profondeur (5 niveaux de repère)",
+    "title": "Paliers d’entraînement (SkillDrills)",
     "headers": [
       "Palier",
-      "Erreur moyenne",
-      "Points et niveau",
+      "Écart typique",
       "Lecture"
     ],
     "rows": [
-      [
-        "Palier 1",
-        "Moins de 5,0 % d’erreur",
-        "1500+ pts | Niveau 7+",
-        "Clics très proches de la coïncidence"
-      ],
-      [
-        "Palier 2",
-        "5,0 % – 9,9 % d’erreur",
-        "1100 – 1499 pts | Niveau 5–6",
-        "Bonne anticipation à vitesse soutenue"
-      ],
-      [
-        "Palier 3",
-        "10,0 % – 15,9 % d’erreur",
-        "750 – 1099 pts | Niveau 3–4",
-        "Léger retard d’estimation aux pointes de vitesse"
-      ],
-      [
-        "Palier 4",
-        "16,0 % – 25,0 % d’erreur",
-        "450 – 749 pts | Niveau 2",
-        "Clics souvent trop précoces"
-      ],
-      [
-        "Palier 5",
-        "Plus de 25,0 % d’erreur",
-        "Moins de 450 pts | Niveau 1",
-        "Point de départ : attendez la coïncidence"
-      ]
+      ["Palier 1", "Plus de 25 %", "Clics souvent bien avant la coïncidence"],
+      ["Palier 2", "16 – 25 %", "Fixez le bord de l’anneau et attendez"],
+      ["Palier 3", "7 – 16 %", "Essais dans la zone à +100 points"],
+      ["Palier 4", "4 – 7 %", "Le timing tient quand la vitesse augmente"],
+      ["Palier 5", "Moins de 4 %", "Garder cette précision sur toute la séance"]
     ],
-    "note": "Repères éditoriaux propres à cet exercice, sans lien avec un examen de la vue ni un classement de population."
+    "note": "Paliers d’entraînement SkillDrills : ni statistique de population, ni percentile, ni examen de la vue."
   },
   "steps": [
     "Cliquez sur « Démarrer le test » pour lancer la séance de 45 secondes.",
     "Fixez l’anneau de référence cyan au centre.",
     "Suivez la sphère qui apparaît au fond du couloir et accélère vers vous.",
-    "Cliquez, touchez l’écran ou appuyez sur la barre d’espace quand la sphère s’ajuste à l’anneau.",
-    "Lisez votre erreur (moins de 5 % : parfait, +150 PTS) et adaptez votre rythme aux accélérations."
+    "Cliquez ou touchez l’écran quand la sphère s’ajuste à l’anneau.",
+    "Lisez votre écart (jusqu’à 7 % : +150 PTS, jusqu’à 16 % : +100 PTS) et adaptez votre rythme aux accélérations."
   ],
   "audience": "Joueurs, conducteurs et curieux qui veulent s’exercer à apprécier les distances et le temps avant contact sur écran.",
   "related": [
@@ -368,7 +327,7 @@ const distanceGuideFr = {
 
 const copyFr = {
   title: 'Test de Perception de la Profondeur',
-  subtitle: 'Vision 3D et appréciation des distances',
+  subtitle: 'Appréciation des distances sur écran',
   caption: 'La perception de la profondeur permet d\'évaluer l\'éloignement et l\'ordre des objets. Sur un écran plat, le taux d\'expansion optique (Lee, 1976; Regan & Beverley, 1978) permet de mesurer le temps avant contact (TTC) sans nécessiter la connaissance de la taille de l\'objet.',
   statScore: 'Points',
   statTime: 'Temps',
@@ -389,10 +348,10 @@ const copyFr = {
   rulesTitle: 'Règles et Attribution des Points',
   rule1Text: 'Interception Parfaite',
   rule1Highlight: '+150 PTS',
-  rule1Result: 'Moins de 5% d\'erreur',
+  rule1Result: 'Écart ≤ 7 % (4 % aux niveaux élevés)',
   rule2Text: 'Interception Rapprochée',
   rule2Highlight: '+100 PTS',
-  rule2Result: 'Moins de 12% d\'erreur',
+  rule2Result: 'Écart ≤ 16 % (10 % aux niveaux élevés)',
   rule3Text: 'Accélération Progressive',
   rule3Highlight: 'Plus Rapide',
   rule3Result: 'La sphère s\'approche plus vite',
@@ -401,12 +360,12 @@ const copyFr = {
   rule4Result: 'Nouvelle cible sans perte de points',
   aboutTitle: 'À propos du test de perception de la profondeur',
   overviewTitle: 'Que mesure cette épreuve ?',
-  overviewLead: 'Elle évalue la vitesse et la justesse avec lesquelles le cerveau décrypte une approche spatiale en 3D.',
+  overviewLead: 'Elle mesure la justesse de votre clic quand une sphère qui grossit atteint la profondeur de l\'anneau.',
   overviewBody: 'En analysant le moment de coïncidence par expansion de contour, le jeu fait travailler le timing visuo-moteur sur cette tâche précise.',
   aboutCards: [
     { iconBg: 'bg-blue-600', title: 'À qui s\'adresse ce jeu ?', text: 'Joueurs et curieux qui veulent s\'exercer à estimer le temps avant contact sur écran.' },
-    { iconBg: 'bg-cyan-600', title: 'Capacités exercées', text: 'Expansion optique, estimation du temps de contact, anticipation visuelle et acuité spatiale.' },
-    { iconBg: 'bg-purple-600', title: 'Conseil Clé', text: 'Fixez l\'anneau cible et déclenchez votre clic au millimètre près quand les contours coïncident.' }
+    { iconBg: 'bg-cyan-600', title: 'Capacités exercées', text: 'Expansion optique, estimation du temps de contact, anticipation visuelle et timing du clic.' },
+    { iconBg: 'bg-purple-600', title: 'Conseil Clé', text: 'Fixez l\'anneau cible et cliquez quand les contours coïncident.' }
   ]
 };
 

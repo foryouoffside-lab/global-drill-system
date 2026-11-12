@@ -5,276 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SPANISH SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "entrenamiento de visión periférica" / "ejercicios para visión periférica"
-// Secondary:    "atención encubierta espacial", "ampliación del campo visual", "estabilidad foveal central"
-// LSI / Domain:  "detección periférica de estímulos", "percepción visual lateral", "seguimiento visual y visión amplia",
-//               "visión periférica para shooters", "agudeza visual periférica deportes", "coordinación foveal periférica", "campo visual dinámico ejercicio"
-// Authentic Domain Terms: Entrenamiento de Visión Periférica（Peripheral Vision Training）, Atención Espacial Encubierta（Covert Spatial Attention）, Campo Visual Útil（Useful Field of View / UFOV）, Fijación Foveal（Foveal Fixation）, Bastones Retinianos（Retinal Rods）, Supresión Sacádica（Saccadic Suppression）, Visión en Túnel（Tunnel Vision）
-// ============================================================
+const url = 'https://skilldrills.online/es/drills/visual-tracking/peripheral-ping-pursuit';
+const title = "Fijación Central y Visión Periférica | SkillDrills";
+const description = "Ejercicio gratis: mantén la mirada en la cruz central mientras aparecen puntos breves en otras zonas de la pantalla. Detéctalos sin mover los ojos.";
 
 export const metadata = {
-  title: "Fijación Central y Visión Periférica | SkillDrills",
-  description: "Sigue el objetivo central y responde a señales laterales sin apartar la mirada. Ejercicio gratuito en navegador con reacción y estabilidad de fijación.",
-  keywords: [
-    "entrenamiento de visión periférica",
-    "ejercicios para visión periférica",
-    "atención periférica con fijación central",
-    "visión periférica deporte",
-    "detección de estímulos laterales",
-    "tiempo de reacción periférico",
-    "percepción visual periférica",
-    "fijación central y visión lateral",
-    "ejercicio de visión periférica online",
-    "entrenamiento visual para baloncesto"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Fijación Central y Visión Periférica | SkillDrills",
-    description: "Sigue el objetivo central y detecta señales laterales sin apartar la mirada. Ejercicio gratuito en navegador.",
-    type: "website",
-    url: "https://skilldrills.online/es/drills/visual-tracking/peripheral-ping-pursuit",
-    siteName: "SkillDrills",
-    locale: "es_ES",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Fijación Central y Visión Periférica | SkillDrills",
-    description: "Practica la fijación central y la percepción de estímulos laterales directamente en el navegador.",
-  },
+  title,
+  description,
+  keywords: ["fijación central y visión periférica", "visión periférica ejercicios", "fijación central", "ejercicio de ojos online", "mirada fija ejercicio", "percepción periférica"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/peripheral-ping-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'es_ES', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: "https://skilldrills.online/es/drills/visual-tracking/peripheral-ping-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/peripheral-ping-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://skilldrills.online/es" },
-    { "@type": "ListItem", "position": 2, "name": "Ejercicios", "item": "https://skilldrills.online/es/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Seguimiento Visual", "item": "https://skilldrills.online/es/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "Entrenamiento de Visión Periférica – Ping Pursuit", "item": "https://skilldrills.online/es/drills/visual-tracking/peripheral-ping-pursuit" }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Inicio", item: 'https://skilldrills.online/es' },
+    { '@type': 'ListItem', position: 2, name: "Ejercicios", item: 'https://skilldrills.online/es/drills' },
+    { '@type': 'ListItem', position: 3, name: "Seguimiento Visual", item: 'https://skilldrills.online/es/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "Fijación Central y Visión Periférica", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "Entrenamiento de Visión Periférica y Atención Encubierta",
-  "operatingSystem": "Navegador Web",
-  "applicationCategory": "HealthApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD"
-  },
-  "description": "Herramienta de doble tarea para practicar la estabilidad de la fijación central y registrar la detección de señales laterales.",
-  "dateModified": "2026-09-20"
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Aplicación de Visión Periférica Ping Pursuit",
-  "url": "https://skilldrills.online/es/drills/visual-tracking/peripheral-ping-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Todos los navegadores modernos",
-  "browserRequirements": "Requiere compatibilidad con JavaScript y HTML5 Canvas",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Entrenamiento de Visión Periférica Ping Pursuit",
-  "description": "Ejercicio visual interactivo donde el usuario mantiene el seguimiento del blanco central mientras detecta señales en las esquinas de la pantalla.",
-  "genre": ["Entrenamiento Visual", "Visión Periférica", "Entrenamiento de Reflejos"],
-  "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Fijación Central y Visión Periférica",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Cómo Entrenar la Visión Periférica con el Ping Pursuit",
-  "description": "Protocolo neurofisiológico para expandir el campo visual útil sosteniendo una fijación foveal estable.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Anclaje Foveal Central",
-      "text": "Sitúate a una distancia de 50 a 70 cm del monitor. Fija la mirada en el blanco central en desplazamiento sin desviar los ojos."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Expansión de la Atención Encubierta",
-      "text": "Amplía el campo consciente hacia los márgenes de la pantalla manteniendo el eje ocular físico en el centro."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Detección de Impulsos Periféricos",
-      "text": "Al percibir un destello momentáneo en la periferia, capta el estímulo mediante los bastones retinianos sin lanzar la mirada."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Respuesta Motriz Inmediata",
-      "text": "Activa la respuesta de inmediato manteniendo la trayectoria fluida de seguimiento sobre el objetivo principal."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Cómo practicar la visión periférica con fijación central",
+  description: "Cuatro pasos para mantener la mirada en la cruz central y notar los puntos que parpadean en la periferia.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Postura cómoda",
+    "text": "Siéntate a una distancia cómoda de la pantalla y relaja hombros y cuello."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Fijar la cruz",
+    "text": "Al empezar la sesión, mira la cruz del centro de la pantalla y mantén ahí la mirada."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Notar sin mirar",
+    "text": "Cuando un punto parpadee en algún lugar, nótalo con el rabillo del ojo, sin girar los ojos hacia él."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Un ajuste cada vez",
+    "text": "Cuando resulte fácil, sube la velocidad o activa Ocultar línea y Velocidad aleatoria, de uno en uno."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "¿Cómo funciona el ejercicio de fijación central y visión periférica?",
+    "a": "Hay una cruz fija en el centro. En posiciones aleatorias aparece un punto cada vez que enseguida desaparece: unos 0,75 segundos a velocidad 1,0x, y el siguiente llega tras una pausa corta. Los puntos no se mueven. El objetivo es notarlos manteniendo la mirada en la cruz; no hay que hacer clic. No es un examen del campo visual."
+  },
+  {
+    "q": "¿Qué cambian la velocidad y Hide Line?",
+    "a": "Más velocidad hace que los puntos aparezcan más a menudo y duren menos (como mínimo unos 0,25 segundos). Random Speed hace variar sin parar la frecuencia y la duración. Hide Line oculta la cruz y tienes que mantener el centro sin referencia."
+  },
+  {
+    "q": "¿Puedo mirar los puntos?",
+    "a": "El sentido del ejercicio es mantener la mirada en el centro. El navegador no registra tus ojos, así que comprueba tú mismo si siguen a los puntos. Si ocurre a menudo, baja la velocidad."
+  },
+  {
+    "q": "¿El ejercicio mide mis movimientos oculares o da una puntuación?",
+    "a": "No. El navegador no sabe hacia dónde miras y no hay clics ni detección de aciertos. No hay puntuación: solo se guarda en este navegador el número de sesiones completadas. Mantener la mirada donde pide el ejercicio depende de ti."
+  },
+  {
+    "q": "¿Qué ajustes puedo cambiar?",
+    "a": "Tras una cuenta atrás 3-2-1, la sesión dura 30, 45, 60, 90 o 120 segundos (60 por defecto). Puedes ajustar la velocidad de 0,5x a 9,0x, el tamaño del objetivo de 10 a 50 px, su color, las opciones Hide Line (ocultar línea), Random Speed (velocidad aleatoria), Gaze Trail (estela), Neon Glow y Scanlines, y fondo claro u oscuro. La tecla Esc termina la sesión en cualquier momento."
+  },
+  {
+    "q": "¿Mejorará mi vista o mi puntería?",
+    "a": "No está garantizado. No es un examen de la vista ni una terapia, sino una herramienta para practicar la mirada sobre un objetivo. No promete mejor agudeza visual ni mejor puntería. Si notas molestias en los ojos, consulta a un profesional."
+  },
+  {
+    "q": "¿Cuánto tiempo debo practicar?",
+    "a": "Unas cuantas sesiones de 1 a 2 minutos con pausas son suficientes. Si notas los ojos cansados o secos, parpadea y mira a lo lejos; detente si aparece dolor, mareo, náuseas o dolor de cabeza."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿En qué consiste el entrenamiento de visión periférica Ping Pursuit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es un ejercicio de doble tarea para practicar la atención periférica mientras mantienes la fijación en el objetivo central. Registra el resultado de esta sesión, pero no mide ni amplía anatómicamente el campo visual (Posner, 1980)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es la diferencia fisiológica entre la fóvea y la periferia retiniana?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La fóvea abarca los 1 o 2 grados centrales con alta densidad de conos para ver detalles. La periferia está formada por bastones y la vía magnocelular, orientada a detectar movimiento y cambios de brillo (Wolfe, 1994)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo opera la atención espacial encubierta sin mover los ojos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La atención encubierta es gestionada por la red frontoparietal dorsal, permitiendo desplazar el foco mental por el campo visual sin rotar físicamente los ojos (Eriksen & St. James, 1986)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo previene este ejercicio la visión en túnel bajo tensión?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La carga cognitiva puede cambiar cuántas señales laterales se detectan mientras se sigue un objetivo central. Este ejercicio permite observar esa relación en pantalla, pero no demuestra que trate la visión en túnel ni que cambie de forma permanente el campo visual."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué no se debe desviar la mirada hacia el destello periférico?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mirar directamente dispara una sacada balística que induce supresión sacádica durante 50 a 100 ms, provocando una ceguera momentánea respecto al blanco central (Findlay & Walker, 1999)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué ventajas aporta este entrenamiento en videojuegos de disparos (FPS)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los jugadores de élite fijan la retícula en la zona de contacto mientras monitorean el minimapa y los flancos, evitando descuidos tácticos por visión en túnel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo se transfiere este entrenamiento al rendimiento deportivo tradicional?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En fútbol, baloncesto o tenis, los atletas siguen la pelota centralmente mientras detectan los movimientos de rivales y compañeros en los laterales (Leigh & Zee, 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué efecto tiene la tasa de refresco del monitor en la prueba?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Las pantallas de alta frecuencia (144Hz o superiores) muestran los destellos sin persistencia borrosa, permitiendo a los bastones periféricos registrar el impulso más rápido (Woods et al., 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Esta herramienta de entrenamiento es gratuita y sin anuncios invasivos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, SkillDrills ofrece esta aplicación sin coste alguno, sin necesidad de registro ni descargas, directamente en el navegador."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Con qué frecuencia se debe practicar para lograr mejoras perceptivas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Empieza con sesiones cortas y pausas, y compara tus propios resultados en condiciones parecidas. Esta herramienta no permite prometer una ampliación del campo visual ni un plazo fijo de mejora. Detén la práctica si aparece molestia."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'es',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Fundamentos Científicos de Visión Periférica y Atención Espacial",
-  intro: [
-    "La retina humana cuenta con una marcada división de tareas: la visión foveal nítida ocupa apenas los 1° a 2° centrales del campo visual (vía parvocelular), mientras que la mayor parte del espacio circundante es procesada por la retina periférica, rica en bastones y asociada a la vía magnocelular, experta en cambios de luminosidad y movimiento rápido (Wolfe, 1994; Leigh & Zee, 2015). De forma instintiva, el cerebro tiende a lanzar sacadas hacia cualquier estímulo periférico.",
-    "El ejercicio Ping Pursuit practica la atención espacial encubierta: detectar sucesos periféricos sin apartar los ojos del blanco central (Posner, 1980; Eriksen & St. James, 1986). Al mantener la fijación central, permite comparar el seguimiento con la detección lateral; no promete modificar el campo visual ni tratar una alteración ocular.",
-    "Los tiempos de respuesta del monitor y las latencias de entrada repercuten en la detección de impulsos breves (Woods et al., 2015). Todas las mediciones se efectúan de forma local en la memoria de tu navegador, garantizando confidencialidad absoluta."
+  ...{
+  "heading": "Fijación Central y Visión Periférica: guía",
+  "intro": [
+    "Fijación central y visión periférica es un ejercicio en el navegador en el que mantienes la mirada en una cruz en el centro de la pantalla y notas, sin mover los ojos, puntos que parpadean un instante. Aparecen de uno en uno en posiciones aleatorias y se ven unos 0,75 segundos a velocidad 1,0x.",
+    "La visión central capta los detalles hacia donde miras; la visión periférica detecta los cambios alrededor. Cuando algo aparece a un lado, los ojos tienden a saltar hacia allí (Findlay & Walker, 1999). Este ejercicio repite situaciones en las que resistes ese impulso.",
+    "El navegador solo conoce la posición donde se dibuja el objetivo y tus ajustes, no hacia dónde miran realmente tus ojos. No hay puntuación ni porcentaje de precisión: compara tu comodidad y concentración con la misma pantalla, distancia y ajustes. La frecuencia de refresco y el retardo de la pantalla también cambian cómo se ve el movimiento (Woods et al., 2015)."
   ],
-  benchmarks: {
-    title: "Métricas de Campo Visual Útil (UFOV) y Latencia Periférica",
-    headers: ["Nivel de Rendimiento", "Campo Visual Útil (UFOV %)", "Tiempo de Reacción Periférico", "Estabilidad Central", "Perfil Neurofisiológico"],
-    rows: [
-      ["Etapa Avanzada", "Más de 92%", "Menos de 280 ms", "Más de 95%", "Desacoplamiento foveal perfecto; conciencia panorámica sin desviar la mirada central."],
-      ["Avanzado (Nivel Competitivo)", "85% – 92%", "280 ms – 340 ms", "90% – 95%", "Excelente distribución de atención encubierta; mínima demora ante estímulos laterales."],
-      ["Competente (Adulto Sano)", "75% – 84%", "341 ms – 410 ms", "82% – 89%", "Sólida capacidad de doble tarea; leve visión en túnel con movimientos centrales rápidos."],
-      ["En Desarrollo", "60% – 74%", "411 ms – 500 ms", "70% – 81%", "Retraso apreciable; micro-sacadas involuntarias frecuentes hacia los destellos periféricos."],
-      ["Iniciante / Nivel Base", "Menos de 60%", "Más de 500 ms", "Menos de 70%", "Marcada visión en túnel; pérdida constante del seguimiento central al activarse el impulso."]
+  "benchmarks": {
+    "title": "Etapas de práctica (guía de SkillDrills)",
+    "headers": [
+      "Etapa",
+      "Objetivo de práctica"
     ],
-    note: "※ Baremos basados en pruebas estandarizadas a 50–70 cm con series de doble tarea de 60 segundos. Solo se puntúan las repeticiones donde se mantiene el seguimiento central."
+    "rows": [
+      [
+        "Etapa 1",
+        "1,0x, cruz visible, mirada mantenida en el centro"
+      ],
+      [
+        "Etapa 2",
+        "Notar la mayoría de los puntos sin mirarlos"
+      ],
+      [
+        "Etapa 3",
+        "Subir la velocidad: puntos más breves y frecuentes"
+      ],
+      [
+        "Etapa 4",
+        "Añadir Hide Line o Random Speed, de uno en uno"
+      ]
+    ],
+    "note": "Etapas de práctica sugeridas por SkillDrills: no son baremos clínicos, estadísticas de usuarios ni percentiles."
   },
-  techniques: {
-    title: "Cuatro Principios Clave para Desarrollar la Visión Periférica",
-    items: [
+  "techniques": {
+    "title": "Consejos de ejecución",
+    "items": [
       {
-        name: "Protocolo de Anclaje Foveal",
-        desc: "Condiciona los músculos extraoculares para mantenerse fijados en el blanco central móvil. Reprime el impulso de mirar el destello lateral para no sufrir periodos de supresión sacádica (Findlay & Walker, 1999).",
-        tips: "Visualiza que tu mirada central es un punto magnético firme mientras tu mente cubre la pantalla como un radar abierto."
+        "name": "Mirada en el centro, atención amplia",
+        "desc": "Mira la cruz sin tensión y percibe la pantalla entera. No busques los puntos con los ojos.",
+        "tips": "Si los ojos se escapan a menudo, baja la velocidad y deja la cruz visible."
       },
       {
-        name: "Ampliación de la Atención Encubierta",
-        desc: "Extiende tu atención desde el centro hacia los cuatro bordes del monitor. Pasa a una modalidad de enfoque difuso donde los bastones perciben cambios lumínicos sin fijar la vista (Posner, 1980).",
-        tips: "No trates de distinguir la forma exacta del destello; pulsa el botón en cuanto percibas la alteración de brillo."
+        "name": "Mira el objetivo, no el cursor",
+        "desc": "No hace falta usar el ratón. Deja la mano quieta y sigue solo con los ojos.",
+        "tips": "Comprueba de vez en cuando que la cabeza y el cuello no giran."
       },
       {
-        name: "Activación de la Vía Dorsal",
-        desc: "Las señales visuales viajan por la vía ventral ('qué es') y dorsal ('dónde está'). La detección periférica depende de la vía dorsal. Evita el análisis verbal y confía en el reflejo motor directo.",
-        tips: "Responde de forma inmediata al estímulo luminoso sin detenerte a pensar o procesar la señal."
+        "name": "Dificulta una sola cosa cada vez",
+        "desc": "Sube por separado la velocidad, Ocultar línea y Velocidad aleatoria. Si pierdes la comodidad, vuelve al ajuste anterior.",
+        "tips": "Tras cambiar un ajuste, no compares directamente con sesiones antiguas."
       },
       {
-        name: "Control Respiratorio Antiestrés",
-        desc: "La activación simpática reduce el campo visual generando visión en túnel repentina (Eriksen & St. James, 1986). La respiración nasal rítmica y pausada estabiliza las pulsaciones y mantiene amplio el campo visual.",
-        tips: "Inhala despacio durante 4 segundos y exhala en 6 segundos para destensar la musculatura del cuello y de los ojos."
+        "name": "Sesiones cortas y pausas",
+        "desc": "Entre sesiones cortas, parpadea y mira a lo lejos. Más tiempo no es mejor.",
+        "tips": "Para enseguida si notas dolor o mareo."
       }
     ]
   },
-  steps: [
-    "Ubícate en una posición equilibrada a 50–70 cm del monitor manteniendo la cabeza inmóvil.",
-    "Configura el tiempo de la prueba (30 a 120 segundos) y la velocidad del blanco central.",
-    "Fija la vista en el objetivo del centro acompañando su recorrido de forma continua.",
-    "Al percibir un destello en la periferia, regístralo sin mover los ojos de la trayectoria central.",
-    "Presiona de inmediato la tecla de reacción y evalúa tu porcentaje de campo visual útil."
+  "steps": [
+    "Siéntate a una distancia cómoda de la pantalla y relaja hombros y cuello.",
+    "Empieza con 30 a 60 segundos, velocidad 1,0x y línea visible.",
+    "Mantén la mirada en la cruz y nota con el rabillo del ojo los puntos que parpadean.",
+    "Después sube la velocidad o activa Ocultar línea y Velocidad aleatoria, de uno en uno."
   ],
-  audience: "Jugadores de shooters competitivos (Valorant, CS2, Overwatch 2, Apex Legends), deportistas de equipo, conductores y cualquier persona que desee superar la visión en túnel y aumentar su agilidad visual.",
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "Quien quiera practicar de forma sencilla a percibir cambios en la periferia sin apartar la vista del centro."
+},
+  faqs,
   sources: pickSources('posner1980', 'eriksen1986', 'wolfe1994', 'findlay1999', 'leigh2015', 'woods2015'),
   related: [
     { href: "/es/drills/visual-tracking/constant-slow-pursuit", label: "Seguimiento ocular suave continuo" },
@@ -283,26 +192,18 @@ const guideProps = {
     { href: "/es/drills/visual-tracking/ghosting-suppress-pursuit", label: "Estabilidad de la fijación ocular" },
     { href: "/es/drills/visual-tracking/infinity-pursuit", label: "Ejercicio ocular en ocho" },
     { href: "/es/drills/visual-tracking/momentum-teleport-pursuit", label: "Seguimiento de objetivo desplazado" }
-  ]
+  ],
 };
 
-export default function SpanishPeripheralPingPage() {
+export default function SpanishPeripheralPingPursuitPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <PeripheralPingPursuitClient
-        copy={{
-          title: "Fijación central y visión periférica",
-          subtitle: "Evaluación de Doble Tarea: Fijación Foveal Central y Detección de Estímulos Laterales",
-          description: "Ejercicio visual para practicar la atención periférica: sigue el objetivo central y detecta destellos en los márgenes sin apartar los ojos. Compara tus resultados en el navegador."
-        }}
-      />
+      <PeripheralPingPursuitClient copy={{"title": "Fijación Central y Visión Periférica", "subtitle": "Mirar la cruz central y notar los puntos que parpadean", "description": "Mirada fija en la cruz central: en posiciones aleatorias parpadean puntos durante unos 0,75 segundos (a 1,0x). Detéctalos sin mover los ojos. Sin clics ni puntuación; el navegador no registra tu mirada."}} />
 
       <DrillGuide guide={guideProps} />
 

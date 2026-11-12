@@ -679,7 +679,7 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
               </div>
             </DrillAccordion>
             <DrillAccordion id="about" title="About Dynamic Evasion Pursuit" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
-              <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Dynamic evasion pursuit exercises your ability to re-acquire visual targets executing abrupt directional vector turns without warning (Rashbass, 1961). Because the sudden direction cut breaks smooth pursuit velocity matching, your oculomotor system must immediately fire a corrective catch-up saccade and re-establish continuous foveal tracking (Bahill et al., 1980; Krauzlis, 2004). Because pursuit only tracks accurately to roughly 30°/s, an abrupt cut leaves the eye behind and forces a corrective saccade before smooth tracking can resume (Krauzlis, 2004)."}</p>
+              <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "The target moves in straight lines and switches to a new random direction and speed about every 0.5 s (350–650 ms with Random Speed on), bouncing off the canvas edges. An abrupt cut leaves the eyes behind until a catch-up saccade closes the gap (Rashbass, 1961; Krauzlis, 2004). The motion does not react to your cursor, the browser does not record gaze, and there is no score."}</p>
             </DrillAccordion>
           </div>
         )}

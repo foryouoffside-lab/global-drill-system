@@ -4,296 +4,160 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/fr/drills/visual-tracking/strobe-prediction-pursuit';
+const title = "Poursuite stroboscopique : cible clignotante | SkillDrills";
+const description = "Poursuite stroboscopique : une cible rebondit sur les bords et disparaît à intervalles réguliers. Anticipez sa position. Exercice gratuit, pas un test de vue.";
+
 export const metadata = {
-  title: "Entraînement visuel stroboscopique | SkillDrills",
-  description: "Prévoyez la trajectoire d’une cible masquée par des flashs. Exercice gratuit pour mesurer reprise, erreur et continuité du suivi.",
-  keywords: [
-    "entraînement visuel stroboscopique",
-    "lunettes stroboscopiques entraînement",
-    "vision stroboscopique sport",
-    "vision intermittente entraînement",
-    "poursuite visuelle masquée",
-    "anticipation visuelle sportive",
-    "prédiction de trajectoire visuelle",
-    "erreur de reprise de cible",
-    "continuité du suivi visuel",
-    "entraînement oculomoteur intermittent",
-    "exercice de poursuite sous flashs",
-    "réflexes visuels sport"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/fr/drills/visual-tracking/strobe-prediction-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/strobe-prediction-pursuit')
-  },
+  title,
+  description,
+  keywords: ["poursuite stroboscopique", "cible clignotante", "anticiper une trajectoire exercice", "poursuite oculaire exercice", "exercice des yeux en ligne"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/strobe-prediction-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'fr_FR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Entraînement visuel stroboscopique | SkillDrills",
-    description: "Prévoyez la trajectoire d’une cible masquée par des flashs. Exercice gratuit pour mesurer reprise, erreur et continuité du suivi.",
-    url: "https://skilldrills.online/fr/drills/visual-tracking/strobe-prediction-pursuit",
-    siteName: "SkillDrills",
-    locale: "fr_FR",
-    type: "website"
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Entraînement visuel stroboscopique | SkillDrills",
-    description: "Prévoyez la trajectoire d’une cible masquée par des flashs. Exercice gratuit pour mesurer reprise, erreur et continuité du suivi."
-  }
 };
 
-export default function StrobePredictionPursuitPageFR() {
-  const sources = pickSources('appelbaum2011', 'bennett2007', 'mitroff2013', 'smith2016', 'woods2015', 'leigh2015');
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Accueil", item: 'https://skilldrills.online/fr' },
+    { '@type': 'ListItem', position: 2, name: "Poursuite visuelle", item: 'https://skilldrills.online/fr/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 3, name: "Poursuite stroboscopique : cible clignotante", item: url },
+  ],
+};
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://skilldrills.online/fr" },
-      { "@type": "ListItem", "position": 2, "name": "Entraînement Visuel", "item": "https://skilldrills.online/fr/drills/visual-tracking" },
-      { "@type": "ListItem", "position": 3, "name": "Vision Stroboscopique", "item": "https://skilldrills.online/fr/drills/visual-tracking/strobe-prediction-pursuit" }
-    ]
-  };
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Poursuite stroboscopique : cible clignotante",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
+};
 
-  const softwareApplicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "Entraîneur de Vision Stroboscopique et Prédiction",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entraînement neurocognitif de poursuite visuelle sous impulsions périodiques d’occlusion stroboscopique pour sportifs et joueurs compétitifs.",
-    "dateModified": "2026-09-20"
-  };
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Poursuite stroboscopique : cible clignotante",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navigateur récent compatible HTML5 Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
+};
 
-  const webAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Exercice de Perception et Prédiction Stroboscopique",
-    "url": "https://skilldrills.online/fr/drills/visual-tracking/strobe-prediction-pursuit",
-    "applicationCategory": "TrainingTool",
-    "browserRequirements": "JavaScript requis avec compatibilité HTML5 Canvas.",
-    "dateModified": "2026-09-20"
-  };
+const videoGameSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: "Poursuite stroboscopique : cible clignotante",
+  url,
+  description,
+  genre: ['Casual Game', 'Educational Game'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
 
-  const videoGameSchema = {
-    "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "Défi de Vision Stroboscopique et Extrapolation",
-    "gamePlatform": "Web Browser",
-    "genre": ["Entraînement visuel", "Exercice cognitif", "Poursuite visuelle"],
-    "dateModified": "2026-09-20"
-  };
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Comment faire la poursuite stroboscopique",
+  description: "Quatre étapes pour suivre une cible qui disparaît régulièrement et anticiper sa position.",
+  step: [
+    { '@type': 'HowToStep', position: 1, name: "Choisir les réglages", text: "Commencez avec 60 secondes, 1,0x et le contour visible.", url: `${url}#step-1` },
+    { '@type': 'HowToStep', position: 2, name: "Lire le mouvement", text: "Pendant la phase visible, suivez la direction et la vitesse de la cible.", url: `${url}#step-2` },
+    { '@type': 'HowToStep', position: 3, name: "Franchir la phase invisible", text: "Quand la cible disparaît, continuez à déplacer le regard dans la direction attendue.", url: `${url}#step-3` },
+    { '@type': 'HowToStep', position: 4, name: "Augmenter progressivement", text: "Quand c'est facile, augmentez la vitesse ou masquez le contour ou activez la vitesse aléatoire, un réglage à la fois.", url: `${url}#step-4` }
+  ],
+};
 
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Comment Entraîner l’Anticipation Visuelle sous Occlusion Stroboscopique",
-    "description": "Protocole pour stimuler le modèle interne cérébelleux par des impulsions d’obscurité intermittente.",
-    "dateModified": "2026-09-20",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Positionnement et Fixation Initiale",
-        "text": "Placez-vous à environ 50-60 cm de votre écran et fixez la cible lors de sa trajectoire continue initiale."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Extrapolation en Phase d’Obscurité",
-        "text": "Dès que la cible disparaît durant le masquage stroboscopique, poursuivez le mouvement du curseur en extrapolant sa position."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Réalignement Visuel Immédiat",
-        "text": "À la réapparition de la lumière, vérifiez l’écart de prédiction et réajustez le curseur sans à-coups brusques."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Progression de la Vitesse",
-        "text": "Augmentez progressivement la cadence dès que votre score de précision en phase masquée dépasse régulièrement 75%."
-      }
-    ]
-  };
+const faqs = [
+  { q: "Qu'est-ce que la poursuite stroboscopique ?", a: "Un exercice dans le navigateur avec une seule cible qui se déplace en ligne droite et rebondit sur les bords de l'écran. Elle est visible environ deux tiers de chaque cycle et cachée un tiers. Comme elle continue d'avancer en étant invisible, vous anticipez l'endroit où elle va réapparaître." },
+  { q: "Que fait la cible quand elle est invisible ?", a: "Elle continue dans la même direction et à la même vitesse. Si la ligne est affichée, un contour discret marque sa position. Si vous masquez la ligne, le contour disparaît aussi et vous ne suivez plus que votre anticipation." },
+  { q: "Le rythme du clignotement change-t-il ?", a: "Le cycle est compté en images affichées et raccourcit avec le multiplicateur de vitesse. Une vitesse plus élevée accélère donc à la fois le mouvement et le clignotement." },
+  { q: "Est-ce la même chose qu'un entraînement avec lunettes stroboscopiques ?", a: "Non. Les études sur les lunettes stroboscopiques (par exemple Appelbaum et al., 2011) utilisent des lunettes qui occultent tout le champ de vision par intermittence. Ici, seule une cible à l'écran disparaît et réapparaît. Les résultats de ces études ne s'appliquent pas à cet exercice." },
+  { q: "Et si je suis sensible aux lumières clignotantes ?", a: "L'écran entier ne flashe pas : seule une cible disparaît et réapparaît. Si vous avez déjà mal réagi à une lumière clignotante, évitez quand même cet exercice et arrêtez dès le moindre malaise." },
+  { q: "L'exercice mesure-t-il mes mouvements oculaires ?", a: "Non. Le navigateur ne sait pas où vous regardez : il connaît seulement la position où la cible est dessinée et vos réglages. Aucun clic ni toucher n'est nécessaire ; le résultat est un repère de pratique pour vous-même." },
+  { q: "Y a-t-il un score ou une note ?", a: "Non. À la fin, l'écran affiche seulement la durée, le multiplicateur de vitesse, l'activation ou non de la vitesse aléatoire et le nombre total de séances (enregistré dans ce navigateur). Pour compter les pertes de cible, notez-les vous-même." },
+  { q: "Quels réglages sont disponibles ?", a: "Durée de 30, 45, 60, 90 ou 120 secondes, vitesse de 0,5x à 9,0x, taille de cible de 10 à 50 px. Vous pouvez aussi masquer la ligne (contour pendant la phase invisible), activer la vitesse aléatoire, la traînée, le halo, les lignes de balayage, le fond clair ou sombre et changer la couleur de la cible. La touche Échap arrête la séance à tout moment." },
+  { q: "Est-ce que cela améliore la vue ou la visée ?", a: "Rien ne le garantit. C'est un exercice où l'on suit une cible mobile des yeux ; ce n'est ni un examen de la vue, ni un traitement, et il ne promet pas une meilleure visée dans les jeux de tir. En cas de gêne visuelle, consultez un ophtalmologiste." },
+  { q: "L'écran influence-t-il le résultat ?", a: "Oui. La fréquence de rafraîchissement, la luminosité, le contraste, la taille de l'écran et la distance changent la façon dont la cible apparaît (Woods et al., 2015). Comparez uniquement des séances faites sur le même écran, le même navigateur et avec les mêmes réglages." },
+  { q: "Combien de temps faut-il s'entraîner ?", a: "Quelques séances d'environ 60 secondes, 5 à 10 minutes au total, avec des pauses. Arrêtez immédiatement en cas d'yeux fatigués, secs ou douloureux, de vertiges, de nausées ou de maux de tête." }
+];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "dateModified": "2026-09-20",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "En quoi consiste l’entraînement à la vision stroboscopique dans le sport?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Il s agit d’une méthode où la vue est masquée par intermittence à haute fréquence, contraignant le cerveau à prédire les trajectoires sans assistance visuelle continue."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Comment l’occlusion stroboscopique améliore-t-elle l’anticipation motrice?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "En privant temporairement les yeux d’informations en continu, elle force le cervelet et le cortex pariétal à mobiliser des modèles moteurs internes prédictifs feedforward."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quelles sont les preuves scientifiques de cet entraînement?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Les recherches menées par Appelbaum et al. (2011) et Mitroff et al. (2013) ont étudié l’entraînement stroboscopique sur la mémoire visuelle à court terme chez des athlètes. Ces résultats portent sur des lunettes stroboscopiques ; cet exercice sur écran reproduit le principe, sans preuve équivalente."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quelle est la différence avec un entraînement de poursuite visuelle classique?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "La poursuite classique s effectue en boucle fermée avec ajustements visuels continus. L’exercice stroboscopique bascule en boucle ouverte durant les masquages, imposant une pure extrapolation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quels sports bénéficient le plus de la vision stroboscopique?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Les sports de balle rapides, comme le tennis, le baseball ou le hockey, ont été les plus étudiés avec des lunettes stroboscopiques. Cet exercice sur écran n’a pas été validé pour un sport en particulier."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Que faire si la cible réapparaît loin de la position de mon curseur?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Conservez un mouvement fluide. Effectuez une micro-saccade de recalage sans geste saccadé et ajustez votre estimation pour le cycle d’obscurité suivant."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quelle durée d’entraînement quotidien est recommandée?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Des sessions courtes de 8 à 12 minutes quotidiennes, fractionnées en séries de 60 à 90 secondes, sont idéales pour stimuler la plasticité cérébrale sans générer de fatigue oculaire."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Faut-il impérativement un écran gaming pour pratiquer cet exercice?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Cet outil fonctionne parfaitement sur un écran standard à 60Hz, mais un taux de rafraîchissement élevé (144Hz ou 240Hz) optimise la fluidité des cycles d’occultation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Comment le calcul de précision en phase masquée est-il établi?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "L’algorithme calcule la proximité spatiale moyenne entre le curseur de la souris et la position exacte calculée de la cible tout au long de la période d’extinction."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Cet exercice virtuel remplace-t-il les lunettes stroboscopiques réelles?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Bien que les lunettes physiques masquent la totalité du champ de vision dans l’espace réel, ce module numérique sollicite fidèlement les mêmes circuits neuronaux de prédiction spatio-temporelle."
-        }
-      }
-    ]
-  };
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'fr',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
 
-  const guide = {
-    title: "Guide Neuroscientifique de Vision Stroboscopique et Anticipation",
-    intro: [
-      "Cet exercice d’entraînement visuel stroboscopique vous fait suivre une cible mobile qui disparaît par intermittence : vous devez continuer à estimer sa trajectoire pendant les phases masquées. Il mesure l’erreur au rallumage et la reprise du suivi. C’est un entraînement avec des repères personnels, pas un examen médical.",
-      "L’entraînement visuel stroboscopique est une méthode étudiée en recherche, caractérisée par l’interruption périodique de l’entrée lumineuse continue par de brèves phases d’occultation complète. Privé de signaux sensorimoteurs ininterrompus, le système nerveux central doit compenser ce manque d’informations cinématiques en activant des modèles internes prédictifs feedforward élaborés par le cervelet et le cortex pariétal (Appelbaum et al., 2011 ; Mitroff et al., 2013).",
-      "Lorsqu une cible mobile bascule dans une phase d’obscurité, le glissement rétinien chute instantanément à zéro. Chez un individu non entraîné, la poursuite visuelle lisse s effondre en 100 à 200 millisecondes, se désorganisant en saccades de rattrapage erratiques au réallumage. Les travaux fondamentaux de Bennett et al. (2007) et Leigh & Zee (2015) ont démontré qu’un protocole d’occlusion structuré stimule les réseaux de mémoire de vitesse au sein des champs oculaires frontaux (FEF) et du flocculus cérébelleux, permettant de maintenir la commande motrice extraoculaire continue à travers l’intervalle masqué et d’atterrir fovéalement sur les coordonnées prévues.",
-      "Des lunettes stroboscopiques à obturateur à cristaux liquides ont été utilisées dans des études en sport (Smith & Mitroff, 2016). Cet exercice reprend le principe sur écran, avec une alternance de 60 images visibles et 30 images masquées. La fréquence d’affichage de l’écran influence la précision de l’alternance (Woods et al., 2015) : comparez vos séries sur le même écran.",
-      "Méthodologie et confidentialité des mesures : l’ensemble des extrapolations et calculs de latence s effectue en temps réel sur le terminal de l’utilisateur. SkillDrills ne collecte aucune donnée personnelle ni agrégée sur des serveurs externes ; vos scores demeurent strictement stockés dans le localStorage de votre navigateur. Cette application constitue un entraînement cognitif et réflexe à visée pédagogique et sportive, sans vocation diagnostique médicale."
+const guide = {
+  heading: "Poursuite stroboscopique : guide",
+  intro: [
+    "La poursuite stroboscopique est un exercice gratuit dans le navigateur : une cible se déplace en ligne droite, rebondit sur les bords de l'écran et disparaît à intervalles réguliers. Elle est visible environ deux tiers de chaque cycle et cachée environ un tiers.",
+    "Pendant qu'elle est invisible, la cible continue dans la même direction et à la même vitesse. Par défaut, un contour discret indique sa position ; si vous masquez la ligne, le contour disparaît aussi. Après le compte à rebours 3-2-1, la cible bouge pendant la durée choisie (30 à 120 secondes, 60 par défaut). Il n'y a rien à cliquer ni à appuyer, et pas de score.",
+    "Le navigateur n'enregistre pas votre regard. Considérez le résultat comme un repère de pratique personnel, pas comme un test de vision ou d'attention. Ce n'est pas non plus un entraînement avec des lunettes stroboscopiques, qui occultent tout le champ de vision.",
+    "Comparez vos séances sur le même écran et à la même distance ; la fréquence de rafraîchissement et la latence d'affichage influencent la fluidité de la cible (Woods et al., 2015). Arrêtez en cas de douleur, de vertiges, de nausées ou de vision floue persistante."
+  ],
+  benchmarks: {
+    title: "Paliers de pratique indicatifs",
+    headers: ["Palier", "Réglage", "Objectif"],
+    rows: [
+      ["1", "1,0x, contour visible", "Saisir direction et vitesse avant la disparition"],
+      ["2", "1,0x à 2,0x", "Être sur la cible dès sa réapparition"],
+      ["3", "2,0x et plus", "Continuer à anticiper malgré un clignotement rapide"],
+      ["4", "Ligne masquée", "Franchir la phase invisible par anticipation seule"],
+      ["5", "Vitesse aléatoire", "Ajuster l'anticipation à une vitesse variable"]
     ],
-    benchmarks: {
-      title: "Repères de Performance d’Extrapolation et de Précision Stroboscopique",
-      headers: ["Niveau", "Précision masquée (%)", "Erreur moyenne (px)", "Temps de recalage (ms)"],
-      rows: [
-        ["Débutant", "Moins de 45 %", "Plus de 85 px", "Plus de 280 ms"],
-        ["Intermédiaire", "45 – 62 %", "55 – 84 px", "210 – 280 ms"],
-        ["Avancé", "63 – 78 %", "35 – 54 px", "150 – 209 ms"],
-        ["Très précis", "79 – 89 %", "20 – 34 px", "95 – 149 ms"],
-        ["Excellent", "90 % et plus", "Moins de 20 px", "Moins de 95 ms"]
-      ],
-      note: "Repères éditoriaux propres à cet exercice (vitesse 1.0x, cycle de 400 ms visible / 400 ms masqué, 60 images par seconde), non issus d’un panel ni de normes cliniques. Contexte : Appelbaum et al. (2011) ; Bennett et al. (2007)."
-    },
-    techniques: {
-      title: "4 Piliers Techniques pour Maîtriser l'Occlusion Stroboscopique",
-      items: [
-        {
-          name: "Mémorisation Active du Vecteur de Vitesse",
-          desc: "Durant les 60 images lumineuses, focalisez l’attention fovéale sur l’encodage précis de la vitesse angulaire et de la courbure dans la mémoire motrice cérébelleuse.",
-          tips: "Ne relâchez pas vos muscles oculaires lors de l’extinction : continuez d’impulser le regard à la même vitesse."
-        },
-        {
-          name: "Projection Cinématique de la Trajectoire Masquée",
-          desc: "Prolongez mentalement la trajectoire invisible comme si la cible traversait un tunnel couvert, sans dévier l’axe d’attention spatiale.",
-          tips: "Visualisez une traînée lumineuse imaginaire qui guide votre regard à travers le noir."
-        },
-        {
-          name: "Calibrage Prédictif de la Ré-Acquisition Fovéale",
-          desc: "Juste avant la fin du créneau d’obscurité, positionnez le centre du regard sur les coordonnées d’émergence estimées pour éliminer toute saccade tardive.",
-          tips: "Intériorisez le tempo régulier des flashs stroboscopiques pour anticiper la milliseconde de rallumage."
-        },
-        {
-          name: "Inhibition de l’Arrêt Sacadé et Continuité Motrice",
-          desc: "Neutralisez le réflexe primaire de figer les yeux ou d’émettre des saccades de recherche anarchiques lors de la disparition. Fiez-vous à l’élan interne du modèle.",
-          tips: "Gardez les muscles extraoculaires détendus et fluides pour maintenir une trajectoire continue."
-        }
-      ]
-    },
-    steps: [
-      { title: "Fixez la cible pendant la lumière", text: "Suivez le déplacement initial et mémorisez sa direction et sa vitesse sans bouger la tête." },
-      { title: "Continuez pendant l’extinction", text: "Quand la cible disparaît, maintenez le regard sur la trajectoire prévue sans vous arrêter ni chercher au hasard." },
-      { title: "Vérifiez l’écart au rallumage", text: "Observez si le regard arrive avant ou après la cible, puis corrigez doucement le cycle suivant." },
-      { title: "Augmentez la difficulté progressivement", text: "Travaillez par blocs courts et augmentez la vitesse seulement lorsque la précision masquée reste stable." }
+    note: "Paliers de pratique SkillDrills à titre indicatif. Ce ne sont ni des normes d'examen de la vue, ni des statistiques d'utilisateurs, ni des percentiles.",
+  },
+  techniques: {
+    title: "Conseils pratiques",
+    items: [
+      { name: "Lire la direction pendant la phase visible", desc: "Quand la cible est visible, repérez sa direction et sa vitesse.", tips: "Si elle disparaît près d'un bord, pensez au rebond." },
+      { name: "Ne pas arrêter le regard", desc: "Quand la cible disparaît, continuez à déplacer le regard doucement dans la direction attendue.", tips: "À la réapparition, comparez sa position à votre estimation." },
+      { name: "Retirer le contour progressivement", desc: "Entraînez-vous d'abord avec le contour, puis masquez la ligne pour que le contour disparaisse aussi.", tips: "Ne changez qu'un réglage par séance." },
+      { name: "Séances courtes et pauses", desc: "Travaillez par blocs de 5 à 10 minutes, clignez des yeux et regardez au loin entre deux séances. Plus long n'est pas forcément mieux.", tips: "Arrêtez tout de suite en cas de douleur ou de vertige." }
     ],
-    audience: "Sportifs de balle et de raquette, joueurs de jeux de tir et toute personne qui veut s’exercer à estimer la trajectoire d’une cible masquée par intermittence.",
-    faqs: faqSchema.mainEntity.map(item => ({
-      q: item.name,
-      a: item.acceptedAnswer.text
-    })),
-    sources
-  };
+  },
+  steps: [
+    { title: "Choisir les réglages", text: "Commencez avec 60 secondes, 1,0x et le contour visible." },
+    { title: "Lire le mouvement", text: "Pendant la phase visible, suivez la direction et la vitesse de la cible." },
+    { title: "Franchir la phase invisible", text: "Quand la cible disparaît, continuez à déplacer le regard dans la direction attendue." },
+    { title: "Augmenter progressivement", text: "Quand c'est facile, augmentez la vitesse ou masquez le contour ou activez la vitesse aléatoire, un réglage à la fois." }
+  ],
+  audience: "Toute personne qui veut s'exercer de façon ludique à suivre par anticipation une cible momentanément invisible.",
+  faqs,
+  sources: pickSources('appelbaum2011', 'bennett2007', 'mitroff2013', 'smith2016', 'woods2015', 'leigh2015'),
+};
 
+export default function StrobePredictionPursuitPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <StrobePredictionPursuitClient
         copy={{
-          title: "Entraînement visuel stroboscopique",
-          subtitle: "Prédiction visuelle sous masquage intermittent",
-          description: "Prévoyez la trajectoire d’une cible masquée par des flashs et mesurez l’erreur de reprise et la continuité du suivi."
+          title: "Poursuite stroboscopique : cible clignotante",
+          subtitle: "Anticipez la position quand la cible disparaît",
+          description: "Dans la poursuite stroboscopique, vous suivez une cible qui disparaît régulièrement et vous anticipez sa position. Le navigateur n'enregistre pas votre regard : c'est un repère de pratique, pas un test.",
         }}
       />
       <DrillGuide guide={guide} />

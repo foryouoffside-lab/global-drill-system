@@ -5,281 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// JAPANESE SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "偏差エイム 練習" (Lead shooting aim practice) / "予測エイム 練習"
-// Secondary:    "動体視力 先読み", "遮蔽物 飛び出し 予測", "予測性追従眼球運動", "置きエイム 練習"
-// LSI / Domain:  "内部モデル 小脳", "視覚ワーキングメモリ 軌道予測", "オクルージョン 遮蔽追従",
-//               "フィードフォワード制御", "着地点 予測 視線", "動体追従 スムーズパシュート"
-// Authentic Domain Terms: 偏差エイム（Lead Aiming / Deflection Shooting）, 予測性追従眼球運動（Predictive Smooth Pursuit）, 遮蔽（Visual Occlusion）, 内部順モデル（Internal Forward Model）, 視覚作業記憶（Visual Working Memory）, 網膜スリップ（Retinal Slip）
-// ============================================================
+const url = 'https://skilldrills.online/ja/drills/visual-tracking/predictive-pursuit';
+const title = "予測視線トレーニング｜着地点を先読み | SkillDrills";
+const description = "約2.2秒ごとに新しい目的地へすべるように動き、減速して止まる標的を追う無料の予測視線トレーニング。目的地の線を隠すと、動きだけから着地点を先読みします。";
 
 export const metadata = {
-  title: "予測視線トレーニング｜遮蔽後の軌道を追う | SkillDrills",
-  description: "動く標的を追い、短い遮蔽のあとに現れる位置を予測する無料ブラウザ練習。反応時間と予測誤差を記録。",
-  keywords: [
-    "予測追従 眼球運動",
-    "動体視力 予測 トレーニング",
-    "偏差エイム 練習",
-    "遮蔽後 位置予測",
-    "滑動性追従眼球運動",
-    "動く標的 追視 練習",
-    "視覚作業記憶 軌道予測",
-    "先読み視線 トレーニング",
-    "遮蔽 追従 練習",
-    "予測視線 テスト"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "予測視線トレーニング｜遮蔽後の軌道を追う | SkillDrills",
-    description: "動く標的を追い、短い遮蔽のあとに現れる位置を予測する無料ブラウザ練習。反応時間と予測誤差を記録。",
-    type: "website",
-    url: "https://skilldrills.online/ja/drills/visual-tracking/predictive-pursuit",
-    siteName: "SkillDrills",
-    locale: "ja_JP",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "予測視線トレーニング｜遮蔽後の軌道を追う | SkillDrills",
-    description: "見えている軌道を手掛かりに、遮蔽中の標的位置を予測するブラウザドリル。無理のない短時間練習。",
-  },
+  title,
+  description,
+  keywords: ["予測視線トレーニング", "予測 追視 練習", "着地点 先読み", "眼球運動 トレーニング", "視線追従 練習", "無料 ブラウザ ドリル"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/predictive-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ja_JP', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: "https://skilldrills.online/ja/drills/visual-tracking/predictive-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/predictive-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://skilldrills.online/ja" },
-    { "@type": "ListItem", "position": 2, "name": "ドリル一覧", "item": "https://skilldrills.online/ja/drills" },
-    { "@type": "ListItem", "position": 3, "name": "視覚追従・アイトラッキング", "item": "https://skilldrills.online/ja/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "偏差エイム練習・遮蔽軌道予測テスト", "item": "https://skilldrills.online/ja/drills/visual-tracking/predictive-pursuit" }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "ホーム", item: 'https://skilldrills.online/ja' },
+    { '@type': 'ListItem', position: 2, name: "ドリル一覧", item: 'https://skilldrills.online/ja/drills' },
+    { '@type': 'ListItem', position: 3, name: "視覚追従・アイトラッキング", item: 'https://skilldrills.online/ja/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "予測視線トレーニング", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "偏差エイム練習・遮蔽軌道予測テスト",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "視覚フィードバックが途絶する遮蔽（オクルージョン）条件下で、小脳と前頭眼野の内部モデルを活用して標的軌道を外挿・先読み追従するアイトラッキング訓練ツール。",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/predictive-pursuit",
-  "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ja" },
-  "inLanguage": "ja",
-  "dateModified": "2026-09-20"
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "偏差エイム・予測性追従トラッカー",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas対応ブラウザ（Chrome, Edge, Firefox, Safari）",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/predictive-pursuit",
-  "inLanguage": "ja",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "dateModified": "2026-09-20",
-  "name": "予測追従エイムトレーニング",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/predictive-pursuit",
-  "description": "物陰に隠れるターゲットの速度ベクトルを計算し、再出現位置を先読みして撃ち抜く競技ゲーマー向けビジョントレーニングゲーム。",
-  "genre": ["エイム練習", "眼球追従", "視覚トレーニング", "競技ドリル"],
-  "gamePlatform": ["ウェブブラウザ", "デスクトップ", "モバイル"],
-  "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "予測視線トレーニング",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ja' },
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "予測性追従と偏差エイムの訓練手順",
-  "description": "視線追従の網膜スリップ遅延をゼロにし、小脳の内部モデルで先読み軌道を生成する4段階のプロトコル。",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "初期軌道と速度ベクトルの捕捉",
-      "text": "標的が射出された直後の動きを中心窩で捉え、その移動速度と方向角（ベクトル情報）を視覚作業記憶にロードします。"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "軌道ライン非表示モード（オクルージョン）への適応",
-      "text": "ガイド線が消去された状態、または標的が不可視領域を通過する間、頭の中で速度ベクトルを等速外挿します。"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "出現予定位置（着地点）への先行視線移動",
-      "text": "標的が再び現れるタイミングと幾何学的座標に合わせて視線を先行させ、出現と同時に中心窩でロックします。"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "予測誤差のフィードバック修正",
-      "text": "出現時の視線ズレ（位置誤差および速度誤差）を確認し、小脳の内部順モデルの予測パラメータを微調整します。"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "予測視線トレーニングのやり方",
+  description: "新しい目的地へ動く標的を追い、止まる位置を先読みする4ステップの練習です。",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "楽な姿勢をとる",
+    "text": "画面から楽な距離をとって座り、肩と首の力を抜きます。"
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "目的地の線を見る",
+    "text": "最初は標的と目的地を結ぶ線を表示したまま、標的が線に沿って動き、止まるまでを目で追います。"
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "着地点を先読みする",
+    "text": "Hide Lineをオンにし、標的が動き出す向きと速さだけから止まる位置を先読みして追います。"
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "設定は一つずつ",
+    "text": "慣れたら速度を上げるか、線を隠す・ランダム速度を一つずつオンにします。"
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "予測視線トレーニングでは標的はどう動きますか？",
+    "a": "速度1.0倍では約2.2秒ごとに画面のランダムな地点が新しい目的地になります。標的はそこへ勢いよく動き出し、だんだん減速して約1.5秒以内に止まり、次の目的地が決まるまで待ちます。隠れたり消えたりする区間はありません。視線だけを使うブラウザ練習で、視力検査ではありません。"
+  },
+  {
+    "q": "何を予測するのですか？",
+    "a": "標的が止まる位置です。初期状態では標的と目的地を結ぶ線が表示され、着地点が見えています。Hide Lineをオンにすると線が消えるので、動き出しの向きと減速から着地点を先読みします。"
+  },
+  {
+    "q": "速度とRandom Speedで何が変わりますか？",
+    "a": "速度を上げると移動も目的地の切り替えも速くなります。Random Speedをオンにすると速度が揺れ続け、次の目的地までの間隔も不規則になります。"
+  },
+  {
+    "q": "目の動きやスコアを記録しますか？",
+    "a": "いいえ。ブラウザは視線の向きを知ることができず、クリックや命中判定もありません。スコアはなく、終えたセッション数だけがこのブラウザに保存されます。視線を保つのは自分自身です。"
+  },
+  {
+    "q": "どんな設定を変えられますか？",
+    "a": "3-2-1のカウントダウン後、30・45・60・90・120秒（初期値60秒）のセッションが始まります。速度0.5〜9.0倍、標的サイズ10〜50px、標的の色、Hide Line（線を隠す）・Random Speed（ランダム速度）・Gaze Trail（残像）・Neon Glow・Scanlinesの各トグル、明るい／暗い背景を選べます。Escキーでいつでも終了できます。"
+  },
+  {
+    "q": "視力やゲームの腕が上がりますか？",
+    "a": "保証はできません。視力検査や治療ではなく、目で標的を見る練習ツールです。視力の改善やエイムの向上は約束しません。目の不調が気になる場合は専門医に相談してください。"
+  },
+  {
+    "q": "どれくらい練習すればよいですか？",
+    "a": "1〜2分のセッションを数回行って休む、短いブロックで十分です。目が疲れたり乾いたりしたら遠くを見てまばたきし、痛み・めまい・吐き気・頭痛があれば中止してください。"
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "予測性追従眼球運動とは何ですか？反応的な追従とどう違いますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "人間の通常の視覚フィードバック制御には、光受容から眼球運動の出力まで約130〜150msの神経生理学的遅延（網膜スリップ）が存在します。受動的（リアクティブ）な追従では高速な動体に対して常に視線が後れを取ります。一方、予測性追従は脳内（小脳・前頭眼野・補足眼野）に蓄えられた速度記憶と運動内部モデルを用い、将来の位置を先回りして眼球を駆動するフィードフォワード制御です（Barnes, 2008）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "FPSゲームにおける「偏差エイム」や「置きエイム」にこのドリルはどう役立ちますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Apex LegendsやVALORANTなどの対戦シューターでは、壁から飛び出す敵や高速スライディングするターゲットに対し、敵を見てから撃つリアクション撃ちでは弾着が遅れます。本ドリルで標的のベクトル外挿能力を鍛えることで、遮蔽物から飛び出してくる未来の座標にクロスヘアをピタリと配置する偏差撃ち（リードエイム）の精度の向上に役立つ可能性があります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "標的が遮蔽物に隠れて見えなくなっても（オクルージョン）、なぜ目は追従を続けられるのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bennett & Barnes (2003)の研究により、前頭眼野（FEF）および補足眼野（SEF）には直前に見ていた物体の速度ベクトルを一時保持する「視覚作業記憶バッファ」が存在することが解明されています。ターゲットが視覚的に完全に消失しても、この記憶バッファから運動指令が外眼筋核へ持続的に送られるため、約1〜2秒間は高い精度で追従が維持されます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "初心者が予測追従で犯しやすい最大のミスは何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "最も多いミスは、標的が隠れた瞬間に予測を諦めて眼球を停止させ、標的が再出現したのを見てから慌ててサッケード（急速眼球運動）で追いつこうとすることです。これでは150ms以上の空白時間が生まれ、着地後の追従利得も大幅に乱れます。消失中も滑らかに視線を動かし続けることが重要です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "小脳の「内部順モデル」とは何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "内部順モデルとは、運動指令の遠心性コピー（Efference Copy）に基づいて、自らの運動結果や物理環境の変化をシミュレートする神経回路です（Robinson, 1965; Krauzlis, 2004）。このモデルが高精度化すると、目で直に見ずとも物体の運動軌道が手に取るように予測できるようになります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "ガイド線を表示した状態と非表示の違いは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ガイド線が見えている状態では、空間的な幾何学手掛かりに頼った視覚追従が行われます。一方「Hide Line（非表示）」モードでは、空間手掛かりが遮断されるため、大脳皮質と小脳が純粋な速度・方向ベクトルのみからメンタル軌道を生成する必要があり、偏差予測と空間認識の練習になります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "野球やテニス、サッカーなどの現実スポーツでもこの先読み能力は重要ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "極めて重要です。例えば時速150kmの野球ボールは投手の手から捕手まで約0.4秒で到達するため、打者は飛来するボールを途中で最後まで見ることはできず、リリースの初動情報からバット衝突位置を予測しています。予測性追従能力の高さは、トッププロアスリートの不可欠な条件です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "モニターのリフレッシュレート（Hz）は予測追従の習得速度に影響しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "はい。144Hzや240Hzなどの高リフレッシュレートモニターでは、標的が遮蔽される直前のフレーム情報が極めて細かく網膜に届きます。これにより小脳が初期速度ベクトルを正確に算出でき、消失中の軌道予測誤差を最小化できます（Woods et al., 2015）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "1日の推奨トレーニング量と疲労管理の目安は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "高次の認知リソース（ワーキングメモリと運動前野）を消費するため、1回60秒のセッションを5〜8回（合計5〜10分）、週4〜5日が理想的です。予測のタイミングが狂い始めたり目の奥に重さを感じた場合は、セッションを打ち切り目を休ませてください。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "動体予測能力は年齢とともに衰えますか？訓練で維持できますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "加齢に伴い単純な視覚反射神経はわずかに低下しますが、小脳の運動モデルや経験に基づく予測メカニズム（Kowler, 1989）は訓練によって長期間高く維持・強化できます。日常的なアイトラッキング練習により、若年層と同等以上の偏差精度を保つことが可能です。"
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'ja',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "偏差エイム・遮蔽軌道予測トレーニングの科学的根拠と実践ガイド",
-  intro: [
-    "予測視線トレーニングとは、動く標的が短い間だけ隠れても、動きを予測して視線を追従させる練習です。このページでは遮蔽のあとに標的が現れる位置を先読みし、再出現したときの視線のズレや反応を確認できます。",
-    "人間の眼球運動系における最大の制約の一つが、網膜に像が結ばれてから大脳皮質視覚野を経て外眼筋へ神経伝達されるまでに生じる約130〜150ミリ秒の「感覚運動遅延（Sensorimotor Delay）」です。移動する物体を単なる受動的フィードバックのみで追尾しようとすると、視線は常に標的の後方を引きずる「網膜スリップ（Retinal Slip）」に陥ります。この遅延を相殺し、物体の将来位置を先読みしてスムーズに視線を同期させる神経メカニズムが「予測性追従眼球運動（Predictive Smooth Pursuit）」です。",
-    "視覚運動制御の大家であるロビンソン（Robinson, 1965）やバーンズ（Barnes, 2008）らの生理学的研究によれば、小脳（Cerebellum）と前頭眼野（Frontal Eye Fields: FEF）は標的の初期運動から速度ベクトルを抽出し、脳内に「内部順モデル（Internal Forward Model）」を瞬時に構築します。このモデルが生成するフィードフォワード信号によって、眼球は実際の標的の動きに先行して駆動され、生理的遅延を完全に相殺することが可能になります。",
-    "さらに実戦のゲーム環境やスポーツでは、標的が障害物（カバー、スモーク、建物）の背後を通過して一時的に視界から消える「遮蔽（オクルージョン）」が頻発します。ベネット＆バーンズ（Bennett & Barnes, 2003）の実験では、視覚的入力が完全にゼロになった瞬間にも、視覚作業記憶（Visual Working Memory）に保持された速度情報に基づき、被験者の眼球が約1〜2秒間は等速軌道を外挿して追尾し続けることが証明されています。この外挿利得を高めることこそが、物陰からの飛び出しを撃ち抜く「置きエイム」や「偏差撃ち」の真の正体です。",
-    "本ドリル（Predictive Pursuit）は、直線および曲線軌道を描くターゲットの飛行予測、および軌道線非表示（Hide Line）による脳内シミュレーションを通じて、小脳の内部モデルと前頭葉の軌道外挿ネットワークを集中的に強化します。視覚情報が途絶してもブレない確固たる先読み視線を獲得し、対戦シューターや高速球技における圧倒的なアドバンテージを確立してください。"
+  ...{
+  "heading": "予測視線トレーニングガイド",
+  "intro": [
+    "予測視線トレーニングは、新しい目的地へすべるように動き、減速して止まる標的を目で追い、止まる位置を先読みするブラウザ練習です。速度1.0倍では約2.2秒ごとにランダムな目的地が決まり、目的地の線を隠すと動きだけから着地点を予測することになります。",
+    "なめらかな追従眼球運動は動きが始まってから少し遅れて立ち上がるため、動きを予期することがその遅れを補うと説明されています（Kowler, 1989; Barnes, 2008）。この練習はそうした予期が必要な場面をくり返します。",
+    "ブラウザが知っているのは標的を描いた位置と設定だけで、目が実際にどこを見たかは記録できません。スコアや正確さの数値もないので、同じ画面・距離・設定で自分の楽さと集中を比べてください。リフレッシュレートや表示遅延も見え方に影響します（Woods et al., 2015）。"
   ],
-  benchmarks: {
-    title: "遮蔽後の軌道予測と追従精度の基準",
-    headers: ["習熟度", "軌道予測精度（%）", "再出現時の位置誤差", "追従の一致度", "先読みの特徴"],
-    rows: [
-      ["上級", "94%以上", "15px未満", "0.95〜1.02", "再出現時の補正が少ない"],
-      ["熟練", "86%〜93%", "15px〜28px", "0.88〜0.94", "予測が安定し短い補正で追従"],
-      ["中級", "76%〜85%", "29px〜45px", "0.78〜0.87", "長い遮蔽で少しずれる"],
-      ["練習中", "62%〜75%", "46px〜65px", "0.65〜0.77", "再出現後の補正が増える"],
-      ["初めて", "62%未満", "65px超", "0.65未満", "遮蔽中に止まり再出現後に追う"]
+  "benchmarks": {
+    "title": "練習の段階（SkillDrillsの目安）",
+    "headers": [
+      "段階",
+      "練習の目標"
     ],
-    note: "※ 本基準は1080p解像度、標準速度1.0x〜1.5x、Hide Line（軌道非表示）環境における実測データに基づきます。再出現時の補正サッケードなしで中心窩捕捉できた割合を評価しています。"
+    "rows": [
+      [
+        "段階1",
+        "1.0倍・目的地の線表示で移動と停止を追う"
+      ],
+      [
+        "段階2",
+        "標的より先に着地点を見る"
+      ],
+      [
+        "段階3",
+        "Hide Lineをオンにし、動き出しだけで予測"
+      ],
+      [
+        "段階4",
+        "速度かRandom Speedを一つずつ追加"
+      ]
+    ],
+    "note": "SkillDrillsの練習段階の目安であり、検査基準・利用者統計・パーセンタイルではありません。"
   },
-  techniques: {
-    title: "先読み軌道と偏差エイムを練習する4つの要点",
-    items: [
+  "techniques": {
+    "title": "練習のコツ",
+    "items": [
       {
-        name: "初期速度と方向の読み取り",
-        desc: "標的が発射された瞬間の最初の100〜200msに全神経を集中させ、移動速度と射出角度を中心窩で正確に読み取ります。この初期ベクトル情報が小脳内部モデルの入力データとなるため、初動の読み取り精度が外挿結果の成否を決定づけます。",
-        tips: "ターゲットの形状を見るのではなく、背景の空間格子に対してどのくらいのスピードで流れているかを意識してください。"
+        "name": "動き出しの瞬間を見逃さない",
+        "desc": "標的が動き出す瞬間の向きと速さに注目します。減速のカーブから止まる位置の見当がつきます。",
+        "tips": "線を隠すのが難しければ、線を表示して着地のパターンに慣れ直します。"
       },
       {
-        name: "見えない区間の軌道予測",
-        desc: "標的が遮蔽物に入った瞬間に視線を止めるのではなく、頭の中で等速運動シミュレータを走らせ、視線（マウスポインタ）を消失点から出現予定位置へと一定のペースで滑らせます。",
-        tips: "「消えた場所」を見るのではなく、「次に出現する予定の空空間」に視線の焦点を先行させましょう。"
+        "name": "カーソルではなく標的を見る",
+        "desc": "マウスは使わなくて構いません。手を置いたまま、目だけで標的を見ます。",
+        "tips": "頭や首が一緒に動いていないか時々確認します。"
       },
       {
-        name: "遮蔽中の視線の安定",
-        desc: "視覚目標が消えると、脳は焦りからランダムなサッケード（急速眼球運動）を起こして周囲を探そうとします。サッケードが起きると視覚情報が遮断され内部モデルが崩壊するため、呼吸を落ち着かせて滑らかなパシュート速度を維持します。",
-        tips: "目をキョロキョロ動かさず、レールの上を滑車が静かに走るような滑らかな視線移動を意識してください。"
+        "name": "難しくするのは一つずつ",
+        "desc": "速度、線を隠す、ランダム速度は別々に上げます。楽さが崩れたら前の設定に戻します。",
+        "tips": "設定を変えたら前のセッションと直接比べないでください。"
       },
       {
-        name: "再出現時の誤差確認",
-        desc: "標的が再出現した瞬間に、自分の視線が標的の「前方に行き過ぎていたか」「後方に取り残されていたか」を瞬時に認知します。このミリ秒単位の誤差フィードバックを繰り返すことで、予測の精度を高める練習になります。",
-        tips: "ズレた時に落胆するのではなく、「速すぎた＝次回は少し抑える」「遅すぎた＝次回はもっと先行させる」と論理的に調整してください。"
+        "name": "短くやって休む",
+        "desc": "短いセッションの間にまばたきし、遠くを見ます。長くやれば良いわけではありません。",
+        "tips": "痛みやめまいがあればすぐにやめます。"
       }
     ]
   },
-  steps: [
-    "環境設定: モニターとの距離を約50〜70cmに保ち、視野の中央にターゲット射出エリアが位置するように姿勢を整えます。",
-    "難易度調整: 初めは速度1.0x、ガイド線表示（Visible）で開始し、軌道パターンの規則性と消失タイミングに慣れます。",
-    "Hide Lineモードへの移行: 慣れてきたら設定からガイドラインを非表示にし、純粋な視覚作業記憶によるメンタル外挿に挑戦します。",
-    "セッションの継続: 60秒間のセッション中、連続して出現するターゲットの軌道を先読みし、着地点でのロックを繰り返します。",
-    "データ分析: 終了後に表示される追従精度（Accuracy）とセッション統計を確認し、小脳予測モデルの成長度を記録します。"
+  "steps": [
+    "画面から楽な距離をとって座り、肩と首の力を抜きます。",
+    "30〜60秒、速度1.0倍、線を表示した状態で始めます。",
+    "標的が動き出したら、向きと減速から止まる位置を先読みして追います。",
+    "慣れたら速度を上げるか、線を隠す・ランダム速度を一つずつオンにします。"
   ],
-  audience: "Apex・VALORANT等で物陰からの飛び出し敵に偏差エイムを合わせたい競技ゲーマー、野球・テニス等の球技でボールの軌道を先読みしてミート率を高めたいアスリート、動体視力の先読み精度を高めたいすべてのユーザー。",
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "動く標的がどこで止まるかを先読みしながら追う練習を、気軽に試したい人。"
+},
+  faqs,
   sources: pickSources('barnes2008', 'bennett2003', 'kowler1989', 'krauzlis2004', 'robinson1965', 'woods2015'),
   related: [
     { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング" },
@@ -288,49 +192,22 @@ const guideProps = {
     { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像を抑える固視トレーニング" },
     { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字眼球運動トレーニング" },
     { href: "/ja/drills/visual-tracking/momentum-teleport-pursuit", label: "瞬間移動する標的の追従エイム" }
-  ]
+  ],
 };
 
 export default function JapanesePredictivePursuitPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <PredictivePursuitClient
-        copy={{
-          title: "予測視線と遮蔽後の軌道練習",
-          subtitle: "見えている動きを手掛かりに、再出現位置を先読みする追視ドリル",
-          description: "動く標的を追い、短い遮蔽の間も進む方向を保ちながら再出現位置を予測します。練習後に反応時間と位置誤差を確認できます。無料でブラウザから始められます。"
-        }}
-      />
+      <PredictivePursuitClient copy={{"title": "予測視線トレーニング", "subtitle": "標的が止まる位置を先に読む練習", "description": "予測視線トレーニングは、約2.2秒ごと（1.0倍速）に新しい目的地へ動き、減速して止まる標的を追い、止まる位置を先読みする練習です。Hide Lineで目的地の線が消えます。クリックやスコアはなく、ブラウザは視線を記録しません。"}} />
 
       <DrillGuide guide={guideProps} />
 
       <RelatedDrills />
-
       <DrillFooter />
     </>
   );

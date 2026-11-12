@@ -908,7 +908,7 @@ diagnostics = "Low target identification accuracy. Anchor your gaze centrally an
                       <strong>Multiple Object Tracking (MOT)</strong> forces the brain to isolate, store, and continuously update spatial coordinates of multiple identical moving objects in real time, even through chaotic bouncing collisions. Most people can track about four or five independent targets at once, and accuracy falls away sharply beyond that (Pylyshyn &amp; Storm, 1988). The limit is attentional rather than optical &mdash; the eyes cannot fixate five things at once, so the tracking is done by attention split across locations (Cavanagh &amp; Alvarez, 2005).
                     </p>
                     <p className="text-sm leading-relaxed text-slate-300">
-                      By expanding peripheral visual focus and maintaining tracking resolution, you sharpen divided attention required for esports, driving, and fast-paced sports.
+                      Here three of the identical balls glow green for 2 seconds, then every ball moves for 60 seconds, bouncing off the walls and each other. When they stop, pick the three targets and confirm: 20 points per correct target, no penalty for a wrong pick. A higher score shows you have got better at this task; it is not a measure of attention or eyesight, and transfer to games, driving or sport is not established.
                     </p>
                   </section>
   
@@ -918,14 +918,14 @@ diagnostics = "Low target identification accuracy. Anchor your gaze centrally an
                         <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><GraduationCap className="w-3.5 h-3.5 text-white" /></div>
                         <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed">MOBA & FPS players, tactical operators, and trainees seeking superior visual working memory capacity.</p>
+                      <p className="text-xs text-slate-400 leading-relaxed">MOBA & FPS players and anyone curious how many moving objects they can keep track of at once.</p>
                     </div>
                     <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">
                         <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
                         <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed">Divided visual attention, working memory capacity, spatial tracking resolution, and motion prediction.</p>
+                      <p className="text-xs text-slate-400 leading-relaxed">Practice keeping attention on several moving objects at once and predicting where they bounce.</p>
                     </div>
                     <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">

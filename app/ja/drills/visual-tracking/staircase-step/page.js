@@ -5,372 +5,143 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/ja/drills/visual-tracking/staircase-step';
+const title = "上下視線追従トレーニング｜動体視力ドリル | SkillDrills";
+const description = "上下視線追従トレーニングは、左右に折り返しながら画面の上から下へ段々に進み、また上へ戻る標的を目で追う無料ブラウザ練習。速度と時間を調整できます。";
+
 export const metadata = {
-  title: "上下視線追従トレーニング｜動体視力ドリル | SkillDrills",
-  description: "上下に段階移動する標的を追う無料ブラウザ練習。垂直追従、視線の遅れ、標的ロストを記録。",
-  keywords: [
-    "上下 視線移動 練習",
-    "動体視力 上下 トレーニング",
-    "垂直追従 眼球運動",
-    "画面 上下 標的追跡",
-    "高低差 エイム 練習",
-    "動体視力テスト",
-    "視線 上下 トレーニング",
-    "垂直視線 追従",
-    "階段状 軌道 追視",
-    "視覚追従 練習",
-    "上昇下降 標的追跡",
-    "目だけ動かす 練習"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/ja/drills/visual-tracking/staircase-step",
-    languages: getAlternateLanguages("/drills/visual-tracking/staircase-step"),
-  },
+  title,
+  description,
+  keywords: ["上下視線追従トレーニング", "垂直 視線追従", "眼球運動 トレーニング", "目で追う 練習", "視線 トレーニング ブラウザ", "アイトラッキング 練習"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/staircase-step') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ja_JP', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "上下視線追従トレーニング｜動体視力ドリル | SkillDrills",
-    description: "上下に段階移動する標的を追う無料ブラウザ練習。垂直追従、視線の遅れ、標的ロストを記録。",
-    url: "https://skilldrills.online/ja/drills/visual-tracking/staircase-step",
-    siteName: "SkillDrills",
-    locale: "ja_JP",
-    type: "website",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "上下視線追従トレーニング｜動体視力ドリル | SkillDrills",
-    description: "上下に段階移動する標的を追う無料ブラウザ練習。垂直追従、視線の遅れ、標的ロストを記録。",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills ホーム",
-      "item": "https://skilldrills.online/ja"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "視覚追従・アイトラッキング",
-      "item": "https://skilldrills.online/ja/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "階段ステップ垂直追従",
-      "item": "https://skilldrills.online/ja/drills/visual-tracking/staircase-step"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "SkillDrills ホーム", item: 'https://skilldrills.online/ja' },
+    { '@type': 'ListItem', position: 2, name: "視覚追従・アイトラッキング", item: 'https://skilldrills.online/ja/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 3, name: "上下視線追従トレーニング", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "高低差エイム練習・垂直追従眼球運動テスト",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "階段状のジグザグ軌道を昇降する目標を追尾する垂直追従眼球運動トレーニング。中脳riMLF経路を刺激し高低差エイムを向上。",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/staircase-step",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online"
-  },
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "上下視線追従トレーニング",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ja' },
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "高低差エイム練習・垂直追従眼球運動テスト",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas対応およびJavaScript有効なブラウザ",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/staircase-step",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "上下視線追従トレーニング",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "HTML5 Canvas対応の最新ブラウザ",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "高低差エイム練習・垂直追従眼球運動テスト",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/staircase-step",
-  "description": "階段状のジグザグ軌道を昇降する目標を追尾する垂直追従眼球運動トレーニング。中脳riMLF経路を刺激し高低差エイムを向上。",
-  "genre": [
-    "アクション",
-    "エイムトレーニング",
-    "視覚追従訓練"
-  ],
-  "gamePlatform": [
-    "ブラウザ",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: "上下視線追従トレーニング",
+  url,
+  description,
+  genre: ['Casual Game', 'Educational Game'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "階段ステップ垂直追従訓練の進め方",
-  "description": "多段階段状の幾何学的軌道を昇降するターゲットを滑動性および捕捉サッケードで追従し、垂直動眼制御を鍛える4ステップ。",
-  "dateModified": "2026-09-20",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "セッションパラメータの設定",
-      "text": "セッション時間（30〜120秒）、目標の移動速度倍率、ターゲットサイズを選択します。軌道予測を排除したい場合はHide Lineを有効化します。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/staircase-step#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "頭部の正対と頚部運動の完全固定",
-      "text": "顎を引いて頭部を正面に固定します。首を上下に振ると垂直眼球運動が水平運動にすり替わってしまうため、眼球のみを独立して動かします。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/staircase-step#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "階段ステップ角における減速と再捕捉",
-      "text": "ステップの直線部では滑動性追従（スムーズパシュート）を維持し、直角に折れ曲がるコーナー頂点では素早い捕捉サッケードで目標を再ロックします。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/staircase-step#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "上方向・下方向の非対称性の分析と速度向上",
-      "text": "上昇フェーズと下降フェーズでの視線安定性を比較し、追従が乱れやすい方向を意識しながら段階的に速度倍率を高めていきます。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/staircase-step#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "上下視線追従トレーニングのやり方",
+  description: "段々に上下する経路を進む標的を目で追う4ステップの練習方法です。",
+  step: [
+    { '@type': 'HowToStep', position: 1, name: "設定を選ぶ", text: "最初は60秒・1.0倍・ガイド線表示から始めます。", url: `${url}#step-1` },
+    { '@type': 'HowToStep', position: 2, name: "姿勢を整える", text: "画面から楽な距離に座り、頭を正面に保ちます。", url: `${url}#step-2` },
+    { '@type': 'HowToStep', position: 3, name: "目だけで追う", text: "左右の折り返しと段々の下り・上りを、標的から目を離さずに追います。", url: `${url}#step-3` },
+    { '@type': 'HowToStep', position: 4, name: "少しずつ難しくする", text: "慣れたら速度を上げるか、ガイド線の非表示・ランダム速度を1つずつ加えます。", url: `${url}#step-4` }
+  ],
 };
 
+const faqs = [
+  { q: "上下視線追従トレーニングとは何ですか？", a: "標的が左右に折り返しながら画面の上（高さ約15%）から下（約85%）へ段々に下りていき、下端に着くと同じ道を上へ戻ります。この往復を目で追う無料のブラウザ練習で、クリックは不要です。" },
+  { q: "標的はどんな経路を動きますか？", a: "8つの点を結んだジグザグの線で、左右に7回折り返しながら少しずつ下がっていきます。1.0倍では片道およそ4.5秒で、速度倍率を上げるとその分速くなります。" },
+  { q: "上下の動きは左右の動きより追いにくいですか？", a: "同じ人でも上下方向の追従は左右方向より精度が落ちやすいという研究があります（Rottach et al., 1996）。このドリルはそれを測定するものではありませんが、下りと上りで追いやすさが違うかを自分で比べることはできます。" },
+  { q: "折り返しで標的を見失うのはなぜですか？", a: "折り返しでは動く向きが急に変わるため、目の動きが一瞬遅れやすくなります。滑らかな追従は標的が動き始めてから少し遅れて始まることが知られています（Lisberger, 2010）。速度を下げ、ガイド線を表示して角の位置を先に意識してください。" },
+  { q: "ガイド線を非表示にすると何が変わりますか？", a: "ジグザグの経路線が消えます。標的の動きは同じですが、次の折り返し位置を自分で予測する必要があります。" },
+  { q: "目の動きを測定しますか？", a: "いいえ。ブラウザは視線の位置を検出できず、分かるのは標的を描いた位置と設定だけです。クリックやタッチ操作も不要で、結果は自分で振り返る練習記録です。" },
+  { q: "スコアや判定はありますか？", a: "ありません。終了後に表示されるのは練習時間、速度倍率、ランダム速度の有無、累計セッション数（このブラウザに保存）だけです。見失った回数を数えたい場合は自分でメモしてください。" },
+  { q: "どんな設定を変えられますか？", a: "時間は30・45・60・90・120秒、速度倍率は0.5〜9.0倍、標的サイズは10〜50pxから選べます。ほかにガイド線（ジグザグの経路）の非表示、ランダム速度、残像トレイル、発光、走査線、昼/夜の背景、標的の色を切り替えられます。Escキーでいつでも終了できます。" },
+  { q: "視力やゲームのエイムは良くなりますか？", a: "保証はできません。これは動く標的を目で追う練習で、視力の改善、目の病気の治療、FPSでのエイム向上を約束するものではありません。目の不調があれば眼科を受診してください。" },
+  { q: "画面環境は結果に影響しますか？", a: "リフレッシュレート、明るさ、コントラスト、画面サイズや距離によって標的の見え方は変わります（Woods et al., 2015）。比べるときは同じ画面・同じブラウザ・同じ設定で行ってください。" },
+  { q: "どれくらい練習すればよいですか？", a: "60秒前後のセッションを数回、合計5〜10分程度の短いブロックで行い、間に休憩を入れてください。目の疲れ・乾き・痛み・めまい・吐き気・頭痛があればすぐ中止します。" }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "階段状の垂直追従テストとは何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "画面上を階段状のジグザグ幾何学軌道に沿って昇降するターゲットを、頭部を固定したまま眼球のみで追従する視覚運動トレーニングです。直線的な斜面移動と直角コーナーでの急激な方向転換を組み合わせることで、日常で鍛えられにくい垂直方向の滑動性追従眼球運動と補正サッケードを徹底的に強化します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "なぜ水平方向のエイムや視線移動に比べ、垂直方向は難しいのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "解剖学的に水平眼球運動が橋（PPRF）の神経核で制御されるのに対し、垂直眼球運動は中脳の内側縦束吻側間質核（riMLF）およびカハール間質核という全く異なる独立した中枢で制御されるためです（Büttner-Ennever & Horn, 1997）。また現代人の生活習慣（読書、スマホ、横長ディスプレイ）は水平視線移動が圧倒的大多数を占め、垂直方向の視線移動は水平方向より練習量が少なくなりやすいとされています（Rottach et al., 1996）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "上方向への追従（上昇）と下方向（下降）で難しさに差があるのはなぜですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ke et al. (2013)の研究により、垂直追従眼球運動には顕著な方向非対称性が存在することが証明されています。上向きの視線移動は上直筋および下斜筋の複雑な筋力配分を要求し、下向き移動に比べて追従利得（ゲイン）が低く、網膜像のズレを補正するための補正サッケード（Catch-up Saccade）が頻発する傾向があります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "なぜ頭を動かさず首を固定することが決定的に重要なのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "頭部を傾けたり上下に頷くように動かしてしまうと、前庭動眼反射（VOR）が介入し、網膜上での垂直運動が容易な水平運動や眼球静止状態へと変換されてしまいます。中脳riMLFの神経経路と外眼筋の垂直運動線維を選択的に刺激するには、頭部を完全に静止させ、眼球のみを純粋に上下させる必要があります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "階段の角（直角コーナー）を曲がる瞬間に視線が飛んでしまうのはなぜですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "目標が突然90度向きを変える瞬間、滑動性追従システムの運動予測エラーが極大化します。スムーズパシュート系は急激な方向変化に即座に適応できないため（応答潜時約100ms; Lisberger, 2010）、脳は一時的にサッケードシステムを起動して目標を再捕捉します。この切り替え時のラグを最小化することが本訓練の目的です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "FPSやバトルロイヤルゲーム（Apex、Overwatch等）でどう役立ちますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "近年の競技FPSでは、ジップライン、ジャンプパッド、空中ダッシュ、高低差のある立体地形での撃ち合いが頻発します。垂直追従を鍛えることで、空中に飛び出した敵の軌道をクロスヘアから外さず追尾でき、さらに垂直リコイル制御時の視覚的安定性の向上にも役立つ可能性があります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "バレーボールやテニスなど球技スポーツへの応用効果はありますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "バレーのトスやスパイク、テニスのロブショット、バスケットボールのリバウンドなど、高く上がったボールの軌道を正確に空間把握するためには強靭な垂直追従動眼能力が不可欠です。垂直方向の追尾ゲインが向上することで、落下点予測と打点タイミングの精度が飛躍的に上がります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "ガイド線非表示（Hide Line）モードのトレーニング効果は何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "階段のステップ線が見えている状態では、脳が外部の幾何学的ガイドラインに視覚的手がかりを依存してしまいます。Hide Lineをオンにすると、小脳内部の運動予測モデルのみを頼りに次のステップ位置を予測・補間せざるを得なくなるため、フィードフォワード制御能力が飛躍的に高まります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "1日の推奨練習頻度と時間はどのくらいですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "45〜60秒のセッションを2〜3セット、1日合計3〜5分が理想的です。垂直外眼筋（上直筋・下直筋・上下斜筋）は水平筋に比べて筋疲労が早く蓄積するため、長時間の疲労練習よりも、鮮明な集中力を維持できる短時間の高密度トレーニングが効果的です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "高リフレッシュレート（144Hz/240Hz）環境はなぜ垂直追従に不可欠ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "60Hz（更新間隔約16.7ms）では階段ステップの直角変化点で目標像がジャダー（残像・カクつき）を起こし、正確な角の頂点位置を脳が誤認します。144Hz（約6.9ms）以上の環境では急峻な方向転換が極めてシャープに描画され、中脳バーストニューロンが正確な補正サッケードを発火できるようになります（Woods et al., 2015）。"
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'ja',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guide = {
-  heading: "高低差エイム練習・垂直追従眼球運動テスト：階段ステップ追尾と中脳動眼神経強化",
+  heading: "上下視線追従トレーニングのガイド",
   intro: [
-    "上下視線追従トレーニングとは、階段状に上下へ動く標的を目で追う練習です。このページでは垂直方向の追従と階段の角での再捕捉を繰り返し、標的を見失う回数や視線の遅れを確認できます。",
-    "人間の眼球運動系（Oculomotor System）は、水平方向と垂直方向とで全く異なる神経解剖学的制御機構を有しています。水平方向の滑動性追従およびサッケード運動が橋（Pons）の傍正中橋網様体（PPRF）を中心とする回路で処理されるのに対し、垂直方向の運動制御は中脳（Midbrain）に局在する内側縦束吻側間質核（riMLF: rostral interstitial nucleus of the medial longitudinal fasciculus）およびカハール間質核によって排他的に統御されています（Büttner-Ennever & Horn, 1997）。",
-    "精神物理学および眼球運動計測に関する先行研究（Rottach et al., 1996; Ke et al., 2013）は、垂直追従眼球運動が水平追従に比べて定常ゲイン（目標速度に対する眼球速度の比）が有意に低く、応答潜時が長く、位相遅れ（Phase Lag）が大きいことを実証しています。さらに、仰角方向（上向き）の追従は沈降方向（下向き）に比べて網膜スリップの知覚感度が低く、追従中に目標を見失って眼球が追いつくための補正サッケード（Catch-up Saccade）が高頻度で誘発されるという顕著な方向非対称性を示します。",
-    "",
-    "本ドリルは、多段の階段状ジグザグ幾何学経路に沿って目標を移動させることで、対角線方向の滑動性追従と直角コーナー頂点における急激な減速・再捕捉サッケードを複合的に課します（Collewijn & Tamminga, 1984; Lisberger, 2010）。ディスプレイ表示の量子化遅延（60Hz時16.7ms、144Hz時6.9ms）や入力遅延（Woods et al., 2015）を最小化した環境で、同じ環境での自己記録の推移を確認してください。全記録はブラウザ内に保存されます。"
+    "上下視線追従トレーニングは、左右に折り返しながら画面の上から下へ段々に下り、下端で向きを変えて上へ戻る標的を目で追う無料のブラウザ練習です。経路は8つの点を結んだジグザグ線で、左右の幅は画面の約6割です。",
+    "スタートを押すと3・2・1のカウントダウンの後、選んだ時間（30〜120秒、初期値60秒）だけ標的が動き続けます。クリックやキー操作は不要で、スコアもありません。1.0倍では片道およそ4.5秒です。",
+    "ブラウザは視線の位置を記録できません。結果は視力や注意力の検査値ではなく、自分で振り返る練習記録として扱ってください。",
+    "比べるときは同じ画面と距離で行い、リフレッシュレートや表示遅延も見え方に影響することを覚えておいてください（Woods et al., 2015）。痛み、めまい、吐き気、かすみが続く場合は中止してください。"
   ],
   benchmarks: {
-    title: "垂直階段追従パフォーマンス基準（追従速度倍率・視線安定性）",
-    headers: ["習熟度ティア", "推奨速度倍率", "コーナー頂点再捕捉", "垂直追従ゲイン (推定)"],
+    title: "練習ステップの目安",
+    headers: ["ステップ", "設定", "練習の目標"],
     rows: [
-      ["最上位段階 / 垂直神経完全適応", "3.5x〜5.0x+", "ステップ角でのオーバーシュート 0", "ゲイン 0.92〜0.98 (遅れなし)"],
-      ["マスター / 高度垂直制御 (Master)", "2.5x〜3.5x", "角で瞬時に微小サッケード再捕捉", "ゲイン 0.85〜0.92 (極めて安定)"],
-      ["アドバンス / 実践競技レベル (Advanced)", "1.8x〜2.5x", "斜面部は安定・急反転時に微小ズレ", "ゲイン 0.75〜0.85 (良好)"],
-      ["インターミディエイト / 基礎 (Intermediate)", "1.2x〜1.8x", "上向きステップで遅れ・首が動きがち", "ゲイン 0.60〜0.75 (補正多発)", "中位 45%"],
-      ["ノービス / 未訓練 (Novice)", "0.5x〜1.2x", "ステップ角で目標完全ロスト・頭部連動", "ゲイン < 0.60 (激しい跳躍)", "入門レベル"]
+      ["1", "1.0倍・ガイド線表示", "下りと上りの経路を覚える"],
+      ["2", "1.0〜2.0倍", "折り返しで遅れずに追う"],
+      ["3", "2.0倍以上", "速い往復でも標的から目を離さない"],
+      ["4", "ガイド線非表示", "次の折り返し位置を予測する"],
+      ["5", "ランダム速度", "速さが変わっても追い続ける"]
     ],
-    note: "評価基準はRottach et al. (1996)の垂直動眼ゲインデータおよびKe et al. (2013)の垂直非対称性モデルに基づき設定されています。"
+    note: "SkillDrillsの練習段階の目安です。視機能検査の基準、利用者統計、パーセンタイルではありません。",
   },
-  techniques: [
-    {
-      title: "頭部・頚部の完全固定と外眼筋の純粋単離運動",
-      description: "垂直移動する物体を追う際、人間は無意識に顎を上げ下げして首を動かしてしまいがちです。頭部を動かすと前庭動眼反射が作用して眼球運動神経への刺激が逃げてしまいます。顎を軽く引き、頭蓋骨を静止させたまま眼球のみを上下に動かす『アイ・アイソレーション』を徹底します。",
-      tips: [
-        "椅子の背もたれに後頭部を軽く密着させ、頭のぐらつきを物理的に検知できるようにする",
-        "目線を上下に動かしても視界全体の傾きが変わらないよう、首周りの僧帽筋の脱力を意識する",
-        "首がどうしても動いてしまう場合は、速度倍率を一度0.8xまで落として眼球のみで追う感覚を脳に刷り込む"
-      ]
-    },
-    {
-      title: "階段ステップ角（頂点）における先読み減速と再捕捉サッケード",
-      description: "目標が直線的なステップから直角に向きを変える瞬間、等速のまま追従しようとすると視線が角を突き抜ける『オーバーシュート』が発生します。頂点の手前でわずかに視線を先行させ、反転の瞬間に極小のサッケードを発火させて瞬時に角の内側へ引き戻します。",
-      tips: [
-        "目標の球体を追うだけでなく、階段のグリッド線（角の配置間隔）を周辺視で捉えてリズムを予測する",
-        "反転直後に生じる約100msのパシュート初期遅延（Lisberger, 2010）を、短時間の注視で相殺する",
-        "『Hide Line』をオンにして練習し、外部の線に頼らず自分自身の内的な空間リズムでコーナーを予測する"
-      ]
-    },
-    {
-      title: "上向き（仰角）追従時のゲイン低下に対する能動的補正",
-      description: "多くの人は上向き追従時に下向き追従よりも視線が遅れがちになります（Ke et al., 2013）。上昇ステップに入った際は、意識的に視線のフォーカスポイントを目標球体の上端（進行方向の前端）に置き、下垂しがちな視線位置を前進させます。",
-      tips: [
-        "上昇フェーズでは目標の『中心』ではなく『頭頂部』をやや上から引っ張り上げるイメージで凝視する",
-        "下降フェーズでは重力方向と目の自然な下向き運動が一致するため、余分な力を抜いてスムーズに追従する",
-        "上昇と下降の切り替わり時に呼吸を吐き出し、目元の眼輪筋の緊張をリセットする"
-      ]
-    },
-    {
-      title: "斜め複合ベクトルから純粋垂直成分の抽出認識",
-      description: "ジグザグの階段ステップは水平成分（X軸）と垂直成分（Y軸）が連動した複合ベクトル運動です。水平筋（外直筋・内直筋）の動きに引きずられて垂直筋（上直筋・下直筋）の収縮がブレないよう、縦方向の変位量を主たる感覚軸として脳内にマッピングします。",
-      tips: [
-        "目標の『高さ（Y座標）』の変化に全意識の7割を向け、横の揺れは周辺視野に任せる感覚を掴む",
-        "ステップが最上段および最下段に達した際の大きな折り返し時に、眼球が最大可動域まで届いているか確認する",
-        "夜間モードや高コントラストターゲット色を活用し、垂直方向の軌跡エッジを網膜に強く焼き付ける"
-      ]
-    }
-  ],
+  techniques: {
+    title: "練習のコツ",
+    items: [
+      { name: "頭を動かさない", desc: "首や頭で追うと目の練習になりにくくなります。頭は正面に保ち、目だけで標的を追います。", tips: "肩と首の力を抜いた楽な姿勢で座ります。" },
+      { name: "折り返しを先に意識する", desc: "標的は経路の角で急に向きを変えます。角が近づいたら次の方向を意識しておきます。", tips: "見失ったら無理に追わず、次の角で合わせ直します。" },
+      { name: "下りと上りを比べる", desc: "下る区間と上る区間で追いやすさが違うかを確認します。", tips: "気づいたことはメモし、同じ設定で比べます。" },
+      { name: "短く区切って休む", desc: "5〜10分程度で区切り、まばたきをして遠くを見て目を休めます。長くやるほど良いわけではありません。", tips: "痛みやめまいがあればすぐにやめます。" }
+    ],
+  },
   steps: [
-    { title: "画面中央で開始する", text: "画面から50〜70cm離れ、頭を固定して標的が最初の段を進むのを待ちます。" },
-    { title: "上り下りの段を追う", text: "標的の高さを中心に捉え、首を動かさず斜めの区間と垂直の切り替えを追います。" },
-    { title: "角で視線を戻す", text: "段の角に近づいたら少し減速し、見失った場合は次の標的位置へ小さく視線を戻します。" },
-    { title: "安定後に速度を上げる", text: "標的ロストと視線の遅れが減ってから速度倍率を一段だけ上げ、記録を比較します。" }
+    { title: "設定を選ぶ", text: "最初は60秒・1.0倍・ガイド線表示から始めます。" },
+    { title: "姿勢を整える", text: "画面から楽な距離に座り、頭を正面に保ちます。" },
+    { title: "目だけで追う", text: "左右の折り返しと段々の下り・上りを、標的から目を離さずに追います。" },
+    { title: "少しずつ難しくする", text: "慣れたら速度を上げるか、ガイド線の非表示・ランダム速度を1つずつ加えます。" }
   ],
-  deviceCalibration: {
-    title: "垂直追従訓練におけるモニター・エルゴノミクス基準",
-    points: [
-      "モニターの垂直視野角と高さ：目線の高さがモニター画面の上端から1/3の水平線と一致するよう高さを調整。画面が高すぎると頸部伸展（首の反り）が生じ、低すぎると下向きの眼筋が過剰に圧迫されます。",
-      "ディスプレイリフレッシュレート：ステップ角での瞬間的な方向転換を正確に視認するため、144Hz以上の高駆動モニターを推奨。60Hz（16.7ms）比でフレーム遅延を6.9ms以下へ低減（Woods et al., 2015）。",
-      "視聴距離の確保：画面の垂直寸法が視角25〜30度前後に収まるよう、50〜65cmの距離を維持。距離が近すぎると垂直の眼球可動限界（上下各30度）を超え、首の代償運動が強制されます。",
-      "ターゲット色と照明環境：黒背景にサイバーレッド（#ef4444）またはネオングリーンを選び、部屋の照明を間接照明にしてモニターへの映り込みを完全遮断。"
-    ]
-  },
-  faqs: [
-    {
-      q: "階段状の垂直追従テストとは何ですか？",
-      a: "画面上を階段状のジグザグ幾何学軌道に沿って昇降するターゲットを、頭部を固定したまま眼球のみで追従する視覚運動トレーニングです。直線的な斜面移動と直角コーナーでの急激な方向転換を組み合わせることで、日常で鍛えられにくい垂直方向の滑動性追従眼球運動と補正サッケードを徹底的に強化します。"
-    },
-    {
-      q: "なぜ水平方向のエイムや視線移動に比べ、垂直方向は難しいのですか？",
-      a: "解剖学的に水平眼球運動が橋（PPRF）の神経核で制御されるのに対し、垂直眼球運動は中脳の内側縦束吻側間質核（riMLF）およびカハール間質核という全く異なる独立した中枢で制御されるためです（Büttner-Ennever & Horn, 1997）。また現代人の生活習慣（読書、スマホ、横長ディスプレイ）は水平視線移動が圧倒的大多数を占め、垂直方向の視線移動は水平方向より練習量が少なくなりやすいとされています（Rottach et al., 1996）。"
-    },
-    {
-      q: "上方向への追従（上昇）と下方向（下降）で難しさに差があるのはなぜですか？",
-      a: "Ke et al. (2013)の研究により、垂直追従眼球運動には顕著な方向非対称性が存在することが証明されています。上向きの視線移動は上直筋および下斜筋の複雑な筋力配分を要求し、下向き移動に比べて追従利得（ゲイン）が低く、網膜像のズレを補正するための補正サッケード（Catch-up Saccade）が頻発する傾向があります。"
-    },
-    {
-      q: "なぜ頭を動かさず首を固定することが決定的に重要なのですか？",
-      a: "頭部を傾けたり上下に頷くように動かしてしまうと、前庭動眼反射（VOR）が介入し、網膜上での垂直運動が容易な水平運動や眼球静止状態へと変換されてしまいます。中脳riMLFの神経経路と外眼筋の垂直運動線維を選択的に刺激するには、頭部を完全に静止させ、眼球のみを純粋に上下させる必要があります。"
-    },
-    {
-      q: "階段の角（直角コーナー）を曲がる瞬間に視線が飛んでしまうのはなぜですか？",
-      a: "目標が突然90度向きを変える瞬間、滑動性追従システムの運動予測エラーが極大化します。スムーズパシュート系は急激な方向変化に即座に適応できないため（応答潜時約100ms; Lisberger, 2010）、脳は一時的にサッケードシステムを起動して目標を再捕捉します。この切り替え時のラグを最小化することが本訓練の目的です。"
-    },
-    {
-      q: "FPSやバトルロイヤルゲーム（Apex、Overwatch等）でどう役立ちますか？",
-      a: "近年の競技FPSでは、ジップライン、ジャンプパッド、空中ダッシュ、高低差のある立体地形での撃ち合いが頻発します。垂直追従を鍛えることで、空中に飛び出した敵の軌道をクロスヘアから外さず追尾でき、さらに垂直リコイル制御時の視覚的安定性の向上にも役立つ可能性があります。"
-    },
-    {
-      q: "バレーボールやテニスなど球技スポーツへの応用効果はありますか？",
-      a: "バレーのトスやスパイク、テニスのロブショット、バスケットボールのリバウンドなど、高く上がったボールの軌道を正確に空間把握するためには強靭な垂直追従動眼能力が不可欠です。垂直方向の追尾ゲインが向上することで、落下点予測と打点タイミングの精度が飛躍的に上がります。"
-    },
-    {
-      q: "ガイド線非表示（Hide Line）モードのトレーニング効果は何ですか？",
-      a: "階段のステップ線が見えている状態では、脳が外部の幾何学的ガイドラインに視覚的手がかりを依存してしまいます。Hide Lineをオンにすると、小脳内部の運動予測モデルのみを頼りに次のステップ位置を予測・補間せざるを得なくなるため、フィードフォワード制御能力が飛躍的に高まります。"
-    },
-    {
-      q: "1日の推奨練習頻度と時間はどのくらいですか？",
-      a: "45〜60秒のセッションを2〜3セット、1日合計3〜5分が理想的です。垂直外眼筋（上直筋・下直筋・上下斜筋）は水平筋に比べて筋疲労が早く蓄積するため、長時間の疲労練習よりも、鮮明な集中力を維持できる短時間の高密度トレーニングが効果的です。"
-    },
-    {
-      q: "高リフレッシュレート（144Hz/240Hz）環境はなぜ垂直追従に不可欠ですか？",
-      a: "60Hz（更新間隔約16.7ms）では階段ステップの直角変化点で目標像がジャダー（残像・カクつき）を起こし、正確な角の頂点位置を脳が誤認します。144Hz（約6.9ms）以上の環境では急峻な方向転換が極めてシャープに描画され、中脳バーストニューロンが正確な補正サッケードを発火できるようになります（Woods et al., 2015）。"
-    }
-  ],
+  audience: "上下方向に進む動きを目で追う練習を、ゲーム感覚で試したい人。",
+  faqs,
+  sources: pickSources('rottach1996', 'collewijn1984', 'ke2013', 'buttner1997', 'lisberger2010', 'woods2015'),
   related: [
     { href: "/ja/drills/visual-tracking/split-screen-tracking", label: "画面分割アイトラッキング" },
     { href: "/ja/drills/visual-tracking/sine-wave-pursuit", label: "サイン波眼球運動トレーニング" },
@@ -378,42 +149,23 @@ const guide = {
     { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "偏差エイム練習・遮蔽軌道予測テスト" },
     { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "滑動性追従・基礎アイエクササイズ" }
   ],
-  sources: pickSources('rottach1996', 'collewijn1984', 'ke2013', 'buttner1997', 'lisberger2010', 'woods2015'),
 };
 
 export default function StaircaseStepJaPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <StaircaseStepClient
         copy={{
           title: "上下視線追従トレーニング",
           subtitle: "垂直追従と標的再捕捉の練習",
-          description: "段階的に上下する標的を目だけで追い、視線の遅れと標的ロストを記録します。頭を固定して角での再捕捉精度を確認できます。"
+          description: "上下視線追従トレーニングは、左右に折り返しながら上下に進む標的を目で追う練習です。ブラウザは視線を記録しないため、結果は検査ではなく練習記録として見てください。",
         }}
       />
       <DrillGuide guide={guide} />

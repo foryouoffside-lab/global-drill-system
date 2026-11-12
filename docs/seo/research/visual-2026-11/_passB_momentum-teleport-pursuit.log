@@ -1,0 +1,6 @@
+ko | 순간이동 표적 시선 재포착 (kept, map KEEP GSC p8.7) | ko.md | body rebuilt to code: straight-line+edge bounce, ~1.2 s random teleports keeping velocity, no score/clicks, real settings; grammar; dateModified | audit OK
+ja | 瞬間移動標的の視線再捕捉 (kept) | ja.md no-demand descriptive, GSC 0 | full rebuild: removed fabricated ms/eye-tracking benchmark table, FPS/Tracer guarantees, "result score", physiology claims; mechanics to code (1.2 s teleports keep velocity, no score); 3 dup titles unified; dateModified | audit OK
+de | Springendes Ziel verfolgen (title: Springendes Ziel mit den Augen verfolgen) | de.md no-demand descriptive, Blickverfolgung tail dropped (hub primary) | full rebuild: fabricated benchmarks/Punkte claims removed, mechanics to code; dateModified | audit OK
+fr | Poursuite oculaire : cible qui saute (kept) | fr.md keep descriptive | full rebuild: fabricated precision/ms table removed, mechanics to code; dateModified | audit OK
+pt | Rastreamento de Alvo Teleportado (kept) | pt.md keep | full rebuild: fabricated precision/percentile table removed, mechanics to code; dateModified | audit OK
+es | Seguimiento de Blanco Teletransportado (kept) | es.md keep | full rebuild: fabricated table/penalty claim removed, mechanics to code; dateModified | audit OK

@@ -645,7 +645,7 @@ export default function InfinityPursuitClient({ copy }: { copy?: { title?: strin
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <p className="text-sm text-slate-300 leading-relaxed">
-                {copy?.description || "Figure-8 eye tracking conditions multi-axial smooth pursuit by guiding gaze continuously across intersecting horizontal and vertical planes (Barnes, 2008). Following the smooth curvature of the Lemniscate loop trains coordinated extraocular muscle synergies, minimizing catch-up saccades and stabilizing foveal focus (Robinson, 1965; Leigh & Zee, 2015). Pursuit tracks accurately up to roughly 30°/s in any direction, so the curve exposes whichever axis your gain drops on first (Krauzlis, 2004)."}
+                {copy?.description || "The target loops along a figure-8 (lemniscate) path, so your eyes follow horizontal and vertical motion and cross the centre on every lap (Barnes, 2008). Hide the line or turn on Random Speed to make the loop harder to anticipate. The browser does not record where you look and there is no score; this is a practice exercise, not an eye test or therapy."}
               </p>
             </DrillAccordion>
           </div>

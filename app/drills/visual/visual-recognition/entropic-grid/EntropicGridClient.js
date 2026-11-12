@@ -665,7 +665,7 @@ export default function EntropicGridClient({ copy } = {}) {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <DrillRuleItem num="1" text="Find Target Code" highlight="Scan Noisy Letter Grid" result="+150 PTS per target code pair" />
-                <DrillRuleItem num="2" text="Dynamic Noise Reshuffle" highlight="700ms Regeneration" result="Distractors reshuffle continuously" />
+                <DrillRuleItem num="2" text="Dynamic Noise Reshuffle" highlight="700ms Regeneration" result="3 distractor cells change every 700 ms; new code every 12 s" />
                 <DrillRuleItem num="3" text="Progressive Difficulty" highlight="Up to 6 Live Targets" result="Guaranteed placements grow with level" />
                 <DrillRuleItem num="4" text="Miss / Timeout" highlight="Zero Penalties" result="No score or time loss" />
               </div>
@@ -684,10 +684,10 @@ export default function EntropicGridClient({ copy } = {}) {
                       <Brain className="w-4 h-4 text-blue-400" /> What Is Entropic Grid Training?
                     </h3>
                     <p className="text-sm leading-relaxed mb-3">
-                      <strong>Entropic Grid Training</strong> is an advanced visual search and concentration drill designed to measure visual noise suppression capacity. The <strong>Entropic Grid drill</strong> presents a 100-cell alphanumeric grid with dynamic entropy noise continuously regenerating background characters, testing your ability to isolate and click specific 2-character targets. How long that takes depends less on the number of items than on similarity — search slows as the target resembles its distractors and as the distractors differ from each other (Duncan &amp; Humphreys, 1989; Treisman &amp; Gelade, 1980). Here the background regenerates every 700 ms, so the display never settles into a pattern you can memorise.
+                      <strong>Entropic Grid Training</strong> is a visual search practice drill. The <strong>Entropic Grid drill</strong> shows a 10×10 grid of 2-character codes and asks you to click every copy of the target code shown above it (2 copies at the start, up to 6 at higher levels). How long that takes depends less on the number of items than on similarity — search slows as the target resembles its distractors and as the distractors differ from each other (Duncan &amp; Humphreys, 1989; Treisman &amp; Gelade, 1980). Here three non-target cells change to new codes every 700 ms, and the target code and grid are replaced every 12 seconds or once every copy is found, so the display never settles into a pattern you can memorise.
                     </p>
                     <p className="text-sm leading-relaxed">
-                      By practicing <strong>peripheral visual noise filtering</strong>, you expand your visual search field and increase target recognition speed under high-distraction environments.
+                      It is 45 seconds long, every correct click scores 150 points, the level rises every 750 points, and wrong clicks cost nothing but a red flash.
                     </p>
                   </section>
   
@@ -697,14 +697,14 @@ export default function EntropicGridClient({ copy } = {}) {
                         <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
                         <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                       </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Gamers improving visual scanning speed, pilots & drivers enhancing visual focus under noise, and professionals building concentration stamina.</p>
+                      <p className="text-xs text-gray-300 leading-relaxed">Gamers and anyone who wants a short, repeatable visual scanning exercise in the browser.</p>
                     </div>
                     <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">
                         <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
                         <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                       </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Visual search speed, selective attention, visual noise filtering, target recognition, and sustained concentration stamina.</p>
+                      <p className="text-xs text-gray-300 leading-relaxed">Practises visual search, ignoring changing distractors and recognising a 2-character code quickly.</p>
                     </div>
                     <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">

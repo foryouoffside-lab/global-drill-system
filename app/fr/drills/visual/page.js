@@ -6,45 +6,30 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const visualDrills = DRILLS.filter((d) => d.category === 'visual');
 
 export const metadata = {
-  title: 'Entraînement Visuel & Test de Vue en Ligne | SkillDrills',
-  description: 'Entraînement visuel en ligne : 9 exercices d\'acuité visuelle dynamique, vision du relief, poursuite oculaire, temps de réaction et recherche visuelle.',
-  keywords: [
-    'test de vue en ligne gratuit', 'exercices de gymnastique oculaire', 'test acuite visuelle dynamique',
-    'perception de la profondeur test', 'test vision du relief', 'temps de reaction visuel en ligne',
-    'test de reaction a la lumiere', 'poursuite visuelle oculaire', 'mouvements oculaires saccadiques',
-    'recherche visuelle attention selective', 'champ visuel utile entrainement', 'fatigue oculaire exercices ecran',
-    'discrimination temporelle visuelle', 'poursuite dobjets multiples mot', 'sports vision entrainement visuel'
-  ],
+  title: 'Entraînement visuel en ligne : réaction et suivi | SkillDrills',
+  description: 'Entraînement visuel en ligne : 9 exercices gratuits pour la réaction visuelle, le suivi de cibles, la recherche visuelle et les distances. Pas un test de vue.',
+  keywords: ['entraînement visuel en ligne', 'exercices visuels', 'suivi de cibles', 'recherche visuelle', 'réaction à la lumière', 'suivi de plusieurs objets', 'appréciation des distances', 'poursuite oculaire'],
   openGraph: {
-    title: 'Entraînement Visuel & Test de Vue en Ligne | SkillDrills',
-    description: 'Entraînement visuel en ligne : 9 exercices d\'acuité visuelle dynamique, vision du relief, poursuite oculaire, temps de réaction et recherche visuelle.',
+    title: 'Entraînement visuel en ligne : réaction et suivi | SkillDrills',
+    description: 'Entraînement visuel en ligne : 9 exercices gratuits pour la réaction visuelle, le suivi de cibles, la recherche visuelle et les distances. Pas un test de vue.',
     type: 'website',
     url: 'https://skilldrills.online/fr/drills/visual',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Entraînement de la Vision et de l\'Acuité Visuelle sur SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Entraînement visuel en ligne sur SkillDrills' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Entraînement Visuel & Test de Vue en Ligne | SkillDrills',
-    description: '9 exercices scientifiques d\'acuité visuelle dynamique, vision du relief, poursuite oculaire et recherche visuelle.',
+    title: 'Entraînement visuel en ligne : réaction et suivi | SkillDrills',
+    description: 'Entraînement visuel en ligne : 9 exercices gratuits pour la réaction visuelle, le suivi de cibles, la recherche visuelle et les distances. Pas un test de vue.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/visual',
-    languages: getAlternateLanguages('/fr/drills/visual'),
+    languages: getAlternateLanguages('/drills/visual'),
   },
 };
-
-Object.assign(metadata, {
-  title: 'Exercices visuels : suivi, recherche, réaction | SkillDrills',
-  description: `${visualDrills.length} exercices gratuits dans le navigateur : suivi de cibles, recherche visuelle, réaction à la lumière et appréciation des distances. Pas un test de vue.`,
-  keywords: ['exercices visuels', 'recherche visuelle', 'suivi de cibles', 'temps de réaction visuel', 'réaction à la lumière', 'perception de la profondeur', 'poursuite visuelle', 'suivi de plusieurs objets', 'entraînement visuel gratuit'],
-  openGraph: { ...metadata.openGraph, title: 'Exercices visuels : suivi, recherche, réaction | SkillDrills', description: `${visualDrills.length} exercices gratuits dans le navigateur : suivi de cibles, recherche visuelle, réaction à la lumière et appréciation des distances. Pas un test de vue.` },
-  twitter: { ...metadata.twitter, title: 'Exercices visuels : suivi, recherche, réaction | SkillDrills', description: `${visualDrills.length} exercices gratuits dans le navigateur : suivi de cibles, recherche visuelle, réaction à la lumière et appréciation des distances. Pas un test de vue.` },
-  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -52,7 +37,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
     { "@type": "ListItem", "position": 2, "name": "Exercices de Performance", "item": "https://skilldrills.online/fr/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Exercices visuels", "item": "https://skilldrills.online/fr/drills/visual" }
+    { "@type": "ListItem", "position": 3, "name": "Entraînement visuel", "item": "https://skilldrills.online/fr/drills/visual" }
   ]
 };
 
@@ -60,8 +45,8 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "fr",
-  "dateModified": "2026-09-20",
-  "name": `Exercices visuels : suivi, recherche, réaction (${visualDrills.length} exercices)`,
+  "dateModified": "2026-11-12",
+  "name": `Entraînement visuel en ligne (${visualDrills.length} exercices)`,
   "url": "https://skilldrills.online/fr/drills/visual",
   "description": `${visualDrills.length} exercices gratuits dans le navigateur : suivi de cibles, recherche visuelle, réaction à la lumière et appréciation des distances. Pas un test de vue.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
@@ -83,7 +68,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "fr",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",

@@ -117,8 +117,8 @@ const VISUAL_HUB_COPY = {
     cta: '시각 드릴 시작하기',
   },
   de: {
-    h1: 'Dynamisches Sehen, visuelle Suche & Reaktion',
-    description: '9 kostenlose Browser-Drills für dynamisches Sehen, visuelle Suche, Reaktionszeit, Zielverfolgung und Tiefenwahrnehmung. Ohne Anmeldung; Ergebnisse bleiben im Browser.',
+    h1: 'Visuelles Training online: Reaktion & Tracking',
+    description: 'Visuelles Training online: 9 kostenlose Browser-Drills für visuelle Reaktion, bewegte Ziele, visuelle Suche und das Einschätzen von Entfernungen. Kein Sehtest; ohne Anmeldung, Ergebnisse bleiben im Browser.',
     drillsHeading: 'Einen visuellen Drill wählen',
     domainsHeading: 'Visuelle Fähigkeit wählen',
     drill: 'Drill',
@@ -138,8 +138,8 @@ const VISUAL_HUB_COPY = {
     cta: 'Visuellen Drill starten',
   },
   pt: {
-    h1: 'Visão Dinâmica, Busca Visual e Reação',
-    description: '9 exercícios gratuitos no navegador para visão dinâmica, busca visual, tempo de reação, rastreamento de alvos e percepção de profundidade. Sem cadastro; os resultados ficam no navegador.',
+    h1: 'Treino visual online: reação e rastreamento',
+    description: 'Treino visual online: 9 exercícios grátis no navegador para reação visual, rastreamento de alvos, busca visual e noção de distância. Não é exame de vista; sem cadastro, os resultados ficam no navegador.',
     drillsHeading: 'Escolha um treino visual',
     domainsHeading: 'Escolha a habilidade visual',
     drill: 'treino',
@@ -159,8 +159,8 @@ const VISUAL_HUB_COPY = {
     cta: 'Começar um treino visual',
   },
   es: {
-    h1: 'Agudeza Visual Dinámica, Búsqueda y Reacción',
-    description: '9 ejercicios gratuitos en el navegador para agudeza visual dinámica, búsqueda visual, tiempo de reacción, seguimiento de objetivos y percepción de profundidad. Sin registro; tus marcas quedan en el navegador.',
+    h1: 'Ejercicios de percepción visual online',
+    description: 'Ejercicios de percepción visual online: 9 ejercicios gratis en el navegador para reacción visual, seguimiento de objetivos, búsqueda visual y cálculo de distancias. No es un examen de la vista; sin registro, tus marcas quedan en el navegador.',
     drillsHeading: 'Elige un ejercicio visual',
     domainsHeading: 'Elige la habilidad visual',
     drill: 'ejercicio',
@@ -180,8 +180,8 @@ const VISUAL_HUB_COPY = {
     cta: 'Empezar un ejercicio visual',
   },
   fr: {
-    h1: 'Vision dynamique, recherche visuelle et réaction',
-    description: '9 exercices gratuits dans le navigateur pour vision dynamique, recherche visuelle, temps de réaction, suivi de cibles et perception de la profondeur. Sans inscription; vos scores restent dans le navigateur.',
+    h1: 'Entraînement visuel en ligne : réaction et suivi',
+    description: 'Entraînement visuel en ligne : 9 exercices gratuits dans le navigateur pour la réaction visuelle, le suivi de cibles, la recherche visuelle et l’appréciation des distances. Pas un test de vue ; sans inscription, vos scores restent dans le navigateur.',
     drillsHeading: 'Choisissez un exercice visuel',
     domainsHeading: 'Choisissez la capacité visuelle',
     drill: 'exercice',

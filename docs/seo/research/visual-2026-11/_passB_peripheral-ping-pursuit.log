@@ -1,0 +1,6 @@
+ko | 주변시 훈련 (kept, map KEEP GSC p6.25) | ko.md | body rebuilt: false "moving central target" premise replaced by code (fixed center crosshair, stationary dots flash ~0.75 s at 1.0x, no click/score); dateModified | audit OK
+ja | 中心固視で周辺の点滅に気づく練習 (retarget; 周辺視野トレーニング TAKEN by physical) | ja.md RETARGET | full rebuild, fabricated benchmarks removed, mechanics to code; dateModified | audit OK
+de | Randreize erkennen, Blick in der Mitte | de.md no-demand descriptive (peripheres sehen 0; map wording "beim Tracking" rejected: no tracked target) | full rebuild: fake UFOV/ms benchmarks, Treffer/Klick claims removed; dateModified | audit OK
+fr | Signaux périphériques, regard au centre | fr.md collision fix vs physical "jeu de vision périphérique" | full rebuild: fake UFOV/ms table removed; dateModified | audit OK
+pt | Visão Periférica e Fixação Central (kept) | pt.md keep | full rebuild: fake UFOV/score/percentile table removed; dateModified | audit OK
+es | Fijación Central y Visión Periférica (kept) | es.md keep, no medical claims | full rebuild: fake UFOV table removed; dateModified | audit OK

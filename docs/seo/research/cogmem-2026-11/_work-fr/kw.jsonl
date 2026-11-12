@@ -1,0 +1,2 @@
+{"phrase": "test de mémoire", "cc": "fr", "lang": "fr-FR", "exact": 44, "broad": 107, "status": "ok"}
+{"phrase": "test de mémoire en ligne", "cc": "fr", "lang": "fr-FR", "exact": null, "broad": null, "status": "error:<urlopen error [WinError 10054] An existing connection was forcibly closed by th"}

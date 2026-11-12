@@ -6,24 +6,18 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Mehrfach-Objektverfolgung | MOT-Test | SkillDrills",
-  description: "Kostenloser MOT-Test: Verfolge mehrere bewegte Objekte unter Ablenkern. Trainiere geteilte Aufmerksamkeit und peripheres Sehen. Kein Diagnosetest.",
+  description: "Kostenloser MOT-Test zur Mehrfach-Objektverfolgung: Merke dir 3 markierte Kugeln und verfolge sie 60 s lang unter gleich aussehenden Kugeln. Kein Diagnosetest.",
   keywords: [
     "Mehrfach-Objektverfolgung",
-    "Multi-Objekt-Tracking-Test",
-    "MOT Test",
-    "Objektverfolgung",
+    "Multiple Object Tracking Test",
+    "MOT-Test",
     "mehrere Objekte verfolgen",
     "geteilte Aufmerksamkeit",
-    "peripheres Sehen",
-    "visuelle Aufmerksamkeit",
-    "räumliches Arbeitsgedächtnis",
-    "Mehrzielverfolgung",
-    "bewegte Objekte verfolgen",
-    "MOT Training"
+    "Kugeln verfolgen Spiel"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Mehrfach-Objektverfolgung | MOT-Test | SkillDrills",
-    description: "Kostenloser MOT-Test: Verfolge mehrere bewegte Objekte unter Ablenkern. Übe geteilte Aufmerksamkeit und peripheres Sehen.",
+    description: "Merke dir 3 markierte Kugeln und finde sie nach 60 Sekunden Bewegung wieder. Kostenloser MOT-Test im Browser, keine Diagnose.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets',
     siteName: 'SkillDrills',
@@ -32,7 +26,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Mehrfach-Objektverfolgung | MOT-Test | SkillDrills",
-    description: "Verfolge mehrere bewegte Objekte gleichzeitig und übe visuelle Aufmerksamkeit und peripheres Sehen im Browser.",
+    description: "Mehrfach-Objektverfolgung im Browser: 3 Ziele unter gleich aussehenden Kugeln 60 Sekunden lang verfolgen.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -45,292 +39,307 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Trainings-Hub",
-      "item": "https://skilldrills.online/de/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Visuelles Training",
-      "item": "https://skilldrills.online/de/drills/visual"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Zielverfolgung & Tracking",
-      "item": "https://skilldrills.online/de/drills/visual/tracking-accuracy"
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "Mehrfach-Objektverfolgung (MOT-Test)",
-      "item": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills Startseite", "item": "https://skilldrills.online/de" },
+    { "@type": "ListItem", "position": 2, "name": "Trainings-Hub", "item": "https://skilldrills.online/de/drills" },
+    { "@type": "ListItem", "position": 3, "name": "Visuelles Training", "item": "https://skilldrills.online/de/drills/visual" },
+    { "@type": "ListItem", "position": 4, "name": "Blickverfolgung", "item": "https://skilldrills.online/de/drills/visual/tracking-accuracy" },
+    { "@type": "ListItem", "position": 5, "name": "Mehrfach-Objektverfolgung (MOT-Test)", "item": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Multiple_object_tracking"],
-  "name": "SkillDrills Mehrfach-Objektverfolgung und peripheres Sehen",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Any",
-  "browserRequirements": "Moderner Webbrowser mit HTML5-Canvas-Unterstützung",
+  "@type": "SoftwareApplication",
+  "name": "Mehrfach-Objektverfolgung (MOT-Test)",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Web Browser",
+  "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Präzises Web-Tool zur Messung der simultanen Mehrzielverfolgung, des peripheren Blickfelds und der Kapazität des visuell-räumlichen Arbeitsgedächtnisses basierend auf dem Pylyshyn-MOT-Paradigma."
+  "description": "Browser-Übung: Unter gleich aussehenden Kugeln leuchten 3 Ziele 2 Sekunden lang grün. Danach bewegen sich alle Kugeln 60 Sekunden lang und prallen voneinander ab; anschließend wählst du die 3 Ziele wieder aus. Kein Test zur Diagnose von Sehen oder Aufmerksamkeit.",
+  "featureList": [
+    "Start mit 8 Kugeln, davon 3 für 2 Sekunden grün markiert",
+    "60 Sekunden Bewegung: alle Kugeln sehen gleich aus und prallen von Wänden und voneinander ab",
+    "Danach 3 Kugeln wählen und bestätigen: 20 Punkte pro richtigem Ziel (max. 60), kein Abzug für Fehler",
+    "Mit steigendem Bestwert mehr Kugeln und etwas mehr Tempo; Daten nur im lokalen Browser-Speicher"
+  ],
+  "dateModified": "2026-11-12"
 };
 
-const webApplicationSchema = {
+const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Kostenloser Mehrfach-Objektverfolgung-MOT-Test",
+  "name": "Mehrfach-Objektverfolgung (MOT-Test) | SkillDrills",
+  "alternateName": "GhostLink MOT",
   "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets",
-  "applicationCategory": "GameApplication",
-  "genre": ["Mehrfach-Objektverfolgung", "Visuelles Training", "Geteilte Aufmerksamkeit", "Peripheres Sehen"],
-  "browserRequirements": "Requires HTML5 Canvas and JavaScript",
-  "inLanguage": "de-DE"
+  "dateModified": "2026-11-12",
+  "description": "Kostenloser Online-MOT-Test: Verfolge 3 Ziele 60 Sekunden lang unter gleich aussehenden Kugeln.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Moderner Browser mit HTML5-Canvas.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "isAccessibleForFree": true,
+  "learningResourceType": "Educational Game",
+  "teaches": "Mehrere bewegte Objekte gleichzeitig mit der Aufmerksamkeit verfolgen, geteilte Aufmerksamkeit"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Mehrfach-Objektverfolgung-Challenge (GhostLink)",
-  "description": "Verfolge mehrere optisch identische Kugeln simultan im zweidimensionalen Raum und identifiziere alle Zielobjekte fehlerfrei.",
-  "genre": ["Visuelles Training", "Geteilte Aufmerksamkeit", "Kognitives Training"],
-  "playMode": "SinglePlayer",
-  "applicationCategory": "Game"
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was genau misst der Multiple Object Tracking (MOT) Test?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das von Kognitionsforscher Zenon Pylyshyn (1988) entwickelte MOT-Paradigma misst die Fähigkeit des Gehirns, mehrere optisch identische Objekte gleichzeitig über die Zeit im Raum zu verfolgen, während sie sich chaotisch zwischen identischen Ablenkern (Distraktoren) bewegen. Im Unterschied zur einfachen Zielverfolgung wird hier nicht ein Einzelobjekt mit der Fovea fixiert, sondern die geteilte visuelle Aufmerksamkeit und das visuell-räumliche Arbeitsgedächtnis des parietalen Kortex gefordert."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie viele Objekte kann ein gesunder Mensch maximal gleichzeitig verfolgen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Umfassende neurokognitive Studien belegen, dass die typische Kapazitätsgrenze gesunder Erwachsener bei durchschnittlich 3 bis 4 Objekten liegt (Cavanagh & Alvarez, 2005). Bei mehr als vier Zielen kommt es bei schnellen Objektkreuzungen häufig zu Verwechslungen. Professionelle E-Sportler, Jagdpiloten und Spitzensportler in Mannschaftssportarten können jedoch trainiert 5 bis 6 Ziele gleichzeitig stabil im Arbeitsgedächtnis halten (Green & Bavelier, 2006; Faubert, 2013)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum scheitert man, wenn man die Kugeln nacheinander einzeln mit den Augen abtastet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Jeder Blicksprung (Sakkade) von einem Objekt zum nächsten benötigt rund 200 Millisekunden Latenzzeit. Zudem unterdrückt das Gehirn während der eigentlichen Sakkade die visuelle Wahrnehmung (sakkadische Suppression). Wer versucht, vier sich mit 300 px/s bewegende Kugeln nacheinander anzuschauen, verpasst zwangsläufig die kritischen Kreuzungsmomente der anderen drei Kugeln. Erfolgreiches Tracking erfordert daher eine parallele, periphere Informationsverarbeitung."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was versteht man unter der Schwerpunkt-Strategie (Centroid Strategy)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Geübte Tracker fixieren oft ihren Blick nicht auf eine einzelne Kugel, sondern richten ihren Fokus weich auf den geometrischen Schwerpunkt (Centroid) des von allen Zielen aufgespannten Polygons. Indem die Augen im Zentrum verweilen, registriert das periphere Sehen die Formveränderungen des Gesamtsystems als Gestalt. Dadurch entfallen unruhige Sakkaden, und Verwechslungen bei Überlagerungen werden drastisch minimiert."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was bedeutet 'Hemifield Independence' für das Tracking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Studien von Alvarez & Cavanagh (2005) zeigen, dass die linke und rechte Bildhaushälfte primär von getrennten Gehirnhälften (rechte vs. linke Hemisphäre) verarbeitet werden. Verteilen sich die Zielobjekte gleichmäßig über die linke und rechte Bildschirmhälfte, ist die Tracking-Leistung signifikant höher als wenn alle Ziele in einem Quadranten gedrängt sind. Ein ruhiger Blick auf die vertikale Bildschirmmitte optimiert diese beidseitige Ressourcenverteilung."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie profitieren Teamsportler in Fußball, Basketball oder Handball von MOT?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die sprichwörtliche 'Spielübersicht' (Court Vision) beruht fundamental auf der MOT-Kapazität. Ein Spielmacher muss den Ball kontrollieren und gleichzeitig mehrere einlaufende Mitspieler sowie gegnerische Verteidiger im peripheren Blickfeld behalten. Faubert (2013) konnte zeigen, dass Profi-Athleten in 3D-MOT-Tests signifikant steilere Lernkurven und höhere Maximalgeschwindigkeiten erzielen als Amateure."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche konkreten Vorteile bringt dieses Training in FPS-Titeln wie Valorant oder Apex Legends?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es verhindert den berüchtigten 'Tunnelblick' (Tunnel Vision). Spieler behalten das Fadenkreuz im Zentrum, erfassen aber gleichzeitig Team-Positionen, herannahende Granaten, Minimap-Pings und flankierende Gegner im peripheren Sichtfeld. Das steigert die situative Aufmerksamkeit (Situational Awareness) in chaotischen Gefechten enorm."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie verhindert man Identitätsverwechslungen (Identity Swaps) bei Kugelüberlagerungen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Anstatt den Kollisionspunkt starr anzustarren, sollte das Gehirn die Bewegungsträgheit (den physikalischen Impulsvektor) vor der Berührung extrapolieren. Indem man antizipiert, auf welcher Bahn das Ziel nach der Kreuzung geradlinig austreten muss, verhindert man, dass die Aufmerksamkeit auf die falsche Kugel überspringt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie oft sollte man trainieren, um maximale Fortschritte zu erzielen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Da MOT das parietale Arbeitsgedächtnis stark beansprucht, sind kurze, hochkonzentrierte Einheiten ideal: 10 bis 15 Minuten (5 bis 8 Durchgänge) an 4 bis 5 Tagen pro Woche fördern die synaptische Plastizität optimal, ohne kognitive Erschöpfung hervorzurufen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Werden meine Testergebnisse auf Server hochgeladen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Alle Berechnungen und Leistungsstatistiken werden ausschließlich lokal im Speicher deines Browsers (localStorage) abgelegt. Es erfolgt keinerlei Übertragung persönlicher Daten an externe Server."
-      }
-    }
-  ]
+  "name": "Mehrfach-Objektverfolgung (MOT-Test)",
+  "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets",
+  "description": "Merke dir 3 markierte Kugeln, verfolge sie unter gleich aussehenden Kugeln und finde sie am Ende wieder. Kostenloses MOT-Spiel.",
+  "genre": [
+    "Puzzle",
+    "Visual Tracking"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Anleitung für den Mehrfach-Objektverfolgung-Test",
-  "description": "Schritt-für-Schritt-Vorgehensweise zur Maximierung deiner Zielverfolgung und peripheren Wahrnehmung.",
+  "name": "So funktioniert der MOT-Test",
+  "dateModified": "2026-11-12",
+  "description": "Vier Schritte durch eine Runde.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Zielgruppe geometrisch einprägen",
-      "text": "Merke dir zu Beginn die aufleuchtenden Zielkugeln und verbinde sie mental zu einem gemeinsamen Polygon (z. B. Dreieck oder Viereck).",
+      "name": "3 Ziele merken",
+      "text": "Nach dem Countdown erscheinen die Kugeln, 3 davon leuchten 2 Sekunden lang grün. Merke dir ihre Positionen.",
       "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Schwerpunkt fixieren (Soft-Focus)",
-      "text": "Blicke nicht auf einzelne Kugeln, sondern richte deinen Fokus entspannt auf das Zentrum der Gruppe und nutze dein peripheres Blickfeld.",
+      "name": "60 Sekunden verfolgen",
+      "text": "Danach sehen alle Kugeln gleich aus und bewegen sich 60 Sekunden lang. Sie prallen von den Wänden und voneinander ab.",
       "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Kollisionen vektoriell antizipieren",
-      "text": "Behalte bei dichten Kreuzungen mit Ablenkern die Vorwärtsbewegung im Sinn, um den Austritt der Zielkugeln fehlerfrei vorherzusehen.",
+      "name": "3 Kugeln auswählen",
+      "text": "Am Ende bleiben die Kugeln stehen. Klicke (tippe) die 3 Kugeln an, die du für die Ziele hältst. Ein zweiter Klick hebt die Auswahl auf.",
       "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Ziele präzise markieren",
-      "text": "Klicke nach dem Stillstand aller Objekte nacheinander auf die identifizierten Zielkugeln, um das Ergebnis zu erfassen.",
+      "name": "Bestätigen",
+      "text": "Mit 3 gewählten Kugeln drückst du auf Bestätigen: 20 Punkte pro richtigem Ziel, falsche Wahl gibt 0 Punkte ohne Abzug.",
       "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets#step-4"
     }
   ]
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "dateModified": "2026-11-12",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie läuft der Multiple Object Tracking Test (MOT) ab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unter gleich aussehenden Kugeln leuchten 3 Ziele 2 Sekunden lang grün. Dann bewegen sich alle Kugeln 60 Sekunden lang, und wenn sie anhalten, wählst du die 3 Ziele aus und bestätigst. Pro richtigem Ziel gibt es 20 Punkte, maximal 60 pro Runde. Es ist kein medizinischer Test des Sehens oder der Aufmerksamkeit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viele Kugeln gibt es und wird es schwerer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du startest mit 8 Kugeln. Für je 30 Punkte Bestwert kommt eine Kugel dazu, und das Tempo steigt mit dem Bestwert leicht an. Es sind immer genau 3 Ziele."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert bei einer falschen Wahl?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine falsche Kugel bringt 0 Punkte, einen Abzug gibt es nicht. Ein erneuter Klick hebt die Auswahl auf, du kannst also bis zum Bestätigen umentscheiden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viele Objekte kann man gleichzeitig verfolgen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Seit dem ersten MOT-Experiment von Pylyshyn & Storm (1988) wird berichtet, dass die Grenze für gleich aussehende Objekte bei etwa vier liegt und mit höherem Tempo sinkt (Cavanagh & Alvarez, 2005). In diesem Test sind es immer 3 Ziele."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sollte ich die Kugeln nacheinander anschauen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Während dein Blick zu einer Kugel springt, kann ein anderes Ziel mit einer Ablenkkugel zusammentreffen, und du verlierst die Zuordnung. Viele finden es leichter, ungefähr in die Mitte zwischen den Zielen zu schauen und alle drei gemeinsam im Blick zu behalten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie verliere ich ein Ziel bei Zusammenstößen nicht?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Kugeln prallen voneinander ab. Achte auf die Richtung kurz vor dem Zusammenstoß und darauf, wohin die Kugel danach fliegt; so verwechselst du Ziel und Ablenkkugel seltener."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Verbessert das Training meine Leistung in Spielen oder im Sport?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine höhere Punktzahl zeigt, dass du in genau dieser Aufgabe geübter bist. Eine Übertragung auf Spiele, Sport oder Autofahren ist nicht garantiert, und die Übung ersetzt keine medizinische Abklärung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist der Test kostenlos und wo werden meine Daten gespeichert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, kostenlos und ohne Konto. Bestwerte bleiben nur im lokalen Speicher deines Browsers."
+      }
+    }
+  ]
+};
+
 const guideData = {
-  eyebrow: "Kognitionspsychologie & Visuelle Neurowissenschaft",
-  heading: "Mehrfach-Objektverfolgung: Geteilte Aufmerksamkeit trainieren",
+  heading: "Mehrfach-Objektverfolgung: Ablauf und Tipps",
   intro: [
-    "Das Multiple Object Tracking (MOT) Paradigma, 1988 von Kognitionswissenschaftler Zenon Pylyshyn begründet, gilt als Meilenstein der empirischen Aufmerksamkeitsforschung. Es untersucht die biologischen Leistungsgrenzen des menschlichen Sehsystems bei der parallelen Erfassung mehrerer unabhängiger Informationsträger: Aus einer Menge optisch völlig ununterscheidbarer Objekte müssen zuvor definierte Zielobjekte simultan über einen dynamischen Zeitraum hinweg verfolgt werden, während sie sich chaotisch zwischen zahlreichen Ablenkern (Distraktoren) kreuzen.",
-    "Neurobiologische fMRT-Untersuchungen belegen, dass erfolgreiches MOT auf einem weit verzweigten dorsalen Aufmerksamkeitsnetzwerk beruht, das maßgeblich den Sulcus intraparietalis (IPS), die frontalen Augenfelder (FEF) und die oberen Hügelchen (Colliculi superiores) einbindet (Cavanagh & Alvarez, 2005). Das Gehirn speichert hierbei keine statischen Merkmalsbeschreibungen, sondern verankert sogenannte visuelle Zeiger (Visual Indices bzw. FINSTs) als prädiktive Koordinatenzeiger direkt im visuellen Kortex.",
-    "Besonders bedeutsam ist die funktionelle Unabhängigkeit der beiden Gehirnhälften (Hemifield Independence): Das linke und das rechte Sehfeld greifen weitgehend auf getrennte Aufmerksamkeitskapazitäten in der rechten und linken Hemisphäre zu (Alvarez & Cavanagh, 2004). Wer versucht, mehrere Ziele durch sequenzielle Blicksprünge (Sakkaden) abzutasten, scheitert an der ca. 200 ms langen sakkadischen Latenzzeit. Top-Athleten und erfahrene Action-Gamer halten ihren Blick stattdessen im geometrischen Schwerpunkt der Zielformation fixiert und werten die Positionsänderungen über das periphere Sehen aus – die sogenannte Schwerpunkt-Strategie (Green & Bavelier, 2006; Faubert, 2013).",
-    "Dieses webbasierte Trainingssystem steuert Kugelanzahl, Geschwindigkeitsgradienten und Kreuzungsfrequenzen millisekundengenau über die HTML5-Canvas-Engine. Ein regelmäßiges MOT-Training beseitigt zuverlässig den visuellen Tunnelblick, schult die Spielübersicht in Mannschaftssportarten, verbessert das Situationsbewusstsein (Situational Awareness) in First-Person-Shootern und schärft die periphere Gefahrenerkennung im Straßenverkehr."
+    "Beim MOT-Test (Multiple Object Tracking) verfolgst du 3 markierte Ziele unter gleich aussehenden Kugeln und wählst sie am Ende wieder aus. Die Aufgabe geht auf das Experiment von Pylyshyn & Storm (1988) zurück und ist hier als einfaches Browser-Spiel umgesetzt.",
+    "Nach dem Countdown leuchten 3 Kugeln 2 Sekunden lang grün, danach bewegen sich alle Kugeln gleich aussehend 60 Sekunden lang und prallen von Wänden und voneinander ab. Bleiben sie stehen, wählst du 3 Kugeln und bestätigst: 20 Punkte pro richtigem Ziel (max. 60), falsche Wahl ohne Abzug. Mit steigendem Bestwert kommen Kugeln dazu und das Tempo steigt leicht.",
+    "Mehrere Objekte gleichzeitig zu verfolgen gelingt nicht durch schnelles Hin- und Herschauen, sondern indem die Aufmerksamkeit auf mehrere Orte verteilt bleibt (Cavanagh & Alvarez, 2005). Der Test ist ein Übungsspiel dazu und misst oder diagnostiziert weder Aufmerksamkeit noch Sehvermögen."
   ],
   benchmarks: {
-    title: "Orientierungswerte für Mehrfach-Objektverfolgung",
-    headers: ["Leistungsstufe / Rang", "Simultan verfolgte Zielobjekte", "Maximales Bewegungstempo", "Trefferquote / Präzision", "Neurokognitive Leistungsstufe"],
-    rows: [
-      ["Stufe 1: Höchste Übungsstufe", "5 – 6 Ziele", "Schnell (> 400 px/s)", "≥ 92%", "Geometrische Schwerpunkt-Fixierung und vollständige hemisphärische Parallelverarbeitung (Cavanagh & Alvarez, 2005)"],
-      ["Stufe 2: Fortgeschritten / Athlet", "4 – 5 Ziele", "Mittel-Schnell (300 – 400 px/s)", "82 – 91%", "Stabiles peripheres Tracking und verlässliche Trägheitsprädiktion bei dichten Kreuzungen"],
-      ["Stufe 3: Solider Standard", "3 – 4 Ziele", "Moderates Tempo (200 – 300 px/s)", "72 – 81%", "Typische Kapazitätsgrenze gesunder Erwachsener bei gleichmäßigen Trajektorien"],
-      ["Stufe 4: Basis-Niveau", "2 – 3 Ziele", "Niedrig-Moderat (150 – 200 px/s)", "60 – 71%", "Informationsverlust durch serielle Sakkaden (zu starke Fixierung auf Einzelobjekte)"],
-      ["Einsteiger / Untrainiert (Baseline)", "< 2 Ziele", "Langsam (< 150 px/s)", "< 60%", "Überlastung des visuell-räumlichen Arbeitsgedächtnisses bei Kollisionen"]
+    "title": "SkillDrills-Übungsstufen (nur für dieses Spiel)",
+    "headers": [
+      "Stufe",
+      "Richtige Ziele",
+      "Punkte",
+      "Beschreibung"
     ],
-    note: "Basierend auf publizierten neurokognitiven und sportophthalmologischen Studien (Pylyshyn 1988; Cavanagh & Alvarez 2005; Green & Bavelier 2006; Faubert 2013). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
+    "rows": [
+      [
+        "Perfekt",
+        "3 / 3",
+        "60",
+        "Alle 3 Ziele über 60 Sekunden gehalten."
+      ],
+      [
+        "Gut",
+        "2 / 3",
+        "40",
+        "Ein Ziel bei einem Zusammenstoß verloren."
+      ],
+      [
+        "Übung",
+        "1 / 3",
+        "20",
+        "Mehrere Verwechslungen unterwegs."
+      ],
+      [
+        "Einstieg",
+        "0 / 3",
+        "0",
+        "Eingewöhnung ins Spiel."
+      ]
+    ],
+    "note": "Eigene Übungsstufen von SkillDrills für dieses Spiel, keine wissenschaftlichen Normwerte und keine Bewertung kognitiver Fähigkeiten."
   },
   techniques: {
-    title: "Mehrere Ziele verfolgen und Ablenkungen ausblenden",
-    items: [
+    "title": "Tipps, um mehrere Ziele nicht zu verlieren",
+    "items": [
       {
-        name: "Geometrische Schwerpunkt-Fixierung (Centroid Soft-Focus)",
-        desc: "Fixiere nicht einzelne Zielkugeln, sondern richte den Blick weich auf das geometrische Zentrum des von allen Zielen aufgespannten Raumes und nimm Verformungen peripher wahr.",
-        tips: "Vermeide starres Starren; behalte den gesamten Monitor entspannt als zusammenhängende Bildfläche im Blick."
+        "name": "In die Mitte schauen",
+        "desc": "Wer nur einem Ziel mit den Augen folgt, verliert die anderen leicht.",
+        "tips": "Schau ungefähr in die Mitte zwischen den 3 Zielen und behalte alle gemeinsam im Blick."
       },
       {
-        name: "Hemisphärische Ressourcenbalance (Hemifield Allocation)",
-        desc: "Da linkes und rechtes Sichtfeld unabhängig voneinander in beiden Gehirnhälften verarbeitet werden, optimiert eine gleichmäßige Zielverteilung über die vertikale Achse die Trefferquote.",
-        tips: "Nutze die Bildschirmmitte als Orientierungslinie, um beide Hemisphären gleichmäßig zu fordern."
+        "name": "Abpraller vorausahnen",
+        "desc": "Die Kugeln prallen von Wänden und voneinander ab.",
+        "tips": "Achte weniger auf den Aufprallpunkt als auf die Richtung danach."
       },
       {
-        name: "Kollisionsvektor-Extrapolation (Collision Extrapolation)",
-        desc: "Verfolge bei dichten Überlagerungen mit Ablenkern mental den linearen Bewegungsimpuls, um den Austrittsweg der Zielkugel unmittelbar nach der Kreuzung abzufangen.",
-        tips: "Stich nicht mit dem Auge in den Kreuzungspunkt, sondern platziere die Aufmerksamkeit auf den zu erwartenden Austrittsbereich."
+        "name": "Nach Überlappungen nachzählen",
+        "desc": "Am verwirrendsten ist der Moment, in dem sich Ziel und Ablenkkugel trennen.",
+        "tips": "Zähle danach kurz nach, ob du noch alle 3 Ziele hast."
       },
       {
-        name: "Aktives Aufmerksamkeits-Refreshing (Attentional Refreshing)",
-        desc: "Sollte das Gedächtnisbild während einer langen Passage verblassen, taste die mentale Verbindungslinie der Zielgruppe im Geiste blitzschnell ab, um die Zeiger zu erneuern.",
-        tips: "Bewege nicht die physischen Augen, sondern schwenke lediglich den inneren Fokus der Aufmerksamkeit im Millisekundentakt."
+        "name": "In Ruhe auswählen",
+        "desc": "Nach dem Anhalten gibt es kein Zeitlimit für die Auswahl.",
+        "tips": "Bei Zweifeln die Auswahl per Klick aufheben und neu wählen."
       }
     ]
   },
   steps: [
-    "Klicke auf Start und präge dir die blinkenden Zielkugeln und deren polygonale Anordnung ein.",
-    "Sobald die Kugeln ihre neutrale Farbe annehmen und in Bewegung geraten, fixiere den Schwerpunkt der Gruppe.",
-    "Halte den Blick ruhig zentriert und nutze das periphere Sehen, um die Kugelbahnen simultan zu überwachen.",
-    "Identifiziere nach dem Stillstand alle Zielkugeln durch fehlerfreies Anklicken.",
-    "Überprüfe deine Trefferquote, Zielanzahl und Einstufung im Ergebnisreport und baue den Drill in deine Routine ein."
+    "Drücke auf Start und merke dir nach dem Countdown die 3 grün markierten Kugeln.",
+    "Verfolge die 3 Ziele 60 Sekunden lang mit den Augen.",
+    "Wenn die Kugeln stehen bleiben, klicke die 3 Kugeln an, die du für die Ziele hältst.",
+    "Bestätige und sieh dir Treffer und Punkte an (20 pro richtigem Ziel).",
+    "Prüfe Genauigkeit und Bewertung auf dem Ergebnisbildschirm und spiele erneut."
   ],
-  audience: "Ambitionierte E-Sportler und FPS-Gamer (Valorant, Apex Legends, CS2, Overwatch) für bessere Raumübersicht, Teamsportler (Fußball, Basketball, Handball) zur Schulung der Spielübersicht sowie angehende Piloten und Fluglotsen.",
+  audience: "Für alle, die das gleichzeitige Verfolgen mehrerer bewegter Objekte ausprobieren möchten, etwa FPS- und MOBA-Spieler, oder ein kurzes Konzentrationsspiel suchen.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('pylyshyn1988', 'cavanagh2005', 'alvarez2004', 'green2006', 'faubert2013', 'woods2015'),
+  sources: pickSources('pylyshyn1988', 'cavanagh2005'),
   related: [
-    { href: "/de/drills/visual/tracking-accuracy/moving-target", label: "Dynamische Sehschärfe & Zielinterzeption" },
-    { href: "/de/drills/visual/visual-recognition/visual-search", label: "Visuelle Suche (Peripheres Scannen)" },
-    { href: "/de/drills/visual/depth-perception/distance-judgment", label: "Tiefensehschärfe & Dreistäbchentest" },
-    { href: "/de/drills/reaction-speed/visual-tracking-speed-test", label: "Visuelle Tracking-Geschwindigkeit" }
+    {
+      "href": "/de/drills/visual/tracking-accuracy/moving-target",
+      "label": "Bewegte Ziele abfangen"
+    },
+    {
+      "href": "/de/drills/visual/tracking-accuracy/pursuit-tracker",
+      "label": "Glatte Blickfolge"
+    },
+    {
+      "href": "/de/drills/visual/visual-recognition/visual-search",
+      "label": "Visuelle Suche"
+    },
+    {
+      "href": "/de/drills/visual/depth-perception/distance-judgment",
+      "label": "Tiefenwahrnehmung & Distanzurteil"
+    },
+    {
+      "href": "/de/drills/reaction-speed/visual-tracking-speed-test",
+      "label": "Zielverfolgung testen"
+    }
   ]
 };
 
 export default function LocalizedMultipleTargetsDePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
-      <GhostLinkClient copy={{ title: "Mehrfach-Objektverfolgung", subtitle: "MOT-Test für geteilte Aufmerksamkeit" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <GhostLinkClient copy={{  "title": "Mehrfach-Objektverfolgung" }} />
       <DrillGuide guide={guideData} />
       <RelatedDrills />
     </>

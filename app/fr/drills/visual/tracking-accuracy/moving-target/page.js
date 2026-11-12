@@ -5,25 +5,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Poursuite Visuelle | Cible Mobile | SkillDrills",
-  description: "Entraînement gratuit de poursuite visuelle : suivez des cibles mobiles, anticipez leur trajectoire et interceptez-les. Pas un diagnostic.",
+  title: "Intercepter des cibles mobiles | Trajectoire | SkillDrills",
+  description: "Intercepter des cibles mobiles en ligne : la sphère rebondit sur les bords puis saute ailleurs. Touche +2 s, clic raté -1 s. Gratuit, pas un test de vue.",
   keywords: [
-    "poursuite visuelle",
-    "test de poursuite visuelle",
-    "suivi de cible mobile",
-    "cible en mouvement",
-    "interception de cible",
-    "poursuite oculaire",
-    "coordination œil-main",
-    "acuité visuelle dynamique",
-    "entraînement cible mobile",
-    "suivi visuel",
-    "trajectoire visuelle",
-    "vitesse de poursuite"
+    "intercepter des cibles mobiles",
+    "prédire la trajectoire",
+    "cible qui rebondit",
+    "cliquer sur une cible mobile",
+    "anticiper une trajectoire",
+    "jeu de cibles mobiles"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Poursuite Visuelle | Cible Mobile | SkillDrills",
-    description: "Suivez des cibles mobiles, anticipez leur trajectoire et entraînez la coordination œil-main gratuitement dans le navigateur.",
+    title: "Intercepter des cibles mobiles | Trajectoire | SkillDrills",
+    description: "Lisez la trajectoire d'une sphère qui rebondit et cliquez-la avant qu'elle ne saute ailleurs. Entraînement gratuit dans le navigateur, pas un test médical.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -31,8 +25,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Poursuite Visuelle | Cible Mobile | SkillDrills",
-    description: "Entraînez la poursuite visuelle, l'anticipation de trajectoire et l'interception de cibles mobiles.",
+    title: "Intercepter des cibles mobiles | Trajectoire | SkillDrills",
+    description: "Intercepter des cibles mobiles : prédire la trajectoire et cliquer au bon moment. Gratuit dans le navigateur.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -49,91 +43,115 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Catalogue des Drills", "item": "https://skilldrills.online/fr/drills" },
     { "@type": "ListItem", "position": 3, "name": "Entraînement Visuel", "item": "https://skilldrills.online/fr/drills/visual" },
     { "@type": "ListItem", "position": 4, "name": "Précision de Poursuite", "item": "https://skilldrills.online/fr/drills/visual/tracking-accuracy" },
-    { "@type": "ListItem", "position": 5, "name": "Interception de Cible Mobile", "item": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target" }
+    { "@type": "ListItem", "position": 5, "name": "Intercepter des cibles mobiles", "item": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "Test d'Interception de Cibles Mobiles",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "name": "Intercepter des cibles mobiles",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "description": "Test psychophysique interactif pour évaluer la poursuite oculaire lente, l'extrapolation de trajectoire et la justesse d'interception motrice.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Exercice dans le navigateur : une sphère se déplace en ligne droite, rebondit sur les bords et saute à un autre endroit après un court délai. Il faut la cliquer avant. Ce n'est pas un test de la vue ni des mouvements oculaires.",
   "featureList": [
-    "Physique de trajectoire 2D avec vecteurs de collision et rebonds sur les parois",
-    "Chronométrie en millisecondes et multiplicateurs de combo évolutifs",
-    "Accélération continue et réduction progressive de la hitbox des sphères",
-    "Enregistrement 100% local dans le navigateur sans collecte externe"
+    "Cible qui rebondit sur les bords et saute à une nouvelle position quand son anneau expire",
+    "Touche : 150 pts × combo × bonus de niveau et +2 s (60 s restantes au maximum)",
+    "Plus le niveau monte, plus la cible est rapide et petite, et plus le délai avant le saut est court",
+    "Les records restent uniquement dans le stockage local de votre navigateur"
   ],
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test d'Interception de Cibles Mobiles — Vision Dynamique | SkillDrills",
+  "name": "Intercepter des cibles mobiles | SkillDrills",
   "alternateName": "Moving Target Pro",
   "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target",
-  "dateModified": "2026-09-20",
-  "description": "Test gratuit de poursuite visuelle cinétique. Interceptez des cibles sphériques accélérées et rebondissantes avec calcul prédictif.",
+  "dateModified": "2026-11-12",
+  "description": "Jeu gratuit dans le navigateur : intercepter des cibles mobiles avant qu'elles ne sautent ailleurs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
-  "browserRequirements": "Navigateur moderne supportant HTML5 Canvas.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
+  "browserRequirements": "Navigateur moderne compatible HTML5 Canvas.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
   "isAccessibleForFree": true,
   "learningResourceType": "Educational Game",
-  "teaches": "Poursuite Oculaire Lente, Acuité Visuelle Dynamique, Extrapolation de Vitesse, Interception Balistique, Boucle de Rétroaction Motrice"
+  "teaches": "Suivre une cible mobile du regard, prédire sa trajectoire, précision du clic à la souris"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Drill d'Interception de Cibles Mobiles",
+  "name": "Intercepter des cibles mobiles",
   "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target",
-  "description": "Jeu de visée dynamique pour perfectionner les réflexes et la coordination œil-main en mouvement.",
-  "genre": ["Action", "Aim Trainer", "Visual Tracking"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "description": "Cliquez une sphère qui rebondit avant qu'elle ne saute ailleurs. Jeu gratuit pour intercepter des cibles mobiles.",
+  "genre": [
+    "Action",
+    "Aim Trainer",
+    "Visual Tracking"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
   "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment Réaliser le Test d'Interception de Cibles Mobiles",
-  "dateModified": "2026-09-20",
-  "description": "Protocole en 4 phases pour développer la poursuite oculaire lente, l'anticipation de trajectoire et l'exactitude d'interception.",
+  "name": "Comment jouer à « Intercepter des cibles mobiles »",
+  "dateModified": "2026-11-12",
+  "description": "Quatre étapes pour démarrer et faire monter votre score.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Localiser et Verrouiller le Regard",
-      "text": "Repérez la sphère mobile dès sa matérialisation et fixez sa zone centrale pour engager la poursuite oculaire lente.",
+      "name": "Suivre la sphère du regard et du curseur",
+      "text": "Après le compte à rebours, une sphère orange avance en ligne droite et rebondit sur les bords. Gardez le curseur près d'elle.",
       "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Prédire la Trajectoire et les Rebonds",
-      "text": "Évaluez la vélocité et l'angle de rebond contre les bords, en plaçant le curseur légèrement en avant de la sphère.",
+      "name": "Surveiller l'anneau",
+      "text": "L'anneau et les secondes affichés autour de la cible indiquent quand elle va sauter ailleurs. Au début, c'est environ 1 seconde ; le délai raccourcit avec le niveau et le combo.",
       "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Déclencher le Clic Balistique",
-      "text": "Cliquez nettement sur la cible avant l'expiration du temps imparti (+150 PTS × Combo × Niveau et +0,6 s de délai additionnel).",
+      "name": "Cliquer la cible",
+      "text": "Un clic (ou une touche à l'écran) sur la sphère compte comme une touche : 150 pts × combo × bonus de niveau et +2 s de temps (60 s maximum).",
       "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Préserver la Série de Combos à Haute Vitesse",
-      "text": "Maintenez votre régularité malgré l'accélération et le rétrécissement de la cible, en évitant tout tir précipité.",
+      "name": "Éviter les clics ratés",
+      "text": "Un clic à côté coûte 1 seconde et remet le combo à zéro. À 0 seconde, la partie s'arrête.",
       "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target#step-4"
     }
   ]
@@ -142,153 +160,184 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu'est-ce que le test d'interception de cibles mobiles ?",
+      "name": "Comment fonctionne l'exercice « Intercepter des cibles mobiles » ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C'est un test psychophysique conçu pour évaluer la poursuite oculaire lente (smooth pursuit), l'anticipation spatiale de trajectoire et la précision de pointage moteur. L'utilisateur intercepte des sphères qui rebondissent à vitesses variables."
+        "text": "Une sphère se déplace en ligne droite et rebondit sur les bords de la zone. Après un court délai (environ 1 seconde au début), elle saute à un autre endroit. Vous devez la cliquer avant. La partie commence avec 45 secondes, chaque touche ajoute 2 s (60 s maximum) et elle s'arrête à 0. Ce n'est ni un test de la vue ni un examen médical."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment le cerveau suit-il et intercepte-t-il une cible visuelle en mouvement ?",
+      "name": "Comment le score est-il calculé ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les signaux de mouvement détectés par la rétine atteignent l'aire temporale moyenne (MT/V5) pour extraire vecteurs et vitesse. Les champs oculaires frontaux (FEF) et le cervelet coordonnent les muscles oculomoteurs pour égaler la vitesse de la cible, tandis que le cortex pariétal orchestre le clic."
+        "text": "Chaque touche rapporte 150 points multipliés par le combo et par un bonus de niveau. Le niveau monte en continu avec le score : la cible devient plus rapide et plus petite, et elle saute plus tôt."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la différence physiologique entre la poursuite oculaire lente et les saccades ?",
+      "name": "Que se passe-t-il si je rate ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Selon Rashbass (1961), ces mouvements dépendent de circuits distincts : la poursuite lente est une réponse continue (jusqu'à 30–40°/s) calée sur la vitesse de glissement rétinien pour conserver la netteté fovéale. Les saccades sont des sauts balistiques vifs (jusqu'à 900°/s) pour replacer la fovéa sur une cible décentrée."
+        "text": "Un clic à côté de la cible retire 1 seconde et remet le combo à 0. Si l'option « Target Timeouts » est active dans les réglages (par défaut), une cible qui saute sans avoir été touchée compte aussi comme une erreur et coûte 1 seconde."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi est-il nécessaire d'anticiper la trajectoire (tirer en avant) ?",
+      "name": "Pourquoi viser un peu devant la cible ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le délai sensorimoteur humain impose un temps de latence de 150 à 220 ms entre la détection et le clic. Une cible naviguant à 500 px/s parcourt plus de 100 pixels durant ce laps de temps. Viser sa position apparente mène à l'échec ; il faut viser le point d'impact futur (Land & McLeod, 2000)."
+        "text": "Entre voir, décider et cliquer, il s'écoule un court instant pendant lequel la sphère continue d'avancer. Plus elle est rapide, plus il est utile de viser légèrement dans le sens de son déplacement."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelles sont les limites de vitesse de la poursuite oculaire humaine ?",
+      "name": "En quoi prédire la trajectoire aide-t-il ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La poursuite lente fonctionne de façon optimale en deçà de 30°/s de vitesse angulaire (Bahill et al., 1980 ; Krauzlis, 2004). Au-delà ou lors d'accélérations brutales, le gain chute sous 1,0, forçant l'émission de saccades correctrices de rattrapage."
+        "text": "La sphère ne change de direction qu'en touchant un bord, comme une balle qui rebondit. Si vous repérez le rebond tôt, vous pouvez déjà placer le curseur là où elle va repartir."
       }
     },
     {
       "@type": "Question",
-      "name": "Peut-on améliorer son acuité visuelle dynamique et sa précision en mouvement ?",
+      "name": "Quelle différence entre poursuite oculaire et saccades ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Des séances ciblées renforcent le traitement cortical dans l'aire MT/V5, affinent les calculs prédictifs du cervelet et réduisent la latence de correction motrice lors des changements brusques de direction."
+        "text": "Pendant la poursuite, les yeux glissent avec un objet en mouvement ; une saccade est un saut rapide du regard vers un nouveau point. Les deux sont contrôlés séparément (Rashbass, 1961). Ici, il faut les deux : suivre la sphère tant qu'elle avance, puis la retrouver quand elle saute."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel est l'impact du taux de rafraîchissement (60 Hz vs 144 Hz vs 240 Hz) sur le tracking ?",
+      "name": "Cet entraînement améliore-t-il ma vue ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "À 60 Hz, l'écran actualise la position toutes les 16,7 ms, produisant des saccades visibles. Les dalles 144 Hz (6,9 ms) et 240 Hz (4,1 ms) délivrent un mouvement continu et limpide, diminuant l'erreur rétinienne et haussant la précision de tir (Woods et al., 2015)."
+        "text": "Un meilleur score montre que vous progressez dans cette tâche précise. Aucun effet sur l'acuité visuelle, les performances sportives ou d'autres tâches n'est établi, et l'exercice ne remplace pas un examen chez un ophtalmologiste."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment l'accélération et les rebonds sur les parois affectent-ils la précision ?",
+      "name": "L'exercice est-il gratuit et où sont enregistrés mes scores ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les trajectoires constantes sont aisément extrapolées. Toutefois, une collision contre un bord brise le schéma prédictif, imposant 150 à 200 ms pour actualiser le modèle vectoriel et lancer une saccade de recadrage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle est la différence entre contrôle visuo-moteur en boucle ouverte et boucle fermée ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les premiers ~100 ms de la trajectoire du geste se font en boucle ouverte (tir balistique sans ajustement possible). Ensuite s'active la boucle fermée, où le retour visuel affine la course du pointeur en temps réel jusqu'à l'impact."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ce test de cibles mobiles est-il gratuit et garantit-il la confidentialité ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. Le test de SkillDrills est entièrement gratuit, sans publicité intrusive ni création de compte. Toutes les métriques restent strictement cantonnées dans le stockage local de votre navigateur."
+        "text": "Oui, il est gratuit et sans compte. Les records et combos restent uniquement dans le stockage local de votre navigateur."
       }
     }
   ]
 };
 
-const movingTargetGuide = {
-  heading: "Poursuite visuelle et interception de cibles mobiles",
+const guideData = {
+  heading: "Intercepter des cibles mobiles : comment fonctionne l'exercice",
   intro: [
-    "L'interception de cibles dynamiques constitue une aptitude sensorimotrice charnière dans les sports de haut niveau, l'aviation, les arts martiaux et l'esport tactique. Réussir à toucher un objet accéléré aux trajectoires non linéaires réclame la synchronisation de la poursuite oculaire lente, de l'extrapolation vectorielle et d'un contrôle moteur en boucle fermée.",
-    "Le traitement neuronal du mouvement visuel s'amorce dans les neurones sélectifs à la direction de l'aire temporale moyenne (MT/V5) et temporale supérieure médiane (MST). Ces structures calculent les vecteurs de vitesse et projettent des flux vers les champs oculaires frontaux (FEF) et le cervelet afin de maintenir le gain de poursuite oculaire (Krauzlis, 2004).",
-    "Dans sa publication princeps, Rashbass (1961) a prouvé que la poursuite lente et les saccades obéissent à des modes de commande distincts : la poursuite répond à l'erreur de vitesse du glissement rétinien, tandis que les saccades réduisent les écarts de position. Dès que la cible excède 30 à 40°/s ou ricoche, le gain s'affaisse et des saccades correctrices prennent le relais (Bahill et al., 1980).",
-    "Par ailleurs, les travaux de Land & McLeod (2000) auprès d'athlètes de sports de balle mettent en lumière que les spécialistes ne suivent pas passivement la trajectoire intégrale de la balle ; ils projettent des saccades d'anticipation vers les points de rebond et d'impact calculés. Cet exercice forge cette exactitude prédictive sous contrainte temporelle sévère."
+    "Le but est d'intercepter des cibles mobiles : une sphère avance en ligne droite, rebondit sur les bords et saute à un autre endroit après un court délai. Vous devez la cliquer avant, donc prédire sa trajectoire.",
+    "La partie commence avec 45 secondes. Chaque touche rapporte 150 points × combo × bonus de niveau et ajoute 2 s (60 s maximum) ; un clic raté coûte 1 seconde et le combo. Plus le score monte, plus la sphère est rapide et petite, et le délai avant le saut raccourcit à partir d'environ 1 seconde.",
+    "Les yeux suivent sans à-coups un objet lent ; s'il va trop vite, le regard prend du retard et rattrape la cible par petits sauts (Krauzlis, 2004). L'exercice transforme cette situation en une simple tâche de clic. Il ne mesure ni l'acuité visuelle ni les mouvements des yeux."
   ],
   benchmarks: {
-    title: "Repères de poursuite et de précision d'interception",
-    headers: ["Palier de Performance", "Fenêtre de Pacing", "Score & Seuil de Combo", "Profil de Poursuite et d'Interception"],
-    rows: [
-      ["Tier 1: Intercepteur Cinétique Apex", "< 0.25s Fenêtre", "16 000+ PTS | Combo 25x+", "Poursuite lente avancée ; extrapolation sans latence de saccade correctrice."],
-      ["Tier 2: Traqueur Dynamique Supérieur", "0.25 – 0.45s Fenêtre", "10 500 – 15 999 PTS | Combo 16x+", "Fluidité oculaire remarquable ; corrections vives en boucle fermée avec dépassement minime sur des cibles accélérées."],
-      ["Tier 3: Standard Adulte Équilibré", "0.46 – 0.70s Fenêtre", "6 000 – 10 499 PTS | Combo 9x+", "Suivi régulier sur les trajectoires directes ; léger délai d'ajustement lors des rebonds inattendus contre les parois."],
-      ["Tier 4: Traqueur en Évolution", "0.71 – 1.00s Fenêtre", "2 500 – 5 999 PTS | Combo 4x+", "Forte dépendance envers les saccades réactives au détriment de la poursuite fluide ; hésitation marquée à grande vitesse."],
-      ["Tier 5: Jitter de Suivi (Base)", "> 1.00s Fenêtre", "< 2 500 PTS | Combo < 4x", "Dépassement moteur constant ; difficulté à maintenir la fovéa centrée sur l'objet mobile ; requiert une stabilisation de base."]
+    "title": "Paliers d'entraînement SkillDrills (propres à cet exercice)",
+    "headers": [
+      "Palier",
+      "Délai avant le saut",
+      "Score et combo",
+      "Profil de jeu"
     ],
-    note: "Ces paliers reposent sur la psychophysique de la vision dynamique et la chronométrie motrice (Rashbass, 1961 ; Krauzlis, 2004 ; Land & McLeod, 2000 ; Bahill et al., 1980 ; Woods et al., 2015). Les scores varient selon la fréquence d'écran et la souris."
+    "rows": [
+      [
+        "Palier 1",
+        "< 0,25 s",
+        "16 000+ pts | Combo 25x+",
+        "Cibles très rapides et petites touchées en série."
+      ],
+      [
+        "Palier 2",
+        "0,25 – 0,45 s",
+        "10 500 – 15 999 pts | Combo 16x+",
+        "Peu de clics ratés, même sur des cibles rapides."
+      ],
+      [
+        "Palier 3",
+        "0,46 – 0,70 s",
+        "6 000 – 10 499 pts | Combo 9x+",
+        "Lignes droites maîtrisées, quelques ratés juste après un rebond."
+      ],
+      [
+        "Palier 4",
+        "0,71 – 1,00 s",
+        "2 500 – 5 999 pts | Combo 4x+",
+        "Le curseur court souvent derrière la sphère."
+      ],
+      [
+        "Palier 5",
+        "> 1,00 s",
+        "< 2 500 pts | Combo < 4x",
+        "Prise en main de l'exercice."
+      ]
+    ],
+    "note": "Paliers définis par SkillDrills pour s'entraîner, pas des normes scientifiques ni une évaluation de la vue. L'écran et la souris influencent le résultat."
   },
   techniques: {
-    title: "Comment suivre une cible mobile et anticiper sa trajectoire",
-    items: [
+    "title": "Conseils pour toucher plus souvent une cible mobile",
+    "items": [
       {
-        name: "Anticipation Vectorielle du Trajet (Ajustement de Rashbass)",
-        desc: "En raison du délai de réaction biologique de 150 à 220 ms, cliquer sur l'emplacement actuel de la cible provoque un tir manqué (Rashbass, 1961).",
-        tips: "Extrapolez la vélocité et décochez votre clic 5 à 15 pixels en avant de la sphère le long de son axe de déplacement."
+        "name": "Viser un peu devant",
+        "desc": "Pendant votre clic, la sphère continue d'avancer. Cliquer sur sa position actuelle fait souvent rater derrière.",
+        "tips": "Cliquez légèrement en avant, dans le sens de son déplacement."
       },
       {
-        name: "Anticipation des Rebonds (Ancrage Saccadique de Land & McLeod)",
-        desc: "Les sportifs chevronnés déplacent le regard vers la zone de rebond anticipée avant même que la cible ne percute le mur (Land & McLeod, 2000).",
-        tips: "Dès que l'objet frôle une paroi, portez votre réticule vers l'angle de sortie prévisible au lieu de suivre la cible jusqu'au contact."
+        "name": "Anticiper les rebonds",
+        "desc": "La sphère rebondit sur les bords comme une balle.",
+        "tips": "Ne la suivez pas jusque dans le bord : déplacez déjà le curseur vers la direction de son rebond."
       },
       {
-        name: "Stabilisation Fovéale Continue (Boucle de Krauzlis)",
-        desc: "Un tracking fluide impose de retenir l'objet dans l'axe fovéal afin de supprimer tout flou rétinien parasite (Krauzlis, 2004).",
-        tips: "Glissez doucement votre regard au rythme de la cible au lieu de laisser vos yeux statiques en espérant son passage."
+        "name": "Accompagner avec le curseur",
+        "desc": "Attendre avec un curseur immobile fait manquer le bon moment aux niveaux élevés.",
+        "tips": "Faites glisser le regard et le curseur en même temps que la sphère."
       },
       {
-        name: "Rupture de Rythme et Discipline de Clic",
-        desc: "Des variations brutales provoquent des saccades correctrices (Bahill et al., 1980) ; spammer frénétiquement brise la série de combos.",
-        tips: "Ne cliquez pas selon une cadence automatique. Validez visuellement la superposition entre le réticule et la cible avant de presser le bouton."
+        "name": "Ne pas cliquer au hasard",
+        "desc": "Chaque clic raté coûte 1 seconde et le combo.",
+        "tips": "Cliquez seulement quand le curseur est bien sur la sphère."
       }
     ]
   },
   steps: [
-    "Cliquez sur Démarrer le Drill pour débuter la session de 45 secondes d'interception cinétique.",
-    "Repérez la sphère mouvante avec vos yeux et instaurez une poursuite oculaire ininterrompue.",
-    "Anticipez le vecteur de vol et visez légèrement en amont de la trajectoire de la cible.",
-    "Cliquez posément sur la sphère avant l'échéance (+150 PTS × Multiplicateur et +0,6 s de rallonge).",
-    "Analysez votre total d'interceptions réussies, votre pic de combo et votre échelon de performance au terme du chrono."
+    "Cliquez sur « Démarrer » pour lancer la partie de 45 secondes.",
+    "Suivez la sphère du regard et avec le curseur.",
+    "Cliquez-la avant la fin de l'anneau, en visant un peu dans le sens de son déplacement.",
+    "Touche : +150 pts × multiplicateur et +2 s ; clic raté : -1 s et combo remis à zéro.",
+    "À la fin, consultez votre score, vos touches, votre précision et votre meilleur combo."
   ],
-  audience: "Joueurs d'esport (FPS, MOBAs), sportifs de disciplines de contact et de raquette, pilotes de course et toute personne désireuse d'aiguiser sa poursuite visuelle cinétique.",
+  audience: "Pour tous ceux qui veulent s'entraîner à toucher des cibles mobiles dans le navigateur, par exemple les joueurs de FPS, ou qui cherchent un petit jeu de réflexes.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('rashbass1961', 'krauzlis2004', 'land2000', 'bahill1980', 'woods2015'),
+  sources: pickSources('rashbass1961', 'krauzlis2004'),
   related: [
-    { href: "/fr/drills/visual/tracking-accuracy/multiple-targets", label: "Poursuite d'Objets Multiples" },
-    { href: "/fr/drills/visual/tracking-accuracy/pursuit-tracker", label: "Traqueur de Poursuite Oculaire Lente" },
-    { href: "/fr/drills/visual/reaction-speed/light-reaction", label: "Test de Réaction Lumineuse" },
-    { href: "/fr/drills/visual/reaction-speed/go/no-go", label: "Test Go / No-Go d'Inhibition Motrice" },
-    { href: "/fr/drills/visual/depth-perception/distance-judgment", label: "Jugement de Distance et Perception de Profondeur" },
-    { href: "/fr/drills/visual/visual-recognition/entropic-grid", label: "Recherche sur Grille Entropique" }
+    {
+      "href": "/fr/drills/visual/tracking-accuracy/multiple-targets",
+      "label": "Suivi d'Objets Multiples"
+    },
+    {
+      "href": "/fr/drills/visual/tracking-accuracy/pursuit-tracker",
+      "label": "Poursuite Lisse au Curseur"
+    },
+    {
+      "href": "/fr/drills/visual/reaction-speed/light-reaction",
+      "label": "Test de Réaction Lumineuse"
+    },
+    {
+      "href": "/fr/drills/visual/reaction-speed/go/no-go",
+      "label": "Test Go / No-Go d'Inhibition Motrice"
+    },
+    {
+      "href": "/fr/drills/visual/depth-perception/distance-judgment",
+      "label": "Jugement de Distance et Perception de Profondeur"
+    },
+    {
+      "href": "/fr/drills/visual/visual-recognition/entropic-grid",
+      "label": "Recherche sur Grille Entropique"
+    }
   ]
 };
 
@@ -301,8 +350,8 @@ export default function KineticInterceptPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <KineticInterceptClient copy={{ title: "Poursuite Visuelle" }} />
-      <DrillGuide guide={movingTargetGuide} />
+      <KineticInterceptClient copy={{  "title": "Intercepter des cibles mobiles : prédire la trajectoire" }} />
+      <DrillGuide guide={guideData} />
       <RelatedDrills />
     </>
   );

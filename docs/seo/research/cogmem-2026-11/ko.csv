@@ -1,0 +1,18 @@
+market,page,current_title,proposed_primary,bing_exact,gsc_impr,gsc_pos,ac_hit,competition,action
+ko,cognitive,무료 두뇌 훈련 & 집중력 테스트,두뇌게임,47,25,6.8,yes,low,keep
+ko,cognitive/attention/concentration-stamina,집중력 테스트 | 지속 주의력 측정,집중력 테스트,0,0,,yes,unknown,keep
+ko,cognitive/attention/divided-attention,분할 주의력 테스트 | 이중과제 훈련,분할 주의력 테스트,0,0,,no,unknown,no-demand descriptive
+ko,cognitive/attention/multi-tasking,멀티태스킹 테스트 | 이중 표적 추적,멀티태스킹 테스트,0,0,,yes,unknown,keep
+ko,cognitive/focus/concentration-grid,집중력 테스트 게임 | 슐테 테이블 격자,슐테 테이블,0,0,,yes,unknown,retarget
+ko,cognitive/focus/distraction-fighter,스트룹 테스트 | 선택적 주의력 훈련,스트룹 테스트,0,55,8.02,yes,low,keep
+ko,cognitive/processing-speed/reaction-time,선택 반응 시간 테스트 | 색상 규칙 전환 훈련,선택 반응 시간 테스트,0,0,,no,unknown,no-demand descriptive
+ko,cognitive/processing-speed/rsvp-reader,속독 훈련·속독 테스트 | RSVP 읽기,속독 테스트,0,0,,yes,unknown,retarget-light
+ko,cognitive/processing-speed/symbol-matching,처리속도 테스트 | 기호 숫자 매칭 훈련,처리속도 테스트,0,0,,no,unknown,no-demand descriptive
+ko,memory,기억력 테스트·기억력 게임,기억력 테스트,0,0,,yes,unknown,keep
+ko,memory/short-term-memory/color-sequence,색깔 순서 기억 게임,색깔 순서 기억 게임,0,0,,no,unknown,no-demand descriptive
+ko,memory/short-term-memory/digit-span,숫자 기억력 테스트 | 숫자 외우기,숫자 기억력 테스트,0,0,,yes,unknown,keep
+ko,memory/short-term-memory/word-recall,단어 기억력 테스트 | 단어 회상,단어 기억력 테스트,0,0,,yes,unknown,keep
+ko,memory/spatial-memory/grid-memorization,순간 기억력 테스트 | 시각 기억 게임,순간 기억력 테스트,0,0,,yes,unknown,keep
+ko,memory/spatial-memory/object-location,공간 기억력 테스트 | 물체 위치 기억,공간 기억력 테스트,0,0,,no,unknown,keep
+ko,memory/spatial-memory/path-tracing,코르시 블록 검사 | 순서 기억,코르시 블록 테스트,0,0,,no,unknown,no-demand descriptive
+ko,memory/working-memory/n-back,듀얼 N-백 | 작업기억 훈련 게임,엔백 게임,0,0,,yes,unknown,retarget-light

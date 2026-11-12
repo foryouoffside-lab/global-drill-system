@@ -5,278 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SPANISH SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "seguimiento de blanco teletransportado" / "entrenamiento de punteria al teletransporte"
-// Secondary:    "reincorporacion sacadica ocular", "seguimiento visual con inercia", "ejercicio de sacadas oculares rapidas"
-// LSI / Domain:  "movimiento sacadico de correccion", "persecucion ocular suave", "fijacion foveal rapida",
-//               "reflejos visuales para shooters", "coordinacion ojo raton teletransporte", "control oculomotor dinamico", "recuperacion de blanco visual"
-// Authentic Domain Terms: Blanco Teletransportado（Teleported Target）, Inercia Cinética（Momentum Preservation）, Reincorporación Sacádica（Saccadic Re-acquisition）, Supresión Sacádica（Saccadic Suppression）, Persecución Suave Pospasadada（Post-saccadic Smooth Pursuit）, Salto Balístico Ocular（Ballistic Saccade）
-// ============================================================
+const url = 'https://skilldrills.online/es/drills/visual-tracking/momentum-teleport-pursuit';
+const title = "Seguimiento de Blanco Teletransportado | SkillDrills";
+const description = "Ejercicio ocular gratis: el blanco avanza en línea recta y se teletransporta cada 1,2 s a un punto aleatorio sin cambiar de rumbo. Reencuéntralo con la vista.";
 
 export const metadata = {
-  title: "Seguimiento de Blanco Teletransportado | SkillDrills",
-  description: "Practica seguimiento ocular, relocalización visual y sacadas rápidas cuando un objetivo cambia de posición y conserva su movimiento.",
-  keywords: [
-    "objetivo teletransportado seguimiento ocular",
-    "movimientos sacádicos seguimiento ocular",
-    "relocalización visual",
-    "sacadas oculares",
-    "fijación visual",
-    "seguimiento de objetivos",
-    "entrenamiento visual dinámico",
-    "objetivo móvil cambio repentino",
-    "ejercicio oculomotor online",
-    "entrenamiento de puntería con objetivo móvil",
-    "recaptura visual rápida",
-    "persecución ocular continua"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Seguimiento de Blanco Teletransportado | SkillDrills",
-    description: "Practica seguimiento ocular, relocalización visual y sacadas rápidas cuando un objetivo cambia de posición y conserva su movimiento.",
-    type: "website",
-    url: "https://skilldrills.online/es/drills/visual-tracking/momentum-teleport-pursuit",
-    siteName: "SkillDrills",
-    locale: "es_ES",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Seguimiento de Blanco Teletransportado | SkillDrills",
-    description: "Practica relocalización visual y sacadas rápidas cuando un objetivo cambia de posición y conserva su movimiento.",
-  },
+  title,
+  description,
+  keywords: ["seguimiento de blanco teletransportado", "blanco teletransportado", "ejercicio de ojos online", "sacadas ejercicio", "seguimiento visual", "ejercicio ocular gratis"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/momentum-teleport-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'es_ES', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: "https://skilldrills.online/es/drills/visual-tracking/momentum-teleport-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/momentum-teleport-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://skilldrills.online/es" },
-    { "@type": "ListItem", "position": 2, "name": "Ejercicios", "item": "https://skilldrills.online/es/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Seguimiento Visual", "item": "https://skilldrills.online/es/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "Seguimiento de Blanco Teletransportado", "item": "https://skilldrills.online/es/drills/visual-tracking/momentum-teleport-pursuit" }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Inicio", item: 'https://skilldrills.online/es' },
+    { '@type': 'ListItem', position: 2, name: "Ejercicios", item: 'https://skilldrills.online/es/drills' },
+    { '@type': 'ListItem', position: 3, name: "Seguimiento Visual", item: 'https://skilldrills.online/es/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "Seguimiento de Blanco Teletransportado", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "Entrenamiento de Seguimiento de Blanco Teletransportado con Inercia",
-  "dateModified": "2026-09-20",
-  "operatingSystem": "Navegador Web",
-  "applicationCategory": "HealthApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD"
-  },
-  "description": "Entrenamiento oculomotor interactivo para ejercitar la reincorporación sacádica foveal y persecución suave continua en blancos con inercia."
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Aplicación de Seguimiento de Blancos Teletransportados",
-  "dateModified": "2026-09-20",
-  "url": "https://skilldrills.online/es/drills/visual-tracking/momentum-teleport-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Navegador",
-  "browserRequirements": "Requiere compatibilidad con JavaScript y HTML5 Canvas"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Seguimiento de Blanco Teletransportado con Inercia",
-  "dateModified": "2026-09-20",
-  "description": "Ejercicio visual de alta precisión donde blancos dinámicos saltan bruscamente de coordenadas conservando sus vectores de inercia y velocidad.",
-  "genre": ["Entrenamiento de Puntería", "Evaluación Oculomotora", "Entrenamiento de Reflejos"],
-  "playMode": "Un jugador",
-  "gamePlatform": "Navegador"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Seguimiento de Blanco Teletransportado",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Cómo Entrenar la Reincorporación Sacádica con Blancos Teletransportados",
-  "description": "Protocolo neurofisiológico estructurado para recapturar blancos con saltos espaciales conservando continuidad de movimiento foveal.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Fijación Foveal Inicial",
-      "text": "Siéntate a una distancia de 50 a 70 cm del monitor manteniendo la cabeza erguida y fija la mirada en el blanco en desplazamiento continuo."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Detección Periférica del Salto",
-      "text": "En el instante en que el blanco se teletransporte, detecta la nueva posición mediante la visión periférica sin mover el cuello."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Ejecución de la Sacada Balística",
-      "text": "Lanza un salto ocular rectilíneo veloz directamente hacia la coordenada de destino para devolver el blanco al centro foveal."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Sincronización Inmediata de Velocidad",
-      "text": "Dado que el vector cinético se conserva, acopla inmediatamente la persecución suave sin vacilaciones de búsqueda ocular."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Cómo hacer el seguimiento de blanco teletransportado",
+  description: "Cuatro pasos para reencontrar un blanco que cambió de lugar y seguir su movimiento en la misma dirección.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Postura cómoda",
+    "text": "Siéntate a una distancia cómoda de la pantalla y relaja hombros y cuello."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Seguir el movimiento",
+    "text": "Sigue el blanco con calma mientras avanza en línea recta y rebota en los bordes de la pantalla."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Reencontrarlo tras el salto",
+    "text": "Cuando el blanco se teletransporte, lleva la mirada de una vez a la nueva posición y sigue su movimiento en la misma dirección."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Un ajuste cada vez",
+    "text": "Cuando resulte fácil, sube la velocidad o activa Ocultar línea y Velocidad aleatoria, de uno en uno."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "¿Cómo funciona el seguimiento de blanco teletransportado?",
+    "a": "El blanco avanza en línea recta con dirección y velocidad constantes y rebota en los bordes. A velocidad 1,0x se teletransporta aproximadamente cada 1,2 segundos a una posición aleatoria, sin cambiar dirección ni velocidad. Lo reencuentras con la vista y sigues su movimiento. Es un ejercicio en el navegador, no un examen de la vista ni una terapia."
+  },
+  {
+    "q": "¿Se puede prever adónde saltará el blanco?",
+    "a": "No. La nueva posición es aleatoria en cada salto. Lo único previsible es que, tras el salto, sigue en la misma dirección y a la misma velocidad. Una línea corta muestra hacia dónde se mueve; la opción Hide Line la oculta."
+  },
+  {
+    "q": "¿Qué cambia al subir la velocidad?",
+    "a": "El blanco va más rápido y salta más a menudo: aproximadamente cada 0,6 segundos a 2,0x. Con Random Speed, la velocidad oscila sin parar y los saltos se vuelven irregulares."
+  },
+  {
+    "q": "¿El ejercicio mide mis movimientos oculares o da una puntuación?",
+    "a": "No. El navegador no sabe hacia dónde miras y no hay clics ni detección de aciertos. No hay puntuación: solo se guarda en este navegador el número de sesiones completadas. Mantener la mirada donde pide el ejercicio depende de ti."
+  },
+  {
+    "q": "¿Qué ajustes puedo cambiar?",
+    "a": "Tras una cuenta atrás 3-2-1, la sesión dura 30, 45, 60, 90 o 120 segundos (60 por defecto). Puedes ajustar la velocidad de 0,5x a 9,0x, el tamaño del objetivo de 10 a 50 px, su color, las opciones Hide Line (ocultar línea), Random Speed (velocidad aleatoria), Gaze Trail (estela), Neon Glow y Scanlines, y fondo claro u oscuro. La tecla Esc termina la sesión en cualquier momento."
+  },
+  {
+    "q": "¿Mejorará mi vista o mi puntería?",
+    "a": "No está garantizado. No es un examen de la vista ni una terapia, sino una herramienta para practicar la mirada sobre un objetivo. No promete mejor agudeza visual ni mejor puntería. Si notas molestias en los ojos, consulta a un profesional."
+  },
+  {
+    "q": "¿Cuánto tiempo debo practicar?",
+    "a": "Unas cuantas sesiones de 1 a 2 minutos con pausas son suficientes. Si notas los ojos cansados o secos, parpadea y mira a lo lejos; detente si aparece dolor, mareo, náuseas o dolor de cabeza."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿En qué consiste el ejercicio de blanco teletransportado con inercia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es una prueba oculomotora avanzada que acondiciona el enlace inmediato entre una sacada balística de reincorporación y la persecución suave continua sobre un blanco que salta conservando su velocidad (Rashbass, 1961)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es la diferencia fisiológica entre una sacada y el seguimiento suave?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La sacada es un salto ocular balístico explosivo (hasta 700 grados/s) destinado a reorientar la fovea, mientras que el seguimiento suave es un ajuste cinético continuo (hasta 40 grados/s) para estabilizar una imagen móvil."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo beneficia este ejercicio a jugadores de videojuegos de disparos (FPS)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En juegos como Apex Legends, Valorant u Overwatch 2, los adversarios ejecutan saltos repentinos y teletransportes. Entrenar la reincorporación inmediata reduce la deriva del punto de mira tras el desplazamiento."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo ayuda la inercia del blanco a desarrollar la anticipación visual?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Al conservar la velocidad y el ángulo tras el salto, el cerebelo recurre a modelos predictivos internos para proyectar el recorrido continuo durante la supresión sacádica (Barnes, 2008)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué produce la disminución visual durante un salto sacádico?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El cerebro activa la supresión sacádica para mitigar el desenfoque retiniano provocado por la velocidad de rotación. La nitidez se restaura de forma instantánea al tocar la coordenada foveal (Findlay & Walker, 1999)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué es crucial mantener la cabeza inmóvil durante el entrenamiento?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mover la cabeza dispara el reflejo vestíbulo-ocular (RVO), generando un contra-movimiento de compensación que retrasa la estabilización del blanco. Mantén la mandíbula fija para activar solo los músculos extraoculares (Leigh & Zee, 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué es la dismetría o error de aterrizaje sacádico?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es el desvío por exceso o por defecto respecto a la coordenada final, requiriendo una microsacada de ajuste. La práctica regular permite observar si ese error disminuye con el tiempo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo influye la tasa de refresco del monitor en el rendimiento?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los monitores de alta frecuencia (144Hz a 360Hz) renuevan los fotogramas cada 2,7ms a 6,9ms, minimizando la incertidumbre temporal y facilitando reincorporaciones sacádicas precisas (Woods et al., 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Esta herramienta de entrenamiento es gratuita y sin suscripciones?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, SkillDrills ofrece esta aplicación sin costes, sin registros y sin anuncios invasivos, accesible directamente desde cualquier navegador web moderno."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo potencia la neuroplasticidad la práctica ocular repetitiva?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La repetición puede familiarizarte con la tarea, pero esta página no mide neuroplasticidad ni demuestra una mejora de agudeza o velocidad de reacción. Compara sesiones en las mismas condiciones y detente si aparece incomodidad."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'es',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Directrices Científicas de Seguimiento Ocular con Inercia y Saltos Espaciales",
-  intro: [
-    "Cuando un objetivo cambia de posición de forma repentina, la mirada debe encontrarlo de nuevo y después seguir su movimiento. Una sacada es un salto rápido entre puntos de fijación; el seguimiento ocular es el movimiento continuo que acompaña a un objetivo. Este ejercicio practica la transición entre ambos y no es una prueba clínica.",
-    "El objetivo cambia de coordenada y conserva una indicación de movimiento. Observa si lo recuperas directamente o necesitas pequeñas correcciones antes de continuar. El resultado depende de la pantalla, la distancia, la velocidad y tu estado de atención.",
-    "La latencia de la pantalla puede cambiar el tiempo percibido, así que compara solo sesiones hechas con el mismo dispositivo y configuración. Las métricas se procesan en el navegador; baja la velocidad o detente ante dolor, visión doble, náusea o mareo."
+  ...{
+  "heading": "Seguimiento de Blanco Teletransportado: guía",
+  "intro": [
+    "El seguimiento de blanco teletransportado es un ejercicio en el navegador en el que reencuentras con la vista un blanco que cambia de lugar de golpe. El blanco avanza en línea recta, rebota en los bordes y, a velocidad 1,0x, se teletransporta cada 1,2 segundos aproximadamente a un punto aleatorio, manteniendo dirección y velocidad.",
+    "Seguir con suavidad un objeto en movimiento y llevar la mirada rápidamente a un objeto lejano (sacada) se describen como movimientos oculares distintos (Rashbass, 1961; Krauzlis, 2004). Aquí ambos se alternan continuamente.",
+    "El navegador solo conoce la posición donde se dibuja el objetivo y tus ajustes, no hacia dónde miran realmente tus ojos. No hay puntuación ni porcentaje de precisión: compara tu comodidad y concentración con la misma pantalla, distancia y ajustes. La frecuencia de refresco y el retardo de la pantalla también cambian cómo se ve el movimiento (Woods et al., 2015)."
   ],
-  benchmarks: {
-    title: "Métricas de Reincorporación Espacial y Sincronización de Inercia",
-    headers: ["Nivel", "Tiempo para reencontrar el objetivo", "Desvío al llegar", "Sincronización del movimiento", "Lectura práctica"],
-    rows: [
-      ["Etapa Avanzada", "< 140 ms", "< 3% (bloqueo foveal exacto)", "97%+", "Precisión balística impecable. Transición instantánea a la persecución suave sin oscilaciones de búsqueda."],
-      ["Avanzado (Nivel Competitivo)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Rápida recuperación espacial. Micro-sacada correctora mínima con alta fidelidad cinemática tras el aterrizaje."],
-      ["Competente (Adulto Sano)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Parámetro estándar saludable. Breve periodo refractario pos-sacádico seguido de persecución estable."],
-      ["En Desarrollo", "241 – 320 ms", "15% – 24%", "68% – 79%", "Retraso perceptible en el salto ocular. Desvíos frecuentes por exceso requiriendo múltiples correcciones."],
-      ["Iniciante / Nivel Base", "> 320 ms", "> 24%", "< 68%", "Dificultad acusada en saltos angulares amplios. Compensación con movimientos de cuello no deseados."]
+  "benchmarks": {
+    "title": "Etapas de práctica (guía de SkillDrills)",
+    "headers": [
+      "Etapa",
+      "Objetivo de práctica"
     ],
-    note: "※ Valores de referencia fundamentados en estudios oculomotores a 50–70 cm con velocidades de 1,0x a 2,0x durante intervalos de 60 segundos. La latencia mide el tiempo transcurrido desde el salto del blanco hasta el reacoplamiento foveal."
+    "rows": [
+      [
+        "Etapa 1",
+        "1,0x, línea de dirección visible, reencontrar sin esfuerzo"
+      ],
+      [
+        "Etapa 2",
+        "Tras cada salto, encontrar el blanco de un solo vistazo"
+      ],
+      [
+        "Etapa 3",
+        "Subir la velocidad y acostumbrarse a saltos más frecuentes"
+      ],
+      [
+        "Etapa 4",
+        "Añadir Hide Line o Random Speed, de uno en uno"
+      ]
+    ],
+    "note": "Etapas de práctica sugeridas por SkillDrills: no son baremos clínicos, estadísticas de usuarios ni percentiles."
   },
-  techniques: {
-    title: "Cuatro Principios Clave para una Reincorporación Visual Instantánea",
-    items: [
+  "techniques": {
+    "title": "Consejos de ejecución",
+    "items": [
       {
-        name: "Trayectoria Balística Rectilínea Directa",
-        desc: "Traza el salto sacádico por la línea recta más corta entre el punto de fuga y la coordenada de llegada. Cualquier desvío curvo penaliza drásticamente el tiempo de reacción foveal (Findlay & Walker, 1999).",
-        tips: "Confía en las señales de tu visión periférica y lanza la mirada de manera decidida hacia el nuevo punto luminoso."
+        "name": "Un solo movimiento y seguir",
+        "desc": "Tras un salto, no busques por toda la pantalla: lleva la mirada de una vez a la nueva posición y sigue el blanco en la misma dirección que antes.",
+        "tips": "Si lo pierdes a menudo, baja la velocidad y deja visible la línea de dirección."
       },
       {
-        name: "Retención del Vector de Inercia Mental",
-        desc: "Aunque el objetivo cambie bruscamente de lugar, conserva su rapidez y ángulo de avance. Activa el modelo cerebelar predictivo para anticipar el desplazamiento durante la supresión sacádica (Barnes, 2008).",
-        tips: "No asumas que el blanco se ha detenido; prepara tu sistema visual para fluir junto a él inmediatamente al hacer contacto."
+        "name": "Mira el objetivo, no el cursor",
+        "desc": "No hace falta usar el ratón. Deja la mano quieta y sigue solo con los ojos.",
+        "tips": "Comprueba de vez en cuando que la cabeza y el cuello no giran."
       },
       {
-        name: "Adelanto Predictivo al Aterrizar",
-        desc: "La sacada requiere de 20 a 40 ms de vuelo ocular, intervalo durante el cual el blanco continúa avanzando. Dirige la mirada levemente por delante de las coordenadas de destino.",
-        tips: "Un pequeño margen de anticipación compensa el tiempo de tránsito y evita quedar rezagado al aterrizar."
+        "name": "Dificulta una sola cosa cada vez",
+        "desc": "Sube por separado la velocidad, Ocultar línea y Velocidad aleatoria. Si pierdes la comodidad, vuelve al ajuste anterior.",
+        "tips": "Tras cambiar un ajuste, no compares directamente con sesiones antiguas."
       },
       {
-        name: "Aislamiento Cervical Riguroso",
-        desc: "Los desplazamientos angulares amplios incitan a girar el cuello. El reflejo vestíbulo-ocular desestabiliza la fijación foveal al generar contra-rotaciones (Leigh & Zee, 2015).",
-        tips: "Mantén el mentón firme y estable, asegurando que el movimiento provenga de los músculos del ojo."
+        "name": "Sesiones cortas y pausas",
+        "desc": "Entre sesiones cortas, parpadea y mira a lo lejos. Más tiempo no es mejor.",
+        "tips": "Para enseguida si notas dolor o mareo."
       }
     ]
   },
-  steps: [
-    "Ubícate en una postura cómoda a 50–70 cm del monitor manteniendo la cabeza perfectamente estable.",
-    "Selecciona la duración de la sesión (30 a 120 segundos) y el multiplicador de velocidad (0,5x a 9,0x).",
-    "Fija el centro foveal sobre el blanco y acompaña su recorrido inicial de forma uniforme.",
-    "Al producirse el teletransporte, lanza una sacada lineal inmediata hacia la nueva coordenada espacial.",
-    "Al aterrizar, acopla suavemente la persecución continua siguiendo el vector de inercia del objetivo."
+  "steps": [
+    "Siéntate a una distancia cómoda de la pantalla y relaja hombros y cuello.",
+    "Empieza con 30 a 60 segundos, velocidad 1,0x y línea visible.",
+    "Cuando el blanco se teletransporte, lleva la mirada a la nueva posición y sigue su movimiento en la misma dirección.",
+    "Después sube la velocidad o activa Ocultar línea y Velocidad aleatoria, de uno en uno."
   ],
-  audience: "Jugadores de shooters competitivos (Valorant, CS2, Overwatch 2, Apex Legends), atletas de deportes de pelota expuestos a desvíos veloces y deportistas visuales que buscan máxima agilidad sacádica.",
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "Quien quiera practicar de forma sencilla a reencontrar con la vista un blanco en movimiento que cambia de lugar de repente."
+},
+  faqs,
   sources: pickSources('rashbass1961', 'bahill1980', 'findlay1999', 'krauzlis2004', 'barnes2008', 'woods2015'),
   related: [
     { href: "/es/drills/visual-tracking/constant-slow-pursuit", label: "Seguimiento ocular suave continuo" },
@@ -285,26 +192,18 @@ const guideProps = {
     { href: "/es/drills/visual-tracking/ghosting-suppress-pursuit", label: "Estabilidad de la fijación ocular" },
     { href: "/es/drills/visual-tracking/infinity-pursuit", label: "Ejercicio ocular en ocho" },
     { href: "/es/drills/visual-tracking/predictive-pursuit", label: "Seguimiento ocular predictivo" }
-  ]
+  ],
 };
 
-export default function SpanishMomentumTeleportPage() {
+export default function SpanishMomentumTeleportPursuitPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <MomentumTeleportPursuitClient
-        copy={{
-          title: "Seguimiento de Blanco Teletransportado",
-          subtitle: "Relocalización visual y seguimiento del movimiento",
-          description: "Encuentra de nuevo un objetivo que cambia de posición y retoma el seguimiento de su movimiento. Compara tiempo, precisión y comodidad sin convertir el resultado en un diagnóstico."
-        }}
-      />
+      <MomentumTeleportPursuitClient copy={{"title": "Seguimiento de Blanco Teletransportado", "subtitle": "Reencontrar un blanco que salta pero mantiene el rumbo", "description": "Seguimiento de blanco teletransportado: el blanco avanza en línea recta y se teletransporta cada 1,2 segundos aprox. (a 1,0x) a un punto aleatorio, manteniendo dirección y velocidad. Sin clics ni puntuación, solo la vista; el navegador no registra tus ojos."}} />
 
       <DrillGuide guide={guideProps} />
 

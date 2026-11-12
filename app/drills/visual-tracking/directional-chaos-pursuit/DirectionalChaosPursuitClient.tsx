@@ -679,7 +679,7 @@ export default function DirectionalChaosPursuitClient({ copy }: { copy?: { title
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <p className="text-sm text-slate-300 leading-relaxed">
-                {copy?.description || "Chaotic target tracking forces the visual system to operate under real-time reactive feedback rather than relying on predictive internal models (Bahill et al., 1980). When unpredictable velocity shifts displace the target from central gaze, the oculomotor network must rapidly fire corrective saccades and re-establish pursuit gain (Barnes, 2008; Krauzlis, 2004). Pursuit holds accuracy up to roughly 30°/s, so every unpredictable direction change drops the eye behind the target until a catch-up saccade closes the gap (Krauzlis, 2004)."}
+                {copy?.description || "The target drifts with small random velocity changes every frame and bounces off the canvas edges, so its path cannot be learned in advance. Follow it with your eyes; when it pulls ahead, a quick catch-up eye movement usually brings it back into central view (Krauzlis, 2004). The browser does not record where you look and there is no score: compare sessions by speed, duration and comfort."}
               </p>
             </DrillAccordion>
           </div>

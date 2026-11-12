@@ -6,153 +6,33 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Rastreamento de Múltiplos Objetos | MOT | SkillDrills",
-  description: "Teste MOT gratuito: acompanhe vários objetos móveis entre distratores. Treine atenção dividida, visão periférica e memória espacial. Não é diagnóstico.",
+  description: "Teste grátis de rastreamento de múltiplos objetos (MOT): memorize 3 bolas marcadas e siga-as por 60 s entre bolas iguais. Não é exame médico.",
   keywords: [
-    "rastreamento visual múltiplo",
     "rastreamento de múltiplos objetos",
     "teste MOT",
-    "atenção dividida",
-    "visão periférica",
-    "objetos em movimento",
-    "memória de trabalho espacial",
-    "múltiplos alvos",
-    "atenção visual",
-    "treino visual",
-    "seguimento de vários objetos",
-    "MOT visual"
+    "MOT",
+    "multiple object tracking",
+    "acompanhar vários objetos",
+    "atenção dividida"
   ],
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
+    title: "Rastreamento de Múltiplos Objetos | MOT | SkillDrills",
+    description: "Memorize 3 bolas marcadas e encontre-as de novo depois de 60 segundos de movimento. Teste MOT grátis no navegador, sem diagnóstico.",
+    type: 'article',
+    url: 'https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets',
+    siteName: 'SkillDrills',
+    locale: 'pt_BR',
+  },
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
+    card: 'summary_large_image',
+    title: "Rastreamento de Múltiplos Objetos | MOT | SkillDrills",
+    description: "Rastreamento de múltiplos objetos: mantenha 3 alvos à vista por 60 s entre bolas iguais.",
+  },
+  robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets",
+    canonical: 'https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets',
     languages: getAlternateLanguages('/drills/visual/tracking-accuracy/multiple-targets'),
   },
-  openGraph: {
-    title: "Rastreamento de Múltiplos Objetos | MOT | SkillDrills",
-    description: "Teste MOT gratuito: acompanhe vários objetos móveis entre distratores e treine atenção dividida e visão periférica.",
-    url: "https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets",
-    type: "website",
-    locale: "pt_BR",
-    alternateLocale: ["en_US", "de_DE", "ko_KR", "ja_JP", "es_ES", "fr_FR"],
-    images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Rastreamento de Múltiplos Objetos | MOT | SkillDrills",
-    description: "Acompanhe vários objetos móveis entre distratores e pratique atenção dividida, visão periférica e memória espacial.",
-    images: ["https://skilldrills.online/opengraph-image"],
-  },
-};
-
-const multipleTargetsGuide = {
-  heading: "Rastreamento de múltiplos objetos: atenção dividida e visão periférica",
-  intro: [
-    "O paradigma de Rastreamento de Múltiplos Objetos (MOT - Multiple Object Tracking), formalizado inicialmente por Zenon Pylyshyn e Ron Storm (1988), é o padrão-ouro na psicofísica cognitiva para investigar como a arquitetura visual humana mantém representações espaciais em tempo real de múltiplas entidades móveis independentes. Ambientes visuais complexos do cotidiano — como esportes coletivos de alta velocidade, cruzamentos viários caóticos e partidas táticas de esports — raramente exibem estímulos focais isolados; pelo contrário, exigem monitoramento paralelo contínuo de vários elementos distribuídos pelo campo visual.",
-    "Antes do paradigma MOT, os modelos clássicos de atenção visual postulavam a existência de um único 'holofote' móvel que realizava varreduras sequenciais objeto por objeto. Pylyshyn e Storm comprovaram que observadores humanos são capazes de rastrear de 4 a 5 alvos idênticos em paralelo sem varredura serial, fundamentando a teoria da indexação visual ('FINSTs' ou Fingers of Instantiation). Os FINSTs atuam como ponteiros mentais pré-atentivos que se fixam aos objetos e rastreiam continuamente suas coordenadas espaciais através de densas trajetórias cinéticas, independentemente de propriedades superficiais como forma ou cor.",
-    "Estudos posteriores de psicofísica e neuroimagem conduzidos por Patrick Cavanagh e George Alvarez (2004, 2005) revelaram que o rastreamento atencional é mediado por focos multifocais independentes distribuídos bilateralmente entre os hemisférios cerebrais esquerdo e direito. Quando os alvos estão distribuídos entre ambos os hemicampos visuais, a capacidade de rastreamento é substancialmente superior em comparação a quando todos os alvos são confinados a um único hemicampo, evidenciando que cada hemisfério possui recursos dedicados de processamento.",
-    "Na pesquisa aplicada à alta performance, Daphne Bavelier e C. Shawn Green (2006) demonstraram que praticantes habituais de jogos de ação exibem uma expansão marcante da capacidade MOT, rastreando de 6 a 7 alvos simultâneos contra 3 a 4 observados em não praticantes. De maneira convergente, Jocelyn Faubert (2013) evidenciou que atletas profissionais de elite (como jogadores da NHL e da Premier League inglesa) possuem extraordinárias capacidades de rastreamento de cenas dinâmicas em 3D-MOT que se adaptam prontamente a velocidades cinéticas crescentes, associando a capacidade MOT diretamente à excelência na tomada de decisões espaciais sob pressão."
-  ],
-  benchmarks: {
-    title: "Referência de desempenho no rastreamento múltiplo",
-    headers: ["Faixa de Desempenho", "Capacidade Efetiva", "Pontuação & Limiar de Precisão", "Perfil de Atenção Visual e Cognição"],
-    rows: [
-      ["Nível 1: Rastreador Multifocal Apex", "5+ Alvos em Paralelo", "Score: 60 PTS (3/3) | Precisão 100% (Velocidade Máxima)", "Indexação visual paralela; distribuição entre hemicampos sem perda por colisão. Exige prática e varia bastante entre pessoas."],
-      ["Nível 2: Indexador Paralelo Avançado", "4 Alvos em Paralelo", "Score: 50 – 59 PTS | Precisão 85 – 99%", "Rastreamento multifocal robusto; mantém diferenciação alvo-distrator em trajetórias com alta densidade de colisão com desvio centroide mínimo."],
-      ["Nível 3: Atenção Dividida Competente", "3 Alvos em Paralelo", "Score: 40 – 49 PTS | Precisão 70 – 84%", "Padrão de referência adulto saudável; rastreamento confiável de 3 alvos em velocidade moderada, suscetível a trocas em agrupamento espacial denso."],
-      ["Nível 4: Memória Espacial em Desenvolvimento", "2 Alvos em Paralelo", "Score: 20 – 39 PTS | Precisão 50 – 69%", "Tendência a colapsar atenção multifocal em um único ponto foveal; dificuldade em suprimir distratores durante rebotes de alta aceleração."],
-      ["Nível 5: Foco Inicial / Alvo Único", "1 Alvo Baseline", "Score: < 20 PTS | Precisão < 50%", "Perda frequente de alvos nas deflexões iniciais; necessita de menor número de esferas e velocidade reduzida para desenvolver ancoragem pré-atentiva."]
-    ],
-    note: "Estas faixas de desempenho representam um referencial editorial fundamentado na literatura psicofísica do rastreamento de múltiplos objetos e memória de trabalho visual (Pylyshyn & Storm, 1988; Cavanagh & Alvarez, 2005; Alvarez & Cavanagh, 2004; Green & Bavelier, 2006; Faubert, 2013). O desempenho individual varia conforme a velocidade dos alvos, densidade de distratores e duração do rastreamento."
-  },
-  techniques: {
-    title: "Como acompanhar vários objetos e ignorar distratores",
-    items: [
-      {
-        name: "Estratégia do Centroide (Foco Global)",
-        desc: "Em vez de movimentar os olhos rapidamente entre os alvos (sacadas foveais consecutivas), fixe o olhar suavemente no baricentro geométrico (ponto médio imaginário) formado pelos alvos. Deixe que a visão periférica processe o movimento simultâneo.",
-        tips: "Evite fixar os olhos em uma única esfera por mais de 200 milissegundos; a visão periférica é otimizada para detecção de movimento dinâmico."
-      },
-      {
-        name: "Independência dos Hemisférios Visuais",
-        desc: "O córtex cerebral aloca recursos de rastreamento de forma semi-independente para o campo visual esquerdo (processado pelo hemisfério direito) e campo visual direito (processado pelo hemisfério esquerdo). Distribuir os alvos pelos dois lados dobra sua capacidade efetiva.",
-        tips: "Ao posicionar a tela confortavelmente no centro do seu campo visual, os dois hemisférios dividem a carga atencional sem sobrecarga."
-      },
-      {
-        name: "Ponteiros Pré-Atentivos (FINSTs de Pylyshyn)",
-        desc: "Confie na capacidade inata do sistema visual pré-cortical de ancorar 'etiquetas invisíveis' aos objetos. Quando dois alvos se cruzam, não tente analisar formas, mantenha o vetor de movimento contínuo ativo no córtex parietal.",
-        tips: "Durante colisões densas, preveja o ângulo de saída com base na conservação do momento em vez de rastrear o impacto exato."
-      },
-      {
-        name: "Supressão Ativa de Distratores",
-        desc: "A precisão no MOT depende tanto de iluminar mentalmente os alvos quanto de inibir proativamente as esferas não-alvo. O córtex pré-frontal inibe os sinais de distratores para prevenir trocas acidentais de identidade.",
-        tips: "Mantenha a respiração ritmada e postura estável para evitar ativação adrenérgica excessiva que estreita o campo visual (visão de túnel)."
-      }
-    ]
-  },
-  steps: [
-    "Configure a duração da sessão (15s a 60s), velocidade e número total de esferas nas opções de treino.",
-    "Clique em Iniciar Treino e memorize com precisão as esferas destacadas em verde durante a prévia de 2 segundos.",
-    "Assim que as esferas perderem o destaque e começarem a se movimentar, ancore seu olhar centralmente e rastreie os alvos em paralelo.",
-    "Quando o movimento cessar completamente, clique ou toque em cada esfera que você identificou como alvo original (+20 PTS por acerto).",
-    "Analise seu relatório final com pontuação total, percentual de precisão e nível de capacidade multifocal atingido."
-  ],
-  audience: "Essencial para atletas de esportes coletivos (futebol, basquete, handebol), jogadores competitivos de FPS (CS2, Valorant, Apex Legends) e MOBA (LoL, Dota 2), pilotos de aviação e qualquer profissional que precise manter visão panorâmica e controle simultâneo de múltiplos eventos dinâmicos.",
-  faqs: [
-    {
-        "q": "O que exatamente o teste de Multiple Object Tracking (MOT) avalia?",
-        "a": "O MOT avalia a capacidade de atenção visual dividida, indexação dinâmica de múltiplos objetos e memória de trabalho espacial. Ele mede quantos estímulos móveis idênticos seu cérebro consegue monitorar em tempo real em meio a distratores concorrentes sem sofrer cegueira por saturação."
-    },
-    {
-        "q": "Quantos objetos em movimento um ser humano consegue rastrear simultaneamente?",
-        "a": "Em média, adultos saudáveis conseguem rastrear com precisão entre 3 e 4 objetos simultaneamente em velocidades moderadas. Superar essa faixa exige prática e varia bastante entre pessoas (Cavanagh & Alvarez, 2005)."
-    },
-    {
-        "q": "Por que tentar olhar individualmente para cada esfera com movimentos sacádicos falha?",
-        "a": "Cada sacada ocular leva de 20 a 40 ms para ser executada e impõe supressão sacádica (uma breve cegueira neural transitória). Alternar fovealmente entre 4 esferas gera atrasos de 150 a 300 ms, tempo suficiente para que alvos colidam, troquem trajetórias e se percam completamente. O rastreamento bem-sucedido opera via atenção multifocal distribuída."
-    },
-    {
-        "q": "O que é a Estratégia do Centroide (Centroid Gaze) no rastreamento múltiplo?",
-        "a": "É a técnica de manter o ponto de fixação ocular no centro geométrico médio do grupo de alvos. Ao fixar o olhar nesse baricentro invisível, todos os alvos permanecem na fóvea periférica ou parafóvea, permitindo que os detectores de movimento do córtex visual processem todos os vetores simultaneamente sem exigir micromovimentos oculares contínuos."
-    },
-    {
-        "q": "O que significa independência dos hemisférios visuais (Hemifield Independence)?",
-        "a": "Pesquisas de Alvarez e Cavanagh (2005) demonstraram que a atenção visual opera em dois processadores independentes: o hemisfério direito monitora o campo visual esquerdo e o hemisfério esquerdo monitora o campo visual direito. Assim, rastrear 2 alvos à esquerda e 2 à direita é significativamente mais fácil do que rastrear 4 alvos confinados a um único lado da tela."
-    },
-    {
-        "q": "Como o treino MOT beneficia atletas de esportes coletivos como futebol e basquete?",
-        "a": "Em esportes como futebol ou basquete, um jogador precisa monitorar simultaneamente a bola, a movimentação de três defensores e a corrida de desmarque de um companheiro. O treino MOT amplia o campo visual útil (UFOV) e acelera a leitura tática, permitindo passes antecipados e leitura de jogadas sob pressão (Faubert, 2013)."
-    },
-    {
-        "q": "Quais são as vantagens práticas deste teste para jogadores de FPS e MOBAs táticos?",
-        "a": "Em jogos como Valorant ou Apex Legends, o jogador precisa manter a mira no crosshair enquanto monitora o minimapa, projéteis inimigos na visão periférica e companheiros de equipe flanqueando. O MOT previne a 'visão de túnel' (hiperfoco na mira) e aprimora a consciência situacional espacial."
-    },
-    {
-        "q": "Como evitar trocas de identidade (Identity Swaps) quando alvos colidem ou se cruzam?",
-        "a": "Trocas de identidade ocorrem quando dois objetos se aproximam a menos da distância crítica de resolução espacial atencional. Para mitigar isso, concentre-se no vetor de inércia: antecipe a trajetória linear contínua do objeto antes e após a interseção, em vez de focar na proximidade do ponto de contato."
-    },
-    {
-        "q": "Qual é a rotina ideal de treinamento de rastreamento de múltiplos objetos?",
-        "a": "Recomenda-se realizar de 3 a 5 séries de 10 a 15 minutos por semana. Sessões curtas com foco intenso produzem neuroplasticidade superior sem sobrecarregar a musculatura ocular extrínseca ou causar fadiga visual cortical."
-    },
-    {
-        "q": "Meus dados de rastreamento ou desempenho são enviados para servidores externos?",
-        "a": "Não. Todas as simulações físicas vetoriais, renderização em canvas e cálculos de pontuação e precisão rodam 100% no navegador do seu dispositivo via JavaScript local. Nenhum dado de sessão ou desempenho é transmitido ou coletado externamente."
-    }
-],
-  sources: pickSources([
-    "pylyshyn1988tracking",
-    "cavanagh2005tracking",
-    "faubert2013professional",
-    "green2006action",
-    "alvarez2004capacity",
-    "scialfa2002visual"
-  ]),
-  related: [
-    { href: "/pt/drills/visual/tracking-accuracy/moving-target", label: "Rastreamento de Alvo Móvel" },
-    { href: "/pt/drills/visual-tracking/split-screen-tracking", label: "Rastreamento em Tela Dividida" },
-    { href: "/pt/drills/visual/reaction-speed/go/no-go", label: "Teste Go/No-Go" },
-    { href: "/pt/drills/visual/reaction-speed/light-reaction", label: "Reação a Estímulos de Luz" },
-    { href: "/pt/drills/fps/target-prioritization", label: "Priorização de Alvos FPS" },
-    { href: "/pt/drills/visual-tracking/peripheral-ping-pursuit", label: "Perseguição Periférica" }
-  ]
 };
 
 const breadcrumbSchema = {
@@ -169,132 +49,285 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Multiple_object_tracking"],
+  "@type": "SoftwareApplication",
   "name": "Teste de Rastreamento de Múltiplos Objetos (MOT)",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Web Browser",
-  "applicationCategory": "HealthApplication",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "publisher": { "@type": "Organization", "name": "SkillDrills" }
+  "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL"
+  },
+  "description": "Exercício no navegador: entre bolas iguais, 3 alvos acendem em verde por 2 segundos. Depois todas as bolas se movem por 60 segundos, quicando umas nas outras, e você aponta os 3 alvos. Não é teste diagnóstico de visão ou atenção.",
+  "featureList": [
+    "Começa com 8 bolas, 3 delas marcadas em verde por 2 segundos",
+    "60 segundos de movimento: todas as bolas ficam iguais e quicam nas bordas e entre si",
+    "Depois, escolha 3 bolas e confirme: 20 pontos por alvo certo (máx. 60), sem penalidade por erro",
+    "Quanto maior seu recorde, mais bolas e um pouco mais de velocidade; dados só no armazenamento local"
+  ],
+  "dateModified": "2026-11-12"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Teste de Rastreamento de Múltiplos Objetos (MOT)",
+  "name": "Teste de Rastreamento de Múltiplos Objetos (MOT) | SkillDrills",
+  "alternateName": "GhostLink MOT",
   "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets",
-  "applicationCategory": "SportsApplication",
-  "browserRequirements": "Requires JavaScript. Canvas support required.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-11-12",
+  "description": "Teste MOT grátis online: acompanhe 3 alvos por 60 segundos entre bolas iguais.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Navegador moderno com suporte a HTML5 Canvas.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "isAccessibleForFree": true,
+  "learningResourceType": "Educational Game",
+  "teaches": "Acompanhar vários objetos em movimento com a atenção, atenção dividida"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Treino de Rastreamento de Múltiplos Alvos (MOT)",
-  "gamePlatform": "Web Browser",
-  "genre": ["Visão Esportiva", "Treino Cognitivo", "Percepção Visual"],
-  "numberOfPlayers": { "@type": "QuantitativeValue", "value": 1 }
+  "name": "Teste de Rastreamento de Múltiplos Objetos (MOT)",
+  "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets",
+  "description": "Memorize 3 bolas marcadas, acompanhe-as entre bolas iguais e encontre-as no final. Jogo MOT grátis.",
+  "genre": [
+    "Puzzle",
+    "Visual Tracking"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL"
+  }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Como realizar o teste de rastreamento visual múltiplo (MOT)",
-  "description": "Protocolo passo a passo para testar e treinar a atenção visual dividida e visão periférica usando o teste MOT.",
+  "name": "Como funciona o teste MOT",
+  "dateModified": "2026-11-12",
+  "description": "Os quatro passos de uma rodada.",
   "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Etapa 1", "text": "Configure a duração da sessão (15s a 60s), velocidade e número total de esferas nas opções de treino." },
-    { "@type": "HowToStep", "position": 2, "name": "Etapa 2", "text": "Clique em Iniciar Treino e memorize com precisão as esferas destacadas em verde durante a prévia de 2 segundos." },
-    { "@type": "HowToStep", "position": 3, "name": "Etapa 3", "text": "Assim que as esferas perderem o destaque e começarem a se movimentar, ancore seu olhar centralmente e rastreie os alvos em paralelo." },
-    { "@type": "HowToStep", "position": 4, "name": "Etapa 4", "text": "Quando o movimento cessar completamente, clique ou toque em cada esfera que você identificou como alvo original (+20 PTS por acerto)." },
-    { "@type": "HowToStep", "position": 5, "name": "Etapa 5", "text": "Analise seu relatório final com pontuação total, percentual de precisão e nível de capacidade multifocal atingido." }
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Memorizar 3 alvos",
+      "text": "Depois da contagem regressiva, as bolas aparecem e 3 delas acendem em verde por 2 segundos. Guarde as posições.",
+      "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Acompanhar por 60 segundos",
+      "text": "Em seguida todas as bolas ficam iguais e se movem por 60 segundos. Elas quicam nas bordas e umas nas outras.",
+      "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Escolher 3 bolas",
+      "text": "No fim, as bolas param. Clique (toque) nas 3 bolas que você acha que são os alvos. Um segundo clique desfaz a seleção.",
+      "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Confirmar",
+      "text": "Com 3 bolas escolhidas, toque em Confirmar: 20 pontos por alvo certo; escolha errada vale 0, sem penalidade.",
+      "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/multiple-targets#step-4"
+    }
   ]
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
-        "@type": "Question",
-        "name": "O que exatamente o teste de Multiple Object Tracking (MOT) avalia?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O MOT avalia a capacidade de atenção visual dividida, indexação dinâmica de múltiplos objetos e memória de trabalho espacial. Ele mede quantos estímulos móveis idênticos seu cérebro consegue monitorar em tempo real em meio a distratores concorrentes sem sofrer cegueira por saturação."
-        }
+      "@type": "Question",
+      "name": "Como funciona o teste de rastreamento de múltiplos objetos (MOT)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entre bolas iguais, 3 alvos acendem em verde por 2 segundos. Depois todas as bolas se movem por 60 segundos; quando param, você escolhe os 3 alvos e confirma. Cada alvo certo vale 20 pontos, no máximo 60 por rodada. Não é exame médico de visão ou atenção."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Quantos objetos em movimento um ser humano consegue rastrear simultaneamente?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Em média, adultos saudáveis conseguem rastrear com precisão entre 3 e 4 objetos simultaneamente em velocidades moderadas. Superar essa faixa exige prática e varia bastante entre pessoas (Cavanagh & Alvarez, 2005)."
-        }
+      "@type": "Question",
+      "name": "Quantas bolas existem e o jogo fica mais difícil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Você começa com 8 bolas. A cada 30 pontos de recorde entra mais uma bola, e a velocidade aumenta um pouco com o recorde. São sempre exatamente 3 alvos."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Por que tentar olhar individualmente para cada esfera com movimentos sacádicos falha?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cada sacada ocular leva de 20 a 40 ms para ser executada e impõe supressão sacádica (uma breve cegueira neural transitória). Alternar fovealmente entre 4 esferas gera atrasos de 150 a 300 ms, tempo suficiente para que alvos colidam, troquem trajetórias e se percam completamente. O rastreamento bem-sucedido opera via atenção multifocal distribuída."
-        }
+      "@type": "Question",
+      "name": "O que acontece se eu escolher a bola errada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A bola errada vale 0 ponto, sem penalidade. Um novo clique desfaz a seleção, então você pode mudar de ideia até confirmar."
+      }
     },
     {
-        "@type": "Question",
-        "name": "O que é a Estratégia do Centroide (Centroid Gaze) no rastreamento múltiplo?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "É a técnica de manter o ponto de fixação ocular no centro geométrico médio do grupo de alvos. Ao fixar o olhar nesse baricentro invisível, todos os alvos permanecem na fóvea periférica ou parafóvea, permitindo que os detectores de movimento do córtex visual processem todos os vetores simultaneamente sem exigir micromovimentos oculares contínuos."
-        }
+      "@type": "Question",
+      "name": "Quantos objetos uma pessoa consegue acompanhar ao mesmo tempo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desde o primeiro experimento MOT de Pylyshyn & Storm (1988), relata-se que o limite para objetos iguais fica em torno de quatro e cai quando a velocidade aumenta (Cavanagh & Alvarez, 2005). Este teste usa sempre 3 alvos."
+      }
     },
     {
-        "@type": "Question",
-        "name": "O que significa independência dos hemisférios visuais (Hemifield Independence)?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pesquisas de Alvarez e Cavanagh (2005) demonstraram que a atenção visual opera em dois processadores independentes: o hemisfério direito monitora o campo visual esquerdo e o hemisfério esquerdo monitora o campo visual direito. Assim, rastrear 2 alvos à esquerda e 2 à direita é significativamente mais fácil do que rastrear 4 alvos confinados a um único lado da tela."
-        }
+      "@type": "Question",
+      "name": "Devo olhar as bolas uma de cada vez?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enquanto o olhar salta para uma bola, outro alvo pode cruzar com uma bola distratora e você perde a referência. Muita gente acha mais fácil olhar mais ou menos para o meio entre os alvos e manter os três à vista juntos."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Como o treino MOT beneficia atletas de esportes coletivos como futebol e basquete?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Em esportes como futebol ou basquete, um jogador precisa monitorar simultaneamente a bola, a movimentação de três defensores e a corrida de desmarque de um companheiro. O treino MOT amplia o campo visual útil (UFOV) e acelera a leitura tática, permitindo passes antecipados e leitura de jogadas sob pressão (Faubert, 2013)."
-        }
+      "@type": "Question",
+      "name": "Como não perder um alvo nas colisões?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As bolas quicam umas nas outras. Observe a direção logo antes do choque e para onde a bola vai depois: assim você confunde menos alvo e distrator."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Quais são as vantagens práticas deste teste para jogadores de FPS e MOBAs táticos?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Em jogos como Valorant ou Apex Legends, o jogador precisa manter a mira no crosshair enquanto monitora o minimapa, projéteis inimigos na visão periférica e companheiros de equipe flanqueando. O MOT previne a 'visão de túnel' (hiperfoco na mira) e aprimora a consciência situacional espacial."
-        }
+      "@type": "Question",
+      "name": "Esse treino melhora meu desempenho em jogos ou esportes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uma pontuação maior mostra que você ficou melhor nesta tarefa específica. A transferência para jogos, esportes ou direção não é garantida, e o exercício não substitui avaliação médica."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Como evitar trocas de identidade (Identity Swaps) quando alvos colidem ou se cruzam?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Trocas de identidade ocorrem quando dois objetos se aproximam a menos da distância crítica de resolução espacial atencional. Para mitigar isso, concentre-se no vetor de inércia: antecipe a trajetória linear contínua do objeto antes e após a interseção, em vez de focar na proximidade do ponto de contato."
-        }
-    },
-    {
-        "@type": "Question",
-        "name": "Qual é a rotina ideal de treinamento de rastreamento de múltiplos objetos?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Recomenda-se realizar de 3 a 5 séries de 10 a 15 minutos por semana. Sessões curtas com foco intenso produzem neuroplasticidade superior sem sobrecarregar a musculatura ocular extrínseca ou causar fadiga visual cortical."
-        }
-    },
-    {
-        "@type": "Question",
-        "name": "Meus dados de rastreamento ou desempenho são enviados para servidores externos?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Não. Todas as simulações físicas vetoriais, renderização em canvas e cálculos de pontuação e precisão rodam 100% no navegador do seu dispositivo via JavaScript local. Nenhum dado de sessão ou desempenho é transmitido ou coletado externamente."
-        }
+      "@type": "Question",
+      "name": "O teste é grátis e onde ficam meus dados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, é grátis e não precisa de conta. Os recordes ficam apenas no armazenamento local do seu navegador."
+      }
     }
-]
+  ]
+};
+
+const guideData = {
+  heading: "Rastreamento de múltiplos objetos: como funciona e dicas",
+  intro: [
+    "Neste teste de rastreamento de múltiplos objetos (MOT), você acompanha 3 alvos marcados entre bolas iguais e os aponta no final. A tarefa vem do experimento de Pylyshyn & Storm (1988), adaptado como um jogo simples no navegador.",
+    "Depois da contagem regressiva, 3 bolas acendem em verde por 2 segundos; em seguida todas as bolas, agora iguais, se movem por 60 segundos quicando nas bordas e entre si. Quando param, você escolhe 3 bolas e confirma: 20 pontos por alvo certo (máx. 60), sem penalidade por erro. Quanto maior o recorde, mais bolas e mais velocidade.",
+    "Acompanhar vários objetos ao mesmo tempo não depende de olhar rapidamente de um para outro, e sim de manter a atenção distribuída entre várias posições (Cavanagh & Alvarez, 2005). O teste é um jogo de treino: não mede nem diagnostica atenção ou visão."
+  ],
+  benchmarks: {
+    "title": "Faixas de treino SkillDrills (só para este jogo)",
+    "headers": [
+      "Faixa",
+      "Alvos certos",
+      "Pontos",
+      "Descrição"
+    ],
+    "rows": [
+      [
+        "Perfeito",
+        "3 / 3",
+        "60",
+        "Os 3 alvos mantidos durante 60 segundos."
+      ],
+      [
+        "Bom",
+        "2 / 3",
+        "40",
+        "Um alvo perdido numa colisão."
+      ],
+      [
+        "Em treino",
+        "1 / 3",
+        "20",
+        "Várias trocas no caminho."
+      ],
+      [
+        "Início",
+        "0 / 3",
+        "0",
+        "Adaptação ao jogo."
+      ]
+    ],
+    "note": "Faixas definidas pelo SkillDrills para este jogo, não são normas científicas nem avaliação de capacidade cognitiva."
+  },
+  techniques: {
+    "title": "Dicas para não perder vários alvos",
+    "items": [
+      {
+        "name": "Olhar para o centro",
+        "desc": "Seguir só um alvo com os olhos faz perder os outros com facilidade.",
+        "tips": "Olhe mais ou menos para o meio dos 3 alvos e mantenha os três à vista."
+      },
+      {
+        "name": "Antecipar os quiques",
+        "desc": "As bolas quicam nas bordas e entre si.",
+        "tips": "Preste menos atenção ao ponto do choque e mais à direção seguinte."
+      },
+      {
+        "name": "Recontar depois de um cruzamento",
+        "desc": "O momento mais confuso é quando alvo e distrator se separam.",
+        "tips": "Confira rapidamente se você ainda tem os 3 alvos."
+      },
+      {
+        "name": "Escolher com calma",
+        "desc": "Depois que as bolas param, não há limite de tempo.",
+        "tips": "Na dúvida, desfaça a seleção com um clique e escolha de novo."
+      }
+    ]
+  },
+  steps: [
+    "Toque em Iniciar e, depois da contagem regressiva, memorize as 3 bolas verdes.",
+    "Acompanhe os 3 alvos com os olhos por 60 segundos.",
+    "Quando as bolas pararem, clique nas 3 que você acha que são os alvos.",
+    "Confirme e veja alvos certos e pontos (20 por alvo certo).",
+    "Confira precisão e nota na tela de resultados e jogue de novo."
+  ],
+  audience: "Para quem quer experimentar acompanhar vários objetos em movimento ao mesmo tempo, como jogadores de FPS e MOBA, ou procura um jogo curto de concentração.",
+  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
+  sources: pickSources('pylyshyn1988', 'cavanagh2005'),
+  related: [
+    {
+      "href": "/pt/drills/visual/tracking-accuracy/moving-target",
+      "label": "Previsão de Trajetória de Alvo Móvel"
+    },
+    {
+      "href": "/pt/drills/visual/tracking-accuracy/pursuit-tracker",
+      "label": "Perseguição Suave com o Cursor"
+    },
+    {
+      "href": "/pt/drills/visual-tracking/split-screen-tracking",
+      "label": "Rastreamento em Tela Dividida"
+    },
+    {
+      "href": "/pt/drills/visual/reaction-speed/go/no-go",
+      "label": "Teste Go/No-Go"
+    },
+    {
+      "href": "/pt/drills/visual-tracking/peripheral-ping-pursuit",
+      "label": "Perseguição Periférica"
+    }
+  ]
 };
 
 export default function MultipleTargetsPage() {
@@ -303,15 +336,12 @@ export default function MultipleTargetsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-
-      <main className="container mx-auto px-4 py-8 max-w-5xl">
-        <GhostLinkClient copy={{ title: "Rastreamento de Múltiplos Objetos", subtitle: "Atenção dividida e visão periférica" }} />
-        <DrillGuide guide={multipleTargetsGuide} />
-        <RelatedDrills related={multipleTargetsGuide.related} />
-      </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <GhostLinkClient copy={{  "title": "Rastreamento de Múltiplos Objetos" }} />
+      <DrillGuide guide={guideData} />
+      <RelatedDrills />
     </>
   );
 }

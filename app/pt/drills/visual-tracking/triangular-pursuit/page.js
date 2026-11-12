@@ -4,285 +4,159 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/pt/drills/visual-tracking/triangular-pursuit';
+const title = "Rastreamento visual triangular | SkillDrills";
+const description = "Rastreamento visual triangular: um alvo dá voltas em um triângulo com três cantos marcados, sempre no mesmo sentido. Treino grátis, velocidade ajustável.";
+
 export const metadata = {
-  title: "Rastreamento visual triangular | SkillDrills",
-  description: "Acompanhe um alvo em uma rota triangular. Treino gratuito para rastreamento diagonal, erro nas quinas e perdas do alvo.",
-  keywords: [
-    "rastreamento visual triangular treino",
-    "movimento ocular triangular exercício",
-    "seguir alvo em triângulo",
-    "rastreamento diagonal",
-    "treino de visão dinâmica",
-    "erro de olhar nas quinas",
-    "reaquisição do alvo triangular",
-    "treino de coordenação ocular",
-    "sacadas em mudança de direção",
-    "perda de alvo visual",
-    "agilidade visual esportiva",
-    "treino de rastreamento no navegador"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/pt/drills/visual-tracking/triangular-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/triangular-pursuit')
-  },
+  title,
+  description,
+  keywords: ["rastreamento visual triangular", "exercício para os olhos triângulo", "rastreamento ocular treino", "exercício para os olhos online", "acompanhar alvo com os olhos"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/triangular-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_BR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Rastreamento visual triangular | SkillDrills",
-    description: "Acompanhe um alvo em uma rota triangular. Treino gratuito para rastreamento diagonal, erro nas quinas e perdas do alvo.",
-    url: "https://skilldrills.online/pt/drills/visual-tracking/triangular-pursuit",
-    siteName: "SkillDrills",
-    locale: "pt_BR",
-    type: "website"
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Rastreamento visual triangular | SkillDrills",
-    description: "Acompanhe um alvo em uma rota triangular. Treino gratuito para rastreamento diagonal, erro nas quinas e perdas do alvo."
-  }
 };
 
-export default function TriangularPursuitPagePT() {
-  const sources = pickSources(
-    'debrouwer2002',
-    'heinen2005',
-    'orbandexivry2007',
-    'bennett2006',
-    'barnes2008',
-    'woods2015'
-  );
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Início", item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: "Rastreamento visual", item: 'https://skilldrills.online/pt/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 3, name: "Rastreamento visual triangular", item: url },
+  ],
+};
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://skilldrills.online/pt" },
-      { "@type": "ListItem", "position": 2, "name": "Treinamento Visual", "item": "https://skilldrills.online/pt/drills/visual-tracking" },
-      { "@type": "ListItem", "position": 3, "name": "Perseguição Triangular", "item": "https://skilldrills.online/pt/drills/visual-tracking/triangular-pursuit" }
-    ]
-  };
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Rastreamento visual triangular",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
+};
 
-  const softwareApplicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-    "name": "Treinador de Rastreamento Ocular Triangular",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Treinamento neuromuscular de rastreamento ocular contínuo e sacadas de alta aceleração em trajetórias poligonais fechadas.",
-    "dateModified": "2026-09-20"
-  };
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Rastreamento visual triangular",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navegador atual com suporte a HTML5 Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
+};
 
-  const webAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Exercício de Rastreamento Vetorial Triangular",
-    "url": "https://skilldrills.online/pt/drills/visual-tracking/triangular-pursuit",
-    "applicationCategory": "TrainingTool",
-    "browserRequirements": "Requer JavaScript e compatibilidade com HTML5 Canvas.",
-    "dateModified": "2026-09-20"
-  };
+const videoGameSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: "Rastreamento visual triangular",
+  url,
+  description,
+  genre: ['Casual Game', 'Educational Game'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
 
-  const videoGameSchema = {
-    "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "Desafio de Perseguição Triangular",
-    "gamePlatform": "Navegador Web",
-    "genre": ["Treino visual", "Exercício de rastreamento ocular", "Reflexos para esports"],
-    "dateModified": "2026-09-20"
-  };
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Como fazer o rastreamento visual triangular",
+  description: "Quatro passos para acompanhar com os olhos um alvo em uma trajetória triangular.",
+  step: [
+    { '@type': 'HowToStep', position: 1, name: "Escolher as configurações", text: "Comece com 60 segundos, 1,0x e a linha visível.", url: `${url}#step-1` },
+    { '@type': 'HowToStep', position: 2, name: "Ajustar a postura", text: "Sente-se confortavelmente e mantenha a cabeça reta.", url: `${url}#step-2` },
+    { '@type': 'HowToStep', position: 3, name: "Seguir o triângulo", text: "Acompanhe o alvo com os olhos pelos três cantos.", url: `${url}#step-3` },
+    { '@type': 'HowToStep', position: 4, name: "Aumentar aos poucos", text: "Quando ficar fácil, aumente a velocidade ou oculte a linha ou ligue a velocidade aleatória, uma coisa por vez.", url: `${url}#step-4` }
+  ],
+};
 
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Como Praticar Rastreamento Ocular Triangular",
-    "description": "Protocolo para controle de frenagem foveal e reaquisição em vértices de 60 graus.",
-    "dateModified": "2026-09-20",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Posicionamento e Fixação Inicial",
-        "text": "Mantenha a cabeça ereta e estável a 50-60 cm do monitor, fixando os olhos na esfera quando ela iniciar o deslocamento ao longo de uma das arestas."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Seguimento Diagonal Suave",
-        "text": "Acompanhe o trajeto retilíneo mantendo o olhar firme no centro do alvo, equilibrando os movimentos oculares horizontais e verticais."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Frenagem e Reaquisição no Vértice",
-        "text": "Ao atingir o vértice de 60 graus, execute uma desaceleração controlada seguida de uma sacada corretiva imediata para a nova aresta."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Progressão de Velocidade",
-        "text": "Inicie em velocidade 1.0x e avance para multiplicadores maiores assim que conseguir completar as curvas sem ultrapassar os limites do vértice."
-      }
-    ]
-  };
+const faqs = [
+  { q: "O que é o rastreamento visual triangular?", a: "Um alvo dá voltas sem parar em um triângulo com vértices no alto ao centro, embaixo à direita e embaixo à esquerda, sempre no mesmo sentido. Você acompanha com os olhos os dois lados inclinados e a base horizontal sem se perder nos cantos. Não é preciso clicar." },
+  { q: "A velocidade é constante?", a: "Cada lado leva o mesmo tempo (cerca de 1,5 segundo em 1,0x), então a velocidade muda um pouco conforme o tamanho do lado. Em telas largas, a base é o lado mais longo e o alvo anda mais rápido nela. O multiplicador e a velocidade aleatória também alteram a velocidade." },
+  { q: "Por que fico para trás ou passo do ponto nos cantos?", a: "No canto, a direção muda de uma vez. O acompanhamento suave não dá conta, e os olhos costumam alcançar o alvo com um salto rápido (sacada de correção) (de Brouwer et al., 2002). Diminua a velocidade e pense na nova direção logo antes do canto." },
+  { q: "O que acontece se eu ocultar a linha?", a: "O contorno do triângulo some. O trajeto continua igual, mas você precisa lembrar sozinho onde ficam os cantos." },
+  { q: "O exercício mede os movimentos dos meus olhos?", a: "Não. O navegador não sabe para onde você está olhando; ele só conhece a posição em que o alvo é desenhado e as suas configurações. Não é preciso clicar nem tocar; o resultado é um registro de prática para você mesmo." },
+  { q: "Tem pontuação ou nota?", a: "Não. No fim, a tela mostra apenas a duração, o multiplicador de velocidade, se a velocidade aleatória estava ligada e o total de sessões (salvo neste navegador). Se quiser contar quantas vezes perdeu o alvo, anote por conta própria." },
+  { q: "Quais configurações existem?", a: "Duração de 30, 45, 60, 90 ou 120 segundos, velocidade de 0,5x a 9,0x e tamanho do alvo de 10 a 50 px. Também dá para ocultar a linha (contorno do triângulo), ligar velocidade aleatória, rastro, brilho, linhas de varredura, fundo claro ou escuro e trocar a cor do alvo. A tecla Esc encerra a sessão a qualquer momento." },
+  { q: "Isso melhora a visão ou a mira?", a: "Não há garantia. É um exercício em que você acompanha um alvo em movimento com os olhos; não é exame de vista, não é tratamento e não promete mira melhor em jogos de tiro. Se sentir algum problema nos olhos, procure um oftalmologista." },
+  { q: "A tela influencia o resultado?", a: "Sim. Taxa de atualização, brilho, contraste, tamanho da tela e distância mudam a forma como o alvo aparece (Woods et al., 2015). Compare apenas sessões feitas na mesma tela, no mesmo navegador e com as mesmas configurações." },
+  { q: "Quanto tempo devo praticar?", a: "Algumas sessões de cerca de 60 segundos, de 5 a 10 minutos no total, com pausas. Pare na hora se sentir olhos cansados, secos ou doloridos, tontura, enjoo ou dor de cabeça." }
+];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "dateModified": "2026-09-20",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "O que torna o rastreamento em trajetórias triangulares tão exigente para o cérebro?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ao contrário de círculos ou elipses suaves, o triângulo combina segmentos lineares diagonais com vértices agudos de 60 graus, exigindo transições instantâneas entre o sistema de perseguição lenta e o circuito de sacadas de alta aceleração."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quais centros neurais controlam essas mudanças angulares de trajetória?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A coordenação recruta o córtex visual frontal (FEF), o cerebelo (flóculo e verme dorsal) e os núcleos pontinos (PPRF para o plano horizontal e riMLF no mesencéfalo para o plano vertical)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Por que ocorrem ultrapassagens (overshoot) ao virar nos vértices?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ocorre devido à inércia do comando motor de seguimento contínuo. Sem adaptação feedforward prévia, os músculos extraoculares continuam na direção antiga por 80 a 120 milissegundos antes de frear."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Como atletas e gamers de FPS se beneficiam deste exercício?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ele ensina o sistema motor a frear bruscamente a mira e reorientar o foco visual sem oscilações, fundamental para rastrear alvos erráticos ou cantos de mapas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Qual é a postura correta da cabeça durante o treino?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A cabeça deve permanecer completamente estática. Mover a cabeça mistura o esforço dos olhos com o do reflexo vestíbulo-ocular (RVO)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Com que frequência devo realizar este exercício?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sessões de 5 a 10 minutos diários, divididas em séries de 60 segundos com pausas curtas para descanso visual, são confortáveis para a visão."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "O que é o deslizamento retiniano (retinal slip) nos vértices?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "É o deslocamento rápido da imagem do alvo para fora da fóvea quando a direção muda bruscamente, servindo de gatilho neurofisiológico para a sacada de recuperação."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Como monitores com alta taxa de atualização influenciam os resultados?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Telas de 144 Hz ou 240 Hz reduzem o atraso entre quadros no momento da virada no vértice, o que facilita perceber a desaceleração."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "O que é uma sacada de recuperação (catch-up saccade)?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "É um salto ocular balístico ultrarrápido de 30 a 50 milissegundos disparado para reposicionar a fóvea no alvo após uma defasagem de posição."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Posso ajustar a velocidade e a direção do movimento?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim, o aplicativo permite alterar o multiplicador de velocidade, a duração da sessão e a direção horária ou anti-horária."
-        }
-      }
-    ]
-  };
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
 
-  const guide = {
-    title: "Diretrizes Neurocientíficas de Perseguição Vetorial e Dinâmica de Vértices",
-    intro: [
-      "O rastreamento visual ao longo de polígonos geométricos fechados impõe uma demanda única sobre a coordenação contínua dos músculos extraoculares horizontais e verticais. Quando o alvo percorre os lados de um triângulo equilátero, o sistema oculomotor executa uma perseguição suave em vetores diagonais não cardinais, exigindo que o tronco encefálico equilibre os disparos pontinos horizontais (PPRF) com os comandos motores mesencefálicos verticais (riMLF; Orban de Xivry & Lefèvre, 2007).",
-      "O principal desafio neurofisiológico ocorre nos três vértices agudos de 60 graus. Ao atingir cada quina e sofrer uma reversão angular abrupta, a velocidade do deslizamento retiniano cai instantaneamente enquanto o erro de posição foveal se eleva de forma vertiginosa. Estudos clássicos de de Brouwer et al. (2002) e Heinen et al. (2005) demonstraram que as sacadas de recuperação (catch-up saccades) são disparadas por um cálculo neural conjunto entre desvio de posição e deslizamento de velocidade, operado pelos campos oculares frontais (FEF) e suplementares (SEF).",
-      "Sem treinamento oculomotor específico, o olhar tende a ultrapassar os vértices por inércia motora (overshoot) ou a cortar as esquinas antecipadamente, gerando microssacadas dispersas e quebrando a acuidade dinâmica. Por outro lado, a prática deliberada do rastreamento poligonal ativa os modelos internos cerebelares (Bennett & Barnes, 2006; Barnes, 2008), propiciando uma desaceleração preditiva da perseguição antes de cada vértice e acelerando a reaquisição foveal sobre o vetor seguinte.",
-      "O exercício de Rastreamento visual triangular desenvolve essa agilidade visomotora diretamente no navegador web. Ao acompanhar a esfera ao longo da trajetória triangular contínua, o atleta treina simultaneamente a perseguição diagonal a velocidade uniforme e a reancoragem nos vértices. Recursos como ocultar a linha de trajetória removem guias visuais para exigir rastreamento sensoriomotor autônomo, enquanto a velocidade aleatória impede hábitos mecânicos de temporização.",
-      "Metodologia de medição e latência de hardware: As estimativas temporais incorporam a quantização de atualização das telas (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz) e os intervalos de varredura dos dispositivos de entrada (~8 ms a 125 Hz contra ~1 ms a 1.000 Hz), conforme detalhado por Woods et al. (2015). Todas as suas pontuações e registros de precisão residem exclusivamente no armazenamento local (localStorage) do seu navegador, resguardando total privacidade sem transmissão externa."
+const guide = {
+  heading: "Rastreamento visual triangular: guia",
+  intro: [
+    "O rastreamento visual triangular é um treino grátis no navegador: um alvo percorre um triângulo sem parar, do alto no centro para baixo à direita, depois para baixo à esquerda e de volta ao alto. Trechos retos se alternam com mudanças bruscas de direção nos cantos.",
+    "Cada lado leva o mesmo tempo (cerca de 1,5 segundo em 1,0x); por isso, na base, que é mais longa, o alvo anda um pouco mais rápido. Depois da contagem 3-2-1, o alvo se move pelo tempo escolhido (30 a 120 segundos, padrão 60). Não é preciso clicar nem apertar nada, e não há pontuação.",
+    "O navegador não registra para onde você olha. Trate o resultado como um registro de prática pessoal, não como teste de visão ou de atenção.",
+    "Compare sessões na mesma tela e à mesma distância; a taxa de atualização e o atraso de exibição influenciam a fluidez do alvo (Woods et al., 2015). Pare se sentir dor, tontura, enjoo ou visão embaçada persistente."
+  ],
+  benchmarks: {
+    title: "Etapas de prática como referência",
+    headers: ["Etapa", "Configuração", "Objetivo"],
+    rows: [
+      ["1", "1,0x, linha visível", "Conhecer os cantos e o sentido da volta"],
+      ["2", "1,0x a 2,0x", "Virar nos cantos sem atraso"],
+      ["3", "2,0x ou mais", "Ficar no alvo mesmo em voltas rápidas"],
+      ["4", "Linha oculta", "Prever o próximo canto sem contorno"],
+      ["5", "Velocidade aleatória", "Acompanhar mesmo com mudanças de velocidade"]
     ],
-    benchmarks: {
-      title: "Faixas de Referência de Perseguição Triangular (Velocidade e Erro em Vértices)",
-      headers: ["Nível de Habilidade", "Multiplicador de Velocidade", "Erro no Vértice", "Latência da Sacada de Virada", "Referência"],
-      rows: [
-        ["Faixa 1 (Muito alta)", "3.5x – 5.0x+", "Erro < 12 px (fixação perfeita no vértice)", "Latência < 110 ms (frenagem preditiva)", "Faixa 1"],
-        ["Faixa 2 (Alta)", "2.5x – 3.5x", "Erro < 22 px (apenas microssacadas mínimas)", "Latência < 140 ms (curvas limpas)", "Faixa 2"],
-        ["Faixa 3 (Boa)", "1.8x – 2.5x", "Erro < 38 px (reaquisição veloz)", "Latência < 180 ms (viradas estáveis)", "Faixa 3"],
-        ["Faixa 4 (Intermediária)", "1.2x – 1.8x", "Erro 38 – 70 px (corte de curvas / overshoot)", "Latência 180 – 240 ms (sacadas múltiplas)", "Faixa 4"],
-        ["Faixa 5 (Inicial)", "0.5x – 1.2x", "Erro > 70 px (perda total no vértice)", "Latência > 250 ms (ultrapassagem evidente)", "Faixa 5"]
-      ],
-      note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Padrões fundamentados em de Brouwer et al. (2002) sobre dinâmica de sacadas corretivas e Heinen et al. (2005) sobre controle motor em reversões abruptas de trajetória."
-    },
-    steps: [
-      { title: "Fixe o alvo no centro", text: "Mantenha a cabeça estável e acompanhe o início da rota triangular com o olhar." },
-      { title: "Siga cada lado na diagonal", text: "Acompanhe o segmento reto sem cortar caminho e mantenha o olhar no centro do alvo." },
-      { title: "Frene nas quinas", text: "Diminua antes do vértice de 60 graus e faça uma correção curta para entrar na nova aresta." },
-      { title: "Aumente a velocidade com controle", text: "Suba o multiplicador somente quando o erro nas quinas e as perdas do alvo estiverem estáveis." }
+    note: "Etapas de prática da SkillDrills apenas como orientação. Não são normas de exame de vista, estatísticas de usuários nem percentis.",
+  },
+  techniques: {
+    title: "Dicas de prática",
+    items: [
+      { name: "Siga os lados com calma", desc: "Nos trechos retos, olhe para o centro do alvo e mova os olhos de forma regular.", tips: "Cabeça e pescoço ficam parados." },
+      { name: "Pense na próxima direção antes do canto", desc: "Ter o próximo lado em mente reduz o atraso e a passada do ponto no canto.", tips: "Perdeu o alvo? Retome no próximo canto." },
+      { name: "Acostume-se à base mais rápida", desc: "A base é o lado mais longo, e é nela que o alvo anda mais rápido.", tips: "Ligue a velocidade aleatória só quando essa diferença ficar familiar." },
+      { name: "Sessões curtas com pausas", desc: "Pratique em blocos de 5 a 10 minutos, pisque e olhe para longe entre as sessões. Mais tempo não é necessariamente melhor.", tips: "Pare imediatamente se sentir dor ou tontura." }
     ],
-    instructions: [
-      "Fixe a fóvea na esfera e acompanhe o trajeto retilíneo sem mover o pescoço.",
-      "Antecipe a desaceleração quando o alvo se aproximar do vértice agudo.",
-      "Execute uma sacada rápida e controlada para engajar imediatamente na nova aresta.",
-      "Aumente o multiplicador de velocidade apenas quando seu erro de vértice for consistentemente inferior a 35 px."
-    ],
-    tips: [
-      "Evite cortar caminho nos cantos: tente acompanhar o trajeto exatamente até a extremidade do vértice.",
-      "Mantenha o braço e a mão relaxados no mouse para não transmitir tensão muscular desnecessária.",
-      "Respire com cadência regular para manter o tônus motor estável durante as transições de velocidade."
-    ],
-    sources,
-    faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text }))
-  };
+  },
+  steps: [
+    { title: "Escolher as configurações", text: "Comece com 60 segundos, 1,0x e a linha visível." },
+    { title: "Ajustar a postura", text: "Sente-se confortavelmente e mantenha a cabeça reta." },
+    { title: "Seguir o triângulo", text: "Acompanhe o alvo com os olhos pelos três cantos." },
+    { title: "Aumentar aos poucos", text: "Quando ficar fácil, aumente a velocidade ou oculte a linha ou ligue a velocidade aleatória, uma coisa por vez." }
+  ],
+  audience: "Quem quer praticar de forma leve, como um jogo, o acompanhamento de um alvo em retas e cantos bem marcados.",
+  faqs,
+  sources: pickSources('debrouwer2002', 'heinen2005', 'orbandexivry2007', 'bennett2006', 'barnes2008', 'woods2015'),
+};
 
+export default function TriangularPursuitPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <TriangularPursuitClient
         copy={{
           title: "Rastreamento visual triangular",
-          subtitle: "Treino de diagonais e retomada nas quinas",
-          description: "Acompanhe um alvo em uma rota triangular e registre o erro nas quinas e as perdas do alvo."
+          subtitle: "Retas e cantos bem marcados",
+          description: "No rastreamento visual triangular, você acompanha com os olhos um alvo que dá voltas em um triângulo. O navegador não registra seu olhar: é um registro de prática, não um teste.",
         }}
       />
       <DrillGuide guide={guide} />

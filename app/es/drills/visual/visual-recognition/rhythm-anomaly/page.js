@@ -4,39 +4,120 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
+const PAGE_URL = "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly";
+const TITLE = "Encuentra la celda fuera de ritmo: test visual | SkillDrills";
+const DESCRIPTION = "Encuentra la celda fuera de ritmo: en una cuadrícula 6x6 que late, haz clic en la única celda que parpadea a otro compás. Test visual gratis de 45 segundos.";
+const FAQS = [
+  [
+    "¿Qué mide este test de ritmo visual?",
+    "Cuenta cuántas veces encuentras la celda fuera de ritmo en 45 segundos (10 puntos cada una), tu mejor racha y tus errores. Es una puntuación de práctica para comparar ritmos, no un diagnóstico de la vista ni del sistema nervioso."
+  ],
+  [
+    "¿Es un test de frecuencia crítica de fusión (CFF)?",
+    "No. La cuadrícula solo parpadea entre 0,6 y 2,5 veces por segundo. La frecuencia crítica de fusión (unos 50 a 60 Hz) no se mide aquí."
+  ],
+  [
+    "¿Cómo suben los puntos y el nivel?",
+    "Cada acierto vale 10 puntos y el nivel sube cada 3 aciertos. Cuanto más aciertas, más rápido va el compás (periodo de 1,6 s a 0,6 s) y más frecuentes son los parpadeos de distracción."
+  ],
+  [
+    "¿Fallar resta puntos?",
+    "No. Un clic erróneo muestra un destello rojo y solo reinicia la racha. Si el límite de tiempo está activado, la celda cambia de sitio cuando no la encuentras a tiempo."
+  ],
+  [
+    "¿Para qué sirven las celdas que se oscurecen?",
+    "Son distractores aleatorios. La celda correcta es la que parpadea todo el rato a otro compás."
+  ],
+  [
+    "¿Se puede jugar con el teclado?",
+    "No, se juega con clic o toque. El teclado no tiene función en el juego."
+  ],
+  [
+    "¿Influye la frecuencia de la pantalla?",
+    "Poco, porque la cuadrícula parpadea despacio y se ve bien incluso a 60 Hz. El brillo, el tamaño de la pantalla y la latencia de entrada sí pueden influir (Woods et al., 2015): compara en el mismo dispositivo."
+  ],
+  [
+    "¿Pueden jugar personas sensibles a la luz?",
+    "La cuadrícula parpadea despacio en grises oscuros. Si las pantallas que parpadean te molestan o tienes fotosensibilidad, no juegues. Para si notas dolor de cabeza o mareo."
+  ]
+];
+const RULES = [
+  "Clic en la celda correcta: +10 puntos, y la celda distinta cambia de sitio.",
+  "Cada 3 aciertos sube el nivel; el compás y los parpadeos de distracción se aceleran.",
+  "Celdas al azar se oscurecen un instante continuamente (distractores).",
+  "Clic erróneo: destello rojo y la racha vuelve a cero. No se resta ni puntuación ni tiempo.",
+  "Con el límite de tiempo activado en los ajustes, la celda distinta cambia de sitio tras 6 s (mínimo 1,8 s al final) sin respuesta, y la racha vuelve a cero."
+];
+const BANDS = [
+  [
+    "Rango 1",
+    "< 50",
+    "0–4",
+    "L1–2"
+  ],
+  [
+    "Rango 2",
+    "50–99",
+    "5–9",
+    "L2–4"
+  ],
+  [
+    "Rango 3",
+    "100–149",
+    "10–14",
+    "L4–5"
+  ],
+  [
+    "Rango 4",
+    "150–199",
+    "15–19",
+    "L6–7"
+  ],
+  [
+    "Rango 5",
+    "200+",
+    "20+",
+    "L7+"
+  ]
+];
+const TIPS = [
+  "Mira toda la cuadrícula en lugar de celda por celda: la que va fuera de ritmo destaca antes.",
+  "Una celda que se oscurece una vez es un distractor. Haz clic cuando una celda haya parpadeado al menos dos veces a otro compás.",
+  "Cuando suba el nivel, observa el nuevo compás durante un latido antes de hacer clic.",
+  "Compara resultados en el mismo dispositivo y con el mismo brillo de pantalla."
+];
+const INTRO = [
+  "En este juego, las 36 celdas de una cuadrícula 6x6 parpadean despacio al mismo compás. Solo una celda parpadea a un ritmo más rápido: encuentra la celda fuera de ritmo y haz clic en ella. La sesión dura 45 segundos y se juega gratis en el navegador, con ratón o pantalla táctil. No es un examen de la vista ni una prueba médica.",
+  "La celda distinta tiene cerca del 72 % del periodo de las demás: parpadea unas 1,4 veces más rápido y se ve algo más clara en el pico. Con cada acierto, toda la cuadrícula acelera (periodo de 1,6 s hasta un mínimo de 0,6 s). Al principio es fácil; después hay que notar la diferencia de ritmo más deprisa.",
+  "La cuadrícula parpadea entre 0,6 y 2,5 veces por segundo, muy por debajo de la frecuencia crítica de fusión (unos 50 a 60 Hz; De Lange, 1958; Kelly, 1961). Por eso no es un test de parpadeo (CFF), sino una tarea de atención de discriminación temporal visual en la que comparas ritmos. Juzgar si dos estímulos van al mismo compás solo es posible a ritmos mucho más lentos que detectar el parpadeo en sí (Holcombe, 2009)."
+];
+
 export const metadata = {
-  title: "Discriminación Temporal | Ritmo Visual | SkillDrills",
-  description: "Test gratuito de discriminación temporal visual: encuentra la celda desfasada en una matriz pulsante de 36 celdas. No es un examen médico.",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "discriminación temporal visual",
-    "test de ritmo visual",
-    "fusión de parpadeo",
-    "resolución temporal visual",
-    "frecuencia crítica de fusión",
-    "test de parpadeo visual",
-    "desfase temporal",
-    "detección de pulsos",
-    "entrenamiento de percepción visual",
-    "matriz pulsante",
-    "celda desfasada",
-    "percepción temporal del movimiento",
-    "entrenamiento de ritmo óptico"
+  "encuentra la celda fuera de ritmo",
+  "discriminación temporal visual",
+  "test de ritmo visual",
+  "juego de encontrar anomalías",
+  "cuadrícula que parpadea"
 ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Discriminación Temporal | Ritmo Visual | SkillDrills",
-    description: "Encuentra la celda desfasada en una matriz pulsante y practica la discriminación temporal visual.",
+    title: TITLE,
+    description: DESCRIPTION,
     type: "website",
-    url: "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly",
+    url: PAGE_URL,
     siteName: "SkillDrills",
+    locale: "es_ES",
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Discriminación Temporal | Ritmo Visual | SkillDrills",
-    description: "Encuentra la celda desfasada en una matriz pulsante y practica la discriminación temporal visual.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly",
+    canonical: PAGE_URL,
     languages: getAlternateLanguages('/drills/visual/visual-recognition/rhythm-anomaly', 'es'),
   },
 };
@@ -48,345 +129,126 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es/" },
     { "@type": "ListItem", "position": 2, "name": "Entrenamiento Visual", "item": "https://skilldrills.online/es/drills/visual" },
     { "@type": "ListItem", "position": 3, "name": "Reconocimiento Visual", "item": "https://skilldrills.online/es/drills/visual/visual-recognition" },
-    { "@type": "ListItem", "position": 4, "name": "Discriminación temporal visual (ritmo pulsante)", "item": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly" }
+    { "@type": "ListItem", "position": 4, "name": "Celda Fuera de Ritmo", "item": PAGE_URL }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Time_perception"],
-  "name": "Test de discriminación temporal visual",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "name": "Encuentra la celda fuera de ritmo",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Ejercicio gratuito de discriminación temporal visual. Matriz 6x6 con 36 celdas pulsantes. Localiza la celda desfasada en modo contrarreloj de 45 segundos.",
-  "url": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly",
+  "description": "Juego de 45 segundos en el navegador: encuentra en la cuadrícula 6x6 la celda que parpadea más rápido que las demás. Ratón o táctil, sin valor médico.",
+  "url": PAGE_URL,
+  "inLanguage": "es-ES",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-20"
-};
-
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Test gratuito de ritmo visual",
-  "browserRequirements": "Requires HTML5 canvas and JavaScript",
-  "url": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly",
-  "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Desafío de pulsos visuales desfasados",
-  "url": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly",
-  "description": "Juego gratuito de percepción temporal y detección de parpadeo. Detecta desfases y microfluctuaciones de frecuencia en matrices ópticas pulsantes.",
-  "genre": ["Discriminación temporal visual", "Ritmo visual", "Percepción visual"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
-  "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-11-12"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Cómo entrenar la discriminación temporal visual",
-  "description": "Perfecciona tu timing visual, sensibilidad al parpadeo y reconocimiento de desfase óptico con nuestro protocolo científico en 4 pasos.",
-  "dateModified": "2026-09-20",
+  "name": "Cómo jugar: encuentra la celda fuera de ritmo",
+  "inLanguage": "es-ES",
   "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Fija la vista en el centro de la matriz pulsante",
-      "text": "Enfoca con suavidad el centro de la cuadrícula de 6x6 y permite que tu visión periférica capte la cadencia armónica de las 36 celdas.",
-      "url": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Internaliza el tempo periódico basal",
-      "text": "Deja que tu corteza visual se sincronice con la oscilación sinusoidal de luminancia para construir una referencia temporal interna estable.",
-      "url": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Detecta la anomalía de fase temporal",
-      "text": "Identifica la celda individual que alcanza el pico de brillo antes que las demás o que vibra a una frecuencia acelerada fuera de compás.",
-      "url": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Registra tu respuesta con un clic instantáneo",
-      "text": "Haz clic inmediatamente al percibir el desfase para registrar tu precisión y latencia temporal en milisegundos.",
-      "url": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly#step-4"
-    }
+  [
+    "Mirar toda la cuadrícula",
+    "Fija la vista en el centro de la cuadrícula 6x6 y percibe el compás común de las 36 celdas."
+  ],
+  [
+    "Encontrar el ritmo distinto",
+    "Busca la única celda que parpadea más rápido. Las celdas que se oscurecen un instante son distractores."
+  ],
+  [
+    "Clic o toque",
+    "Haz clic o toca la celda: +10 puntos, y cambia de sitio."
+  ],
+  [
+    "Seguir la aceleración",
+    "Cada 3 aciertos sube el nivel y el compás acelera. Tras 45 segundos, revisa tus puntos y tu racha."
   ]
+].map(([name, text], i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "name": name,
+    "text": text,
+    "url": `${PAGE_URL}#step-${i + 1}`
+  }))
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué mide el test de anomalía de ritmo visual?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mide la discriminación de frecuencia temporal y la resolución de parpadeo, evaluando la rapidez con la que el cerebro localiza una celda desfasada entre 35 celdas sincronizadas en una matriz de 36 elementos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo detecta el cerebro los desfases temporales y ritmos fuera de sincronía?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A través de la vía magnocelular (M), cuyas neuronas responden rápidamente a cambios de luminancia y envían señales directas a la corteza visual que originan un pop-out atencional preatentivo (Kelly, 1961)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es la diferencia entre las vías magnocelular y parvocelular?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La vía magnocelular cuenta con axones gruesos y conducción rápida, ideal para percibir movimiento, parpadeo y tiempo. La parvocelular conduce más lento y se especializa en color y detalles espaciales finos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué es la Frecuencia Crítica de Fusión (CFF)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es el umbral de frecuencia en el que una luz parpadeante se percibe como una fuente de brillo constante (35–60 Hz). Un CFF elevado se asocia a ventanas de integración más cortas y mayor velocidad reactiva."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué puntuación se considera óptima en la sesión de 45 segundos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los principiantes suelen registrar entre 50 y 99 puntos (Nivel 2–3). Usuarios habituales logran de 100 a 149 puntos, y superar los 150 a 200+ puntos requiere rachas continuas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué se acelera la cuadrícula a medida que encadenas aciertos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Para estresar progresivamente el umbral biológico del usuario: el tempo de fondo aumenta y el margen temporal (Delta-T) entre la anomalía y el resto se acorta, exigiendo máxima agudeza cronométrica."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es la función de los destellos estocásticos de entropía?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Añadir ruido transitorio para evitar que el observador se guíe únicamente por diferencias de brillo momentáneas, obligándole a evaluar la cadencia periódica real (Burr, 1980)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Se pierden puntos o tiempo por pulsar la celda equivocada?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No se restan puntos del marcador acumulado ni se recorta el tiempo de la prueba. Un fallo muestra una alerta roja y reinicia la racha de aciertos, favoreciendo la iniciativa y rapidez decisional."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Influye la tasa de refresco del monitor (60Hz frente a 144Hz o más)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, notablemente. A 60 Hz los fotogramas se renuevan cada 16,7 ms, mientras que a 144 Hz o 240 Hz se actualizan cada 6,9 a 4,2 ms, lo que dibuja ondas sinusoidales más nítidas y facilita la detección de desfases."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo beneficia el entrenamiento temporal a deportistas y gamers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Permite reconocer fracciones de segundo antes la salida de un lanzamiento, los fotogramas iniciales de animaciones rivales y pequeños cambios periféricos, otorgando una ventaja decisiva en situaciones límite."
-      }
-    }
-  ]
+  "inLanguage": "es-ES",
+  "dateModified": "2026-11-12",
+  "mainEntity": FAQS.map(([q, a]) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": { "@type": "Answer", "text": a }
+  }))
 };
 
-export default function RhythmAnomalyLocalePage() {
-  const sources = pickSources('holcombe2009', 'kelly1961', 'delange1958', 'burr1980', 'posner1980', 'woods2015');
+export default function SpanishRhythmAnomalyPage() {
+  const sources = pickSources('holcombe2009', 'kelly1961', 'delange1958', 'woods2015');
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <RhythmAnomalyClient copy={{ title: "Discriminación Temporal Visual", subtitle: "Ritmo visual y detección de desfase" }} />
+      <RhythmAnomalyClient copy={{ title: "Encuentra la celda fuera de ritmo", subtitle: "Test de ritmo visual con cuadrícula 6x6" }} />
       <DrillGuide
-        eyebrow="Psicofísica Temporal & Cronometría Visual"
-        title="La Ciencia del Ritmo Visual, Fusión de Parpadeo & Discriminación de Frecuencia Temporal"
+        eyebrow={"Guía del test de ritmo visual"}
+        title={"Celda fuera de ritmo: cómo se juega y puntuación"}
         sources={sources}
       >
-        <p dangerouslySetInnerHTML={{ __html: `Mientras que las evaluaciones oftalmológicas tradicionales miden la agudeza visual espacial —la capacidad de resolver detalles estáticos en la retina—, el rendimiento visual en entornos dinámicos está delimitado por la <em>resolución temporal</em>: la facultad cerebral de separar estímulos sucesivos en el tiempo. En deportes de alta velocidad, conducción de emergencia y videojuegos competitivos, la anticipación de trayectorias y movimientos rápidos depende de la cadencia de muestreo de la corteza visual (De Lange, 1958; Kelly, 1961; Holcombe, 2009).` }} />
+        {INTRO.map((p) => <p key={p}>{p}</p>)}
 
-        <h3>Función de Transferencia de Modulación Temporal y Vía Magnocelular</h3>
-        <p dangerouslySetInnerHTML={{ __html: `La vía visual primaria se bifurca en dos subsistemas paralelos: la vía parvocelular (P) y la vía magnocelular (M). La vía magnocelular se compone de neuronas de gran calibre con axones gruesos y fuertemente mielinizados que proyectan a gran velocidad hacia la vía dorsal. Gracias a su latencia mínima, las neuronas M sobresalen en el procesamiento de frecuencias temporales elevadas y desfases luminosos de hasta 40–50 Hz (De Lange, 1958; Holcombe, 2009). Cuando una celda de la cuadrícula pulsa antes que sus vecinas, la diferencia de fase genera una señal de activación rápida en V1 que desencadena un pop-out visual automático (Kelly, 1961; Burr, 1980).` }} />
-
-        <h3>Dos techos fisiológicos de la visión temporal: Muestreo rápido vs. Integración cortical</h3>
-        <p dangerouslySetInnerHTML={{ __html: `En una investigación canónica sobre cronometría visual, Holcombe (2009) demostró que la percepción temporal humana está delimitada por dos techos fisiológicos claramente diferenciados:` }} />
+        <h3>{"Reglas"}</h3>
         <ul className="list-disc pl-5 space-y-2 my-3 text-slate-300">
-          <li>
-            <strong>Límite subcortical de muestreo rápido (~40–50 Hz):</strong> Las células ganglionares magnocelulares retinianas y las neuronas de V1 resuelven el contraste temporal y el parpadeo a tasas superiores a 40 Hz (De Lange, 1958; Kelly, 1961).
-          </li>
-          <li>
-            <strong>Límite cortical de enlace consciente (~2–5 Hz):</strong> La identificación semántica consciente y el ligamiento de características complejas exigen bucles de retroalimentación corticales recurrentes que operan a solo 2 a 5 ciclos por segundo (Holcombe, 2009).
-          </li>
+          {RULES.map((r) => <li key={r}>{r}</li>)}
         </ul>
-<p dangerouslySetInnerHTML={{ __html: `Este ejercicio entrena deliberadamente la conexión funcional entre ambos sistemas: el usuario debe valerse de la sensibilidad magnocelular temprana para aislar el candidato anómalo y desplegar de inmediato una confirmación atencional descendente antes de que concluya el ciclo de fase.` }} />
 
-        <h3>Ventanas de Integración Temporal y Ruido de Entropía</h3>
-        <p dangerouslySetInnerHTML={{ __html: `El sistema visual promedia la luz en intervalos de entre 30 y 100 milisegundos (Burr, 1980; Woods et al., 2015). Los eventos que ocurren dentro del mismo intervalo se fusionan perceptivamente. Los destellos estocásticos de entropía del drill inyectan ruido no periódico en esta ventana, obligando al cerebro a distinguir variaciones sinusoidales rítmicas de picos aislados de luminancia (Burr, 1980; Posner, 1980).` }} />
-
-        <h3>Estándares de Rendimiento Temporal (Matriz Pulsante 45s)</h3>
-        <p dangerouslySetInnerHTML={{ __html: `A partir de datos psicofísicos acumulados en series de 45 segundos sobre la cuadrícula de 36 celdas, el rendimiento de discriminación temporal se clasifica en cinco niveles de agudeza cronométrica:` }} />
+        <h3>{"Niveles de práctica SkillDrills"}</h3>
         <div className="overflow-x-auto my-6">
           <table className="w-full text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-white/10 text-slate-400">
-                <th className="py-2.5 px-3 font-semibold">Nivel</th>
-                <th className="py-2.5 px-3 font-semibold">Clasificación</th>
-                <th className="py-2.5 px-3 font-semibold">Puntuación 45s</th>
-                <th className="py-2.5 px-3 font-semibold">Nivel de Velocidad</th>
-                <th className="py-2.5 px-3 font-semibold">Ventana Delta-T</th>
-                <th className="py-2.5 px-3 font-semibold">Perfil Temporal</th>
+                {[
+  "Rango",
+  "Puntos (45 s)",
+  "Aciertos",
+  "Nivel alcanzado"
+].map((h) => <th key={h} className="py-2.5 px-3 font-semibold">{h}</th>)}
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5 text-slate-300">
-              <tr>
-                <td className="py-2.5 px-3 font-bold text-purple-400">Tier 1</td>
-                <td className="py-2.5 px-3 font-semibold text-white">Crono-Maestro</td>
-                <td className="py-2.5 px-3 tabular-nums">200+ PTS</td>
-                <td className="py-2.5 px-3 tabular-nums">Nivel 8+</td>
-                <td className="py-2.5 px-3 tabular-nums">&lt; 60 ms</td>
-                <td className="py-2.5 px-3">Aislamiento instantáneo de adelanto de fase; supresión de ruido; sensibilidad cercana al CFF.</td>
-              </tr>
-              <tr>
-                <td className="py-2.5 px-3 font-bold text-teal-400">Tier 2</td>
-                <td className="py-2.5 px-3 font-semibold text-white">Detector de Fase</td>
-                <td className="py-2.5 px-3 tabular-nums">150–199 PTS</td>
-                <td className="py-2.5 px-3 tabular-nums">Nivel 6–7</td>
-                <td className="py-2.5 px-3 tabular-nums">60–90 ms</td>
-                <td className="py-2.5 px-3">Gran resolución temporal; identificación de anomalías en 1–2 periodos oscilatorios.</td>
-              </tr>
-              <tr>
-                <td className="py-2.5 px-3 font-bold text-blue-400">Tier 3</td>
-                <td className="py-2.5 px-3 font-semibold text-white">Ritmista Competente</td>
-                <td className="py-2.5 px-3 tabular-nums">100–149 PTS</td>
-                <td className="py-2.5 px-3 tabular-nums">Nivel 4–5</td>
-                <td className="py-2.5 px-3 tabular-nums">91–130 ms</td>
-                <td className="py-2.5 px-3">Discriminación estable; leve pausa de adaptación ante aceleraciones repentinas de tempo.</td>
-              </tr>
-              <tr>
-                <td className="py-2.5 px-3 font-bold text-amber-400">Tier 4</td>
-                <td className="py-2.5 px-3 font-semibold text-white">Perceptor en Desarrollo</td>
-                <td className="py-2.5 px-3 tabular-nums">50–99 PTS</td>
-                <td className="py-2.5 px-3 tabular-nums">Nivel 2–3</td>
-                <td className="py-2.5 px-3 tabular-nums">131–180 ms</td>
-                <td className="py-2.5 px-3">Búsqueda celda por celda; susceptible a falsas alarmas por destellos estocásticos.</td>
-              </tr>
-              <tr>
-                <td className="py-2.5 px-3 font-bold text-rose-400">Tier 5</td>
-                <td className="py-2.5 px-3 font-semibold text-white">Fusión de Fase</td>
-                <td className="py-2.5 px-3 tabular-nums">&lt; 50 PTS</td>
-                <td className="py-2.5 px-3 tabular-nums">Nivel 1</td>
-                <td className="py-2.5 px-3 tabular-nums">&gt; 180 ms</td>
-                <td className="py-2.5 px-3">Amplio difuminado por integración temporal; dificultad para captar desfases sutiles.</td>
-              </tr>
+              {BANDS.map((row) => (
+                <tr key={row[0]}>
+                  {row.map((c, i) => <td key={i} className="py-2.5 px-3 tabular-nums">{c}</td>)}
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
+        <p>{"Niveles de práctica de SkillDrills: no son estadística de población, percentiles ni diagnóstico."}</p>
 
-        <h3>Pautas de Entrenamiento para Potenciar la Discriminación Temporal</h3>
+        <h3>{"Consejos"}</h3>
         <ol className="list-decimal pl-5 space-y-2 my-4 text-slate-300">
-          <li>
-            <strong>Foco Blando Magnocelular:</strong> Evita la inspección secuencial directa. Fija la mirada en el centro de la cuadrícula de 6x6 y relaja el enfoque para que los amplios campos receptivos periféricos supervisen la cadencia luminosa colectiva (Holcombe, 2009).
-          </li>
-          <li>
-            <strong>Comparación de Frente de Onda de Fase:</strong> Atiende al &apos;pico luminoso anticipado&apos;. La celda anómala acelera su ciclo y alcanza su brillo máximo milisegundos antes que las celdas circundantes, creando una onda de desfase nítida (Kelly, 1961).
-          </li>
-          <li>
-            <strong>Filtrado de Ruido Estocástico:</strong> Distingue destellos espurios de pulsos rítmicos periódicos. Permite que el sistema visual verifique la repetición cíclica durante 150–200 ms antes de ejecutar el clic (Burr, 1980).
-          </li>
-          <li>
-            <strong>Ajuste de Tempo al Subir de Nivel:</strong> Cuando superes un tramo de velocidad, tómate un instante mínimo para acompasar tu reloj interno al nuevo pulso de fondo, previniendo errores por descalibración temporal (De Lange, 1958).
-          </li>
+          {TIPS.map((t) => <li key={t}>{t}</li>)}
         </ol>
 
-        <h3>Preguntas Frecuentes (FAQ)</h3>
+        <h3>{"Preguntas frecuentes"}</h3>
         <div className="space-y-4 my-6">
-          <div>
-            <h4 className="font-semibold text-white">¿Qué mide el test de anomalía de ritmo visual?</h4>
-            <p className="text-slate-300 mt-1">
-              Mide la discriminación de frecuencia temporal y la resolución de parpadeo, evaluando la rapidez con la que el cerebro localiza una celda desfasada entre 35 celdas sincronizadas en una matriz de 36 elementos.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">¿Cómo detecta el cerebro los desfases temporales y ritmos fuera de sincronía?</h4>
-            <p className="text-slate-300 mt-1">
-              A través de la vía magnocelular (M), cuyas neuronas responden rápidamente a cambios de luminancia y envían señales directas a la corteza visual que originan un pop-out atencional preatentivo (Kelly, 1961).
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">¿Cuál es la diferencia entre las vías magnocelular y parvocelular?</h4>
-            <p className="text-slate-300 mt-1">
-              La vía magnocelular cuenta con axones gruesos y conducción rápida, ideal para percibir movimiento, parpadeo y tiempo. La parvocelular conduce más lento y se especializa en color y detalles espaciales finos.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">¿Qué es la Frecuencia Crítica de Fusión (CFF)?</h4>
-            <p className="text-slate-300 mt-1">
-              Es el umbral de frecuencia en el que una luz parpadeante se percibe como una fuente de brillo constante (35–60 Hz). Un CFF elevado se asocia a ventanas de integración más cortas y mayor velocidad reactiva.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">¿Qué puntuación se considera óptima en la sesión de 45 segundos?</h4>
-            <p className="text-slate-300 mt-1">
-              Los principiantes suelen registrar entre 50 y 99 puntos (Nivel 2–3). Usuarios habituales logran de 100 a 149 puntos, y superar los 150 a 200+ puntos requiere rachas continuas.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">¿Por qué se acelera la cuadrícula a medida que encadenas aciertos?</h4>
-            <p className="text-slate-300 mt-1">
-              Para estresar progresivamente el umbral biológico del usuario: el tempo de fondo aumenta y el margen temporal (Delta-T) entre la anomalía y el resto se acorta, exigiendo máxima agudeza cronométrica.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">¿Cuál es la función de los destellos estocásticos de entropía?</h4>
-            <p className="text-slate-300 mt-1">
-              Añadir ruido transitorio para evitar que el observador se guíe únicamente por diferencias de brillo momentáneas, obligándole a evaluar la cadencia periódica real (Burr, 1980).
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">¿Se pierden puntos o tiempo por pulsar la celda equivocada?</h4>
-            <p className="text-slate-300 mt-1">
-              No se restan puntos del marcador acumulado ni se recorta el tiempo de la prueba. Un fallo muestra una alerta roja y reinicia la racha de aciertos, favoreciendo la iniciativa y rapidez decisional.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">¿Influye la tasa de refresco del monitor (60Hz frente a 144Hz o más)?</h4>
-            <p className="text-slate-300 mt-1">
-              Sí, notablemente. A 60 Hz los fotogramas se renuevan cada 16,7 ms, mientras que a 144 Hz o 240 Hz se actualizan cada 6,9 a 4,2 ms, lo que dibuja ondas sinusoidales más nítidas y facilita la detección de desfases.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">¿Cómo beneficia el entrenamiento temporal a deportistas y gamers?</h4>
-            <p className="text-slate-300 mt-1">
-              Permite reconocer fracciones de segundo antes la salida de un lanzamiento, los fotogramas iniciales de animaciones rivales y pequeños cambios periféricos, otorgando una ventaja decisiva en situaciones límite.
-            </p>
-          </div>
+          {FAQS.map(([q, a]) => (
+            <div key={q}>
+              <h4 className="font-semibold text-white">{q}</h4>
+              <p className="text-slate-300 mt-1">{a}</p>
+            </div>
+          ))}
         </div>
       </DrillGuide>
       <RelatedDrills />

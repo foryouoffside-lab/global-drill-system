@@ -4,315 +4,185 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
-export const metadata = {
-  title: "Concentration en Grille | Balayage Visuel | SkillDrills",
-  description: "Entraînement gratuit de concentration en grille : trouvez des codes cibles dans une grille 10×10 avec des distracteurs. Pratiquez l’attention sélective.",
-  keywords: [
-    "recherche visuelle",
-    "attention sélective visuelle",
-    "balayage visuel",
-    "test d'attention visuelle",
-    "concentration grille",
-    "filtrage des distracteurs",
-    "vitesse de balayage",
-    "attention visuospatiale",
-    "entraînement de l'attention",
-    "psychologie de la recherche visuelle",
-    "fixation oculaire",
-    "détection de cibles"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/fr/drills/visual/visual-recognition/entropic-grid",
-    languages: getAlternateLanguages('/drills/visual/visual-recognition/entropic-grid'),
-  },
-  openGraph: {
-    title: "Concentration en Grille | Balayage Visuel | SkillDrills",
-    description: "Trouvez des codes cibles dans une grille 10×10 avec des distracteurs changeants et pratiquez l’attention sélective.",
-    url: "https://skilldrills.online/fr/drills/visual/visual-recognition/entropic-grid",
-    type: "website",
-    locale: "fr_FR",
-    alternateLocale: ["en_US", "de_DE", "ko_KR", "ja_JP", "pt_PT", "es_ES"],
-    images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Concentration en Grille | Balayage Visuel | SkillDrills",
-    description: "Trouvez des codes dans une grille changeante et pratiquez attention visuelle, balayage et filtrage des distracteurs.",
-    images: ["https://skilldrills.online/opengraph-image"],
-  },
-};
+const URL = "https://skilldrills.online/fr/drills/visual/visual-recognition/entropic-grid";
+const TITLE = "Grille de codes à repérer – balayage visuel | SkillDrills";
+const DESCRIPTION = "Grille de codes à repérer : en 45 secondes, cliquez chaque copie du code cible dans une grille 10 × 10 de codes à deux caractères qui change sans cesse.";
 
-const guideData = {
-  eyebrow: "Psychologie Cognitive & Attention Sélective",
-  heading: "Recherche visuelle : attention sélective et filtrage des distracteurs",
-  intro: [
-    "La recherche visuelle (Visual Search) constitue l'opération perceptive élémentaire consistant à localiser une cible spécifique au sein d'un environnement encombré d'éléments distracteurs. Du pilote analysant un tableau de bord saturé d'indicateurs au joueur d'esport repérant une silhouette dans un décor complexe, l'efficacité de la recherche conditionne la conscience situationnelle et la réactivité motrice. En psychophysique visuelle, cette performance découle de la confrontation permanente entre la saillance visuelle ascendante (bottom-up) et le contrôle attentionnel descendant (top-down) (Treisman & Gelade, 1980 ; Wolfe, 1994).",
-    "Selon la théorie de l'intégration des traits (Feature Integration Theory : FIT, Treisman & Gelade, 1980), le cortex visuel analyse les caractéristiques primitives — telles que la couleur, l'orientation ou le contraste — de manière automatique, pré-attentionnelle et parallèle sur l'ensemble du champ de vision. Lorsqu'une cible diffère par un trait isolé saillant, elle déclenche un phénomène immédiat de 'pop-out'. En revanche, lorsqu'une cible est définie par une conjonction de caractères alphanumériques complexes, l'attention spatiale focalisée doit se déployer de manière sérielle pour assembler ces traits, orientée par les priorités du modèle Guided Search de Wolfe (1994 ; Wolfe, 2007).",
-    "La réinitialisation périodique des caractères toutes les 700 millisecondes dans l'Entropic Grid modélise les perturbations cognitives du monde réel sous l'angle de la théorie de la charge perceptive (Perceptual Load Theory) de Nilli Lavie (1995). L'attention sélective est régie par une limite capacitaire structurelle : en situation de faible charge perceptive, les ressources cognitives résiduelles débordent involontairement sur les distracteurs périphériques. Inversement, sous forte charge perceptive — telle que l'analyse rapide d'une matrice de 100 cellules en perpétuelle mutation —, la bande passante attentionnelle est intégralement mobilisée, établissant un verrouillage neurochimique automatique contre le bruit visuel (Lavie, 1995).",
-    "L'attention visuelle humaine ne fonctionne pas comme un projecteur rigide, mais comme un zoom optique dynamique (Zoom Lens Model, Eriksen & St. James, 1986). Les observateurs chevronnés modulent en continu l'ouverture de leur champ attentionnel, passant d'un balayage global à basse résolution sur la grille 10x10 à une inspection resserrée à haute résolution par quadrants 2x2. En optimisant la perception parafovéale au-delà des 2 degrés fovéaux centraux, ils éliminent des grappes entières de distracteurs sans exécuter de saccades oculaires superflues (Posner, 1980 ; Woods et al., 2015).",
-    "Ce banc d'évaluation en ligne exploite la résolution de 0,1 ms de l'API performance.now() pour mesurer la latence de fixation, le volume de détections validées et la résistance au désordre visuel sur des séries de 45 secondes. Un entraînement régulier sur l'Entropic Grid renforce les réseaux fronto-pariétaux d'inhibition sélective, offrant des gains directs pour le repérage de cibles dans les FPS compétitifs, la conduite rapide en milieu dense et le traitement de flux massifs de données visuelles."
+export const metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    "grille de codes à repérer",
+    "balayage visuel",
+    "grille qui se régénère",
+    "trouver le code",
+    "jeu de recherche",
   ],
-  benchmarks: {
-    title: "Repères de recherche visuelle et d’attention sélective",
-    headers: ["Palier de Performance", "Réponses Exactes (45s)", "Latence Moyenne de Fixation", "Précision de Filtrage du Bruit", "Profil Neurocognitif"],
-    rows: [
-      ["Palier 1", "18+ Cibles", "< 180 ms", "> 96%", "Combinaison parfaite de détection pré-attentionnelle pop-out et de balayage top-down guidé (Wolfe, 2007)."],
-      ["Palier 2", "14 – 17 Cibles", "180 – 230 ms", "88 – 95%", "Excellent filtrage des distracteurs dynamiques et exploration structurée par quadrants."],
-      ["Palier 3", "10 – 13 Cibles", "230 – 300 ms", "76 – 87%", "Vitesse d'analyse moyenne ; alterne contrôle sériel et repérage périphérique partiel."],
-      ["Palier 4", "7 – 9 Cibles", "300 – 400 ms", "65 – 75%", "Vulnérabilité à l'encombrement visuel et ralentissement face aux transitions d'affichage."],
-      ["Palier 5", "< 7 Cibles", "> 400 ms", "< 65%", "Saccades oculaires désordonnées et perte du modèle de la cible en mémoire de travail."]
-    ],
-    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Établi selon la littérature en psychologie cognitive visuelle (Treisman & Gelade 1980 ; Wolfe 2007 ; Duncan & Humphreys 1989 ; Posner 1980)."
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
+    title: TITLE,
+    description: DESCRIPTION,
+    type: "website",
+    url: URL,
+    siteName: "SkillDrills",
   },
-  techniques: {
-    title: "Comment trouver les cibles plus vite et filtrer les distracteurs",
-    items: [
-      {
-        name: "Balayage Structuré par Quadrants",
-        desc: "Plutôt que de parcourir la grille ligne par ligne, divisez mentalement la matrice 10x10 en 4 blocs de 5x5 et posez votre regard au centre de chaque zone pour analyser plusieurs cellules en vision parafovéale.",
-        tips: "Limitez vos saccades oculaires à 4 ou 5 fixations stratégiques par cycle d'inspection."
-      },
-      {
-        name: "Filtrage Pré-Attentionnel par Traits Géométriques",
-        desc: "Mémorisez la signature visuelle du code (ex : lignes obliques d'un 'X' ou contours arrondis d'un 'O') afin de rejeter instantanément les symboles non pertinents.",
-        tips: "Évitez la répétition phonétique du code ; gardez uniquement son image géométrique en mémoire vive."
-      },
-      {
-        name: "Résistance au Scintillement de Contraste",
-        desc: "Le renouvellement de la grille attire naturellement les yeux vers les bords. Forcez votre attention à rester centrée sur le quadrant sous surveillance.",
-        tips: "Ignorez les éclairs de rafraîchissement périphérique pour préserver la continuité du balayage."
-      },
-      {
-        name: "Positionnement Médian du Curseur",
-        desc: "Laissez flotter le curseur de souris au centre de la grille afin de minimiser le trajet moteur vers la case dès la confirmation visuelle.",
-        tips: "Relâchez les muscles de la main pour déclencher des clics instantanés et précis."
-      }
-    ]
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
   },
-  steps: [
-    "Identifiez le code de deux caractères indiqué dans le bandeau supérieur de l'exercice.",
-    "Cliquez sur Démarrer le Test pour lancer le compte à rebours et afficher la grille de 100 cases.",
-    "Balayez la matrice et cliquez sur la bonne case avant la fin du temps imparti de 45 secondes.",
-    "Chaque réponse exacte octroie des points et affiche immédiatement un nouveau code à localiser.",
-    "Au coup de sifflet final, consultez votre total de cibles trouvées, votre latence moyenne et votre précision."
-  ],
-  audience: "Indispensable pour les joueurs d'esport tactique (Valorant, CS2, Apex Legends), les opérateurs de vidéosurveillance, les analystes de données, les pilotes et tout utilisateur souhaitant améliorer sa rapidité d'analyse visuelle sous distraction.",
-  faqs: [
-    {
-        "q": "Qu'est-ce que le test de recherche visuelle Entropic Grid (Visual Search Task) ?",
-        "a": "L'Entropic Grid constitue une déclinaison moderne des protocoles d'intégration des traits (Treisman & Gelade, 1980) et de recherche guidée (Wolfe, 2007). Il mesure la capacité du système visuo-attentionnel à extraire une cible alphanumérique dans une matrice de 100 cases soumise à des mutations périodiques toutes les 700 ms."
-    },
-    {
-        "q": "Quelle est la différence entre recherche parallèle (pop-out) et recherche sérielle ?",
-        "a": "La recherche parallèle survient lorsque la cible se distingue immédiatement par une caractéristique élémentaire isolée (couleur ou éclat), sautant aux yeux sans effort (effet pop-out). La recherche sérielle oblige à déplacer le regard fovéal de case en case pour vérifier la combinaison des traits, exigeant du temps et de l'attention."
-    },
-    {
-        "q": "Quels sont les bénéfices pour les joueurs de FPS tactiques comme Valorant ou CS2 ?",
-        "a": "Dans les affrontements rapides, les joueurs doivent repérer des silhouettes ennemies dissimulées dans des environnements visuellement denses et chargés d'effets visuels. L'Entropic Grid accroît la vitesse de discrimination figure-fond et réduit le délai avant le premier tir précis."
-    },
-    {
-        "q": "Quelle est la stratégie de balayage la plus rapide sur une grille de 100 cases ?",
-        "a": "La méthode la plus performante repose sur le découpage en 4 quadrants de 5x5. En fixant le regard au centre de chaque quadrant, la vision parafovéale filtre plusieurs caractères simultanément sans imposer 100 saccades oculaires complètes."
-    },
-    {
-        "q": "Comment éviter la distraction induite par le scintillement toutes les 700 ms ?",
-        "a": "Les changements brusques de caractères provoquent des signaux d'alerte dans le cortex visuel précoce. Pour contrer cette capture automatique de l'attention, maintenez active l'empreinte géométrique du code dans le cortex préfrontal en adoptant un contrôle descendant (top-down)."
-    },
-    {
-        "q": "En quoi l'Entropic Grid diffère-t-il d'une table de Schulte classique ?",
-        "a": "Dans une table de Schulte, les chiffres restent fixes pendant tout le test. Sur l'Entropic Grid, les distracteurs changent de configuration toutes les 700 ms, ce qui sollicite activement l'inhibition du bruit visuel et la résistance aux interférences."
-    },
-    {
-        "q": "Ce test améliore-t-il la vitesse de lecture et le travail sur écran ?",
-        "a": "Oui. Développer le filtrage rapide des symboles optimise le guidage des saccades et élargit l'empan visuel de lecture, réduisant les retours en arrière involontaires dans les textes denses et les tableaux de données."
-    },
-    {
-        "q": "Pourquoi la vitesse de recherche visuelle baisse-t-elle avec l'âge et comment y remédier ?",
-        "a": "Le vieillissement s'accompagne d'une réduction naturelle du champ visuel utile (UFOV) et d'un ralentissement de la transmission pariétale. L'entraînement régulier sur des matrices dynamiques favorise la plasticité cérébrale et préserve l'acuité de tri visuel."
-    },
-    {
-        "q": "Quel est le volume d'entraînement quotidien idéal sans fatigue oculaire ?",
-        "a": "Il est recommandé de pratiquer 4 à 6 séries de 45 secondes par jour (environ 5 à 8 minutes au total). Des pauses de 30 secondes entre chaque épreuve préviennent l'épuisement attentionnel du lobe frontal."
-    },
-    {
-        "q": "Mes temps de réaction et mes coordonnées de clic sont-ils enregistrés sur des serveurs ?",
-        "a": "Non. La génération aléatoire des symboles, la mesure de latence et le calcul du score s'effectuent intégralement en mémoire locale dans votre navigateur via JavaScript client-side. Aucune donnée n'est transmise vers l'extérieur."
-    }
-],
-  sources: pickSources([
-    "treisman1980feature",
-    "wolfe2007guided",
-    "duncan1989visual",
-    "posner1980orienting",
-    "scialfa2002visual"
-  ]),
-  related: [
-    { href: "/fr/drills/visual/tracking-accuracy/moving-target", label: "Poursuite de Cibles Mobiles" },
-    { href: "/fr/drills/visual/tracking-accuracy/multiple-targets", label: "Poursuite d'Objets Multiples" },
-    { href: "/fr/drills/visual/tracking-accuracy/pursuit-tracker", label: "Poursuite Oculaire Continue" },
-    { href: "/fr/drills/visual/reaction-speed/go/no-go", label: "Test Go/No-Go" },
-    { href: "/fr/drills/fps/target-prioritization", label: "Priorisation des Cibles FPS" },
-    { href: "/fr/drills/visual-tracking/peripheral-ping-pursuit", label: "Poursuite Périphérique" }
-  ]
+  robots: { index: true, follow: true },
+  alternates: {
+    canonical: URL,
+    languages: getAlternateLanguages('/drills/visual/visual-recognition/entropic-grid', 'fr'),
+  },
 };
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://skilldrills.online/fr" },
-    { "@type": "ListItem", "position": 2, "name": "Entraînements", "item": "https://skilldrills.online/fr/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Perception Visuelle", "item": "https://skilldrills.online/fr/drills/visual" },
-    { "@type": "ListItem", "position": 4, "name": "Reconnaissance Visuelle", "item": "https://skilldrills.online/fr/drills/visual/visual-recognition" },
-    { "@type": "ListItem", "position": 5, "name": "Recherche visuelle et attention sélective", "item": "https://skilldrills.online/fr/drills/visual/visual-recognition/entropic-grid" }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Entraînement Visuel", "item": "https://skilldrills.online/fr/drills/visual" },
+    { "@type": "ListItem", "position": 3, "name": "Reconnaissance Visuelle", "item": "https://skilldrills.online/fr/drills/visual/visual-recognition" },
+    { "@type": "ListItem", "position": 4, "name": "Grille de codes à repérer", "item": URL }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Feature_integration_theory"],
-  "name": "Test de recherche visuelle",
-  "operatingSystem": "Web Browser",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "name": "Grille de codes à repérer",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "publisher": { "@type": "Organization", "name": "SkillDrills" }
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Test de recherche visuelle",
-  "url": "https://skilldrills.online/fr/drills/visual/visual-recognition/entropic-grid",
-  "applicationCategory": "SportsApplication",
-  "browserRequirements": "Requires JavaScript. Canvas support required.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Entraînement de recherche visuelle et d'attention sélective",
-  "gamePlatform": "Web Browser",
-  "genre": ["Vision Sportive", "Entraînement Cognitif", "Attention Sélective"],
-  "numberOfPlayers": { "@type": "QuantitativeValue", "value": 1 }
+  "description": DESCRIPTION,
+  "url": URL,
+  "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
+  "dateModified": "2026-11-12"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment réaliser le test de recherche visuelle",
-  "description": "Protocole étape par étape pour évaluer et entraîner l'attention sélective et la vitesse de recherche visuelle.",
+  "name": "Comment fonctionne la grille de codes à repérer",
+  "dateModified": "2026-11-12",
   "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Étape 1", "text": "Identifiez le code de deux caractères indiqué dans le bandeau supérieur de l'exercice." },
-    { "@type": "HowToStep", "position": 2, "name": "Étape 2", "text": "Cliquez sur Démarrer le Test pour lancer le compte à rebours et afficher la grille de 100 cases." },
-    { "@type": "HowToStep", "position": 3, "name": "Étape 3", "text": "Balayez la matrice et cliquez sur la bonne case avant la fin du temps imparti de 45 secondes." },
-    { "@type": "HowToStep", "position": 4, "name": "Étape 4", "text": "Chaque réponse exacte octroie des points et affiche immédiatement un nouveau code à localiser." },
-    { "@type": "HowToStep", "position": 5, "name": "Étape 5", "text": "Au coup de sifflet final, consultez votre total de cibles trouvées, votre latence moyenne et votre précision." }
+    { "@type": "HowToStep", "position": 1, "name": "Lire le code cible", "text": "En haut, sous « FIND TARGET CODE », s'affiche un code de deux caractères, lettres et chiffres, par exemple K7." },
+    { "@type": "HowToStep", "position": 2, "name": "Parcourir la grille", "text": "La grille 10 × 10 contient 100 codes à deux caractères ; le code cible y figure au moins deux fois." },
+    { "@type": "HowToStep", "position": 3, "name": "Cliquer chaque copie", "text": "Chaque copie trouvée vaut 150 points. Quand toutes sont trouvées, un nouveau code et une nouvelle grille apparaissent." },
+    { "@type": "HowToStep", "position": 4, "name": "Tenir 45 secondes", "text": "Toutes les 700 ms, trois cases distractrices changent de code, et le code cible change au plus tard toutes les 12 secondes." }
   ]
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
-        "@type": "Question",
-        "name": "Qu'est-ce que le test de recherche visuelle Entropic Grid (Visual Search Task) ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "L'Entropic Grid constitue une déclinaison moderne des protocoles d'intégration des traits (Treisman & Gelade, 1980) et de recherche guidée (Wolfe, 2007). Il mesure la capacité du système visuo-attentionnel à extraire une cible alphanumérique dans une matrice de 100 cases soumise à des mutations périodiques toutes les 700 ms."
-        }
+      "@type": "Question",
+      "name": "Comment fonctionne la grille de codes à repérer ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un code cible de deux caractères s'affiche en haut. Il apparaît plusieurs fois parmi les 100 codes de la grille 10 × 10 ; cliquez chaque copie. Quand toutes sont trouvées ou après 12 secondes, un nouveau code et une nouvelle grille arrivent. Une manche dure 45 secondes." }
     },
     {
-        "@type": "Question",
-        "name": "Quelle est la différence entre recherche parallèle (pop-out) et recherche sérielle ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La recherche parallèle survient lorsque la cible se distingue immédiatement par une caractéristique élémentaire isolée (couleur ou éclat), sautant aux yeux sans effort (effet pop-out). La recherche sérielle oblige à déplacer le regard fovéal de case en case pour vérifier la combinaison des traits, exigeant du temps et de l'attention."
-        }
+      "@type": "Question",
+      "name": "Combien de copies du code cible y a-t-il ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Deux au départ. Leur nombre augmente avec le niveau : trois dès le niveau 3, quatre dès le niveau 6, cinq dès le niveau 9 et six au maximum dès le niveau 12." }
     },
     {
-        "@type": "Question",
-        "name": "Quels sont les bénéfices pour les joueurs de FPS tactiques comme Valorant ou CS2 ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dans les affrontements rapides, les joueurs doivent repérer des silhouettes ennemies dissimulées dans des environnements visuellement denses et chargés d'effets visuels. L'Entropic Grid accroît la vitesse de discrimination figure-fond et réduit le délai avant le premier tir précis."
-        }
+      "@type": "Question",
+      "name": "Pourquoi la grille change-t-elle sans cesse ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Toutes les 700 millisecondes, trois cases distractrices tirées au hasard reçoivent un nouveau code. Les copies du code cible ne bougent pas. Impossible donc de mémoriser la grille." }
     },
     {
-        "@type": "Question",
-        "name": "Quelle est la stratégie de balayage la plus rapide sur une grille de 100 cases ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La méthode la plus performante repose sur le découpage en 4 quadrants de 5x5. En fixant le regard au centre de chaque quadrant, la vision parafovéale filtre plusieurs caractères simultanément sans imposer 100 saccades oculaires complètes."
-        }
+      "@type": "Question",
+      "name": "Comment les points sont-ils comptés ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Chaque copie trouvée vaut 150 points et le niveau monte tous les 750 points (5 copies). À la fin s'affichent le score, la précision, le niveau maximal et le nombre de copies trouvées." }
     },
     {
-        "@type": "Question",
-        "name": "Comment éviter la distraction induite par le scintillement toutes les 700 ms ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Les changements brusques de caractères provoquent des signaux d'alerte dans le cortex visuel précoce. Pour contrer cette capture automatique de l'attention, maintenez active l'empreinte géométrique du code dans le cortex préfrontal en adoptant un contrôle descendant (top-down)."
-        }
+      "@type": "Question",
+      "name": "Les erreurs de clic sont-elles pénalisées ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non. La case cliquée par erreur devient rouge un instant, sans retirer de points ni de temps. Seule la précision baisse." }
     },
     {
-        "@type": "Question",
-        "name": "En quoi l'Entropic Grid diffère-t-il d'une table de Schulte classique ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dans une table de Schulte, les chiffres restent fixes pendant tout le test. Sur l'Entropic Grid, les distracteurs changent de configuration toutes les 700 ms, ce qui sollicite activement l'inhibition du bruit visuel et la résistance aux interférences."
-        }
+      "@type": "Question",
+      "name": "Est-ce un test de concentration officiel ou un test de vue ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non. C'est un exercice gratuit dans le navigateur, ni un test psychologique étalonné ni un examen de la vue. Comparez votre score uniquement à vos propres manches précédentes." }
     },
     {
-        "@type": "Question",
-        "name": "Ce test améliore-t-il la vitesse de lecture et le travail sur écran ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui. Développer le filtrage rapide des symboles optimise le guidage des saccades et élargit l'empan visuel de lecture, réduisant les retours en arrière involontaires dans les textes denses et les tableaux de données."
-        }
-    },
-    {
-        "@type": "Question",
-        "name": "Pourquoi la vitesse de recherche visuelle baisse-t-elle avec l'âge et comment y remédier ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le vieillissement s'accompagne d'une réduction naturelle du champ visuel utile (UFOV) et d'un ralentissement de la transmission pariétale. L'entraînement régulier sur des matrices dynamiques favorise la plasticité cérébrale et préserve l'acuité de tri visuel."
-        }
-    },
-    {
-        "@type": "Question",
-        "name": "Quel est le volume d'entraînement quotidien idéal sans fatigue oculaire ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Il est recommandé de pratiquer 4 à 6 séries de 45 secondes par jour (environ 5 à 8 minutes au total). Des pauses de 30 secondes entre chaque épreuve préviennent l'épuisement attentionnel du lobe frontal."
-        }
-    },
-    {
-        "@type": "Question",
-        "name": "Mes temps de réaction et mes coordonnées de clic sont-ils enregistrés sur des serveurs ?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non. La génération aléatoire des symboles, la mesure de latence et le calcul du score s'effectuent intégralement en mémoire locale dans votre navigateur via JavaScript client-side. Aucune donnée n'est transmise vers l'extérieur."
-        }
+      "@type": "Question",
+      "name": "Comment trouver les codes plus vite ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Retenez le code comme une paire, pas comme deux caractères isolés, et balayez la grille par quarts ou ligne par ligne. Les distracteurs changeant sans cesse, mémoriser des positions ne sert à rien." }
     }
-]
+  ]
 };
 
-export default function EntropicGridPage() {
+export default function EntropicGridLocalePage() {
+  const sources = pickSources('treisman1980', 'wolfe1994', 'duncan1989');
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <EntropicGridClient copy={{ title: "Grille de codes à repérer", subtitle: "Le code cible dans une grille de 100 cases qui change" }} />
+      <DrillGuide
+        eyebrow="Jeu de balayage visuel"
+        title="Grille de codes à repérer : règles, points et conseils"
+        sources={sources}
+      >
+        <p>La <strong>grille de codes à repérer</strong> est un exercice gratuit dans le navigateur : dans une grille 10 × 10 de 100 codes à deux caractères, vous cliquez chaque copie du code cible. La manche dure 45 secondes et la grille ne reste jamais identique, car les distracteurs changent sans cesse. Souris ou écran tactile.</p>
 
-      <main className="container mx-auto px-4 py-8 max-w-5xl">
-        <EntropicGridClient copy={{ title: "Concentration en grille", subtitle: "Balayage visuel et attention sélective" }} />
-        <DrillGuide guide={guideData} />
-        <RelatedDrills related={guideData.related} />
-      </main>
+        <h3>Ce qui se passe dans la grille</h3>
+        <ul className="list-disc pl-5 space-y-2 my-3 text-slate-300">
+          <li><strong>Code cible :</strong> deux caractères parmi les lettres (sauf I et O) et les chiffres 2 à 9.</li>
+          <li><strong>Plusieurs copies :</strong> deux au départ, jusqu'à six en même temps selon le niveau.</li>
+          <li><strong>Bruit :</strong> toutes les 700 ms, trois cases distractrices changent de code.</li>
+          <li><strong>Changement de cible :</strong> nouveau code dès que toutes les copies sont trouvées, au plus tard après 12 secondes.</li>
+        </ul>
+
+        <h3>Pourquoi la recherche demande un effort</h3>
+        <p>Un code à deux caractères ne se distingue pas des distracteurs par un trait saillant unique, mais seulement par la combinaison de deux caractères. Ce type de recherche se fait plutôt élément par élément (Treisman &amp; Gelade, 1980 ; Wolfe, 1994) et ralentit quand cible et distracteurs se ressemblent (Duncan &amp; Humphreys, 1989). Le bruit changeant empêche en plus de s'appuyer sur des positions mémorisées.</p>
+
+        <h3>Paliers d'entraînement SkillDrills (45 secondes)</h3>
+        <p>Ces paliers sont des repères propres à SkillDrills pour cette grille, pas des normes scientifiques.</p>
+        <div className="overflow-x-auto my-6">
+          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr className="border-b border-white/10 text-slate-400">
+                <th className="py-2.5 px-3 font-semibold">Palier</th>
+                <th className="py-2.5 px-3 font-semibold">Copies</th>
+                <th className="py-2.5 px-3 font-semibold">Points</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-white/5 text-slate-300">
+              <tr><td className="py-2.5 px-3">Débutant</td><td className="py-2.5 px-3 tabular-nums">0–2</td><td className="py-2.5 px-3 tabular-nums">0–300</td></tr>
+              <tr><td className="py-2.5 px-3">Solide</td><td className="py-2.5 px-3 tabular-nums">3–4</td><td className="py-2.5 px-3 tabular-nums">450–600</td></tr>
+              <tr><td className="py-2.5 px-3">Fort</td><td className="py-2.5 px-3 tabular-nums">5–6</td><td className="py-2.5 px-3 tabular-nums">750–900</td></tr>
+              <tr><td className="py-2.5 px-3">Excellent</td><td className="py-2.5 px-3 tabular-nums">7+</td><td className="py-2.5 px-3 tabular-nums">1 050+</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Conseils</h3>
+        <ol className="list-decimal pl-5 space-y-2 my-4 text-slate-300">
+          <li><strong>Lisez le code comme une paire :</strong> cherchez la suite de deux caractères, pas une lettre isolée.</li>
+          <li><strong>Balayez par quarts :</strong> parcourez la grille quart par quart au lieu de sauter au hasard.</li>
+          <li><strong>Continuez après un succès :</strong> il reste presque toujours une autre copie du même code.</li>
+        </ol>
+
+        <h3>Questions fréquentes (FAQ)</h3>
+        <div className="space-y-4 my-6">
+          {faqSchema.mainEntity.map((q) => (
+            <div key={q.name}>
+              <h4 className="font-semibold text-white">{q.name}</h4>
+              <p className="text-slate-300 mt-1">{q.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </DrillGuide>
+      <RelatedDrills />
     </>
   );
 }

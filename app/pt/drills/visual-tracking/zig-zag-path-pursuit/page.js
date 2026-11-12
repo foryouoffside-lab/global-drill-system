@@ -4,285 +4,160 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/pt/drills/visual-tracking/zig-zag-path-pursuit';
+const title = "Rastreamento visual em zigue-zague | SkillDrills";
+const description = "Rastreamento visual em zigue-zague: um alvo sobe e desce em curvas fechadas, da esquerda para a direita e de volta. Treino grátis, não é exame de vista.";
+
 export const metadata = {
-  title: "Rastreamento visual em zigue-zague | SkillDrills",
-  description: "Acompanhe um alvo em zigue-zague. Treino gratuito para seguimento ocular, viradas rápidas e perdas do alvo.",
-  keywords: [
-    "rastreamento visual zigue-zague exercício",
-    "exercício de seguimento ocular",
-    "movimento ocular em zigue-zague",
-    "treino de visão dinâmica",
-    "rastreamento visual com viradas rápidas",
-    "exercício de coordenação ocular",
-    "treino de sacadas corretivas",
-    "controle do olhar em mudanças de direção",
-    "treino visual para esportes",
-    "exercício de agilidade visual online",
-    "teste de precisão do rastreamento visual",
-    "treino gratuito de movimento ocular"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/pt/drills/visual-tracking/zig-zag-path-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/zig-zag-path-pursuit')
-  },
+  title,
+  description,
+  keywords: ["rastreamento visual em zigue-zague", "exercício para os olhos zigue-zague", "rastreamento ocular treino", "exercício para os olhos online", "acompanhar alvo com os olhos"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/zig-zag-path-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_BR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Rastreamento visual em zigue-zague | SkillDrills",
-    description: "Acompanhe um alvo em zigue-zague. Treino gratuito para seguimento ocular, viradas rápidas e perdas do alvo.",
-    url: "https://skilldrills.online/pt/drills/visual-tracking/zig-zag-path-pursuit",
-    siteName: "SkillDrills",
-    locale: "pt_BR",
-    type: "website"
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Rastreamento visual em zigue-zague | SkillDrills",
-    description: "Acompanhe um alvo em zigue-zague. Treino gratuito para seguimento ocular, viradas rápidas e perdas do alvo."
-  }
 };
 
-export default function ZigZagPathPursuitPagePT() {
-  const sources = pickSources(
-    'debrouwer2002',
-    'krauzlis2004',
-    'orbandexivry2007',
-    'bennett2006',
-    'barnes2008',
-    'woods2015'
-  );
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Início", item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: "Rastreamento visual", item: 'https://skilldrills.online/pt/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 3, name: "Rastreamento visual em zigue-zague", item: url },
+  ],
+};
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://skilldrills.online/pt" },
-      { "@type": "ListItem", "position": 2, "name": "Treinamento Visual", "item": "https://skilldrills.online/pt/drills/visual-tracking" },
-      { "@type": "ListItem", "position": 3, "name": "Perseguição em Zigue-Zague", "item": "https://skilldrills.online/pt/drills/visual-tracking/zig-zag-path-pursuit" }
-    ]
-  };
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Rastreamento visual em zigue-zague",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
+};
 
-  const softwareApplicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-    "name": "Treinador de Perseguição em Zigue-Zague",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Treinamento neuromuscular de rastreamento dinâmico em dente de serra e supressão de ultrapassagem sacádica em reversões angulares agudas.",
-    "dateModified": "2026-09-20"
-  };
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Rastreamento visual em zigue-zague",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navegador atual com suporte a HTML5 Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
+};
 
-  const webAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Exercício de Rastreamento Vetorial em Zigue-Zague",
-    "url": "https://skilldrills.online/pt/drills/visual-tracking/zig-zag-path-pursuit",
-    "applicationCategory": "TrainingTool",
-    "browserRequirements": "Requer JavaScript e compatibilidade com HTML5 Canvas.",
-    "dateModified": "2026-09-20"
-  };
+const videoGameSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: "Rastreamento visual em zigue-zague",
+  url,
+  description,
+  genre: ['Casual Game', 'Educational Game'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
 
-  const videoGameSchema = {
-    "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "Desafio de Perseguição em Zigue-Zague",
-    "gamePlatform": "Navegador Web",
-    "genre": ["Treino visual", "Exercício de rastreamento ocular", "Reflexos para esports"],
-    "dateModified": "2026-09-20"
-  };
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Como fazer o rastreamento visual em zigue-zague",
+  description: "Quatro passos para acompanhar com os olhos um alvo em uma trajetória em zigue-zague.",
+  step: [
+    { '@type': 'HowToStep', position: 1, name: "Escolher as configurações", text: "Comece com 60 segundos, 1,0x e a linha visível.", url: `${url}#step-1` },
+    { '@type': 'HowToStep', position: 2, name: "Ajustar a postura", text: "Sente-se confortavelmente e mantenha a cabeça reta.", url: `${url}#step-2` },
+    { '@type': 'HowToStep', position: 3, name: "Seguir o zigue-zague", text: "Acompanhe o alvo com os olhos em todas as curvas, na ida e na volta.", url: `${url}#step-3` },
+    { '@type': 'HowToStep', position: 4, name: "Aumentar aos poucos", text: "Quando ficar fácil, aumente a velocidade ou oculte a linha ou ligue a velocidade aleatória, uma coisa por vez.", url: `${url}#step-4` }
+  ],
+};
 
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Como Treinar Rastreamento Ocular em Zigue-Zague",
-    "description": "Protocolo neurofuncional para frenagem de ultrapassagens e estabilização foveal em reversões agudas.",
-    "dateModified": "2026-09-20",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Postura Estável e Fixação",
-        "text": "Mantenha a cabeça perfeitamente estática a 50-60 cm da tela, fixando o alvo na aresta diagonal inicial."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Perseguição em Vetor Diagonal",
-        "text": "Siga o alvo ao longo da reta mantendo sincronia entre os músculos retos horizontais e verticais."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Frenagem nos Pontos de Inflexão",
-        "text": "No momento exato da reversão aguda, acione a desaceleração motora antecipada para não projetar o olhar além da curva."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Aumento Gradual de Velocidade",
-        "text": "Progrida para velocidades maiores apenas quando seu erro de vértice for menor que 38 pixels em 80% das reversões."
-      }
-    ]
-  };
+const faqs = [
+  { q: "O que é o rastreamento visual em zigue-zague?", a: "Um alvo sobe e desce entre a parte de cima (cerca de 20% da altura) e a de baixo (cerca de 80%) em 7 curvas fechadas, da borda esquerda até a direita, e depois volta pelo mesmo caminho. Você o acompanha só com os olhos; não é preciso clicar." },
+  { q: "Qual a diferença para o rastreamento visual triangular?", a: "No triângulo, o alvo gira sempre no mesmo sentido por três cantos. No zigue-zague, as curvas fechadas vêm uma atrás da outra e, na borda, o sentido de todo o percurso se inverte. Em 1,0x, cada trajeto leva cerca de 4,5 segundos." },
+  { q: "E para o rastreamento ocular vertical?", a: "No rastreamento ocular vertical, o alvo vai de um lado para o outro enquanto desce. Aqui, ele sobe e desce enquanto avança para a direita, então cada trecho é principalmente vertical." },
+  { q: "Por que meu olhar passa do alvo nas curvas?", a: "Na curva, a direção muda de uma vez. O acompanhamento suave não dá conta e os olhos costumam corrigir com um salto rápido (de Brouwer et al., 2002). Diminua a velocidade, mostre a linha e antecipe a próxima curva." },
+  { q: "O que acontece se eu ocultar a linha?", a: "O trajeto em zigue-zague some. O alvo se move do mesmo jeito, mas você precisa prever sozinho a próxima curva." },
+  { q: "O exercício mede os movimentos dos meus olhos?", a: "Não. O navegador não sabe para onde você está olhando; ele só conhece a posição em que o alvo é desenhado e as suas configurações. Não é preciso clicar nem tocar; o resultado é um registro de prática para você mesmo." },
+  { q: "Tem pontuação ou nota?", a: "Não. No fim, a tela mostra apenas a duração, o multiplicador de velocidade, se a velocidade aleatória estava ligada e o total de sessões (salvo neste navegador). Se quiser contar quantas vezes perdeu o alvo, anote por conta própria." },
+  { q: "Quais configurações existem?", a: "Duração de 30, 45, 60, 90 ou 120 segundos, velocidade de 0,5x a 9,0x e tamanho do alvo de 10 a 50 px. Também dá para ocultar a linha (trajeto em zigue-zague), ligar velocidade aleatória, rastro, brilho, linhas de varredura, fundo claro ou escuro e trocar a cor do alvo. A tecla Esc encerra a sessão a qualquer momento." },
+  { q: "Isso melhora a visão ou a mira?", a: "Não há garantia. É um exercício em que você acompanha um alvo em movimento com os olhos; não é exame de vista, não é tratamento e não promete mira melhor em jogos de tiro. Se sentir algum problema nos olhos, procure um oftalmologista." },
+  { q: "A tela influencia o resultado?", a: "Sim. Taxa de atualização, brilho, contraste, tamanho da tela e distância mudam a forma como o alvo aparece (Woods et al., 2015). Compare apenas sessões feitas na mesma tela, no mesmo navegador e com as mesmas configurações." },
+  { q: "Quanto tempo devo praticar?", a: "Algumas sessões de cerca de 60 segundos, de 5 a 10 minutos no total, com pausas. Pare na hora se sentir olhos cansados, secos ou doloridos, tontura, enjoo ou dor de cabeça." }
+];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "dateModified": "2026-09-20",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Por que trajetórias em zigue-zague causam tanta sobrecarga neuromuscular aos olhos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Porque combinam aceleração diagonal contínua com reversões de alta frequência, forçando ativação e frenagem antagônica quase instantânea entre os músculos extraoculares."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quais estruturas neurológicas governam a frenagem antecipatória do olhar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "O cerebelo (flóculo e verme posterior) e os gânglios da base operam com o córtex frontal (FEF) para emitir comandos inibitórios que amortecem a velocidade antes do vértice."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "O que é o erro de ultrapassagem em curvas agudas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "É quando a inércia faz o globo ocular continuar na direção anterior por dezenas de milissegundos após o alvo já ter mudado bruscamente de sentido."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Como este exercício se relaciona com jogos competitivos (FPS)?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ele condiciona o controle de mira em microcorreções rápidas, permitindo frear o retículo exatamente sobre o oponente que realiza strafe evasivo em zigue-zague."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Por que não devo movimentar a cabeça junto com os olhos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Movimentar a cabeça aciona o reflexo vestíbulo-ocular, que mistura o esforço da cabeça com o dos olhos e atrapalha a leitura do exercício."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Qual é a duração recomendada por sessão?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sessões de 6 a 10 minutos por dia em rodadas curtas de 60 segundos são ajudam a evitar fadiga visual excessiva."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "O que caracteriza o deslizamento retiniano nas reversões?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "É a perda foveal momentânea quando o alvo inverte o sentido, criando um erro de posição que força uma sacada de recuperação rápida."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Como um monitor de alta taxa de atualização impacta este treino?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Monitores de 144 Hz a 240 Hz mostram o ponto de quebra da curva com menos atraso entre quadros, o que facilita perceber a mudança."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Qual a diferença entre rastreamento senoidal e zigue-zague?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "O movimento senoidal desacelera suavemente nos ápices, enquanto o zigue-zague apresenta velocidade linear constante até o vértice e uma reversão angular abrupta."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Como o sistema avalia minha precisão nas curvas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Calcula a distância euclidiana entre o cursor e o alvo nos instantes críticos de mudança de sentido, penalizando ultrapassagens e cortes de curva."
-        }
-      }
-    ]
-  };
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
 
-  const guide = {
-    title: "Diretrizes Científicas de Rastreamento em Zigue-Zague e Controle de Inflexão",
-    intro: [
-      "O rastreamento motor ocular ao longo de polilinhas em zigue-zague de múltiplos segmentos representa um dos desafios de coordenação mais complexos na visão esportiva e na neuro-optometria. Ao contrário dos deslocamentos retilíneos simples, o seguimento de trajetórias diagonais exige a inervação proporcional e contínua de pares musculares distintos, harmonizando os centros pré-motores pontinos horizontais (PPRF) com os núcleos mesencefálicos verticais (riMLF; Orban de Xivry & Lefèvre, 2007).",
-      "A sobrecarga neurocomputacional atinge o ápice nas inflexões agudas em que a trajetória inverte abruptamente o sentido. No momento dessa deflexão súbita, o deslizamento retiniano instantâneo eleva-se de maneira drástica enquanto o erro de posição foveal sofre um pico agudo. As pesquisas clássicas de de Brouwer et al. (2002) e Heinen et al. (2005) demonstraram que as sacadas de recuperação (catch-up saccades) são disparadas por um circuito computacional compartilhado no colículo superior e nos campos oculares frontais (FEF), integrando o desvio posicional e o erro de velocidade para efetuar correções balísticas milimétricas.",
-      "Sem um condicionamento visual específico, o sistema oculomotor apresenta ultrapassagens excessivas ou cortes antecipados de curva, acarretando latências prolongadas de reaquisição e instabilidade foveal. Em contrapartida, a prática deliberada em trajetórias de zigue-zague estimula os modelos internos preditivos do cerebelo (Barnes, 2008; Krauzlis, 2004; Orban de Xivry & Lefèvre, 2007), permitindo uma desaceleração antecipada antes de cada vértice, atenuando o erro sacádico e acelerando o reengajamento suave ao longo do vetor diagonal de saída.",
-      "O exercício de Rastreamento visual em zigue-zague pratica essa habilidade no navegador. Ao seguir o alvo em sua trajetória contínua e alternada, o usuário desenvolve a equalização de velocidade na perseguição suave e uma reancoragem foveal precisa nas inflexões. O recurso de ocultar a linha elimina guias espaciais para avaliar a estimativa perceptiva em tempo real, enquanto a velocidade variável rompe automatismos para desenvolver agilidade visual adaptativa.",
-      "Metodologia de medição e latência de hardware: As estimativas temporais incorporam a quantização de atualização das telas (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz) e os intervalos de varredura dos dispositivos de entrada (~8 ms a 125 Hz contra ~1 ms a 1.000 Hz), conforme detalhado por Woods et al. (2015). Todas as suas pontuações e registros de precisão residem exclusivamente no armazenamento local (localStorage) do seu navegador, resguardando total privacidade sem transmissão externa."
+const guide = {
+  heading: "Rastreamento visual em zigue-zague: guia",
+  intro: [
+    "O rastreamento visual em zigue-zague é um treino grátis no navegador: um alvo sobe e desce entre a parte de cima e a de baixo da tela enquanto avança da borda esquerda até a direita. Ao chegar à direita, volta pelo mesmo caminho. O trajeto liga 8 pontos com 7 curvas fechadas.",
+    "Depois da contagem 3-2-1, o alvo se move pelo tempo escolhido (30 a 120 segundos, padrão 60). Não é preciso clicar nem apertar nada, e não há pontuação. Em 1,0x, cada trajeto leva cerca de 4,5 segundos.",
+    "O navegador não registra para onde você olha. Trate o resultado como um registro de prática pessoal, não como teste de visão ou de atenção.",
+    "Compare sessões na mesma tela e à mesma distância; a taxa de atualização e o atraso de exibição influenciam a fluidez do alvo (Woods et al., 2015). Pare se sentir dor, tontura, enjoo ou visão embaçada persistente."
+  ],
+  benchmarks: {
+    title: "Etapas de prática como referência",
+    headers: ["Etapa", "Configuração", "Objetivo"],
+    rows: [
+      ["1", "1,0x, linha visível", "Conhecer a posição e o ritmo das curvas"],
+      ["2", "1,0x a 2,0x", "Acompanhar sem atraso nas curvas"],
+      ["3", "2,0x ou mais", "Ficar no alvo mesmo no vaivém rápido"],
+      ["4", "Linha oculta", "Prever a próxima curva"],
+      ["5", "Velocidade aleatória", "Acompanhar mesmo com mudanças de velocidade"]
     ],
-    benchmarks: {
-      title: "Padrões de Eficiência em Zigue-Zague (Velocidade e Erro de Inflexão)",
-      headers: ["Nível de Habilidade", "Multiplicador de Velocidade", "Erro no Vértice", "Latência da Sacada de Virada", "Referência"],
-      rows: [
-        ["Faixa 1 (Muito alta)", "3.5x – 5.0x+", "Erro < 12 px (fixação perfeita na inflexão)", "Latência < 110 ms (frenagem preditiva)", "Faixa 1"],
-        ["Faixa 2 (Alta)", "2.5x – 3.5x", "Erro < 22 px (apenas microssacadas mínimas)", "Latência < 140 ms (curvas fluidas)", "Faixa 2"],
-        ["Faixa 3 (Boa)", "1.8x – 2.5x", "Erro < 38 px (reaquisição veloz)", "Latência < 180 ms (viradas estáveis)", "Faixa 3"],
-        ["Faixa 4 (Intermediária)", "1.2x – 1.8x", "Erro 38 – 70 px (ultrapassagem e corte de curvas)", "Latência 180 – 240 ms (múltiplas correções)", "Faixa 4"],
-        ["Faixa 5 (Inicial)", "0.5x – 1.2x", "Erro > 70 px (perda total nos vértices)", "Latência > 250 ms (ultrapassagem evidente)", "Faixa 5"]
-      ],
-      note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Parâmetros baseados em de Brouwer et al. (2002) sobre dinâmica de sacadas corretivas e Krauzlis (2004) sobre controle motor em reversões rápidas de velocidade e direção."
-    },
-    steps: [
-      { title: "Fixe o alvo no centro", text: "Mantenha a cabeça estável e acompanhe o primeiro segmento diagonal com os olhos." },
-      { title: "Siga a diagonal sem cortar", text: "Acompanhe o alvo até o fim de cada segmento e preserve o olhar no centro da figura." },
-      { title: "Frene antes da virada", text: "Reduza o impulso antes da inflexão para evitar que o olhar ultrapasse o canto." },
-      { title: "Aumente o ritmo com precisão", text: "Suba a velocidade somente quando as perdas do alvo e o erro nas viradas estiverem estáveis." }
+    note: "Etapas de prática da SkillDrills apenas como orientação. Não são normas de exame de vista, estatísticas de usuários nem percentis.",
+  },
+  techniques: {
+    title: "Dicas de prática",
+    items: [
+      { name: "Não balance a cabeça", desc: "Com os grandes movimentos de sobe e desce, a cabeça tende a acompanhar. Mantenha-a reta e siga só com os olhos.", tips: "Relaxe os ombros e o pescoço." },
+      { name: "Antecipe as curvas", desc: "Pouco antes de cada curva, já pense na direção oposta.", tips: "Perdeu o alvo? Retome no trecho seguinte." },
+      { name: "Prepare-se para a volta na borda", desc: "Nas bordas esquerda e direita, o sentido de todo o percurso se inverte.", tips: "Pense no caminho de volta pouco antes da borda." },
+      { name: "Sessões curtas com pausas", desc: "Pratique em blocos de 5 a 10 minutos, pisque e olhe para longe entre as sessões. Mais tempo não é necessariamente melhor.", tips: "Pare imediatamente se sentir dor ou tontura." }
     ],
-    instructions: [
-      "Fixe os olhos no alvo circular e acompanhe o trajeto retilíneo inicial.",
-      "Antecipe o ponto de inflexão e aplique frenagem muscular suave antes da virada.",
-      "Execute uma micro-sacada ágil para retomar o alinhamento com o vetor oposto.",
-      "Eleve a velocidade somente quando seu erro de vértice se mantiver abaixo de 38 px."
-    ],
-    tips: [
-      "Evite antecipar excessivamente cortando os cantos: atinja o ápice de cada zigue-zague.",
-      "Mantenha a musculatura dos ombros e pescoço totalmente relaxada.",
-      "Respire com fluidez para manter a estabilidade do tônus ocular nas acelerações."
-    ],
-    sources,
-    faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text }))
-  };
+  },
+  steps: [
+    { title: "Escolher as configurações", text: "Comece com 60 segundos, 1,0x e a linha visível." },
+    { title: "Ajustar a postura", text: "Sente-se confortavelmente e mantenha a cabeça reta." },
+    { title: "Seguir o zigue-zague", text: "Acompanhe o alvo com os olhos em todas as curvas, na ida e na volta." },
+    { title: "Aumentar aos poucos", text: "Quando ficar fácil, aumente a velocidade ou oculte a linha ou ligue a velocidade aleatória, uma coisa por vez." }
+  ],
+  audience: "Quem quer praticar de forma leve, como um jogo, o acompanhamento de um alvo em mudanças rápidas de direção.",
+  faqs,
+  sources: pickSources('debrouwer2002', 'krauzlis2004', 'orbandexivry2007', 'bennett2006', 'barnes2008', 'woods2015'),
+};
 
+export default function ZigZagPathPursuitPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <ZigZagPathPursuitClient
         copy={{
           title: "Rastreamento visual em zigue-zague",
-          subtitle: "Treino de diagonais e viradas rápidas",
-          description: "Acompanhe um alvo em zigue-zague e registre as perdas e o erro nas viradas."
+          subtitle: "Curvas fechadas para cima e para baixo",
+          description: "No rastreamento visual em zigue-zague, um alvo sobe e desce em curvas fechadas, da esquerda para a direita e de volta. O navegador não registra seu olhar: é um registro de prática, não um teste.",
         }}
       />
       <DrillGuide guide={guide} />

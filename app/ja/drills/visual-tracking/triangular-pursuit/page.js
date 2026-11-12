@@ -4,415 +4,161 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit';
+const title = "三角形視線追従トレーニング | SkillDrills";
+const description = "三角形視線追従トレーニングは、上・右下・左下の3つの角を順に回る標的を目で追う無料ブラウザ練習。角での急な方向転換に、速度と時間を調整して挑めます。";
+
 export const metadata = {
-  title: "三角形視線追従トレーニング | SkillDrills",
-  description: "三角軌道の標的を追う無料練習。斜めの視線追従、角での再捕捉、追従誤差と標的ロストを記録。",
-  keywords: [
-    "三角形 視線 追従 トレーニング",
-    "三角形 眼球運動 練習",
-    "動体視力 三角軌道",
-    "視線 三角形 練習",
-    "斜め 追視 トレーニング",
-    "三角形 標的追跡",
-    "頂点 再捕捉 視線",
-    "方向転換 視線追従",
-    "動体視力 角度練習",
-    "視覚追従 誤差 測定",
-    "標的ロスト 視線練習",
-    "スポーツビジョン 追視"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "三角形視線追従トレーニング | SkillDrills",
-    description: "三角軌道の標的を追う無料練習。斜めの視線追従、角での再捕捉、追従誤差と標的ロストを記録。",
-    url: 'https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit',
-    siteName: 'SkillDrills',
-    locale: 'ja_JP',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "三角形視線追従トレーニング | SkillDrills",
-    description: "三角軌道の標的を追う無料練習。斜めの視線追従、角での再捕捉、追従誤差と標的ロストを記録。",
-  },
+  title,
+  description,
+  keywords: ["三角形視線追従トレーニング", "三角形 追従", "視線追従 練習", "眼球運動 トレーニング", "目で追う ゲーム", "アイトラッキング 練習"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/triangular-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ja_JP', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: 'https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit',
-    languages: getAlternateLanguages('/drills/visual-tracking/triangular-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills ホーム",
-      "item": "https://skilldrills.online/ja"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "ビジョントレーニング一覧",
-      "item": "https://skilldrills.online/ja/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "視覚追従・アイトラッキング",
-      "item": "https://skilldrills.online/ja/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "三角形追従眼球運動テスト",
-      "item": "https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "SkillDrills ホーム", item: 'https://skilldrills.online/ja' },
+    { '@type': 'ListItem', position: 2, name: "視覚追従・アイトラッキング", item: 'https://skilldrills.online/ja/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 3, name: "三角形視線追従トレーニング", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "三角形追従眼球運動テスト・多角形エイム練習",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "三角形幾何学ベクトル軌道を追尾し鋭角コーナーでの補正サッケードを鍛えるアイトラッキング訓練。直線滑動追従と頂点再捕捉を強化。",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online"
-  },
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "三角形視線追従トレーニング",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ja' },
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "三角形追従眼球運動テスト・多角形エイム練習",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas対応およびJavaScript有効なブラウザ",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "三角形視線追従トレーニング",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "HTML5 Canvas対応の最新ブラウザ",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "三角形追従眼球運動テスト・多角形エイム練習",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit",
-  "description": "三角形幾何学ベクトル軌道を追尾し鋭角コーナーでの補正サッケードを鍛えるアイトラッキング訓練。直線滑動追従と頂点再捕捉を強化。",
-  "genre": [
-    "アクション",
-    "動体視力トレーニング",
-    "エイム練習"
-  ],
-  "gamePlatform": [
-    "ウェブブラウザ",
-    "デスクトップ",
-    "モバイル"
-  ],
-  "applicationCategory": "Game",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: "三角形視線追従トレーニング",
+  url,
+  description,
+  genre: ['Casual Game', 'Educational Game'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "三角形追従眼球運動ドリルの進め方",
-  "description": "閉じた三角形軌道上で等速の直線追従と鋭角頂点での補正サッケードを連動させ、眼球運動の幾何学的追尾精度を極限まで高める手順。",
-  "dateModified": "2026-09-20",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "トラッキングパラメータの設定",
-      "text": "訓練セッション時間（30〜120秒）、目標の基準速度倍率、ターゲットサイズ、色を調整します。難易度を上げる場合は『軌道線非表示』を有効化します。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "斜め直線区間の等速滑動追従の確立",
-      "text": "三角形の各辺を移動するターゲットの中心窩捕捉を維持し、水平筋と垂直筋を滑らかに連動させて視線のブレ（ジッター）を防ぎます。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "鋭角頂点における予測的減速と補正サッケードの実行",
-      "text": "頂点（60度の鋭角コーナー）へ到達する瞬間、進行方向へのオーバーシュートを抑え、瞬時の補正サッケードで次の辺へと視線を即座に再固定します。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "速度倍率とランダム挙動の段階的負荷向上",
-      "text": "コーナーでの着地精度が安定したら、速度倍率を引き上げ、『ランダム速度』をオンにして予測困難な加減速への適応力を強化します。",
-      "url": "https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "三角形視線追従トレーニングのやり方",
+  description: "三角形の経路を回る標的を目で追う4ステップの練習方法です。",
+  step: [
+    { '@type': 'HowToStep', position: 1, name: "設定を選ぶ", text: "最初は60秒・1.0倍・ガイド線表示から始めます。", url: `${url}#step-1` },
+    { '@type': 'HowToStep', position: 2, name: "姿勢を整える", text: "画面から楽な距離に座り、頭を正面に保ちます。", url: `${url}#step-2` },
+    { '@type': 'HowToStep', position: 3, name: "三角形を目で追う", text: "上・右下・左下の順に回る標的を、角でも目を離さずに追います。", url: `${url}#step-3` },
+    { '@type': 'HowToStep', position: 4, name: "少しずつ難しくする", text: "慣れたら速度を上げるか、ガイド線の非表示・ランダム速度を1つずつ加えます。", url: `${url}#step-4` }
+  ],
 };
 
+const faqs = [
+  { q: "三角形視線追従トレーニングとは何ですか？", a: "画面の上中央、右下、左下を頂点とする三角形の上を、標的が同じ順番で回り続けます。斜めの2辺と水平な底辺を目で追い、角で向きが変わるたびに遅れずについていく練習です。クリックは不要です。" },
+  { q: "標的の速さは一定ですか？", a: "各辺を同じ時間（1.0倍で約1.5秒）で進むため、辺の長さによって速さが少し変わります。横長の画面では底辺が最も長く、そこで最も速く動きます。速度倍率やランダム速度でも変わります。" },
+  { q: "角で視線が遅れたり行き過ぎたりするのはなぜですか？", a: "角では動く向きが一瞬で変わるため、滑らかな追従だけでは追いつけず、素早い視線の跳び（キャッチアップサッカード）で位置を合わせ直すことがよくあります（de Brouwer et al., 2002）。速度を下げて角の手前で次の向きを意識してください。" },
+  { q: "ガイド線を非表示にすると何が変わりますか？", a: "三角形の輪郭線が消えます。経路は同じですが、次の角の位置を自分で覚えて追う必要があります。" },
+  { q: "目の動きを測定しますか？", a: "いいえ。ブラウザは視線の位置を検出できず、分かるのは標的を描いた位置と設定だけです。クリックやタッチ操作も不要で、結果は自分で振り返る練習記録です。" },
+  { q: "スコアや判定はありますか？", a: "ありません。終了後に表示されるのは練習時間、速度倍率、ランダム速度の有無、累計セッション数（このブラウザに保存）だけです。見失った回数を数えたい場合は自分でメモしてください。" },
+  { q: "どんな設定を変えられますか？", a: "時間は30・45・60・90・120秒、速度倍率は0.5〜9.0倍、標的サイズは10〜50pxから選べます。ほかにガイド線（三角形の輪郭）の非表示、ランダム速度、残像トレイル、発光、走査線、昼/夜の背景、標的の色を切り替えられます。Escキーでいつでも終了できます。" },
+  { q: "視力やゲームのエイムは良くなりますか？", a: "保証はできません。これは動く標的を目で追う練習で、視力の改善、目の病気の治療、FPSでのエイム向上を約束するものではありません。目の不調があれば眼科を受診してください。" },
+  { q: "画面環境は結果に影響しますか？", a: "リフレッシュレート、明るさ、コントラスト、画面サイズや距離によって標的の見え方は変わります（Woods et al., 2015）。比べるときは同じ画面・同じブラウザ・同じ設定で行ってください。" },
+  { q: "どれくらい練習すればよいですか？", a: "60秒前後のセッションを数回、合計5〜10分程度の短いブロックで行い、間に休憩を入れてください。目の疲れ・乾き・痛み・めまい・吐き気・頭痛があればすぐ中止します。" }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "三角形追従眼球運動テストとはどのような訓練ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "正三角形の幾何学軌道に沿って移動するターゲットを中心窩で追尾し、斜め直線区間での滑動性追従眼球運動と、3箇所の急峻な頂点（60度の鋭角）で発生する補正サッケードを高度に統合する視覚運動訓練です（de Brouwer et al., 2002）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "なぜ円形や直線追従よりも三角形などの多角形追従が難しいのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "円形追従は曲率が一定で角速度が滑らかに連続変化しますが、三角形軌道は『一定速度の直線追従』と『頂点における不連続な急旋回』が交互に繰り返されます。眼球運動系は滑動追従から急速な跳躍運動（サッケード）へのモード切り替えを瞬時に強いられるため、神経負荷が格段に高くなります（Orban de Xivry & Lefèvre, 2007）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "斜め方向の眼球運動は脳内でどのように制御されていますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "斜め方向への視覚追従は、橋（PPRF）の水平注視中枢と中脳（riMLF）の垂直注視中枢が同時に比例発火することで成立します。小脳片葉および小脳虫部（第VI-VII葉）が両直交ベクトルの速度成分をミリ秒単位で合成し、一本の直線的な斜め追従軌道を作り出しています。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "鋭角コーナーを曲がる際、なぜ視線がショートカット（内回り）してしまうのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "脳が次の辺の軌道を予測しすぎてしまい、頂点に到達する前に早期サッケードを発火させてしまうためです（Bennett & Barnes, 2006）。このショートカット傾向を意識的に抑制し、正確に頂点ノードまで中心窩を運ぶことで、外眼筋の真の幾何学的制動力と空間制御力が養われます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "コーナーで視線が外側へ飛び出してしまう（オーバーシュート）原因と対策は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "直線区間の追従慣性が強く、頂点での減速指令（前頭眼野および小脳からのブレーキ信号）が約100〜150msの神経伝達遅延により遅れることが原因です。頂点手前で視覚的注意を研ぎ澄まし、角を曲がる直前に追従利得を微小に引き下げる予測的ブレーキを意識することで解消されます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "FPSゲーム（VALORANT、Apex、CS2）のエイムにどう直結しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "障害物から飛び出す敵や、壁ジャンプ・スライディング等で斜めに急激な方向転換を行う標的を追尾する際、直線的なクロスヘア誘導から角での急停止・切り返しが要求されます。三角形追従ドリルはこの角切り返しエイムのブレを抑え、初弾捕捉精度の向上に役立つ可能性があります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "球技スポーツ（スカッシュ、テニス、サッカー等）での動体視力向上にどう役立ちますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "壁や芝生でバウンドして急角度に軌道を変えるボールや、相手選手の鋭いカッティング動作に対し、視線が置き去りにされるのを防ぎます。急激なベクトル変化を最小限の補正サッケードで再捕捉できるようになります（Heinen et al., 2005）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "効果的な1日の推奨トレーニングプロトコルは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "1セット45〜60秒を2〜3セット、合計3〜5分間を目安に行います。頂点での急激な制動と再捕捉は外眼筋に負荷がかかるため、疲労で視線が泳ぎ始める前に適度なインターバルを挟むのがおすすめです。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "高リフレッシュレートモニター（144Hz/240Hz）を使う利点は何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "頂点旋回の瞬間のフレーム更新間隔が60Hz（約16.7ms）から144Hz（約6.9ms）、240Hz（約4.2ms）へと短縮され、角での目標位置の量子化誤差が劇的に減少します（Woods et al., 2015）。視覚系がより正確なタイミングで制動サッケードを発火できます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "訓練を継続することで小脳や視覚運動系にどのような神経適応が起きますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "小脳プルキンエ細胞における長期抑圧（LTD）を介して順モデル（Internal Forward Model）の精度が向上します（Barnes, 2008）。これにより、ターゲットが鋭角に方向転換しても網膜スリップ（像のブレ）を発生させず、滑動追従の利得とサッケード振幅がミリ秒単位で最適化されます。"
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'ja',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guide = {
-  heading: "三角形追従眼球運動テスト・多角形エイム練習：鋭角旋回と制動サッケードの神経適応",
+  heading: "三角形視線追従トレーニングのガイド",
   intro: [
-    "三角形視線追従トレーニングとは、三角形の軌道を周回する標的を目で追う練習です。このページでは直線の追従と頂点での方向転換を繰り返し、角での再捕捉や標的を見失う回数を確認できます。",
-      "三角形などの閉じた幾何学多角形に沿って動く視覚目標を追従するタスクは、水平・垂直の外眼筋群に対して極めて高度な動的協調を要求します。正三角形の直線的な各辺をターゲットが移動する際、眼球運動系は非主軸（斜め方向）の滑動性追従眼球運動を展開します。これには橋網様体傍正中核（PPRF）の水平シグナルと中脳内側縦束吻側間質核（riMLF）の垂直シグナルをミリ秒単位で厳密に等比率発火させ、小脳片葉で統合することが不可欠です（Orban de Xivry & Lefèvre, 2007）。",
-    "この運動制御における最大の神経生理学的挑戦は、三角形の鋭角な頂点（60度コーナー）に到達した瞬間に生じます。直線走行から急激な角度変更が発生すると、進行方向の網膜スリップ速度が瞬時に崩壊し、位置誤差（Position Error）が急増します。de Brouwer et al. (2002)およびHeinen et al. (2005)の基礎研究が実証しているように、このような不連続点では前頭眼野（FEF）および補足眼野（SEF）の意思決定回路が作動し、位置誤差と瞬時スリップ速度の統合計算に基づいて補正サッケード（Catch-up Saccade）がトリガーされます。",
-    "未訓練の被験者では、頂点に突入した際に視線が慣性によって外側へ飛び出すオーバーシュート（Overshoot）を起こすか、あるいは予測を焦って頂点の手前で内側にショートカットしてしまう現象が頻発します。いずれのケースでも中心窩から目標が逸脱し、複数回の微小探索サッケードが発生して視覚情報処理が一時的に中断されます。しかし、反復的な多角形追従訓練を行うことで、小脳の順モデル（Internal Forward Model）が活性化し、既知の頂点ノード手前で追従速度を予測的に減速させ、角を曲がった直後の新ベクトルへの正確な視線着地が可能になります（Bennett & Barnes, 2006; Barnes, 2008）。",
-      "本『三角形追従』ドリルは、この幾何学的アジリティをブラウザ上で鍛えます。正三角形の軌道上を周回するターゲットを目で追い続けることで、直線区間の等速追従と角での急減速・再加速を同時に習得できます。『軌道線非表示』をオンにすると視覚的なガイドラインを除いた追従を試せます。『ランダム速度』では機械的なタイミング学習を避けて適応力を確認できます。",
-    "ハードウェア遅延および計測仕様：表示の更新タイミングはディスプレイのリフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）および入力デバイスのポーリング間隔（125Hzで約8ms、1000Hzで約1ms）による時間量子化を受けます（Woods et al., 2015）。なお、本テストで記録されたすべてのスコアや反応データはお使いのブラウザのローカルストレージ（localStorage）に保存されます。"
+    "三角形視線追従トレーニングは、画面の上中央・右下・左下を結ぶ三角形の上を回り続ける標的を目で追う無料のブラウザ練習です。直線の区間と、角での急な方向転換が交互に来ます。",
+    "標的は各辺を同じ時間（1.0倍で約1.5秒）で進むため、長い底辺ではやや速く動きます。スタートを押すと3・2・1のカウントダウンの後、選んだ時間（30〜120秒、初期値60秒）だけ標的が動き続けます。クリックやキー操作は不要で、スコアもありません。",
+    "ブラウザは視線の位置を記録できません。結果は視力や注意力の検査値ではなく、自分で振り返る練習記録として扱ってください。",
+    "比べるときは同じ画面と距離で行い、リフレッシュレートや表示遅延も見え方に影響することを覚えておいてください（Woods et al., 2015）。痛み、めまい、吐き気、かすみが続く場合は中止してください。"
   ],
   benchmarks: {
-    title: "三角形追従パフォーマンス基準（推奨速度倍率・頂点再捕捉着地誤差）",
-    headers: ["習熟度ティア", "推奨速度倍率", "頂点再捕捉着地誤差", "頂点サッケード潜時"],
+    title: "練習ステップの目安",
+    headers: ["ステップ", "設定", "練習の目標"],
     rows: [
-      ["最上位段階 / 幾何学神経完全適応", "3.5x〜5.0x+", "ズレ < 12px (頂点にピタリと吸着)", "潜時 < 110ms (予測ブレーキ完璧)"],
-      ["マスター / 高度軌道制御 (Master)", "2.5x〜3.5x", "ズレ < 22px (微小補正のみ)", "潜時 < 140ms (高精度な角処理)"],
-      ["アドバンス / 実践レベル (Advanced)", "1.8x〜2.5x", "ズレ < 38px (短時間で再捕捉)", "潜時 < 180ms (一般的な競技者)"],
-      ["インターミディエイト / 基礎 (Intermediate)", "1.2x〜1.8x", "ズレ 38〜70px (内回りや微小飛び出し)", "潜時 180〜240ms (補正に複数サッケード)", "中位 45%"],
-      ["ノービス / 未訓練 (Novice)", "0.5x〜1.2x", "ズレ > 70px (頂点完全見失い)", "潜時 > 250ms (大幅なオーバーシュート)", "入門レベル"]
+      ["1", "1.0倍・ガイド線表示", "3つの角の位置と回る順番をつかむ"],
+      ["2", "1.0〜2.0倍", "角で遅れずに向きを変える"],
+      ["3", "2.0倍以上", "速い周回でも標的から目を離さない"],
+      ["4", "ガイド線非表示", "輪郭なしで次の角を予測する"],
+      ["5", "ランダム速度", "速さが変わっても追い続ける"]
     ],
-    note: "評価基準はde Brouwer et al. (2002)の補正サッケード・スリップ速度解析およびHeinen et al. (2005)の急峻角追従潜時データに基づき策定されています。"
+    note: "SkillDrillsの練習段階の目安です。視機能検査の基準、利用者統計、パーセンタイルではありません。",
   },
-  techniques: [
-    {
-      title: "斜め直線区間における水平・垂直外眼筋のベクトル均等協調",
-      description: "三角形の各辺を斜めに進む際、水平方向の直筋と垂直方向の直筋・斜筋が均等なテンションで連動する必要があります。左右どちらか一方に力みがあると視線が波打ち、ターゲットから中心窩が外れてしまいます。",
-      tips: [
-        "視線をターゲットの『進行方向の先端』に固定し、直線を引くように滑らかに滑らせる",
-        "頭部を固定し、首や顔を傾けずに眼球のみを動かすアイソレーションを意識する",
-        "直線区間では瞬目（まばたき）を控え、連続的な網膜像フィードバックを維持する"
-      ]
-    },
-    {
-      title: "鋭角頂点手前における予測的減速とオーバーシュート制動",
-      description: "60度の角を曲がる直前、小脳のブレーキ機構を作動させて追従速度を微小に落とします。慣性のまま頂点に突入すると視線が必ず外側に飛び出してしまうため、角の直前で制動をかける感覚を掴みます。",
-      tips: [
-        "頂点に到達する約30〜50ミリ秒前に、視覚的集中を目標の減速予兆にフォーカスする",
-        "角を曲がる瞬間、視線が角を突き破らないよう『ノードで一度留まる』意識を持つ",
-        "息を細く吐きながらコーナーを通過し、全身の無駄な筋緊張を緩和させる"
-      ]
-    },
-    {
-      title: "60度方向転換に伴う補正サッケード（キャッチアップ）の最小化",
-      description: "方向が変わった瞬間、視線が遅れた場合は単一の素早いサッケードで目標の中心を即座に再捕捉します。探索的な複数回のバタつきサッケード（マルチサッケード）を出さないことが最重要です。",
-      tips: [
-        "角を曲がった直後は『視線を跳躍させて目標の真上に落とす』イメージを持つ",
-        "角の内側をショートカットしてフライングしないよう、頂点通過を確認してから跳ぶ",
-        "目標が新ベクトルに乗ったら、0.1秒以内に再び滑動追従モードへ移行させる"
-      ]
-    },
-    {
-      title: "軌道非表示による内発的幾何学モデルの活性化",
-      description: "軌道線が見えている状態は視覚補助に依存しています。設定で『軌道非表示』を有効化し、見えない正三角形の軌道を脳内でイメージしながら追従することで、脳幹・小脳の空間予測回路を鍛えます。",
-      tips: [
-        "画面の四隅や中心点を目安に、見えない三角形の3つの頂点位置を空間把握する",
-        "ターゲットの速度からリズム（タン、タン、タン）を体感し、拍子に合わせて角を捉える",
-        "ライン非表示下で頂点誤差が20px以下に収まるまで反復して練習を重ねる"
-      ]
-    }
-  ],
+  techniques: {
+    title: "練習のコツ",
+    items: [
+      { name: "直線区間は滑らかに", desc: "辺の途中では標的の中心を見て、目を滑らかに動かします。", tips: "頭や首は動かさず、目だけで追います。" },
+      { name: "角の手前で次の向きを意識する", desc: "角が近づいたら次の辺の方向を意識しておくと、遅れや行き過ぎを減らしやすくなります。", tips: "見失ったら次の角で合わせ直します。" },
+      { name: "底辺の速さに慣れる", desc: "底辺は他の2辺より長く、そのぶん速く動きます。", tips: "速さの違いに慣れてからランダム速度を加えます。" },
+      { name: "短く区切って休む", desc: "5〜10分程度で区切り、まばたきをして遠くを見て目を休めます。長くやるほど良いわけではありません。", tips: "痛みやめまいがあればすぐにやめます。" }
+    ],
+  },
   steps: [
-    { title: "中央で標的を捉える", text: "画面から50〜70cm離れ、頭を固定して三角軌道の標的が最初の辺を進むのを追います。" },
-    { title: "斜めの辺を滑らかに追う", text: "標的の進行方向を見ながら、首を動かさず三角形の直線区間を一定の視線で追従します。" },
-    { title: "頂点で減速して再捕捉する", text: "60度の角に近づいたら少し減速し、角を通過した直後に次の辺へ視線を戻します。" },
-    { title: "精度が安定してから速度を上げる", text: "角でのオーバーシュートと標的ロストが減ってから速度倍率や予測しにくい動きを追加します。" }
+    { title: "設定を選ぶ", text: "最初は60秒・1.0倍・ガイド線表示から始めます。" },
+    { title: "姿勢を整える", text: "画面から楽な距離に座り、頭を正面に保ちます。" },
+    { title: "三角形を目で追う", text: "上・右下・左下の順に回る標的を、角でも目を離さずに追います。" },
+    { title: "少しずつ難しくする", text: "慣れたら速度を上げるか、ガイド線の非表示・ランダム速度を1つずつ加えます。" }
   ],
-  deviceCalibration: {
-    title: "多角形追従・頂点サッケードのためのハードウェア・エルゴノミクス基準",
-    points: [
-      "ディスプレイリフレッシュレート：60度の鋭角旋回時のコマ落ちや位置ジッターを排除するため、144Hz以上の高駆動モニターを推奨。フレーム間隔を6.9ms以下に抑えることで正確な制動タイミングを視認可能（Woods et al., 2015）。",
-      "ピクセル応答速度と残像感：急減速・急旋回時にターゲットの尾を引く残像（ゴースト）があると中心位置の誤認につながるため、応答速度1ms以下のゲーミングモニターが最適です。",
-      "適切な視距離とアイレベル：画面全体が水平視野角40度前後に収まるよう、モニターから50〜65cmの距離を維持。三角形の頂点を見上げる角度にならないよう、目線の高さが画面中央やや上に来るよう調整します。",
-      "コントラストと部屋の照明：背景色（漆黒 #050508）と目標色（サイバーレッド #ef4444）のコントラストを際立たせ、暗がりでも眩しすぎない適切な輝度設定（120〜150cd/m²）に設定します。"
-    ]
-  },
-  faqs: [
-    {
-      "q": "三角形追従眼球運動テストとはどのような訓練ですか？",
-        "a": "正三角形の幾何学軌道に沿って移動するターゲットを中心窩で追尾し、斜め直線区間での滑動性追従眼球運動と、3箇所の急峻な頂点（60度の鋭角）で発生する補正サッケードを高度に統合する視覚運動訓練です（de Brouwer et al., 2002）。"
-    },
-    {
-      "q": "なぜ円形や直線追従よりも三角形などの多角形追従が難しいのですか？",
-      "a": "円形追従は曲率が一定で角速度が滑らかに連続変化しますが、三角形軌道は『一定速度の直線追従』と『頂点における不連続な急旋回』が交互に繰り返されます。眼球運動系は滑動追従から急速な跳躍運動（サッケード）へのモード切り替えを瞬時に強いられるため、神経負荷が格段に高くなります（Orban de Xivry & Lefèvre, 2007）。"
-    },
-    {
-      "q": "斜め方向の眼球運動は脳内でどのように制御されていますか？",
-      "a": "斜め方向への視覚追従は、橋（PPRF）の水平注視中枢と中脳（riMLF）の垂直注視中枢が同時に比例発火することで成立します。小脳片葉および小脳虫部（第VI-VII葉）が両直交ベクトルの速度成分をミリ秒単位で合成し、一本の直線的な斜め追従軌道を作り出しています。"
-    },
-    {
-      "q": "鋭角コーナーを曲がる際、なぜ視線がショートカット（内回り）してしまうのですか？",
-      "a": "脳が次の辺の軌道を予測しすぎてしまい、頂点に到達する前に早期サッケードを発火させてしまうためです（Bennett & Barnes, 2006）。このショートカット傾向を意識的に抑制し、正確に頂点ノードまで中心窩を運ぶことで、外眼筋の真の幾何学的制動力と空間制御力が養われます。"
-    },
-    {
-      "q": "コーナーで視線が外側へ飛び出してしまう（オーバーシュート）原因と対策は？",
-      "a": "直線区間の追従慣性が強く、頂点での減速指令（前頭眼野および小脳からのブレーキ信号）が約100〜150msの神経伝達遅延により遅れることが原因です。頂点手前で視覚的注意を研ぎ澄まし、角を曲がる直前に追従利得を微小に引き下げる予測的ブレーキを意識することで解消されます。"
-    },
-    {
-      "q": "FPSゲーム（VALORANT、Apex、CS2）のエイムにどう直結しますか？",
-      "a": "障害物から飛び出す敵や、壁ジャンプ・スライディング等で斜めに急激な方向転換を行う標的を追尾する際、直線的なクロスヘア誘導から角での急停止・切り返しが要求されます。三角形追従ドリルはこの角切り返しエイムのブレを抑え、初弾捕捉精度の向上に役立つ可能性があります。"
-    },
-    {
-      "q": "球技スポーツ（スカッシュ、テニス、サッカー等）での動体視力向上にどう役立ちますか？",
-      "a": "壁や芝生でバウンドして急角度に軌道を変えるボールや、相手選手の鋭いカッティング動作に対し、視線が置き去りにされるのを防ぎます。急激なベクトル変化を最小限の補正サッケードで再捕捉できるようになります（Heinen et al., 2005）。"
-    },
-    {
-      "q": "効果的な1日の推奨トレーニングプロトコルは？",
-      "a": "1セット45〜60秒を2〜3セット、合計3〜5分間を目安に行います。頂点での急激な制動と再捕捉は外眼筋に負荷がかかるため、疲労で視線が泳ぎ始める前に適度なインターバルを挟むのがおすすめです。"
-    },
-    {
-      "q": "高リフレッシュレートモニター（144Hz/240Hz）を使う利点は何ですか？",
-      "a": "頂点旋回の瞬間のフレーム更新間隔が60Hz（約16.7ms）から144Hz（約6.9ms）、240Hz（約4.2ms）へと短縮され、角での目標位置の量子化誤差が劇的に減少します（Woods et al., 2015）。視覚系がより正確なタイミングで制動サッケードを発火できます。"
-    },
-    {
-      "q": "訓練を継続することで小脳や視覚運動系にどのような神経適応が起きますか？",
-      "a": "小脳プルキンエ細胞における長期抑圧（LTD）を介して順モデル（Internal Forward Model）の精度が向上します（Barnes, 2008）。これにより、ターゲットが鋭角に方向転換しても網膜スリップ（像のブレ）を発生させず、滑動追従の利得とサッケード振幅がミリ秒単位で最適化されます。"
-    }
-  ],
+  audience: "直線と急な方向転換が交互に来る動きを目で追う練習を、ゲーム感覚で試したい人。",
+  faqs,
   sources: pickSources('debrouwer2002', 'heinen2005', 'orbandexivry2007', 'bennett2006', 'barnes2008', 'woods2015'),
 };
 
-export default function LocalizedPage() {
+export default function TriangularPursuitJaPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <TriangularPursuitClient copy={{
-        title: "三角形視線追従トレーニング",
-        subtitle: "斜め追従と頂点での再捕捉",
-        description: "三角軌道の標的を追い、角での再捕捉と視線ズレを確認します。"
-      }} />
+      <TriangularPursuitClient
+        copy={{
+          title: "三角形視線追従トレーニング",
+          subtitle: "斜め追従と頂点での再捕捉",
+          description: "三角形視線追従トレーニングは、三角形の角を順に回る標的を目で追う練習です。ブラウザは視線を記録しないため、結果は検査ではなく練習記録として見てください。",
+        }}
+      />
       <DrillGuide guide={guide} />
       <RelatedDrills />
     </>

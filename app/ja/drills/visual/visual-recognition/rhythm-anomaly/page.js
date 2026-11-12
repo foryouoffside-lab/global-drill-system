@@ -4,39 +4,120 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
+const PAGE_URL = "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly";
+const TITLE = "点滅のズレ探しゲーム｜視覚リズムテスト | SkillDrills";
+const DESCRIPTION = "点滅のズレ探しゲーム：6×6のマスの中から、ひとつだけ違うテンポで点滅するマスを見つけてクリック。45秒の無料視覚リズムテストで、医療検査ではありません。";
+const FAQS = [
+  [
+    "点滅のズレ探しゲームでは何を測りますか？",
+    "45秒間でテンポが違うマスを何回見つけたか（1回10点）、連続正解数、ミスの数を記録します。視覚リズムを見比べる練習用のスコアで、視力や神経の働きを診断するものではありません。"
+  ],
+  [
+    "フリッカーテスト（CFF）と同じですか？",
+    "いいえ。マスは毎秒約0.6〜2.5回とゆっくり点滅しており、点滅が融合して見える臨界融合頻度（約50〜60Hz）は測っていません。"
+  ],
+  [
+    "スコアとレベルはどう上がりますか？",
+    "正解1回で10点、3回ごとにレベルが1上がります。正解するほど全体のテンポが速くなり（周期1.6秒から0.6秒まで）、妨害の点滅も増えます。"
+  ],
+  [
+    "間違えると減点されますか？",
+    "減点や時間のペナルティはありません。ミスすると赤いフラッシュが出て連続正解がリセットされるだけです。タイムアウト設定をオンにした場合は、時間内に見つけないとズレたマスが移動します。"
+  ],
+  [
+    "一瞬暗くなるマスは何ですか？",
+    "ランダムな妨害刺激です。一度だけ変わるマスではなく、違うテンポで点滅し続けるマスが正解です。"
+  ],
+  [
+    "キーボードでも遊べますか？",
+    "マウスのクリックか画面のタッチで操作します。キーボードは使いません。"
+  ],
+  [
+    "モニターのリフレッシュレートは影響しますか？",
+    "点滅がゆっくりなので60Hzの画面でも十分に表示されます。ただし画面の明るさや大きさ、入力遅延は結果に影響しうるので、同じ端末で比べてください（Woods et al., 2015）。"
+  ],
+  [
+    "光に敏感でも遊べますか？",
+    "マスは暗い灰色でゆっくり点滅しますが、点滅する画面がつらい方や光過敏の症状がある方は控えてください。頭痛やめまいが出たらすぐにやめましょう。"
+  ]
+];
+const RULES = [
+  "正解のマスをクリック：+10点。ズレたマスは別の場所に移ります。",
+  "3回正解するごとにレベルが1上がり、全体のテンポと妨害の点滅が速くなります。",
+  "ランダムに数マスが一瞬暗くなる妨害刺激が出続けます。",
+  "間違ったマスをクリック：赤いフラッシュが出て連続正解がリセットされるだけで、減点や時間のペナルティはありません。",
+  "設定でタイムアウトをオンにすると、6秒（後半は最短1.8秒）以内に見つけられないとズレたマスが移動し、連続正解がリセットされます。"
+];
+const BANDS = [
+  [
+    "レンジ 1",
+    "< 50",
+    "0–4",
+    "L1–2"
+  ],
+  [
+    "レンジ 2",
+    "50–99",
+    "5–9",
+    "L2–4"
+  ],
+  [
+    "レンジ 3",
+    "100–149",
+    "10–14",
+    "L4–5"
+  ],
+  [
+    "レンジ 4",
+    "150–199",
+    "15–19",
+    "L6–7"
+  ],
+  [
+    "レンジ 5",
+    "200+",
+    "20+",
+    "L7+"
+  ]
+];
+const TIPS = [
+  "1マスずつ見るより、マス全体をぼんやり広く見ると、ひとつだけテンポがズレたマスが目に入りやすくなります。",
+  "一瞬暗くなって戻るマスは妨害刺激です。2回以上違うテンポで点滅したマスをクリックしましょう。",
+  "レベルが上がってテンポが速くなったら、新しいリズムを1拍見てからクリックしましょう。",
+  "記録は同じ端末・同じ画面の明るさで比べましょう。"
+];
+const INTRO = [
+  "点滅のズレ探しゲームは、6×6の36マスが同じテンポでゆっくり点滅する中で、ひとつだけ速いテンポで点滅するマスを見つけてクリックする45秒の視覚リズムテストです。マウスかタッチでブラウザから無料で遊べます。視力検査や医療検査ではありません。",
+  "ズレたマスの周期は周りの約72%で、約1.4倍の速さで点滅し、いちばん明るい瞬間も少しだけ明るくなります。正解するたびにマス全体のテンポが速くなります（周期1.6秒から最短0.6秒）。最初は簡単ですが、後半ほどテンポの違いを素早く読み取る必要があります。",
+  "点滅は毎秒約0.6〜2.5回で、点滅がひとつの光に融合して見える臨界融合頻度（約50〜60Hz；De Lange, 1958; Kelly, 1961）よりずっと遅い速度です。このためCFFを測るフリッカーテストではなく、複数のマスのリズムを見比べる注意の課題です。2つの刺激が同じテンポかを判断できる限界は、点滅そのものに気づく限界よりずっと低い速度にあります（Holcombe, 2009）。"
+];
+
 export const metadata = {
-  title: "フリッカーテスト | 視覚の時間分解能 | SkillDrills",
-  description: "36マスの点滅グリッドから位相のズレたセルを探す無料フリッカーテスト。ちらつきの識別と視覚的な時間分解能を練習できます。医療検査ではありません。",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "フリッカーテスト",
-    "ちらつき検査",
-    "フリッカー値",
-    "視覚の時間分解能",
-    "点滅刺激",
-    "点滅識別",
-    "視覚タイミング",
-    "視覚認知トレーニング",
-    "位相差検出",
-    "時間知覚テスト",
-    "視覚リズム",
-    "視覚的時間分解能",
-    "視覚周期性 識別"
+  "点滅のズレ探し",
+  "視覚リズムテスト",
+  "リズムのズレ 見つける",
+  "点滅 違い 探す ゲーム",
+  "視覚タイミング 練習"
 ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "フリッカーテスト | 視覚の時間分解能 | SkillDrills",
-    description: "点滅グリッドで位相差を見つけ、ちらつきの識別と視覚タイミングを練習できます。",
+    title: TITLE,
+    description: DESCRIPTION,
     type: "website",
-    url: "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly",
+    url: PAGE_URL,
     siteName: "SkillDrills",
+    locale: "ja_JP",
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "フリッカーテスト | 視覚の時間分解能 | SkillDrills",
-    description: "点滅グリッドで位相差を見つけ、ちらつきの識別と視覚タイミングを練習できます。",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly",
+    canonical: PAGE_URL,
     languages: getAlternateLanguages('/drills/visual/visual-recognition/rhythm-anomaly', 'ja'),
   },
 };
@@ -48,345 +129,126 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja/" },
     { "@type": "ListItem", "position": 2, "name": "視覚トレーニング", "item": "https://skilldrills.online/ja/drills/visual" },
     { "@type": "ListItem", "position": 3, "name": "視覚認識", "item": "https://skilldrills.online/ja/drills/visual/visual-recognition" },
-      { "@type": "ListItem", "position": 4, "name": "フリッカーテスト（視覚の時間分解能）", "item": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly" }
+    { "@type": "ListItem", "position": 4, "name": "点滅のズレ探しゲーム", "item": PAGE_URL }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Time_perception"],
-  "name": "フリッカーテスト・視覚の時間分解能",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "name": "点滅のズレ探しゲーム（視覚リズムテスト）",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "無料のオンライン視覚リズム＆時間分解能テスト。6x6の脈動する36セルから位相の狂った異常セルを素早く検出するタイムアタック測定。",
-  "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly",
+  "description": "6×6のマスの中から、ひとつだけ速いテンポで点滅するマスを探す45秒のブラウザゲーム。マウスかタッチで操作し、医療検査ではありません。",
+  "url": PAGE_URL,
+  "inLanguage": "ja-JP",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-20"
-};
-
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "無料オンライン視覚時間分解能トレーニング",
-  "browserRequirements": "Requires HTML5 canvas and JavaScript",
-  "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly",
-  "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "点滅リズムの視覚弁別チャレンジ",
-  "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly",
-  "description": "無料の視覚タイミング＆点滅周波数弁別ゲーム。脈動する光学グリッドから位相や周期の異なる異常セルを瞬時に見極めてタップ。",
-  "genre": ["フリッカーテスト", "視覚の時間分解能", "視覚認知トレーニング"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
-  "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-11-12"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "フリッカーテストで視覚の時間分解能を練習する方法",
-  "description": "視覚心理物理学に基づき、網膜の大細胞系神経および大脳視覚野の時間分解能を極限まで引き上げる4段階の実践プロトコル。",
-  "dateModified": "2026-09-20",
+  "name": "点滅のズレ探しゲームの遊び方",
+  "inLanguage": "ja-JP",
   "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "脈動するグリッドの中心に視線を固定",
-      "text": "6x6グリッドの中心に視線をリラックスさせて置き、36セル全体が同期して点滅する基準リズムを捉えます。",
-      "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "基準パルスの周期的テンポを脳内に同調",
-      "text": "視覚野を正弦波状の輝度変化に同調させ、脳内に安定した時間的ベースラインを構築します。",
-      "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "位相が狂った異常パルス（アノマリー）を検出",
-      "text": "同期する周囲のセルよりわずかに早くピークに達するか、異なる周期で脈動する単一の異常セルを特定します。",
-      "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "電光石火のタップで反応レイテンシを記録",
-      "text": "異常を察知した瞬間にクリックし、ミリ秒単位の時間分解能と正確性スコアを記録します。",
-      "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly#step-4"
-    }
+  [
+    "マス全体を見る",
+    "6×6のマスの中央あたりに視線を置き、36マスが一緒に点滅する基本のテンポをつかみます。"
+  ],
+  [
+    "違うテンポを探す",
+    "ひとつだけ速く点滅するマスを探します。一瞬暗くなるマスは妨害刺激です。"
+  ],
+  [
+    "クリックかタッチ",
+    "そのマスをクリックかタッチすると10点が入り、ズレたマスは別の場所に移ります。"
+  ],
+  [
+    "速くなるテンポに合わせる",
+    "3回正解するごとにレベルが上がりテンポが速くなります。45秒後にスコアと連続正解を確認します。"
   ]
+].map(([name, text], i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "name": name,
+    "text": text,
+    "url": `${PAGE_URL}#step-${i + 1}`
+  }))
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-"name": "視覚リズムテストは何を測定しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "視覚的時間周波数の弁別力と時間分解能を測定します。36個の脈動セルの中から、位相や点滅周期がわずかにズレた異常セルを瞬時に見抜く能力を評価します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "視覚系はどのように非同期リズムや時間的位相差を感知しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "網膜から伸びる大細胞系（M経路）を介して感知します。M細胞は急激な輝度変化に敏感に応答し、異常セルの位相先行が一次視覚野で直感的なポップアウトを引き起こします。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "大細胞系（M）と小細胞系（P）の根本的な違いは何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "大細胞系は大きな受容野と高速な伝導速度を持ち、動き・点滅・時間変化の検出に特化しています。小細胞系は小さな受容野を持ち、色彩や静止した微細な形態の認識に優れています。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "臨界フリッカー融合頻度（CFF）と反応速度の関係は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "CFFは断続的な点滅光が連続した光に見え始める境界周波数（通常35〜60Hz）です。CFF値が高い人ほど視覚の時間積分窓が短く、素早い動的反応が可能になります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "45秒のテストで優秀とされるスコアはどのくらいですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "初級者は50〜99点、経験者は100〜149点に達します。練習を重ねると150〜200点以上や10回以上の連続正解ストリークに届くこともあります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "正解を重ねるとなぜグリッドの点滅が加速するのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "連続正解により基準点滅速度が引き上げられ、異常セルとの時間差（Delta-T）が狭まります。これにより視覚処理が神経生理学的な限界付近まで押し上げられます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "途中で発生するランダムな閃光（エントロピーノイズ）の目的は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "瞬間的な明暗差だけで正解を見つける抜け道を塞ぐためです。脳に一過性のノイズと持続的な正弦波パルスを正確に分別させる役割があります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "誤タップや時間切れに対するペナルティはありますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "点数の減点や残り時間の没収はありません。ミス時は赤い閃光が表示されて連続ストリークがリセットされるだけですので、積極的なタップが推奨されます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "モニターのリフレッシュレート（60Hz vs 144Hz+）は影響しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "大きく影響します。60Hzは16.7msごとにしか更新されませんが、144Hz〜240Hzでは6.9〜4.2ms間隔で滑らかな正弦波が描画され、微細な位相差をより正確に視認できます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "格闘ゲームやFPS、球技の選手に視覚リズム訓練が役立つ理由は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "敵の飛び出しモーション、アニメーションの発生フレーム、高速ボールの軌道変化などをコンマ数秒早く察知して反応する時間的直観力を研ぎ澄ますことができるからです。"
-      }
-    }
-  ]
+  "inLanguage": "ja-JP",
+  "dateModified": "2026-11-12",
+  "mainEntity": FAQS.map(([q, a]) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": { "@type": "Answer", "text": a }
+  }))
 };
 
-export default function RhythmAnomalyLocalePage() {
-  const sources = pickSources('holcombe2009', 'kelly1961', 'delange1958', 'burr1980', 'posner1980', 'woods2015');
+export default function JapaneseRhythmAnomalyPage() {
+  const sources = pickSources('holcombe2009', 'kelly1961', 'delange1958', 'woods2015');
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <RhythmAnomalyClient copy={{ title: "フリッカーテスト", subtitle: "視覚の時間分解能と点滅識別" }} />
+      <RhythmAnomalyClient copy={{ title: "点滅のズレ探しゲーム", subtitle: "視覚リズムテスト：ひとつだけテンポが違うマス" }} />
       <DrillGuide
-        eyebrow="時間心理物理学 & 視覚クロノメトリー"
-        title="視覚リズム・フリッカー融合・時間周波数弁別の神経科学"
+        eyebrow={"視覚リズムテストのガイド"}
+        title={"点滅のズレ探しゲーム：遊び方とスコアの目安"}
         sources={sources}
       >
-        <p dangerouslySetInnerHTML={{ __html: `従来の視力検査は網膜上の細かいディテールを識別する『空間分解能』のみを測定しますが、実世界の反応速度や競技パフォーマンスは、連続する視覚事象を時間的に分離する<em>時間分解能（Temporal Resolution）</em>に強く制約されます。時速150kmの投球、テニスの高速ラリー、FPSゲームの飛び出し索敵など、あらゆる動的状況において重要なのは、視覚皮質が時間変化する輝度信号をどれほど高頻度でサンプリングできるかです (De Lange, 1958; Kelly, 1961; Holcombe, 2009)。` }} />
+        {INTRO.map((p) => <p key={p}>{p}</p>)}
 
-        <h3>時間的変調伝達関数と大細胞系（M経路）</h3>
-        <p dangerouslySetInnerHTML={{ __html: `人間の視覚伝導路は、精細な形態や色彩を担う小細胞系（P経路）と、動き・点滅・低コントラスト変化を電光石火で伝える大細胞系（M経路）に分かれます。大細胞系ニューロンは太い有髄軸索を持ち、伝導遅延が極めて短いため、40〜50Hzに及ぶ高周波の明滅や位相のズレを捉えるのに最適化されています (De Lange, 1958; Holcombe, 2009)。36個のパルスセルの中で1マスだけ周期が先行すると、一次視覚野（V1）に明瞭な位相差信号が生じ、無意識的な『ポップアウト』を引き起こします (Kelly, 1961; Burr, 1980)。` }} />
-
-        <h3>時間知覚の2つの限界：高速サンプリング vs 遅い統合バインディング</h3>
-        <p dangerouslySetInnerHTML={{ __html: `視覚的時間処理に関する包括的レビューにおいて、Holcombe（2009）は人間の時間知覚が2つの独立した生理学的限界によって制約されていることを証明しました：` }} />
+        <h3>{"ルール"}</h3>
         <ul className="list-disc pl-5 space-y-2 my-3 text-slate-300">
-          <li>
-            <strong>低次皮質下サンプリング限界（約40〜50Hz）：</strong> 網膜のM神経節細胞および初期V1ニューロンは、40Hzを超える高速フリッカーや局所的輝度コントラストを前注意的に解像できます (De Lange, 1958; Kelly, 1961)。
-          </li>
-          <li>
-            <strong>高次皮質バインディング限界（約2〜5Hz）：</strong> 刺激の正体を意識的に同定し、複数の特徴を1つの対象として結合する処理には大脳皮質の反復的フィードバックが必要であり、毎秒2〜5サイクルという極めて遅い速度で作動します (Holcombe, 2009)。
-          </li>
+          {RULES.map((r) => <li key={r}>{r}</li>)}
         </ul>
-<p dangerouslySetInnerHTML={{ __html: `このドリルはこの2つのシステムをつなぐ神経的架け橋を鍛え上げます。観察者は初期の大細胞系フリッカー感度によって異常候補を瞬時に検出し、ターゲットのパルス周期が完了する前にトップダウンの注意確認を電光石火で完遂しなければなりません。` }} />
 
-<h3>時間積分窓とエントロピーノイズ</h3>
-        <p dangerouslySetInnerHTML={{ __html: `人間の視覚系は、約30〜100ミリ秒という短い時間窓（時間積分窓）の中で光を合算します (Burr, 1980; Woods et al., 2015)。この窓の中で生じた光は1つの連続した像として認識されます。ドリル中に散発する『エントロピー閃光』は、この積分窓にランダムなノイズを混入させます。これにより、単なる明るさの瞬きに惑わされず、真の正弦波的な周期変動を抽出する能力が強制的に強化されます (Burr, 1980; Posner, 1980)。` }} />
-
-        <h3>視覚時間分解能 性能ベンチマーク（45秒脈動グリッド）</h3>
-        <p dangerouslySetInnerHTML={{ __html: `36セルの脈動グリッドにおける45秒間の客観的パフォーマンステストに基づき、時間周波数弁別能力は5つの標準到達基準に体系化されます：` }} />
+        <h3>{"SkillDrills練習レンジ"}</h3>
         <div className="overflow-x-auto my-6">
           <table className="w-full text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-white/10 text-slate-400">
-                <th className="py-2.5 px-3 font-semibold">ランク</th>
-                <th className="py-2.5 px-3 font-semibold">分類呼称</th>
-                <th className="py-2.5 px-3 font-semibold">45秒スコア</th>
-                <th className="py-2.5 px-3 font-semibold">速度レベル</th>
-                <th className="py-2.5 px-3 font-semibold">弁別閾値（Delta-T）</th>
-                <th className="py-2.5 px-3 font-semibold">時間知覚プロファイル</th>
+                {[
+  "レンジ",
+  "45秒スコア",
+  "正解数",
+  "到達レベル"
+].map((h) => <th key={h} className="py-2.5 px-3 font-semibold">{h}</th>)}
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5 text-slate-300">
-              <tr>
-                <td className="py-2.5 px-3 font-bold text-purple-400">Tier 1</td>
-                <td className="py-2.5 px-3 font-semibold text-white">クロノ・マスター</td>
-                <td className="py-2.5 px-3 tabular-nums">200+ PTS</td>
-                <td className="py-2.5 px-3 tabular-nums">Level 8+</td>
-                <td className="py-2.5 px-3 tabular-nums">&lt; 60 ms</td>
-                <td className="py-2.5 px-3">瞬間的な位相差捕捉；完璧なノイズ抑制；CFF限界付近の超高感度。</td>
-              </tr>
-              <tr>
-                <td className="py-2.5 px-3 font-bold text-teal-400">Tier 2</td>
-                <td className="py-2.5 px-3 font-semibold text-white">フェーズ・ディテクター</td>
-                <td className="py-2.5 px-3 tabular-nums">150–199 PTS</td>
-                <td className="py-2.5 px-3 tabular-nums">Level 6–7</td>
-                <td className="py-2.5 px-3 tabular-nums">60–90 ms</td>
-                <td className="py-2.5 px-3">極めて高い時間分解能；1〜2周期以内に異常セルを高速分離。</td>
-              </tr>
-              <tr>
-                <td className="py-2.5 px-3 font-bold text-blue-400">Tier 3</td>
-                <td className="py-2.5 px-3 font-semibold text-white">プロフィシェント</td>
-                <td className="py-2.5 px-3 tabular-nums">100–149 PTS</td>
-                <td className="py-2.5 px-3 tabular-nums">Level 4–5</td>
-                <td className="py-2.5 px-3 tabular-nums">91–130 ms</td>
-                <td className="py-2.5 px-3">安定したリズム弁別；テンポ加速時にわずかな確認遅延が生じる。</td>
-              </tr>
-              <tr>
-                <td className="py-2.5 px-3 font-bold text-amber-400">Tier 4</td>
-                <td className="py-2.5 px-3 font-semibold text-white">ディベロッパー</td>
-                <td className="py-2.5 px-3 tabular-nums">50–99 PTS</td>
-                <td className="py-2.5 px-3 tabular-nums">Level 2–3</td>
-                <td className="py-2.5 px-3 tabular-nums">131–180 ms</td>
-                <td className="py-2.5 px-3">順次探索に頼る傾向；エントロピー閃光による誤認が散見。</td>
-              </tr>
-              <tr>
-                <td className="py-2.5 px-3 font-bold text-rose-400">Tier 5</td>
-                <td className="py-2.5 px-3 font-semibold text-white">フェーズ・フュージョン</td>
-                <td className="py-2.5 px-3 tabular-nums">&lt; 50 PTS</td>
-                <td className="py-2.5 px-3 tabular-nums">Level 1</td>
-                <td className="py-2.5 px-3 tabular-nums">&gt; 180 ms</td>
-                <td className="py-2.5 px-3">広い時間積分による滲み；微小な周波数差の識別に苦戦。</td>
-              </tr>
+              {BANDS.map((row) => (
+                <tr key={row[0]}>
+                  {row.map((c, i) => <td key={i} className="py-2.5 px-3 tabular-nums">{c}</td>)}
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
+        <p>{"SkillDrillsの練習用の目安です。統計値やパーセンタイル、診断基準ではありません。"}</p>
 
-        <h3>時間分解能を最大化する実践トレーニングプロトコル</h3>
+        <h3>{"コツ"}</h3>
         <ol className="list-decimal pl-5 space-y-2 my-4 text-slate-300">
-          <li>
-            <strong>大細胞系ソフトフォーカス:</strong> 1マスずつ順番に注視するのは禁物です。グリッドの中心に視線を落として視野全体をぼんやり広く捉えると、大細胞系の広い受容野が視野全体の明滅リズムを同時にモニタリングできます (Holcombe, 2009)。
-          </li>
-          <li>
-            <strong>位相波面の比較法:</strong> 『わずかに先行する光』を探してください。異常セルは周波数が高いため、周囲のセルよりも数十ミリ秒早くピーク輝度に達し、目に見える位相の波面を作り出します (Kelly, 1961)。
-          </li>
-          <li>
-            <strong>エントロピー閃光の除外:</strong> 一発だけの単発閃光（ノイズ）と、連続する周期的な脈動（ターゲット）を冷静に見分けます。150〜200msだけ観察して周期的な繰り返しを確認してからタップします (Burr, 1980)。
-          </li>
-          <li>
-            <strong>レベル昇格時のテンポ再調整:</strong> 連続正解で速度レベルが上がったら、0.2秒ほど立ち止まって新しい基準テンポを脳内に馴染ませてください。テンポのズレによる誤タップを防止できます (De Lange, 1958)。
-          </li>
+          {TIPS.map((t) => <li key={t}>{t}</li>)}
         </ol>
 
-        <h3>よくある質問 (FAQ)</h3>
+        <h3>{"よくある質問"}</h3>
         <div className="space-y-4 my-6">
-          <div>
-<h4 className="font-semibold text-white">視覚リズムテストは何を測定しますか？</h4>
-            <p className="text-slate-300 mt-1">
-              視覚的時間周波数の弁別力と時間分解能を測定します。36個の脈動セルの中から、位相や点滅周期がわずかにズレた異常セルを瞬時に見抜く能力を評価します。
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">視覚系はどのように非同期リズムや時間的位相差を感知しますか？</h4>
-            <p className="text-slate-300 mt-1">
-              網膜から伸びる大細胞系（M経路）を介して感知します。M細胞は急激な輝度変化に敏感に応答し、異常セルの位相先行が一次視覚野で直感的なポップアウトを引き起こします。
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">大細胞系（M）と小細胞系（P）の根本的な違いは何ですか？</h4>
-            <p className="text-slate-300 mt-1">
-              大細胞系は大きな受容野と高速な伝導速度を持ち、動き・点滅・時間変化の検出に特化しています。小細胞系は小さな受容野を持ち、色彩や静止した微細な形態の認識に優れています。
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">臨界フリッカー融合頻度（CFF）と反応速度の関係は？</h4>
-            <p className="text-slate-300 mt-1">
-              CFFは断続的な点滅光が連続した光に見え始める境界周波数（通常35〜60Hz）です。CFF値が高い人ほど視覚の時間積分窓が短く、素早い動的反応が可能になります。
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">45秒のテストで優秀とされるスコアはどのくらいですか？</h4>
-            <p className="text-slate-300 mt-1">
-              初級者は50〜99点、経験者は100〜149点に達します。練習を重ねると150〜200点以上や10回以上の連続正解ストリークに届くこともあります。
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">正解を重ねるとなぜグリッドの点滅が加速するのですか？</h4>
-            <p className="text-slate-300 mt-1">
-              連続正解により基準点滅速度が引き上げられ、異常セルとの時間差（Delta-T）が狭まります。これにより視覚処理が神経生理学的な限界付近まで押し上げられます。
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">途中で発生するランダムな閃光（エントロピーノイズ）の目的は？</h4>
-            <p className="text-slate-300 mt-1">
-              瞬間的な明暗差だけで正解を見つける抜け道を塞ぐためです。脳に一過性のノイズと持続的な正弦波パルスを正確に分別させる役割があります。
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">誤タップや時間切れに対するペナルティはありますか？</h4>
-            <p className="text-slate-300 mt-1">
-              点数の減点や残り時間の没収はありません。ミス時は赤い閃光が表示されて連続ストリークがリセットされるだけですので、積極的なタップが推奨されます。
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">モニターのリフレッシュレート（60Hz vs 144Hz+）は影響しますか？</h4>
-            <p className="text-slate-300 mt-1">
-              大きく影響します。60Hzは16.7msごとにしか更新されませんが、144Hz〜240Hzでは6.9〜4.2ms間隔で滑らかな正弦波が描画され、微細な位相差をより正確に視認できます。
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white">格闘ゲームやFPS、球技の選手に視覚リズム訓練が役立つ理由は？</h4>
-            <p className="text-slate-300 mt-1">
-              敵の飛び出しモーション、アニメーションの発生フレーム、高速ボールの軌道変化などをコンマ数秒早く察知して反応する時間的直観力を研ぎ澄ますことができるからです。
-            </p>
-          </div>
+          {FAQS.map(([q, a]) => (
+            <div key={q}>
+              <h4 className="font-semibold text-white">{q}</h4>
+              <p className="text-slate-300 mt-1">{a}</p>
+            </div>
+          ))}
         </div>
       </DrillGuide>
       <RelatedDrills />

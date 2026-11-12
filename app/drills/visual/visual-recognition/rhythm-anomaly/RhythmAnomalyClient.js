@@ -683,7 +683,7 @@ export default function RhythmAnomalyClient({ copy } = {}) {
                 icon={Zap}
                 accent="purple"
                 title={copy?.title || "Rhythm Anomaly"}
-                subtitle={copy?.subtitle || "Visual Temporal Perception • Flicker Discrimination"}
+                subtitle={copy?.subtitle || "Find the cell pulsing on a different beat"}
                 isTouchOnlyDevice={false}
                 onStart={enterDrill}
               />
@@ -816,10 +816,10 @@ export default function RhythmAnomalyClient({ copy } = {}) {
                       <Brain className="w-4 h-4 text-purple-400" /> What Is Rhythm Anomaly Training?
                     </h3>
                     <p className="text-sm leading-relaxed mb-3">
-                      <strong>Rhythm Anomaly Training</strong> is a specialized visual temporal perception drill designed to test out-of-sync motion discrimination. The <strong>Rhythm Anomaly drill</strong> displays a 6x6 matrix of 36 pulsing cells, challenging your visual system to detect the single cell pulsing at a higher temporal frequency than the surrounding grid over a <strong>45-second session</strong>. Human sensitivity to flicker peaks somewhere around 10–20 Hz and falls away to nothing near 50–60 Hz, above which a flickering light simply looks steady (De Lange, 1958; Kelly, 1961). Judging whether two things pulse in phase is harder than detecting the flicker itself and breaks down at considerably lower rates, which is what this 6x6 matrix measures.
+                      <strong>Rhythm Anomaly Training</strong> is a specialized visual temporal perception drill designed to test out-of-sync motion discrimination. The <strong>Rhythm Anomaly drill</strong> displays a 6x6 matrix of 36 pulsing cells, challenging your visual system to detect the single cell pulsing at a higher temporal frequency than the surrounding grid over a <strong>45-second session</strong>. Human sensitivity to flicker peaks somewhere around 10–20 Hz and falls away to nothing near 50–60 Hz, above which a flickering light simply looks steady (De Lange, 1958; Kelly, 1961). This grid pulses only about 0.6 to 2.5 times per second, far below that range, so it is not a flicker-fusion test: judging whether two things pulse in step is harder than detecting flicker and breaks down at much lower rates (Holcombe, 2009), which is the comparison this 6x6 matrix asks you to make.
                     </p>
                     <p className="text-sm leading-relaxed">
-                      By practicing <strong>peripheral temporal discrimination</strong>, you improve your ability to spot micro-movements, flickers, and timing anomalies across wide visual fields.
+                      Practice tends to improve your score on this specific task; no transfer to vision, driving or sport is claimed.
                     </p>
                   </section>
   
@@ -829,14 +829,14 @@ export default function RhythmAnomalyClient({ copy } = {}) {
                         <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
                         <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                       </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">FPS gamers spotting subtle peripheral movements, pilots & drivers improving motion anomaly detection, and visual athletes.</p>
+                      <p className="text-xs text-gray-300 leading-relaxed">Players and curious users who want a short attention game built on comparing rhythms.</p>
                     </div>
                     <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">
                         <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
                         <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                       </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Visual temporal discrimination, peripheral motion perception, micro-flicker detection, and visual attention stamina.</p>
+                      <p className="text-xs text-gray-300 leading-relaxed">Comparing pulse rhythms across a grid, ignoring brief distractor flashes, and keeping attention for 45 seconds.</p>
                     </div>
                     <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">

@@ -3,24 +3,6 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — distance-judgment
-// PRIMARY:  "depth perception test"         — Global high-intent term (~1,300 searches/mo)
-//           "distance judgment test"        — Kinesthetic and intercept-specific query
-// SECONDARY / LSI:
-//           "depth perception test online"  — Direct browser search
-//           "stereoscopic vision test"      — Binocular disparity term
-//           "howard dolman test"            — Gold standard clinical two-rod apparatus (Howard, 1919)
-//           "distance estimation test"      — Practical driver/pilot screening term
-//           "stereopsis test online"        — Clinical binocular acuity term (Julesz, 1971)
-//           "time to contact test"          — Ecological optical expansion term (Lee, 1976)
-//           "intercept timing drill"        — Sports vision intercept term (Regan & Beverley, 1978)
-// LOCALES:
-//           ja: "深視力 テスト" (Shinshiryoku Tesuto — Japanese driver license depth test)
-//           ko: "입체시 검사" (Ipchesi Geomsa — Korean stereopsis clinical test)
-//           de: "tiefensehen test" (German depth perception test)
-// ============================================================
-
 export const metadata = {
   title: "Depth Perception Test - Free Online Distance Judgment Drill",
   description: "Free depth perception test. Judge how far away an approaching target is and intercept it in time, using optical expansion rather than stereo cues.",
@@ -28,24 +10,19 @@ export const metadata = {
     "depth perception test",
     "depth perception test online",
     "distance judgment test",
-    "stereoscopic vision test",
-    "howard dolman test",
     "depth perception games",
     "how to test depth perception",
-    "3d perception test",
     "distance estimation test",
-    "stereopsis test online",
     "visual depth test",
     "depth perception training",
     "how to improve depth perception",
     "time to contact test",
     "intercept timing drill",
-    "binocular vision test",
     "visual training online"
   ],
   openGraph: {
     title: "Depth Perception Test & Distance Judgment | SkillDrills",
-    description: "Measure stereoscopic depth acuity and visual intercept timing with this free online 3D depth perception drill.",
+    description: "Free online depth perception test: judge an approaching target's distance and click when it matches the ring. A timing drill, not an eye exam.",
     type: "website",
     url: "https://skilldrills.online/drills/visual/depth-perception/distance-judgment",
     siteName: "SkillDrills",
@@ -54,7 +31,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Depth Perception Test & Distance Judgment | SkillDrills",
-    description: "Train 3D stereoscopic depth perception and intercept timing online. Free browser-based distance judgment drill.",
+    description: "Free depth perception test in your browser: time your click as an approaching sphere matches the target ring. Distance judgment practice.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -88,24 +65,24 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Interactive stereoscopic depth perception and distance judgment test measuring 3D optical looming intercept timing and relative spatial plane alignment.",
+  "description": "Browser depth perception test that times your click as an approaching sphere's on-screen size matches a reference ring (optical expansion, not stereo vision).",
   "featureList": [
     "Millisecond looming velocity and distance estimation tracking",
     "Dynamic accelerating approach speeds from 2200ms to 500ms",
-    "Percentage-based spatial depth deviation measurement (<5% Perfect, <12% Close)",
+    "Percentage size-deviation scoring (Perfect within 7% narrowing to 4%, Close within 16% narrowing to 10%)",
     "Scores are stored locally in your browser"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-11-12"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Distance Judgment Depth Perception Test — Online 3D Vision Drill | SkillDrills",
+  "name": "Distance Judgment Depth Perception Test | SkillDrills",
   "alternateName": "Distance Judgment Pro",
   "url": "https://skilldrills.online/drills/visual/depth-perception/distance-judgment",
-  "dateModified": "2026-09-05",
-  "description": "Free online stereoscopic depth perception test. Intercept approaching 3D targets at the calibrated depth plane under progressive speed scaling.",
+  "dateModified": "2026-11-12",
+  "description": "Free online depth perception test. Click when an approaching sphere matches the target ring as approach speed rises with each level.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with HTML5 Canvas support.",
@@ -113,7 +90,7 @@ const webAppSchema = {
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
   "learningResourceType": "Educational Game",
-  "teaches": "Stereoscopic Depth Perception, Time-to-Contact Estimation, Looming Optical Velocity Discrimination, Intercept Timing"
+  "teaches": "Distance Judgment, Time-to-Contact Estimation, Optical Expansion Timing, Intercept Timing"
 };
 
 const videoGameSchema = {
@@ -121,8 +98,8 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Distance Judgment Test — Depth Perception Simulator",
   "url": "https://skilldrills.online/drills/visual/depth-perception/distance-judgment",
-  "description": "Interactive 3D depth perception and distance judgment simulator. Train stereoscopic visual alignment and binocular parallax.",
-  "dateModified": "2026-09-11",
+  "description": "Interactive depth perception and distance judgment drill. Time your click as an approaching sphere grows to match a reference ring.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Visual Training", "Depth Perception", "Distance Judgment"],
   "playMode": "SinglePlayer",
@@ -135,7 +112,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Take the Distance Judgment Depth Perception Test",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-11-12",
   "description": "Step-by-step procedure to measure and train visual depth estimation and looming intercept timing.",
   "step": [
     {
@@ -160,7 +137,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/drills/visual/depth-perception/distance-judgment#step-3",
       
       "name": "Execute Intercept Tap at Coplanar Alignment",
-      "text": "Click, tap, or press the Spacebar at the exact instant the expanding sphere's perimeter matches the reference ring's diameter."
+      "text": "Click or tap at the exact instant the expanding sphere's perimeter matches the reference ring's diameter."
     },
     {
       "@type": "HowToStep",
@@ -176,30 +153,14 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "What is the distance judgment depth perception test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The distance judgment depth perception test is a psychophysical vision test designed to evaluate an individual's ability to perceive relative distance, estimate optical looming velocity, and intercept moving objects at a calibrated spatial depth plane in 3D space."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the Howard-Dolman test?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Invented by Harvey J. Howard in 1919 and refined with Arthur Dolman, the Howard-Dolman test is the classic apparatus used in aviation and clinical optometry to measure stereoscopic depth acuity. It requires a subject to adjust two vertical rods viewed through an aperture until they appear equidistant from the observer."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is stereoscopic depth perception?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Stereoscopic depth perception (stereopsis) is the neurological process by which the visual cortex combines two slightly different 2D retinal images from each eye (binocular disparity) into a single unified 3D perceptual model with true depth and volume."
+        "text": "It is a free browser drill in which a sphere approaches down a perspective tunnel and you click or tap when its on-screen size matches a reference ring. It practises judging distance and time-to-contact from how fast an object grows (optical expansion) on a flat screen."
       }
     },
     {
@@ -207,7 +168,7 @@ const faqSchema = {
       "name": "How does the brain calculate distance and time-to-contact?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "As established by David N. Lee (1976), the brain calculates time-to-contact (TTC) using the optical variable tau (τ)—the ratio of an object's current retinal image size to its rate of optical expansion. Specialized cortical looming detectors in visual area V3A/MT compute this expansion without requiring conscious distance calculation (Regan & Beverley, 1978)."
+        "text": "As established by David N. Lee (1976), the brain calculates time-to-contact (TTC) using the optical variable tau (τ)—the ratio of an object's current retinal image size to its rate of optical expansion. Psychophysical experiments suggest the visual system has channels tuned to changing size, so this does not require a conscious distance calculation (Regan & Beverley, 1978)."
       }
     },
     {
@@ -215,15 +176,7 @@ const faqSchema = {
       "name": "Can you improve depth perception with training?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. While structural binocular alignment is physiological, perceptual sensitivity to optical expansion cues, motion parallax, looming acceleration, and interceptive motor timing can be significantly sharpened through dedicated visual psychophysical training."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What causes poor depth perception?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Impaired depth perception commonly stems from strabismus (eye misalignment), amblyopia ('lazy eye'), significant unequal refractive errors (anisometropia), loss of binocular vision in one eye, or neuro-visual processing delays in the visual cortex."
+        "text": "Practice usually makes you better at the specific task you practise. This drill lets you practise timing an intercept from optical expansion; it does not treat or change two-eye vision, and gains in the drill are not a guarantee of gains elsewhere."
       }
     },
     {
@@ -231,7 +184,7 @@ const faqSchema = {
       "name": "Is an online depth perception test diagnostic for clinical eye conditions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Online computer-screen depth drills evaluate dynamic visual-motor intercept timing and monocular/perspective depth cues. They do not replace formal clinical examinations such as the Titmus Stereotest, Randot Stereotest, or Howard-Dolman test administered by a licensed optometrist or ophthalmologist."
+        "text": "No. It is not a clinical eye test. A flat monitor cannot show each eye a different image, so this drill only uses single-eye cues such as perspective and how fast the target grows. If you are concerned about your depth perception or eyesight, see an optometrist or ophthalmologist."
       }
     },
     {
@@ -247,7 +200,7 @@ const faqSchema = {
       "name": "What is a good score on the distance judgment drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Achieving an average depth deviation below 8% with more than 10 Perfect intercepts (<5% error) and reaching Level 5 or higher represents superior depth perception and interceptive timing. Typical adult baseline scores average between 10% and 16% error."
+        "text": "There is no published norm for this drill. Use your own best score as the benchmark: you level up every 750 points, and 1,500 points in a 45-second run is the drill's top S+ target. Compare runs on the same device and screen."
       }
     },
     {
@@ -262,25 +215,23 @@ const faqSchema = {
 };
 
 const distanceGuide = {
-  heading: "Distance Judgment & Stereoscopic Depth Perception Standards",
+  heading: "How the Distance Judgment Depth Perception Test Works",
   intro: [
     "The Distance Judgment depth perception test asks you to judge how far away an approaching target is and intercept it in time. It relies on how fast the target grows on screen, not on stereo vision, so it is a timing drill, not a clinical eye test. Start, watch the target approach, and act when it is in range.",
     "Depth perception is the visual and neurological faculty that enables organisms to perceive the world in three dimensions and accurately judge the distance, spatial volume, and trajectory of objects. In dynamic sports (such as baseball, tennis, and motorsports), aviation, tactical driving, and competitive esports, split-second distance estimation determines the difference between a clean interception and a catastrophic collision.",
-    "This drill operationalizes the classic Howard-Dolman stereoscopic apparatus (Howard, 1919) and ecological optical expansion theory (Lee, 1976; Regan & Beverley, 1978). By projecting a 3D target along a deep visual tunnel toward a stationary target depth plane, the drill trains your visual cortex to calculate looming velocity, visual expansion rate, and time-to-contact (TTC) under accelerating approach speeds.",
+    "The drill is built on optical expansion research (Lee, 1976; Regan & Beverley, 1978): the rate at which an approaching object's image grows tells you its time-to-contact. A sphere moves down a perspective tunnel toward a fixed reference ring, and approach speed rises from about 2.2 s to 0.5 s per pass as you level up.",
     "Timing & Measurement Methodology: All intercept deviations are captured client-side using the high-resolution performance.now() API. Deviation is computed as the relative percentage error (|Actual Diameter - Target Diameter| / Target Diameter). Hardware latency adds display quantization delay (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz, ~4.1 ms at 240 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1000 Hz), as documented by Woods et al. (2015). Compare runs on the same hardware setup for consistent longitudinal tracking.",
     "Data Transparency: Scores, level progressions, and accuracy percentages are stored in your browser's local storage."
   ],
   benchmarks: {
-    title: "Depth judgment and intercept bands (editorial guide)",
-    headers: ["Performance Band", "Depth Deviation Error", "Score & Level Range", "Visual Neuromuscular Profile"],
+    title: "SkillDrills practice bands (45-second run)",
+    headers: ["Practice Band", "Score in One Run", "Level Reached", "What It Looks Like"],
     rows: [
-      ["Tier 1: Top Band", "< 5.0% Mean Error", "Score: 1,500+ | Level 7+", "Best band in this drill: low distance error and well-timed trigger release. A practice target, not a clinical standard."],
-      ["Tier 2: Superior Depth Acuity", "5.0% – 9.9% Mean Error", "Score: 1,100 – 1,499 | Level 5–6", "High-tier spatial anticipation; smooth adaptation to high-speed target compression."],
-      ["Tier 3: Solid Baseline Depth", "10.0% – 15.9% Mean Error", "Score: 750 – 1,099 | Level 3–4", "Healthy adult baseline; reliable depth alignment under moderate velocities, minor latency breakdown under peak speed."],
-      ["Tier 4: Moderate Sensitivity", "16.0% – 25.0% Mean Error", "Score: 450 – 749 | Level 2", "Susceptible to optical illusions; tendency to trigger prematurely before full planar coincidence."],
-      ["Tier 5: Developing / Monocular Bias", "> 25.0% Mean Error", "Score: < 450 | Level 1", "Substantial temporal estimation error; significant reliance on guessing rather than visual looming rate calculation."]
+      ["Top band", "1,500+", "Level 3+", "Reaches the drill's S+ target; consistent Perfect intercepts at the faster approach speeds."],
+      ["Solid", "750 – 1,499", "Level 2", "Reliable Close and Perfect intercepts at moderate speeds; some early or late clicks as speed rises."],
+      ["Building", "Under 750", "Level 1", "Still learning the timing; clicks often land before or after the sphere matches the ring."]
     ],
-    note: "These tiers represent an editorial reference benchmark grounded in classical stereopsis and ecological motion-in-depth psychophysics (Howard, 1919; Lee, 1976; Regan & Beverley, 1978). Performance naturally varies with visual acuity, fatigue, display refresh rate, and monitor viewing distance."
+    note: "SkillDrills practice bands based on the drill's own scoring (level up every 750 points; 1,500 points is the S+ target). They are not population norms or a clinical standard. Results vary with fatigue, display refresh rate, and viewing distance."
   },
   techniques: {
     title: "How to train distance judgment",
@@ -311,12 +262,12 @@ const distanceGuide = {
     "Click Start Drill to initialize the 45-second distance judgment session.",
     "Fixate your gaze on the cyan reference ring positioned at the middle depth plane.",
     "Watch the 3D sphere as it spawns at the far end of the tunnel and accelerates toward you.",
-    "Tap the screen, click the mouse, or press Spacebar at the exact moment the expanding sphere matches the target ring diameter.",
-    "Review your precision feedback (<5% Perfect: +150 PTS, <12% Close: +100 PTS) and adapt to increasing speeds across 45 seconds."
+    "Tap the screen or click the mouse at the exact moment the expanding sphere matches the target ring diameter.",
+    "Review your feedback (Perfect: +150 PTS within 7% size error, Close: +100 PTS within 16%; both windows narrow to 4% and 10% at higher levels). You level up every 750 points and the approach speeds up."
   ],
-  audience: "Competitive gamers in tactical and arena shooters, baseball/tennis/cricket players training ball-tracking depth acuity, drivers and pilots sharpening spatial distance estimation, and vision training practitioners.",
+  audience: "Gamers and anyone who wants a short browser challenge in judging when an approaching object arrives. It is practice for this task, not a driving, flying or sports-vision assessment.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('howard1919', 'lee1976', 'regan1978', 'julesz1971', 'woods2015'),
+  sources: pickSources('lee1976', 'regan1978', 'woods2015'),
   related: [
     { href: "/drills/visual/tracking-accuracy/moving-target", label: "Moving Target Intercept" },
     { href: "/drills/visual/reaction-speed/light-reaction", label: "Light Reaction Test" },

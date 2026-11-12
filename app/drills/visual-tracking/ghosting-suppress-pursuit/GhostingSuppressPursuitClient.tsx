@@ -655,7 +655,7 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
                 {[
-                  { num: "1", text: "Ghosting Suppress", highlight: "Pure Visual", result: "Suppress trail artifacts" },
+                  { num: "1", text: "Ghosting Suppress", highlight: "Pure Visual", result: "Ignore the optional trail" },
                   { num: "2", text: "Time Adjusting", highlight: `${selectedDuration}s Duration`, result: "Customizable session timer" },
                   { num: "3", text: "Hide Line", highlight: mathInvisible ? "Enabled (Invisible)" : "Disabled (Visible)", result: "Toggle path guide lines" },
                   { num: "4", text: "Random Speed", highlight: randomSpeed ? "Enabled Acceleration" : "Disabled Velocity", result: "Erratic acceleration control" }
@@ -665,7 +665,7 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
               </div>
             </DrillAccordion>
             <DrillAccordion id="about" title="About Ghosting Suppress Pursuit" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
-              <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Eye fixation stability training conditions active suppression of visual ghosting and motion smear artifacts during continuous target tracking (Burr, 1980). By anchoring central foveal gaze firmly on the high-contrast target core, your visual system attenuates distracting trail rings and maintains steady extraocular motor control (Martinez-Conde et al., 2004; Rolfs, 2009). Pursuit stays accurate to roughly 30°/s, and it is the mismatch above that speed — image slipping across the retina — that produces the smear this drill asks you to suppress (Krauzlis, 2004)."}</p>
+              <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "The target travels in straight lines at a steady speed and bounces off the canvas edges. Turn on the trail option to draw faint fading rings behind it, then keep your eyes on the solid target instead of the copies. This is a pursuit exercise, not a monitor ghosting or response-time test; the browser does not record gaze and there is no score."}</p>
             </DrillAccordion>
           </div>
         )}

@@ -5,276 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// PORTUGUESE SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "rastreamento visual preditivo" / "treino de antecipação visual"
-// Secondary:    "perseguição suave preditiva", "predição de oclusão visual", "exercício de mira preditiva"
-// LSI / Domain:  "memória de trabalho ocular", "controle motor feedforward", "antecipação de trajetória mira",
-//               "rastreamento ocular com bloqueio", "visão preditiva para fps", "agilidade visual em oclusões", "avaliação de rastreamento preditivo"
-// Authentic Domain Terms: Rastreamento Visual Preditivo（Predictive Visual Pursuit）, Antecipação de Trajetória（Trajectory Anticipation）, Oclusão Visual（Visual Occlusion）, Modelo Interno Cerebelar（Internal Cerebellar Forward Model）, Controle Motor Feedforward（Feedforward Motor Control）, Ganho de Oclusão（Occlusion Gain）
-// ============================================================
+const url = 'https://skilldrills.online/pt/drills/visual-tracking/predictive-pursuit';
+const title = "Rastreamento visual preditivo | SkillDrills";
+const description = "Exercício grátis: a cada 2,2 s, aprox., o alvo desliza para um novo ponto e abranda até parar. Sem a linha, antecipe o ponto de chegada pelo movimento.";
 
 export const metadata = {
-  title: "Rastreamento visual preditivo | SkillDrills",
-  description: "Siga um alvo em movimento e estime sua posição após uma breve oclusão. Exercício gratuito no navegador com reação e erro de trajetória.",
-  keywords: [
-    "rastreamento visual preditivo",
-    "antecipação visual esporte",
-    "prever trajetória alvo treino",
-    "seguir alvo em movimento",
-    "oclusão visual treino",
-    "treino de mira antecipada",
-    "exercício de antecipação visual",
-    "rastreamento ocular online",
-    "trajetória de alvo treino",
-    "treino de visão dinâmica"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Rastreamento visual preditivo | SkillDrills",
-    description: "Siga um alvo em movimento e estime sua posição após uma breve oclusão. Exercício gratuito no navegador com reação e erro de trajetória.",
-    type: "website",
-    url: "https://skilldrills.online/pt/drills/visual-tracking/predictive-pursuit",
-    siteName: "SkillDrills",
-    locale: "pt_BR",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Rastreamento visual preditivo | SkillDrills",
-    description: "Exercício curto para seguir um alvo, manter a estimativa durante a oclusão e conferir o desvio na reaparição.",
-  },
+  title,
+  description,
+  keywords: ["rastreamento visual preditivo", "rastreamento preditivo", "antecipar trajetória", "exercício para os olhos online", "rastreamento ocular", "exercício ocular grátis"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/predictive-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_BR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: "https://skilldrills.online/pt/drills/visual-tracking/predictive-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/predictive-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://skilldrills.online/pt" },
-    { "@type": "ListItem", "position": 2, "name": "Treinos", "item": "https://skilldrills.online/pt/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Rastreamento Visual", "item": "https://skilldrills.online/pt/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "Rastreamento Visual Preditivo", "item": "https://skilldrills.online/pt/drills/visual-tracking/predictive-pursuit" }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Início", item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: "Treinos", item: 'https://skilldrills.online/pt/drills' },
+    { '@type': 'ListItem', position: 3, name: "Rastreamento Visual", item: 'https://skilldrills.online/pt/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "Rastreamento visual preditivo", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "Treino de Rastreamento Visual Preditivo",
-  "operatingSystem": "Navegador Web",
-  "applicationCategory": "GameApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD"
-  },
-  "description": "Treino oculomotor avançado para condicionamento de modelos preditivos cerebelares e perseguição suave durante oclusões visuais.",
-  "dateModified": "2026-09-20"
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Aplicativo de Rastreamento Preditivo",
-  "url": "https://skilldrills.online/pt/drills/visual-tracking/predictive-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Todos os navegadores modernos",
-  "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Rastreamento Preditivo",
-  "description": "Exercício de agilidade visual onde o usuário antecipa e projeta mentalmente trajetórias de alvos através de setores ocluídos.",
-  "genre": ["Treino Visual", "Mira Preditiva", "Treino de Reflexos"],
-  "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Rastreamento visual preditivo",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Como Treinar a Antecipação de Trajetória com o Rastreamento Preditivo",
-  "description": "Protocolo estruturado para praticar a estimativa de trajetórias durante interrupções visuais temporárias.",
-  "dateModified": "2026-09-20",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Codificação do Vetor Inicial",
-      "text": "Fixe o alvo nos primeiros 100 a 200 ms para capturar com exatidão a velocidade e o ângulo do vetor cinético."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Ativação do Modelo Preditivo",
-      "text": "Quando o alvo entrar em oclusão, continue movendo os olhos com velocidade constante pela trajetória estimada."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Inibição de Sacadas de Busca",
-      "text": "Evite saltos oculares desordenados procurando o alvo na escuridão; preserve a suavidade contínua do olhar."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Recepção Foveal no Ponto de Saída",
-      "text": "Posicione a fóvea com precisão milimétrica exatamente na coordenada de reaparecimento do alvo móvel."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Como praticar o rastreamento visual preditivo",
+  description: "Quatro passos para seguir um alvo até ao seu novo ponto de paragem e antecipá-lo.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Postura confortável",
+    "text": "Sente-se a uma distância confortável do ecrã e relaxe ombros e pescoço."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Começar com a linha",
+    "text": "Mantenha primeiro visível a linha que liga o alvo ao ponto de chegada e siga-o até parar."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Antecipar a paragem",
+    "text": "Ative Hide Line e estime, pela direção e velocidade de partida, onde o alvo vai parar."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Um ajuste de cada vez",
+    "text": "Quando ficar fácil, aumente a velocidade ou ative Ocultar linha e Velocidade aleatória, um de cada vez."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Como se move o alvo no rastreamento visual preditivo?",
+    "a": "À velocidade 1,0x, um ponto aleatório do ecrã passa a ser o novo destino a cada 2,2 segundos, aproximadamente. O alvo arranca depressa nessa direção, abranda aos poucos, para em cerca de 1,5 segundos e espera pelo destino seguinte. Não há oclusão nem desaparecimento. É um exercício do olhar no navegador, não um exame de visão."
+  },
+  {
+    "q": "O que se antecipa, exatamente?",
+    "a": "O ponto onde o alvo para. Por defeito, uma linha liga o alvo a esse ponto, que fica visível. Com Hide Line, a linha desaparece e tem de deduzir o ponto de paragem pela direção de partida e pela travagem."
+  },
+  {
+    "q": "O que mudam a velocidade e o Random Speed?",
+    "a": "Mais velocidade acelera tanto o movimento como a mudança de destino. Random Speed faz a velocidade oscilar sempre e torna irregular o intervalo até ao destino seguinte."
+  },
+  {
+    "q": "O exercício mede os movimentos dos olhos ou dá pontuação?",
+    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. Não existe pontuação: apenas o número de sessões concluídas fica guardado neste navegador. Manter o olhar onde o exercício pede depende de si."
+  },
+  {
+    "q": "Que definições posso mudar?",
+    "a": "Depois de uma contagem 3-2-1, a sessão dura 30, 45, 60, 90 ou 120 segundos (60 por defeito). Pode ajustar a velocidade de 0,5x a 9,0x, o tamanho do alvo de 10 a 50 px, a cor, as opções Hide Line (ocultar linha), Random Speed (velocidade aleatória), Gaze Trail (rasto), Neon Glow e Scanlines, e fundo claro ou escuro. A tecla Esc termina a sessão a qualquer momento."
+  },
+  {
+    "q": "Isto melhora a minha visão ou a minha mira?",
+    "a": "Não há garantia. Não é um exame de visão nem uma terapia, mas uma ferramenta para praticar o olhar sobre um alvo. Não promete melhor acuidade nem melhor pontaria. Se notar algum problema nos olhos, consulte um profissional."
+  },
+  {
+    "q": "Quanto tempo devo praticar?",
+    "a": "Algumas sessões de 1 a 2 minutos com pausas chegam. Se os olhos ficarem cansados ou secos, pisque e olhe ao longe; pare se sentir dor, tontura, náusea ou dor de cabeça."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "O que é o treino de rastreamento visual preditivo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É um exercício neurofisiológico que treina o cérebro a projetar trajetórias de alvos móveis durante oclusões temporárias sem depender de feedback visual contínuo (Barnes, 2008)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como o rastreamento preditivo supera a latência biológica humana?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O atraso neuromuscular reflexivo é de aproximadamente 130 a 150 ms. Modelos preditivos cerebelares disparam comandos antecipados que neutralizam completamente esse atraso (Robinson, 1965)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que áreas cerebrais mantêm o rastreamento durante o bloqueio visual?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Os campos oculares frontais (FEF) e a memória de trabalho visual retêm o vetor de velocidade, mantendo os olhos em movimento mesmo sem estímulo na retina (Bennett & Barnes, 2003)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como este exercício pode apoiar a mira antecipada em jogos de tiro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quando inimigos passam por trás de paredes ou fumaça, jogadores treinados posicionam a mira exatamente no ponto de saída antes da reaparição, em vez de reagirem com atraso."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual o benefício deste treino em esportes tradicionais de bola?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No beisebol, tênis e futebol, a velocidade da bola excede a velocidade de reação pura. Atletas usam modelos preditivos para estimar a rota antes do impacto (Kowler, 1989)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que se deve evitar sacadas de busca quando o alvo some?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sacadas de busca geram supressão sacádica e quebram a sincronia de velocidade. Manter a perseguição suave assegura reaquisição perfeita na saída (Krauzlis, 2004)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que é ganho de oclusão em testes de motricidade ocular?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É a razão entre a velocidade ocular durante a oclusão e a velocidade real do alvo. Um ganho próximo a 1,0 indica ausência de desaceleração durante a invisibilidade."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual a influência da taxa de atualização do monitor neste exercício?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Telas de alta frequência geram amostragens cinéticas mais suaves antes da oclusão, tornando a trajetória antes da oclusão mais fluida (Woods et al., 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Esta ferramenta de treino preditivo é gratuita e sem anúncios invasivos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim, o SkillDrills oferece este exercício de forma 100% gratuita, sem registros, downloads ou assinaturas, diretamente no navegador."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Adultos mais velhos conseguem melhorar a mira preditiva com treino?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A pesquisa sobre predição no acompanhamento ocular (Kowler, 1989) não permite prometer melhora com o treino. Você pode usar o exercício para comparar suas próprias sessões ao longo do tempo."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Princípios Neurofisiológicos de Rastreamento Preditivo e Extrapolação de Trajetória",
-  intro: [
-    "O sistema visual humano enfrenta um limite fisiológico insuperável: a latência sensomotora de 130 a 150 milissegundos necessária para que os fótons captados na retina sejam processados e convertidos em impulsos motores extraoculares. Se os olhos fossem conduzidos apenas por feedback reativo, o olhar sofreria deslizamento retiniano constante (retinal slip), ficando permanentemente atrasado em relação aos alvos velozes. A solução evolutiva para esse impasse é a perseguição suave preditiva.",
-    "Estudos fundamentais de Robinson (1965) e Barnes (2008) comprovaram que o cerebelo, em estreita cooperação com os campos oculares frontais (FEF), extrai os vetores de aceleração e direção logo nos primeiros 100 a 200 ms de movimento. A partir desses dados, o cérebro projeta um modelo interno feedforward que guia os músculos oculares na exata velocidade futura do alvo, anulando o retardo biológico.",
-    "No contexto competitivo de esportes e jogos eletrônicos, alvos frequentemente sofrem oclusão visual ao cruzar obstáculos, estruturas ou fumaça. Pesquisas de Bennett & Barnes (2003) revelaram que a memória de trabalho visual retém a velocidade e sustenta a perseguição ocular por até dois segundos em ausência total de sinal visual. O treino Predictive Pursuit desenvolve especificamente essa competência motora antecipatória."
+  ...{
+  "heading": "Rastreamento visual preditivo: guia",
+  "intro": [
+    "O rastreamento visual preditivo consiste em seguir com o olhar um alvo que desliza para um novo ponto e abranda até parar, antecipando onde ele vai ficar. À velocidade 1,0x é escolhido um destino aleatório a cada 2,2 segundos, aproximadamente; sem a linha de destino, tem de o deduzir pelo movimento.",
+    "O seguimento suave dos olhos arranca com um pequeno atraso depois de o movimento começar; a antecipação ajuda a reduzir esse atraso (Kowler, 1989; Barnes, 2008). O exercício repete situações em que essa antecipação é útil.",
+    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Não há pontuação nem percentagem de precisão: compare antes o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
   ],
-  benchmarks: {
-    title: "Referências para prever trajetórias e acompanhar alvos ocultos",
-    headers: ["Nível", "Precisão da previsão (%)", "Desvio na reaparição", "Correspondência do acompanhamento", "Perfil de antecipação"],
-    rows: [
-      ["Faixa 1 (Muito alta)", "Acima de 94%", "Abaixo de 15 px (Aterrissagem Perfeita)", "0.95 – 1.02", "Modelo cerebelar perfeito; antecipação milimétrica sem hesitação ou sacadas corretivas."],
-      ["Faixa 2 (Alta)", "86% – 93%", "15 px – 28 px", "0.88 – 0.94", "Excelente extrapolação vetorial com mínima necessidade de correção após a saída."],
-      ["Faixa 3 (Boa)", "76% – 85%", "29 px – 45 px", "0.78 – 0.87", "Predição sólida com leve deriva do olhar em oclusões mais longas."],
-      ["Faixa 4 (Intermediária)", "62% – 75%", "46 px – 65 px", "0.65 – 0.77", "Predomínio de controle reativo; desaceleração evidente durante o período ocluído."],
-      ["Faixa 5 (Inicial)", "Abaixo de 62%", "Acima de 65 px", "Abaixo de 0.65", "Parada imediata do olhar na oclusão; grande atraso na recaptura do alvo."]
+  "benchmarks": {
+    "title": "Etapas de prática (referência SkillDrills)",
+    "headers": [
+      "Etapa",
+      "Objetivo de prática"
     ],
-    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. ※ Testes realizados em 1080p a 50–70 cm da tela com velocidades de 1.0x a 1.5x. A pontuação avalia a precisão de chegada foveal na coordenada de saída sem sacadas corretivas posteriores."
+    "rows": [
+      [
+        "Etapa 1",
+        "1,0x, linha visível, seguir o trajeto e a paragem"
+      ],
+      [
+        "Etapa 2",
+        "Olhar para o ponto de chegada antes do alvo"
+      ],
+      [
+        "Etapa 3",
+        "Hide Line ativo: antecipar só pela partida"
+      ],
+      [
+        "Etapa 4",
+        "Juntar velocidade ou Random Speed, um de cada vez"
+      ]
+    ],
+    "note": "Etapas de prática sugeridas pela SkillDrills: não são normas de teste, estatísticas de utilizadores nem percentis."
   },
-  techniques: {
-    title: "Quatro princípios para prever trajetórias com mais precisão",
-    items: [
+  "techniques": {
+    "title": "Dicas de execução",
+    "items": [
       {
-        name: "Ler a velocidade e a direção iniciais",
-        desc: "Foque intensamente o alvo nos primeiros 100 a 200 ms após o início do percurso. O cerebelo necessita de dados limpos de aceleração para erguer a simulação preditiva correta (Barnes, 2008).",
-        tips: "Observe a rapidez com que o objeto cruza o plano de fundo em vez de reparar em detalhes gráficos."
+        "name": "Observar bem a partida",
+        "desc": "Concentre-se na direção e na velocidade no instante em que o alvo arranca. A travagem permite estimar o ponto de paragem.",
+        "tips": "Se for difícil sem linha, volte a mostrá-la e reaprenda o padrão."
       },
       {
-        name: "Continuar mentalmente o trecho oculto",
-        desc: "Quando o alvo sumir atrás da oclusão, não interrompa o movimento dos olhos. Mantenha o deslocamento fluindo na mesma velocidade pela linha imaginária de travessia.",
-        tips: "Não olhe para onde o alvo sumiu; guie os olhos para o espaço vazio à frente em direção à saída."
+        "name": "Olhar para o alvo, não para o cursor",
+        "desc": "O rato não é usado. Pouse a mão e siga apenas com os olhos.",
+        "tips": "Confirme de vez em quando que a cabeça e o pescoço não acompanham o movimento."
       },
       {
-        name: "Manter o olhar estável durante a oclusão",
-        desc: "A ausência de estímulo instiga o cérebro a fazer buscas sacádicas ansiosas. Esses saltos destroem o vetor cinético e criam borrão visual. Conserve o deslizar uniforme do olhar (Krauzlis, 2004).",
-        tips: "Imagine seus olhos deslizando sobre um trilho suave e magnético através da área escura."
+        "name": "Dificultar uma coisa de cada vez",
+        "desc": "Aumente separadamente a velocidade, Ocultar linha e Velocidade aleatória. Se o conforto se perder, volte à definição anterior.",
+        "tips": "Depois de mudar uma definição, não compare diretamente com sessões antigas."
       },
       {
-        name: "Conferir o desvio na reaparição",
-        desc: "Calcule a coordenada exata onde o alvo irá reaparecer. Conecte a chegada do olhar no mesmo instante da reaparição para travar a fóvea sem desvios.",
-        tips: "Prefira chegar à coordenada de saída uma fração de segundo antes a ficar atrás do alvo."
+        "name": "Sessões curtas e pausas",
+        "desc": "Entre sessões curtas, pisque e olhe ao longe. Mais tempo não é melhor.",
+        "tips": "Pare de imediato se sentir dor ou tontura."
       }
     ]
   },
-  steps: [
-    "Posicione-se confortavelmente a 50–70 cm da tela mantendo o pescoço e a cabeça estáveis.",
-    "Escolha a velocidade da sessão e selecione a ocultação de linha para aumentar o desafio mental.",
-    "Acompanhe o alvo em movimento na fase visível absorvendo seu vetor cinético.",
-    "Durante o trecho ocluído, mantenha o deslizar dos olhos pela trajetória prevista com velocidade constante.",
-    "Reenquadre a fóvea no instante em que o alvo reaparecer e confira sua precisão de extrapolação."
+  "steps": [
+    "Sente-se a uma distância confortável do ecrã e relaxe ombros e pescoço.",
+    "Comece com 30 a 60 segundos, velocidade 1,0x e linha visível.",
+    "Quando o alvo arrancar, estime o ponto de paragem pela direção e pela travagem e siga-o até lá.",
+    "Depois aumente a velocidade ou ative Ocultar linha e Velocidade aleatória, um de cada vez."
   ],
-  audience: "Jogadores de shooters táticos (Valorant, CS2, Apex Legends, Overwatch), e quem quer praticar o acompanhamento visual com trajetórias que somem e reaparecem.",
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "Quem quer praticar, de forma simples, antecipar onde um alvo em movimento vai parar."
+},
+  faqs,
   sources: pickSources('robinson1965', 'kowler1989', 'krauzlis2004', 'barnes2008', 'woods2015'),
   related: [
     { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição ocular suave contínua" },
@@ -283,7 +192,7 @@ const guideProps = {
     { href: "/pt/drills/visual-tracking/ghosting-suppress-pursuit", label: "Estabilidade da fixação ocular" },
     { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Treino ocular em oito" },
     { href: "/pt/drills/visual-tracking/momentum-teleport-pursuit", label: "Rastreamento de alvo com salto" }
-  ]
+  ],
 };
 
 export default function PortuguesePredictivePursuitPage() {
@@ -291,23 +200,14 @@ export default function PortuguesePredictivePursuitPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <PredictivePursuitClient
-        copy={{
-          title: "Rastreamento visual preditivo sob oclusão",
-          subtitle: "Siga um alvo em movimento e estime onde ele reaparece",
-          description: "Siga um alvo em movimento e mantenha uma estimativa da direção durante uma breve oclusão. Depois, confira o tempo de reação e o desvio na reaparição. O exercício é gratuito no navegador."
-        }}
-      />
+      <PredictivePursuitClient copy={{"title": "Rastreamento visual preditivo", "subtitle": "Antecipar onde o alvo vai parar", "description": "Rastreamento visual preditivo: a cada 2,2 segundos, aprox. (a 1,0x), o alvo desliza para um novo ponto e abranda até parar. Antecipe onde ele fica; Hide Line esconde a linha de destino. Sem cliques nem pontuação; o navegador não regista o seu olhar."}} />
 
       <DrillGuide guide={guideProps} />
 
       <RelatedDrills />
-
       <DrillFooter />
     </>
   );

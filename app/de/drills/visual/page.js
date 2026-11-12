@@ -6,45 +6,30 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const visualDrills = DRILLS.filter((d) => d.category === 'visual');
 
 export const metadata = {
-  title: 'Augentraining & Tiefensehen Test Online | SkillDrills',
-  description: 'Visuelles Training online: 9 wissenschaftliche Übungen für dynamische Sehschärfe, räumliches Tiefensehen, Augenfolgebewegung, Lichtreaktion und Suchzeit.',
-  keywords: [
-    'augentraining online kostenlos', 'tiefensehen test online', 'raumliches sehen test',
-    'dynamische sehscharfe trainieren', 'augenfolgebewegung uebungen', 'visuelle reaktionszeit messen',
-    'lichtreaktion test online', 'peripheres sehen trainieren', 'blickkontakt stabilisierung',
-    'visuelle suche aufmerksamkeit', 'augenmuskeln trainieren computer', 'sehschulung online uebungen',
-    'selektive visuelle aufmerksamkeit', 'bewegte objekte verfolgen uebung', 'sports vision training deutsch'
-  ],
+  title: 'Visuelles Training online: Reaktion & Tracking | SkillDrills',
+  description: 'Visuelles Training online: 9 kostenlose Browser-Drills für visuelle Reaktion, bewegte Ziele, visuelle Suche und Entfernungen. Kein Sehtest, ohne Anmeldung.',
+  keywords: ['visuelles Training online', 'visuelle Reaktion', 'bewegte Ziele verfolgen', 'visuelle Suche', 'mehrere Objekte verfolgen', 'Entfernung einschätzen', 'Blickfolge', 'kostenlose Browser-Drills'],
   openGraph: {
-    title: 'Augentraining & Tiefensehen Test Online | SkillDrills',
-    description: 'Visuelles Training online: 9 wissenschaftliche Übungen für dynamische Sehschärfe, räumliches Tiefensehen, Augenfolgebewegung, Lichtreaktion und Suchzeit.',
+    title: 'Visuelles Training online: Reaktion & Tracking | SkillDrills',
+    description: 'Visuelles Training online: 9 kostenlose Browser-Drills für visuelle Reaktion, bewegte Ziele, visuelle Suche und Entfernungen. Kein Sehtest, ohne Anmeldung.',
     type: 'website',
     url: 'https://skilldrills.online/de/drills/visual',
     siteName: 'SkillDrills',
     locale: 'de_DE',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Augentraining und visuelle Leistungsübungen auf SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Visuelles Training online auf SkillDrills' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Augentraining & Tiefensehen Test Online | SkillDrills',
-    description: '9 wissenschaftliche Übungen für dynamische Sehschärfe, Tiefensehen, Lichtreaktion und visuelle Suche im Browser.',
+    title: 'Visuelles Training online: Reaktion & Tracking | SkillDrills',
+    description: 'Visuelles Training online: 9 kostenlose Browser-Drills für visuelle Reaktion, bewegte Ziele, visuelle Suche und Entfernungen. Kein Sehtest, ohne Anmeldung.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/visual',
-    languages: getAlternateLanguages('/de/drills/visual'),
+    languages: getAlternateLanguages('/drills/visual'),
   },
 };
-
-Object.assign(metadata, {
-  title: 'Dynamisches Sehen & Wahrnehmung trainieren | SkillDrills',
-  description: '9 kostenlose Browser-Drills für dynamisches Sehen, visuelle Suche, Reaktionszeit, Zielverfolgung und Tiefenwahrnehmung.',
-  keywords: ['dynamisches Sehen', 'visuelle Suche Test', 'Reaktionstest online', 'peripheres Sehen Training', 'Augenbewegungen Training', 'Tiefenwahrnehmung Test', 'visuelle Reaktion', 'mehrere Objekte verfolgen', 'kostenloses Sehtraining online'],
-  openGraph: { ...metadata.openGraph, title: 'Dynamisches Sehen & Wahrnehmung trainieren | SkillDrills', description: '9 kostenlose Browser-Drills für dynamisches Sehen, visuelle Suche, Reaktionszeit und Zielverfolgung.' },
-  twitter: { ...metadata.twitter, title: 'Dynamisches Sehen & Wahrnehmung trainieren | SkillDrills', description: 'Dynamisches Sehen und visuelle Suche mit 9 kostenlosen Drills trainieren.' },
-  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -52,7 +37,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
     { "@type": "ListItem", "position": 2, "name": "Leistungsübungen", "item": "https://skilldrills.online/de/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Visuelle Wahrnehmung & Tiefensehen", "item": "https://skilldrills.online/de/drills/visual" }
+    { "@type": "ListItem", "position": 3, "name": "Visuelles Training", "item": "https://skilldrills.online/de/drills/visual" }
   ]
 };
 
@@ -60,10 +45,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "de",
-  "dateModified": "2026-09-20",
-  "name": "Visuelle Wahrnehmung & Augentraining (9 Übungen)",
+  "dateModified": "2026-11-12",
+  "name": "Visuelles Training online (9 Drills)",
   "url": "https://skilldrills.online/de/drills/visual",
-  "description": "9 interaktive Übungen für dynamische Sehschärfe, stereoskopisches Tiefensehen, Augenfolgebewegung, visuelle Suche und Reaktionszeit.",
+  "description": "9 kostenlose Browser-Drills für visuelle Reaktion, Impulskontrolle, bewegte Ziele, mehrere Objekte, visuelle Suche und das Einschätzen von Entfernungen.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": visualDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'de', drill.name);
@@ -83,70 +68,70 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "de",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Wie verbessert das Training der dynamischen Sehschärfe (DVA) die Reaktionszeit im Sport und Gaming?",
+      "name": "Hilft visuelles Training im Browser beim Sport oder in FPS-Spielen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Im Gegensatz zur statischen Sehschärfe auf der Sehtafel erfordert die dynamische Sehschärfe, dass die Fovea centralis die Netzhautabbildung eines sich schnell bewegenden Objekts kontinuierlich stabilisiert. Gezieltes Abfangen und Verfolgen ballistischer Bahnen trainiert die neuromuskuläre Steuerung der sechs äußeren Augenmuskeln, wodurch Trefferquoten bei Ballsportarten und Tracking-Präzision in FPS-Spielen steigen."
+        "text": "Die Drills üben, bewegte Ziele mit Blick und Maus zu verfolgen, auf visuelle Signale zu reagieren und Ziele zu suchen. Eine Verbesserung im Ballsport oder in FPS-Spielen ist damit nicht garantiert. Nutze sie als Zusatzübung und vergleiche deine eigenen Werte auf demselben Gerät."
       }
     },
     {
       "@type": "Question",
-      "name": "Was misst der Tiefensehen-Test basierend auf dem Dreistäbchen-Prinzip?",
+      "name": "Ist die Entfernungsübung ein Test für räumliches Sehen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Test prüft die stereoskopische Tiefenwahrnehmung anhand der binokularen Querdisparität – dem feinen Winkelunterschied zwischen den Netzhautbildern beider Augen. Die exakte Erkennung, wann sich Stäbe auf gleicher Tiefenebene befinden, ist essenziell für die fehlerfreie Einschätzung von Bremswegen im Straßenverkehr und Distanzpässen im Mannschaftssport."
+        "text": "Nein. Ein flacher Bildschirm hat keine binokulare Disparität, daher wird kein Stereo- oder 3D-Sehen geprüft. Eine Kugel nähert sich und wird auf dem Bildschirm größer; du klickst, wenn sie die markierte Tiefe erreicht. Geübt wird das Einschätzen von Entfernung und Timing."
       }
     },
     {
       "@type": "Question",
-      "name": "Warum ist Multiple Object Tracking (MOT) entscheidend für die Erweiterung des peripheren Blickfelds?",
+      "name": "Was übt das Verfolgen mehrerer Objekte (MOT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "MOT-Übungen beanspruchen gezielt die geteilte räumliche Aufmerksamkeit im parietalen Kortex sowie das visuelle Arbeitsgedächtnis. Indem man den Blick zentral fixiert und zeitgleich mehrere unberechenbar wandernde Ziele im peripheren Sichtfeld überwacht, vergrößert sich das nützliche Sehfeld (UFOV) signifikant, was die Übersicht im Spielgeschehen schärft."
+        "text": "Du behältst markierte Ziele zwischen gleich aussehenden, bewegten Objekten im Blick. Das beansprucht geteilte Aufmerksamkeit und visuelles Arbeitsgedächtnis. Dass sich dadurch das Blickfeld erweitert oder Leistungen im Straßenverkehr steigen, ist nicht belegt."
       }
     },
     {
       "@type": "Question",
-      "name": "Was unterscheidet glatte Augenfolgebewegungen (Smooth Pursuit) von sakkadischen Blicksprüngen?",
+      "name": "Was ist der Unterschied zwischen Blickfolge und Sakkaden?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Glatte Augenfolgebewegungen erlauben es dem visuellen System, gleichmäßig gleitenden Objekten unterbrechungsfrei zu folgen, ohne dass das Bild durch abrupte Blicksprünge (Sakkaden) kurzzeitig maskiert wird. Regelmäßiges Folgetraining stärkt die Blickstabilisierung und verhindert, dass bewegte Details verschwimmen."
+        "text": "Bei der glatten Blickfolge folgen die Augen einem bewegten Ziel gleichmäßig, Sakkaden sind schnelle Blicksprünge. Die Tracking-Drills fordern vor allem Blickfolge, die Seite misst deine Augenbewegungen aber nicht."
       }
     },
     {
       "@type": "Question",
-      "name": "Worin liegt der wissenschaftliche Unterschied zwischen dem Lichtreaktionstest und normalen Reflextests?",
+      "name": "Was misst die Lichtreaktions-Übung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Während klassische Reaktionstests kognitive Auswertungen wie Farberkennung oder semantische Zuordnung beinhalten, isoliert der Lichtreaktionstest die reine visuell-motorische Latenz. Er misst die minimale Zeitspanne von der Phototransduktion in den Photorezeptoren der Retina bis zur ersten elektromechanischen Muskelaktivierung im Zeigefinger."
+        "text": "Die Zeit zwischen dem Lichtsignal auf dem Bildschirm und deinem Klick. Darin stecken auch Verzögerungen von Bildschirm, Maus und Browser; es ist keine reine Nervenleitzeit."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche kognitiven Prozesse stimuliert das Training der visuellen Suche (Visual Search)?`",
+      "name": "Was übt die visuelle Suche?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Suchaufgaben in dichten Matrizen von Störreizen (Distraktoren) trainieren die parallele Merkmalsintegration im primären visuellen Kortex und die selektive Filterung im dorsolateralen präfrontalen Kortex. Dadurch lernt das Gehirn, irrelevantes visuelles Rauschen zu unterdrücken und zielrelevante Muster in Millisekunden zu lokalisieren."
+        "text": "Du suchst ein Ziel zwischen ablenkenden Elementen. Das trainiert gezielte Aufmerksamkeit und Suchgeschwindigkeit in genau dieser Aufgabe; ein Transfer in den Alltag ist individuell und nicht garantiert."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie oft und wie lange sollte man visuelles Augentraining absolvieren?",
+      "name": "Hängen meine Ergebnisse von der Hardware ab?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Empfohlen werden 15 bis 20 Minuten hochkonzentriertes Training, 3 bis 5 Mal pro Woche. Da die visuellen Hirnareale und die Augenmuskeln rasch ermüden, führen Einheiten über 25 Minuten zu visueller Überanstrengung und nachlassenden Lerneffekten. Kurze, regelmäßige Reize erzielen die besten neuroplastischen Anpassungen."
+        "text": "Ja. Ein Bildschirm aktualisiert bei 60 Hz etwa alle 16,7 ms, bei 144 Hz alle 6,9 ms und bei 240 Hz alle 4,1 ms. Vergleiche Durchgänge deshalb mit demselben Bildschirm, derselben Maus und demselben Browser."
       }
     },
     {
       "@type": "Question",
-      "name": "Können browserbasierte Sehtests professionelle augenärztliche Untersuchungen ersetzen?",
+      "name": "Wie lange sollte eine Trainingseinheit dauern?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nein, digitale Drills dienen als funktionelles Leistungs- und Koordinationstraining und ersetzen keine klinische Refraktionsbestimmung oder ophthalmologische Diagnostik. Für Athleten und Trainierende bieten sie jedoch eine hocheffektive Methode, um visuelle Wahrnehmungs- und Reaktionsfähigkeiten im Alltag kontinuierlich zu schärfen."
+        "text": "Eine belegte Idealdauer gibt es nicht. Halte die Einheiten kurz und regelmäßig, schau zwischendurch in die Ferne und hör bei Ermüdung, Kopfschmerzen oder Unwohlsein auf."
       }
     }
   ]

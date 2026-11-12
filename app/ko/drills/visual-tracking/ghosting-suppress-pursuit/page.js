@@ -12,7 +12,7 @@ const description = "움직이는 표적과 뒤에 남는 흔적에 흔들리지
 export const metadata = {
   title,
   description,
-  keywords: ["시선 고정 훈련", "잔상 속 시선 고정", "모니터 잔상 차이", "표적 번짐 연습", "눈 운동 게임", "시선 추적 훈련", "움직이는 표적 추적", "안구 운동 연습"],
+  keywords: ["시선 고정 훈련", "잔상 속 시선 고정", "표적 번짐 연습", "눈 운동 게임", "시선 추적 훈련", "움직이는 표적 추적", "안구 운동 연습"],
   alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/ghosting-suppress-pursuit') },
   openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
   twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
@@ -41,7 +41,7 @@ const softwareApplicationSchema = {
   url,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
@@ -54,7 +54,7 @@ const webAppSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url,
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
@@ -67,7 +67,7 @@ const videoGameSchema = {
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-12',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -75,7 +75,7 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: "잔상 속 시선 고정 훈련 하는 방법",
-  description: "뒤에 흔적을 남기며 움직이는 표적를 눈으로 따라가는 4단계 연습법입니다.",
+  description: "뒤에 흔적을 남기며 움직이는 표적을 눈으로 따라가는 4단계 연습법입니다.",
   step: [
   {
     "@type": "HowToStep",
@@ -107,7 +107,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "잔상 속 시선 고정 훈련은 무엇인가요?",
-    "a": "뒤에 흔적을 남기며 움직이는 표적를 눈으로 따라가는 브라우저 훈련입니다. 흔적에 시선을 빼앗기지 않고 표적에 집중하는 연습이 목적이며, 속도·시간·경로 표시를 조절할 수 있습니다. 시력 검사나 치료가 아니라 연습 도구입니다."
+    "a": "직선으로 움직이다 화면 가장자리에서 튕기는 표적을 눈으로 따라가는 브라우저 훈련입니다. 설정에서 흔적 효과를 켜면 표적 뒤에 옅은 고리가 남습니다(기본값은 꺼짐). 흔적에 시선을 빼앗기지 않고 표적에 집중하는 연습이 목적이며, 속도·시간·경로 표시를 조절할 수 있습니다. 시력 검사나 치료가 아니라 연습 도구입니다."
   },
   {
     "q": "눈의 움직임을 직접 측정하나요?",
@@ -157,7 +157,7 @@ const faqSchema = {
 const guideProps = {
   "heading": "잔상 속 시선 고정 훈련 가이드",
   "intro": [
-    "잔상 속 시선 고정 훈련은 뒤에 흔적을 남기며 움직이는 표적를 눈으로 따라가는 브라우저 훈련입니다. 흔적에 시선을 빼앗기지 않고 표적에 집중하는 연습을 반복해서 경험할 수 있고, 속도·시간·경로 표시를 조절할 수 있습니다.",
+    "잔상 속 시선 고정 훈련은 직선으로 움직이다 가장자리에서 튕기는 표적을 눈으로 따라가는 브라우저 훈련입니다. 흔적 효과를 켜면 표적 뒤에 옅은 고리가 남습니다(기본값은 꺼짐). 흔적에 시선을 빼앗기지 않고 표적에 집중하는 연습을 반복해서 경험할 수 있고, 속도·시간·경로 표시를 조절할 수 있습니다.",
     "움직이는 표적을 부드럽게 따라가는 눈의 움직임과 시선을 빠르게 옮기는 움직임은 서로 다른 움직임으로 설명됩니다 (Krauzlis, 2004). 이 훈련에서는 둘이 번갈아 쓰이는 상황을 연습할 수 있습니다.",
     "브라우저는 표적을 그린 위치와 설정을 알 수 있지만 눈이 실제로 향한 위치는 기록하지 못합니다. 따라서 결과는 임상적 추적 능력이나 시력 수치가 아니라 반복 가능한 연습 기록으로 해석하세요.",
     "편안한 거리와 자세에서, 같은 화면과 브라우저로 비교하세요. 주사율과 입력 장치도 영향을 줄 수 있습니다(Woods et al., 2015). 통증, 어지럼, 메스꺼움, 지속적인 흐림이나 이상 증상이 생기면 중단하세요."
@@ -267,7 +267,7 @@ export default function LocalizedPage() {
         copy={{
           title: "잔상 속 시선 고정 훈련",
           subtitle: "표적 번짐에 흔들리지 않기",
-          description: "잔상 속 시선 고정 훈련은 뒤에 흔적을 남기며 움직이는 표적를 눈으로 따라가는 연습입니다. 브라우저는 시선을 기록하지 않으며 포인터는 보조일 뿐이므로, 결과는 의료 검사가 아닌 연습 기록으로 보세요."
+          description: "잔상 속 시선 고정 훈련은 뒤에 흔적을 남기며 움직이는 표적을 눈으로 따라가는 연습입니다. 브라우저는 시선을 기록하지 않으며 포인터는 보조일 뿐이므로, 결과는 의료 검사가 아닌 연습 기록으로 보세요."
         }}
       />
       <DrillGuide guide={guideProps} />

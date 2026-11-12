@@ -4,36 +4,21 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — distance-judgment (Spanish native search)
-// PRIMARY:  "test de percepción de profundidad" — Consumer utility intent
-//           "estereopsis"                       — Clinical vision term
-// SECONDARY / LSI:
-//           "test de estereopsis online"         — Browser intent
-//           "cálculo de distancias"              — Practical distance phrase
-//           "visión estereoscópica"              — Native clinical phrase
-//           "visión tridimensional"              — Supporting query
-// ============================================================
-
 export const metadata = {
   title: 'Test de percepción de profundidad online | SkillDrills',
-  description: 'Test de percepción de profundidad y estereopsis online. Practica el cálculo de distancias con un objetivo móvil; no es un diagnóstico médico.',
+  description: 'Test de percepción de profundidad online: haz clic cuando la esfera que se acerca encaje en el anillo. Gratis, error en %. No es un examen de la vista.',
   keywords: [
     'test de percepción de profundidad',
-    'estereopsis',
-    'test de estereopsis online',
-    'cálculo de distancias',
-    'visión estereoscópica',
-    'visión tridimensional',
+    'percepción de profundidad test',
     'test de percepción de profundidad online',
-    'entrenar cálculo de distancias',
-    'test de visión binocular',
-    'test de Howard-Dolman',
-    'percepción espacial visual',
+    'test de profundidad visual online',
+    'percepción de distancia',
+    'cálculo de distancias',
+    'tiempo hasta el contacto',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de percepción de profundidad online | SkillDrills',
-    description: 'Test de percepción de profundidad y estereopsis online. Practica el cálculo de distancias con un objetivo móvil; no es un diagnóstico médico.',
+    description: 'Test de percepción de profundidad online: haz clic cuando la esfera que se acerca encaje en el anillo. Gratis, error en %. No es un examen de la vista.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -42,7 +27,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de percepción de profundidad online | SkillDrills',
-    description: 'Test de percepción de profundidad y estereopsis online. Practica el cálculo de distancias con un objetivo móvil; no es un diagnóstico médico.',
+    description: 'Test de percepción de profundidad online: haz clic cuando la esfera que se acerca encaje en el anillo. Gratis, error en %. No es un examen de la vista.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -65,26 +50,26 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Depth_perception"],
-  name: 'Test de Percepción de Profundidad y Cálculo de Distancias',
-  applicationCategory: 'HealthApplication',
+  name: 'Test de percepción de profundidad online',
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Herramienta interactiva para evaluar el cálculo de distancias y la intercepción de objetos por expansión óptica.',
+  description: 'Ejercicio gratuito en el navegador: haz clic cuando la esfera que se acerca encaje en el anillo. Mide la desviación en porcentaje; no es un examen de la vista.',
   url: 'https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Simulador de Cálculo de Distancias 3D',
+  name: 'Test de profundidad visual online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Navegador moderno con soporte para HTML5 Canvas y Pointer Events',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment',
-  dateModified: '2026-09-05',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
@@ -92,7 +77,7 @@ const videoGameSchema = {
   '@type': 'VideoGame',
   name: 'Entrenamiento de Intercepción Visual en Profundidad',
   url: 'https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment',
-  description: 'Juego de percepción visual y cálculo de tiempo de impacto (TTC) con esferas tridimensionales.',
+  description: 'Juego de timing: haz clic cuando la esfera que crece en pantalla alcanza la profundidad del anillo.',
   genre: ['Precision Game', 'Visual Training', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
@@ -116,14 +101,14 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 2,
       name: 'Observar el acercamiento del objetivo',
-      text: 'Sigue la esfera a medida que se aproxima y su imagen aumenta sobre la retina.',
+      text: 'Sigue la esfera a medida que se aproxima y crece en la pantalla.',
       url: 'https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment#step-2'
     },
     {
       '@type': 'HowToStep',
       position: 3,
       name: 'Pulsar en la coincidencia exacta',
-      text: 'Pulsa la barra espaciadora o haz clic en el instante justo en que la esfera coincida con el anillo.',
+      text: 'Haz clic o toca la pantalla en el instante en que la esfera coincida con el anillo.',
       url: 'https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment#step-3'
     },
     {
@@ -145,7 +130,7 @@ const faqSchema = {
       name: '¿Qué es el test de percepción de profundidad y qué habilidades evalúa?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Evalúa la capacidad de calcular distancias relativas en el espacio 3D y estimar el tiempo exacto hasta el contacto (Time-to-Contact) a través de la velocidad de expansión de la imagen en la retina.',
+        text: 'Es una práctica de percepción de distancia en pantalla: una esfera crece como si se acercara y haces clic cuando encaja en el anillo. El juego mide la desviación en porcentaje. No es un test de estereopsis ni un examen de la vista.',
       },
     },
     {
@@ -153,7 +138,7 @@ const faqSchema = {
       name: '¿En qué se diferencia de la prueba clásica de Howard-Dolman?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'La prueba de Howard-Dolman (1919) mide la estereopsis pura con varillas físicas. Como las pantallas de ordenador son planas y carecen de disparidad binocular real, este test entrena el componente dinámico de expansión óptica (Lee, 1976), primordial al conducir y hacer deporte.',
+        text: 'La prueba de Howard-Dolman (1919) mide la estereopsis pura con varillas físicas. Como las pantallas de ordenador son planas y carecen de disparidad binocular real, este ejercicio usa solo la ampliación de la imagen (Lee, 1976) y no sustituye a ese aparato.',
       },
     },
     {
@@ -166,10 +151,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '¿Por qué se exige medir la profundidad al renovar carnets profesionales?',
+      name: '¿Sirve como examen de la vista o del carnet de conducir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Los conductores profesionales (camiones, autobuses) deben calcular distancias de seguridad con total exactitud al adelantar y frenar para evitar choques por alcance.',
+        text: 'No. Es un juego de navegador sin valor médico ni legal. No sustituye una revisión oftalmológica ni el reconocimiento para el carnet.',
       },
     },
     {
@@ -177,7 +162,7 @@ const faqSchema = {
       name: '¿Puede fallar una persona con visión 20/20?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sí. Se puede tener una vista perfecta en cada ojo por separado pero fallar al coordinar la visión binocular debido a pequeñas diferencias de graduación (anisometropía), astigmatismo o cansancio ocular.',
+        text: 'Sí, porque el juego mide sobre todo el timing del clic a partir de la ampliación de la esfera, no la nitidez de la vista. Un mal resultado aquí no indica un problema de visión.',
       },
     },
     {
@@ -185,7 +170,7 @@ const faqSchema = {
       name: '¿Es posible mejorar el cálculo de distancias con entrenamiento?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sí. Aunque anomalías estructurales requieran oftalmólogo, la agilidad con la que el cerebro procesa la aproximación de objetos se incrementa notablemente con ejercicios específicos.',
+        text: 'Es probable que con la práctica mejores tu timing en esta tarea concreta. No hay garantía de efecto fuera de la pantalla. Para cualquier duda sobre tu visión, consulta a un oftalmólogo.',
       },
     },
     {
@@ -193,15 +178,15 @@ const faqSchema = {
       name: '¿Cómo se determina el porcentaje de error en la prueba?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Se calcula la diferencia porcentual entre el diámetro de la esfera en el momento del clic y el diámetro real del anillo. Menos del 5% de error se premia con máxima puntuación.',
+        text: 'El juego compara la profundidad de la esfera en el momento del clic con la del anillo, en porcentaje del túnel. Hasta un 7 % de desviación: +150 puntos; hasta un 16 %: +100 puntos. Estos márgenes bajan al 4 % y 10 % en niveles altos. Cada 750 puntos subes de nivel, y fallar no resta puntos.',
       },
     },
     {
       '@type': 'Question',
-      name: '¿Qué relevancia tiene en deportes de raqueta y pelota?',
+      name: '¿Se puede jugar en el móvil o con el teclado?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'En tenis, béisbol o pádel, los jugadores cuentan con menos de 400 milisegundos para anticipar el punto de contacto y armar el golpe con precisión milimétrica.',
+        text: 'En el móvil, sí: toca la pantalla. En el ordenador, haz clic con el ratón. El teclado no se usa para jugar.',
       },
     },
     {
@@ -209,7 +194,7 @@ const faqSchema = {
       name: '¿Influye la tasa de refresco del monitor (Hz)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Un monitor de 144 Hz o 240 Hz actualiza los fotogramas cada 4–7 ms, lo que ayuda a percibir el contorno de la esfera con mayor definición que a 60 Hz.',
+        text: 'Puede influir. A 60 Hz la pantalla se actualiza cada 16,7 ms; a 144 Hz, cada 6,9 ms (Woods et al., 2015). Compara tus resultados siempre en el mismo equipo.',
       },
     },
     {
@@ -226,51 +211,40 @@ const faqSchema = {
 const distanceGuideEs = {
   heading: 'Test de percepción de profundidad y cálculo de distancias',
   intro: [
-    'La percepción de profundidad (visión estereoscópica y cálculo espacial) es la facultad visual y neurológica que nos permite interpretar el entorno en tres dimensiones y calcular con exactitud milimétrica la distancia, volumen y trayectoria de objetos en movimiento. En el deporte de alta velocidad (béisbol, tenis, automovilismo), en la aviación, en las pruebas psicotécnicas de conducción y en los eSports tácticos, estimar distancias en fracciones de segundo marca la frontera entre una intercepción perfecta y una colisión crítica.',
-    'Este ejercicio traslada a un entorno digital los principios geométricos del clásico aparato estereoscópico de Howard-Dolman (Howard, 1919) y las investigaciones de óptica ecológica de David N. Lee (1976) y David Regan & Kenneth I. Beverley (1978). Al proyectar una esfera 3D a través de un túnel visual hacia un plano de referencia fijo, el test entrena la corteza visual para procesar la velocidad de expansión retiniana (looming) y estimar con exactitud el tiempo hasta el contacto (Time-to-Contact, τ) bajo velocidades crecientes.',
-    'Metodología y Precisión de Muestreo: Todas las desviaciones de intercepción se registran localmente con la API de alta resolución performance.now() con la resolución temporal del navegador (~1 ms). El error se calcula como la desviación porcentual relativa (|Diámetro Real - Diámetro Objetivo| / Diámetro Objetivo). Existen latencias físicas de cuantización de pantalla (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz) y de sondeo del ratón (125 Hz vs 1000 Hz), descritas por Woods et al. (2015). Desviaciones inferiores a 5 ms constituyen ruido de medición estándar; compare sus registros en el mismo equipo.',
-    'Transparencia y Privacidad de Datos: SkillDrills no almacena ni recopila datos personales, resultados psicotécnicos ni métricas agregadas en servidores externos. Todas las puntuaciones, niveles superados y porcentajes de precisión se guardan exclusivamente en el almacenamiento local (LocalStorage) de su navegador.'
+    'Este test de percepción de profundidad online muestra una esfera que crece dentro de un túnel, como si se acercara. Haces clic cuando encaja en el anillo fijo y el juego mide la desviación en porcentaje. Es una práctica de percepción de distancia en pantalla basada en la ampliación de la imagen: no es un test de estereopsis ni un examen de la vista.',
+    'Fuera de la pantalla, la percepción de profundidad combina varias pistas: disparidad binocular, perspectiva, tamaño relativo y ampliación de la imagen. El aparato de Howard-Dolman (Howard, 1919) estudia la disparidad con varillas reales. Aquí solo usas la pista de ampliación descrita por Lee (1976) y Regan y Beverley (1978), que permite estimar el tiempo hasta el contacto.',
+    'Una sesión dura 45 segundos y el anillo cambia de profundidad en cada intento. Hasta un 7 % de desviación: +150 puntos; hasta un 16 %: +100 puntos. Cada 750 puntos subes de nivel: la esfera llega más rápido y los márgenes bajan hasta el 4 % y el 10 %. Fallar no resta puntos.',
+    'La frecuencia de la pantalla y la latencia de entrada afectan al momento del clic (Woods et al., 2015): compara resultados en el mismo equipo. Tus récords se guardan solo en el almacenamiento local (LocalStorage) del navegador.'
   ],
   benchmarks: {
-    title: 'Referencia de rendimiento en percepción de profundidad',
-    headers: ['Nivel de Rendimiento', 'Error Medio de Profundidad', 'Puntos y Nivel', 'Perfil Visomotor'],
+    title: 'Niveles de práctica (SkillDrills)',
+    headers: ['Nivel', 'Desviación típica', 'Lectura'],
     rows: [
-      ['Tier 1: Maestro Estereoscópico Apex', 'Menos de 5,0% de error', '1500+ pts | Nivel 7+', 'Sensibilidad extraordinaria a la expansión óptica; sincronización impecable.'],
-      ['Tier 2: Alta Agudeza de Profundidad', '5,0% – 9,9% de error', '1100 – 1499 pts | Nivel 5–6', 'Fuerte anticipación espacial; excelente respuesta a altas velocidades.'],
-      ['Tier 3: Nivel Estándar Saludable', '10,0% – 15,9% de error', '750 – 1099 pts | Nivel 3–4', 'Promedio normal; ligeros retrasos ante velocidades máximas.'],
-      ['Tier 4: Sensibilidad Moderada', '16,0% – 25,0% de error', '450 – 749 pts | Nivel 2', 'Propensión a accionar el botón de forma prematura.'],
-      ['Tier 5: En Desarrollo', 'Más de 25,0% de error', 'Menos de 450 pts | Nivel 1', 'Error temporal considerable; conviene entrenar con regularidad.'],
+      ['Nivel 1', 'Más del 25 %', 'Clics mucho antes del encaje.'],
+      ['Nivel 2', '16 – 25 %', 'Fija el borde del anillo y espera.'],
+      ['Nivel 3', '7 – 16 %', 'Intentos en la zona de +100 puntos.'],
+      ['Nivel 4', '4 – 7 %', 'El timing aguanta con más velocidad.'],
+      ['Nivel 5', 'Menos del 4 %', 'Mantener esa precisión toda la sesión.'],
     ],
+    note: 'Niveles de práctica de SkillDrills: no son estadística de población, percentiles ni un examen de la vista.',
   },
-  protocols: {
-    title: 'Cómo entrenar el cálculo de distancias',
+  techniques: {
+    title: 'Cómo practicar la percepción de distancia',
     items: [
-      {
-        title: 'Protocolo 1: Atención a la Tasa de Expansión Óptica (Lee 1976)',
-        description: 'Focaliza la aceleración con la que crecen los bordes de la esfera en comparación con el anillo objetivo.',
-      },
-      {
-        title: 'Protocolo 2: Supresión del Gatillo Prematuro',
-        description: 'Controla el nerviosismo de pulsar antes de tiempo al aumentar la velocidad; aguarda el encaje espacial exacto.',
-      },
-      {
-        title: 'Protocolo 3: Fijación en el Plano Meta',
-        description: 'Deja los ojos fijados sobre el anillo objetivo y permite que la esfera entre en tu foco.',
-      },
-      {
-        title: 'Protocolo 4: Respiración Calma y Alivio Ocular',
-        description: 'Pestañea entre tandas para rehidratar la córnea y evitar que la fatiga deforme las distancias.',
-      },
+      { name: 'Mira los bordes', desc: 'Fíjate en la velocidad a la que se abren los bordes de la esfera respecto al anillo, no solo en el centro (Lee, 1976).' },
+      { name: 'Frena el clic prematuro', desc: 'Cuando suba la velocidad, espera al encaje completo antes de hacer clic.' },
+      { name: 'Mirada en el anillo', desc: 'Deja los ojos sobre el anillo objetivo y permite que la esfera llegue hasta él.' },
+      { name: 'Parpadea entre intentos', desc: 'Parpadea entre intentos para mantener la vista cómoda.' },
     ],
   },
   steps: [
-    'Haz clic en "Comenzar Test" para iniciar la sesión de 45 segundos de cálculo de profundidad.',
+    'Haz clic en "Comenzar Test" para iniciar la sesión de 45 segundos.',
     'Fija la mirada de forma estable en el anillo cian de referencia situado en el plano medio.',
-    'Observa la esfera 3D que aparece al fondo del túnel y acelera progresivamente hacia ti.',
-    'Haz clic con el ratón, toca la pantalla o pulsa la barra espaciadora en el instante exacto en que la esfera coincida con el diámetro del anillo objetivo.',
-    'Consulta la retroalimentación de precisión (<5% de error: Perfecto / +150 PTS) y adáptate a la velocidad creciente durante los 45 segundos.'
+    'Observa la esfera que aparece al fondo del túnel y crece hacia ti.',
+    'Haz clic con el ratón o toca la pantalla cuando la esfera coincida con el anillo objetivo.',
+    'Consulta tu desviación (hasta 7 %: +150 PTS; hasta 16 %: +100 PTS) y adáptate a la velocidad creciente.'
   ],
-  audience: 'Conductores y aspirantes a permisos de conducir y licencias profesionales, operadores de maquinaria pesada, deportistas de pelota y raqueta (tenis, pádel, béisbol), pilotos y jugadores de eSports que busquen calibrar su cálculo de distancias e intercepción.',
+  audience: 'Jugadores y curiosos que quieren practicar la percepción de distancia y el timing del clic con un objetivo que se acerca en pantalla.',
   faqs: {
     title: 'Preguntas Frecuentes sobre Percepción de Profundidad y Distancias',
     items: faqSchema.mainEntity.map((q) => ({
@@ -291,13 +265,13 @@ const distanceGuideEs = {
 
 const copyEs = {
   title: 'Test de Percepción de Profundidad',
-  subtitle: 'Cálculo de distancias y visión 3D',
-  caption: 'La percepción de profundidad calcula qué tan lejos se encuentran los elementos en el espacio. En una pantalla plana, la tasa de expansión óptica (Lee, 1976; Regan & Beverley, 1978) permite deducir el tiempo hasta el contacto (TTC) con total fidelidad sin conocer el tamaño del objeto.',
+  subtitle: 'Percepción de distancia en pantalla',
+  caption: 'La percepción de profundidad calcula qué tan lejos se encuentran los elementos en el espacio. En una pantalla plana, la tasa de expansión óptica (Lee, 1976; Regan & Beverley, 1978) permite estimar el tiempo hasta el contacto (TTC) sin conocer el tamaño del objeto.',
   statScore: 'Puntos',
   statTime: 'Tiempo',
   statLevel: 'Nivel',
   statBestScore: 'Récord',
-  startTitle: 'Cálculo de Distancias Pro',
+  startTitle: 'Percepción de Distancia',
   startSubtitle: 'Practica el timing con un objetivo en movimiento',
   startBtn: 'Comenzar Test',
   getReady: 'PREPÁRATE',
@@ -312,10 +286,10 @@ const copyEs = {
   rulesTitle: 'Normas y Puntuación',
   rule1Text: 'Intercepción Perfecta',
   rule1Highlight: '+150 PTS',
-  rule1Result: 'Error menor al 5%',
+  rule1Result: 'Desviación ≤ 7 % (4 % en niveles altos)',
   rule2Text: 'Intercepción Cercana',
   rule2Highlight: '+100 PTS',
-  rule2Result: 'Error menor al 12%',
+  rule2Result: 'Desviación ≤ 16 % (10 % en niveles altos)',
   rule3Text: 'Aceleración Escalonada',
   rule3Highlight: 'Mayor Velocidad',
   rule3Result: 'La esfera se acerca más rápido',
@@ -324,11 +298,11 @@ const copyEs = {
   rule4Result: 'Nuevo objetivo sin restar puntos',
   aboutTitle: 'Sobre el Test de Percepción de Profundidad',
   overviewTitle: '¿Qué mide este test?',
-  overviewLead: 'Evalúa la rapidez con la que el cerebro descifra trayectorias tridimensionales y calcula distancias de seguridad.',
-  overviewBody: 'Al medir el momento exacto de impacto por expansión de contornos, la prueba afina el reflejo visomotor necesario para deportistas y conductores.',
+  overviewLead: 'Mide cuánto se acerca tu clic al encaje entre la esfera que crece y el anillo.',
+  overviewBody: 'Con la repetición es probable que mejores el timing en esta tarea concreta; no hay garantía de efecto fuera de la pantalla.',
   aboutCards: [
-    { iconBg: 'bg-blue-600', title: 'Recomendado para', text: 'Conductores, pilotos, jugadores de deportes de pelota y aficionados a los videojuegos competitivos.' },
-    { iconBg: 'bg-cyan-600', title: 'Capacidades Entrenadas', text: 'Expansión óptica, cálculo de tiempo de impacto, anticipación visomotriz y agudeza espacial.' },
+    { iconBg: 'bg-blue-600', title: 'Recomendado para', text: 'Jugadores y curiosos que quieren practicar la estimación de distancia en pantalla.' },
+    { iconBg: 'bg-cyan-600', title: 'Capacidades Entrenadas', text: 'Expansión óptica, cálculo de tiempo de impacto, anticipación visual y timing del clic.' },
     { iconBg: 'bg-purple-600', title: 'Clave del Éxito', text: 'Mantén la mirada en el anillo de referencia y activa el pulsador justo al solaparse.' }
   ]
 };

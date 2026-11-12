@@ -5,26 +5,24 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "動体視力テスト | 移動標的トレーニング | SkillDrills",
-  description: "動く標的を追い、軌道を予測して迎撃する無料動体視力テスト。視線追跡と手と目の協応を練習できます。診断用ではありません。",
+  title: "動体視力を鍛えるゲーム | 移動標的トレーニング | SkillDrills",
+  description: "壁で跳ね返り、時間が来ると別の位置へ移る球体をクリックして当てる無料の動体視力を鍛えるゲーム。登録不要のブラウザ練習で、命中ごとに+2秒、空振りは-1秒。視力検査ではありません。",
   keywords: [
-    "動体視力テスト",
-    "動体視力 トレーニング",
-    "動体視力 ゲーム",
-    "動体視力 測定",
+    "動体視力を鍛えるゲーム",
+    "動体視力 鍛え方",
+    "移動標的トレーニング",
     "動体視力 ゲーム",
     "移動標的",
     "軌道予測",
     "標的迎撃",
     "視線追跡",
     "手と目の協応",
-    "反射神経 トレーニング",
     "FPS 移動標的",
     "動くボール 追う"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "動体視力テスト | 移動標的トレーニング | SkillDrills",
-    description: "動く標的を追って軌道を予測し、動体視力と視線追跡を練習する無料ブラウザドリル。医療診断ではありません。",
+    title: "動体視力を鍛えるゲーム | 移動標的トレーニング | SkillDrills",
+    description: "動く標的を目で追い、別の位置へ移る前にクリックして当てる無料の動体視力を鍛えるゲーム。医療診断ではありません。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -32,8 +30,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "動体視力テスト | 移動標的トレーニング | SkillDrills",
-    description: "移動標的の軌道予測と迎撃精度を練習する無料動体視力ドリル。画面やマウス環境で結果は変わります。",
+    title: "動体視力を鍛えるゲーム | 移動標的トレーニング | SkillDrills",
+    description: "跳ね返る標的の軌道を読んでクリックする、無料の動体視力を鍛えるゲーム。画面やマウス環境で結果は変わります。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -50,36 +48,36 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "ドリル一覧", "item": "https://skilldrills.online/ja/drills" },
     { "@type": "ListItem", "position": 3, "name": "ビジョントレーニング", "item": "https://skilldrills.online/ja/drills/visual" },
     { "@type": "ListItem", "position": 4, "name": "追従精度", "item": "https://skilldrills.online/ja/drills/visual/tracking-accuracy" },
-    { "@type": "ListItem", "position": 5, "name": "移動標的迎撃テスト", "item": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target" }
+    { "@type": "ListItem", "position": 5, "name": "移動標的トレーニング", "item": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "動体視力標的迎撃テスト",
-  "applicationCategory": "HealthApplication",
+  "name": "動体視力を鍛えるゲーム・移動標的トレーニング",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
-  "description": "不規則加速と壁面反射を伴う移動ターゲットの弾道を予測迎撃し、動体視力と滑動性眼球運動をミリ秒単位で測定する視覚訓練ツール。",
+  "description": "壁で跳ね返りながら動き、一定時間で別の位置へ移動する球体をクリックして当てるブラウザ練習ゲーム。視力や眼球運動を測定・診断するものではありません。",
   "featureList": [
-    "境界衝突反発ベクトル物理演算を備えた動的ターゲット",
-    "ミリ秒単位の命中判定とコンボ倍率スコアリング",
-    "レベル上昇に伴う標的加速と当たり判定の縮小",
-    "完全クライアントサイド実行によるローカルデータ保護"
+    "壁で反射しながら動き、制限時間が切れると新しい位置へ移る標的",
+    "命中150点 × コンボ倍率 × レベルボーナス、命中ごとに+2秒（上限60秒）",
+    "レベルが上がるほど標的が速く小さくなり、移動間隔も短縮",
+    "記録はブラウザのローカルストレージにのみ保存"
   ],
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "動体視力標的迎撃テスト — 視覚追従トレーニング | SkillDrills",
+  "name": "動体視力を鍛えるゲーム・移動標的トレーニング | SkillDrills",
   "alternateName": "Moving Target Pro",
   "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target",
-  "dateModified": "2026-09-20",
-  "description": "無料オンライン動体視力トレーニング。画面内を高速でバウンドする移動球体を滑らかな視線追従とリードショットで迎撃します。",
+  "dateModified": "2026-11-12",
+  "description": "無料の動体視力を鍛えるゲーム。画面内を跳ね返る球体を目で追い、別の位置へ移る前にクリックして当てます。",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "browserRequirements": "HTML5 Canvas対応のモダンブラウザ。",
@@ -87,15 +85,15 @@ const webAppSchema = {
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
   "learningResourceType": "Educational Game",
-  "teaches": "滑動性眼球運動, 動体視力, 軌道予測外挿, 弾道迎撃, 閉ループ運動補正"
+  "teaches": "動く標的の目視追従, 軌道予測, マウスでの迎撃精度"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "移動標的迎撃動体視力ゲーム",
+  "name": "動体視力を鍛えるゲーム・移動標的トレーニング",
   "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target",
-  "description": "移動する標的を正確に追従・予測迎撃して動体視力を鍛えるオンライントレーニング。",
+  "description": "動く標的を目で追い、別の位置へ移る前にクリックして当てる無料オンライン動体視力ゲーム。",
   "genre": ["Action", "Aim Trainer", "Visual Tracking"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
@@ -105,36 +103,36 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "動体視力移動標的迎撃テストの実施手順",
-  "dateModified": "2026-09-20",
-  "description": "移動標的迎撃プロトコルに従い、動体視力と滑動性追従能力を高める4つのステップ。",
+  "name": "移動標的トレーニングの遊び方",
+  "dateModified": "2026-11-12",
+  "description": "移動標的トレーニングを始めてスコアを伸ばすための4ステップ。",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "移動ターゲットの中心窩捕捉",
-      "text": "出現した移動球体の中心に視線の中心窩を素早く合わせ、滑らかな追従眼球運動を開始します。",
+      "name": "動く球体を目で追う",
+      "text": "カウントダウン後にオレンジ色の球体が現れ、一定方向に動いて壁で跳ね返ります。カーソルを標的の近くに置いて一緒に追いかけます。",
       "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "進行軌道と壁面反射角を予測",
-      "text": "球体の前進速度と境界壁に当たる反射角を瞬時に計算し、標的のわずかに前方を狙います。",
+      "name": "移動タイマーを確認する",
+      "text": "標的の周りのリングと数字は、標的が別の位置へ移るまでの残り時間です。最初は約1秒で、レベルやコンボが上がるほど短くなります。",
       "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "正確な弾道迎撃クリックの執行",
-      "text": "移動インターバルが終了する前に球体を正確にクリックして撃破します（+150点 × コンボ × レベル、+0.6秒延長）。",
+      "name": "標的をクリックする",
+      "text": "標的をクリック（タップ）すると命中です：+150点 × コンボ × レベルボーナス、残り時間+2秒（上限60秒）。",
       "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "加速下でのコンボ維持",
-      "text": "レベルが上がって速度が増しサイズが縮小しても、焦らず照準を重ねてからクリックしコンボを守ります。",
+      "name": "空振りを減らす",
+      "text": "標的の外をクリックすると1秒減ってコンボがリセットされます。残り時間が0になるとセッション終了です。",
       "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target#step-4"
     }
   ]
@@ -143,22 +141,30 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "移動標的迎撃テスト（動体視力テスト）とはどのような検査ですか？",
+      "name": "この動体視力を鍛えるゲームはどんな内容ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "移動標的迎撃テストは、加速・バウンドする動的ターゲットを目で滑らかに追い続ける「滑動性眼球運動（スムースパシュート）」、軌道の空間的外挿予測、そして手と目の協調迎撃精度を高精度に測定・訓練する視覚心理物理学テストです。"
+        "text": "画面内を跳ね返る球体をクリック（タップ）して当てるブラウザゲームです。標的は一定時間（最初は約1秒、レベルやコンボが上がるほど短くなる）が過ぎると別の位置へ移ります。セッションは45秒から始まり、命中ごとに+2秒（上限60秒）、残り時間が0になると終了します。視力検査や医療診断ではありません。"
       }
     },
     {
       "@type": "Question",
-      "name": "脳は動く視覚対象をどのように追跡し迎撃しているのですか？",
+      "name": "スコアはどう計算されますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "網膜神経節細胞が捉えた運動信号は中側頭野（MT/V5）へ送られ、速度と方向ベクトルが計算されます。前頭眼野（FEF）と小脳が眼球筋を調整して視線速度を目標物に同調させ、頭頂葉が手の弾道学的迎撃動作を計画します。"
+        "text": "命中1回につき150点にコンボ倍率とレベルボーナスが掛かります。スコアに応じてレベルが連続的に上がり、標的は速く小さくなり、移動間隔も短くなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "外すとどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "標的の外をクリックすると残り時間が1秒減り、コンボが0に戻ります。ドリル設定の Target Timeouts（標的タイムアウト）がオン（初期設定）の場合、当てられないまま標的が移動したときもミスとして1秒減ります。"
       }
     },
     {
@@ -166,129 +172,104 @@ const faqSchema = {
       "name": "滑動性眼球運動（パシュート）とサッケード（跳躍性眼球運動）の違いは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Rashbass（1961）が示した通り、両者は異なる制御機構を持ちます。パシュートは移動物を中心窩に留めるための連続的な追従運動（秒速30〜40度まで）であり、サッケードは離れた対象に視線を素早く飛ばす弾道学的ジャンプ（秒速最大900度）です。"
+        "text": "パシュートは動く物体を視野の中心に保つために目が滑らかに追う運動で、サッケードは視線を別の地点へ素早く飛ばす運動です。両者は別々の制御系を持つとされています（Rashbass, 1961）。このゲームでは標的が位置を変えるたびにサッケードで探し直す必要があります。"
       }
     },
     {
       "@type": "Question",
-      "name": "動く標的を撃つ際、なぜ「リードショット（偏差撃ち）」が必須なのですか？",
+      "name": "動く標的を撃つとき、なぜ少し前を狙うのですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "人間の知覚から指のクリック入力までには不可避的に150〜220msの神経伝達遅延が存在します。秒速500pxで動く物体はその間に100px以上進むため、現在位置ではなく未来の到達点を狙わなければ命中しません（Land & McLeod, 2000）。"
+        "text": "見て判断し手を動かすまでには時間がかかるため、クリックした瞬間には標的がすでに少し進んでいます。標的が速いほど、進行方向の少し先を狙うほうが当たりやすくなります。"
       }
     },
     {
       "@type": "Question",
-      "name": "人間の滑動性眼球運動（パシュート）の追従速度限界はどのくらいですか？",
+      "name": "このゲームで動体視力は鍛えられますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "人間の目は角速度秒速約30度未満の動きに対してパシュートを安定維持します（Bahill et al., 1980; Krauzlis, 2004）。それを超えるか急激に変向すると追従ゲインが1.0を割り込み、追いつきサッケード（Catch-up Saccade）で補正する必要があります。"
+        "text": "ゲーム内のスコアが伸びるのは、この課題に慣れたことを示します。実際の視力やスポーツの成績、他の課題への効果を保証するものではなく、眼科の検査の代わりにもなりません。"
       }
     },
     {
       "@type": "Question",
-      "name": "動体視力や移動ターゲットのエイム精度はトレーニングで鍛えられますか？",
+      "name": "ディスプレイのリフレッシュレートは結果に影響しますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい。継続的な追従練習により、大脳MT/V5野の運動情報処理が洗練され、小脳のフィードバック補正速度が向上することで、動体視力と迎撃精度の向上に役立つ可能性があります。"
+        "text": "標的は画面の更新ごとに描画されるため、リフレッシュレートの高いモニターでは動きがより滑らかに見えます。機器やマウス環境が違うとスコアを単純に比較できません。"
       }
     },
     {
       "@type": "Question",
-      "name": "ディスプレイのリフレッシュレート（60Hz、144Hz、240Hz）の影響は？",
+      "name": "無料ですか？記録はどこに保存されますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "60Hz画面は16.7msごとに位置が更新されるため像が断続的になり、知覚誤差が増大します。144Hz（6.9ms）や240Hz（4.1ms）では連続的な滑らかさが得られ、眼球追従の疲労軽減と命中率向上に役立つ可能性があります（Woods et al., 2015）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "標的の急加速や壁面バウンドは命中率にどう影響しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "等速直線運動は高い精度で予測できますが、壁に当たって跳ね返る瞬間は従来の予測モデルがリセットされます。新しい軌道を再計算して視線を追従させるまでに150〜200msの遅延が生じます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "開ループ（Open-loop）と閉ループ（Closed-loop）視覚運動制御の違いは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "移動標的を迎撃する最初の約100msはフィードバックなしで初期推定に基づく「開ループ」動作です。その後、目と手の位置誤差をリアルタイムで修正しながら命中させる「閉ループ」動作へと移行します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "このテストは無料ですか？スコアデータは保護されますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "はい。SkillDrillsの動体視力テストは登録不要で100%無料です。測定されたスコアや詳細データはお使いのブラウザ（LocalStorage）にのみ安全に保持されます。"
+        "text": "はい、登録不要・無料で使えます。ベストスコアやコンボの記録はお使いのブラウザのローカルストレージにのみ保存されます。"
       }
     }
   ]
 };
 
 const movingTargetGuide = {
-  heading: "動体視力テスト：移動標的を追って迎撃する方法",
+  heading: "動体視力を鍛えるゲーム：移動標的を追って当てる方法",
   intro: [
-    "動的ターゲットの迎撃は、球技スポーツ、モータースポーツ、格闘技、航空操縦、そして競技型eスポーツ全般における最重要知覚運動能力です。加速し不規則に反射する物体を正確にヒットするには、滑動性眼球運動（Smooth Pursuit）、未来の空間軌道外挿、そして精密な閉ループ運動タイミングの統合が不可欠です。",
-    "視覚運動追従の神経生理学的基盤は、中側頭視覚野（MT/V5）および内側上側頭野（MST）の方向選択性ニューロンにあります。これらの皮質領域が速度と方向ベクトルを計算し、前頭眼野（FEF）や脳橋核へフィードフォワード信号を送ることで、小脳プルキンエ細胞が眼球追従ゲインを制御します（Krauzlis, 2004）。",
-    "Rashbass（1961）の古典的研究によれば、滑動性眼球運動とサッケードは独立した制御機構を持ちます。パシュートは網膜スリップ速度誤差によって調節され、サッケードは位置のズレを矯正します。標的が秒速30〜40度を超えて加速するか境界でバウンドすると追従ゲインが低下し、急激な補正サッケードが発生します（Bahill et al., 1980）。",
-    "さらにLand & McLeod（2000）のアスリート研究によると、熟練者は物体を目で受動的に追い続けるのではなく、未来のバウンド地点や打撃ポイントへ視線をあらかじめ飛ばす「予測的サッケード（Anticipatory Saccade）」を駆使します。本ドリルはこの高度な空間予測能力をミリ秒単位のプレッシャー下で鍛え上げます。"
+    "この動体視力を鍛えるゲームは、画面内を跳ね返る球体を目で追い、クリックして当てるブラウザ練習です。標的は一定の方向と速さで動いて壁で反射し、決まった時間が過ぎると別の位置へ移るため、追い続けながら探し直す必要があります。",
+    "セッションは45秒から始まります。命中ごとに150点 × コンボ × レベルボーナスを得て残り時間が2秒増え（上限60秒）、空振りは1秒減ってコンボがリセットされます。スコアが上がるほど標的は速く小さくなり、移動間隔も約1秒から少しずつ短くなります。動体視力の鍛え方として、短い時間で集中して繰り返せるのが特徴です。",
+    "動く物体を目で追う滑動性眼球運動は比較的遅い速さでは正確に保たれ、それより速くなると目が遅れて追いつきサッケードで補うようになります（Krauzlis, 2004）。このゲームはそうした状況を単純なクリック課題として練習するもので、視力や眼球運動を測定する検査ではありません。"
   ],
   benchmarks: {
-    title: "動体視力と迎撃精度の参考基準（ブラウザ練習用）",
-    headers: ["習熟度ティア", "目標ペーシング時間", "到達スコア・コンボ基準", "視覚追従・迎撃プロファイル"],
+    title: "SkillDrills 練習バンド（このゲーム専用の目安）",
+    headers: ["バンド", "標的の移動間隔", "スコア・コンボ", "プレイの特徴"],
     rows: [
-      ["ティア1：神業キネティック迎撃", "< 0.25秒 ペーシング", "16,000点以上 | コンボ 25x+", "滑動性追従が安定；補正サッケード遅延が皆無の完璧な速度ベクトル外挿。最上位段階の目安。"],
-      ["ティア2：上位動的トラッカー (Advanced)", "0.25 – 0.45秒 ペーシング", "10,500 – 15,999点 | コンボ 16x+", "滑らかな眼球追随；加速する標的に対してオーバーシュートなく迅速な閉ループ運動補正を行う上級段階。"],
-      ["ティア3：標準的視覚追従 (Competent)", "0.46 – 0.70秒 ペーシング", "6,000 – 10,499点 | コンボ 9x+", "信頼できる標準基準；直線軌道の迎撃は安定しているが、急激な壁面バウンド時に一時的な捕捉遅延が発生。"],
-      ["ティア4：発展段階トラッカー (Developing)", "0.71 – 1.00秒 ペーシング", "2,500 – 5,999点 | コンボ 4x+", "予測的パシュートより反射的サッケードへの依存度が高い；高速加速時に視線追従の明らかな躊躇が見られる。"],
-      ["ティア5：追従不安定・基礎段階 (Baseline)", "> 1.00秒 ペーシング", "< 2,500点 | コンボ < 4x", "著しい照準オーバーシュート；移動物体を中心窩に捉え続ける基礎的な眼球安定化トレーニングが必要。"]
+      ["バンド1", "< 0.25秒", "16,000点以上 | コンボ 25x+", "非常に速く小さい標的を連続で命中。"],
+      ["バンド2", "0.25 – 0.45秒", "10,500 – 15,999点 | コンボ 16x+", "速い標的でも空振りが少ない。"],
+      ["バンド3", "0.46 – 0.70秒", "6,000 – 10,499点 | コンボ 9x+", "直線部分は安定、壁の反射直後にときどき外す。"],
+      ["バンド4", "0.71 – 1.00秒", "2,500 – 5,999点 | コンボ 4x+", "標的を後ろから追いかけてクリックしがち。"],
+      ["バンド5", "> 1.00秒", "< 2,500点 | コンボ < 4x", "ゲームに慣れていく段階。"]
     ],
-    note: "本基準値は滑動性眼球運動の精神物理学および動的迎撃時間測定の文献（Rashbass, 1961; Krauzlis, 2004; Land & McLeod, 2000; Bahill et al., 1980; Woods et al., 2015）に基づく指標です。画面環境により変動します。"
+    note: "SkillDrills が独自に設定した練習の目安で、研究に基づく基準値や視力の評価基準ではありません。モニターやマウス環境で変わります。"
   },
   techniques: {
-    title: "移動標的を追い、軌道予測を安定させる方法",
+    title: "移動標的に当てやすくするコツ",
     items: [
       {
-        name: "予測的ベクトルリーディング (Rashbass速度適合)",
-        desc: "知覚からクリックまで150〜220msの遅延があるため、現在の位置をクリックすると後方を叩いて空振りを起こします（Rashbass, 1961）。",
-        tips: "球体の速度ベクトルを外挿し、進行方向の5〜15ピクセル先を狙ってリードショットを放ちます。"
+        name: "進行方向の少し先を狙う",
+        desc: "クリックする間にも標的は動くため、今の位置をそのままクリックすると後ろに外れやすくなります。",
+        tips: "標的が進む方向へ少し先を狙ってクリックします。"
       },
       {
-        name: "境界バウンドの予測的先回り (Land & McLeodサッケード)",
-        desc: "優れた打者は物体が壁に当たるまで追わず、反射して跳ね返る予測地点へ視線を先回りさせます（Land & McLeod, 2000）。",
-        tips: "球体が壁に近づいたら壁を追うのをやめ、跳ね返りの反射角となる空間へクロスヘアを先回りさせて待ち構えます。"
+        name: "壁での跳ね返りを先読みする",
+        desc: "標的は壁に当たると入射角どおりに反射します。",
+        tips: "壁までカーソルで追わず、跳ね返ってくる方向に先にカーソルを置いて待ちます。"
       },
       {
-        name: "網膜像のブレ防止固定 (Krauzlisパシュートループ)",
-        desc: "鮮明な視界を保つには、目の動きを標的速度に同期させて網膜上の像を中心窩に固定する必要があります（Krauzlis, 2004）。",
-        tips: "マウスを止めて標的が通過するのを待つのではなく、目とカーソルを標的と滑らかに滑動させて追尾します。"
+        name: "カーソルも一緒に動かす",
+        desc: "カーソルを止めて標的が通るのを待つと、速いレベルではタイミングが合いません。",
+        tips: "目とカーソルを標的と一緒に滑らかに動かして追います。"
       },
       {
-        name: "機械的リズムの打破と引き金規律",
-        desc: "不規則な軌道変化はサッケードを誘発するため、闇雲な連打はコンボを途絶えさせます（Bahill et al., 1980）。",
-        tips: "一定のリズムでクリックせず、照準と球体の重なりが網膜で確認された刹那にのみ引き金を引きます。"
+        name: "連打しない",
+        desc: "空振りのたびに1秒減り、コンボもリセットされます。",
+        tips: "カーソルが標的に重なったと確認できたときだけクリックします。"
       }
     ]
   },
   steps: [
-    "「ドリル開始」をクリックして45秒のキネティック迎撃セッションを起動します。",
-    "出現した移動球体を素早く目で捉え、滑らかな視線追従を確立します。",
-    "進行ベクトルと壁面反射角を予測し、球体の少し前方をリードします。",
-    "制限時間内に球体を正確にクリックして撃破します（+150点 × 倍率、+0.6秒延長）。",
-    "終了後に総迎撃数、最高コンボ、動体視力評価ランクを確認します。"
+    "「ドリル開始」をクリックして45秒のセッションを始めます。",
+    "現れた球体を目とカーソルで追います。",
+    "標的の周りのリングが消える前に、進行方向を見込んでクリックします。",
+    "命中で+150点 × 倍率と+2秒、空振りで-1秒とコンボリセット。",
+    "時間が0になったら命中数、正確さ、最高レベル、最大コンボを確認します。"
   ],
-  audience: "VALORANTやApexなどのFPSプレイヤー、野球やテニス等の球技競技者、格闘家、レーサー、動体視力を高めたいすべての方。",
+  audience: "FPSで動く相手に当てる練習をしたい人や、気軽に動体視力ゲームを楽しみたいすべての方。",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('rashbass1961', 'krauzlis2004', 'land2000', 'bahill1980', 'woods2015'),
   related: [
     { href: "/ja/drills/visual/tracking-accuracy/multiple-targets", label: "複数目標追跡 (MOT) 検査" },
-    { href: "/ja/drills/visual/tracking-accuracy/pursuit-tracker", label: "滑動性眼球運動トラッカー" },
+    { href: "/ja/drills/visual/tracking-accuracy/pursuit-tracker", label: "スムースパシュート・視線追従トレーニング" },
     { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "閃光反応速度テスト" },
     { href: "/ja/drills/visual/reaction-speed/go/no-go", label: "Go / No-Go 衝動制御テスト" },
-    { href: "/ja/drills/visual/depth-perception/distance-judgment", label: "三桿法 深視力・距離判定検査" },
+    { href: "/ja/drills/visual/depth-perception/distance-judgment", label: "深視力トレーニング" },
     { href: "/ja/drills/visual/visual-recognition/entropic-grid", label: "エントロピーグリッド探索テスト" }
   ]
 };
@@ -302,7 +283,7 @@ export default function KineticInterceptPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <KineticInterceptClient copy={{ title: "動体視力・移動標的" }} />
+      <KineticInterceptClient copy={{ title: "動体視力を鍛えるゲーム：移動標的トレーニング" }} />
       <DrillGuide guide={movingTargetGuide} />
       <RelatedDrills />
     </>
