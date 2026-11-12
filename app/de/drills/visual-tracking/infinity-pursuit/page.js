@@ -4,299 +4,243 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
+import { breadcrumbItems } from '@/lib/i18n/breadcrumbLabels';
 
-// ============================================================
-// GERMAN SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "liegende acht augentraining" (Lying eight eye training) / "achter schleife augenuebung"
-// Secondary:    "binokulare koordination training", "mittellinienkreuzung blickuebung", "augentraining liegende 8"
-// LSI / Domain:  "glatte augenfolgebewegung achterbahn", "augenmuskeltraining unendlichkeitsschleife",
-//               "blickmotorik koordinationsuebung", "lemniskate augentraining online", "sakkaden unterdrueckung blick"
-// Authentic Domain Terms: Liegende Acht Augentraining（Figure-8 Eye Training）, Bernoullische Lemniskate（Lemniscate of Bernoulli）, Überschreiten der Mittellinie（Midline Crossing）, Binokulare Koordination（Binocular Coordination）, Glatte Augenfolgebewegung（Smooth Pursuit）, Sakkadische Korrektursprünge（Catch-up Saccades）
-// ============================================================
+const url = 'https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit';
+const name = "Liegende Acht Augenübung";
+const title = `${name} | SkillDrills`;
+const description = "Liegende Acht Augenübung im Browser: Folge einem Ziel auf einer Achterschleife (Lemniskate) über die Bildmitte. Kostenlos, Tempo und Dauer einstellbar.";
 
 export const metadata = {
-  title: "Liegende Acht Augentraining | Blickverfolgung | SkillDrills",
-  description: "Kostenlose Augenübung mit der liegenden Acht: übe Blickverfolgung, flüssige Augenfolge und das Überqueren der visuellen Mittellinie.",
-  keywords: [
-    "liegende acht augentraining",
-    "blickverfolgung liegende acht",
-    "augenübung liegende acht",
-    "blickverfolgung",
-    "augenkoordination",
-    "mittellinie überkreuzen",
-    "beidäugige koordination",
-    "glatte augenfolgebewegung",
-    "blickübung acht online",
-    "visuelles training sport",
-    "augenübung kostenlos",
-    "sichtziel verfolgen übung"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Liegende Acht Augentraining | Blickverfolgung | SkillDrills",
-    description: "Kostenlose Augenübung mit der liegenden Acht: übe Blickverfolgung und das Überqueren der visuellen Mittellinie.",
-    type: "website",
-    url: "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",
-    siteName: "SkillDrills",
-    locale: "de_DE",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Liegende Acht: Blickverfolgung | SkillDrills",
-    description: "Folge einer liegenden Acht und beobachte flüssige Augenbewegungen beim Wechsel über die Mittellinie.",
-  },
+  title,
+  description,
+  keywords: ["Liegende Acht Augenübung","liegende Acht Augen","Achterschleife Blickfolge","Lemniskate Augenübung","bewegtes Ziel verfolgen","Augenübung Browser"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/infinity-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'de_DE', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/infinity-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://skilldrills.online/de" },
-    { "@type": "ListItem", "position": 2, "name": "Übungen", "item": "https://skilldrills.online/de/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Visuelle Blickverfolgung", "item": "https://skilldrills.online/de/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "Liegende Acht Augentraining – Achter-Schleifen-Blickübung", "item": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit" }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems('de', url, 'visual-tracking', name, true),
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "Liegende Acht Augentraining – Achter-Schleifen-Blickübung",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Browser",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Kostenloses interaktives Augentraining entlang der Bernoullischen Lemniskate zur Optimierung der binokularen Koordination und stufenlosen Blickführung.",
-  "url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",
-  "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/de" },
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
+  inLanguage: 'de',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Liegende Acht Augentraining – Achter-Schleifen-Blickübung & Binokulare Koordination | SkillDrills",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Browser",
-  "browserRequirements": "HTML5 Canvas-fähiger Webbrowser (Chrome, Edge, Firefox, Safari)",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Liegende Acht Augenübung Web-App",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Aktueller Browser mit HTML5-Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'de',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Liegende Acht Augentraining – Achter-Schleifen-Blickübung",
-  "url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",
-  "description": "Visuelle Übung im Browser: Verfolge ein Ziel auf einer liegenden Acht mit möglichst ruhiger Augenbewegung.",
-  "genre": ["Augentraining", "Sportliches Sehen", "Blickverfolgung"],
-  "gamePlatform": ["Browser"],
-  "dateModified": "2026-09-20",
-  "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name,
+  url,
+  description,
+  genre: ['Visual training', 'Eye tracking exercise'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'de',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Anleitung zum Liegende-Acht-Augentraining (Lemniskaten-Blickführung)",
-  "description": "Vierstufiges klinisches Vorgehen zur Steigerung der binokularen Koordination und fovealen Fixationsstabilität auf der Unendlichkeitsschleife.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Sitzabstand einnehmen und Kopfhaltung fixieren",
-      "text": "Positioniere dich etwa 50 bis 70 cm frontal vor dem Bildschirm. Halte den Kopf absolut ruhig und richte den Blick zentriert aus, um jegliche zervikale Mitbewegung zu unterbinden.",
-      "url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Sitzungsdauer und Geschwindigkeitsstufe wählen",
-      "text": "Wähle eine Übungszeit (30 bis 120 Sekunden) und einen Geschwindigkeitsmultiplikator (0,5x bis 9,0x). Beginne bei 1,0x, um die stufenlose Blickfolge sicherzustellen.",
-      "url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Kontinuierliche foveale Zentrierung auf der Achter-Schleife",
-      "text": "Fixiere das kreisende Ziel exakt im Zentrum der Fovea. Verfolge die Krümmung beider Schlaufen und gleite ruckfrei durch den zentralen Kreuzungspunkt (visuelle Mittellinie).",
-      "url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Sakkadenrate analysieren und Belastung adaptieren",
-      "text": "Prüfe nach Abschluss der Runde deinen Tracking-Gain und die Gleichmäßigkeit der Augenführung. Erhöhe das Tempo schrittweise um 0,2x, sobald der Kreuzungspunkt ohne Blicksprünge gemeistert wird.",
-      "url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "So funktioniert: Liegende Acht Augenübung",
+  description: "Liegende Acht Augenübung in vier ruhigen Schritten.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Bequem hinsetzen",
+    "text": "Setz dich in angenehmem Abstand zum Bildschirm und entspanne Schultern und Hand."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Auf die Mitte achten",
+    "text": "Bleib auch beim Überqueren der Bildmitte ohne Unterbrechung am Ziel."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Mit den Augen folgen",
+    "text": "Folge dem Ziel mit den Augen, nicht dem Cursor, und bring die Session von 30 bis 120 Sekunden zu Ende."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Einstellungen einzeln ändern",
+    "text": "Erhöhe erst dann das Tempo oder schalte Linie ausblenden bzw. Zufallstempo einzeln dazu."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Was ist die Liegende Acht Augenübung?",
+    "a": "Eine Browser-Übung, bei der du ein Ziel auf einer liegenden Acht mit den Augen verfolgst. Dauer (30 bis 120 Sekunden), Tempo, Zielgröße und Linie sind einstellbar. Sie ist kein Sehtest und keine Therapie."
+  },
+  {
+    "q": "Warum gerade eine liegende Acht?",
+    "a": "Die Acht ist eine durchgehende Bahn mit waagerechten und senkrechten Anteilen, die sich in der Mitte kreuzt. Es gibt keine Sprünge, deshalb lassen sich Sessions mit gleichen Einstellungen gut vergleichen."
+  },
+  {
+    "q": "Misst die Übung meine Augenbewegungen?",
+    "a": "Nein. Der Browser kann deinen Blick nicht sehen und kennt nur die gezeichnete Zielposition und die Einstellungen. Der Cursor ist nur eine Hilfe und beweist nicht, wohin du schaust. Einen Score gibt es nicht."
+  },
+  {
+    "q": "Was ändert das Zufallstempo?",
+    "a": "Die Geschwindigkeit des Ziels schwankt unregelmäßig, dadurch wird es schwerer vorherzusehen. Schalte es erst ein, wenn das Grundtempo entspannt klappt, und nicht gleichzeitig mit dem Ausblenden der Linie."
+  },
+  {
+    "q": "Soll die Linie sichtbar bleiben?",
+    "a": "Mit sichtbarer Linie lässt sich die Bewegung leichter abschätzen, das hilft am Anfang. Später kannst du sie ausblenden. Es gibt keine richtige Wahl, vergleiche nur gleiche Einstellungen miteinander."
+  },
+  {
+    "q": "Mit welchen Einstellungen fange ich an?",
+    "a": "Mit 30 bis 60 Sekunden, langsamem Tempo (0,5 bis 1,0×) und sichtbarer Linie. Das Tempo reicht von 0,5 bis 9,0×, die Zielgröße von 10 bis 50 px; ändere immer nur eine Sache."
+  },
+  {
+    "q": "Verbessert die Übung meine Sehkraft oder meine Aim?",
+    "a": "Das kann niemand garantieren. Die Übung ist ein Training im Verfolgen eines bewegten Ziels und verspricht weder bessere Sehkraft noch die Behandlung von Augenproblemen noch besseres Zielen in Shootern. Bei Beschwerden zum Augenarzt."
+  },
+  {
+    "q": "Beeinflussen Bildschirm und Umgebung das Ergebnis?",
+    "a": "Ja. Bildwiederholrate, Helligkeit, Kontrast, Bildschirmgröße, Abstand und Browser verändern, wie das Ziel aussieht. Auch Eingabe- und Anzeigeverzögerung spielen mit (Woods et al., 2015), also immer unter gleichen Bedingungen vergleichen."
+  },
+  {
+    "q": "Wie lange sollte ich üben?",
+    "a": "In kurzen Blöcken von 5 bis 10 Minuten mit Pausen. Wenn die Augen müde oder trocken werden, aufhören, blinzeln und in die Ferne schauen. Bei Schmerzen, Schwindel, Übelkeit oder Kopfschmerzen abbrechen."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was bewirkt das Augentraining mit der liegenden Acht (Achter-Schleife)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die liegende Acht (Bernoullische Lemniskate ∞) ist eine kontinuierliche Bewegungsschleife, bei der die Augen einem Ziel horizontal, vertikal und diagonal folgen. Die Übung macht sichtbar, wie gleichmäßig der Blick die Kurve begleitet; sie verspricht keine Behandlung oder Verbesserung der Sehkraft."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum ist die Bernoullische Lemniskate effektiver als einfache Kreise oder Linien?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Geradlinige Bewegungen besitzen an den Umkehrpunkten abrupte Geschwindigkeitsstillstände, während Kreisbahnen stereotyp in eine einzige Richtung rotieren. Die Lemniskate hingegen wechselt kontinuierlich zwischen Rechts- und Linksdrehung, variiert stetig ihren Krümmungsradius und zwingt die Augen, die vertikale Körpermittellinie diagonal zu kreuzen. Dies fordert die zerebelläre Vorsteuerung und die interhemisphärische Koordination ungleich intensiver."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was versteht man unter dem „Überschreiten der Mittellinie“ und warum ist es oft fehleranfällig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wenn der Blick die vertikale Gesichtsfeldmitte überquert, wechselt das Ziel von einer Seite zur anderen. Beobachte, ob du es am Kreuzungspunkt kurz verlierst oder eine Korrekturbewegung machst. Das beschreibt die Übung und ist keine Diagnose."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche äußeren Augenmuskeln werden bei der liegenden Acht gezielt trainiert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es werden alle sechs Muskeln beansprucht: die horizontalen Musculi rectus medialis und lateralis, die vertikalen Musculi rectus superior und inferior sowie die schrägen Muskeln Musculus obliquus superior und inferior. Insbesondere in den diagonalen Kurvenpassagen und im Zentrum müssen Schräg- und Geradmuskeln in mikroskopischer Feinabstimmung zusammenwirken."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welchen konkreten Vorteil bringt die liegende Acht für das Aiming in FPS-Games?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Übung bietet eine kontrollierte Kurve, an der du gleichmäßige Blickführung beobachten kannst. Eine Übertragung auf ein Spiel hängt von der jeweiligen Praxis und Person ab; eine bessere Zielgenauigkeit wird nicht zugesichert."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Verbessert diese Übung auch die Leseflüssigkeit und kognitive Verarbeitung?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Flüssiges Lesen und visuelles Scannen basieren auf präziser Koordination beider Augen beim Zeilensprung und bei Richtungswechseln. Wenn das Überschreiten der Mittellinie reibungslos funktioniert, sinkt die Neigung zu Zeilenverrutschern, Wortverdopplungen und vorzeitiger visueller Ermüdung bei Bildschirmarbeit spürbar."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie kann ich verhindern, dass sich mein Kopf während des Trainings mitdreht?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Kopfbewegung ist eine intuitive Ausgleichsstrategie des Nervensystems, um die Beanspruchung der Augenmuskeln zu dämpfen. Um reine Augenbewegungen zu isolieren, stütze dein Kinn locker auf deinen Daumen oder Zeigefinger auf. Achte darauf, dass Hals und Nacken vollständig entspannt bleiben und ausschließlich die Augäpfel in ihren Augenhöhlen rotieren."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie oft und wie lange sollte das Liegende-Acht-Training durchgeführt werden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Zwei bis drei Durchgänge von jeweils 60 bis 90 Sekunden pro Tag sind optimal. Da die Augenmuskeln hochsensibel reagieren, führt ein zu langes Üben schnell zu Ermüdungszuständen. Halte nach jeder Sitzung eine kurze Pause ein und blicke für mindestens 20 Sekunden in die Ferne (20-20-20-Regel), um die Akkommodation zu entspannen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welcher Bildschirmabstand und welche Displaygröße sind empfehlenswert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ein normaler Arbeitsabstand von 50 bis 70 cm ist ideal. Die Schlaufengröße auf dem Bildschirm sollte ein horizontales Blickfeld von etwa 30 bis 40 Grad abdecken. So werden die äußeren Augenmuskeln bis in ihre physiologische Enddehnung gefordert, ohne dass Überlastungen auftreten."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was sollte ich tun, wenn ich während der Übung Augenbrennen oder Schwindel bemerke?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Leichtes Ziehen in den Muskeln ist vergleichbar mit einem leichten Muskelkater bei ungewohnten Bewegungsmustern. Bei Schwindelgefühlen brich die Übung bitte sofort ab, schließe die Augen und atme ruhig durch. Beginne bei der nächsten Einheit mit einer reduzierten Geschwindigkeit von 0,6x oder 0,8x und steigere die Intensität erst nach einigen Tagen behutsam."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'de',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Liegende Acht Augentraining: Okulomotorische Normwerte und Neurophysiologie",
-  intro: [
-    "Die liegende Acht, auch Bernoullische Lemniskate genannt, verbindet zwei Kurven und einen zentralen Kreuzungspunkt. Wenn du ein bewegtes Ziel mit den Augen verfolgst, wechseln horizontale, vertikale und diagonale Blickbewegungen einander ab. Diese Seite ist eine Übung und kein Test oder Heilmittel für eine Augenerkrankung.",
-    "Am zentralen Knoten wechselt das Ziel von der linken zur rechten Seite des Gesichtsfelds. Beobachte, ob der Blick die Bahn verliert, kurz springt oder dort anhält. So lässt sich die eigene Sitzung unter gleichen Bedingungen beschreiben; aus dem Ergebnis folgt keine Diagnose.",
-    "Die Leichtigkeit der Blickverfolgung hängt von Abstand, Zielgröße, Bildwiederholrate und Ermüdung ab. Wähle ein angenehmes Tempo, blinzele normal und vergleiche nicht unterschiedliche Geräte direkt. Bei Schmerzen, Doppelbildern, Übelkeit oder Schwindel sofort pausieren und bei anhaltenden Beschwerden fachlichen Rat suchen.",
-    "Eine Übertragung auf Lesen, Sport oder Spiele kann nicht pauschal zugesichert werden. Die Seite dient dazu, das Folgen eines bewegten Ziels kurz zu üben und eigene Werte unter gleichen Bedingungen zu vergleichen."
+  ...{
+  "heading": "Anleitung: Liegende Acht Augenübung",
+  "intro": [
+    "Bei der Liegende Acht Augenübung läuft das Ziel immer wieder eine liegende Acht (Lemniskate) ab. Die Bahn verbindet waagerechte und senkrechte Bewegung und kreuzt in jeder Runde die Bildmitte, sodass du übst, den Blick auch beim Überqueren der Mitte ohne Unterbrechung zu führen (Barnes, 2008). Linie ausblenden oder Zufallstempo machen die Schleife schwerer vorherzusehen.",
+    "Der Browser kennt nur die gezeichnete Zielposition und deine Einstellungen, nicht die Position deiner Augen. Es gibt keinen Score, gezählt werden nur abgeschlossene Sessions. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
+    "Nutze einen bequemen Abstand und vergleiche nur Sessions auf demselben Bildschirm und Browser. Bildwiederholrate und Eingabegerät beeinflussen die Darstellung (Woods et al., 2015). Brich bei Schmerzen, Schwindel, Übelkeit oder anhaltend verschwommenem Sehen ab."
   ],
-  benchmarks: {
-    title: "Leistungswerte bei der Blickverfolgung einer liegenden Acht",
-    headers: ["Stufe", "Zielverfolgung", "Verluste an der Mitte", "Bahngenauigkeit", "Praktische Einordnung"],
-    rows: [
-      ["Stufe 5 (höchste Übungsstufe)", "0,96 – 1,02", "< 2% (nahezu perfekt stufenlos)", "98%+", "Vollkommene Muskelkoordination. Keine Sakkaden an der Mittellinie; internes Kleinhirnmodell perfekt synchronisiert"],
-      ["Fortgeschritten (Wettkampf-Level)", "0,90 – 0,95", "2% – 5%", "92% – 97%", "Hervorragende Blickfolgestabilität. Minimale Phasenverzögerung nur an extremen Scheitelpunkten; sichere Fovea-Arretierung"],
-      ["Kompetent (Gesunde Erwachsene)", "0,80 – 0,89", "6% – 12%", "82% – 91%", "Solide Alltagsfähigkeit. Gelegentliche Korrektursakkaden beim Kreuzen des Zentrums oder am äußeren Scheitel"],
-      ["Aufbauend (Erhöhte Latenz / Ermüdung)", "0,68 – 0,79", "13% – 22%", "70% – 81%", "Deutliche Nachlaufverzögerung. Wiederholte Blicksprünge, Anzeichen muskulärer Dysbalance oder zervikaler Mitbewegung"],
-      ["Basis / Förderbedarf (Sehstress)", "< 0,68", "> 22%", "< 70%", "Stufenlose Verfolgung bricht ab. Häufige unwillkürliche Kopfdrehungen; Grundlagentraining für Binokularsehen und Augenmuskeln ratsam"]
+  "benchmarks": {
+    "title": "Übungsstufen (Orientierung)",
+    "headers": [
+      "Stufe",
+      "Übungsziel"
     ],
-    note: "Diese Bereiche dienen nur zum Vergleich eigener Sitzungen bei gleichem Bildschirmabstand und sind keine klinischen Normwerte. Die Zielverfolgung misst weder Sehschärfe noch eine Erkrankung."
+    "rows": [
+      [
+        "1",
+        "Langsames Tempo, Linie sichtbar"
+      ],
+      [
+        "2",
+        "Grundtempo entspannt halten"
+      ],
+      [
+        "3",
+        "Auch in der Mitte am Ziel bleiben"
+      ],
+      [
+        "4",
+        "Linie ausblenden"
+      ],
+      [
+        "5",
+        "Zufallstempo dazunehmen"
+      ]
+    ],
+    "note": "Diese Tabelle ist eine SkillDrills-Übungsorientierung. Sie ist keine Norm für Sehfunktionen, keine Nutzerstatistik und kein Perzentil."
   },
-  techniques: {
-    title: "Vier essenzielle Techniken für stufenlose Blickführung auf der Achter-Schleife",
-    items: [
+  "techniques": {
+    "title": "Vier Übungstipps",
+    "items": [
       {
-        name: "Kopf ruhig halten und nur mit den Augen folgen",
-        desc: "Lege zwei Finger sanft an deine Kinnspitze, um jede minimale Kopfdrehung sensorisch sofort zu registrieren. Halte Hals- und Nackenmuskulatur vollkommen entspannt und bewege ausschließlich deine Augen in den Augenhöhlen. Nur so wird der vestibulookuläre Reflex (VOR) entkoppelt und die kortikale Blickmotorik direkt trainiert.",
-        tips: "Atme ruhig und gleichmäßig in den Bauch, um ein unbewusstes Anspannen der Nackenmuskeln zu verhindern."
+        "name": "Durch die Mitte weiterfolgen",
+        "desc": "Am Kreuzungspunkt bleibt der Blick gern hängen oder springt. Halte die Zielmitte im Blick und gleite ruhig hindurch.",
+        "tips": "Wird es unangenehm, Tempo senken und Linie wieder einblenden."
       },
       {
-        name: "Vor dem Zentrum das Tempo anpassen",
-        desc: "Vor dem zentralen Kreuzungspunkt kann die Kurve schneller wirken. Halte den Blick weich auf dem Ziel und lasse ihn ohne abrupten Sprung durch die Mitte gleiten.",
-        tips: "Fixiere den Kreuzungspunkt nicht starr, sondern lasse den Blick elastisch hindurchgleiten."
+        "name": "Ziel statt Cursor ansehen",
+        "desc": "Der Zeiger ist nur eine Hilfe. Folge dem Ziel mit den Augen und lass Schultern und Hand locker.",
+        "tips": "Prüfe ab und zu, ob Kopf oder Nacken mitdrehen."
       },
       {
-        name: "Die äußeren Schleifen vollständig verfolgen",
-        desc: "An den Wendepunkten der beiden Schlaufen neigt das Sehsystem dazu, die Kurve unbewusst nach innen 'abzuschneiden'. Zwinge deine Augen, das Ziel bis zum maximalen Außenpunkt zu fixieren. Dadurch werden die Musculi obliqui bis an ihre anatomische Dehngrenze gefordert.",
-        tips: "Widerstehe dem Drang, vorzeitig zur Gegenkurve zu springen; nimm die gesamte Kurvenbreite mit."
+        "name": "Immer nur eine Schwierigkeit ändern",
+        "desc": "Tempo, ausgeblendete Linie und Zufallstempo getrennt steigern. Wird es unbequem, zurück zur vorherigen Einstellung.",
+        "tips": "Nach jeder Änderung neu vergleichen."
       },
       {
-        name: "Tempo stufenweise erhöhen und Pausen machen",
-        desc: "Absolviere zunächst fehlerfreie 60-Sekunden-Runden auf 1,0x ohne jegliche Sakkadensprünge. Steigere das Tempo erst dann in 0,2x-Schritten. Blicke nach jeder Einheit für 20 Sekunden auf ein mindestens 6 Meter entferntes Objekt, um die Ziliarmuskeln zu detonisieren.",
-        tips: "Sobald deine Augen tränen oder brennen, lege eine Pause ein und blinzle mehrmals bewusst."
+        "name": "Kurz üben, Pausen machen",
+        "desc": "Übe in Blöcken von 5 bis 10 Minuten, blinzle und schau zwischendurch in die Ferne. Länger ist nicht automatisch besser.",
+        "tips": "Bei Schmerzen, Schwindel oder Übelkeit sofort aufhören."
       }
     ]
   },
-  steps: [
-    "Positioniere dich etwa 50 bis 70 cm frontal vor dem Bildschirm und halte den Kopf absolut ruhig.",
-    "Wähle eine Übungszeit (30 bis 120 Sekunden) und einen Geschwindigkeitsmultiplikator (0,5x bis 9,0x).",
-    "Fixiere das kreisende Ziel exakt im Zentrum der Fovea und folge der doppelten Schleifenbahn.",
-    "Gleite stufenlos durch den zentralen Kreuzungspunkt (Mittellinie), ohne den Blick ruckartig springen zu lassen.",
-    "Prüfe nach Abschluss deinen Tracking-Gain und steigere die Geschwindigkeit schrittweise um 0,2x."
+  "steps": [
+    "Setz dich in angenehmem Abstand hin und entspanne Schultern und Hand.",
+    "Starte mit 30 bis 60 Sekunden, langsamem Tempo und sichtbarer Linie.",
+    "Folge dem Ziel mit den Augen, nicht dem Cursor.",
+    "Steigere danach Tempo oder einzelne Optionen Schritt für Schritt."
   ],
-  audience: "E-Sportler (FPS-Shooter), Ballsportler (Tennis, Tischtennis, Badminton), Personen mit hoher Bildschirmarbeitszeit sowie alle, die visuelle Ermüdung und Sehachsenblockaden abbauen möchten.",
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "Alle, die Liegende Acht Augenübung unverbindlich im Browser ausprobieren und das Verfolgen bewegter Ziele spielerisch üben möchten."
+},
+  faqs,
   sources: pickSources('robinson1965', 'leigh2015', 'barnes2008', 'krauzlis2004', 'woods2015'),
   related: [
-    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Langsame Augenfolge" },
-    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Blickverfolgung mit Richtungswechsel" },
-    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Blickverfolgung bewegter Ziele" },
-    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Fixationsstabilität beim Sehen" },
-    { href: "/de/drills/visual-tracking/sine-wave-pursuit", label: "Sinusförmige Blickverfolgung" },
-    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Vorausschauende Blickverfolgung" }
-  ]
+  {
+    "href": "/de/drills/visual-tracking/constant-slow-pursuit",
+    "label": "Augenfolgebewegung üben"
+  },
+  {
+    "href": "/de/drills/visual-tracking/directional-chaos-pursuit",
+    "label": "Richtungswechsel verfolgen: Zufallsbahn-Übung"
+  },
+  {
+    "href": "/de/drills/visual-tracking/dynamic-evasion-pursuit",
+    "label": "Korrektursakkaden üben: Ziel schlägt Haken"
+  },
+  {
+    "href": "/de/drills/visual-tracking/ghosting-suppress-pursuit",
+    "label": "Blickstabilität trainieren: Ziel mit Geisterspur"
+  }
+],
 };
 
-export default function GermanInfinityPursuitPage() {
+export default function LocalizedPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -305,17 +249,14 @@ export default function GermanInfinityPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-
       <InfinityPursuitClient
         copy={{
-          title: "Liegende Acht: Augentraining",
-          subtitle: "Blickverfolgung und Mittellinienübergang",
-          description: "Verfolge ein Ziel auf einer liegenden Acht, beobachte den Übergang über die Mitte und übe flüssige Augenbewegungen in einem angenehmen Tempo."
+          title: name,
+          subtitle: "Blickfolge auf der Achterschleife",
+          description: "Liegende Acht Augenübung: Verfolge ein Ziel auf einer Achterschleife über die Bildmitte. Der Browser zeichnet deinen Blick nicht auf und es gibt keinen Score; das Ergebnis ist ein Übungsprotokoll, kein medizinischer Test.",
         }}
       />
-
       <DrillGuide guide={guideProps} />
-
       <RelatedDrills />
       <DrillFooter />
     </>

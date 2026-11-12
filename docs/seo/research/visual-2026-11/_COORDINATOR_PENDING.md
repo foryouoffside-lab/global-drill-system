@@ -20,3 +20,6 @@ Apply to lib/i18n/drillNames.js after all 7 groups report (name = page primary, 
 - multiple-targets (G3): titles kept. ko/ja still contain 주변시 훈련 / 周辺視野トレーニング (map says drop; KOREA keep rule held) -> revisit after Korea settles.
 - G7 card names: de split-screen 'Geteiltes Tracking: zwei Ziele gleichzeitig' | de strobe 'Stroboskop-Tracking: blinkendes Ziel verfolgen' | fr strobe 'Poursuite stroboscopique : cible clignotante'. Others unchanged.
 - TODO (after G5/G6 finish): every visual-tracking client puts the subtitle INSIDE <h1> -> move to sibling <p> (markup only) in all 15 *Client.tsx, re-audit.
+- G5 card names = new page titles: constant-slow ko 부드러운 시각 추적 훈련 / ja ゆっくり動く点を目で追う練習 / es Ejercicio de Seguimiento Lento Constante; directional-chaos ja/de/pt; dynamic-evasion ja/de/fr/pt/es; ghosting-suppress ALL 6 (drop 'monitor test' card names); infinity de Liegende Acht Augenübung. ko constant/directional/dynamic cards: drop 동체시력 prefix.
+- CHECK: ko constant-slow title changed (was hub term 동체시력 훈련) despite KOREA keep rule -> verify GSC pos before push; revert if pos <= 10.
+- TODO: EN ghosting page still titled 'Eye Fixation Stability Training – Ghosting' -> honest EN title.

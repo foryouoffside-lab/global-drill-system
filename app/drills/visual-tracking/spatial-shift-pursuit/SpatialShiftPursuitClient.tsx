@@ -680,7 +680,7 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <p className="text-sm text-slate-300 leading-relaxed">
-                {copy?.description || "Adaptive eye tracking drills train the ocular motor system to rapidly re-acquire targets following sudden spatial velocity shifts (Robinson, 1965; Rashbass, 1961). Interleaving ballistic catch-up saccades with immediate velocity gain re-synchronization conditions cerebellar plasticity and minimizes tracking recovery latencies (Krauzlis, 2004; Kahlon & Lisberger, 1996). Pursuit only tracks accurately to roughly 30°/s (Krauzlis, 2004), so each sudden displacement is re-acquired by a saccade before smooth tracking restarts."}
+                {copy?.description || "Adaptive eye tracking drills train the ocular motor system to rapidly re-acquire targets following sudden spatial velocity shifts (Robinson, 1965; Rashbass, 1961). Interleaving ballistic catch-up saccades with immediate velocity gain re-synchronization conditions cerebellar plasticity and minimizes tracking recovery latencies (Krauzlis, 2004; Kahlon & Lisberger, 1996). Pursuit only tracks accurately to roughly 30°/s (Krauzlis, 2004), so each sudden change of direction is caught up with a saccade before smooth tracking restarts."}
               </p>
             </DrillAccordion>
           </div>

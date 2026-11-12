@@ -4,313 +4,256 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
+import { breadcrumbItems } from '@/lib/i18n/breadcrumbLabels';
+
+const url = 'https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit';
+const name = "Exercício Ocular em Oito";
+const title = `${name} | SkillDrills`;
+const description = "Exercício ocular em oito no navegador: acompanhe com os olhos um alvo que percorre um oito deitado (lemniscata) cruzando o centro. Grátis e ajustável.";
 
 export const metadata = {
-  title: "Exercício Ocular em Oito | SkillDrills",
-  description: "Exercício ocular em oito deitado para praticar rastreamento ocular, perseguição suave e coordenação binocular. Grátis no navegador.",
-  keywords: [
-    "exercício ocular oito deitado",
-    "exercício de figura 8 para os olhos",
-    "rastreamento ocular",
-    "coordenação binocular",
-    "cruzamento da linha média",
-    "movimento ocular",
-    "perseguição suave",
-    "figura do oito com os olhos",
-    "exercício ocular online grátis",
-    "treino de visão esportiva",
-    "acompanhamento visual em oito",
-    "coordenação olho-mão"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit",
-    languages: getAlternateLanguages("/drills/visual-tracking/infinity-pursuit"),
-  },
+  title,
+  description,
+  keywords: ["exercício ocular em oito","exercício dos olhos em oito","oito deitado olhos","lemniscata","acompanhar alvo com os olhos","exercício para os olhos no navegador"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/infinity-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_BR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Exercício Ocular em Oito | SkillDrills",
-    description: "Exercício ocular em oito deitado para praticar rastreamento ocular, perseguição suave e coordenação binocular. Grátis no navegador.",
-    url: "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit",
-    siteName: "SkillDrills",
-    locale: "pt_BR",
-    type: "website",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Exercício Ocular em Oito | SkillDrills",
-    description: "Exercício ocular em oito deitado para praticar rastreamento ocular, perseguição suave e coordenação binocular. Grátis no navegador.",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills",
-      "item": "https://skilldrills.online/pt"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Rastreamento Visual",
-      "item": "https://skilldrills.online/pt/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Perseguição em Oito Infinito",
-      "item": "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems('pt', url, 'visual-tracking', name, true),
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "Exercício Ocular em Oito – Rastreamento Ocular",
-  "dateModified": "2026-09-20",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "Navegador",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Rastreamento Ocular em Oito Deitado e Cruzamento da Linha Média",
-  "dateModified": "2026-09-20",
-  "url": "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Navegador",
-  "browserRequirements": "Requer JavaScript e Canvas HTML5.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Exercício Ocular em Oito (app web)",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navegador atual com suporte a HTML5 Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Treino de Perseguição Ocular em Oito",
-  "dateModified": "2026-09-20",
-  "description": "Treino visual no navegador para praticar a coordenação binocular em uma trajetória contínua de oito deitado.",
-  "genre": ["Treino ocular", "Visão esportiva", "Rastreamento visual"],
-  "playMode": "Um jogador",
-  "applicationCategory": "Game"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name,
+  url,
+  description,
+  genre: ['Visual training', 'Eye tracking exercise'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Como Realizar o Exercício do Oito Deitado para os Olhos",
-  "dateModified": "2026-09-20",
-  "description": "Protocolo para treinar a perseguição ocular contínua e a coordenação binocular ao longo da lemniscata de Bernoulli.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Alinhe a Postura e Fixe a Cabeça",
-      "text": "Sente-se ereto a 50-70 cm da tela. Mantenha o queixo imóvel para evitar que a rotação da cabeça substitua o trabalho dos músculos oculares.",
-      "url": "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Inicie na Velocidade Padrão",
-      "text": "Selecione 1.0x para habituar os olhos à transição contínua entre os laços esquerdo e direito da curva.",
-      "url": "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Flua sem Saltos pelo Centro",
-      "text": "Ao cruzar a interseção central (linha média), evite piscadelas ou sacadas compensatórias. Mantenha um deslizamento suave e ininterrupto.",
-      "url": "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Complete Sessões Curtas e Focadas",
-      "text": "Execute de 5 a 8 blocos de 60 segundos com descansos oculares para consolidar o ganho de perseguição no cerebelo.",
-      "url": "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Como fazer: Exercício Ocular em Oito",
+  description: "Exercício Ocular em Oito em quatro passos simples.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Fique em posição confortável",
+    "text": "Sente a uma distância confortável da tela, com ombros e mão relaxados."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Atenção ao centro",
+    "text": "Continue no alvo sem interrupção quando ele cruzar o centro."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Acompanhe com os olhos",
+    "text": "Siga o alvo com os olhos, não o cursor, e termine a sessão de 30 a 120 segundos."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Mude um ajuste por vez",
+    "text": "Depois aumente a velocidade ou ative Ocultar linha ou a velocidade aleatória, um de cada vez."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "O que é o exercício ocular em oito?",
+    "a": "Um exercício no navegador em que você acompanha com os olhos um alvo que percorre um oito deitado. Duração (30 a 120 segundos), velocidade, tamanho e linha são ajustáveis. Não é teste de visão nem tratamento."
+  },
+  {
+    "q": "Por que um oito deitado?",
+    "a": "O oito é uma trajetória contínua com partes horizontais e verticais que se cruzam no centro. Como não há saltos de posição, fica fácil comparar sessões com os mesmos ajustes."
+  },
+  {
+    "q": "O exercício mede o movimento dos meus olhos?",
+    "a": "Não. O navegador não vê o seu olhar; conhece apenas a posição desenhada do alvo e os ajustes. O cursor é só um apoio e não prova para onde você olha. Não há pontuação."
+  },
+  {
+    "q": "O que muda com a velocidade aleatória?",
+    "a": "A velocidade do alvo varia de forma irregular e fica mais difícil de prever. Ative depois que a velocidade base estiver confortável, e não junto com a linha oculta."
+  },
+  {
+    "q": "Devo deixar a linha visível?",
+    "a": "Com a linha visível fica mais fácil prever o movimento, o que ajuda no começo. Depois você pode ocultá-la para aumentar a dificuldade. Não existe escolha certa: compare apenas ajustes iguais."
+  },
+  {
+    "q": "Com quais ajustes devo começar?",
+    "a": "Sessões de 30 a 60 segundos, velocidade lenta (0,5 a 1,0×) e linha visível. A velocidade vai de 0,5 a 9,0× e o tamanho do alvo de 10 a 50 px; mude um ajuste por vez."
+  },
+  {
+    "q": "O exercício melhora a visão ou a mira?",
+    "a": "Não há garantia. É um exercício de acompanhar um alvo com os olhos; não promete melhorar a visão, tratar problemas oculares nem melhorar a mira em FPS. Em caso de desconforto ocular, procure um profissional."
+  },
+  {
+    "q": "A tela e o ambiente influenciam?",
+    "a": "Sim. Taxa de atualização, brilho, contraste, tamanho e distância da tela e o navegador mudam a aparência do alvo. Atrasos de entrada e de exibição também contam (Woods et al., 2015), então compare nas mesmas condições."
+  },
+  {
+    "q": "Por quanto tempo devo praticar?",
+    "a": "Em blocos curtos de 5 a 10 minutos, com pausas. Se os olhos cansarem ou ressecarem, pare, pisque e olhe para longe. Pare se houver dor, tontura, náusea ou dor de cabeça."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "O que é o exercício ocular em oito deitado?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É uma prática visual em que os dois olhos acompanham um alvo que percorre uma figura de oito deitado. Ela permite observar a continuidade do olhar e a passagem pelo centro, mas não substitui uma avaliação clínica."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que observar o cruzamento da linha média?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A passagem pelo centro muda continuamente o lado do campo visual que o alvo ocupa. Observar esse trecho ajuda a identificar hesitações ou saltos do olhar dentro da sessão, sem transformar o resultado em diagnóstico."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como os olhos participam da trajetória em oito deitado?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Os músculos extraoculares de cada olho coordenam movimentos horizontais, verticais e diagonais para manter o alvo na visão. O exercício pratica controle do olhar; não é correto prometer fortalecimento ou tratamento de uma doença."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que significa acompanhar o alvo com estabilidade?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Significa manter o olhar próximo do alvo durante a curva, com poucas perdas ou correções. A métrica da página é uma referência de treino nas mesmas condições e não uma medida clínica universal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Este treino pode ajudar quem acompanha alvos em jogos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ele oferece uma tarefa controlada para praticar a continuidade do olhar em curvas. Qualquer transferência para jogos depende da prática específica, do descanso e da habilidade individual; a página não promete melhorar a mira."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que manter a cabeça estável durante o exercício?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A cabeça estável deixa mais claro o que os olhos conseguem acompanhar sozinhos e torna as sessões comparáveis. Não force uma imobilidade rígida: relaxe o pescoço e pare se surgir dor ou tontura."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a recomendação ideal de tempo de prática diária?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Comece com uma ou duas séries curtas de cerca de 60 segundos, com pausa entre elas. Aumente apenas se o olhar continuar confortável; não há uma dose diária universal para este exercício."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O exercício auxilia na redução do cansaço visual de telas de computador?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pode funcionar como uma pausa ativa para variar um olhar preso à tela, mas não há garantia de aliviar a fadiga. Para desconforto persistente, visão dupla ou dor, interrompa a prática e procure um profissional."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Existe benefício para esportes tradicionais de campo e quadra?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A tarefa reproduz apenas uma parte do acompanhamento de uma trajetória. Esportes reais também exigem antecipação, profundidade, reação e decisões; use o exercício como complemento, não como substituto do treino esportivo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O exercício ocular em oito é gratuito e como usar com segurança?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A ferramenta é gratuita e funciona no navegador, sem exigir cadastro. Use em ritmo confortável, pisque normalmente e pare diante de dor, visão dupla, náusea ou tontura; procure orientação profissional se os sintomas persistirem."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Fundamentos Neurofisiológicos da Lemniscata e Coordenação Binocular",
-  intro: [
-    "A figura do oito deitado, também chamada de lemniscata, combina curvas diagonais e passagens pelo centro em uma única tarefa de perseguição visual. O alvo se move continuamente para que você pratique manter a fixação sem transformar cada curva em uma sequência de saltos do olhar. A página treina uma habilidade visual; não substitui avaliação com oftalmologista ou ortoptista.",
-    "O ponto central é útil para observar a transição entre os campos visuais direito e esquerdo. Ao atravessar a linha média, mantenha o alvo nítido e note se o olhar perde a trajetória, faz um pequeno salto ou precisa de uma pausa. Esse registro descreve o desempenho no exercício, não diagnostica uma alteração neurológica ou binocular.",
-    "A resposta percebida depende da distância da tela, do tamanho do alvo, da taxa de atualização e da fadiga. Use uma tela confortável, pisque normalmente e priorize regularidade em vez de velocidade. As métricas ficam no dispositivo; se surgir dor, visão dupla, náusea ou tontura, pare e procure orientação profissional."
+  ...{
+  "heading": "Guia: Exercício Ocular em Oito",
+  "intro": [
+    "No exercício ocular em oito, o alvo percorre sem parar um oito deitado (lemniscata). A trajetória combina movimentos horizontais e verticais e cruza o centro a cada volta, então você pratica manter o olhar no alvo sem interrupção ao passar pelo meio (Barnes, 2008). Ocultar a linha ou ativar a velocidade aleatória deixa a volta mais difícil de prever.",
+    "O navegador conhece apenas a posição desenhada do alvo e seus ajustes, não para onde seus olhos estão olhando. Não há pontuação: só as sessões concluídas são contadas. O resultado é um registro de prática repetível, não uma medida clínica nem um teste de visão.",
+    "Use uma distância confortável e compare sempre a mesma tela e o mesmo navegador. Taxa de atualização e dispositivo de entrada mudam a exibição (Woods et al., 2015). Pare se sentir dor, tontura, náusea ou visão embaçada persistente."
   ],
-  techniques: {
-    title: "Quatro técnicas para a perseguição visual em oito",
-    items: [
-      { name: "Âncora no centro", desc: "Comece percebendo o cruzamento central antes de tentar acompanhar a volta inteira.", tips: "Mantenha o tronco quieto, pisque sem prender a respiração e reduza a velocidade se perder o ponto." },
-      { name: "Curva contínua", desc: "Deixe os olhos acompanharem a curva sem antecipar o próximo laço com um salto.", tips: "Olhe para o alvo atual; não tente enxergar o caminho inteiro de uma vez." },
-      { name: "Simetria dos dois lados", desc: "Compare a passagem pelo laço esquerdo e pelo laço direito na mesma sessão.", tips: "Se um lado parecer mais difícil, repita em ritmo lento e registre a diferença sem forçar." },
-      { name: "Progressão controlada", desc: "Aumente a velocidade apenas quando a trajetória continuar estável e confortável.", tips: "Faça uma sessão curta, descanse olhando para longe e retorne ao último nível confortável." }
+  "benchmarks": {
+    "title": "Etapas de prática (referência)",
+    "headers": [
+      "Etapa",
+      "Objetivo"
+    ],
+    "rows": [
+      [
+        "1",
+        "Velocidade lenta, linha visível"
+      ],
+      [
+        "2",
+        "Manter a velocidade base com conforto"
+      ],
+      [
+        "3",
+        "Ficar no alvo ao cruzar o centro"
+      ],
+      [
+        "4",
+        "Ocultar a linha"
+      ],
+      [
+        "5",
+        "Adicionar velocidade aleatória"
+      ]
+    ],
+    "note": "Esta tabela é uma orientação de prática do SkillDrills. Não é norma de função visual, estatística de usuários nem percentil."
+  },
+  "techniques": {
+    "title": "4 dicas de prática",
+    "items": [
+      {
+        "name": "Passe pelo centro sem perder o alvo",
+        "desc": "No cruzamento o olhar tende a parar ou saltar. Mantenha o centro do alvo à vista e passe com suavidade.",
+        "tips": "Se ficar desconfortável, reduza a velocidade e mostre a linha de novo."
+      },
+      {
+        "name": "Olhe o alvo, não o cursor",
+        "desc": "O ponteiro é só um apoio. Siga o alvo com os olhos e relaxe ombros e mão.",
+        "tips": "Confira de vez em quando se a cabeça ou o pescoço estão girando junto."
+      },
+      {
+        "name": "Uma dificuldade por vez",
+        "desc": "Aumente separadamente a velocidade, a linha oculta e a velocidade aleatória. Se o conforto cair, volte ao ajuste anterior.",
+        "tips": "Depois de cada mudança, compare de novo."
+      },
+      {
+        "name": "Sessões curtas com pausas",
+        "desc": "Pratique em blocos de 5 a 10 minutos, pisque e olhe para longe. Mais tempo não é necessariamente melhor.",
+        "tips": "Dor, tontura ou náusea: pare na hora."
+      }
     ]
   },
-  steps: [
-    "Sente-se com as costas apoiadas e deixe a tela a uma distância confortável, sem aproximar o rosto.",
-    "Ajuste o brilho e o tamanho da janela para enxergar o alvo com nitidez; mantenha a cabeça relaxada e estável.",
-    "Comece na velocidade mais baixa e acompanhe o ponto luminoso com os dois olhos, piscando normalmente.",
-    "Observe com atenção a passagem pelo centro e reduza a velocidade se o olhar começar a saltar ou se você mover a cabeça.",
-    "Registre a precisão e o conforto percebido, faça uma pausa olhando para longe e só então repita ou avance um nível."
+  "steps": [
+    "Sente a uma distância confortável, com ombros e mão relaxados.",
+    "Comece com 30 a 60 segundos, velocidade lenta e linha visível.",
+    "Siga o alvo com os olhos, não o cursor.",
+    "Depois aumente a velocidade ou um ajuste por vez."
   ],
-  benchmarks: {
-    title: "Métricas de desempenho no oito deitado",
-    headers: ["Nível", "Acompanhamento do alvo", "Perdas no centro", "Precisão da trajetória", "Leitura prática"],
-    rows: [
-      ["Faixa 1 (Muito alta)", "Alvo quase sempre acompanhado", "Raras", "98% ou mais", "Ritmo confortável; use como referência pessoal, não como diagnóstico."],
-      ["Faixa 2 (Alta)", "Acompanhamento contínuo", "Poucas", "92%–97%", "Boa consistência; teste uma pequena progressão de velocidade."],
-      ["Faixa 3 (Boa)", "Algumas correções", "Ocasionalmente", "82%–91%", "Base adequada para repetir sessões lentas e observar evolução."],
-      ["Faixa 4 (Intermediária)", "Atrasos perceptíveis", "Frequentes", "70%–81%", "Diminua o ritmo, faça pausas e compare apenas sessões feitas nas mesmas condições."],
-      ["Faixa 5 (Inicial)", "Perde o alvo com frequência", "Muitas", "Abaixo de 70%", "Volte ao ritmo mais lento; interrompa se houver desconforto visual."]
-    ],
-    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. As faixas são referências internas para comparar sessões na mesma tela e distância; não são valores normativos clínicos. O acompanhamento do alvo não mede acuidade visual nem confirma uma condição médica."
-  },
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('barnes2008', 'krauzlis2004', 'robinson1965', 'leighzee2015', 'woods2015', 'salthouse1980'),
+  "audience": "Quem quer experimentar o exercício \"Exercício Ocular em Oito\" no navegador e praticar o acompanhamento de um alvo em movimento de forma leve."
+},
+  faqs,
+  sources: pickSources('robinson1965', 'leigh2015', 'barnes2008', 'krauzlis2004', 'woods2015'),
   related: [
-    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição ocular lenta" },
-    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Perseguição direcional variável" },
-    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Perseguição evasiva dinâmica" },
-    { href: "/pt/drills/visual-tracking/sine-wave-pursuit", label: "Rastreamento em onda senoidal" }
-  ]
+  {
+    "href": "/pt/drills/visual-tracking/constant-slow-pursuit",
+    "label": "Exercício de Perseguição Visual"
+  },
+  {
+    "href": "/pt/drills/visual-tracking/directional-chaos-pursuit",
+    "label": "Rastreamento com Mudanças de Direção"
+  },
+  {
+    "href": "/pt/drills/visual-tracking/dynamic-evasion-pursuit",
+    "label": "Alvo que Muda de Direção sem Aviso"
+  },
+  {
+    "href": "/pt/drills/visual-tracking/ghosting-suppress-pursuit",
+    "label": "Rastreamento com Rastros Fantasma"
+  }
+],
 };
 
-export default function InfinityPursuitPagePt() {
+export default function LocalizedPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <InfinityPursuitClient
         copy={{
-          title: "Exercício Ocular em Oito",
-          subtitle: "Rastreamento ocular e coordenação binocular",
-          description: "Acompanhe um alvo em uma figura de oito deitado, observe a passagem pela linha média e pratique uma perseguição visual suave em ritmo confortável."
+          title: name,
+          subtitle: "Acompanhar o alvo num oito deitado",
+          description: "Exercício ocular em oito: acompanhe um alvo num oito deitado que cruza o centro. O navegador não registra seu olhar e não há pontuação; veja o resultado como registro de prática, não como exame médico.",
         }}
       />
       <DrillGuide guide={guideProps} />

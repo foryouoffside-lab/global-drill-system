@@ -4,314 +4,256 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
+import { breadcrumbItems } from '@/lib/i18n/breadcrumbLabels';
+
+const url = 'https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit';
+const name = "Exercice des yeux en huit couché";
+const title = `${name} | SkillDrills`;
+const description = "Exercice des yeux en huit couché dans le navigateur : suivez une cible sur une boucle en huit (lemniscate) qui traverse le centre. Gratuit et réglable.";
 
 export const metadata = {
-  title: "Exercice des yeux en huit couché | SkillDrills",
-  description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",
-  keywords: [
-    "exercice oculaire en huit",
-    "poursuite visuelle en huit",
-    "huit couché",
-    "coordination binoculaire",
-    "franchissement de la ligne médiane",
-    "mouvement des yeux",
-    "poursuite fluide",
-    "exercice des yeux en forme de huit",
-    "exercice oculaire gratuit en ligne",
-    "entraînement visuel sportif",
-    "suivi visuel en huit",
-    "coordination œil-main"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit",
-    languages: getAlternateLanguages("/drills/visual-tracking/infinity-pursuit"),
-  },
+  title,
+  description,
+  keywords: ["exercice des yeux en huit couché","exercice yeux huit","huit couché yeux","poursuite visuelle en huit","suivre une cible des yeux","exercice des yeux navigateur"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/infinity-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'fr_FR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Exercice des yeux en huit couché | SkillDrills",
-    description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",
-    url: "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit",
-    siteName: "SkillDrills",
-    locale: "fr_FR",
-    type: "website",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Exercice des yeux en huit couché | SkillDrills",
-    description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Poursuite Visuelle",
-      "item": "https://skilldrills.online/fr/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Poursuite en Huit Infini",
-      "item": "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems('fr', url, 'visual-tracking', name, true),
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "Exercice Oculaire en Huit – Poursuite Visuelle",
-  "dateModified": "2026-09-20",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Navigateur",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Poursuite Oculaire en Huit Couché et Ligne Médiane",
-  "dateModified": "2026-09-20",
-  "url": "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Navigateur",
-  "browserRequirements": "JavaScript et Canvas HTML5 requis.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Exercice des yeux en huit couché (application web)",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navigateur récent compatible HTML5 Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Entraînement de Poursuite Oculaire en Huit",
-  "dateModified": "2026-09-20",
-  "description": "Entraînement visuel dans le navigateur pour pratiquer la coordination binoculaire sur une trajectoire continue en huit couché.",
-  "genre": ["Entraînement oculaire", "Vision sportive", "Poursuite visuelle"],
-  "playMode": "Un joueur",
-  "applicationCategory": "Game"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name,
+  url,
+  description,
+  genre: ['Visual training', 'Eye tracking exercise'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Comment Réaliser l’Exercice du Huit Couché pour les Yeux",
-  "dateModified": "2026-09-20",
-  "description": "Protocole pour entraîner la poursuite fluide et la coordination binoculaire le long de la lemniscate de Bernoulli.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Stabilisez Votre Posture",
-      "text": "Placez-vous à 50-70 cm de l'écran avec la tête immobile pour mobiliser exclusivement les muscles oculomoteurs.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Démarrez à Vitesse Standard",
-      "text": "Choisissez 1.0x afin d'habituer votre regard à la bascule continue entre les boucles gauche et droite.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Franchissez le Centre de Manière Fluide",
-      "text": "Lors du croisement de la ligne médiane centrale, maintenez un glissement oculaire régulier sans clignement ni saccade corrective.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Enchaînez des Séries Courtes",
-      "text": "Réalisez 5 à 8 blocs de 60 secondes avec des pauses pour renforcer le modèle moteur prédictif du cervelet.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Comment faire : Exercice des yeux en huit couché",
+  description: "Exercice des yeux en huit couché en quatre étapes simples.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Installez-vous confortablement",
+    "text": "Asseyez-vous à une distance confortable de l'écran, épaules et main détendues."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Soigner le passage au centre",
+    "text": "Restez sur la cible sans interruption quand elle traverse le centre."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Suivez avec les yeux",
+    "text": "Suivez la cible des yeux, pas le curseur, et terminez la séance de 30 à 120 secondes."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Changez un réglage à la fois",
+    "text": "Augmentez ensuite la vitesse, ou ajoutez Masquer la ligne ou la vitesse aléatoire, un réglage à la fois."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Qu'est-ce que l'exercice des yeux en huit couché ?",
+    "a": "Un exercice dans le navigateur où vous suivez des yeux une cible sur un huit couché. Durée (30 à 120 secondes), vitesse, taille et ligne sont réglables. Ce n'est ni un test de vue ni une thérapie."
+  },
+  {
+    "q": "Pourquoi un huit couché ?",
+    "a": "Le huit est une trajectoire continue avec une composante horizontale et verticale, qui se croise au centre. Sans saut de position, les séances aux mêmes réglages se comparent facilement."
+  },
+  {
+    "q": "Mesure-t-il le mouvement de mes yeux ?",
+    "a": "Non. Le navigateur ne voit pas votre regard ; il connaît seulement la position dessinée de la cible et vos réglages. Le curseur n'est qu'une aide et ne prouve pas où vous regardez. Il n'y a pas de score."
+  },
+  {
+    "q": "Que change la vitesse aléatoire ?",
+    "a": "La vitesse de la cible varie de façon irrégulière, elle devient plus difficile à anticiper. Activez-la une fois la vitesse de base confortable, et pas en même temps que le masquage de la ligne."
+  },
+  {
+    "q": "Faut-il laisser la ligne visible ?",
+    "a": "Une ligne visible aide à anticiper le mouvement au début. Vous pourrez la masquer ensuite pour corser l'exercice. Il n'y a pas de bon choix : comparez uniquement des réglages identiques."
+  },
+  {
+    "q": "Quels réglages pour commencer ?",
+    "a": "Des séances de 30 à 60 secondes, une vitesse lente (0,5 à 1,0×) et la ligne visible. La vitesse va de 0,5 à 9,0× et la taille de cible de 10 à 50 px ; changez un seul réglage à la fois."
+  },
+  {
+    "q": "Cet exercice améliore-t-il ma vue ou mon aim ?",
+    "a": "Rien ne le garantit. C'est un exercice pour suivre une cible des yeux ; il ne promet ni meilleure vue, ni traitement d'un trouble visuel, ni meilleure visée en FPS. En cas de gêne oculaire, consultez un professionnel."
+  },
+  {
+    "q": "L'écran et l'environnement comptent-ils ?",
+    "a": "Oui. Fréquence d'affichage, luminosité, contraste, taille et distance de l'écran et navigateur changent l'apparence de la cible. La latence d'entrée et d'affichage joue aussi (Woods et al., 2015) : comparez dans les mêmes conditions."
+  },
+  {
+    "q": "Combien de temps pratiquer ?",
+    "a": "Par blocs courts de 5 à 10 minutes avec des pauses. Si les yeux fatiguent ou sèchent, arrêtez, clignez et regardez au loin. Douleur, vertige, nausée ou mal de tête : arrêtez."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Qu’est-ce que l’exercice oculaire en huit couché ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "C’est une pratique visuelle où les deux yeux suivent une cible qui parcourt un huit couché. Elle permet d’observer la continuité du regard et le passage central, sans remplacer un bilan clinique."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi observer le franchissement de la ligne médiane ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le passage central fait changer la cible de côté dans le champ visuel. L’observer aide à repérer les hésitations ou les sauts pendant la séance, sans transformer cette observation en diagnostic."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment les yeux participent-ils à la trajectoire en huit couché ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les muscles extraoculaires de chaque œil coordonnent des mouvements horizontaux, verticaux et diagonaux pour garder la cible dans le regard. L’exercice pratique le contrôle visuel et ne promet ni renforcement ni traitement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que signifie suivre la cible avec stabilité ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cela signifie garder le regard près de la cible pendant la courbe, avec peu de pertes ou de corrections. La mesure de la page sert à comparer des séances identiques et n’est pas une mesure clinique universelle."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cet exercice peut-il aider à suivre des cibles dans un jeu ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il propose une tâche contrôlée pour pratiquer la continuité du regard dans les courbes. Le transfert vers un jeu dépend de l’entraînement spécifique et de chaque personne ; aucune amélioration de visée n’est garantie."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi garder la tête stable pendant l’exercice ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Une tête stable permet de mieux observer ce que les yeux suivent seuls et de comparer les séances. Ne raidissez pas la nuque : relâchez-la et arrêtez en cas de douleur ou de vertige."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quel temps de pratique quotidienne est recommandé ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Commencez par une ou deux séries d’environ 60 secondes et reposez-vous entre elles. Augmentez seulement si le regard reste confortable ; il n’existe pas de dose quotidienne universelle."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cet exercice aide-t-il à réduire la fatigue oculaire devant les écrans ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cela peut servir de pause active pour varier un regard fixé sur l’écran, mais aucun soulagement n’est garanti. En cas de gêne persistante, de douleur ou de vision double, arrêtez et consultez."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Existe-t-il un transfert vers les sports réels comme le tennis ou le football ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La tâche ne reproduit qu’une partie du suivi d’une trajectoire. Les sports demandent aussi anticipation, profondeur, réaction et décision ; utilisez-la comme complément, pas comme remplacement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "L’exercice en huit est-il gratuit et comment le pratiquer en sécurité ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "L’outil est gratuit et fonctionne dans le navigateur sans compte obligatoire. Pratiquez à un rythme confortable, clignez naturellement et arrêtez en cas de douleur, vision double, nausée ou vertige ; demandez conseil si cela persiste."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'fr',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Bases Neurophysiologiques de la Lemniscate et de la Coordination Binoculaire",
-  intro: [
-    "Cet exercice des yeux en huit couché vous demande de suivre du regard un point qui parcourt une lemniscate, en passant par le centre à chaque boucle. Il mesure le suivi de la cible et les pertes au centre. Ce n’est pas un examen ophtalmologique ni de la rééducation orthoptique.",
-    "La figure en huit couché, aussi appelée lemniscate, réunit des courbes diagonales et des passages par le centre dans une tâche de poursuite visuelle. La cible se déplace continûment afin de pratiquer un regard qui reste accroché sans transformer chaque virage en une suite de sauts. Il s’agit d’un exercice visuel, pas d’un examen ophtalmologique ou orthoptique.",
-    "Le passage central permet d’observer la transition entre les hémichamps visuels droit et gauche. Gardez la cible nette et notez si le regard quitte la trajectoire, effectue un petit saut ou nécessite une pause. Cette observation décrit la séance et ne permet pas de poser un diagnostic binoculaire ou neurologique.",
-    "La réponse dépend de la distance à l’écran, de la taille de la cible, du rafraîchissement et de la fatigue. Utilisez un affichage confortable, clignez naturellement et privilégiez la régularité à la vitesse. En cas de douleur, vision double, nausée ou vertige, arrêtez et demandez un avis professionnel."
+  ...{
+  "heading": "Guide : Exercice des yeux en huit couché",
+  "intro": [
+    "Dans l'exercice des yeux en huit couché, la cible parcourt en boucle un huit couché (lemniscate). La trajectoire combine mouvements horizontaux et verticaux et traverse le centre à chaque tour : vous vous exercez à garder le regard sur la cible sans interruption au passage du centre (Barnes, 2008). Masquer la ligne ou activer la vitesse aléatoire rend la boucle plus difficile à anticiper.",
+    "Le navigateur connaît seulement la position dessinée de la cible et vos réglages, pas l'endroit où regardent vos yeux. Il n'y a pas de score : seules les séances terminées sont comptées. Le résultat est un repère d'entraînement reproductible, pas une mesure clinique ni un test de vue.",
+    "Gardez une distance confortable et comparez toujours le même écran et le même navigateur. La fréquence d'affichage et le périphérique d'entrée changent le rendu (Woods et al., 2015). Arrêtez en cas de douleur, vertige, nausée ou vision floue persistante."
   ],
-  techniques: {
-    title: "Quatre techniques pour suivre un huit couché",
-    items: [
-      { name: "Repère central", desc: "Commencez par percevoir le croisement central avant de suivre toute la boucle.", tips: "Gardez le buste calme, respirez naturellement et ralentissez si vous perdez la cible." },
-      { name: "Courbe continue", desc: "Laissez les yeux accompagner la courbe sans anticiper la boucle suivante par un saut.", tips: "Regardez la cible présente ; n’essayez pas de couvrir tout le parcours d’un seul coup." },
-      { name: "Symétrie des côtés", desc: "Comparez la boucle gauche et la boucle droite au cours de la même séance.", tips: "Si un côté est plus difficile, répétez lentement et notez l’écart sans forcer." },
-      { name: "Progression mesurée", desc: "Augmentez la vitesse seulement si la trajectoire reste stable et confortable.", tips: "Faites une courte série, regardez au loin pour récupérer, puis revenez au dernier niveau confortable." }
+  "benchmarks": {
+    "title": "Repères d'entraînement",
+    "headers": [
+      "Étape",
+      "Objectif"
+    ],
+    "rows": [
+      [
+        "1",
+        "Vitesse lente, ligne visible"
+      ],
+      [
+        "2",
+        "Tenir la vitesse de base sans effort"
+      ],
+      [
+        "3",
+        "Rester sur la cible au passage du centre"
+      ],
+      [
+        "4",
+        "Masquer la ligne"
+      ],
+      [
+        "5",
+        "Ajouter la vitesse aléatoire"
+      ]
+    ],
+    "note": "Ce tableau est un repère d'entraînement SkillDrills. Ce n'est ni une norme visuelle, ni une statistique d'utilisateurs, ni un percentile."
+  },
+  "techniques": {
+    "title": "4 conseils pratiques",
+    "items": [
+      {
+        "name": "Traverser le centre sans décrocher",
+        "desc": "Au croisement, le regard a tendance à s'arrêter ou à sauter. Gardez le centre de la cible en vue et passez en douceur.",
+        "tips": "Si c’est inconfortable, baissez la vitesse et réaffichez la ligne."
+      },
+      {
+        "name": "Regarder la cible, pas le curseur",
+        "desc": "Le pointeur n’est qu’une aide. Suivez la cible des yeux et relâchez épaules et main.",
+        "tips": "Vérifiez de temps en temps que la tête et le cou ne tournent pas avec."
+      },
+      {
+        "name": "Une difficulté à la fois",
+        "desc": "Augmentez séparément la vitesse, le masquage de la ligne et la vitesse aléatoire. Si le confort baisse, revenez au réglage précédent.",
+        "tips": "Après chaque changement, comparez à nouveau."
+      },
+      {
+        "name": "Séances courtes, pauses régulières",
+        "desc": "Travaillez par blocs de 5 à 10 minutes, clignez des yeux et regardez au loin. Plus long n’est pas forcément mieux.",
+        "tips": "Douleur, vertige ou nausée : arrêtez immédiatement."
+      }
     ]
   },
-  steps: [
-    "Asseyez-vous le dos soutenu et placez l’écran à une distance confortable, sans rapprocher le visage.",
-    "Réglez la luminosité et la taille de la fenêtre pour voir la cible nettement ; relâchez et stabilisez la tête.",
-    "Commencez à la vitesse la plus lente et suivez le point lumineux avec les deux yeux en clignant normalement.",
-    "Observez le passage au centre et ralentissez si le regard saute ou si la tête commence à bouger.",
-    "Notez la précision et le confort, reposez les yeux en regardant au loin, puis répétez ou augmentez d’un niveau."
+  "steps": [
+    "Asseyez-vous à une distance confortable, épaules et main détendues.",
+    "Commencez par 30 à 60 secondes, vitesse lente, ligne visible.",
+    "Suivez la cible des yeux, pas le curseur.",
+    "Augmentez ensuite la vitesse ou un seul réglage à la fois."
   ],
-  benchmarks: {
-    title: "Repères de performance sur le huit couché",
-    headers: ["Niveau", "Suivi de la cible", "Pertes au centre", "Précision du parcours", "Lecture pratique"],
-    rows: [
-      ["Très stable", "Cible presque toujours suivie", "Rares", "98 % ou plus", "Rythme confortable ; repère personnel, pas un diagnostic."],
-      ["Stable", "Suivi continu", "Peu nombreuses", "92–97 %", "Bonne constance ; essayez une légère progression de vitesse."],
-      ["Fonctionnel", "Quelques corrections", "Occasionnelles", "82–91 %", "Base adaptée aux séances lentes et à l’observation des changements."],
-      ["En développement", "Retards perceptibles", "Fréquentes", "70–81 %", "Ralentissez, reposez-vous et comparez des séances aux conditions identiques."],
-      ["Instable", "Cible souvent perdue", "Nombreuses", "Moins de 70 %", "Revenez à la vitesse lente et arrêtez en cas d’inconfort visuel."]
-    ],
-    note: "Ces fourchettes servent à comparer vos propres séances avec le même écran et la même distance ; elles ne sont pas des normes cliniques. Le suivi de la cible ne mesure ni l’acuité visuelle ni une maladie."
-  },
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('barnes2008', 'krauzlis2004', 'robinson1965', 'leighzee2015', 'woods2015', 'salthouse1980'),
+  "audience": "Toute personne qui veut essayer « Exercice des yeux en huit couché » dans le navigateur et s'exercer à suivre une cible mobile de façon ludique."
+},
+  faqs,
+  sources: pickSources('robinson1965', 'leigh2015', 'barnes2008', 'krauzlis2004', 'woods2015'),
   related: [
-    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite oculaire lente" },
-    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite directionnelle variable" },
-    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite évasive dynamique" },
-    { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite en onde sinusoïdale" }
-  ]
+  {
+    "href": "/fr/drills/visual-tracking/constant-slow-pursuit",
+    "label": "Exercice de Poursuite Visuelle"
+  },
+  {
+    "href": "/fr/drills/visual-tracking/directional-chaos-pursuit",
+    "label": "Exercice de poursuite oculaire chaotique"
+  },
+  {
+    "href": "/fr/drills/visual-tracking/dynamic-evasion-pursuit",
+    "label": "Poursuite oculaire : cible qui esquive"
+  },
+  {
+    "href": "/fr/drills/visual-tracking/ghosting-suppress-pursuit",
+    "label": "Poursuite avec traînée visuelle"
+  }
+],
 };
 
-export default function InfinityPursuitPageFr() {
+export default function LocalizedPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <InfinityPursuitClient
         copy={{
-          title: "Exercice des yeux en huit couché",
-          subtitle: "Poursuite visuelle et coordination binoculaire",
-          description: "Suivez une cible sur un huit couché, observez le passage de la ligne médiane et pratiquez une poursuite fluide à un rythme confortable."
+          title: name,
+          subtitle: "Poursuite visuelle sur une boucle en huit",
+          description: "Exercice des yeux en huit couché : suivez une cible sur une boucle en huit qui traverse le centre. Le navigateur n'enregistre pas votre regard et il n'y a pas de score ; c'est un repère d'entraînement, pas un examen médical.",
         }}
       />
       <DrillGuide guide={guideProps} />

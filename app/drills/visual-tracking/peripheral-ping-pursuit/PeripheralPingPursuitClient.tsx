@@ -649,7 +649,7 @@ export default function PeripheralPingPursuitClient({ copy }: { copy?: { title?:
                 {[
                   { num: "1", text: "Peripheral Fixation", highlight: "Pure Visual", result: "Detect peripheral targets" },
                   { num: "2", text: "Time Adjusting", highlight: `${selectedDuration}s Duration`, result: "Customizable session timer" },
-                  { num: "3", text: "Hide Line", highlight: mathInvisible ? "Enabled (Invisible)" : "Disabled (Visible)", result: "Toggle path guide lines" },
+                  { num: "3", text: "Hide Line", highlight: mathInvisible ? "Enabled (Invisible)" : "Disabled (Visible)", result: "Toggle center crosshair" },
                   { num: "4", text: "Random Speed", highlight: randomSpeed ? "Enabled Acceleration" : "Disabled Velocity", result: "Erratic acceleration control" }
                 ].map((item) => (
                   <RuleItem key={item.num} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
@@ -663,7 +663,7 @@ export default function PeripheralPingPursuitClient({ copy }: { copy?: { title?:
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <p className="text-sm text-slate-300 leading-relaxed">
-                {copy?.description || "Peripheral vision training conditions covert spatial attention by expanding your functional visual field without breaking central foveal fixation (Posner, 1980; Eriksen & St. James, 1986). Detecting transient peripheral flashes while suppressing overt gaze shifts strengthens frontoparietal attentional networks and accelerates threat detection across wide angles (Wolfe, 1994; Leigh & Zee, 2015). A saccade to a target detected in the periphery takes on the order of 200 ms to initiate (Findlay & Walker, 1999), which is the cost this drill trains you to avoid paying on every target."}
+                {copy?.description || "Peripheral vision training conditions covert spatial attention by expanding your functional visual field without breaking central foveal fixation (Posner, 1980; Eriksen & St. James, 1986). This drill flashes brief, stationary dots at random screen positions while you keep your gaze on a fixed center crosshair and notice them without looking (Wolfe, 1994; Leigh & Zee, 2015). A saccade to a target detected in the periphery takes on the order of 200 ms to initiate (Findlay & Walker, 1999), which is the urge this drill asks you to resist on every flash."}
               </p>
             </DrillAccordion>
           </div>

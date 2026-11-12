@@ -666,7 +666,7 @@ export default function MomentumTeleportPursuitClient({ copy }: { copy?: { title
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
                 {[
-                  { num: "1", text: "Teleport Pursuit", highlight: "Pure Visual", result: "Predict momentum trajectory" },
+                  { num: "1", text: "Teleport Pursuit", highlight: "Pure Visual", result: "Re-find target after jumps" },
                   { num: "2", text: "Time Adjusting", highlight: `${selectedDuration}s Duration`, result: "Customizable session timer" },
                   { num: "3", text: "Hide Line", highlight: mathInvisible ? "Enabled (Invisible)" : "Disabled (Visible)", result: "Toggle path guide lines" },
                   { num: "4", text: "Random Speed", highlight: randomSpeed ? "Enabled Acceleration" : "Disabled Velocity", result: "Erratic acceleration control" }
@@ -676,7 +676,7 @@ export default function MomentumTeleportPursuitClient({ copy }: { copy?: { title
               </div>
             </DrillAccordion>
             <DrillAccordion id="about" title="About Momentum Teleport Pursuit" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
-              <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Anticipatory eye tracking drills condition rapid saccadic target re-acquisition followed by immediate velocity matching when objects teleport across space (Rashbass, 1961; Findlay & Walker, 1999). Preserving momentum across spatial coordinate jumps trains the visual cortex to maintain internal velocity representations, bridging saccadic suppression and smooth pursuit continuity (Bahill et al., 1980; Barnes, 2008). Pursuit itself only tracks accurately to roughly 30°/s (Krauzlis, 2004), which is why a jump has to be closed by a saccade rather than by pursuit alone."}</p>
+              <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Anticipatory eye tracking drills condition rapid saccadic target re-acquisition followed by immediate velocity matching when objects teleport across space (Rashbass, 1961; Findlay & Walker, 1999). In this drill the target keeps its direction and speed after each random jump, so you practice re-finding it and resuming smooth pursuit in the same direction (Bahill et al., 1980; Barnes, 2008). Pursuit itself only tracks accurately to roughly 30°/s (Krauzlis, 2004), which is why a jump has to be closed by a saccade rather than by pursuit alone."}</p>
             </DrillAccordion>
           </div>
         )}
