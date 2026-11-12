@@ -1,0 +1,18 @@
+market,page,current_title,proposed_primary,bing_exact,gsc_impr,gsc_pos,ac_hit,competition,action
+ja,cognitive,無料脳トレ・集中力テスト,脳トレ 無料ゲーム,2789,55,6.73,yes,low(page)/unknown(term),keep+title-tweak
+ja,cognitive/attention/concentration-stamina,集中力テスト | 持続的注意の測定,集中力テスト,0,77,7.4,yes,low,keep
+ja,cognitive/attention/divided-attention,注意分割テスト | 二重課題トレーニング,注意分割テスト,0,0,,no,unknown,no-demand descriptive
+ja,cognitive/attention/multi-tasking,マルチタスクテスト | 二重ターゲット追従,マルチタスクテスト,0,6,5.17,yes,low,keep
+ja,cognitive/focus/concentration-grid,シュルテテーブル | 集中力グリッド練習,シュルテテーブル,0,0,,yes,unknown,keep
+ja,cognitive/focus/distraction-fighter,ストループテスト | 選択的注意トレーニング,ストループテスト,253,0,,yes,unknown,keep+add ストループ課題
+ja,cognitive/processing-speed/reaction-time,選択反応時間テスト | 判断速度トレーニング,選択反応時間テスト,0,0,,no,unknown,no-demand descriptive
+ja,cognitive/processing-speed/rsvp-reader,速読テスト | RSVP読書トレーニング,速読テスト,0,0,,yes,unknown,keep
+ja,cognitive/processing-speed/symbol-matching,符号数字置換検査 | SDMT方式の処理速度トレーニング,記号と数字の照合テスト,0,0,,no,unknown,retarget-light
+ja,memory,記憶力テストと記憶力トレーニング,記憶力テスト,149,146,9.21,yes,low,keep+add 無料
+ja,memory/short-term-memory/color-sequence,サイモンゲーム｜色順番記憶,色の順番記憶ゲーム,0,0,,no,unknown,no-demand descriptive
+ja,memory/short-term-memory/digit-span,数唱テスト｜数字記憶・ワーキングメモリ,数字記憶テスト,0,0,,yes,unknown,retarget-light
+ja,memory/short-term-memory/word-recall,単語記憶テスト｜自由再生・言語性記憶,単語記憶テスト,0,0,,no,unknown,no-demand descriptive
+ja,memory/spatial-memory/grid-memorization,瞬間記憶テスト｜視覚記憶ゲーム,瞬間記憶ゲーム,0,0,,yes,unknown,retarget-light
+ja,memory/spatial-memory/object-location,空間記憶テスト｜物体位置記憶,空間記憶テスト,0,0,,no,unknown,no-demand descriptive
+ja,memory/spatial-memory/path-tracing,コルシブロックテスト｜順番記憶,コルシブロックテスト,0,9,7,no,low,keep
+ja,memory/working-memory/n-back,Nバック課題｜ワーキングメモリ訓練,nバック課題,0,0,,yes,unknown,keep

@@ -1,2 +1,10 @@
 {"phrase": "test de mémoire", "cc": "fr", "lang": "fr-FR", "exact": 44, "broad": 107, "status": "ok"}
 {"phrase": "test de mémoire en ligne", "cc": "fr", "lang": "fr-FR", "exact": null, "broad": null, "status": "error:<urlopen error [WinError 10054] An existing connection was forcibly closed by th"}
+{"phrase": "test de mémoire gratuit", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "jeux de mémoire", "cc": "fr", "lang": "fr-FR", "exact": 186, "broad": 210, "status": "ok"}
+{"phrase": "jeux de mémoire en ligne", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "jeu de mémoire", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 11, "status": "ok"}
+{"phrase": "exercices de mémoire", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "entraînement mémoire", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test mémoire à court terme", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "mémoire de travail", "cc": "fr", "lang": "fr-FR", "exact": 79, "broad": 79, "status": "ok"}

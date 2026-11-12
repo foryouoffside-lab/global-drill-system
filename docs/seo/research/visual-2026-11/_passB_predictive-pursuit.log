@@ -1,0 +1,6 @@
+ko | 예측 추적 훈련 (primary kept; subtitle "가림 뒤 궤적" -> "도착 지점 예측하기") | ko.md no-demand descriptive, GSC 0 | false occlusion premise removed; mechanics to code (destination every ~2.2 s, ease-out stop ~1.5 s, destination line = Hide Line); dateModified | audit OK
+ja | 予測視線トレーニング (subtitle 遮蔽後の軌道 -> 着地点を先読み) | ja.md no-demand descriptive | full rebuild: false occlusion premise + fabricated benchmarks removed; dateModified | audit OK
+de | Prädiktive Blickverfolgung (kept; H1 "bei Verdeckung" dropped) | de.md keep | full rebuild: false Verdeckung premise, fake Genauigkeit/Punkte benchmarks removed; dateModified | audit OK
+fr | Poursuite oculaire prédictive (kept; H1 "sous masquage" dropped) | fr.md keep | full rebuild: false masquage premise, fake précision table removed; dateModified | audit OK
+pt | Rastreamento visual preditivo (kept; H1 "sob oclusão" dropped) | pt.md keep | full rebuild: false oclusão premise, fake percentile table removed; dateModified | audit OK
+es | Seguimiento ocular predictivo (kept; H1 "con oclusión" dropped) | es.md keep | full rebuild: false oclusión premise, fake table removed; dateModified | audit OK
