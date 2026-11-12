@@ -4,295 +4,160 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit';
+const title = "Entrenamiento visual estroboscópico | SkillDrills";
+const description = "Entrenamiento visual estroboscópico: un objetivo rebota en los bordes y desaparece a intervalos regulares. Predice dónde está. Gratis, no es un examen visual.";
+
 export const metadata = {
-  title: "Entrenamiento visual estroboscópico | SkillDrills",
-  description: "Predice la ruta de un objetivo oculto por destellos. Ejercicio gratuito para medir la recuperación, el error y la continuidad visual.",
-  keywords: [
-    "entrenamiento visual estroboscópico",
-    "gafas estroboscópicas entrenamiento",
-    "visión estroboscópica deporte",
-    "oclusión visual intermitente",
-    "predicción de trayectoria visual",
-    "anticipación visual deportiva",
-    "seguimiento visual con ocultación",
-    "error de recuperación del objetivo",
-    "continuidad del seguimiento visual",
-    "entrenamiento oculomotor intermitente",
-    "visión dinámica deporte",
-    "entrenamiento de reflejos visuales"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/strobe-prediction-pursuit')
-  },
+  title,
+  description,
+  keywords: ["entrenamiento visual estroboscópico", "entrenamiento estroboscópico", "objetivo que parpadea", "predecir trayectoria ejercicio", "seguimiento ocular ejercicio"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/strobe-prediction-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'es_ES', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Entrenamiento visual estroboscópico | SkillDrills",
-    description: "Predice la ruta de un objetivo oculto por destellos. Ejercicio gratuito para medir la recuperación, el error y la continuidad visual.",
-    url: "https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit",
-    siteName: "SkillDrills",
-    locale: "es_ES",
-    type: "website"
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Entrenamiento visual estroboscópico | SkillDrills",
-    description: "Predice la ruta de un objetivo oculto por destellos. Ejercicio gratuito para medir la recuperación, el error y la continuidad visual."
-  }
 };
 
-export default function StrobePredictionPursuitPageES() {
-  const sources = pickSources('appelbaum2011', 'bennett2007', 'mitroff2013', 'smith2016', 'woods2015', 'leigh2015');
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Inicio", item: 'https://skilldrills.online/es' },
+    { '@type': 'ListItem', position: 2, name: "Seguimiento visual", item: 'https://skilldrills.online/es/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 3, name: "Entrenamiento visual estroboscópico", item: url },
+  ],
+};
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://skilldrills.online/es" },
-      { "@type": "ListItem", "position": 2, "name": "Entrenamiento Visual", "item": "https://skilldrills.online/es/drills/visual-tracking" },
-      { "@type": "ListItem", "position": 3, "name": "Visión Estroboscópica", "item": "https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit" }
-    ]
-  };
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Entrenamiento visual estroboscópico",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
+};
 
-  const softwareApplicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "Entrenador de Visión Estroboscópica y Predicción",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entrenamiento neurocognitivo de seguimiento visual bajo pulsos periódicos de oclusión estroboscópica para atletas y jugadores competitivos.",
-    "dateModified": "2026-09-20"
-  };
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Entrenamiento visual estroboscópico",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navegador actual compatible con HTML5 Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
+};
 
-  const webAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Ejercicio de Percepción y Predicción Estroboscópica",
-    "url": "https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit",
-    "applicationCategory": "TrainingTool",
-    "browserRequirements": "Requiere JavaScript y compatibilidad con HTML5 Canvas.",
-    "dateModified": "2026-09-20"
-  };
+const videoGameSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: "Entrenamiento visual estroboscópico",
+  url,
+  description,
+  genre: ['Casual Game', 'Educational Game'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
 
-  const videoGameSchema = {
-    "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "Desafío de Visión Estroboscópica y Extrapolación",
-    "gamePlatform": "Web Browser",
-    "genre": ["Entrenamiento visual", "Ejercicio cognitivo", "Reflejos para esports"],
-    "dateModified": "2026-09-20"
-  };
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Cómo hacer el entrenamiento visual estroboscópico",
+  description: "Cuatro pasos para seguir un objetivo que desaparece a intervalos y predecir su posición.",
+  step: [
+    { '@type': 'HowToStep', position: 1, name: "Elegir los ajustes", text: "Empieza con 60 segundos, 1,0x y el contorno visible.", url: `${url}#step-1` },
+    { '@type': 'HowToStep', position: 2, name: "Leer el movimiento", text: "En la fase visible, sigue la dirección y la velocidad del objetivo.", url: `${url}#step-2` },
+    { '@type': 'HowToStep', position: 3, name: "Cruzar la fase invisible", text: "Cuando el objetivo desaparece, sigue moviendo la mirada en la dirección esperada.", url: `${url}#step-3` },
+    { '@type': 'HowToStep', position: 4, name: "Subir poco a poco", text: "Cuando resulte fácil, sube la velocidad u oculta el contorno o activa la velocidad aleatoria, una cosa cada vez.", url: `${url}#step-4` }
+  ],
+};
 
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Cómo Entrenar la Anticipación Visual con Oclusión Estroboscópica",
-    "description": "Metodología para optimizar el modelo motor interno cerebeloso mediante pulsos de oscuridad intermitente.",
-    "dateModified": "2026-09-20",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Alineación Ocular y Enfoque",
-        "text": "Sitúese a 50-60 cm de la pantalla con la cabeza relajada y enfoque el centro del objetivo antes de que comiencen los ciclos de oscurecimiento."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Extrapolación Motora en Fase Oscura",
-        "text": "Cuando el objetivo desaparezca durante el apagón estroboscópico, continúe desplazando el cursor prediciendo mentalmente su trayectoria."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Reorientación y Verificación Inmediata",
-        "text": "En el instante en que la luz reaparezca, verifique la desviación de su estimación y corrija suavemente la posición del puntero."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Incremento Progresivo de Dificultad",
-        "text": "Aumente la velocidad de desplazamiento y reduzca la ventana de visibilidad cuando su porcentaje de precisión oculta supere el 75%."
-      }
-    ]
-  };
+const faqs = [
+  { q: "¿Qué es el entrenamiento visual estroboscópico?", a: "Un ejercicio en el navegador con un único objetivo que se mueve en línea recta y rebota en los bordes de la pantalla. Se ve durante unos dos tercios de cada ciclo y se oculta un tercio. Como sigue avanzando aunque no se vea, predices dónde va a reaparecer." },
+  { q: "¿Qué hace el objetivo mientras está invisible?", a: "Sigue en la misma dirección y a la misma velocidad. Con la línea visible, un contorno discreto marca su posición. Si ocultas la línea, el contorno también desaparece y solo sigues tu predicción." },
+  { q: "¿Cambia el ritmo del parpadeo?", a: "El ciclo se cuenta en fotogramas mostrados y se acorta con el multiplicador de velocidad. Una velocidad mayor acelera a la vez el movimiento y el parpadeo." },
+  { q: "¿Es lo mismo que entrenar con gafas estroboscópicas?", a: "No. Los estudios con gafas estroboscópicas (por ejemplo, Appelbaum et al., 2011) usan gafas que tapan todo el campo visual a intervalos. Aquí solo desaparece y reaparece un objetivo en la pantalla. Los resultados de esos estudios no se aplican a este ejercicio." },
+  { q: "¿Y si soy sensible a las luces que parpadean?", a: "No parpadea toda la pantalla: solo un objetivo desaparece y reaparece. Aun así, si alguna vez te ha sentado mal una luz parpadeante, evita este ejercicio y para ante la menor molestia." },
+  { q: "¿El ejercicio mide los movimientos de mis ojos?", a: "No. El navegador no sabe hacia dónde miras; solo conoce la posición en la que se dibuja el objetivo y tus ajustes. No hace falta hacer clic ni tocar la pantalla; el resultado es un registro de práctica para ti." },
+  { q: "¿Hay puntuación o nota?", a: "No. Al terminar, la pantalla muestra solo la duración, el multiplicador de velocidad, si la velocidad aleatoria estaba activada y el total de sesiones (guardado en este navegador). Si quieres contar cuántas veces pierdes el objetivo, apúntalo tú." },
+  { q: "¿Qué ajustes hay?", a: "Duración de 30, 45, 60, 90 o 120 segundos, velocidad de 0,5x a 9,0x y tamaño del objetivo de 10 a 50 px. También puedes ocultar la línea (contorno en la fase invisible), activar velocidad aleatoria, estela, brillo, líneas de escaneo, fondo claro u oscuro y cambiar el color del objetivo. La tecla Esc termina la sesión en cualquier momento." },
+  { q: "¿Mejora la vista o la puntería?", a: "No hay garantía. Es un ejercicio en el que sigues con los ojos un objetivo en movimiento; no es un examen de la vista ni un tratamiento, y no promete mejor puntería en juegos de disparos. Si notas molestias en los ojos, consulta a un oftalmólogo." },
+  { q: "¿Influye la pantalla en el resultado?", a: "Sí. La frecuencia de actualización, el brillo, el contraste, el tamaño de la pantalla y la distancia cambian cómo se ve el objetivo (Woods et al., 2015). Compara solo sesiones hechas en la misma pantalla, el mismo navegador y con los mismos ajustes." },
+  { q: "¿Cuánto tiempo debo practicar?", a: "Unas cuantas sesiones de unos 60 segundos, de 5 a 10 minutos en total, con pausas. Para enseguida si notas los ojos cansados, secos o doloridos, mareo, náuseas o dolor de cabeza." }
+];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "dateModified": "2026-09-20",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Qué es el entrenamiento de visión estroboscópica en el deporte?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Es una disciplina de entrenamiento en la que se interrumpe periódicamente la visión del deportista, forzando a los centros motores cerebrales a anticipar trayectorias sin soporte visual constante."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cómo mejora la oclusión intermitente la velocidad de reacción?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Al eliminar el flujo sensorial ininterrumpido, el cerebro fortalece las vías cerebelosas y parietales responsables de los modelos motores de predicción interna, disminuyendo el tiempo de indecisión."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuál es el respaldo neurocientífico de este entrenamiento estroboscópico?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Investigaciones como las de Appelbaum et al. (2011) y Mitroff et al. (2013) comprobaron que el entrenamiento estroboscópico aumenta la memoria de trabajo visual y la discriminación de velocidad en deportistas de alto nivel."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿En qué se diferencia el seguimiento continuo del seguimiento estroboscópico?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El seguimiento continuo opera en bucle cerrado mediante retroalimentación visual inmediata. El estroboscópico cambia a bucle abierto durante el apagón, exigiendo cálculos cinemáticos predictivos."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué disciplinas deportivas se benefician más de esta práctica?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Béisbol, tenis, pádel, porteros de fútbol, hockey, artes marciales y jugadores de disparos en primera persona (FPS) donde las trayectorias de alta velocidad sufren oclusiones momentáneas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué debo hacer si pierdo la trayectoria cuando el objetivo reaparece?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No realice sacudidas violentas con el ratón. Efectúe una microcorrección fluida y conserve la velocidad de seguimiento para preparar la siguiente fase de oscurecimiento."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuántos minutos al día se aconseja practicar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "De 10 a 15 minutos diarios distribuidos en rondas cortas de 60 a 90 segundos son suficientes para lograr adaptaciones neuronales sin sobrecargar la musculatura ocular."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Se requiere una pantalla de alta tasa de refresco para este ejercicio?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Es completamente funcional a 60Hz, aunque monitores de 144Hz o superiores brindan una respuesta visual más precisa durante los cortes rápidos de imagen."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cómo evalúa el sistema la precisión predictiva?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Mide en tiempo real la distancia euclidiana entre el cursor del usuario y las coordenadas verdaderas del objetivo mientras este permanece en estado de oclusión total."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Puede este software digital sustituir a las gafas estroboscópicas físicas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Si bien las gafas ocluyen todo el entorno visual físico, este simulador activa exactamente las mismas redes neuronales de extrapolación de trayectoria y control visomotor."
-        }
-      }
-    ]
-  };
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'es',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
 
-  const guide = {
-    title: "Guía Científica de Visión Estroboscópica y Predicción Visomotora",
-    intro: [
-      "El entrenamiento visual estroboscópico es un protocolo neurovisual respaldado empíricamente donde la percepción visual continua se interrumpe de forma rítmica mediante intervalos de oclusión total. Al suprimir la retroalimentación sensorial ininterrumpida, el sistema nervioso central se ve forzado a operar con conjuntos incompletos de información cinemática, obligando a las redes cerebelosas y corticales a computar modelos internos predictivos feedforward del movimiento (Appelbaum et al., 2011; Mitroff et al., 2013).",
-      "Cuando un objetivo en movimiento se sumerge en una fase de oscuridad, el deslizamiento retiniano desciende instantáneamente a cero. En observadores no entrenados, el seguimiento ocular lento decae y se detiene entre los 100 y 200 milisegundos, derivando en sacadas de búsqueda erráticas al reaparecer el estímulo. Investigaciones pioneras de Bennett et al. (2007) y Leigh & Zee (2015) demuestran que la oclusión periódica condiciona las vías de memoria de velocidad en los campos oculares frontales (FEF) y el flóculo cerebeloso, permitiendo sostener el impulso oculomotor continuo a través de la brecha oscura y acelerar con precisión hacia las coordenadas de reaparición.",
-      "En el deporte de alto rendimiento (béisbol, tenis, hockey sobre hielo y tiro de precisión), las gafas estroboscópicas con lentes de cristal líquido se han consolidado como un equipo esencial de acondicionamiento neuromuscular (Smith & Mitroff, 2016). Strobe Prediction Pursuit traslada este método de élite al navegador web mediante ciclos de 60 fotogramas visibles y 30 fotogramas ocluidos. En pantallas con alta tasa de refresco (144 Hz o superior) que ofrecen una cadencia temporal más precisa (Woods et al., 2015), este ejercicio fortalece la transición entre la captación foveal y la ejecución motora anticipatoria.",
-      "Metodología y privacidad de datos: todas las trayectorias e interacciones se calculan y cronometran en tiempo real en el cliente. SkillDrills no almacena ni recopila datos de los usuarios en servidores remotos; sus marcas y configuraciones residen únicamente en el almacenamiento local (localStorage) de su navegador. Este simulador es una herramienta de entrenamiento cognitivo y desarrollo de reflejos con fines formativos, no constituyendo un instrumento diagnóstico médico."
+const guide = {
+  heading: "Entrenamiento visual estroboscópico: guía",
+  intro: [
+    "El entrenamiento visual estroboscópico es un ejercicio gratis en el navegador: un objetivo se mueve en línea recta, rebota en los bordes de la pantalla y desaparece a intervalos regulares. Se ve durante unos dos tercios de cada ciclo y queda oculto alrededor de un tercio.",
+    "Mientras está invisible, el objetivo sigue en la misma dirección y a la misma velocidad. Por defecto, un contorno discreto marca su posición; si ocultas la línea, el contorno también desaparece. Tras la cuenta atrás 3-2-1, el objetivo se mueve durante el tiempo elegido (de 30 a 120 segundos, 60 por defecto). No hay que hacer clic ni pulsar nada, y no hay puntuación.",
+    "El navegador no registra hacia dónde miras. Trata el resultado como un registro de práctica personal, no como una prueba de vista o de atención. Tampoco es un entrenamiento con gafas estroboscópicas, que tapan todo el campo visual.",
+    "Compara sesiones en la misma pantalla y a la misma distancia; la frecuencia de actualización y el retardo de imagen influyen en la fluidez del objetivo (Woods et al., 2015). Para si sientes dolor, mareo, náuseas o visión borrosa persistente."
+  ],
+  benchmarks: {
+    title: "Etapas de práctica orientativas",
+    headers: ["Etapa", "Ajuste", "Objetivo"],
+    rows: [
+      ["1", "1,0x, contorno visible", "Captar dirección y velocidad antes de que desaparezca"],
+      ["2", "1,0x a 2,0x", "Estar sobre el objetivo en cuanto reaparece"],
+      ["3", "2,0x o más", "Seguir prediciendo con parpadeos rápidos"],
+      ["4", "Línea oculta", "Cruzar la fase invisible solo con la predicción"],
+      ["5", "Velocidad aleatoria", "Ajustar la predicción a una velocidad variable"]
     ],
-    benchmarks: {
-      title: "Valores de Referencia de Eficiencia Oculomotora Estroboscópica",
-      headers: ["Nivel de Habilidad", "Precisión en Oscuridad (%)", "Error Medio (px)", "Latencia de Reajuste (ms)", "Marcador de práctica"],
-      rows: [
-        ["Etapa 1", "< 45%", "> 85 px", "> 280 ms", "Ritmo muy alto con alta precisión"],
-        ["Etapa 2", "45% – 62%", "55 – 84 px", "210 – 280 ms", "Ritmo alto y regular"],
-        ["Etapa 3", "63% – 78%", "35 – 54 px", "150 – 209 ms", "Ritmo estable con algunos errores"],
-        ["Etapa 4", "79% – 89%", "20 – 34 px", "95 – 149 ms", "Ritmo medio con margen de mejora"],
-        ["Etapa 5", "90%+", "< 20 px", "< 95 ms", "Punto de partida"]
-      ],
-      note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Parámetros registrados a velocidad 1.0x con ciclos estroboscópicos de 400ms encendido / 400ms apagado a 60 fotogramas por segundo (Appelbaum et al., 2011; Bennett et al., 2007)."
-    },
-    techniques: {
-      title: "4 Técnicas Fundamentales para Dominar la Oclusión Estroboscópica",
-      items: [
-        {
-          name: "Mantenimiento Activo de la Memoria de Velocidad",
-          desc: "Durante la ráfaga de fotogramas iluminados, concentre la fijación foveal en codificar el vector de velocidad instantáneo y la curvatura en la memoria motora cerebelosa.",
-          tips: "No relaje la musculatura ocular al desaparecer el objetivo; continúe guiando la mirada a la misma velocidad angular."
-        },
-        {
-          name: "Proyección Cinemática de la Trayectoria Invisible",
-          desc: "Extrapole mentalmente la trayectoria oculta como si el objetivo cruzara un túnel cubierto, manteniendo el curso sin desviar el eje de atención.",
-          tips: "Visualice mentalmente una estela brillante que prolonga la trayectoria a través del vacío."
-        },
-        {
-          name: "Aterrizaje Foveal Pre-Destello",
-          desc: "Justo antes de completarse el intervalo de oscuridad, oriente el punto de mira hacia las coordenadas previstas de salida para suprimir sacadas de recuperación.",
-          tips: "Siga el ritmo estroboscópico interiormente como un metrónomo para anticipar el milisegundo exacto de reaparición."
-        },
-        {
-          name: "Inhibición del Bloqueo Sacádico",
-          desc: "Reprime el reflejo primario de congelar los ojos o disparar micromovimientos de búsqueda durante el apagón. Confíe en la inercia del modelo feedforward.",
-          tips: "Conserve los músculos extraoculares distendidos y fluidos para asegurar una transición suave."
-        }
-      ]
-    },
-    steps: [
-      { title: "Fija el objetivo durante la luz", text: "Sigue el movimiento inicial y memoriza su dirección y velocidad sin mover la cabeza." },
-      { title: "Continúa durante el apagón", text: "Cuando el objetivo desaparezca, mantén la mirada en la ruta prevista en lugar de detenerla o buscar al azar." },
-      { title: "Comprueba el error al reaparecer", text: "Observa si la mirada quedó delante o detrás del objetivo y corrige suavemente el siguiente ciclo." },
-      { title: "Aumenta la dificultad con control", text: "Trabaja en bloques cortos y sube la velocidad solo cuando la precisión oculta sea estable." }
+    note: "Etapas de práctica de SkillDrills solo como orientación. No son normas de examen visual, estadísticas de usuarios ni percentiles.",
+  },
+  techniques: {
+    title: "Consejos de práctica",
+    items: [
+      { name: "Lee la dirección mientras se ve", desc: "En la fase visible, fíjate en la dirección y la velocidad del objetivo.", tips: "Si desaparece cerca de un borde, piensa en el rebote." },
+      { name: "No detengas la mirada", desc: "Cuando el objetivo desaparece, sigue moviendo la mirada con calma en la dirección esperada.", tips: "Al reaparecer, compara su posición con tu predicción." },
+      { name: "Quita el contorno poco a poco", desc: "Practica primero con el contorno y luego oculta la línea para que el contorno también desaparezca.", tips: "Cambia un solo ajuste por sesión." },
+      { name: "Sesiones cortas con pausas", desc: "Practica en bloques de 5 a 10 minutos, parpadea y mira a lo lejos entre sesiones. Más tiempo no es necesariamente mejor.", tips: "Para de inmediato si sientes dolor o mareo." }
     ],
-    audience: "Deportistas de raqueta y pelota, pilotos, jugadores de esports (FPS y MOBA) y profesionales que busquen maximizar la anticipación visoespacial y la memoria de velocidad.",
-    faqs: faqSchema.mainEntity.map(item => ({
-      q: item.name,
-      a: item.acceptedAnswer.text
-    })),
-    sources
-  };
+  },
+  steps: [
+    { title: "Elegir los ajustes", text: "Empieza con 60 segundos, 1,0x y el contorno visible." },
+    { title: "Leer el movimiento", text: "En la fase visible, sigue la dirección y la velocidad del objetivo." },
+    { title: "Cruzar la fase invisible", text: "Cuando el objetivo desaparece, sigue moviendo la mirada en la dirección esperada." },
+    { title: "Subir poco a poco", text: "Cuando resulte fácil, sube la velocidad u oculta el contorno o activa la velocidad aleatoria, una cosa cada vez." }
+  ],
+  audience: "Quien quiera practicar de forma ligera, como un juego, seguir por predicción un objetivo que se vuelve invisible por momentos.",
+  faqs,
+  sources: pickSources('appelbaum2011', 'bennett2007', 'mitroff2013', 'smith2016', 'woods2015', 'leigh2015'),
+};
 
+export default function StrobePredictionPursuitPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <StrobePredictionPursuitClient
         copy={{
           title: "Entrenamiento visual estroboscópico",
-          subtitle: "Predicción visual con ocultación intermitente",
-          description: "Predice la ruta de un objetivo oculto por destellos y registra el error de recuperación y la continuidad visual."
+          subtitle: "Predice la posición cuando el objetivo desaparece",
+          description: "En el entrenamiento visual estroboscópico sigues un objetivo que desaparece a intervalos regulares y predices su posición. El navegador no registra tu mirada: es un registro de práctica, no una prueba.",
         }}
       />
       <DrillGuide guide={guide} />

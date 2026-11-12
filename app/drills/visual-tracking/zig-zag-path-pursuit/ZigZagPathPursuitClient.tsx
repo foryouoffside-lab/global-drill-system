@@ -20,7 +20,7 @@ const RELATED_DRILLS = [
   { id: "constant-slow-pursuit", name: "Smooth Pursuit Eye Exercise", cat: "Visual Tracking", desc: "Condition smooth pursuit tracking along continuous Lissajous curves.", href: "/drills/visual-tracking/constant-slow-pursuit" },
   { id: "directional-chaos-pursuit", name: "Erratic Motion Eye Drill", cat: "Visual Tracking", desc: "Complex multi-directional visual tracking with sudden direction shifts.", href: "/drills/visual-tracking/directional-chaos-pursuit" },
   { id: "dynamic-evasion-pursuit", name: "Reactive Eye Tracking Drill", cat: "Visual Tracking", desc: "Re-acquire targets executing rapid evasive directional changes.", href: "/drills/visual-tracking/dynamic-evasion-pursuit" },
-  { id: "split-screen-tracking", name: "Divided Attention Eye Test", cat: "Visual Tracking", desc: "Condition divided attention across dual independent movement planes.", href: "/drills/visual-tracking/split-screen-tracking" },
+  { id: "split-screen-tracking", name: "Divided Attention Tracking Drill", cat: "Visual Tracking", desc: "Condition divided attention across dual independent movement planes.", href: "/drills/visual-tracking/split-screen-tracking" },
   { id: "infinity-pursuit", name: "Figure-8 Eye Tracking Exercise", cat: "Visual Tracking", desc: "Condition continuous pursuit across figure-8 infinity loops.", href: "/drills/visual-tracking/infinity-pursuit" },
   { id: "spatial-shift-pursuit", name: "Adaptive Eye Tracking Drill", cat: "Visual Tracking", desc: "Track shifting targets across sudden spatial displacements.", href: "/drills/visual-tracking/spatial-shift-pursuit" }
 ];
@@ -630,7 +630,7 @@ export default function ZigZagPathPursuitClient({ copy }: { copy?: { title?: str
             onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
           >
             <p className="text-sm text-slate-300 leading-relaxed">
-              {copy?.description || "Zig-zag path pursuit conditions multi-vector foveal tracking and rapid catch-up saccades by guiding gaze along an alternating multi-segment polyline. Navigating sharp diagonal inflection points trains predictive ocular motor coordination and dynamic visual acuity (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007). Pursuit holds to roughly 30°/s on each straight leg, and every reversal exceeds it, so the eye alternates between smooth tracking and catch-up saccades (Krauzlis, 2004)."}
+              {copy?.description || "Zig-Zag Path Pursuit is a browser practice task: a target swings up and down through seven sharp turns from the left edge to the right, then returns the same way, and you follow it with your eyes only. It does not record where you look and is not an eye test (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007). Pursuit holds to roughly 30°/s on each straight leg, and every reversal exceeds it, so the eye alternates between smooth tracking and catch-up saccades (Krauzlis, 2004)."}
             </p>
           </DrillAccordion>
         )}

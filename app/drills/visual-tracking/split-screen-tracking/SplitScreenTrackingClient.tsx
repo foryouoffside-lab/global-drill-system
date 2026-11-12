@@ -458,7 +458,7 @@ export default function SplitScreenTrackingClient({ copy }: { copy?: { title?: s
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Split-Screen Tracking"}</span>
               <span className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                {copy?.subtitle || "Divided Attention Eye Test"}
+                {copy?.subtitle || "Divided Attention Tracking Drill"}
               </span>
             </h1>
           </div>
@@ -683,7 +683,7 @@ export default function SplitScreenTrackingClient({ copy }: { copy?: { title?: s
             </DrillAccordion>
             {(locale === 'en' || copy?.description) && (
               <DrillAccordion id="about" title="About Split-Screen Tracking" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
-                <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Split-screen tracking conditions divided visual attention by training observers to monitor two independent targets moving along orthogonal vertical and horizontal axes simultaneously. By utilizing covert peripheral vision between hemifields, this drill strengthens parallel visual processing and reduces attentional tunneling (Pylyshyn & Storm, 1988; Alvarez & Cavanagh, 2005). Most people can track about four or five independent moving targets at once, with accuracy falling away sharply beyond that (Pylyshyn & Storm, 1988)."}</p>
+                <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Split-screen tracking is a browser practice task: one target bounces up and down in the left half while a second bounces left and right in the right half, and you follow both with your eyes at the same time. It does not record where you look and is not an eye test; research on tracking several moving objects is background, not something this drill measures (Pylyshyn & Storm, 1988; Alvarez & Cavanagh, 2005). Most people can track about four or five independent moving targets at once, with accuracy falling away sharply beyond that (Pylyshyn & Storm, 1988)."}</p>
               </DrillAccordion>
             )}
           </div>

@@ -4,313 +4,260 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
+import { breadcrumbItems } from '@/lib/i18n/breadcrumbLabels';
+
+const url = 'https://skilldrills.online/es/drills/visual-tracking/ghosting-suppress-pursuit';
+const name = "Seguimiento con Imágenes Fantasma";
+const title = `${name} | SkillDrills`;
+const description = "Seguimiento con imágenes fantasma: el objetivo avanza en línea recta y rebota, con estela opcional de anillos tenues. No es un test de ghosting del monitor.";
 
 export const metadata = {
-  title: "Test de Ghosting del Monitor | SkillDrills",
-  description: "Observa estelas y halos en un objetivo móvil y practica fijación foveal, nitidez de movimiento y estabilidad de la mirada.",
-  keywords: [
-    "prueba de ghosting del monitor",
-    "ghosting monitor test",
-    "estela en la pantalla",
-    "prueba de monitor",
-    "tiempo de respuesta del monitor",
-    "desenfoque de movimiento",
-    "prueba de estelas visuales",
-    "fijación foveal",
-    "estabilidad de la mirada",
-    "prueba de movimiento online",
-    "monitor gaming ghosting",
-    "test visual gratis"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/es/drills/visual-tracking/ghosting-suppress-pursuit",
-    languages: getAlternateLanguages("/drills/visual-tracking/ghosting-suppress-pursuit"),
-  },
+  title,
+  description,
+  keywords: ["seguimiento con imágenes fantasma","ignorar rastros fantasma","objetivo con estela","seguir un objetivo con la mirada","estabilidad de la mirada","ejercicio para los ojos en el navegador"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/ghosting-suppress-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'es_ES', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de Ghosting del Monitor | SkillDrills",
-    description: "Observa estelas y halos en un objetivo móvil y practica fijación foveal, nitidez de movimiento y estabilidad de la mirada.",
-    url: "https://skilldrills.online/es/drills/visual-tracking/ghosting-suppress-pursuit",
-    siteName: "SkillDrills",
-    locale: "es_ES",
-    type: "website",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Test de Ghosting del Monitor | SkillDrills",
-    description: "Observa estelas y halos en un objetivo móvil y practica fijación foveal, nitidez de movimiento y estabilidad de la mirada.",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills",
-      "item": "https://skilldrills.online/es"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Seguimiento Visual",
-      "item": "https://skilldrills.online/es/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Supresión de Estelas y Fijación",
-      "item": "https://skilldrills.online/es/drills/visual-tracking/ghosting-suppress-pursuit"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems('es', url, 'visual-tracking', name, true),
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "Supresión de Estelas Visuales – Fijación Ocular",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Navegador",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Test de Estabilidad de Fijación Ocular y Supresión de Imágenes Residuales",
-  "url": "https://skilldrills.online/es/drills/visual-tracking/ghosting-suppress-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Navegador",
-  "browserRequirements": "Requiere JavaScript y Canvas HTML5.",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Seguimiento con Imágenes Fantasma (aplicación web)",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navegador actual compatible con HTML5 Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Test de Ghosting del Monitor – Fijación Foveal",
-  "description": "Entrenador visual en el navegador para observar estelas en un objetivo móvil y practicar fijación foveal y estabilidad de la mirada.",
-  "genre": ["Prueba de Monitor", "Entrenamiento de Motilidad Ocular", "Entrenamiento de Reacción Visual"],
-  "playMode": "Un jugador",
-  "applicationCategory": "Game",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name,
+  url,
+  description,
+  genre: ['Visual training', 'Eye tracking exercise'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Cómo Entrenar la Fijación Foveal ante Estelas Visuales",
-  "description": "Protocolo para optimizar la supresión cortical de borrosidad y mantener el anclaje visual en blancos con artefactos de arrastre.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Inmoviliza Cabeza y Cuello",
-      "text": "Siéntate a 50-60 cm de la pantalla con la cabeza inmóvil para suprimir la ayuda refleja del sistema vestibular.",
-      "url": "https://skilldrills.online/es/drills/visual-tracking/ghosting-suppress-pursuit#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Clava la Mirada en el Núcleo Central",
-      "text": "Fija la atención foveal únicamente en el centro del blanco, ignorando deliberadamente los anillos y halos que lo persiguen.",
-      "url": "https://skilldrills.online/es/drills/visual-tracking/ghosting-suppress-pursuit#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Suprime el Deslizamiento Retiniano Posterior",
-      "text": "Evita que la vista retroceda hacia la estela. Mantén las microsacadas orientadas de forma continua en la dirección del desplazamiento.",
-      "url": "https://skilldrills.online/es/drills/visual-tracking/ghosting-suppress-pursuit#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Completa Series de Alta Concentración",
-      "text": "Ejecuta de 5 a 8 series de 60 segundos con descansos periódicos para prevenir el agotamiento de los fotorreceptores y de la corteza visual.",
-      "url": "https://skilldrills.online/es/drills/visual-tracking/ghosting-suppress-pursuit#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Cómo hacer: Seguimiento con Imágenes Fantasma",
+  description: "Seguimiento con Imágenes Fantasma en cuatro pasos sencillos.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Ponte cómodo",
+    "text": "Siéntate a una distancia cómoda de la pantalla, con hombros y mano relajados."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Quédate en el objetivo",
+    "text": "Mantén la mirada en el centro del objetivo sólido, no en los anillos de detrás."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Sigue con la mirada",
+    "text": "Sigue el objetivo con los ojos, no el cursor, y termina la sesión de 30 a 120 segundos."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Cambia un ajuste cada vez",
+    "text": "Después sube la velocidad o activa Ocultar línea o la velocidad aleatoria, de uno en uno."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "¿Qué es el seguimiento con imágenes fantasma?",
+    "a": "Un ejercicio en el navegador: sigues con los ojos un objetivo en línea recta sin dejarte arrastrar por la estela opcional. Duración (30 a 120 segundos), velocidad, tamaño y línea son ajustables. No es un test de visión ni un tratamiento."
+  },
+  {
+    "q": "¿Es un test de ghosting del monitor?",
+    "a": "No. El ejercicio no mide el tiempo de respuesta ni el ghosting de tu pantalla. Los anillos los dibuja la página a propósito; el rendimiento del monitor no se prueba. Para eso usa un test de monitor específico."
+  },
+  {
+    "q": "¿Cuándo aparece la estela?",
+    "a": "Solo si activas la estela en los ajustes. Entonces quedan pequeños anillos, cada vez más tenues, en las últimas posiciones. Sin ella, solo se mueve el objetivo."
+  },
+  {
+    "q": "¿Mide el movimiento de mis ojos?",
+    "a": "No. El navegador no ve tu mirada; solo conoce la posición dibujada del objetivo y los ajustes. El cursor es solo una ayuda y no demuestra hacia dónde miras. No hay puntuación."
+  },
+  {
+    "q": "¿Qué cambia la velocidad aleatoria?",
+    "a": "La velocidad del objetivo varía de forma irregular y cuesta más anticiparla. Actívala cuando la velocidad base sea cómoda, y no a la vez que ocultas la línea."
+  },
+  {
+    "q": "¿Conviene dejar la línea visible?",
+    "a": "Con la línea visible es más fácil prever el movimiento, lo que ayuda al principio. Después puedes ocultarla para subir la dificultad. No hay opción correcta: compara solo ajustes iguales."
+  },
+  {
+    "q": "¿Con qué ajustes empiezo?",
+    "a": "Sesiones de 30 a 60 segundos, velocidad lenta (0,5 a 1,0×) y línea visible. La velocidad va de 0,5 a 9,0× y el tamaño del objetivo de 10 a 50 px; cambia un ajuste cada vez."
+  },
+  {
+    "q": "¿Mejora la vista o la puntería?",
+    "a": "No se puede garantizar. Es un ejercicio para seguir un objetivo con los ojos; no promete mejorar la vista, tratar problemas oculares ni mejorar la puntería en FPS. Si notas molestias oculares, consulta a un profesional."
+  },
+  {
+    "q": "¿Influyen la pantalla y el entorno?",
+    "a": "Sí. Frecuencia de refresco, brillo, contraste, tamaño y distancia de la pantalla y el navegador cambian cómo se ve el objetivo. También influyen los retrasos de entrada y de imagen (Woods et al., 2015): compara en las mismas condiciones."
+  },
+  {
+    "q": "¿Cuánto tiempo practicar?",
+    "a": "En bloques cortos de 5 a 10 minutos, con pausas. Si los ojos se cansan o se secan, para, parpadea y mira a lo lejos. Para si aparece dolor, mareo, náuseas o dolor de cabeza."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué es la prueba de ghosting y fijación de la mirada?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es una práctica visual que muestra un objetivo móvil con estelas y halos para observar la claridad del movimiento y mantener la mirada en el núcleo. No sustituye una medición de laboratorio del tiempo de respuesta del panel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo gestiona el sistema visual el desenfoque de movimiento?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El sistema visual combina señales de movimiento y contraste a lo largo del tiempo. La percepción depende tanto del procesamiento neural como de la respuesta del monitor, por lo que el resultado debe interpretarse como observación y práctica (Burr, 1980)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es la función de las microsacadas en la fijación ocular?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Incluso durante la fijación estricta, los ojos generan microsacadas de alta frecuencia que renuevan la estimulación de la fóvea y evitan el desvanecimiento perceptivo (efecto Troxler) sin perder el objetivo (Martinez-Conde et al., 2004)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué la mirada tiende a seguir la estela detrás del objetivo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los cambios de brillo y contraste en la periferia pueden atraer la atención. Si sigues el halo en lugar del núcleo, la fijación se desplaza hacia atrás; baja la velocidad y vuelve al centro."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿De qué manera favorece este ejercicio a los jugadores de FPS y deportes electrónicos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En tiroteos cargados de partículas, humo y proyectiles, fijar la retícula en el centro exacto del adversario sin distraerse por estelas luminosas permite disparar con mayor certeza y evitar fallos por fatiga visual."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué es crucial no mover la cabeza durante la prueba?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El movimiento cefálico activa el reflejo vestíbulo-ocular (RVO), compensando el desajuste con el oído interno. Mantener la cabeza fija hace que los músculos extraoculares asuman más carga de estabilización."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es el tiempo y la frecuencia diaria recomendados para este test?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "De 5 a 10 minutos al día (entre 5 y 8 bloques de 60 segundos). Como la supresión de ruido visual demanda esfuerzo cognitivo continuo, series cortas evitan la astenopia y favorecen la plasticidad motora."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué relevancia tiene el tiempo de respuesta del monitor (GtG) y los Hz en esta práctica?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El tiempo de respuesta y la frecuencia del monitor cambian la estela observada, pero un navegador no garantiza una medición de 1 ms. Compara 60, 120 o 144 Hz en el mismo equipo y registra las condiciones."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Existe transferencia de este ejercicio a disciplinas como tenis, béisbol o fútbol?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Una pelota bateada o lanzada con rotación genera estelas visuales en la retina. Los deportistas con fijación avanzada distinguen los giros y la costura de la pelota con gran nitidez a pesar de su alta velocidad."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Es seguro y gratuito realizar este ejercicio de fijación diariamente?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Totalmente. El test es 100 % gratuito, opera en el navegador sin descargas ni registros, y los registros de puntuación se conservan únicamente en el almacenamiento local de tu dispositivo."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'es',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Bases Neurofisiológicas de la Fijación Foveal y Supresión de Estelas Visuales",
-  intro: [
-    "Al seguir un objetivo rápido, la imagen puede dejar una estela por la respuesta de los píxeles, el tiempo de integración visual y el movimiento de la mirada. Esta prueba usa la estela como distracción controlada: la tarea es mantener la fijación en el núcleo, sin convertir el resultado en un examen clínico (Burr, 1980; Burr & Morgan, 1997).",
-    "Filtrado visual y microsacadas: durante la fijación, pequeños movimientos oculares renuevan la estimulación retiniana y ayudan a conservar la percepción del objetivo. La práctica combina atención al núcleo, seguimiento suave y una corrección breve cuando el halo atrae la visión periférica (Martinez-Conde, Macknik, & Hubel, 2004; Rolfs, 2009; Krauzlis, 2004).",
-    "Interacción con el hardware y frecuencia: 60 Hz, 120 Hz y 144 Hz muestran el movimiento con intervalos distintos, mientras que el overdrive puede producir un halo claro de sobreimpulso. Compara la misma pantalla y configuración; la herramienta funciona en el navegador y guarda los resultados localmente."
+  ...{
+  "heading": "Guía: Seguimiento con Imágenes Fantasma",
+  "intro": [
+    "En el seguimiento con imágenes fantasma, el objetivo avanza a velocidad constante en línea recta y rebota en los bordes. Si activas la estela, la página dibuja detrás anillos tenues que se desvanecen (desactivada por defecto). El objetivo es mantener la mirada en el objetivo sólido sin seguir las copias.",
+    "El navegador solo conoce la posición dibujada del objetivo y tus ajustes, no hacia dónde miran tus ojos. No hay puntuación: solo se cuentan las sesiones completadas. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
+    "Usa una distancia cómoda y compara siempre la misma pantalla y el mismo navegador. La frecuencia de refresco y el dispositivo de entrada cambian la imagen (Woods et al., 2015). Para si notas dolor, mareo, náuseas o visión borrosa persistente."
   ],
-  techniques: {
-    title: "Cuatro técnicas para mantener la fijación en el núcleo",
-    items: [
-      { name: "Estabiliza la postura antes de observar la estela", desc: "Mantener cabeza y mandíbula quietas reduce los movimientos compensatorios y facilita separar el comportamiento de la mirada del artefacto de la pantalla.", tips: "Siéntate a 50–70 cm, apoya los pies y detente si aparece ardor, dolor o visión doble." },
-      { name: "Fija la mirada en el núcleo, no en el halo", desc: "El centro del objetivo es la referencia de precisión; la estela es un estímulo secundario que puede llevar la atención hacia atrás.", tips: "Empieza a baja velocidad y repite mentalmente ‘centro’ cuando el halo sea más llamativo." },
-      { name: "Compara una sola variable cada vez", desc: "La frecuencia, el brillo, el overdrive y la velocidad cambian el aspecto de la estela. Cambiar todo impide una comparación fiable.", tips: "Mantén el fondo y el tamaño constantes; cambia solo la velocidad o la configuración del monitor por serie." },
-      { name: "Descansa y registra las condiciones", desc: "La fatiga, el brillo y la distancia de visualización afectan la estabilidad. Series cortas producen datos más comparables.", tips: "Anota velocidad, Hz y modo de respuesta; interrumpe la sesión ante molestias visuales persistentes." }
+  "benchmarks": {
+    "title": "Etapas de práctica (referencia)",
+    "headers": [
+      "Etapa",
+      "Objetivo"
+    ],
+    "rows": [
+      [
+        "1",
+        "Velocidad lenta, línea visible"
+      ],
+      [
+        "2",
+        "Mantener la velocidad base con comodidad"
+      ],
+      [
+        "3",
+        "Seguir en el objetivo con la estela activada"
+      ],
+      [
+        "4",
+        "Ocultar la línea"
+      ],
+      [
+        "5",
+        "Añadir velocidad aleatoria"
+      ]
+    ],
+    "note": "Esta tabla es una orientación de práctica de SkillDrills. No es una norma de función visual, ni una estadística de usuarios, ni un percentil."
+  },
+  "techniques": {
+    "title": "4 consejos de práctica",
+    "items": [
+      {
+        "name": "Mira el objetivo, no los anillos",
+        "desc": "No sigas la estela tenue; apunta al centro del objetivo. Si la mirada se va hacia la estela, parpadea una vez y vuelve al objetivo.",
+        "tips": "Si resulta incómodo, desactiva la estela y baja la velocidad."
+      },
+      {
+        "name": "Mira el objetivo, no el cursor",
+        "desc": "El puntero es solo una ayuda. Sigue el objetivo con los ojos y relaja hombros y mano.",
+        "tips": "Comprueba de vez en cuando que la cabeza y el cuello no giran con él."
+      },
+      {
+        "name": "Una dificultad cada vez",
+        "desc": "Sube por separado la velocidad, la línea oculta y la velocidad aleatoria. Si baja la comodidad, vuelve al ajuste anterior.",
+        "tips": "Tras cada cambio, compara de nuevo."
+      },
+      {
+        "name": "Sesiones cortas con pausas",
+        "desc": "Practica en bloques de 5 a 10 minutos, parpadea y mira a lo lejos. Más tiempo no es necesariamente mejor.",
+        "tips": "Dolor, mareo o náuseas: para enseguida."
+      }
     ]
   },
-  steps: [
-    "Siéntate a 50–70 cm de la pantalla, alinea la postura y mantén la cabeza estable.",
-    "Empieza en 0.7x o 1.0x durante 60 segundos y observa el núcleo sin intentar medir el tiempo de respuesta del panel.",
-    "Cuando aparezca el halo, mantén la mirada en el centro; si lo pierdes, haz una corrección corta y vuelve al seguimiento suave.",
-    "Repite la serie cambiando una sola condición: velocidad, frecuencia de actualización o intensidad de respuesta del monitor.",
-    "Haz de 5 a 8 series con pausas y registra la configuración, la frecuencia de pérdidas y cualquier molestia."
+  "steps": [
+    "Siéntate a una distancia cómoda, con hombros y mano relajados.",
+    "Empieza con 30 a 60 segundos, velocidad lenta y línea visible.",
+    "Sigue el objetivo con los ojos, no el cursor.",
+    "Después sube la velocidad o un ajuste cada vez."
   ],
-  benchmarks: {
-    title: "Estándares de Rendimiento en Fijación Foveal y Supresión de Estelas Visuales",
-    headers: ["Nivel de Rendimiento", "Multiplicador de Velocidad", "Estabilidad de Fijación ante Estelas Visuales", "Perfil Neuromotor y Oculomotor"],
-    rows: [
-      ["Nivel 1: Apex Fijación – Bloqueo Foveal Puro", "2.0x+ Ultra-Velocidad", "La mirada permanece firmemente anclada en el núcleo del blanco a pesar de los densos anillos de estela y rebotes bruscos.", "Supresión cortical perfecta del desenfoque de movimiento y precisión absoluta en microsacadas (Burr, 1980; Martinez-Conde et al., 2004)."],
-      ["Nivel 2: Agudeza de Fijación Superior", "1.4x – 1.9x Alta Velocidad", "El contorno del blanco se percibe nítido a gran velocidad; mínima distracción ocasionada por los anillos de arrastre.", "Excelente filtrado sensoriomotor de los músculos extraoculares. Gran eficacia en situaciones colmadas de efectos visuales y partículas."],
-      ["Nivel 3: Estándar Funcional Sólido", "1.0x – 1.3x Velocidad Estándar", "Seguimiento regular a velocidad habitual; breve titubeo durante rebotes rápidos o cuando los anillos se vuelven muy densos.", "Rango habitual en adultos sanos. Suficiente para la conducción vehicular, deportes recreativos y videojuegos convencionales."],
-      ["Nivel 4: Deriva Visual – Requiere Práctica", "0.7x – 0.9x Velocidad Moderada", "La mirada se desvía periódicamente hacia las estelas posteriores; el núcleo del objetivo abandona frecuentemente la fóvea.", "Filtrado cortical pausado frente al ruido visual. Se aconseja consolidar la fijación en las velocidades más bajas."],
-      ["Nivel 5: Pérdida de Fijación – Principiante", "< 0.7x Baja Velocidad", "Los ojos oscilan de manera errática entre el objetivo y los halos residuales, perdiendo el blanco por completo.", "La coordinación neuromuscular básica debe desarrollarse a bajas velocidades manteniendo la cabeza estrictamente fija."]
-    ],
-    note: "Baremos fundamentados en investigaciones neurofisiológicas sobre control de fijación foveal, dinámica de microsacadas y supresión cortical de estelas de movimiento (Burr, 1980; Martinez-Conde et al., 2004; Rolfs, 2009; Krauzlis, 2004)."
-  },
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('burr1980', 'martinezconde2004', 'rolfs2009', 'krauzlis2004', 'barnes2008', 'woods2015'),
+  "audience": "Quien quiera probar el ejercicio «Seguimiento con Imágenes Fantasma» en el navegador y practicar de forma ligera el seguimiento de un objetivo en movimiento."
+},
+  faqs,
+  sources: pickSources('burr1980', 'martinezConde2004', 'rolfs2009', 'krauzlis2004', 'leigh2015', 'woods2015'),
   related: [
-    { href: "/es/drills/visual-tracking/constant-slow-pursuit", label: "Seguimiento Ocular Lento" },
-    { href: "/es/drills/visual-tracking/directional-chaos-pursuit", label: "Persecución Caótica Direccional" },
-    { href: "/es/drills/visual-tracking/dynamic-evasion-pursuit", label: "Seguimiento Ocular Reactivo" },
-    { href: "/es/drills/visual-tracking/infinity-pursuit", label: "Seguimiento en Ocho" }
-  ]
+  {
+    "href": "/es/drills/visual-tracking/constant-slow-pursuit",
+    "label": "Ejercicio de Seguimiento Lento Constante"
+  },
+  {
+    "href": "/es/drills/visual-tracking/directional-chaos-pursuit",
+    "label": "Seguimiento ocular con cambios de dirección"
+  },
+  {
+    "href": "/es/drills/visual-tracking/dynamic-evasion-pursuit",
+    "label": "Objetivo que Cambia de Dirección sin Aviso"
+  },
+  {
+    "href": "/es/drills/visual-tracking/infinity-pursuit",
+    "label": "Ejercicio Ocular en Figura Ocho"
+  }
+],
 };
 
-export default function GhostingSuppressPursuitPageEs() {
+export default function LocalizedPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <GhostingSuppressPursuitClient
         copy={{
-          title: "Test de Ghosting del Monitor – Fijación Ocular",
-          subtitle: "Entrenamiento de Estabilidad Foveal y Supresión de Imágenes Residuales",
-          description: "Al proyectar estelas de arrastre y anillos fantasma estocásticos, este ejercicio entrena a la corteza visual para inhibir activamente las distracciones lumínicas, afianzando la fóvea en el centro del blanco (Burr, 1980; Martinez-Conde et al., 2004)."
+          title: name,
+          subtitle: "Mirar el objetivo, no su estela",
+          description: "Seguimiento con imágenes fantasma: sigue un objetivo con estela opcional. No es un test de ghosting del monitor. El navegador no registra tu mirada y no hay puntuación.",
         }}
       />
       <DrillGuide guide={guideProps} />

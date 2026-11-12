@@ -5,287 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit';
+const title = "Exercice de poursuite oculaire sinusoïdale | SkillDrills";
+const description = "Exercice gratuit : suivez des yeux une cible qui fait des allers-retours de gauche à droite en montant et descendant sur une courbe sinusoïdale fixe.";
+
 export const metadata = {
-  title: "Exercice de poursuite oculaire sinusoïdale | SkillDrills",
-  description: "Suivez une cible mobile sinusoïdale horizontalement et verticalement. Exercice gratuit avec décalage de phase et écart de position.",
-  keywords: [
-    "poursuite oculaire sinusoïdale",
-    "suivi oculaire sinusoïdal",
-    "exercice de poursuite visuelle",
-    "suivre une cible mobile",
-    "décalage de phase visuel",
-    "gain de poursuite oculaire",
-    "poursuite visuelle horizontale",
-    "poursuite visuelle verticale",
-    "cible oscillante exercice",
-    "écart de position du regard"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/sine-wave-pursuit'),
-  },
+  title,
+  description,
+  keywords: ["exercice de poursuite oculaire sinusoïdale", "poursuite oculaire", "trajectoire sinusoïdale", "exercice des yeux en ligne", "poursuite lisse", "exercice oculaire gratuit"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/sine-wave-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'fr_FR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Exercice de poursuite oculaire sinusoïdale | SkillDrills",
-    description: "Suivez une cible mobile sinusoïdale horizontalement et verticalement. Exercice gratuit avec décalage de phase et écart de position.",
-    url: "https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit",
-    siteName: 'SkillDrills',
-    locale: 'fr_FR',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Exercice de poursuite oculaire sinusoïdale | SkillDrills",
-    description: "Exercice court pour suivre une cible périodique et observer l écart de vitesse et de position au changement de direction.",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Accueil",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Exercices",
-      "item": "https://skilldrills.online/fr/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Poursuite Visuelle",
-      "item": "https://skilldrills.online/fr/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Poursuite Oculaire en Onde Sinusoïdale",
-      "item": "https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Accueil", item: 'https://skilldrills.online/fr' },
+    { '@type': 'ListItem', position: 2, name: "Exercices", item: 'https://skilldrills.online/fr/drills' },
+    { '@type': 'ListItem', position: 3, name: "Poursuite Visuelle", item: 'https://skilldrills.online/fr/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "Exercice de poursuite oculaire sinusoïdale", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "dateModified": "2026-09-20",
-  "name": "Entraînement Oculaire Sinusoïdal",
-  "operatingSystem": "Navigateur Web",
-  "applicationCategory": "HealthApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD"
-  },
-  "description": "Exercice de poursuite visuelle sur une trajectoire sinusoïdale, avec gain de poursuite, décalage de phase et écart de position."
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "dateModified": "2026-09-20",
-  "name": "Exercice de Poursuite Sinusoïdale",
-  "url": "https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Tous les navigateurs modernes",
-  "browserRequirements": "Nécessite le support de JavaScript et HTML5 Canvas"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "dateModified": "2026-09-20",
-  "name": "Poursuite oculaire sinusoïdale",
-  "description": "Exercice de poursuite oculaire continue : suivez une cible qui oscille en vague, avec un gain de poursuite et un écart de phase affichés en fin de série.",
-  "genre": ["Entraînement visuel", "Poursuite lente", "Entraînement des réflexes"],
-  "playMode": "SinglePlayer",
-  "gamePlatform": "Navigateur Web"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Exercice de poursuite oculaire sinusoïdale",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Comment suivre une cible sinusoïdale du regard",
-  "description": "Quatre étapes pour garder une poursuite fluide sur une trajectoire ondulatoire.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Repérer le rythme de l’onde",
-      "text": "Placez-vous à 50-70 cm de l’écran et observez les premiers cycles pour repérer l’amplitude et la cadence."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Accompagner le passage central",
-      "text": "La cible va le plus vite quand elle traverse l’axe central : laissez le regard la suivre sans à-coup."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Ralentir aux sommets",
-      "text": "Quand la cible ralentit puis repart en sens inverse, ralentissez avec elle pour éviter de la dépasser."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Limiter les rattrapages",
-      "text": "Gardez une poursuite continue plutôt que de multiplier les petits sauts du regard pour rattraper la cible."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Comment faire l’exercice de poursuite oculaire sinusoïdale",
+  description: "Quatre étapes pour suivre en douceur une cible qui fait des allers-retours sur une courbe en vague.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "S’installer confortablement",
+    "text": "Asseyez-vous à une distance confortable de l’écran, épaules et nuque relâchées."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Repérer la courbe",
+    "text": "Au début, gardez la courbe visible et repérez la vague que la cible va parcourir."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Suivre sans à-coups",
+    "text": "Suivez la cible sans interruption pendant qu’elle monte et descend sur la courbe et fait demi-tour aux bords."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Un réglage à la fois",
+    "text": "Quand c’est facile, augmentez la vitesse ou activez Masquer la ligne puis Vitesse aléatoire, l’un après l’autre."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Comment la cible bouge-t-elle dans la poursuite oculaire sinusoïdale ?",
+    "a": "La cible fait des allers-retours à vitesse horizontale constante entre environ 5 % et 95 % de la largeur de l’écran (environ 220 pixels par seconde à 1,0x) et suit une courbe sinusoïdale fixe dont l’amplitude vaut environ 28 % de la hauteur de l’écran. Aux bords, elle fait demi-tour sur la même courbe. C’est un exercice du regard dans le navigateur, pas un examen de la vue."
+  },
+  {
+    "q": "Pourquoi la vitesse verticale change-t-elle sans cesse ?",
+    "a": "La vitesse horizontale est constante, mais la pente de la courbe varie. Au milieu de la vague, le mouvement vertical est le plus rapide ; aux sommets et aux creux, il semble s’arrêter un instant."
+  },
+  {
+    "q": "Que changent Hide Line et Random Speed ?",
+    "a": "Hide Line masque la courbe : vous suivez alors de mémoire ou d’après le seul mouvement. Random Speed fait varier la vitesse en continu. La trajectoire elle-même ne change pas."
+  },
+  {
+    "q": "L’exercice mesure-t-il mes mouvements oculaires ou un score ?",
+    "a": "Non. Le navigateur ne sait pas où vous regardez et il n’y a ni clic ni détection de touche. Il n’y a pas de score : seul le nombre de séances terminées est enregistré dans ce navigateur. C’est à vous de garder le regard là où l’exercice le demande."
+  },
+  {
+    "q": "Quels réglages sont disponibles ?",
+    "a": "Après un compte à rebours 3-2-1, la séance dure 30, 45, 60, 90 ou 120 secondes (60 par défaut). Vous réglez la vitesse de 0,5x à 9,0x, la taille de la cible de 10 à 50 px, sa couleur, les options Hide Line (masquer la ligne), Random Speed (vitesse aléatoire), Gaze Trail (traînée), Neon Glow et Scanlines, ainsi qu’un fond clair ou sombre. Échap arrête la séance à tout moment."
+  },
+  {
+    "q": "Est-ce que ma vue ou ma visée vont s’améliorer ?",
+    "a": "Rien n’est garanti. Ce n’est ni un examen de la vue ni une thérapie, mais un outil pour s’exercer à regarder une cible. Il ne promet ni meilleure acuité ni meilleure visée. En cas de gêne visuelle, consultez un professionnel."
+  },
+  {
+    "q": "Combien de temps s’entraîner ?",
+    "a": "Quelques séances de 1 à 2 minutes avec des pauses suffisent. Si vos yeux sont fatigués ou secs, clignez et regardez au loin ; arrêtez en cas de douleur, vertige, nausée ou mal de tête."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Qu’est-ce qu’un exercice de poursuite oculaire sinusoïdale ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Vous suivez du regard une cible qui oscille en vague, horizontalement et verticalement. L’exercice affiche ensuite votre gain de poursuite, votre décalage de phase et l’écart de position. Ce n’est pas un test médical."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "En quoi la poursuite sinusoïdale diffère-t-elle d’un suivi à vitesse constante ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La vitesse et l’accélération changent en permanence : la cible va le plus vite au passage de l’axe central et s’arrête brièvement aux sommets avant de repartir en sens inverse (Stark et al., 1962)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qu’est-ce que le gain de poursuite ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "C’est le rapport entre la vitesse de votre regard et celle de la cible. Un gain proche de 1,0 signifie que l’œil suit la cible à la même vitesse ; en dessous, l’œil prend du retard (Robinson, 1965)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi le regard fait-il des sauts de rattrapage ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quand la poursuite prend du retard, l’œil effectue une saccade de rattrapage pour replacer la cible au centre de la fovéa (Bahill et al., 1980). Peu de rattrapages indiquent généralement une poursuite plus régulière."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Peut-on anticiper une trajectoire sinusoïdale ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. Comme le mouvement est périodique, le cerveau peut s’appuyer sur le rythme après quelques cycles pour réduire le retard entre la cible et le regard (Barnes, 2008). Une cible aléatoire ne le permet pas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cet exercice améliore-t-il la visée dans les jeux de tir ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il entraîne le suivi d’une cible en mouvement régulier, ce qui ressemble au tracking dans un jeu. Aucune étude ne démontre à ce jour un gain direct de score en jeu à partir de cet exercice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi garder la tête immobile ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les mouvements de la tête déclenchent le réflexe vestibulo-oculaire, qui déplace les yeux en sens inverse et fausse la mesure de la poursuite (Leigh & Zee, 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "La fréquence de rafraîchissement de l’écran change-t-elle le résultat ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, un peu. Un écran à 144 Hz affiche la cible plus souvent qu’un écran à 60 Hz, ce qui rend le mouvement plus fluide. Comparez toujours vos séries sur le même écran (Woods et al., 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cet exercice oculaire est-il gratuit ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. Il fonctionne gratuitement dans votre navigateur, sans inscription, et vos résultats restent enregistrés localement sur votre appareil."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "À quelle fréquence faut-il s’entraîner ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Des séances courtes de 5 à 10 minutes, quelques fois par semaine, suffisent pour suivre votre progression. Arrêtez-vous en cas de fatigue ou d’inconfort visuel."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'fr',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Poursuite oculaire sinusoïdale : principes et repères",
-  intro: [
-    "Cet exercice de poursuite oculaire sinusoïdale vous demande de suivre du regard une cible qui oscille en vague. Il affiche votre gain de poursuite, votre décalage de phase et l’écart de position. C’est un entraînement avec des repères personnels, pas un examen médical ni un test de vue.",
-    "Sur une onde, la cible va le plus vite au passage de l’axe central, puis s’arrête brièvement aux sommets avant de repartir (Stark et al., 1962 ; Robinson, 1965). Comme le rythme se répète, le cerveau peut s’en servir pour réduire le retard entre la cible et le regard (Barnes, 2008).",
-    "Si le regard prend du retard, il rattrape la cible par des saccades courtes (Rashbass, 1961 ; Bahill et al., 1980). Le but est de garder une poursuite continue, avec un gain proche de 1,0 et peu de rattrapages."
+  ...{
+  "heading": "Exercice de poursuite oculaire sinusoïdale : le guide",
+  "intro": [
+    "L’exercice de poursuite oculaire sinusoïdale consiste à suivre des yeux une cible qui fait des allers-retours de gauche à droite en montant et descendant sur une courbe sinusoïdale fixe. Sa vitesse horizontale est constante et elle fait demi-tour aux bords de l’écran.",
+    "La poursuite lisse suit une cible lente presque à sa vitesse, mais prend plus facilement du retard quand la cible accélère (Robinson, 1965). Ici, vous variez la vitesse et suivez un mouvement qui change entre les sommets et le milieu de la vague.",
+    "Le navigateur connaît seulement la position où la cible est dessinée et vos réglages, pas l’endroit où vos yeux regardent réellement. Il n’affiche ni score ni précision : comparez plutôt votre aisance et votre concentration avec le même écran, la même distance et les mêmes réglages. La fréquence de rafraîchissement et la latence d’affichage changent aussi le rendu du mouvement (Woods et al., 2015)."
   ],
-  benchmarks: {
-    title: "Repères indicatifs de gain de poursuite",
-    headers: ["Palier", "Gain de poursuite", "Rattrapages par cycle", "Lecture"],
-    rows: [
-      ["Très régulier", "0,96 – 1,02", "0 – 1", "Le regard reste synchronisé avec la cible, y compris aux sommets"],
-      ["Régulier", "0,90 – 0,95", "2 – 3", "Quelques micro-corrections aux points d’inversion"],
-      ["Correct", "0,82 – 0,89", "4 – 5", "Légère dérive quand l’oscillation s’accélère"],
-      ["À travailler", "0,70 – 0,81", "6 – 8", "Retards fréquents aux sommets, rattrapages répétés"],
-      ["Débutant", "Moins de 0,70", "Plus de 9", "Suivi surtout réactif ; ralentissez la vitesse"]
+  "benchmarks": {
+    "title": "Étapes de pratique (repères SkillDrills)",
+    "headers": [
+      "Étape",
+      "Objectif de pratique"
     ],
-    note: "Repères éditoriaux propres à cet exercice, établis pour un écran à 50-70 cm entre 1.0x et 1.5x. Ce ne sont ni des normes cliniques ni un classement de population."
+    "rows": [
+      [
+        "Étape 1",
+        "1,0x, courbe visible, suivre sans interruption"
+      ],
+      [
+        "Étape 2",
+        "Ne pas perdre la cible aux demi-tours"
+      ],
+      [
+        "Étape 3",
+        "Augmenter la vitesse, suivre le milieu rapide de la vague"
+      ],
+      [
+        "Étape 4",
+        "Ajouter Hide Line ou Random Speed, un à la fois"
+      ]
+    ],
+    "note": "Repères de pratique proposés par SkillDrills : ni normes de test, ni statistiques d’utilisateurs, ni percentiles."
   },
-  techniques: {
-    title: "Quatre points de technique pour la poursuite sinusoïdale",
-    items: [
+  "techniques": {
+    "title": "Conseils d’exécution",
+    "items": [
       {
-        name: "Repérer le rythme",
-        desc: "Utilisez les premiers cycles pour mémoriser la cadence, puis laissez le regard accompagner la cible plutôt que de la poursuivre (Robinson, 1965).",
-        tips: "Comptez mentalement « un-deux » à chaque aller-retour pour garder la cadence."
+        "name": "Caler son regard sur le rythme de la vague",
+        "desc": "La cible ralentit un instant aux sommets et accélère au milieu. Connaître ce rythme aide à la suivre sans à-coups.",
+        "tips": "Si vous restez derrière la cible, baissez la vitesse."
       },
       {
-        name: "Ralentir aux sommets",
-        desc: "À l’approche des sommets, relâchez la tension du regard pour éviter de dépasser la cible au moment où elle s’inverse.",
-        tips: "Imaginez le mouvement d’un pendule qui arrive au bout de sa course."
+        "name": "Regarder la cible, pas le curseur",
+        "desc": "La souris n’est pas utilisée. Posez la main et suivez uniquement avec les yeux.",
+        "tips": "Vérifiez de temps en temps que la tête et la nuque ne tournent pas."
       },
       {
-        name: "Accompagner le passage central",
-        desc: "La cible est la plus rapide au centre : suivez-la en continu pour conserver la fovéa sur elle.",
-        tips: "Évitez de sauter en avant ; laissez le mouvement du regard rester régulier."
+        "name": "Un seul paramètre plus difficile à la fois",
+        "desc": "Augmentez séparément la vitesse, Masquer la ligne et Vitesse aléatoire. Si l’aisance disparaît, revenez au réglage précédent.",
+        "tips": "Après un changement, ne comparez pas directement avec les anciennes séances."
       },
       {
-        name: "Limiter les rattrapages",
-        desc: "Ne réagissez pas à chaque petit écart par un saut du regard. Corrigez par de légères variations de vitesse continue (Bahill et al., 1980).",
-        tips: "Gardez le visage détendu et clignez normalement pour limiter la fatigue."
+        "name": "Court, avec des pauses",
+        "desc": "Entre deux séances courtes, clignez des yeux et regardez au loin. Plus long n’est pas mieux.",
+        "tips": "Arrêtez immédiatement en cas de douleur ou de vertige."
       }
     ]
   },
-  steps: [
-    "Installez-vous à environ 50–70 cm de l’écran et gardez la tête stable et confortable.",
-    "Commencez à la vitesse la plus basse pour repérer l’amplitude et le rythme de l’onde.",
-    "Suivez la cible au passage central et ralentissez doucement au point d’inversion.",
-    "Faites une séance courte et arrêtez-vous en cas de fatigue ou d’inconfort visuel.",
-    "Consultez ensuite le gain de poursuite, le déphasage et l’écart de position."
+  "steps": [
+    "Asseyez-vous à une distance confortable de l’écran, épaules et nuque relâchées.",
+    "Commencez par 30 à 60 secondes, vitesse 1,0x, ligne visible.",
+    "Suivez la cible sans interruption pendant ses allers-retours sur la courbe en vague.",
+    "Ensuite, augmentez la vitesse ou activez Masquer la ligne puis Vitesse aléatoire, un réglage à la fois."
   ],
-  audience: "Personnes souhaitant pratiquer la poursuite oculaire d’une cible périodique à l’écran, sans remplacer un bilan professionnel.",
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "Toute personne qui veut s’exercer simplement à suivre des yeux une cible sur une courbe régulière."
+},
+  faqs,
   sources: pickSources('stark1962', 'robinson1965', 'rashbass1961', 'bahill1980', 'barnes2008', 'woods2015'),
   related: [
     { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Exercice de poursuite lente continue" },
@@ -294,21 +192,21 @@ const guideProps = {
     { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Suppression des images résiduelles" },
     { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Exercice oculaire en huit" },
     { href: "/fr/drills/visual-tracking/momentum-teleport-pursuit", label: "Poursuite d’une cible qui saute" }
-  ]
+  ],
 };
 
-export default function SineWavePursuitPage() {
+export default function FrenchSineWavePursuitPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SineWavePursuitClient copy={{ title: "Exercice de poursuite oculaire sinusoïdale", subtitle: "Suivez une cible périodique horizontalement et verticalement" }} />
+      <SineWavePursuitClient copy={{"title": "Exercice de poursuite oculaire sinusoïdale", "subtitle": "Suivre une cible sur une trajectoire en vague", "description": "Poursuite oculaire sinusoïdale : la cible fait des allers-retours de gauche à droite en montant et descendant sur une courbe en vague fixe. Hide Line masque la courbe. Pas de clic ni de score ; le navigateur n’enregistre pas votre regard."}} />
+
       <DrillGuide guide={guideProps} />
+
       <RelatedDrills />
       <DrillFooter />
     </>

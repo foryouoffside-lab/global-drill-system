@@ -5,280 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// GERMAN SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "sinuswelle augentraining" (Sine wave eye training) / "harmonische blickfolgebewegung"
-// Secondary:    "kurven tracking training", "phasennacheilung augen", "vertikale blickverfolgung", "wellenform sehtraining"
-// LSI / Domain:  "null-phasennacheilung", "zerebellärer oszillator", "wendepunkt abbremsung",
-//               "harmonische oszillation", "korrektursakkaden unterdrueckung", "blickfolge gain 1.0"
-// Authentic Domain Terms: Sinuswellen-Augentraining (Sine Wave Eye Training), Harmonische Blickfolge (Harmonic Smooth Pursuit), Sinusoidale Oszillation (Sinusoidal Oscillation), Phasennacheilung (Phase Lag), Blickfolge-Gain (Pursuit Gain), Nachholsakkade (Catch-up Saccade)
-// ============================================================
+const url = 'https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit';
+const title = "Sinuswellen-Blickverfolgung | SkillDrills";
+const description = "Kostenlose Augenübung: Folge einem Ziel, das auf einer festen Sinuskurve von links nach rechts und zurück pendelt und dabei auf- und absteigt. Tempo einstellbar.";
 
 export const metadata = {
-  title: "Sinuswellen-Blickverfolgung | SkillDrills",
-  description: "Verfolge ein sinusförmig bewegtes Ziel horizontal und vertikal. Kostenlose Browserübung mit Phasenabweichung und Positionsfehler.",
-  keywords: [
-    "Sinuswelle Augentraining",
-    "harmonische Blickfolge",
-    "Kurven Blickverfolgung",
-    "Phasenverzögerung Augen",
-    "vertikale Blickverfolgung",
-    "Wellenform Sehtraining",
-    "Blickverfolgung Übung",
-    "bewegtes Ziel verfolgen",
-    "Blickfolge Geschwindigkeit testen",
-    "Bahn am Wendepunkt verfolgen"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Sinuswellen-Blickverfolgung | SkillDrills",
-    description: "Verfolge ein sinusförmig bewegtes Ziel horizontal und vertikal. Kostenlose Browserübung mit Phasenabweichung und Positionsfehler.",
-    type: "website",
-    url: "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit",
-    siteName: "SkillDrills",
-    locale: "de_DE",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Sinuswellen-Blickverfolgung | SkillDrills",
-    description: "Kurze Übung für Blickfolge bei periodischer Bewegung. Prüfe Geschwindigkeit, Phasenabweichung und Fehler am Wendepunkt.",
-  },
+  title,
+  description,
+  keywords: ["Sinuswellen-Blickverfolgung", "Sinuskurve Augenübung", "Wellenbahn verfolgen", "Augenübung Browser", "Augenfolgebewegung üben", "Augentraining kostenlos"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/sine-wave-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'de_DE', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/sine-wave-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://skilldrills.online/de" },
-    { "@type": "ListItem", "position": 2, "name": "Übungen", "item": "https://skilldrills.online/de/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Visuelles Tracking", "item": "https://skilldrills.online/de/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "Sinuswellen-Augentraining & Harmonische Blickverfolgung", "item": "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit" }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Startseite", item: 'https://skilldrills.online/de' },
+    { '@type': 'ListItem', position: 2, name: "Übungen", item: 'https://skilldrills.online/de/drills' },
+    { '@type': 'ListItem', position: 3, name: "Visuelles Tracking", item: 'https://skilldrills.online/de/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "Sinuswellen-Blickverfolgung", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "Sinuswellen-Augentraining & Harmonische Blickverfolgung",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Interaktives browserbasiertes Sehtraining zur okulomotorischen Synchronisation mit harmonischen Schwingungsbahnen und zur Unterdrückung von Korrektursakkaden an Richtungsumkehrpunkten.",
-  "url": "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit",
-  "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/de" },
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Sinuswellen-Blickführungstracker (SkillDrills Sine Wave Pursuit)",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas fähiger Browser (Chrome, Edge, Firefox, Safari)",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "url": "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit",
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "dateModified": "2026-09-20",
-  "name": "Sinuswellen Tracking Training (Sine Wave Pursuit)",
-  "url": "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit",
-  "description": "Aim- und Augentrainingstool für E-Sportler und Athleten zur Perfektionierung von Kurven-Tracking, Sprungbewegungen und Wellenverfolgung.",
-  "genre": ["Aim Trainer", "Eye Tracking", "Vision Training", "Esports Drill"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
-  "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Sinuswellen-Blickverfolgung",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
+  inLanguage: 'de',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Anleitung zum Training harmonischer Blickfolgebewegungen auf Sinusbahnen",
-  "description": "Systematischer Ablauf zur Synchronisation des Kleinhirns auf periodische Schwingungen und Erreichung einer Null-Phasennacheilung.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Schwingungsperiode und Amplitude erfassen",
-      "text": "Beobachte in den ersten ein bis zwei Schwingungen bei Tempo 1.0x den Rhythmus und die maximale Auslenkung des Zielpunkts."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Zentrale Höchstgeschwindigkeit synchronisieren",
-      "text": "Am Nulldurchgang der Sinuskurve erreicht das Ziel seine höchste Winkelgeschwindigkeit. Halte den Blick foveal zentriert."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Sanftes Abbremsen an den Amplituden-Wendepunkten",
-      "text": "Antizipiere das Abbremsen am Scheitelpunkt, um Blicksprünge (Sakkaden) über das Ziel hinaus zu vermeiden."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Tempo schrittweise steigern",
-      "text": "Erhöhe die Frequenz auf 1.5x bis 2.0x, sobald du kontinuierlich eine Tracking-Präzision von über 90 % ohne Ruckeln erzielst."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "So übst du die Sinuswellen-Blickverfolgung",
+  description: "In vier Schritten einem Ziel folgen, das auf einer Wellenbahn hin- und herläuft.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Bequem hinsetzen",
+    "text": "Setz dich in angenehmem Abstand vor den Bildschirm und entspanne Schultern und Nacken."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Bahn ansehen",
+    "text": "Lass die Kurve zu Beginn sichtbar und präge dir die Wellenbahn ein, auf der das Ziel läuft."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Ruhig folgen",
+    "text": "Folge dem Ziel ohne Unterbrechung, während es auf der Kurve auf- und absteigt und an den Rändern umkehrt."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Eine Einstellung nach der anderen",
+    "text": "Wenn es sich leicht anfühlt, erhöhe das Tempo oder schalte Linie ausblenden bzw. Zufallstempo einzeln zu."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Wie bewegt sich das Ziel bei der Sinuswellen-Blickverfolgung?",
+    "a": "Das Ziel pendelt mit gleichbleibendem Seitwärtstempo zwischen etwa 5 % und 95 % der Bildschirmbreite (bei Tempo 1,0 rund 220 Pixel pro Sekunde) und folgt dabei einer festen Sinuskurve mit einer Ausschlaghöhe von etwa 28 % der Bildschirmhöhe. An den Rändern kehrt es um und läuft dieselbe Kurve zurück. Eine reine Blickübung im Browser, kein Sehtest."
+  },
+  {
+    "q": "Warum ändert sich das Tempo nach oben und unten ständig?",
+    "a": "Das Seitwärtstempo bleibt gleich, aber die Steigung der Kurve ändert sich. In der Mitte der Welle ist die Auf- und Abbewegung am schnellsten, an Wellenberg und -tal scheint sie kurz stillzustehen."
+  },
+  {
+    "q": "Was bewirken Hide Line und Random Speed?",
+    "a": "Hide Line blendet die Kurve aus; du folgst dann aus dem Gedächtnis oder nur der Bewegung. Random Speed lässt das Tempo laufend schwanken. Die Bahn selbst bleibt gleich."
+  },
+  {
+    "q": "Misst die Übung meine Augenbewegungen oder einen Score?",
+    "a": "Nein. Der Browser weiß nicht, wohin du schaust, und es gibt weder Klicks noch Trefferwertung. Es gibt keinen Score; gespeichert wird nur die Zahl abgeschlossener Durchgänge in diesem Browser. Ob dein Blick wie geplant bleibt, kontrollierst du selbst."
+  },
+  {
+    "q": "Welche Einstellungen gibt es?",
+    "a": "Nach einem 3-2-1-Countdown läuft ein Durchgang von 30, 45, 60, 90 oder 120 Sekunden (Standard 60). Einstellbar sind Tempo 0,5- bis 9,0-fach, Zielgröße 10–50 px, Zielfarbe, die Schalter Hide Line (Linie ausblenden), Random Speed (Zufallstempo), Gaze Trail (Spur), Neon Glow und Scanlines sowie heller oder dunkler Hintergrund. Mit Esc beendest du jederzeit."
+  },
+  {
+    "q": "Werden meine Sehkraft oder mein Aim besser?",
+    "a": "Das ist nicht garantiert. Die Übung ist kein Sehtest und keine Therapie, sondern ein Werkzeug zum Üben des Hinschauens. Sie verspricht weder bessere Sehschärfe noch besseres Zielen. Bei Beschwerden an den Augen wende dich an eine Fachperson."
+  },
+  {
+    "q": "Wie lange sollte ich üben?",
+    "a": "Ein paar Durchgänge von 1–2 Minuten mit Pausen reichen. Bei müden oder trockenen Augen blinzeln und in die Ferne schauen; bei Schmerzen, Schwindel, Übelkeit oder Kopfschmerzen sofort aufhören."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was versteht man unter Sinuswellen-Tracking (Sine Wave Pursuit) und wie unterscheidet es sich vom linearen Tracking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei linearer Bewegung bewegt sich das Objekt mit konstanter Geschwindigkeit. Bei einer Sinuswelle hingegen ändern sich Position, Geschwindigkeit und Beschleunigung kontinuierlich nach den Gesetzen der harmonischen Schwingung. In der Mitte ist die Geschwindigkeit am höchsten, an den Umkehrpunkten fällt sie kurzzeitig auf null ab. Das erfordert eine ständige, fließende Drehmomentanpassung der Augenmuskeln (Robinson, 1965)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum kann das menschliche Sehsystem die 150ms Signalverzögerung bei Sinuswellen auf null reduzieren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Stark et al. (1962) bewiesen, dass das Kleinhirn (Cerebellum) bei periodischen, vorhersagbaren Reizen innerhalb weniger Zyklen die Frequenz adaptiert. Dadurch steuert das Gehirn die Augenmuskeln vorausschauend per Feedforward an, wodurch die sensorische Latenz von 130–150 ms vollständig neutralisiert wird (Null-Phasennacheilung / Zero Phase Lag)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum kommt es an den Wendepunkten der Kurve häufig zu Rucklern und Blicksprüngen (Sakkaden)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wenn das Ziel am Scheitelpunkt abbremst, neigt das Auge durch motorische Trägheit und zu aggressive Vorhersage zum 'Obershoot' (Überschießen). Um den Fehler zu korrigieren, feuert das Gehirn hektische Nachholsakkaden ab, was die Kontinuität der Spurführung zerstört (Bahill et al., 1980)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie verbessert dieses Training das Kurven- und Strafe-Tracking in kompetitiven Shootern?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In Spielen wie Apex Legends oder Overwatch bewegen sich Gegner selten schnurgerade, sondern springen, sliden und strafen in wellenartigen Bögen. Wer Sinuskurven flüssig verfolgen kann, führt das Fadenkreuz wie auf Schienen ohne ständiges Über- und Unterkorrigieren."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was genau bedeutet der 'Blickfolge-Gain (Pursuit Gain)'?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Gain beschreibt das Verhältnis von Augenwinkelgeschwindigkeit zu Zielwinkelgeschwindigkeit. Ein idealer Wert liegt bei 1.0 (exakte Synchronität). Fällt der Gain unter 0.8, fällt das Auge zurück und muss durch ermüdende Korrektursakkaden nachjustieren (Rashbass, 1961)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum fällt die vertikale (Auf-Ab) Sinusverfolgung oft schwerer als die horizontale (Links-Rechts)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das oculomotorische System des Menschen ist anatomisch auf horizontale Abtastung optimiert. Vertikale Blickfolgebewegungen nutzen andere Hirnstammkerne (rostraler interstitieller Kern) und besitzen eine geringere neuronale Bandbreite, weshalb vertikale Oszillationen früher an ihre Leistungsgrenze stoßen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Nützt das Sinuswellen-Augentraining auch im Ballsport (Fußball, Volleyball, Tennis)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sehr stark. Flatterbälle, Flugkurven und aufprallende Bälle folgen schwerkraftbedingt parabolen und wellenartigen Bahnen. Die Fähigkeit, den Scheitelpunkt einer Flugbahn und den Beschleunigungswechsel exakt mit den Augen abzutasten, erhöht die Treffsicherheit beim Schmettern und Fangen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Rolle spielt die Monitor-Bildwiederholrate (Hz) beim harmonischen Tracking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Da die Sinusgeschwindigkeit kontinuierlich gleitet, wirkt sie bei 60 Hz mikroskopisch abgehackt. Monitore mit 144 Hz oder 240 Hz bilden die Geschwindigkeitsgradienten an den Wendepunkten ultra-flüssig ab, was dem Kleinhirn eine präzisere Rhythmusanpassung ermöglicht (Woods et al., 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie lange und wie oft sollte die Übung durchgeführt werden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Aufgrund der hohen Beanspruchung der Augenmuskeln empfehlen sich 3 bis 5 Durchgänge à 60 Sekunden (insgesamt ca. 3 bis 5 Minuten) an 3 bis 4 Tagen pro Woche. Bei einsetzendem Flimmern oder Muskelziehen sollte pausiert werden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kann regelmäßiges Wellen-Tracking vorzeitiger Augenermüdung am Bildschirm vorbeugen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Es mobilisiert die gesamte Augenmuskulatur in ihrem vollen Bewegungsradius, fördert die Durchblutung des Augapfels und durchbricht den starren Tunnelblick, der durch stundenlanges starres Arbeiten vor Monitoren entsteht."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'de',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Wissenschaftliche Grundlagen des Sinuswellen-Trackings und harmonischer Blickführung",
-  intro: [
-    "Die Qualität des okulomotorischen Blickfolgesystems (Smooth Pursuit) offenbart sich besonders deutlich, wenn das Auge nicht simplen, gleichförmigen Bahnen folgt, sondern harmonischen Schwingungsbewegungen (Simple Harmonic Motion). Entlang einer Sinuswelle variieren Geschwindigkeit und Beschleunigung des Zielobjekts kontinuierlich: Am Nulldurchgang in der Schwingungsmitte erreicht die translatorische Geschwindigkeit ihr absolutes Maximum, während sie an den äußeren Scheitelpunkten (Wendepunkten) bis zum Stillstand abbremst, bevor sich die Bewegungsrichtung umkehrt.",
-    "Klassische neurologische Studien von Stark et al. (1962) und David Robinson (1965) zeigten, dass das visuelle System bei unvorhersehbaren Reizen unvermeidbar 130 bis 150 Millisekunden hinterherhinkt (Phasennacheilung). Sobald eine Bewegung jedoch periodisch-sinusoidaler Natur ist, adaptiert das Kleinhirn (Cerebellum) binnen kürzester Zeit die Grundfrequenz. Über feedforward-gesteuerte motorische Entladungen an die Augenmuskelkerne neutralisiert das Gehirn die sensorische Latenz vollständig – ein Phänomen, das als 'Null-Phasennacheilung (Zero Phase Lag)' bekannt ist.",
-    "Stoßen Schwingungsfrequenz oder Zielgeschwindigkeit jedoch an die biologischen Kapazitätsgrenzen, gerät die geschmeidige Spurführung aus dem Takt. Wie Rashbass (1961) und Bahill et al. (1980) nachwiesen, führt ein Einbruch des Geschwindigkeits-Gains (Verhältnis von Augentempo zu Zieltempo) dazu, dass der foveale Fokus abreißt. Um den Anschluss nicht zu verlieren, schaltet das Zentralnervensystem auf ruckartige 'Nachholsakkaden (Catch-up Saccades)' um, wodurch während jedes Sprungs eine sakkadische Unterdrückung die Sehschärfe kurzzeitig ausblendet.",
-    "Dieser Drill (Sine Wave Pursuit) trainiert gezielt das zerebelläre Schwingungsgedächtnis sowie die feinstufige Brems- und Beschleunigungsmotorik der äußeren Augenmuskeln in horizontaler und vertikaler Dimension. Entwickle einen fehlerfreien Blickfolge-Gain von 1.0 ohne sakkadische Unterbrechungen – das unverzichtbare Fundament für flüssiges Aiming bei dynamischen Ausweichbewegungen im E-Sport und die perfekte Antizipation von Ballflugkurven im Sport."
+  ...{
+  "heading": "Sinuswellen-Blickverfolgung – Anleitung",
+  "intro": [
+    "Bei der Sinuswellen-Blickverfolgung folgst du mit den Augen einem Ziel, das auf einer festen Sinuskurve von links nach rechts und zurück pendelt und dabei auf- und absteigt. Das Seitwärtstempo ist konstant, an den Rändern kehrt das Ziel um.",
+    "Langsamen Zielen folgt die glatte Augenfolgebewegung fast im gleichen Tempo, bei schnelleren fällt der Blick leichter zurück (Robinson, 1965). Hier variierst du das Tempo und folgst der wechselnden Bewegung an Wellenberg und Wellenmitte.",
+    "Der Browser kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen – nicht, wohin deine Augen tatsächlich blicken. Es gibt keinen Score und keinen Genauigkeitswert. Vergleiche deshalb dein Gefühl von Ruhe und Konzentration bei gleichem Bildschirm, Abstand und gleichen Einstellungen. Bildwiederholrate und Anzeigeverzögerung beeinflussen, wie die Bewegung aussieht (Woods et al., 2015)."
   ],
-  benchmarks: {
-    title: "Standard-Benchmarks für Harmonische Blickfolge & Geschwindigkeits-Gain (Sinusoidal Gain)",
-    headers: ["Leistungsstufe", "Geschwindigkeits-Gain", "Phasennacheilung", "Nachholsakkaden pro Zyklus", "Tracking-Profil"],
-    rows: [
-      ["Höchste Übungsstufe", "0.96 – 1.02", "Unter 15 ms (Vollsynchron)", "0 – 1 (Perfekte flüssige Spur)", "Vollständige zerebelläre Null-Phasen-Synchronisation"],
-      ["Meister", "0.90 – 0.95", "15 ms – 30 ms", "2 – 3", "Sehr hohe Spurtreue, minimale Wendepunkt-Korrektur"],
-      ["Diamant", "0.82 – 0.89", "31 ms – 50 ms", "4 – 5", "Solide Wellenführung, leichte Drift bei hohem Tempo"],
-      ["Gold", "0.70 – 0.81", "51 ms – 80 ms", "6 – 8", "Instabil an Scheitelpunkten, häufige Korrektursakkaden"],
-      ["Basis", "Unter 0.70", "Über 80 ms", "Über 9", "Fehlende Rhythmusanpassung, rein reaktive Blicksprünge"]
+  "benchmarks": {
+    "title": "Übungsstufen (SkillDrills-Orientierung)",
+    "headers": [
+      "Stufe",
+      "Übungsziel"
     ],
-    note: "※ Messwerte basieren auf standardisierten Tests bei 1080p Auflösung und Geschwindigkeit 1.0x–1.5x. Bewertet wird die Übereinstimmung der Winkelgeschwindigkeiten (Gain) sowie die Sakkadenarmut."
+    "rows": [
+      [
+        "Stufe 1",
+        "Tempo 1,0, Kurve sichtbar, ohne Abreißen folgen"
+      ],
+      [
+        "Stufe 2",
+        "Auch beim Umkehren an den Rändern dranbleiben"
+      ],
+      [
+        "Stufe 3",
+        "Tempo erhöhen, schnelle Wellenmitte verfolgen"
+      ],
+      [
+        "Stufe 4",
+        "Hide Line oder Random Speed einzeln dazunehmen"
+      ]
+    ],
+    "note": "Übungsstufen von SkillDrills zur Orientierung – keine Testnormen, Nutzerstatistiken oder Perzentile."
   },
-  techniques: {
-    title: "Vier Kerntechniken zur Beherrschung harmonischer Sinus-Blickbahnen",
-    items: [
+  "techniques": {
+    "title": "Tipps zur Ausführung",
+    "items": [
       {
-        name: "Harmonische Phasenverriegelung (Phase Locking)",
-        desc: "Nutze die ersten Schwingungszyklen, um den Rhythmus der Wellenbewegung mental zu verinnerlichen. Schalte den zerebellären Taktgeber ein und führe das Auge im Takt der Schwingung, anstatt passiv auf optische Reize zu warten.",
-        tips: "Zähle im Kopf einen gleichmäßigen 2er-Takt ('Eins-Zwei, Eins-Zwei') mit, um die sensorische Verzögerung komplett auszuschalten."
+        "name": "Den Rhythmus der Welle nutzen",
+        "desc": "Am Wellenberg wird es kurz langsam, in der Mitte schnell. Wer diesen Rhythmus kennt, folgt gleichmäßiger.",
+        "tips": "Hängst du hinterher, senke das Tempo."
       },
       {
-        name: "Sanfte Wendepunkt-Dämpfung (Apex Deceleration Cushioning)",
-        desc: "Wenn das Ziel den oberen oder unteren Scheitelpunkt ansteuert, drossle die Augenmuskelspannung rechtzeitig. Verhindere so ein Überschießen (Overshoot) über den Bewegungsumkehrpunkt.",
-        tips: "Visualisiere das sanfte Ausschwingen eines Pendels am höchsten Punkt, bevor es schwerelos die Richtung ändert."
+        "name": "Das Ziel ansehen, nicht den Cursor",
+        "desc": "Die Maus wird nicht gebraucht. Lass die Hand ruhen und folge nur mit den Augen.",
+        "tips": "Prüfe ab und zu, ob Kopf oder Nacken mitdrehen."
       },
       {
-        name: "Zentraler Geschwindigkeitsschub (Zero-Crossing Acceleration Boost)",
-        desc: "Beim Passieren der horizontalen Mittelachse erreicht die Sinuskurve ihre höchste Geschwindigkeit. Erhöhe genau in dieser Passage aktiv den okulomotorischen Vortrieb, um nicht ins Hintertreffen zu geraten.",
-        tips: "Gib dem Blick im Zentrum bewusst einen dynamischen Impuls, um den fovealen Kontakt festzuhalten."
+        "name": "Nur eine Sache schwerer machen",
+        "desc": "Erhöhe Tempo, Linie ausblenden und Zufallstempo getrennt voneinander. Wird es unangenehm, geh zur vorigen Einstellung zurück.",
+        "tips": "Nach einer Änderung nicht direkt mit älteren Durchgängen vergleichen."
       },
       {
-        name: "Disziplinierte Sakkaden-Unterdrückung (Saccadic Suppression Control)",
-        desc: "Widerstehe dem Impuls, bei kleinen Abweichungen reflexartig mit den Augen zu zucken. Gleiche minimale Distanzen lieber durch sanfte Tempoanpassung der kontinuierlichen Blickfolge aus.",
-        tips: "Halte die Augenmuskeln weich und elastisch wie ein Gummiband, das sanft zum Zielpunkt zurückfedert."
+        "name": "Kurz üben, Pausen machen",
+        "desc": "Zwischen kurzen Durchgängen blinzeln und in die Ferne schauen. Länger ist nicht besser.",
+        "tips": "Bei Schmerzen oder Schwindel sofort stoppen."
       }
     ]
   },
-  steps: [
-    "Sitzposition einrichten: Positioniere dich in ca. 60 cm Sehabstand mittig vor dem Bildschirm und stelle eine entspannte Kopfhaltung sicher.",
-    "Initialer Rhythmusabgleich: Starte die Übung bei Geschwindigkeit 1.0x und erfasse die Amplitude sowie die Frequenz der Welle.",
-    "Phasensynchronisation aktivieren: Passe deine Blickfolgebewegung in den ersten 2–3 Zyklen exakt an die Beschleunigungsphasen an.",
-    "60 Sekunden kontinuierliche Verfolgung: Halte den Blick für eine Minute ununterbrochen auf dem Kugelzentrum, ohne Blicksprünge einzustreuen.",
-    "Auswertung analysieren: Überprüfe nach Ablauf der Runde deine Tracking-Präzision (Accuracy %) und die Konstanz deines Geschwindigkeits-Gains."
+  "steps": [
+    "Setz dich in angenehmem Abstand vor den Bildschirm und entspanne Schultern und Nacken.",
+    "Starte mit 30–60 Sekunden, Tempo 1,0 und sichtbarer Linie.",
+    "Folge dem Ziel ohne Unterbrechung, während es auf der Wellenbahn hin- und herläuft.",
+    "Erhöhe danach das Tempo oder schalte Linie ausblenden bzw. Zufallstempo einzeln zu."
   ],
-  audience: "Shooter-Gamer (Apex Legends, Overwatch) zur Beherrschung unberechenbarer Strafe- und Sprungkurven, Athleten in dynamischen Ballsportarten (Tennis, Volleyball, Fußball) zur Antizipation gekrümmter Balltrajektorien, sowie Bildschirmarbeiter zur Entlastung verspannter Augenmuskeln.",
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "Alle, die locker üben möchten, einem Ziel auf einer gleichmäßigen Kurve mit den Augen zu folgen."
+},
+  faqs,
   sources: pickSources('stark1962', 'robinson1965', 'rashbass1961', 'bahill1980', 'barnes2008', 'woods2015'),
   related: [
     { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Konstantes langsames Blickfolgetraining" },
@@ -287,49 +192,22 @@ const guideProps = {
     { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Blickstabilität bei Nachbildern" },
     { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Augentraining mit einer liegenden Acht" },
     { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Prädiktive Blickverfolgung bei Verdeckung" }
-  ]
+  ],
 };
 
 export default function GermanSineWavePursuitPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SineWavePursuitClient
-        copy={{
-          title: "Sinuswellen-Blickverfolgung",
-          subtitle: "Ein bewegtes Ziel horizontal und vertikal verfolgen",
-          description: "Verfolge ein sinusförmig bewegtes Ziel und beobachte die Geschwindigkeitsänderung am Mittelpunkt und Wendepunkt. Prüfe danach Blickfolge und Positionsabweichung. Die Übung ist kostenlos im Browser."
-        }}
-      />
+      <SineWavePursuitClient copy={{"title": "Sinuswellen-Blickverfolgung", "subtitle": "Einem Ziel auf einer Wellenbahn folgen", "description": "Sinuswellen-Blickverfolgung: Das Ziel pendelt von links nach rechts und zurück und steigt dabei auf einer festen Wellenbahn auf und ab. Hide Line blendet die Kurve aus. Kein Klicken, kein Score; der Browser zeichnet deinen Blick nicht auf."}} />
 
       <DrillGuide guide={guideProps} />
 
       <RelatedDrills />
-
       <DrillFooter />
     </>
   );

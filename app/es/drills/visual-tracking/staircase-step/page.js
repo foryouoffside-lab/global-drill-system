@@ -5,287 +5,142 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/es/drills/visual-tracking/staircase-step';
+const title = "Seguimiento ocular vertical | SkillDrills";
+const description = "Seguimiento ocular vertical: un objetivo baja la pantalla en zigzag, escalón a escalón, y luego vuelve a subir. Ejercicio gratis, velocidad ajustable.";
+
 export const metadata = {
-  title: "Seguimiento ocular vertical | SkillDrills",
-  description: "Sigue un objetivo que sube y baja por escalones. Ejercicio gratuito en navegador con retraso de mirada, pérdidas y precisión vertical.",
-  keywords: [
-    "seguimiento ocular vertical ejercicio",
-    "movimientos oculares verticales entrenamiento",
-    "seguimiento de arriba abajo",
-    "entrenamiento de puntería vertical",
-    "seguimiento visual por escalones",
-    "movimiento ocular vertical",
-    "seguir objetivo que sube y baja",
-    "atención visual vertical",
-    "retraso de mirada medir",
-    "pérdida del objetivo visual",
-    "ejercicio de persecución ocular",
-    "visión dinámica entrenamiento"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/es/drills/visual-tracking/staircase-step",
-    languages: getAlternateLanguages('/drills/visual-tracking/staircase-step'),
-  },
+  title,
+  description,
+  keywords: ["seguimiento ocular vertical", "seguir un objetivo que sube y baja", "ejercicio de ojos online", "seguimiento ocular ejercicio", "zigzag en escalera"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/staircase-step') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'es_ES', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Seguimiento ocular vertical | SkillDrills",
-    description: "Sigue un objetivo que sube y baja por escalones. Ejercicio gratuito en navegador con retraso de mirada, pérdidas y precisión vertical.",
-    url: "https://skilldrills.online/es/drills/visual-tracking/staircase-step",
-    siteName: 'SkillDrills',
-    locale: 'es_ES',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Seguimiento ocular vertical | SkillDrills",
-    description: "Sigue un objetivo que sube y baja por escalones. Ejercicio gratuito en navegador con retraso de mirada, pérdidas y precisión vertical.",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Inicio",
-      "item": "https://skilldrills.online/es"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Ejercicios",
-      "item": "https://skilldrills.online/es/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Rastreo Visual",
-      "item": "https://skilldrills.online/es/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Seguimiento en Escalones",
-      "item": "https://skilldrills.online/es/drills/visual-tracking/staircase-step"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Inicio", item: 'https://skilldrills.online/es' },
+    { '@type': 'ListItem', position: 2, name: "Seguimiento visual", item: 'https://skilldrills.online/es/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 3, name: "Seguimiento ocular vertical", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "Seguimiento Ocular Vertical en Escalones",
-  "operatingSystem": "Navegador Web",
-  "applicationCategory": "HealthApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD"
-  },
-  "description": "Herramienta de acondicionamiento oculomotor vertical disenada para estimular el mesencefalo (riMLF) y optimizar la precision de sacadas y seguimiento vertical.",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Seguimiento ocular vertical",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Ejercicio de Seguimiento en Escalones",
-  "url": "https://skilldrills.online/es/drills/visual-tracking/staircase-step",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Todos los navegadores modernos",
-  "browserRequirements": "Requiere soporte para JavaScript y HTML5 Canvas",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Seguimiento ocular vertical",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navegador actual compatible con HTML5 Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Seguimiento ocular por escalones",
-  "description": "Reto de coordinacion visual vertical donde el usuario fija objetivos dinamicos a lo largo de perfiles en zigzag escalonados.",
-  "genre": ["Entrenamiento Visual", "Seguimiento Ocular Vertical", "Entrenamiento de Reflejos"],
-  "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: "Seguimiento ocular vertical",
+  url,
+  description,
+  genre: ['Casual Game', 'Educational Game'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'es',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Cómo Entrenar el Seguimiento Vertical en Escalones",
-  "description": "Metodologia cientifica para optimizar la motricidad ocular vertical y las sacadas de cambio de plano sin mover el cuello.",
-  "dateModified": "2026-09-20",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Inmovilice la Cabeza",
-      "text": "Sitatese a 50-70 cm de la pantalla con la cabeza fija para que el esfuerzo recaiga exclusivamente en los musculos oculares."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Recorra las Rampas Diagonales",
-      "text": "Siga el objetivo con ritmo uniforme a traves de las lineas inclinadas manteniendo la foveacion centrada."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Anticipe las Esquinas Angulares",
-      "text": "Aplique una suave deceleracion antes de alcanzar el vertice para evitar rebasar la curva de cambio de sentido."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Ejecute Sacadas Rápidas de Elevación",
-      "text": "Dispare un salto sacadico vertical certero para reenganchar al instante con la siguiente seccion escalonada."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Cómo hacer el seguimiento ocular vertical",
+  description: "Cuatro pasos para seguir con los ojos un objetivo que baja y sube en escalones.",
+  step: [
+    { '@type': 'HowToStep', position: 1, name: "Elegir los ajustes", text: "Empieza con 60 segundos, 1,0x y la línea visible.", url: `${url}#step-1` },
+    { '@type': 'HowToStep', position: 2, name: "Postura", text: "Siéntate cómodo y mantén la cabeza recta.", url: `${url}#step-2` },
+    { '@type': 'HowToStep', position: 3, name: "Seguir solo con los ojos", text: "Sigue el objetivo por los escalones en zigzag, bajando y luego subiendo.", url: `${url}#step-3` },
+    { '@type': 'HowToStep', position: 4, name: "Subir poco a poco", text: "Cuando resulte fácil, sube la velocidad u oculta la línea o activa la velocidad aleatoria, una cosa cada vez.", url: `${url}#step-4` }
+  ],
 };
+
+const faqs = [
+  { q: "¿Qué es el seguimiento ocular vertical?", a: "Un objetivo va de izquierda a derecha en zigzag mientras baja por escalones, desde arriba (cerca del 15 % de la altura) hasta abajo (cerca del 85 %). Al final da la vuelta y sube por el mismo camino. Lo sigues solo con los ojos; no hace falta hacer clic." },
+  { q: "¿Cómo es exactamente el trazado?", a: "Una línea en zigzag que une 8 puntos, con 7 cambios de dirección, y que baja un poco en cada tramo. A 1,0x, cada recorrido dura unos 4,5 segundos; un multiplicador mayor acelera el objetivo en la misma proporción." },
+  { q: "¿Los movimientos verticales son más difíciles de seguir?", a: "Hay estudios que muestran que las mismas personas suelen seguir con menos precisión un movimiento vertical que uno horizontal (Rottach et al., 1996). El ejercicio no lo mide, pero puedes comparar tú mismo la bajada y la subida." },
+  { q: "¿Por qué pierdo el objetivo en las esquinas?", a: "En la esquina la dirección cambia de golpe y los ojos se quedan un instante atrás. El seguimiento suave empieza con un pequeño retraso tras el inicio del movimiento (Lisberger, 2010). Baja la velocidad, muestra la línea y anticipa la siguiente esquina." },
+  { q: "¿Qué pasa si oculto la línea?", a: "Desaparece el trazado en zigzag. El objetivo se mueve igual, pero tienes que prever tú el siguiente giro." },
+  { q: "¿El ejercicio mide los movimientos de mis ojos?", a: "No. El navegador no sabe hacia dónde miras; solo conoce la posición en la que se dibuja el objetivo y tus ajustes. No hace falta hacer clic ni tocar la pantalla; el resultado es un registro de práctica para ti." },
+  { q: "¿Hay puntuación o nota?", a: "No. Al terminar, la pantalla muestra solo la duración, el multiplicador de velocidad, si la velocidad aleatoria estaba activada y el total de sesiones (guardado en este navegador). Si quieres contar cuántas veces pierdes el objetivo, apúntalo tú." },
+  { q: "¿Qué ajustes hay?", a: "Duración de 30, 45, 60, 90 o 120 segundos, velocidad de 0,5x a 9,0x y tamaño del objetivo de 10 a 50 px. También puedes ocultar la línea (trazado en zigzag), activar velocidad aleatoria, estela, brillo, líneas de escaneo, fondo claro u oscuro y cambiar el color del objetivo. La tecla Esc termina la sesión en cualquier momento." },
+  { q: "¿Mejora la vista o la puntería?", a: "No hay garantía. Es un ejercicio en el que sigues con los ojos un objetivo en movimiento; no es un examen de la vista ni un tratamiento, y no promete mejor puntería en juegos de disparos. Si notas molestias en los ojos, consulta a un oftalmólogo." },
+  { q: "¿Influye la pantalla en el resultado?", a: "Sí. La frecuencia de actualización, el brillo, el contraste, el tamaño de la pantalla y la distancia cambian cómo se ve el objetivo (Woods et al., 2015). Compara solo sesiones hechas en la misma pantalla, el mismo navegador y con los mismos ajustes." },
+  { q: "¿Cuánto tiempo debo practicar?", a: "Unas cuantas sesiones de unos 60 segundos, de 5 a 10 minutos en total, con pausas. Para enseguida si notas los ojos cansados, secos o doloridos, mareo, náuseas o dolor de cabeza." }
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué es el seguimiento ocular por escalones?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Este ejercicio entrena el seguimiento visual vertical y las sacadas de elevación mediante recorridos escalonados, estimulando núcleos del mesencéfalo (Büttner-Ennever & Horn, 1997)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que es mas complejo el seguimiento vertical que el horizontal?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Las conexiones del tronco encefalico encargadas del eje vertical (riMLF y Cajal) presentan de forma congenita menor ganancia de velocidad, mas retraso y asimetrias hacia arriba (Rottach et al., 1996)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que funcion desempena el nucleo riMLF en la mirada vertical?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El riMLF alberga neuronas de disparo rapido que originan sacadas verticales a gran velocidad coordinando los musculos rectos superior e inferior."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como mejora la punteria en videojuegos de accion (FPS)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En shooters como Apex Legends y Overwatch 2, los adversarios escalan y saltan constantemente. Este ejercicio suprime temblores de mira ante cambios repentinos de cota vertical."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que utilidad tiene en deportes como voleibol o tenis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En remates de voleibol o globos en tenis, la pelota asciende con perfiles parabolicos. Mejorar la agilidad visual vertical perfecciona la coordinacion espaciotemporal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que no se debe mover la cabeza durante el ejercicio?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Al mover el cuello se esquiva el esfuerzo de los musculos oculares, limitando la adaptacion sinaptica en los centros del tronco cerebral (Leigh & Zee, 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que funcion tiene la opcion de ocultar la guia (Hide Line)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Eliminar la linea visual visible obliga al cerebro a generar una proyeccion cinematica interna pura de la trayectoria escalonada."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Importa la tasa de refresco del monitor (144Hz+)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los monitores de alta frecuencia visualizan las esquinas de los escalones con nitidez total, permitiendo a las neuronas del mesencefalo guiar sacadas limpias (Woods et al., 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Es gratuito este entrenamiento?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Si, SkillDrills ofrece esta aplicacion de forma libre y gratuita en el navegador sin tramites de registro."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cual es la duracion de sesion aconsejada?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Se recomiendan de 2 a 3 tandas de 45 a 60 segundos por jornada (unos 3 a 5 minutos). La musculatura vertical se fatiga antes, por lo que series cortas resultan optimas."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'es',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
-const guideProps = {
-  heading: "Bases Científicas del Seguimiento Vertical y Control Oculomotor",
+const guide = {
+  heading: "Seguimiento ocular vertical: guía",
   intro: [
-    "El sistema de la motilidad ocular humana recurre a vias neuroanatomicas independientes para movimientos en los ejes horizontal y vertical. Mientras que la dinamica horizontal se vehicula a traves de la formacion reticular pontina paramediana (PPRF), el control de los desplazamientos verticales corre a cargo exclusivo de estructuras especificas del mesencefalo: de modo primordial, el nucleo intersticial rostral del fasciculo longitudinal medial (riMLF) y el nucleo de Cajal (Büttner-Ennever & Horn, 1997).",
-    "Los datos experimentales (Rottach et al., 1996; Ke et al., 2013) evidencian que el seguimiento ocular suave vertical cuenta intrinsecamente con una menor ganancia de velocidad, mayor desfase de tiempo y respuestas mas pausadas que su homologo horizontal. Ademas, se advierte una visible asimetria: la capacidad de elevacion de la mirada declina con rapidez ante aumentos de ritmo, demandando sacadas de recuperacion mas tempranas.",
-    "Las costumbres de visión modernas centran la estimulación en planos laterales horizontales, postergando la musculatura vertical. Este ejercicio desafía esta asimetría llevando la mirada por rampas escalonadas en zigzag, combinando persecución continua en planos inclinados con sacadas correctoras puntuales en las esquinas de transición (Collewijn & Tamminga, 1984; Lisberger, 2010)."
+    "El seguimiento ocular vertical es un ejercicio gratis en el navegador: un objetivo va de izquierda a derecha en zigzag mientras baja, escalón a escalón, desde la parte de arriba hasta la de abajo de la pantalla. Abajo, vuelve a subir por el mismo camino. El trazado une 8 puntos y ocupa cerca del 60 % del ancho de la pantalla.",
+    "Tras la cuenta atrás 3-2-1, el objetivo se mueve durante el tiempo elegido (de 30 a 120 segundos, 60 por defecto). No hay que hacer clic ni pulsar nada, y no hay puntuación. A 1,0x, cada recorrido dura unos 4,5 segundos.",
+    "El navegador no registra hacia dónde miras. Trata el resultado como un registro de práctica personal, no como una prueba de vista o de atención.",
+    "Compara sesiones en la misma pantalla y a la misma distancia; la frecuencia de actualización y el retardo de imagen influyen en la fluidez del objetivo (Woods et al., 2015). Para si sientes dolor, mareo, náuseas o visión borrosa persistente."
   ],
   benchmarks: {
-    title: "Baremos de Rendimiento en Seguimiento Vertical y Sacadas en Escalones",
-    headers: ["Nivel de Rendimiento", "Velocidad del Objetivo", "Precisión en Esquinas de Escalón", "Ganancia Vertical Estimada", "Marcador de práctica"],
+    title: "Etapas de práctica orientativas",
+    headers: ["Etapa", "Ajuste", "Objetivo"],
     rows: [
-      ["Etapa 1", "3.5x – 5.0x+", "Fijación limpia sin rebasar esquinas", "0.92 – 0.98 (sincronización casi instantánea)", "Ritmo muy alto con alta precisión"],
-      ["Etapa 2", "2.5x – 3.5x", "Foveación rápida mediante micro-sacada única", "0.85 – 0.92 (enfoque muy estable)", "Ritmo alto y regular"],
-      ["Etapa 3", "1.8x – 2.5x", "Seguimiento regular en rampas; vacilación leve en vértices", "0.75 – 0.85 (control adecuado)", "Ritmo estable con algunos errores"],
-      ["Etapa 4", "1.2x – 1.8x", "Demora en trayectos ascendentes; compensación cervical", "0.60 – 0.75 (frecuentes sacadas correctoras)", "Ritmo medio con margen de mejora"],
-      ["Etapa 5", "0.5x – 1.2x", "Pérdida del blanco en esquinas; la cabeza sigue al objeto", "< 0.60 (saltos sacádicos desordenados)", "Punto de partida"]
+      ["1", "1,0x, línea visible", "Conocer el camino de bajada y subida"],
+      ["2", "1,0x a 2,0x", "Seguir sin retraso en los giros"],
+      ["3", "2,0x o más", "No soltar el objetivo aunque vaya rápido"],
+      ["4", "Línea oculta", "Prever el siguiente giro"],
+      ["5", "Velocidad aleatoria", "Seguir aunque cambie la velocidad"]
     ],
-    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. ※ Basado en parametros de latencia vertical (Rottach et al., 1996) y dinamica celular del riMLF (Büttner-Ennever & Horn, 1997) en monitores 1080p a 50–70 cm."
+    note: "Etapas de práctica de SkillDrills solo como orientación. No son normas de examen visual, estadísticas de usuarios ni percentiles.",
   },
   techniques: {
-    title: "Cuatro Técnicas Clave para el Seguimiento en Escalones",
+    title: "Consejos de práctica",
     items: [
-      {
-        name: "Inmovilización Cervical Absoluta",
-        desc: "Fije con firmeza la posicion del menton evitando balanceos de cuello en ascensos y descensos, obligando a los musculos oculares a realizar todo el trabajo motor.",
-        tips: "Mantenga la sensacion de apoyo en la barbilla para neutralizar giros de cabeza."
-      },
-      {
-        name: "Frenado Anticipado en Esquinas",
-        desc: "Antes de llegar al vertice de giro del escalon, modere proactivamente la inercia del movimiento para no sobrepasar el cambio de rasante.",
-        tips: "Trate la esquina como un acantilado donde se debe amortiguar la velocidad antes de virar."
-      },
-      {
-        name: "Impulso de Elevación Vertical",
-        desc: "Dado que la motilidad hacia arriba posee menor ganancia refleja, proporcione voluntariamente un estimulo muscular mas enérgico al subir los tramos.",
-        tips: "Aplique un pulso deliberado hacia arriba para contrarrestar la inercia de elevacion."
-      },
-      {
-        name: "Reenganche Sacádico Post-Escalón",
-        desc: "No permita pausas en la esquina del escalon. Dirija el foco central de inmediato al nuevo plano para conservar la velocidad de crucero sin tirones.",
-        tips: "Sienta la mirada como un escalador ágil pisando con precision de peldano en peldano."
-      }
-    ]
+      { name: "Mantén la cabeza quieta", desc: "Si la cabeza o el cuello acompañan, los ojos apenas trabajan. Mantén la cabeza recta y sigue el objetivo solo con los ojos.", tips: "Relaja los hombros y el cuello." },
+      { name: "Anticipa los giros", desc: "En cada esquina del trazado el objetivo cambia de dirección de golpe. Piensa en la nueva dirección justo antes.", tips: "¿Lo perdiste? No lo persigas; retómalo en el siguiente giro." },
+      { name: "Compara bajada y subida", desc: "Fíjate en si la bajada o la subida te resulta más fácil.", tips: "Apunta lo que notes y compara con los mismos ajustes." },
+      { name: "Sesiones cortas con pausas", desc: "Practica en bloques de 5 a 10 minutos, parpadea y mira a lo lejos entre sesiones. Más tiempo no es necesariamente mejor.", tips: "Para de inmediato si sientes dolor o mareo." }
+    ],
   },
   steps: [
-    { title: "Empieza en el centro", text: "Siéntate a 50–70 cm de la pantalla, mantén la cabeza quieta y espera a que el objetivo inicie el primer tramo." },
-    { title: "Sigue las subidas y bajadas", text: "Prioriza la altura del objetivo y acompaña los tramos diagonales y los cambios verticales sin mover el cuello." },
-    { title: "Recupera la mirada en las esquinas", text: "Reduce un poco el ritmo antes de cada esquina y haz una corrección breve si pierdes el objetivo." },
-    { title: "Sube la velocidad con control", text: "Aumenta un nivel solo cuando bajen las pérdidas y el retraso de mirada; después compara tus registros." }
+    { title: "Elegir los ajustes", text: "Empieza con 60 segundos, 1,0x y la línea visible." },
+    { title: "Postura", text: "Siéntate cómodo y mantén la cabeza recta." },
+    { title: "Seguir solo con los ojos", text: "Sigue el objetivo por los escalones en zigzag, bajando y luego subiendo." },
+    { title: "Subir poco a poco", text: "Cuando resulte fácil, sube la velocidad u oculta la línea o activa la velocidad aleatoria, una cosa cada vez." }
   ],
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  audience: "Quien quiera practicar de forma ligera, como un juego, seguir con la vista un objetivo que cambia de dirección y de altura.",
+  faqs,
   sources: pickSources('buttner1997', 'rottach1996', 'ke2013', 'collewijn1984', 'lisberger2010', 'woods2015'),
   related: [
     { href: "/es/drills/visual-tracking/constant-slow-pursuit", label: "Seguimiento lento continuo" },
@@ -294,7 +149,7 @@ const guideProps = {
     { href: "/es/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supresión de imágenes fantasma" },
     { href: "/es/drills/visual-tracking/infinity-pursuit", label: "Ejercicio ocular en forma de ocho" },
     { href: "/es/drills/visual-tracking/sine-wave-pursuit", label: "Seguimiento en onda sinusoidal" }
-  ]
+  ],
 };
 
 export default function StaircaseStepPage() {
@@ -307,8 +162,14 @@ export default function StaircaseStepPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <StaircaseStepClient copy={{ title: "Seguimiento ocular vertical", subtitle: "Ejercicio para subidas, bajadas y recuperación del objetivo" }} />
-      <DrillGuide guide={guideProps} />
+      <StaircaseStepClient
+        copy={{
+          title: "Seguimiento ocular vertical",
+          subtitle: "Baja escalón a escalón y vuelve a subir",
+          description: "En este seguimiento ocular vertical, un objetivo baja la pantalla en zigzag, escalón a escalón, y luego vuelve a subir. El navegador no registra tu mirada: es un registro de práctica, no una prueba.",
+        }}
+      />
+      <DrillGuide guide={guide} />
       <RelatedDrills />
       <DrillFooter />
     </>

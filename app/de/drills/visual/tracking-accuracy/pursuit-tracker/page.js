@@ -5,23 +5,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Glatte Blickfolge | Zielverfolgung | SkillDrills",
-  description: "Kostenloses Blickfolge-Training: Verfolge ein bewegtes Ziel mit Augen und Cursor und übe visuomotorische Präzision. Kein Diagnosetest.",
+  title: "Glatte Blickfolge | Smooth Pursuit | SkillDrills",
+  description: "Glatte Blickfolge (Smooth Pursuit) üben: Halte den Cursor 45 s lang auf einem umherwandernden Punkt, +5 Punkte pro Sekunde Kontakt. Kein Sehtest.",
   keywords: [
-    "Blickfolge",
-    "glatte Blickfolge",
-    "Augenfolgebewegung",
-    "Blickfolge Training",
-    "Zielverfolgung",
-    "bewegtes Ziel verfolgen",
-    "visuomotorische Koordination",
-    "Auge-Hand-Koordination",
-    "Smooth Pursuit Test",
-    "visuelles Tracking"
+    "Glatte Blickfolge",
+    "Smooth Pursuit",
+    "Cursor auf bewegtem Ziel halten",
+    "Tracking-Genauigkeit",
+    "bewegten Punkt verfolgen",
+    "Tracking üben"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Glatte Blickfolge | Zielverfolgung | SkillDrills",
-    description: "Trainiere Blickfolge, Zielverfolgung und Auge-Hand-Koordination mit einem bewegten Ziel. Kostenlos im Browser, kein Diagnosetest.",
+    title: "Glatte Blickfolge | Smooth Pursuit | SkillDrills",
+    description: "Halte den Cursor auf einem Punkt, der Tempo und Richtung wechselt. Gewertet wird nur der Cursor, nicht deine Augen. Kostenlos im Browser.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker',
     siteName: 'SkillDrills',
@@ -29,8 +25,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Glatte Blickfolge | Zielverfolgung | SkillDrills",
-    description: "Übe glatte Blickfolge und stabile Zielverfolgung im Browser. Ergebnisse hängen von Bildschirm und Maus ab.",
+    title: "Glatte Blickfolge | Smooth Pursuit | SkillDrills",
+    description: "Glatte Blickfolge im Browser: einen wandernden Punkt 45 Sekunden lang mit dem Cursor verfolgen.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -43,293 +39,290 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Trainings-Hub",
-      "item": "https://skilldrills.online/de/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Visuelles Training",
-      "item": "https://skilldrills.online/de/drills/visual"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Zielverfolgung & Tracking",
-      "item": "https://skilldrills.online/de/drills/visual/tracking-accuracy"
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "Smooth Pursuit Eye-Tracking Test",
-      "item": "https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills Startseite", "item": "https://skilldrills.online/de" },
+    { "@type": "ListItem", "position": 2, "name": "Trainings-Hub", "item": "https://skilldrills.online/de/drills" },
+    { "@type": "ListItem", "position": 3, "name": "Visuelles Training", "item": "https://skilldrills.online/de/drills/visual" },
+    { "@type": "ListItem", "position": 4, "name": "Blickverfolgung", "item": "https://skilldrills.online/de/drills/visual/tracking-accuracy" },
+    { "@type": "ListItem", "position": 5, "name": "Glatte Blickfolge", "item": "https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "SkillDrills Smooth Pursuit Eye-Tracking Test & Trainer",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Any",
-  "browserRequirements": "Moderner Webbrowser mit HTML5-Canvas-Unterstützung",
+  "@type": "SoftwareApplication",
+  "name": "Glatte Blickfolge (Smooth Pursuit)",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Web Browser",
+  "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Präzises Web-Tool zur computergestützten Messung kontinuierlicher okulomotorischer Folgebewegungen, Hand-Auge-Synchronisation und Sakkadendämpfung auf der Basis neuroophthalmologischer Standards."
+  "description": "45-Sekunden-Browser-Übung: Halte den Mauszeiger (oder Finger) auf einem Punkt, der Tempo und Richtung wechselt. Gewertet wird nur die Cursorposition; keine Kamera-Blickmessung, kein Seh- oder medizinischer Test.",
+  "featureList": [
+    "Feste 45-Sekunden-Runde; der Punkt ändert zufällig Tempo und Richtung und prallt von den Rändern ab",
+    "Je ca. 1 Sekunde Cursor auf dem Punkt (großzügige Trefferzone): +5 Punkte und Serie +1",
+    "Mehr als 2 Sekunden daneben setzt nur die Serie zurück, kein Punkt- oder Zeitabzug",
+    "Mit steigender Punktzahl wird der Punkt kleiner und schneller; Daten nur im lokalen Browser-Speicher"
+  ],
+  "dateModified": "2026-11-12"
 };
 
-const webApplicationSchema = {
+const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Kostenloses Online Smooth Pursuit Eye-Tracking-Training",
+  "name": "Glatte Blickfolge (Smooth Pursuit) | SkillDrills",
+  "alternateName": "Pursuit Tracker Pro",
   "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker",
-  "applicationCategory": "GameApplication",
-  "genre": ["Eye Tracking Test", "Augenfolgebewegung", "Aim Tracking", "Visuelle Koordination"],
-  "browserRequirements": "Requires HTML5 Canvas and JavaScript",
-  "inLanguage": "de-DE"
+  "dateModified": "2026-11-12",
+  "description": "Kostenlose Übung zur glatten Blickfolge: einen wandernden Punkt 45 Sekunden lang mit dem Cursor halten.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Moderner Browser mit HTML5-Canvas.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "isAccessibleForFree": true,
+  "learningResourceType": "Educational Game",
+  "teaches": "Ein bewegtes Ziel mit den Augen verfolgen und den Cursor darauf halten"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Smooth Pursuit Auto-Tracker Drill",
-  "description": "Halte das Fadenkreuz kontinuierlich auf dem fließend manövrierenden Ziel-Orb und teste deine Reaktionskonstanz über 45 Sekunden.",
-  "genre": ["Aim Trainer", "Vision Training", "Esports Reaction"],
-  "playMode": "SinglePlayer",
-  "applicationCategory": "Game"
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was versteht man unter Smooth Pursuit (glatte Augenfolgebewegungen)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Smooth Pursuit Eye Movements (SPEM) bezeichnen das neurophysiologische Vermögen des Sehsystems, den Blick stufenlos und synchron an die Geschwindigkeit eines sich bewegenden Objekts anzupassen (Leigh & Zee, 2015). Ziel ist es, das Netzhautbild des Zielobjekts exakt auf der Fovea centralis (dem Punkt des schärfsten Sehens) festzuhalten und störenden Netzhautschlupf (Retinal Slip) zu minimieren. Im Gegensatz zu sprunghaften Sakkaden erfordert dies eine kontinuierliche Geschwindigkeitsberechnung im parieto-okzipitalen Kortex (Areal MT/MST) und Kleinhirn."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum ruckelt die Zielverfolgung bei schnellen Manövern oft stufenweise?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hinkt die Winkelgeschwindigkeit des Auges dem Zielobjekt hinterher, entsteht ein Positionsfehler auf der Netzhaut. Um das Ziel nicht komplett zu verlieren, löst das Gehirn reflexartig kompensatorische Kurzsakkaden aus, sogenannte Catch-up-Sakkaden (Rashbass, 1961). Ein untrainiertes visuelles System wechselt ständig zwischen zu langsamer Verfolgung und ruckartigen Nachkorrekturen hin und her, was sich als unruhiges Ruckeln bemerkbar macht."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche direkte Relevanz hat dieser Test für FPS-Shooter wie Apex Legends oder Overwatch?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das sogenannte 'Tracking-Aiming' auf ausweichende, gleitende oder strafende Gegner (AD-Strafe) ist die direkte motorische Umsetzung des Smooth-Pursuit-Systems. Spieler mit hochgradig geschulter Blickfolge halten das Fadenkreuz auch bei plötzlichen Geschwindigkeitswechseln stabil auf der gegnerischen Hitbox, ohne durch Überreagieren (Overshoot) vom Ziel abzuprallen (Lisberger, 2010)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Mauseinstellungen (DPI, Sensitivität) eignen sich am besten für Folgebewegungen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Eine übertrieben hohe Maussensitivität verstärkt natürliche Mikrovibrationen der Finger und erzeugt unruhiges Zeigerzittern. Eine zu niedrige Empfindlichkeit hingegen ermüdet den Arm bei weiten Bildschirmüberquerungen. Empfohlen wird eine mittlere bis moderate Sensitivität (z. B. 800 DPI mit einer In-Game-Sensitivität, die ca. 30–45 cm für eine 360-Grad-Drehung erfordert), kombiniert mit zwingend deaktivierter Zeigerbeschleunigung in Windows."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Verbessert regelmäßiges Blickfolgetraining auch die allgemeine Konzentration und Sehgesundheit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Das Training stärkt die synaptische Plastizität im frontalen Augenfeld (FEF) und optimiert interne Vorhersagemodelle (Barnes, 2008). Dies erleichtert flüssiges Lesen bei raschen Zeilenwechseln, verlängert die fehlerfreie visuelle Aufmerksamkeitsspanne und verringert spürbar die Symptome digitaler Augenüberlastung (Asthenopie) bei Bildschirmarbeit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Profitieren auch reale Sportarten wie Tennis, Tischtennis oder Motorsport davon?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Enorm. Spitzen-Baseballer, Tennisprofis und Formel-1-Piloten zeichnen sich durch einen außergewöhnlich hohen Smooth-Pursuit-Gain aus. Da ihre Augen dem Verlauf des Balls oder der Kurvenlinie ohne zeitliche Phasenverschiebung folgen, bleibt mehr Reaktionszeit für die Feinabstimmung der Körpermechanik übrig."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Sollte man die Maus primär aus dem Handgelenk oder aus dem Unterarm führen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die anatomisch sauberste Technik ist die kinetische Entkopplung: Weite, kontinuierliche Kurvenbewegungen werden fließend aus dem Ellenbogen (Unterarm-Aiming) gesteuert, während feine Richtungskorrekturen und Mikroabgleiche aus dem Handgelenk und den Fingerspitzen stammen. Wer ausschließlich das Handgelenk einsetzt, riskiert Sehnenreizungen und unpräzise Knickbewegungen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie reagiert man am besten auf abrupte Richtungswechsel des Ziel-Orbs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der häufigste Fehler ist ein panischer, ruckartiger Ruck (Flick), der fast immer zum Überschwingen führt. Versuche stattdessen, die Handmuskeln im Moment der Richtungsänderung bewusst locker zu halten und den Zeiger in einer gleichmäßigen, weichen Gleitbewegung auf den neuen Geschwindigkeitsvektor einzuschleifen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie sieht eine effektive Trainingsroutine aus, um Augenermüdung zu vermeiden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Da die sechs äußeren Augenmuskeln bei kontinuierlicher Zielverfolgung Höchstleistung erbringen, sind 3 bis 5 Durchgänge à 45 Sekunden (ca. 5 bis 10 Minuten Gesamttraining) pro Tag optimal. Nach dem Training empfiehlt sich das 'Palming' (Augen mit warmen Handflächen abdecken) und der Blick in die Ferne zur Entlastung des Ziliarmuskels."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Werden meine Tracking-Daten oder Mauskoordinaten an externe Server übertragen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Sämtliche Berechnungen, Haltezeiten und Präzisionsbewertungen finden ausnahmslos clientseitig in deinem Webbrowser statt. Alle Fortschrittsdaten verbleiben verschlüsselt im lokalen Speicher (localStorage) deines Geräts. Es werden keinerlei persönliche Daten oder Bewegungsprofile übertragen."
-      }
-    }
-  ]
+  "name": "Glatte Blickfolge (Smooth Pursuit)",
+  "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker",
+  "description": "Halte den Cursor auf einem Punkt, der Tempo und Richtung wechselt. Kostenloses Smooth-Pursuit-Spiel.",
+  "genre": [
+    "Action",
+    "Visual Tracking"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Schritt-für-Schritt-Anleitung für das Smooth Pursuit Eye-Tracking-Training",
-  "description": "So maximierst du deine Haltezeit und Verfolgungsgenauigkeit auf dynamisch fließenden Zielbahnen.",
+  "name": "So funktioniert die Übung zur glatten Blickfolge",
+  "dateModified": "2026-11-12",
+  "description": "Vier Schritte durch die 45-Sekunden-Runde.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Ausgangsposition zentrieren und Haltung lockern",
-      "text": "Platziere den Zeiger während des Countdowns ruhig auf dem ruhenden Ziel-Orb und lockere Schulter- und Handgelenksmuskulatur.",
+      "name": "Cursor auf den Punkt",
+      "text": "Nach dem Countdown erscheint ein oranger Punkt und wandert umher. Liegt der Cursor (am Touchscreen der Finger) darauf, wird er grün.",
       "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Gleichmäßige kontinuierliche Führung starten",
-      "text": "Folge der Kugel ab dem ersten Bewegungsmoment mit konstanter Geschwindigkeit, ohne ruckartig vorauszueilen oder abzufallen.",
+      "name": "Jeweils ca. 1 Sekunde halten",
+      "text": "Ist der Ring um den Punkt voll (ca. 1 Sekunde), gibt es +5 Punkte und die Serie steigt um 1. Wer abrutscht, beginnt den Ring von vorn.",
       "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Mikrosakkaden bei Richtungswechseln dämpfen",
-      "text": "Gleite bei Kurvenwechseln weich in die neue Bewegungsbahn hinein, anstatt panisch mit schnellen Blicksprüngen nachzukorrigieren.",
+      "name": "Richtungswechsel mitgehen",
+      "text": "Der Punkt wechselt ohne Vorwarnung Tempo und Richtung und prallt von den Rändern ab. Mit Punktzahl und Serie wird er schneller und kleiner.",
       "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "45 Sekunden Haltezeit maximieren",
-      "text": "Halte das Fadenkreuz über die volle Trainingsdauer auf dem Ziel und werte deinen Haltezeit-Prozentsatz (Time on Target) im Abschlussreport aus.",
+      "name": "Bis zum Ende dranbleiben",
+      "text": "Mehr als 2 Sekunden daneben setzt nur die Serie zurück; Punkte und Zeit bleiben. Nach 45 Sekunden endet die Runde.",
       "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker#step-4"
     }
   ]
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "dateModified": "2026-11-12",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie funktioniert die Übung zur glatten Blickfolge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du hältst 45 Sekunden lang den Mauszeiger auf einem umherwandernden Punkt. Für jede ununterbrochene Sekunde (ca.) gibt es 5 Punkte. Gewertet wird nur die Cursorposition; Kamera oder Eye-Tracker messen deine Augen nicht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert, wenn ich den Punkt verliere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der laufende Sekunden-Ring startet neu, und nach mehr als 2 Sekunden daneben fällt die Serie auf 0. Punkte und Restzeit werden nicht abgezogen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wird es schwieriger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mit steigender Punktzahl schrumpft der Punkt (bis auf die halbe Größe) und seine Höchstgeschwindigkeit steigt. Auch eine längere Serie macht ihn schneller."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Spielt die Bildwiederholrate eine Rolle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Die Übung zählt Bilder (Frames): Auf 60 Hz gibt es etwa jede Sekunde Punkte, auf Monitoren mit höherer Rate kommen Punkte schneller und der Punkt bewegt sich schneller. Ergebnisse verschiedener Geräte sind daher kaum vergleichbar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist glatte Blickfolge (Smooth Pursuit)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die gleitende Augenbewegung, mit der wir ein bewegtes Objekt im Zentrum des Blickfelds halten. Ist es zu schnell, fällt das Auge zurück und holt mit kurzen Sakkaden auf (Krauzlis, 2004). Die Übung bildet diese Situation mit dem Cursor nach, misst die Augenbewegung aber nicht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Verbessert das Training Sehkraft oder Aim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine höhere Punktzahl zeigt, dass du in dieser Aufgabe geübter bist. Bessere Sehkraft, Spiel- oder Sportleistung ist nicht garantiert, und die Übung ersetzt keine augenärztliche Untersuchung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist die Übung kostenlos und wo werden meine Werte gespeichert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, kostenlos und ohne Konto. Bestwerte bleiben nur im lokalen Speicher deines Browsers."
+      }
+    }
+  ]
+};
+
 const guideData = {
-  eyebrow: "Neuroophthalmologie & Okulomotorische Kontrolle",
-  heading: "Glatte Blickfolge und visumotorische Zielverfolgung trainieren",
+  heading: "Glatte Blickfolge: einen bewegten Punkt mit dem Cursor halten",
   intro: [
-    "Das System der glatten Augenfolgebewegungen (Smooth Pursuit Eye Movements, SPEM) steuert die stufenlose Ausrichtung der Sehachse auf kontinuierlich bewegte Objekte, um deren Abbild stabil im Bereich der Fovea centralis – dem Areal höchster visueller Auflösung – zu fixieren. Physiologisch unterscheidet sich dieser Regelkreis fundamental von sakkadischen Blicksprüngen, die Zielpositionen sprunghaft ansteuern und von eigenständigen prämotorischen Schaltkreisen im Hirnstamm generiert werden (Rashbass, 1961; Krauzlis, 2004).",
-    "Der neurophysiologische Hauptantrieb für Smooth Pursuit ist der sogenannte Netzhautschlupf (Retinal Slip), also die Abdriftrate des Bildes auf der Retina (Leigh & Zee, 2015). Visuelle Bewegungssignale aus dem primären Sehzentrum (V1) werden in den Arealen MT/V5 und MST in Richtungs- und Geschwindigkeitsvektoren zerlegt. Über die frontalen Augenfelder (FEF) und Brückenkerne gelangt das Signal in das Kleinhirn (Flocculus und dorsaler Vermis), welches hochpräzise Feuermuster an die okulomotorischen Hirnnervenkerne übermittelt (Krauzlis, 2004; Lisberger, 2010).",
-    "Biomechanische Grenzen der glatten Augenfolge treten ein, sobald die Winkelgeschwindigkeit des Zielobjekts 30 bis 40 Grad pro Sekunde übersteigt oder unvorhersehbare Richtungswechsel vollzogen werden (Bahill, Iandolo & Troost, 1980). Unter diesen Bedingungen kann das okulomotorische System die Einheitsverstärkung (Unity Gain von 1,0) nicht mehr aufrechterhalten. Überschreitet der akkumulierte Positionsfehler einen Schwellenwert, schaltet das Zentralnervensystem blitzschnell kompensatorische Catch-up-Sakkaden von 20 bis 40 Millisekunden Dauer ein, um das Ziel wieder einzufangen (Leigh & Zee, 2015). Spitzen-Athleten und Shooter-Profis minimieren die Amplitude dieser Notfallsakkaden durch präzise Geschwindigkeitsinterpolation.",
-    "Da die neuronale Signalübertragung im menschlichen Seh- und Bewegungssystem einer unvermeidbaren Latenzzeit von 100 bis 130 Millisekunden unterliegt, basiert eine erfolgreiche stufenlose Zielverfolgung auf internen Kleinhirn-Vorhersagemodellen (Internal Predictive Models), die eine vorausschauende Feedforward-Steuerung ermöglichen (Land & McLeod, 2000; Barnes, 2008). Versagt diese prädiktive Synchronisation, bricht die Folgebewegung ab und das Fadenkreuz verliert den Anschluss an die tatsächliche Zielbahn.",
-    "Dieses webbasierte Testsystem nutzt moderne performance.now()-Mikrotimer und Subpixel-Rendering, um die relative Haltezeit im Ziel (Time on Target), die mittlere Bahnabweichung und die Latenz bei Richtungswechseln in Echtzeit zu analysieren (Woods et al., 2015). Regelmäßiges okulomotorisches Folgetraining optimiert die neuromuskuläre Koppelung zwischen Auge und Hand – mit direkt spürbaren Vorteilen für das Tracking-Aiming in First-Person-Shootern, die dynamische Bewegungserfassung im Sport sowie die Entlastung der Augen bei Bildschirmarbeit."
+    "Bei dieser Übung zur glatten Blickfolge (Smooth Pursuit) verfolgst du 45 Sekunden lang einen umherwandernden Punkt mit den Augen und hältst den Mauszeiger darauf. Gewertet wird nur, wie lange der Cursor auf dem Punkt bleibt; deine Augen werden nicht per Kamera erfasst.",
+    "Bleibt der Cursor etwa 1 Sekunde ohne Unterbrechung auf dem Punkt (großzügige Trefferzone), gibt es +5 Punkte und die Serie steigt. Der Punkt wechselt ohne Vorwarnung Tempo und Richtung, prallt von den Rändern ab und wird mit steigender Punktzahl kleiner und schneller. Mehr als 2 Sekunden daneben setzt nur die Serie zurück.",
+    "Langsamen Objekten folgen die Augen gleitend; sind sie zu schnell, fällt der Blick zurück und holt mit kurzen Sprüngen auf (Krauzlis, 2004). Die Übung macht daraus eine einfache Cursor-Aufgabe und misst oder diagnostiziert weder Sehschärfe noch Augenbewegungen."
   ],
   benchmarks: {
-    title: "Orientierungswerte für Blickfolge und Zielverfolgung",
-    headers: ["Leistungsstufe / Rang", "Zielverfolgungs-Haltezeit (Time on Target)", "Mittlere Tracking-Präzision", "Sakkaden-Unterdrückung", "Neurophysiologisches Niveau"],
-    rows: [
-      ["Stufe 1: Höchste Übungsstufe", "≥ 88%", "≥ 92%", "≥ 95% Unterdrückung", "Perfekte kontinuierliche Folgebewegung, minimaler Netzhautschlupf. Voll synchronisiertes Kleinhirn-Innenmodell (Lisberger, 2010)"],
-      ["Stufe 2: Fortgeschritten / Athlet", "76 – 87%", "84 – 91%", "88 – 94% Unterdrückung", "Hochpräzise Okulomotorik und rasche Phasenanpassung bei Richtungswechseln"],
-      ["Stufe 3: Solider Standard", "62 – 75%", "72 – 83%", "78 – 87% Unterdrückung", "Stabiles Tracking auf gleichmäßigen Bahnen, vereinzelte Korrektursakkaden bei Tempowechseln"],
-      ["Stufe 4: Basis-Niveau", "48 – 61%", "60 – 71%", "65 – 77% Unterdrückung", "Häufiges Abdriften des Cursors und stufenweises Nachführen via Catch-up-Sakkaden"],
-      ["Einsteiger / Untrainiert (Baseline)", "< 48%", "< 60%", "< 65% Unterdrückung", "Starke visuelle Latenz, ruckartige Handbewegungen und chronisches Überschwingen"]
+    "title": "SkillDrills-Übungsstufen (nur für diese Übung, 60 Hz)",
+    "headers": [
+      "Stufe",
+      "Punkte in 45 s",
+      "Beschreibung"
     ],
-    note: "Basierend auf publizierten neuroophthalmologischen und sportwissenschaftlichen Studien (Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
+    "rows": [
+      [
+        "Oben",
+        "180+",
+        "Der Punkt wird fast die ganze Zeit gehalten."
+      ],
+      [
+        "Stabil",
+        "120 – 179",
+        "Nur direkt nach Richtungswechseln gelegentlich daneben."
+      ],
+      [
+        "Übung",
+        "60 – 119",
+        "In schnellen Phasen oft unterbrochen."
+      ],
+      [
+        "Einstieg",
+        "< 60",
+        "Eingewöhnung in die Übung."
+      ]
+    ],
+    "note": "Eigene Übungsstufen von SkillDrills, keine wissenschaftlichen Normwerte und keine Bewertung des Sehvermögens. Bildwiederholrate und Maus beeinflussen das Ergebnis."
   },
   techniques: {
-    title: "Vier Methoden für stabilere Blickfolge",
-    items: [
+    "title": "Tipps, um den Punkt zu halten",
+    "items": [
       {
-        name: "Geschwindigkeits-Phasenabgleich (Smooth Acceleration Matching)",
-        desc: "Führe den Cursor nicht hinter dem Ziel her, sondern passe die Handgeschwindigkeit kontinuierlich an das Tempo des Objekts an, um die relative Bewegung auf der Netzhaut auf null zu reduzieren.",
-        tips: "Fixiere foveal entspannt den Kern des Ziel-Orbs, anstatt hektisch den äußeren Rändern hinterherzuschauen."
+        "name": "Cursor in die Mitte",
+        "desc": "Am Rand rutscht man schon bei kleinen Richtungswechseln ab.",
+        "tips": "Halte den Cursor in der Mitte des Punkts und bewege dich mit ihm."
       },
       {
-        name: "Mikrosakkaden-Dämpfung (Catch-up Saccade Suppression)",
-        desc: "Unterdrücke den Impuls, bei kleinen Abweichungen panisch mit schnellen Rucks nachzukorrigieren; gleite stattdessen mit ruhigem, fließendem Schwung zurück ins Zentrum.",
-        tips: "Verkrampfte Handmuskeln verursachen Zittern. Achte auf bewusst gelockerte Finger- und Handgelenkshaltung."
+        "name": "Locker im Handgelenk",
+        "desc": "Verkrampfte Hände lassen den Cursor springen.",
+        "tips": "Kleine Korrekturen aus dem Handgelenk, große Wege aus dem Arm."
       },
       {
-        name: "Kinetische Muskelentkopplung (Arm-Wrist Kinetic Decoupling)",
-        desc: "Nutze den Unterarm mit dem Ellenbogen als Drehpunkt für weite, flächige Richtungsverläufe und setze das Handgelenk ausschließlich für minimale Feinkorrekturen ein.",
-        tips: "Vermeide es, das Handgelenk mit hohem Druck auf das Mauspad zu pressen, da Reibungswiderstand stufenförmiges Haken provoziert."
+        "name": "An den Rändern vorbereitet sein",
+        "desc": "Der Punkt prallt sofort von den Rändern ab.",
+        "tips": "Nähert er sich einem Rand, stell dich auf die Gegenrichtung ein."
       },
       {
-        name: "Foveale Fixierungsstabilität (Foveal Attentional Anchoring)",
-        desc: "Behalte auch bei abrupten Richtungswechseln einen weiten, unverkrampften Blick bei und koordiniere die foveale Schärfe mit der peripheren Bewegungswahrnehmung.",
-        tips: "Regelmäßiges, natürliches Blinzeln verhindert trockene Augen und erhält einen stabilen Tränenfilm für scharfe Konturen."
+        "name": "Sofort zurück",
+        "desc": "Innerhalb von 2 Sekunden zurück bleibt die Serie erhalten.",
+        "tips": "Nicht anhalten, wenn du abrutschst, sondern direkt zurück auf den Punkt."
       }
     ]
   },
   steps: [
-    "Klicke auf Start und positioniere das Fadenkreuz im Zentrum des im Bildschirmzentrum erscheinenden Ziel-Orbs.",
-    "Bewege die Maus mit gleichmäßiger Geschwindigkeit und sanftem Druck synchron mit dem manövrierenden Zielkörper.",
-    "Passe dich fließend an Beschleunigungen und Kurven an, ohne bei Richtungswechseln hektisch zu verreißen.",
-    "Halte das Fadenkreuz 45 Sekunden lang ununterbrochen im Zielbereich und maximiere deine Time-on-Target-Quote.",
-    "Analysiere deine ermittelte Tracking-Genauigkeit und Einstufung und integriere den Drill in dein tägliches Sehtraining."
+    "Drücke auf Start und warte den Countdown ab.",
+    "Lege den Cursor auf den Punkt, bis er grün wird.",
+    "Bleib dran, damit sich alle ca. 1 Sekunde 5 Punkte sammeln.",
+    "Geh bei Richtungswechseln und Abprallern mit.",
+    "Nach 45 Sekunden siehst du Punktzahl, Serie und Bewertung."
   ],
-  audience: "FPS-Gamer (Apex Legends, Overwatch, Valorant, CS2) zur Optimierung des Tracking-Aimings auf bewegte Hitboxen, Ballsportler (Tennis, Baseball, Tischtennis) zur Schulung der kontinuierlichen Blickfolge sowie alle, die ihre visuelle Feinmotorik verbessern möchten.",
+  audience: "Für alle, die das gleichmäßige Verfolgen eines bewegten Ziels mit dem Cursor üben möchten, und Spieler, die ihr Tracking-Gefühl kurz prüfen wollen.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('rashbass1961', 'krauzlis2004', 'leigh2015', 'lisberger2010', 'barnes2008', 'woods2015'),
+  sources: pickSources('krauzlis2004', 'rashbass1961'),
   related: [
-    { href: "/de/drills/visual/tracking-accuracy/moving-target", label: "Dynamische Sehschärfe & Zielinterzeption" },
-    { href: "/de/drills/visual/tracking-accuracy/multiple-targets", label: "Multiple Object Tracking Test (MOT)" },
-    { href: "/de/drills/visual/visual-recognition/visual-search", label: "Visuelle Suche (Peripheres Scannen)" },
-    { href: "/de/drills/reaction-speed/visual-tracking-speed-test", label: "Visuelle Tracking-Geschwindigkeit" }
+    {
+      "href": "/de/drills/visual/tracking-accuracy/moving-target",
+      "label": "Bewegte Ziele abfangen"
+    },
+    {
+      "href": "/de/drills/visual/tracking-accuracy/multiple-targets",
+      "label": "Mehrfach-Objektverfolgung"
+    },
+    {
+      "href": "/de/drills/visual/visual-recognition/visual-search",
+      "label": "Visuelle Suche"
+    },
+    {
+      "href": "/de/drills/reaction-speed/visual-tracking-speed-test",
+      "label": "Zielverfolgung testen"
+    }
   ]
 };
 
 export default function LocalizedPursuitTrackerDePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
-      <AutoPursuitClient copy={{ title: "Glatte Blickfolge", subtitle: "Zielverfolgung trainieren" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <AutoPursuitClient copy={{  "title": "Glatte Blickfolge (Smooth Pursuit)" }} />
       <DrillGuide guide={guideData} />
       <RelatedDrills />
     </>

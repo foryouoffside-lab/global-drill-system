@@ -20,7 +20,7 @@ const RELATED_DRILLS = [
   { id: "constant-slow-pursuit", name: "Smooth Pursuit Eye Exercise", cat: "Visual Tracking", desc: "Condition smooth pursuit tracking along continuous Lissajous curves.", href: "/drills/visual-tracking/constant-slow-pursuit" },
   { id: "directional-chaos-pursuit", name: "Erratic Motion Eye Drill", cat: "Visual Tracking", desc: "Complex multi-directional visual tracking with sudden direction shifts.", href: "/drills/visual-tracking/directional-chaos-pursuit" },
   { id: "dynamic-evasion-pursuit", name: "Reactive Eye Tracking Drill", cat: "Visual Tracking", desc: "Re-acquire targets executing rapid evasive directional changes.", href: "/drills/visual-tracking/dynamic-evasion-pursuit" },
-  { id: "split-screen-tracking", name: "Divided Attention Eye Test", cat: "Visual Tracking", desc: "Condition divided attention across dual independent movement planes.", href: "/drills/visual-tracking/split-screen-tracking" },
+  { id: "split-screen-tracking", name: "Divided Attention Tracking Drill", cat: "Visual Tracking", desc: "Condition divided attention across dual independent movement planes.", href: "/drills/visual-tracking/split-screen-tracking" },
   { id: "infinity-pursuit", name: "Figure-8 Eye Tracking Exercise", cat: "Visual Tracking", desc: "Condition continuous pursuit across figure-8 infinity loops.", href: "/drills/visual-tracking/infinity-pursuit" },
   { id: "spatial-shift-pursuit", name: "Adaptive Eye Tracking Drill", cat: "Visual Tracking", desc: "Track shifting targets across sudden spatial displacements.", href: "/drills/visual-tracking/spatial-shift-pursuit" }
 ];

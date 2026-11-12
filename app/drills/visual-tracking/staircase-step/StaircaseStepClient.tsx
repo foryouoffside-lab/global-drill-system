@@ -21,7 +21,7 @@ const RELATED_DRILLS = [
   { id: "constant-slow-pursuit", name: "Smooth Pursuit Eye Exercise", cat: "Visual Tracking", desc: "Condition smooth pursuit tracking along continuous Lissajous curves.", href: "/drills/visual-tracking/constant-slow-pursuit" },
   { id: "directional-chaos-pursuit", name: "Erratic Motion Eye Drill", cat: "Visual Tracking", desc: "Complex multi-directional visual tracking with sudden direction shifts.", href: "/drills/visual-tracking/directional-chaos-pursuit" },
   { id: "dynamic-evasion-pursuit", name: "Reactive Eye Tracking Drill", cat: "Visual Tracking", desc: "Re-acquire targets executing rapid evasive directional changes.", href: "/drills/visual-tracking/dynamic-evasion-pursuit" },
-  { id: "split-screen-tracking", name: "Divided Attention Eye Test", cat: "Visual Tracking", desc: "Condition divided attention across dual independent movement planes.", href: "/drills/visual-tracking/split-screen-tracking" },
+  { id: "split-screen-tracking", name: "Divided Attention Tracking Drill", cat: "Visual Tracking", desc: "Condition divided attention across dual independent movement planes.", href: "/drills/visual-tracking/split-screen-tracking" },
   { id: "infinity-pursuit", name: "Figure-8 Eye Tracking Exercise", cat: "Visual Tracking", desc: "Condition continuous pursuit across figure-8 infinity loops.", href: "/drills/visual-tracking/infinity-pursuit" },
   { id: "spatial-shift-pursuit", name: "Adaptive Eye Tracking Drill", cat: "Visual Tracking", desc: "Track shifting targets across sudden spatial displacements.", href: "/drills/visual-tracking/spatial-shift-pursuit" }
 ];
@@ -676,7 +676,7 @@ export default function StaircaseStepClient({ copy }: { copy?: { title?: string;
             </DrillAccordion>
             {(locale === 'en' || copy?.description) && (
               <DrillAccordion id="about" title="About Staircase Step" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
-                <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Staircase step tracking conditions vertical smooth pursuit and elevation gaze stability by guiding observers along a multi-segment vertical zig-zag polyline. By training acute direction reversals and diagonal velocity shifts without head movement, this drill strengthens specialized midbrain ocular motor pathways (Rottach et al., 1996; Ke et al., 2013). Vertical pursuit is measurably worse than horizontal in the same observers (Rottach et al., 1996), and pursuit takes roughly 100 ms to begin after a target starts moving (Lisberger, 2010)."}</p>
+                <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Staircase Step is a browser practice task: a target zig-zags left and right as it steps from the top of the screen to the bottom, then climbs back the same way, and you follow it with your eyes only. It does not record where you look and is not an eye test (Rottach et al., 1996; Ke et al., 2013). Vertical pursuit is measurably worse than horizontal in the same observers (Rottach et al., 1996), and pursuit takes roughly 100 ms to begin after a target starts moving (Lisberger, 2010)."}</p>
               </DrillAccordion>
             )}
           </div>

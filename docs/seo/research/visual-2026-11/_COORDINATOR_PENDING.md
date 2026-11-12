@@ -15,3 +15,6 @@ Apply to lib/i18n/drillNames.js after all 7 groups report (name = page primary, 
 - CHECK vs cogmem maps: pt entropic-grid 'Atenção Concentrada' and es 'Concentración' may collide with cognitive concentration-grid / pt 'teste de atenção concentrada' family -> resolve when cogmem pt/es maps land.
 - lib/i18n/visualTrackingHubNative.js still has clinical wording (overridden by pages) - cleanup optional.
 - ja visual-tracking hub: map wants 視線追従トレーニング, blocked by ja keep rule.
+- moving-target (G3): ko 동체시력 키우는 게임 | ja 動体視力を鍛えるゲーム | de Bewegte Ziele abfangen | fr Intercepter des cibles mobiles | pt Previsão de Trajetória | es Predicción de Trayectoria
+- pursuit-tracker (G3): ko 시선 추적 게임 | de Glatte Blickfolge | fr Test de poursuite lisse au curseur | pt Perseguição Suave com o Cursor | es Persecución con el Cursor (ja unchanged)
+- multiple-targets (G3): titles kept. ko/ja still contain 주변시 훈련 / 周辺視野トレーニング (map says drop; KOREA keep rule held) -> revisit after Korea settles.

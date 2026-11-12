@@ -3,3 +3,4 @@ ja | 三角形視線追従トレーニング (kept) | ja.md no-demand descriptiv
 de | Dreieckige Blickverfolgung (kept) | de.md keep, not measured | full rewrite: 3-corner loop, equal time per side so base fastest; removed cerebellum-neuroplasticity/sports/FPS claims, latency tier table; dateModified | audit OK
 fr | Poursuite visuelle triangulaire (kept) | fr.md keep, not measured | full rewrite: removed false 'measures corner error/losses' + false FAQ 'module lets you reverse direction' (no such setting); 3-corner loop, equal time per side; dateModified | audit OK
 pt | Rastreamento visual triangular (kept) | pt.md keep, not measured | full rewrite: 3-corner loop, equal time per side; removed measurement claims + tier table; dateModified | audit OK
+es | Seguimiento visual triangular (kept) | es.md keep, not measured | full rewrite: 3-corner loop, equal time per side; removed measurement claims + tier table; dateModified | audit OK

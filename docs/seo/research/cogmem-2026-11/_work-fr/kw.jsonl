@@ -8,3 +8,28 @@
 {"phrase": "entraînement mémoire", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
 {"phrase": "test mémoire à court terme", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
 {"phrase": "mémoire de travail", "cc": "fr", "lang": "fr-FR", "exact": 79, "broad": 79, "status": "ok"}
+{"phrase": "test n-back", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "empan de chiffres", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "empan mnésique", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "jeu simon", "cc": "fr", "lang": "fr-FR", "exact": 25, "broad": 25, "status": "ok"}
+{"phrase": "jeu simon en ligne", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test mémoire des mots", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test des blocs de corsi", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de mémoire spatiale", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de concentration", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de concentration en ligne", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de concentration gratuit", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "exercice de concentration", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "jeux de concentration", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "entraînement cérébral", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "entraînement cérébral gratuit", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de mémoire et concentration", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "table de schulte", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "tableau de schulte", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de stroop", "cc": "fr", "lang": "fr-FR", "exact": 117, "broad": 117, "status": "ok"}
+{"phrase": "test de stroop en ligne", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "lecture rapide", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de lecture rapide", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test vitesse de lecture", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test multitâche", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "attention divisée", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}

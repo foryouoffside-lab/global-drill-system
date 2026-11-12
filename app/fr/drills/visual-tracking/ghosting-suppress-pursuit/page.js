@@ -4,314 +4,260 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
+import { breadcrumbItems } from '@/lib/i18n/breadcrumbLabels';
+
+const url = 'https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit';
+const name = "Poursuite avec traînée visuelle";
+const title = `${name} | SkillDrills`;
+const description = "Poursuite avec traînée visuelle : la cible file en ligne droite et rebondit, avec une traînée d'anneaux pâles en option. Pas un test de ghosting écran.";
 
 export const metadata = {
-  title: "Test ghosting écran : cible mobile | SkillDrills",
-  description: "Observez les traînées et halos d’une cible mobile et travaillez fixation fovéale, netteté du mouvement et stabilité du regard.",
-  keywords: [
-    "test de rémanence écran",
-    "test ghosting écran",
-    "traînée écran",
-    "temps de réponse écran",
-    "test de flou de mouvement",
-    "fréquence de rafraîchissement écran",
-    "test de mouvement écran",
-    "fixation fovéale",
-    "stabilité du regard",
-    "test de poursuite oculaire",
-    "rémanence moniteur gaming",
-    "test écran gratuit"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit",
-    languages: getAlternateLanguages("/drills/visual-tracking/ghosting-suppress-pursuit"),
-  },
+  title,
+  description,
+  keywords: ["poursuite avec traînée visuelle","cible avec traînée","ignorer la traînée","suivre une cible des yeux","stabilité du regard","exercice des yeux navigateur"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/ghosting-suppress-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'fr_FR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test ghosting écran : cible mobile | SkillDrills",
-    description: "Observez les traînées et halos d’une cible mobile et travaillez fixation fovéale, netteté du mouvement et stabilité du regard.",
-    url: "https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit",
-    siteName: "SkillDrills",
-    locale: "fr_FR",
-    type: "website",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "Test ghosting écran : cible mobile | SkillDrills",
-    description: "Observez les traînées et halos d’une cible mobile et travaillez fixation fovéale, netteté du mouvement et stabilité du regard.",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Poursuite Visuelle",
-      "item": "https://skilldrills.online/fr/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Suppression des Traînées et Fixation",
-      "item": "https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems('fr', url, 'visual-tracking', name, true),
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "Suppression des Traînées Visuelles – Fixation Oculaire",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Navigateur",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Test de Stabilité de Fixation Oculaire et Neutralisation du Flou Visuel",
-  "url": "https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Navigateur",
-  "browserRequirements": "JavaScript et Canvas HTML5 requis.",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Poursuite avec traînée visuelle (application web)",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navigateur récent compatible HTML5 Canvas",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Test de Rémanence Écran – Fixation Fovéale",
-  "description": "Entraîneur visuel sur navigateur pour observer les traînées d’une cible mobile et travailler fixation fovéale et stabilité du regard.",
-  "genre": ["Test d’Écran", "Entraînement de la Motricité Oculaire", "Entraînement de la Réactivité Visuelle"],
-  "playMode": "Un joueur",
-  "applicationCategory": "Game",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name,
+  url,
+  description,
+  genre: ['Visual training', 'Eye tracking exercise'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Comment Entraîner la Fixation Fovéale Face aux Traînées Visuelles",
-  "description": "Protocole pour stimuler le défloutage cortical et verrouiller le regard sur des cibles avec artefacts visuels.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Stabilisez Votre Tête et Votre Posture",
-      "text": "Asseyez-vous à 50-60 cm de l'écran avec la tête parfaitement immobile pour forcer l'action directe des muscles oculomoteurs sans intervention vestibulaire.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Verrouillez le Centre du Noyau",
-      "text": "Portez votre attention exclusivement sur le cœur de la cible, en refusant activement de suivre les anneaux rémanents qui traînent à l'arrière.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Inhibez le Décrochage Rétinien",
-      "text": "Empêchez votre fovéa de glisser vers l'arrière. Maintenez des microsaccades d'ajustement stables sur la partie avant du vecteur.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Enchaînez des Séries Intenses et Concises",
-      "text": "Effectuez 5 à 8 séries de 60 secondes avec des pauses pour préserver la précision synaptique du cortex visuel sans fatigue prématurée.",
-      "url": "https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Comment faire : Poursuite avec traînée visuelle",
+  description: "Poursuite avec traînée visuelle en quatre étapes simples.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Installez-vous confortablement",
+    "text": "Asseyez-vous à une distance confortable de l'écran, épaules et main détendues."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Rester sur la cible",
+    "text": "Gardez le regard au centre de la cible pleine, pas sur les anneaux derrière elle."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Suivez avec les yeux",
+    "text": "Suivez la cible des yeux, pas le curseur, et terminez la séance de 30 à 120 secondes."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Changez un réglage à la fois",
+    "text": "Augmentez ensuite la vitesse, ou ajoutez Masquer la ligne ou la vitesse aléatoire, un réglage à la fois."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Qu'est-ce que la poursuite avec traînée visuelle ?",
+    "a": "Un exercice dans le navigateur : vous suivez des yeux une cible en ligne droite sans vous laisser attirer par la traînée optionnelle. Durée (30 à 120 secondes), vitesse, taille et ligne sont réglables. Ni test de vue, ni thérapie."
+  },
+  {
+    "q": "Est-ce un test de ghosting d'écran ?",
+    "a": "Non. L'exercice ne mesure ni le temps de réponse ni le ghosting de votre écran. Les anneaux sont dessinés volontairement par la page ; les performances du moniteur ne sont pas testées. Pour cela, utilisez un test d'écran dédié."
+  },
+  {
+    "q": "Quand la traînée apparaît-elle ?",
+    "a": "Seulement si vous activez la traînée dans les réglages. De petits anneaux de plus en plus pâles restent alors sur les dernières positions. Sans elle, seule la cible bouge."
+  },
+  {
+    "q": "Mesure-t-il le mouvement de mes yeux ?",
+    "a": "Non. Le navigateur ne voit pas votre regard ; il connaît seulement la position dessinée de la cible et vos réglages. Le curseur n'est qu'une aide et ne prouve pas où vous regardez. Il n'y a pas de score."
+  },
+  {
+    "q": "Que change la vitesse aléatoire ?",
+    "a": "La vitesse de la cible varie de façon irrégulière, elle devient plus difficile à anticiper. Activez-la une fois la vitesse de base confortable, et pas en même temps que le masquage de la ligne."
+  },
+  {
+    "q": "Faut-il laisser la ligne visible ?",
+    "a": "Une ligne visible aide à anticiper le mouvement au début. Vous pourrez la masquer ensuite pour corser l'exercice. Il n'y a pas de bon choix : comparez uniquement des réglages identiques."
+  },
+  {
+    "q": "Quels réglages pour commencer ?",
+    "a": "Des séances de 30 à 60 secondes, une vitesse lente (0,5 à 1,0×) et la ligne visible. La vitesse va de 0,5 à 9,0× et la taille de cible de 10 à 50 px ; changez un seul réglage à la fois."
+  },
+  {
+    "q": "Cet exercice améliore-t-il ma vue ou mon aim ?",
+    "a": "Rien ne le garantit. C'est un exercice pour suivre une cible des yeux ; il ne promet ni meilleure vue, ni traitement d'un trouble visuel, ni meilleure visée en FPS. En cas de gêne oculaire, consultez un professionnel."
+  },
+  {
+    "q": "L'écran et l'environnement comptent-ils ?",
+    "a": "Oui. Fréquence d'affichage, luminosité, contraste, taille et distance de l'écran et navigateur changent l'apparence de la cible. La latence d'entrée et d'affichage joue aussi (Woods et al., 2015) : comparez dans les mêmes conditions."
+  },
+  {
+    "q": "Combien de temps pratiquer ?",
+    "a": "Par blocs courts de 5 à 10 minutes avec des pauses. Si les yeux fatiguent ou sèchent, arrêtez, clignez et regardez au loin. Douleur, vertige, nausée ou mal de tête : arrêtez."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Qu’est-ce qu’un test de rémanence et de fixation du regard ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "C’est une pratique visuelle qui montre une cible mobile avec des traînées et des halos afin d’observer la netteté du mouvement et de garder le regard sur le noyau. Elle ne remplace pas une mesure de laboratoire du temps de réponse de la dalle."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment le système visuel gère-t-il le flou de mouvement ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le système visuel combine les signaux de mouvement et de contraste au fil du temps. La perception dépend du traitement neural et de la réponse de l’écran ; le résultat doit donc rester une observation et un exercice (Burr, 1980)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quel est le rôle des microsaccades dans la fixation oculaire ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Même lors d'une fixation stable, les yeux réalisent des microsaccades imperceptibles qui rafraîchissent la fovéa et préviennent l'évanouissement visuel (effet Troxler) sans dévier de la cible (Martinez-Conde et al., 2004)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi le regard suit-il parfois la traînée derrière la cible ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les changements de luminosité et de contraste en périphérie peuvent attirer l’attention. Si vous suivez le halo plutôt que le noyau, la fixation recule ; ralentissez et revenez au centre."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quels sont les bénéfices directs de cet entraînement pour les joueurs de FPS ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dans les affrontements chargés d'explosions et d'effets visuels complexes, maintenir le réticule exactement au cœur de la cible adverse sans être perturbé par les traînées lumineuses aide à garder une précision de tir plus constante."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi faut-il maintenir la tête strictement immobile lors du test ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les mouvements de tête déclenchent le réflexe vestibulo-oculaire (RVO), compensant le suivi via l'oreille interne. L’immobilité de la tête fait peser davantage de charge de stabilisation sur les muscles oculomoteurs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quel temps d’entraînement quotidien est recommandé ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nous conseillons 5 à 10 minutes quotidiennes (5 à 8 blocs de 60 secondes). La suppression de stimuli parasites exigeant une grande énergie cognitive, des séances courtes évitent la fatigue oculaire et maximisent l'apprentissage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle est l’influence de la réactivité de l’écran (GtG) et de sa fréquence (Hz) ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le temps de réponse et la fréquence de l’écran modifient la traînée observée, mais un navigateur ne garantit pas une mesure de 1 ms. Comparez 60, 120 ou 144 Hz sur le même appareil et notez les conditions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ce protocole s’applique-t-il aux sports de balle comme le tennis ou le football ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Une balle rapide laisse une traînée sur la rétine, et garder le regard sur le bon détail est une compétence utile en sport. Cet exercice entraîne la fixation sur écran ; il ne prouve pas de gain sur le terrain."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ce test de suppression des traînées visuelles est-il gratuit et confidentiel ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, ce test fonctionne gratuitement et directement dans votre navigateur web sans création de compte, et l'ensemble de vos données de performance est conservé localement sur votre terminal."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'fr',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Bases Neurophysiologiques de la Fixation Fovéale et Neutralisation du Flou Visuel",
-  intro: [
-    "Ce test de ghosting d’écran vous fait suivre une cible mobile entourée de traînées et de halos. Vous gardez le regard sur son noyau plutôt que sur la traînée. Ce n’est pas un outil de diagnostic de votre moniteur : il montre comment le ghosting perturbe votre fixation, à comparer sur le même écran.",
-    "Lorsqu’une cible rapide se déplace, son image peut laisser une traînée à cause de la réponse des pixels, du temps d’intégration visuelle et du mouvement du regard. Ce test utilise la traînée comme distraction contrôlée : l’objectif est de garder la fixation sur le noyau, sans en faire un examen clinique (Burr, 1980 ; Burr & Morgan, 1997).",
-    "Filtrage visuel et microsaccades : pendant la fixation, de petits mouvements oculaires renouvellent la stimulation rétinienne et contribuent à maintenir la perception de la cible. L’exercice associe attention au noyau, poursuite fluide et correction brève lorsque le halo attire la vision périphérique (Martinez-Conde, Macknik, & Hubel, 2004 ; Rolfs, 2009 ; Krauzlis, 2004).",
-    "Interaction avec le matériel et fréquence : 60 Hz, 120 Hz et 144 Hz présentent le mouvement à des intervalles différents, tandis que l’overdrive peut produire un halo clair de dépassement. Comparez le même écran et les mêmes réglages ; l’outil fonctionne dans le navigateur et conserve les résultats localement."
+  ...{
+  "heading": "Guide : Poursuite avec traînée visuelle",
+  "intro": [
+    "Dans cette poursuite avec traînée visuelle, la cible avance à vitesse constante en ligne droite et rebondit sur les bords. Si vous activez la traînée, la page dessine derrière elle des anneaux pâles qui s'estompent (désactivée par défaut). Le but : garder le regard sur la cible pleine, sans suivre les copies.",
+    "Le navigateur connaît seulement la position dessinée de la cible et vos réglages, pas l'endroit où regardent vos yeux. Il n'y a pas de score : seules les séances terminées sont comptées. Le résultat est un repère d'entraînement reproductible, pas une mesure clinique ni un test de vue.",
+    "Gardez une distance confortable et comparez toujours le même écran et le même navigateur. La fréquence d'affichage et le périphérique d'entrée changent le rendu (Woods et al., 2015). Arrêtez en cas de douleur, vertige, nausée ou vision floue persistante."
   ],
-  techniques: {
-    title: "Quatre techniques pour garder la fixation sur le noyau",
-    items: [
-      { name: "Stabiliser la posture avant d’observer la traînée", desc: "Garder la tête et la mâchoire immobiles réduit les mouvements compensatoires et aide à distinguer le comportement du regard de l’artefact de l’écran.", tips: "Installez-vous à 50–70 cm, posez les pieds au sol et arrêtez en cas de brûlure, de douleur ou de vision double." },
-      { name: "Fixer le noyau plutôt que le halo", desc: "Le centre de la cible sert de référence de précision ; la traînée est un stimulus secondaire qui peut attirer l’attention vers l’arrière.", tips: "Commencez lentement et répétez mentalement « centre » lorsque le halo devient plus visible." },
-      { name: "Comparer une seule variable à la fois", desc: "La fréquence, la luminosité, l’overdrive et la vitesse changent l’aspect de la traînée. Tout modifier simultanément empêche une comparaison fiable.", tips: "Gardez le fond et la taille constants ; changez uniquement la vitesse ou le réglage de l’écran par série." },
-      { name: "Se reposer et noter les conditions", desc: "La fatigue, la luminosité et la distance de vision influencent la stabilité du regard. Des séries courtes donnent des observations plus comparables.", tips: "Notez la vitesse, les Hz et le mode de réponse ; interrompez en cas de gêne visuelle persistante." }
+  "benchmarks": {
+    "title": "Repères d'entraînement",
+    "headers": [
+      "Étape",
+      "Objectif"
+    ],
+    "rows": [
+      [
+        "1",
+        "Vitesse lente, ligne visible"
+      ],
+      [
+        "2",
+        "Tenir la vitesse de base sans effort"
+      ],
+      [
+        "3",
+        "Rester sur la cible avec la traînée activée"
+      ],
+      [
+        "4",
+        "Masquer la ligne"
+      ],
+      [
+        "5",
+        "Ajouter la vitesse aléatoire"
+      ]
+    ],
+    "note": "Ce tableau est un repère d'entraînement SkillDrills. Ce n'est ni une norme visuelle, ni une statistique d'utilisateurs, ni un percentile."
+  },
+  "techniques": {
+    "title": "4 conseils pratiques",
+    "items": [
+      {
+        "name": "Regarder la cible, pas les anneaux",
+        "desc": "Ne suivez pas la traînée pâle, visez le centre de la cible. Si le regard décroche vers la traînée, clignez une fois et revenez sur la cible.",
+        "tips": "Si c’est inconfortable, coupez la traînée et baissez la vitesse."
+      },
+      {
+        "name": "Regarder la cible, pas le curseur",
+        "desc": "Le pointeur n’est qu’une aide. Suivez la cible des yeux et relâchez épaules et main.",
+        "tips": "Vérifiez de temps en temps que la tête et le cou ne tournent pas avec."
+      },
+      {
+        "name": "Une difficulté à la fois",
+        "desc": "Augmentez séparément la vitesse, le masquage de la ligne et la vitesse aléatoire. Si le confort baisse, revenez au réglage précédent.",
+        "tips": "Après chaque changement, comparez à nouveau."
+      },
+      {
+        "name": "Séances courtes, pauses régulières",
+        "desc": "Travaillez par blocs de 5 à 10 minutes, clignez des yeux et regardez au loin. Plus long n’est pas forcément mieux.",
+        "tips": "Douleur, vertige ou nausée : arrêtez immédiatement."
+      }
     ]
   },
-  steps: [
-    "Asseyez-vous à 50–70 cm de l’écran, alignez votre posture et gardez la tête stable.",
-    "Commencez à 0.7x ou 1.0x pendant 60 secondes et observez le noyau sans chercher à mesurer le temps de réponse de la dalle.",
-    "Lorsque le halo apparaît, gardez le regard au centre ; si vous le perdez, faites une correction courte puis reprenez la poursuite fluide.",
-    "Répétez la série en ne changeant qu’une condition : vitesse, fréquence de rafraîchissement ou intensité de réponse de l’écran.",
-    "Faites 5 à 8 séries avec des pauses et notez les réglages, la fréquence des pertes et toute gêne."
+  "steps": [
+    "Asseyez-vous à une distance confortable, épaules et main détendues.",
+    "Commencez par 30 à 60 secondes, vitesse lente, ligne visible.",
+    "Suivez la cible des yeux, pas le curseur.",
+    "Augmentez ensuite la vitesse ou un seul réglage à la fois."
   ],
-  benchmarks: {
-    title: "Normes de Performance en Fixation Fovéale et Suppression des Traînées Visuelles",
-    headers: ["Niveau de Performance", "Multiplicateur de Vitesse", "Stabilité de Fixation Face aux Traînées Visuelles", "Profil Neuromoteur et Oculaire"],
-    rows: [
-      ["Niveau 1 : Apex Fixation – Verrouillage Fovéal Pur", "2.0x+ Ultra-Vitesse", "Le regard demeure ancré sur le noyau de la cible malgré les anneaux d'artefacts denses et les rebonds rapides.", "Inhibition corticale parfaite du flou de mouvement et précision absolue des microsaccades (Burr, 1980 ; Martinez-Conde et al., 2004). Niveau de référence de l'exercice, sans valeur de classement."],
-      ["Niveau 2 : Acuité de Fixation Supérieure", "1.4x – 1.9x Haute Vitesse", "Contour de la cible parfaitement isolé à vive allure ; distraction négligeable face aux traînées résiduelles.", "Remarquable filtrage sensorimoteur des muscles extraoculaires. Très grande efficacité dans les environnements riches en particules."],
-      ["Niveau 3 : Standard Fonctionnel Solide", "1.0x – 1.3x Vitesse Standard", "Poursuite régulière à vitesse de référence ; brève hésitation lors des rebonds ou lorsque la traînée se densifie.", "Profil représentatif des adultes sains. Parfaitement adapté à la conduite automobile, aux loisirs sportifs et au jeu vidéo standard."],
-      ["Niveau 4 : Dérive Oculaire – Pratique Recommandée", "0.7x – 0.9x Vitesse Modérée", "Le regard est régulièrement attiré vers l'arrière par les traînées ; le noyau de la cible s'échappe souvent de la fovéa.", "Filtrage cortical ralenti face au bruit visuel. Entraînement recommandé sur les paliers de vitesse inférieurs."],
-      ["Niveau 5 : Perte de Fixation – Débutant", "< 0.7x Basse Vitesse", "Les yeux oscillent de façon désordonnée entre le centre de la cible et les anneaux fantômes, entraînant un décrochage complet.", "La coordination neuromusculaire de base doit d'abord être stabilisée à vitesse réduite avec immobilisation stricte de la tête."]
-    ],
-    note: "Normes établies d'après les recherches neurophysiologiques sur le contrôle de la fixation fovéale, la dynamique des microsaccades et la suppression corticale du flou de mouvement (Burr, 1980 ; Martinez-Conde et al., 2004 ; Rolfs, 2009 ; Krauzlis, 2004)."
-  },
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('burr1980', 'martinezconde2004', 'rolfs2009', 'krauzlis2004', 'barnes2008', 'woods2015'),
+  "audience": "Toute personne qui veut essayer « Poursuite avec traînée visuelle » dans le navigateur et s'exercer à suivre une cible mobile de façon ludique."
+},
+  faqs,
+  sources: pickSources('burr1980', 'martinezConde2004', 'rolfs2009', 'krauzlis2004', 'leigh2015', 'woods2015'),
   related: [
-    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite Oculaire Lente" },
-    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite Chaotique Directionnelle" },
-    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite Oculaire Réactive" },
-    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Poursuite en Huit" }
-  ]
+  {
+    "href": "/fr/drills/visual-tracking/constant-slow-pursuit",
+    "label": "Exercice de Poursuite Visuelle"
+  },
+  {
+    "href": "/fr/drills/visual-tracking/directional-chaos-pursuit",
+    "label": "Exercice de poursuite oculaire chaotique"
+  },
+  {
+    "href": "/fr/drills/visual-tracking/dynamic-evasion-pursuit",
+    "label": "Poursuite oculaire : cible qui esquive"
+  },
+  {
+    "href": "/fr/drills/visual-tracking/infinity-pursuit",
+    "label": "Exercice des yeux en huit couché"
+  }
+],
 };
 
-export default function GhostingSuppressPursuitPageFr() {
+export default function LocalizedPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <GhostingSuppressPursuitClient
         copy={{
-          title: "Test ghosting écran : cible mobile",
-          subtitle: "Entraînement à la Stabilité Fovéale et à la Neutralisation du Flou Visuel",
-          description: "En affichant des traînées d'arrachement et des anneaux fantômes stochastiques, cet exercice entraîne le cortex visuel à inhiber activement les perturbations d'arrière-plan pour focaliser la fovéa sur le noyau de la cible (Burr, 1980; Martinez-Conde et al., 2004)."
+          title: name,
+          subtitle: "Fixer la cible, pas sa traînée",
+          description: "Poursuite avec traînée visuelle : suivez une cible dotée d'une traînée optionnelle. Ce n'est pas un test de ghosting d'écran. Le navigateur n'enregistre pas votre regard et il n'y a pas de score.",
         }}
       />
       <DrillGuide guide={guideProps} />

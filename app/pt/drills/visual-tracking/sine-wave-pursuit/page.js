@@ -5,287 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/pt/drills/visual-tracking/sine-wave-pursuit';
+const title = "Rastreamento ocular senoidal | SkillDrills";
+const description = "Exercício grátis: siga com o olhar um alvo que vai e volta da esquerda para a direita, subindo e descendo numa trajetória senoidal fixa. Velocidade ajustável.";
+
 export const metadata = {
-  title: "Rastreamento ocular senoidal | SkillDrills",
-  description: "Siga um alvo em movimento senoidal na horizontal e na vertical. Exercício gratuito no navegador com atraso de fase e erro de posição.",
-  keywords: [
-    "rastreamento ocular onda senoidal",
-    "perseguição ocular senoidal",
-    "seguir alvo em movimento",
-    "treino de acompanhamento ocular",
-    "atraso de fase visual",
-    "ganho de perseguição ocular",
-    "exercício de seguimento ocular",
-    "rastreamento de alvo oscilante",
-    "seguir alvo na vertical",
-    "erro de posição do olhar"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/pt/drills/visual-tracking/sine-wave-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/sine-wave-pursuit'),
-  },
+  title,
+  description,
+  keywords: ["rastreamento ocular senoidal", "trajetória senoidal", "rastreamento ocular", "exercício para os olhos online", "seguimento suave", "exercício ocular grátis"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/sine-wave-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_PT', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Rastreamento ocular senoidal | SkillDrills",
-    description: "Siga um alvo em movimento senoidal na horizontal e na vertical. Exercício gratuito no navegador com atraso de fase e erro de posição.",
-    url: "https://skilldrills.online/pt/drills/visual-tracking/sine-wave-pursuit",
-    siteName: 'SkillDrills',
-    locale: 'pt_PT',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Rastreamento ocular senoidal | SkillDrills",
-    description: "Exercício curto para acompanhar um alvo periódico e conferir a diferença de velocidade e o erro na mudança de direção.",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Início",
-      "item": "https://skilldrills.online/pt"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Exercícios",
-      "item": "https://skilldrills.online/pt/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Rastreamento Visual",
-      "item": "https://skilldrills.online/pt/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Rastreamento em Onda Senoidal",
-      "item": "https://skilldrills.online/pt/drills/visual-tracking/sine-wave-pursuit"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Início", item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: "Exercícios", item: 'https://skilldrills.online/pt/drills' },
+    { '@type': 'ListItem', position: 3, name: "Rastreamento Visual", item: 'https://skilldrills.online/pt/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "Rastreamento ocular senoidal", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "dateModified": "2026-09-20",
-  "name": "Treino de Movimento Ocular Senoidal",
-  "operatingSystem": "Navegador Web",
-  "applicationCategory": "GameApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD"
-  },
-  "description": "Exercício de rastreamento visual em onda senoidal no navegador para praticar o acompanhamento de um alvo com velocidade variável."
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "dateModified": "2026-09-20",
-  "name": "Exercício de Rastreamento Senoidal",
-  "url": "https://skilldrills.online/pt/drills/visual-tracking/sine-wave-pursuit",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "Todos os navegadores modernos",
-  "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "dateModified": "2026-09-20",
-  "name": "Sine Wave Pursuit",
-  "description": "Exercício de acompanhamento visual contínuo em que o jogador segue um alvo em oscilação senoidal.",
-  "genre": ["Treino Visual", "Seguimento Ocular", "Treino de Reflexos"],
-  "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Rastreamento ocular senoidal",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "dateModified": "2026-09-20",
-  "name": "Como Treinar o Rastreamento em Onda Senoidal",
-  "description": "Passo a passo para acompanhar um alvo em curvas de oscilação sem perder o ritmo.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Observe a Frequência da Oscilação",
-      "text": "Posicione-se a 50-70 cm da tela. Observe os ciclos iniciais da onda para perceber o ritmo e a frequência da oscilação."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Acompanhe o Cruzamento Central",
-      "text": "Acompanhe o alvo ao atravessar o eixo central, onde a velocidade dele é maior."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Desacelere nos Pontos de Retorno",
-      "text": "Reduza o ritmo com suavidade quando o alvo se aproximar das cristas e vales da onda, para não passar do ponto de retorno."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Evite Saltos Corretivos",
-      "text": "Tente manter um acompanhamento contínuo em vez de recorrer a saltos rápidos de recuperação."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Como fazer o rastreamento ocular senoidal",
+  description: "Quatro passos para seguir suavemente um alvo que vai e volta numa curva em onda.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Postura confortável",
+    "text": "Sente-se a uma distância confortável do ecrã e relaxe ombros e pescoço."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Ver a curva",
+    "text": "No início, mantenha a curva visível e observe a onda que o alvo vai percorrer."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Seguir sem quebras",
+    "text": "Siga o alvo sem interrupções enquanto sobe e desce na curva e inverte o sentido nas margens."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Um ajuste de cada vez",
+    "text": "Quando ficar fácil, aumente a velocidade ou ative Ocultar linha e Velocidade aleatória, um de cada vez."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Como se move o alvo no rastreamento ocular senoidal?",
+    "a": "O alvo vai e volta com velocidade horizontal constante entre cerca de 5% e 95% da largura do ecrã (cerca de 220 píxeis por segundo a 1,0x) e segue uma curva senoidal fixa com amplitude de cerca de 28% da altura do ecrã. Nas margens inverte o sentido e percorre a mesma curva de volta. É um exercício do olhar no navegador, não um exame de visão."
+  },
+  {
+    "q": "Porque é que a velocidade vertical muda sempre?",
+    "a": "A velocidade horizontal é constante, mas a inclinação da curva varia. No meio da onda o movimento vertical é mais rápido; nos picos e vales parece parar por um instante."
+  },
+  {
+    "q": "O que mudam o Hide Line e o Random Speed?",
+    "a": "Hide Line esconde a curva: segue então de memória ou só pelo movimento. Random Speed faz a velocidade oscilar continuamente. A trajetória em si não muda."
+  },
+  {
+    "q": "O exercício mede os movimentos dos olhos ou dá pontuação?",
+    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. Não existe pontuação: apenas o número de sessões concluídas fica guardado neste navegador. Manter o olhar onde o exercício pede depende de si."
+  },
+  {
+    "q": "Que definições posso mudar?",
+    "a": "Depois de uma contagem 3-2-1, a sessão dura 30, 45, 60, 90 ou 120 segundos (60 por defeito). Pode ajustar a velocidade de 0,5x a 9,0x, o tamanho do alvo de 10 a 50 px, a cor, as opções Hide Line (ocultar linha), Random Speed (velocidade aleatória), Gaze Trail (rasto), Neon Glow e Scanlines, e fundo claro ou escuro. A tecla Esc termina a sessão a qualquer momento."
+  },
+  {
+    "q": "Isto melhora a minha visão ou a minha mira?",
+    "a": "Não há garantia. Não é um exame de visão nem uma terapia, mas uma ferramenta para praticar o olhar sobre um alvo. Não promete melhor acuidade nem melhor pontaria. Se notar algum problema nos olhos, consulte um profissional."
+  },
+  {
+    "q": "Quanto tempo devo praticar?",
+    "a": "Algumas sessões de 1 a 2 minutos com pausas chegam. Se os olhos ficarem cansados ou secos, pisque e olhe ao longe; pare se sentir dor, tontura, náusea ou dor de cabeça."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "O que é o exercício de rastreamento em onda senoidal?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É um exercício em que você acompanha com os olhos um alvo que se move em onda senoidal. Em trajetórias periódicas, o sistema visual consegue antecipar parte do movimento (Robinson, 1965); a página mede apenas a tarefa na tela."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como o rastreamento senoidal difere do acompanhamento em velocidade constante?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Em trajetórias senoidais, a velocidade e a aceleração variam continuamente: o pico de velocidade ocorre no centro, enquanto nos extremos a velocidade cai a zero antes de inverter a direção (Stark et al., 1962)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que é a latência de fase?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É a diferença de tempo entre o movimento do alvo e o do olhar. Em movimentos periódicos o olhar pode acompanhar com atraso menor do que em trajetórias imprevisíveis, mas o valor medido aqui depende da tela e do navegador."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que causa as sacadas de recuperação durante o treino?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quando o ganho de velocidade do acompanhamento cai abaixo de 1.0, o olhar fica atrás do alvo e um salto rápido de recuperação o reposiciona (Bahill et al., 1980)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Este exercício ajuda na mira em jogos FPS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Em jogos como Apex Legends e Overwatch, os adversários fazem deslocamentos rítmicos. O exercício pratica acompanhar um movimento periódico, mas não há garantia de transferência para a mira no jogo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Serve para esportes de bola?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No tênis, vôlei e futebol, as bolas descrevem arcos. O exercício pratica o acompanhamento visual de um alvo em movimento na tela; não substitui treino esportivo nem garante ganho em campo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que a cabeça deve ficar imóvel durante o treino?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Movimentos do pescoço ativam o reflexo vestíbulo-ocular (VOR), que gera contrarrotações dos olhos e mistura o esforço da cabeça com o dos olhos (Leigh & Zee, 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "A taxa de atualização do monitor influencia o exercício?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Monitores de 144 Hz ou mais desenham a curva com mais quadros por segundo, o que torna o movimento mais fluido (Woods et al., 2015). Compare sessões apenas no mesmo equipamento."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Este treino senoidal é gratuito?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim, o SkillDrills disponibiliza esta ferramenta gratuitamente no navegador, sem necessidade de cadastro ou instalação."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Com que frequência devo praticar este exercício?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Comece com sessões curtas de 5 a 10 minutos, faça pausas e compare os próprios resultados ao longo do tempo. Não há um prazo fixo de melhora; pare se sentir desconforto."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Fundamentos Científicos do Rastreamento em Onda Senoidal e Coordenação Ocular",
-  intro: [
-    "O acompanhamento ocular contínuo (smooth pursuit) é desafiado quando o alvo segue uma oscilação harmônica em vez de um percurso linear previsível. Ao longo de uma curva senoidal, velocidade e aceleração variam: a velocidade é máxima ao cruzar o eixo central e cai a zero nos pontos de retorno, antes de inverter o sentido (Stark et al., 1962; Robinson, 1965).",
-    "Estudos clássicos de Robinson (1965) e Barnes (2008) descrevem que o sistema de acompanhamento ocular tem um atraso em trajetórias imprevisíveis e que, em movimentos periódicos, consegue usar a repetição para antecipar parte do trajeto. Neste exercício, esse efeito aparece como menor atraso de fase quando você acompanha o ritmo da onda.",
-    "Quando a velocidade do alvo passa do que o acompanhamento consegue seguir, ou quando há cansaço visual, o ganho de velocidade cai. Segundo Rashbass (1961) e Bahill et al. (1980), o olhar então usa saltos corretivos (sacadas), durante os quais a visão fica momentaneamente suprimida. O exercício pratica manter o acompanhamento o mais contínuo possível."
+  ...{
+  "heading": "Rastreamento ocular senoidal: guia",
+  "intro": [
+    "O rastreamento ocular senoidal consiste em seguir com o olhar um alvo que vai e volta da esquerda para a direita, subindo e descendo numa curva senoidal fixa. A velocidade horizontal é constante e o alvo inverte o sentido nas margens do ecrã.",
+    "O seguimento suave dos olhos acompanha um alvo lento quase à mesma velocidade, mas atrasa-se com mais facilidade quando o alvo acelera (Robinson, 1965). Aqui varia a velocidade e acompanha um movimento que muda entre os picos e o meio da onda.",
+    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Não há pontuação nem percentagem de precisão: compare antes o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
   ],
-  benchmarks: {
-    title: "Faixas de Referência do Rastreamento Senoidal e Ganho de Velocidade",
-    headers: ["Nível de Desempenho", "Ganho de Velocidade", "Latência de Fase", "Sacadas por Ciclo", "Perfil Oculomotor"],
-    rows: [
-      ["Faixa 1 (Muito alta)", "0.96 – 1.02", "< 15 ms (Sincronização Total)", "0 – 1 (Fluxo Perfeito)", "Acompanhamento muito sincronizado, com pouco atraso de fase."],
-      ["Faixa 2 (Alta)", "0.90 – 0.95", "15 – 30 ms", "2 – 3", "Elevada fidelidade de trajetória e mínimas micro-sacadas nos vértices de inversão."],
-      ["Faixa 3 (Boa)", "0.82 – 0.89", "31 – 50 ms", "4 – 5", "Bom rastreamento harmônico com ligeira dispersão em oscilações de alta frequência."],
-      ["Faixa 4 (Intermediária)", "0.70 – 0.81", "51 – 80 ms", "6 – 8", "Instabilidade nos vértices com frequentes sacadas corretivas para recuperar o alvo."],
-      ["Faixa 5 (Inicial)", "< 0.70", "> 80 ms", "> 9", "Dificuldade em antecipar o ritmo harmônico com seguimento estritamente reativo."]
+  "benchmarks": {
+    "title": "Etapas de prática (referência SkillDrills)",
+    "headers": [
+      "Etapa",
+      "Objetivo de prática"
     ],
-    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. ※ Referência para telas 1080p a uma distância de 50–70 cm com velocidades de 1.0x a 1.5x. Avaliado pelo razão de ganho angular e ausência de sacadas corretivas."
+    "rows": [
+      [
+        "Etapa 1",
+        "1,0x, curva visível, seguir sem interrupções"
+      ],
+      [
+        "Etapa 2",
+        "Não perder o alvo nas inversões"
+      ],
+      [
+        "Etapa 3",
+        "Subir a velocidade e seguir o meio rápido da onda"
+      ],
+      [
+        "Etapa 4",
+        "Juntar Hide Line ou Random Speed, um de cada vez"
+      ]
+    ],
+    "note": "Etapas de prática sugeridas pela SkillDrills: não são normas de teste, estatísticas de utilizadores nem percentis."
   },
-  techniques: {
-    title: "Quatro Técnicas Fundamentais para o Rastreamento Senoidal Harmónico",
-    items: [
+  "techniques": {
+    "title": "Dicas de execução",
+    "items": [
       {
-        name: "Bloqueio de Fase Harmónica",
-        desc: "Utilize os primeiros ciclos da onda para absorver a cadência do movimento. Tente seguir o ritmo da oscilação (Robinson, 1965).",
-        tips: "Mantenha uma contagem rítmica mental ('um-dois, um-dois') para eliminar o atraso visual."
+        "name": "Apanhar o ritmo da onda",
+        "desc": "O alvo abranda um instante nos picos e acelera no meio. Conhecer este ritmo ajuda a segui-lo sem quebras.",
+        "tips": "Se ficar atrás do alvo, baixe a velocidade."
       },
       {
-        name: "Amortecimento no Ápice",
-        desc: "Ao aproximar-se das cristas e vales da curva, reduza gradualmente a força ocular para impedir que o olhar ultrapasse o ponto de inversão.",
-        tips: "Imagine o balanço suave de um pêndulo desacelerando até ao cume antes de retornar."
+        "name": "Olhar para o alvo, não para o cursor",
+        "desc": "O rato não é usado. Pouse a mão e siga apenas com os olhos.",
+        "tips": "Confirme de vez em quando que a cabeça e o pescoço não acompanham o movimento."
       },
       {
-        name: "Aceleração no Cruzamento Central",
-        desc: "A velocidade tangencial do alvo atinge o valor mais alto ao atravessar o centro. Aplique um impulso antecipado para não perder o enquadramento foveal.",
-        tips: "Acelere a rotação ocular deliberadamente no centro para sustentar o ganho."
+        "name": "Dificultar uma coisa de cada vez",
+        "desc": "Aumente separadamente a velocidade, Ocultar linha e Velocidade aleatória. Se o conforto se perder, volte à definição anterior.",
+        "tips": "Depois de mudar uma definição, não compare diretamente com sessões antigas."
       },
       {
-        name: "Supressão Disciplinada de Sacadas",
-        desc: "Evite pequenos saltos oculares reflexos quando houver pequenas defasagens. Corrija a posição acelerando a velocidade contínua (Bahill et al., 1980).",
-        tips: "Conserve os músculos dos olhos relaxados e elásticos como um fluido contínuo."
+        "name": "Sessões curtas e pausas",
+        "desc": "Entre sessões curtas, pisque e olhe ao longe. Mais tempo não é melhor.",
+        "tips": "Pare de imediato se sentir dor ou tontura."
       }
     ]
   },
-  steps: [
-    "Sente-se a cerca de 50–70 cm da tela e mantenha a cabeça confortável e estável.",
-    "Comece na velocidade mais baixa para perceber a amplitude e o ritmo da onda.",
-    "Acompanhe o alvo durante o cruzamento central e reduza suavemente no ponto de retorno.",
-    "Repita uma sessão curta e pare se houver cansaço ou desconforto visual.",
-    "Confira o ganho de acompanhamento, o atraso de fase e o erro de posição ao final."
+  "steps": [
+    "Sente-se a uma distância confortável do ecrã e relaxe ombros e pescoço.",
+    "Comece com 30 a 60 segundos, velocidade 1,0x e linha visível.",
+    "Siga o alvo sem interrupções enquanto ele vai e volta na curva em onda.",
+    "Depois aumente a velocidade ou ative Ocultar linha e Velocidade aleatória, um de cada vez."
   ],
-  audience: "Pessoas que querem praticar o acompanhamento ocular de alvos periódicos em uma tela, sem substituir avaliação profissional.",
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "Quem quer praticar, de forma simples, seguir com o olhar um alvo numa curva regular."
+},
+  faqs,
   sources: pickSources('stark1962', 'robinson1965', 'rashbass1961', 'bahill1980', 'barnes2008', 'woods2015'),
   related: [
     { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Exercício de seguimento ocular lento" },
@@ -294,21 +192,21 @@ const guideProps = {
     { href: "/pt/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supressão de imagens residuais" },
     { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Exercício ocular em oito" },
     { href: "/pt/drills/visual-tracking/momentum-teleport-pursuit", label: "Rastreamento de alvo com salto" }
-  ]
+  ],
 };
 
-export default function SineWavePursuitPage() {
+export default function PortugueseSineWavePursuitPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SineWavePursuitClient copy={{ title: "Rastreamento ocular senoidal", subtitle: "Siga um alvo periódico na horizontal e na vertical" }} />
+      <SineWavePursuitClient copy={{"title": "Rastreamento ocular senoidal", "subtitle": "Seguir um alvo numa trajetória em onda", "description": "Rastreamento ocular senoidal: o alvo vai e volta da esquerda para a direita, subindo e descendo numa curva em onda fixa. Hide Line esconde a curva. Sem cliques nem pontuação; o navegador não regista o seu olhar."}} />
+
       <DrillGuide guide={guideProps} />
+
       <RelatedDrills />
       <DrillFooter />
     </>

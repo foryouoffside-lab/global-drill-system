@@ -20,7 +20,7 @@ const RELATED_DRILLS = [
   { id: "constant-slow-pursuit", name: "Smooth Pursuit Eye Exercise", cat: "Visual Tracking", desc: "Condition smooth pursuit tracking along continuous Lissajous curves.", href: "/drills/visual-tracking/constant-slow-pursuit" },
   { id: "directional-chaos-pursuit", name: "Erratic Motion Eye Drill", cat: "Visual Tracking", desc: "Complex multi-directional visual tracking with sudden direction shifts.", href: "/drills/visual-tracking/directional-chaos-pursuit" },
   { id: "dynamic-evasion-pursuit", name: "Reactive Eye Tracking Drill", cat: "Visual Tracking", desc: "Re-acquire targets executing rapid evasive directional changes.", href: "/drills/visual-tracking/dynamic-evasion-pursuit" },
-  { id: "split-screen-tracking", name: "Divided Attention Eye Test", cat: "Visual Tracking", desc: "Condition divided attention across dual independent movement planes.", href: "/drills/visual-tracking/split-screen-tracking" },
+  { id: "split-screen-tracking", name: "Divided Attention Tracking Drill", cat: "Visual Tracking", desc: "Condition divided attention across dual independent movement planes.", href: "/drills/visual-tracking/split-screen-tracking" },
   { id: "infinity-pursuit", name: "Figure-8 Eye Tracking Exercise", cat: "Visual Tracking", desc: "Condition continuous pursuit across figure-8 infinity loops.", href: "/drills/visual-tracking/infinity-pursuit" },
   { id: "spatial-shift-pursuit", name: "Adaptive Eye Tracking Drill", cat: "Visual Tracking", desc: "Track shifting targets across sudden spatial displacements.", href: "/drills/visual-tracking/spatial-shift-pursuit" }
 ];
@@ -611,7 +611,7 @@ export default function TriangularPursuitClient({ copy }: { copy?: { title?: str
             onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
           >
             <p className="text-sm text-slate-300 leading-relaxed">
-              {copy?.description || "Triangular pursuit conditions multi-vector foveal tracking and catch-up saccadic suppression by guiding gaze along an acute 3-node geometric trajectory. Tracking continuous linear target velocities interrupted by sharp angular directional shifts trains predictive ocular motor coordination and dynamic visual acuity (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007). Smooth pursuit tracks accurately to roughly 30°/s along a straight edge, but a corner exceeds that in an instant, so each vertex is closed by a catch-up saccade rather than by pursuit (Krauzlis, 2004)."}
+              {copy?.description || "Triangular Pursuit is a browser practice task: a target loops a triangle (top centre, bottom right, bottom left), spending the same time on each side, and you follow it with your eyes through each sharp corner. It does not record where you look and is not an eye test (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007). Smooth pursuit tracks accurately to roughly 30°/s along a straight edge, but a corner exceeds that in an instant, so each vertex is closed by a catch-up saccade rather than by pursuit (Krauzlis, 2004)."}
             </p>
           </DrillAccordion>
         )}

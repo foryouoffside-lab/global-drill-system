@@ -5,155 +5,34 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Perseguição Ocular | Rastreamento Visual | SkillDrills",
-  description: "Treino gratuito de perseguição ocular: mantenha o olhar e o cursor em um alvo móvel. Pratique rastreamento visual. Não é diagnóstico clínico.",
+  title: "Perseguição Suave com o Cursor | SkillDrills",
+  description: "Perseguição suave com o cursor: mantenha o mouse por 45 s sobre um ponto que muda de velocidade e direção, +5 pts por segundo. Não é exame de vista.",
   keywords: [
-    "perseguição ocular",
-    "perseguição suave",
-    "rastreamento visual",
-    "teste de rastreamento ocular",
-    "movimento ocular de perseguição",
-    "alvo em movimento",
-    "coordenação olho-mão",
-    "treino visual",
-    "rastreamento de alvo",
-    "mira contínua",
-    "teste smooth pursuit",
-    "treinamento oculomotor"
+    "perseguição suave com o cursor",
+    "manter o cursor no alvo",
+    "seguir ponto em movimento",
+    "precisão de rastreamento do mouse",
+    "smooth pursuit",
+    "jogo de seguir o alvo"
   ],
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
+    title: "Perseguição Suave com o Cursor | SkillDrills",
+    description: "Mantenha o cursor sobre um ponto que muda de velocidade e direção. Só o cursor é avaliado, não seus olhos. Grátis no navegador.",
+    type: 'article',
+    url: 'https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker',
+    siteName: 'SkillDrills',
+    locale: 'pt_BR',
+  },
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
+    card: 'summary_large_image',
+    title: "Perseguição Suave com o Cursor | SkillDrills",
+    description: "Perseguição suave com o cursor: siga um ponto em movimento por 45 segundos sem perdê-lo.",
+  },
+  robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker",
+    canonical: 'https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker',
     languages: getAlternateLanguages('/drills/visual/tracking-accuracy/pursuit-tracker'),
   },
-  openGraph: {
-    title: "Perseguição Ocular | Rastreamento Visual | SkillDrills",
-    description: "Mantenha o olhar e o cursor em um alvo móvel para praticar perseguição ocular e rastreamento visual. Não é diagnóstico clínico.",
-    url: "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker",
-    type: "website",
-    locale: "pt_PT",
-    alternateLocale: ["en_US", "de_DE", "ko_KR", "ja_JP", "es_ES", "fr_FR"],
-    images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Perseguição Ocular | Rastreamento Visual | SkillDrills",
-    description: "Treine perseguição suave e estabilidade do olhar no navegador. Os resultados variam conforme a tela e o mouse.",
-    images: ["https://skilldrills.online/opengraph-image"],
-  },
-};
-
-const guideData = {
-  eyebrow: "Neuroftalmologia & Controle Oculomotor",
-  heading: "Smooth Pursuit Eye-Tracking – Perseguição Ocular & Precisão Visuomotora",
-  intro: [
-    "O sistema de movimentos oculares de perseguição suave (Smooth Pursuit Eye Movements - SPEM) coordena a orientação contínua e uniforme da fóvea central sobre alvos visuais dinâmicos em movimento pelo espaço. Do ponto de vista fisiológico, esse sistema de malha fechada difere frontalmente dos sobressaltos sacádicos balísticos, que corrigem erros de posição estática por meio de circuitos pré-motores autônomos no tronco encefálico (Rashbass, 1961; Krauzlis, 2004).",
-    "O estímulo neurofisiológico primordial da perseguição contínua é o deslizamento retiniano (retinal slip), ou seja, a taxa de variação da velocidade da imagem projetada sobre os fotorreceptores da retina (Leigh & Zee, 2015). As informações cinemáticas da área visual primária (V1) são convertidas em vetores de velocidade e direção nas áreas corticais MT/V5 e MST. Através dos campos oculares frontais (FEF) e núcleos pontinos, os sinais alcançam o cerebelo (flóculo e vermis dorsal), emitindo padrões motores de altíssima fidelidade para os núcleos oculomotores (Krauzlis, 2004; Lisberger, 2010).",
-    "As restrições biomecânicas da perseguição ocular suave tornam-se evidentes quando a velocidade angular do alvo ultrapassa o patamar de 30 a 40 graus por segundo ou executa trajetórias oscilatórias imprevisíveis (Bahill, Iandolo & Troost, 1980). Sob tais condições limites, o sistema oculomotor é incapaz de sustentar o ganho unitário (razão velocidade ocular / velocidade do alvo igual a 1,0). Conforme o erro de posição retiniana se acumula além do limiar tolerado, o sistema nervoso central mobiliza sacadas de recuperação (catch-up saccades) — intervenções balísticas ultrarrápidas de 20 a 40 milissegundos que saltam à frente para reenquadrar o alvo na fóvea (Leigh & Zee, 2015). Atletas de alta performance e jogadores competitivos minimizam a ocorrência dessas sacadas corretivas refinando a estimativa contínua de aceleração.",
-    "Considerando que a condução neuromotora humana possui uma latência sensorial inevitável de 100 a 130 milissegundos entre a estimulação retiniana e a resposta muscular, o rastreamento estritamente reativo culmina em desvios recorrentes e perda de foco (Woods et al., 2015). Para neutralizar esse atraso, o córtex motor e o cerebelo estruturam modelos preditivos internos (Internal Predictive Models), antecipando a cinemática futura do alvo e os vetores de ricochete nas bordas (Land & McLeod, 2000; Barnes, 2008).",
-    "Este sistema de treino avalia via performance.now() de alta resolução e renderização subpixel métricas fundamentais como tempo no alvo (Time on Target), erro angular médio e a maior sequência de contato ininterrupto durante sessões de 45 segundos. A prática continuada de perseguição ocular refina a conexão neuromuscular olho-mão, proporcionando benefícios tangíveis no tracking aim de jogos de tiro em primeira pessoa, na leitura de trajetórias em esportes coletivos e na redução da fadiga visual prolongada."
-  ],
-  benchmarks: {
-    title: "Referência de desempenho em perseguição ocular",
-    headers: ["Nível / Categoria", "Tempo no Alvo (Time-on-Target)", "Acurácia Média de Rastreamento", "Supressão de Sacadas", "Marco Neurofisiológico"],
-    rows: [
-      ["Faixa 1", "≥ 88%", "≥ 92%", "≥ 95% Supressão", "Perseguição contínua sem esforço, deslizamento retiniano quase nulo. Modelo interno cerebelar perfeitamente ajustado (Lisberger, 2010)."],
-      ["Faixa 2", "76 – 87%", "84 – 91%", "88 – 94% Supressão", "Controle oculomotor apurado com rápida acomodação de fase em reversões angulares."],
-      ["Faixa 3", "62 – 75%", "72 – 83%", "78 – 87% Supressão", "Rastreamento estável em trajetórias lineares, sacadas esporádicas de correção em acelerações."],
-      ["Faixa 4", "48 – 61%", "60 – 71%", "65 – 77% Supressão", "Frequentes desvios do cursor com necessidade constante de correções sacádicas em degrau."],
-      ["Faixa 5", "< 48%", "< 60%", "< 65% Supressão", "Latência visual elevada, movimentos bruscos e oscilações contínuas de overshoot."]
-    ],
-    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Fundamentado em estudos neuroftalmológicos e de ciências do esporte (Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010)."
-  },
-  techniques: {
-    title: "Princípios motores para melhorar o rastreamento ocular",
-    items: [
-      {
-        name: "Ancoragem Foveal na Borda Dianteira",
-        desc: "Fixe seu olhar na margem frontal da esfera em movimento, nunca no centro do cursor do mouse. Deixe que os proprioceptores musculares do braço posicionem o cursor na periferia da visão enquanto a fóvea guia o vetor de velocidade.",
-        tips: "Resista à tentação de verificar constantemente o cursor; a visão periférica motora é subconsciente e veloz."
-      },
-      {
-        name: "Acionamento do Antebraço com Pivot no Cotovelo",
-        desc: "Mantenha o pulso neutro e utilize o antebraço deslizando suavemente sobre a superfície para cobrir arcos amplos. Isso previne espasmos dos micromúsculos da mão que induzem solavancos sacádicos.",
-        tips: "Regule a altura da cadeira para que o cotovelo repouse a 90–100 graus em relação à mesa."
-      },
-      {
-        name: "Antecipação de Inércia e Amortecimento",
-        desc: "Ao notar uma mudança de vetor da esfera, não dê trancos repentinos no periférico. Aplique uma leve desaceleração controlada para reorientar a trajetória com suavidade.",
-        tips: "Mousepads com superfície de controle balanceada facilitam a transição suave de velocidade."
-      },
-      {
-        name: "Respiração Diafragmática Rítmica",
-        desc: "A retenção involuntária da respiração durante sessões intensas de mira aumenta o tônus muscular e a rigidez articular, degradando a fluidez motora.",
-        tips: "Inspire pelo nariz e expire suavemente pela boca durante toda a duração da bateria de 45 segundos."
-      }
-    ]
-  },
-  steps: [
-    "Posicione o cursor dentro do círculo central para iniciar a contagem regressiva de 3 segundos.",
-    "Acompanhe a esfera verde em movimento mantendo o cursor centralizado sobre ela durante os 45 segundos.",
-    "Mantenha contato contínuo para elevar o medidor de multiplicador e acumular pontos de bônus de streak.",
-    "Ao final do tempo limite, analise sua porcentagem de Time on Target, acurácia média e taxa de supressão sacádica.",
-    "Repita 3 a 5 séries diárias para consolidar os ganhos de neuroplasticidade oculomotora."
-  ],
-  audience: "Essencial para atletas de esports competitivos (FPS, Battle Royale, Arena Shooters), praticantes de tênis de mesa, beisebol, tênis e automobilismo, além de indivíduos em busca de aprimoramento da estabilidade de foco e atenção visual contínua.",
-  faqs: [
-    {
-        "q": "O que é o movimento de perseguição ocular suave (Smooth Pursuit)?",
-        "a": "O sistema de perseguição ocular suave (SPEM - Smooth Pursuit Eye Movements) é a capacidade motora voluntária de guiar suavemente a linha de visão para acompanhar objetos em movimento contínuo, mantendo a projeção da imagem fixada sobre a fóvea central. Diferencia-se neurologicamente dos movimentos sacádicos, que são saltos bruscos entre alvos estáticos (Rashbass, 1961)."
-    },
-    {
-        "q": "Por que o rastreamento ocular trepida ou salta em degraus durante curvas rápidas?",
-        "a": "Quando a velocidade ou aceleração angular do alvo excede a capacidade de ganho do sistema de perseguição do tronco encefálico e cerebelo, a imagem escorrega da fóvea (retinal slip). O cérebro compensa esse atraso disparando sacadas corretivas (catch-up saccades), que criam a sensação visual de degraus ou solavancos na mira."
-    },
-    {
-        "q": "Qual é a relevância deste teste para jogos de tiro tático (FPS) como Apex Legends ou Overwatch?",
-        "a": "Em jogos de tracking contínuo, manter a retícula colada em oponentes que realizam strafes imprevisíveis exige alta sincronia entre o córtex parietal, cerebelo e os músculos do membro superior. O treino de smooth pursuit reduz o tremor motor e estabiliza o time-to-kill (TTK) com armas automáticas."
-    },
-    {
-        "q": "Quais configurações de mouse (DPI e sensibilidade) favorecem o tracking contínuo?",
-        "a": "Sensibilidades moderadas a baixas (800 DPI com sensibilidade in-game de 1.0 a 1.5, equivalente a 28–45 cm/360°) são ideais para o rastreamento suave. Sensibilidades excessivamente altas ativam micromúsculos dos dedos propensos a tremores e espasmos sacádicos."
-    },
-    {
-        "q": "O treino de perseguição ocular melhora a acuidade visual e concentração no dia a dia?",
-        "a": "Sim. Exercitar a musculatura extraocular e a estabilização foveal reduz a fadiga visual digital (astenopia), amplia a resistência à leitura prolongada e aprimora a atenção sustentada em tarefas que exigem monitoramento dinâmico contínuo."
-    },
-    {
-        "q": "Esportes tradicionais como tênis, beisebol e automobilismo se beneficiam desta prática?",
-        "a": "Sem dúvida. Pilotos de corrida e atletas de esportes com raquete dependem criticamente do smooth pursuit para calcular vetores de interceptação espacial de bolas ou pontos de tangência de curvas a centenas de quilômetros por hora (Land & McLeod, 2000)."
-    },
-    {
-        "q": "Ao controlar o mouse, devo focar no movimento do pulso ou do antebraço?",
-        "a": "O rastreamento contínuo em arcos amplos deve ser executado primariamente com a articulação do cotovelo e antebraço. O pulso e os dedos devem atuar apenas na microcorreção final do centro da esfera para evitar sobrecarga no túnel do carpo."
-    },
-    {
-        "q": "Como reagir da melhor forma a mudanças bruscas de direção do alvo?",
-        "a": "Evite tentar 'adivinhar' a mudança antes que ela ocorra, pois antecipações falsas causam perda total do alvo (overshoot). Mantenha o olhar fixado na borda dianteira do alvo e utilize o amortecimento inercial do mousepad para frear suavemente antes de reacelerar."
-    },
-    {
-        "q": "Qual é a rotina recomendada para treinar sem causar estresse ocular?",
-        "a": "Recomenda-se realizar de 3 a 5 séries de 45 segundos por dia, com intervalos de descanso de 30 segundos entre as repetições. A cada série, pisque ativamente e olhe para um ponto distante a pelo menos 6 metros por 10 segundos para relaxar a acomodação ciliar."
-    },
-    {
-        "q": "Meus dados de rastreamento ou movimentação do mouse são enviados para servidores externos?",
-        "a": "Não. Todo o cálculo de coordenadas em tempo real, física de interpolação em canvas e computação de ganho e precisão ocorrem exclusivamente na memória local do navegador via JavaScript client-side. Nenhum dado é salvo externamente."
-    }
-],
-  sources: pickSources([
-    "rashbass1961smooth",
-    "lisberger2010visual",
-    "krauzlis2004recurrent",
-    "leigh2015neurology",
-    "land2000eye"
-  ]),
-  related: [
-    { href: "/pt/drills/visual/tracking-accuracy/moving-target", label: "Rastreamento de Alvo Móvel" },
-    { href: "/pt/drills/visual/tracking-accuracy/multiple-targets", label: "Rastreamento de Múltiplos Objetos" },
-    { href: "/pt/drills/visual/reaction-speed/go/no-go", label: "Teste Go/No-Go" },
-    { href: "/pt/drills/visual/reaction-speed/light-reaction", label: "Reação à Luz" },
-    { href: "/pt/drills/fps/strafe-tracking", label: "Strafe Tracking FPS" },
-    { href: "/pt/drills/fps/pro-smooth-pursuit", label: "Pro Smooth Pursuit FPS" }
-  ]
 };
 
 const breadcrumbSchema = {
@@ -164,138 +43,278 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Treinos", "item": "https://skilldrills.online/pt/drills" },
     { "@type": "ListItem", "position": 3, "name": "Percepção Visual", "item": "https://skilldrills.online/pt/drills/visual" },
     { "@type": "ListItem", "position": 4, "name": "Precisão de Rastreamento", "item": "https://skilldrills.online/pt/drills/visual/tracking-accuracy" },
-    { "@type": "ListItem", "position": 5, "name": "Perseguição Ocular Suave", "item": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker" }
+    { "@type": "ListItem", "position": 5, "name": "Perseguição Suave com o Cursor", "item": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "Teste de Perseguição Ocular Suave (Smooth Pursuit)",
+  "@type": "SoftwareApplication",
+  "name": "Perseguição Suave com o Cursor",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Web Browser",
-  "applicationCategory": "HealthApplication",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "publisher": { "@type": "Organization", "name": "SkillDrills" }
+  "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL"
+  },
+  "description": "Exercício de 45 segundos no navegador: mantenha o cursor (ou o dedo) sobre um ponto que muda de velocidade e direção. Só a posição do cursor é avaliada; não há medição do olhar por câmera, nem exame de vista ou médico.",
+  "featureList": [
+    "Rodada fixa de 45 segundos; o ponto muda de velocidade e direção ao acaso e quica nas bordas",
+    "Cerca de 1 segundo de cursor sobre o ponto (área de contato generosa): +5 pontos e sequência +1",
+    "Mais de 2 segundos fora só zera a sequência, sem perda de pontos ou tempo",
+    "Quanto maior a pontuação, menor e mais rápido o ponto; dados só no armazenamento local"
+  ],
+  "dateModified": "2026-11-12"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Teste de Perseguição Ocular Suave (Smooth Pursuit)",
+  "name": "Perseguição Suave com o Cursor | SkillDrills",
+  "alternateName": "Pursuit Tracker Pro",
   "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker",
-  "applicationCategory": "SportsApplication",
-  "browserRequirements": "Requires JavaScript. Canvas support required.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "dateModified": "2026-11-12",
+  "description": "Exercício grátis de perseguição suave com o cursor: mantenha um ponto em movimento sob o mouse por 45 segundos.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Navegador moderno com suporte a HTML5 Canvas.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "isAccessibleForFree": true,
+  "learningResourceType": "Educational Game",
+  "teaches": "Acompanhar um alvo em movimento com o olhar e manter o cursor sobre ele"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Treinamento de Rastreamento Contínuo Smooth Pursuit",
-  "gamePlatform": "Web Browser",
-  "genre": ["Visão Esportiva", "Treino Cognitivo", "Controle Oculomotor"],
-  "numberOfPlayers": { "@type": "QuantitativeValue", "value": 1 }
+  "name": "Perseguição Suave com o Cursor",
+  "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker",
+  "description": "Mantenha o cursor sobre um ponto que muda de velocidade e direção. Jogo grátis de perseguição suave.",
+  "genre": [
+    "Action",
+    "Visual Tracking"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL"
+  }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Como Realizar o Teste de Smooth Pursuit",
-  "description": "Guia de execução para testar e aprimorar a perseguição ocular suave e estabilidade do rastreamento de alvos.",
+  "name": "Como funciona a perseguição suave com o cursor",
+  "dateModified": "2026-11-12",
+  "description": "Os quatro passos da rodada de 45 segundos.",
   "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Etapa 1", "text": "Posicione o cursor dentro do círculo central para iniciar a contagem regressiva de 3 segundos." },
-    { "@type": "HowToStep", "position": 2, "name": "Etapa 2", "text": "Acompanhe a esfera verde em movimento mantendo o cursor centralizado sobre ela durante os 45 segundos." },
-    { "@type": "HowToStep", "position": 3, "name": "Etapa 3", "text": "Mantenha contato contínuo para elevar o medidor de multiplicador e acumular pontos de bônus de streak." },
-    { "@type": "HowToStep", "position": 4, "name": "Etapa 4", "text": "Ao final do tempo limite, analise sua porcentagem de Time on Target, acurácia média e taxa de supressão sacádica." },
-    { "@type": "HowToStep", "position": 5, "name": "Etapa 5", "text": "Repita 3 a 5 séries diárias para consolidar os ganhos de neuroplasticidade oculomotora." }
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Colocar o cursor no ponto",
+      "text": "Depois da contagem regressiva aparece um ponto laranja que se move. Com o cursor (ou o dedo na tela de toque) sobre ele, o ponto fica verde.",
+      "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Segurar cerca de 1 segundo",
+      "text": "Quando o anel em volta do ponto enche (cerca de 1 segundo): +5 pontos e sequência +1. Se escapar, o anel recomeça.",
+      "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Acompanhar as mudanças de direção",
+      "text": "O ponto muda de velocidade e direção sem aviso e quica nas bordas. Fica mais rápido e menor com a pontuação e a sequência.",
+      "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Ir até o fim",
+      "text": "Mais de 2 segundos fora só zera a sequência; pontos e tempo continuam. A rodada termina após 45 segundos.",
+      "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker#step-4"
+    }
   ]
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
-        "@type": "Question",
-        "name": "O que é o movimento de perseguição ocular suave (Smooth Pursuit)?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O sistema de perseguição ocular suave (SPEM - Smooth Pursuit Eye Movements) é a capacidade motora voluntária de guiar suavemente a linha de visão para acompanhar objetos em movimento contínuo, mantendo a projeção da imagem fixada sobre a fóvea central. Diferencia-se neurologicamente dos movimentos sacádicos, que são saltos bruscos entre alvos estáticos (Rashbass, 1961)."
-        }
+      "@type": "Question",
+      "name": "Como funciona a perseguição suave com o cursor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Você mantém o cursor sobre um ponto em movimento por 45 segundos. Cada segundo (aprox.) de contato contínuo vale 5 pontos. Só a posição do cursor conta: nenhuma câmera ou eye tracker mede seus olhos."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Por que o rastreamento ocular trepida ou salta em degraus durante curvas rápidas?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Quando a velocidade ou aceleração angular do alvo excede a capacidade de ganho do sistema de perseguição do tronco encefálico e cerebelo, a imagem escorrega da fóvea (retinal slip). O cérebro compensa esse atraso disparando sacadas corretivas (catch-up saccades), que criam a sensação visual de degraus ou solavancos na mira."
-        }
+      "@type": "Question",
+      "name": "O que acontece se eu perder o ponto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O anel de um segundo recomeça, e depois de mais de 2 segundos fora a sequência volta a 0. Nenhum ponto ou tempo é descontado."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Qual é a relevância deste teste para jogos de tiro tático (FPS) como Apex Legends ou Overwatch?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Em jogos de tracking contínuo, manter a retícula colada em oponentes que realizam strafes imprevisíveis exige alta sincronia entre o córtex parietal, cerebelo e os músculos do membro superior. O treino de smooth pursuit reduz o tremor motor e estabiliza o time-to-kill (TTK) com armas automáticas."
-        }
+      "@type": "Question",
+      "name": "Fica mais difícil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quanto maior a pontuação, mais o ponto encolhe (até metade do tamanho) e maior sua velocidade máxima. Uma sequência longa também o deixa mais rápido."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Quais configurações de mouse (DPI e sensibilidade) favorecem o tracking contínuo?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sensibilidades moderadas a baixas (800 DPI com sensibilidade in-game de 1.0 a 1.5, equivalente a 28–45 cm/360°) são ideais para o rastreamento suave. Sensibilidades excessivamente altas ativam micromúsculos dos dedos propensos a tremores e espasmos sacádicos."
-        }
+      "@type": "Question",
+      "name": "A taxa de atualização do monitor influencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O exercício conta quadros: a 60 Hz os pontos entram mais ou menos a cada segundo; em monitores mais rápidos os pontos vêm antes e o ponto se move mais rápido. Pontuações de aparelhos diferentes não são comparáveis."
+      }
     },
     {
-        "@type": "Question",
-        "name": "O treino de perseguição ocular melhora a acuidade visual e concentração no dia a dia?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sim. Exercitar a musculatura extraocular e a estabilização foveal reduz a fadiga visual digital (astenopia), amplia a resistência à leitura prolongada e aprimora a atenção sustentada em tarefas que exigem monitoramento dinâmico contínuo."
-        }
+      "@type": "Question",
+      "name": "O que é perseguição ocular suave (smooth pursuit)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É o movimento dos olhos que desliza junto com um objeto para mantê-lo no centro da visão. Se o objeto é rápido demais, o olho fica para trás e o alcança com pequenas sacadas (Krauzlis, 2004). O exercício reproduz isso com o cursor, sem medir os olhos."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Esportes tradicionais como tênis, beisebol e automobilismo se beneficiam desta prática?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sem dúvida. Pilotos de corrida e atletas de esportes com raquete dependem criticamente do smooth pursuit para calcular vetores de interceptação espacial de bolas ou pontos de tangência de curvas a centenas de quilômetros por hora (Land & McLeod, 2000)."
-        }
+      "@type": "Question",
+      "name": "Esse treino melhora minha visão ou minha mira?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uma pontuação maior mostra que você melhorou nesta tarefa. Não há garantia de melhora na visão, em jogos ou esportes, e o exercício não substitui consulta com oftalmologista."
+      }
     },
     {
-        "@type": "Question",
-        "name": "Ao controlar o mouse, devo focar no movimento do pulso ou do antebraço?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O rastreamento contínuo em arcos amplos deve ser executado primariamente com a articulação do cotovelo e antebraço. O pulso e os dedos devem atuar apenas na microcorreção final do centro da esfera para evitar sobrecarga no túnel do carpo."
-        }
-    },
-    {
-        "@type": "Question",
-        "name": "Como reagir da melhor forma a mudanças bruscas de direção do alvo?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Evite tentar 'adivinhar' a mudança antes que ela ocorra, pois antecipações falsas causam perda total do alvo (overshoot). Mantenha o olhar fixado na borda dianteira do alvo e utilize o amortecimento inercial do mousepad para frear suavemente antes de reacelerar."
-        }
-    },
-    {
-        "@type": "Question",
-        "name": "Qual é a rotina recomendada para treinar sem causar estresse ocular?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Recomenda-se realizar de 3 a 5 séries de 45 segundos por dia, com intervalos de descanso de 30 segundos entre as repetições. A cada série, pisque ativamente e olhe para um ponto distante a pelo menos 6 metros por 10 segundos para relaxar a acomodação ciliar."
-        }
-    },
-    {
-        "@type": "Question",
-        "name": "Meus dados de rastreamento ou movimentação do mouse são enviados para servidores externos?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Não. Todo o cálculo de coordenadas em tempo real, física de interpolação em canvas e computação de ganho e precisão ocorrem exclusivamente na memória local do navegador via JavaScript client-side. Nenhum dado é salvo externamente."
-        }
+      "@type": "Question",
+      "name": "É grátis e onde ficam meus resultados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, grátis e sem conta. Os recordes ficam apenas no armazenamento local do seu navegador."
+      }
     }
-]
+  ]
+};
+
+const guideData = {
+  heading: "Perseguição suave com o cursor: mantenha o alvo sob o mouse",
+  intro: [
+    "Na perseguição suave com o cursor você acompanha com o olhar um ponto em movimento durante 45 segundos e mantém o cursor sobre ele. Só conta o tempo em que o cursor fica sobre o ponto; seus olhos não são filmados.",
+    "Cada segundo, aproximadamente, de contato contínuo (área generosa) vale +5 pontos e aumenta a sequência. O ponto muda de velocidade e direção sem aviso, quica nas bordas e fica menor e mais rápido conforme a pontuação sobe. Mais de 2 segundos fora só zera a sequência.",
+    "Os olhos acompanham suavemente um objeto lento; se ele é rápido demais, o olhar fica para trás e recupera com pequenos saltos (Krauzlis, 2004). O exercício transforma isso numa tarefa simples de cursor e não mede nem diagnostica a visão ou os movimentos dos olhos."
+  ],
+  benchmarks: {
+    "title": "Faixas de treino SkillDrills (só para este exercício, 60 Hz)",
+    "headers": [
+      "Faixa",
+      "Pontos em 45 s",
+      "Descrição"
+    ],
+    "rows": [
+      [
+        "Alta",
+        "180+",
+        "O ponto é mantido quase o tempo todo."
+      ],
+      [
+        "Estável",
+        "120 – 179",
+        "Escapa só logo depois de mudanças de direção."
+      ],
+      [
+        "Em treino",
+        "60 – 119",
+        "Interrupções frequentes nas fases rápidas."
+      ],
+      [
+        "Início",
+        "< 60",
+        "Adaptação ao exercício."
+      ]
+    ],
+    "note": "Faixas definidas pelo SkillDrills, não são normas científicas nem avaliação da visão. Taxa de atualização e mouse influenciam o resultado."
+  },
+  techniques: {
+    "title": "Dicas para manter o cursor no alvo",
+    "items": [
+      {
+        "name": "Mirar no centro",
+        "desc": "Na borda do ponto, qualquer mudança de direção faz você escapar.",
+        "tips": "Mantenha o cursor no meio do ponto e mova-se junto."
+      },
+      {
+        "name": "Pulso relaxado",
+        "desc": "Mão tensa faz o cursor pular.",
+        "tips": "Correções pequenas com o pulso, deslocamentos grandes com o braço."
+      },
+      {
+        "name": "Antecipar as bordas",
+        "desc": "O ponto quica assim que toca uma borda.",
+        "tips": "Quando ele se aproximar de uma borda, prepare-se para ir no sentido oposto."
+      },
+      {
+        "name": "Voltar na hora",
+        "desc": "Voltar em menos de 2 segundos mantém a sequência.",
+        "tips": "Se escapar, não pare: volte imediatamente para o ponto."
+      }
+    ]
+  },
+  steps: [
+    "Toque em Iniciar e aguarde a contagem regressiva.",
+    "Coloque o cursor sobre o ponto até ele ficar verde.",
+    "Continue em cima para somar 5 pontos a cada segundo, aproximadamente.",
+    "Acompanhe mudanças de direção e quiques.",
+    "Após 45 segundos, veja pontuação, sequência e nota."
+  ],
+  audience: "Para quem quer praticar manter o cursor sobre um alvo em movimento e jogadores que querem testar rapidamente seu rastreamento.",
+  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
+  sources: pickSources('krauzlis2004', 'rashbass1961'),
+  related: [
+    {
+      "href": "/pt/drills/visual/tracking-accuracy/moving-target",
+      "label": "Previsão de Trajetória de Alvo Móvel"
+    },
+    {
+      "href": "/pt/drills/visual/tracking-accuracy/multiple-targets",
+      "label": "Rastreamento de Múltiplos Objetos"
+    },
+    {
+      "href": "/pt/drills/visual/reaction-speed/go/no-go",
+      "label": "Teste Go/No-Go"
+    },
+    {
+      "href": "/pt/drills/fps/strafe-tracking",
+      "label": "Strafe Tracking FPS"
+    },
+    {
+      "href": "/pt/drills/fps/pro-smooth-pursuit",
+      "label": "Pro Smooth Pursuit FPS"
+    }
+  ]
 };
 
 export default function PursuitTrackerPage() {
@@ -304,15 +323,12 @@ export default function PursuitTrackerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-
-      <main className="container mx-auto px-4 py-8 max-w-5xl">
-        <AutoPursuitClient copy={{ title: "Perseguição Ocular", subtitle: "Rastreamento Visual" }} />
-        <DrillGuide guide={guideData} />
-        <RelatedDrills related={guideData.related} />
-      </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <AutoPursuitClient copy={{  "title": "Perseguição Suave com o Cursor" }} />
+      <DrillGuide guide={guideData} />
+      <RelatedDrills />
     </>
   );
 }
