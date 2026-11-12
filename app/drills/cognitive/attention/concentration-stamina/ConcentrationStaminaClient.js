@@ -447,8 +447,8 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
           <div className="flex flex-col">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Concentration Stamina – Attention Span Test"}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Attention span test for sustained focus, target discrimination, and cognitive endurance under time pressure"}</span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Attention span test for sustained focus, target discrimination, and cognitive endurance under time pressure"}</p>
           </div>
         )}
 
@@ -662,9 +662,9 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <RuleItem num="1" text={copy?.ruleItems?.[0]?.text || "Target Rule"} highlight={copy?.ruleItems?.[0]?.highlight || "Switches Every 10s"} result={copy?.ruleItems?.[0]?.result || "VOWELS ↔ PRIMES"} />
-            <RuleItem num="2" text={copy?.ruleItems?.[1]?.text || "Target Hit"} highlight={copy?.ruleItems?.[1]?.highlight || "+100 PTS"} result={copy?.ruleItems?.[1]?.result || "Tap or Spacebar"} />
+            <RuleItem num="2" text={copy?.ruleItems?.[1]?.text || "Target Hit"} highlight={copy?.ruleItems?.[1]?.highlight || "+100 PTS"} result={copy?.ruleItems?.[1]?.result || "Click, Tap, Space or Enter"} />
             <RuleItem num="3" text={copy?.ruleItems?.[2]?.text || "Non-Target"} highlight={copy?.ruleItems?.[2]?.highlight || "Inhibit"} result={copy?.ruleItems?.[2]?.result || "Ignore Non-Match"} />
-            <RuleItem num="4" text={copy?.ruleItems?.[3]?.text || "False Alarm"} highlight={copy?.ruleItems?.[3]?.highlight || "Penalty"} result={copy?.ruleItems?.[3]?.result || "Counts vs Accuracy"} />
+            <RuleItem num="4" text={copy?.ruleItems?.[3]?.text || "False Alarm"} highlight={copy?.ruleItems?.[3]?.highlight || "1s Lockout"} result={copy?.ruleItems?.[3]?.result || "Counts vs Accuracy"} />
           </div>
         </DrillAccordion>
 

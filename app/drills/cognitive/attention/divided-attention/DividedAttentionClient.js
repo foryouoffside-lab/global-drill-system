@@ -85,7 +85,7 @@ const RULES_ITEMS = [
   { num: "1", text: "Dual Streams", highlight: "Visual + Number", result: "Track Both Channels" },
   { num: "2", text: "Target Hit", highlight: "+100 PTS", result: "Click/Tap Target (+2s, max 60s)" },
   { num: "3", text: "Even Match", highlight: "+100 PTS", result: "MATCH on Even Digits" },
-  { num: "4", text: "Miss / Mistake", highlight: "Resets Combo", result: "−0.8s on Penalty" }
+  { num: "4", text: "Miss / Mistake", highlight: "Resets Combo", result: "−1s Time" }
 ];
 
 const ABOUT_TEXT = `Divided Attention is a core cognitive drill designed to measure and train multi-channel visual tracking and simultaneous information processing. Based on dual-task psychological paradigms, this exercise forces the brain to allocate attention across two distinct channels at once: spatial motion tracking and numeric categorization.
@@ -603,8 +603,8 @@ export default function DividedAttentionClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Divided Attention Test"}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Divided attention test for tracking moving targets while matching numbers and training multitasking focus"}</span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Divided attention test for tracking moving targets while matching numbers and training multitasking focus"}</p>
           </div>
         )}
 
@@ -876,7 +876,7 @@ export default function DividedAttentionClient({ copy } = {}) {
                   <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Layers className="w-3.5 h-3.5 text-white" /></div>
                   <h5 className="text-xs font-bold text-white">{copy?.flexibilityTitle || 'Parallel Processing'}</h5>
                 </div>
-                <p className="text-xs text-gray-300 leading-relaxed">Track the spatial target stream and the numerical stream at once — reacting to one without letting accuracy on the other channel collapse.</p>
+                <p className="text-xs text-gray-300 leading-relaxed">{copy?.flexibilityText || 'Track the spatial target stream and the numerical stream at once — reacting to one without letting accuracy on the other channel collapse.'}</p>
               </div>
             </div>
           </div>

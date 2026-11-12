@@ -470,8 +470,8 @@ export default function DigitSpanClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "Digit Span Memory Test"}</span>
               {copy?.h1Suffix || null}
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Digit span memory test for recalling growing number sequences and training working memory capacity"}</span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Digit span memory test for recalling growing number sequences and training working memory capacity"}</p>
           </div>
         )}
 
@@ -731,7 +731,7 @@ export default function DigitSpanClient({ copy = null }) {
                 { num: "1", text: "Digit Sequence Recall", highlight: "+100 PTS", result: "Enter flashing digit sequence with on-screen numpad" },
                 { num: "2", text: "Level Bonus", highlight: "Up to +120% PTS", result: "Higher span = more points per hit" },
                 { num: "3", text: "Miss / Timeout", highlight: "-1 Digit", result: "No score or time loss" },
-                { num: "4", text: "Adaptive Span Test", highlight: "Rises & Falls", result: "Converges on your true digit span" }
+                { num: "4", text: "Adaptive Span Test", highlight: "Rises & Falls", result: "Tracks your current digit span" }
               ]).map((item, idx) => (
                 <DrillRuleItem key={idx} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
               ))}
@@ -755,10 +755,10 @@ export default function DigitSpanClient({ copy = null }) {
                     <Brain className="w-4 h-4 text-purple-400" /> What Is Digit Span Training?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Digit Span Training</strong> is a gold-standard cognitive exercise used in WAIS IQ and clinical memory evaluations to measure working memory capacity. The <strong>Digit Span drill</strong> presents random numerical sequences, testing your capacity to memorize and type back exact strings.
+                    <strong>Digit span</strong> tasks are a long-standing way psychologists study short-term memory capacity. The <strong>Digit Span drill</strong> is a free practice version, not a clinical or IQ test: it shows a random digit string (3 to 15 digits) and you type it back in the same order.
                   </p>
                   <p className="text-sm leading-relaxed">
-                    By practicing <strong>numerical recall chunking</strong>, you expand your short-term memory buffer and increase your visual processing speed under time pressure.
+                    By practicing <strong>numerical recall chunking</strong>, you can practice holding longer number strings under time pressure.
                   </p>
                 </section>
   

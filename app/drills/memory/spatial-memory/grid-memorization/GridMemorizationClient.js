@@ -429,8 +429,8 @@ export default function GridMemorizationClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "Visual Memory Test"}</span>
               {copy?.h1Suffix || null}
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Visual grid memory test for memorizing cell patterns and rebuilding spatial layouts with accuracy"}</span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Visual grid memory test for memorizing cell patterns and rebuilding spatial layouts with accuracy"}</p>
           </div>
         )}
 
@@ -674,8 +674,8 @@ export default function GridMemorizationClient({ copy = null }) {
               {(copy?.rulesItems || [
                 { num: "1", text: "Pattern Recall", highlight: "+150 PTS", result: "Memorize lit cell positions & tap tiles to recreate" },
                 { num: "2", text: "Level Progression", highlight: "Grid 4x4 → 5x5", result: "Difficulty naturally scales" },
-                { num: "3", text: "Miss / Timeout", highlight: "Zero Penalties", result: "No score or time loss" },
-                { num: "4", text: "Difficulty Never Drops", highlight: "Stays at Current Level", result: "A miss just replays the round" }
+                { num: "3", text: "Wrong Tile", highlight: "Zero Penalties", result: "Round ends, no score or time loss" },
+                { num: "4", text: "Difficulty Never Drops", highlight: "Stays at Current Level", result: "A miss loads a new pattern at the same level" }
               ]).map((item, idx) => (
                 <DrillRuleItem key={idx} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
               ))}

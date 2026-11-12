@@ -81,16 +81,16 @@ const getLevelConfig = (level, combo = 0) => {
 
 const RULES_ITEMS = [
   { num: "1", text: "Dual Streams", highlight: "Top+Bottom / L+R", result: "Opposing Streams Flow" },
-  { num: "2", text: "Target Match", highlight: "+100 PTS", result: "Tap Active Template" },
+  { num: "2", text: "Target Match", highlight: "+100 PTS, +2s", result: "Tap Active Template" },
   { num: "3", text: "Bilateral", highlight: "Wide Peripheral", result: "Split Focus Across" },
-  { num: "4", text: "Miss / Mistake", highlight: "Resets Combo", result: "−0.8s on Penalty" }
+  { num: "4", text: "Miss / Mistake", highlight: "Resets Combo", result: "−1s Time" }
 ];
 
 const ABOUT_TEXT = `Multi-Tasking (Dual-Target Flow) is an advanced cognitive drill designed to assess and train multi-stream visual tracking and divided attention under severe time constraints. Derived from cognitive workload research in aviation and high-speed motor sports, this drill challenges the brain's executive control system to monitor two independent perceptual channels concurrently.
 
-By streaming distinct geometric shapes across left and right visual fields, the drill exercises bilateral hemispheric processing. Players must maintain a wide peripheral gaze while executing discrete, rapid taps on valid targets matching active target templates.
+By streaming geometric shapes through two separate lanes (left and right, or top and bottom on a portrait screen), the drill makes you watch both halves of the screen at once. Players must maintain a wide peripheral gaze while executing discrete, rapid taps on valid targets matching active target templates.
 
-As your score increases, stream velocity accelerates and target templates diverge, pushing your visual processing throughput to elite levels.`;
+As your score increases, the shapes move faster and spawn more often; from level 3 the two lanes get different target shapes, and both templates change every 20 seconds.`;
 
 export default function DualTargetFlowClient({ copy } = {}) {
   const { locale } = useTranslation();
@@ -650,8 +650,8 @@ export default function DualTargetFlowClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Multitasking Test"}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Multitasking cognitive test for monitoring parallel target streams and improving task-switching speed"}</span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Multitasking cognitive test for monitoring parallel target streams and improving task-switching speed"}</p>
           </div>
         )}
 
@@ -857,7 +857,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
                       <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
                       <h5 className="text-xs font-bold text-white">{copy?.skillsTitle || 'Skills Improved'}</h5>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.skillsText || 'Dual-stream visual tracking, peripheral target acquisition, bilateral hemispheric processing, and prefrontal executive control.'}</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.skillsText || 'Dual-stream visual tracking, peripheral target acquisition, and prefrontal executive control.'}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">

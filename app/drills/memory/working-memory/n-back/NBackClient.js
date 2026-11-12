@@ -408,8 +408,8 @@ export default function NBackClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "N-Back Working Memory Test"}</span>
               {copy?.h1Suffix || null}
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "N-back working memory test for comparing letters across steps and improving focus, recall, and cognitive processing speed"}</span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "N-back working memory test for comparing letters across steps and improving focus, recall, and cognitive processing speed"}</p>
           </div>
         )}
 
@@ -547,7 +547,7 @@ export default function NBackClient({ copy = null }) {
             <FpsStartCard
               icon={Brain}
               accent="cyan"
-              title={copy?.startTitle || "Dual N-Back Training Pro"}
+              title={copy?.startTitle || "N-Back Training Pro"}
               subtitle={copy?.startSubtitle || "Working Memory • Sequence Updating"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
@@ -646,7 +646,7 @@ export default function NBackClient({ copy = null }) {
                 { num: "2", text: "Level Progression", highlight: "3-Back → 4-Back+", result: "Every 1200 points earned" },
                 { num: "3", text: "Display Speeds Up", highlight: "2000ms → 1200ms Floor", result: "Faster letters at higher levels" },
                 { num: "4", text: "Timeout (No Response)", highlight: "Zero Penalties", result: "No score, time, or life lost" },
-                { num: "5", text: "Wrong Judgment", highlight: "Breaks your streak", result: "Costs no score and no time — the run lasts the full clock" }
+                { num: "5", text: "Wrong Judgment", highlight: "Counts as a miss", result: "Costs no score and no time — the run lasts the full clock" }
               ]).map((item, idx) => (
                 <DrillRuleItem key={idx} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
               ))}
@@ -667,10 +667,10 @@ export default function NBackClient({ copy = null }) {
                     <Brain className="w-4 h-4 text-cyan-400" /> What Is N-Back Training?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>N-Back Training</strong> is the gold-standard cognitive working memory paradigm used across neuroscientific research to measure fluid intelligence and memory updating capacity. The <strong>N-Back Working Memory Test</strong> presents continuous stimulus streams, requiring you to determine whether the current item matches the item presented &apos;N&apos; steps ago. You have to hold a short list and update it continuously at the same time, and that combination of storage plus manipulation is what working memory means in Baddeley and Hitch&apos;s (1974) model, with its capacity sitting near four items (Cowan, 2001).
+                    <strong>N-Back Training</strong> is a widely used working memory paradigm in cognitive research for studying memory updating (Kirchner, 1958). This version is single n-back with letters only, not dual n-back. The <strong>N-Back Working Memory Test</strong> presents continuous stimulus streams, requiring you to determine whether the current item matches the item presented &apos;N&apos; steps ago. You have to hold a short list and update it continuously at the same time, and that combination of storage plus manipulation is what working memory means in Baddeley and Hitch&apos;s (1974) model, with its capacity sitting near four items (Cowan, 2001).
                   </p>
                   <p className="text-sm leading-relaxed">
-                    By practicing <strong>working memory updating</strong>, you expand your executive control buffer and strengthen information manipulation speed under time pressure.
+                    You start at 3-back, move up one level every 8 correct judgments, and each letter stays on screen 100 ms less per level (2000 ms down to 1200 ms). Gains on this task have not been shown to raise IQ.
                   </p>
                 </section>
   

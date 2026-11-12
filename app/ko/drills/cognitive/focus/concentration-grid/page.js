@@ -6,10 +6,11 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "집중력 테스트 게임 | 슐테 테이블 격자 | SkillDrills",
-  description: "숫자를 1부터 순서대로 찾는 무료 집중력 테스트 게임입니다. 슐테 테이블 방식으로 시각 탐색과 주변 시야를 연습하는 비임상 훈련입니다.",
+  title: "슐테 테이블 게임 – 숫자 순서 찾기 | SkillDrills",
+  description: "무료 슐테 테이블 게임입니다. 흩어진 숫자를 1부터 순서대로 찾아 누르는 45초 세션으로, 3x3에서 시작해 판을 깰 때마다 격자가 커집니다. 터치 속도와 정확도가 점수에 반영되며, 임상 검사가 아닌 연습용입니다.",
   keywords: [
-    "집중력 테스트 게임",
+    "슐테 테이블 게임",
+    "숫자 순서 찾기",
     "집중력 훈련 게임",
     "집중력 향상 게임",
     "슐테 테이블",
@@ -21,12 +22,11 @@ export const metadata = {
     "시야각 확장 훈련",
     "사케드 안구 운동",
     "무료 뇌 인지 훈련",
-    "슐테 테이블 5x5 연습",
-    "온라인 집중력 테스트 무료"
+    "슐테 테이블 5x5 연습"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "집중력 테스트 게임 – 슐테 테이블 숫자 격자 | SkillDrills",
-    description: "숫자를 순서대로 터치하는 무료 집중력 테스트 게임. 슐테 테이블 방식으로 시각 탐색 속도와 주변 시야를 연습하세요.",
+    title: "슐테 테이블 게임 – 숫자 순서 찾기 | SkillDrills",
+    description: "숫자를 1부터 순서대로 터치하는 무료 슐테 테이블 게임. 45초 동안 3x3부터 커지는 격자에서 시각 탐색 속도를 연습하세요.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/cognitive/focus/concentration-grid",
     siteName: "SkillDrills",
@@ -34,8 +34,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "집중력 테스트 게임 – 슐테 테이블 숫자 격자 | SkillDrills",
-    description: "숫자를 순서대로 터치하는 무료 집중력 테스트 게임. 슐테 테이블 방식으로 시각 탐색 속도와 주변 시야를 연습하세요.",
+    title: "슐테 테이블 게임 – 숫자 순서 찾기 | SkillDrills",
+    description: "숫자를 1부터 순서대로 터치하는 무료 슐테 테이블 게임. 45초 동안 3x3부터 커지는 격자에서 시각 탐색 속도를 연습하세요.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -61,7 +61,7 @@ export default function ConcentrationGridPageKo() {
     "name": "슐테 테이블 온라인 (집중력 격자)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 슐테 테이블(Schulte Table) 및 집중력 격자 훈련 도구.",
     "genre": "인지 훈련 / 주변 시야 / 집중력",
@@ -79,7 +79,7 @@ export default function ConcentrationGridPageKo() {
     "name": "슐테 테이블 온라인 (집중력 격자)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "HTML5 Canvas, JavaScript 지원 웹 브라우저",
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 슐테 테이블(Schulte Table) 및 집중력 격자 훈련 도구.",
@@ -92,7 +92,7 @@ export default function ConcentrationGridPageKo() {
     "name": "슐테 테이블 온라인 (집중력 격자)",
     "url": "https://skilldrills.online/ko/drills/cognitive/focus/concentration-grid",
     "description": "무작위로 배치된 숫자를 순서대로 터치하여 주변 시야와 시각 탐색 속도를 강화하는 인지 훈련 게임.",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "gamePlatform": "Web Browser",
     "genre": ["인지 훈련", "주변 시야", "슐테 테이블", "집중력 격자"],
     "playMode": "SinglePlayer",
@@ -104,7 +104,7 @@ export default function ConcentrationGridPageKo() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
         "@type": "Question",
@@ -119,7 +119,7 @@ export default function ConcentrationGridPageKo() {
         "name": "슐테 테이블 훈련이 주변 시야 확장에 어떻게 도움이 되나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "시선을 격자의 중심에 고정한 채 눈동자를 직접 굴리지 않고 주변 시야(Parafoveal vision)만으로 외곽 숫자를 인지하도록 유도하므로, 중심 시야 너머의 유효 시각 범위를 넓혀줍니다."
+          "text": "시선을 격자의 중심에 둔 채 주변 시야(Parafoveal vision)로 외곽 숫자를 포착하는 연습을 반복하게 됩니다. 시야 범위가 실제로 넓어진다는 보장은 없으며, 이 도구는 시야를 측정하지 않습니다."
         }
       },
       {
@@ -143,7 +143,7 @@ export default function ConcentrationGridPageKo() {
         "name": "시각적 밀집 현상(Crowding)이란 무엇이며 난이도에 어떤 영향을 주나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "격자 크기가 3x3에서 5x5, 6x6, 8x8로 확장될수록 주변 방해 숫자들의 밀도가 높아집니다. 이 밀집 현상을 극복하면서 뇌의 선택적 주의 집중 필터링 능력이 단련됩니다."
+          "text": "격자 크기가 3x3에서 5x5, 6x6, 8x8로 확장될수록 주변 방해 숫자들의 밀도가 높아집니다. 비슷한 숫자들 사이에서 다음 숫자만 골라내는 선택적 주의를 연습하게 됩니다. 작은 화면(폭 380px 미만)에서는 최대 7x7까지 커집니다."
         }
       },
       {
@@ -231,23 +231,24 @@ export default function ConcentrationGridPageKo() {
     intro: [
       "슐테 테이블(Schulte Table)은 독일의 정신과 의사 발터 슐테(Walter Schulte)의 이름을 딴 시지각·주의력 과제입니다. 주의력의 안정성과 작업 능력을 가늠하는 데 쓰여 왔으며, 5x5 격자에 무작위로 분산된 1부터 25까지의 숫자를 시선을 중심에 둔 채 오름차순으로 신속하게 찾아내는 표준 프로토콜을 사용합니다.",
       "응용 스포츠 심리학에서는 '집중력 격자(Concentration Grid)'(Harris & Harris, 1984)라는 이름으로 발전하여 테니스, 모터스포츠, 야구 선수들이 시간 압박 속에서 시각 탐색 속도와 주의 집중력을 단련하는 핵심 도구로 채택되었습니다. 8~11세 아동을 대상으로 한 사건관련전위(ERP) 뇌파 연구에 따르면, 연속적인 순차 탐색은 단일 탐색에 비해 훨씬 높은 인지 자원을 소모하며 색상 간섭 자극이 추가될 때 뇌파 잠복기가 지연되는 경향이 보고되었습니다 (Lu et al., 2022).",
-      "SkillDrills 슐테 테이블 트레이너는 이 고전적 검사를 현대적인 지속 수행 과제(Continuous Performance Task)로 재구성했습니다. 고정된 단일 판이 아닌 3x3에서 8x8까지 격자가 동적으로 확장되며, 5x5 단계부터는 숫자에 미세한 회전 노이즈가 가미되어 45초라는 엄격한 시간 제한 속에서 시야각의 한계와 중심와-주변 시야 협응력을 시험합니다 (Treisman & Gelade, 1980; Wolfe, 2007).",
+      "SkillDrills 슐테 테이블 게임은 이 고전 과제를 하나의 45초 연속 세션으로 재구성했습니다. 고정된 단일 판이 아닌 3x3에서 8x8까지 격자가 동적으로 확장되며, 5x5 단계부터는 숫자에 미세한 회전 노이즈가 가미되어 45초라는 엄격한 시간 제한 속에서 시야각의 한계와 중심와-주변 시야 협응력을 시험합니다 (Treisman & Gelade, 1980; Wolfe, 2007).",
       "정밀 측정 크로노메트리: 모든 터치 및 클릭 반응은 브라우저의 performance.now() API로 기기 안에서 측정됩니다. 브라우저의 Spectre 보안 완화 조치(~1ms) 및 디스플레이 주사율(60Hz 기준 프레임당 약 16.7ms, Woods et al., 2015)을 고려하여 동일 기기 환경에서의 추세 변화를 기준으로 측정하는 것을 권장합니다.",
       "데이터 프라이버시: SkillDrills는 사용자의 어떠한 세션 기록이나 개인 점수도 외부 서버로 수집·전송하지 않습니다. 모든 훈련 기록과 설정값은 브라우저 로컬 저장소(localStorage)에만 안전하게 보관됩니다.",
       "본 훈련 도구는 스포츠 및 학업 능력 향상을 위한 무료 인지 훈련 게임입니다. ADHD, 난독증 또는 시각 인지 질환을 판정하거나 치료하기 위한 임상 진단 도구가 아니므로, 주의력이나 신경 인지적 이상 징후가 있을 경우 전문 의료기관을 방문하십시오."
     ],
     benchmarks: {
-      title: "슐테 테이블 & 집중력 격자 성능 벤치마크 (45초 세션)",
-      headers: ["퍼포먼스 등급", "세션 획득 점수", "최대 돌파 격자", "목표당 탐색 지연", "신경 인지 평가"],
+      title: "슐테 테이블 등급 구간 (45초 세션 점수)",
+      headers: ["등급", "세션 점수"],
       rows: [
-        ["S+ (최상위 단계)", "8,000점 이상", "7x7 이상 (49칸+)", "300ms 미만 / 개", "매우 빠른 시각 스캔 속도와 넓은 유효 시야를 보이는 구간."],
-        ["S (마스터)", "6,000 – 7,999점", "6x6 (36칸)", "300 – 450ms / 개", "최상급 시각 탐색 효율; 매끄러운 부중심와 선행 캐싱(Lookahead)과 극소화된 고시 정지."],
-        ["A (상급)", "4,500 – 5,999점", "5x5 (25칸)", "450 – 600ms / 개", "우수한 시야 정보 처리 능력; 중간 밀도 매트릭스에서 지속적인 쌍 단위 청킹 유지."],
-        ["B (숙련자)", "3,000 – 4,499점", "4x4 (16칸)", "600 – 800ms / 개", "평균 이상의 탐색 규율; 격자가 확장될 때 중앙 재고정으로 인한 일시적 지연 발생."],
-        ["C (중급)", "1,800 – 2,999점", "3x3 (9칸)", "800 – 1,100ms / 개", "표준적 기본 탐색력; 눈동자를 연속으로 크게 굴리는 중심와 사케드에 주로 의존."],
-        ["D (기초/입문)", "1,800점 미만", "3x3 (일부 미달)", "1,100ms 초과 / 개", "시각적 혼잡(Crowding) 간섭; 잦은 안구 도약과 지체되는 숫자 변별력."]
+        ["S+", "7,220점 이상"],
+        ["S", "5,780 – 7,219점"],
+        ["A", "4,500 – 5,779점"],
+        ["B", "2,880 – 4,499점"],
+        ["C", "1,620 – 2,879점"],
+        ["D", "720 – 1,619점"],
+        ["F", "720점 미만"]
       ],
-      note: "이 구간표는 SkillDrills가 정한 참고용 구분이며 사용자 통계나 임상 기준이 아닙니다. 시각 탐색 및 주의력 인지 심리학 문헌(Lu et al., 2022; Treisman & Gelade, 1980; Rayner, 1998; Wolfe, 2007)에 기초한 지표입니다. 개인별 점수는 화면 주사율, 입력 장치 및 시각 피로도에 따라 달라질 수 있습니다."
+      note: "SkillDrills 연습 구간입니다. 종료 화면의 등급 공식(기준 점수 8,000점 대비 비율)에서 그대로 계산한 값이며, 사용자 통계나 임상 기준이 아닙니다. 정답 터치마다 100점과 빠를수록 커지는 속도 보너스(최대 120점), 판을 완성하면 격자 크기에 비례한 보너스가 더해집니다."
     },
     techniques: {
       title: "슐테 테이블 기록 단축을 위한 4가지 신경 인지 기술",
@@ -264,7 +265,7 @@ export default function ConcentrationGridPageKo() {
         },
         {
           name: "속발음(Subvocalization) 억제",
-          desc: "숫자를 찾으면서 머릿속으로 '하나, 둘, 셋...' 하고 소리 내어 읽으면 언어 뇌의 속도 한계(초당 3~4단어)에 갇히게 됩니다.",
+          desc: "숫자를 찾으면서 머릿속으로 '하나, 둘, 셋...' 하고 소리 내어 읽으면 탐색 리듬이 말하는 속도에 묶이기 쉽습니다.",
           tips: "숫자의 이름을 소리로 읽지 말고 기하학적 형상(패턴)으로 즉각 인식하세요."
         },
         {
@@ -321,10 +322,10 @@ export default function ConcentrationGridPageKo() {
       />
       <ConcentrationGridClient
         copy={{
-          h1Keyword: "집중력 테스트 게임",
-          h1Suffix: " – 슐테 테이블 격자",
+          h1Keyword: "슐테 테이블",
+          h1Suffix: " 게임 – 숫자 순서 찾기",
           subtitle: "숫자를 1부터 순서대로 찾으며 시각 탐색 속도와 주변 시야, 집중을 연습하는 슐테 테이블 훈련",
-          startTitle: "집중력 테스트 게임",
+          startTitle: "슐테 테이블 게임",
           startSubtitle: "순차 숫자 찾기 • 확장되는 슐테 격자",
           startButtonText: "훈련 시작",
           getReady: "준비",
@@ -344,8 +345,8 @@ export default function ConcentrationGridPageKo() {
           stageCaption: "확장되는 슐테 격자 매트릭스에서 제한 시간 동안 숫자를 순서대로 빠르게 찾아 터치하세요.",
           rulesTitle: "훈련 규칙 & 점수 체계",
           aboutTitle: "슐테 테이블 & 집중력 격자 상세 안내",
-          aboutLead: "슐테 테이블은 순차 탐색 과정에서 유효 주변 시야를 넓히고 안구 고정 지연 시간을 단축하기 위해 개발된 과학적 인지 도구입니다 (Lu et al., 2022; Rayner, 1998).",
-          aboutText: "집중력 격자는 점진적인 시각 밀집(Visual Crowding) 환경에서 빠른 안구 도약(Saccades)과 선택적 주의 집중을 훈련합니다 (Treisman & Gelade, 1980; Wolfe, 2007).\n\n규칙적인 훈련은 미세 사케드 효율성을 높이고 시각 산만을 억제하여 고도의 집중력을 형성합니다.\n\n45초 고정 세션으로 진행되므로 운에 기댄 난타보다 지속적인 침착성과 정확도가 높은 점수를 결정합니다.",
+          aboutLead: "슐테 테이블은 흩어진 숫자를 순서대로 찾는 시각 탐색 과제로, 탐색 중 시선 고정과 주변 시야 활용을 연습하는 데 쓰입니다 (Lu et al., 2022; Rayner, 1998).",
+          aboutText: "집중력 격자는 점진적인 시각 밀집(Visual Crowding) 환경에서 빠른 안구 도약(Saccades)과 선택적 주의 집중을 훈련합니다 (Treisman & Gelade, 1980; Wolfe, 2007).\n\n규칙적인 연습은 시선 이동과 숫자 변별을 반복하는 기회가 되지만, 집중력 향상이 보장되지는 않습니다.\n\n45초 고정 세션으로 진행되므로 운에 기댄 난타보다 지속적인 침착성과 정확도가 높은 점수를 결정합니다.",
           aboutCards: [
             { title: "누구에게 필요한가요?", text: "속독 능력을 기르고자 하는 학습자, 광범위한 정보 처리가 필요한 운동선수 및 E-스포츠 플레이어.", color: "bg-blue-600" },
             { title: "훈련되는 인지 역량", text: "시각 탐색 속도, 미세 사케드 안구 운동 효율성, 공간 스캐닝 규율, 지속적 주의 집중력.", color: "bg-emerald-600" },

@@ -5,7 +5,18 @@ Trigger for a new chat: `Continue docs/seo/HANDOFF_LOCAL_SEO_CATEGORY.md`
 Read this file first, then `docs/seo/HANDOFF_DEMAND_RESEARCH.md` (tooling + rules), `docs/seo/GLOBAL_PAGE_SEO_AEO_GEO_STANDARD.md`, `docs/seo/NO_TRANSLATION_NATIVE_SEARCH_MANDATE.md`.
 Update the LOG section at the end of every step. Never leave work only in chat.
 
-## >>> RESUME HERE (2026-11-12 save, credits) - do these in order <<<
+## >>> RESUME HERE (2026-11-12 NIGHT save) - do these in order <<<
+
+STATE: everything committed LOCALLY on main (latest WIP commits 139d701b..592a6396), NOT pushed. Never commit middleware.js (not ours; owner asked about it, no answer yet).
+DONE + LIVE: reaction-speed, fps, motor(+keyboard tester).
+DONE, NOT PUSHED: PHYSICAL (84/84 audit OK, runtime smoke PASS 36 pages) + VISUAL (all 7 Phase B groups, h1-subtitle fix 15 clients, drillNames visual synced, EN distance-judgment/ghosting/peripheral honesty fixes).
+1. VISUAL final audit: re-run if no result recorded below: all visual routes x 7 locales via `bash docs/seo/tools/aud.sh <loc>/drills/visual...` + grep aggregateRating/sub-millisecond. Open visual items: docs/seo/research/visual-2026-11/_COORDINATOR_PENDING.md (multiple-targets ko/ja 주변시/周辺視野 kept by KOREA rule; toggles English-only on localized pursuit pages).
+2. COGNITIVE+MEMORY PHASE B RUNNING (7 agents, brief docs/seo/research/cogmem-2026-11/_AGENT_BRIEF_PHASE_B.md, groups 1-7). Resume: per page docs/seo/research/cogmem-2026-11/_passB_<drill>.log (hubs: _passB_hub-cognitive/_passB_hub-memory) - 6 lines = done. Relaunch ONLY unfinished groups with the same brief + "resume: skip logged locales". If an agent died by rate limit, SendMessage it after reset instead.
+3. After Phase B: sync card names (agents' reports) into lib/i18n/drillNames.js cognitive+memory blocks; audit 102 locale + 17 EN pages; red-flag grep; commit.
+4. ASK OWNER to push (physical + visual + cognitive/memory in one deploy) -> cache-busted curl check -> Bing submit (quota) -> GSC Request-Indexing list for owner.
+5. Then: keyword_tracker snapshot in ~4 weeks; KOREA drop watch (do not touch ko pages pos<=10).
+
+## (older) RESUME HERE (2026-11-12 save, credits)
 
 STATE: committed locally, NOT pushed. Commits: e80b3786 (physical 72 pages + 404 group redirects) + the 2026-11-12 save commit (registry/tracker, visual research, should-fix pass). middleware.js edit is NOT ours - never commit it.
 

@@ -459,10 +459,10 @@ export default function ColorSequenceClient({ copy = null }) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               {copy?.title || t('colorSequence.title', 'Color Memory Game')}
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1">
-                {copy?.subtitle || t('colorSequence.subtitle', 'Simon Game Online & Visual Working Memory Sequence Test')}
-              </span>
             </h1>
+            <p data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1">
+              {copy?.subtitle || t('colorSequence.subtitle', 'Simon Game Online & Visual Working Memory Sequence Test')}
+            </p>
           </div>
         )}
 

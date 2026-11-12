@@ -72,11 +72,11 @@ const RULES_ITEMS = [
   { num: "4", text: "Wrong Tap", highlight: "Accuracy Penalty", result: "Warning flash continues" }
 ];
 
-const ABOUT_TEXT = `Concentration Grid is a foundational cognitive training drill designed to measure and improve visual search speed, spatial awareness, and sustained attention under time pressure. Originating from sports psychology performance labs, grid scanning exercises are widely used by elite athletes, pilots, and esports competitors to sharpen rapid visual information processing and mental focus.
+const ABOUT_TEXT = `Concentration Grid is a foundational cognitive training drill designed to measure and improve visual search speed, spatial awareness, and sustained attention under time pressure. Grid scanning exercises of this kind appear in sports psychology handbooks as a simple way to practise rapid visual search and focus.
 
-By systematically scanning numbers in numerical sequence across expanding grids, players train micro-saccadic eye movement efficiency and peripheral target recognition. Regular practice enhances visual search discipline, suppresses cognitive distraction, and builds concentration stamina under high-speed competitive conditions.
+By systematically scanning numbers in numerical sequence across expanding grids, players train micro-saccadic eye movement efficiency and peripheral target recognition. Regular practice gives you repeated reps of disciplined scanning under time pressure; it is a practice tool, not a guaranteed way to improve concentration.
 
-Because the session runs on a single fixed 45-second clock with no time bonuses or penalties, the drill rewards sustained accuracy over lucky bursts of speed — one careless tap costs a life, and every second spent hesitating is time you can't get back, making peak grid size and total grids cleared the truest measures of your focus stamina.`;
+Because the session runs on a single fixed 45-second clock with no time bonuses or penalties, the drill rewards sustained accuracy over lucky bursts of speed — a wrong tap flashes red and lowers your accuracy (it costs no points or time), and every second spent hesitating is time you can't get back, making peak grid size and total grids cleared the truest measures of your focus stamina.`;
 
 // ============================================================
 // MAIN COMPONENT

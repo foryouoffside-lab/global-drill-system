@@ -494,8 +494,8 @@ export default function PathTracingClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "Path Tracing Memory Test"}</span>
               {copy?.h1Suffix || null}
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Path tracing memory test for watching spatial routes, retracing them in order, and improving visual recall"}</span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Path tracing memory test for watching spatial routes, retracing them in order, and improving visual recall"}</p>
           </div>
         )}
 
@@ -760,10 +760,10 @@ export default function PathTracingClient({ copy = null }) {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {(copy?.rulesItems || [
-                { num: "1", text: "Memorize & Retrace Path Sequence", highlight: "+150 PTS", result: "Level Up (+1 Step)" },
+                { num: "1", text: "Memorize & Retrace Path Sequence", highlight: "+150 PTS", result: "Level Up (+1 Step); 10s to retrace" },
                 { num: "2", text: "Level Progression", highlight: "Grid 3x3 → 7x7", result: "Difficulty naturally scales" },
                 { num: "3", text: "Miss / Timeout", highlight: "Zero Penalties", result: "No score or time loss" },
-                { num: "4", text: "Difficulty Never Drops", highlight: "Stays at Current Level", result: "A miss just replays the round" }
+                { num: "4", text: "Difficulty Never Drops", highlight: "Stays at Current Level", result: "A miss starts a new path of the same length" }
               ]).map((r, i) => (
                 <DrillRuleItem key={i} num={r.num} text={r.text} highlight={r.highlight} result={r.result} />
               ))}
@@ -784,10 +784,10 @@ export default function PathTracingClient({ copy = null }) {
                     <Brain className="w-4 h-4 text-amber-400" /> What Is Path Tracing Training?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Path Tracing Training</strong> is an advanced spatial sequence memory drill designed to measure route tracing capacity. The <strong>Path Tracing drill</strong> demonstrates animated step paths on 3x3 to 7x7 matrices, testing your ability to lock in and retrace directional routes in exact order. The Corsi block-tapping task, the standard measure of spatial span, puts most adults around five to seven steps (Milner, 1971; Corsi, 1972), and it draws on a different store from verbal digit span (Logie, 1995).
+                    <strong>Path Tracing Training</strong> is an advanced spatial sequence memory drill designed to measure route tracing capacity. The <strong>Path Tracing drill</strong> demonstrates animated step paths on 3x3 to 7x7 matrices, testing your ability to lock in and retrace directional routes in exact order. Each step moves to an adjacent tile and never revisits one, so it works like a Corsi-style block-tapping task (Milner, 1971; Corsi, 1972) laid out on a grid; it is practice, not the clinical test.
                   </p>
                   <p className="text-sm leading-relaxed">
-                    By practicing <strong>sequential spatial chunking</strong>, you expand your visual short-term memory buffer and increase your route navigation speed under time pressure.
+                    The 60-second clock runs only while you retrace; the path demonstration is untimed. Grouping steps into <strong>directional chunks</strong> is the main strategy for holding longer paths.
                   </p>
                 </section>
   
