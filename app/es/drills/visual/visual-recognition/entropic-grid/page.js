@@ -14,7 +14,6 @@ export const metadata = {
   keywords: [
     "concentración en cuadrícula",
     "escaneo visual",
-    "test de concentración visual",
     "encontrar el código",
     "cuadrícula de códigos",
   ],
