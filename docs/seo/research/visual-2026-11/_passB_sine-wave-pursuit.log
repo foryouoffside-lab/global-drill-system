@@ -1,0 +1,6 @@
+ko | 사인파 안구 추적 훈련 (kept) | ko.md no-demand descriptive | body rebuilt to code: horizontal back-and-forth on fixed sine curve (~220 px/s at 1.0x, amplitude ~28% height), no score; grammar; dateModified | audit OK
+ja | サイン波の眼球追従トレーニング (kept, map KEEP GSC p5.2: title/H1 untouched) | ja.md | body/FAQ: false "horizontal+vertical", "records lag/phase error" claims removed, fake benchmarks removed; dateModified | audit OK
+de | Sinuswellen-Blickverfolgung (kept) | de.md keep | full rebuild: false phase-error measurement + fake gain benchmarks removed; dateModified | audit OK
+fr | Exercice de poursuite oculaire sinusoïdale (kept) | fr.md keep | full rebuild: false décalage de phase measurement + fake table removed; dateModified | audit OK
+pt | Rastreamento ocular senoidal (kept) | pt.md keep | full rebuild: false phase-error claim + fake table removed; dateModified | audit OK
+es | Seguimiento ocular sinusoidal (kept) | es.md keep | full rebuild: false desfase claim + fake baremos removed; dateModified | audit OK

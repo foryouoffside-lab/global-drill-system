@@ -1,0 +1,6 @@
+ko | 궤도 급변 시선 추적 훈련 (was 화면 흔들림 추적 훈련 - false: screen never moves) | ko.md no-demand descriptive, GSC 0 | full rebuild to code: straight-line + bounce (+2%/bounce), random abrupt direction/speed changes (x0.8-1.3); dateModified | audit OK
+ja | 軌道が急変する標的の追視トレーニング (was 視界ブレ追従 - false) | ja.md no-demand descriptive | full rebuild, fake benchmarks + "records reacquisition time" removed; dateModified | audit OK
+de | Blickfolge bei plötzlichem Kurswechsel (was Sichtfeldwechsel - false; avoids directional-chaos "Richtungswechsel") | de.md descriptive | full rebuild; dateModified | audit OK
+fr | Poursuite visuelle à trajectoire changeante (was "saut spatial" - target never jumps) | fr.md descriptive | full rebuild; dateModified | audit OK
+pt | Rastreamento visual com mudança espacial (kept) | pt.md keep | full rebuild: false "campo visual muda"/reaction-time claims removed; dateModified | audit OK
+es | Seguimiento visual con cambio espacial (kept) | es.md keep | full rebuild: false "cambia el campo visual" claims removed; dateModified | audit OK
