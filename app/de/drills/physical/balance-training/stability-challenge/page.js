@@ -4,382 +4,176 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Germany (DE / DE)
-// Native SERP intent: Aim-Trainer kostenlos online, Maus-Präzision, Fadenkreuz stabilisieren
-// Target Queries:
-//   - "Maus Präzision Testen Online" (Mouse precision test online)
-//   - "Maus Stabilitätstest Online" (Mouse stability test)
-//   - "Mauszeiger Zittern Beseitigen" (Eliminate cursor tremor/jitter)
-//   - "Gleichgewichtssinn Trainieren Online" (Balance and equilibrium training)
-//   - "Recoil Kontrolle Übungen" (Recoil control training)
-//   - "Hand Auge Koordination Training" (Hand-eye coordination training)
-// ============================================================
+const url = 'https://skilldrills.online/de/drills/physical/balance-training/stability-challenge';
+const title = 'Maus-Stabilitätstest: Fadenkreuz im Ring halten | SkillDrills';
+const description = 'Kostenloser Maus-Stabilitätstest: Ein wechselnder Wind schiebt dein Fadenkreuz weg. Gleiche die Drift 45 Sekunden lang aus und bleib im schrumpfenden Ring.';
 
 export const metadata = {
-  title: 'Maus-Stabilitätstest | Aim präzise halten | SkillDrills',
-  description: 'Kostenloser Browser-Drill für stabile Mausführung. Halte das Fadenkreuz gegen bewegte Kräfte zentriert und trainiere Jitter- sowie Recoil-Kontrolle.',
-  keywords: [
-    'aim trainer kostenlos online',
-    'maus präzisionstest online',
-    'mauszeiger zittern beseitigen',
-    'fadenkreuz stabilisieren',
-    'recoil kontrolle übung',
-    'aim stabilität trainieren',
-    'maus tracking test',
-    'hand auge koordination training',
-    'cursor stabilität test',
-    'maus ruhig halten',
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/de/drills/physical/balance-training/stability-challenge',
-    languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Maus-Stabilitätstest | Aim präzise halten | SkillDrills',
-    description: 'Halte das Fadenkreuz zentriert und trainiere Maus-Jitter, Recoil-Kontrolle und präzise Zielsteuerung im kostenlosen Browser-Drill.',
-    url: 'https://skilldrills.online/de/drills/physical/balance-training/stability-challenge',
-    siteName: 'SkillDrills',
-    locale: 'de_DE',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: 'Maus-Stabilitätstest | Aim präzise halten | SkillDrills',
-    description: 'Halte das Fadenkreuz zentriert und trainiere Maus-Jitter, Recoil-Kontrolle und präzise Zielsteuerung im kostenlosen Browser-Drill.',
-  },
+  title,
+  description,
+  keywords: ['Maus-Stabilitätstest', 'Fadenkreuz im Ring halten', 'Wind-Drift ausgleichen', 'Cursor-Stabilität', 'Maus Stabilität Spiel'],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'de_DE', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Körper- & Motorik-Hub",
-      "item": "https://skilldrills.online/de/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Gleichgewichtstraining",
-      "item": "https://skilldrills.online/de/drills/physical/balance-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Maus-Präzision & Stabilitätstest",
-      "item": "https://skilldrills.online/de/drills/physical/balance-training/stability-challenge"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Start', item: 'https://skilldrills.online/de' },
+    { '@type': 'ListItem', position: 2, name: 'Physische Drills', item: 'https://skilldrills.online/de/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Maus-Stabilitätstest', item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Balance_(ability)"],
-  "name": "Maus-Präzision & Stabilitätstest",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Kostenloses Online-Tool zur Messung der Maus-Stabilität und posturalen Gleichgewichtskontrolle gegen dynamische Auslenkungs- und Windkraftvektoren.",
-  "url": "https://skilldrills.online/de/drills/physical/balance-training/stability-challenge",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/de"
-  },
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Maus-Stabilitätstest',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'Browser mit HTML5 Canvas und Pointer Lock, Maus',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
+  inLanguage: 'de',
+  dateModified: '2026-11-10',
 };
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Maus-Präzision & Stabilitäts-Trainer",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Requires HTML5 Canvas and JavaScript enabled browser with Pointer Lock support",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const faqs = [
+  {
+    q: 'Was ist der Maus-Stabilitätstest?',
+    a: 'In der Bildmitte liegt ein Sicherheitsring. Eine Art Wind schiebt dein Fadenkreuz ständig nach außen, und du gleichst die Drift mit der Maus aus, um 45 Sekunden lang im Ring zu bleiben. Es ist ein Drill für Cursor-Stabilität.',
   },
-  "url": "https://skilldrills.online/de/drills/physical/balance-training/stability-challenge",
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Stabilitäts-Challenge - Maus-Präzision & Recoil-Drill",
-  "url": "https://skilldrills.online/de/drills/physical/balance-training/stability-challenge",
-  "description": "Präzises Maus-Stabilisierungsspiel gegen dynamische stochastische Kraftvektoren für verbesserte FPS-Recoil-Kontrolle.",
-  "genre": [
-    "Action",
-    "Precision Drill",
-    "Balance Training",
-    "Motor Control"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop"
-  ],
-  "applicationCategory": "Game",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+  {
+    q: 'Wie werden Punkte vergeben?',
+    a: 'Solange das Fadenkreuz im Ring ist, steigt die Combo alle 0,15 Sekunden um 1 und du erhältst 15 Punkte × Combo-Multiplikator. Der Multiplikator beginnt bei Combo 3 mit 1,1x und erreicht bei Combo 50 das Maximum von 3,0x. Klicken ist nicht nötig.',
   },
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
-};
+  {
+    q: 'Was passiert, wenn ich aus dem Ring gedrückt werde?',
+    a: 'Die Combo fällt auf 0 und ein roter Blitz erscheint (per Schalter im Spiel abschaltbar). Punkte und Zeit werden nicht abgezogen. Sobald du wieder im Ring bist, baust du die Combo neu auf.',
+  },
+  {
+    q: 'Wie steigt die Schwierigkeit?',
+    a: 'Das Level steigt alle 250 Punkte und zusätzlich bei langen Serien im Ring, ohne Obergrenze. Der Ring schrumpft von 45 px bis auf mindestens 16 px, und die Windstärke beginnt bei 250 und wächst weiter (850 auf Level 15).',
+  },
+  {
+    q: 'Misst der Test Gleichgewicht oder Gesundheit?',
+    a: 'Nein. Es ist ein Mausspiel und misst oder diagnostiziert weder Gleichgewicht noch Gesundheitszustand. Wenn dich körperliche Beschwerden beunruhigen, wende dich an medizinisches Fachpersonal.',
+  },
+  {
+    q: 'Wie wird die Note berechnet?',
+    a: 'Deine Endpunktzahl wird mit einem SkillDrills-Referenzwert von 17.000 Punkten verglichen. Ungefähr ab 9.563 Punkten gibt es A, ab 12.283 S und ab 15.342 S+. Das sind Übungsstufen, keine Nutzerstatistik und keine Perzentile.',
+  },
+  {
+    q: 'Hilft mir das in Shootern?',
+    a: 'Das lässt sich nicht garantieren. Du übst kleine, laufende Korrekturen gegen eine Drift, aber Rückstoßmuster und Empfindlichkeit im Spiel sind anders. Ein Transfer ist nicht belegt.',
+  },
+  {
+    q: 'Funktioniert der Test auf dem Handy?',
+    a: 'Nein, er braucht eine Maus und Pointer Lock und startet nicht auf reinen Touch-Geräten. Mit der Escape-Taste beendest du den Drill und kehrst zum Startbildschirm zurück.',
+  },
+  {
+    q: 'Wo werden meine Ergebnisse gespeichert?',
+    a: 'Bestwert, beste Combo und höchstes Level werden nur im lokalen Speicher deines Browsers abgelegt. Der Test ist kostenlos und ohne Anmeldung.',
+  },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "de",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Welche neuromuskulären Fähigkeiten misst der Maus-Stabilitätstest?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Test misst die posturale Gleichgewichtskontrolle (Postural Equilibrium), die antagonistische Ko-Kontraktion der Unterarmmuskeln sowie die Fähigkeit zur hochfrequenten visuellen Closed-Loop-Mikrokorrektur (in Intervallen von 150 bis 200 ms) gegen unvorhersehbare Kraftvektoren."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie funktionieren die dynamischen Windkraft-Vektoren in diesem Drill?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Während der gesamten 45-Sekunden-Sitzung erzeugen stochastische Beschleunigungsvektoren eine kontinuierliche Kraft, die das Fadenkreuz aus dem geometrischen Zentrum drückt. Der Anwender muss mit dosierter Gegenbewegung der Maus einen entgegengesetzten Ausgleichsimpuls erzeugen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche biomechanischen Modelle erklären die Kraftkompensation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das Verfahren basiert auf Nashner & McCollums (1985) posturalem Synergiemodell sowie David A. Winters (1995) biomechanischen Gleichgewichtsprinzipien. Bei Störungen reguliert das zentrale Nervensystem Gelenkmomente blitzschnell, um ein Ausbrechen des Schwerpunkts zu verhindern."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie skaliert die Schwierigkeit über die 15 Progressions-Level?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Alle 250 Punkte steigt das Level. Dabei verengt sich der Radius des Sicherheitskreises von anfänglich 45 Pixeln auf nur noch 20 Pixel, während die abdrängende Windkraft von 250 auf bis zu 850 Krafteinheiten ansteigt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was geschieht, wenn das Fadenkreuz den Sicherheitskreis verlässt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Beim Verlassen des Rings blinkt ein roter Warnrahmen auf und der aktive Combo-Multiplikator wird unmittelbar auf 1.0x zurückgesetzt. Es gibt keinen Punktabzug und keinen Zeitverlust, sodass eine sofortige Rückkehr ins Zentrum belohnt wird."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie lässt sich Woodworths Closed-Loop-Modell auf das Zielen anwenden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Robert S. Woodworth (1899) wies nach, dass zielgerichtete Motorik aus einem initialen ballistischen Impuls und kontinuierlicher visuell gesteuerter Stromkontrolle (Current Control) besteht. Dieser Drill schult genau diese kontinuierliche Feedback-Korrektur."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie überträgt sich dieses Training auf das Recoil-Verhalten in CS2, Valorant und Apex?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Waffenrückstoß (Spray Patterns) übt eine kontinuierliche Aufwärts- und Seitwärtsverschiebung auf das Fadenkreuz aus. Das kontinuierliche Gegensteuern gegen Auslenkungsvektoren bildet das Muskelgedächtnis für gleichmäßiges, präzises Pull-Down-Kompensieren."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Mausempfindlichkeit (DPI) und Griffart sind für Stabilitätstests optimal?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Empfohlen wird eine mittlere bis niedrige Empfindlichkeit (400 bis 800 DPI bei 30–45 cm/360°). Niedrige DPI-Werte dämpfen unbeabsichtigtes Muskelzittern. Ein Palm-Grip oder Claw-Grip mit aufliegendem Unterarm bietet die stabilste Reibungsfläche."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie vermeidet man Muskelverkrampfungen im Unterarm bei starker Windkraft?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Vermeide ein zu festes Umklammern der Maus. Halte eine leichte, elastische Grundspannung in den Beuge- und Streckmuskeln des Unterarms aufrecht und nutze die Oberflächenreibung des Mauspads durch sanften Druck nach unten als Bremskraft."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist der Stabilitätstest vollkommen kostenlos und bleiben meine Daten privat?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Der Stabilitätstest auf SkillDrills ist 100% kostenlos und läuft vollständig in deinem Browser. Sämtliche Bestwerte und Messdaten werden ausschließlich lokal im Browser-Speicher (localStorage) abgelegt und niemals extern verarbeitet."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'de',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "4-Stufen-Trainingsprotokoll für Maus-Stabilität & Vektor-Kompensation",
-  "description": "Wissenschaftlich fundierte Schritte zur Beherrschung stochastischer Auslenkungskräfte und Maximierung des Combo-Multiplikators.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Pointer Lock aktivieren und Fadenkreuz im Sicherheitskreis zentrieren",
-      "text": "Klicke auf Start, um den Pointer Lock zu aktivieren, und positioniere das Fadenkreuz im grünen Sicherheitsring.",
-      "url": "https://skilldrills.online/de/drills/physical/balance-training/stability-challenge#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Kraftvektoren wahrnehmen und entgegengesetzt ausgleichen",
-      "text": "Erkenne visuell, in welche Richtung die Windkraft das Fadenkreuz abdrängt, und führe die Maus mit gleichmäßiger Gegenkraft zurück.",
-      "url": "https://skilldrills.online/de/drills/physical/balance-training/stability-challenge#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Dauerhafte Zentrierung für bis zu 3.0x Combo-Multiplikator halten",
-      "text": "Verbleibe ohne Ausbrechen im Sicherheitskreis, um den Multiplikator auf maximal 3.0x zu steigern und den Highscore zu maximieren.",
-      "url": "https://skilldrills.online/de/drills/physical/balance-training/stability-challenge#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Kreisverengung und Sturmbeschleunigung mit Mikrostopps abfangen",
-      "text": "In den höheren Levels ab Stufe 12 verengt sich der Kreis auf 20px – nutze dosierten Reibungsdruck nach unten, um Überschwingen zu verhindern.",
-      "url": "https://skilldrills.online/de/drills/physical/balance-training/stability-challenge#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'So funktioniert der Maus-Stabilitätstest',
+  description: 'In vier Schritten das Fadenkreuz gegen den Wind im Ring halten.',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Starten', text: 'Nach dem Start läuft ein 3-Sekunden-Countdown, danach wird Pointer Lock aktiviert.' },
+    { '@type': 'HowToStep', position: 2, name: 'Drift lesen', text: 'Beobachte, wohin das Fadenkreuz gedrückt wird, und bewege die Maus leicht in die Gegenrichtung.' },
+    { '@type': 'HowToStep', position: 3, name: 'Im Ring bleiben', text: 'Je länger du im Ring bleibst, desto höher steigen Combo und Multiplikator.' },
+    { '@type': 'HowToStep', position: 4, name: 'Auf den kleineren Ring reagieren', text: 'Mit steigendem Level wird der Ring kleiner und der Wind stärker – korrigiere früher und feiner.' },
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
-const stabilityGuideDe = {
-  heading: "Maus-Stabilität & Kraftvektor-Kompensation: Biomechanischer Leitfaden",
-  subtitle: "Posturale Synergien, Closed-Loop-Mikrokorrekturen und Antagonisten-Ko-Kontraktion zur Beseitigung von Mauszeiger-Zittern",
+const guide = {
+  heading: 'Maus-Stabilitätstest: Anleitung',
   intro: [
-    "Die Stabilitäts-Challenge (Stability Challenge) ist ein präziser kontinuierlicher Korrektur-Drill, bei dem das Fadenkreuz gegen stochastische externe Kraftvektoren ununterbrochen im geometrischen Zentrum gehalten werden muss. Im Gegensatz zu isolierten Flick-Schüssen erfordert diese Aufgabe über 45 Sekunden hinweg eine ununterbrochene sensorisch-motorische Reaktionsschleife im visuell-motorischen Kortex.",
-    "In der Bewegungswissenschaft folgt zielgerichtetes Stabilisieren Robert S. Woodworths (1899) 'Zwei-Komponenten-Modell': Einem initialen Impuls folgt eine kontinuierliche Closed-Loop-Regulierung mit visuellem Feedback in Zyklen von 150 bis 200 ms. Gemäß Nashner & McCollums (1985) posturalem Synergiemodell und David A. Winters (1995) Gelenkmoment-Regulierung ist die synchrone Ko-Kontraktion (Co-contraction) von Beuge- und Streckmuskeln des Unterarms der entscheidende Schlüssel, um unvorhersehbare Auslenkungsimpulse stoßfrei abzufedern.",
-    "Nach dem Fitts'schen Gesetz (Fitts, 1954) steigt die motorische Schwierigkeit (Index of Difficulty) logarithmisch an, sobald sich die Zielgröße halbiert. Dieser Drill verengt den Sicherheitsradius graduell von 45 auf 20 Pixel und beschleunigt gleichzeitig die Abdrängkraft von 250 auf 850 Einheiten, um eSports-taugliche Bremskontrolle und belastbares Muskelgedächtnis für Waffen-Recoil aufzubauen.",
-    "Hinweise zu Zeitmessung & Hardware: Dieser Drill nutzt die hochpräzise Browser-Uhr performance.now() für Zeitmessungen. Abhängig von der Display-Bildwiederholrate (60Hz = 16,7ms / 144Hz = 6,9ms / 240Hz = 4,1ms) und der Maus-Abtastrate (125Hz vs. 1000Hz Polling) treten minimale Quantisierungsverzögerungen auf (Woods et al., 2015). Alle Bestwerte verbleiben privat in deinem lokalen Browser-Speicher."
+    'Beim Maus-Stabilitätstest schiebt ein Wind mit zufällig wechselnder Richtung dein Fadenkreuz aus der Bildmitte. Du gleichst die Wind-Drift mit der Maus aus und hältst das Fadenkreuz im Ring. Eine Runde dauert fest 45 Sekunden.',
+    'Schnelle Zielbewegungen werden als grobe Bewegung mit anschließender, visuell gesteuerter Feinkorrektur beschrieben (Woodworth, 1899). Dieser Drill lässt dich diese Feinkorrektur ohne Pause wiederholen; je kleiner der Ring, desto genauer muss sie sein (Fitts, 1954).',
+    'Es ist ein Spiel für Cursor-Stabilität und misst weder Gleichgewicht noch Gesundheit. Vergleiche deine Ergebnisse nur mit eigenen Runden auf derselben Maus, Empfindlichkeit und demselben Monitor; Bildwiederholrate und Polling-Rate beeinflussen die Eingabeverzögerung (Woods et al., 2015).',
   ],
   benchmarks: {
-    title: "Maus-Präzision & Stabilitäts-Benchmarks (5 Leistungsstufen)",
-    headers: ["Leistungsstufe & Tier", "Rang-Titel", "Punkte-Benchmark", "Erreichtes Level", "Sicherheitszonen-Halterate", "Neuromuskuläres Profil"],
+    title: 'SkillDrills-Übungsstufen',
+    headers: ['Note', 'Punkte', 'Anzeige'],
     rows: [
-      ["Tier 1: Apex Stabilisator", "Apex Stabilizer", "15.300+ Punkte", "Level 12 – 15", "> 94% Halterate", "Fortgeschrittene Antagonisten-Ko-Kontraktion und präzise Mikrostopp-Kontrolle (Nashner & McCollum, 1985)"],
-      ["Tier 2: Meister-Anker", "Master Anchor", "12.000 – 15.299 Punkte", "Level 9 – 11", "86 – 93% Halterate", "Exzellente Vektor-Kompensation und unerschütterliche Fadenkreuz-Zentrierung (Winter, 1995)"],
-      ["Tier 3: Erfahrener Konterer", "Proficient Counterer", "9.500 – 11.999 Punkte", "Level 6 – 8", "75 – 85% Halterate", "Gehobener Wettkampf-Standard mit verlässlicher Gleichgewichtskontrolle und schneller Rückkehr"],
-      ["Tier 4: Intermediärer Kern", "Intermediate Core", "6.000 – 9.499 Punkte", "Level 3 – 5", "60 – 74% Halterate", "Vorübergehendes Abdriften bei Kraftspitzen, gezieltes Unterarm-Bremstraining empfohlen"],
-      ["Tier 5: Einsteiger / Unruhig", "Novice Perturbed", "< 6.000 Punkte", "Level 1 – 2", "< 60% Halterate", "Verkrampfte Handgelenkshaltung und deutliches Überschwingen (Overshooting), DPI-Anpassung ratsam"]
+      ['S+', 'ab 15.342', 'LEGENDARY'],
+      ['S', '12.283 – 15.341', 'Elite'],
+      ['A', '9.563 – 12.282', 'Excellent'],
+      ['B', '6.120 – 9.562', 'Great'],
+      ['C', '3.443 – 6.119', 'Good'],
+      ['D', '1.530 – 3.442', 'Keep Going'],
+      ['F', 'unter 1.530', 'Needs Practice'],
     ],
-    note: "Integrierter Standard basierend auf posturaler Störungsforschung (Nashner & McCollum 1985; Winter 1995) und Closed-Loop-Bewegungsregelung (Woodworth 1899; Woods et al. 2015)."
+    note: 'Die Noten vergleichen die Endpunktzahl mit dem Referenzwert von 17.000 Punkten. Es sind SkillDrills-Übungsstufen, keine Nutzerstatistik, keine Perzentile und keine medizinischen Normen.',
   },
   techniques: {
-    title: "Praxis-Protokolle zur Beseitigung von Maus-Zittern & Maximierung der Bremskraft",
+    title: 'Vier Tipps, um länger im Ring zu bleiben',
     items: [
-      {
-        name: "Antagonistische Ko-Kontraktion des Unterarms (Antagonist Co-contraction)",
-        desc: "Gemäß dem Synergiemodell von Nashner & McCollum (1985) erfordert das Ausgleichen unberechenbarer Kräfte eine simultane Grundspannung in Beugern und Streckern des Unterarms zur Erhöhung der Gelenksteifigkeit.",
-        tips: "Umfasse die Maus nicht krampfhaft, sondern halte eine kontinuierliche Grundspannung von etwa 20–30% im gesamten Unterarm, um Stöße geschmeidig zu absorbieren."
-      },
-      {
-        name: "Kontinuierliche Closed-Loop-Visus-Rückkopplung (Closed-loop Visual Feedback)",
-        desc: "Wie Woodworth (1899) zeigte, ist das Halten einer Position kein einmaliger Entschluss, sondern ein fortlaufender Korrekturzyklus alle 150 bis 200 ms.",
-        tips: "Fixiere nicht starr den Fadenkreuzpunkt, sondern beobachte den Abstand zwischen Zielkreisrand und Fadenkreuz, um Abdriften blitzschnell wahrzunehmen."
-      },
-      {
-        name: "Mittlere bis niedrige eDPI-Kalibrierung (400–800 DPI)",
-        desc: "Hohe Empfindlichkeit verstärkt natürliches Muskelzittern (Tremor) auf dem Bildschirm und führt bei plötzlichen Kraftspitzen zu heftigem Überschwingen.",
-        tips: "Wähle einen Bereich von 30 bis 45 cm pro 360°-Drehung und sorge für eine breite Auflagefläche des Unterarms auf dem Schreibtisch."
-      },
-      {
-        name: "Vertikaler Anpressdruck auf das Mauspad (Vertical Downward Friction Braking)",
-        desc: "In höheren Stufen reicht reine Muskelkraft oft nicht aus, um die Maus bei schnellen Richtungswechseln sofort abzustoppen.",
-        tips: "Drücke den Handballen und die Fingerspitzen bei Ausgleichsbewegungen leicht nach unten auf das Mauspad, um die Reibung als natürliche Bremse zu nutzen."
-      }
-    ]
+      { name: 'Aus der Mitte starten', desc: 'Während des Countdowns steht das Fadenkreuz in der Mitte. Mach zu Beginn keine großen Bewegungen, sondern lies zuerst die Drift.', tips: 'Die ersten Sekunden gehören der Richtung, nicht den Punkten.' },
+      { name: 'Früh und klein korrigieren', desc: 'Wer erst am Ringrand kräftig zurückzieht, schießt leicht auf die andere Seite. Korrigiere, sobald die Drift einsetzt.', tips: 'Achte auf den Abstand zwischen Ringmitte und Fadenkreuz.' },
+      { name: 'Auf Windwechsel gefasst sein', desc: 'Die Windrichtung wechselt zufällig und dreht dann allmählich. Bleib locker, damit die Korrektur nicht plötzlich zu groß wird.', tips: 'Verkrampfte Hand und Unterarm machen das Fadenkreuz unruhiger.' },
+      { name: 'Die Combo schützen', desc: 'Der Multiplikator erreicht bei Combo 50 sein Maximum von 3,0x. Jeder Austritt setzt die Combo auf 0, daher bringt ruhiges Halten mehr als hektische Korrekturen.', tips: 'Die Zahl der Austritte steht im Ergebnis unter Blowouts.' },
+    ],
   },
   steps: [
-    "Passe deine Ingame-Empfindlichkeit und DPI konsistent an und aktiviere den Pointer Lock.",
-    "Positioniere das Fadenkreuz im grünen zentralen Sicherheitskreis.",
-    "Sobald die Windkraft das Fadenkreuz verschiebt, führe die Maus mit sanfter Gegenkraft in die entgegengesetzte Richtung.",
-    "Halte das Fadenkreuz im Ring, um den Combo-Multiplikator auf bis zu 3.0x zu maximieren.",
-    "Nutze bei schrumpfendem Kreis und Sturmbeschleunigung die Oberflächenreibung des Mauspads für präzise Mikrostopps."
+    'Starte mit deiner gewohnten Maus und Empfindlichkeit.',
+    'Bewege die Maus leicht entgegen der Richtung, in die das Fadenkreuz gedrückt wird.',
+    'Bleib im Ring und baue Combo und Multiplikator auf.',
+    'Prüfe nach 45 Sekunden Note, Stabilität in %, Austritte und höchstes Level.',
   ],
-  audience: "FPS-Spieler (Valorant, CS2, Apex Legends), Anwender mit zitterndem Mauszeiger sowie Personen, die ihre Hand-Auge-Koordination, Feinmotorik und das Gleichgewichtsgefühl gezielt trainieren möchten.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('nashner1985', 'winter1995', 'woodworth1899', 'fitts1954', 'woods2015'),
-  related: [
-    { href: "/de/drills/physical/coordination/complex-pattern", label: "Komplexe Bewegungsmuster-Koordination" },
-    { href: "/de/drills/physical/coordination/cross-body-movement", label: "Diagonale Körperkoordination" },
-    { href: "/de/drills/physical/reflex-training/reaction-chain", label: "Reaktionsketten-Stopptraining" },
-    { href: "/de/drills/physical/reflex-training/quick-dodge", label: "Schnelles Ausweichen & Reflexe" }
-  ]
+  audience: 'Spieler, die üben wollen, ein Fadenkreuz gegen eine Drift ruhig zu halten, und alle, die ihre Cursor-Stabilität spielerisch ausprobieren möchten.',
+  faqs,
+  sources: pickSources('woodworth1899', 'fitts1954', 'woods2015'),
 };
 
 export default function StabilityChallengeDePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <StabilityChallengeClient
         copy={{
-          title: "Maus-Stabilitätstest",
-          subtitle: "Fadenkreuz stabil halten gegen bewegte Kräfte",
-          rules: [
-            { title: "Sicherheitskreis halten", text: "Halte das Fadenkreuz gegen stochastische Wind- und Kraftvektoren im zentralen Sicherheitsring." },
-            { title: "Combo-Multiplikator aufbauen", text: "Je länger du das Fadenkreuz ununterbrochen im Zentrum stabilisierst, desto höher steigt der Combo-Multiplikator (bis zu 3.0x)." },
-            { title: "Dynamische Schwierigkeitsskalierung", text: "Alle 250 Punkte steigt das Level. Der Sicherheitsring verkleinert sich und die ablenkende Windkraft verstärkt sich kontinuierlich." },
-            { title: "Combo-Reset bei Drift", text: "Verlässt das Fadenkreuz den Sicherheitsring, wird der Combo-Multiplikator auf 1.0x zurückgesetzt – ohne Punktabzug oder Zeitverlust." }
+          title: 'Maus-Stabilitätstest',
+          hudLabels: {
+            score: 'Punkte',
+            time: 'Zeit',
+            getReady: 'Bereit machen',
+            points: 'Punkte',
+            stability: 'Stabilität',
+            blowouts: 'Austritte',
+            maxStreak: 'Beste Combo',
+            peakLevel: 'Höchstes Level',
+            playAgain: 'Nochmal',
+          },
+          rulesTitle: 'Regeln und Punktesystem',
+          rulesItems: [
+            { title: 'Im Sicherheitsring bleiben', text: 'Ein Wind mit zufällig wechselnder Richtung schiebt das Fadenkreuz weg. Gleiche die Drift mit der Maus aus und bleib im Ring.' },
+            { title: 'Combo-Multiplikator (max. 3,0x)', text: 'Im Ring steigt die Combo alle 0,15 s und bringt 15 Punkte × Multiplikator. Bei Combo 50 sind es 3,0x.' },
+            { title: 'Level-Aufstieg', text: 'Alle 250 Punkte und bei langen Serien steigt das Level. Der Ring schrumpft bis 16 px, der Wind wird immer stärker.' },
+            { title: 'Austritt', text: 'Wer aus dem Ring gedrückt wird, verliert die Combo (zurück auf 0). Punkte und Zeit werden nicht abgezogen.' },
           ],
-          aboutTitle: "Über den Stabilitäts-Challenge",
-          aboutHeading: "Maus-Präzision, Antagonisten-Koordination & Recoil-Kontrolle",
-          aboutText: "Dieser Drill trainiert die neuromuskuläre Fähigkeit, dynamische Auslenkungsvektoren in Echtzeit wahrzunehmen und durch sanfte Gegenbewegungen der Maus zu neutralisieren. Perfektioniere deine Fadenkreuz-Stabilität und Waffen-Recoil-Kontrolle in CS2, Valorant und Apex Legends."
         }}
       />
-      <DrillGuide guide={stabilityGuideDe} />
+      <DrillGuide guide={guide} />
       <RelatedDrills />
     </>
   );

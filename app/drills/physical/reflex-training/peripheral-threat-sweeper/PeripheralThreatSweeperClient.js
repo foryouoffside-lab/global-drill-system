@@ -72,7 +72,7 @@ const RULES_ITEMS = [
   { title: "Threat Interception", text: "Click threat node in outer vision to score +100 PTS scaled with combo multiplier (+2s per sweep, max 60s)." },
   { title: "Combo System", text: "Chain unbroken threat sweeps to build combo multiplier up to 3.0x max." },
   { title: "Level Progression", text: "Score increases level continuously. Threat speed & spawn density accelerate dynamically." },
-  { title: "Core Breach / Miss", text: "Missing threat or allowing core breach resets combo streak (and deducts 0.8s if enabled in settings)." }
+  { title: "Core Breach / Miss", text: "Missing threat or allowing core breach resets your combo streak and costs 1 second." }
 ];
 
 // ============================================================
@@ -99,9 +99,9 @@ const ABOUT_SECTIONS = [
   },
   {
     icon: Activity,
-    title: "Useful Field of View & Multi-Vector Bandwidth",
-    subtitle: "Expanding cognitive processing area under high-density spawn rates",
-    content: "As levels scale, spawn intervals compress from 1.4s down to 0.20s, and threat velocities accelerate up to 520 px/s. This expands the functional Useful Field of View (UFOV), conditioning the central nervous system to process multi-vector spatial hazards simultaneously."
+    title: "Several Threats at Once",
+    subtitle: "Higher spawn density as the level rises",
+    content: "As levels scale, spawn intervals compress from 1.4s down to 0.20s, and threat velocities accelerate up to 520 px/s. More threats are on screen at the same time, so you have to watch several directions at once while keeping your eyes on the core. It is a game, not a visual-field test, and it does not claim to widen your field of view."
   }
 ];
 
@@ -648,12 +648,12 @@ export default function PeripheralThreatSweeperClient({ copy = {} } = {}) {
           <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Peripheral Threat Sweeper"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
+            {copy?.subtitle && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy.subtitle}
+              </p>
+            )}
           </div>
         )}
 

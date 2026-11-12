@@ -4,54 +4,36 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Germany (DE / DE)
-// Primary Intent: Lineal-Falltest, Reaktionszeit messen, Reaktionstest online
-// German Context: Klassischer Lineal-Falltest (Schule/Sport) als digitaler Drop-Catch & Go/No-Go-Reflextest
-// High-Demand, Low-Competition Target Keywords:
-//   - "Lineal Fallen Lassen Reaktionszeit" (Classic ruler drop reaction query)
-//   - "Reaktionszeit Lineal Fangen" (Catching ruler reflex measurement)
-//   - "Reaktionszeit Messen Lineal" (Measuring reaction speed via ruler drop)
-//   - "Reaktionstest Online Kostenlos" (Free online reaction test query)
-//   - "Wahlreaktionszeit Test" (Donders Type C choice reaction time query)
-//   - "Fallende Ziele Abfangen" (Gravitational target interception query)
-//   - "Impulskontrolle Reaktionstraining" (Cognitive motor inhibition query)
-//   - "Reflexe Testen Online" (Reflex testing browser query)
-//   - "Optische Reizdiskrimination" (Visual stimulus discrimination query)
-//   - "Go No-Go Test Online" (Inhibitory stop-signal paradigm query)
-// ============================================================
+const url = 'https://skilldrills.online/de/drills/physical/reflex-training/drop-catch';
+const title = "Fallende Ziele fangen: Grün klicken, Rot meiden | SkillDrills";
+const description = "Fallende Ziele fangen im Browser: nur grüne Ziele klicken, rote Köder fallen lassen. +2 s pro Fang, 1 s Abzug bei Fehlern. Kostenlos und ohne Anmeldung spielen.";
 
 export const metadata = {
-  title: "Lineal-Reaktionstest online | Reaktionszeit messen",
-  description: "Kostenloser Lineal-Reaktionstest im Browser: Fange fallende Ziele, meide rote Fallen und übe deine Reaktionszeit in Millisekunden.",
+  title,
+  description,
   keywords: [
-    "Lineal-Falltest",
-    "Reaktionszeit messen",
-    "Reaktionszeit Lineal",
-    "Reaktionstest Online Kostenlos",
-    "Wahlreaktionszeit Test",
-    "Reaktionstest online kostenlos",
-    "fallende Ziele fangen",
-    "Reflexe testen online",
-    "Reaktionsspiel mit fallenden Zielen",
-    "Go-No-Go-Reaktionstest"
+    "Fallende Ziele fangen",
+    "grüne Ziele klicken",
+    "rote Köder ignorieren",
+    "Klickspiel mit fallenden Zielen",
+    "Drop Catch"
   ],
   alternates: {
-    canonical: 'https://skilldrills.online/de/drills/physical/reflex-training/drop-catch',
+    canonical: url,
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Lineal-Reaktionstest online | Reaktionszeit messen",
-    description: "Fange fallende grüne Ziele und meide rote Fallen in einem kostenlosen Browser-Drill für Reaktionszeit und visuelle Auswahl.",
-    url: 'https://skilldrills.online/de/drills/physical/reflex-training/drop-catch',
+    title,
+    description,
+    url,
     siteName: 'SkillDrills',
     locale: 'de_DE',
     type: 'website',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Lineal-Reaktionstest online | Reaktionszeit messen",
-    description: "Fange fallende grüne Ziele und meide rote Fallen in einem kostenlosen Browser-Drill für Reaktionszeit und visuelle Auswahl.",
+    title,
+    description,
   },
   robots: { index: true, follow: true },
 };
@@ -60,278 +42,162 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Physisches Trainingszentrum",
-      "item": "https://skilldrills.online/de/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Reflextraining & Schnelligkeit",
-      "item": "https://skilldrills.online/de/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Lineal-Falltest & Drop-Catch-Reaktionsmessung",
-      "item": "https://skilldrills.online/de/drills/physical/reflex-training/drop-catch"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills Startseite", "item": "https://skilldrills.online/de" },
+    { "@type": "ListItem", "position": 2, "name": "Physisches Training", "item": "https://skilldrills.online/de/drills/physical" },
+    { "@type": "ListItem", "position": 3, "name": "Reflextraining", "item": "https://skilldrills.online/de/drills/physical/reflex-training" },
+    { "@type": "ListItem", "position": 4, "name": "Fallende Ziele fangen", "item": url }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination", "https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "Lineal-Falltest & Drop-Catch-Reflextrainer",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "name": "Drop Catch – Fallende Ziele fangen",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Kostenloses biomechanisches Online-Tool zum Abfangen beschleunigter Fallziele und zur Schulung der präfrontalen Impulskontrolle nach Donders und Logan.",
-  "url": "https://skilldrills.online/de/drills/physical/reflex-training/drop-catch",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/de"
-  },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  description,
+  url,
+  "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/de" },
   "inLanguage": "de",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-10"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Drop-Catch Reaktionsmessungs-Web-App",
+  "name": "Drop Catch – Fallende Ziele fangen (Web-App)",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
-  "browserRequirements": "Moderner Browser mit Unterstützung für HTML5 Canvas und Pointer-Events",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/de/drills/physical/reflex-training/drop-catch",
+  "browserRequirements": "Aktueller Browser mit HTML5-Canvas und Zeigereingabe",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  url,
   "inLanguage": "de",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-10"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Drop Catch: Gravitations-Abfang- und Impulskontrollspiel (Drop Catch)",
-  "url": "https://skilldrills.online/de/drills/physical/reflex-training/drop-catch",
-  "description": "Fange gravitationsbeschleunigte Fallziele ab und entkomme roten Fallen in diesem reaktionsbasierten Präzisionsspiel.",
-  "genre": [
-    "Action Game",
-    "Reflex Game",
-    "Aim Trainer",
-    "Coordination"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
+  "name": "Drop Catch – Fallende Ziele fangen",
+  url,
+  description,
+  "genre": ["Action Game", "Reflex Game"],
+  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  "inLanguage": "de",
+  "dateModified": "2026-11-10",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
+
+const faqs = [
+  {
+    q: "Wie funktioniert das Spiel „Fallende Ziele fangen“?",
+    a: "Von oben fallen Ziele herunter. Du klickst nur die grünen und lässt rote Köder ungeklickt durchfallen. Jeder grüne Fang bringt 100 Punkte (mit Combo- und Level-Multiplikator) und +2 Sekunden, höchstens bis 60 Sekunden. Die Runde startet mit 45 Sekunden."
+  },
+  {
+    q: "Ist das der Lineal-Falltest aus dem Sportunterricht?",
+    a: "Nein. Beim Lineal-Falltest wird ein echtes Lineal gefangen und aus der Fallstrecke eine Reaktionszeit berechnet. Dieses Spiel misst keine Reaktionszeit: Du unterscheidest Farben und klickst nur Grün, das Ergebnis ist eine Punktzahl."
+  },
+  {
+    q: "Was passiert bei einem Fehler?",
+    a: "Lässt du ein grünes Ziel unten aus dem Bild fallen, klickst einen roten Köder oder klickst ins Leere, fällt die Combo auf 1,0x zurück und du verlierst 1 Sekunde. Dieser Abzug ist immer aktiv und lässt sich nicht abschalten."
+  },
+  {
+    q: "Was ändert sich mit steigendem Level?",
+    a: "Alle 1.750 Punkte steigt das Level, ohne Obergrenze. Die Fallgeschwindigkeit steigt von etwa 400 auf 1.250 px/s, der Abstand zwischen neuen Zielen sinkt von etwa 0,8 auf minimal 0,18 Sekunden, der Anteil roter Köder steigt von 15 % auf bis zu 45 %, und die Ziele werden kleiner."
+  },
+  {
+    q: "Wie klicke ich rote Köder nicht versehentlich an?",
+    a: "Erst die Farbe prüfen, dann klicken. Ein Modell beschreibt einen Wettlauf zwischen dem Impuls zu klicken und dem Stoppen (Logan et al., 1984). Ein roter Köder, den du fallen lässt, kostet nichts – im Zweifel also nicht klicken."
+  },
+  {
+    q: "Wohin sollte ich schauen?",
+    a: "Statt einen Punkt am oberen Rand zu fixieren, hilft ein breiter Blick über das obere und mittlere Drittel. Wenn du den Cursor schon unter die Fallbahn setzt, wird der Weg kürzer. Was am besten funktioniert, ist individuell – probiere es aus."
+  },
+  {
+    q: "Spielt die Bildwiederholrate des Monitors eine Rolle?",
+    a: "Bei höherer Bildwiederholrate springt ein schnelles Ziel pro Frame weniger weit, und die Eingabeverzögerung sinkt tendenziell (Woods et al., 2015). Wie stark sich das auf deine Punkte in diesem Spiel auswirkt, haben wir nicht gemessen. Vergleiche Ergebnisse daher auf demselben Gerät."
+  },
+  {
+    q: "Wo werden meine Ergebnisse gespeichert?",
+    a: "Punkte und beste Combo werden im lokalen Speicher deines Browsers abgelegt und von diesem Drill nicht an einen Server gesendet. Wenn du die Browserdaten löschst, sind sie weg. Details stehen in der Datenschutzerklärung."
+  }
+];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was unterscheidet den klassischen Lineal-Falltest vom digitalen Drop-Catch-Reflextraining?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der traditionelle Lineal-Falltest mit Daumen und Zeigefinger misst die freie Fallstrecke (s = 1/2gt²) als einfache Reaktionszeit (Donders Typ A). Der digitale Drop-Catch hingegen ist eine Donders-Typ-C-Wahlreaktionsaufgabe: Zwischen 400 px/s und 1250 px/s beschleunigende grüne Zielobjekte müssen von roten Täuschkörpern (Decoys) unterschieden werden. Dies testet neben der motorischen Schnelligkeit vor allem die neuronale Farberkennung und die Hemmung von Fehlauslösungen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie erklärt die optische Tau-Theorie (David N. Lee, 1976) das Abfangen fallender Objekte?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wenn ein Objekt unter Erdbeschleunigung fällt, berechnet das Gehirn weder die physische Fallstrecke noch die momentane Geschwindigkeit numerisch. Stattdessen extrahiert die Sehrinde die optische Tau-Größe (τ) – den Kehrwert der relativen retinalen Expansionsrate. Dadurch wird die verbleibende Kontaktzeit (Time-to-Contact) im Millisekundenfenster intuitiv antizipiert, sodass der Klickimpuls exakt synchron zur Trefferzone ausgelöst werden kann."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was besagt das Pferderennen-Modell (Horse-Race Model) nach Logan (1984) bezüglich roter Täuschziele?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sobald ein Objekt auf dem Bildschirm erscheint, startet im Gehirn ein interner Wettlauf zwischen dem unwillkürlichen Bewegungsimpuls ('Go'-Prozess zum Klicken) und dem präfrontalen Hemmungssignal ('Stop'-Prozess beim Erkennen der roten Signalfarbe). Um einen Fehlschuss zu verhindern, muss das Stop-Signal die Erregungsschwelle des motorischen Kortex erreichen, bevor der Finger zuckt. Drop Catch trainiert diese exekutive Veto-Kontrolle intensiv."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie verbessert dieses Training die Entscheidungsfindung in E-Sport-Titeln (CS2, Valorant, Apex, LoL)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In hektischen Gefechtssituationen müssen Spieler blitzschnell zwischen gegnerischen Köpfen, Verbündeten und ablenkenden Ködern (Flashes, Decoys) differenzieren. Die Fähigkeit, unüberlegte Klickreflexe bei Erkennung falscher Merkmale sofort zu stoppen, verhindert Team-Schaden (Friendly Fire), spart wertvolle Munition und schärft die taktische Schussdisziplin."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie entwickeln sich Fallgeschwindigkeit, Spawn-Intervalle und Täuschkörperhäufigkeit über die Level?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Alle 1.750 Punkte steigt der Schwierigkeitsgrad nahtlos auf bis zu Level 15 und darüber hinaus. Die Basisfallgeschwindigkeit zieht von 400 px/s auf bis zu 1250 px/s an, während das Spawn-Intervall von 0,8s auf 0,18s schrumpft. Zudem klettert die Wahrscheinlichkeit für rote Täuschkörper von 15 % auf bis zu 45 %, was höchste kognitive Wachsamkeit erfordert."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche taktische Bedeutung hat die Zeitgutschrift von +0,6 Sekunden pro gefangenem Ziel?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Runde startet mit einem Basiskonto von 45 Sekunden. Jeder erfolgreiche Treffer auf ein grünes Ziel fügt 0,6 Sekunden hinzu. Ein fehlerfreier Rhythmus ermöglicht es, die Runde über 60 oder 90 Sekunden am Leben zu halten, den 3,0x-Maximalmultiplikator auszubauen und Wertungen von über 24.000 Punkten zu erzielen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Strafen drohen bei Fehlschüssen oder dem Auslösen eines roten Täuschkörpers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das Berühren eines roten Täuschkörpers oder das Entkommenlassen eines grünen Ziels setzt den Multiplikator augenblicklich auf 1,0x zurück. Ist die Zeitstrafe in den Einstellungen aktiv, werden pro Fehler zusätzlich 0,8 Sekunden vom Rundentimer abgezogen, was unüberlegtes Dauerklicken sofort bestraft."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Mausführung und Blickfixierung wird für vertikale Abfangbewegungen empfohlen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Empfohlen wird ein Fingertip- oder Claw-Grip, bei dem der Handballen nicht starr auf dem Pad aufliegt, um freie vertikale Schub- und Ziehbewegungen aus den Fingergelenken zu ermöglichen. Fixieren Sie Ihren Blick im oberen Drittel des Bildschirms, um Farben bereits in den ersten 50 ms nach dem Erscheinen zu klassifizieren und die Maus vorausahnend in die Fallbahn zu schieben."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welchen Vorteil bieten Gaming-Monitore mit 144 Hz oder 240 Hz bei Fallgeschwindigkeiten von 1250 px/s?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei 1250 px/s springt ein Objekt auf einem 60-Hz-Display um rund 20,8 px pro Frame und zieht starke Schlieren hinter sich her. Bei 240 Hz sinkt der Bewegungssprung auf 5,2 px pro Bild. Dies liefert eine glasklare Farbtrennung und präzise Kanten, sodass Täuschkörper selbst bei Maximalgeschwindigkeit ohne Zögern enttarnt werden (Woods et al., 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Werden Reaktionszeiten, Trefferquoten oder persönliche Daten an externe Server übertragen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein, zu keinem Zeitpunkt. Sämtliche Leistungswerte, Latenzstatistiken, Reaktionszeiten und Rekorde werden ausschließlich lokal im Speicher Ihres Browsers (LocalStorage) verwaltet. Es findet keinerlei Tracking oder externe Datenübertragung statt."
-      }
-    }
-  ]
+  "inLanguage": "de",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "4-Stufen-Trainingsprotokoll für Lineal-Falltest und optische Zielabfangung",
-  "description": "Wissenschaftlich fundierter Leitfaden zur Optimierung von Wahlreaktionszeit und präfrontaler Impulskontrolle nach Donders und Logan.",
+  "name": "So spielst du „Fallende Ziele fangen“",
+  "description": "Grün fangen, Rot fallen lassen – in vier Schritten.",
   "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Visuelle Verankerung im oberen Drittel (Visual Anchoring)",
-      "text": "Positionieren Sie den Fokus im oberen Bildschirmdrittel, um innerhalb der ersten 50ms nach dem Erscheinen zwischen grün (Ziel) und rot (Täuschkörper) zu differenzieren.",
-      "url": "https://skilldrills.online/de/drills/physical/reflex-training/drop-catch#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Logan Stop-Signal Veto-Kontrolle (Logan Inhibitory Veto)",
-      "text": "Aktivieren Sie bei Erkennung roter Signalfarben sofort die präfrontale Hemmung, um das motorische Durchdrücken des Zeigefingers zu blockieren.",
-      "url": "https://skilldrills.online/de/drills/physical/reflex-training/drop-catch#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Vorausahnendes Tau-Abfangen (Optical Tau Interception)",
-      "text": "Führen Sie die Maus bei grünen Zielen antizipierend in die untere Fallbahn und lösen Sie den Klick im idealen Abfangfenster sauber aus.",
-      "url": "https://skilldrills.online/de/drills/physical/reflex-training/drop-catch#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Zeitgutschrift sichern & Multiplikator maximieren (Time Extension & Streak Heat)",
-      "text": "Nutzen Sie den Bonus von +0,6s pro Treffer, um die Serie bis auf den 3,0x-Multiplikator auszubauen und über 24.000 Punkte zu erzielen.",
-      "url": "https://skilldrills.online/de/drills/physical/reflex-training/drop-catch#step-4"
-    }
-  ]
+    { "@type": "HowToStep", "position": 1, "name": "Farbe zuerst prüfen", "text": "Sobald ein Ziel erscheint, prüfst du zuerst, ob es grün oder rot ist." },
+    { "@type": "HowToStep", "position": 2, "name": "Rot nicht klicken", "text": "Rote Köder klickst du nicht an, sondern lässt sie nach unten durchfallen." },
+    { "@type": "HowToStep", "position": 3, "name": "Unter der Fallbahn warten", "text": "Bei Grün setzt du den Cursor unter die Fallbahn und klickst, sobald das Ziel darüber ist." },
+    { "@type": "HowToStep", "position": 4, "name": "Combo halten", "text": "Fange ohne Fehler weiter, um +2 Sekunden und den Combo-Multiplikator aufzubauen." }
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` }))
 };
 
 const dropGuide = {
-  heading: "Leitfaden für Lineal-Falltest & gravitative Zielabfang-Biomechanik",
-  intro: {
-    title: "Wissenschaftliche Grundlagen der Reizdiskrimination und Impulshemmung",
-    paragraphs: [
-      "Der Drop Catch ist ein spezialisiertes Reaktions- und Impulskontrollsystem, das die klassische Methode des Lineal-Falltests in eine hochdynamische digitale Testumgebung überführt. Anstelle des einfachen Greifens nach einer herabfallenden Skala erfordert dieser Drill die Bewältigung einer Donders-Typ-C-Wahlreaktionsaufgabe (Donders, 1868): Gültige grüne Zielobjekte müssen unter Zeitdruck präzise abgefangen werden, während optisch identische, jedoch rot gefärbte Täuschkörper unter strikter Hemmung des Klickreflexes passieren gelassen werden müssen.",
-      "Unter Erdbeschleunigung (s = 1/2gt²) beschleunigen fallende Objekte kontinuierlich von 400 px/s bis auf 1250 px/s. Gemäß der optischen Tau-Theorie von David N. Lee (1976) berechnet das Sehzentrum die verbleibende Kontaktzeit (Time-to-Contact) anhand der relativen Expansionsrate auf der Netzhaut. Wer versucht, die Beschleunigung bewusst nachzurechnen, verliert wertvolle Millisekunden; der Schlüssel zum Erfolg liegt darin, den Mauszeiger vorausschauend auf der Fallachse zu positionieren.",
-      "Die größte neuronale Herausforderung stellen die unvorhersehbar eingestreuten roten Fallen dar. Nach dem Pferderennen-Modell (Horse-Race Model) von Gordon D. Logan (1984) konkurrieren im Gehirn ein automatischer Bewegungsimpuls ('Go') und ein hemmendes Veto-Signal ('Stop'). Nur wenn die präfrontale Hemmung rechtzeitig interveniert, wird ein Fehlschuss verhindert. Dieses Training schult die exekutive Verhaltenskontrolle auf Spitzensport-Niveau.",
-      "Für exakte Laborpräzision arbeitet das System mit der performance.now()-Schnittstelle moderner Browser. Auf Gaming-Monitoren mit 144 Hz oder 240 Hz wird die Bildunschärfe bei 1250 px/s drastisch reduziert, was eine verzögerungsfreie Reizdifferenzierung ermöglicht (Woods et al., 2015). Sämtliche Messwerte bleiben zum Schutz der Privatsphäre ausnahmslos auf Ihrem lokalen Endgerät gespeichert."
-    ]
-  },
+  heading: "Leitfaden: Fallende Ziele fangen",
+  intro: [
+    "Drop Catch ist ein kostenloses Browserspiel zum Fallende-Ziele-Fangen: Von oben fallen Ziele herunter, du klickst nur die grünen und lässt rote Köder durchfallen. Ein Fang bringt +2 Sekunden, ein Fehler kostet 1 Sekunde.",
+    "Wer erst zwischen Reizen unterscheiden muss, reagiert in der Regel langsamer als bei einer einfachen Reaktion (Donders, 1868). Außerdem beschreibt ein Modell einen Wettlauf zwischen dem Impuls zu klicken und dem Stoppen (Logan et al., 1984). Das Spiel macht beides spielerisch erfahrbar.",
+    "Wie Menschen die Zeit bis zum Eintreffen eines sich nähernden Objekts abschätzen, untersucht Lee (1976). Die Fallgeschwindigkeit steigt mit dem Level von etwa 400 auf 1.250 px/s – je später du entscheidest, desto schwerer wird es.",
+    "Die Punkte sind ein Übungsergebnis, kein medizinischer Reaktionstest und keine Sportlerbewertung. Vergleiche Ergebnisse auf demselben Gerät und Monitor."
+  ],
   benchmarks: {
-    title: "5-Stufen-Leistungsbenchmarks für Wahlreaktionszeit und Fallabfangung",
-    headers: ["Stufe & Rang", "Titel (Rank Title)", "Punkteziel", "Wahlreaktionszeit & Genauigkeit", "Gesamtnote", "Neuromuskuläres Profil"],
+    title: "Orientierung: Punktebereiche",
+    headers: ["Stufe", "Punkte", "Genauigkeit", "Übungsschwerpunkt"],
     rows: [
-      ["Stufe 1: Ultimativer Gravitations-Abfänger", "Apex Gravitational Interceptor", "24.000+ Punkte", "< 190 ms / > 95 %", "Grade S", "Perfekte Logan-Impulskontrolle und fehlerfreies Abfangen bei 1250 px/s (Lee 1976; Logan 1984)"],
-      ["Stufe 2: Präzisions-Reflex-Striker", "Precision Reflex Striker", "17.000 – 23.999 Punkte", "195 – 240 ms / 90 – 94 %", "Grade A", "Überragende Tau-Antizipation und stabiles Halten des 3,0x-Multiplikators bei 45 % Fallenquote"],
-      ["Stufe 3: Erfahrener Drop-Catcher", "Skilled Drop Catcher", "11.000 – 16.999 Punkte", "245 – 310 ms / 82 – 89 %", "Grade B", "Solide Auge-Hand-Koordination und gute Nutzung des +0,6s-Zeitbonus für lange Überlebensdauer"],
-      ["Stufe 4: Lernender Reflex-Athlet", "Developing Reflex Trainee", "6.000 – 10.999 Punkte", "311 – 370 ms / 70 – 81 %", "Grade C", "Durchschnittliches Erwachsenenniveau. Bei Geschwindigkeiten über 800 px/s treten Fehlklicks auf rote Fallen und Serienabbrüche auf"],
-      ["Stufe 5: Einsteiger in Impulskontrolle", "Novice Decoy Learner", "< 6.000 Punkte", "> 370 ms / < 70 %", "Grade D", "Basisniveau. Überhastetes Klicken auf Täuschkörper durch optische Überforderung. Blickfixierung im oberen Drittel empfohlen"]
+      ["1", "unter 6.000", "unter 70 %", "Rote Köder konsequent nicht klicken"],
+      ["2", "6.000 – 10.999", "70 – 81 %", "Erst Farbe prüfen, dann klicken"],
+      ["3", "11.000 – 16.999", "82 – 89 %", "Combo ohne Abbruch halten"],
+      ["4", "17.000 – 23.999", "90 – 94 %", "Auch bei hohem Tempo Köder fallen lassen"],
+      ["5", "ab 24.000", "ab 95 %", "Mit dem +2-s-Bonus lange Runden spielen"]
     ],
-    note: "Objektive Kriterien basierend auf der Donders-Typ-C-Chronometrie (1868), Lees optischer Tau-Theorie (1976) und Logans Hemmungsmodell (1984). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
+    note: "Diese Bereiche sind SkillDrills-Übungsstufen. Sie sind keine Nutzerstatistik, keine Perzentile und kein Profi-Maßstab."
   },
   techniques: {
-    title: "4 Praxisprotokolle für maximale Fallreaktion & Impulsdisziplin",
+    title: "4 Tipps für mehr Punkte",
     items: [
       {
-        name: "Visuelle Verankerung im oberen Drittel (Upper Third Visual Anchoring)",
-        desc: "Richten Sie den Blick nicht an den oberen Rand oder auf den Boden. Verankern Sie den Fokus im oberen Drittel, um Farben in den ersten 50 ms nach dem Auftauchen zu identifizieren und die Falllinie vorausschauend zu besetzen.",
-        tips: "Verfolgen Sie Ziele nicht von hinten – fangen Sie sie am erwarteten Durchgangspunkt ab."
+        name: "Breit schauen, Farbe zuerst",
+        desc: "Fixiere keinen einzelnen Punkt, sondern überblicke das obere und mittlere Drittel. Taucht ein Ziel auf, prüfe zuerst die Farbe.",
+        tips: "Spanne den Finger erst an, wenn die Farbe klar ist."
       },
       {
-        name: "Logan Stop-Signal Veto-Kontrolle (Logan Stop-Signal Veto)",
-        desc: "Unterdrücken Sie den Drang des Zeigefingers, auf jeden Reiz reflexartig zu drücken. Entspannen Sie die Fingerkuppe bei Sichtung roter Farbtöne augenblicklich und lassen Sie das Objekt ins Leere fallen.",
-        tips: "Ein Klick auf Rot kostet nicht nur Punkte, sondern vernichtet den gesamten 3,0x-Multiplikator."
+        name: "Rot einfach fallen lassen",
+        desc: "Ein roter Köder, den du fallen lässt, kostet nichts. Klickst du ihn, sind Combo und 1 Sekunde weg – im Zweifel nicht klicken.",
+        tips: "Wenn später mehr Köder kommen, geht Genauigkeit vor Tempo."
       },
       {
-        name: "Tau-Antizipation auf der Fallachse (Optical Tau Gravitational Interception)",
-        desc: "Die Fallbeschleunigung nimmt nach unten hin drastisch zu. Nutzen Sie das Zeitfenster in der Bildschirmmitte für einen sauberen Snap-Klick, bevor das Ziel die kritische Fluchtgeschwindigkeit erreicht.",
-        tips: "Warten Sie nicht bis zur letzten Kante – schlagen Sie im großzügigen mittleren Drittel entschlossen zu."
+        name: "Unter der Fallbahn warten",
+        desc: "Statt dem Ziel hinterherzujagen, setze den Cursor vorab unter seine Bahn. Das verkürzt den Weg.",
+        tips: "In der Bildschirmmitte zu fangen gibt dir mehr Puffer."
       },
       {
-        name: "Fingertip-Führung für vertikale Mikro-Flicks (Fingertip Vertical Micro-Steering)",
-        desc: "Legen Sie die Handfläche nicht flach auf das Mauspad. Ein leichter Fingertip-Grip erlaubt blitzschnelle Vor- und Zurückbewegungen aus den Fingergelenken ohne Reibungsverlust.",
-        tips: "Steuern Sie vertikale Korrekturen aus der Beugung der Finger, nicht aus dem gesamten Unterarm."
+        name: "Locker greifen",
+        desc: "Für schnelle Auf-und-ab-Bewegungen die Hand entspannen und mit Fingern und Handgelenk fein nachkorrigieren.",
+        tips: "Bei Ermüdung pausieren und auf demselben Gerät vergleichen."
       }
     ]
   },
   steps: [
-    "Nehmen Sie eine aufrechte Haltung ein und fokussieren Sie das obere Bildschirmdrittel.",
-    "Klassifizieren Sie herabfallende Objekte in den ersten 50ms als grün (treffen) oder rot (meiden).",
-    "Fangen Sie grüne Ziele antizipierend ab und lassen Sie rote Fallen unberührt passieren.",
-    "Sichern Sie sich +0,6s Zeitbonus pro Treffer und halten Sie den 3,0x-Multiplikator für 24.000+ Punkte."
+    "Cursor in die Bildschirmmitte setzen und das obere und mittlere Drittel im Blick behalten.",
+    "Fällt ein Ziel, zuerst prüfen: grün oder rot?",
+    "Grüne Ziele anklicken, rote Köder ungeklickt fallen lassen.",
+    "Mit +2 Sekunden pro Fang und gehaltener Combo die Punktzahl steigern."
   ],
-  audience: "Sportler und Schüler zur präzisen digitalen Messung des Lineal-Falltests sowie E-Sportler zur Schulung von Schussdisziplin und Reaktionsschnelligkeit.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
+  audience: "Alle, die ein Klickspiel mit fallenden Zielen und Farbunterscheidung suchen, und Gamer, die Auswahlreaktion und Impulskontrolle spielerisch üben möchten.",
+  faqs,
   sources: pickSources('donders1868', 'lee1976', 'logan1984', 'woodworth1899', 'fitts1954', 'woods2015')
 };
 
@@ -364,42 +230,42 @@ export default function LocalizedDropCatchPageDe() {
       />
       <DropCatchClient
         copy={{
-          title: "Lineal-Reaktionstest & Drop Catch",
-          subtitle: "Fallende Ziele fangen, rote Fallen meiden",
+          title: "Fallende Ziele fangen",
+          subtitle: "Grün klicken, rote Köder fallen lassen",
           hudLabels: {
             score: "Punkte",
             time: "Zeit",
-            bestScore: "Rekord",
-            bestCombo: "Max Combo"
+            bestScore: "Bestwert",
+            bestCombo: "Beste Combo"
           },
-          rulesTitle: "Drill-Regeln & Punktesystem",
+          rulesTitle: "Regeln und Wertung",
           rulesItems: [
-            { title: "Grüne Ziele fangen & Zeitbonus", text: "Klicken Sie auf fallende grüne Ziele für 100 Punkte (skaliert mit Multiplikator) und sichern Sie sich +0,6 Sekunden extra." },
-            { title: "Combo-Multiplikator aufbauen", text: "Treffer ohne Unterbrechung steigern den Multiplikator kontinuierlich auf bis zu 3,0x." },
-            { title: "Level-Progression", text: "Alle 1.750 Punkte steigt das Level. Fallgeschwindigkeit (bis zu 1250 px/s) und Fallenquote (bis zu 45%) ziehen an." },
-            { title: "Fallen- und Verfehlungsstrafen", text: "Das Verpassen grüner Ziele oder Anklicken roter Fallen setzt die Combo zurück (und kostet 0,8s bei aktiver Option)." }
+            { title: "Grüne Ziele fangen & Zeitbonus", text: "Klicke fallende grüne Ziele für 100 Punkte (mit Combo- und Level-Multiplikator) und +2 Sekunden (maximal 60 Sekunden)." },
+            { title: "Combo-Multiplikator", text: "Treffer ohne Fehler steigern den Multiplikator auf bis zu 3,0x." },
+            { title: "Level-Steigerung", text: "Alle 1.750 Punkte steigt das Level. Fallgeschwindigkeit (bis 1.250 px/s) und Köderanteil (bis 45 %) nehmen zu." },
+            { title: "Fehler und Zeitabzug", text: "Ein verpasstes grünes Ziel, ein Klick auf einen roten Köder oder ins Leere setzt die Combo zurück und kostet 1 Sekunde." }
           ],
-          aboutTitle: "Über Drop Catch & Fallreaktions-Biomechanik",
+          aboutTitle: "Über Drop Catch",
           aboutSections: [
             {
-              title: "Gravitationsbeschleunigung & optische Tau-Theorie",
-              subtitle: "David N. Lee (1976) Nicht-lineare Zeit-zu-Kontakt-Berechnung",
-              content: "Fallende Ziele beschleunigen. Das Gehirn liest die retinale Expansionsrate ab, um vor Erreichen der unteren Begrenzung den optimalen Trefferpunkt zu bestimmen."
+              title: "Timing bei fallenden Zielen",
+              subtitle: "Lee (1976): Zeit bis zum Kontakt",
+              content: "Die Fallgeschwindigkeit steigt mit dem Level. Lees Forschung dazu, wie Menschen die Zeit bis zum Eintreffen eines Objekts abschätzen, hilft beim Verständnis des Klick-Timings."
             },
             {
-              title: "Impulskontrolle & Logan-Stoppsignal-Modell",
-              subtitle: "Gordon D. Logan (1984) Präfrontale Hemmung unwillkürlicher Klicks",
-              content: "Rote Fallen erzeugen einen Wettlauf zwischen Handlungsdrang (Go) und Hemmung (Stop). Trainiert das exekutive Veto gegen überhastete Fehlbedienungen."
+              title: "Klicken oder stoppen",
+              subtitle: "Logan (1984): Stopp-Signal-Modell",
+              content: "Bei roten Ködern konkurrieren der Impuls zu klicken und das Stoppen. Das Spiel übt, Köder nicht anzuklicken."
             },
             {
-              title: "Donders-Typ-C-Wahlreaktionszeit",
-              subtitle: "Reizdifferenzierung vor der motorischen Antwortauslösung",
-              content: "Geht weit über einfache Reflexe hinaus: Nur auf relevante Reize reagieren und Störreize verwerfen schärft die taktische Schussdisziplin."
+              title: "Auswahlreaktion",
+              subtitle: "Donders (1868): Reaktionszeitforschung",
+              content: "Muss man zwischen Reizen unterscheiden, dauert die Reaktion meist länger als bei einer einfachen Reaktion. Hier klickst du nur Grün."
             },
             {
-              title: "Woodworth-Flicks & Landungspräzision",
-              subtitle: "Woodworth (1899) und Fitts-Gesetz (1954) bei hoher Dynamik",
-              content: "85% der Distanz werden ballistisch überbrückt, gefolgt von feiner optischer Landungsverzögerung auf dem herabfallenden Zielpunkt."
+              title: "Grob bewegen, fein korrigieren",
+              subtitle: "Woodworth (1899) und Fitts (1954)",
+              content: "Schnelles Zeigen besteht aus einer großen Bewegung und einer kleinen Schlusskorrektur. Erst unter die Fallbahn ziehen, dann abbremsen und klicken."
             }
           ]
         }}

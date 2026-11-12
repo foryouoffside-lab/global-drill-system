@@ -4,377 +4,177 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Spain & Latin America (ES / ES-MX)
-// Native SERP intent: entrenamiento de puntería online, estabilidad del ratón, control del retroceso
-// Spanish Context: Ejercicios para no temblar al apuntar en Valorant/CS2 y control de estabilidad contra perturbaciones
-// High-Demand, Low-Competition Target Keywords:
-//   - "juegos para mejorar la punteria con el raton" (High-volume interactive game query)
-//   - "test punteria raton" (Direct head test query)
-//   - "como controlar el retroceso" (Recoil control & stabilization query)
-//   - "control de retroceso con raton" (Mouse recoil compensation drill)
-//   - "test de estabilidad del raton" (Mouse stability & tracking test)
-//   - "como evitar que tiemble la mira al disparar" (Aim jitter & tremor prevention)
-//   - "ejercicios de estabilidad de raton" (Mouse stabilization exercises)
-//   - "entrenamiento de punteria y control motor" (Motor control and aim drill)
-//   - "resistencia a perturbaciones externas" (Perturbation balance physics)
-//   - "compensacion de retroceso valorant cs2" (Tactical FPS compensation)
-// ============================================================
+const url = 'https://skilldrills.online/es/drills/physical/balance-training/stability-challenge';
+const title = 'Estabilidad del cursor con el ratón | SkillDrills';
+const description = 'Estabilidad del cursor con el ratón: un viento que cambia de dirección empuja la mira. Compénsalo y mantente 45 segundos dentro del anillo. Ejercicio gratis.';
 
 export const metadata = {
-  title: 'Estabilidad de puntería | Test de ratón | SkillDrills',
-  description: 'Entrenamiento gratis de puntería en el navegador. Mantén la retícula centrada contra fuerzas móviles y practica estabilidad, temblor y retroceso.',
-  keywords: [
-    "entrenamiento de puntería online gratis",
-    "test de precisión del ratón",
-    "cómo evitar que tiemble la mira",
-    "cómo controlar el retroceso",
-    "estabilidad de la puntería",
-    "ejercicios de estabilidad del ratón",
-    "entrenador de puntería FPS",
-    "control de la mira con ratón",
-    "seguimiento estable de objetivos",
-    "puntería Valorant y CS2"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/es/drills/physical/balance-training/stability-challenge',
-    languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Estabilidad de puntería | Test de ratón | SkillDrills',
-    description: 'Mantén la retícula centrada y practica estabilidad, control del temblor y retroceso en un entrenamiento gratis de navegador.',
-    url: 'https://skilldrills.online/es/drills/physical/balance-training/stability-challenge',
-    siteName: 'SkillDrills',
-    locale: 'es_ES',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: 'Estabilidad de puntería | Test de ratón | SkillDrills',
-    description: 'Mantén la retícula centrada y practica estabilidad, control del temblor y retroceso en un entrenamiento gratis de navegador.',
-  },
+  title,
+  description,
+  keywords: ['estabilidad del cursor', 'mantener la mira dentro del anillo', 'deriva del viento', 'juego de estabilidad con el ratón', 'cursor estable'],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'es_ES', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Inicio",
-      "item": "https://skilldrills.online/es"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Entrenamiento Físico",
-      "item": "https://skilldrills.online/es/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Entrenamiento de Equilibrio y Estabilidad",
-      "item": "https://skilldrills.online/es/drills/physical/balance-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Desafío de Estabilidad y Control de Retroceso",
-      "item": "https://skilldrills.online/es/drills/physical/balance-training/stability-challenge"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Inicio', item: 'https://skilldrills.online/es' },
+    { '@type': 'ListItem', position: 2, name: 'Juegos de agilidad con el ratón', item: 'https://skilldrills.online/es/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Estabilidad del cursor', item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Balance_(ability)"],
-  "name": "Entrenador de Estabilidad de Ratón y Puntería FPS",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Herramienta científica de control motor fino y resistencia a perturbaciones externas para corregir temblores de ratón y perfeccionar el control de retroceso.",
-  "url": "https://skilldrills.online/es/drills/physical/balance-training/stability-challenge",
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Estabilidad del cursor con el ratón',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'Navegador con HTML5 Canvas y Pointer Lock, ratón',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
+  inLanguage: 'es-ES',
+  dateModified: '2026-11-10',
 };
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Desafío de Estabilidad de Puntería Online (Stability Challenge)",
-  "url": "https://skilldrills.online/es/drills/physical/balance-training/stability-challenge",
-  "description": "Test interactivo en navegador para evaluar y mejorar la estabilidad del cursor del ratón bajo fuerzas dinámicas continuas de resistencia al viento.",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Web Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const faqs = [
+  {
+    q: '¿En qué consiste este ejercicio de estabilidad del cursor?',
+    a: 'Un anillo de seguridad ocupa el centro de la pantalla. Una fuerza parecida al viento empuja la mira hacia fuera sin parar; la compensas con el ratón para seguir dentro del anillo durante 45 segundos. Es un ejercicio de estabilidad del cursor.',
   },
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Desafío de Estabilidad del Ratón",
-  "url": "https://skilldrills.online/es/drills/physical/balance-training/stability-challenge",
-  "description": "Juego de reflejos y resistencia neuromuscular donde debes estabilizar la mira contra ráfagas de fuerza continuas.",
-  "genre": ["Action", "Sports Game", "Reflex Game", "Motor Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
-};
+  {
+    q: '¿Cómo se calculan los puntos?',
+    a: 'Mientras la mira está dentro del anillo, la racha sube 1 cada 0,15 segundos y ganas 15 puntos × multiplicador. El multiplicador empieza en 1,1x con racha 3 y llega a su máximo de 3,0x con racha 50. No hace falta hacer clic.',
+  },
+  {
+    q: '¿Qué pasa si salgo del anillo?',
+    a: 'La racha vuelve a 0 y aparece un destello rojo (se puede desactivar con el botón en pantalla). No se restan puntos ni segundos. Al volver al anillo, reconstruyes la racha.',
+  },
+  {
+    q: '¿Cómo aumenta la dificultad?',
+    a: 'El nivel sube cada 250 puntos y también con las rachas largas dentro del anillo, sin límite. El anillo se reduce de 45 px hasta un mínimo de 16 px, y la fuerza del viento empieza en 250 y sigue aumentando (850 en el nivel 15).',
+  },
+  {
+    q: 'Si mi mira tiembla en los juegos, ¿esto lo corrige?',
+    a: 'No directamente. Una mira que tiembla en un juego suele deberse a la sensibilidad, los DPI, la configuración o el hardware, y este ejercicio no cambia nada de eso. Tampoco mide ni diagnostica el equilibrio, los temblores ni la salud: es un juego de pequeñas correcciones continuas con el ratón.',
+  },
+  {
+    q: '¿Cómo se asigna la nota?',
+    a: 'La puntuación final se compara con una referencia de SkillDrills de 17.000 puntos. Aproximadamente: A desde 9.563 puntos, S desde 12.283 y S+ desde 15.342. Son niveles de práctica, no estadísticas de usuarios ni percentiles.',
+  },
+  {
+    q: '¿Me ayudará en los shooters?',
+    a: 'No se puede garantizar. Practicas pequeñas correcciones continuas contra una deriva, pero los patrones de retroceso y la sensibilidad de cada juego son distintos. No está demostrado que se transfiera.',
+  },
+  {
+    q: '¿Funciona en el móvil?',
+    a: 'No. Necesita un ratón y Pointer Lock, y no arranca en dispositivos solo táctiles. La tecla Escape termina el ejercicio y vuelve a la pantalla de inicio.',
+  },
+  {
+    q: '¿Dónde se guardan mis resultados?',
+    a: 'La mejor puntuación, la mejor racha y el nivel máximo se guardan solo en el almacenamiento local de tu navegador. Es gratis y sin registro.',
+  },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué es el Desafío de Estabilidad (Stability Challenge) y cómo funciona?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El Desafio de Estabilidad es un entrenamiento neuromuscular de control motor fino y equilibrio postural. Vectores dinámicos de viento empujan constantemente tu retícula lejos del centro; tu objetivo es aplicar micropresión suave y precisa en sentido opuesto para mantener la mira fija dentro del anillo de seguridad central."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo ayuda este ejercicio a evitar que tiemble la mira en shooters como Valorant o CS2?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El temblor involuntario al apuntar surge de la co-contracción excesiva entre los músculos flexores y extensores de la muñeca. Al obligar al sistema nervioso a regular una fuerza de empuje continua y suave (Woodworth, 1899), se inhibe la tensión excesiva y se automatiza la compensación suave requerida para controlar el retroceso (recoil)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo escala la dificultad respecto al viento y al tamaño del anillo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cada 250 puntos acumulados subes de nivel hasta el Nivel 15. A lo largo de la prueba, el radio del anillo de seguridad se reduce de 45px a solo 20px, mientras que la intensidad del viento se acelera de 250 a 850 unidades de fuerza, poniendo a prueba microcorrecciones de altísima precisión."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué ocurre cuando el cursor se sale del anillo de seguridad?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Salirse del anillo rompe el bloqueo de estabilización, provocando un destello rojo y reiniciando inmediatamente el multiplicador de combo acumulado a 1.0x. No se restan puntos ya acumulados ni se reduce el tiempo total de la ronda."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto tiempo dura una sesión estándar de entrenamiento?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cada sesión dura exactamente 45 segundos cronometrados. El contador desciende de forma regular de 45s a 0s, lo que proporciona un estándar objetivo y reproducible para medir el progreso y comparar marcas personales."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué puntuación corresponde al Tier 1?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Alcanzar 17.000 puntos o más con una estabilidad superior al 92% dentro del anillo de 20px (Niveles 12–15) te sitúa en el Tier 1: Apex Stability Master (Calificación S+). Es el nivel más alto de la escala de este drill; los Tiers son marcadores editoriales."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué tipo de agarre de ratón (Palm, Claw o Fingertip) es más adecuado para la estabilidad?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los agarres Palm o Claw con el antebrazo firmemente asentado sobre el escritorio proporcionan la mayor base isométrica para neutralizar el arrastre sostenido. El agarre Fingertip permite gran agilidad, pero fatiga con mayor rapidez los pequeños músculos intrínsecos de la mano ante fuerzas intensas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué configuración de sensibilidad de ratón (DPI) es más aconsejable?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Se recomiendan sensibilidades moderadas a bajas (entre 800 y 1200 DPI nativos, o 200 a 350 eDPI en shooters tácticos). Esto permite que pequeños microtemblores involuntarios no saquen el cursor del estrecho perímetro de 20px."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué influyen la postura corporal y la respiración en la puntería con el ratón?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Según los estudios de Nashner & McCollum (1985), el control motor distal (dedos y muñeca) depende de la estabilidad proximal (hombros y tronco). Una respiración superficial o una mala postura transmite oscilaciones torácicas directamente al sensor óptico del ratón."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Se transfieren mis puntuaciones o datos de juego a servidores externos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutamente no. SkillDrills guarda el 100% de tus récords, estadísticas de precisión y configuraciones de forma segura en el almacenamiento local (LocalStorage) de tu navegador, garantizando privacidad total sin cookies de seguimiento."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'es-ES',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Cómo Entrenar la Estabilidad y el Control del Ratón en 4 Pasos",
-  "description": "Procedimiento neurofisiológico en 4 fases para contrarrestar perturbaciones y perfeccionar el control del retroceso.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Centrado y Bloqueo de Puntero (Pointer Lock)",
-      "text": "Ubica la mira exactamente en el centro del anillo esmeralda antes de iniciar y activa el bloqueo del ratón en el navegador con un clic.",
-      "url": "https://skilldrills.online/es/drills/physical/balance-training/stability-challenge#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Detección Visual del Vector de Perturbación",
-      "text": "Observa hacia dónde comienza a derivar el cursor a causa de la fuerza del viento para anticipar la dirección requerida de compensación.",
-      "url": "https://skilldrills.online/es/drills/physical/balance-training/stability-challenge#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Aplicación de Contrapresión Isométrica Continua",
-      "text": "Ejerce fuerza suave y progresiva en la dirección exactamente contraria al empuje del viento, manteniendo el cursor en el centro para multiplicar el combo hasta 3.0x.",
-      "url": "https://skilldrills.online/es/drills/physical/balance-training/stability-challenge#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Ajustes Finos en Anillos Reducidos de 20px",
-      "text": "Al entrar en los niveles altos (Lv. 10 a 15) con el anillo reducido al mínimo, absorbe los cambios bruscos de vector con las yemas de los dedos sin levantar el antebrazo.",
-      "url": "https://skilldrills.online/es/drills/physical/balance-training/stability-challenge#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Cómo hacer el ejercicio de estabilidad del cursor',
+  description: 'Cuatro pasos para mantener la mira dentro del anillo a pesar del viento.',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Empezar', text: 'Tras una cuenta atrás de 3 segundos se activa el Pointer Lock.' },
+    { '@type': 'HowToStep', position: 2, name: 'Leer el empuje', text: 'Observa hacia dónde se desplaza la mira y mueve el ratón ligeramente en sentido contrario.' },
+    { '@type': 'HowToStep', position: 3, name: 'Quedarse en el anillo', text: 'Cuanto más tiempo sigas dentro del anillo, más suben la racha y el multiplicador.' },
+    { '@type': 'HowToStep', position: 4, name: 'Adaptarse al anillo más pequeño', text: 'Al subir de nivel, el anillo se estrecha y el viento se intensifica: corrige antes y con más finura.' },
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
-const guideProps = {
-  sources: pickSources('woodworth1899', 'fitts1954', 'woods2015'),
-  intro: {
-    title: 'Cómo se mide la estabilidad del cursor',
-    paragraphs: [
-      "La estabilidad del cursor del ratón bajo fuerzas dinámicas imprevistas es un reflejo fidedigno de la capacidad del sistema sensoriomotor para integrar información propioceptiva y correcciones visuales continuas. A diferencia de un movimiento de flick puramente balístico, la estabilización exige una regulación isométrica constante entre los grupos musculares agonistas y antagonistas del antebrazo y la mano. Este ejercicio evalúa cómo el córtex motor primario y el cerebelo modulan micropresiones de resistencia ante vectores de perturbación no anticipados (Nashner & McCollum, 1985).",
-      "Siguiendo el modelo clásico de dos fases de Robert S. Woodworth (1899), cualquier movimiento manual guiado se compone de un impulso inicial abierto y una fase posterior de control continuo basada en retroalimentación visual de circuito cerrado (Current Control Phase). En este ejercicio de estabilidad, el usuario permanece constantemente en esta segunda fase: la simulación de viento recrea el arrastre ascendente y lateral del retroceso de las armas, obligando a los ojos a detectar la desviación respecto al centro y a emitir microcorrecciones continuas.",
-      "La escalada de dificultad se rige por los principios de equilibrio ante perturbaciones de David A. Winter (1995) y la Ley de Fitts (1954). Cuando el anillo de seguridad se estrecha de 45px a solo 20px en los niveles avanzados, el margen de tolerancia física se reduce radicalmente, aumentando de manera exponencial el índice de dificultad motora. Cualquier retraso superior a 50 ms en la respuesta de contrapresión culmina en la ruptura del perímetro y la pérdida inmediata de la bonificación de combo.",
-      "Precisión de medición y consideraciones de hardware: La estabilidad porcentual y la detección de bordes se capturan mediante la API de alta resolución performance.now() del navegador, con precisión de microsegundos. Sin embargo, las pantallas tradicionales de 60Hz introducen una cuantización de fotogramas de ~16,7 ms, mientras que los paneles de 144Hz y 240Hz la reducen a 6,9 ms y 4,1 ms respectivamente (Woods et al., 2015). Los ratones gaming con tasa de sondeo de 1000Hz operan con latencias de entrada inferiores a 1 ms. Todas las métricas se procesan exclusivamente en el hardware local del dispositivo, garantizando privacidad absoluta y libre de latencias de servidor."
-    ]
-  },
+const guide = {
+  heading: 'Estabilidad del cursor con el ratón: guía',
+  intro: [
+    'Este ejercicio de estabilidad del cursor con el ratón es sencillo: un viento cuya dirección cambia al azar empuja la mira fuera del centro, y la devuelves con el ratón para seguir dentro del anillo de seguridad. Una partida dura exactamente 45 segundos.',
+    'Un movimiento de apuntado rápido se describe como un desplazamiento amplio seguido de una corrección fina guiada por la vista (Woodworth, 1899). Aquí repites esa corrección sin parar, y cuanto más pequeño es el anillo, más precisa tiene que ser (Fitts, 1954).',
+    'Es un juego de estabilidad del cursor: no mide el equilibrio ni la salud. Compara tus resultados solo con tus propias partidas, con el mismo ratón, la misma sensibilidad y el mismo monitor; la frecuencia de refresco y el polling rate influyen en la latencia (Woods et al., 2015).',
+  ],
   benchmarks: {
-    title: "Tabla Oficial de Estándares y Clasificación de Estabilidad",
-    headers: ["Nivel", "Título del Nivel", "Puntuación Diana", "Estabilidad & Nivel", "Nota", "Marcador de práctica"],
+    title: 'Niveles de práctica de SkillDrills',
+    headers: ['Nota', 'Puntos', 'Etiqueta'],
     rows: [
-      ["Etapa 1", "Muy avanzada", "17.000+ puntos", "Nivel 12–15 / Estabilidad >92%", "Nota S+", "Ritmo muy alto con alta precisión"],
-      ["Etapa 2", "Avanzada", "13.000 a 16.999 pts", "Nivel 9–11 / Estabilidad 85–91%", "Nota A", "Ritmo alto y regular"],
-      ["Etapa 3", "Sólida", "9.500 a 12.999 pts", "Nivel 6–8 / Estabilidad 76–84%", "Nota B", "Ritmo estable con algunos errores"],
-      ["Etapa 4", "En desarrollo", "6.000 a 9.499 pts", "Nivel 3–5 / Estabilidad 65–75%", "Nota C", "Ritmo medio con margen de mejora"],
-      ["Etapa 5", "Inicial", "< 6.000 puntos", "Nivel 1–2 / Estabilidad <65%", "Nota D", "Punto de partida"],
+      ['S+', '15.342 o más', 'LEGENDARY'],
+      ['S', '12.283 – 15.341', 'Elite'],
+      ['A', '9.563 – 12.282', 'Excellent'],
+      ['B', '6.120 – 9.562', 'Great'],
+      ['C', '3.443 – 6.119', 'Good'],
+      ['D', '1.530 – 3.442', 'Keep Going'],
+      ['F', 'menos de 1.530', 'Needs Practice'],
     ],
-    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. La clasificación final evalúa el tiempo de permanencia en el anillo, roturas de trayectoria, fuerza de viento contrarrestada y puntuación total.",
+    note: 'La nota compara la puntuación final con la referencia de 17.000 puntos. Son niveles de práctica de SkillDrills, no estadísticas de usuarios, percentiles ni normas médicas.',
   },
-  protocols: {
-    title: 'Cómo entrenar la estabilidad del ratón',
-    description: 'Cuatro hábitos para mantener la retícula en el anillo cuando el viento empuja el cursor y el anillo se estrecha.',
+  techniques: {
+    title: 'Cuatro consejos para seguir más tiempo en el anillo',
     items: [
-      {
-        title: 'Contrapresión suave',
-        description: 'Responde a cada empujón con una corrección pequeña y proporcional. Agarrar el ratón con fuerza añade temblor en lugar de quitarlo.'
-      },
-      {
-        title: 'Mirada en el centro del anillo',
-        description: 'Fija la vista en el centro y no en el cursor. Así detectas antes hacia dónde te empuja el viento y corriges con menos movimiento.'
-      },
-      {
-        title: 'Antebrazo relajado',
-        description: 'Apoya el antebrazo y mueve el ratón desde la muñeca y los dedos. Un brazo tenso reacciona más tarde y se pasa de largo.'
-      },
-      {
-        title: 'Anillo de 20 px en niveles altos',
-        description: 'Cuando el anillo se estrecha y la fuerza sube, reduce la amplitud de cada corrección y mantén un ritmo constante en vez de saltar de un lado a otro.'
-      }
-    ]
+      { name: 'Empezar desde el centro', desc: 'Durante la cuenta atrás la mira está centrada. Evita los movimientos grandes al principio: primero lee la dirección del viento.', tips: 'Los primeros segundos sirven para leer el empuje, no para puntuar.' },
+      { name: 'Corregir pronto y poco', desc: 'Tirar fuerte una vez en el borde del anillo suele llevarte al otro lado. Corrige en cuanto empieza el empuje.', tips: 'Vigila la distancia entre el centro del anillo y la mira.' },
+      { name: 'Anticipar los cambios de viento', desc: 'La dirección del viento cambia al azar y luego gira poco a poco. Mantén la mano suelta para evitar una corrección repentina demasiado grande.', tips: 'Una mano o un antebrazo tensos hacen la mira más inestable.' },
+      { name: 'Proteger la racha', desc: 'El multiplicador llega a su máximo de 3,0x con racha 50. Cada salida devuelve la racha a 0: mantener la calma rinde más que corregir a golpes.', tips: 'El número de salidas aparece en los resultados como Blowouts.' },
+    ],
   },
-  faqs: {
-    title: 'Preguntas frecuentes sobre la estabilidad del ratón',
-    items: faqSchema.mainEntity.map(q => ({
-      q: q.name,
-      a: q.acceptedAnswer.text
-    }))
-  }
+  steps: [
+    'Empieza con tu ratón y tu sensibilidad habituales.',
+    'Mueve el ratón ligeramente en sentido contrario al empuje.',
+    'Quédate en el anillo para subir la racha y el multiplicador.',
+    'Tras 45 segundos, revisa la nota, la estabilidad en %, las salidas y el nivel máximo.',
+  ],
+  audience: 'Jugadores que quieren practicar cómo mantener la mira estable frente a un empuje, y cualquiera que quiera probar la estabilidad de su cursor de forma lúdica.',
+  faqs,
+  sources: pickSources('woodworth1899', 'fitts1954', 'woods2015'),
 };
 
 export default function StabilityChallengeEsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <StabilityChallengeClient
         copy={{
-          title: 'Estabilidad de puntería',
-          subtitle: 'Mantén la mira centrada y reduce el temblor',
+          title: 'Estabilidad del cursor con el ratón',
           hudLabels: {
-            score: "Puntos",
-            time: "Tiempo",
-            stability: "Estabilidad",
-            blowouts: "Rupturas",
-            maxStreak: "Racha Máx",
-            peakLevel: "Nivel Máx",
-            getReady: "PREPÁRATE",
-            points: "Puntos",
-            playAgain: "Jugar de Nuevo"
+            score: 'Puntos',
+            time: 'Tiempo',
+            getReady: 'Prepárate',
+            points: 'Puntos',
+            stability: 'Estabilidad',
+            blowouts: 'Salidas',
+            maxStreak: 'Mejor racha',
+            peakLevel: 'Nivel máximo',
+            playAgain: 'Jugar otra vez',
           },
-          rulesTitle: "Instrucciones del Ejercicio y Sistema de Puntuación",
+          rulesTitle: 'Reglas y puntuación',
           rulesItems: [
-            { title: 'Centro del anillo', text: "Mantén la retícula en el centro del anillo de seguridad contra los vectores dinámicos del viento." },
-            { title: 'Combo de estabilidad', text: "Mantén una estabilización ininterrumpida para acumular un multiplicador de combo de hasta 3.0x." },
-            { title: 'Subida de nivel', text: "Cada 250 puntos subes de nivel. El anillo se contrae de 45px a 20px y las fuerzas se aceleran." },
-            { title: 'Salir del anillo', text: "Salirte del anillo reinicia el combo a 1.0x instantáneamente, sin restar puntos ni tiempo." }
+            { title: 'Quédate en el anillo central', text: 'Un viento de dirección aleatoria empuja la mira. Compénsalo con el ratón para seguir dentro del anillo.' },
+            { title: 'Multiplicador de racha (hasta 3,0x)', text: 'Dentro del anillo, la racha sube cada 0,15 s y da 15 puntos × multiplicador. Con racha 50: 3,0x.' },
+            { title: 'Subida de nivel', text: 'El nivel sube cada 250 puntos y con las rachas largas. El anillo se reduce hasta 16 px y el viento es cada vez más fuerte.' },
+            { title: 'Salida del anillo', text: 'Si el viento te saca del anillo, pierdes la racha (vuelve a 0). No se restan puntos ni tiempo.' },
           ],
-          aboutTitle: "Sobre el Desafío de Estabilidad",
-          aboutHeading: "Compensación Dinámica de Fuerzas y Equilibrio Postural",
-          aboutIntro: "El Desafío de Estabilidad es un ejercicio biomecánico de precisión motora fina y control postural. Vectores de viento empujan continuamente el cursor, requiriendo contrapresión suave y precisa.",
-          aboutScience: "Fundamentado en los modelos de sinergia postural de Nashner & McCollum (1985) y en los principios de equilibrio de David A. Winter (1995), el ejercicio entrena correcciones visuales continuas en circuito cerrado (Woodworth, 1899). Conforme sube el puntaje, el anillo se reduce a 20px y la fuerza asciende a 850 unidades.",
-          aboutCards: [
-            { title: 'Para quién es', text: "Jugadores de shooters tácticos que buscan erradicar temblores involuntarios y dominar el control de retroceso en juegos como Valorant, CS2 y Apex Legends." },
-            { title: 'Qué entrena', text: "Compensación de vectores de fuerza, equilibrio postural, seguimiento de resistencia, estabilización de retícula y precisión en microajustes." },
-            { title: 'Por qué funciona', text: "La contrapresión ininterrumpida requerida contra el empuje del viento simula de manera exacta el control fluido necesario para retener el alza de retroceso en fusiles." }
-          ]
         }}
       />
-      <DrillGuide {...guideProps} />
-      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/balance-training/stability-challenge" />
+      <DrillGuide guide={guide} />
+      <RelatedDrills />
     </>
   );
 }

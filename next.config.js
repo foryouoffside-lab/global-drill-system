@@ -121,6 +121,16 @@ const nextConfig = {
   
   async redirects() {
     return [
+      {
+        source: '/drills/:cat(cognitive|memory|motor|physical|visual)/:group(attention|focus|processing-speed|short-term-memory|spatial-memory|working-memory|hand-eye-coordination|movement-speed|precision-control|balance-training|coordination|fitness|reflex-training|depth-perception|reaction-speed|tracking-accuracy|visual-recognition)',
+        destination: '/drills/:cat',
+        permanent: true,
+      },
+      {
+        source: '/:loc(ko|ja|de|fr|pt|es)/drills/:cat(cognitive|memory|motor|physical|visual)/:group(attention|focus|processing-speed|short-term-memory|spatial-memory|working-memory|hand-eye-coordination|movement-speed|precision-control|balance-training|coordination|fitness|reflex-training|depth-perception|reaction-speed|tracking-accuracy|visual-recognition)',
+        destination: '/:loc/drills/:cat',
+        permanent: true,
+      },
       // ------------------------------------------------------------------
       // Retired sections. These URLs were deleted from the app but are still
       // indexed and still earning impressions (measured in Search Console

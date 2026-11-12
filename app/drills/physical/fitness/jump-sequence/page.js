@@ -11,7 +11,7 @@ import { pickSources } from '@/lib/drillSources';
 // on the same day the motor and visual sweeps returned 100% null. Re-measure
 // before acting on any of these terms. Phrases are kept; numbers are not.
 // Native research: docs/seo/research/jump-sequence-2026-09-20.md
-// Primary intent: jump timing drill, jump sequence game, and plyometric rhythm drill.
+// Primary intent: jump timing drill, jump sequence game.
 // This page targets the browser interaction honestly; it does not claim to measure
 // real-world jump height. Locale pages use native search clusters independently.
 // PAA TARGETS:
@@ -34,7 +34,6 @@ export const metadata = {
   keywords: [
     'jump timing drill',
     'jump sequence game',
-    'plyometric rhythm drill',
     'aerial trajectory game',
     'mid-air target game',
     'vertical jump timing',

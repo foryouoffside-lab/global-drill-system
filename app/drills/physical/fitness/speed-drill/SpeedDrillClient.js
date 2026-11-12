@@ -69,10 +69,10 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 const RULES_ITEMS = [
-  { title: "Target Acquisition", text: "Click moving shrinking targets before radius decays to zero (+2s per hit, max 60s). Each hit scores 100 points multiplied by your combo and level." },
+  { title: "Target Acquisition", text: "Click moving shrinking targets before they vanish at a 4px radius (+2s per hit, max 60s). Each hit scores 100 points multiplied by your combo and level." },
   { title: "Combo Multiplier", text: "Chain unbroken target hits to build combo multiplier up to 3.0x max." },
   { title: "Level Progression", text: "Score increases level continuously. Target velocity & shrink rate accelerate dynamically." },
-  { title: "Miss / Target Expiry", text: "Missing a target or letting target shrink to zero resets combo streak (and deducts 0.8s if enabled in settings)." }
+  { title: "Miss / Target Expiry", text: "Clicking empty space or letting a target shrink away resets your combo streak and costs 1 second." }
 ];
 
 // ============================================================
@@ -632,12 +632,12 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
           <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Speed Drill Training"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
+            {copy?.subtitle && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy.subtitle}
+              </p>
+            )}
           </div>
         )}
 

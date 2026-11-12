@@ -4,398 +4,142 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// PESQUISA DE PALAVRAS-CHAVE NATIVAS (SERP BRASIL / PT-BR)
-// Clusters nativos revisados por intenção; concorrência ainda não medida:
-// - "jogo de desviar do mouse" (Busca de alta intenção gamer e reflexo)
-// - "jogo de esquiva mouse reflexo" (Treino de agilidade psicomotora)
-// - "teste de visao periferica online" (Avaliação de campo visual e atenção)
-// - "treino de reflexo e desvio" (Mecânica de esquiva e tempo de reação)
-// - "desviar de habilidades jogo" / "desviar de skillshot" (Cultura MOBA/FPS eSports)
-// - "teste de atencao espacial e reflexo" (Neurociência cognitiva aplicada)
-// - "jogo de agilidade com mouse" (Busca funcional no navegador sem download)
-// - "treino de micro esquiva e flick" (Microajuste balístico de mira)
-// ============================================================
+const url = 'https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion';
+const title = "Jogo de Esquiva em Grade: Saia Antes da Explosão | SkillDrills";
+const description = "Jogo de esquiva em grade grátis: leve o cursor para fora das casas que piscam em laranja na grade 3x3 antes que explodam. Rodadas de 45 segundos.";
 
 export const metadata = {
-  title: "Teste de Reflexo | Jogo de Esquiva | SkillDrills",
-  description: "Teste de reflexo grátis e jogo de esquiva online. Detecte zonas perigosas na grade 3x3 e mova o cursor para células seguras para treinar reflexos.",
-  keywords: [
-    "teste de reflexo",
-    "teste de visão periférica online",
-    "jogo de desviar do mouse",
-    "jogo de esquiva mouse reflexo",
-    "treino de reflexo e desvio",
-    "desviar de habilidades jogo",
-    "teste de atencao espacial e reflexo",
-    "jogo de agilidade com mouse",
-    "treino de visão periférica",
-    "jogo de reflexo",
-    "teste de atenção espacial",
-    "jogo de agilidade com mouse",
-    "reflexo espacial teste"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion',
-    languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Teste de Reflexo | Jogo de Esquiva | SkillDrills",
-    description: "Teste de reflexo grátis e jogo de esquiva online. Detecte zonas perigosas na grade 3x3 e mova o cursor para células seguras para treinar reflexos.",
-    url: 'https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion',
-    siteName: 'SkillDrills',
-    locale: 'pt_BR',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Teste de Reflexo | Jogo de Esquiva | SkillDrills",
-    description: "Teste de reflexo grátis e jogo de esquiva online. Detecte zonas perigosas na grade 3x3 e mova o cursor para células seguras para treinar reflexos.",
-  },
+  title,
+  description,
+  keywords: ["jogo de esquiva em grade", "fuja das casas que explodem", "grade 3x3", "leitura de perigo", "jogo de esquiva no navegador"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_BR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Início",
-      "item": "https://skilldrills.online/pt"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Treinamento Físico",
-      "item": "https://skilldrills.online/pt/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Coordenação Motora",
-      "item": "https://skilldrills.online/pt/drills/physical/coordination"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Jogo de Desviar do Mouse & Teste de Visão Periférica",
-      "item": "https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion"
-    }
-  ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Peripheral_vision"],
-  "name": "Jogo de Desviar do Mouse & Teste de Visão Periférica",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Ferramenta neurocognitiva de avaliação de reflexos espaciais e varredura periférica através de esquiva dinâmica em matriz 3x3 sob pressão de tempo.",
-  "url": "https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/pt"
-  },
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
-};
-
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Treinador de Esquiva e Reflexo Espacial",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Navegador moderno compatível com HTML5 Canvas e Pointer Lock API",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Início', item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: 'Treino Físico', item: 'https://skilldrills.online/pt/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Coordenação', item: 'https://skilldrills.online/pt/drills/physical/coordination' },
+    { '@type': 'ListItem', position: 4, name: 'Jogo de Esquiva em Grade', item: url },
+  ],
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Jogo de Esquiva em Grade Dinâmica (Dynamic Grid Evasion)",
-  "url": "https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion",
-  "description": "Exercício intensivo de desvio de explosões em grade 3x3 para aprimoramento de visão periférica, tempo de reação e esquiva de habilidades em jogos competitivos.",
-  "genre": [
-    "Coordination Drill",
-    "Reflex Training",
-    "Spatial Awareness",
-    "Action"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Jogo de Esquiva em Grade (Dynamic Grid Evasion)',
+  url,
+  description,
+  genre: ['Action Game', 'Browser Game'],
+  gamePlatform: ['Web Browser', 'Desktop'],
+  applicationCategory: 'Game',
+  operatingSystem: 'All',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-11-10',
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
+
+const faqs = [
+  { q: "Como funciona o jogo de esquiva em grade?", a: "A tela é dividida em uma grade 3x3. A cada onda, algumas casas piscam em laranja como aviso. Quando o tempo de aviso acaba, essas casas explodem em vermelho; se o seu cursor estiver fora delas nesse instante, você passou da onda. A próxima onda começa 0,35 segundo depois da explosão, e cada rodada dura 45 segundos." },
+  { q: "Quando a posição do cursor é verificada?", a: "Só no momento da explosão. Você pode passar por casas perigosas durante o aviso; o que conta é estar numa casa segura quando elas explodem. O cursor começa no centro, e a casa do meio também pode virar casa perigosa." },
+  { q: "Como são calculados os pontos e o combo?", a: "Cada onda superada vale 100 pontos vezes o multiplicador de combo. O multiplicador fica em 1,1x a partir de 3 ondas seguidas, 1,25x com 5, 1,5x com 10, 2,0x com 20 e 2,5x com 30. O código prevê 3,0x com 50 seguidas, mas em 45 segundos cabem no máximo pouco mais de 40 ondas, então 2,5x é o máximo alcançável na prática." },
+  { q: "Como a dificuldade aumenta?", a: "Toda rodada começa no nível 1. O nível sobe 1 a cada 250 pontos e mais 1 a cada 4 ondas seguidas. Com o nível, o aviso cai de 1,4 para 0,45 segundo e as casas perigosas passam de 3 para 7, sobrando só 2 seguras. Os dois valores chegam ao limite no nível 15." },
+  { q: "O que acontece se a explosão me pegar?", a: "O combo volta a 0 e aparecem um flash vermelho e um tremor de tela. Você não perde pontos nem tempo. O flash vermelho pode ser desligado no botão do canto inferior direito durante o jogo." },
+  { q: "Como a nota é definida?", a: "A pontuação final é comparada com uma referência de 17.000 pontos (B a partir de 6.120, C a partir de cerca de 3.450, D a partir de 1.530). Mesmo superando todas as ondas em 45 segundos, o cálculo dá no máximo cerca de 8.400 pontos, então a nota mais alta realista aqui é B." },
+  { q: "Qual controle é usado?", a: "Só o mouse. Ao começar, o ponteiro é travado (pointer lock) e a sensibilidade das configurações do site é aplicada. No teclado, só Esc (sair) é usado. Em aparelhos só de toque não dá para mover o cursor; recomendamos um PC com mouse." },
+  { q: "Qual a diferença para um jogo de projéteis?", a: "Aqui você escolhe uma de 9 casas fixas e entra nela antes do fim do aviso. Se você quer fugir de projéteis que vêm de todas as bordas, use o Quick Dodge na mesma categoria." },
+  { q: "É grátis? Onde ficam os recordes?", a: "Sim, grátis, sem instalação nem cadastro, direto no navegador. Recorde e melhor combo ficam só no armazenamento local do seu navegador." },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Como funciona o teste de visão periférica e esquiva na grade 3x3?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O exercício divide a tela em uma matriz tática de 9 células. Pulsos de aviso em cor âmbar alertam sobre detonações iminentes em múltiplos quadrantes. O jogador deve manter a visão descentralizada, identificar os setores seguros que permanecem apagados e realizar um flick rápido com o cursor antes da explosão."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que a fixação visual centralizada no meio da tela é mais eficiente do que olhar célula por célula?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Com base na Teoria da Integração de Características de Anne Treisman (1980), o processamento pré-atencional da visão periférica analisa estímulos luminosos de forma paralela e instantânea. Tentar inspecionar cada célula de modo sequencial causaria um gargalo cognitivo fatal quando o tempo de aviso cai para 0,45 segundos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "De que maneira este treino melhora a esquiva de habilidades em jogos como League of Legends, Valorant e CS2?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Em confrontos competitivos, habilidades de área (molotovs, granadas e ultimates) e skillshots exigem reação de fuga imediata sem desviar o foco da mira central. O treino condiciona o reflexo exógeno de Posner, permitindo desviar o cursor de ameaças periféricas sem hesitação consciente."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como a janela de aviso e a quantidade de células perigosas variam com o avanço dos níveis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A cada 250 pontos o nível sobe. A janela de tolerância de aviso é reduzida gradualmente de 1,4 segundos no nível 1 para apenas 0,45 segundos nos níveis 12 a 15. Concomitantemente, o número de células em perigo salta de 3 para até 7 células simultâneas, deixando apenas 2 quadrantes de refúgio seguro."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ser atingido por uma explosão desconta pontos do meu placar ou reduz o cronômetro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Não há dedução de pontos acumulados nem encurtamento do tempo de 45 segundos. Entretanto, permanecer em uma célula vermelha durante a detonação reinicia imediatamente o multiplicador de combo para 1.0x, incentivando decisões rápidas e agressivas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a mecânica motora correta para frear o cursor exatamente dentro da célula segura sem passar direto?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Aplica-se o modelo bifásico de Woodworth (1899): execute um flick balístico rápido com o antebraço em direção ao setor seguro e, no instante em que a ponta do cursor cruzar a fronteira da célula, aplique pressão descendente com a almofada da mão e dedos contra o mousepad para gerar atrito de frenagem imediato."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que a sensibilidade do mouse influencia a capacidade de sobrevivência em níveis elevados?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sensibilidades extremamente baixas forçam movimentos amplos do braço que consomem tempo precioso da janela de 0,45s. Uma sensibilidade média equilibrada (entre 28 e 38 cm/360°) permite transitar entre quadrantes vizinhos da matriz com pequenos movimentos conjugados de pulso e dedos, minimizando a latência de deslocamento."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a estratégia fundamental para superar 17.000 pontos e conquistar o rank Apex Grid Evader?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É indispensável manter a visão suave (soft gaze) no centro exato da matriz 3x3 e priorizar a célula segura mais próxima adjacente ao cursor atual. Sustentar uma sequência ininterrupta com multiplicador máximo de 3.0x durante toda a rodada de 45 segundos ajuda a maximizar a pontuação."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a diferença entre atenção endógena e atenção exógena nesta dinâmica de jogo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Conforme descrito por Michael Posner (1980), a atenção endógena é voluntária e lenta (cerca de 300ms), enquanto a atenção exógena é disparada de forma reflexa por estímulos visuais externos (cerca de 100 a 150ms). Este drill automatiza a resposta exógena diante do pulso luminoso âmbar."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O teste exige instalação de extensões ou envio de dados pessoais?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Não. Todo o processamento cinemático e estatístico roda diretamente no navegador web através de HTML5 Canvas e performance.now(). Seus recordes e estatísticas ficam guardados estritamente na memória local do seu navegador (LocalStorage), mantendo os dados no seu dispositivo."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-11-10',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
+const steps = [
+  "Clique em Iniciar; depois da contagem de 3 segundos o cursor começa no centro da grade.",
+  "Veja as casas que piscam em laranja e encontre uma casa sem aviso.",
+  "Antes da explosão, leve o cursor para dentro da casa segura e pare longe da borda.",
+  "Supere onda após onda, mantenha o combo e busque seu recorde em 45 segundos.",
+];
+
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Protocolo de Treinamento em Grade de Esquiva e Reflexos Espaciais",
-  "description": "Guia de 4 etapas para escanear a matriz 3x3, identificar células seguras e sobreviver às ondas de explosão.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Posicionamento Central e Fixação Descentralizada",
-      "text": "Inicie o teste e posicione a mira no centro da grade 3x3 mantendo um foco visual relaxado que abranja os 9 quadrantes simultaneamente.",
-      "url": "https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion#passo-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Detecção Periférica do Pulso Âmbar de Ameaça",
-      "text": "Assim que as bordas âmbar começarem a piscar nos setores de perigo, identifique instantaneamente com a visão periférica os quadrantes que permanecem escuros.",
-      "url": "https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion#passo-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Flick Balístico e Frenagem no Setor Seguro",
-      "text": "Mova o cursor com um flick direto para a célula segura mais próxima antes que o tempo expire e os setores em perigo detonem em vermelho.",
-      "url": "https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion#passo-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Sustentação de Combo Máximo e Sobrevivência Contínua",
-      "text": "Encadeie esquivas consecutivas sem ser atingido para elevar o multiplicador até 3.0x e registrar a pontuação máxima ao longo dos 45 segundos.",
-      "url": "https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion#passo-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Como jogar o jogo de esquiva em grade',
+  description: 'Quatro passos para sair das casas perigosas da grade 3x3.',
+  step: steps.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, name: `Passo ${i + 1}`, text, url: `${url}#step-${i + 1}` })),
 };
 
 const gridGuide = {
-  heading: "Fundamentação Neurocognitiva: Atenção Espacial e Mecânica de Esquiva Periférica",
-  subtitle: "Teoria de integração de Treisman, paradigma de orientação de Posner e controle balístico de Woodworth aplicados à esquiva rápida",
+  heading: 'Guia do jogo de esquiva em grade',
   intro: [
-    "O teste de esquiva em grade dinâmica (Dynamic Grid Evasion) submete o aparelho visuomotor a um regime de alta densidade informacional. Em vez de perseguir um alvo móvel isolado, o praticante deve monitorar simultaneamente 9 setores táticos em uma matriz 3x3, discernindo instantaneamente quais quadrantes apresentam risco de detonação iminente e executando uma rota de escape balística antes do término da janela de aviso.",
-    "A célebre psicóloga cognitiva Anne Treisman e Garry Gelade (1980), em sua Teoria da Integração de Características, comprovaram que pistas visuais elementares e salientes (como cores contrastantes e bordas cintilantes) são segmentadas de forma pré-atencional e paralela pelo córtex visual. Ao adotar uma fixação visual descentralizada no centróide da matriz, o jogador ativa as células ganglionares parvocelulares e magnocelulares da retina periférica, permitindo registrar múltiplos avisos simultâneos sem necessidade de varredura ocular sacádica sequencial.",
-    "A dinâmica de tempo de reação de escolha é aprofundada pelas investigações de Michael Posner (1980) sobre a orientação da atenção encoberta (covert spatial attention). Conforme a dificuldade ascende para os níveis 12 a 15, a janela de alarme colapsa de 1,4 segundos para escassos 0,45 segundos, enquanto o número de setores ameaçados sobe para 7 de 9. Nesse regime de estresse temporal, o controle voluntário endógeno é suplantado pelo modelo bifásico de Robert Woodworth (1899): um disparo motor balístico de alta velocidade seguido por frenagem micrométrica por atrito manual para estabilizar o cursor dentro da fronteira segura.",
-    "Rigor de cronometria computacional: A plataforma SkillDrills opera com a API nativa performance.now() em resolução de cerca de 1 ms no hardware do cliente. Variações cinemáticas perceptíveis decorrem da taxa de atualização do monitor (60Hz = 16,6ms; 144Hz = 6,9ms; 240Hz = 4,1ms) e da taxa de amostragem do mouse. Desvios inferiores a 5ms constituem tolerância física esperada."
+    "O jogo de esquiva em grade é um jogo de navegador em que você tira o cursor das casas avisadas em laranja numa grade 3x3 antes que explodam. Em vez de fugir de objetos voando, você escolhe uma de 9 casas, então decisão rápida e parada precisa contam juntas.",
+    "Conforme o nível sobe, o aviso encolhe de 1,4 para 0,45 segundo e até 7 das 9 casas viram perigo. No fim sobram só 2 casas seguras e não há tempo de checar uma por uma. Como nos experimentos de pistas de atenção de Posner (Posner, 1980), ajuda ler de uma vez o contraste entre casas piscando e casas escuras.",
+    "Movimentos rápidos têm um impulso grande e uma correção pequena no final (Woodworth, 1899). Escolher a casa certa e passar da borda ainda conta como acerto da explosão, por isso treine parar dentro da casa.",
+    "Os resultados são registros de prática dentro do SkillDrills, não um exame médico, teste de visão ou medida de desempenho esportivo. Compare pontuações sempre com o mesmo mouse, sensibilidade e monitor.",
   ],
   benchmarks: {
-    title: "Faixas de Referência de Desempenho em Esquiva Espacial (5 Níveis)",
-    headers: ["Faixa", "Classificação editorial", "Pontuação Alvo", "Nível Atingido", "Janela de Aviso Suportada", "Perfil Neurofuncional de Esquiva"],
+    title: 'Faixas de nota (faixas de prática SkillDrills)',
+    headers: ['Nota', 'Pontos', 'Referência'],
     rows: [
-      ["Faixa 1", "Muito alta", "17.000+ pontos", "Nível 12 – 15", "0,45 – 0,60 s de aviso", "Processamento paralelo periférico muito eficiente; flicks balísticos instantâneos para refúgios seguros sob 7 ameaças ativas (Treisman 1980; Posner 1980)"],
-      ["Faixa 2", "Alta", "13.000 – 16.999 pts", "Nível 9 – 11", "0,65 – 0,80 s de aviso", "Excelente orientação de atenção encoberta de Posner; esquiva segura sob 5 a 6 células detonadas com frenagem de Woodworth estável"],
-      ["Faixa 3", "Boa", "9.500 – 12.999 pts", "Nível 6 – 8", "0,85 – 1,05 s de aviso", "Desempenho sólido para games competitivos; boa tomada de decisão rápida e controle firme de atrito no mousepad"],
-      ["Faixa 4", "Intermediária", "6.000 – 9.499 pts", "Nível 3 – 5", "1,10 – 1,25 s de aviso", "Faixa intermediária; falhas recorrentes provocadas por visão em túnel quando a janela de aviso desce para 1,0 segundo"],
-      ["Faixa 5", "Inicial", "< 6.000 pontos", "Nível 1 – 2", "> 1,25 s de aviso", "Dificuldade na distribuição da atenção periférica; tendência a focar em células isoladas e ultrapassar os limites da célula segura"]
+      ['B', 'a partir de 6.120', 'quase todas as ondas superadas em 45 segundos'],
+      ['C', 'a partir de cerca de 3.450', 'mais da metade das ondas superadas em sequência'],
+      ['D', 'a partir de 1.530', 'troca segura para a casa livre depois do aviso'],
+      ['F', 'abaixo de 1.530', 'início'],
     ],
-    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Benchmarks consolidados a partir da Teoria de Integração de Características (Treisman & Gelade 1980), estudos de atenção espacial de Posner (1980) e princípios de controle motor de Woodworth (1899)."
+    note: 'As faixas comparam a pontuação final com 17.000 pontos e são faixas de prática do SkillDrills. A ou mais não é alcançável em 45 segundos pelo cálculo. Não são estatísticas de usuários nem percentis.',
   },
   techniques: {
-    title: "Protocolos Táticos para Aperfeiçoamento da Visão Periférica e Esquiva em Grade",
+    title: 'Dicas para pontuar mais',
     items: [
-      {
-        name: "Fixação Descentralizada no Centróide da Matriz (Treisman Decentralized Fixation)",
-        desc: "Mantenha os olhos direcionados suavemente ao centro geométrico da matriz 3x3 sem fixar um ponto rígido. Abra o campo de visão periférica para que as células da retina captem a cintilação âmbar simultaneamente em todos os cantos.",
-        tips: "Evite rastrear com os olhos o movimento do cursor; confie na propriocepção do braço para deslocar o mouse até o refúgio seguro."
-      },
-      {
-        name: "Disparo Reflexo Exógeno de Posner (Exogenous Covert Attention Trigger)",
-        desc: "Aproveite a ativação exógena descrita por Posner (1980). Em vez de calcular deliberadamente onde estão os perigos, mova a mão de forma reflexa em direção ao quadrante que permanece escuro e sem pulso luminoso.",
-        tips: "A ausência de estímulo de aviso é o seu sinal verde de fuga instantânea."
-      },
-      {
-        name: "Flick Balístico e Frenagem por Fricção Manual de Woodworth (Boundary Deceleration)",
-        desc: "Execute o movimento em aceleração máxima balística e utilize o contato da base da mão e do quinto dedo contra a superfície do mousepad para travar o cursor no interior do quadrante.",
-        tips: "Essa leve pressão física para baixo neutraliza a inércia e previne que o cursor ultrapasse a célula segura."
-      },
-      {
-        name: "Regra de Fuga para o Quadrante Adjacente Mais Próximo (Nearest Safe Sector)",
-        desc: "Nos níveis finais com 7 células detonadas simultaneamente e tempo reduzido a 0,45s, ponderar a célula 'ideal' gera paralisia por análise.",
-        tips: "Salte imediatamente para o quadrante seguro que estiver mais próximo da sua posição atual (seja horizontal, vertical ou diagonal imediato)."
-      }
-    ]
+      { name: 'Procure as casas escuras', desc: 'Em vez de contar as casas piscando, procure direto a casa sem aviso.', tips: 'No fim só há 2 casas seguras; vá para a mais próxima.' },
+      { name: 'Casa segura mais próxima', desc: 'Com cerca de 0,5 segundo de aviso, trajetos longos não dão tempo. Vá para a casa segura mais perto.', tips: 'Na horizontal ou vertical costuma ser mais curto que na diagonal.' },
+      { name: 'Pare dentro da casa', desc: 'Vale a posição exata do cursor. Em cima da borda ele pode contar como a casa vizinha.', tips: 'Mire no centro da casa.' },
+      { name: 'Mantenha o combo', desc: 'Quanto maior a sequência, mais sobem multiplicador e nível. Arriscar uma casa distante e ser pego zera o combo.', tips: 'Prefira a casa segura e próxima.' },
+    ],
   },
-  steps: [
-    "Sente-se confortavelmente e posicione o cursor na célula central da grade 3x3.",
-    "Mantenha o olhar suave no meio da tela para captar os avisos luminosos pela visão periférica.",
-    "Desloque o cursor com agilidade para a célula segura mais próxima antes da explosão vermelha.",
-    "Sustente o multiplicador de 3.0x ininterruptamente para alcançar o ranking Apex durante os 45 segundos."
-  ],
-  audience: "Jogadores e atletas de eSports (LoL, Valorant, CS2, Apex Legends), praticantes de artes marciais e esportes de bola, e qualquer pessoa buscando expandir sua visão periférica e velocidade de esquiva reflexa.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015'),
+  steps,
+  audience: 'Quem procura um jogo de esquiva com casas perigosas numa grade e quem quer treinar decisão rápida e parada precisa com o mouse.',
+  faqs,
+  sources: pickSources('posner1980', 'woodworth1899', 'fitts1954'),
 };
 
 export default function DynamicGridEvasionPagePt() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <DynamicGridEvasionClient
         copy={{
-          title: "Teste de Reflexo",
-          subtitle: "Detecte o perigo e mova-se para uma célula segura • 15 níveis",
-          hudLabels: {
-            score: "Pontuação",
-            timeLeft: "Tempo Restante",
-            bestScore: "Melhor Pontuação",
-            bestCombo: "Melhor Combo"
-          },
-          rulesTitle: "Regras do Teste de Esquiva e Sistema de Pontuação",
+          title: "Jogo de Esquiva em Grade",
+          hudLabels: { score: "Pontos", timeLeft: "Tempo", bestScore: "Recorde", bestCombo: "Melhor Combo" },
+          rulesTitle: "Regras e pontuação",
           rules: [
-            { title: "Esquiva de Células de Perigo", text: "Mova a mira para quadrantes seguros antes que as bordas âmbar detonem em explosões vermelhas." },
-            { title: "Multiplicador de Combo", text: "Sobreviva a ondas consecutivas sem ser atingido para construir um multiplicador de até 3.0x." },
-            { title: "Progressão de Nível", text: "A cada 250 pontos o nível sobe, reduzindo a janela de aviso de 1,4s para 0,45s e elevando o perigo para 7 células." },
-            { title: "Impacto da Detonação", text: "Ser atingido por uma explosão reinicia o multiplicador para 1.0x, sem qualquer perda de pontos." }
+            { title: "Aviso de perigo", text: "A cada onda algumas casas piscam em laranja. Quando o aviso acaba, elas explodem." },
+            { title: "Vá para a casa segura", text: "Se o cursor estiver fora das casas perigosas na explosão, você ganha 100 pontos vezes o multiplicador de combo." },
+            { title: "Nível", text: "O nível sobe a cada 250 pontos e a cada 4 ondas seguidas. O aviso cai de 1,4 para 0,45 s e as casas perigosas passam de 3 para 7." },
+            { title: "Pego pela explosão", text: "Só o combo volta a 0. Pontos e a rodada de 45 segundos não mudam." },
           ],
-          aboutTitle: "Sobre o Treinamento de Esquiva em Grade",
-          aboutHeading: "Atenção Espacial Periférica e Fuga Balística de Ameaças",
-          aboutText: "Este exercício é fundamentado na Teoria de Integração de Características de Anne Treisman (1980) e no Paradigma de Orientação Espacial de Michael Posner (1980). A dinâmica em matriz 3x3 exercita a visão periférica descentralizada e condiciona reflexos rápidos de fuga necessários para desviar de habilidades de área (AOE), projéteis e granadas em jogos de eSports competitivos.",
+          aboutTitle: "O que é o jogo de esquiva em grade?",
+          aboutHeading: "Fuja das casas que explodem na grade 3x3",
+          aboutText: "No jogo de esquiva em grade, casas de uma grade 3x3 piscam em laranja antes de explodir e você leva o cursor a tempo para uma casa segura. Com o nível, o aviso fica mais curto e há mais casas perigosas. O foco é decidir rápido e frear o mouse com precisão, não uma medida médica.",
           aboutCards: [
-            {
-              title: "Público-Alvo",
-              desc: "Gamers de FPS e MOBA que buscam aprimorar a esquiva de habilidades de área e granadas, além de praticantes focados em agilidade e visão periférica."
-            },
-            {
-              title: "Habilidades Desenvolvidas",
-              desc: "Busca visual paralela, atenção encoberta reflexa, redução do tempo de reação de escolha e frenagem motora de alta precisão."
-            },
-            {
-              title: "Varredura Periférica",
-              desc: "A fixação no centro da matriz erradica a visão em túnel e desenvolve a percepção espacial em 360 graus."
-            }
-          ]
+            { title: "Para quem", desc: "Para quem gosta de jogos de esquiva em grade ou quer treinar reação a avisos com o mouse." },
+            { title: "O que você treina", desc: "Separar casas perigosas e seguras, escolher a mais próxima e parar o cursor dentro dela." },
+            { title: "Formato", desc: "45 segundos fixos, sempre a partir do nível 1. Ser pego não tira pontos nem tempo." },
+          ],
         }}
       />
       <DrillGuide guide={gridGuide} />

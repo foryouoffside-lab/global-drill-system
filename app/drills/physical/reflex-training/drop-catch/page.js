@@ -188,7 +188,7 @@ const faqSchema = {
       name: 'What happens when a red decoy is clicked?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Clicking a red decoy triggers an immediate combo reset to 1.0x and flashes a red visual penalty. If time penalties are activated in settings, decoy hits also deduct 0.8 seconds from your remaining clock.',
+        text: 'Clicking a red decoy triggers an immediate combo reset to 1.0x and flashes a red visual penalty. Each decoy hit also costs 1 second of clock time.',
       },
     },
     {

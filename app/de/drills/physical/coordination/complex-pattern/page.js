@@ -4,380 +4,186 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Germany (DE / DACH)
-// Native SERP intent: Muster merken Test, visuelles Gedächtnis, räumliches Vorstellungsvermögen
-// Context: German medical aptitude (TMS Muster zuordnen / Figuren lernen) & E-Sport Recoil Tracking
-// Target Queries:
-//   - "Muster Merken Test" (High-intent cognitive aptitude test phrase)
-//   - "Muster Merken Spiel" (Brain game / pattern memory game)
-//   - "Räumliches Vorstellungsvermögen Test" (Spatial visualization test)
-//   - "Arbeitsgedächtnis Trainieren Spiele" (Working memory brain training)
-//   - "Visuelles Gedächtnis Test Online" (Visual memory test online free)
-//   - "Pfade Merken Spiel Browser" (Path tracing browser game)
-//   - "Feinmotorik Koordination Maus" (Mouse fine motor coordination)
-// ============================================================
+const PAGE_URL = 'https://skilldrills.online/de/drills/physical/coordination/complex-pattern';
+const TITLE = "Muster merken Spiel – Pfad nachzeichnen | SkillDrills";
+const DESCRIPTION = "Muster merken Spiel: Ein Pfad aus 3 bis 8 Punkten blitzt kurz auf. Merk ihn dir und zeichne ihn mit der Maus nach. 45 Sekunden, kostenlos im Browser.";
 
 export const metadata = {
-  title: 'Muster merken Test | Visuelles Gedächtnis | SkillDrills',
-  description: 'Kostenloses Browser-Gedächtnisspiel. Merke dir einen aufleuchtenden Pfad, zeichne ihn nach und trainiere räumliches Arbeitsgedächtnis sowie Mauskoordination.',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "Muster merken Test",
-    "Muster merken Spiel",
-    "visuelles Gedächtnis Test online",
-    "räumliches Vorstellungsvermögen Test",
-    "Arbeitsgedächtnis trainieren Spiel",
-    "Pfade merken Spiel Browser",
-    "Gedächtnisspiel online kostenlos",
-    "Muster Gedächtnis Spiel",
-    "Feinmotorik Koordination Maus",
-    "räumliches Gedächtnis trainieren"
-  ],
+  "Muster merken Spiel",
+  "Pfad nachzeichnen",
+  "Bewegungsmuster merken",
+  "Muster nachzeichnen Maus"
+],
   alternates: {
-    canonical: 'https://skilldrills.online/de/drills/physical/coordination/complex-pattern',
+    canonical: PAGE_URL,
     languages: getAlternateLanguages('/drills/physical/coordination/complex-pattern'),
   },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Muster merken Test | Visuelles Gedächtnis | SkillDrills',
-    description: 'Merke dir einen aufleuchtenden Pfad, zeichne ihn nach und trainiere räumliches Gedächtnis sowie Mauskoordination im kostenlosen Browser-Spiel.',
-    url: 'https://skilldrills.online/de/drills/physical/coordination/complex-pattern',
+  openGraph: {
+    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }],
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_URL,
     siteName: 'SkillDrills',
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
+  twitter: {
+    images: ['https://skilldrills.online/opengraph-image'],
     card: 'summary_large_image',
-    title: 'Muster merken Test | Visuelles Gedächtnis | SkillDrills',
-    description: 'Merke dir einen aufleuchtenden Pfad, zeichne ihn nach und trainiere räumliches Gedächtnis sowie Mauskoordination im kostenlosen Browser-Spiel.',
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Physisches Training",
-      "item": "https://skilldrills.online/de/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Koordination",
-      "item": "https://skilldrills.online/de/drills/physical/coordination"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Muster Merken Test & Räumliches Gedächtnistraining",
-      "item": "https://skilldrills.online/de/drills/physical/coordination/complex-pattern"
-    }
-  ]
-};
+const faqItems = [
+  {
+    "q": "Wie funktioniert das Muster merken Spiel?",
+    "a": "Ein Pfad wird kurz angezeigt und verschwindet. Halte die Maustaste im cyanfarbenen Startknoten gedrückt, fahre die Punkte in der gemerkten Reihenfolge ab und lass im magentafarbenen Endknoten los. Danach wird deine Linie mit dem Original verglichen."
+  },
+  {
+    "q": "Wie wird die Übereinstimmung berechnet?",
+    "a": "Deine Linie und der Originalpfad werden in gleich viele Punkte zerlegt. Aus dem mittleren Abstand zum jeweils nächsten Punkt (in Pixeln) ergibt sich der Wert, der von 100 abgezogen wird. Liegen Start oder Ende mehr als etwa 45 px neben dem Knoten, zählt der Versuch als Fehler."
+  },
+  {
+    "q": "Was ändert sich mit dem Level?",
+    "a": "Der Pfad wächst von 3 auf 8 Punkte, die Anzeigezeit sinkt von 2,0 auf 0,6 Sekunden und die nötige Übereinstimmung steigt von 50 % auf 85 %. Ab Level 3 sind Zickzack-, ab Level 4 Spiralpfade möglich."
+  },
+  {
+    "q": "Gibt es Punktabzug für Fehler?",
+    "a": "Nein. Wer die Vorgabe verfehlt, verliert nur den Combo-Multiplikator (zurück auf 1,0x); Punkte und Restzeit bleiben. Der Multiplikator steigt mit Serien auf bis zu 3,0x."
+  },
+  {
+    "q": "Wie lange dauert eine Runde?",
+    "a": "Genau 45 Sekunden. Das Level startet jede Runde wieder bei 1."
+  },
+  {
+    "q": "Ist das ein Test des visuellen Gedächtnisses?",
+    "a": "Nein, es ist ein Übungsspiel ohne Diagnose oder Normwerte. Für klassische Gedächtnistests gibt es eigene Seiten im Memory-Bereich von SkillDrills."
+  },
+  {
+    "q": "Funktioniert es auf dem Handy?",
+    "a": "Gesteuert wird per Mausziehen. Am besten spielst du im Browser am Computer mit Maus."
+  },
+  {
+    "q": "Ist das Spiel kostenlos?",
+    "a": "Ja, ohne Installation und ohne Anmeldung. Bestwerte werden nur in deinem Browser gespeichert."
+  }
+];
 
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-  "name": "Muster Merken Test & Räumliches Arbeitsgedächtnistraining",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Kostenloses webbasiertes Tool zur Messung und Schulung des visuell-räumlichen Arbeitsgedächtnisses und der Feinmotorik durch sequenzielle geometrische Pfadreproduktion.",
-  "url": "https://skilldrills.online/de/drills/physical/coordination/complex-pattern",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/de"
-  },
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "SkillDrills Startseite", item: 'https://skilldrills.online/de' },
+    { '@type': 'ListItem', position: 2, name: "Koordinationsspiele online", item: 'https://skilldrills.online/de/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: "Muster merken Spiel", item: PAGE_URL },
+  ],
 };
 
 const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Muster Merken Trainer",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas und Maus-Eingabe in modernem Webbrowser erforderlich",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/de/drills/physical/coordination/complex-pattern",
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Muster Merken Spiel (Pattern Memory Game)",
-  "url": "https://skilldrills.online/de/drills/physical/coordination/complex-pattern",
-  "description": "Präge dir kurz aufleuchtende Vektorpfade ein und zeichne sie fehlerfrei per Maus nach. Kostenloses kognitives Koordinationsspiel.",
-  "genre": [
-    "Brain Training",
-    "Memory Test",
-    "Coordination Drill",
-    "Action"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Muster merken Spiel",
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Aktueller Browser mit HTML5-Canvas und Maus",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
+  inLanguage: 'de',
+  dateModified: '2026-11-10',
 };
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "de",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Welche kognitiven und feinmotorischen Fähigkeiten misst der Muster-Merken-Test?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Drill evaluiert simultan die Pufferkapazität des visuell-räumlichen Notizblocks (Visuospatial Sketchpad) im parietalen und präfrontalen Kortex sowie die serielle motorische Pfadreproduktion des primären motorischen Kortex. Gemessen wird, wie effizient flüchtige geometrische Vektorkoordinaten enkodiert und ohne zeitliche Latenz in kontinuierliche Maussteuerungsbefehle umgesetzt werden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Inwiefern hilft dieses Training bei Eignungstests wie dem TMS (Muster zuordnen / Figuren lernen)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Untertest 'Muster zuordnen' und 'Figuren lernen' im TMS (Test für Medizinische Studiengänge) verlangt das blitzschnelle Erfassen subtiler geometrischer Merkmale unter Zeitdruck. Durch die dynamische Skalierung auf bis zu 8 Knoten und Einprägezeiten von nur 0,6 Sekunden schult dieser Drill die Fähigkeit, visuelle Reize in Sekundenschnelle strukturiert im Arbeitsgedächtnis zu verankern."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie hängen Baddeleys Notizblock und Cowans 4-Elemente-Limit mit den Levelstufen zusammen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nach Alan Baddeley (1974) speichert der visuell-räumliche Notizblock räumliche Orientierungen nur temporär. Nelson Cowan (2001) wies nach, dass die reine Kapazität des unstrukturierten Arbeitsgedächtnisses bei etwa 4 Items liegt. Während Level 1 bis 4 innerhalb dieser Spanne liegen, bricht das Einprägen einzelner Punkte ab Level 5 (5 bis 8 Knoten) zusammen. Der Trainierende wird neuroplastisch gezwungen, übergeordnete geometrische Chunks (z. B. Dreiecke, Zickzacklinien) zu bilden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie verändern sich Einprägezeit und Knotenanzahl im Verlauf der 15 Level?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Schwierigkeit skaliert dynamisch: Die Anzahl der miteinander zu verbindenden Wegpunkte wächst von 3 auf bis zu 8 Knoten an, während die Sichtbarkeitsdauer des Pfades von anfänglichen 2,0 Sekunden schrittweise auf 0,6 Sekunden sinkt. Gleichzeitig werden die geometrischen Winkel spitzwinkliger und erfordern anspruchsvolle Richtungswechsel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie wird die prozentuale Pfadgenauigkeit (Accuracy %) mathematisch ermittelt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Genauigkeit basiert auf einer Echtzeit-Kollisionsprüfung und der euklidischen Koordinatenabweichung (Euclidean Deviation) zwischen dem gezeichneten Vektor und dem Zielpfad. Werden alle Wegpunkte in der korrekten Reihenfolge mit minimaler Abweichung passiert, werden Genauigkeitswerte von über 85% bis 95% erzielt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Verbessert dieser Drill das Recoil-Control (Spray Patterns) in Shooter-Games wie CS2 oder Valorant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, in erheblichem Maße. Das Beherrschen von Rückstoßmustern (Spray Patterns) erfordert das blinde Abrufen gespeicherter zweidimensionaler Bewegungskurven ohne externe Hilfslinien. Dieser Drill konditioniert exakt die motorische Feedforward-Steuerung, bei der das Gehirn gespeicherte Vektoren präzise an Hand- und Fingermuskeln überträgt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Mit welchen kognitiven Chunking-Strategien lassen sich komplexe Zickzack-Pfade am besten behalten?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Merke dir nicht die einzelnen Koordinaten, sondern fasse Wegpunkte zu bekannten geometrischen Gestalten zusammen (z. B. 'Buchstabe N', 'Pfeilspitze', 'Dreieck mit Ausleger'). Ein 7-Knoten-Pfad wird so zu '1 Dreieck + 1 Gerade' – das reduziert die kognitive Belastung von 7 isolierten Punkten auf lediglich 2 handhabbare Chunks."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Maus-Empfindlichkeit (DPI) und welcher Griff eignen sich am besten für schnelles Nachzeichnen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Eine mittlere Mausempfindlichkeit von 25 bis 35 cm/360° bietet den besten Kompromiss aus Reichweite und Präzision. Als Griffhaltung empfiehlt sich der Claw-Grip oder Fingertip-Grip: Sie bieten im Vergleich zum Palm-Grip mehr Gelenkspielraum in den Fingerkuppen, um spitze Scheitelpunkte ohne Bremsverzögerung exakt auszuführen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Kriterien müssen erfüllt sein, um den Spitzenrang von 17.000 Punkten (Apex-Rang) zu erreichen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Voraussetzung ist das fehlerfreie Erreichen von Level 12 oder höher innerhalb der 45 Sekunden, das Aufrechterhalten des maximalen 4,0x Combo-Multiplikators und eine Durchschnittsgenauigkeit von mindestens 92%. Dies gelingt nur mit ununterbrochener Voraktivierung der Bewegungsmuster im Kopf während der Aufblitzphase."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist dieser Test vollkommen kostenlos und ohne Installation nutzbar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, SkillDrills ist zu 100% kostenfrei und läuft direkt in jedem modernen Webbrowser (HTML5 Canvas). Es ist weder ein Download noch eine Registrierung erforderlich. Alle Rekorde und Trainingsstatistiken verbleiben ausschließlich lokal in deinem Browser."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'de',
+  dateModified: '2026-11-10',
+  mainEntity: faqItems.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 };
 
-const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Anleitung: Räumliches Arbeitsgedächtnis und Pfad-Reproduktion trainieren",
-  "description": "4-Schritte-Trainingsprotokoll zum systematischen Einprägen geometrischer Pfade und deren exakter Rekonstruktion per Maus.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Aufblitzenden Pfad erfassen und geometrisch chunking",
-      "text": "Konzentriere dich zu Rundenbeginn auf die grüne Vektorlinie. Fasse die Wegpunkte sofort zu geometrischen Unterformen (Dreiecke, Zickzack) zusammen, bevor die Linie erlischt.",
-      "url": "https://skilldrills.online/de/drills/physical/coordination/complex-pattern#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Cyanfarbenen Startknoten anklicken und Pfad ziehen",
-      "text": "Sobald die Zeichenphase aktiv ist, klicke auf den cyanfarbenen Startpunkt und ziehe die Maus mit gedrückter Taste los.",
-      "url": "https://skilldrills.online/de/drills/physical/coordination/complex-pattern#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Wegpunkte sequenziell ansteuern und am Endknoten loslassen",
-      "text": "Führe den Cursor in der gelernten Reihenfolge durch jeden Knotenpunkt und lasse die Maustaste erst auf dem magentafarbenen Zielknoten los.",
-      "url": "https://skilldrills.online/de/drills/physical/coordination/complex-pattern#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Geschwindigkeit steigern und 4,0x Multiplikator halten",
-      "text": "Vollende korrekte Pfade zügig, um deinen Combo-Multiplikator auf bis zu 4,0x auszubauen und innerhalb von 45 Sekunden maximale Punkte zu erzielen.",
-      "url": "https://skilldrills.online/de/drills/physical/coordination/complex-pattern#step-4"
-    }
-  ]
-};
-
-const patternGuide = {
-  heading: "Visuell-räumliches Arbeitsgedächtnis und serielle Pfad-Reproduktion",
-  subtitle: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills',
-  intro: [
-    "Das Muster-Merken-Training (Complex Pattern Drill) ist eine koordinative High-Speed-Aufgabe, bei der flüchtige geometrische Vektorpfade innerhalb von Sekundenbruchteilen im Arbeitsgedächtnis verankert und anschließend auf einer leeren Leinwand allein aus dem Gedächtnis exakt nachgezeichnet werden müssen. Im Unterschied zu reinen Klick-Reflex-Tests erfordert diese Übung das gleichzeitige Halten mehrteiliger Raumkoordinaten unter Zeitdruck und deren verzögerungsfreie Umsetzung in kontinuierliche motorische Steuerimpulse.",
-    "Nach dem vielbeachteten Modell von Alan Baddeley und Graham Hitch (1974) wird visuelle und räumliche Information im sogenannten 'visuell-räumlichen Notizblock' (Visuospatial Sketchpad) kurzzeitig repräsentiert. Nelson Cowan (2001) bewies in seinen kognitionswissenschaftlichen Arbeiten, dass die unverfälschte Haltekapazität des menschlichen Arbeitsgedächtnisses auf etwa 3 bis 4 unabhängige Elemente beschränkt ist. Sobald der Drill in höheren Levels 5 bis 8 Knotenpunkte vorgibt, stößt das isolierte Merken von Einzelpunkten an seine biologische Grenze: Der Trainierende muss die Knotenpunkte zu übergeordneten geometrischen Einheiten (z. B. Dreiecken, Buchstaben oder Zickzack-Segmenten) zusammenfassen ('Chunking').",
-    "Karl Lashleys (1951) Pionierarbeit über die serielle Ordnung des Verhaltens ('The Problem of Serial Order in Behavior') zeigte auf, dass schnelle koordinative Kettenbewegungen nicht Schritt für Schritt über sensorisches Feedback korrigiert werden können. Stattdessen werden sie vorab als geschlossenes motorisches Programm ('Motor Chunk') im Kortex kompiliert. In Übereinstimmung mit Robert S. Woodworths (1899) zweiphasigem Modell harmonieren dabei die initiale ballistische Beschleunigungsphase von Knoten zu Knoten und die präzise terminale Abbremsung an den Scheitelpunkten, um ein Überschießen des Cursors zu verhindern.",
-    "Messtechnische Genauigkeit & Hardware-Hinweise: Dieser Drill nutzt den hochpräzisen Zeitgeber performance.now() des Browsers für Berechnungen auf Millisekunden-Ebene. Durch die Bildwiederholfrequenz deines Monitors (60 Hz ca. 16,7 ms / 144 Hz ca. 6,9 ms / 240 Hz ca. 4,1 ms, Woods et al., 2015) und die Maus-Pollingrate (125 Hz vs. 1000 Hz) entstehen physikalische Latenzunterschiede. Abweichungen unter 5 ms sind als messtechnisches Rauschen zu bewerten. Sämtliche Daten werden ausschließlich lokal in deinem Browser gespeichert."
+const guide = {
+  "heading": "Muster merken Spiel: Anleitung und Tipps",
+  "intro": [
+    "Das Muster merken Spiel ist ein kostenloses Browser-Spiel: Ein Pfad blitzt kurz auf, du merkst ihn dir und zeichnest ihn danach mit der Maus nach. Sobald der Pfad verschwindet, startest du im cyanfarbenen Knoten, fährst die Punkte in der gemerkten Reihenfolge ab und lässt die Maustaste im magentafarbenen Endknoten los. Wie nah deine Linie am Original liegt, wird als Übereinstimmung in Prozent berechnet.",
+    "Eine Runde dauert 45 Sekunden. Das Level beginnt jede Runde bei 1 und steigt mit Punkten und Serien; um Level 15 erreicht das Spiel 8 Punkte, 0,6 Sekunden Anzeigezeit und 85 % geforderte Übereinstimmung. Als Referenz für die Schwierigkeit dienten das Arbeitsgedächtnismodell mit seinem visuell-räumlichen Notizblock (Baddeley & Hitch, 1974) und Befunde, nach denen dort etwa vier Einheiten Platz haben (Cowan, 2001). Das Spiel ist eine Übung, kein Gedächtnistest mit Diagnose oder Normwerten."
   ],
-  benchmarks: {
-    title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills',
-    headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert-Spanne", "Erreichtes Level", "Pfadgenauigkeit", "Neuro-kognitives & motorisches Profil"],
-    rows: [
-      ["Stufe 1: Apex Pattern Master", "Apex Pattern Master", "17.000+ Pkt.", "Level 12 – 15", "> 92% Genauigkeit", "Hochgradig automatisiertes räumliches Chunking und meisterhafte Unterarm-Finger-Präzision (Cowan 2001; Lashley 1951)"],
-      ["Stufe 2: Elite Sequence Tracer", "Elite Sequence Tracer", "13.000 – 16.999 Pkt.", "Level 9 – 11", "85 – 91% Genauigkeit", "Sicheres Beherrschen spitzwinkliger 6–7-Knoten-Pfade und exzellentes motorisches Feedforward-Gedächtnis (Baddeley 1974)"],
-      ["Stufe 3: Advanced Spatial Navigator", "Advanced Spatial Navigator", "9.500 – 12.999 Pkt.", "Level 6 – 8", "76 – 84% Genauigkeit", "Solides räumliches Vorstellungsvermögen auf dem Niveau ambitionierter E-Sportler und Eignungstest-Kandidaten"],
-      ["Stufe 4: Intermediate Waypoint Recaller", "Intermediate Waypoint Recaller", "6.000 – 9.499 Pkt.", "Level 3 – 5", "65 – 75% Genauigkeit", "Typische biologische Kapazitätsgrenze: Bei mehr als 4 Knoten treten Verzögerungen beim Abrufen und Pfadverzerrungen auf"],
-      ["Stufe 5: Novice Trajectory Learner", "Novice Trajectory Learner", "< 6.000 Pkt.", "Level 1 – 2", "< 65% Genauigkeit", "Instabile Enkodierung flüchtiger Reize, deutliches Überschießen an Eckpunkten; grundlegendes Chunking-Training empfohlen"]
-    ],
-    note: "Objektive Standards abgeleitet aus der Arbeitsgedächtnisforschung (Baddeley & Hitch 1974; Cowan 2001) und seriellen motorischen Steuerungsmodellen (Lashley 1951; Woodworth 1899). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
-  },
-  techniques: {
-    title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills',
-    items: [
+  "techniques": {
+    "title": "Tipps für genaueres Nachzeichnen",
+    "items": [
       {
-        name: "Geometrisches Sub-Shape-Chunking (Baddeley & Cowan)",
-        desc: "Das menschliche Arbeitsgedächtnis kann maximal 4 isolierte Punkte stabil halten. Erscheinen 5 oder mehr Wegpunkte, betrachte sie nicht als Punkte, sondern zerlege das Gesamtmuster in vertraute Formen wie Dreiecke, Zickzack-Linien oder Rechtecke.",
-        tips: "Ein komplexer 7-Knoten-Pfad lässt sich mühelos in '1 Dreieck (3 Punkte) + 1 Z-Form (4 Punkte)' unterteilen, was die kognitive Last drastisch reduziert."
+        "name": "Formen statt Punkte merken",
+        "desc": "Ab 5 Punkten hilft es, den Pfad in zwei, drei große Formen zu zerlegen, etwa ein N oder ein Dreieck plus Gerade, statt jeden Punkt einzeln zu speichern.",
+        "tips": "Prüfe während der Anzeige zuerst Start- und Endpunkt, den Rest merkst du dir als Umriss."
       },
       {
-        name: "Mentale Voraktivierung des motorischen Feedforward-Programms (Lashley)",
-        desc: "Karl Lashley wies nach, dass blitzschnelle Zeichenbewegungen nicht während des Ziehens erdacht werden können. Der Pfad muss vor Beginn der Bewegung als geschlossener Ablauf im motorischen Kortex bereitliegen.",
-        tips: "Simuliere in den letzten 0,2 Sekunden der Aufblitzphase den gesamten Ziehweg mental im Kopf und führe die Bewegung nach dem Erlöschen in einem entschlossenen Zug aus."
+        "name": "Start und Ende genau treffen",
+        "desc": "Beginnst du mehr als etwa 45 px vom Startknoten entfernt oder lässt du neben dem Endknoten los, zählt der Versuch als Fehler, auch wenn die Form stimmt.",
+        "tips": "Kontrolliere vor dem Ziehen, dass der Cursor im cyanfarbenen Knoten liegt."
       },
       {
-        name: "Terminale Scheitelpunkt-Bremsung nach Woodworth (Vertex Deceleration)",
-        desc: "Nutze auf geraden Teilstrecken maximale Beschleunigung, übe jedoch exakt beim Passieren der Wegpunkte leichten vertikalen Druck mit den Fingerkuppen auf das Mauspad aus, um Richtungswechsel scharfkantig zu ziehen.",
-        tips: "Bei spitzen Winkeln stabilisiert das Absenken des Handballens die Gleitreibung und verhindert ungenaues Kurvenschneiden."
-      },
-      {
-        name: "Zentroid-Fixierung für non-verbale ikonische Enkodierung (Iconic Anchoring)",
-        desc: "In höheren Levels mit 0,6 Sekunden Anzeigedauer führt inneres Verbalisieren (z. B. 'oben, links, runter') zu zeitlichen Engpässen. Nutze die reine visuelle Netzhaut-Nachwirkung.",
-        tips: "Verfolge die Punkte nicht einzeln mit den Augen, sondern fixiere den geometrischen Schwerpunkt (Zentroid) des Musters, um die Silhouette per peripherem Sehen simultan aufzunehmen."
+        "name": "An Ecken abbremsen",
+        "desc": "Auf geraden Stücken zügig, vor Knickpunkten langsamer: So schießt du seltener über die Ecke hinaus.",
+        "tips": "Ein gleichmäßiger Zug in einem Stück bringt meist mehr Übereinstimmung als hastiges Zeichnen."
       }
     ]
   },
-  steps: [
-    "Stelle deine gewohnte In-Game-Mausempfindlichkeit ein und nimm eine aufrechte Sitzhaltung ein.",
-    "Beobachte nach dem Countdown den grün aufleuchtenden Pfad und strukturiere die Wegpunkte.",
-    "Klicke nach dem Erlöschen auf den cyanfarbenen Startknoten und starte die Zugbewegung.",
-    "Verbinde alle Wegpunkte in der korrekten Reihenfolge und lasse die Maustaste am Zielknoten los."
+  "steps": [
+    "Starte die Runde und warte den Countdown ab.",
+    "Präge dir Form und Reihenfolge des angezeigten Pfads ein.",
+    "Wenn der Pfad verschwindet, drücke die Maustaste im cyanfarbenen Startknoten.",
+    "Fahre die Punkte in der gemerkten Reihenfolge ab und lass im magentafarbenen Endknoten los."
   ],
-  audience: "E-Sportler (FPS-Gamer für Recoil-Pattern-Control), Teilnehmer an medizinischen/kognitiven Eignungstests (TMS, MedAT Figuren und Fakten lernen) sowie alle, die visuell-räumliches Vorstellungsvermögen und Feinmotorik schulen möchten.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('baddeley1974', 'cowan2001', 'lashley1951', 'woodworth1899', 'woods2015')
+  "audience": "Alle, die üben möchten, eine kurz gesehene Form zu behalten und mit der Maus sauber nachzuzeichnen.",
+  faqs: faqItems,
+  sources: pickSources('baddeley1974', 'cowan2001', 'lashley1951', 'woodworth1899'),
 };
 
 export default function ComplexPatternPageDe() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ComplexPatternClient
         copy={{
-          title: 'Muster merken Test',
-          subtitle: 'Muster merken und den Pfad genau nachzeichnen',
-          rulesTitle: "Trainingsregeln & Punktesystem für das Muster-Merken-Spiel",
-          rules: [
-            { title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills', text: "Präge dir den kurz aufblitzenden grünen Vektorpfad und alle Wegpunkte ein, bevor die Linie vom Bildschirm verschwindet." },
-            { title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills', text: "Klicke auf den cyanfarbenen Startknoten und ziehe den Cursor in exakter Reihenfolge durch alle Wegpunkte bis zum magentafarbenen Endknoten." },
-            { title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills', text: "Erreichst du die geforderte Pfadähnlichkeit, steigt dein Combo-Multiplikator auf bis zu 4,0x für massive Punktgewinne." },
-            { title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills', text: "Weichst du zu stark ab, wird der Multiplikator auf 1,0x zurückgesetzt, deine 45-sekündige Rundenzeit bleibt jedoch unberührt." }
-          ],
-          aboutTitle: "Über das Muster-Merken-Training",
-          aboutHeading: "Visuell-räumliches Arbeitsgedächtnis und serielle Bewegungssyntax",
-          aboutText: "Dieser Drill basiert auf Alan Baddeleys (1974) visuell-räumlichem Notizblock sowie Nelson Cowans (2001) Forschung zur 4-Elemente-Kapazitätsgrenze des menschlichen Arbeitsgedächtnisses. Durch das kurzzeitige Festhalten flüchtiger geometrischer Pfade und deren fehlerfreie Übertragung in kontinuierliche Mausbewegungen (Lashley 1951, Woodworth 1899) trainierst du die visuell-motorische Präzision für Gaming und kognitive Eignungstests."
-        }}
+  "title": "Muster merken Spiel",
+  "subtitle": "Pfad einprägen und mit der Maus nachzeichnen",
+  "rulesTitle": "Regeln: Muster merken Spiel",
+  "rules": [
+    {
+      "title": "Pfad einprägen",
+      "text": "Ein Pfad aus Punkten und Linien wird kurz angezeigt. Merk dir Form und Reihenfolge, bevor er verschwindet."
+    },
+    {
+      "title": "Vom Start ziehen",
+      "text": "Drücke die Maustaste im cyanfarbenen Startknoten, fahre alle Punkte ab und lass im magentafarbenen Endknoten los."
+    },
+    {
+      "title": "Übereinstimmung",
+      "text": "Erreicht deine Linie die geforderte Übereinstimmung (anfangs 50 %, später bis 85 %) und treffen Start und Ende, ist das Muster geschafft."
+    },
+    {
+      "title": "Kein Punktabzug",
+      "text": "Verfehlst du die Vorgabe, fällt nur der Combo-Multiplikator auf 1,0x zurück. Punkte und die 45 Sekunden bleiben unberührt."
+    }
+  ],
+  "aboutTitle": "Über das Muster merken Spiel",
+  "aboutHeading": "Ansehen, merken, nachzeichnen",
+  "aboutText": "Im Muster merken Spiel siehst du kurz einen Pfad, der danach verschwindet. Dann zeichnest du ihn per Mausziehen aus dem Gedächtnis nach. Zu Beginn hat der Pfad 3 Punkte und bleibt 2 Sekunden sichtbar; mit steigendem Level wächst er auf bis zu 8 Punkte, die Anzeigezeit sinkt auf 0,6 Sekunden und es kommen Zickzack- und Spiralformen dazu."
+}}
       />
-      <DrillGuide guide={patternGuide} />
-      <RelatedDrills />
+      <DrillGuide guide={guide} />
+      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/coordination/complex-pattern" />
     </>
   );
 }

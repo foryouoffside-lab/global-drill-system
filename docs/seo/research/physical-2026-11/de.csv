@@ -1,0 +1,41 @@
+phrase,cc,lang,bing_exact,bing_broad,status,assigned_page,role
+agility training,de,de-DE,6,24,ok,physical (hub),kill: dog agility/OSRS intent; drop from title
+koordinationstraining,de,de-DE,0,0,ok,-,kill: 0 measured
+koordinationstest,de,de-DE,0,0,ok,coordination/cross-body-movement,"primary component (Koordinationstest mit der Maus), no-demand"
+reflextraining,de,de-DE,0,0,ok,-,kill: 0 measured
+reflex spiel,de,de-DE,0,0,ok,-,kill: 0 measured
+reflex spiel online,de,de-DE,0,0,ok,-,kill: 0 measured
+reflexspiele,de,de-DE,0,0,ok,-,kill: 0 measured
+stabilitätstest,de,de-DE,0,0,ok,balance-training/stability-challenge,"primary component (Maus-Stabilitätstest), no-demand"
+visuelles gedächtnis test,de,de-DE,0,0,ok,-,kill as primary: memory grid-memorization title owns it
+visuelles gedächtnis trainieren,de,de-DE,0,0,ok,-,kill: 0 measured
+visuelles gedächtnistraining,de,de-DE,0,0,ok,-,kill: 0 measured
+muster merken,de,de-DE,0,0,ok,-,kill: 0 measured
+muster merken spiel,de,de-DE,0,0,ok,coordination/complex-pattern,"primary, no-demand"
+räumliches gedächtnis test,de,de-DE,0,0,ok,-,kill: memory object-location owns it
+hand auge koordination übungen,de,de-DE,0,0,ok,-,kill: 0 measured
+hand auge koordination spiele,de,de-DE,0,0,ok,-,kill: 0 measured
+hand auge koordination trainieren,de,de-DE,0,0,ok,-,kill: 0 measured
+koordinationsspiel,de,de-DE,0,0,ok,physical (hub),"primary component (Koordinationsspiele online), no-demand"
+ausweichspiel,de,de-DE,0,0,ok,coordination/dynamic-grid-evasion,primary component (Raster-Ausweichspiel); theatre noise
+ausweichen spiel,de,de-DE,0,0,ok,-,kill: 0 measured
+dodge game,de,de-DE,10,58,ok,reflex-training/quick-dodge,primary
+koordinationsleiter,de,de-DE,114,114,ok,-,kill: equipment/shop SERP (serp_probe)
+koordinationsleiter übungen,de,de-DE,0,0,ok,-,kill: 0 measured
+koordinationsleiter spiele,de,de-DE,0,0,ok,-,kill: 0 measured
+agility ladder,de,de-DE,7,7,ok,fitness/agility-ladder,secondary (equipment intent; mouse-version framing)
+sprungkraft trainieren,de,de-DE,0,0,ok,-,kill: false fitness claim
+sprung spiel,de,de-DE,0,0,ok,fitness/jump-sequence,"primary component (Sprung-Zielspiel), no-demand"
+klickspiel,de,de-DE,78,78,ok,-,kill for physical: SERP = CPS intent (motor owns CPS); offer to motor as secondary
+schnelligkeitstraining,de,de-DE,0,0,ok,-,kill: 0 measured
+lineal test,de,de-DE,0,0,ok,-,"kill: ruler-drop experiment, false claim"
+lineal fall test,de,de-DE,0,0,ok,-,kill: false claim
+reaktionszeit test lineal,de,de-DE,0,0,ok,-,kill: false claim
+fallende objekte fangen,de,de-DE,0,0,ok,reflex-training/drop-catch,"primary component (Fallende Ziele fangen), no-demand"
+peripheres sehen trainieren,de,de-DE,0,0,ok,-,hold: visual-tracking peripheral-ping-pursuit overlaps; decide in visual pass
+peripheres sehen test,de,de-DE,0,0,ok,-,kill: 0 measured
+peripheres sehen übungen,de,de-DE,0,0,ok,-,kill: 0 measured
+peripheres sehen verbessern,de,de-DE,0,0,ok,-,kill: 0 measured
+maus ausweichspiel,de,de-DE,0,0,ok,reflex-training/quick-dodge,"secondary, no-demand"
+overflicking,de,de-DE,0,0,ok,reflex-training/reaction-chain,"primary component (Overflicking stoppen), no-demand"
+reflex test,de,de-DE,99,99,ok,-,TAKEN by reaction reflex-training-drill; canary (known 78)

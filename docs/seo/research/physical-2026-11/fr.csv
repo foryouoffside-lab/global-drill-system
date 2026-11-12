@@ -1,0 +1,41 @@
+phrase,cc,lang,bing_exact,bing_broad,status,assigned_to,role
+reflex test,fr,fr-FR,100,100,ok,TAKEN reaction reflex-training-drill,canary (known 87)
+jeu de réflexe en ligne,fr,fr-FR,0,0,ok,physical/reflex-training/drop-catch,secondary (no-demand)
+jeu de réflexe avec la souris,fr,fr-FR,0,0,ok,physical/reflex-training/drop-catch,secondary (no-demand)
+jeux de réflexe gratuit,fr,fr-FR,0,0,ok,none,KILL
+jeu de reflexe baton qui tombe,fr,fr-FR,0,0,ok,none,KILL
+jeu du baton qui tombe,fr,fr-FR,0,0,ok,none,KILL
+test du baton qui tombe,fr,fr-FR,0,0,ok,none,KILL
+mémoire visuelle test,fr,fr-FR,0,0,ok,TAKEN memory grid-memorization,do not claim
+test de mémoire visuelle,fr,fr-FR,0,0,ok,TAKEN memory grid-memorization,do not claim
+mémoire visuelle exercices,fr,fr-FR,0,0,ok,none,KILL
+jeu de mémoire visuelle,fr,fr-FR,0,0,ok,TAKEN memory grid-memorization,do not claim
+jeu visuo spatial,fr,fr-FR,0,0,ok,physical/coordination/complex-pattern,primary (GSC 3 impr pos 9; Bing below threshold)
+jeux visuo spatial en ligne,fr,fr-FR,0,0,ok,physical/coordination/complex-pattern,secondary
+exercice de coordination,fr,fr-FR,0,0,ok,none,KILL
+exercice de coordination motrice,fr,fr-FR,0,0,ok,none,KILL
+test de coordination,fr,fr-FR,0,0,ok,none,KILL
+jeu de coordination,fr,fr-FR,0,0,ok,physical (hub),secondary (no-demand)
+échelle de rythme,fr,fr-FR,0,0,ok,none,KILL
+échelle de rythme exercices,fr,fr-FR,0,0,ok,none,KILL
+échelle d'agilité exercices,fr,fr-FR,0,0,ok,none,KILL
+exercice agilité,fr,fr-FR,0,0,ok,none,KILL
+jeu d'esquive,fr,fr-FR,0,0,ok,physical/reflex-training/quick-dodge,primary (no-demand descriptive)
+jeu d'esquive en ligne,fr,fr-FR,0,0,ok,none,KILL
+jeu d'évitement,fr,fr-FR,0,0,ok,physical/coordination/dynamic-grid-evasion,primary (no-demand descriptive)
+jeu esquiver obstacles,fr,fr-FR,0,0,ok,none,KILL
+vision périphérique test,fr,fr-FR,0,0,ok,physical/reflex-training/peripheral-threat-sweeper,secondary (no-demand)
+test vision périphérique,fr,fr-FR,0,0,ok,none,KILL
+exercice vision périphérique,fr,fr-FR,0,0,ok,physical/reflex-training/peripheral-threat-sweeper,secondary (no-demand)
+améliorer vision périphérique,fr,fr-FR,0,0,ok,none,KILL
+jeu de saut,fr,fr-FR,0,0,ok,physical/fitness/jump-sequence,primary (no-demand descriptive)
+jeu de clic,fr,fr-FR,18,18,ok,physical/fitness/speed-drill,primary
+jeu de clic en ligne,fr,fr-FR,0,0,ok,none,KILL
+jeu cliquer sur les cibles,fr,fr-FR,0,0,ok,none,KILL
+stabilité souris,fr,fr-FR,0,0,ok,physical/balance-training/stability-challenge,primary (no-demand descriptive)
+viseur qui tremble,fr,fr-FR,0,0,ok,none,KILL
+overflick,fr,fr-FR,0,0,ok,physical/reflex-training/reaction-chain,secondary (no-demand)
+test d'agilité,fr,fr-FR,0,0,ok,none,KILL
+test de rapidité de réaction,fr,fr-FR,0,0,ok,none,KILL
+entrainement réflexe,fr,fr-FR,0,0,ok,none,KILL
+test de vivacité,fr,fr-FR,0,0,ok,none,KILL

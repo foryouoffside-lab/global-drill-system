@@ -4,377 +4,173 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Brazil & Portugal (BR / PT)
-// Native SERP intent: treino de mira online grátis, teste de precisão do mouse, estabilidade da mira
-// Portuguese Context: Como parar de tremer a mira no Valorant/CS2 e treino de estabilidade motora contra forças externas
-// High-Demand, Low-Competition Target Keywords:
-//   - "como parar de tremer a mira" (Top intent for mouse jitter & hand shake)
-//   - "teste de precisão do mouse" (Direct mouse precision diagnostic query)
-//   - "controle de recoil cs2" (Recoil compensation and steady tracking)
-//   - "treino de estabilidade de mira" (Aim steadiness training query)
-//   - "teste de estabilidade do mouse" (Mouse stability & tracking test)
-//   - "estabilidade de mira valorant" (Esports steadiness benchmark)
-//   - "equilíbrio postural e controle motor" (Motor control & balance synergy)
-//   - "resistência a forças externas mouse" (Perturbation force counteraction)
-//   - "sensibilidade e estabilidade do cursor" (Cursor tracking steadiness)
-//   - "treino de compensação de recuo" (Recoil counter-pressure training)
-// ============================================================
+const url = 'https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge';
+const title = 'Mira Tremendo? Treino de Firmeza do Mouse | SkillDrills';
+const description = 'Mira tremendo? Um vento muda de direção e empurra o retículo para fora do centro. Corrija com o mouse e segure a mira estável no anel por 45 segundos. Grátis.';
 
 export const metadata = {
-  title: 'Mira Tremendo? Treino de Firmeza do Mouse | SkillDrills',
-  description: 'Treino grátis de mira no navegador. Mantenha o retículo no centro contra forças móveis e pratique firmeza, controle de recoil e precisão do mouse.',
-  keywords: [
-    "treino de mira online grátis",
-    "teste de precisão do mouse",
-    "como parar de tremer a mira",
-    "controle de recoil",
-    "treino de estabilidade de mira",
-    "estabilidade da mira Valorant",
-    "teste de mira FPS",
-    "controle do mouse",
-    "rastreio estável de mira",
-    "mira firme no CS2"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge',
-    languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Mira Tremendo? Treino de Firmeza do Mouse | SkillDrills',
-    description: 'Mantenha o retículo centrado e pratique firmeza, controle de recoil e precisão do mouse em um treino grátis no navegador.',
-    url: 'https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge',
-    siteName: 'SkillDrills',
-    locale: 'pt_BR',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: 'Mira Tremendo? Treino de Firmeza do Mouse | SkillDrills',
-    description: 'Mantenha o retículo centrado e pratique firmeza, controle de recoil e precisão do mouse em um treino grátis no navegador.',
-  },
+  title,
+  description,
+  keywords: ['mira tremendo', 'firmeza da mira', 'segurar a mira estável', 'estabilidade do cursor', 'jogo de estabilidade do mouse'],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_BR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Início",
-      "item": "https://skilldrills.online/pt"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Treinamento Físico",
-      "item": "https://skilldrills.online/pt/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Treino de Equilíbrio e Estabilidade",
-      "item": "https://skilldrills.online/pt/drills/physical/balance-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Desafio de Estabilidade e Precisão de Mira",
-      "item": "https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Início', item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: 'Drills Físicos', item: 'https://skilldrills.online/pt/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Treino de Firmeza do Mouse', item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Balance_(ability)"],
-  "name": "Treinador de Estabilidade de Mira e Precisão do Mouse",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Ferramenta biomecânica de precisão motora e resistência a perturbações externas, desenhada para eliminar tremores no mouse e aprimorar a estabilidade de mira em FPS.",
-  "url": "https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Treino de Firmeza do Mouse',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'Navegador com HTML5 Canvas e Pointer Lock, mouse',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  inLanguage: 'pt-BR',
+  dateModified: '2026-11-10',
 };
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Desafio de Estabilidade de Mira Online (Stability Challenge)",
-  "url": "https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge",
-  "description": "Teste interativo gratuito no navegador para medir e aprimorar a estabilidade do cursor sob vetores de força dinâmicos de vento e perturbações motoras.",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Web Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const faqs = [
+  {
+    q: 'O que é este treino de firmeza do mouse?',
+    a: 'No centro da tela há um anel seguro. Uma força parecida com vento empurra o retículo para fora o tempo todo, e você corrige com o mouse para manter a mira dentro do anel por 45 segundos. É um drill de estabilidade do cursor.',
   },
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Desafio de Estabilidade do Mouse",
-  "url": "https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge",
-  "description": "Jogo de resistência neuromuscular onde o jogador estabiliza a mira no centro contra forças contínuas de arrasto.",
-  "genre": ["Action", "Sports Game", "Reflex Game", "Motor Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
-};
+  {
+    q: 'Como os pontos são calculados?',
+    a: 'Enquanto o retículo está dentro do anel, o combo sobe 1 a cada 0,15 segundo e você ganha 15 pontos × multiplicador. O multiplicador começa em 1,1x no combo 3 e chega ao máximo de 3,0x no combo 50. Não é preciso clicar.',
+  },
+  {
+    q: 'O que acontece se a mira sair do anel?',
+    a: 'O combo volta a 0 e aparece um flash vermelho (dá para desligar pelo botão na tela). Pontos e tempo não são descontados. Ao voltar para o anel, você recomeça o combo.',
+  },
+  {
+    q: 'Como a dificuldade aumenta?',
+    a: 'O nível sobe a cada 250 pontos e também em sequências longas dentro do anel, sem limite. O anel encolhe de 45 px até no mínimo 16 px, e a força do vento começa em 250 e continua crescendo (850 no nível 15).',
+  },
+  {
+    q: 'Este treino corrige mira tremendo no jogo ou tremor na mão?',
+    a: 'Não. Mira tremendo em jogos costuma vir de sensibilidade, DPI, configuração ou hardware, e isto não ajusta nada disso. Também não mede nem diagnostica tremor, equilíbrio ou saúde. É um jogo para praticar correções pequenas e contínuas com o mouse.',
+  },
+  {
+    q: 'Como a nota é definida?',
+    a: 'A pontuação final é comparada com uma referência de 17.000 pontos do SkillDrills. Aproximadamente: A a partir de 9.563, S a partir de 12.283 e S+ a partir de 15.342. São faixas de prática, não estatísticas de usuários nem percentis.',
+  },
+  {
+    q: 'Funciona no celular?',
+    a: 'Não. Precisa de mouse e Pointer Lock, e não inicia em aparelhos só de toque. A tecla Esc encerra o drill e volta à tela inicial.',
+  },
+  {
+    q: 'Onde ficam meus resultados?',
+    a: 'Melhor pontuação, maior combo e nível máximo ficam apenas no armazenamento local do navegador. É grátis e não exige cadastro.',
+  },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "O que é o Desafio de Estabilidade (Stability Challenge) e como ele funciona?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O Stability Challenge é um exercício biomecânico de controle motor fino e estabilidade postural. O sistema gera rajadas de vento dinâmicas com vetores de força contínuos que tentam empurrar seu retículo para fora da zona segura central. Seu objetivo é aplicar micropressão contrária suave e constante no mouse para manter a mira cravada no centro."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como este exercício ajuda a parar de tremer a mira no Valorant, CS2 e Apex Legends?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O tremor na mira decorre da contração excessiva de músculos antagonistas da mão e antebraço sob estresse. Ao forçar o cérebro a lidar com forças de perturbação externa contínuas em vez de movimentos abruptos, o exercício recruta circuitos de feedback visual em circuito fechado (Woodworth, 1899), desenvolvendo relaxamento muscular seletivo e tônus de compensação suave de recuo (recoil)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como a força do vento e o tamanho do anel seguro progridem com os níveis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A cada 250 pontos conquistados, você avança de nível até o Nível 15. Durante essa evolução, o raio do anel central encolhe de 45px para apenas 20px, enquanto a magnitude da aceleração das rajadas de força salta de 250 para 850 unidades de força, exigindo microajustes de altíssima frequência."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que acontece quando o cursor é empurrado para fora do anel de segurança?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sair do anel de segurança quebra o bloqueio de estabilização, gerando um flash vermelho e resetando instantaneamente seu multiplicador de combo acumulado para 1.0x. Não há dedução direta de pontuação acumulada nem redução do tempo restante da sessão."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a duração padrão de uma sessão de treino?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cada rodada dura exatamente 45 segundos fixos. O cronômetro regressivo decresce de forma homogênea de 45s a 0s, criando um ambiente padronizado e reprodutível para comparação científica de evolução pessoal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que diferencia um jogador iniciante de um mestre de estabilidade (Tier 1)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Um jogador iniciante (Tier 5) acumula menos de 6.000 pontos com estabilidade inferior a 65%, sofrendo constantes rupturas sob o vento. Quem chega ao Tier 1 (Apex Stability Master / Nota S) atinge 17.000+ pontos, superando o Nível 12 com mais de 92% de tempo dentro do anel minúsculo de 20px."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual pegada de mouse (Palm, Claw ou Fingertip) oferece melhor resistência?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A pegada Claw ou Palm com apoio firme do antebraço na mesa costuma oferecer a maior base de sustentação isométrica contra forças de arrasto contínuas. A pegada Fingertip permite ajustes rápidos, mas exige força muscular intrínseca dos dedos muito mais desenvolvida para resistir a rajadas fortes sem perder contato."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual sensibilidade de mouse (DPI / eDPI) é recomendada para estabilização?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sensibilidades moderadas a baixas (entre 800 e 1200 DPI, ou 200 a 350 eDPI em jogos táticos) facilitam correções microscópicas sem que tremores involuntários de pulso joguem o cursor fora do anel de 20px."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que a postura corporal e o alinhamento da coluna afetam a precisão do mouse?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Como demonstrado por Nashner & McCollum (1985), o controle motor das extremidades depende da estabilidade do tronco e da cintura escapular. Uma postura desleixada ou cotovelo solto no ar transfere oscilações respiratórias e instabilidades da coluna diretamente para o sensor do mouse."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Meus recordes e histórico de pontuações ficam salvos onde?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Seus recordes e combos ficam no armazenamento local (localStorage) do seu navegador e não exigem cadastro. Para saber como o site trata outros dados, consulte a política de privacidade."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt-BR',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Como Treinar Estabilidade e Controle de Mira no Mouse",
-  "description": "Procedimento biomecânico em 4 etapas para desenvolver resistência motora e eliminar tremores na mira.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Alinhamento e Bloqueio Central",
-      "text": "Posicione o retículo no centro exato do anel esmeralda antes do início da contagem e trave o ponteiro através do Pointer Lock do navegador.",
-      "url": "https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Sensoreamento da Perturbação de Força",
-      "text": "Sinta visualmente a direção do vetor de aceleração do vento quando a linha indicadora começar a puxar o retículo para fora do anel.",
-      "url": "https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Aplicação de Micropressão Contrária",
-      "text": "Aplique contra-pressão isométrica suave na direção oposta ao vento, mantendo o cursor confinado no perímetro seguro para multiplicar o combo até 3.0x.",
-      "url": "https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Adaptação ao Encolhimento do Anel",
-      "text": "Conforme o nível sobe para o Lv. 15 e o anel encolhe para 20px, utilize apoio suave do antebraço e microajustes de dedos para absorver as rajadas intensas.",
-      "url": "https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Como fazer o treino de firmeza do mouse',
+  description: 'Quatro passos para segurar a mira estável no anel contra o vento.',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Começar', text: 'Clique em iniciar; após a contagem de 3 segundos o Pointer Lock é ativado.' },
+    { '@type': 'HowToStep', position: 2, name: 'Ler a força', text: 'Veja para onde o retículo está sendo empurrado e mova o mouse um pouco para o lado oposto.' },
+    { '@type': 'HowToStep', position: 3, name: 'Ficar no anel', text: 'Quanto mais tempo dentro do anel, maiores o combo e o multiplicador.' },
+    { '@type': 'HowToStep', position: 4, name: 'Acompanhar o anel menor', text: 'Com o nível, o anel diminui e o vento fica mais forte: corrija mais cedo e com movimentos menores.' },
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
-const guideProps = {
-  sources: pickSources('woodworth1899', 'fitts1954', 'woods2015'),
-  intro: {
-    title: 'Como a estabilidade da mira funciona e como é medida',
-    paragraphs: [
-      "A estabilidade do cursor do mouse sob perturbações externas é uma manifestação direta da capacidade do sistema neuromuscular de integrar propriocepção sensorial e correções visuais em tempo real. Diferente de um movimento de mira puramente balístico (como um tiro de flick), a estabilização exige regulação isométrica contínua entre grupos musculares agonistas e antagonistas do antebraço e da mão. Este exercício quantifica a eficácia com que o córtex motor primário e o cerebelo modulam essa micropressão frente a vetores de arrasto não antecipados (Nashner & McCollum, 1985).",
-      "De acordo com o modelo clássico de controle motor de duas fases de Robert S. Woodworth (1899), movimentos manuais envolvem uma fase de impulso inicial seguida por ajustes microscópicos baseados em feedback sensorial de circuito fechado (Current Control Phase). No Desafio de Estabilidade, o jogador atua permanentemente nessa fase de circuito fechado: à medida que a física de vento simula a força de subida de recuo de armas ou tremores involuntários, o sistema visual detecta o desvio em relação ao centro e comanda contrações reflexas de restauração.",
-      "A dinâmica da dificuldade segue os princípios de equilíbrio sob perturbação descritos por David A. Winter (1995) combinados com a Lei de Fitts (1954). Quando o anel seguro encolhe de 45px para 20px no Nível 15, a tolerância espacial diminui drasticamente, tornando o índice de dificuldade exponencialmente maior. Qualquer atraso superior a 50 milissegundos na resposta motora resulta no rompimento da borda do anel e na perda imediata da cadeia de combo.",
-      "Precisão de medição e latência de hardware: O cálculo da estabilidade percentual e das colisões de fronteira é realizado com base no relógio performance.now() da API do navegador, com resolução em microssegundos. Contudo, monitores convencionais de 60Hz introduzem uma quantização de quadros de ~16,7ms, enquanto telas de 144Hz e 240Hz reduzem esse atraso para 6,9ms e 4,1ms, respectivamente (Woods et al., 2015). Mouses com taxa de amostragem de 1000Hz diminuem a latência de entrada para menos de 1ms. Toda a análise analítica é computada exclusivamente no hardware local do usuário, sem depender de tráfego de rede para calcular a pontuação."
-    ]
-  },
+const guide = {
+  heading: 'Mira tremendo? Guia do treino de firmeza do mouse',
+  intro: [
+    'Se a sua mira fica tremendo e escapando do alvo, este treino isola uma parte do problema: segurar a mira estável contra uma força que muda de direção. Um vento aleatório empurra o retículo para fora do centro e você corrige com o mouse para ficar dentro do anel. Cada partida dura 45 segundos.',
+    'Movimentos rápidos de mira são descritos como um deslocamento grande seguido de uma correção fina guiada pela visão (Woodworth, 1899). Aqui você repete essa correção sem parar, e quanto menor o anel, mais precisa ela precisa ser (Fitts, 1954).',
+    'Este treino não ajusta sensibilidade, DPI nem hardware, e não mede tremor, equilíbrio ou saúde. Compare resultados só com suas próprias partidas no mesmo mouse, sensibilidade e monitor; taxa de atualização e polling rate afetam o atraso de entrada (Woods et al., 2015).',
+  ],
   benchmarks: {
-    title: "Faixas de referência de estabilidade (editoriais)",
-    headers: ["Nível", "Título do Nível", "Pontuação Alvo", "Estabilidade & Nível", "Nota", "Leitura"],
+    title: 'Faixas de prática do SkillDrills',
+    headers: ['Nota', 'Pontos', 'Rótulo'],
     rows: [
-      ["Tier 1", "Mestre Supremo de Estabilidade", "17.000+ pontos", "Nível 12–15 / Estabilidade >92%", "Nota S+", "Controle muito fino"],
-      ["Tier 2", "Especialista em Compensação de Recuo", "13.000 a 16.999 pts", "Nível 9–11 / Estabilidade 85–91%", "Nota A", "Nível competitivo"],
-      ["Tier 3", "Controlador Seguro Avançado", "9.500 a 12.999 pts", "Nível 6–8 / Estabilidade 76–84%", "Nota B", "Firmeza sólida"],
-      ["Tier 4", "Praticante em Desenvolvimento", "6.000 a 9.499 pts", "Nível 3–5 / Estabilidade 65–75%", "Nota C", "Faixa intermediária"],
-      ["Tier 5", "Iniciante Suscetível a Tremores", "< 6.000 pontos", "Nível 1–2 / Estabilidade <65%", "Nota D", "Iniciante (Treino Recomendado)"],
+      ['S+', '15.342 ou mais', 'LEGENDARY'],
+      ['S', '12.283 – 15.341', 'Elite'],
+      ['A', '9.563 – 12.282', 'Excellent'],
+      ['B', '6.120 – 9.562', 'Great'],
+      ['C', '3.443 – 6.119', 'Good'],
+      ['D', '1.530 – 3.442', 'Keep Going'],
+      ['F', 'menos de 1.530', 'Needs Practice'],
     ],
-    note: "Faixas editoriais para comparar suas próprias sessões; não são percentis de população medidos. A classificação final pondera o tempo acumulado no anel, quantidade de quebras de estabilização, velocidade máxima de vento superada e pontuação bruta.",
+    note: 'A nota compara a pontuação final com a referência de 17.000 pontos. São faixas de prática do SkillDrills, não estatísticas de usuários, percentis ou critérios médicos.',
   },
-  protocols: {
-    title: 'Quatro etapas para segurar a mira firme contra a força',
-    description: 'Um passo a passo curto para praticar contra-pressão suave no mouse e reduzir tremores na mira.',
+  techniques: {
+    title: 'Quatro dicas para ficar mais tempo no anel',
     items: [
-      {
-        title: 'Centralize antes de começar',
-        description: 'Posicione o retículo no centro do anel seguro, relaxe o ombro e deixe o antebraço apoiado antes da contagem.'
-      },
-      {
-        title: 'Leia a direção da força',
-        description: 'Observe para onde a linha indicadora puxa o retículo e responda com uma contra-pressão pequena no sentido oposto.'
-      },
-      {
-        title: 'Corrija pouco e cedo',
-        description: 'Microajustes curtos funcionam melhor do que movimentos grandes. Evite apertar o mouse com força.'
-      },
-      {
-        title: 'Avance de nível com calma',
-        description: 'Conforme o anel encolhe, apoie o antebraço, mantenha o ritmo e só busque pontuação depois de ficar estável.'
-      }
-    ]
+      { name: 'Comece pelo centro', desc: 'Durante a contagem o retículo fica no centro. Não faça movimentos grandes logo de cara; primeiro leia a direção do vento.', tips: 'Nos primeiros segundos, priorize a direção, não os pontos.' },
+      { name: 'Corrija pouco e cedo', desc: 'Puxar forte só na borda do anel faz a mira passar para o outro lado. Corrija assim que o empurrão começar.', tips: 'Observe a distância entre o centro do anel e o retículo.' },
+      { name: 'Espere a troca de vento', desc: 'A direção do vento muda ao acaso e gira aos poucos. Mantenha a mão relaxada para a correção não ficar grande de repente.', tips: 'Mão e antebraço tensos deixam a mira mais instável.' },
+      { name: 'Proteja o combo', desc: 'O multiplicador chega a 3,0x no combo 50. Cada saída zera o combo, então segurar com calma rende mais que correções bruscas.', tips: 'O número de saídas aparece no resultado como Blowouts.' },
+    ],
   },
-  faqs: {
-    title: 'Perguntas frequentes sobre estabilidade de mira',
-    items: faqSchema.mainEntity.map(q => ({
-      q: q.name,
-      a: q.acceptedAnswer.text
-    }))
-  }
+  steps: [
+    'Comece com seu mouse e sensibilidade de sempre.',
+    'Mova o mouse levemente contra a direção em que o retículo é empurrado.',
+    'Fique dentro do anel e acumule combo e multiplicador.',
+    'Depois de 45 segundos, veja nota, estabilidade em %, saídas e nível máximo.',
+  ],
+  audience: 'Jogadores que querem praticar segurar a mira estável contra uma força que empurra, e quem quer testar a estabilidade do cursor de forma leve.',
+  faqs,
+  sources: pickSources('woodworth1899', 'fitts1954', 'woods2015'),
 };
 
 export default function StabilityChallengePtPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <StabilityChallengeClient
         copy={{
-          title: 'Treino de Firmeza do Mouse (Mira Estável)',
-          subtitle: 'Mantenha o retículo no centro contra a força',
+          title: 'Mira Tremendo? Treino de Firmeza do Mouse',
           hudLabels: {
-            score: "Pontos",
-            time: "Tempo",
-            stability: "Estabilidade",
-            blowouts: "Rupturas",
-            maxStreak: "Maior Combo",
-            peakLevel: "Nível Máximo",
-            getReady: "PREPARE-SE",
-            points: "Pontos",
-            playAgain: "Jogar Novamente"
+            score: 'Pontos',
+            time: 'Tempo',
+            getReady: 'Prepare-se',
+            points: 'Pontos',
+            stability: 'Estabilidade',
+            blowouts: 'Saídas',
+            maxStreak: 'Maior combo',
+            peakLevel: 'Nível máximo',
+            playAgain: 'Jogar de novo',
           },
-          rulesTitle: "Instruções do Exercício e Sistema de Pontuação",
+          rulesTitle: 'Regras e pontuação',
           rulesItems: [
-            { title: 'Segure o anel seguro', text: "Mantenha o retículo no centro do anel seguro contra os vetores dinâmicos de resistência do vento." },
-            { title: 'Construa o combo', text: "Mantenha a estabilização ininterrupta para construir um multiplicador de combo de até 3.0x." },
-            { title: 'Suba de nível', text: "A cada 250 pontos o nível sobe. O anel seguro encolhe de 45px para 20px e as forças aceleram." },
-            { title: 'Cuidado ao sair do anel', text: "Derivar para fora do anel reseta o combo para 1.0x instantaneamente, sem perda de pontos ou tempo." }
+            { title: 'Fique no anel central', text: 'Um vento com direção aleatória empurra o retículo. Corrija com o mouse e mantenha a mira dentro do anel.' },
+            { title: 'Multiplicador de combo (até 3,0x)', text: 'Dentro do anel o combo sobe a cada 0,15 s e rende 15 pontos × multiplicador. No combo 50 são 3,0x.' },
+            { title: 'Subida de nível', text: 'O nível sobe a cada 250 pontos e em sequências longas. O anel encolhe até 16 px e o vento fica cada vez mais forte.' },
+            { title: 'Saída do anel', text: 'Se a mira for empurrada para fora, o combo volta a 0. Pontos e tempo não são descontados.' },
           ],
-          aboutTitle: "Sobre o Desafio de Estabilidade",
-          aboutHeading: "Compensação Dinâmica de Forças e Equilíbrio Postural",
-          aboutIntro: "O Desafio de Estabilidade é um exercício biomecânico de precisão motora fina e estabilização postural. Vetores de vento empurram seu cursor continuamente, exigindo contra-pressão suave e precisa no mouse.",
-          aboutScience: "Fundamentado nos modelos de sinergia postural de Nashner & McCollum (1985) e nos princípios de equilíbrio de David A. Winter (1995), o exercício treina correções motoras visuais de circuito fechado (Woodworth, 1899). Conforme a pontuação sobe, o anel contrai para 20px e as forças aceleram até 850 unidades.",
-          aboutCards: [
-            { title: 'Para quem é', text: "Jogadores de FPS que buscam eliminar tremores na mira e dominar o controle de recoil em jogos competitivos como Valorant, CS2 e Apex Legends." },
-            { title: 'O que o exercício treina', text: "Compensação de vetores de força, equilíbrio postural, rastreamento de resistência, estabilização de retículo e precisão de microajustes." },
-            { title: 'Por que importa nos jogos de tiro', text: "A contra-pressão contínua exigida contra o vento simula exatamente o controle motor suave necessário para segurar o recuo de fuzis e armas automáticas." }
-          ]
         }}
       />
-      <DrillGuide {...guideProps} />
-      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/balance-training/stability-challenge" />
+      <DrillGuide guide={guide} />
+      <RelatedDrills />
     </>
   );
 }

@@ -4,370 +4,194 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Brazil & Portugal (BR / PT)
-// Native SERP intent: jogo de memória visual online, teste de memória espacial, memória de sequência
-// Portuguese Context: Memorização de padrões geométricos vetoriais e reprodução motora sob pressão de tempo
-// High-Demand, Low-Competition Target Keywords:
-//   - "jogo de memoria visual online" (High-volume brain game query)
-//   - "teste de memoria de trabalho visual" (Clinical & cognitive sports query)
-//   - "teste de coordenacao motora fina" (Motor control & tracing benchmark)
-//   - "jogo de memorizar sequencia" (Sequential memory game query)
-//   - "teste de coordenacao viso motora" (Visuomotor integration diagnostic)
-//   - "memorizar padroes geometricos" (Spatial geometry retention query)
-//   - "memoria espacial e controle de recoil" (Esports recoil pattern retention)
-//   - "treino de traco vetorial" (Vector path tracing accuracy)
-//   - "agilidade motora sequencial" (Sequential motor agility query)
-//   - "bloco de notas visuoespacial treino" (Baddeley visuospatial buffer drill)
-// ============================================================
+const PAGE_URL = 'https://skilldrills.online/pt/drills/physical/coordination/complex-pattern';
+const TITLE = "Memorizar e Traçar Padrões com o Mouse | SkillDrills";
+const DESCRIPTION = "Memorizar e Traçar Padrões: um caminho de 3 a 8 pontos aparece por instantes. Memorize e trace o caminho com o mouse. Rodadas de 45 s, grátis no navegador.";
 
 export const metadata = {
-  title: 'Jogo de Memória Visual | Teste Espacial | SkillDrills',
-  description: 'Jogo grátis de memória visual no navegador. Memorize um caminho piscando, trace o padrão e treine memória espacial, sequência e coordenação do mouse.',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "jogo de memória visual online",
-    "teste de memória visual",
-    "memória espacial",
-    "teste de memória de sequência",
-    "teste de memória visuoespacial",
-    "jogo de memorizar sequência",
-    "coordenação visomotora",
-    "memorizar padrões geométricos",
-    "traçar padrões no navegador",
-    "memória de trabalho visual"
-  ],
+  "memorizar e traçar padrões",
+  "jogo de padrões",
+  "traçar o caminho de memória",
+  "jogo de caminhos com o mouse"
+],
   alternates: {
-    canonical: 'https://skilldrills.online/pt/drills/physical/coordination/complex-pattern',
+    canonical: PAGE_URL,
     languages: getAlternateLanguages('/drills/physical/coordination/complex-pattern'),
   },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Jogo de Memória Visual | Teste Espacial | SkillDrills',
-    description: 'Memorize um caminho piscando, trace o padrão e pratique memória espacial e coordenação do mouse em um jogo grátis no navegador.',
-    url: 'https://skilldrills.online/pt/drills/physical/coordination/complex-pattern',
+  openGraph: {
+    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }],
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_URL,
     siteName: 'SkillDrills',
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
+  twitter: {
+    images: ['https://skilldrills.online/opengraph-image'],
     card: 'summary_large_image',
-    title: 'Jogo de Memória Visual | Teste Espacial | SkillDrills',
-    description: 'Memorize um caminho piscando, trace o padrão e pratique memória espacial e coordenação do mouse em um jogo grátis no navegador.',
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Início",
-      "item": "https://skilldrills.online/pt"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Treinamento Físico",
-      "item": "https://skilldrills.online/pt/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Coordenação Motora e Espacial",
-      "item": "https://skilldrills.online/pt/drills/physical/coordination"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Memória de Padrões Complexos e Coordenação Fina",
-      "item": "https://skilldrills.online/pt/drills/physical/coordination/complex-pattern"
-    }
-  ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-  "name": "Treinador de Memória Visual e Padrões Vetoriais (Complex Pattern Pro)",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const faqItems = [
+  {
+    "q": "Como funciona Memorizar e Traçar Padrões?",
+    "a": "Um caminho aparece por pouco tempo e some. Segure o botão do mouse dentro do nó ciano, passe pelos pontos na ordem lembrada e solte no nó magenta. Em seguida o seu traço é comparado com o original."
   },
-  "description": "Ferramenta cognitiva e motora para avaliar e expandir a memória de trabalho visoespacial através da memorização de padrões geométricos e traçado de vetores de alta precisão.",
-  "url": "https://skilldrills.online/pt/drills/physical/coordination/complex-pattern",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
+  {
+    "q": "Como a semelhança é calculada?",
+    "a": "O seu traço e o caminho original são divididos no mesmo número de pontos. A distância média até o ponto mais próximo (em pixels) é subtraída de 100. Se o início ou o fim ficar a mais de uns 45 px do nó, a tentativa conta como erro."
+  },
+  {
+    "q": "O que muda com o nível?",
+    "a": "O caminho passa de 3 para 8 pontos, o tempo de exibição cai de 2,0 para 0,6 segundo e a semelhança exigida sobe de 50% para 85%. A partir do nível 3 podem surgir caminhos em zigue-zague e, a partir do nível 4, em espiral."
+  },
+  {
+    "q": "Errar tira pontos?",
+    "a": "Não. Quem não atinge o mínimo só perde o multiplicador de combo (volta a 1,0x); pontos e tempo restante ficam. O multiplicador sobe com acertos seguidos até 3,0x."
+  },
+  {
+    "q": "Quanto dura uma rodada?",
+    "a": "Exatamente 45 segundos. O nível recomeça em 1 a cada rodada."
+  },
+  {
+    "q": "É um teste de memória visual?",
+    "a": "Não. É um jogo de prática sem diagnóstico nem valores de referência. Os testes de memória da SkillDrills ficam na categoria Memória."
+  },
+  {
+    "q": "Funciona no celular?",
+    "a": "O controle é por arrastar com o mouse; o ideal é jogar no navegador do computador."
+  },
+  {
+    "q": "É grátis?",
+    "a": "Sim, sem instalação e sem cadastro. Os recordes ficam salvos apenas no seu navegador."
+  }
+];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "SkillDrills Início", item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: "Treino de Agilidade com o Mouse", item: 'https://skilldrills.online/pt/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: "Memorizar e Traçar Padrões", item: PAGE_URL },
+  ],
 };
 
 const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Teste de Memória Visual e Traçado de Padrões",
-  "url": "https://skilldrills.online/pt/drills/physical/coordination/complex-pattern",
-  "description": "Jogo online gratuito para treinar coordenação viso-motora e memória espacial reproduzindo trajetórias vetoriais complexas sob limite de tempo.",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Web Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Desafio de Padrões Complexos (Complex Pattern)",
-  "url": "https://skilldrills.online/pt/drills/physical/coordination/complex-pattern",
-  "description": "Jogo de habilidade mental e motora onde o jogador memoriza vértices geométricos e os reproduz com o mouse em alta velocidade.",
-  "genre": ["Action", "Brain Game", "Reflex Game", "Coordination"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Memorizar e Traçar Padrões",
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navegador atual com HTML5 Canvas e mouse",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  inLanguage: 'pt',
+  dateModified: '2026-11-10',
 };
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "O que é o exercício de Padrões Complexos (Complex Pattern Pro) e como ele funciona?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O Complex Pattern Pro é um treino cognitivo e motor que desafia a retenção geométrica e a precisão do traçado manual. Uma trajetória vetorial com múltiplos nós pisca brevemente na tela; você deve reter a forma no cérebro e, após o desaparecimento, clicar no nó inicial ciano e arrastar o cursor até o nó final magenta, recriando com exatidão o padrão."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como a mecânica de desenhar trajetórias se traduz em vantagens em jogos como Valorant e CS2?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Memorizar formas angulares e reproduzi-las rapidamente no mouse estimula o sequenciamento motor (Lashley, 1951), exatamente o mesmo processo neural exigido para dominar padrões complexos de recuo de armas (spray recoil) e alinhar a mira em múltiplos ângulos de forma fluida."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como a dificuldade se intensifica nos níveis mais altos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Conforme sua pontuação aumenta, o exercício evolui até o Nível 15. A contagem de nós sobe de 3 para até 8 vértices, o tempo de exibição cai de 2,0s para apenas 0,6s (exigindo codificação quase instantânea), e o limiar de precisão de similaridade geométrica exigido sobe de 50% para 85%."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que acontece se eu errar o desenho ou não atingir a precisão mínima?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Se o traçado não atingir o percentual de precisão exigido para o nível atual, a tentativa é considerada perdida, a tela pisca em vermelho e seu multiplicador de combo retorna para 1.0x. No entanto, não há dedução na pontuação total nem penalidade de tempo na sessão de 45 segundos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que é o 'bloco de notas visuoespacial' de Baddeley citado na fundamentação científica?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "De acordo com o modelo de Alan Baddeley (1974), o bloco de notas visuoespacial é o componente da memória de trabalho encarregado de reter e manipular temporariamente coordenadas espaciais, distâncias e formas geométricas. O exercício sobrecarrega intencionalmente esse buffer mental para forçar a plasticidade neural."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quantos pontos são necessários para alcançar a nota máxima (Tier 1: Master)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O nível Tier 1 (Apex Pattern Master / Nota S+) exige 17.000 pontos ou mais, superando o Nível 12 com uma média de precisão de traçado superior a 85% em padrões intrincados de 7 a 8 vértices. A faixa média de jogadores (Tier 4) situa-se entre 6.000 e 9.499 pontos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a melhor estratégia mental para memorizar padrões de 6 a 8 nós em 0,6 segundos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A melhor técnica é o 'agrupamento espacial' (chunking). Em vez de memorizar cada nó individualmente, visualize o padrão como uma única figura geométrica fechada (como uma letra Z alongada ou um triângulo sobreposto) e concentre-se na direção do vetor inicial que parte do nó ciano."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual estilo de movimento manual é mais eficiente: arrasto contínuo ou paradas em cada nó?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Um traçado contínuo e fluido com micropausas apenas nos vértices de ângulo agudo costuma obter a maior pontuação de similaridade temporal e espacial, evitando linhas tremidas ou arcos deformados que reduzem a pontuação."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O exercício é compatível com dispositivos móveis ou telas sensíveis ao toque?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim. Embora seja otimizado para mouse com sistema Pointer Lock em computadores, o exercício oferece suporte touch nativo para tablets e smartphones, permitindo desenhar os vetores diretamente com o dedo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Com que frequência devo praticar para notar melhorias perceptíveis na coordenação?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sessões diárias de 5 a 10 minutos são suficientes para induzir consolidação sináptica na coordenação olho-mão e ampliar a capacidade do buffer visoespacial sem causar fadiga muscular no punho."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt',
+  dateModified: '2026-11-10',
+  mainEntity: faqItems.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 };
 
-const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Como Treinar Memória Visual e Traçado de Padrões em 4 Passos",
-  "description": "Procedimento passo a passo para memorizar sequências vetoriais complexas e reproduzi-las com alta precisão.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Fase de Codificação e Memorização Flash",
-      "text": "Fixe o olhar no canvas assim que o padrão de nós aparecer. Observe o ponto de partida ciano e a sequência de ângulos antes que a linha desapareça.",
-      "url": "https://skilldrills.online/pt/drills/physical/coordination/complex-pattern#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Retenção Mental no Buffer Visoespacial",
-      "text": "Mantenha a imagem espacial ativa na mente por fração de segundo, antecipando o primeiro vetor de movimento do mouse.",
-      "url": "https://skilldrills.online/pt/drills/physical/coordination/complex-pattern#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Execução Motora Fluida do Traçado",
-      "text": "Clique no nó inicial ciano e arraste a linha continuamente pelos vértices intermediários até alcançar o nó final magenta.",
-      "url": "https://skilldrills.online/pt/drills/physical/coordination/complex-pattern#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Liberação do Clique e Avaliação de Similaridade",
-      "text": "Solte o botão do mouse sobre o nó magenta para submeter o traço. Ao atingir o percentual de acerto, ganhe bônus e acumule combos até 3.0x.",
-      "url": "https://skilldrills.online/pt/drills/physical/coordination/complex-pattern#step-4"
-    }
-  ]
-};
-
-const guideProps = {
-  sources: pickSources('woodworth1899', 'fitts1954', 'woods2015'),
-  intro: {
-    title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-    paragraphs: [
-      "A capacidade de reter uma estrutura geométrica temporária e traduzi-la em uma trajetória motora suave é uma das funções mais complexas do encéfalo humano. O exercício de Padrões Complexos recruta ativamente o córtex pré-frontal dorsolateral e o córtex parietal posterior, regiões responsáveis pelo 'bloco de notas visuoespacial' (Baddeley & Hitch, 1974). A tarefa não avalia apenas a memória passiva, mas a habilidade de manipular internamente representações angulares sob restrição severa de tempo.",
-      "Segundo as teorias de sequenciamento motor de Karl S. Lashley (1951), tarefas com múltiplos waypoints não podem ser processadas nó por nó de maneira isolada em velocidades altas; o sistema neuromotor precisa agrupar a sequência em uma 'macroestrutura' motora (chunking). Isso espelha diretamente o controle de recuo de armas em jogos de tiro em primeira pessoa, onde o competidor não pensa em cada desvio individual, mas executa um gesto espacial integrado.",
-      "À medida que a dificuldade avança para o Nível 15, a quantidade de nós atinge 8 vértices, ultrapassando a capacidade padrão da memória de trabalho imediata descrita por Nelson Cowan (2001), que estabelece um limite de cerca de 4 itens simultâneos. Ao mesmo tempo, o tempo de exibição é reduzido para apenas 0,6 segundo e a exigência de similaridade sobe para 85%, obrigando o praticante a refinar a velocidade e a precisão das microcorreções manuais descritas na fase de controle contínuo de Woodworth (1899).",
-      "Precisão temporal e telemetria local: Os tempos de exibição e de desenho são controlados com exatidão através da API performance.now() do navegador. A detecção de similaridade do traço compara os vetores traçados com as coordenadas alvo em tempo real. Telas de 144Hz a 240Hz proporcionam maior nitidez durante a apresentação flash do padrão, minimizando o efeito de 'ghosting' e facilitando a codificação retiniana instantânea (Woods et al., 2015). Todos os dados e pontuações são salvos localmente na máquina do usuário, garantindo privacidade completa."
-    ]
-  },
-  benchmarks: {
-    title: "Padrões Oficiais de Memória Visuoespacial e Coordenação Fina",
-    headers: ["Nível", "Título do Nível", "Pontuação Alvo", "Acurácia de Trajeto", "Nota", "Marcador de prática"],
-    rows: [
-      ["Faixa 1", "Muito avançada", "17.000+ pontos", "Nível 12–15 / Acurácia >92%", "Nota S+", "Ritmo muito alto com alta precisão"],
-      ["Faixa 2", "Avançada", "13.000 a 16.999 pts", "Nível 9–11 / Acurácia 85–91%", "Nota A", "Ritmo alto e regular"],
-      ["Faixa 3", "Sólida", "9.500 a 12.999 pts", "Nível 6–8 / Acurácia 76–84%", "Nota B", "Ritmo estável com alguns erros"],
-      ["Faixa 4", "Em desenvolvimento", "6.000 a 9.499 pts", "Nível 3–5 / Acurácia 65–75%", "Nota C", "Ritmo médio com margem de melhora"],
-      ["Faixa 5", "Inicial", "< 6.000 pontos", "Nível 1–2 / Acurácia <65%", "Nota D", "Ponto de partida"],
-    ],
-    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Parâmetros estandardizados com base em capacidade de memória de trabalho visuoespacial (Baddeley & Hitch 1974; Cowan 2001) e sequenciamento motor serial (Lashley 1951).",
-  },
-  protocols: {
-    title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-    description: 'Jogo de memória visual e espacial gratuito. Memorize trajetos complexos entre pontos para treinar sua memória de trabalho e coordenação motora no PC.',
-    items: [
+const guide = {
+  "heading": "Memorizar e Traçar Padrões: como jogar e dicas",
+  "intro": [
+    "Memorizar e Traçar Padrões é um jogo de padrões gratuito no navegador: um caminho aparece rapidamente, você o memoriza e depois traça o caminho de memória com o mouse. Quando o caminho some, comece no nó ciano, passe pelos pontos na ordem lembrada e solte o botão no nó magenta. A proximidade entre o seu traço e o original é calculada como semelhança em porcentagem.",
+    "Cada rodada dura 45 segundos. O nível começa em 1 a cada rodada e sobe com pontos e sequências de acertos; perto do nível 15 o jogo chega a 8 pontos, 0,6 segundo de exibição e 85% de semelhança exigida. Como referência de dificuldade usamos o modelo de memória de trabalho com o seu componente visuoespacial (Baddeley & Hitch, 1974) e estudos que estimam a sua capacidade em cerca de quatro itens (Cowan, 2001). É um jogo de prática, não um teste de memória com diagnóstico ou valores de referência."
+  ],
+  "techniques": {
+    "title": "Dicas para traçar com mais precisão",
+    "items": [
       {
-        title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-        description: 'Jogo de memória visual e espacial gratuito. Memorize trajetos complexos entre pontos para treinar sua memória de trabalho e coordenação motora no PC.'
+        "name": "Memorize formas, não pontos",
+        "desc": "A partir de 5 pontos, divida o caminho em duas ou três formas maiores, como um N ou um triângulo mais uma reta, em vez de guardar cada ponto.",
+        "tips": "Durante a exibição, olhe primeiro onde ficam o início e o fim; o resto guarde como contorno."
       },
       {
-        title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-        description: 'Jogo de memória visual e espacial gratuito. Memorize trajetos complexos entre pontos para treinar sua memória de trabalho e coordenação motora no PC.'
+        "name": "Acerte o início e o fim",
+        "desc": "Começar a mais de uns 45 px do nó inicial ou soltar fora do nó final conta como erro, mesmo que a forma esteja certa.",
+        "tips": "Antes de arrastar, confira se o cursor está dentro do nó ciano."
       },
       {
-        title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-        description: 'Jogo de memória visual e espacial gratuito. Memorize trajetos complexos entre pontos para treinar sua memória de trabalho e coordenação motora no PC.'
-      },
-      {
-        title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-        description: 'Jogo de memória visual e espacial gratuito. Memorize trajetos complexos entre pontos para treinar sua memória de trabalho e coordenação motora no PC.'
+        "name": "Desacelere nas curvas",
+        "desc": "Rápido nas retas e mais devagar perto dos cantos: assim você passa menos do ponto.",
+        "tips": "Um traço contínuo e de ritmo constante costuma dar mais semelhança do que desenhar com pressa."
       }
     ]
   },
-  faqs: {
-    title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-    items: faqSchema.mainEntity.map(q => ({
-      q: q.name,
-      a: q.acceptedAnswer.text
-    }))
-  }
+  "steps": [
+    "Inicie a rodada e espere a contagem regressiva.",
+    "Memorize a forma e a ordem do caminho exibido.",
+    "Quando o caminho sumir, pressione o botão do mouse dentro do nó ciano.",
+    "Passe pelos pontos na ordem lembrada e solte no nó magenta."
+  ],
+  "audience": "Quem quer praticar guardar uma forma vista por instantes e reproduzi-la com o mouse com precisão.",
+  faqs: faqItems,
+  sources: pickSources('baddeley1974', 'cowan2001', 'lashley1951', 'woodworth1899'),
 };
 
-export default function ComplexPatternPtPage() {
+export default function ComplexPatternPagePt() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ComplexPatternClient
         copy={{
-          title: 'Jogo de Memória Visual',
-          subtitle: 'Memorize o caminho e trace o padrão',
-          hudLabels: {
-            score: "Pontos",
-            time: "Tempo",
-            accuracy: "Precisão Média",
-            traced: "Traçados",
-            missed: "Erros",
-            peakLevel: "Nível Máx",
-            getReady: "PREPARE-SE",
-            points: "Pontos",
-            playAgain: "Jogar Novamente"
-          },
-          rulesTitle: "Instruções do Exercício e Sistema de Pontuação",
-          rules: [
-            { title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills', text: "Observe o traçado geométrico multinodal exibido na tela antes que ele desapareça." },
-            { title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills', text: "Clique no nó inicial ciano e arraste o mouse até o nó final magenta para reproduzir o padrão." },
-            { title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills', text: "Alcance a porcentagem de similaridade requerida para validar a sequência e acumular combo." },
-            { title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills', text: "Não atingir a precisão exigida reinicia o combo para 1.0x, sem perda de pontos acumulados." }
-          ],
-          aboutTitle: "Sobre o Jogo de Memória de Padrões",
-          aboutHeading: "Memória de Trabalho Espacial e Traçado Multinodal",
-          aboutText: "O exercício avalia a memória de trabalho visoespacial, a retenção geométrica e o controle vetorial fino sob pressão de tempo. Os praticantes memorizam caminhos geométricos exibidos rapidamente e os reproduzem com exatidão a partir da memória, desenvolvendo fluidez essencial para controle de recoil e gestos rápidos no mouse."
-        }}
+  "title": "Memorizar e Traçar Padrões",
+  "subtitle": "Memorize o caminho e trace com o mouse",
+  "rulesTitle": "Regras: Memorizar e Traçar Padrões",
+  "rules": [
+    {
+      "title": "Memorize o caminho",
+      "text": "Um caminho de pontos e linhas aparece por pouco tempo. Guarde a forma e a ordem antes que ele suma."
+    },
+    {
+      "title": "Arraste do início",
+      "text": "Pressione o botão do mouse dentro do nó ciano, passe por todos os pontos e solte no nó magenta."
+    },
+    {
+      "title": "Semelhança mínima",
+      "text": "Se o traço atingir a semelhança exigida (50% no começo, até 85% depois) e começar e terminar nos nós certos, o padrão conta."
+    },
+    {
+      "title": "Sem perda de pontos",
+      "text": "Se não atingir o mínimo, só o multiplicador de combo volta a 1,0x. Pontos e os 45 segundos não são descontados."
+    }
+  ],
+  "aboutTitle": "Sobre Memorizar e Traçar Padrões",
+  "aboutHeading": "Veja, memorize e trace",
+  "aboutText": "Neste jogo um caminho aparece por instantes e depois some; você o redesenha de memória arrastando o mouse. No início o caminho tem 3 pontos e fica visível por 2 segundos; com o nível ele chega a 8 pontos, o tempo de exibição cai para 0,6 segundo e surgem formas em zigue-zague e espiral.",
+  "hudLabels": {
+    "getReady": "PREPARE-SE",
+    "points": "Pontos",
+    "accuracy": "Precisão Média",
+    "traced": "Traçados",
+    "missed": "Erros",
+    "peakLevel": "Nível Máx",
+    "playAgain": "Jogar Novamente"
+  }
+}}
       />
-      <DrillGuide {...guideProps} />
+      <DrillGuide guide={guide} />
       <RelatedDrills currentCategory="physical" currentHref="/drills/physical/coordination/complex-pattern" />
     </>
   );

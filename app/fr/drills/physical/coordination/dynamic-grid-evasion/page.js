@@ -4,431 +4,142 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// RECHERCHE DE MOTS-CLÉS NATIFS (SERP FRANCE / FR-FR)
-// Clusters natifs à intention forte; concurrence non mesurée :
-// - "jeu d'évitement" (Suggest gl=fr: jeux d'évitement; Bing exact 0, non vérifié)
-// - "test de vision périphérique en ligne gratuit" (Évaluation visuelle et cognitive)
-// - "jeu d'esquive de zone réflexe" (Entraînement à la détection spatiale)
-// - "entraînement aux réflexes spatiaux" (Neuro-motricité appliquée)
-// - "esquiver les sorts jeu d'entraînement" / "esquive skillshot" (eSports / MOBA / FPS)
-// - "test d'attention visuelle et de détection périphérique" (Mesure psychologique)
-// - "jeu de rapidité et d'évitement souris" (Recherche ludique sur navigateur)
-// - "réflexe d'évitement et coordination visuelle" (Capacité psychomotrice)
-// ============================================================
+const url = 'https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion';
+const title = "Jeu d’évitement sur grille 3x3 à la souris | SkillDrills";
+const description = "Jeu d’évitement sur grille gratuit : sortez le curseur des cases qui clignotent en orange sur une grille 3x3 avant qu’elles n’explosent. Parties de 45 s.";
 
 export const metadata = {
-  title: "Jeu d’évitement sur grille 3x3 à la souris | SkillDrills",
-  description: "Jeu d’évitement gratuit : repérez les cases qui vont exploser sur une grille 3x3 et rejoignez une case sûre à la souris. 15 niveaux, 45 secondes.",
-  keywords: [
-    "jeu d'esquive à la souris en ligne",
-    "test de vision périphérique en ligne",
-    "jeu de réflexes",
-    "jeu d'esquive de zone réflexe",
-    "entraînement aux réflexes spatiaux",
-    "esquiver les sorts jeu d'entraînement",
-    "test d'attention visuelle et de détection périphérique",
-    "jeu de rapidité et d'évitement souris",
-    "réflexe d'évitement et coordination visuelle",
-    "réflexes souris entraînement"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion',
-    languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Jeu d’évitement sur grille 3x3 à la souris | SkillDrills",
-    description: "Jeu d’évitement gratuit : repérez les cases qui vont exploser sur une grille 3x3 et rejoignez une case sûre à la souris. 15 niveaux, 45 secondes.",
-    url: 'https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion',
-    siteName: 'SkillDrills',
-    locale: 'fr_FR',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Jeu d’évitement sur grille 3x3 à la souris | SkillDrills",
-    description: "Jeu d’évitement gratuit : repérez les cases qui vont exploser sur une grille 3x3 et rejoignez une case sûre à la souris. 15 niveaux, 45 secondes.",
-  },
+  title,
+  description,
+  keywords: ["jeu d’évitement sur grille", "éviter les cases piégées", "grille 3x3", "jeu d’évitement", "jeu de souris en ligne"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'fr_FR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Accueil",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Entraînement Physique",
-      "item": "https://skilldrills.online/fr/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Coordination Motrice",
-      "item": "https://skilldrills.online/fr/drills/physical/coordination"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Jeu d’évitement sur grille 3x3",
-      "item": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion"
-    }
-  ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Jeu d’évitement sur grille 3x3 à la souris",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Jeu gratuit dans le navigateur : repérez les cases qui vont exploser sur une grille 3x3 et rejoignez une case sûre avant l’explosion.",
-  "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online"
-  },
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
-};
-
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Jeu d’évitement sur grille 3x3",
-  "description": "Jeu d’évitement gratuit dans le navigateur, avec 15 niveaux de difficulté croissante sur 45 secondes.",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Navigateur moderne avec JavaScript",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Accueil', item: 'https://skilldrills.online/fr' },
+    { '@type': 'ListItem', position: 2, name: 'Entraînement physique', item: 'https://skilldrills.online/fr/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Coordination', item: 'https://skilldrills.online/fr/drills/physical/coordination' },
+    { '@type': 'ListItem', position: 4, name: 'Jeu d’évitement sur grille 3x3', item: url },
+  ],
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Jeu d’évitement sur grille dynamique (Dynamic Grid Evasion)",
-  "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion",
-  "description": "Jeu d’évitement sur une grille 3x3 : repérez les cases dangereuses et rejoignez une case sûre à la souris.",
-  "genre": [
-    "Action",
-    "Reflex Game",
-    "Spatial Awareness"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Jeu d’évitement sur grille 3x3 (Dynamic Grid Evasion)',
+  url,
+  description,
+  genre: ['Action Game', 'Browser Game'],
+  gamePlatform: ['Web Browser', 'Desktop'],
+  applicationCategory: 'Game',
+  operatingSystem: 'All',
+  inLanguage: 'fr',
+  dateModified: '2026-11-10',
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
+
+const faqs = [
+  { q: "Comment fonctionne ce jeu d’évitement sur grille 3x3 ?", a: "L’écran est découpé en grille 3x3. À chaque vague, quelques cases clignotent en orange pour avertir. Quand l’avertissement se termine, ces cases explosent en rouge ; si votre curseur est hors de ces cases à cet instant, la vague est évitée. La vague suivante démarre 0,35 seconde après l’explosion, et une partie dure 45 secondes." },
+  { q: "Quand la position du curseur est-elle vérifiée ?", a: "Uniquement au moment de l’explosion. Vous pouvez traverser des cases piégées pendant l’avertissement ; il suffit d’être dans une case sûre quand elles explosent. Le curseur part du centre, et la case centrale peut elle aussi devenir piégée." },
+  { q: "Comment sont calculés les points et le combo ?", a: "Chaque vague évitée rapporte 100 points multipliés par le combo. Le multiplicateur vaut 1,1x dès 3 vagues d’affilée, 1,25x à 5, 1,5x à 10, 2,0x à 20 et 2,5x à 30. Le code prévoit 3,0x à 50 d’affilée, mais une partie de 45 secondes ne compte guère plus de 40 vagues : 2,5x est le maximum atteignable en pratique." },
+  { q: "Comment la difficulté augmente-t-elle ?", a: "Chaque partie commence au niveau 1. Le niveau monte de 1 tous les 250 points, et de 1 de plus toutes les 4 vagues d’affilée. L’avertissement passe de 1,4 à 0,45 seconde et les cases piégées de 3 à 7, ce qui ne laisse que 2 cases sûres. Ces deux valeurs atteignent leur limite au niveau 15." },
+  { q: "Une explosion fait-elle perdre des points ou du temps ?", a: "Non. Le combo retombe à 0, avec un flash rouge et une secousse d’écran, mais le score et le temps restant ne bougent pas. Le flash rouge se désactive pendant la partie avec le bouton en bas à droite." },
+  { q: "Comment la note est-elle attribuée ?", a: "Le score final est comparé à une référence de 17 000 points (B dès 6 120, C dès environ 3 450, D dès 1 530). Même en évitant toutes les vagues pendant 45 secondes, le calcul plafonne vers 8 400 points : la meilleure note réaliste ici est B." },
+  { q: "Quelles commandes utilise-t-on ?", a: "Uniquement la souris. Au lancement, le pointeur est verrouillé et la sensibilité des réglages du site s’applique. Au clavier, seule la touche Échap (quitter) sert. Sur un appareil uniquement tactile, le curseur ne peut pas bouger : un ordinateur avec souris est recommandé." },
+  { q: "Quelle différence avec un jeu où l’on évite des projectiles ?", a: "Ici, vous choisissez l’une des 9 cases fixes et vous y entrez avant la fin de l’avertissement. Pour fuir des projectiles venant de tous les bords, utilisez Quick Dodge dans la même catégorie." },
+  { q: "Est-ce gratuit ? Où sont gardés mes records ?", a: "Oui, gratuit, sans installation ni compte, directement dans le navigateur. Le meilleur score et le meilleur combo restent dans le stockage local de votre navigateur." },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Comment fonctionne ce jeu d’évitement sur grille 3x3 ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "L’écran est divisé en 9 cases. Des bordures ambrées signalent les cases qui vont exploser en rouge. Vous repérez les cases restées sombres et déplacez votre curseur vers l’une d’elles avant l’explosion."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Faut-il fixer le centre de la grille ou balayer case par case ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Fixer le centre permet de voir les neuf cases d’un coup, alors qu’un balayage case par case demande du temps que le délai d’alerte ne laisse pas. La recherche sur les caractéristiques visuelles saillantes (Treisman & Gelade, 1980) soutient cette stratégie, que vous pouvez comparer à la vôtre."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment la difficulté augmente-t-elle sur les 15 niveaux ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le niveau monte tous les 250 points. Le délai d’avertissement passe de 1,4 s au niveau 1 à 0,45 s aux niveaux 12 à 15, et le nombre de cases dangereuses de 3 à 7 simultanément, avec 2 refuges au minimum."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Une explosion fait-elle perdre des points ou du temps ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Aucun point acquis n’est retiré et le chronomètre de 45 secondes ne change pas. Être touché ramène seulement le multiplicateur de série à 1.0x."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment placer le curseur dans la case sûre sans la dépasser ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Vers la case choisie, un grand mouvement suivi d’un freinage court correspond au modèle à deux phases de Woodworth (1899). Reposer légèrement la main sur le tapis aide certains joueurs à s’arrêter net."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle sensibilité de souris choisir pour ce jeu ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il n’y a pas de réglage unique. Une sensibilité trop basse oblige à de grands mouvements du bras, une sensibilité très haute rend l’arrêt difficile. Gardez celle de votre jeu et comparez vos séances avec le même réglage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment atteindre le palier 1 de 17 000 points ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Gardez le regard au centre, choisissez toujours la case sûre la plus proche de votre curseur et conservez le multiplicateur 3.0x sur les 45 secondes. Les paliers sont des repères propres à l’exercice, pas des classements."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle différence entre attention volontaire et réflexe ici ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Posner (1980) distingue l’attention dirigée volontairement, plus lente, de celle attirée par un signal visuel soudain. Ce jeu vous fait réagir aux bordures ambrées, donc au signal, plutôt que de chercher activement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ce jeu entraîne-t-il à esquiver dans les jeux vidéo ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il travaille la détection de signaux visuels en périphérie et le déplacement rapide du curseur. Aucune étude ne démontre un transfert vers un jeu précis : testez dans votre propre jeu."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Faut-il installer quelque chose ou créer un compte ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Le jeu fonctionne dans le navigateur, sans installation ni compte, et vos records sont stockés dans le LocalStorage de votre navigateur."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'fr',
+  dateModified: '2026-11-10',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
+const steps = [
+  "Cliquez sur Démarrer ; après un compte à rebours de 3 secondes, le curseur part du centre de la grille.",
+  "Repérez les cases qui clignotent en orange et trouvez une case sans avertissement.",
+  "Avant l’explosion, placez le curseur à l’intérieur de la case sûre, loin du bord.",
+  "Enchaînez les vagues, gardez le combo et visez votre record en 45 secondes.",
+];
+
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Comment jouer au jeu d’évitement sur grille 3x3",
-  "description": "Quatre étapes pour surveiller la grille, repérer les cases sûres et éviter les explosions.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Placez le curseur au centre",
-      "text": "Placez le curseur au milieu de la grille 3x3 et gardez un regard large qui englobe les neuf cases.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Repérez les cases sombres",
-      "text": "Repérez par vision périphérique les cases qui ne clignotent pas en ambre : ce sont les zones sûres.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Rejoignez la case sûre",
-      "text": "Déplacez le curseur vers la case sûre la plus proche avant l’explosion rouge.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Gardez la série",
-      "text": "Enchaînez les évitements pour maintenir le multiplicateur 3.0x pendant les 45 secondes.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Comment jouer au jeu d’évitement sur grille 3x3',
+  description: 'Quatre étapes pour sortir des cases piégées de la grille 3x3.',
+  step: steps.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, name: `Étape ${i + 1}`, text, url: `${url}#step-${i + 1}` })),
 };
 
 const gridGuide = {
-  "heading": "Jeu d’évitement sur grille 3x3 : comment ça marche",
-  "subtitle": "Attention spatiale périphérique (Treisman, Posner) et freinage en deux phases (Woodworth)",
-  "intro": [
-    "Ce jeu d’évitement vous place devant une grille de 9 cases dont certaines vont exploser. Vous repérez les cases restées sombres et rejoignez l’une d’elles à la souris avant l’explosion rouge. Il dure 45 secondes, compte 15 niveaux et exerce la détection périphérique et le déplacement rapide du curseur.",
-    "Treisman et Gelade (1980) ont montré que les caractéristiques visuelles saillantes, comme un clignotement ou un changement de couleur, sont repérées en parallèle sur le champ visuel. En fixant le centre de la grille, vous pouvez donc voir l’état des neuf cases sans balayage séquentiel.",
-    "Posner (1980) a décrit l’orientation de l’attention vers un lieu sans bouger les yeux. Du niveau 12 au niveau 15, la fenêtre de réaction tombe de 1,4 s à 0,45 s pendant que 7 cases sur 9 deviennent dangereuses. Le déplacement vers la case sûre suit le modèle en deux phases de Woodworth (1899) : un mouvement rapide puis une correction fine.",
-    "Mesure et matériel : le test s’exécute dans votre navigateur avec l’horloge performance.now(), dont la résolution est limitée. Un écran à 60 Hz affiche une image toutes les 16,7 ms et un écran à 144 Hz toutes les 6,9 ms (Woods et al., 2015) : comparez vos séances sur le même matériel."
+  heading: 'Guide du jeu d’évitement sur grille',
+  intro: [
+    "Ce jeu d’évitement sur grille est un jeu de navigateur : sur une grille 3x3, vous sortez le curseur des cases signalées en orange avant qu’elles n’explosent. Pas d’objets qui volent : vous choisissez l’une des 9 cases, donc la décision rapide et l’arrêt précis comptent autant l’un que l’autre.",
+    "Au fil des niveaux, l’avertissement passe de 1,4 à 0,45 seconde et jusqu’à 7 cases sur 9 deviennent piégées. En fin de partie il ne reste que 2 cases sûres, sans temps pour vérifier case par case. Comme dans les expériences d’indices attentionnels de Posner (Posner, 1980), il aide de lire d’un coup d’œil le contraste entre cases qui clignotent et cases sombres.",
+    "Un mouvement rapide combine une grande impulsion et une petite correction finale (Woodworth, 1899). Choisir la bonne case puis dépasser son bord compte quand même comme touché : entraînez-vous à vous arrêter dans la case.",
+    "Les résultats sont des relevés d’entraînement propres à SkillDrills, pas un examen médical, un test de la vue ni une mesure de performance sportive. Comparez vos scores avec la même souris, la même sensibilité et le même écran.",
   ],
-  "benchmarks": {
-    "title": "Paliers du jeu d’évitement (5 niveaux de repère)",
-    "headers": [
-      "Palier",
-      "Score requis",
-      "Niveau atteint",
-      "Délai d’alerte",
-      "Lecture"
+  benchmarks: {
+    title: 'Paliers de note (paliers d’entraînement SkillDrills)',
+    headers: ['Note', 'Points', 'Repère'],
+    rows: [
+      ['B', 'dès 6 120', 'presque toutes les vagues évitées en 45 secondes'],
+      ['C', 'dès environ 3 450', 'plus de la moitié des vagues évitées d’affilée'],
+      ['D', 'dès 1 530', 'passage fiable vers la case libre après l’avertissement'],
+      ['F', 'moins de 1 530', 'débutant'],
     ],
-    "rows": [
-      [
-        "Palier 1",
-        "17 000+ points",
-        "Niveau 12 – 15",
-        "0,45 – 0,60 s",
-        "Évitement fluide face à 7 cases dangereuses"
-      ],
-      [
-        "Palier 2",
-        "13 000 – 16 999 pts",
-        "Niveau 9 – 11",
-        "0,65 – 0,80 s",
-        "Bonne gestion de 5 à 6 explosions simultanées"
-      ],
-      [
-        "Palier 3",
-        "9 500 – 12 999 pts",
-        "Niveau 6 – 8",
-        "0,85 – 1,05 s",
-        "Décisions rapides, arrêts bien dosés"
-      ],
-      [
-        "Palier 4",
-        "6 000 – 9 499 pts",
-        "Niveau 3 – 5",
-        "1,10 – 1,25 s",
-        "Séries interrompues quand le délai passe sous 1 s"
-      ],
-      [
-        "Palier 5",
-        "Moins de 6 000 points",
-        "Niveau 1 – 2",
-        "Plus de 1,25 s",
-        "Point de départ : cherchez à voir toute la grille"
-      ]
+    note: 'Les paliers comparent le score final à 17 000 points et sont des paliers d’entraînement SkillDrills. A et au-delà sont hors d’atteinte en 45 secondes selon le calcul. Ni statistiques d’utilisateurs ni centiles.',
+  },
+  techniques: {
+    title: 'Conseils pour marquer plus',
+    items: [
+      { name: 'Cherchez les cases sombres', desc: 'Plutôt que de compter les cases qui clignotent, cherchez directement la case sans avertissement.', tips: 'En fin de partie, seules 2 cases sont sûres : prenez la plus proche.' },
+      { name: 'La case sûre la plus proche', desc: 'Avec environ 0,5 seconde d’avertissement, les longs trajets ne passent plus. Allez vers la case sûre la plus proche.', tips: 'À l’horizontale ou à la verticale, c’est souvent plus court qu’en diagonale.' },
+      { name: 'Arrêtez-vous dans la case', desc: 'C’est la position exacte du curseur qui compte. Sur le bord, il peut être compté dans la case voisine.', tips: 'Visez le centre de la case.' },
+      { name: 'Gardez le combo', desc: 'Plus la série est longue, plus le multiplicateur et le niveau montent. Tenter une case lointaine et se faire toucher coûte le combo.', tips: 'Préférez la case sûre et proche.' },
     ],
-    "note": "Repères éditoriaux propres à cet exercice, établis sur le niveau atteint et le délai d’alerte. Ce ne sont ni des normes cliniques ni un classement de population."
   },
-  "techniques": {
-    "title": "Quatre techniques pour mieux éviter sur la grille",
-    "items": [
-      {
-        "name": "Fixer le centre de la grille",
-        "desc": "Gardez le regard détendu sur le centre sans vous attacher à une case. Laissez la périphérie repérer l’éclat ambré sur l’ensemble des zones.",
-        "tips": "Ne suivez pas le curseur des yeux : guidez-le avec votre bras."
-      },
-      {
-        "name": "Réagir à l’absence de signal",
-        "desc": "Ne cherchez pas d’abord où est le danger : dirigez la main vers une case restée sombre.",
-        "tips": "Une case sans bordure ambrée est votre refuge."
-      },
-      {
-        "name": "Mouvement rapide puis freinage",
-        "desc": "Partez vite vers la case choisie, puis ralentissez en entrant dans la case pour ne pas la dépasser.",
-        "tips": "Un léger appui de la main sur le tapis peut aider à s’arrêter net."
-      },
-      {
-        "name": "Choisir la case sûre la plus proche",
-        "desc": "Aux niveaux élevés, chercher la case idéale coûte du temps : visez le refuge le plus proche de votre curseur, en horizontal, vertical ou diagonale.",
-        "tips": "Une décision rapide vaut mieux qu’un déplacement parfait mais tardif."
-      }
-    ]
-  },
-  "steps": [
-    "Placez le curseur au centre de la grille 3x3.",
-    "Gardez les yeux détendus au centre pour surveiller les signaux en périphérie.",
-    "Rejoignez la case sûre la plus proche avant l’explosion rouge.",
-    "Maintenez le combo 3.0x pendant les 45 secondes."
-  ],
-  "audience": "Joueurs, sportifs et toute personne qui veut s’exercer à la détection périphérique et à l’évitement rapide à la souris.",
-  "faqs": faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  "sources": pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015')
+  steps,
+  audience: 'Pour qui cherche un jeu d’évitement sur grille avec des cases piégées, et pour les joueurs qui veulent travailler la décision rapide et l’arrêt précis à la souris.',
+  faqs,
+  sources: pickSources('posner1980', 'woodworth1899', 'fitts1954'),
 };
 
 export default function DynamicGridEvasionPageFr() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <DynamicGridEvasionClient
         copy={{
           title: "Jeu d’évitement sur grille 3x3",
-          subtitle: "Repérez le danger et rejoignez une case sûre • 15 niveaux",
-          hudLabels: {
-            score: "Score",
-            timeLeft: "Temps Restant",
-            bestScore: "Meilleur Score",
-            bestCombo: "Meilleur Combo"
-          },
-          rulesTitle: "Règles du jeu et barème de points",
+          hudLabels: { score: "Score", timeLeft: "Temps restant", bestScore: "Meilleur score", bestCombo: "Meilleur combo" },
+          rulesTitle: "Règles et calcul du score",
           rules: [
-            { title: "Évitement des Zones Dangereuses", text: "Dirigez le réticule vers les cases sécurisées avant que les bordures ambrées n'explosent en rouge." },
-            { title: "Multiplicateur de Série", text: "Survivez à plusieurs vagues consécutives sans dégât pour élever le combo jusqu'à 3.0x." },
-            { title: "Montée en Difficulté", text: "Tous les 250 points le niveau augmente, réduisant le délai d'avertissement de 1,4s à 0,45s et imposant jusqu'à 7 zones dangereuses." },
-            { title: "Impact d'une Détonation", text: "Être touché par une détonation ramène le combo à 1.0x sans la moindre déduction de score." }
+            { title: "Avertissement", text: "À chaque vague, quelques cases clignotent en orange. À la fin de l’avertissement, elles explosent." },
+            { title: "Vers la case sûre", text: "Si le curseur est hors des cases piégées au moment de l’explosion, vous gagnez 100 points multipliés par le combo." },
+            { title: "Niveau", text: "Le niveau monte tous les 250 points et toutes les 4 vagues d’affilée. L’avertissement passe de 1,4 à 0,45 s et les cases piégées de 3 à 7." },
+            { title: "Touché", text: "Seul le combo retombe à 0. Le score et la partie de 45 secondes ne changent pas." },
           ],
-          aboutTitle: "À propos du jeu d’évitement sur grille",
-          aboutHeading: "Attention périphérique et évitement rapide",
-          aboutText: "Cet exercice s’appuie sur la théorie de l’intégration des attributs de Treisman et Gelade (1980) et sur les travaux de Posner (1980) sur l’orientation de l’attention. La grille 3x3 fait travailler la détection périphérique et le déplacement rapide vers une zone sûre.",
+          aboutTitle: "Qu’est-ce que le jeu d’évitement sur grille ?",
+          aboutHeading: "Éviter les cases piégées d’une grille 3x3",
+          aboutText: "Dans ce jeu d’évitement sur grille, des cases d’une grille 3x3 clignotent en orange avant d’exploser et vous amenez le curseur à temps dans une case sûre. Au fil des niveaux, l’avertissement raccourcit et les cases piégées se multiplient. Il s’agit de décider vite et de freiner la souris avec précision, pas d’une mesure médicale.",
           aboutCards: [
-            {
-              title: "À qui s’adresse ce jeu ?",
-              desc: "Joueurs et toute personne qui veut s’exercer à repérer des signaux en périphérie et à réagir vite avec la souris."
-            },
-            {
-              title: "Capacités exercées",
-              desc: "Détection visuelle en parallèle, attention attirée par un signal, décision rapide et freinage du curseur."
-            },
-            {
-              title: "Vision Périphérique",
-              desc: "Fixer le centre de la grille vous apprend à utiliser la périphérie du regard plutôt que de fixer une seule case."
-            }
-          ]
+            { title: "Pour qui", desc: "Pour qui aime les jeux d’évitement sur grille ou veut s’exercer à réagir à un avertissement avec la souris." },
+            { title: "Ce que vous travaillez", desc: "Distinguer cases piégées et sûres, choisir la plus proche, arrêter le curseur à l’intérieur." },
+            { title: "Format", desc: "45 secondes fixes, toujours à partir du niveau 1. Être touché ne coûte ni points ni temps." },
+          ],
         }}
       />
       <DrillGuide guide={gridGuide} />

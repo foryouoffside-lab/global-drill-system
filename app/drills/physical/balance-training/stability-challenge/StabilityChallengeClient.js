@@ -56,27 +56,27 @@ const saveData = (data) => {
 const RULES_ITEMS = [
   { title: "Central Safe Zone Lock", text: "Keep crosshair centered inside safe ring against dynamic wind resistance vectors." },
   { title: "Combo System", text: "Maintain unbroken central stabilization to build combo multiplier up to 3.0x max." },
-  { title: "Level Progression", text: "Score increases level every 250 PTS. Safe ring shrinks & wind forces accelerate." },
-  { title: "Instability Blowout", text: "Drifting outside safe ring resets combo streak to 1.0x with zero score or time loss." }
+  { title: "Level Progression", text: "Level rises every 250 PTS and with long in-ring streaks. Safe ring shrinks to a 16px floor and wind keeps getting stronger." },
+  { title: "Instability Blowout", text: "Drifting outside the safe ring resets the combo streak to 1.0x. No score or time is deducted." }
 ];
 
-const ABOUT_TEXT = `Stability Challenge is a fine motor resistance tracking and postural stability exercise. Dynamic wind force vectors continuously push your crosshair away from the center, requiring precise counter-directional mouse input to maintain central safe zone alignment.
+const ABOUT_TEXT = `Stability Challenge is a mouse cursor-stability drill. A drifting wind force continuously pushes your crosshair away from the center, and you counter it with mouse input to stay inside the central safe ring.
 
-As your score increases, the level scales up to Level 15. Safe zone radiuses shrink from 45px down to 20px, and wind force pushes accelerate from 250 up to 850 force strength.
+Levels have no cap: they rise every 250 points and with long in-ring streaks. The safe ring shrinks from 45px toward a 16px floor, and the wind force starts at 250 and keeps growing (850 at level 15).
 
-Resist weapon recoil drift and external visual disturbance vectors to maintain pin-point crosshair alignment in FPS games.`;
+It practises small, continuous cursor corrections. It does not measure physical balance or hand tremor.`;
 
 const FAQ_ITEMS = [
-  { q: "What is the Stability Challenge exercise?", a: "Stability Challenge is a resistance tracking and postural stability drill. Players resist dynamic wind force vectors to keep their crosshair inside a central safe zone." },
+  { q: "What is the Stability Challenge exercise?", a: "Stability Challenge is a mouse cursor-stability drill. Players counter a drifting wind force to keep their crosshair inside a central safe zone for 45 seconds." },
   { q: "How do wind force mechanics work?", a: "Dynamic wind vectors continuously push your crosshair away from the center. Apply smooth counter-directional mouse input to remain inside the central safe ring." },
-  { q: "How does difficulty scale in Stability Challenge?", a: "As your score increases, the level rises up to Level 15. Safe zone radiuses shrink from 45px down to 20px, and wind force pushes accelerate from 250 up to 850 force strength." },
+  { q: "How does difficulty scale in Stability Challenge?", a: "The level rises every 250 points and with long in-ring streaks, with no cap. The safe zone shrinks from 45px toward a 16px floor and the wind force keeps growing past 850 (its value at level 15)." },
   { q: "What happens when my crosshair gets pushed out of the safe zone?", a: "Drifting outside the safe zone breaks your stability lock, resets your combo multiplier back to 1.0x, and triggers a red flash overlay. There are no score deductions or time penalties." },
   { q: "How long does each session run?", a: "Each session runs for a fixed 45 seconds. The game timer counts down steadily from 45s to 0s, providing a standard, reproducible performance benchmark." },
-  { q: "Does Stability Challenge help with FPS gaming?", a: "Yes. It trains micro-stabilization and force counteraction needed for recoil control and precise crosshair placement in CS2, Valorant, and Apex Legends." },
+  { q: "Does Stability Challenge help with FPS gaming?", a: "It practises small, continuous cursor corrections against a drifting force. No study cited here shows that it transfers to recoil control in any specific game." },
   { q: "What is a good score in Stability Challenge?", a: "Scoring 9,500+ points earns an A grade or higher, while reaching 15,300+ points places you in the elite S+ tier. Grades are calculated purely from score against a 17,000-point elite benchmark." },
-  { q: "Do I need special hardware to practice this drill?", a: "No special hardware is required. Any standard computer mouse with 1:1 raw input support works ideally with our pointer lock system." },
+  { q: "Do I need special hardware to practice this drill?", a: "No special hardware is required. Any standard computer mouse works; the drill uses pointer lock and is not available on touch-only devices." },
   { q: "Is Stability Challenge free to play?", a: "Yes, Stability Challenge on SkillDrills is 100% free, ad-free, and runs entirely in your web browser with zero downloads." },
-  { q: "How often should I practice daily?", a: "Practicing 5 to 10 minutes daily is recommended for optimal neuromuscular adaptation and micro-correction stabilization." }
+  { q: "How often should I practice daily?", a: "There is no proven dose. Short sessions on the same mouse and sensitivity make your scores easier to compare." }
 ];
 
 const RELATED_DRILLS = [
@@ -586,12 +586,12 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Stability Challenge"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
+            {copy?.subtitle && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy.subtitle}
+              </p>
+            )}
           </div>
         )}
 
@@ -686,7 +686,7 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
               icon={Wind}
               accent="emerald"
               title={copy?.title || "Stability Challenge"}
-              subtitle={copy?.subtitle || "Wind Resistance Motor Control • 15 Levels"}
+              subtitle={copy?.subtitle || "Keep the crosshair inside the shrinking safe ring"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -800,21 +800,21 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
                 <div className="space-y-6">
                   <div className="space-y-3">
                     <h3 className="text-base font-bold text-white flex items-center gap-2">
-                      <Wind className="w-4 h-4 text-emerald-400" /> {copy?.aboutHeading || "Dynamic Force Counteraction & Postural Equilibrium"}
+                      <Wind className="w-4 h-4 text-emerald-400" /> {copy?.aboutHeading || "Dynamic Force Counteraction & Cursor Stability"}
                     </h3>
                     <p className="text-sm leading-relaxed text-gray-300">
-                      {copy?.aboutIntro || "The Stability Challenge is a fine motor resistance tracking and postural equilibrium exercise. Dynamic wind force vectors continuously push your crosshair away from the center, requiring precise counter-directional mouse input to maintain central safe ring alignment."}
+                      {copy?.aboutIntro || "The Stability Challenge is a mouse cursor-stability drill. A drifting wind force continuously pushes your crosshair away from the center, requiring counter-directional mouse input to maintain central safe ring alignment."}
                     </p>
                     <p className="text-sm leading-relaxed text-gray-300">
-                      {copy?.aboutScience || "Grounded in Nashner & McCollum's (1985) postural synergy models and David A. Winter's (1995) perturbation balance principles, the drill forces your motor cortex to recruit closed-loop visual feedback corrections (Woodworth 1899). As your score rises, safe ring radii contract from 45px down to 20px while force magnitudes accelerate up to 850 strength units, testing high-frequency micro-adjustments and isometric stability under pressure. Standing balance works the same way: quiet standing is not motionless but a constant loop of small corrections around a drifting centre of pressure (Winter, 1995), organised into a few stereotyped strategies rather than improvised each time (Nashner & McCollum, 1985). Vision needs roughly 100–150 ms to influence a movement already under way (Woodworth, 1899), so the faster the disturbance, the more you have to anticipate instead of react. This drill runs that loop through a mouse cursor — it trains the correction habit, and does not measure physical balance."}
+                      {copy?.aboutScience || "Grounded in Nashner & McCollum's (1985) postural synergy models and David A. Winter's (1995) perturbation balance principles, the drill relies on closed-loop visual feedback corrections (Woodworth 1899). As your score rises, the safe ring contracts from 45px toward a 16px floor while the wind force keeps growing (850 units at level 15), with no level cap. Standing balance works the same way: quiet standing is not motionless but a constant loop of small corrections around a drifting centre of pressure (Winter, 1995), organised into a few stereotyped strategies rather than improvised each time (Nashner & McCollum, 1985). Vision needs roughly 100–150 ms to influence a movement already under way (Woodworth, 1899), so the faster the disturbance, the more you have to anticipate instead of react. This drill runs that loop through a mouse cursor — it trains the correction habit, and does not measure physical balance."}
                     </p>
                   </div>
   
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {(copy?.aboutCards || [
-                      { title: "Target Audience", icon: Users, color: "bg-blue-600", text: "FPS and tactical shooter players training recoil control, esports competitors building micro-stabilization under pressure, and athletes strengthening fine motor resistance to involuntary drift." },
-                      { title: "Mechanical Benefits", icon: TrendingUp, color: "bg-emerald-600", text: "Force vector counteraction, postural equilibrium, resistance tracking, central crosshair stabilization, and micro-adjustment precision." },
-                      { title: "Recoil Counteraction", icon: Activity, color: "bg-purple-600", text: "Continuously countering unpredictable wind push mirrors the smooth counter-pressure needed to hold a crosshair steady through weapon recoil climb and flinch displacement." }
+                      { title: "Target Audience", icon: Users, color: "bg-blue-600", text: "Players who want to practise holding a mouse cursor steady against a drifting force, and anyone curious how small continuous corrections feel." },
+                      { title: "Mechanical Benefits", icon: TrendingUp, color: "bg-emerald-600", text: "Countering a drifting force with the mouse, keeping the crosshair centred, and making small, early corrections." },
+                      { title: "Recoil Counteraction", icon: Activity, color: "bg-purple-600", text: "The wind changes direction at random, so you correct continuously. Leaving the ring resets the combo but costs no score or time." }
                     ]).map((card, idx) => {
                       const IconComp = card.icon || [Users, TrendingUp, Activity][idx % 3];
                       const color = card.color || ["bg-blue-600", "bg-emerald-600", "bg-purple-600"][idx % 3];

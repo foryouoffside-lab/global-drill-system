@@ -631,12 +631,12 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
             <div className="flex items-center gap-2">
               <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Quick Dodge Challenge"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
+            {copy?.subtitle && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy.subtitle}
+              </p>
+            )}
             </div>
           </div>
         )}

@@ -637,12 +637,12 @@ export default function DynamicGridEvasionClient({ copy = {} } = {}) {
           <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Dynamic Grid Evasion"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
+            {copy?.subtitle && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy.subtitle}
+              </p>
+            )}
           </div>
         )}
 

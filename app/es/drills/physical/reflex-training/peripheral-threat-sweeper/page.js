@@ -5,53 +5,42 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — Spain & Latin America (ES / ES-ES / ES-MX)
-// Primary Intent: entrenar vision periferica, test de vision periferica online, ampliar campo visual ejercicios
-// Hispanic Gaming & Athletic Context: Prevención de visión de túnel en shooters (Valorant, CS2) y expansión del campo de visión útil (UFOV) para atletas
-// High-Demand, Low-Competition Target Keywords:
-//   - "entrenar vision periferica" (Core athletic vision conditioning query)
-//   - "test de vision periferica online" (Visual field testing query)
-//   - "ampliar campo visual ejercicios" (Visual field expansion exercises)
-//   - "evitar vision de tunel gaming" (Tunnel vision prevention in esports)
-//   - "test de reflejos perifericos" (Peripheral reaction chronometry)
-//   - "ejercicios de vision periferica para deportes" (Sports visual conditioning)
-//   - "test ufov online" (Useful Field of View cognitive assessment)
-//   - "mejorar percepcion espacial y reflejos" (Spatial perception & reflexes)
-//   - "atencion visual encubierta test" (Covert visual attention paradigm)
-//   - "entrenamiento visual para gamers" (Esports visual training query)
+// SEO (2026-11-10, docs/seo/research/physical-2026-11/es.md)
+// Primary: Ejercicios de visión periférica (no-demand descriptive).
+// Dropped "Test" (clinical/DGT field-test intent) and UFOV-expansion claims.
+// Visual peripheral-ping-pursuit keeps "Fijación Central".
 // ============================================================
 
+const url = 'https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper';
+const title = "Ejercicios de Visión Periférica: Juego Online | SkillDrills";
+const description = "Ejercicios de visión periférica en forma de juego: mira el núcleo central y haz clic en las amenazas que llegan del borde. +2 s por acierto, -1 s por fallo.";
+
 export const metadata = {
-  title: "Test de Visión Periférica Online | Entrenamiento",
-  description: "Test gratis de visión periférica en el navegador. Mantén la mirada en el centro, detecta amenazas laterales y practica el campo visual útil (UFOV).",
+  title,
+  description,
   keywords: [
-    "entrenar visión periférica",
-    "test de visión periférica online",
-    "test de reflejos periféricos",
-    "ampliar campo visual ejercicios",
-    "ejercicios de visión periférica para deportes",
-    "test UFOV online",
-    "mejorar percepción espacial y reflejos",
-    "evitar visión de túnel gaming",
-    "atención visual encubierta test",
-    "entrenamiento visual para gamers"
+    "ejercicios de visión periférica",
+    "visión periférica en juegos",
+    "amenazas desde el borde",
+    "juego de visión periférica",
+    "Peripheral Threat Sweeper"
   ],
   alternates: {
-    canonical: 'https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper',
+    canonical: url,
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de Visión Periférica Online | Entrenamiento",
-    description: "Test gratis de visión periférica en el navegador. Mantén la mirada en el centro, detecta amenazas laterales y practica el campo visual útil (UFOV).",
-    url: 'https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper',
+    title,
+    description,
+    url,
     siteName: 'SkillDrills',
     locale: 'es_ES',
     type: 'website',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de Visión Periférica Online | Entrenamiento",
-    description: "Test gratis de visión periférica en el navegador. Mantén la mirada en el centro, detecta amenazas laterales y practica el campo visual útil (UFOV).",
+    title,
+    description,
   },
   robots: { index: true, follow: true },
 };
@@ -60,329 +49,160 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Inicio",
-      "item": "https://skilldrills.online/es"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Centro de Entrenamiento Físico",
-      "item": "https://skilldrills.online/es/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Entrenamiento de Reflejos",
-      "item": "https://skilldrills.online/es/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Visión Periférica y Defensa Radial",
-      "item": "https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills Inicio", "item": "https://skilldrills.online/es" },
+    { "@type": "ListItem", "position": 2, "name": "Centro de Entrenamiento Físico", "item": "https://skilldrills.online/es/drills/physical" },
+    { "@type": "ListItem", "position": 3, "name": "Entrenamiento de Reflejos", "item": "https://skilldrills.online/es/drills/physical/reflex-training" },
+    { "@type": "ListItem", "position": 4, "name": "Ejercicios de Visión Periférica", "item": url }
   ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision"],
-  "name": "Simulador de Visión Periférica y Ampliación de Campo Visual (UFOV)",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "url": "https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper",
-  "description": "Entrenamiento gratuito para detectar amenazas laterales, practicar reflejos y trabajar el campo visual útil.",
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Entrenador de Atención Visual Encubierta y Barrido Radial 360°",
-  "url": "https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper",
-  "description": "Drill de navegador para mantener la mirada en el centro, detectar amenazas laterales y practicar el campo visual útil.",
+  "name": "Ejercicios de Visión Periférica",
+  description,
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Navegador actual con HTML5 Canvas y ratón o pantalla táctil",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  url,
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
-  "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Vision, Attention"
+  "dateModified": "2026-11-10"
 };
 
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Entrenamiento de Visión Periférica y Defensa Radial",
-  "gamePlatform": "Web Browser",
-  "url": "https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper",
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
-  "applicationSubCategory": "Esports Cognitive Vision Drill"
-};
+const faqs = [
+  {
+    q: "¿Qué hago en estos ejercicios de visión periférica?",
+    a: "Mantienes la vista en el núcleo del centro de la pantalla y haces clic en las amenazas que llegan desde el borde hacia él, antes de que lo alcancen. Así practicas notar movimientos alrededor sin mover los ojos. Es un juego de navegador, no un examen de la vista ni un tratamiento."
+  },
+  {
+    q: "¿En qué se diferencian la visión central y la periférica?",
+    a: "La visión central distingue letras y detalles en una zona pequeña alrededor del punto que miras; la periférica percibe, fuera de esa zona, sobre todo movimiento y cambios más grandes. El juego te pide mantener la mirada en el centro y reaccionar a las amenazas que vienen del borde."
+  },
+  {
+    q: "¿Puedo mover los ojos?",
+    a: "La idea es seguir mirando el núcleo y solo percibir los bordes. Si sigues las amenazas con los ojos, estás practicando otra cosa. El navegador no puede saber adónde miras, así que depende de ti."
+  },
+  {
+    q: "¿Cómo se calculan los puntos y el tiempo?",
+    a: "Cada acierto vale 100 puntos multiplicados por el combo y un bonus de nivel, y suma 2 segundos, hasta un máximo de 60 segundos. La partida empieza con 45 segundos y el combo llega hasta 3,0x. Si una amenaza alcanza el núcleo o haces clic en el vacío, el combo vuelve a 1,0x y pierdes 1 segundo. Esta penalización está siempre activa y no se puede desactivar."
+  },
+  {
+    q: "¿Cómo aumenta la dificultad?",
+    a: "A medida que sube la puntuación, las amenazas pasan de unos 80 px/s a cerca de 520 px/s (algo más durante un combo largo) y el intervalo entre apariciones baja de unos 1,4 segundos a un mínimo de 0,20 segundos. Más adelante aparecen también amenazas más rápidas y otras que se mueven ondulando de lado."
+  },
+  {
+    q: "¿Qué es la visión de túnel?",
+    a: "Bajo estrés o muy concentrado en un punto, solemos percibir peor lo que hay alrededor; a eso se le suele llamar visión de túnel. Este juego practica mantener el centro a la vista sin perder los bordes. No detecta una pérdida de campo visual por enfermedad ni sirve como prueba del carnet de conducir; para eso, acude a un oftalmólogo."
+  },
+  {
+    q: "¿Este juego amplía mi campo visual?",
+    a: "No podemos prometerlo. Quien practica una tarea suele mejorar en esa tarea, pero el efecto de este juego no se ha estudiado. Úsalo para comparar tus propios resultados."
+  },
+  {
+    q: "¿Influyen el tamaño y la distancia de la pantalla?",
+    a: "Cuanto más grande y cercana es la pantalla, más hacia fuera de tu campo visual aparecen las amenazas. Compara tus resultados siempre con la misma distancia y postura. La frecuencia de refresco y el retraso de entrada también pueden influir (Woods et al., 2015)."
+  },
+  {
+    q: "¿Dónde se guardan mis resultados?",
+    a: "La mejor puntuación, la precisión y el mejor combo se guardan en el almacenamiento local de tu navegador y este ejercicio no los envía a ningún servidor. Si borras los datos del navegador, desaparecen."
+  }
+];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo entrena este ejercicio la visión periférica sin requerir el desvío directo de la mirada?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El ejercicio aplica el paradigma de atención espacial encubierta de Michael Posner (1980). Al anclar la mirada en el núcleo central, el atleta aprende a proyectar sus recursos atencionales por el rabillo del ojo a lo largo de los 360° periféricos, eliminando los 150 a 200 ms que consumen las sacadas oculares mecánicas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué función cumple la teoría de integración de rasgos de Anne Treisman en este ejercicio?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "De acuerdo con Anne Treisman (1980), los estímulos periféricos con alto contraste cromático (nodos rojos y anaranjados en trayectoria convergente) activan detectores de rasgos preatencionales en la retina periférica, generando un efecto de resalte inmediato (pop-out) que alerta al córtex parietal sin necesidad de escaneo foveal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo se manifiesta el modelo motor de Woodworth (1899) en los barridos con ratón?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cada barrido radial consta de las dos fases descritas por Robert S. Woodworth: una proyección balística inicial de muñeca en bucle abierto que cubre más del 85% de la distancia, seguida de una desaceleración óptica milimétrica en bucle cerrado para hacer clic sobre el nodo antes de que perfore el núcleo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué es el Campo de Visión Útil (UFOV) y por qué se amplía mediante este simulador?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El Useful Field of View (UFOV), estudiado por Karlene Ball et al. (1988), delimita el área visual en la que el cerebro puede procesar información en un instante sin mover los ojos ni la cabeza. Acelerar los vectores a 520 px/s y reducir el tiempo de aparición a 0,20 s obliga al córtex a expandir este margen funcional, evitando la visión de túnel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué es fundamental recolocar el cursor en el centro tras neutralizar una amenaza?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mantener el cursor centrado conserva la equidistancia espacial hacia cualquier nuevo vector que emerja en los 360° circundantes. Dejar el ratón estacionado en un extremo exterior duplica la distancia motora requerida para responder en el flanco opuesto conforme a la Ley de Fitts, propiciando brechas en la defensa."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué sucede si una amenaza sobrepasa el escudo e impacta contra el núcleo central?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Si un nodo alcanza el perímetro central (breach), el multiplicador acumulado de racha se reinicia de inmediato a 1.0x y la pantalla proyecta un destello rojo de advertencia. Contener las brechas resulta indispensable para mantener la bonificación y acceder al rango de 24.000 puntos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué configuración de sensibilidad de ratón resulta más conveniente para barridos en 360 grados?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Se recomienda una sensibilidad media a moderadamente alta (eDPI entre 800 y 1400 en shooters tácticos) que facilite realizar movimientos rápidos hacia cualquier cuadrante sin tener que levantar el ratón ni rotar bruscamente el hombro, apoyándose en articulaciones ágiles de muñeca y dedos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué impacto tiene una pantalla de 144Hz o 240Hz en la percepción lateral periférica?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La retina periférica posee una sensibilidad extraordinaria a la cinemática y al parpadeo. Los paneles de 144Hz y 240Hz refrescan los nodos a 520 px/s con una latencia de 4,1 ms sin estelas borrosas, activando los fotorreceptores magnocelulares con mucha mayor celeridad que un monitor convencional de 60Hz."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuántas sesiones diarias conviene practicar para evitar la sobrecarga visual?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Se aconseja realizar entre 3 y 5 intentos de 45 segundos por jornada, intercalando pausas de 60 segundos mirando a un punto lejano. El entrenamiento de visión periférica exige un esfuerzo cognitivo intenso a los lóbulos parietales, por lo que estímulos cortos y concentrados aseguran la máxima neuroplasticidad."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Se transfieren mis métricas de barrido o resultados a plataformas externas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Todo el motor gráfico Canvas, la cronometría basada en performance.now() y la gestión de impactos se calculan estrictamente en tu navegador. Tus récords y puntuaciones se conservan exclusivamente de manera local en el localStorage de tu ordenador."
-      }
-    }
-  ]
+  "inLanguage": "es-ES",
+  "dateModified": "2026-11-10",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
 };
+
+const steps = [
+  "Siéntate cómodo y mira el núcleo del centro de la pantalla.",
+  "Percibe las amenazas que llegan desde el borde sin mover los ojos.",
+  "Haz clic en la amenaza antes de que alcance el núcleo.",
+  "Suma 2 segundos por acierto y mantén el combo para subir la puntuación."
+];
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Protocolo en 4 Fases para Barrido Periférico y Defensa Radial 360°",
-  "description": "Pauta metódica para ensanchar el campo visual útil, agudizar la atención encubierta y salvaguardar el núcleo ante amenazas multivectoriales.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Fijación Central Foveal y Atención Encubierta (Core Eye Fixation)",
-      "text": "Ancle los ojos firmemente en el núcleo central y evite rastrear los bordes con la vista, desplegando la percepción por el rabillo del ojo (Posner, 1980).",
-      "url": "https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Detección Preatencional de Pop-Out de Treisman (Feature Saliency)",
-      "text": "Capte al instante los nodos rojos y anaranjados que avanzan hacia el centro en la retina periférica mediante mapas de contraste directo.",
-      "url": "https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Flick Balístico Radial de Woodworth (Radial Ballistic Snap)",
-      "text": "Proyecte la muñeca con un movimiento veloz hacia el vector y presione el clic antes de que el nodo traspase el perímetro del escudo (+0,6s de extensión).",
-      "url": "https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Recolocación Inmediata en el Centro y Continuidad (Recentering)",
-      "text": "Retorne el cursor al centro de inmediato tras cada acierto para restablecer la cobertura simétrica de 360° camino a los 24.000 puntos.",
-      "url": "https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper#step-4"
-    }
-  ]
+  "name": "Cómo jugar a los ejercicios de visión periférica",
+  "description": "Mantener la mirada en el centro e interceptar las amenazas que llegan desde el borde, en cuatro pasos.",
+  "step": steps.map((text, i) => ({ "@type": "HowToStep", "position": i + 1, "name": `Paso ${i + 1}`, "text": text }))
 };
 
 const guideProps = {
-  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015'),
-  intro: {
-    title: "Fundamentos Biomecánicos de la Visión Periférica y del Campo Visual Útil (UFOV)",
-    paragraphs: [
-      "En el aparato visual humano, la fóvea central —responsable de la agudeza fina y la discriminación cromática— abarca apenas de 1 a 2 grados del campo visual total. El amplio entorno periférico circundante pierde nitidez espacial estática, pero alberga una densidad sobresaliente de fotorreceptores bastones, especializados en percibir movimiento, destellos y contraste con gran premura. Este ejercicio evalúa y desarrolla la atención espacial encubierta (Posner, 1980): la capacidad de orientar recursos cognitivos hacia los flancos laterales sin mover la dirección primaria de los ojos.",
-      "La trayectoria de cada barrido responde a los preceptos de la Ley de Fitts (1954) y al modelo motor en dos etapas de Woodworth (1899). El tiempo de movimiento se incrementa de forma logarítmica con la distancia angular y la reducción del diámetro del blanco. Al neutralizar nodos que avanzan hacia el centro, el participante debe lanzar el ratón con un impulso balístico en bucle abierto que cubra más del 85% del trayecto, aplicando una microcorrección óptica final instantes antes de accionar el botón.",
-      "Investigaciones conducidas por Karlene Ball et al. (1988) demuestran que, bajo condiciones de sobrecarga o estrés competitivo, el campo de visión funcional puede sufrir una constricción acusada denominada 'visión de túnel'. La presente plataforma previene este deterioro partiendo de intervalos holgados de 1,4 segundos y evolucionando dinámicamente hasta frecuencias vertiginosas de 0,20 segundos con nodos a 520 px/s. Este estímulo perseverante compele al lóbulo parietal a expandir permanentemente el Useful Field of View (UFOV), otorgando una lectura espacial omnidireccional.",
-      "Con el fin de certificar una fiabilidad milimétrica libre de interferencias, el sistema monitorea los tiempos mediante la API performance.now() del navegador. En monitores con frecuencias de 144Hz o 240Hz, el rastro de barrido en nodos a 520 px/s desaparece, asegurando una discriminación limpia y sin desfase de imagen (Woods et al., 2015). Tus marcas permanecen resguardadas de forma confidencial en la memoria de tu equipo."
-    ]
-  },
+  heading: "Ejercicios de visión periférica: guía",
+  intro: [
+    "Estos ejercicios de visión periférica son un juego gratis en el navegador: mantienes la vista en el núcleo central e interceptas las amenazas que llegan desde el borde. Cada acierto suma 2 segundos; un clic en el vacío o una amenaza que toca el núcleo resta 1.",
+    "La investigación muestra que se puede desplazar la atención sin mover los ojos (Posner, 1980). Los objetivos con contraste y en movimiento se detectan rápido incluso en la periferia (Treisman & Gelade, 1980). El juego lo convierte en una tarea de clic.",
+    "Al principio aparece una amenaza cada 1,4 segundos aproximadamente; con la puntuación se vuelven más rápidas y más frecuentes (hasta 0,20 segundos de intervalo). Para hacer clic ayuda un movimiento amplio seguido de una pequeña corrección final (Woodworth, 1899; Fitts, 1954).",
+    "Los resultados son registros de práctica. No sustituyen un examen de la vista, un diagnóstico ni un tratamiento. Si notas cambios en tu visión, acude a un oftalmólogo."
+  ],
   benchmarks: {
-    title: "Baremo Oficial de Clasificación para Visión Periférica y Defensa Radial",
-    headers: ['Nivel (Tier)', 'Título y Clasificación', 'Puntos Meta', 'Precisión y Velocidad', 'Calificación', 'Nivel de Percepción'],
+    title: "Rangos de nota (niveles de práctica de SkillDrills)",
+    headers: ["Nota", "Puntuación final"],
     rows: [
-      ['Etapa 1', 'Muy avanzada', '24.000+ pts', '90%+ Aciertos / 450+ px/s', 'Grado S', 'Ritmo muy alto con alta precisión'],
-      ['Etapa 2', 'Avanzada', '17.000 – 23.999 pts', '82–89% Aciertos / 350–449 px/s', 'Grado A', 'Ritmo alto y regular'],
-      ['Etapa 3', 'Sólida', '11.000 – 16.999 pts', '74–81% Aciertos / 250–349 px/s', 'Grado B', 'Ritmo estable con algunos errores'],
-      ['Etapa 4', 'En desarrollo', '6.000 – 10.999 pts', '65–73% Aciertos / 160–249 px/s', 'Grado C', 'Media (Jugadores Habituales)'],
-      ['Etapa 5', 'Inicial', '< 6.000 pts', '< 65% Aciertos / < 160 px/s', 'Grado D', 'Básico (Expansión UFOV Recomendada)'],
+      ["S+", "desde 21.660"],
+      ["S", "17.340 – 21.659"],
+      ["A", "13.500 – 17.339"],
+      ["B", "8.640 – 13.499"],
+      ["C", "4.860 – 8.639"],
+      ["D", "2.160 – 4.859"],
+      ["F", "menos de 2.160"]
     ],
-    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. La clasificación evalúa la puntuación total, número de penetraciones al núcleo sufridas, velocidad máxima sobrellevada y longitud máxima de racha.",
+    note: "Niveles de práctica de SkillDrills calculados con la fórmula de nota del juego; no son estadísticas de usuarios, ni percentiles, ni un criterio de examen de la vista."
   },
-  protocols: {
-    title: "Protocolo de 4 Fases para la Optimización de la Visión Periférica",
-    description: "Plan metódico para consolidar el anclaje foveal, agudizar la visión lateral y coordinar respuestas radiales en tiempo récord.",
+  techniques: {
+    title: "4 consejos para sumar más",
     items: [
-      {
-        title: "Protocolo 1: Condicionamiento de Atención Encubierta de Posner",
-        description: "Mantenga los ojos sujetos al punto central e inhiba el impulso de seguir estímulos con la mirada. Neutralice la latencia sacádica proyectando el foco a los cuatro cuadrantes (Posner 1980)."
-      },
-      {
-        title: "Protocolo 2: Reconocimiento Preatencional de Pop-Out de Treisman",
-        description: "Adiestre la retina periférica para asimilar nodos convergentes rojos y anaranjados en el borde externo como señales de resalte prioritario sin búsqueda lenta (Treisman & Gelade 1980)."
-      },
-      {
-        title: "Protocolo 3: Flick Radial Balístico de Woodworth con Deceleración",
-        description: "Al percibir el vector, proyecte el ratón mediante un golpe rápido de muñeca cubriendo el trayecto en bucle abierto, frenando con los dedos en el clic (Woodworth 1899)."
-      },
-      {
-        title: "Protocolo 4: Ampliación de UFOV ante Alta Densidad y Jerarquización",
-        description: "En fases avanzadas con intervalos de 0,20 s, evalúe la cercanía de varios nodos simultáneamente e intercepte en primer lugar los más próximos al núcleo (Woods et al. 2015)."
-      }
+      { name: "Mirada fija en el centro", desc: "Mirar el núcleo sin mover los ojos es la base del ejercicio. Seguir las amenazas con la vista es practicar otra cosa.", tips: "Si los ojos se escapan, crea el hábito primero en los niveles bajos." },
+      { name: "Ver toda la pantalla de forma relajada", desc: "No te concentres en una dirección; percibe toda la pantalla a la vez, relajado. Así el movimiento llama la atención antes.", tips: "Relaja los ojos y mantén un enfoque suave." },
+      { name: "Movimiento amplio, ajuste fino", desc: "Cuando sepas la posición, lleva el cursor cerca de una vez y frena solo al final.", tips: "Los clics precipitados cerca del núcleo cuestan el combo y 1 segundo." },
+      { name: "Partidas cortas, con pausas", desc: "Los ojos cansados bajan la concentración. Juega partidas cortas y aparta la vista de la pantalla entre ellas.", tips: "Para si notas dolor o mareo." }
     ]
   },
-  faqs: {
-    title: "Preguntas Frecuentes (FAQ) sobre Visión Periférica y Defensa de Amenazas",
-    items: faqSchema.mainEntity.map(q => ({
-      q: q.name,
-      a: q.acceptedAnswer.text
-    }))
-  }
+  steps,
+  audience: "Quien quiera practicar de forma lúdica la reacción a movimientos en el borde de la pantalla, y jugadores que quieran probar a mantener la mirada en el centro sin perder lo que pasa alrededor.",
+  faqs,
+  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015')
 };
 
-export default function LocalizedPeripheralThreatSweeperPageEs() {
+export default function PeripheralThreatSweeperEsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "Test de Visión Periférica Online",
-          subtitle: "Mira al centro y detecta amenazas laterales",
-          description: "La visión periférica es aquello que puedes detectar sin mirar directamente. El nivel de detalle decrece de forma acusada desde el centro de la mirada, pero la atención puede dirigirse hacia un punto periférico mientras los ojos permanecen fijos, acelerando la respuesta motriz (Posner, 1980). Una característica única como el color se detecta en un tiempo similar con independencia de distracciones, mientras que objetivos que combinan rasgos demandan búsqueda atencional activa (Treisman & Gelade, 1980) — lo que hace que algunas amenazas sean sencillas de interceptar en el margen y otras no.",
+          title: "Ejercicios de Visión Periférica",
           hudLabels: {
-            score: "Puntuación",
+            score: "Puntos",
             time: "Tiempo",
-            bestScore: "Mejor Puntuación",
-            bestCombo: "Mejor Racha",
-            getReady: "PREPÁRATE",
+            bestScore: "Récord",
+            bestCombo: "Mejor combo",
             accuracy: "Precisión",
-            sweeps: "Barridos",
-            breaches: "Brechas",
-            peakLevel: "Nivel Máximo"
+            sweeps: "Aciertos",
+            breaches: "En el núcleo",
+            peakLevel: "Nivel máx.",
+            getReady: "PREPÁRATE"
           },
-          resultLabels: {
-            accuracy: "Precisión",
-            sweeps: "Barridos",
-            breaches: "Brechas",
-            peakLevel: "Nivel Máximo"
-          },
-          rulesTitle: "Instrucciones del Drill y Sistema de Puntuación",
+          rulesTitle: "Reglas y puntuación",
           rulesItems: [
-            { title: "Defensa del Núcleo y Puntos", text: "Haga clic en los nodos rojos y anaranjados convergentes antes de que penetren en el núcleo central. Cada barrido concede 100 puntos base (multiplicados por nivel y racha) y +0,6s de tiempo." },
-            { title: "Penalización por Penetración", text: "Si un nodo alcanza el núcleo central, se produce una brecha (breach): la racha de combo se reinicia a 1.0x y la pantalla emite un parpadeo rojo." },
-            { title: "Escalado Continuo de Amenazas", text: "A medida que la puntuación asciende, el intervalo de aparición disminuye de 1,4s a 0,20s y la velocidad de los vectores se acelera de 160 px/s a 520 px/s." },
-            { title: "Recolocación Táctica Central", text: "Retorne el cursor al núcleo central tras cada eliminación para mantener la equidistancia simétrica de 360° ante amenazas en cualquier ángulo." }
+            { title: "Intercepta y gana tiempo", text: "Haz clic en las amenazas que llegan desde el borde: 100 puntos (multiplicados por el combo y el nivel) y +2 segundos (máximo 60 segundos)." },
+            { title: "Multiplicador de combo", text: "Los aciertos seguidos sin fallo suben el multiplicador hasta 3,0x." },
+            { title: "Dificultad creciente", text: "Con la puntuación, las amenazas van más rápido y aparecen más a menudo (hasta 0,20 s de intervalo)." },
+            { title: "Núcleo alcanzado y clics fallidos", text: "Si una amenaza alcanza el núcleo o haces clic en el vacío, el combo vuelve a 1,0x y pierdes 1 segundo." }
           ],
-          aboutTitle: "Sobre el Entrenamiento de Visión Periférica y Atención Encubierta",
+          aboutTitle: "Sobre los ejercicios de visión periférica",
           aboutSections: [
-            {
-              title: "Orientación Atencional Encubierta y Barrido Periférico",
-              subtitle: "Direccionamiento espacial de Posner sin desvío de la fijación foveal",
-              content: "La intercepción de amenazas en la periferia ejercita la atención visual encubierta (Posner, 1980). En lugar de desplazar la mirada continuamente, el jugador mantiene la fijación en el centro mientras proyecta recursos atencionales hacia los 360° exteriores."
-            },
-            {
-              title: "Integración Preatencional y Mapas de Prominencia",
-              subtitle: "Búsqueda visual paralela de Treisman a través de ángulos radiales",
-              content: "Los nuevos vectores de peligro estimulan detectores preatencionales de color y movimiento en la retina periférica (Treisman & Gelade, 1980). Los nodos contrastados suscitan el efecto pop-out, guiando al cerebro para frenar la incursión."
-            },
-            {
-              title: "Flick Balístico y Protección del Núcleo",
-              subtitle: "Movimiento rápido de Woodworth articulado con frenada precisa",
-              content: "Los barridos requieren el control en dos etapas de Woodworth (1899): un latigazo inicial de muñeca cubriendo más del 85% de la trayectoria, seguido de ajustes visuales microscópicos antes del clic."
-            },
-            {
-              title: "Campo Visual Útil y Procesamiento Multivectorial",
-              subtitle: "Ampliación de la capacidad cognitiva bajo alta frecuencia de aparición",
-              content: "Al comprimirse los tiempos de generación y escalar la velocidad a 520 px/s, el drill expande el Useful Field of View (UFOV), habituando al sistema nervioso a gestionar múltiples peligros simultáneamente."
-            }
+            { title: "Mover la atención sin mover los ojos", subtitle: "Posner (1980): atención espacial", content: "Se puede llevar la atención a otro punto sin mover los ojos. Aquí la mirada se queda en el núcleo mientras notas las amenazas del borde." },
+            { title: "Los objetivos en movimiento llaman la atención", subtitle: "Treisman (1980): búsqueda visual", content: "Los objetivos con contraste y en movimiento destacan rápido incluso en la periferia. Quien mira toda la pantalla de forma relajada detecta antes las amenazas nuevas." },
+            { title: "Movimiento amplio, ajuste fino", subtitle: "Woodworth (1899) y Fitts (1954)", content: "Apuntar rápido combina un movimiento amplio con una pequeña corrección final. Cerca del núcleo, frena y haz clic con precisión." },
+            { title: "Varias amenazas a la vez", subtitle: "Intervalos más cortos más adelante", content: "Más adelante las amenazas llegan seguidas y hay que repartir la atención. Mantén la mirada en el centro y resuelve primero las más cercanas al núcleo." }
           ]
         }}
       />

@@ -5,62 +5,43 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 
 const physicalDrills = DRILLS.filter((d) => d.category === 'physical');
 
+const url = 'https://skilldrills.online/es/drills/physical';
+const title = "Juegos de agilidad con el ratón: 11 ejercicios | SkillDrills";
+const description = "Juegos de agilidad con el ratón, gratis en el navegador: 11 ejercicios para hacer clic en objetivos, esquivar, estabilizar el cursor y memorizar recorridos.";
+
 export const metadata = {
-  title: 'Entrenamiento de Agilidad & Test de Reflejos | SkillDrills',
-  description: 'Entrenamiento de agilidad y reflejos online: 11 ejercicios científicos de reacción, equilibrio, coordinación motriz, evasión y velocidad de pies.',
-  keywords: [
-    'test de reflejos online gratis', 'ejercicios de coordinacion ojo mano', 'escalera de agilidad ejercicios online',
-    'test de equilibrio online', 'juegos de esquivar obstaculos raton', 'entrenamiento de vision periferica',
-    'test go no go online', 'juego de la regla reaccion test', 'test de velocidad de reaccion online',
-    'como mejorar los reflejos y velocidad', 'ejercicios de coordinacion motriz', 'velocidad de pies y agilidad futbol',
-    'movimiento bilateral y linea media', 'control postural y estabilidad motora', 'juego de reflejos y esquivar balas'
-  ],
+  title,
+  description,
+  keywords: ["juegos de agilidad con el ratón", "juego de agilidad con el mouse", "juego de coordinación", "juegos de esquivar con el ratón", "ejercicios con el ratón en el navegador"],
   openGraph: {
-    title: 'Entrenamiento de Agilidad & Test de Reflejos | SkillDrills',
-    description: 'Entrenamiento de agilidad y reflejos online: 11 ejercicios científicos de reacción, equilibrio, coordinación motriz, evasión y velocidad de pies.',
+    title,
+    description,
     type: 'website',
-    url: 'https://skilldrills.online/es/drills/physical',
+    url,
     siteName: 'SkillDrills',
     locale: 'es_ES',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Entrenamiento de Agilidad y Reflejos Físicos en SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630, alt: title }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Entrenamiento de Agilidad & Test de Reflejos | SkillDrills',
-    description: '11 ejercicios científicos de agilidad, equilibrio, coordinación motriz y reflejos rápidos gratis en el navegador.',
-    images: ['https://skilldrills.online/icons/icon-512x512.png'],
+    title,
+    description,
+    images: ['https://skilldrills.online/opengraph-image'],
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://skilldrills.online/es/drills/physical',
-    languages: getAlternateLanguages('/es/drills/physical'),
+    canonical: url,
+    languages: getAlternateLanguages('/drills/physical'),
   },
 };
-
-Object.assign(metadata, {
-  title: 'Reflejos y Agilidad | 11 Ejercicios Online | SkillDrills',
-  description: '11 ejercicios gratuitos en el navegador para tiempo de reacción, agilidad, equilibrio, coordinación motriz y reflejos.',
-  keywords: ['juego de reflejos', 'entrenamiento de agilidad', 'test de reacción', 'coordinación motriz', 'equilibrio corporal', 'velocidad de pies', 'coordinación ojo-mano', 'juego de esquivar', 'entrenamiento deportivo online', 'ejercicios de reflejos gratis'],
-  openGraph: {
-    ...metadata.openGraph,
-    title: 'Reflejos y Agilidad | 11 Ejercicios Online | SkillDrills',
-    description: '11 ejercicios gratuitos en el navegador para reflejos, tiempo de reacción, agilidad y coordinación motriz.',
-  },
-  twitter: {
-    ...metadata.twitter,
-    title: 'Reflejos y Agilidad | SkillDrills',
-    description: 'Entrena reflejos, agilidad, equilibrio y coordinación con 11 ejercicios gratuitos.',
-  },
-  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
-    { "@type": "ListItem", "position": 2, "name": "Ejercicios de Rendimiento", "item": "https://skilldrills.online/es/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Reflejos Físicos & Agilidad", "item": "https://skilldrills.online/es/drills/physical" }
+    { "@type": "ListItem", "position": 2, "name": "Todos los ejercicios", "item": "https://skilldrills.online/es/drills" },
+    { "@type": "ListItem", "position": 3, "name": "Juegos de agilidad con el ratón", "item": url }
   ]
 };
 
@@ -68,10 +49,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "es",
-  "dateModified": "2026-09-20",
-  "name": "Entrenamiento de Agilidad & Reflejos (11 Ejercicios)",
-  "url": "https://skilldrills.online/es/drills/physical",
-  "description": "11 ejercicios interactivos para tiempo de reacción, equilibrio, coordinación motriz, escalera de agilidad y evasión de obstáculos.",
+  "dateModified": "2026-11-10",
+  "name": "Juegos de agilidad con el ratón – 11 ejercicios",
+  "url": url,
+  "description": "11 ejercicios con el ratón en el navegador: hacer clic en objetivos, esquivar, estabilizar el cursor, memorizar recorridos y ajustar el timing.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": physicalDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'es', drill.name);
@@ -87,91 +68,26 @@ const collectionSchema = {
   })
 };
 
+const faqs = [
+  { q: "¿El juego de la escalera en pantalla ayuda al juego de pies real?", a: "El ejercicio practica el timing y el ritmo: llevas el cursor, en el orden correcto, a los peldaños izquierdo y derecho de una escalera que baja por la pantalla. No sustituye el trabajo de pies real ni el entrenamiento de fuerza, y esta página no afirma ningún efecto sobre la agilidad deportiva." },
+  { q: "¿Qué practica el frenado de puntería (cadena de reacción)?", a: "Solo puntúas si detienes por completo el cursor dentro de un nodo en movimiento. Atravesarlo sin parar o dejar que se escape corta el combo y resta 1 segundo. No se garantiza una mejor puntería en juegos de disparos." },
+  { q: "¿Qué practica el ejercicio de estabilidad contra fuerzas externas?", a: "Mantienes la mira dentro del anillo seguro del centro mientras un viento simulado la empuja. Salir del anillo solo reinicia el combo. Es un ejercicio de control estable del ratón, no un entrenamiento del equilibrio corporal." },
+  { q: "¿Qué ocurre en el ejercicio de movimiento cruzado?", a: "Colocas el cursor sobre el nodo de inicio y luego lo guías a través de la pantalla, dentro de un corredor, hasta el nodo final. Salir del corredor reinicia el combo. Esta página no afirma ningún efecto sobre la comunicación entre los hemisferios cerebrales." },
+  { q: "¿Qué practica el juego de esquivar casillas en la cuadrícula?", a: "Algunas casillas parpadean como aviso y luego se convierten en zonas de peligro; debes mover el cursor a una casilla segura antes. Esta página no promete ninguna mejora en milisegundos. Compara nivel y precisión en el mismo dispositivo." },
+  { q: "¿Qué practica el ejercicio de amenazas en el borde de la pantalla?", a: "Detectas y haces clic en los nodos de amenaza que aparecen en la zona exterior de la pantalla para practicar la atención periférica. No está demostrado que amplíe el campo visual ni que prevenga lesiones; úsalo solo como práctica." },
+  { q: "¿Con qué frecuencia conviene practicar?", a: "No hay una regla fija. Unas pocas sesiones de 15 a 25 minutos por semana, mientras dure la concentración, son una carga ligera. Para si notas dolor en los ojos o en la muñeca." },
+  { q: "¿Complementan estos ejercicios el entrenamiento en el gimnasio o en la pista?", a: "No sustituyen la fuerza, la pliometría ni el entrenamiento específico del deporte. Sirven como pequeño complemento para practicar el timing visual y las decisiones rápidas ante señales en pantalla." },
+  { q: "¿Cuántos ejercicios incluye esta lista?", a: "11 ejercicios de navegador en cuatro áreas: reflejos y evasión, agilidad y timing, coordinación y trayectorias, equilibrio y estabilidad. Cada tarjeta abre la descripción y las instrucciones del ejercicio." },
+  { q: "¿Estos juegos de agilidad son una prueba física?", a: "No. No miden fuerza, salto ni resistencia. Practican el timing, la velocidad de decisión, la precisión con el ratón y las secuencias de movimiento en pantalla." },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "es",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo se traduce el entrenamiento de escalera de agilidad digital en juego de pies y agilidad física real?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los ejercicios de escalera de agilidad por desplazamiento visual entrenan el reconocimiento de patrones de alta velocidad y la sincronización rítmica en la corteza visual. Al condicionar al cerebro para tomar decisiones motoras en milisegundos sincronizadas con estímulos visuales, la corteza motora acelera la conducción neural, optimizando el tiempo de contacto con el suelo y los cambios de dirección (COD) en deportes como fútbol, baloncesto y tenis."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué es una cadena de reacción con arresto de impulsos y cómo evita sobre-comprometerse (over-committing)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La prueba de parada de impulsos (Impulse Arrest) evalúa la capacidad neuromuscular para cancelar o rectificar abruptamente una acción ya iniciada ante la aparición de un señuelo o finta inesperada. El entrenamiento de las vías inhibitorias en los ganglios basales y la corteza prefrontal capacita a los atletas para frenar el impulso en menos de 150 ms, neutralizando los engaños del adversario."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo mejora el equilibrio físico el entrenamiento virtual de estabilidad contra vectores de fuerza?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El equilibrio dinámico depende de la integración sensorial continua entre la fijación visual, el sistema vestibular del oído interno y los propioceptores articulares y musculares. Contrarrestar vectores de viento y fuerzas dinámicas en pantalla entrena al sistema nervioso central para calcular micro-fuerzas antagonistas en tiempo real, reclutando los músculos posturales ante perturbaciones repentinas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué es fundamental el movimiento cruzado de la línea media (Cross-Body Movement) en el rendimiento atlético?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Moverse cruzando la línea media corporal requiere una transmisión neuronal constante a través del cuerpo calloso entre ambos hemisferios cerebrales. Los ejercicios de interceptación coordinan cadenas cinéticas diagonales, potenciando la agilidad multidireccional, la potencia de rotación y la orientación espacial tridimensional."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto reducen los ejercicios de evasión en cuadrícula 3x3 el tiempo real de reacción ante esquivas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A diferencia de las pruebas estáticas predecibles, las zonas de peligro dinámicas exigen una actualización constante del mapa espacial en el lóbulo parietal. Esto reduce el tiempo de reacción de elección (Choice Reaction Time) bajo presión de una media de 280 ms a menos de 190 ms."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo contribuye el escaneo de visión periférica (campo visual útil UFOV) a la prevención de lesiones?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Las pruebas de detección perimétrica amplían el campo visual funcional (FFOV). Los estímulos en la periferia activan la vía visual magnocelular, desencadenando respuestas motoras evasivas reflejas ante peligros en puntos ciegos sin necesidad de fijación foveal directa, lo que previene impactos y colisiones deportivas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es la rutina óptima para entrenar agilidad física y reflejos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Se recomiendan sesiones de 15 a 25 minutos de alta intensidad, de 3 a 5 veces por semana. Dado que la precisión neuromuscular consume una gran cantidad de energía sináptica, extender la práctica más allá de 30 minutos genera fatiga en el sistema nervioso central (SNC), degradando los patrones de reacción."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Pueden los juegos de reflejos en el navegador complementar el entrenamiento físico en el gimnasio o la pista?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Las herramientas digitales no sustituyen la fuerza muscular ni la potencia pliométrica, pero aíslan y perfeccionan la fase perceptivo-cognitiva del movimiento. Al acelerar la detección visual, el análisis de amenazas y el envío de órdenes motoras, permiten que la potencia física se exprese en el campo sin retardos perceptivos."
-      }
-    }
-  ]
+  "dateModified": "2026-11-10",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
 };
-
-faqSchema.mainEntity.push(
-  {
-    "@type": "Question",
-    "name": "¿Cuántos ejercicios incluye la categoría de entrenamiento físico?",
-    "acceptedAnswer": { "@type": "Answer", "text": "La categoría reúne 11 ejercicios de navegador en cuatro focos: reflejos y evasión, agilidad y condición física, coordinación y trayectorias, y equilibrio y estabilidad. Cada tarjeta abre su ejercicio correspondiente." }
-  },
-  {
-    "@type": "Question",
-    "name": "¿Los ejercicios de reflejos en el navegador sustituyen el entrenamiento físico?",
-    "acceptedAnswer": { "@type": "Answer", "text": "No. Practican el tiempo visual, la velocidad de decisión, la precisión de control y la secuencia de movimientos. Complementan, pero no sustituyen, la fuerza, la pliometría, la movilidad ni el entrenamiento específico del deporte." }
-  }
-);
 
 export default function PhysicalDrillsPage() {
   return (
@@ -188,9 +104,7 @@ export default function PhysicalDrillsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <PhysicalDrillsClient
-        faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
-      />
+      <PhysicalDrillsClient faqs={faqs} />
     </>
   );
 }

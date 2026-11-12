@@ -4,399 +4,192 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// RECHERCHE DE MOTS-CLÉS NATIFS (SERP FRANCE / FR-FR)
-// Clusters natifs à intention neurofonctionnelle; concurrence non mesurée :
-// - "test de coordination oeil main en ligne" (Requête dominante visuo-motrice)
-// - "exercice de coordination visuo motrice" (Entraînement psychomoteur et précision)
-// - "franchissement de la ligne médiane motricité" (Concept d'intégration sensorielle et bilatérale)
-// - "coordination bilatérale et motricité fine" (Neuro-développement et dextérité)
-// - "jeux de coordination motrice gratuit" (Recherche ludique sans téléchargement)
-// - "mouvement de balayage diagonal souris" (Mécanique de visée eSport / FPS)
-// - "test de vitesse de réaction et coordination" (Évaluation cognitive et motrice)
-// - "contrôle moteur controlatéral" (Terme scientifique de transmission inter-hémisphérique)
-// ============================================================
+const PAGE_URL = 'https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement';
+const TITLE = "Exercice de coordination visuo-motrice à la souris | SkillDrills";
+const DESCRIPTION = "Exercice de coordination visuo-motrice à la souris : guidez le curseur d'un bord de l'écran à l'autre sans sortir d'un couloir étroit. Parties de 45 s, gratuit.";
 
 export const metadata = {
-  title: "Test de coordination œil-main | SkillDrills",
-  description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane : coordination bilatérale et précision à la souris.',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "test de coordination oeil main",
-    "exercice de coordination visuo motrice",
-    "franchissement de la ligne médiane motricité",
-    "coordination bilatérale et motricité fine",
-    "jeux de coordination motrice gratuit",
-    "coordination souris en ligne",
-    "test de vitesse de réaction et coordination",
-    "contrôle moteur controlatéral",
-    "test de coordination motrice",
-    "test motricité fine"
-  ],
+  "coordination visuo-motrice à la souris",
+  "exercice coordination visuo motrice",
+  "balayage croisé",
+  "jeu de couloir à la souris"
+],
   alternates: {
-    canonical: 'https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement',
+    canonical: PAGE_URL,
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de coordination œil-main | SkillDrills",
-    description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane : coordination bilatérale et précision à la souris.',
-    url: 'https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement',
+  openGraph: {
+    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }],
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_URL,
     siteName: 'SkillDrills',
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
+  twitter: {
+    images: ['https://skilldrills.online/opengraph-image'],
     card: 'summary_large_image',
-    title: "Test de coordination œil-main | SkillDrills",
-    description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane : coordination bilatérale et précision à la souris.',
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Accueil",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Entraînement Physique",
-      "item": "https://skilldrills.online/fr/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Coordination Motrice",
-      "item": "https://skilldrills.online/fr/drills/physical/coordination"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Test de Coordination Œil-Main",
-      "item": "https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement"
-    }
-  ]
-};
+const faqItems = [
+  {
+    "q": "Comment fonctionne cet exercice de coordination visuo-motrice ?",
+    "a": "Placez le curseur sur le nœud cyan au bord de l'écran : la liaison démarre sans clic. Si vous atteignez le nœud magenta en face sans sortir du couloir autour de la ligne, vous marquez des points."
+  },
+  {
+    "q": "Que se passe-t-il si je sors du couloir ?",
+    "a": "L'essai s'arrête et une nouvelle paire de nœuds apparaît. Le multiplicateur de combo retombe à 1,0x, mais le score et le temps restant sont conservés."
+  },
+  {
+    "q": "Qu'est-ce qui change avec le niveau ?",
+    "a": "La tolérance du couloir (l'écart permis par rapport à la ligne) passe de 10 px à 4 px, le rayon des nœuds de 16 px à 8 px, et les nœuds se rapprochent des bords, ce qui allonge le trajet. Les points de base par réussite passent de 10 à 40."
+  },
+  {
+    "q": "Comment le score est-il calculé ?",
+    "a": "Chaque nœud atteint rapporte les points de base du niveau multipliés par le combo, qui monte jusqu'à 3,0x avec les réussites consécutives."
+  },
+  {
+    "q": "Combien de temps dure une partie ?",
+    "a": "Exactement 45 secondes ; le niveau repart de 1 à chaque partie."
+  },
+  {
+    "q": "Est-ce un bilan de coordination ou un exercice de rééducation ?",
+    "a": "Non. C'est un jeu d'entraînement à la souris, pas une évaluation du développement ou de la motricité et pas un outil de rééducation."
+  },
+  {
+    "q": "Fonctionne-t-il sur mobile ?",
+    "a": "Le jeu est conçu pour la souris ; un ordinateur est conseillé. La touche Échap arrête la partie en cours."
+  },
+  {
+    "q": "Est-ce gratuit ?",
+    "a": "Oui, sans installation ni inscription. Les records restent uniquement dans votre navigateur."
+  }
+];
 
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-  "name": "Test de Coordination Œil-Main & Contrôle Bilatéral",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Outil neurofonctionnel d'évaluation et d'entraînement du contrôle moteur controlatéral et du franchissement de la ligne médiane visuelle.",
-  "url": "https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/fr"
-  },
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "SkillDrills Accueil", item: 'https://skilldrills.online/fr' },
+    { '@type': 'ListItem', position: 2, name: "Entraînement physique", item: 'https://skilldrills.online/fr/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: "Coordination visuo-motrice à la souris", item: PAGE_URL },
+  ],
 };
 
 const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Entraîneur de Coordination Œil-Main",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Navigateur moderne compatible HTML5 Canvas et Pointer Lock API",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Jeu de Coordination Visuo-Motrice (Cross-Body Movement)",
-  "url": "https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement",
-  "description": "Exercice intensif de balayage diagonal à travers l'axe médian pour accélérer la transmission inter-hémisphérique et stabiliser les flicks sur FPS.",
-  "genre": [
-    "Coordination Drill",
-    "Motor Control",
-    "Hand-Eye Training",
-    "Action"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "Coordination visuo-motrice à la souris",
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: "Navigateur récent compatible HTML5 Canvas et souris",
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
+  inLanguage: 'fr',
+  dateModified: '2026-11-10',
 };
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Quelles capacités neuro-motrices sont évaluées lors du franchissement de la ligne médiane ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "L'exercice mesure la vitesse et la précision avec lesquelles les informations visuelles (cortex occipital) et spatiales (lobe pariétal) sont traduites en commandes motrices (cortex moteur primaire). Le balayage diagonal traversant l'axe médian exige une transmission continue entre les deux hémisphères cérébraux via le corps calleux."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi atteindre une cible dans l'espace controlatéral est-il physiologiquement plus lent ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "D'après les recherches biomécaniques de David Carey et al. (1996), les trajectoires dirigées vers l'espace controlatéral (le côté opposé au bras agissant) accusent un retard de conduction synaptique et une dispersion d'erreur plus élevée que les mouvements ipsilatéraux, en raison du coût temporel du transfert calleux."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "En quoi cet exercice améliore-t-il la précision des flicks sur des jeux comme Valorant ou CS2 ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La majorité des joueurs se cantonnent aux micro-ajustements horizontaux. Or, les changements d'angle brusques ou les cibles en dénivelé vertical requièrent des balayages diagonaux fluides. Cet entraînement renforce le pivot avant-bras/coude afin d'empêcher le poignet de tracer des arcs de cercle parasites sur le tapis."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment évoluent la tolérance du couloir et la taille des nœuds au fil des 15 niveaux ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La difficulté progresse par paliers de 250 points. La marge de tolérance du couloir se resserre graduellement de 10 pixels au niveau 1 jusqu'à seulement 4 pixels aux niveaux supérieurs, tandis que le rayon des nœuds se réduit de 16 pixels à 8 pixels pour imposer une rigueur micrométrique."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Sortir des limites du couloir entraîne-t-il une pénalité de points ou de temps ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Aucun point n'est retranché et le chronomètre fixe de 45 secondes n'est pas raccourci. En revanche, tout écart hors du couloir réinitialise instantanément le multiplicateur de combo à 1.0x, forçant une régularité de trajectoire sans à-coups."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle sensibilité de souris et quelle taille de tapis sont recommandées pour ce test ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Une sensibilité moyenne à basse (30 à 45 cm pour un tour complet de 360°) associée à un tapis de souris d'au moins 450 mm de largeur est idéale. Cette configuration permet de déployer l'amplitude complète de l'avant-bras sans devoir lever la souris en plein mouvement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi est-il crucial de pivoter autour du coude plutôt que de plier uniquement le poignet ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "L'anatomie articulaire du poignet produit inévitablement des trajectoires courbes en arc. Pour générer des vecteurs diagonaux parfaitement rectilignes capables de rester dans un couloir de 4 pixels, l'avant-bras doit fonctionner comme un bras de levier rigide guidé par le coude."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment exploiter le modèle de contrôle à deux phases de Woodworth pour freiner sur le nœud ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Selon les travaux de Robert Woodworth (1899), il convient d'exécuter 75 % du trajet à vitesse balistique maximale via l'avant-bras, puis d'exercer une légère pression avec la pulpe des doigts sur le tapis lors des 25 % restants pour stopper le curseur avec précision sous guidage visuel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle méthode permet d’atteindre le palier de 17 000 points (Apex Bilateral) ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La fixation oculaire prédictive (gaze feedforward) est déterminante : dès que le curseur effleure le nœud A, le regard doit déjà être verrouillé sur les coordonnées du nœud B. Conserver le combo 3.0x sans interruption et maintenir plus de 92 % de précision aux niveaux 12 à 15 est indispensable."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Mes scores et données de temps de réaction sont-ils enregistrés de façon sécurisée et confidentielle ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. Tous les calculs cinématiques reposent sur l'API performance.now() et les données sont conservées localement dans votre navigateur (LocalStorage). Aucune information personnelle ni historique de frappe n'est téléversé vers des serveurs distants."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'fr',
+  dateModified: '2026-11-10',
+  mainEntity: faqItems.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 };
 
-const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Protocole d'Exécution du Test de Coordination et de Balayage Diagonal",
-  "description": "Guide en 4 étapes pour relier des nœuds opposés à travers la ligne médiane et maximiser votre score.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Activation du Nœud Source A",
-      "text": "Placez le pointeur sur le nœud cyan pulsant situé en bordure de l'écran pour déclencher la ligne de visée vectorielle.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement#etape-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Balayage Diagonal Traversant la Ligne Médiane",
-      "text": "Déplacez le curseur de façon fluide et rectiligne à travers le centre sans franchir les limites lumineuses du couloir.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement#etape-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Frappe et Verrouillage du Nœud Cible B",
-      "text": "Atteignez le nœud magenta à l'extrémité opposée pour valider le vecteur, déclenchant l'effet de particules et les points.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement#etape-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Maintien de la Série et du Multiplicateur",
-      "text": "Enchaînez les connexions sans rupture de couloir pour hisser le combo à 3.0x et maximiser votre score sur 45 secondes.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement#etape-4"
-    }
-  ]
-};
-
-const crossBodyGuide = {
-  heading: "Fondements Neuroscientifiques : Ligne Médiane et Coordination Motrice Bilatérale",
-  subtitle: "Intégration sensorielle d'Ayres, asymétrie motrice de Carey et loi de Woodworth appliquées à la visée",
-  intro: [
-    "L'exercice de franchissement de la ligne médiane (Cross-Body Movement) impose au système visuo-moteur d'effectuer des trajectoires diagonales complètes traversant l'axe sagittal du corps. Contrairement aux mouvements confinés à un seul secteur de l'écran, le passage au-delà de l'axe médian requiert un flux continu de signaux à travers le corps calleux pour coordonner avec précision la musculature du bras dans l'espace controlatéral.",
-    "La créatrice de l'intégration sensorielle, Dre A. Jean Ayres (1972), a mis en évidence que la capacité à franchir la ligne médiane constitue le socle de la maturation motrice et de la spécialisation hémisphérique harmonieuse. Dans des travaux cinématiques de référence, David Carey, Hargreaves et Goodale (1996) ont établi que les mouvements de pointage dirigés vers l'espace controlatéral manifestent systématiquement un temps de décélération allongé et une dispersion d'erreur accrue par rapport aux cibles ipsilatérales. Cet exercice vise précisément à gommer cette asymétrie neuromusculaire.",
-    "Sous l'éclairage de la Loi de Fitts (1954), l'élévation de la distance et le rétrécissement de la zone de tolérance augmentent de façon logarithmique l'Indice de Difficulté (ID). Plus les niveaux s'élèvent, plus le couloir se resserre (de 10 à 4 pixels) et plus les cibles diminuent (jusqu'à 8 pixels). Réussir dans ces conditions extrêmes suppose de maîtriser le modèle en deux temps de Robert Woodworth (1899) : une phase d'impulsion balistique vive portée par l'avant-bras (75 % de la distance) complétée par un freinage terminal micrométrique sous contrôle visuel rétroactif (25 % restants).",
-    "Précision instrumentale et rafraîchissement d'affichage : Ce test s'exécute nativement côté client à l'aide de l'API performance.now() avec une granularité inférieure à la milliseconde. La latence physique perçue dépend du taux de rafraîchissement de votre moniteur (60Hz = 16.6ms, 144Hz = 6.9ms, 240Hz = 4.1ms) et de la fréquence de rapport de votre souris. Les fluctuations sous 5ms relèvent de la physique matérielle standard."
+const guide = {
+  "heading": "Coordination visuo-motrice à la souris : règles et conseils",
+  "intro": [
+    "Cet exercice de coordination visuo-motrice à la souris est un jeu gratuit dans le navigateur : vous guidez le curseur avec précision dans un couloir étroit. Touchez le nœud cyan sur un bord de l'écran, puis suivez la ligne jusqu'au nœud magenta du côté opposé. Chaque trajet est un balayage croisé d'un bord à l'autre ; si vous sortez du couloir, l'essai s'arrête et une nouvelle paire de nœuds apparaît.",
+    "Une partie dure 45 secondes et le niveau repart de 1. En montant, la tolérance du couloir passe de 10 px à 4 px, le rayon des nœuds de 16 px à 8 px, et les nœuds glissent vers les bords. La difficulté suit l'idée de la loi de Fitts (Fitts, 1954) : plus le trajet est long et la cible petite, plus le geste est difficile. C'est un jeu d'entraînement au contrôle de la souris, pas un bilan de coordination ni une rééducation."
   ],
-  benchmarks: {
-    title: "Grille d'Évaluation et Niveaux de Coordination Visuo-Motrice (5 Paliers)",
-    headers: ["Palier / Rang", "Titre de Maîtrise", "Score Requis", "Niveau Culminant", "Précision Vectorielle", "Profil Neurophysiologique"],
-    rows: [
-      ["Palier 1", "Très avancé", "17 000+ points", "Niveau 12 – 15", "≥ 92 % de réussite", "Rythme très élevé et précis"],
-      ["Palier 2", "Avancé", "13 000 – 16 999 pts", "Niveau 9 – 11", "85 – 91 % de réussite", "Excellente accélération controlatérale et maîtrise du freinage de Woodworth sur des nœuds de 8px (Carey et al. 1996)"],
-      ["Palier 3", "Solide", "9 500 – 12 999 pts", "Niveau 6 – 8", "76 – 84 % de réussite", "Coordination solide pour le tir compétitif ; légère dérive cinématique dès que le couloir passe sous les 6px"],
-      ["Palier 4", "En progression", "6 000 – 9 499 pts", "Niveau 3 – 5", "65 – 75 % de réussite", "Moyenne fonctionnelle standard ; ruptures de série dues à une crispation du poignet lors des grands mouvements obliques"],
-      ["Palier 5", "Initial", "< 6 000 points", "Niveau 1 – 2", "< 65 % de réussite", "Difficulté marquée à traverser le plan sagittal central ; tendance à tracer des arcs de cercle entraînant des sorties de couloir"]
-    ],
-    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Données étalonnées à partir de la théorie d'intégration sensorielle (Ayres 1972), des études de motricité controlatérale (Carey et al. 1996) et des constantes de Fitts (1954)."
-  },
-  techniques: {
-    title: "Protocoles Pratiques pour Optimiser le Balayage Diagonal et le Contrôle Bilatéral",
-    items: [
+  "techniques": {
+    "title": "Conseils pour rester dans le couloir",
+    "items": [
       {
-        name: "Alignement Corporel Central sur l'Axe Sagittal (Ayres Midline Alignment)",
-        desc: "Positionnez votre siège et votre buste exactement au centre de l'écran. Évitez de tourner les épaules pour que le mouvement traduise un authentique franchissement du plan médian par le bras.",
-        tips: "Conservez les épaules détendues et utilisez le coude comme point d'appui glissant sur le bureau."
+        "name": "Regarder d'abord la cible",
+        "desc": "Repérez le nœud d'en face avant de toucher le nœud de départ : la direction est juste dès le début.",
+        "tips": "La liaison démarre au contact du nœud, donc préparez la direction pendant l'approche."
       },
       {
-        name: "Fixation Oculaire Prédictive Feedforward (Contralateral Target Fixation)",
-        desc: "Comme l'ont souligné Carey et ses pairs (1996), suivre visuellement le curseur crée un décalage. Dès que le nœud A est touché, déplacez immédiatement le regard vers l'emplacement du nœud B.",
-        tips: "Laissez la commande motrice périphérique diriger la main tandis que vos yeux fixent déjà la cible finale."
+        "name": "Vitesse régulière, trajet droit",
+        "desc": "Un geste brusque fait trembler le curseur à la fin et sortir du couloir. Gardez un rythme calme et régulier.",
+        "tips": "Avec 4 px de tolérance aux niveaux élevés, ralentir un peu aide à garder la série."
       },
       {
-        name: "Freinage Terminal de Woodworth par Friction (Current-Control Braking)",
-        desc: "Accélérez énergiquement sur les 3/4 du trajet puis appliquez une légère pression de la main et de la pulpe des doigts sur le tapis lors du dernier quart.",
-        tips: "Cette friction contrôlée absorbe l'élan mécanique du bras et évite de dépasser les nœuds étroits de 8 pixels."
-      },
-      {
-        name: "Pivot d'Avant-Bras et Coude vs. Flexion Circulaire du Poignet (Elbow Pivot)",
-        desc: "La mobilité du poignet génère des trajectoires incurvées qui sortent instantanément d'un couloir de 4 pixels. Bloquez le poignet en position neutre et menez le geste avec l'avant-bras pivotant autour du coude.",
-        tips: "Assurez-vous que le câble de la souris ne frotte pas ou munissez-vous d'un mouse bungee pour éliminer les résistances parasites."
+        "name": "Freiner près de la cible",
+        "desc": "Approcher vite puis finir lentement près de la cible (Woodworth, 1899) aide à toucher les petits nœuds.",
+        "tips": "Juste avant le nœud, relâchez la tension du poignet et arrivez en douceur."
       }
     ]
   },
-  steps: [
-    "Adoptez une posture droite et alignez le centre du thorax avec le milieu du moniteur.",
-    "Dès le signal de départ, placez le réticule sur le nœud cyan en périphérie de l'écran.",
-    "Balayez l'écran en ligne droite oblique sans mordre les bordures du couloir lumineux.",
-    "Atteignez le nœud magenta opposé et préservez le combo 3.0x durant l'intégralité des 45 secondes."
+  "steps": [
+    "Lancez la partie et attendez le compte à rebours.",
+    "Repérez la position du nœud magenta d'arrivée.",
+    "Placez le curseur sur le nœud cyan de départ.",
+    "Suivez le couloir jusqu'au nœud magenta."
   ],
-  audience: "Joueurs d'esport (CS2, Valorant, Apex Legends), athlètes de sports de précision et de combat, et toute personne souhaitant développer sa coordination œil-main et son contrôle moteur bilatéral.",
-  faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('ayres1972', 'carey1996', 'cernacek1961', 'fitts1954', 'woodworth1899', 'woods2015'),
+  "audience": "Joueurs et utilisateurs d'ordinateur qui veulent s'exercer à des mouvements de souris longs et droits.",
+  faqs: faqItems,
+  sources: pickSources('carey1996', 'fitts1954', 'woodworth1899'),
 };
 
 export default function CrossBodyMovementPageFr() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <CrossBodyMovementClient
         copy={{
-          title: "Test de coordination œil-main",
-          subtitle: "Contrôle diagonal à travers la ligne médiane • 15 niveaux",
-          hudLabels: {
-            score: "Score",
-            timeLeft: "Temps Restant",
-            bestScore: "Meilleur Score",
-            bestCombo: "Meilleur Combo"
-          },
-          rulesTitle: "Règles du Test de Coordination et Barème",
-          rules: [
-            { title: "Activation du Nœud Source", text: "Effleurez le nœud cyan en bordure d'écran avec le curseur pour lancer la trajectoire vectorielle." },
-            { title: "Balayage Diagonal en Ligne Médiane", text: "Traversez l'écran en restant strictement à l'intérieur du couloir de tolérance lumineux." },
-            { title: "Impact Cible et Multiplicateur", text: "Atteignez le nœud magenta opposé pour valider la liaison, marquer des points et faire monter le combo." },
-            { title: "Tolérance et Sortie de Couloir", text: "Quitter le couloir réinitialise le multiplicateur à 1.0x, sans déduction de score ni pénalité de temps." }
-          ],
-          aboutTitle: "À Propos de l'Entraînement de Coordination",
-          aboutHeading: "Neurophysiologie du Franchissement Médian et Intégration Bilatérale",
-          aboutText: "Cet exercice s'appuie sur la théorie de l'Intégration Sensorielle de Jean Ayres (1972) et sur les études biomécaniques de David Carey (1996). Les mouvements obliques franchissant l'axe médian exigent un échange inter-hémisphérique rapide via le corps calleux, permettant de développer des flicks à 180 degrés et des changements d'angle d'une précision chirurgicale.",
-          aboutCards: [
-            {
-              title: "Public Visé",
-              desc: "Joueurs de tir compétitif cherchant à fluidifier leurs grands flicks diagonaux, et toute personne souhaitant développer sa motricité fine et sa vivacité oculo-motrice."
-            },
-            {
-              title: "Bénéfices Neurologiques",
-              desc: "Stimulation de la transmission inter-hémisphérique, renforcement du freinage agoniste-antagoniste et correction du retard moteur en espace controlatéral."
-            },
-            {
-              title: "Progression Dynamique",
-              desc: "Le couloir se resserre de 10px à 4px, les cibles diminuent de 16px à 8px et les trajectoires s'étirent jusqu'aux angles extrêmes de l'écran."
-            }
-          ]
-        }}
+  "title": "Coordination visuo-motrice à la souris",
+  "subtitle": "Traversez l'écran sans sortir du couloir",
+  "rulesTitle": "Règles de l'exercice de coordination visuo-motrice",
+  "rules": [
+    {
+      "title": "Toucher le nœud de départ",
+      "text": "Placez le curseur sur le nœud cyan au bord de l'écran. La liaison démarre aussitôt, sans clic."
+    },
+    {
+      "title": "Rester dans le couloir",
+      "text": "Suivez le couloir autour de la ligne qui relie les deux nœuds jusqu'au nœud magenta en face."
+    },
+    {
+      "title": "Atteindre la cible",
+      "text": "Si vous touchez le nœud magenta sans sortir du couloir, vous marquez des points et votre série augmente."
+    },
+    {
+      "title": "Sortie de couloir",
+      "text": "Sortir du couloir met fin à l'essai et une nouvelle paire de nœuds apparaît. Seul le multiplicateur retombe à 1,0x ; score et temps restent."
+    }
+  ],
+  "aboutTitle": "À propos de l'exercice de coordination visuo-motrice",
+  "aboutHeading": "Traverser l'écran dans un couloir étroit",
+  "aboutText": "Dans ce jeu de 45 secondes, vous reliez deux nœuds qui apparaissent sur les bords gauche et droit de l'écran. Leur hauteur est aléatoire, donc le trajet est tantôt diagonal, tantôt horizontal. Avec les niveaux, la tolérance du couloir passe de 10 px à 4 px, les nœuds rapetissent et se rapprochent des bords, ce qui allonge le trajet.",
+  "hudLabels": {
+    "score": "Score",
+    "timeLeft": "Temps restant",
+    "bestScore": "Meilleur score",
+    "bestCombo": "Meilleur combo"
+  }
+}}
       />
-      <DrillGuide guide={crossBodyGuide} />
-      <RelatedDrills />
+      <DrillGuide guide={guide} />
+      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/coordination/cross-body-movement" />
     </>
   );
 }

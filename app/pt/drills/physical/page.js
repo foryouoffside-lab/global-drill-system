@@ -5,62 +5,43 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 
 const physicalDrills = DRILLS.filter((d) => d.category === 'physical');
 
+const url = 'https://skilldrills.online/pt/drills/physical';
+const title = "Treino de Agilidade com o Mouse: 11 Drills | SkillDrills";
+const description = "Treino de agilidade com o mouse, grátis: 11 drills de clicar em alvos, esquiva, controle do cursor, memória de trajetos e timing. Não é teste físico.";
+
 export const metadata = {
-  title: 'Treino de Agilidade & Teste de Reflexos | SkillDrills',
-  description: 'Treino de agilidade e reflexos online: 11 exercícios para tempo de reação, equilíbrio, coordenação motora, esquiva e velocidade de pés.',
-  keywords: [
-    'teste de reflexo online gratis', 'exercicios de coordenacao motora', 'escada de agilidade exercicios',
-    'teste de equilibrio corporal online', 'jogo de esquiva desviar do mouse', 'treino de visao periferica',
-    'teste go no go impulsividade', 'teste da regua tempo de reacao', 'como melhorar a velocidade de reacao',
-    'exercicios de agilidade e reflexos', 'velocidade de pes no futebol', 'movimento bilateral cruzando a linha media',
-    'controle postural e estabilidade motora', 'jogo de reflexo e agilidade mental', 'exercicios pliometricos tempo de contato'
-  ],
+  title,
+  description,
+  keywords: ["Treino de Agilidade com o Mouse", "jogos de agilidade", "agilidade no navegador", "jogo de agilidade com o mouse", "drills de esquiva com o mouse"],
   openGraph: {
-    title: 'Treino de Agilidade & Teste de Reflexos | SkillDrills',
-    description: 'Treino de agilidade e reflexos online: 11 exercícios para tempo de reação, equilíbrio, coordenação motora, esquiva e velocidade de pés.',
+    title,
+    description,
     type: 'website',
-    url: 'https://skilldrills.online/pt/drills/physical',
+    url,
     siteName: 'SkillDrills',
     locale: 'pt_BR',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Treino de Agilidade e Reflexos Físicos no SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630, alt: title }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Treino de Agilidade & Teste de Reflexos | SkillDrills',
-    description: '11 exercícios de agilidade, equilíbrio, coordenação motora e reflexos rápidos gratuitos no navegador.',
-    images: ['https://skilldrills.online/icons/icon-512x512.png'],
+    title,
+    description,
+    images: ['https://skilldrills.online/opengraph-image'],
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://skilldrills.online/pt/drills/physical',
-    languages: getAlternateLanguages('/pt/drills/physical'),
+    canonical: url,
+    languages: getAlternateLanguages('/drills/physical'),
   },
 };
-
-Object.assign(metadata, {
-  title: 'Agilidade e Reflexo | 11 Exercícios | SkillDrills',
-  description: '11 exercícios gratuitos no navegador para tempo de reação, agilidade, equilíbrio, coordenação motora e reflexos.',
-  keywords: ['teste de reflexo', 'treino de agilidade', 'tempo de reação', 'coordenação motora', 'equilíbrio corporal', 'velocidade de pés', 'coordenação olho-mão', 'jogo de esquiva', 'treino esportivo online', 'exercícios físicos no navegador'],
-  openGraph: {
-    ...metadata.openGraph,
-    title: 'Agilidade e Reflexo | 11 Exercícios | SkillDrills',
-    description: '11 exercícios gratuitos no navegador para reflexos, tempo de reação, agilidade e coordenação motora.',
-  },
-  twitter: {
-    ...metadata.twitter,
-    title: 'Agilidade e Reflexo | SkillDrills',
-    description: 'Treine reflexos, agilidade, equilíbrio e coordenação com 11 exercícios gratuitos.',
-  },
-  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
-    { "@type": "ListItem", "position": 2, "name": "Treinos de Performance", "item": "https://skilldrills.online/pt/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Reflexos Físicos & Agilidade", "item": "https://skilldrills.online/pt/drills/physical" }
+    { "@type": "ListItem", "position": 2, "name": "Todos os treinos", "item": "https://skilldrills.online/pt/drills" },
+    { "@type": "ListItem", "position": 3, "name": "Treino de Agilidade com o Mouse", "item": url }
   ]
 };
 
@@ -68,10 +49,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "name": "Treino de Agilidade & Testes de Reflexos (11 Exercícios)",
-  "url": "https://skilldrills.online/pt/drills/physical",
-  "description": "11 exercícios interativos para tempo de reação, equilíbrio postural, coordenação olho-mão, escada de agilidade e esquiva ágil.",
+  "dateModified": "2026-11-10",
+  "name": "Treino de Agilidade com o Mouse – 11 drills",
+  "url": url,
+  "description": "11 drills no navegador com o mouse: clicar em alvos, esquiva, controle do cursor, memória de trajetos e timing.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": physicalDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'pt', drill.name);
@@ -87,91 +68,26 @@ const collectionSchema = {
   })
 };
 
+const faqs = [
+  { q: "O jogo da escada na tela ajuda no trabalho de pés de verdade?", a: "O drill treina timing e ritmo: você leva o cursor, na ordem certa, até os degraus da esquerda e da direita de uma escada que desce pela tela. Ele não substitui trabalho de pés real nem treino de força, e esta página não afirma efeitos sobre a agilidade no esporte." },
+  { q: "O que a Frenagem de Mira (cadeia de reação) treina?", a: "Você só pontua se parar o cursor por completo dentro de um nó em movimento. Passar direto sem parar ou deixar o nó escapar zera o combo e tira 1 segundo. Não há garantia de melhora da mira em jogos de tiro." },
+  { q: "O que o teste de estabilidade contra forças externas treina?", a: "Você mantém a mira dentro do anel seguro no centro enquanto um vento simulado a empurra. Sair do anel só zera o combo. É um exercício de controle firme do mouse, não um treino de equilíbrio corporal." },
+  { q: "O que acontece no drill de coordenação mão-olho (movimento cruzado)?", a: "Você coloca o cursor no nó inicial e depois o leva pela tela, dentro de um corredor, até o nó de destino. Sair do corredor zera o combo. Esta página não afirma efeitos sobre a comunicação entre os hemisférios do cérebro." },
+  { q: "O que o jogo de esquiva em grade treina?", a: "Algumas casas piscam como aviso e depois viram zona de perigo; você precisa mover o cursor para uma casa segura antes disso. Esta página não promete quantos milissegundos sua reação vai ganhar. Compare nível e precisão no mesmo aparelho." },
+  { q: "O que o drill de ameaças nas bordas da tela treina?", a: "Você encontra e clica nos nós de ameaça que surgem na área externa da tela para praticar a atenção periférica. Ampliar o campo de visão ou prevenir lesões não é comprovado; use-o apenas como prática." },
+  { q: "Com que frequência devo treinar?", a: "Não existe regra fixa. Algumas sessões por semana de 15 a 25 minutos, enquanto a concentração durar, são uma forma leve. Pare se sentir dor nos olhos ou no punho." },
+  { q: "Drills no navegador complementam o treino na academia ou em campo?", a: "Eles não substituem treino de força, pliometria ou treino do esporte. Servem como complemento para praticar timing visual e decisões rápidas diante de sinais na tela." },
+  { q: "Quantos drills existem nesta lista?", a: "São 11 drills no navegador em quatro áreas: reflexo e esquiva, agilidade e timing, coordenação e trajetórias, equilíbrio e estabilidade. Pelos cartões você abre a descrição e as instruções de cada drill." },
+  { q: "Este treino de agilidade é um teste físico?", a: "Não. Os drills não medem força, impulsão nem resistência. Eles praticam timing, velocidade de decisão, precisão com o mouse e sequências de movimento na tela." },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Como o treino digital de escada de agilidade melhora os apoios dos pés e a agilidade esportiva real?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Os exercícios de escada de agilidade na tela desenvolvem o reconhecimento veloz de estímulos visuais e o ritmo de cadência no córtex motor. Ao exigir respostas em frações de milissegundos a pistas visuais em constante mudança, o exercício pratica reconhecimento rápido de estímulos e ritmo de resposta com o mouse. Ele não treina os pés nem garante ganhos em mudanças de direção (COD) no esporte."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que é uma cadeia de reação com inibição de impulso e por que ela evita antecipações falsas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O teste de parada de impulso (Go/No-Go) afere a capacidade do sistema neuromotor de frear imediatamente uma ação já iniciada diante de um estímulo falso ou drible adversário. O teste pratica a inibição de respostas rápidas em uma tarefa de tela; ele não mede nem garante a capacidade de conter movimentos reais."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "De que forma o desafio virtual de estabilidade contra forças dinâmicas fortalece o equilíbrio físico?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O equilíbrio postural dinâmico depende da integração sensorial contínua entre a fixação visual, o labirinto no ouvido interno (sistema vestibular) e os proprioceptores musculares. Resistir a forças em movimento na tela pratica correções finas de mouse; o exercício não treina o equilíbrio corporal real."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que cruzar a linha média do corpo (movimento bilateral) é essencial para a coordenação motora?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mover-se cruzando a linha média visual e corporal é uma ideia comum em treinos esportivos. Aqui, os exercícios de interceptação com o mouse praticam coordenação olho-mão e leitura espacial na tela; não substituem treino físico em campo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Em quanto tempo os treinos de esquiva dinâmica em grade reduzem o tempo de reação de fuga?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Diferente de testes estáticos previsíveis, zonas dinâmicas de perigo exigem atualização constante do mapa espacial no lobo parietal. Essa prática exercita o tempo de reação de escolha (Choice Reaction Time) sob pressão; compare seus próprios resultados ao longo das sessões, sem expectativa de ganho fixo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual o papel da visão periférica (campo visual útil UFOV) na prevenção de colisões e lesões?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O monitoramento ativo de ameaças periféricas expande o campo visual funcional. O exercício pratica notar estímulos na borda da tela enquanto o olhar fica no centro; não há garantia de efeito em esportes ou no trânsito."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual a frequência ideal de treino para agilidade neuromotora e velocidade de reflexos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Uma sugestão prática é fazer sessões curtas de 15 a 25 minutos, algumas vezes por semana. Sessões muito longas tendem a cansar e a piorar a precisão; pare quando notar queda de desempenho."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Os testes e exercícios no navegador substituem o treinamento atlético no campo ou na academia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Não, eles atuam de maneira complementar. Enquanto o treino físico trabalha músculos, tendões e pliometria, os treinos digitais praticam tempo de resposta e decisão na tela. Não há garantia de transferência para o campo."
-      }
-    }
-  ]
+  "dateModified": "2026-11-10",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
 };
-
-faqSchema.mainEntity.push(
-  {
-    "@type": "Question",
-    "name": "Quantos exercícios existem na categoria de treinos físicos?",
-    "acceptedAnswer": { "@type": "Answer", "text": "A categoria reúne 11 exercícios no navegador em quatro focos: reflexo e esquiva, agilidade e condicionamento, coordenação e trajetórias, além de equilíbrio e estabilidade. Cada cartão abre o treino correspondente." }
-  },
-  {
-    "@type": "Question",
-    "name": "Os treinos no navegador substituem força ou equilíbrio físico?",
-    "acceptedAnswer": { "@type": "Answer", "text": "Não. Eles treinam tempo visual, velocidade de decisão, precisão de controle e sequência de movimentos. Servem como complemento, não como substituto para força, pliometria, mobilidade ou orientação esportiva." }
-  }
-);
 
 export default function PhysicalDrillsPage() {
   return (
@@ -188,9 +104,7 @@ export default function PhysicalDrillsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <PhysicalDrillsClient
-        faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
-      />
+      <PhysicalDrillsClient faqs={faqs} />
     </>
   );
 }

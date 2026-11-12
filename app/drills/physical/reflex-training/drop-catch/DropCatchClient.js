@@ -87,9 +87,9 @@ Instantly distinguish between enemies, teammates, and decoy utility in chaos wit
 const ABOUT_SECTIONS = [
   {
     icon: Eye,
-    title: "Gravitational Acceleration & Optical Tau Interception",
-    subtitle: "Time-to-contact calculations under non-linear vertical acceleration",
-    content: "Falling targets accelerate continuously due to gravity. The human visual system estimates interception windows using optical tau (τ), the inverse relative rate of retinal image expansion (Lee, 1976). Accurate tau estimation enables players to predict the exact millisecond and vertical coordinate of interception before the target exits the capture boundary. Catching does not require calculating distance and speed separately: the expanding retinal image specifies time-to-contact on its own (Lee, 1976)."
+    title: "Falling Targets & Time-to-Contact",
+    subtitle: "Timing a click on targets that fall faster as the level rises",
+    content: "Each target falls at a steady speed, and the base fall speed rises with level from about 400 px/s to 1250 px/s. People judge how long an approaching object has before it arrives using optical tau (τ), the inverse relative rate of retinal image expansion (Lee, 1976). Catching does not require calculating distance and speed separately: the expanding retinal image specifies time-to-contact on its own (Lee, 1976)."
   },
   {
     icon: ShieldAlert,
@@ -101,7 +101,7 @@ const ABOUT_SECTIONS = [
     icon: Zap,
     title: "Donders Type C Discrimination Reaction Chronometry",
     subtitle: "Stimulus classification latency prior to motor initiation",
-    content: "Unlike simple reflex tests, Drop Catch embodies Franciscus Donders\'s (1868) Type C reaction task: multiple visual stimuli are presented, but response must be restricted strictly to target items while withholding response to decoys, extending sensory-motor processing by 80–120ms. Simple visual reaction alone costs about 200–250 ms before either can start (Woods et al., 2015)."
+    content: "Unlike simple reflex tests, Drop Catch embodies Franciscus Donders\'s (1868) Type C reaction task: multiple visual stimuli are presented, but response must be restricted strictly to target items while withholding response to decoys, which usually takes longer than a simple reaction. Simple visual reaction alone costs about 200–250 ms before either can start (Woods et al., 2015)."
   },
   {
     icon: Target,
@@ -645,12 +645,12 @@ export default function DropCatchClient({ copy = {} } = {}) {
           <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Drop Catch Reflex Test"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1 whitespace-nowrap">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
+            {copy?.subtitle && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy.subtitle}
+              </p>
+            )}
           </div>
         )}
 

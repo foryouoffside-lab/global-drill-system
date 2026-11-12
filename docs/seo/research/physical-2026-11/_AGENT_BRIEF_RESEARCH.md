@@ -28,3 +28,9 @@ with NO two pages sharing a primary. Phase B (separate agents) will implement it
 - `docs/seo/research/physical-2026-11/<market>.csv` raw rows; raw tool output under `_work-<market>/`.
 - Write the .md incrementally (after each step) so a dead agent leaves partial results.
 - Final reply <= 250 words: top 5 opportunities with numbers, collisions, decisions needed.
+
+## RESUME (2026-11-10 evening) - finish the map from existing data ONLY
+- Autocomplete is DONE for every market (`_work-<m>/ac*`). Bing is DONE: the coordinator ran each market's single batch -> `_work-<m>/kw.jsonl` (pt: kw.jsonl + kw_rest.jsonl). The last row of each batch is a canary with known volume (de reflex test 78, ko 클릭속도 테스트 1,134, ja 連打測定 2,047, fr reflex test 87, es test de reacción 125, pt coordenação motora 252): if the canary is 0/nodata, treat that market's zeros as UNKNOWN, not zero.
+- Do NOT run bing_kw.py or autocomplete.py again. serp_probe: max 3 per market, only for a candidate primary with measured volume >= 50.
+- Reuse the existing `<market>.md` (keep what is there, add the 12-row table, collisions resolved, kill list). Write `<market>.csv` from kw.jsonl.
+- Most physical phrases will measure 0: that is a valid result -> action "no-demand descriptive" with an honest native title idea. Never move a TAKEN primary onto a physical page.

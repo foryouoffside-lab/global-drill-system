@@ -5,62 +5,43 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 
 const physicalDrills = DRILLS.filter((d) => d.category === 'physical');
 
+const url = 'https://skilldrills.online/fr/drills/physical';
+const title = "Jeux d'agilité et de coordination à la souris | SkillDrills";
+const description = "Jeux d'agilité et de coordination à la souris, gratuits : 11 exercices pour cliquer des cibles, esquiver, stabiliser le curseur et mémoriser des tracés.";
+
 export const metadata = {
-  title: 'Entraînement d\'Agilité & Test de Réflexes | SkillDrills',
-  description: 'Entraînement d\'agilité et réflexes en ligne : 11 exercices scientifiques pour temps de réaction, équilibre, coordination œil-main, esquive et appuis vifs.',
-  keywords: [
-    'test de réflexe en ligne gratuit', 'exercices coordination oeil main', 'échelle de rythme exercices en ligne',
-    'test d équilibre en ligne', 'jeu d esquive souris réflexe', 'entraînement vision périphérique',
-    'test go no go en ligne', 'test de la règle temps de réaction', 'test vitesse de réaction en ligne',
-    'améliorer vitesse de réaction et réflexes', 'exercices de vivacité motrice', 'vitesse des appuis et agilité sport',
-    'mouvement bilatéral ligne médiane', 'contrôle postural et stabilité motrice', 'jeu de réflexes esquive projectiles'
-  ],
+  title,
+  description,
+  keywords: ["jeux d'agilité et de coordination à la souris", "jeu de coordination", "jeux d'agilité en ligne", "jeu d'esquive à la souris", "exercices à la souris"],
   openGraph: {
-    title: 'Entraînement d\'Agilité & Test de Réflexes | SkillDrills',
-    description: 'Entraînement d\'agilité et réflexes en ligne : 11 exercices scientifiques pour temps de réaction, équilibre, coordination œil-main, esquive et appuis vifs.',
+    title,
+    description,
     type: 'website',
-    url: 'https://skilldrills.online/fr/drills/physical',
+    url,
     siteName: 'SkillDrills',
     locale: 'fr_FR',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Entraînement d\'Agilité et Réflexes Physiques sur SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630, alt: title }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Entraînement d\'Agilité & Test de Réflexes | SkillDrills',
-    description: '11 exercices scientifiques d\'agilité, équilibre, coordination motrice et réflexes rapides gratuits dans le navigateur.',
-    images: ['https://skilldrills.online/icons/icon-512x512.png'],
+    title,
+    description,
+    images: ['https://skilldrills.online/opengraph-image'],
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://skilldrills.online/fr/drills/physical',
-    languages: getAlternateLanguages('/fr/drills/physical'),
+    canonical: url,
+    languages: getAlternateLanguages('/drills/physical'),
   },
 };
-
-Object.assign(metadata, {
-  title: 'Exercices de réflexes et d’agilité en ligne | SkillDrills',
-  description: `${physicalDrills.length} exercices gratuits dans le navigateur : réflexes, esquive, vision périphérique, échelle d’agilité, équilibre et coordination.`,
-  keywords: ['exercices de réflexes', 'test de réflexe en ligne', 'jeu d’esquive', 'vision périphérique exercices', 'échelle d’agilité en ligne', 'coordination œil-main', 'équilibre souris', 'temps de réaction', 'exercices réflexes gratuits'],
-  openGraph: {
-    ...metadata.openGraph,
-    title: 'Exercices de réflexes et d’agilité en ligne | SkillDrills',
-    description: `${physicalDrills.length} exercices gratuits dans le navigateur : réflexes, esquive, vision périphérique, échelle d’agilité, équilibre et coordination.`,
-  },
-  twitter: {
-    ...metadata.twitter,
-    title: 'Exercices de réflexes et d’agilité en ligne | SkillDrills',
-    description: `${physicalDrills.length} exercices gratuits dans le navigateur : réflexes, esquive, vision périphérique, échelle d’agilité, équilibre et coordination.`,
-  },
-  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
-    { "@type": "ListItem", "position": 2, "name": "Exercices de Performance", "item": "https://skilldrills.online/fr/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Réflexes et agilité", "item": "https://skilldrills.online/fr/drills/physical" }
+    { "@type": "ListItem", "position": 2, "name": "Tous les exercices", "item": "https://skilldrills.online/fr/drills" },
+    { "@type": "ListItem", "position": 3, "name": "Jeux d'agilité et de coordination", "item": url }
   ]
 };
 
@@ -68,10 +49,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "fr",
-  "dateModified": "2026-09-20",
-  "name": `Exercices de réflexes et d’agilité (${physicalDrills.length} exercices)`,
-  "url": "https://skilldrills.online/fr/drills/physical",
-  "description": `${physicalDrills.length} exercices gratuits dans le navigateur : réflexes, esquive, vision périphérique, échelle d’agilité, équilibre et coordination.`,
+  "dateModified": "2026-11-10",
+  "name": "Jeux d'agilité et de coordination à la souris – 11 exercices",
+  "url": url,
+  "description": "11 exercices à la souris dans le navigateur : cliquer des cibles, esquiver, stabiliser le curseur, mémoriser des tracés et trouver le bon timing.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": physicalDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'fr', drill.name);
@@ -87,93 +68,25 @@ const collectionSchema = {
   })
 };
 
+const faqs = [
+  { q: "Le jeu d'échelle à l'écran aide-t-il pour un vrai travail d'appuis ?", a: "L'exercice travaille le timing et le rythme : vous amenez le curseur, dans le bon ordre, sur les barreaux gauche et droite d'une échelle qui défile vers le bas. Il ne remplace ni un vrai travail d'appuis ni la musculation, et cette page n'affirme aucun effet sur l'agilité sportive." },
+  { q: "Que travaille le freinage de visée (chaîne de réaction) ?", a: "Vous ne marquez que si vous arrêtez complètement le curseur à l'intérieur d'un nœud en mouvement. Le traverser sans s'arrêter ou le laisser filer coupe le combo et retire 1 seconde. Aucune amélioration de la visée en jeu de tir n'est garantie." },
+  { q: "Que travaille le test de stabilité face aux forces externes ?", a: "Vous gardez le viseur dans l'anneau sûr au centre pendant qu'un vent simulé le pousse. Sortir de l'anneau remet seulement le combo à zéro. C'est un exercice de contrôle stable de la souris, pas un entraînement de l'équilibre corporel." },
+  { q: "Que se passe-t-il dans l'exercice de mouvement croisé ?", a: "Vous placez le curseur sur le nœud de départ, puis vous le guidez à travers l'écran, à l'intérieur d'un couloir, jusqu'au nœud d'arrivée. Sortir du couloir remet le combo à zéro. Cette page n'affirme aucun effet sur la communication entre les hémisphères du cerveau." },
+  { q: "Que travaille le jeu d'évitement sur grille ?", a: "Certaines cases clignotent en avertissement puis deviennent des zones de danger ; vous devez déplacer le curseur vers une case sûre avant. Cette page ne promet aucun gain chiffré en millisecondes. Comparez niveau et précision sur le même appareil." },
+  { q: "Que travaille l'exercice des menaces en bord d'écran ?", a: "Vous repérez et cliquez les nœuds de menace qui apparaissent dans la zone extérieure de l'écran pour pratiquer l'attention périphérique. Un champ de vision élargi ou une prévention des blessures n'est pas démontré ; utilisez-le comme simple pratique." },
+  { q: "À quelle fréquence s'entraîner ?", a: "Il n'y a pas de règle fixe. Quelques séances de 15 à 25 minutes par semaine, tant que la concentration tient, restent légères. Arrêtez en cas de douleur aux yeux ou au poignet." },
+  { q: "Ces exercices complètent-ils l'entraînement en salle ou sur le terrain ?", a: "Ils ne remplacent ni la musculation, ni la pliométrie, ni l'entraînement du sport. Ils servent de complément pour pratiquer le timing visuel et les décisions rapides face à des signaux à l'écran." },
+  { q: "Combien d'exercices contient cette liste ?", a: "11 exercices dans le navigateur répartis en quatre domaines : réflexes et esquive, agilité et timing, coordination et trajectoires, équilibre et stabilité. Les cartes ouvrent la description et les consignes de chaque exercice." },
+  { q: "Ces jeux d'agilité sont-ils un test physique ?", a: "Non. Ils ne mesurent ni la force, ni la détente, ni l'endurance. Ils pratiquent le timing, la vitesse de décision, la précision à la souris et les séquences de mouvement à l'écran." },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "fr",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Quels exercices contient la catégorie réflexes et agilité ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": `La catégorie réunit ${physicalDrills.length} exercices dans le navigateur : test de réflexe, jeu d’esquive, freinage de visée, vision périphérique, jeu d’évitement sur grille, échelle d’agilité, jeu de précision souris, jeu de rapidité et autres exercices de coordination. Chaque carte ouvre l’exercice associé.`
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ces exercices sont-ils de vrais exercices physiques ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Ce sont des jeux à la souris ou au clavier qui travaillent le timing visuel, la vitesse de décision et le contrôle du curseur. Ils ne remplacent ni la force, ni la pliométrie, ni la mobilité, ni l’entraînement propre à un sport."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "L’échelle d’agilité en ligne améliore-t-elle les appuis ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Aucune étude ne le démontre. C’est un jeu de rythme à la souris inspiré de l’échelle d’agilité : il travaille l’alternance gauche-droite et le séquençage, pas le jeu de jambes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "À quoi sert le jeu d’esquive et d’évitement ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il vous demande de repérer des dangers à l’écran et de déplacer le curseur vers une zone sûre. Il exerce l’anticipation et le contrôle du curseur ; le transfert vers un sport ou un jeu précis n’est pas démontré."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que travaille l’exercice de vision périphérique ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il vous demande de fixer le centre de l’écran et de cliquer sur des cibles qui arrivent des bords. Il fait travailler la détection en périphérie, mais n’est ni un test médical ni une preuve d’élargissement du champ visuel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle est la différence entre le test de réflexe et le jeu de freinage de visée ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le test de réflexe mesure la réaction à des cibles qui tombent, avec des leurres à ignorer. Le freinage de visée mesure la capacité à arrêter le curseur dans une cible mobile."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Mes résultats dépendent-ils de mon matériel ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. Écran, souris, navigateur et système ajoutent leur propre délai. Un écran affiche une image toutes les 16,7 ms à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015) : comparez vos séances avec le même matériel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Combien de temps s’entraîner ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il n’existe pas de durée prouvée. Quelques séances courtes, reposées et régulières, sur le même matériel, permettent de suivre vos résultats ; arrêtez-vous en cas de fatigue ou d’inconfort."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ces exercices fonctionnent-ils sur téléphone ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La plupart demandent une souris et un ordinateur. Vérifiez la page de chaque exercice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Mes scores sont-ils envoyés à un serveur ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Vos records restent dans le LocalStorage de votre navigateur et aucun compte n’est nécessaire."
-      }
-    }
-  ]
+  "dateModified": "2026-11-10",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
 };
 
 export default function PhysicalDrillsPage() {
@@ -191,9 +104,7 @@ export default function PhysicalDrillsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <PhysicalDrillsClient
-        faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
-      />
+      <PhysicalDrillsClient faqs={faqs} />
     </>
   );
 }

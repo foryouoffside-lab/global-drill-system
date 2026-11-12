@@ -1,0 +1,41 @@
+phrase,cc,lang,bing_exact,bing_broad,status,assigned_page,role
+test de reacción,es,es-ES,61,61,ok,visual/reaction-speed/light-reaction,CANARY; TAKEN (reaction)
+test de la regla,es,es-ES,0,0,ok,physical/reflex-training/drop-catch,kill; dishonest (ruler-drop) - remove from title
+test de la regla velocidad de reaccion,es,es-ES,0,0,ok,physical/reflex-training/drop-catch,kill; dishonest
+test caida de la regla,es,es-ES,0,0,ok,physical/reflex-training/drop-catch,kill; dishonest
+escalera de agilidad,es,es-ES,0,0,ok,physical/fitness/agility-ladder,kill; equipment intent
+escalera de agilidad ejercicios,es,es-ES,0,0,ok,physical/fitness/agility-ladder,kill; equipment intent - remove from title
+juego de esquivar,es,es-ES,0,0,ok,physical/reflex-training/quick-dodge,primary (no-demand descriptive; AC strong)
+juego de esquivar obstaculos,es,es-ES,0,0,ok,physical/reflex-training/quick-dodge,secondary
+juego de esquivar cosas,es,es-ES,0,0,ok,physical/reflex-training/quick-dodge,kill
+juegos de esquivar,es,es-ES,0,0,ok,physical/reflex-training/quick-dodge,secondary
+coordinación ojo mano,es,es-ES,0,0,ok,physical/coordination/cross-body-movement,primary (no-demand descriptive)
+coordinación ojo mano ejercicios,es,es-ES,0,0,ok,physical/coordination/cross-body-movement,kill; kids/OT intent
+test de coordinación,es,es-ES,0,0,ok,physical/coordination/cross-body-movement,secondary (no-demand)
+test de coordinación online,es,es-ES,0,0,ok,physical/coordination/cross-body-movement,secondary (no-demand)
+test de coordinación bimanual,es,es-ES,0,0,ok,-,never claim (DGT two-hand test; drill single-cursor)
+test de coordinación bimanual online,es,es-ES,0,0,ok,-,never claim (DGT)
+test de coordinación motriz,es,es-ES,0,0,ok,-,kill; school battery intent
+test de coordinación visomotora,es,es-ES,0,0,ok,-,kill
+juego de coordinación,es,es-ES,0,0,ok,physical (hub),secondary (no-demand)
+visión periférica,es,es-ES,0,0,ok,physical/reflex-training/peripheral-threat-sweeper,secondary (no-demand)
+ejercicios visión periférica,es,es-ES,0,0,ok,physical/reflex-training/peripheral-threat-sweeper,primary family (no-demand descriptive)
+test de visión periférica,es,es-ES,0,0,ok,physical/reflex-training/peripheral-threat-sweeper,kill; clinical intent - remove from title
+juego de agilidad,es,es-ES,0,0,ok,physical (hub),primary (no-demand descriptive)
+juego de agilidad visual,es,es-ES,0,0,ok,-,kill
+juego de agilidad mental,es,es-ES,0,0,ok,-,kill; cognitive intent
+test de agilidad,es,es-ES,0,0,ok,-,kill
+juego de saltar,es,es-ES,0,0,ok,physical/fitness/jump-sequence,secondary (no-demand; head intent = dino/platformer)
+juego de hacer click,es,es-ES,0,0,ok,physical/fitness/speed-drill,kill; CPS intent
+juego de hacer click rapido,es,es-ES,0,0,ok,physical/fitness/speed-drill,kill; CPS intent
+juego de clics,es,es-ES,0,0,ok,physical/fitness/speed-drill,kill
+juego de memoria visual,es,es-ES,0,0,ok,physical/coordination/complex-pattern,kill; collides w/ memory grid-memorization - remove from title
+test de memoria visual,es,es-ES,0,0,ok,memory/spatial-memory/grid-memorization,TAKEN-ish (live title); kill
+memoria espacial test,es,es-ES,0,0,ok,memory/spatial-memory/object-location,TAKEN-ish (live title); kill
+juego de reflejos,es,es-ES,0,0,ok,reaction-speed/reflex-training-drill,TAKEN (reaction); remove from physical
+juegos de reflejos online,es,es-ES,0,0,ok,reaction-speed/reflex-training-drill,TAKEN; kill
+entrenamiento de reflejos,es,es-ES,0,0,ok,-,kill
+pulso firme juego,es,es-ES,0,0,ok,motor/precision-control/steady-hand,TAKEN-family (motor); kill
+mira temblorosa,es,es-ES,0,0,ok,physical/balance-training/stability-challenge,kill
+juego de esquivar balas,es,es-ES,0,0,ok,physical/reflex-training/quick-dodge,secondary (no-demand; AC)
+test psicotecnico coordinacion,es,es-ES,0,0,ok,-,never claim (DGT psychotechnical)

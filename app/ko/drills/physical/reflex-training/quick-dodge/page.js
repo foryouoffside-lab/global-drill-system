@@ -5,13 +5,13 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge';
-const title = "마우스 피하기 게임 | 탄막 피하기 순발력 테스트 | SkillDrills";
-const description = "날아오는 탄막을 마우스 커서로 피하는 무료 마우스 피하기 게임. 아슬아슬한 회피로 콤보를 쌓으며 순발력과 마우스 컨트롤을 연습하세요.";
+const title = "마우스 피하기 게임 | 장애물 피하기 게임 | SkillDrills";
+const description = "사방에서 커서를 향해 날아오는 붉은 장애물을 마우스로 피하는 무료 마우스 피하기 게임입니다. 45초 동안 연속으로 피해 콤보 배율을 쌓고, 점점 빨라지는 장애물 속에서 최고 점수에 도전하세요.";
 
 export const metadata = {
   title,
   description,
-  keywords: ["마우스 피하기 게임", "탄막 피하기 게임", "총알 피하기 게임", "마우스 컨트롤 게임", "순발력 테스트 게임", "마우스 무빙 연습", "투사체 회피 훈련", "무료 피하기 게임"],
+  keywords: ["마우스 피하기 게임", "피하기 게임", "장애물 피하기 게임", "총알 피하기 게임", "마우스 컨트롤 게임", "무료 피하기 게임"],
   alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge') },
   openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
   twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
@@ -19,334 +19,133 @@ export const metadata = {
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills 홈",
-      "item": "https://skilldrills.online/ko"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "신체 훈련 센터",
-      "item": "https://skilldrills.online/ko/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "반사신경 훈련",
-      "item": "https://skilldrills.online/ko/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "마우스 피하기 게임",
-      "item": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge"
-    }
-  ]
-};
-
-const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: "퀵 닷지 마우스 피하기 게임",
-  applicationCategory: 'GameApplication',
-  operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  description,
-  url,
-  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
-  inLanguage: 'ko',
-  dateModified: '2026-10-08',
-};
-
-const webApplicationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: "퀵 닷지 마우스 피하기 게임 웹 앱",
-  applicationCategory: 'GameApplication',
-  operatingSystem: 'All',
-  browserRequirements: 'HTML5 Canvas를 지원하는 최신 브라우저',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  url,
-  inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills 홈', item: 'https://skilldrills.online/ko' },
+    { '@type': 'ListItem', position: 2, name: '피지컬 테스트', item: 'https://skilldrills.online/ko/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: '반사 훈련', item: 'https://skilldrills.online/ko/drills/physical/reflex-training' },
+    { '@type': 'ListItem', position: 4, name: '마우스 피하기 게임', item: url },
+  ],
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: "퀵 닷지 마우스 피하기 게임",
+  name: '마우스 피하기 게임 (Quick Dodge)',
   url,
   description,
-  genre: ['Action Game', 'Aim Trainer'],
-  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  genre: ['Action Game', 'Browser Game'],
+  gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  operatingSystem: 'All',
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const faqs = [
-  {
-    "q": "마우스 피하기 게임은 어떻게 하나요?",
-    "a": "마우스 커서를 움직여 사방에서 날아오는 붉은 투사체에 맞지 않고 최대한 오래 버티는 게임입니다. 1초 생존할 때마다 점수가 쌓이고, 투사체를 아슬아슬하게 스치면 보너스와 콤보가 붙습니다. 맞으면 콤보가 초기화됩니다."
-  },
-  {
-    "q": "공포 마우스 피하기 게임과 같은가요?",
-    "a": "아닙니다. 검색하면 귀신이 나오는 공포 플래시 게임이 많이 나오지만, 이 페이지는 놀라는 요소가 없는 탄막 회피 게임입니다. 투사체의 속도와 개수가 점점 늘어나는 점수형 연습입니다."
-  },
-  {
-    "q": "점수와 콤보는 어떻게 쌓이나요?",
-    "a": "1초 생존마다 점수가 쌓이고, 투사체를 아슬아슬하게 스치며 피하면(Close Shave) 추가 점수와 함께 콤보 배율이 오릅니다. 투사체에 맞으면 콤보가 1.0배로 돌아가고 붉은 경고 플래시가 나옵니다."
-  },
-  {
-    "q": "난이도는 어떻게 올라가나요?",
-    "a": "점수가 오를수록 투사체 속도가 최대 500px/s까지 빨라지고 생성 간격이 짧아집니다. 후반에는 투사체 수가 늘어 안전한 틈이 좁아집니다. 큰 동작으로 휘젓기보다 작은 움직임으로 틈을 찾는 편이 안정적입니다."
-  },
-  {
-    "q": "반응속도보다 예측이 중요한가요?",
-    "a": "빠른 투사체는 보고 나서 움직이면 늦기 쉽습니다. 시각 피드백을 반영하는 데는 100~150ms가 걸린다는 설명이 있고(Woodworth, 1899), 그래서 투사체가 갈 방향을 미리 가늠하고 움직이는 것이 도움이 됩니다. 이 게임의 결과가 개인의 예측 능력을 측정하는 것은 아닙니다."
-  },
-  {
-    "q": "후반에는 어떻게 움직이는 게 좋나요?",
-    "a": "커서를 크게 휘두르지 말고 투사체 사이의 틈으로 짧게 이동하세요. 작은 영역에서 미세하게 움직일수록 허용 오차가 좁아지므로(Fitts, 1954) 급하게 멈추고 방향을 바꾸는 연습이 필요합니다. 더 좋은 방법은 사람마다 다릅니다."
-  },
-  {
-    "q": "롤이나 발로란트 무빙 실력이 늘어나나요?",
-    "a": "보장할 수 없습니다. 마우스로 움직이는 대상을 피하는 연습이지만 게임의 조작, 화면, 규칙이 달라 같은 결과로 이어진다고 단정할 수 없습니다. 연습 기록을 비교하는 용도로 쓰세요."
-  },
-  {
-    "q": "어떤 마우스 파지법이 유리한가요?",
-    "a": "정해진 정답은 없습니다. 손목과 손가락으로 작게 움직이기 편한 평소 파지법을 쓰고, 설정을 바꿨다면 전후 점수를 같은 조건에서 비교하세요. 손목이나 손가락에 통증이 있으면 쉬거나 중단합니다."
-  },
-  {
-    "q": "모니터 주사율이 영향을 주나요?",
-    "a": "주사율이 높으면 빠른 투사체가 더 자주 갱신되어 보이고 입력 지연도 줄어드는 경향이 있습니다(Woods et al., 2015). 다만 이 게임에서 점수가 얼마나 달라지는지는 측정하지 않았습니다. 같은 환경에서 기록을 비교하세요."
-  },
-  {
-    "q": "기록은 어디에 저장되나요?",
-    "a": "점수와 최고 콤보는 브라우저의 로컬 저장소에 보관되며 이 드릴에서 서버로 올리지 않습니다. 브라우저 데이터를 삭제하면 기록도 사라집니다. 자세한 내용은 개인정보처리방침을 확인하세요."
-  }
+  { q: "마우스 피하기 게임은 어떻게 하나요?", a: "붉은 원형 장애물이 화면 네 가장자리 중 한 곳에서 생겨나, 생성되는 순간의 커서 위치를 향해 직선으로 날아옵니다. 커서를 움직여 맞지 않으면 장애물이 화면 밖으로 빠져나갈 때 회피 1회로 인정됩니다. 한 세션은 45초입니다." },
+  { q: "장애물이 커서를 계속 따라오나요?", a: "아닙니다. 생성 순간의 커서 위치를 겨냥해 출발한 뒤에는 방향을 바꾸지 않고 직선으로 날아갑니다. 날아오면서 크기가 조금씩 커지므로 여유 있게 비켜 서는 것이 안전합니다." },
+  { q: "위에서 떨어지는 것을 피하는 고전 피하기 게임과 같은가요?", a: "같은 피하기 게임 계열이지만 다른 게임입니다. 똥피하기처럼 날아오는 것을 피하는 게임이지만, 위에서만 떨어지지 않고 사방에서 커서를 향해 날아오며 마우스로 화면 전체를 움직여 피합니다. 맞아도 게임이 끝나지 않고 콤보만 초기화됩니다." },
+  { q: "공포 마우스 피하기 게임과 같은가요?", a: "아닙니다. 검색하면 귀신이 갑자기 나오는 공포 플래시 게임도 나오지만, 이 게임에는 놀래키는 요소가 없습니다. 장애물 속도와 개수가 점점 늘어나는 점수형 게임입니다." },
+  { q: "점수와 콤보는 어떻게 계산되나요?", a: "장애물을 하나 피할 때마다 기본 점수에 콤보 배율을 곱해 얻습니다. 기본 점수는 레벨이 오를수록 2점에서 20점까지 커집니다. 배율은 연속 회피 3회 1.1배, 10회 1.5배, 20회 2.0배, 30회 2.5배, 50회 3.0배입니다." },
+  { q: "난이도는 어떻게 올라가나요?", a: "레벨은 매 세션 1에서 시작해 250점마다 1씩, 연속 회피 4회마다 1씩 더 오릅니다. 장애물 속도는 초당 300px에서 레벨 15에 1,600px까지 빨라지고 그 뒤로도 계속 오르며, 콤보가 길면 최대 200px/s가 더해집니다. 생성 간격은 0.65초에서 0.10초로 줄고 화면에 동시에 있을 수 있는 장애물은 8개에서 58개까지 늘어납니다." },
+  { q: "장애물에 맞으면 어떻게 되나요?", a: "콤보가 1.0배로 초기화되고 화면의 장애물이 모두 사라지며, 붉은 플래시와 화면 흔들림이 나옵니다. 점수와 남은 시간은 줄지 않습니다. 붉은 플래시는 게임 중 오른쪽 아래 버튼으로 끌 수 있습니다." },
+  { q: "어떤 조작을 쓰나요?", a: "마우스만 씁니다. 시작하면 포인터가 잠기고 사이트의 감도 설정이 적용됩니다. 키보드는 Esc(종료)만 사용합니다. 마우스가 있는 PC를 권장합니다." },
+  { q: "등급은 어떻게 정해지나요?", a: "최종 점수를 17,000점 기준과 비교해 S+(약 15,350점 이상), S(약 12,300점), A(약 9,550점), B(6,120점), C(약 3,450점), D(1,530점)로 나눕니다. SkillDrills 안의 연습 구간이며 사용자 통계나 백분위가 아닙니다." },
+  { q: "무료인가요? 기록은 어디에 저장되나요?", a: "무료이며 설치나 가입 없이 브라우저에서 실행됩니다. 최고 점수와 최고 콤보는 브라우저의 로컬 저장소에만 보관됩니다." },
 ];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'ko',
+  dateModified: '2026-11-10',
   mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
+
+const steps = [
+  "시작 버튼을 누르면 3초 카운트다운 뒤 커서가 화면 중앙에서 시작합니다.",
+  "가장자리에서 장애물이 생기면 지금 커서 위치로 날아온다는 점을 기억하고 옆으로 비켜 섭니다.",
+  "크게 휘두르지 말고 짧게 움직여 장애물 사이의 빈 공간에 머뭅니다.",
+  "맞지 않고 연속으로 피해 콤보 배율을 올리며 45초 동안 최고 점수에 도전합니다.",
+];
 
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: "마우스 피하기 게임 하는 방법",
-  description: "탄막을 피하며 점수와 콤보를 쌓는 4단계 연습법입니다.",
-  step: [
-  {
-    "@type": "HowToStep",
-    "position": 1,
-    "name": "중앙에서 시작",
-    "text": "커서를 화면 중앙 근처에 두고 사방을 넓게 봅니다."
-  },
-  {
-    "@type": "HowToStep",
-    "position": 2,
-    "name": "틈 찾기",
-    "text": "투사체가 가는 방향을 보고 비어 있는 틈을 찾습니다."
-  },
-  {
-    "@type": "HowToStep",
-    "position": 3,
-    "name": "작게 이동",
-    "text": "크게 휘두르지 말고 짧게 이동해 투사체를 스치며 피합니다."
-  },
-  {
-    "@type": "HowToStep",
-    "position": 4,
-    "name": "콤보 유지",
-    "text": "맞지 않고 이어서 피해 콤보 배율을 높입니다."
-  }
-].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
+  name: '마우스 피하기 게임 하는 방법',
+  description: '날아오는 장애물을 마우스로 피하며 콤보를 쌓는 4단계 방법입니다.',
+  step: steps.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, name: `${i + 1}단계`, text, url: `${url}#step-${i + 1}` })),
 };
 
 const dodgeGuide = {
-  "heading": "마우스 피하기 게임 가이드",
-  "intro": [
-    "퀵 닷지는 사방에서 날아오는 붉은 투사체를 마우스 커서로 피하며 점수를 쌓는 브라우저 게임입니다. 반응 속도뿐 아니라 투사체가 갈 방향을 가늠하는 판단과 정밀한 마우스 움직임이 함께 쓰입니다.",
-    "시각 정보가 움직임에 반영되기까지 100~150ms가 걸린다는 설명이 있어(Woodworth, 1899), 빠른 투사체는 미리 방향을 예상해 움직이는 편이 유리합니다. 예측에 소뇌 내부 모델이 쓰인다는 이론이 있습니다(Kawato, 1999). 이 게임은 그런 상황을 단순하게 만든 연습입니다.",
-    "투사체가 늘어나면 안전한 틈이 좁아지고 정밀한 움직임이 더 어려워집니다(Fitts, 1954). 투사체 속도는 점수가 오르면 최대 500px/s까지 빨라집니다.",
-    "점수는 같은 마우스, 감도, 모니터에서 비교하세요. 주사율과 입력 장치도 지연에 영향을 줄 수 있습니다(Woods et al., 2015). 결과는 연습 기록이며 의학적 검사나 선수 등급이 아닙니다."
+  heading: '마우스 피하기 게임 가이드',
+  intro: [
+    "마우스 피하기 게임(퀵 닷지)은 화면 사방에서 커서를 향해 날아오는 붉은 장애물을 마우스로 피하며 점수를 쌓는 브라우저 게임입니다. 장애물 피하기 게임이나 총알 피하기 게임처럼 맞지 않고 버티는 것이 목표이고, 연속으로 피할수록 콤보 배율이 오릅니다.",
+    "장애물은 생성되는 순간의 커서 위치를 겨냥해 직선으로 날아옵니다. 그래서 가만히 있으면 맞고, 조금만 비켜 서도 피할 수 있습니다. 빠른 움직임은 미리 계획해서 시작한다는 설명(Kawato, 1999)처럼, 장애물이 보이면 어디로 갈지 먼저 정하는 편이 유리합니다.",
+    "레벨이 오를수록 장애물이 빨라지고 자주 생기며 커집니다. 빈 공간이 좁아질수록 작은 목표 안에서 정확히 움직여야 하므로 더 어려워집니다(Fitts, 1954). 맞으면 화면이 비워지고 콤보만 초기화됩니다.",
+    "결과는 SkillDrills 안에서 쓰는 연습 기록입니다. 의학적 검사나 실제 운동 능력 평가가 아닙니다. 주사율과 입력 장치도 지연에 영향을 줄 수 있으므로(Woods et al., 2015) 같은 장비에서 기록을 비교하세요.",
   ],
-  "benchmarks": {
-    "title": "점수 구간 참고표",
-    "headers": [
-      "단계",
-      "연습 목표",
-      "연습 포인트"
+  benchmarks: {
+    title: '등급 기준표 (SkillDrills 연습 구간)',
+    headers: ['등급', '점수'],
+    rows: [
+      ['S+', '약 15,350점 이상'],
+      ['S', '약 12,300점 이상'],
+      ['A', '약 9,550점 이상'],
+      ['B', '6,120점 이상'],
+      ['C', '약 3,450점 이상'],
+      ['D', '1,530점 이상'],
     ],
-    "rows": [
-      [
-        "1단계",
-        "투사체 맞지 않고 버티기",
-        "화면 중앙 근처에서 짧게 움직이기"
-      ],
-      [
-        "2단계",
-        "스침 회피 늘리기",
-        "투사체 사이의 틈 찾기"
-      ],
-      [
-        "3단계",
-        "콤보 이어가기",
-        "실수 후 침착하게 위치 회복하기"
-      ],
-      [
-        "4단계",
-        "빠른 투사체 대응",
-        "커서를 크게 휘두르지 않기"
-      ],
-      [
-        "5단계",
-        "긴 세션 유지",
-        "피로 전에 쉬고 같은 장비로 비교하기"
-      ]
+    note: '등급은 최종 점수를 17,000점 기준과 비교한 SkillDrills 연습 구간입니다. 사용자 통계나 백분위가 아닙니다.',
+  },
+  techniques: {
+    title: '점수를 올리는 연습법',
+    items: [
+      { name: '생성 순간을 보기', desc: '장애물은 생길 때의 커서 위치로 날아옵니다. 생기는 순간을 보고 바로 옆으로 비켜 서면 대부분 피할 수 있습니다.', tips: '한 자리에 오래 머물지 마세요.' },
+      { name: '작게 움직이기', desc: '커서를 크게 휘두르면 새로 날아오는 장애물과 부딪히기 쉽습니다. 짧게 움직여 빈 공간에 머무세요.', tips: '가장자리보다 장애물이 지나간 쪽이 비어 있는 경우가 많습니다.' },
+      { name: '커지는 크기 고려', desc: '장애물은 날아오면서 커집니다. 아슬아슬하게 피하려 하기보다 여유를 두세요.', tips: '후반 고속 구간에서는 안전한 거리가 우선입니다.' },
+      { name: '콤보 유지', desc: '연속 회피가 길수록 배율과 레벨이 함께 오릅니다. 맞으면 화면이 비워지니 침착하게 다시 시작하세요.', tips: '손목과 어깨에 힘을 빼고, 통증이 있으면 쉬세요.' },
     ],
-    "note": "이 표는 SkillDrills의 연습 방향 안내입니다. 점수 기준, 사용자 통계, 백분위가 아닙니다."
   },
-  "techniques": {
-    "title": "점수를 올리는 4가지 연습법",
-    "items": [
-      {
-        "name": "작게 움직이기",
-        "desc": "커서를 크게 휘두르면 새 투사체와 부딪히기 쉽습니다. 투사체 사이의 틈으로 짧게 이동하세요.",
-        "tips": "큰 동작이 필요하면 투사체가 적은 쪽을 미리 정합니다."
-      },
-      {
-        "name": "방향을 보고 미리 이동",
-        "desc": "투사체가 닿은 뒤에 움직이면 늦습니다. 날아오는 방향을 보고 비어 있는 곳으로 먼저 움직이세요.",
-        "tips": "가장 가까운 한두 개만 보기보다 전체 흐름을 봅니다."
-      },
-      {
-        "name": "스침 회피 노리기",
-        "desc": "투사체를 아슬아슬하게 스치면 보너스와 콤보가 붙습니다. 다만 무리하게 노리다 맞으면 콤보가 사라지니 안정이 먼저입니다.",
-        "tips": "후반 고속 구간에서는 안전한 회피부터 하세요."
-      },
-      {
-        "name": "편한 자세 유지",
-        "desc": "손목과 어깨에 힘을 빼고 팔을 편하게 두세요. 힘이 들어가면 작은 움직임이 어려워집니다.",
-        "tips": "통증이 있으면 중단하고 쉽니다."
-      }
-    ]
-  },
-  "steps": [
-    "마우스를 편하게 잡고 커서를 화면 중앙에 둡니다.",
-    "날아오는 투사체의 방향을 보고 비어 있는 틈을 찾습니다.",
-    "짧게 이동해 투사체를 피하고 스치면 보너스를 얻습니다.",
-    "맞지 않고 이어서 피해 콤보를 쌓습니다."
-  ],
-  "audience": "마우스 피하기 게임을 온라인에서 가볍게 즐기고 싶은 사용자와 마우스 컨트롤을 연습하려는 게이머.",
+  steps,
+  audience: '마우스 피하기 게임이나 장애물 피하기 게임을 브라우저에서 가볍게 즐기려는 사용자, 마우스 컨트롤을 연습하려는 게이머.',
   faqs,
-  sources: pickSources('kawato1999', 'woodworth1899', 'fitts1954', 'woods2015'),
+  sources: pickSources('kawato1999', 'fitts1954', 'woods2015'),
 };
 
 export default function LocalizedQuickDodgePageKo() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <QuickDodgeClient
         copy={{
           title: "마우스 피하기 게임",
-          subtitle: "탄막을 마우스로 피하며 생존하기",
-          description: "시각 정보가 움직임에 반영되기까지 100~150ms가 걸린다는 설명이 있어(Woodworth, 1899), 빠른 투사체는 방향을 미리 가늠하고 움직이는 편이 유리합니다. 속도가 빨라질수록 보고 나서 움직일 시간이 줄어듭니다.",
-          badge: "순발력 탄막 테스트",
-          hudLabels: {
-            score: "현재 점수",
-            time: "남은 시간",
-            bestScore: "최고 점수",
-            bestCombo: "최대 콤보",
-            getReady: "준비하세요"
-          },
-          resultLabels: {
-            newBest: "최고 기록 달성",
-            points: "최종 점수",
-            accuracy: "회피 성공률",
-            dodges: "회피 횟수",
-            peakSpeed: "최고 속도",
-            peakLevel: "도달 레벨",
-            playAgain: "다시 도전하기"
-          },
-          rulesTitle: "진행 규칙과 점수 계산",
+          hudLabels: { score: "현재 점수", time: "남은 시간", bestScore: "최고 점수", bestCombo: "최대 콤보", getReady: "준비하세요" },
+          resultLabels: { newBest: "최고 기록 달성", points: "최종 점수", accuracy: "회피 성공률", dodges: "회피 횟수", peakSpeed: "최고 속도", peakLevel: "도달 레벨", playAgain: "다시 도전하기" },
+          rulesTitle: "게임 규칙과 점수 계산",
           rulesItems: [
-            {
-              "title": "투사체 회피와 생존 점수",
-              "text": "사방에서 날아오는 붉은 투사체에 맞지 않고 버티세요. 1초 생존할 때마다 점수가 쌓입니다."
-            },
-            {
-              "title": "아슬아슬한 스침 회피",
-              "text": "투사체를 근접해서 스치며 피하면 보너스 점수와 함께 콤보 배율이 오릅니다."
-            },
-            {
-              "title": "점진적 난이도 상승",
-              "text": "점수가 오를수록 투사체 속도가 최대 500px/s까지 빨라지고 생성 간격이 짧아집니다."
-            },
-            {
-              "title": "피격",
-              "text": "투사체에 맞으면 콤보 배율이 1.0배로 초기화되고 붉은 경고 플래시가 나옵니다."
-            }
+            { title: "장애물 피하기", text: "붉은 장애물이 가장자리에서 생겨 그 순간의 커서 위치로 날아옵니다. 맞지 않고 화면 밖으로 보내면 회피 1회입니다." },
+            { title: "콤보 배율", text: "연속 회피가 쌓이면 배율이 올라 최대 3.0배(50회 연속)까지 커집니다." },
+            { title: "난이도 상승", text: "점수와 연속 회피에 따라 레벨이 오르며 장애물 속도가 300px/s에서 1,600px/s 이상으로 빨라지고 더 자주 생깁니다." },
+            { title: "맞으면", text: "콤보가 1.0배로 초기화되고 화면의 장애물이 사라집니다. 점수와 45초 세션 시간은 줄지 않습니다." },
           ],
           aboutTitle: "마우스 피하기 게임 안내",
           aboutSections: [
-            {
-              "title": "보고 움직이면 늦는 이유",
-              "subtitle": "우드워스(Woodworth, 1899)와 카와토(Kawato, 1999)",
-              "content": "시각 정보가 움직임에 반영되기까지 100~150ms가 걸린다는 설명이 있습니다. 빠른 투사체는 방향을 미리 가늠해 움직이는 편이 유리합니다."
-            },
-            {
-              "title": "크게 이동하고 작게 보정하기",
-              "subtitle": "우드워스(Woodworth, 1899)의 두 단계 설명",
-              "content": "빠른 움직임은 먼저 크게 이동하고 마지막에 작게 보정하는 두 단계로 설명됩니다. 좁은 틈에서는 속도를 줄여 정확히 멈추는 것이 중요합니다."
-            },
-            {
-              "title": "좁아지는 틈",
-              "subtitle": "피츠(Fitts, 1954)의 속도-정확도 관계",
-              "content": "투사체가 늘어나면 안전한 틈이 좁아집니다. 목표가 작을수록 정밀하게 움직여야 한다는 관계가 이 게임의 후반 난이도를 설명합니다."
-            },
-            {
-              "title": "장비와 지연",
-              "subtitle": "우즈(Woods et al., 2015)의 입력 지연 연구",
-              "content": "주사율과 입력 장치는 지연에 영향을 줄 수 있습니다. 점수를 비교할 때는 같은 장비를 사용하세요."
-            }
-          ]
+            { title: "직선으로 날아오는 장애물", content: "장애물은 생성 순간의 커서 위치를 겨냥해 직선으로 날아옵니다. 생기는 순간 비켜 서는 것이 기본입니다." },
+            { title: "미리 정하고 움직이기", subtitle: "Kawato, 1999", content: "빠른 움직임은 미리 계획해 시작한다는 설명이 있습니다. 장애물이 보이면 갈 방향을 먼저 정하세요." },
+            { title: "좁아지는 빈 공간", subtitle: "Fitts, 1954", content: "장애물이 많아질수록 빈 공간이 좁아져 정확한 움직임이 필요합니다." },
+            { title: "장비와 기록 비교", subtitle: "Woods et al., 2015", content: "주사율과 입력 장치는 지연에 영향을 줄 수 있습니다. 같은 장비에서 기록을 비교하세요." },
+          ],
         }}
       />
-      <DrillGuide {...dodgeGuide} />
+      <DrillGuide guide={dodgeGuide} />
       <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/quick-dodge" />
     </>
   );

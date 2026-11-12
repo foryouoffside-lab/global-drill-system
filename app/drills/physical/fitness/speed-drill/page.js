@@ -193,7 +193,7 @@ const faqSchema = {
       name: 'What happens when a target expires or misses?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Missing a click or allowing a target to shrink to zero resets your active combo multiplier back to 1.0x and flashes red. If time penalties are enabled in settings, misses also deduct 0.8 seconds from the clock.',
+        text: 'Missing a click or allowing a target to shrink to zero resets your active combo multiplier back to 1.0x and flashes red. Each miss also costs 1 second of clock time.',
       },
     },
     {

@@ -58,8 +58,8 @@ const saveData = (data) => {
 const RULES_ITEMS = [
   { title: "Pattern Memorization", text: "Study the multi-node vector geometric path flashed on screen before it vanishes." },
   { title: "Vector Tracing", text: "Click and drag your crosshair from the cyan start node to the magenta end node to recreate the pattern." },
-  { title: "Accuracy Threshold", text: "Achieve the required path similarity percentage to successfully complete the pattern and build combo." },
-  { title: "Streak Reset", text: "Failing to hit accuracy requirements resets your combo multiplier back to 1.0x." }
+  { title: "Accuracy Threshold", text: "Start inside the cyan node, finish on the magenta node and reach the required path similarity (50% at the start, rising to 85%) to clear the pattern and build combo." },
+  { title: "Streak Reset", text: "Missing the accuracy requirement resets your combo multiplier to 1.0x. No points or time are deducted." }
 ];
 
 const ABOUT_TEXT = `Complex Pattern Pro tests spatial working memory, visual geometry retention, and fine vector control under extreme cognitive load. Players memorize intricate multi-waypoint geometric paths before tracing them from memory.
@@ -807,12 +807,12 @@ export default function ComplexPatternClient({ copy = {} } = {}) {
           <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Pattern Memory Game"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
+            {copy?.subtitle && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy.subtitle}
+              </p>
+            )}
           </div>
         )}
 

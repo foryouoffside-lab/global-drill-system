@@ -4,409 +4,197 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Germany, Austria, Switzerland (DE / DE-DE / DE-AT / DE-CH)
-// Primary Intent: impuls hemmer reflex spiel, präzisionsbremsung reaktionstest, motorische inhibition übung
-// German Gaming Context: FPS Overflicking-Korrektur, CS2 / Valorant First-Shot-Bremsung, Kinetischer Stopp
-// High-Demand, Low-Competition Target Keywords:
-//   - "impuls hemmer reflex spiel" (Impulse inhibitor reflex game)
-//   - "präzisionsbremsung reaktionstest" (Precision braking reaction test)
-//   - "motorische inhibition übung" (Motor inhibition exercise)
-//   - "maus verzögerungstraining" (Mouse deceleration training)
-//   - "overflick korrektur maus" (Over-flick correction mouse)
-//   - "kinetischer stopp reflex training" (Kinetic arrest reflex training)
-//   - "maus präzisionstest online" (Mouse precision test online)
-//   - "reaktionsgeschwindigkeit spiel" (Reaction speed game)
-// ============================================================
+const url = 'https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain';
+const title = 'Overflicking stoppen | Flick-Stopp-Training | SkillDrills';
+const description = 'Overflicking stoppen: Bremse den Cursor auf Zielen, die vom Bildrand heranfliegen. Jedes Durchrauschen oder verpasste Ziel kostet 1 Sekunde. Gratis im Browser.';
 
 export const metadata = {
-  title: "Overflicking stoppen | Flick-Stopp-Training",
-  description: "Kostenloser Aim-Drill im Browser. Triff bewegte Ziele, stoppe den Cursor sauber und trainiere Mauspräzision sowie Overflick-Kontrolle.",
-  keywords: [
-    "aim trainer kostenlos online",
-    "maus bremsen aim",
-    "overflick korrektur maus",
-    "flick präzision training",
-    "maus präzisionstest online",
-    "reaktionsspiel online",
-    "ziel bremsen maus training",
-    "stoppsignal reaktionstest",
-    "flick stoppen üben",
-    "hand-auge-koordination aim"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain',
-    languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Overflicking stoppen | Flick-Stopp-Training",
-    description: "Triff bewegte Ziele, stoppe den Cursor sauber und trainiere Mauspräzision sowie Overflick-Kontrolle im Browser.",
-    url: 'https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain',
-    siteName: 'SkillDrills',
-    locale: 'de_DE',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Overflicking stoppen | Flick-Stopp-Training",
-    description: "Bewegte Ziele treffen, den Cursor sauber stoppen und Overflick-Kontrolle trainieren.",
-  },
+  title,
+  description,
+  keywords: ['Overflicking stoppen', 'Flick-Stopp-Training', 'Flick abbremsen', 'Cursor im Ziel stoppen', 'Overflick'],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'de_DE', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
+  robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Trainingsübungen",
-      "item": "https://skilldrills.online/de/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Reflextraining",
-      "item": "https://skilldrills.online/de/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Reaktionskette (Bremskontrolle)",
-      "item": "https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Start', item: 'https://skilldrills.online/de' },
+    { '@type': 'ListItem', position: 2, name: 'Physische Drills', item: 'https://skilldrills.online/de/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Overflicking stoppen', item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
-  "name": "Maus Bremskontrolle & Impulskontrolle Reflex-Test (Reaction Chain)",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Interaktives biomechanisches Trainingsmodul zur Schulung motorischer Bremsverzögerung, Impulskontrolle und Eliminierung von Overflicking bei schnellen Mausbewegungen.",
-  "url": "https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/de"
-  },
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Overflicking stoppen – Flick-Stopp-Training (Reaction Chain)',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'Browser mit HTML5 Canvas und Pointer Lock, Maus',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
+  inLanguage: 'de',
+  dateModified: '2026-11-10',
 };
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Maus Bremskontrolle – Reflex-Test | SkillDrills",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Requires HTML5 Canvas and JavaScript enabled browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const faqs = [
+  {
+    q: 'Was übt das Flick-Stopp-Training?',
+    a: 'Knoten fliegen geradlinig von einem der vier Bildränder herein. Du führst den Cursor auf einen Knoten und bringst ihn darin vollständig zum Stehen. Wer Overflicking stoppen will, braucht genau diesen letzten Bremsmoment – der Drill übt ihn isoliert.',
   },
-  "url": "https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain",
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Maus Bremskontrolle & Impulskontrolle Reflex-Test",
-  "url": "https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain",
-  "genre": ["Reflex Game", "Motor Control Trainer", "Esports Precision"],
-  "playMode": "SinglePlayer",
-  "inLanguage": "de",
-  "dateModified": "2026-09-20",
-  "description": "Fangen Sie Zielknoten mit bis zu 1.800 px/s ab und stoppen Sie die Cursorgeschwindigkeit unter 1,5 px/Frame, um Multiplikatoren bis 3,0x aufzubauen."
-};
+  {
+    q: 'Wie werden Punkte berechnet?',
+    a: 'Ein Stopp im Knoten (Anzeige ARREST READY) bringt 50 Punkte × Combo-Multiplikator. Geklickt wird nicht. Ab 5 Stopps in Folge gilt 1,2x, ab 10 1,5x, ab 25 2,0x und ab 40 das Maximum von 3,0x.',
+  },
+  {
+    q: 'Was passiert bei einem Fehler?',
+    a: 'Fehler sind: durch einen Knoten hindurchrauschen, ohne zu stoppen, oder einen Knoten aus dem Bild fliegen lassen. Jeder Fehler zieht 1 Sekunde von der Restzeit ab und setzt den Multiplikator auf 1,0x zurück. Punkte werden nicht abgezogen. Die Zeitstrafe ist immer aktiv und lässt sich nicht abschalten.',
+  },
+  {
+    q: 'Wann zählt ein Stopp?',
+    a: 'Sobald sich der Cursor innerhalb des Knotens langsamer als 1,5 Pixel pro Frame bewegt. Ist er schneller, zählt der Kontakt als Durchrauschen. Das ist ein drillinterner Grenzwert.',
+  },
+  {
+    q: 'Wie steigt die Schwierigkeit?',
+    a: 'Das Level steigt mit der Punktzahl von 1 bis 10 (bei 250, 500, 1.000, 2.000, 3.500, 5.500, 8.000, 11.000 und 15.000 Punkten). Die Knotengeschwindigkeit wächst von 360 auf 1.800 px/s, gleichzeitig sind 1 bis 5 Knoten unterwegs, und der Knotenradius schrumpft von 15 auf 6 px.',
+  },
+  {
+    q: 'Ist Stoppen schwerer als Losbewegen?',
+    a: 'Viele empfinden es so, es gibt aber individuelle Unterschiede. Ein bekanntes Modell beschreibt Starten und Stoppen als Wettlauf zweier Prozesse (Logan & Cowan, 1984); kommt der Stopp zu spät, trägt der Schwung über das Ziel hinaus. Die Punktzahl misst keine Stopp-Reaktionszeit.',
+  },
+  {
+    q: 'Werde ich dadurch in Valorant oder CS2 besser?',
+    a: 'Das lässt sich nicht garantieren. Der Drill übt das Abbremsen auf dem Ziel, aber Empfindlichkeit, Bildschirm und Regeln im Spiel sind anders. Nutze ihn, um eigene Runden zu vergleichen.',
+  },
+  {
+    q: 'Was brauche ich dafür?',
+    a: 'Eine Maus. Nach dem Countdown wird Pointer Lock aktiviert und du steuerst nur über Mausbewegung; auf reinen Touch-Geräten startet der Drill nicht. Spiele mit deiner gewohnten DPI und Empfindlichkeit und vergleiche Änderungen unter gleichen Bedingungen.',
+  },
+  {
+    q: 'Wo werden Ergebnisse gespeichert?',
+    a: 'Bestwert, bester Multiplikator und höchstes Level liegen nur im lokalen Speicher deines Browsers und werden nicht an einen Server gesendet. Löschst du die Browserdaten, sind sie weg.',
+  },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Warum ist das exakte Abstoppen einer Mausbewegung neurologisch schwieriger als das Beschleunigen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Eine Beschleunigung wird durch eine koordinierte Kontraktion der agonistischen Muskeln ausgelöst. Ein punktgenauer Halt erfordert jedoch, dass die antagonistischen Muskelgruppen in Bruchteilen einer Millisekunde die exakt entgegengesetzte Bremskraft erzeugen. Wie Robert S. Woodworth (1899) nachwies, unterliegt die Endverzögerung optischen und somatosensorischen Rückkopplungsverzögerungen von 100 bis 150 ms. Schlägt die Bremsberechnung fehl, schießt der Cursor durch die kinetische Trägheit über das Ziel hinaus (Overshoot)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was besagt das Pferderennmodell von Logan & Cowan (1984) zur Bewegungsinhibition?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das Horse-Race-Modell postuliert, dass der 'Go-Prozess' (Ausführung der Bewegung) und der 'Stop-Prozess' (Inhibition und Bremsung) in den Basalganglien als unabhängige neurophysiologische Prozesse um die Ziellinie konkurrieren. Nur wenn das Stoppsignal das Ziel vor dem motorischen Bewegungsimpuls erreicht, wird die Muskelkontraktion gehemmt und der Zeiger kommt innerhalb des Knotens zum Stehen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was versteht man unter der Stop-Signal Reaction Time (SSRT) und wie beeinflusst sie das Zielen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die SSRT ist die interne neuronale Latenzzeit (typischerweise 180 bis 250 ms), die der rechte Gyrus frontalis inferior (rIFG) und der Nucleus subthalamicus (STN) benötigen, um einen bereits eingeleiteten motorischen Befehl abzufangen (Verbruggen & Logan, 2008). Eine kürzere SSRT ermöglicht es Taktik-Spielern, fehlgeleitete Flicks sofort abzubrechen und das Fadenkreuz auf der gegnerischen Kopflinie einzuloggen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche biomechanischen Ursachen führen in Taktik-Shootern wie Valorant oder CS2 zu Overflicking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hauptursache ist ein Ungleichgewicht in der Kokontraktion von Beugern und Streckern des Unterarms. Übermäßige Beschleunigung ohne rechtzeitige Antagonisten-Aktivierung führt dazu, dass die kinetische Trägheit die Haftreibung des Mauspads überwindet. Das Reaction-Chain-Training konditioniert einen mechanischen Reibungsstopp über Fingerspitzen und Mausgleiter."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie wirkt sich das Fitts'sche Gesetz (Fitts, 1954) bei hoher Knotengeschwindigkeit aus?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nach dem Fitts'schen Gesetz steigt der Schwierigkeitsindex (ID) logarithmisch mit der Relation von Distanz zu Zielbreite. Wenn Knoten mit 1.800 px/s anstürmen und der Halteradius schrumpft, geht das zeitliche Korrekturfenster gegen null. Das Gehirn muss sich auf eine vorprogrammierte ballistische Bremsdynamik verlassen, ohne auf visuelle Zwischenkorrekturen warten zu können."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was bedeutet das Kriterium 'unter 1,5 px/Frame' für einen gültigen kinetischen Arrest?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dies verhindert sogenanntes 'Slice-Through', bei dem der Spieler das Ziel nur im Vorbeigleiten streift. Bei 144 Hz entspricht 1,5 px/Frame einer Restgeschwindigkeit von unter 216 px/s. Dies stellt mathematisch sicher, dass die Muskeln eine echte physikalische Vollbremsung absolviert haben und in den Haftreibungszustand übergegangen sind."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welchen Einfluss haben Mauspad-Oberfläche und Maus-Skates auf das Bremsvermögen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sehr schnelle Glaspads oder extrem reibungsarme Mauspads verringern zwar die Anschubkraft, bieten jedoch kaum Bremswiderstand, was die Unterarmmuskulatur überfordert. Für das Training der Bremskontrolle eignen sich Hybrid- oder Kontroll-Stoffpads mit hoher statischer Reibung, da sie das Einrasten auf dem Ziel physisch unterstützen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum ist ein 144Hz- oder 240Hz-Bildschirm für das Training der Bewegungsinhibition entscheidend?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Woods et al. (2015) demonstrierten, dass 60Hz-Displays (16,6 ms Bildverzögerung) Mikroverzögerungen verschmieren. Bei 240 Hz (4,1 ms) wird die Flugbahn des Knotens analog und mikrometergenau abgebildet, sodass der visuelle Kortex Bremsbefehle mehr als 10 ms früher an die motorischen Nervenbahnen übermitteln kann."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie hoch ist das optimale tägliche Trainingsvolumen, um neuronale Übermüdung zu vermeiden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Da motorische Inhibition hohe Mengen zentralnervöser Energie bindet, sind 15 bis 20 Minuten pro Tag (10 bis 15 Durchgänge à 45 Sekunden mit je 45 Sekunden Pause) optimal. Bei einsetzender Muskelverkrampfung im Handgelenk sollte das Training sofort pausiert werden, um fehlerhafte Bewegungsmuster zu vermeiden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie lässt sich die Bremsleistung aus diesem Drill am besten auf reale Matches übertragen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nutzen Sie exakt dieselbe DPI-Einstellung (eDPI) und denselben Griffstil wie im Hauptspiel. Konzentrieren Sie sich während der Übung nicht auf das 'Klicken', sondern auf das 'Einfrieren' des Cursors im Zentrum des Knotens. Dieses mentale Bewegungsmuster überträgt sich direkt auf den First-Bullet-Stop in Schusswechseln."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'de',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Anleitung für das Maus-Bremskontrolle & Impulskontrolle Training",
-  "description": "4-stufiges Protokoll zum präzisen Abfangen anstürmender Zielknoten und vollständigen Abbau kinetischer Restenergie.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Pointer-Lock aktivieren und Fadenkreuz zentrieren",
-      "text": "Klicken Sie in das Spielfeld, um den Zeiger zu sperren, und positionieren Sie das Fadenkreuz in der Spielfeldmitte."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Knoten erfassen und ballistischen Flick initiieren",
-      "text": "Antizipieren Sie die Flugbahn des anstürmenden Knotens und führen Sie einen schnellen Beschleunigungs-Flick über 80% der Distanz aus."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Antagonistische Bremsung und Kinetischer Stopp",
-      "text": "Aktivieren Sie im Zielkreis die antagonistische Muskulatur und Fingertip-Druck, um die Geschwindigkeit unter 1,5 px/Frame abzustoppen."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Streak-Multiplikator sichern und 15.000 Punkte anvisieren",
-      "text": "Halten Sie die Bremspräzision über 45 Sekunden aufrecht, um den 3,0x Multiplikator zu halten und einen hohen Score zu erreichen."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'So funktioniert das Flick-Stopp-Training',
+  description: 'In vier Schritten den Cursor sauber im Ziel stoppen.',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Grob annähern', text: 'Sobald ein Knoten erscheint, führe den Cursor zügig in seine Bahn.' },
+    { '@type': 'HowToStep', position: 2, name: 'Vor dem Rand bremsen', text: 'Verlangsame kurz bevor du den Rand des Knotens erreichst.' },
+    { '@type': 'HowToStep', position: 3, name: 'Im Ziel stoppen', text: 'Bring den Cursor im Knoten vollständig zum Stehen, bis ARREST READY erscheint.' },
+    { '@type': 'HowToStep', position: 4, name: 'Serie halten', text: 'Stoppe Knoten für Knoten ohne Durchrauschen. Jeder Fehler kostet 1 Sekunde.' },
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
 const guideProps = {
-  sources: pickSources('logan1984', 'woodworth1899', 'fitts1954', 'woods2015'),
-  intro: {
-    title: "Neurobiologie der Bewegungsinhibition und Biomechanik des kinetischen Stopps",
-    paragraphs: [
-      "Eine Mausbewegung mit maximaler Geschwindigkeit zu starten ist leicht – sie jedoch auf den Bruchteil eines Millimeters genau und ohne Nachschwingen abzustoppen, ist eine der anspruchsvollsten Leistungen des motorischen Nervensystems. Während traditionelle Aim-Trainer lediglich den Klickzeitpunkt erfassen, isoliert der Reaction-Chain-Drill die Fähigkeit, kinetische Trägheit unmittelbar nach dem Abfangen eines Zielknotens auf null zu reduzieren (Kinetic Arrest).",
-      "Im renommierten Pferderennmodell von Gordon D. Logan und William B. Cowan (1984) rasen der motorische 'Go-Prozess' und der hemmende 'Stop-Prozess' unabhängig voneinander durch die Basalganglien. Um einen heranrasenden Zielknoten punktgenau einzufangen, müssen der rechte Gyrus frontalis inferior (rIFG) und der Nucleus subthalamicus (STN) extrem schnell antagonistische Bremsbefehle entsenden, die den Vorwärtsimpuls des Go-Prozesses neutralisieren (Verbruggen & Logan, 2008).",
-      "Das klassische Zwei-Komponenten-Modell von Robert S. Woodworth (1899) zeigt, dass Zielbewegungen aus einem ballistischen Anfangsimpuls und einer optisch kontrollierten Endverzögerung bestehen. Erreicht die Knotengeschwindigkeit 1.800 px/s, schrumpft das visuelle Korrekturfenster nach Fitts' Gesetz (1954) vollständig zusammen: Nur eine zerebellär vorausberechnete Muskelbremsung kann ein Hinausschießen (Overflicking) noch verhindern.",
-      "Dieses Trainingsmodul analysiert über performance.now() kontinuierlich die Subpixel-Geschwindigkeit des Zeigers und verlangt eine Reduktion auf unter 1,5 px/Frame, um einen erfolgreichen Halt zu werten. In Kombination mit einem 144Hz- oder 240Hz-Monitor und 1000Hz Abtastrate wird die Anzeigelatenz auf unter 4 ms minimiert, was optimale Voraussetzungen für neuronale Plastizität schafft (Woods et al., 2015)."
-    ]
-  },
+  heading: 'Overflicking stoppen: Anleitung zum Flick-Stopp-Training',
+  intro: [
+    'Reaction Chain ist ein Browser-Drill, mit dem du Overflicking stoppen übst: Du bremst den Cursor auf Knoten, die vom Bildrand heranfliegen, und bringst ihn darin vollständig zum Stehen. Es gibt keinen Klick – gewertet wird nur der Stopp. Eine Runde dauert 45 Sekunden, jeder Fehler kostet 1 Sekunde.',
+    'Ein bekanntes Modell beschreibt Starten und Stoppen als Wettlauf zweier Prozesse (Logan & Cowan, 1984). Schnelle Zielbewegungen bestehen aus einer groben Bewegung und einer feinen Korrektur (Woodworth, 1899), und je kleiner das Ziel, desto genauer muss der Stopp sein (Fitts, 1954).',
+    'Vergleiche Ergebnisse auf derselben Maus, Empfindlichkeit und demselben Monitor; Bildwiederholrate und Eingabegerät beeinflussen die Verzögerung (Woods et al., 2015). Die Werte sind Übungsprotokolle und garantieren keine Spielleistung.',
+  ],
   benchmarks: {
-    title: "Offizielle 5-Stufen-Benchmarks für Bremskontrolle & Bewegungsinhibition",
-    headers: ["Leistungsstufe", "Offizieller Titel", "Punktebereich", "Brems-Erfolgsquote", "Gesamtnote", "Neuromotorisches Profil"],
+    title: 'Level und Schwierigkeit (Werte aus dem Spiel)',
+    headers: ['Level', 'Ab Punkten', 'Knotentempo', 'Knoten gleichzeitig', 'Knotenradius'],
     rows: [
-      ["Stufe 1: Absoluter kinetischer Bremsmeister", "Apex Kinetic Arrester", "15.000+ Pkt.", "95%+ / 1500+ px/s", "Grade S", "Phänomenale Impulskontrolle: stoppt selbst bei 1.800 px/s ohne jeden Overflick abrupt im Knoten (Logan 1984; Woodworth 1899)"],
-      ["Stufe 2: Präzisions-Kinetic-Sniper", "Precision Kinetic Sniper", "11.000 – 14.999 Pkt.", "90 – 94% / 1200 – 1499 px/s", "Grade A", "Exzellente Verzögerungskontrolle über die Fingerspitzen; minimale Rutschphasen nach hartem Flick"],
-      ["Stufe 3: Erfahrener Verzögerungspilot", "Skilled Deceleration Pilot", "7.500 – 10.999 Pkt.", "82 – 89% / 900 – 1199 px/s", "Grade B", "Solide Bremsung bei mittlerem Tempo; gelegentliche Durchrutschfehler bei Topspeed"],
-      ["Stufe 4: Aufstrebender Brems-Trainee", "Developing Stopper", "4.000 – 7.499 Pkt.", "70 – 81% / 600 – 899 px/s", "Grade C", "Durchschnittliches Erwachsenenniveau. Tendenz zum Überschießen durch unzureichende Antagonisten-Aktivierung"],
-      ["Stufe 5: Verzögerungs-Einsteiger", "Novice Arrester Trainee", "< 4.000 Pkt.", "< 70% / < 600 px/s", "Grade D", "Verzögerte Bewegungsinhibition führt zu häufigen Fehlschlägen; Grundlagen des Abbremsens über Haftreibung müssen geschult werden"]
+      ['1', '0', '360 px/s', '1', '15 px'],
+      ['2', '250', '420 px/s', '1', '14 px'],
+      ['3', '500', '500 px/s', '2', '13 px'],
+      ['4', '1.000', '600 px/s', '2', '12 px'],
+      ['5', '2.000', '720 px/s', '2', '11 px'],
+      ['6', '3.500', '850 px/s', '3', '10 px'],
+      ['7', '5.500', '1.000 px/s', '3', '9 px'],
+      ['8', '8.000', '1.200 px/s', '4', '8 px'],
+      ['9', '11.000', '1.450 px/s', '4', '7 px'],
+      ['10', '15.000', '1.800 px/s', '5', '6 px'],
     ],
-    note: "Kalibriert anhand des Logan-Pferderennmodells (1984), des Woodworth-Modells (1899) und des Fitts'schen Schwierigkeitsgesetzes (1954). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
+    note: 'Diese Werte sind im Code des Drills festgelegt. Keine Nutzerstatistik, keine Perzentile.',
   },
   techniques: {
-    title: "Praxistechniken für maximale Bremspräzision",
+    title: 'Vier Techniken für einen sauberen Stopp',
     items: [
-      {
-        name: "Antizipierte Bremsung nach Logan (Logan Kinetic Brake)",
-        desc: "Wer erst beim Erreichen des Zielknotens bremst, schießt wegen der neuronalen Latenzzeit unweigerlich darüber hinaus. Leiten Sie den Stopp-Befehl bereits bei 80% des Weges ein, sodass die Geschwindigkeit exakt beim Eintritt in den Knoten auf null sinkt.",
-        tips: "Denken Sie nicht daran, den Knoten zu 'berühren', sondern die Maus im Zentrum des Knotens 'einzuloggen'."
-      },
-      {
-        name: "Fingertip-Downforce-Reibung (Fingertip Downforce Braking)",
-        desc: "Versuchen Sie nicht, die Maus allein über das Handgelenk abzustoppen. Erhöhen Sie im Bremsmoment minimal den Druck der Fingerspitzen nach unten, um das Mauspad leicht einzudrücken und die physikalische Haftreibung zu maximieren.",
-        tips: "Nutzen Sie die Schaumstoffdämpfung Ihres Mauspads als natürlichen Bremsklotz."
-      },
-      {
-        name: "Verhinderung von Slice-Through-Fehlern",
-        desc: "Das blinde Durchfahren des Knotens zerstört in Taktik-Shootern die Schusspräzision. Halten Sie den Zeiger diszipliniert im Knoten, bis der grüne Status 'ARREST READY' aufleuchtet.",
-        tips: "Genauigkeit und Standfestigkeit im Knoten haben absolute Priorität vor hektischer Geschwindigkeit."
-      },
-      {
-        name: "3,0x Streak-Management-Protokoll",
-        desc: "Ein Fehlversuch zieht zwar keine Punkte ab, setzt jedoch den Multiplikator auf 1,0x zurück. Spielen Sie die ersten Levels mit 100% Bremsquote, um den 3,0x Multiplikator frühzeitig aufzubauen.",
-        tips: "Über 80% Ihrer Gesamtpunktzahl entstehen während der Phasen mit aktivem 3,0x Multiplikator."
-      }
-    ]
+      { name: 'Vor dem Rand bremsen', desc: 'Wer erst am Knotenrand abbremst, ist zu spät. Beginne kurz davor zu verlangsamen.', tips: 'Achte anfangs mehr auf ARREST READY als auf Punkte.' },
+      { name: 'Locker stoppen', desc: 'Verkrampfte Finger und Handgelenke lassen den Cursor zittern. Bremse locker, als würdest du den Schwung auslaufen lassen.', tips: 'Mauspad und Gleitfüße verändern das Stoppgefühl – vergleiche nur mit gleichem Setup.' },
+      { name: 'Nicht durchrauschen', desc: 'Schnelles Überfahren eines Knotens zählt nicht als Stopp, kostet 1 Sekunde und die Serie.', tips: 'Halte den Stopp einen Augenblick.' },
+      { name: 'Keinen Knoten entkommen lassen', desc: 'Auch ein Knoten, der aus dem Bild fliegt, kostet 1 Sekunde. Bei mehreren Knoten zuerst den nächsten abarbeiten.', tips: 'Der Multiplikator erreicht erst nach 40 Stopps in Folge 3,0x – Ruhe zahlt sich aus.' },
+    ],
   },
   steps: [
-    "Pointer-Lock im Spielfeld aktivieren und eine bequeme Fingertip- oder Claw-Grip-Haltung einnehmen.",
-    "Den anfliegenden Knoten fokussieren und einen dynamischen Beschleunigungsflick starten.",
-    "Kurz vor Erreichen des Knotens die antagonistische Muskelbremse und leichten Anpressdruck aktivieren.",
-    "Über 45 Sekunden hinweg jeden Knoten fehlerfrei arretieren, um den 3,0x Multiplikator und 15.000 Punkte zu erreichen."
+    'Klicke auf Start und warte, bis nach dem Countdown Pointer Lock aktiv ist.',
+    'Führe den Cursor zügig in die Bahn des Knotens.',
+    'Bremse kurz vor dem Rand und stoppe im Knoten vollständig.',
+    'Sammle 45 Sekunden lang Stopps in Folge. Jeder Fehler kostet 1 Sekunde.',
   ],
-  audience: "Spieler von Counter-Strike 2, Valorant, Apex Legends und Overwatch 2, die unkontrolliertes Overflicking abstellen und messerscharfe First-Bullet-Headshots erzielen wollen.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('logan1984', 'woodworth1899', 'fitts1954', 'woods2015')
+  audience: 'FPS-Spieler, die ihr Overflicking mit gezielter Übung reduzieren möchten, und alle, die das Abbremsen der Maus üben wollen.',
+  faqs: { title: 'Häufige Fragen', items: faqs },
+  sources: pickSources('logan1984', 'woodworth1899', 'fitts1954', 'woods2015'),
 };
 
 export default function LocalizedReactionChainPageDe() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <ReactionChainClient
         copy={{
-          title: "Overflicking stoppen",
-          subtitle: "Zielen, treffen, den Cursor sauber stoppen",
-          badge: "Impulskontrolle Reflex-Test",
-          description: "Eine schnelle Bewegung punktgenau auf einem Ziel anzuhalten ist neuromotorisch weitaus anspruchsvoller als das Beschleunigen. Ausführung und Hemmung konkurrieren als unabhängige Prozesse im Gehirn (Logan & Cowan, 1984). Verzögert sich das Bremsen, führt die Trägheit zu fatalen Overflicks (Woodworth, 1899). Fangen Sie anstürmende Knoten ab und stoppen Sie den Cursor abrupt auf den Punkt.",
+          title: 'Overflicking stoppen',
+          subtitle: 'Cursor aufs Ziel führen und sauber stoppen',
+          description: 'Eine schnelle Bewegung genau auf dem Ziel zu stoppen, fällt vielen schwerer, als sie zu starten. Ein bekanntes Modell beschreibt Starten und Stoppen als Wettlauf zweier Prozesse (Logan & Cowan, 1984); kommt der Stopp zu spät, trägt der Schwung über das Ziel hinaus. Probiere es auf den Knoten aus.',
           hudLabels: {
-            score: "Punktzahl",
-            time: "Restzeit",
-            accuracy: "Bremspräzision",
-            bestScore: "Bestwert",
-            getReady: "BEREITMACHEN"
+            score: 'Punkte',
+            time: 'Restzeit',
+            accuracy: 'Stopp-Quote',
+            bestScore: 'Bestwert',
+            getReady: 'Bereit machen',
           },
-          pauseTitle: "Training Pausiert",
-          pauseSubtitle: "Klicken Sie in das Fenster, um den Pointer-Lock wieder zu aktivieren.",
           resultLabels: {
-            newBest: "NEUER REKORD",
-            points: "Punkte",
-            accuracy: "Bremspräzision",
-            totalArrests: "Kinetische Stopps",
-            maxCombo: "Max. Serie",
-            peakLevel: "Höchste Stufe",
-            playAgain: "Nochmal spielen"
+            newBest: 'Neuer Rekord',
+            points: 'Punkte',
+            accuracy: 'Stopp-Quote',
+            totalArrests: 'Stopps',
+            maxCombo: 'Bester Multiplikator',
+            peakLevel: 'Höchstes Level',
+            playAgain: 'Nochmal',
           },
-          rulesTitle: "Trainingsregeln & Punktesystem",
+          rulesTitle: 'Regeln und Punktesystem',
           rulesItems: [
-            { title: "Kinetischer Stopp (+50 Pkt.)", text: "Fangen Sie anstürmende Knoten ab und bringen Sie den Cursor im Zielkreis vollständig zum Stillstand (ARREST READY)." },
-            { title: "Kombi-Multiplikator (bis zu 3,0x)", text: "Erfolgreiche Stopps ohne Fehler erhöhen den Multiplikator schrittweise auf bis zu 3,0x." },
-            { title: "Durchrutschen & Fehlschläge", text: "Vorbeigleiten ohne Halt oder Verfehlen setzt die Serie zurück (kein Punkteabzug)." },
-            { title: "Extreme Beschleunigung", text: "Mit steigender Punktzahl beschleunigen Knoten auf bis zu 1.800 px/s bei schrumpfendem Halteradius." }
+            { title: 'Stopp im Knoten (+50 Pkt.)', text: 'Bring den Cursor im Knoten vollständig zum Stehen (ARREST READY): 50 Punkte × Multiplikator. Geklickt wird nicht.' },
+            { title: 'Multiplikator (max. 3,0x)', text: 'Ab 5 Stopps in Folge 1,2x, ab 10 1,5x, ab 25 2,0x, ab 40 3,0x.' },
+            { title: 'Durchrauschen / Verpassen (-1 s)', text: 'Ohne Stopp durch einen Knoten fahren oder ihn aus dem Bild fliegen lassen kostet 1 Sekunde und setzt den Multiplikator auf 1,0x (keine Punktabzüge).' },
+            { title: 'Level 1–10', text: 'Mit der Punktzahl steigen Knotentempo (bis 1.800 px/s) und Knotenzahl (bis 5); die Knoten werden kleiner.' },
           ],
-          aboutTitle: "Über Bremskontrolle & Neuromotorische Inhibition",
+          aboutTitle: 'Über das Flick-Stopp-Training',
           aboutSections: [
-            {
-              title: "Kinetisches Bremsen & Reaktionshemmung",
-              content: "Reaction Chain isoliert und schult Ihre motorische Verzögerungsfähigkeit und Bewegungsinhibition. Statt Zielobjekte nur anzuklicken, müssen Sie die Flugbahn schneiden und Ihre antagonistische Unterarmmuskulatur zwingen, den Bewegungsimpuls innerhalb des Knotens vollständig aufzufangen."
-            },
-            {
-              title: "Logan-Pferderennmodell & First-Shot-Stabilisierung",
-              content: "Regelmäßiges Training des kinetischen Stopps restrukturiert die Signalübertragung im Nucleus subthalamicus und Motorkortex (Logan et al., 1984). Dies eliminiert lästiges Overflicking und sorgt für felsenfeste Fadenkreuz-Stabilisierung in Shootern wie CS2 und Valorant."
-            }
+            { title: 'Nur das Stoppen üben', content: 'Reaction Chain isoliert das Abbremsen auf dem Ziel. Es gibt keinen Klick; Punkte gibt es nur, wenn der Cursor im Knoten vollständig steht.' },
+            { title: 'Wettlauf zwischen Start und Stopp', content: 'Ein bekanntes Modell beschreibt Starten und Stoppen als Wettlauf zweier Prozesse (Logan & Cowan, 1984). Kommt der Stopp zu spät, schießt der Cursor übers Ziel. Eine Wirkung des Drills ist nicht belegt; er dient dem Vergleich eigener Runden.' },
           ],
           aboutCards: [
-            {
-              title: "Zielgruppe",
-              desc: "FPS-Spieler, die Overflicking abstellen wollen, und Athleten, die rasche neuromuskuläre Bremskraft benötigen.",
-              bgClass: "bg-blue-600/30",
-              iconClass: "text-blue-400"
-            },
-            {
-              title: "Trainierte Fertigkeiten",
-              desc: "Präzise Verzögerung, Haftreibungskontrolle, Stop-Signal-Inhibition (SSRT) und räumliche Interzeption.",
-              bgClass: "bg-emerald-600/30",
-              iconClass: "text-emerald-400"
-            },
-            {
-              title: "Kinetisches Bremsen",
-              desc: "Knoten bis 1.800 px/s abfangen und unter 1,5 px/Frame stoppen, um den 3,0x Multiplikator zu maximieren.",
-              bgClass: "bg-purple-600/30",
-              iconClass: "text-purple-400"
-            }
-          ]
+            { title: 'Für wen', desc: 'FPS-Spieler, die weniger überflicken wollen, und alle, die das Abbremsen der Maus üben möchten.', bgClass: 'bg-blue-600/30', iconClass: 'text-blue-400' },
+            { title: 'Was du übst', desc: 'Bremszeitpunkt, Stoppen in kleinen Zielen und das Abfangen von Zielen, die quer durchs Bild fliegen.', bgClass: 'bg-emerald-600/30', iconClass: 'text-emerald-400' },
+            { title: 'Stopp-Kriterium', desc: 'Langsamer als 1,5 Pixel pro Frame innerhalb des Knotens zählt als Stopp.', bgClass: 'bg-purple-600/30', iconClass: 'text-purple-400' },
+          ],
         }}
       >
         <DrillGuide {...guideProps} />
-        <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+        <RelatedDrills />
       </ReactionChainClient>
     </>
   );

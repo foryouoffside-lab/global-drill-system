@@ -57,7 +57,7 @@ const RULES_ITEMS = [
   { title: "Complete Ladder Rungs", text: "Step 4 rungs Left/Right in exact sequence as ladders scroll downwards." },
   { title: "Combo Multiplier", text: "Chain unbroken ladder completions to build combo multiplier up to 3.0x max." },
   { title: "Level Progression", text: "Score increases level every 250 PTS. Scroll speed accelerates & rung precision tightens." },
-  { title: "Missed Rung", text: "Missing a rung or allowing ladder to scroll off resets combo multiplier to 1.0x." }
+  { title: "Missed Ladder", text: "Letting a ladder reach the bottom before all 4 rungs are stepped resets the combo. No points or time are deducted." }
 ];
 
 const ABOUT_TEXT = `Motor Sequencing trains bilateral hand-eye coordination, rhythmic mouse sweeps, and motor pattern execution. Modeled after physical athletic agility ladders, players sweep their crosshair left and right across descending rungs in strict sequential order.
@@ -683,12 +683,12 @@ export default function MotorSequencingClient({ copy = {} } = {}) {
           <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Agility Ladder Drills"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
+            {copy?.subtitle && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy.subtitle}
+              </p>
+            )}
           </div>
         )}
 

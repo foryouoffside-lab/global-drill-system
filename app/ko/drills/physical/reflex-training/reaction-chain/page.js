@@ -6,12 +6,12 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/ko/drills/physical/reflex-training/reaction-chain';
 const title = "오버에임 교정 훈련 | 마우스 에임 브레이킹 | SkillDrills";
-const description = "표적을 맞힌 뒤 커서를 정확히 멈추는 무료 오버에임 교정 훈련. 마우스 에임 브레이킹으로 오버플릭과 정지 조작을 연습하세요.";
+const description = "무료 오버에임 교정 훈련. 화면 가장자리에서 날아오는 노드 위에서 커서를 완전히 멈추세요. 멈추지 못하고 지나치거나 놓치면 1초가 줄어듭니다. 45초 동안 마우스 에임 브레이킹과 정지 타이밍을 연습합니다.";
 
 export const metadata = {
   title,
   description,
-  keywords: ["오버에임 교정", "오버에임 트레이닝", "오버플릭 교정", "마우스 에임 브레이킹", "마우스 정지 연습", "에임 정지 훈련", "정지 조작 연습", "무료 에임 연습"],
+  keywords: ["오버에임 교정", "오버에임 트레이닝", "오버플릭 교정", "마우스 에임 브레이킹", "마우스 정지 연습", "에임 정지 훈련", "정지 조작 연습"],
   alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain') },
   openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
   twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
@@ -31,18 +31,12 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "훈련 드릴",
-      "item": "https://skilldrills.online/ko/drills"
+      "name": "피지컬 드릴",
+      "item": "https://skilldrills.online/ko/drills/physical"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "반사신경 훈련",
-      "item": "https://skilldrills.online/ko/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
       "name": "오버에임 교정 · 마우스 에임 브레이킹",
       "item": "https://skilldrills.online/ko/drills/physical/reflex-training/reaction-chain"
     }
@@ -60,7 +54,7 @@ const softwareApplicationSchema = {
   url,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
 };
 
 const webApplicationSchema = {
@@ -73,7 +67,7 @@ const webApplicationSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url,
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
 };
 
 const videoGameSchema = {
@@ -86,7 +80,7 @@ const videoGameSchema = {
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -101,7 +95,7 @@ const faqs = [
   },
   {
     "q": "점수는 어떻게 얻나요?",
-    "a": "노드를 맞히고 노드 안에서 커서를 완전히 멈추면(ARREST READY 표시) 50점을 얻습니다. 실수 없이 이어가면 콤보 배율이 최대 3.0배까지 오릅니다. 멈추지 않고 스쳐 지나가거나 놓치면 콤보가 초기화되며 점수가 깎이지는 않습니다."
+    "a": "노드 안에서 커서를 완전히 멈추면(ARREST READY 표시) 50점 × 콤보 배율을 얻습니다. 클릭은 필요 없습니다. 연속 성공 5회에 1.2배, 10회에 1.5배, 25회에 2.0배, 40회에 최대 3.0배가 됩니다. 멈추지 않고 노드를 스쳐 지나가거나 노드가 화면 밖으로 나가면 남은 시간이 1초 줄고 콤보가 1.0배로 돌아갑니다. 점수는 깎이지 않습니다."
   },
   {
     "q": "멈춘 것으로 인정되는 기준은 무엇인가요?",
@@ -109,7 +103,7 @@ const faqs = [
   },
   {
     "q": "난이도는 어떻게 올라가나요?",
-    "a": "점수가 오를수록 노드 속도가 최대 1,800px/s까지 빨라지고 유효 정지 반경이 줄어듭니다. 기본 시간은 45초입니다. 속도가 빨라질수록 멈출 여유가 줄어 감속 타이밍이 더 중요해집니다."
+    "a": "레벨은 점수에 따라 1부터 10까지 오릅니다(250, 500, 1,000, 2,000, 3,500, 5,500, 8,000, 11,000, 15,000점). 노드 속도는 360px/s에서 1,800px/s까지, 동시에 나오는 노드는 1개에서 5개까지 늘고, 노드 반경은 15px에서 6px로 줄어듭니다. 한 판은 45초이며 실수할 때마다 1초씩 줄어듭니다."
   },
   {
     "q": "멈추는 것이 가속하는 것보다 어려운가요?",
@@ -125,7 +119,7 @@ const faqs = [
   },
   {
     "q": "포인터 잠금과 마우스 설정은 어떻게 하나요?",
-    "a": "이 드릴은 시작하면 화면에 포인터 잠금을 요청하며, 일시 정지 후 화면을 클릭하면 다시 잠깁니다. 평소 쓰는 DPI와 감도로 시작하고, 설정을 바꿨다면 바꾸기 전후 점수를 같은 조건에서 비교하세요. 입력이 가공되지 않는다는 보장은 하지 않습니다."
+    "a": "카운트다운이 끝나면 포인터 잠금이 켜지고 마우스 움직임으로만 조작합니다. 터치 전용 기기에서는 시작할 수 없습니다. 평소 쓰는 DPI와 감도로 시작하고, 설정을 바꿨다면 바꾸기 전후 점수를 같은 조건에서 비교하세요."
   },
   {
     "q": "기록은 어디에 저장되나요?",
@@ -178,7 +172,7 @@ const guideProps = {
   "intro": [
     "리액션 체인은 빠르게 다가오는 노드를 맞히고 노드 안에서 커서를 완전히 멈추는 브라우저 훈련입니다. 표적을 지나쳐 버리는 오버에임과 오버플릭을 줄이려면 마지막에 멈추는 동작이 중요하고, 이 드릴은 그 동작만 따로 연습하게 합니다.",
     "움직임을 시작하는 명령과 멈추는 명령이 경쟁한다는 모형이 있습니다(Logan & Cowan, 1984). 또 빠른 조준은 먼저 크게 이동하고 마지막에 작게 보정하는 두 단계로 설명됩니다(Woodworth, 1899). 표적이 작을수록 정밀하게 멈춰야 하는 관계는 피츠의 법칙으로 알려져 있습니다(Fitts, 1954).",
-    "노드 속도는 점수에 따라 최대 1,800px/s까지 빨라지고 유효 정지 반경은 줄어듭니다. 커서 속도가 프레임당 1.5px 미만이 되면 정지로 판정합니다.",
+    "노드는 화면 네 가장자리 중 한 곳에서 직선으로 날아옵니다. 노드 속도는 점수에 따라 360px/s에서 1,800px/s까지 빨라지고 노드는 작아집니다. 노드 안에서 커서 속도가 프레임당 1.5px 미만이 되면 정지로 판정하고, 그보다 빠르게 지나가면 실수로 처리해 1초를 뺍니다.",
     "점수는 같은 마우스, 감도, 모니터에서 비교하세요. 주사율과 입력 장치도 지연에 영향을 줄 수 있습니다(Woods et al., 2015). 결과는 연습 기록이며 게임 실력이나 등급을 보장하지 않습니다."
   ],
   "benchmarks": {
@@ -232,12 +226,12 @@ const guideProps = {
       },
       {
         "name": "스쳐 지나가지 않기",
-        "desc": "노드를 스치며 클릭하는 습관은 정지 판정을 못 받고 콤보를 끊습니다. 속도보다 정확한 정지를 먼저 챙기세요.",
+        "desc": "노드 위를 빠르게 스쳐 지나가면 정지 판정을 못 받고 1초를 잃으며 콤보도 끊깁니다. 속도보다 정확한 정지를 먼저 챙기세요.",
         "tips": "정지 상태를 잠깐 유지하는 연습을 합니다."
       },
       {
         "name": "콤보 관리",
-        "desc": "한 번 놓치면 콤보가 1.0배로 돌아갑니다. 무리하게 속도를 올리기보다 안정적으로 이어가세요.",
+        "desc": "한 번 놓치면 콤보가 1.0배로 돌아가고 1초가 줄어듭니다. 무리하게 속도를 올리기보다 안정적으로 이어가세요.",
         "tips": "점수의 많은 부분이 높은 콤보 구간에서 나오므로 침착하게 이어갑니다."
       }
     ]
@@ -246,7 +240,7 @@ const guideProps = {
     "포인터 잠금이 켜진 상태에서 커서를 중앙에 둡니다.",
     "노드가 나타나면 커서를 크게 움직여 접근합니다.",
     "경계 직전에 감속해 노드 안에서 커서를 완전히 멈춥니다.",
-    "45초 동안 연속으로 멈춰 콤보와 점수를 쌓습니다."
+    "45초 동안 연속으로 멈춰 콤보와 점수를 쌓습니다. 실수마다 1초가 줄어듭니다."
   ],
   "audience": "표적을 자꾸 지나치는 오버에임을 연습으로 줄여 보고 싶은 FPS 게이머와, 마우스 정지 동작을 연습하려는 사용자.",
   faqs,
@@ -293,8 +287,6 @@ export default function LocalizedReactionChainPageKo() {
             bestScore: "최고 점수",
             getReady: "준비하세요"
           },
-          pauseTitle: "훈련 일시 정지",
-          pauseSubtitle: "화면을 클릭하면 포인터 잠금이 다시 활성화됩니다.",
           resultLabels: {
             newBest: "최고 기록 달성",
             points: "최종 점수",
@@ -315,19 +307,19 @@ export default function LocalizedReactionChainPageKo() {
               "text": "실수 없이 연속으로 정지에 성공하면 콤보 배율이 최대 3.0배까지 오릅니다."
             },
             {
-              "title": "스쳐 지나감과 놓침",
-              "text": "멈추지 않고 노드를 스쳐 지나가거나 놓치면 콤보가 초기화됩니다(점수 차감은 없음)."
+              "title": "스쳐 지나감과 놓침 (-1초)",
+              "text": "멈추지 않고 노드를 스쳐 지나가거나 노드가 화면 밖으로 나가면 1초가 줄고 콤보가 1.0배로 초기화됩니다(점수 차감은 없음)."
             },
             {
               "title": "속도 증가",
-              "text": "점수가 오를수록 노드 속도가 최대 1,800px/s까지 빨라지고 유효 정지 반경이 줄어듭니다."
+              "text": "점수에 따라 레벨 1~10이 오르며 노드 속도는 최대 1,800px/s, 동시 노드는 최대 5개까지 늘고 노드는 작아집니다."
             }
           ],
           aboutTitle: "오버에임 교정 훈련 안내",
           aboutSections: [
             {
               "title": "멈추는 동작 따로 연습하기",
-              "content": "리액션 체인은 표적을 맞힌 뒤 커서를 멈추는 동작을 따로 연습하게 합니다. 단순히 클릭하는 것이 아니라 노드 안에서 속도를 줄여 완전히 멈춰야 점수를 얻습니다."
+              "content": "리액션 체인은 표적 위에서 커서를 멈추는 동작을 따로 연습하게 합니다. 클릭은 없으며 노드 안에서 속도를 줄여 완전히 멈춰야 점수를 얻습니다."
             },
             {
               "title": "시작 명령과 멈춤 명령의 경쟁",

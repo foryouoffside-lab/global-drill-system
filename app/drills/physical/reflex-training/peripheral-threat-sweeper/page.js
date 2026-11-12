@@ -191,7 +191,7 @@ const faqSchema = {
       name: 'What happens during a central core breach?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Allowing a threat node to reach the central core causes a breach, resetting your active combo multiplier to 1.0x and triggering a red flash. If penalty mode is enabled, breaches also deduct 0.8 seconds from the clock.',
+        text: 'Allowing a threat node to reach the central core causes a breach, resetting your active combo multiplier to 1.0x and triggering a red flash. Each breach also costs 1 second of clock time.',
       },
     },
     {

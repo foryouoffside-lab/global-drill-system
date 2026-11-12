@@ -4,378 +4,142 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Germany (DE)
-// Primary Intent: Reaktionstest Online Kostenlos, Reflexe Trainieren Online, Peripheres Sehen Trainieren
-// German Gaming/Cognitive Context: Gefahrenzone Ausweichen, LoL Skillshot Ausweichen, Hand-Auge-Koordination
-// High-Demand, Low-Competition Target Keywords:
-//   - "Reaktionstest Online Kostenlos" (High intent online reflex test)
-//   - "Reflexe Trainieren Online" (Active skill enhancement search)
-//   - "Peripheres Sehen Trainieren" (Broad visual awareness query)
-//   - "Reaktionstest Spiel" (Gamified testing query)
-//   - "Gefahrenzone Ausweichen" (Tactical avoidance term)
-//   - "Maus Reaktionstest" (Peripheral input latency query)
-//   - "Hand-Auge-Koordination Trainieren" (Physical cognitive skill query)
-//   - "Fitts Gesetz Training" (Speed-accuracy biomechanics)
-//   - "Treisman Merkmalsintegration" (Parallel search science)
-// ============================================================
+const url = 'https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion';
+const title = "Raster-Ausweichspiel | Gefahrenfelder meiden | SkillDrills";
+const description = "Kostenloses Raster-Ausweichspiel: Bring den Mauszeiger im 3x3-Raster aus orange blinkenden Gefahrenfeldern, bevor sie explodieren. 45 Sekunden pro Runde.";
 
 export const metadata = {
-  title: "Raster-Ausweichspiel | Gefahren erkennen | SkillDrills",
-  description: "Kostenloses Raster-Ausweichspiel online: Erkenne Gefahren im 3x3-Gitter und trainiere deine Reaktion in 15 Leveln direkt im Browser.",
-  keywords: [
-    "Reaktionstest online kostenlos",
-    "Reaktionszeit Test",
-    "peripheres Sehen Test",
-    "Ausweichspiel",
-    "Maus Ausweichspiel",
-    "Reaktionsspiel online",
-    "3x3 Raster Spiel",
-    "räumliche Reaktion",
-    "Reflex Test",
-    "Reaktionszeit peripheres Sehen"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion',
-    languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Raster-Ausweichspiel | Gefahren erkennen | SkillDrills",
-    description: "Kostenloses Raster-Ausweichspiel online: Erkenne Gefahren im 3x3-Gitter und trainiere deine Reaktion in 15 Leveln direkt im Browser.",
-    url: 'https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion',
-    siteName: 'SkillDrills',
-    locale: 'de_DE',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Raster-Ausweichspiel | Gefahren erkennen | SkillDrills",
-    description: "Kostenloses Raster-Ausweichspiel online: Erkenne Gefahren im 3x3-Gitter und trainiere deine Reaktion in 15 Leveln direkt im Browser.",
-  },
+  title,
+  description,
+  keywords: ["Raster-Ausweichspiel", "Gefahrenfeldern ausweichen", "3x3-Raster Spiel", "Ausweichspiel Maus", "Browserspiel Ausweichen"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'de_DE', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Körperliches Training",
-      "item": "https://skilldrills.online/de/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Koordinationstraining",
-      "item": "https://skilldrills.online/de/drills/physical/coordination"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Dynamisches Raster-Ausweichtraining",
-      "item": "https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion"
-    }
-  ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Peripheral_vision"],
-  "name": "Dynamisches Raster-Ausweichtraining & Online-Reaktionstest",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Kostenloses browserbasiertes Trainingswerkzeug zur Messung und Schulung von peripherem Sehen, Reaktionszeit und ballistischer Fluchtkoordination in einem 3x3-Gefahrenraster.",
-  "url": "https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/de"
-  },
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
-};
-
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Dynamisches Raster-Ausweichtraining Web-App",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas und Zeigererfassung (Pointer Lock) fähiger moderner Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion",
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Startseite', item: 'https://skilldrills.online/de' },
+    { '@type': 'ListItem', position: 2, name: 'Koordinationsspiele', item: 'https://skilldrills.online/de/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Koordination', item: 'https://skilldrills.online/de/drills/physical/coordination' },
+    { '@type': 'ListItem', position: 4, name: 'Raster-Ausweichspiel', item: url },
+  ],
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Raster-Ausweichspiel (Dynamic Grid Evasion)",
-  "url": "https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion",
-  "description": "Kostenloses Action-Reflexspiel zum Ausweichen vor Rasterexplosionen und zur Schulung der Hand-Auge-Reaktionszeit.",
-  "genre": [
-    "Reflex Game",
-    "Action",
-    "Evasion Game",
-    "Coordination"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Raster-Ausweichspiel (Dynamic Grid Evasion)',
+  url,
+  description,
+  genre: ['Action Game', 'Browser Game'],
+  gamePlatform: ['Web Browser', 'Desktop'],
+  applicationCategory: 'Game',
+  operatingSystem: 'All',
+  inLanguage: 'de',
+  dateModified: '2026-11-10',
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
+
+const faqs = [
+  { q: "Wie funktioniert das Raster-Ausweichspiel?", a: "Das Spielfeld ist ein 3x3-Raster. In jeder Welle blinken einige Felder orange als Warnung. Läuft die Warnzeit ab, explodieren diese Felder rot. Ist dein Mauszeiger in diesem Moment außerhalb der gewarnten Felder, hast du die Welle überstanden. 0,35 Sekunden nach der Explosion startet die nächste Welle; eine Runde dauert 45 Sekunden." },
+  { q: "Wann wird die Zeigerposition geprüft?", a: "Nur im Moment der Explosion. Du darfst während der Warnung durch Gefahrenfelder fahren; entscheidend ist, dass der Zeiger bei der Explosion in einem sicheren Feld steht. Der Zeiger startet in der Mitte, und auch das Mittelfeld kann ein Gefahrenfeld werden." },
+  { q: "Wie werden Punkte und Combo berechnet?", a: "Jede überstandene Welle bringt 100 Punkte mal Combo-Multiplikator. Der Multiplikator liegt bei 1,1x ab 3 Wellen in Folge, 1,25x ab 5, 1,5x ab 10, 2,0x ab 20 und 2,5x ab 30. Im Code gibt es 3,0x ab 50 in Folge, aber in 45 Sekunden sind höchstens gut 40 Wellen möglich, also ist 2,5x der real erreichbare Höchstwert." },
+  { q: "Wie steigt die Schwierigkeit?", a: "Jede Runde beginnt auf Level 1. Das Level steigt pro 250 Punkte um 1 und zusätzlich um 1 pro 4 Wellen in Folge. Mit steigendem Level schrumpft die Warnzeit von 1,4 auf 0,45 Sekunden, und die Gefahrenfelder wachsen von 3 auf 7, sodass nur 2 sichere Felder bleiben. Beide Werte erreichen ihre Grenze bei Level 15." },
+  { q: "Was passiert, wenn mich eine Explosion trifft?", a: "Die Combo fällt auf 0 zurück, es gibt einen roten Blitz und ein kurzes Wackeln. Punkte und Restzeit werden nicht abgezogen. Den roten Blitz kannst du während des Spiels unten rechts ausschalten." },
+  { q: "Wie wird die Bewertung vergeben?", a: "Der Endscore wird mit einem Referenzwert von 17.000 Punkten verglichen (B ab 6.120, C ab etwa 3.450, D ab 1.530 Punkten). Selbst wenn du in 45 Sekunden jede Welle überstehst, sind rechnerisch nur rund 8.400 Punkte möglich; die realistisch höchste Bewertung ist hier also B." },
+  { q: "Welche Steuerung wird benutzt?", a: "Nur die Maus. Beim Start wird der Zeiger gesperrt (Pointer Lock) und die Empfindlichkeit aus den Seiteneinstellungen übernommen. Auf der Tastatur gibt es nur Esc zum Beenden. Auf reinen Touch-Geräten lässt sich der Zeiger nicht bewegen, daher empfehlen wir einen PC mit Maus." },
+  { q: "Was ist der Unterschied zu einem Dodge Game mit Geschossen?", a: "Im Raster-Ausweichspiel wählst du eines von 9 festen Feldern und wechselst hinein, bevor die Warnung abläuft. Wenn du lieber Geschossen ausweichst, die von allen Rändern kommen, nutze Quick Dodge in derselben Kategorie." },
+  { q: "Ist das Spiel kostenlos und wo werden Ergebnisse gespeichert?", a: "Ja, kostenlos, ohne Installation oder Konto direkt im Browser. Bestscore und beste Combo liegen nur im lokalen Speicher deines Browsers." },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Welche kognitiven und motorischen Fähigkeiten werden im dynamischen Raster-Ausweichtest trainiert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dieser Test trainiert die periphere Reizverarbeitung, die visuelle Wahl-Reaktionszeit (Choice Reaction Time) sowie die exogene Aufmerksamkeitslenkung im Kortex. Durch die multidirektionale Fluchtbewegung wird die Koordination zwischen primärem ballistischem Bewegungsimpuls und friktionaler Abbremsung geschult."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum ist die zentrale Blickverankerung (Covert Attention) effektiver als das Verfolgen der Maus mit den Augen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nach Treismans Merkmal-Integrationstheorie (1980) verarbeitet das periphere Gesichtsfeld Farbkontraste parallel. Wer den Blick starr auf die Maus richtet, verliert 150 bis 200 Millisekunden durch serielle Blicksakkaden zu den Außenfeldern. Ein ruhiger Ankerblick im Zentrum deckt alle 9 Zellen simultan ab."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie hilft dieses Rastertraining beim Ausweichen von Fähigkeiten in Spielen wie LoL, Valorant oder CS2?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In MOBA-Titeln wie League of Legends oder Taktik-Shootern wie Valorant kündigen sich Flächenfähigkeiten (Skillshots, Molotovs, Granaten) oft im peripheren Sichtfeld an. Dieses Training automatisiert den Fluchtreflex, sodass die Hand innerhalb von unter 250 Millisekunden intuitiv in die freie Zone zuckt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie verändern sich Vorwarnzeit und Gefahrenzonen bei steigendem Level?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Alle 250 Punkte steigt das Level (bis Level 15). Die bernsteinfarbene Vorwarnzeit sinkt von anfangs 1,40 Sekunden bis auf 0,45 Sekunden ab. Gleichzeitig explodieren bis zu 7 der 9 Zellen simultan, sodass nur noch 2 sichere Fluchtfelder übrig bleiben."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wird die Spielzeit verkürzt oder Punktabzug verhängt, wenn man von einer Explosion getroffen wird?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Ein Treffer setzt lediglich den Multiplikator zurück auf 1,0x und löst einen roten visuellen Warnblitz aus. Die feste Testdauer von 45 Sekunden und die bereits erzielten Basispunkte bleiben vollständig erhalten."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welchen Stellenwert hat das Fitts'sche Gesetz bei schnellen Raster-Ausweichbewegungen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nach Paul M. Fitts (1954) steigt der Schwierigkeitsindex mit größerer Distanz und kleinerer Zielbreite. Bei schrumpfenden Vorwarnzeiten zwingt das System das motorische Kleinhirn zu einer explosiven Beschleunigung, während die feste Zellgrenze absolute Präzision beim Abstoppen verlangt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Hardware-Einstellungen optimieren das Ausweichtraining im Browser?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Empfohlen werden eine Maus-Abtastrate von mindestens 1.000 Hz (1 ms Polling-Intervall), das Abschalten jeglicher Windows-Zeigerbeschleunigung und ein Monitor mit 144 Hz oder 240 Hz zur Minimierung der Bildframe-Latenz."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Mausgriff-Technik bietet die schnellste Bremskontrolle im 3x3-Raster?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Claw-Grip und Fingertip-Grip bieten signifikante Vorteile: Sie ermöglichen blitzschnelle Richtungswechsel aus den Fingergelenken und nutzen Handballen und kleinen Finger als mechanische Reibungsbremse auf dem Mauspad."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie hoch ist die zeitliche Messgenauigkeit der Reaktionserfassung im Browser?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Zeitmessung basiert auf performance.now(), deren Auflösung browserabhängig bei etwa 1 ms liegt. Frame-Quantisierungen des Monitors (16,67 ms bei 60 Hz) können Messschwankungen erzeugen; Abweichungen unter 5 ms gelten als messtechnisches Rauschen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Werden persönliche Leistungsdaten oder Mausbewegungen auf Server übertragen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Alle Berechnungen, Latenzen und Punktzahlen werden zu 100 % lokal auf Ihrem Gerät ausgewertet und im lokalen Speicher (localStorage) abgelegt. Es findet keinerlei Tracking oder externe Datenübertragung statt."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'de',
+  dateModified: '2026-11-10',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
+const steps = [
+  "Klicke auf Start; nach 3 Sekunden Countdown beginnt der Zeiger in der Mitte des Rasters.",
+  "Erkenne die orange blinkenden Gefahrenfelder und suche ein Feld ohne Warnung.",
+  "Bewege den Zeiger vor der Explosion in das sichere Feld und halte ihn innerhalb der Feldgrenzen.",
+  "Übersteh Welle um Welle, halte die Combo und hol in 45 Sekunden deinen Bestscore.",
+];
+
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Trainingsanleitung: Reflexe und Gefahrenvermeidung im Raster schulen",
-  "description": "Schritt-für-Schritt-Protokoll zur peripheren Erkennung von Gefahrenimpulsen und zur blitzschnellen ballistischen Mausflucht in sichere Zellen.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Mauszeiger zentral verankern und Raster periphär erfassen",
-      "text": "Starten Sie den Test, positionieren Sie die Maus im Zentrum und halten Sie die Augen auf der Mitte, um alle 9 Felder periphär im Blick zu behalten.",
-      "url": "https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Bernsteinfarbene Warnimpulse lokalisieren",
-      "text": "Registrieren Sie aufblitzende Gefahrenränder und identifizieren Sie augenblicklich die unmarkierten, sicheren Zellen.",
-      "url": "https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Ballistischer Flucht-Flick vor Detonation",
-      "text": "Schnellen Sie die Maus mit einem gezielten Flick in das sichere Feld und bremsen Sie vor der roten Explosion sauber ab.",
-      "url": "https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Combo-Multiplikator auf 3,0x steigern",
-      "text": "Weichen Sie wiederholt fehlerfrei aus, um den Combo-Faktor auf 3,0x zu maximieren und den 45-Sekunden-Rekord zu brechen.",
-      "url": "https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'So spielst du das Raster-Ausweichspiel',
+  description: 'In 4 Schritten Gefahrenfeldern im 3x3-Raster ausweichen.',
+  step: steps.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, name: `Schritt ${i + 1}`, text, url: `${url}#step-${i + 1}` })),
 };
 
 const gridGuide = {
-  heading: "Wissenschaftlicher Leitfaden: Reaktionsschnelligkeit & Periphere Gefahrenvermeidung",
-  subtitle: "Treisman-Merkmalsintegration, Posner-Raumorientierung und Woodworth-Ballistik im dynamischen Ausweichtraining",
+  heading: 'Anleitung zum Raster-Ausweichspiel',
   intro: [
-    "Das dynamische Raster-Ausweichtraining (Dynamic Grid Evasion) fordert das visuelle und motorische System heraus: In einem 3x3-Zellenraster zünden in dichter Folge unberechenbare Gefahrenexplosionen. Im Gegensatz zu einfachen Klick-Reaktionstests muss das Gehirn hier nicht nur das Auftreten eines Signals registrieren, sondern simultan 9 Zonen überwachen, Gefahrenmuster decodieren und in Millisekunden eine unbedrohte Rettungszelle ansteuern.",
-    "Nach der bahnbrechenden Merkmalsintegrationstheorie von Anne Treisman und Garry Gelade (1980) verarbeitet das Sehzentrum primäre visuelle Reize (wie leuchtende Farbwechsel oder Umrandungen) parallel und präattentiv über das gesamte Gesichtsfeld. Wer seinen Blick im Zentrum des 3x3-Gitters ruhen lässt, nutzt die hohe Bewegungsempfindlichkeit der peripheren Netzhautrezeptoren, um Gefahren ohne zeitraubende Blicksprünge (Sakkaden) augenblicklich zu erfassen.",
-    "Das Paradigma der räumlichen Orientierung von Michael Posner (1980) belegt, dass exogene Warnsignale automatisch die verdeckte Aufmerksamkeit (Covert Attention) anziehen. Sinkt die Vorwarnzeit in höheren Leveln von 1,4 auf 0,45 Sekunden und verbleiben nur noch 2 freie Zellen, greift das Zwei-Phasen-Modell zielgerichteter Bewegungen nach Robert S. Woodworth (1899): Ein kraftvoller ballistischer Anfangsimpuls katapultiert den Zeiger in die sichere Zone, gefolgt von einer präzisen Reibungsbremsung an den Zellgrenzen.",
-    "Präzisions- und Hardwarehinweis: Die Reaktionszeiterfassung erfolgt lokal im Browser über die hochauflösende performance.now()-Schnittstelle. Bildwiederholfrequenzen (60 Hz = 16,7 ms Framezeit vs. 240 Hz = 4,1 ms) und USB-Abtastraten (125 Hz vs. 1.000 Hz) bedingen physikalische Toleranzen. Differenzen unter 5 ms gelten als reguläres Messrauschen. Sämtliche Messwerte verbleiben privat in Ihrem Browser."
+    "Das Raster-Ausweichspiel ist ein Browserspiel, in dem du den Mauszeiger im 3x3-Raster aus orange gewarnten Gefahrenfeldern bringst, bevor sie explodieren. Du weichst also keinen fliegenden Objekten aus, sondern wählst eines von 9 Feldern. Schnelle Entscheidung und sauberes Abbremsen gehören beide dazu.",
+    "Mit steigendem Level schrumpft die Warnzeit von 1,4 auf 0,45 Sekunden, und es werden bis zu 7 der 9 Felder zu Gefahrenfeldern. Später bleiben nur 2 sichere Felder, und für ein Feld-für-Feld-Prüfen ist keine Zeit. Wie bei Posners Hinweisreiz-Versuchen (Posner, 1980) hilft es, den Kontrast zwischen blinkenden und dunklen Feldern auf einen Blick zu lesen.",
+    "Schnelle Bewegungen bestehen aus einem großen Anfangsimpuls und einer kleinen Korrektur am Ende (Woodworth, 1899). Wer das richtige Feld wählt, aber über die Feldgrenze hinausschießt, wird trotzdem getroffen; also übe, innerhalb des Feldes zu stoppen.",
+    "Die Ergebnisse sind Übungswerte innerhalb von SkillDrills, kein medizinischer Test, kein Sehtest und keine Messung sportlicher Leistung. Vergleiche Werte nur mit derselben Maus, Empfindlichkeit und demselben Monitor.",
   ],
   benchmarks: {
-    title: "Wissenschaftliche 5-Stufen-Normtabelle für das Raster-Ausweichtraining",
-    headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert (45s)", "Erreichtes Level", "Minimale Warnzeit", "Neuromotorisches Profil"],
+    title: 'Bewertungsstufen (SkillDrills-Übungsbereiche)',
+    headers: ['Bewertung', 'Punkte', 'Hinweis'],
     rows: [
-      ["Stufe 1: Fortgeschrittenes Ausweichen ", "Apex Grid Evader", "17.000+ Punkte", "Level 12 – 15", "0,45 – 0,60 s", "Perfekte parallele Reizverarbeitung, reflexartige ballistische Trajektorien, fehlerfreie Bremskontrolle"],
-      ["Stufe 2: Meister-Raumscanner ", "Master Spatial Scanner", "13.000 – 16.999 Punkte", "Level 9 – 11", "0,65 – 0,80 s", "Exzellente exogene Aufmerksamkeit, sicheres Navigieren in engen Fluchtgassen unter 6 Gefahrenzellen"],
-      ["Stufe 3: Kompetenter Gefahrenvermeider", "Proficient Hazard Dodger", "9.500 – 12.999 Punkte", "Level 6 – 8", "0,85 – 1,05 s", "Solide Hand-Auge-Koordination im eSports-Bereich, gelegentliche Verzögerungen bei Mehrfachgefahren"],
-      ["Stufe 4: Durchschnittlicher Überlebender", "Intermediate Sector Evader", "6.000 – 9.499 Punkte", "Level 3 – 5", "1,10 – 1,25 s", "Typische Alltagsreaktionszeit, foveale Suchbewegungen verzögern ballistische Ausweichschritte"],
-      ["Stufe 5: Einsteiger / Erholungsbedarf", "Novice Blast Survivor", "< 6.000 Punkte", "Level 1 – 2", "> 1,25 s", "Verzögerte Reizerfassung durch Tunnelblick, Neigung zum Übersteuern der rettenden Zellbegrenzung"]
+      ['B', 'ab 6.120', 'fast jede Welle in 45 Sekunden überstanden'],
+      ['C', 'ab ca. 3.450', 'mehr als die Hälfte der Wellen in Folge überstanden'],
+      ['D', 'ab 1.530', 'sicherer Wechsel ins freie Feld nach der Warnung'],
+      ['F', 'unter 1.530', 'Einstieg'],
     ],
-    note: "Normiert nach den chronometrischen Standards der Aufmerksamkeitsforschung (Treisman 1980, Posner 1980, Woodworth 1899, Woods et al. 2015). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
+    note: 'Die Stufen vergleichen den Endscore mit 17.000 Punkten und sind SkillDrills-Übungsbereiche. A und höher sind in einer 45-Sekunden-Runde rechnerisch nicht erreichbar. Keine Nutzerstatistik, keine Perzentile.',
   },
   techniques: {
-    title: "Methodische Trainingsprotokolle zur Steigerung der Reaktionsgeschwindigkeit",
+    title: 'Tipps für mehr Punkte',
     items: [
-      {
-        name: "Zentraler Ankerblick und periphere Aufmerksamkeitsverteilung (Covert Attention)",
-        desc: "Fixieren Sie die zentrale Zelle des 3x3-Rasters mit ruhigem Blick, anstatt mit den Augen hektisch dem Mauszeiger hinterherzujagen. Nutzen Sie Ihr peripheres Gesichtsfeld zur Erkennung von Farbwechseln.",
-        tips: "Ein entspannter Blick auf die Mitte spart 80 bis 120 ms Sakkadenzeit ein und ermöglicht die simultane Reizerfassung aller 9 Zellen."
-      },
-      {
-        name: "Ballistischer Impuls und abrupte Abbremsung nach Woodworth (Impulse-Variability)",
-        desc: "Vermeiden Sie kriechende, zögerliche Mausbewegungen. Trainieren Sie einen zweiphasigen motorischen Ablauf: Zuerst ein explosiver ballistischer Flick-Impuls, gefolgt von sofortiger mechanischer Reibung.",
-        tips: "Nutzen Sie Handballen und Ring-/Kleinfinger auf dem Mauspad als mechanische Bremse, um Punktlandungen in der sicheren Zelle zu unterstützen."
-      },
-      {
-        name: "Hardware-Kalibrierung: Abtastrate (Polling Rate) und Display-Reaktionszeit",
-        desc: "Stellen Sie Ihre Gaming-Maus auf mindestens 1.000 Hz USB-Polling-Rate ein, um die Eingabeverzögerung auf 1 ms zu senken.",
-        tips: "Schalten Sie die Windows-Zeigerbeschleunigung aus, damit Handbewegung und Zeigerweg in einem gleichmäßigeren Verhältnis stehen."
-      },
-      {
-        name: "0,45s-Extremzonen-Protokoll: Flucht in die nächstgelegene Nachbarzelle",
-        desc: "In fortgeschrittenen Leveln mit 7 Gefahrenfeldern bleibt keine Zeit, nach der 'perfekten' Zelle zu suchen.",
-        tips: "Springen Sie ohne Zögern in die erstbeste freie Nachbarzelle, die Ihr peripheres Sehen meldet."
-      }
-    ]
+      { name: 'Dunkle Felder zuerst suchen', desc: 'Statt die blinkenden Gefahrenfelder zu zählen, such direkt das Feld ohne Warnung.', tips: 'Spät in der Runde gibt es nur 2 sichere Felder; nimm das nähere.' },
+      { name: 'Nächstes sicheres Feld', desc: 'Bei rund 0,5 Sekunden Warnzeit schaffst du weite Wege kaum noch. Wechsle ins nächstgelegene sichere Feld.', tips: 'Waagerecht oder senkrecht ist oft kürzer als diagonal.' },
+      { name: 'Im Feld stoppen', desc: 'Gewertet wird die exakte Zeigerposition. Auf der Feldgrenze kann der Zeiger dem Nachbarfeld zugerechnet werden.', tips: 'Ziele auf die Feldmitte.' },
+      { name: 'Combo halten', desc: 'Je länger die Serie, desto schneller steigen Multiplikator und Level. Ein riskanter weiter Weg mit Treffer kostet die Combo.', tips: 'Lieber das sichere nahe Feld.' },
+    ],
   },
-  steps: [
-    "Nehmen Sie eine ergonomische Haltung ein und positionieren Sie die Maus in der Rastermitte.",
-    "Sobald die Runde startet, erfassen Sie die aufblitzenden bernsteinfarbenen Gefahrenzellen periphär.",
-    "Flicken Sie den Zeiger vor Ablauf des Countdowns in ein sicheres, unbeleuchtetes Feld.",
-    "Bauen Sie fehlerfrei einen 3,0x-Combo-Multiplikator auf und halten Sie die Serie 45 Sekunden lang."
-  ],
-  audience: "FPS- und MOBA-Gamer (LoL, Valorant, CS2, Apex Legends), Ballsportler und alle, die periphere Wahrnehmung und Reaktionszeit verbessern möchten.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015')
+  steps,
+  audience: 'Alle, die ein Ausweichspiel mit Gefahrenfeldern im Raster suchen, und Spieler, die schnelles Entscheiden und präzises Abbremsen mit der Maus üben wollen.',
+  faqs,
+  sources: pickSources('posner1980', 'woodworth1899', 'fitts1954'),
 };
 
-export default function DynamicGridEvasionGermanPage() {
+export default function DynamicGridEvasionPageDe() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <DynamicGridEvasionClient
         copy={{
-          title: "Raster-Ausweichspiel online",
-          subtitle: "Gefahren erkennen und sicher ausweichen • 15 Level",
-          rulesTitle: "Trainingsregeln & Punktesystem",
+          title: "Raster-Ausweichspiel",
+          hudLabels: { score: "Punkte", timeLeft: "Restzeit", bestScore: "Bestscore", bestCombo: "Beste Combo" },
+          rulesTitle: "Regeln und Punktesystem",
           rules: [
-            { title: "Gefahrenwarnung erkennen", text: "In jeder Welle blinken bedrohte Zellen mit einer bernsteinfarbenen Warnumrandung auf." },
-            { title: "Blitzschnell in sichere Zelle flicken", text: "Bewegen Sie den Zeiger vor Detonationsbeginn in ein unbedrohtes, freies Feld." },
-            { title: "Combo-Multiplikator aufbauen", text: "Erfolgreiches Ausweichen belohnt Sie mit Punkten und steigert den Combo-Faktor bis zu 3,0x." },
-            { title: "Verhalten bei Treffern", text: "Wer von einer Explosion erfasst wird, verliert den Combo-Bonus (Rückfall auf 1,0x), behält aber Zeit und Basispunkte." }
+            { title: "Warnung", text: "In jeder Welle blinken einige Felder orange. Läuft die Warnzeit ab, explodieren sie." },
+            { title: "Ins sichere Feld", text: "Steht der Zeiger bei der Explosion außerhalb der Gefahrenfelder, gibt es 100 Punkte mal Combo-Multiplikator." },
+            { title: "Level", text: "Pro 250 Punkte und pro 4 Wellen in Folge steigt das Level. Die Warnzeit sinkt von 1,4 auf 0,45 s, die Gefahrenfelder steigen von 3 auf 7." },
+            { title: "Getroffen", text: "Nur die Combo fällt auf 0. Punkte und die 45-Sekunden-Runde bleiben unverändert." },
           ],
-          aboutTitle: "Über das Raster-Ausweichtraining",
-          aboutHeading: "Periphere Reizverarbeitung & Raumorientierung",
-          aboutText: "Dieses Training basiert auf Treismans Merkmalsintegrationstheorie (1980) und Posners Paradigma der räumlichen Orientierung (1980). Überwachen Sie das gesamte 3x3-Raster mit periphärem Sehen und weichen Sie Flächenangriffen, Skillshots und Gefahrenzonen in Millisekunden aus."
+          aboutTitle: "Was ist das Raster-Ausweichspiel?",
+          aboutHeading: "Gefahrenfeldern im 3x3-Raster ausweichen",
+          aboutText: "Im Raster-Ausweichspiel blinken Felder eines 3x3-Rasters orange, bevor sie explodieren. Du bringst den Mauszeiger rechtzeitig in ein sicheres Feld. Mit steigendem Level wird die Warnzeit kürzer und es gibt mehr Gefahrenfelder. Es geht um schnelles Entscheiden und präzises Abbremsen der Maus, nicht um eine medizinische Messung.",
+          aboutCards: [
+            { title: "Für wen", desc: "Für alle, die ein Ausweichspiel im Raster mögen oder schnelles Reagieren auf Warnungen üben wollen." },
+            { title: "Was du übst", desc: "Gefahrenfelder und sichere Felder unterscheiden, das nächste Feld wählen, den Zeiger im Feld stoppen." },
+            { title: "Ablauf", desc: "45 Sekunden fest, jede Runde ab Level 1. Treffer kosten weder Punkte noch Zeit." },
+          ],
         }}
       />
       <DrillGuide guide={gridGuide} />

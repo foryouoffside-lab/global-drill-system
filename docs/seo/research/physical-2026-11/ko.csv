@@ -1,0 +1,41 @@
+﻿market,phrase,cc,lang,bing_exact,bing_broad,status,source,assigned_page,role
+ko,피지컬 테스트,kr,ko-KR,101,167,ok,bing_kw 2026-11-10,hub,primary
+ko,피지컬 테스트 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,hub,secondary (GSC 5i pos 8.2)
+ko,마우스 피지컬 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,hub,secondary
+ko,피지컬 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill
+ko,민첩성 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill
+ko,순발력 훈련,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill (reaction-adjacent)
+ko,손떨림 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill (medical intent)
+ko,마우스 손떨림 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill
+ko,에임 흔들림,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,balance-training/stability-challenge,body copy only
+ko,협응력 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,coordination/cross-body-movement,secondary
+ko,눈 손 협응력 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,coordination/cross-body-movement,primary
+ko,협응력 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,coordination/cross-body-movement,secondary
+ko,도형 순서 기억하기,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,coordination/complex-pattern,secondary
+ko,도형 기억하기 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,coordination/complex-pattern,secondary
+ko,도형 순서 기억하기 연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,coordination/complex-pattern,secondary
+ko,공간 기억력 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,memory/spatial-memory/object-location,TAKEN (memory) - drop from complex-pattern
+ko,피하기 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,reflex-training/quick-dodge,secondary
+ko,마우스 피하기 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,reflex-training/quick-dodge,primary
+ko,장애물 피하기 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,reflex-training/quick-dodge,secondary
+ko,총알 피하기 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,reflex-training/quick-dodge,secondary
+ko,똥피하기 게임,kr,ko-KR,793,838,ok,bing_kw 2026-11-10,reflex-training/quick-dodge,body-copy comparison only (not the named game) - owner decision
+ko,칸 피하기 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,coordination/dynamic-grid-evasion,primary-family
+ko,점프 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,fitness/jump-sequence,secondary
+ko,점프 게임 사이트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill (platformer intent)
+ko,클릭 게임,kr,ko-KR,21,21,ok,bing_kw 2026-11-10,fitness/speed-drill,primary
+ko,마우스 클릭 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,fitness/speed-drill,secondary
+ko,순발력 클릭 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill (순발력 = reaction)
+ko,클릭 게임 사이트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill
+ko,에임 반응속도 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill (current speed-drill title; 0)
+ko,마우스 반응속도 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill (reaction-adjacent)
+ko,자 떨어뜨리기 반응속도,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill (ruler-drop not the mechanic)
+ko,자 잡기 반응속도,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill
+ko,주변시야 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,reflex-training/peripheral-threat-sweeper,secondary
+ko,주변 시 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,-,kill
+ko,주변시야 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,reflex-training/peripheral-threat-sweeper,secondary
+ko,오버에임,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,reflex-training/reaction-chain,secondary
+ko,오버에임 트레이닝,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,reflex-training/reaction-chain,secondary
+ko,스텝 레더,kr,ko-KR,0,0,ok,bing_kw 2026-11-10,fitness/agility-ladder,secondary
+ko,클릭속도 테스트,kr,ko-KR,1134,1134,ok,bing_kw 2026-11-10,motor/movement-speed/rapid-tapping,TAKEN (canary)
+ko,마우스 게임,kr,ko-KR,276,276,ok,bing_kw 2026-11-10,hub,secondary

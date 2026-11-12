@@ -5,13 +5,13 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/ko/drills/physical/reflex-training/drop-catch';
-const title = "자 떨어뜨리기 반응속도 게임 | 초록 표적 잡기 | SkillDrills";
-const description = "떨어지는 초록 표적만 클릭하고 붉은 함정은 피하는 무료 반응속도 게임. 자 떨어뜨리기 테스트처럼 낙하 타이밍과 순발력을 연습하세요.";
+const title = "떨어지는 표적 잡기 게임 | 초록만 클릭, 빨강은 패스 | SkillDrills";
+const description = "떨어지는 표적 잡기 게임: 화면 위에서 떨어지는 초록 표적만 클릭하고 붉은 함정은 그냥 보내세요. 초록을 잡으면 +2초, 놓치거나 함정·빈 곳을 누르면 -1초. 설치 없이 브라우저에서 무료로 즐기세요.";
 
 export const metadata = {
   title,
   description,
-  keywords: ["낙하 반응속도 게임", "자 반응속도 테스트", "자 떨어뜨리기 반응속도", "반응속도 게임", "순발력 게임", "선택 반응속도 테스트", "반사신경 게임", "드롭 캐치"],
+  keywords: ["떨어지는 표적 잡기 게임", "낙하 표적 클릭", "함정 피하기 게임", "초록 표적 클릭 게임", "드롭 캐치"],
   alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch') },
   openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
   twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
@@ -43,7 +43,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "자 떨어뜨리기 반응속도 게임 · 드롭 캐치",
+      "name": "떨어지는 표적 잡기 게임 · 드롭 캐치",
       "item": "https://skilldrills.online/ko/drills/physical/reflex-training/drop-catch"
     }
   ]
@@ -52,7 +52,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: "드롭 캐치 낙하 반응속도 게임",
+  name: "드롭 캐치 떨어지는 표적 잡기 게임",
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -60,44 +60,44 @@ const softwareApplicationSchema = {
   url,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: "드롭 캐치 낙하 반응속도 게임 웹 앱",
+  name: "드롭 캐치 떨어지는 표적 잡기 게임 웹 앱",
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'HTML5 Canvas를 지원하는 최신 브라우저',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url,
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: "드롭 캐치 낙하 반응속도 게임",
+  name: "드롭 캐치 떨어지는 표적 잡기 게임",
   url,
   description,
   genre: ['Action Game', 'Aim Trainer'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const faqs = [
   {
-    "q": "자 떨어뜨리기 반응속도 테스트와 무엇이 다른가요?",
-    "a": "자 떨어뜨리기 테스트는 떨어지는 자를 잡은 위치로 반응 시간을 가늠하는 방법입니다. 드롭 캐치는 화면에서 떨어지는 표적을 클릭하되, 초록 표적만 잡고 붉은 함정은 누르지 않는 선택 과제입니다. 단순 반응이 아니라 판단이 들어가고, 결과는 점수로 기록되는 연습용 게임입니다."
+    "q": "자 떨어뜨리기 테스트와 같은 건가요?",
+    "a": "아닙니다. 자 떨어뜨리기 테스트는 실제 자를 잡은 위치로 반응 시간을 재는 방법이고, 이 게임은 반응 시간을 측정하지 않습니다. 드롭 캐치는 화면에서 떨어지는 표적 중 초록만 클릭하고 붉은 함정은 누르지 않는 선택 게임이며, 결과는 점수로 기록됩니다."
   },
   {
     "q": "초록 표적과 붉은 함정은 어떻게 구분하나요?",
-    "a": "초록 표적은 클릭해서 점수와 추가 시간을 얻고, 붉은 함정은 클릭하지 않고 지나가게 둡니다. 함정을 누르면 콤보가 초기화됩니다. 색을 먼저 확인하고 누르는 습관이 점수와 콤보를 지킵니다."
+    "a": "초록 표적은 클릭해서 점수와 추가 시간을 얻고, 붉은 함정은 클릭하지 않고 지나가게 둡니다. 함정을 누르면 콤보가 초기화되고 남은 시간이 1초 줄어듭니다. 색을 먼저 확인하고 누르는 습관이 점수와 콤보를 지킵니다."
   },
   {
     "q": "선택 반응이 단순 반응보다 느린 이유는 무엇인가요?",
@@ -113,11 +113,11 @@ const faqs = [
   },
   {
     "q": "점수와 시간은 어떻게 계산되나요?",
-    "a": "초록 표적을 잡을 때마다 100점에 콤보와 레벨 배수가 곱해지고 남은 시간이 0.6초 늘어납니다. 기본 시간은 45초이며 콤보 배율은 최대 3.0배입니다. 초록 표적을 놓치거나 함정을 누르면 콤보가 1.0배로 돌아갑니다."
+    "a": "초록 표적을 잡을 때마다 100점에 콤보와 레벨 배수가 곱해지고 남은 시간이 2초 늘어납니다(최대 60초). 시작 시간은 45초이며 콤보 배율은 최대 3.0배입니다. 초록 표적을 놓치거나 함정이나 빈 곳을 누르면 콤보가 1.0배로 돌아가고 1초가 줄어듭니다."
   },
   {
     "q": "페널티는 어떻게 적용되나요?",
-    "a": "초록 표적이 바닥에 닿아 사라지거나 함정을 누르면 콤보가 초기화됩니다. 설정에서 페널티를 켜면 실수 1회마다 0.8초가 줄어듭니다. 무작정 빠르게 누르기보다 색을 확인하는 편이 유리합니다."
+    "a": "초록 표적이 화면 아래로 빠져나가거나, 붉은 함정을 누르거나, 표적이 없는 빈 곳을 클릭하면 콤보가 초기화되고 남은 시간이 1초 줄어듭니다. 이 감점은 항상 적용되며 설정으로 끌 수 없습니다. 무작정 빠르게 누르기보다 색을 확인하는 편이 유리합니다."
   },
   {
     "q": "어디를 보면서 해야 하나요?",
@@ -143,7 +143,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: "낙하 반응속도 게임 하는 방법",
+  name: "떨어지는 표적 잡기 게임 하는 방법",
   description: "초록 표적은 잡고 붉은 함정은 피하는 4단계 연습법입니다.",
   step: [
   {
@@ -174,9 +174,9 @@ const howToSchema = {
 };
 
 const dropGuide = {
-  "heading": "낙하 반응속도 게임 가이드",
+  "heading": "떨어지는 표적 잡기 게임 가이드",
   "intro": [
-    "드롭 캐치는 화면 위에서 떨어지는 표적 중 초록색만 클릭하고 붉은 함정은 누르지 않는 브라우저 반응속도 게임입니다. 자 떨어뜨리기 테스트처럼 낙하 타이밍을 보지만, 색을 구분하는 선택 과제가 더해졌습니다.",
+    "드롭 캐치는 떨어지는 표적 잡기 게임입니다. 화면 위에서 떨어지는 표적 중 초록색만 클릭하고 붉은 함정은 누르지 않습니다. 초록을 잡으면 2초가 늘고, 놓치거나 잘못 누르면 1초가 줄어듭니다. 실제 자를 잡는 자 떨어뜨리기 테스트와 달리 반응 시간을 재지 않는 점수 게임입니다.",
     "자극을 구분해서 반응해야 하는 선택 반응은 단순 반응보다 시간이 더 걸리는 경향이 있습니다(Donders, 1868). 또 표적을 누르려는 충동과 멈추려는 과정이 경쟁한다는 설명이 있습니다(Logan et al., 1984). 이 드릴은 두 가지를 가볍게 연습하는 게임입니다.",
     "떨어지는 대상이 닿기까지 남은 시간을 사람이 가늠하는 방식은 리(Lee, 1976)의 연구에서 다뤄집니다. 낙하 속도가 400px/s에서 1,250px/s까지 빨라지므로 늦게 누를수록 어려워집니다.",
     "점수는 같은 장비와 모니터에서 비교하세요. 결과는 연습 기록이며 의학적 반응속도 검사나 선수 등급이 아닙니다."
@@ -233,7 +233,7 @@ const dropGuide = {
       },
       {
         "name": "함정은 그냥 보내기",
-        "desc": "붉은 함정은 놓쳐도 손해가 없습니다. 눌렀을 때만 콤보가 사라지니 망설여지면 누르지 마세요.",
+        "desc": "붉은 함정은 그냥 떨어지게 두면 손해가 없습니다. 누르면 콤보가 사라지고 1초가 줄어드니 망설여지면 누르지 마세요.",
         "tips": "함정 비율이 높아지는 후반에는 정확도를 먼저 지킵니다."
       },
       {
@@ -252,9 +252,9 @@ const dropGuide = {
     "커서를 화면 중앙에 두고 상단에서 중간까지 넓게 봅니다.",
     "표적이 떨어지면 초록인지 붉은색인지 먼저 확인합니다.",
     "초록 표적은 클릭하고, 붉은 함정은 누르지 않고 보냅니다.",
-    "추가 시간 0.6초와 콤보를 유지하며 점수를 올립니다."
+    "초록을 잡을 때마다 얻는 2초와 콤보를 유지하며 점수를 올립니다."
   ],
-  "audience": "자 떨어뜨리기 반응속도 테스트를 온라인에서 해 보고 싶은 사용자와, 선택 반응과 충동 조절을 가볍게 연습하려는 게이머.",
+  "audience": "떨어지는 표적을 색으로 구분해 잡는 클릭 게임을 찾는 사용자와, 선택 반응과 충동 조절을 가볍게 연습하려는 게이머.",
   faqs,
   sources: pickSources('donders1868', 'lee1976', 'logan1984', 'woodworth1899', 'fitts1954', 'woods2015'),
 };
@@ -288,7 +288,7 @@ export default function LocalizedDropCatchPageKo() {
       />
       <DropCatchClient
         copy={{
-          title: "자 떨어뜨리기 반응속도 게임 · 드롭 캐치",
+          title: "떨어지는 표적 잡기 게임",
           subtitle: "낙하 표적을 잡고 붉은 함정을 피하기",
           hudLabels: {
             score: "현재 점수",
@@ -298,10 +298,10 @@ export default function LocalizedDropCatchPageKo() {
           },
           rulesTitle: "진행 규칙과 점수 계산",
           rulesItems: [
-            { title: "초록색 타깃 포착 & 시간 보너스", text: "떨어지는 초록 표적을 클릭하면 100점(콤보와 레벨 배수 적용)과 0.6초의 추가 시간을 얻습니다." },
+            { title: "초록색 타깃 포착 & 시간 보너스", text: "떨어지는 초록 표적을 클릭하면 100점(콤보와 레벨 배수 적용)과 2초의 추가 시간(최대 60초)을 얻습니다." },
             { title: "콤보 시스템 증폭", text: "실수 없이 연속으로 맞히면 콤보 배수가 최대 3.0배까지 오릅니다." },
             { title: "점진적 난이도 상향", text: "1,750점마다 레벨이 상승하며 낙하 속도(최대 1250 px/s)와 붉은 함정 출현 확률(최대 45%)이 높아집니다." },
-            { title: "함정 오클릭 및 놓침 페널티", text: "초록 표적을 놓치거나 붉은 함정을 클릭하면 콤보가 초기화되고, 페널티를 켠 경우 0.8초가 줄어듭니다." }
+            { title: "함정 오클릭 및 놓침 페널티", text: "초록 표적을 놓치거나 붉은 함정이나 빈 곳을 클릭하면 콤보가 초기화되고 1초가 줄어듭니다." }
           ],
           aboutTitle: "드롭 캐치 안내",
           aboutSections: [

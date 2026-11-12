@@ -5,386 +5,177 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — Germany (DE)
-// Primary Intent: Sprungkraft Trainieren Übungen, Plyometrisches Training Sprungkraft, Vertikalsprung Trainieren
-// German Context: Sprungkraft & Timing im Volleyball/Basketball/Fußball & Flugbahnantizipation
-// High-Demand, Low-Competition Target Keywords:
-//   - "Sprungkraft Trainieren Übungen" (High-intent vertical jump workout search)
-//   - "Plyometrisches Training Sprungkraft" (Scientific plyometric power conditioning)
-//   - "Sprungkraft Trainieren Zuhause" (Home vertical power training)
-//   - "Vertikalsprung Trainieren" (Vertical jump measurement & performance drill)
-//   - "Flugbahn Antizipation Training" (Trajectory anticipation & interception drill)
-//   - "Abfang-Timing Spiel" (Dynamic target interception timing)
-//   - "Dehnungs-Verkürzungs-Zyklus" (Stretch-shortening cycle biomechanics)
-//   - "Flugbahn Berechnen Spiel" (Trajectory estimation game)
-//   - "Sprungkraft Volleyball Übungen" (Volleyball jump spike timing)
-//   - "Reaktionsschnelligkeit Sprung" (Jump reflex & cadence)
+// SEO (2026-11-10, docs/seo/research/physical-2026-11/de.md)
+// Primary: Sprung-Zielspiel (no-demand descriptive).
+// Deleted the dead base title and override claiming Sprungkraft / Plyometrik:
+// this is a charge-release-steer mouse game, not jump training.
 // ============================================================
 
+const TITLE = 'Sprung-Zielspiel: aufladen, abspringen, steuern | SkillDrills';
+const DESCRIPTION = 'Kostenloses Sprung-Zielspiel: Maustaste halten zum Aufladen, loslassen zum Abspringen und in der Luft auf ein bewegtes Ziel lenken. 45 Sekunden pro Runde.';
+const URL = 'https://skilldrills.online/de/drills/physical/fitness/jump-sequence';
+
 export const metadata = {
-  title: 'Sprungkraft Trainieren – Plyometrik | SkillDrills',
-  description: 'Kostenloses Sprungkraft-Training online: Fange parabelförmige Sprungziele am Scheitelpunkt ab und trainiere Timing und plyometrischen Rhythmus.',
-  keywords: [
-    "Sprungkraft Trainieren Übungen",
-    "Plyometrisches Training Sprungkraft",
-    "Sprungkraft Trainieren Zuhause",
-    "Vertikalsprung Trainieren",
-    "Flugbahn Antizipation Training",
-    "Abfang-Timing Spiel",
-    "Dehnungs-Verkürzungs-Zyklus",
-    "Flugbahn Berechnen Spiel",
-    "Sprungkraft Volleyball Übungen",
-    "Reaktionsschnelligkeit Sprung"
-  ],
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: ['Sprung-Zielspiel', 'Sprungspiel Maus', 'Timing-Spiel', 'aufladen abspringen steuern', 'Browserspiel kostenlos'],
   alternates: {
-    canonical: 'https://skilldrills.online/de/drills/physical/fitness/jump-sequence',
+    canonical: URL,
     languages: getAlternateLanguages('/drills/physical/fitness/jump-sequence'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Sprungkraft Trainieren & Plyometrisches Training – Flugbahn-Abfang-Spiel | SkillDrills",
-    description: "Kostenloses Online-Training für Sprungkraft & plyometrisches Timing. Schulen Sie vertikalen Impuls, parabolische Flugbahn-Steuerung und das präzise Abfangen dynamischer Ziele.",
-    url: 'https://skilldrills.online/de/drills/physical/fitness/jump-sequence',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
     siteName: 'SkillDrills',
     locale: 'de_DE',
     type: 'website',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Sprungkraft Trainieren & Plyometrisches Training – Flugbahn-Abfang-Spiel | SkillDrills",
-    description: "Kostenloses Online-Training für Sprungkraft & plyometrisches Timing. Schulen Sie vertikalen Impuls, parabolische Flugbahn-Steuerung und das präzise Abfangen dynamischer Ziele.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
 };
-
-Object.assign(metadata, {
-  title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills',
-  description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele.',
-  keywords: ['Sprungkrafttraining', 'Sprungkoordination', 'Sprungfolge', 'plyometrisches Training', 'Vertikalsprung Training', 'Sprungspiel', 'Reaktionsschnelligkeit Sprung', 'Flugbahn Training', 'Sprung Timing', 'Koordination Sprung'],
-  openGraph: { ...metadata.openGraph, title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills', description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele.' },
-  twitter: { ...metadata.twitter, title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills', description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele.' },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Körperliches Training",
-      "item": "https://skilldrills.online/de/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Fitness & Schnelligkeit",
-      "item": "https://skilldrills.online/de/drills/physical/fitness"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Sprungkraft & Plyometrisches Training",
-      "item": "https://skilldrills.online/de/drills/physical/fitness/jump-sequence"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills Startseite", "item": "https://skilldrills.online/de" },
+    { "@type": "ListItem", "position": 2, "name": "Körperliches Training", "item": "https://skilldrills.online/de/drills/physical" },
+    { "@type": "ListItem", "position": 3, "name": "Fitness", "item": "https://skilldrills.online/de/drills/physical/fitness" },
+    { "@type": "ListItem", "position": 4, "name": "Sprung-Zielspiel", "item": URL }
   ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Plyometrics"],
-  "name": "Sprungkraft- & Flugbahn-Abfang-Trainer",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Kostenloses biomechanisches Trainingswerkzeug zur Schulung von vertikalem Sprungimpuls, parabolischer Flugbahnsteuerung und dynamischem Zielabfangen.",
-  "url": "https://skilldrills.online/de/drills/physical/fitness/jump-sequence",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/de"
-  },
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Sprungkraft-Training Web-App",
+  "name": "Sprung-Zielspiel",
+  "description": "Kostenloses 45-Sekunden-Browserspiel: aufladen, abspringen und in der Luft auf ein bewegtes Ziel lenken.",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas und Zeigererfassung (Pointer Lock) fähiger moderner Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/de/drills/physical/fitness/jump-sequence",
+  "browserRequirements": "Aktueller Browser mit HTML5 Canvas und Maus",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": URL,
   "inLanguage": "de",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-10"
 };
 
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Sprungsequenz-Abfangspiel (Jump Sequence)",
-  "url": "https://skilldrills.online/de/drills/physical/fitness/jump-sequence",
-  "description": "Kostenloses Action-Geschicklichkeitsspiel zur Flugbahnsteuerung und zum Abfangen fliegender Ziele.",
-  "genre": [
-    "Action Game",
-    "Physics Game",
-    "Timing Drill",
-    "Coordination"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "inLanguage": "de",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const FAQS = [
+  {
+    q: "Was ist das Sprung-Zielspiel?",
+    a: "Ein kostenloses Browserspiel: Du lädst den Punkt am Boden (deine Spielfigur) auf, lässt ihn abspringen und lenkst ihn in der Luft auf ein Ziel, das über den Bildschirm treibt. Eine Runde dauert 45 Sekunden."
+  },
+  {
+    q: "Wie steuere ich?",
+    a: "Fadenkreuz auf die Spielfigur am Boden legen und die Maustaste gedrückt halten: Der Sprung lädt sich auf (nach etwa 1 Sekunde voll). Loslassen, und die Figur springt senkrecht nach oben; in der Luft folgt sie der waagerechten Position der Maus. Mit Escape beendest du den Drill."
+  },
+  {
+    q: "Wie werden Punkte und Combo berechnet?",
+    a: "Berührt die Figur in der Luft das Ziel, ist es ein Treffer. Ein Treffer bringt auf Level 1 5 Grundpunkte, mit steigendem Level mehr, multipliziert mit dem Combo-Multiplikator der Trefferserie (maximal 3,0x ab 50 Treffern in Folge)."
+  },
+  {
+    q: "Was ändert sich mit steigendem Level?",
+    a: "Alle 250 Punkte steigt das Level um 1, dazu alle 4 Treffer in Serie ein Bonuslevel. Das Ziel fliegt anfangs mit 120 px/s, auf Level 15 mit etwa 800 px/s (bei langer Serie bis 900 px/s) und danach immer schneller. Sein Radius schrumpft von 35 px auf 12 px."
+  },
+  {
+    q: "Was passiert, wenn ich das Ziel verfehle?",
+    a: "Landet die Figur, ohne das Ziel berührt zu haben, werden Trefferserie und Combo zurückgesetzt und es gibt einen roten Blitz. Punkte und Restzeit bleiben, und ein neues Ziel erscheint."
+  },
+  {
+    q: "Hat das Spiel einen echten Trainingseffekt?",
+    a: "Nein. Es ist ein Timing-Spiel, bei dem du Ladedauer und Flugrichtung mit der Maus steuerst. Es misst und trainiert weder Sprunghöhe noch Beinkraft und verspricht keinen Trainingseffekt."
+  },
+  {
+    q: "Wie wird die Note am Ende vergeben?",
+    a: "Die Note hängt nur von der Endpunktzahl ab: ab 15.343 S+, ab 12.283 S, ab 9.563 A, ab 6.120 B, ab 3.443 C, ab 1.530 D, darunter F. Das sind SkillDrills-Übungsstufen, keine Vergleichsstatistik mit anderen Spielern."
+  },
+  {
+    q: "Wo werden meine Ergebnisse gespeichert?",
+    a: "Bestwert, beste Combo und höchstes Level werden nur im localStorage deines Browsers gespeichert und nicht an einen Server gesendet. Ohne Anmeldung und ohne Installation kostenlos spielbar."
   }
-};
+];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "de",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Wie überträgt sich das digitale Impuls- und Flugbahn-Training auf die reale Sprungkraft im Sport (Volleyball, Basketball, Fußball)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das Training modelliert Paavo V. Komis (2000) Dehnungs-Verkürzungs-Zyklus (DVZ): Das Nervensystem lernt, elastische Energie im Moment des Bodenkontakts aufzuladen und als explosive Kraftentwicklungsrate (RFD) abzurufen. Die laterale Steuerung der Flugbahn schult das räumliche Vorstellungsvermögen für das Abfangen von Bällen am höchsten Sprungpunkt (Apex)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was versteht man unter dem Dehnungs-Verkürzungs-Zyklus (DVZ / SSC) nach Paavo V. Komi (2000)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Dehnungs-Verkürzungs-Zyklus beschreibt die physiologische Kopplung einer exzentrischen Vordehnung des Muskel-Sehnen-Apparates mit einer unmittelbar anschließenden konzentrischen Verkürzung. Durch den Dehnungsreflex (Ia-Spindel-Afferenzen) und elastische Speichereffekte im Sehnengewebe wird die Absprungleistung um bis zu 25 % gegenüber rein statischen Sprüngen gesteigert."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Funktion haben Vorwärtsmodelle des Kleinhirns (Kawato, 1999) bei der Flugbahnsteuerung im Sprung?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Da während des freien Fluges keine Bodenreaktionskraft mehr aufgebaut werden kann, reicht visuelles Feedback (100–150 ms Latenz) für Korrekturen nicht aus. Das Kleinhirn nutzt interne Vorwärtsmodelle (Forward Models), um die parabolische Flugkurve im Voraus zu berechnen und antizipierende Steuerungsimpulse zur Schnittpunktkonvergenz auszusenden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie funktioniert die optische Tau-Theorie (David N. Lee, 1976) zur Berechnung der Time-to-Contact (TTC)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das Sehzentrum errechnet die verbleibende Zeit bis zur Kollision (Time-to-Contact) direkt aus der relativen optischen Expansionsrate des Netzhautbildes – der sogenannten optischen Tau-Variable (τ). Weder die absolute Distanz noch die exakte physikalische Geschwindigkeit müssen getrennt bestimmt werden, was blitzschnelles Abfangen bei bis zu 900 px/s ermöglicht."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie steigern sich Zielgeschwindigkeit und Trefferradius über die 15 Schwierigkeitsstufen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Alle 250 Punkte klettert der Schwierigkeitsgrad um ein Level (bis Level 15). Die Geschwindigkeit der Flugziele beschleunigt von 120 px/s bis auf 900 px/s, während der effektive Trefferradius von 35 px auf 12 px schrumpft. In höheren Stufen erzeugen elastische Wandabpraller unvorhersehbare Flugkurven."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Gibt es Punktabzug oder Zeitverlust, wenn das Ziel verfehlt wird und man am Boden aufkommt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Ein Verfehlen des Ziels setzt lediglich den Combo-Multiplikator auf 1,0x zurück und löst einen roten Warnblitz aus. Die Gesamtpunktzahl und die 45-Sekunden-Uhr bleiben vollständig erhalten, um mutige Höchstgeschwindigkeitsabfänge zu fördern."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Mauseinstellungen (DPI) und Griffstile sind für das laterale Steuern in der Luft am besten geeignet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Fingertip- oder Claw-Grip bietet optimale Hebelverhältnisse: Er erlaubt feine laterale Kurvenanpassungen aus den Fingergelenken und dem Handgelenk innerhalb des kurzen 100-ms-Zeitfensters vor der Scheitelpunkterreichung. Eine mittlere Mausempfindlichkeit (eDPI 200–350) verhindert Übersteuern."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie hält man den optimalen Lande- und Absprung-Rhythmus (Rebound Cadence) aufrecht?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Im Moment der Landung darf die Handbewegung nicht stoppen. Bereits im Landeanflug fixiert der Blick die nächste Zieltrajektorie, sodass im Moment der Bodenberührung die nächste Ladephase ohne Pausenverzug startet – analog zum reaktiven Pufferkontakt im plyometrischen Sprungtraining."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welchen Einfluss haben Gaming-Monitore mit 144 Hz oder 240 Hz auf das Abfangen von Zielen bei 900 px/s?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei 900 px/s springt ein Ziel auf einem 60-Hz-Monitor um 15 Pixel pro Frame; bei 240 Hz sinkt dieser Abstand auf 3,75 Pixel. Dies ermöglicht eine kontinuierliche optische Tau-Berechnung und verhindert, dass das Fadenkreuz an schmalen 12-px-Zielen vorbeirutscht."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Werden während der Trainingseinheit persönliche Bewegungs- oder Leistungsdaten an externe Server übermittelt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Alle Physik- und Latenzberechnungen laufen zu 100 % lokal im Browser via performance.now(). Highscores und Statistiken verbleiben privat im localStorage Ihres Geräts. Es findet keinerlei Tracking oder externe Datenerfassung statt."
-      }
-    }
-  ]
+  "dateModified": "2026-11-10",
+  "mainEntity": FAQS.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
 };
+
+const STEPS = [
+  "Auf Start klicken und nach dem Countdown (3-2-1) das Fadenkreuz auf die Spielfigur am Boden legen.",
+  "Die Höhe des Ziels abschätzen, Maustaste gedrückt halten zum Aufladen und loslassen.",
+  "In der Luft die Maus nach links oder rechts bewegen und die Figur dorthin lenken, wo das Ziel vorbeikommt.",
+  "45 Sekunden lang Treffer aneinanderreihen und so den Combo-Multiplikator hochtreiben."
+];
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Sprungsequenz-Training: 4-Stufen-Protokoll zur Flugbahnsteuerung",
-  "description": "Wissenschaftlich fundierte Anleitung zur Optimierung von Absprungimpuls, parabolischer Flugkurve und optischem Zielabfangen.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Vertikalen Absprungimpuls aufladen (Charge Impulse)",
-      "text": "Positionieren Sie den Zeiger auf dem Basispunkt, halten Sie die Maustaste gedrückt und stimmen Sie den Ladebalken auf die Zielhöhe ab.",
-      "url": "https://skilldrills.online/de/drills/physical/fitness/jump-sequence#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Ballistischer Start & Flugbahnsteuerung (Liftoff & Steering)",
-      "text": "Lassen Sie die Maustaste los für den ballistischen Aufstieg und steuern Sie die Flugkurve mit sanften Mausbewegungen Richtung Zielvektor.",
-      "url": "https://skilldrills.online/de/drills/physical/fitness/jump-sequence#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Optisches Tau-Abfangen am Scheitelpunkt (Tau Interception)",
-      "text": "Verfolgen Sie die Zielannäherung und bringen Sie den eigenen Punkt vor Beginn des Gravitationsabfalls mit dem Zielkern zur Deckung.",
-      "url": "https://skilldrills.online/de/drills/physical/fitness/jump-sequence#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Bodenberührung & Rebound-Kadenz (Touchdown & Rebound)",
-      "text": "Leiten Sie bei der Landung sofort die nächste Ladesequenz ein und halten Sie den 3,0x-Combo-Multiplikator über 45 Sekunden stabil.",
-      "url": "https://skilldrills.online/de/drills/physical/fitness/jump-sequence#step-4"
-    }
-  ]
+  "name": "So spielst du das Sprung-Zielspiel",
+  "description": "Aufladen, abspringen und in der Luft auf ein bewegtes Ziel lenken.",
+  "step": STEPS.map((text, i) => ({ "@type": "HowToStep", "position": i + 1, "name": `Schritt ${i + 1}`, "text": text }))
 };
 
 const jumpGuide = {
-  heading: "Wissenschaftlicher Leitfaden: Sprungkraft-Timing & Parabolische Flugbahnsteuerung",
-  subtitle: "Komi-DVZ-Kinetik, Kawato-Kleinhirn-Vorwärtsmodelle und Lee-Optisches-Tau im dynamischen Abfangtraining",
+  heading: "Sprung-Zielspiel: Anleitung",
   intro: [
-    "Das Training der Sprungsequenz (Jump Sequence Training) überträgt die neuromuskuläre Koordination des Vertikalsprungs auf eine interaktive biomechanische Simulation. Im Volleyball, Basketball, Torwartspiel und im Hochsprung entscheidet nicht allein die maximale Sprunghöhe, sondern die Fähigkeit, den Scheitelpunkt (Apex) einer ballistischen Parabel zeitlich und räumlich exakt mit einem fliegenden Objekt zur Konvergenz zu bringen.",
-    "Nach Paavo V. Komis (2000) Forschung zum Dehnungs-Verkürzungs-Zyklus (DVZ) maximiert der menschliche Bewegungsapparat seine Kraftentwicklungsrate (RFD) durch das elastische Zusammenspiel von Vordehnung und konzentrischem Abstoß. Der Charge-and-Launch-Mechanismus dieses Drills visualisiert diesen Vorgang: Der Athlet lernt, den vertikalen Kraftimpuls intuitiv an die Flughöhe des herannahenden Ziels anzupassen.",
-    "Die Steuerung im freien Flug unterliegt den internen Vorwärtsmodellen des Kleinhirns (Kawato, 1999). Weil in der Luft keine Bodenreaktionskräfte mehr wirken, muss das zentrale Nervensystem die Flugkurve vorausschauend planen. Zusammen mit David N. Lees (1976) optischer Tau-Theorie (τ), die den Kollisionszeitpunkt aus der Bildexpansionsrate ermittelt, wird das Abfangen von Zielen bei Geschwindigkeiten von bis zu 900 px/s trainiert.",
-    "Präzisions- und Hardwarehinweis: Die Zeiterfassung erfolgt lokal im Browser über die hochauflösende performance.now()-Schnittstelle. Bildwiederholfrequenzen (60 Hz = 16,7 ms Framezeit vs. 240 Hz = 4,1 ms) und USB-Abtastraten (125 Hz vs. 1.000 Hz) bedingen physikalische Toleranzen. Differenzen unter 5 ms gelten als reguläres Messrauschen. Sämtliche Messwerte verbleiben privat in Ihrem Browser."
+    "Beim Sprung-Zielspiel kommt es auf zwei Dinge an: wie lange du auflädst und wohin du in der Luft lenkst. Je länger die Maustaste gedrückt bleibt, desto höher der Sprung; in der Luft folgt die Figur der waagerechten Mausposition. Das Ziel treibt über den Bildschirm und prallt an den Rändern ab.",
+    "Eine Runde dauert 45 Sekunden. Jeder Treffer bringt Punkte und verlängert die Serie; mit steigendem Level wird das Ziel schneller und kleiner. Wer landet, ohne zu treffen, verliert nur die Combo, nicht Punkte oder Zeit.",
+    "Um ein bewegtes Ziel zu treffen, muss man den Treffpunkt vorhersagen, nicht die aktuelle Position anpeilen (Lee, 1976). Eine solche Bewegung besteht aus einem vorgeplanten Hauptteil und einer Korrektur am Ende (Woodworth, 1899). Das Spiel übt dieses Timing mit der Maus und hat mit echten Sprüngen nichts zu tun."
   ],
   benchmarks: {
-    title: "Wissenschaftliche 5-Stufen-Normtabelle für das Sprungsequenz-Training",
-    headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert (45s)", "Genauigkeit & Geschwindigkeit", "Gesamtnote", "Neuromotorisches Profil"],
+    title: "Notenstufen (SkillDrills-Übungsstufen)",
+    headers: ["Note", "Endpunktzahl"],
     rows: [
-      ["Stufe 1: Fortgeschrittene Trajektorienkontrolle ", "Apex Trajectory Master", "17.000+ Punkte", "92%+ / 800 – 900 px/s", "Grade S", "Perfekte DVZ-Impulsberechnung, makelloses optisches Tau-Abfangen fliegender Ziele bei 900 px/s (Komi 2000; Kawato 1999; Lee 1976)"],
-      ["Stufe 2: Präzisions-Flugangreifer ", "Precision Aerial Striker", "12.000 – 16.999 Punkte", "84 – 91% / 650 – 799 px/s", "Grade A", "Hervorragende Kleinhirn-Steuerung im freien Flug, stabile Konvergenz auf komprimierte 15–18-px-Ziele"],
-      ["Stufe 3: Kompetenter Sprungabfänger", "Skilled Jump Interceptor", "7.500 – 11.999 Punkte", "75 – 83% / 500 – 649 px/s", "Grade B", "Solides Niveau im Leistungs- und eSport, verlässliche Impulsdosierung und gute Rebound-Rhythmik"],
-      ["Stufe 4: Parabel-Navigator (Durchschnitt)", "Developing Parabola Navigator", "4.000 – 7.499 Punkte", "65 – 74% / 350 – 499 px/s", "Grade C", "Durchschnittliche zeitliche Koordination, bei Zielgeschwindigkeiten über 500 px/s häufen sich Landefehler"],
-      ["Stufe 5: Einsteiger / Basistraining", "Novice Liftoff Trainee", "< 4.000 Punkte", "< 65% / < 350 px/s", "Grade D", "Fehldosierte Ladeimpulse, Verzögerung bei der Flugbahnkorrektur, Übung von Vorsteuerung empfohlen"]
+      ["S+", "ab 15.343"],
+      ["S", "12.283 – 15.342"],
+      ["A", "9.563 – 12.282"],
+      ["B", "6.120 – 9.562"],
+      ["C", "3.443 – 6.119"],
+      ["D", "1.530 – 3.442"],
+      ["F", "unter 1.530"]
     ],
-    note: "Normiert nach den chronometrischen Standards des Dehnungs-Verkürzungs-Zyklus (Komi 2000), der Kleinhirn-Modellierung (Kawato 1999) und der optischen Tau-Theorie (Lee 1976). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
+    note: "Aus der Notenformel des Spiels berechnete SkillDrills-Übungsstufen; keine Vergleichsstatistik und keine Perzentile."
   },
   techniques: {
-    title: "Methodische Trainingsprotokolle für Sprungkraft & Flugbahnsteuerung",
+    title: "Tipps für mehr Punkte",
     items: [
-      {
-        name: "Komi DVZ-Impulsdosierung nach Maß (Komi Impulse Potentiation)",
-        desc: "Laden Sie den Impulsbalken nicht blind auf 100 %. Erfassen Sie die Höhe des Zielobjekts und laden Sie die Energie nur so weit auf, dass der Scheitelpunkt der Flugparabel exakt die Zielhöhe schneidet.",
-        tips: "Führen Sie das Drücken und Loslassen wie das Spannen und Schnellenlassen einer Sehne aus – kurz, explosiv und zielgenau."
-      },
-      {
-        name: "Kawato Kleinhirn-Vorwärtssteuerung in der Luft (Cerebellar Parabolic Steering)",
-        desc: "Blicken Sie während des Flugs nicht auf den eigenen Punkt, sondern auf den vorausberechneten Schnittpunkt. Lassen Sie die Hand der gedachten Kurve sanft vorausgleiten.",
-        tips: "Fliegen Sie dorthin, wo das Ziel in 100 ms sein wird – niemals dorthin, wo es sich gerade befindet."
-      },
-      {
-        name: "Lee Optisches Tau im Landeanflug (Optical Tau Final Interception)",
-        desc: "In den letzten 100 ms vor der Zielberührung fokussiert die Wahrnehmung auf die optische Ausdehnungsrate (τ). Führen Sie mit feinen Fingerbewegungen die Endkorrektur durch.",
-        tips: "Visieren Sie nicht den Rand des Zielkreises an, sondern durchdringen Sie den Kern der Kugel frontal."
-      },
-      {
-        name: "900 px/s Rebound-Kadenz bei Bodenkontakt (Rebound Cadence Maintenance)",
-        desc: "Verharren Sie nach der Landung nicht in Passivität. Starten Sie im Moment des Aufkommens sofort den nächsten Ladezyklus, um einen metronomischen Rebound-Rhythmus zu etablieren.",
-        tips: "Bringen Sie die Maus bereits während des Sinkflugs in die Ausgangsposition für den nächsten Impuls."
-      }
+      { name: "Nur so viel aufladen wie nötig", desc: "Wer immer voll auflädt, springt über das Ziel hinaus. Brich das Aufladen passend zur Höhe des Ziels ab.", tips: "Ladebalken und Zielhöhe vergleichen." },
+      { name: "Vorausschauend lenken", desc: "Nicht dem Ziel hinterherfahren, sondern die Maus dorthin bewegen, wo es gleich vorbeikommt. Die Figur zieht allmählich zur Maus hin.", tips: "Abpraller an den Rändern mit einplanen." },
+      { name: "Nach der Landung sofort weiter", desc: "Nach Treffer oder Fehlversuch erscheint ein neues Ziel. Fadenkreuz gleich wieder auf die Figur legen und neu aufladen.", tips: "Weniger Leerlauf heißt längere Serien." }
     ]
   },
-  steps: [
-    "Nehmen Sie eine aufrechte Haltung ein und positionieren Sie den Zeiger auf dem Basispunkt.",
-    "Erfassen Sie Zielhöhe und Tempo, halten Sie die Taste zum Aufladen gedrückt und lösen Sie aus.",
-    "Steuern Sie die Maus in der Luft lateral, um die Flugparabel mit dem Zielvektor zu schneiden.",
-    "Starten Sie bei der Landung sofort den nächsten Absprung und halten Sie den 3,0x-Combo über 45 Sekunden."
-  ],
-  audience: "Sportler (Volleyball, Basketball, Fußball, Leichtathletik) zur Schulung von Sprunghöhen-Timing und Flugbahngefühl sowie FPS-Gamer für präzise Sprungschüsse und Aerial Tracking.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('komi2000', 'kawato1999', 'lee1976', 'woodworth1899', 'fitts1954', 'woods2015')
+  steps: STEPS,
+  audience: "Wer ein kurzes Timing-Spiel mit der Maus sucht oder das Vorhersagen bewegter Ziele üben will.",
+  faqs: FAQS,
+  sources: pickSources('lee1976', 'woodworth1899', 'kawato1999', 'fitts1954')
 };
 
 export default function JumpSequencePageDe() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <JumpSequenceClient
         copy={{
-          title: "Sprungsequenz & Flugbahn-Abfangen",
-          subtitle: "Vertikaler Absprungimpuls & Flugbahnsteuerung • 15 Level",
-          rulesTitle: "Trainingsregeln & Punktesystem",
+          title: "Sprung-Zielspiel",
+          hudLabels: { score: "Punkte", timeLeft: "Restzeit", bestScore: "Bestwert", bestCombo: "Beste Combo" },
+          rulesTitle: "Spielregeln",
           rules: [
-            { title: "Impuls aufladen und abspringen", text: "Halten Sie die Maustaste auf dem Spielerpunkt gedrückt, um Sprungenergie zu sammeln, und lassen Sie los." },
-            { title: "Flugbahnsteuerung in der Luft", text: "Bewegen Sie die Maus im Flug lateral, um Ihre parabolische Flugkurve auf das fliegende Ziel auszurichten." },
-            { title: "Combo-Multiplikator aufbauen", text: "Jeder erfolgreiche Treffer vor der Landung belohnt Sie mit Punkten und steigert den Combo-Faktor bis auf 3,0x." },
-            { title: "Verhalten bei Fehltritten", text: "Ein Aufkommen am Boden ohne Zieltreffer setzt den Combo-Multiplikator auf 1,0x zurück; Punkte bleiben erhalten." }
+            { title: "Aufladen und abspringen", text: "Fadenkreuz auf die Spielfigur legen und Maustaste gedrückt halten zum Aufladen; loslassen zum senkrechten Absprung." },
+            { title: "In der Luft lenken", text: "Bewege die Maus in der Luft nach links oder rechts; die Figur zieht dorthin und steuert auf das Ziel zu." },
+            { title: "Combo-Multiplikator", text: "Treffer in Serie erhöhen den Multiplikator bis maximal 3,0x." },
+            { title: "Fehlversuch setzt Combo zurück", text: "Landest du ohne Treffer, wird die Combo zurückgesetzt. Punkte und Zeit bleiben." }
           ],
-          aboutTitle: "Über das Sprungsequenz-Training",
-          aboutHeading: "Dehnungs-Verkürzungs-Zyklus (DVZ) und Flugbahnsteuerung",
-          aboutText: "Das Sprungsequenz-Training (Jump Sequence) basiert auf Paavo V. Komis (2000) Dehnungs-Verkürzungs-Zyklus und Mitsuo Kawatos (1999) Kleinhirn-Vorwärtsmodellen. Es trainiert das neuromuskuläre System darin, vertikalen Absprungimpuls millimetergenau an fliegende Ziele anzupassen und Flugbahnen nach David N. Lees (1976) optischer Tau-Theorie im Scheitelpunkt punktgenau abzufangen. Unverzichtbar für Volleyball, Basketball und präzise Sprungschüsse in modernen Action- und Taktik-Shootern."
+          aboutTitle: "Über das Sprung-Zielspiel"
         }}
       />
       <DrillGuide guide={jumpGuide} />

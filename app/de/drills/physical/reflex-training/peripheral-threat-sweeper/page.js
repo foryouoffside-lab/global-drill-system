@@ -4,54 +4,36 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Germany (DE / DE)
-// Primary Intent: peripheres sehen trainieren, peripheres sehen test, blickfeld erweitern
-// German Context: Tunnelblick verhindern in FPS (CS2, Valorant) & Gesichtsfeld/UFOV-Erweiterung für Athleten
-// High-Demand, Low-Competition Target Keywords:
-//   - "peripheres sehen trainieren" (Top high-demand athletic & vision training query)
-//   - "peripheres sehen test" (Core visual field test query)
-//   - "blickfeld erweitern übungen" (Visual field expansion exercises query)
-//   - "reaktionsschnelligkeit trainieren" (Athletic reaction speed query)
-//   - "ufov test online" (Useful Field of View cognitive/clinical query)
-//   - "augentraining online kostenlos" (Free online visual exercise query)
-//   - "tunnelblick vermeiden" (Tunnel vision prevention under stress query)
-//   - "periphere wahrnehmung verbessern" (Improving peripheral perception query)
-//   - "hand-auge-koordination trainieren" (Hand-eye coordination query)
-//   - "visuelle reaktionszeit test" (Visual reaction time test query)
-// ============================================================
+const url = 'https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper';
+const title = "Peripheres Blickfeld Spiel: Randziele abfangen | SkillDrills";
+const description = "Peripheres Blickfeld Spiel: Blick auf den Kern in der Mitte, Ziele vom Rand abfangen. +2 s pro Treffer, 1 s Abzug bei Fehlern. Browserspiel, kein Sehtest.";
 
 export const metadata = {
-  title: "Peripheres Sehen trainieren | Test online",
-  description: "Kostenloser Test für peripheres Sehen im Browser. Halte den Blick in der Mitte, erkenne Randbedrohungen und trainiere dein nutzbares Sehfeld (UFOV).",
+  title,
+  description,
   keywords: [
-    "peripheres sehen trainieren",
-    "peripheres sehen test",
-    "blickfeld erweitern übungen",
-    "test peripheres sehen online",
-    "reaktionsschnelligkeit trainieren",
-    "ufov test online",
-    "augentraining online kostenlos",
-    "tunnelblick vermeiden",
-    "periphere wahrnehmung verbessern",
-    "hand auge koordination trainieren"
+    "Peripheres Blickfeld Spiel",
+    "Bedrohungen am Rand abwehren",
+    "Randziele abfangen",
+    "Tunnelblick Spiel",
+    "Peripheral Threat Sweeper"
   ],
   alternates: {
-    canonical: 'https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper',
+    canonical: url,
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Peripheres Sehen trainieren | Test online",
-    description: "Kostenloser Test für peripheres Sehen im Browser. Halte den Blick in der Mitte, erkenne Randbedrohungen und trainiere dein nutzbares Sehfeld (UFOV).",
-    url: 'https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper',
+    title,
+    description,
+    url,
     siteName: 'SkillDrills',
     locale: 'de_DE',
     type: 'website',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Peripheres Sehen trainieren | Test online",
-    description: "Kostenloser Test für peripheres Sehen im Browser. Halte den Blick in der Mitte, erkenne Randbedrohungen und trainiere dein nutzbares Sehfeld (UFOV).",
+    title,
+    description,
   },
   robots: { index: true, follow: true },
 };
@@ -60,254 +42,167 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Physisches Training",
-      "item": "https://skilldrills.online/de/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Reflextraining & Reaktionszeit",
-      "item": "https://skilldrills.online/de/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Peripheres Sehen & Bedrohungsabwehr",
-      "item": "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills Startseite", "item": "https://skilldrills.online/de" },
+    { "@type": "ListItem", "position": 2, "name": "Physisches Training", "item": "https://skilldrills.online/de/drills/physical" },
+    { "@type": "ListItem", "position": 3, "name": "Reflextraining", "item": "https://skilldrills.online/de/drills/physical/reflex-training" },
+    { "@type": "ListItem", "position": 4, "name": "Peripheres Blickfeld Spiel", "item": url }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision"],
-  "name": "Peripheres Sehtraining & Bedrohungsabwehr-Trainer",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "name": "Peripheres Blickfeld Spiel (Peripheral Threat Sweeper)",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  description,
+  url,
+  "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/de" },
   "inLanguage": "de",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Wissenschaftlich fundiertes visuo-motorisches Trainingsprogramm zur Erweiterung des nutzbaren Sehfelds (UFOV), verdeckten Raumaufmerksamkeit (Posner) und Beseitigung von Tunnelblick."
+  "dateModified": "2026-11-10"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Online-Trainer für peripheres Sehen (Peripheral Threat Sweeper)",
-  "url": "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper",
-  "description": "Kostenloses Online-Tool zur Messung und Schulung des peripheren Gesichtsfelds. Schützen Sie den Schildkern vor 360°-Bedrohungen aus den Augenwinkeln.",
+  "name": "Peripheres Blickfeld Spiel (Web-App)",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Aktueller Browser mit HTML5-Canvas und Zeigereingabe",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  url,
   "inLanguage": "de",
-  "dateModified": "2026-09-20",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Web Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  "dateModified": "2026-11-10"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Periphere Bedrohungsabwehr (Peripheral Threat Sweeper)",
-  "url": "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper",
-  "description": "High-Speed-Reflexspiel: Verteidigen Sie den Kern vor radial konvergierenden Bedrohungen durch blitzschnelle Reaktionen aus dem Augenwinkel.",
+  "name": "Peripheres Blickfeld Spiel (Peripheral Threat Sweeper)",
+  url,
+  description,
+  "genre": ["Action Game", "Reflex Game"],
+  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "applicationCategory": "Game",
   "inLanguage": "de",
-  "dateModified": "2026-09-20",
-  "genre": ["Action", "Sports Game", "Reflex Game", "Visual Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"]
+  "dateModified": "2026-11-10",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
+
+const faqs = [
+  {
+    q: "Was mache ich in diesem Spiel?",
+    a: "Du schaust auf den Kern in der Bildschirmmitte und klickst Ziele an, die vom Rand auf ihn zukommen, bevor sie ihn erreichen. So übst du, Bewegungen am Rand zu bemerken, ohne den Blick zu bewegen. Es ist ein Browserspiel, kein Sehtest und keine Therapie."
+  },
+  {
+    q: "Was ist der Unterschied zwischen zentralem und peripherem Sehen?",
+    a: "Mit dem zentralen Sehen erkennst du im kleinen Bereich um den Blickpunkt Schrift und Details, mit dem peripheren Sehen außerhalb davon vor allem Bewegung und größere Veränderungen. Das Spiel verlangt, den Blick in der Mitte zu halten und auf Ziele vom Rand zu reagieren."
+  },
+  {
+    q: "Darf ich die Augen bewegen?",
+    a: "Ziel ist, den Kern weiter anzuschauen und den Rand nur wahrzunehmen. Folgst du den Zielen mit den Augen, übst du etwas anderes. Der Browser kann deine Blickrichtung nicht erfassen – darauf musst du selbst achten."
+  },
+  {
+    q: "Wie werden Punkte und Zeit berechnet?",
+    a: "Ein Treffer bringt 100 Punkte mit Combo- und Level-Multiplikator und +2 Sekunden, höchstens bis 60 Sekunden. Die Runde startet mit 45 Sekunden, der Multiplikator reicht bis 3,0x. Erreicht ein Ziel den Kern oder klickst du ins Leere, fällt die Combo auf 1,0x und du verlierst 1 Sekunde. Dieser Abzug ist immer aktiv und lässt sich nicht abschalten."
+  },
+  {
+    q: "Wie steigt die Schwierigkeit?",
+    a: "Mit steigender Punktzahl werden die Ziele von etwa 80 auf bis zu 520 px/s schneller, und der Abstand zwischen neuen Zielen sinkt von etwa 1,4 auf minimal 0,20 Sekunden. Später kommen schnellere Ziele und Ziele hinzu, die seitlich schlingern."
+  },
+  {
+    q: "Was ist Tunnelblick?",
+    a: "Unter Stress oder bei starker Konzentration auf einen Punkt nimmt man die Umgebung oft schlechter wahr – das nennt man umgangssprachlich Tunnelblick. Dieses Spiel übt, die Mitte im Blick zu halten und den Rand trotzdem nicht zu übersehen. Eine krankhafte Gesichtsfeldeinschränkung kann es nicht erkennen; dafür ist eine augenärztliche Untersuchung nötig."
+  },
+  {
+    q: "Wird mein Gesichtsfeld dadurch größer?",
+    a: "Das können wir nicht versprechen. Wer eine Aufgabe übt, wird in dieser Aufgabe oft besser, aber eine Wirkung dieses Spiels ist nicht untersucht. Nutze es, um deine eigenen Ergebnisse zu vergleichen."
+  },
+  {
+    q: "Spielen Bildschirmgröße und Abstand eine Rolle?",
+    a: "Je größer und näher der Bildschirm, desto weiter außen tauchen die Ziele in deinem Blickfeld auf. Vergleiche Ergebnisse daher mit gleichem Abstand und gleicher Haltung. Bildwiederholrate und Eingabeverzögerung können ebenfalls eine Rolle spielen (Woods et al., 2015)."
+  },
+  {
+    q: "Wo werden meine Ergebnisse gespeichert?",
+    a: "Punkte, Genauigkeit und beste Combo werden im lokalen Speicher deines Browsers abgelegt und von diesem Drill nicht an einen Server gesendet. Wenn du die Browserdaten löschst, sind sie weg. Details stehen in der Datenschutzerklärung."
+  }
+];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was versteht man unter dem Training des peripheren Sehens und wie unterscheidet es sich vom zentralen Sehen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Während die zentrale Sehschärfe (foveales Sehen) im Zentrum von 1–2 Grad Details, Farben und Schriftzeichen analysiert, trainiert das periphere Sehtraining die Stäbchenzellen der Netzhautperipherie. Es schult das Gehirn darin, Reize, schnelle Bewegungen und herannahende Gefahren im Augenwinkel zu erfassen, ohne die Blickachse zu verändern (Erweiterung des Useful Field of View, UFOV)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie funktioniert der Peripheral Threat Sweeper (Periphere Bedrohungsabwehr) genau?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Anwender fixiert ununterbrochen den zentralen Schildkern in der Bildschirmmitte. Am 360-Grad-Außenrand spawnen Bedrohungsknoten in variierenden Winkeln und bewegen sich nach innen. Der Nutzer muss diese Angreifer aus dem peripheren Blickfeld registrieren und per präzisem Maus-Flick neutralisieren, bevor sie den Kern berühren."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Worin liegt der neurobiologische Unterschied zwischen verdeckter Aufmerksamkeit (Covert Orienting) und Blickbewegungen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wie der Kognitionswissenschaftler Michael Posner (1980) nachwies, erfordern offene Augenbewegungen (Sakkaden) eine physische Rotation des Augapfels mit einer Latenz von mindestens 200 ms. Verdeckte Raumaufmerksamkeit (Covert Orienting) hingegen verschiebt den mentalen Aufmerksamkeitsfokus im Gehirn bei starrer Blickfixierung in etwa 100 ms – was eine Verdopplung der visuellen Reaktionsgeschwindigkeit ermöglicht."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum ist peripheres Sehen in kompetitiven FPS-Spielen (CS2, Valorant, Apex) und im Sport entscheidend?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In Shootern muss das Fadenkreuz auf wahrscheinliche Eingangswinkel gerichtet bleiben, während Minimap, Cooldowns und Flankenangriffe simultan im Augenwinkel überwacht werden. Ein unzureichendes peripheres Sehfeld führt unter Stress zu fatalem 'Tunnelblick', wodurch Gegner aus seitlichen Winkeln zu spät bemerkt werden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche unterschiedlichen Verhaltensmuster und Geschwindigkeiten weisen die eindringenden Bedrohungsknoten auf?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es gibt drei Bedrohungsklassen: Standard-Knoten (bewegen sich linear mit Basisgeschwindigkeit), Schnelle Knoten (1,6-fache Geschwindigkeit für abrupte Reflexprüfungen) und Ausweichende Knoten (Evasive), die auf oszillierenden Schlangenlinien einschwenken und die räumliche Trajektorienvorhersage fordern."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie steigert sich der Schwierigkeitsgrad hinsichtlich Knoten-Geschwindigkeit und Spawn-Intervallen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mit steigendem Punktestand skaliert das Level stufenlos von Lv. 1 bis über Lv. 15. Die Geschwindigkeit der Knoten beschleunigt von 80 px/s auf bis zu 520 px/s, während die Spawn-Intervalle von 1,4 s auf atemberaubende 0,20 s schrumpfen – was die kognitive Belastungsgrenze der Multi-Target-Verarbeitung testet."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Konsequenzen hat ein Kern-Durchbruch (Core Breach) für den Score und die verbleibende Zeit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dringt ein Knoten ungehindert bis in den Kern vor, blitzt der Bildschirm rot auf und die aktive Combo-Serie fällt schlagartig auf 1,0x zurück. Ist in den Einstellungen die 'Zeitstrafe' aktiviert, werden zusätzlich 0,8 Sekunden Restzeit abgezogen, was das Überleben der Runde massiv erschwert."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie funktioniert die Zeitverlängerung von +0,6 Sekunden pro erfolgreichem Treffer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Jede erfolgreiche Neutralisierung bringt neben den Basispunkten (+100 Pkt. × Combo-Multiplikator) eine Verlängerung der Rundenzeit um 0,6 Sekunden ein. Konstante Treffer ohne Fehlschüsse erlauben es, die 30-Sekunden-Basisgrenze weit zu überschreiten und riesige Punktzahlen anzuhäufen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Kriterien müssen für Stufe 1 (Apex Peripheral Guardian, Note S) erfüllt werden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Für Stufe 1 (Note S) sind mindestens 24.000 Punkte, eine Trefferquote von 90 % oder höher sowie das erfolgreiche Abfangen von Geschwindigkeiten über 450 px/s erforderlich. Fortgeschrittene Spieler bewegen sich typischerweise im Bereich von Stufe 3 (11.000 bis 16.999 Punkte)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welcher Monitorabstand und welche Mauseinstellungen sind für das periphere Sehtraining optimal?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ein Betrachtungsabstand von 50–70 cm sorgt dafür, dass die Monitorränder ein Gesichtsfeld von 40–50 Grad abdecken. Ein 144Hz+ Display sowie eine optische Maus mit 1000Hz Polling-Rate reduzieren Latenz und Bildruckeln auf unter 4 ms (Woods et al., 2015), was für saubere Reizwahrnehmung essenziell ist."
-      }
-    }
-  ]
+  "inLanguage": "de",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Anleitung zur peripheren Bedrohungsabwehr in 4 Schritten",
-  "description": "Wissenschaftlich fundierte 4-Stufen-Methode zur Verankerung des Blicks, Schärfung des Augenwinkels und radialen Treffsicherheit.",
+  "name": "So spielst du das periphere Blickfeld Spiel",
+  "description": "Blick in der Mitte halten und Randziele abfangen – in vier Schritten.",
   "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Blickanker im Zentrum fixieren (Central Anchor)",
-      "text": "Richten Sie den Blick unerschütterlich auf den zentralen Schildkern. Vermeiden Sie den Impuls, auftauchende Reize direkt mit den Augen anzuschauen.",
-      "url": "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Periphere Reizerfassung am Bildschirmrand (Parafoveal Detection)",
-      "text": "Nutzen Sie die hohe Bewegungssensitivität der Netzhautstäbchen, um kontrastreiche rote und orangefarbene Knoten am Bildrand intuitiv wahrzunehmen.",
-      "url": "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Ballistischer Radial-Flick zur Zielneutralisierung (Radial Flick)",
-      "text": "Führen Sie eine blitzschnelle Handgelenksbewegung zum Ziel aus und klicken Sie, bevor der Knoten den Kern erreicht (+0,6s Zeitgutschrift).",
-      "url": "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Sofortige Rückkehr ins Zentrum & Combo-Pflege (Recentering)",
-      "text": "Führen Sie den Cursor nach jedem Treffer augenblicklich in die Mitte zurück, um das 360°-Blickfeld für die nächste Bedrohung schussbereit zu halten.",
-      "url": "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper#step-4"
-    }
-  ]
+    { "@type": "HowToStep", "position": 1, "name": "Mitte fixieren", "text": "Schau auf den Kern in der Bildschirmmitte und bewege die Augen möglichst nicht." },
+    { "@type": "HowToStep", "position": 2, "name": "Rand wahrnehmen", "text": "Bemerke Ziele, die vom Rand auf den Kern zukommen, ohne den Blick zu bewegen." },
+    { "@type": "HowToStep", "position": 3, "name": "Vor dem Kern klicken", "text": "Klicke das Ziel an, bevor es den Kern erreicht." },
+    { "@type": "HowToStep", "position": 4, "name": "Combo halten", "text": "Triff ohne Fehler weiter, um +2 Sekunden und den Combo-Multiplikator aufzubauen." }
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` }))
 };
 
 const guideProps = {
-  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015'),
-  intro: {
-    title: "Messprinzipien des peripheren Sehens und des nutzbaren Sehfelds (UFOV)",
-    paragraphs: [
-      "Im menschlichen Sehsystem umfasst die Fovea centralis – der Bereich schärfsten Sehens – lediglich 1 bis 2 Grad des gesamten Gesichtsfelds. Nur dort können feine Details und Farbnuancen in Reinform aufgelöst werden. Die umgebende Netzhautperipherie verliert zwar drastisch an statischer Auflösung, besitzt jedoch eine immense Dichte an licht- und bewegungsempfindlichen Stäbchenzellen. Diese Übung quantifiziert und schult die Fähigkeit, kognitive Aufmerksamkeitsressourcen ohne Blickrichtungsänderung in den Augenwinkel zu verlagern – die sogenannte 'verdeckte Raumaufmerksamkeit' (Covert Spatial Orienting, Posner 1980).",
-      "Jeder Abfangvorgang in diesem Trainingssystem unterliegt den Gesetzen von Fitts's Law (1954) und Woodworths (1899) Zweiphasen-Modell der Motorik. Die Bewegungszeit wächst logarithmisch mit dem Verhältnis aus Distanz zum Ziel und Zielgröße. Bei der Abwehr radial heranschießender Knoten überbrückt die Hand in einer offenen, ungebremsten ballistischen Phase über 85 % der Strecke, bevor kurz vor dem Klick eine mikrofeine optische Endbremsung greift.",
-      "Untersuchungen von Karlene Ball et al. (1988) belegen, dass unter extremer Stress- und Reizbelastung der funktionelle Wahrnehmungsradius des Menschen kollabieren kann – ein Phänomen, das als 'Tunnelblick' bekannt ist. Das vorliegende Drill-System startet mit entspannten 1,4-Sekunden-Intervallen und beschleunigt progressiv auf eine Kadenz von 0,20 Sekunden bei Vektorgeschwindigkeiten von 520 px/s. Dieser Stimulus zwingt den Parietallappen, das Useful Field of View (UFOV) dauerhaft zu erweitern, um selbst in chaotischen Situationen periphere Gefahren unverzüglich zu verarbeiten.",
-      "Messgenauigkeit und Hardware-Grenzen: Reaktionszeiten und Trefferpräzision werden im Browser über die performance.now()-Schnittstelle im Millisekundentakt erfasst. Aufgrund von Sicherheitsvorgaben (Spectre-Schutz) ist die Uhrenauflösung auf ca. 1 ms gerundet. Zudem quantisiert das Display jedes visuelle Ereignis gemäß seiner Bildwiederholrate – ca. 16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz (Woods et al., 2015). Standardmäuse fügen bei 125 Hz ca. 8 ms Latenz hinzu, moderne 1000Hz-Gamingmäuse unter 1 ms. Abweichungen unter 5 ms sollten daher als gerätespezifisches Rauschen gewertet werden; vergleichen Sie eigene Serien stets auf identischer Hardware. SkillDrills speichert alle Leistungsdaten ausschließlich lokal in Ihrem Browser und übermittelt keine Telemetrie an Dritte."
-    ]
-  },
+  heading: "Leitfaden: Peripheres Blickfeld Spiel",
+  intro: [
+    "Peripheral Threat Sweeper ist ein kostenloses peripheres Blickfeld Spiel im Browser: Du schaust auf den Kern in der Mitte und fängst Ziele ab, die vom Rand auf ihn zukommen. Ein Treffer bringt +2 Sekunden, ein Fehlklick oder ein Ziel im Kern kostet 1 Sekunde.",
+    "Forschung zeigt, dass man die Aufmerksamkeit verschieben kann, ohne die Augen zu bewegen (Posner, 1980). Kontrastreiche, bewegte Ziele fallen auch am Rand schnell auf (Treisman & Gelade, 1980). Das Spiel macht daraus eine Klickaufgabe.",
+    "Anfangs erscheinen Ziele etwa alle 1,4 Sekunden, mit steigender Punktzahl werden sie schneller (bis 520 px/s) und kommen dichter (minimal 0,20 Sekunden Abstand). Beim Klicken hilft eine große Bewegung mit kleiner Schlusskorrektur (Woodworth, 1899; Fitts, 1954).",
+    "Die Ergebnisse sind Übungswerte. Sie ersetzen keinen Sehtest, keine Diagnose und keine Behandlung. Wenn dir Veränderungen beim Sehen auffallen, geh zur Augenärztin oder zum Augenarzt."
+  ],
   benchmarks: {
-    title: "Offizielle Benchmarks für peripheres Reaktionsvermögen & Bedrohungsabwehr",
-    headers: ['Stufe (Tier)', 'Rang & Klassifikation', 'Zielpunktzahl', 'Präzision & Geschwindigkeit', 'Note', 'Leistungsniveau'],
+    title: "Orientierung: Punktebereiche",
+    headers: ["Stufe", "Punkte", "Übungsschwerpunkt"],
     rows: [
-      ['Stufe 1', 'Erhabener Wächter des Blickfelds (Apex Peripheral Guardian)', '24.000+ Pkt.', '90%+ Treffer / 450+ px/s', 'Note S', 'Phänomenales UFOV'],
-      ['Stufe 2', 'Präzisions-Radialabfangjäger (Precision Radial Sweeper)', '17.000 – 23.999 Pkt.', '82–89% Treffer / 350–449 px/s', 'Note A', 'Turnier-Niveau'],
-      ['Stufe 3', 'Erfahrener Feldverteidiger (Skilled Field Defender)', '11.000 – 16.999 Pkt.', '74–81% Treffer / 250–349 px/s', 'Note B', 'Stabile Wahrnehmung'],
-      ['Stufe 4', 'Fortschreitender Raumverfolger (Developing Parafoveal Tracker)', '6.000 – 10.999 Pkt.', '65–73% Treffer / 160–249 px/s', 'Note C', 'Durchschnitt (Reguläre Spieler)'],
-      ['Stufe 5', 'Tunnelblick-Gefährdeter Einsteiger (Novice Tunnel Vision Vulnerable)', '< 6.000 Pkt.', '< 65% Treffer / < 160 px/s', 'Note D', 'Basis (UFOV-Ausbau empfohlen)'],
+      ["1", "unter 6.000", "Blick konsequent in der Mitte halten"],
+      ["2", "6.000 – 10.999", "Ziele vor dem Kern abfangen"],
+      ["3", "11.000 – 16.999", "Combo ohne Abbruch halten"],
+      ["4", "17.000 – 23.999", "Auch bei schnellen Zielen nicht hinschauen"],
+      ["5", "ab 24.000", "Mehrere Ziele nacheinander abarbeiten"]
     ],
-    note: "Die Einstufung berücksichtigt Gesamtpunkte, Anzahl der Kern-Durchbrüche, höchste überlebte Knotengeschwindigkeit und maximale Combo-Länge. Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik.",
+    note: "Diese Bereiche sind SkillDrills-Übungsstufen. Sie sind keine Nutzerstatistik, keine Perzentile und kein Sehtest-Maßstab."
   },
-  protocols: {
-    title: "4-Stufen-Protokoll zur Maximierung des peripheren Sehvermögens",
-    description: "Systematisches Konditionierungsprogramm zur Verankerung des Blicks, Schärfung des Augenwinkels und blitzschnellen Multi-Target-Koordination.",
+  techniques: {
+    title: "4 Tipps für mehr Punkte",
     items: [
       {
-        title: "Protokoll 1: Posner-Konditionierung zur verdeckten Aufmerksamkeitslenkung",
-        description: "Blick starr auf den Kern heften und das unwillkürliche Verfolgen auftauchender Reize mit den Augen unterdrücken. Sakkadische Latenzen werden eliminiert, indem der mentale Fokus flexibel in alle vier Quadranten projiziert wird (Posner 1980)."
+        name: "Blick in der Mitte lassen",
+        desc: "Den Kern anschauen und die Augen nicht bewegen ist der Kern der Übung. Wer den Zielen nachschaut, übt etwas anderes.",
+        tips: "Wandern die Augen ständig, zuerst auf niedrigem Level die Gewohnheit aufbauen."
       },
       {
-        title: "Protokoll 2: Treisman-Parallelerfassung & Saliency-Erkennung",
-        description: "Schulung der retinalen Merkmalskarten, um kontraststarke rote und orangefarbene Knoten am äußersten Rand ohne sequenzielle Suchbewegungen sofort als Pop-out-Signal zu verarbeiten (Treisman & Gelade 1980)."
+        name: "Das ganze Feld weich sehen",
+        desc: "Nicht auf eine Richtung konzentrieren, sondern das ganze Bild locker auf einmal wahrnehmen – so fällt Bewegung früher auf.",
+        tips: "Augen entspannen, Fokus weich halten."
       },
       {
-        title: "Protokoll 3: Woodworth-Ballistischer Radial-Snap mit Endverzögerung",
-        description: "Sobald ein Vektor erfasst wird, schnellt der Cursor durch neuromuskuläre Aktivierung von Handgelenk und Unterarm zum Zielort, gefolgt von einer minimalen Bremsung vor dem Klick (Woodworth 1899)."
+        name: "Grob bewegen, fein korrigieren",
+        desc: "Kennst du die Position, bring den Cursor in einem Zug in die Nähe und bremse erst am Ende ab.",
+        tips: "Hektische Fehlklicks nahe am Kern kosten Combo und 1 Sekunde."
       },
       {
-        title: "Protokoll 4: UFOV-Hochdichte-Erweiterung & Prioritätenanalyse",
-        description: "In hohen Leveln mit 0,20s-Spawn-Frequenz die verbleibende Distanz mehrfacher Knoten simultan berechnen und nach unmittelbarer Bedrohung abarbeiten (Woods et al. 2015)."
+        name: "Kurz spielen, Pausen machen",
+        desc: "Müde Augen lassen die Konzentration schnell sinken. Spiele kurze Runden und schau zwischendurch vom Bildschirm weg.",
+        tips: "Bei Schmerzen oder Schwindel aufhören."
       }
     ]
   },
-  faqs: {
-    title: "Häufig gestellte Fragen (FAQ) zu peripherem Sehen & Bedrohungsabwehr",
-    items: faqSchema.mainEntity.map(q => ({
-      q: q.name,
-      a: q.acceptedAnswer.text
-    }))
-  }
+  steps: [
+    "Bequem hinsetzen und auf den Kern in der Bildschirmmitte schauen.",
+    "Ziele vom Rand wahrnehmen, ohne die Augen zu bewegen.",
+    "Das Ziel anklicken, bevor es den Kern erreicht.",
+    "Mit +2 Sekunden pro Treffer und gehaltener Combo die Punktzahl steigern."
+  ],
+  audience: "Alle, die die Reaktion auf Bewegungen am Bildschirmrand spielerisch üben möchten, und Gamer, die ausprobieren wollen, den Blick in der Mitte zu halten und trotzdem den Rand zu sehen.",
+  faqs,
+  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015')
 };
 
 export default function PeripheralThreatSweeperDePage() {
@@ -339,47 +234,47 @@ export default function PeripheralThreatSweeperDePage() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "Peripheres Sehen trainieren",
-          subtitle: "Blick zentrieren, Randbedrohungen erkennen",
+          title: "Peripheres Blickfeld Spiel",
+          subtitle: "Blick in der Mitte, Ziele vom Rand abfangen",
           hudLabels: {
             score: "Punkte",
             time: "Restzeit",
             bestScore: "Bestwert",
             bestCombo: "Max Combo",
-            accuracy: "Präzision",
+            accuracy: "Genauigkeit",
             sweeps: "Treffer",
             breaches: "Durchbrüche",
             peakLevel: "Level",
             getReady: "BEREIT"
           },
-          rulesTitle: "Ablauf, Regeln und Punktesystem",
+          rulesTitle: "Regeln und Wertung",
           rulesItems: [
-            { title: "Bedrohungsabwehr & Zeitgutschrift", text: "Klicken Sie herannahende Knoten am Rand an: +100 Punkte (skaliert mit Multiplikator) und +0,6s Zeitverlängerung." },
-            { title: "Combo-Multiplikator", text: "Treffen Sie kontinuierlich ohne Fehlschlag, um den Multiplikator stufenweise auf bis zu 3,0x zu steigern." },
-            { title: "Dynamische Schwierigkeit", text: "Mit steigender Punktzahl beschleunigen die Knoten (bis 520 px/s) und die Spawn-Intervalle schrumpfen auf bis zu 0,20s." },
-            { title: "Kern-Durchbruch & Fehlklicks", text: "Erreicht ein Knoten den Schildkern oder klicken Sie ins Leere, wird die Combo auf 1,0x zurückgesetzt (-0,8s bei Strafe)." }
+            { title: "Ziele abfangen & Zeitbonus", text: "Klicke Ziele an, die vom Rand auf den Kern zukommen: 100 Punkte (mit Combo- und Level-Multiplikator) und +2 Sekunden (maximal 60 Sekunden)." },
+            { title: "Combo-Multiplikator", text: "Treffer ohne Fehler steigern den Multiplikator auf bis zu 3,0x." },
+            { title: "Steigende Schwierigkeit", text: "Mit steigender Punktzahl werden die Ziele schneller (bis 520 px/s) und erscheinen dichter (bis 0,20 s Abstand)." },
+            { title: "Kern erreicht & Fehlklicks", text: "Erreicht ein Ziel den Kern oder klickst du ins Leere, fällt die Combo auf 1,0x und du verlierst 1 Sekunde." }
           ],
-          aboutTitle: "Biomechanik des peripheren Sehens und der Reaktionsmotorik",
+          aboutTitle: "Über das periphere Blickfeld Spiel",
           aboutSections: [
             {
-              title: "Verdeckte Aufmerksamkeit & Peripheres Scanning",
-              subtitle: "Posner (1980) Raumaufmerksamkeit ohne Sakkaden",
-              content: "Der Blick bleibt auf dem zentralen Kern verankert, während die geistige Aufmerksamkeit 360 Grad im Raum verteilt wird. Dies eliminiert träge Augenbewegungen und halbiert die Reaktionszeit."
+              title: "Aufmerksamkeit verschieben, ohne hinzuschauen",
+              subtitle: "Posner (1980): räumliche Aufmerksamkeit",
+              content: "Man kann die Aufmerksamkeit an eine andere Stelle lenken, ohne die Augen zu bewegen. Hier bleibt der Blick auf dem Kern, während du Ziele am Rand bemerkst."
             },
             {
-              title: "Parallele Merkmalsintegration & Saliency-Erkennung",
-              subtitle: "Treisman (1980) Retina-Pop-out bei hohem Kontrast",
-              content: "Eindringende rote und orangefarbene Knoten stimulieren die Bewegungssensoren der Netzhautperipherie unmittelbar, sodass der Abfangvektor ohne sequenzielle Suche sofort berechnet wird."
+              title: "Auffällige bewegte Ziele",
+              subtitle: "Treisman (1980): visuelle Suche",
+              content: "Kontrastreiche, bewegte Ziele fallen auch am Rand schnell auf. Wer das ganze Feld locker im Blick hat, bemerkt neue Ziele früher."
             },
             {
-              title: "Woodworth-Zweiphasen-Motorik & Kernschutz",
-              subtitle: "Woodworth (1899) & Fitts (1954) Ballistischer Stoß und Endbremsung",
-              content: "Über 85 % der Distanz werden durch einen schnellen Handgelenks-Flick im offenen Regelkreis überwunden, gefolgt von einer blitzartigen optischen Korrektur direkt auf den Knoten."
+              title: "Grob bewegen, fein korrigieren",
+              subtitle: "Woodworth (1899) und Fitts (1954)",
+              content: "Schnelles Zeigen besteht aus einer großen Bewegung und einer kleinen Schlusskorrektur. Nahe am Kern abbremsen und sauber klicken."
             },
             {
-              title: "UFOV-Erweiterung & Beseitigung von Tunnelblick",
-              subtitle: "Ball et al. (1988) Kognitive Kapazitätserweiterung unter Hochlast",
-              content: "Durch dichte Spawn-Kadenzen und hohe Geschwindigkeiten wird der nutzbare Sehbereich erweitert, sodass Sie auch in hektischen Spiel- und Sportszenarien nicht mehr in Tunnelblick verfallen."
+              title: "Mehrere Ziele gleichzeitig",
+              subtitle: "Später kürzere Abstände",
+              content: "Später kommen Ziele kurz nacheinander, die Aufmerksamkeit muss geteilt werden. Blick in der Mitte lassen und die Ziele nahe am Kern zuerst abfangen."
             }
           ]
         }}

@@ -5,50 +5,36 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// RECHERCHE DE MOTS-CLÉS NATIFS (SERP FRANCE / FR-FR)
-// Clusters natifs à intention sportive; concurrence non mesurée :
-// - "échelle d'agilité" (Suggest gl=fr: exercices, decathlon; intent = matériel physique; Bing exact 0)
-// - "échelle de rythme exercices" (Cadence neuromusculaire et coordination)
-// - "échelle de vélocité entraînement" (Vitesse d'appuis en football et athlétisme)
-// - "travail des appuis et vivacité" (Terminologie de préparation physique française)
-// - "entraînement agilité et vitesse" (Développement des qualités motrices)
-// - "coordination motrice bilatérale souris" (Transposition eSport / bureautique)
-// - "rythme counter strafe" (Mécanique de tir et arrêt instantané en FPS)
-// - "test de vitesse et vivacité" (Évaluation de réactivité sur navigateur)
+// SEO (2026-11-10, docs/seo/research/physical-2026-11/fr.md)
+// Primary: échelle d'agilité en ligne. Title KEPT (GSC 41 impr, pos 7.4).
+// Honesty pass only: removed footwork / counter-strafe / vivacité claims,
+// the false "inversion resets combo" rule and the invented tier table.
 // ============================================================
 
+const TITLE = 'Échelle d’agilité en ligne : jeu de rythme | SkillDrills';
+const DESCRIPTION = 'Échelle d’agilité en ligne : passez le curseur sur les 4 échelons de chaque échelle, gauche-droite-gauche-droite. Jeu de rythme gratuit de 45 secondes.';
+const URL = 'https://skilldrills.online/fr/drills/physical/fitness/agility-ladder';
+
 export const metadata = {
-  title: "Échelle d’agilité en ligne : jeu de rythme | SkillDrills",
-  description: "Échelle d’agilité virtuelle : touchez les échelons qui défilent en alternant gauche et droite à la souris. Un jeu de rythme, pas un exercice physique.",
-  keywords: [
-    "exercices échelle d'agilité",
-    "echelle de rythme exercices",
-    "echelle de velocite entrainement",
-    "travail des appuis et vivacite",
-    "entrainement agilite et vitesse",
-    "coordination motrice bilaterale souris",
-    "rythme counter strafe",
-    "test de vitesse et vivacite",
-    "sequencage moteur reflexe",
-    "jeu de rythme moteur",
-    "vitesse des appuis exercice"
-  ],
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: ['échelle d’agilité en ligne', 'jeu de rythme à la souris', 'échelle d’agilité virtuelle', 'jeu d’alternance gauche-droite', 'jeu navigateur gratuit'],
   alternates: {
-    canonical: 'https://skilldrills.online/fr/drills/physical/fitness/agility-ladder',
+    canonical: URL,
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Échelle d’agilité en ligne : jeu de rythme | SkillDrills",
-    description: "Échelle d’agilité virtuelle : touchez les échelons qui défilent en alternant gauche et droite à la souris. Un jeu de rythme, pas un exercice physique.",
-    url: 'https://skilldrills.online/fr/drills/physical/fitness/agility-ladder',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
     siteName: 'SkillDrills',
     locale: 'fr_FR',
     type: 'website',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Échelle d’agilité en ligne : jeu de rythme | SkillDrills",
-    description: "Échelle d’agilité virtuelle : touchez les échelons qui défilent en alternant gauche et droite à la souris. Un jeu de rythme, pas un exercice physique.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
 };
@@ -57,379 +43,141 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Accueil",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Entraînement Physique",
-      "item": "https://skilldrills.online/fr/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Condition Physique et Vivacité",
-      "item": "https://skilldrills.online/fr/drills/physical/fitness"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Échelle d’agilité en ligne",
-      "item": "https://skilldrills.online/fr/drills/physical/fitness/agility-ladder"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills Accueil", "item": "https://skilldrills.online/fr" },
+    { "@type": "ListItem", "position": 2, "name": "Entraînement Physique", "item": "https://skilldrills.online/fr/drills/physical" },
+    { "@type": "ListItem", "position": 3, "name": "Condition Physique et Vivacité", "item": "https://skilldrills.online/fr/drills/physical/fitness" },
+    { "@type": "ListItem", "position": 4, "name": "Échelle d’agilité en ligne", "item": URL }
   ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Échelle d’agilité en ligne : jeu de rythme",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Jeu de rythme gratuit dans le navigateur : touchez des échelons qui défilent en alternant gauche et droite à la souris. Inspiré de l’échelle d’agilité, sans effort physique.",
-  "url": "https://skilldrills.online/fr/drills/physical/fitness/agility-ladder",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online"
-  },
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Échelle d’agilité en ligne",
-  "description": "Jeu d’échelle d’agilité virtuelle jouable à la souris, avec 15 niveaux de vitesse croissante sur 45 secondes.",
+  "description": "Jeu de rythme gratuit de 45 secondes dans le navigateur : passer le curseur sur les 4 échelons de chaque échelle qui descend, dans l’ordre gauche-droite-gauche-droite.",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
-  "browserRequirements": "Navigateur moderne avec JavaScript",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/fr/drills/physical/fitness/agility-ladder",
+  "browserRequirements": "Navigateur récent avec HTML5 Canvas et souris",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": URL,
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-10"
 };
 
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Échelle d’agilité virtuelle (Agility Ladder Drill)",
-  "url": "https://skilldrills.online/fr/drills/physical/fitness/agility-ladder",
-  "description": "Jeu de rythme à la souris : touchez des échelons qui descendent dans l’ordre gauche, droite, gauche, droite.",
-  "genre": [
-    "Action",
-    "Rhythm Game",
-    "Motor Sequencing"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const FAQS = [
+  {
+    q: "Qu’est-ce que l’échelle d’agilité en ligne ?",
+    a: "Un jeu de rythme gratuit dans le navigateur : des échelles descendent à l’écran et vous passez le curseur sur les 4 échelons de chacune (gauche, droite, gauche, droite) dans un ordre fixe. Une partie dure 45 secondes et chaque échelle terminée rapporte des points."
+  },
+  {
+    q: "Comment jouer ? Faut-il cliquer ?",
+    a: "Non, aucun clic n’est nécessaire. Amenez le réticule sur l’échelon actif (contour vert) : il est validé et le suivant s’active. L’ordre est 1 (gauche) → 2 (droite) → 3 (gauche) → 4 (droite). La touche Échap quitte l’exercice."
+  },
+  {
+    q: "Comment sont calculés les points et le combo ?",
+    a: "Chaque échelle terminée rapporte 100 points multipliés par le multiplicateur de combo. Il augmente avec la série : 1,1x dès 3 échelles d’affilée, 1,25x dès 5, 1,5x dès 10, 2,0x dès 20 et 3,0x au maximum dès 50."
+  },
+  {
+    q: "Qu’est-ce qui change quand le niveau monte ?",
+    a: "Le niveau monte de 1 tous les 250 points, avec un niveau bonus toutes les 4 échelles d’affilée. Les échelles défilent à 150 px/s au départ, à 750 px/s au niveau 15, puis toujours plus vite. La zone de contact des échelons passe de 18 px à 10 px."
+  },
+  {
+    q: "Que se passe-t-il si je rate un échelon ?",
+    a: "Si une échelle atteint le bas de l’écran avant que ses 4 échelons soient validés, le combo retombe à 0, l’écran flashe en rouge et tremble. Aucun point ni aucune seconde n’est retiré."
+  },
+  {
+    q: "Est-ce que ça remplace un vrai exercice d’échelle d’agilité ?",
+    a: "Non. Le jeu reprend seulement l’ordre gauche-droite d’un exercice d’échelle et le fait jouer à la souris. Il ne mesure ni ne promet d’amélioration des appuis, de la condition physique ou de la vitesse."
+  },
+  {
+    q: "Comment la note finale est-elle attribuée ?",
+    a: "La note dépend uniquement du score final : S+ dès 15 343, S dès 12 283, A dès 9 563, B dès 6 120, C dès 3 443, D dès 1 530, F en dessous. Ce sont des paliers d’entraînement SkillDrills, pas une comparaison avec d’autres joueurs."
+  },
+  {
+    q: "Où sont enregistrés mes résultats ?",
+    a: "Le meilleur score, le meilleur combo et le niveau maximal sont stockés uniquement dans le localStorage de votre navigateur et ne sont envoyés à aucun serveur. Gratuit, sans compte et sans installation."
   }
-};
+];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Est-ce un vrai exercice d’échelle d’agilité ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. C’est un jeu de rythme à la souris inspiré de l’échelle d’agilité : des échelons descendent et vous les touchez en alternant gauche et droite. Il ne remplace pas un entraînement physique des appuis."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment fonctionne la séquence gauche-droite ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Chaque série compte 4 échelons à toucher dans l’ordre : 1 gauche, 2 droite, 3 gauche, 4 droite. Un échelon manqué ou une inversion ramène le multiplicateur à 1.0x."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qu’apporte le programme moteur généralisé de Schmidt ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Schmidt (1975) décrit des gestes dont les proportions de rythme restent stables quand la vitesse change. Ici, la descente accélère de 150 à 750 px/s : l’idée est de garder le même rythme interne à quatre temps."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que dit Lashley sur l’enchaînement rapide de gestes ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Lashley (1951) soutient que les séquences rapides ne peuvent pas être guidées pas à pas par les sens. Regrouper les quatre touches en un seul geste est la stratégie qui en découle."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment évoluent la vitesse et la taille des échelons ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La difficulté monte tous les 250 points. Le défilement passe de 150 px/s au niveau 1 à 750 px/s aux niveaux 12 à 15, et la zone de contact se réduit de 18 à 10 pixels."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Rater un échelon coûte-t-il des points ou du temps ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Aucun point acquis n’est retiré et la séance reste de 45 secondes. Seul le multiplicateur de série retombe à 1.0x."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi viser un peu sous le centre de l’échelon ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les échelons descendent en continu : le curseur arrive donc sur un échelon déjà plus bas. Viser légèrement en dessous compense ce décalage, selon la logique d’interception de cibles mobiles (Fitts, 1954)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cet exercice aide-t-il à améliorer le counter-strafing ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Aucune étude ne le démontre. Il travaille l’alternance gauche-droite et le rythme à la souris ; le transfert vers un jeu de tir reste à vérifier dans votre propre jeu."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Où regarder quand la vitesse augmente ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Beaucoup de joueurs trouvent plus simple de garder le regard sur l’axe central de l’échelle plutôt que de suivre chaque échelon. Testez les deux et gardez ce qui marche pour vous."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Mes records sont-ils envoyés à un serveur ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Vos records sont stockés dans le LocalStorage de votre navigateur et le jeu fonctionne sans compte."
-      }
-    }
-  ]
+  "dateModified": "2026-11-10",
+  "mainEntity": FAQS.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
 };
+
+const STEPS = [
+  "Cliquez sur Démarrer ; après le compte à rebours (3-2-1) la partie commence (sur ordinateur, le curseur est verrouillé).",
+  "Amenez le réticule sur le premier échelon de l’échelle qui descend (à gauche, contour vert).",
+  "Enchaînez les échelons 2 (droite), 3 (gauche) et 4 (droite) dans le même rythme pour terminer l’échelle.",
+  "Pendant 45 secondes, ne laissez passer aucune échelle pour faire monter le multiplicateur de combo."
+];
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Comment jouer à l’échelle d’agilité en ligne",
-  "description": "Quatre étapes pour toucher les échelons dans l’ordre et garder le rythme.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Centrez le curseur",
-      "text": "Placez le curseur sur l’axe central, entre les deux montants de l’échelle qui descend.",
-      "url": "https://skilldrills.online/fr/drills/physical/fitness/agility-ladder#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Touchez le premier échelon",
-      "text": "Dès que la descente commence, touchez le premier échelon actif, à gauche.",
-      "url": "https://skilldrills.online/fr/drills/physical/fitness/agility-ladder#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Enchaînez les quatre échelons",
-      "text": "Parcourez 1 gauche, 2 droite, 3 gauche, 4 droite en un geste continu pour valider la série.",
-      "url": "https://skilldrills.online/fr/drills/physical/fitness/agility-ladder#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Montez le combo",
-      "text": "Gardez le rythme sans omission pour atteindre le multiplicateur 3.0x et supporter la vitesse des derniers niveaux.",
-      "url": "https://skilldrills.online/fr/drills/physical/fitness/agility-ladder#step-4"
-    }
-  ]
+  "description": "Passer le curseur sur les 4 échelons de chaque échelle dans l’ordre gauche-droite-gauche-droite.",
+  "step": STEPS.map((text, i) => ({ "@type": "HowToStep", "position": i + 1, "name": `Étape ${i + 1}`, "text": text }))
 };
 
 const ladderGuide = {
-  "heading": "Échelle d’agilité en ligne : comment ça marche",
-  "subtitle": "Séquençage moteur (Lashley), invariance de rythme (Schmidt) et interception de cibles mobiles (Fitts)",
-  "intro": [
-    "Cette échelle d’agilité en ligne est un jeu de rythme à la souris : des échelons descendent et vous les touchez en alternant gauche, droite, gauche, droite. Elle s’inspire de l’échelle d’agilité des sportifs mais ne fait pas travailler les jambes ; c’est un exercice de séquençage et de précision manuelle.",
-    "Lashley (1951) a posé le problème de l’ordre sériel : les gestes enchaînés trop vite ne peuvent pas être guidés pas à pas par le retour sensoriel. Regrouper les quatre touches en un seul bloc moteur est donc la stratégie naturelle de cet exercice.",
-    "Schmidt (1975) décrit le programme moteur généralisé, dont les proportions de rythme restent stables quand la vitesse globale change. La descente accélère de 150 à 750 px/s et les zones de contact passent de 18 à 10 pixels, ce qui rejoint les principes d’interception de Fitts (1954).",
-    "Mesure et matériel : le test s’exécute dans votre navigateur avec l’horloge performance.now(), dont la résolution est limitée. Un écran à 60 Hz affiche une image toutes les 16,7 ms et un écran à 144 Hz toutes les 6,9 ms (Woods et al., 2015) : comparez vos séances sur le même matériel."
+  heading: "Échelle d’agilité en ligne : comment ça marche",
+  intro: [
+    "Cette échelle d’agilité en ligne transpose l’enchaînement gauche-droite-gauche-droite d’une échelle d’agilité sur la souris. Des échelles descendent à l’écran et vous passez le réticule sur les 4 échelons dans un ordre fixe. On ne clique pas : seul le mouvement de la souris compte.",
+    "Une partie dure 45 secondes. Chaque échelle terminée rapporte 100 points multipliés par le combo (jusqu’à 3,0x). Tous les 250 points, le niveau monte : les échelles défilent plus vite et la zone de contact des échelons rétrécit.",
+    "Les séquences de gestes rapides sont plus stables quand les quatre pas sont exécutés comme un bloc planifié plutôt qu’un par un (Lashley, 1951 ; Schmidt, 1975). Le jeu exerce cet ordre et ce rythme avec la main ; il ne fait travailler ni les appuis ni la condition physique."
   ],
-  "benchmarks": {
-    "title": "Paliers de l’échelle d’agilité en ligne (5 niveaux de repère)",
-    "headers": [
-      "Palier",
-      "Score requis",
-      "Niveau atteint",
-      "Vitesse de défilement",
-      "Lecture"
+  benchmarks: {
+    title: "Paliers de note (paliers d’entraînement SkillDrills)",
+    headers: ["Note", "Score final"],
+    rows: [
+      ["S+", "dès 15 343"],
+      ["S", "12 283 – 15 342"],
+      ["A", "9 563 – 12 282"],
+      ["B", "6 120 – 9 562"],
+      ["C", "3 443 – 6 119"],
+      ["D", "1 530 – 3 442"],
+      ["F", "moins de 1 530"]
     ],
-    "rows": [
-      [
-        "Palier 1",
-        "17 000+ points",
-        "Niveau 12 – 15",
-        "600 – 750 px/s",
-        "Séries de 4 échelons enchaînées à très haute vitesse"
-      ],
-      [
-        "Palier 2",
-        "13 000 – 16 999 pts",
-        "Niveau 9 – 11",
-        "480 – 599 px/s",
-        "Alternance régulière sur des échelons de 10 à 12 px"
-      ],
-      [
-        "Palier 3",
-        "9 500 – 12 999 pts",
-        "Niveau 6 – 8",
-        "350 – 479 px/s",
-        "Tempo stable, quelques séries manquées"
-      ],
-      [
-        "Palier 4",
-        "6 000 – 9 499 pts",
-        "Niveau 3 – 5",
-        "230 – 349 px/s",
-        "Ruptures de rythme au-delà de 350 px/s"
-      ],
-      [
-        "Palier 5",
-        "Moins de 6 000 points",
-        "Niveau 1 – 2",
-        "Moins de 230 px/s",
-        "Point de départ : apprenez l’ordre des quatre échelons"
-      ]
-    ],
-    "note": "Repères éditoriaux propres à cet exercice, établis sur le niveau atteint et la vitesse de défilement. Ce ne sont ni des normes sportives ni un classement de population."
+    note: "Paliers d’entraînement SkillDrills calculés à partir de la formule de note du jeu ; ni statistique comparative ni percentiles."
   },
-  "techniques": {
-    "title": "Quatre techniques pour tenir le rythme sur l’échelle",
-    "items": [
-      {
-        "name": "Regrouper les quatre touches",
-        "desc": "Considérez gauche-droite-gauche-droite comme un seul geste fluide, lancé dès le premier contact, plutôt que quatre actions séparées.",
-        "tips": "Évitez de vérifier chaque échelon : laissez la main osciller régulièrement."
-      },
-      {
-        "name": "Garder le même tempo",
-        "desc": "Quand l’échelle accélère, conservez la même répartition du temps entre les quatre touches et adaptez seulement l’énergie du geste.",
-        "tips": "Un décompte mental à quatre temps aide à cadencer."
-      },
-      {
-        "name": "Viser légèrement sous le centre",
-        "desc": "Comme l’échelle descend, visez 2 à 3 pixels sous le centre de l’échelon : le mouvement de chute amène la cible sous le réticule.",
-        "tips": "Ne visez pas le haut de l’échelon, il risque de passer sous le curseur."
-      },
-      {
-        "name": "Regarder l’axe central",
-        "desc": "À haute vitesse, suivre chaque échelon des yeux désoriente. Fixez l’axe central et laissez la périphérie rythmer la main.",
-        "tips": "Si cela ne marche pas pour vous, suivez les échelons du regard : testez les deux."
-      }
+  techniques: {
+    title: "Conseils pour marquer plus de points",
+    items: [
+      { name: "Quatre échelons en un geste", desc: "Regarder chaque échelon puis réagir, c’est arriver trop tard. Faites le zigzag gauche-droite-gauche-droite en un seul mouvement continu.", tips: "Ne vous arrêtez pas entre les échelons." },
+      { name: "Viser un peu plus bas", desc: "L’échelle descend en permanence. Visez légèrement sous la position actuelle de l’échelon pour tomber dans la zone de contact.", tips: "Plus la vitesse augmente, plus il faut anticiper." },
+      { name: "Regard au centre", desc: "Les échelons apparaissent à gauche et à droite de l’axe central. En gardant le regard au milieu, vous voyez les deux côtés.", tips: "À partir du niveau 4, les échelles se décalent un peu latéralement." }
     ]
   },
-  "steps": [
-    "Alignez le curseur au centre des deux montants.",
-    "Dès que la descente commence, touchez le premier échelon à gauche.",
-    "Validez les échelons 2, 3 et 4 sans interruption.",
-    "Gardez le multiplicateur 3.0x pendant les 45 secondes."
-  ],
-  "audience": "Joueurs et curieux qui veulent s’exercer à l’alternance rythmée à la souris, ainsi que sportifs qui cherchent un jeu de rythme complémentaire (pas un substitut à l’échelle physique).",
-  "faqs": faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  "sources": pickSources('lashley1951', 'schmidt1975', 'fitts1954', 'woodworth1899', 'woods2015')
+  steps: STEPS,
+  audience: "Ceux qui cherchent un court jeu de rythme et d’enchaînement à la souris, ou qui veulent s’exercer à l’aller-retour rapide du curseur entre gauche et droite.",
+  faqs: FAQS,
+  sources: pickSources('lashley1951', 'schmidt1975', 'fitts1954')
 };
 
 export default function AgilityLadderPageFr() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <MotorSequencingClient
         copy={{
           title: "Échelle d’agilité en ligne",
-          subtitle: "Touchez les échelons en alternant gauche et droite • 15 niveaux",
-          hudLabels: {
-            score: "Score",
-            timeLeft: "Temps Restant",
-            bestScore: "Meilleur Score",
-            bestCombo: "Meilleur Combo"
-          },
-          rulesTitle: "Règles du jeu et barème de points",
+          hudLabels: { score: "Score", timeLeft: "Temps restant", bestScore: "Meilleur score", bestCombo: "Meilleur combo" },
+          rulesTitle: "Règles du jeu",
           rules: [
-            { title: "Validation Séquentielle des Échelons", text: "Touchez les échelons dans l'ordre strict de descente (1 Gauche → 2 Droite → 3 Gauche → 4 Droite) pour valider chaque volée." },
-            { title: "Multiplicateur de Série", text: "Franchissez les échelles successives sans accroc pour porter le combo jusqu'à 3.0x." },
-            { title: "Accélération Continue", text: "Tous les 250 points, la vitesse de descente s'accroît de 150 à 750 px/s et les hitboxes diminuent." },
-            { title: "Rupture de Cadence", text: "Omettre un échelon ou inverser la séquence réinitialise le multiplicateur à 1.0x sans déduire de points." }
+            { title: "4 échelons dans l’ordre", text: "Passez le réticule sur les échelons de chaque échelle dans l’ordre 1 (gauche) → 2 (droite) → 3 (gauche) → 4 (droite). Aucun clic nécessaire." },
+            { title: "Multiplicateur de combo", text: "Les échelles enchaînées font monter le multiplicateur jusqu’à 3,0x. Chaque échelle rapporte 100 points multipliés par le combo." },
+            { title: "Montée de niveau", text: "Tous les 250 points, le niveau monte : défilement plus rapide, zone de contact plus petite." },
+            { title: "Échelle manquée", text: "Si une échelle incomplète atteint le bas de l’écran, le combo est remis à zéro. Points et temps sont conservés." }
           ],
           aboutTitle: "À propos de l’échelle d’agilité en ligne",
-          aboutHeading: "Alternance rythmée et séquençage moteur",
-          aboutText: "Inspiré de l’échelle d’agilité utilisée en football et en boxe, ce jeu de rythme travaille l’enchaînement sériel décrit par Lashley (1951) avec le curseur de la souris. Il n’entraîne pas les jambes : c’est un exercice d’alternance et de précision manuelle.",
-          aboutCards: [
-            {
-              title: "À qui s’adresse ce jeu ?",
-              desc: "Joueurs et curieux qui veulent s’exercer à l’alternance rythmée à la souris."
-            },
-            {
-              title: "Capacités exercées",
-              desc: "Rythme gauche-droite, enchaînement de quatre touches en un geste et interception de cibles qui défilent."
-            },
-            {
-              title: "Vitesse Évolutive",
-              desc: "Le défilement accélère de 150 à 750 px/s, ce qui demande de garder le même tempo à des vitesses croissantes."
-            }
-          ]
+          aboutHeading: "Ordre et rythme à la souris",
+          aboutText: "L’échelle d’agilité en ligne transforme l’enchaînement gauche-droite d’une échelle d’agilité en un exercice de 45 secondes à la souris. Chaque échelle qui descend est validée quand vous passez le réticule sur ses 4 échelons dans l’ordre ; à mesure que le score monte, la vitesse passe de 150 px/s à 750 px/s au niveau 15 puis continue d’augmenter. C’est un jeu de rythme et d’enchaînement avec la main, qui ne mesure aucun progrès des appuis ni de la condition physique."
         }}
       />
       <DrillGuide guide={ladderGuide} />

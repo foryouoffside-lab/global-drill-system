@@ -4,399 +4,145 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// INVESTIGACIÓN DE PALABRAS CLAVE NATIVAS (SERP ESPAÑA / LATAM)
-// Clusters nativos revisados por intención; competencia aún no medida:
-// - "juego de esquivar con el raton" (Búsqueda principal de agilidad y reflejos)
-// - "test de vision periferica online gratis" (Evaluación visual y psicométrica)
-// - "juegos de esquivar obstaculos con el cursor" (Intención lúdica y entrenamiento)
-// - "entrenamiento de reflejos espaciales" (Neurociencia motora aplicada)
-// - "esquivar habilidades lol juego" / "esquivar skillshots" (Cultura gaming / eSports)
-// - "test de atencion visual periferica" (Diagnóstico cognitivo y de concentración)
-// - "juego de reaccion y evasion rapida" (Velocidad de reacción en navegador)
-// - "ejercicios de vision periferica y reflejos" (Entrenamiento perceptivo)
-// ============================================================
+const url = 'https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion';
+const title = 'Esquivar casillas en la cuadrícula 3x3 | SkillDrills';
+const description = 'Esquivar casillas en la cuadrícula: saca el cursor de las casillas que parpadean en naranja en una cuadrícula 3x3 antes de que exploten. Rondas de 45 s.';
 
 export const metadata = {
-  title: "Juego de reflejos con ratón | SkillDrills",
-  description: "Juego gratis de reflejos con ratón. Detecta zonas peligrosas en la cuadrícula 3x3 y muévete a una casilla segura para entrenar reacciones periféricas.",
-  keywords: [
-    "juego de esquivar con el ratón",
-    "test de visión periférica online",
-    "juego de reflejos",
-    "juegos de esquivar obstáculos con el cursor",
-    "entrenamiento de reflejos espaciales",
-    "test de atención visual periférica",
-    "juego de reacción y evasión rápida",
-    "ejercicios de visión periférica y reflejos",
-    "esquivar skillshots",
-    "reflejos de ratón juego"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion',
-    languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Juego de reflejos con ratón | SkillDrills",
-    description: "Juego gratis de reflejos con ratón. Detecta zonas peligrosas en la cuadrícula 3x3 y muévete a una casilla segura para entrenar reacciones periféricas.",
-    url: 'https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion',
-    siteName: 'SkillDrills',
-    locale: 'es_ES',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Juego de reflejos con ratón | SkillDrills",
-    description: "Juego gratis de reflejos con ratón. Detecta zonas peligrosas en la cuadrícula 3x3 y muévete a una casilla segura para entrenar reacciones periféricas.",
-  },
+  title,
+  description,
+  keywords: ['esquivar casillas en la cuadrícula', 'cuadrícula 3x3', 'zonas de peligro', 'juego con el ratón online'],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'es_ES', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Inicio",
-      "item": "https://skilldrills.online/es"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Entrenamiento Físico",
-      "item": "https://skilldrills.online/es/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Coordinación Motora",
-      "item": "https://skilldrills.online/es/drills/physical/coordination"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Juego de Esquivar con el Ratón & Test de Visión Periférica",
-      "item": "https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion"
-    }
-  ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Peripheral_vision"],
-  "name": "Juego de Esquivar con el Ratón y Visión Periférica",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Herramienta online para el entrenamiento de reflejos espaciales, escaneo periférico y evasión dinámica de amenazas en cuadrícula 3x3.",
-  "url": "https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/es"
-  },
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
-};
-
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Entrenador de Evasión y Reflejos Espaciales",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Navegador moderno compatible con HTML5 Canvas y Pointer Lock API",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion",
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Inicio', item: 'https://skilldrills.online/es' },
+    { '@type': 'ListItem', position: 2, name: 'Juegos de agilidad con el ratón', item: 'https://skilldrills.online/es/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Esquivar casillas en la cuadrícula', item: url },
+  ],
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Juego de Evasión en Cuadrícula Dinámica (Dynamic Grid Evasion)",
-  "url": "https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion",
-  "description": "Entrenamiento de reflejos espaciales y visión periférica mediante la evasión de detonaciones en cuadrícula 3x3 bajo presión de tiempo.",
-  "genre": [
-    "Coordination Drill",
-    "Reflex Training",
-    "Spatial Awareness",
-    "Action"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Esquivar casillas en la cuadrícula 3x3',
+  url,
+  description,
+  genre: ['Action Game', 'Browser Game'],
+  gamePlatform: ['Web Browser', 'Desktop'],
+  applicationCategory: 'Game',
+  operatingSystem: 'All',
+  inLanguage: 'es-ES',
+  dateModified: '2026-11-10',
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
+
+const faqs = [
+  { q: '¿Cómo funciona este juego de esquivar casillas en la cuadrícula?', a: 'La pantalla se divide en una cuadrícula 3x3. En cada oleada algunas casillas parpadean en naranja como aviso. Cuando el aviso termina, esas casillas explotan en rojo; si en ese momento tu cursor está fuera de ellas, superas la oleada. La siguiente oleada empieza 0,35 segundos después de la explosión y una ronda dura 45 segundos.' },
+  { q: '¿Cuándo se comprueba la posición del cursor?', a: 'Solo en el momento de la explosión. Puedes cruzar casillas de peligro durante el aviso; basta con estar en una casilla segura cuando explotan. El cursor empieza en el centro y la casilla central también puede ser peligrosa.' },
+  { q: '¿Cómo se calculan los puntos y el combo?', a: 'Cada oleada superada da 100 puntos multiplicados por el combo. El multiplicador es 1,1x desde 3 oleadas seguidas, 1,25x con 5, 1,5x con 10, 2,0x con 20 y 2,5x con 30. El código prevé 3,0x con 50 seguidas, pero una ronda de 45 segundos apenas pasa de 40 oleadas: en la práctica, 2,5x es el máximo alcanzable.' },
+  { q: '¿Cómo aumenta la dificultad?', a: 'Cada ronda empieza en el nivel 1. El nivel sube 1 cada 250 puntos y 1 más cada 4 oleadas seguidas. El aviso baja de 1,4 a 0,45 segundos y las casillas de peligro pasan de 3 a 7, de modo que solo quedan 2 casillas seguras. Ambos valores llegan a su límite en el nivel 15.' },
+  { q: '¿Una explosión resta puntos o tiempo?', a: 'No. El combo vuelve a 0, con un destello rojo y una sacudida de pantalla, pero la puntuación y el tiempo restante no cambian. El destello rojo se puede desactivar durante la partida con el botón de abajo a la derecha.' },
+  { q: '¿Cómo se asigna la nota?', a: 'La puntuación final se compara con una referencia de 17.000 puntos (B desde 6.120, C desde unos 3.450, D desde 1.530). Aunque superes todas las oleadas durante 45 segundos, el cálculo se queda en unos 8.400 puntos: la mejor nota realista aquí es B.' },
+  { q: '¿Qué controles se usan?', a: 'Solo el ratón. Al empezar, el puntero se bloquea y se aplica la sensibilidad de los ajustes del sitio. En el teclado solo sirve la tecla Esc (salir). En un dispositivo solo táctil el cursor no se puede mover: se recomienda un ordenador con ratón.' },
+  { q: '¿En qué se diferencia de un juego de esquivar proyectiles?', a: 'Aquí eliges una de las 9 casillas fijas y entras en ella antes de que acabe el aviso. Para huir de proyectiles que llegan desde los bordes, usa Quick Dodge en la misma categoría.' },
+  { q: '¿Es gratis? ¿Dónde se guardan mis récords?', a: 'Sí, gratis, sin instalación ni cuenta, directamente en el navegador. La mejor puntuación y el mejor combo se quedan en el almacenamiento local de tu navegador.' },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo funciona el test de visión periférica y esquiva en cuadrícula 3x3?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La pantalla se estructura en una cuadrícula táctica de 9 sectores. Diversas celdas emiten un pulso de aviso ámbar advirtiendo de una detonación inminente. El usuario debe mantener una mirada amplia, localizar con la visión periférica las celdas seguras que continúan apagadas y trasladar el cursor antes de la explosión roja."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué fijar la mirada en el centro es superior a mirar celda por celda de forma secuencial?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Siguiendo la Teoría de Integración de Características de Anne Treisman (1980), los estímulos luminosos periféricos se procesan en paralelo de forma preatencional. Explorar secuencialmente cada cuadrante causaría un colapso cognitivo cuando el margen de aviso se reduce a sólo 0,45 segundos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿En qué medida ayuda este ejercicio a esquivar habilidades y utilidades en juegos como LoL, Valorant o Apex?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En situaciones competitivas, las habilidades de área de efecto (mólotovs, granadas y ultimates) demandan una reacción de escape instantánea sin perder la orientación del combate. El ejercicio automatiza la respuesta espacial de Posner, permitiendo reaccionar a amenazas periféricas con reflejos puros."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo se intensifica la dificultad a lo largo de los 15 niveles de la prueba?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El nivel escala cada 250 puntos acumulados. El tiempo de aviso disminuye progresivamente desde 1,4 segundos en el nivel inicial hasta un umbral crítico de 0,45 segundos en los niveles 12 a 15, al tiempo que el número de celdas en peligro aumenta de 3 hasta 7 sectores simultáneos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Ser alcanzado por una explosión resta puntos del marcador o penaliza el tiempo de la partida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No se deducen puntos de la puntuación acumulada ni se recorta el cronómetro de 45 segundos. Sin embargo, encontrarse en una celda roja durante la explosión reinicia inmediatamente la racha de combo a 1.0x, incentivando decisiones rápidas y sin vacilaciones."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es la técnica psicomotriz adecuada para frenar el ratón dentro de la celda segura?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Se aplica el modelo de control motor de Robert Woodworth (1899): un flick balístico veloz hacia el cuadrante seguro seguido de una deceleración instantánea ejerciendo ligera presión descendente con la almohadilla de la mano y los dedos sobre la alfombrilla para anular la inercia del movimiento."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué la sensibilidad del ratón es determinante para sobrevivir en los niveles expertos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Una sensibilidad excesivamente baja exige movimientos de brazo demasiado amplios que consumen los 0,45 segundos de margen. Una sensibilidad media calibrada (entre 28 y 38 cm/360°) permite transitar entre celdas adyacentes con pequeños gestos conjugados de muñeca y dedos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué táctica es imprescindible para superar los 17.000 puntos y alcanzar el rango Apex Grid Evader?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es esencial mantener un enfoque visual relajado en el punto central de la cuadrícula y aplicar la regla de escape al sector seguro adyacente más cercano al cursor. Conservar la racha de combo 3.0x de forma ininterrumpida durante los 45 segundos es el factor determinante."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué diferencia existe entre atención endógena y exógena en este entrenamiento de reflejos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Según las investigaciones de Michael Posner (1980), la atención endógena es voluntaria y consciente (requiere unos 300ms), mientras que la atención exógena es involuntaria y se activa por señales luminosas repentinas (entre 100 y 150ms). Este ejercicio entrena la respuesta exógena ante los pulsos de alerta."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Requiere esta herramienta la descarga de aplicaciones o el registro de datos personales?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No requiere ninguna instalación externa. Todo el rendimiento cinemático se procesa localmente mediante HTML5 Canvas y la API de alta precisión performance.now(). Tus marcas y puntuaciones se conservan exclusivamente en la memoria local de tu navegador (LocalStorage)."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'es-ES',
+  dateModified: '2026-11-10',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
+const steps = [
+  'Pulsa Empezar; tras una cuenta atrás de 3 segundos, el cursor parte del centro de la cuadrícula.',
+  'Localiza las casillas que parpadean en naranja y busca una casilla sin aviso.',
+  'Antes de la explosión, coloca el cursor dentro de la casilla segura, lejos del borde.',
+  'Encadena oleadas, mantén el combo y busca tu récord en 45 segundos.',
+];
+
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Protocolo de Ejecución del Test de Esquiva en Cuadrícula y Reflejos Espaciales",
-  "description": "Secuencia de 4 pasos para monitorear la cuadrícula 3x3, identificar celdas seguras y esquivar detonaciones.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Posicionamiento Central y Foco Descentralizado",
-      "text": "Sitúa el cursor en el centro geométrico de la cuadrícula 3x3 y abre el campo visual abarcando los 9 cuadrantes a la vez.",
-      "url": "https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion#paso-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Detección Periférica del Pulso de Alerta",
-      "text": "Identifica de forma instantánea mediante la visión periférica las celdas que no emiten pulsos ámbar y permanecen como zonas seguras.",
-      "url": "https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion#paso-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Flick Balístico hacia el Cuadrante Seguro",
-      "text": "Desplaza el cursor rápidamente al sector seguro más cercano antes de que finalice la cuenta atrás y se activen las explosiones rojas.",
-      "url": "https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion#paso-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Mantenimiento del Combo y Supervivencia Continua",
-      "text": "Encadena esquivas exitosas para elevar el multiplicador de combo hasta 3.0x y maximizar tu puntuación en los 45 segundos.",
-      "url": "https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion#paso-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Cómo jugar a esquivar casillas en la cuadrícula 3x3',
+  description: 'Cuatro pasos para salir de las casillas de peligro de la cuadrícula 3x3.',
+  step: steps.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, name: `Paso ${i + 1}`, text, url: `${url}#step-${i + 1}` })),
 };
 
 const gridGuide = {
-  heading: "Fundamentación Científica: Atención Espacial y Mecánica de Evasión Periférica",
-  subtitle: "Teoría de integración de Treisman, paradigma de orientación de Posner y control bifásico de Woodworth aplicados a la esquiva rápida",
+  heading: 'Guía para esquivar casillas en la cuadrícula',
   intro: [
-    "El entrenamiento de evasión en cuadrícula dinámica (Dynamic Grid Evasion) somete al sistema visual y psicomotor a un desafío de elevada carga cognitiva. En lugar de seguir una trayectoria unívoca, el usuario debe procesar de manera simultánea 9 sectores tácticos en una matriz 3x3, identificando qué cuadrantes presentan una amenaza inminente y decidiendo en milésimas de segundo la ruta de escape óptima hacia un refugio seguro.",
-    "La eminente psicóloga cognitiva Anne Treisman y Garry Gelade (1980), a través de su célebre Teoría de Integración de Características, evidenciaron que las propiedades visuales salientes (como bordes intermitentes y cambios cromáticos) se segregan de forma preatencional y paralela en la corteza visual primaria. Al mantener una mirada suave y descentralizada en el centro de la matriz, la retina periférica activa sus células ganglionares magnocelulares, permitiendo capturar de un solo vistazo el estado de los 9 sectores sin recurrir a movimientos sacádicos secuenciales lentos.",
-    "El análisis de la atención espacial encubierta se complementa con las investigaciones fundamentales de Michael Posner (1980). A medida que el ejercicio progresa hacia los niveles 12 a 15, el margen de alerta se contrae de 1,4 segundos a unos implacables 0,45 segundos, mientras que las amenazas abarcan hasta 7 celdas simultáneas. Bajo esta presión cronométrica extrema, la respuesta motriz debe ejecutarse conforme al modelo bifásico de Robert Woodworth (1899): una fase inicial de aceleración balística seguida de una desaceleración precisa por fricción manual para enclavar el cursor dentro de la celda segura.",
-    "Precisión técnica y latencia en navegador: Esta prueba opera en tiempo real utilizando la API performance.now() con resolución de milisegundos. La latencia total percibida depende de la tasa de refresco del monitor (60Hz = 16,6ms; 144Hz = 6,9ms; 240Hz = 4,1ms) y de la frecuencia de muestreo del ratón. Variaciones inferiores a 5ms forman parte del comportamiento normal del hardware."
+    'Esquivar casillas en la cuadrícula es un juego de navegador: en una cuadrícula 3x3 sacas el cursor de las casillas marcadas en naranja antes de que exploten. No hay objetos volando: eliges una de las 9 casillas, así que decidir rápido y detenerte con precisión cuentan por igual.',
+    'Al subir de nivel, el aviso baja de 1,4 a 0,45 segundos y hasta 7 de las 9 casillas se vuelven peligrosas. Al final solo quedan 2 casillas seguras y no hay tiempo para revisar una por una. Como en los experimentos de señales de atención de Posner (Posner, 1980), ayuda leer de un vistazo el contraste entre casillas que parpadean y casillas oscuras.',
+    'Un movimiento rápido combina un gran impulso y una pequeña corrección final (Woodworth, 1899). Elegir la casilla correcta y pasarte del borde cuenta igualmente como impacto: practica detenerte dentro de la casilla.',
+    'Los resultados son marcas de práctica propias de SkillDrills, no un examen médico, ni una prueba de la vista, ni una medida de rendimiento deportivo. Compara tus puntuaciones con el mismo ratón, la misma sensibilidad y la misma pantalla.',
   ],
   benchmarks: {
-    title: "Baremos y Niveles de Desempeño en Evasión Espacial y Reflejos (5 Rangos)",
-    headers: ["Rango / Nivel", "Título de Maestría", "Puntuación Mínima", "Nivel Alcanzado", "Margen de Aviso Resistido", "Perfil Neurocognitivo de Evasión"],
+    title: 'Tramos de nota (tramos de práctica SkillDrills)',
+    headers: ['Nota', 'Puntos', 'Referencia'],
     rows: [
-      ["Tier 1: Evasor Apex Supremo", "Apex Grid Evader", "17.000+ puntos", "Nivel 12 – 15", "0,45 – 0,60 s de aviso", "Procesamiento periférico avanzado; flicks balísticos sin fallos hacia zonas seguras bajo 7 amenazas activas (Treisman 1980; Posner 1980)"],
-      ["Tier 2: Maestro de Escaneo Espacial", "Master Spatial Scanner", "13.000 – 16.999 pts", "Nivel 9 – 11", "0,65 – 0,80 s de aviso", "Excelente respuesta atencional exógena de Posner; evasión serena ante 5 o 6 celdas detonadas con óptimo frenado de Woodworth"],
-      ["Tier 3: Evasor Táctico Eficaz", "Proficient Hazard Dodger", "9.500 – 12.999 pts", "Nivel 6 – 8", "0,85 – 1,05 s de aviso", "Habilidad destacada para videojuegos competitivos; buena velocidad de decisión y control firme de fricción sobre la alfombrilla"],
-      ["Tier 4: Superviviente de Sector Medio", "Intermediate Sector Evader", "6.000 – 9.499 pts", "Nivel 3 – 5", "1,10 – 1,25 s de aviso", "Promedio habitual en adultos; pérdidas de racha por visión en túnel cuando el tiempo de aviso desciende de 1,0 segundo"],
-      ["Tier 5: Aprendiz de Evasión Inicial", "Novice Blast Survivor", "< 6.000 puntos", "Nivel 1 – 2", "> 1,25 s de aviso", "Dificultad acusada para procesar la periferia visual; tendencia a fijar celdas aisladas y sobrepasar la celda segura"]
+      ['B', 'desde 6.120', 'casi todas las oleadas superadas en 45 segundos'],
+      ['C', 'desde unos 3.450', 'más de la mitad de las oleadas superadas seguidas'],
+      ['D', 'desde 1.530', 'llegas con fiabilidad a la casilla libre tras el aviso'],
+      ['F', 'menos de 1.530', 'principiante'],
     ],
-    note: "Baremos determinados a partir de la Teoría de Integración de Características (Treisman & Gelade 1980), el paradigma de Posner (1980) y los principios de control motor de Woodworth (1899)."
+    note: 'Los tramos comparan la puntuación final con 17.000 puntos y son tramos de práctica de SkillDrills. A y superiores son inalcanzables en 45 segundos según el cálculo. No son estadísticas de usuarios ni percentiles.',
   },
   techniques: {
-    title: "Estrategias de Entrenamiento para Maximizar la Visión Periférica y la Evasión",
+    title: 'Consejos para sumar más puntos',
     items: [
-      {
-        name: "Fijación Descentralizada en el Centro de la Cuadrícula (Treisman Decentralized Fixation)",
-        desc: "Enfoca suavemente el centro de la matriz 3x3 sin clavar la vista en una celda concreta. Amplía la atención periférica para que los fotorreceptores de la retina detecten la intermitencia ámbar en cualquier esquina al instante.",
-        tips: "No sigas el cursor con la mirada; confía en la memoria motora del brazo para dirigir el ratón hacia la celda libre."
-      },
-      {
-        name: "Activación Exógena Involuntaria de Posner (Exogenous Attention Reflex)",
-        desc: "Aprovecha la orientación exógena estudiada por Posner (1980). En lugar de deliberar racionalmente qué celdas son peligrosas, desplaza la mano de forma automática hacia el cuadrante que permanece oscuro y sin luz de aviso.",
-        tips: "La ausencia de destello es tu señal inmediata de desplazamiento."
-      },
-      {
-        name: "Flick Balístico y Frenado por Fricción de Woodworth (Boundary Deceleration)",
-        desc: "Acelera sin dudar en dirección al sector seguro y apoya la base de la mano y los dedos exteriores contra la alfombrilla en el momento de cruzar la frontera del sector.",
-        tips: "Esa fricción mecánica detiene en seco el ratón y evita que salga rebotado fuera de la zona segura."
-      },
-      {
-        name: "Criterio de Fuga al Sector Seguro Más Cercano (Nearest Safe Sector Rule)",
-        desc: "En los niveles avanzados con 7 celdas comprometidas y sólo 0,45s de tiempo, buscar la celda 'perfecta' provoca bloqueo mental.",
-        tips: "Huye sin vacilar al cuadrante seguro más cercano a tu posición actual, sea vertical, horizontal o diagonal inmediata."
-      }
-    ]
+      { name: 'Busca las casillas oscuras', desc: 'En vez de contar las casillas que parpadean, busca directamente la casilla sin aviso.', tips: 'Al final de la ronda solo hay 2 casillas seguras: ve a la más cercana.' },
+      { name: 'La casilla segura más cercana', desc: 'Con unos 0,5 segundos de aviso, los recorridos largos ya no llegan. Ve a la casilla segura más próxima.', tips: 'En horizontal o vertical suele ser más corto que en diagonal.' },
+      { name: 'Detente dentro de la casilla', desc: 'Cuenta la posición exacta del cursor. En el borde puede contar como la casilla vecina.', tips: 'Apunta al centro de la casilla.' },
+      { name: 'Mantén el combo', desc: 'Cuanto más larga la racha, más suben el multiplicador y el nivel. Arriesgarte con una casilla lejana y recibir el impacto te cuesta el combo.', tips: 'Prefiere la casilla segura y cercana.' },
+    ],
   },
-  steps: [
-    "Adopta una postura estable y sitúa el cursor en la celda central de la cuadrícula 3x3.",
-    "Mantén una mirada relajada al centro para captar las señales de aviso con la visión periférica.",
-    "Mueve el ratón con decisión hacia la celda segura más cercana antes de la detonación roja.",
-    "Preserva el combo 3.0x ininterrumpidamente durante los 45 segundos para coronar el rango Apex."
-  ],
-  audience: "Jugadores y atletas de eSports (LoL, Valorant, CS2, Apex Legends), deportistas de pelota y combate, y cualquier persona que busque mejorar su visión periférica y velocidad de evasión táctica.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015'),
+  steps,
+  audience: 'Para quien busca un juego de esquivar casillas en una cuadrícula y para jugadores que quieren practicar decidir rápido y frenar el ratón con precisión.',
+  faqs,
+  sources: pickSources('posner1980', 'woodworth1899', 'fitts1954'),
 };
 
 export default function DynamicGridEvasionPageEs() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <DynamicGridEvasionClient
         copy={{
-          title: "Juego de reflejos con ratón",
-          subtitle: "Detecta el peligro y muévete a una casilla segura • 15 niveles",
-          hudLabels: {
-            score: "Puntuación",
-            timeLeft: "Tiempo Restante",
-            bestScore: "Mejor Puntuación",
-            bestCombo: "Mejor Combo"
-          },
-          rulesTitle: "Reglas del Test de Esquiva y Sistema de Puntos",
+          title: 'Esquivar casillas en la cuadrícula',
+          hudLabels: { score: 'Puntuación', timeLeft: 'Tiempo restante', bestScore: 'Mejor puntuación', bestCombo: 'Mejor combo' },
+          rulesTitle: 'Reglas y cálculo de puntos',
           rules: [
-            { title: "Evasión de Celdas de Peligro", text: "Traslada el cursor a zonas seguras antes de que las alertas ámbar estallen en detonaciones rojas." },
-            { title: "Multiplicador de Combo", text: "Sobrevive a oleadas consecutivas sin recibir daño para alcanzar un multiplicador de hasta 3.0x." },
-            { title: "Progresión de Dificultad", text: "Cada 250 puntos el nivel aumenta, comprimiendo el tiempo de aviso de 1,4s a 0,45s y activando hasta 7 zonas de peligro." },
-            { title: "Impacto de Explosión", text: "Quedar atrapado en una explosión restablece el multiplicador a 1.0x sin restar puntos acumulados." }
+            { title: 'Aviso', text: 'En cada oleada algunas casillas parpadean en naranja. Cuando termina el aviso, explotan.' },
+            { title: 'A la casilla segura', text: 'Si el cursor está fuera de las casillas de peligro en el momento de la explosión, ganas 100 puntos multiplicados por el combo.' },
+            { title: 'Nivel', text: 'El nivel sube cada 250 puntos y cada 4 oleadas seguidas. El aviso baja de 1,4 a 0,45 s y las casillas de peligro pasan de 3 a 7.' },
+            { title: 'Impacto', text: 'Solo el combo vuelve a 0. La puntuación y la ronda de 45 segundos no cambian.' },
           ],
-          aboutTitle: "Sobre el Entrenamiento de Esquiva en Cuadrícula",
-          aboutHeading: "Atención Espacial Periférica y Evasión Balística de Amenazas",
-          aboutText: "Este ejercicio se fundamenta en la Teoría de Integración de Características de Anne Treisman (1980) y en el Paradigma de Orientación Espacial de Michael Posner (1980). La dinámica en matriz 3x3 estimula la visión periférica descentralizada y automatiza las reacciones de huida indispensables para esquivar habilidades de área (AOE), proyectiles y granadas en juegos competitivos.",
+          aboutTitle: '¿Qué es el juego de esquivar casillas en la cuadrícula?',
+          aboutHeading: 'Salir de las casillas de peligro de una cuadrícula 3x3',
+          aboutText: 'En este juego, casillas de una cuadrícula 3x3 parpadean en naranja antes de explotar y tú llevas el cursor a tiempo a una casilla segura. Al subir de nivel, el aviso se acorta y hay más casillas de peligro. Se trata de decidir rápido y frenar el ratón con precisión, no de una medición médica.',
           aboutCards: [
-            {
-              title: "Público Objetivo",
-              desc: "Jugadores de FPS y MOBA que buscan optimizar la esquiva de habilidades y proyectiles, además de entusiastas del entrenamiento de reflejos espaciales."
-            },
-            {
-              title: "Habilidades Potenciadas",
-              desc: "Búsqueda visual paralela, atención encubierta refleja, reducción del tiempo de reacción de elección y frenado motor de precisión."
-            },
-            {
-              title: "Visión Periférica",
-              desc: "El escaneo descentralizado erradica la visión en túnel y expande el campo de conciencia visual en 360 grados."
-            }
-          ]
+            { title: 'Para quién', desc: 'Para quien disfruta de los juegos de esquivar en una cuadrícula o quiere practicar reaccionar a un aviso con el ratón.' },
+            { title: 'Qué practicas', desc: 'Distinguir casillas de peligro y seguras, elegir la más cercana y detener el cursor dentro.' },
+            { title: 'Formato', desc: '45 segundos fijos, siempre desde el nivel 1. Recibir un impacto no cuesta ni puntos ni tiempo.' },
+          ],
         }}
       />
       <DrillGuide guide={gridGuide} />
-      <RelatedDrills />
+      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/coordination/dynamic-grid-evasion" />
     </>
   );
 }

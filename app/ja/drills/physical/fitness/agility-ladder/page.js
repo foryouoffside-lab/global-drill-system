@@ -5,52 +5,36 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — Japan (JP / JA)
-// Primary Intent: ラダートレーニング メニュー, ラダートレーニング 効果, アジリティ トレーニング, フットワーク 練習
-// Japanese Context: サッカー/バスケ/テニスのフットワーク俊敏性＆FPSレレレ撃ち切り返しリズム
-// Target clusters from native sports and footwork search language; competition is unmeasured:
-//   - "ラダートレーニング メニュー" (High-intent sports ladder training query)
-//   - "ラダートレーニング 効果" (Benefits and neuro-adaptation query)
-//   - "アジリティ トレーニング" (Agility and footwork conditioning)
-//   - "フットワーク 練習 メニュー" (Footwork agility exercise plan)
-//   - "敏捷性 トレーニング" (Nimbleness & quickness training)
-//   - "レレレ撃ち コツ" (Counter-strafing / AD strafe rhythm in FPS)
-//   - "ステップ ワーク 練習" (Step work motor mechanics)
-//   - "アジリティ ラダー 練習" (Agility ladder drills)
-//   - "両側性運動協調" (Bilateral motor coordination)
-//   - "反射神経 フットワーク" (Reflex footwork timing)
+// SEO (2026-11-10, docs/seo/research/physical-2026-11/ja.md + coordinator queue)
+// Primary: アジリティラダーゲーム (descriptive, unmeasured).
+// ラダートレーニング (244) appears only as an honest analogy: this is a mouse
+// sequence game, not a footwork workout. No fitness or FPS outcome claims.
 // ============================================================
 
+const TITLE = 'アジリティラダーゲーム｜ラダートレーニングの順番をマウスで再現 | SkillDrills';
+const DESCRIPTION = '無料のアジリティラダーゲーム。上から流れてくるはしごのマス4つを、左・右・左・右の順にマウスカーソルで通過します。45秒間コンボをつないでスコアを伸ばし、レベルが上がるほどはしごが速くなります。登録不要・インストール不要ですぐに遊べます。';
+const URL = 'https://skilldrills.online/ja/drills/physical/fitness/agility-ladder';
+
 export const metadata = {
-  title: "ラダートレーニング｜アジリティ練習 | SkillDrills",
-  description: "無料のラダートレーニング・アジリティ練習。左右のステップをリズムよく追い、フットワークの俊敏性と運動シークエンスを鍛えます。",
-  keywords: [
-    "ラダートレーニング メニュー",
-    "アジリティ トレーニング",
-    "フットワーク 練習 メニュー",
-    "敏捷性 トレーニング",
-    "レレレ撃ち コツ",
-    "ステップ ワーク 練習",
-    "アジリティ ラダー 練習",
-    "両側性運動協調",
-    "ラダー フットワーク"
-  ],
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: ['アジリティラダーゲーム', 'ラダートレーニング マウス', 'リズムゲーム マウス', '順番 マウスゲーム', '無料 ブラウザゲーム'],
   alternates: {
-    canonical: 'https://skilldrills.online/ja/drills/physical/fitness/agility-ladder',
+    canonical: URL,
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "ラダートレーニング｜アジリティ練習 | SkillDrills",
-    description: "無料のラダートレーニング・アジリティ練習。左右のステップをリズムよく追い、フットワークの俊敏性と運動シークエンスを鍛えます。",
-    url: 'https://skilldrills.online/ja/drills/physical/fitness/agility-ladder',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
     siteName: 'SkillDrills',
     locale: 'ja_JP',
     type: 'website',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "ラダートレーニング｜アジリティ練習 | SkillDrills",
-    description: "無料のラダートレーニング・アジリティ練習。左右のステップをリズムよく追い、フットワークの俊敏性と運動シークエンスを鍛えます。",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
 };
@@ -59,323 +43,141 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills ホーム",
-      "item": "https://skilldrills.online/ja"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "身体機能トレーニング",
-      "item": "https://skilldrills.online/ja/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "フィットネス＆敏捷性",
-      "item": "https://skilldrills.online/ja/drills/physical/fitness"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "ラダートレーニング＆アジリティ練習",
-      "item": "https://skilldrills.online/ja/drills/physical/fitness/agility-ladder"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills ホーム", "item": "https://skilldrills.online/ja" },
+    { "@type": "ListItem", "position": 2, "name": "身体機能トレーニング", "item": "https://skilldrills.online/ja/drills/physical" },
+    { "@type": "ListItem", "position": 3, "name": "フィットネス", "item": "https://skilldrills.online/ja/drills/physical/fitness" },
+    { "@type": "ListItem", "position": 4, "name": "アジリティラダーゲーム", "item": URL }
   ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Agility"],
-  "name": "ラダートレーニング＆アジリティ練習ドリル",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "スクロールするラダーの左右ステップを交互に正確に捉え、両側性運動プログラミングとフットワークリズムを鍛える無料オンラインドリル。",
-  "url": "https://skilldrills.online/ja/drills/physical/fitness/agility-ladder",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/ja"
-  },
-  "inLanguage": "ja",
-  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "ラダートレーニング Web アプリケーション",
+  "name": "アジリティラダーゲーム",
+  "description": "流れてくるはしごのマス4つを左・右・左・右の順にマウスカーソルで通過する45秒の無料ブラウザゲーム。",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas およびポインターロックをサポートする最新ブラウザ",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/ja/drills/physical/fitness/agility-ladder",
+  "browserRequirements": "HTML5 Canvasとマウスに対応した最新のWebブラウザ",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": URL,
   "inLanguage": "ja",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-10"
 };
 
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "アジリティラダー・運動シークエンシングゲーム",
-  "url": "https://skilldrills.online/ja/drills/physical/fitness/agility-ladder",
-  "description": "下降するラダーステップを左右交互に高速通過してフットワーク敏捷性と反射神経を鍛える無料ブラウザアクション。",
-  "genre": [
-    "Fitness Game",
-    "Coordination",
-    "Rhythm Game",
-    "Agility"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "inLanguage": "ja",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const FAQS = [
+  {
+    q: "アジリティラダーゲームとはどんなゲームですか？",
+    a: "画面の上から流れてくるはしご（ラダー）ごとに、4つのマス（左・右・左・右）を決まった順番でマウスカーソルで通過する無料ブラウザゲームです。1回のプレイは45秒で、はしごを完成させるたびにスコアが入ります。"
+  },
+  {
+    q: "操作方法は？クリックは必要ですか？",
+    a: "クリックは不要です。マウスを動かして照準を今のマス（緑の枠）に重ねると踏んだ扱いになり、次のマスが有効になります。順番は1（左）→2（右）→3（左）→4（右）です。Escキーでドリルを終了します。"
+  },
+  {
+    q: "スコアとコンボはどう計算されますか？",
+    a: "はしごを1つ完成させると100点×コンボ倍率が入ります。連続完成数に応じて倍率は3連続で1.1倍、5連続で1.25倍、10連続で1.5倍、20連続で2.0倍、50連続で最大3.0倍まで上がります。"
+  },
+  {
+    q: "レベルが上がると何が変わりますか？",
+    a: "スコア250点ごとにレベルが1上がり、連続完成4回ごとにボーナスレベルが加わります。はしごの流れる速さは150 px/sから始まり、レベル15で750 px/sになり、その後も速くなり続けます。マスの判定範囲は18pxから10pxまで狭くなります。"
+  },
+  {
+    q: "マスを取り逃すとどうなりますか？",
+    a: "4マスを通過する前にはしごが画面下に届くと失敗となり、コンボが0に戻り、赤いフラッシュと画面の揺れが出ます。獲得済みのスコアや残り時間は減りません。"
+  },
+  {
+    q: "実際のラダートレーニングの代わりになりますか？",
+    a: "なりません。ラダートレーニングの左右の順番パターンを、画面上で手とマウスでなぞるゲームです。フットワーク、体力、敏捷性の向上を測定したり保証したりするものではありません。"
+  },
+  {
+    q: "結果画面のランクはどう決まりますか？",
+    a: "ランクは最終スコアだけで決まります。15,343点以上でS+、12,283点以上でS、9,563点以上でA、6,120点以上でB、3,443点以上でC、1,530点以上でD、それ未満はFです。SkillDrillsの練習用の目安で、他のユーザーとの比較統計ではありません。"
+  },
+  {
+    q: "記録はどこに保存されますか？",
+    a: "ベストスコア、最高コンボ、最高レベルはお使いのブラウザのlocalStorageにのみ保存され、サーバーには送信されません。登録やインストールなしで無料で遊べます。"
   }
-};
+];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ja",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "ラダートレーニング（アジリティ練習）を画面上のマウス操作で行うことにどんな運動効果がありますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "大脳皮質の運動野、大脳基底核、小脳からなる中枢神経運動回路は、手先と足先の筋肉制御で同じ神経タイミング機構を共有しています。画面上を一定のメトロノームリズムで下降するラダーの左右ステップを正確にインターセプトする訓練は、時間的リズム同期能力（Temporal Cadence）を高め、実際のフィールドでのフットワークの俊敏性やステップ切り替え能力を向上させます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "カール・ラシュレー（Karl Lashley, 1951）の直列運動秩序化理論と運動チャンキングとは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "カール・ラシュレーは、超高速の連続運動では各動作ごとに感覚フィードバックを待って反応することは神経伝達時間的に不可能であり、一連の動作が「運動チャンク（Motor Chunk）」として事前に一括プログラムされて発火することを実証しました。ラダーの4ステップ（左-右-左-右）を単一の運動塊として脳に事前構築することで、フィードバック遅延に邪魔されずに高速クリアが可能になります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "リチャード・シュミット（Schmidt, 1975）の一般化運動プログラム（GMP）における「相対的タイミング不変性」とは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "一般化運動プログラム（GMP）理論によると、熟練した動作では全体のスピードが150 px/sから750 px/sへと5倍加速しても、各ステップを踏む時間比率（1:1:1:1）は一定に保たれます。慌ててリズムを崩すのではなく、運動全体の出力パラメータのみを均等に増幅させて規則正しいリズム構造を維持することが上達の絶対条件です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "APEXやVALORANTの「レレレ撃ち」（切り返しストレイフ）やエイムの安定性にどう役立ちますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "FPSの実戦におけるレレレ撃ち（ADキーの高速切り返し）やピーク動作では、横移動中の惰性を打ち消す正確なブレーキ制御と左右のリズム感覚が不可欠です。本ドリルで下降するステップを左右交互に鋭く捉える運動は、撃ち合い中の無駄な力みや手首のブレを抑制し、クロスヘアを一定のヘッドラインに固定するメトロノーム感覚を養います。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "スコア獲得によるレベル進行と、スクロール速度・ステップ判定（ヒットボックス）の変化は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "250点獲得ごとにレベルが1段階上昇し、最大レベル15まで難易度が進行します。ラダーの下降速度は初期の150 px/sから最高750 px/sまで加速し、ステップの有効判定幅は18pxから10pxへと段階的に縮小します。レベル4以上では左右の配置オフセットがランダムに変化し、予測迎撃の難易度が極限まで跳ね上がります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "ステップを踏み外したりラダーを見送った場合、減点や制限時間の減少はありますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "減点や45秒の制限時間減少ペナルティはありません。ステップの踏み外しや見送りが発生するとコンボ倍率のみが1.0xにリセットされ、画面に赤い視覚フラッシュが表示されます。失敗を恐れずに最高速度での高速フリックに挑戦できるよう設計されています。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "ラダートレーニングでの推奨マウス感度（DPI）と最適な持ち方（グリップ）は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "左右約80pxの幅を機敏に往復するため、腕全体を大きく動かすよりも指先と手首のスナップで微調整が効く「つかみ持ち（Claw Grip）」または「つまみ持ち（Fingertip Grip）」が最も適しています。感度はマウスパッド中央で指先の軽い弾き動作だけで左右80pxをカバーできる中感度（ミドルセンシ）を推奨します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "ラダーが高速落下する最難関レベルで、リズムを崩さないための視線制御のコツは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "各ステップを目玉で1つずつ追うと眼球跳躍運動（サッカード）による30〜50msの知覚遅延が発生します。視線はラダーが通過する画面中央の垂直軸線上に柔らかく固定（脱焦点注視）し、周辺視野で左右のステップの下降を俯瞰して手首を機械的にリズム振動させるのが最良の戦略です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "ゲーミングモニターの高リフレッシュレート（144Hz/240Hz）はインターセプト精度に影響しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ラダーが750 px/sで下降する際、一般的な60Hzモニターではフレームごとに約12.5pxの表示飛び（テレポート現象）が生じ、10px幅の微細ステップをすり抜けやすくなります。一方、144Hz（5.2px）や240Hz（3.1px）の高周波ディスプレイでは滑らかな軌跡が描かれ、フィッツの法則（Fitts 1954）に基づく正確なインターセプトが可能になります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "練習中にマウス操作データや個人情報が外部サーバーへ送信されることはありますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "いいえ、一切ありません。SkillDrillsの全ての計算、フレーム補間、コンボ処理はブラウザのperformance.now()を用いて100%クライアント側で完結しています。ベストスコア等の記録はお使いのブラウザのlocalStorageにのみ安全に保存され、外部サーバーへの通信やデータ収集は存在しません。"
-      }
-    }
-  ]
+  "dateModified": "2026-11-10",
+  "mainEntity": FAQS.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
 };
+
+const STEPS = [
+  "スタートを押し、カウントダウン（3-2-1）の後にゲームが始まります（PCではポインターロックが有効になります）。",
+  "流れてくるはしごの1番目のマス（左、緑の枠）に照準を重ねます。",
+  "2番（右）、3番（左）、4番（右）のマスを同じリズムで続けて通過し、はしごを完成させます。",
+  "45秒間はしごを取り逃さずにつなぎ、コンボ倍率を上げます。"
+];
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "ラダートレーニング＆アジリティ練習 4段階実戦プロトコル",
-  "description": "スクロールするラダーステップを左右交互に正確にクリアし、両側性運動シークエンシングとフットワーク敏捷性を高める体系的方法。",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "中央垂直軸への視線固定とポインターロック",
-      "text": "スタートボタンを押してポインターロックを有効化し、視線を中央軸線上に置いて最初のラダーの下降を待ち受けます。",
-      "url": "https://skilldrills.online/ja/drills/physical/fitness/agility-ladder#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "最上段1番ステップの迎撃と左右切り返し",
-      "text": "最上段左側のステップ1へシャープにマウスをフリックして通過させ、即座に右側ステップ2への切り返しを開始します。",
-      "url": "https://skilldrills.online/ja/drills/physical/fitness/agility-ladder#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "4ステップ一括クリアとラダー通過",
-      "text": "ステップ3（左）、ステップ4（右）まで一度の淀みもない単一の運動リズムチャンクで駆け抜け、グリーンの完了チェックを点灯させます。",
-      "url": "https://skilldrills.online/ja/drills/physical/fitness/agility-ladder#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "3.0倍コンボ維持と750 px/s極限加速",
-      "text": "連続クリアでコンボ倍率を3.0倍まで高め、最高速度750 px/sのレベル15極限ゾーンを45秒間生き抜きます。",
-      "url": "https://skilldrills.online/ja/drills/physical/fitness/agility-ladder#step-4"
-    }
-  ]
+  "name": "アジリティラダーゲームの遊び方",
+  "description": "はしごのマス4つを左・右・左・右の順にマウスカーソルで通過する方法。",
+  "step": STEPS.map((text, i) => ({ "@type": "HowToStep", "position": i + 1, "name": `ステップ${i + 1}`, "text": text }))
 };
 
 const ladderGuide = {
-  heading: "ラダートレーニング及び直列運動シークエンシング生体力学ガイド",
-  subtitle: "ラシュレー直列運動秩序化理論、シュミット一般化運動プログラム（GMP）、フィッツ迎撃モデルに基づく敏捷性論",
+  heading: "アジリティラダーゲームのガイド",
   intro: [
-    "ラダートレーニング（Agility Ladder Drill）は、陸上競技、サッカー、バスケットボール、ボクシングなど俊敏性が求められる多くの一流スポーツでフットワークの敏捷性を高めるために広く採用されている基本ドリルです。本デジタル版では、地面のラダーを画面上の垂直スクロールマトリックスとして再構築し、下降する4段ステップを左右交互に高速インターセプトする両側性運動シークエンシング（Bilateral Motor Sequencing）を練習します。",
-    "認知神経科学の先駆者カール・ラシュレー（Karl Lashley, 1951）の「行動における直列順序の問題（The Problem of Serial Order in Behavior）」によると、高速で連続する運動はステップごとの感覚フィードバックを介在させていては間に合いません。運動皮質はラダーの4ステップ（左-右-左-右）を個別の運動ではなく単一の統合された「下位運動チャンク（Sub-Movement Chunk）」として事前プログラムし、一気に発火させることで反応遅延を克服します。",
-    "リチャード・シュミット（Richard A. Schmidt, 1975）の「一般化運動プログラム（GMP）」は、優れたアスリートが速度の変化に晒されても動作内の相対的タイミング不変性（Invariant Relative Timing）を保つことを示しました。ラダーのスクロール速度が150 px/sから750 px/sへと跳ね上がっても、左右の往復比率（1:1:1:1）を乱さず正確なケイデンス（歩調・リズム）を刻み続ける能力こそが、本物の敏捷性と切り返し精度の証明です。",
-    "測定精度およびハードウェアに関する注記: 本ドリルはブラウザのperformance.now()高解像度タイマーを利用し、クライアント端末内でミリ秒単位で計測されます。モニターのリフレッシュレート（60Hz 16.7ms / 144Hz 6.9ms / 240Hz 4.1ms）やマウスのポーリングレート（125Hz vs 1000Hz）により物理的な遅延差が生じるため、5ms未満の微細な差は測定ノイズとしてご理解ください。すべてのスコアはブラウザ内にのみ安全に保持されます。"
+    "アジリティラダーゲームは、ラダートレーニングの「左・右・左・右」のステップ順をマウスゲームに置き換えたドリルです。上からはしごが流れてきたら、4つのマスを決まった順番で照準で通過します。クリックは使わず、マウスの移動だけで遊びます。",
+    "1回のプレイは45秒です。はしごを1つ完成させるごとに100点×コンボ倍率（最大3.0倍）が入り、スコア250点ごとにレベルが上がって、はしごが速く流れ、マスの判定範囲が狭くなります。",
+    "速い連続動作は1マスずつ反応するよりも、4マスを1つのまとまりとして事前に計画した方が安定するという研究があります（Lashley, 1951; Schmidt, 1975）。このゲームはその順番とリズムを手で練習するもので、実際のフットワークや体力を鍛えるものではありません。"
   ],
   benchmarks: {
-    title: "ラダートレーニング＆両側性運動シークエンシング 5段階標準ベンチマーク",
-    headers: ["階層・ランク", "称号 (Rank Title)", "基準スコア", "到達レベル", "最高スクロール速度", "神経生体力学プロファイル"],
+    title: "結果ランクの基準（SkillDrills練習用の目安）",
+    headers: ["ランク", "最終スコア"],
     rows: [
-      ["Tier 1: 頂点ラダーマスター", "Apex Ladder Master", "17,000点以上", "Level 12 – 15", "600 – 750 px/s", "最上級段階の完璧なラシュレー4ステップチャンキング及び750 px/s極限速度下での無欠損メトロノームリズム (Lashley 1951; Schmidt 1975)"],
-      ["Tier 2: 上級スプリンター", "Advanced Rhythm Sprinter", "13,000 – 16,999点", "Level 9 – 11", "480 – 599 px/s", "上級段階の卓越した両側性切り返し速度、10〜12px縮小ステップにおける精密なフィッツ迎撃減速軌道の完遂"],
-      ["Tier 3: 熟練ステップシークエンサー", "Proficient Step Sequencer", "9,500 – 12,999点", "Level 6 – 8", "350 – 479 px/s", "競技ゲーマー及びアスリート標準、優れた左右往復フットワークリズムと安定した手首のスナップ制御"],
-      ["Tier 4: 中級ケイデンス学習者", "Intermediate Cadence Learner", "6,000 – 9,499点", "Level 3 – 5", "230 – 349 px/s", "一般的な成人の平均水準、速度350 px/s超過時に感覚フィードバックの遅延によりステップ踏み外しが頻発"],
-      ["Tier 5: 初級ラダークライマー", "Novice Rung Climber", "6,000点未満", "Level 1 – 2", "< 230 px/s", "ステップごとの視覚追従によるリズム断絶、中心軸固定とチャンキング動作の事前プログラミング練習を推奨"]
+      ["S+", "15,343点以上"],
+      ["S", "12,283～15,342点"],
+      ["A", "9,563～12,282点"],
+      ["B", "6,120～9,562点"],
+      ["C", "3,443～6,119点"],
+      ["D", "1,530～3,442点"],
+      ["F", "1,530点未満"]
     ],
-    note: "直列運動秩序化理論(Lashley 1951)、一般化運動プログラム(Schmidt 1975)、フィッツ迎撃法則(Fitts 1954)に基づく統合評価指標です。"
+    note: "ゲームのランク計算式から求めたSkillDrills練習用の目安です。他のユーザーとの比較統計やパーセンタイルではありません。"
   },
   techniques: {
-    title: "ラダートレーニング敏捷性＆運動シークエンシング実戦プロトコル",
+    title: "スコアを伸ばすコツ",
     items: [
-      {
-        name: "ラシュレー4ステップ一括運動プログラミング (Lashley Serial Chunking)",
-        desc: "ラダーの4つのステップを1つずつ見てから反応しようとしないでください。「左-右-左-右」の4連続スイングをひと続きの動作としてあらかじめ脳内でパッケージ化し、最初のステップ接触と同時に一連の軌道として一気に放出しましょう。",
-        tips: "ステップ間で毎回視覚確認のために手を止めず、単一のジグザグ曲線を描くようにクロスヘアを流れるように動かしてください。"
-      },
-      {
-        name: "シュミット相対的リズム不変性制御 (GMP Invariant Rhythm)",
-        desc: "ラダーのスクロール速度が加速しても焦って不規則に手をバタつかせないでください。各ステップ間を刻む時間比率（1:1:1:1）は一定に保ち、手首の全体的な振り抜きパワーのみを均等に引き上げましょう。",
-        tips: "心の中で「イチ・ニ・サン・シ」と一定のメトロノームカウントを刻み、その拍子に合わせてスイングの勢いだけを増幅させてください。"
-      },
-      {
-        name: "フィッツ下降オフセット予測迎撃カーブ (Moving Target Interception)",
-        desc: "ラダーは真下へスクロールしているため、ステップの現在の位置を狙うとクロスヘアが上空を切って空振りします。移動時間中にステップが下降する予測到達点を見越し、わずかに下向きの斜め角度で進入してください。",
-        tips: "ステップの中心よりも2〜3px下側のフチを狙って飛び込むと、スクロールの下降によって自然にジャスト中央でヒットします。"
-      },
-      {
-        name: "750 px/s超高速域での中心軸脱焦点ペーシング (Metronomic Fixation)",
-        desc: "レベル10を超えて550 px/sを上回ると、目でカーソルやステップを追尾した瞬間に知覚処理がパンクします。視線は画面中央の垂直軸線上に柔らかく据えてください。",
-        tips: "左右のステップの点滅を周辺視野でぼんやり感じ取りながら、手首の周期的な左右振動運動だけでラダーをくぐり抜けさせましょう。"
-      }
+      { name: "4マスをひとまとまりで", desc: "1マスずつ見て反応すると間に合いません。左・右・左・右のジグザグを1つの動きとして続けて通過しましょう。", tips: "マスとマスの間で止まらず、カーソルを流し続けます。" },
+      { name: "少し下を狙う", desc: "はしごは下へ流れ続けるので、マスの今の位置より少し下へ動かすと判定範囲に入りやすくなります。", tips: "速くなるほど下を予測します。" },
+      { name: "視線は中央に", desc: "マスは画面中央の縦軸の左右に出ます。視線を中央に置くと左右のマスを一度に見られます。", tips: "レベル4以降ははしごの位置が左右に少しずれます。" }
     ]
   },
-  steps: [
-    "姿勢を整え、クロスヘアを中央の垂直軸線上に配置します。",
-    "最初のラダーが下降してきたら、最上段の1番ステップ（左）へ鋭くスナップします。",
-    "2番（右）、3番（左）、4番（右）ステップを単一のリズムチャンクで素早くくぐり抜けます。",
-    "連続クリアで3.0倍コンボを維持し、45秒間でハイスコア記録を更新します。"
-  ],
-  audience: "サッカー、バスケ、テニス、ボクシングのフットワーク俊敏性を強化したいアスリート、及びVALORANTやAPEXでレレレ撃ちや安定したヘッドライン制御を極めたいFPSプレイヤー。",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('lashley1951', 'schmidt1975', 'fitts1954', 'woodworth1899', 'woods2015')
+  steps: STEPS,
+  audience: "マウスで遊べる短いリズム・順番ゲームを探している人、左右のカーソル往復を繰り返し練習したいPCユーザー。",
+  faqs: FAQS,
+  sources: pickSources('lashley1951', 'schmidt1975', 'fitts1954')
 };
 
 export default function AgilityLadderPageJa() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <MotorSequencingClient
         copy={{
-          title: "ラダートレーニング",
-          subtitle: "左右のステップをリズムよく追う • 15段階",
-          rulesTitle: "ラダートレーニングのルールと採点システム",
+          title: "アジリティラダーゲーム",
+          hudLabels: { score: "スコア", timeLeft: "残り時間", bestScore: "ベストスコア", bestCombo: "最高コンボ" },
+          rulesTitle: "アジリティラダーゲームのルール",
           rules: [
-            { title: "4段ステップの順次クリア", text: "スクロールするラダーのステップを左右交互の順序（1→2→3→4）で正確に通過します。" },
-            { title: "コンボ倍率の蓄積", text: "ラダーを連続でノーミスクリアするとコンボ倍率が最大3.0倍まで上昇し、高得点を獲得できます。" },
-            { title: "速度加速と判定縮小", text: "250点獲得ごとにレベルが上昇し、ラダーのスクロール速度が加速、ステップ幅が狭くなります。" },
-            { title: "ミス時のコンボリセット", text: "ステップを見送るか踏み外すとコンボ倍率が1.0倍にリセットされますが、時間は減少しません。" }
+            { title: "4マスを順番に", text: "流れてくるはしごのマスを1（左）→2（右）→3（左）→4（右）の順に照準で通過します。クリックは不要です。" },
+            { title: "コンボ倍率", text: "はしごを連続で完成させるとコンボ倍率が最大3.0倍まで上がります。はしご1つは100点×倍率です。" },
+            { title: "レベルアップ", text: "スコア250点ごとにレベルが上がり、流れる速さが上がってマスの判定範囲が狭くなります。" },
+            { title: "取り逃したはしご", text: "完成前にはしごが画面下に届くとコンボがリセットされます。スコアと時間は減りません。" }
           ],
-          aboutTitle: "ラダートレーニングについて",
-          aboutHeading: "両側性運動シークエンシングとリズム制御の神経生体力学",
-          aboutText: "ラダートレーニング（Motor Sequencing）は、敏捷性、両側性協調、そして規則的な運動パターンの実行能力を鍛える科学的ドリルです。カール・ラシュレー（1951）の直列順序化原理とリチャード・シュミット（1975）の一般化運動プログラム（GMP）に基づいて開発され、150 px/sから750 px/sへと加速するスクロール環境下で完全な時間的リズム不変性を維持するよう神経系を適応させます。APEXやVALORANTでのレレレ撃ちやフットワークの切り返し精度の向上に役立つ可能性があります。"
+          aboutTitle: "アジリティラダーゲームについて",
+          aboutHeading: "左右の順番とリズムをマウスで",
+          aboutText: "アジリティラダーゲームは、ラダートレーニングの左・右・左・右のステップ順をマウスゲームにした45秒のドリルです。流れてくるはしごのマス4つを順番に照準で通過するとはしごが完成し、スコアが上がるほど流れる速さが150 px/sからレベル15の750 px/sを超えて速くなり続けます。手とマウスで順番とリズムを練習するゲームで、実際のフットワークや体力の向上を測定するものではありません。"
         }}
       />
       <DrillGuide guide={ladderGuide} />

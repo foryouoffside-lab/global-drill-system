@@ -56,10 +56,10 @@ const saveData = (data) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { title: "Node Activation", text: "Touch the starting cyan node with your crosshair to initiate the bilateral connection vector." },
+  { title: "Node Activation", text: "Move your cursor onto the cyan start node to start the connection. No click is needed." },
   { title: "Vector Sweep", text: "Sweep your crosshair across the canvas directly toward the target magenta node." },
-  { title: "Corridor Tolerance", text: "Stay within the active corridor width. Floating outside the line breaks connection and resets streak." },
-  { title: "Streak Reset", text: "Drifting off path or failing to reach target node resets your combo multiplier to 1.0x." }
+  { title: "Corridor Tolerance", text: "Stay inside the corridor around the line. Leaving it ends the attempt and a new pair of nodes appears." },
+  { title: "Streak Reset", text: "Leaving the corridor resets your combo multiplier to 1.0x. No points or time are deducted." }
 ];
 
 const ABOUT_TEXT = `Cross-Body Movement Pro trains bilateral motor control, cross-body mouse sweeps, and vector line precision under cognitive speed pressure. Players initiate connections on edge nodes and sweep diagonally across the canvas.
@@ -626,12 +626,12 @@ export default function CrossBodyMovementClient({ copy = {} } = {}) {
           <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Hand Eye Coordination Game"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
+            {copy?.subtitle && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy.subtitle}
+              </p>
+            )}
           </div>
         )}
 
@@ -859,10 +859,10 @@ export default function CrossBodyMovementClient({ copy = {} } = {}) {
                         Crossing the midline means reaching to the side of space opposite the hand doing the reaching. It is measurably harder: reaches to contralateral targets are slower and less accurate than reaches to targets on the same side as the hand (Carey, Hargreaves &amp; Goodale, 1996). Each sweep here is also a Fitts&apos;s Law movement &mdash; time grows with the log of distance divided by target width (Fitts, 1954) &mdash; and the corridor narrows to 4 px, so the cost of the crossing rises as the session runs.
                       </p>
                       <p className="text-sm leading-relaxed text-gray-300">
-                        The <strong>Hand Eye Coordination Game</strong> (Cross-Body Movement) trains bilateral motor control, cross-body diagonal mouse sweeps, and high-velocity vector line tracking. Players touch edge nodes to activate connection vectors and sweep across the body midline to reach opposite-side target nodes.
+                        The <strong>Hand Eye Coordination Game</strong> (Cross-Body Movement) practises long, straight mouse sweeps from one side of the screen to the other. Players touch edge nodes to activate connection vectors and sweep across the body midline to reach opposite-side target nodes.
                       </p>
                       <p className="text-sm leading-relaxed text-gray-300">
-                        Grounded in A. Jean Ayres&apos;s (1972) sensory integration theory, Paul Fitts&apos;s (1954) law of movement amplitude, and Robert Woodworth&apos;s (1899) voluntary movement framework, this drill stimulates interhemispheric transfer via the corpus callosum. As difficulty scales to Level 15+, corridor tolerances constrict from 10px down to 4px and target nodes shrink, requiring rapid ballistic arm translation coupled with micrometric terminal finger deceleration.
+                        The drill uses Paul Fitts&apos;s (1954) speed-accuracy trade-off and Robert Woodworth&apos;s (1899) fast-approach, careful-finish model as design references. As your level rises, the corridor tolerance narrows from 10 px to 4 px, the nodes shrink from 16 px to 8 px and move closer to the screen edges, so each sweep gets longer and stricter.
                       </p>
                     </>
                   )}

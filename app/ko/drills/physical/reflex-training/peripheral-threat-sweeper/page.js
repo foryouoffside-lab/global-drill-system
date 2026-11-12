@@ -5,13 +5,13 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/ko/drills/physical/reflex-training/peripheral-threat-sweeper';
-const title = "주변시야 훈련 게임 | 주변 시야 반응 테스트 | SkillDrills";
-const description = "화면 중앙을 보면서 바깥에서 다가오는 표적을 찾아 클릭하는 무료 주변시야 훈련 게임. 시야 인지와 반응 속도를 연습하세요.";
+const title = "주변시야 훈련 게임 | 중앙을 보며 다가오는 표적 클릭 | SkillDrills";
+const description = "주변시야 훈련 게임: 화면 중앙 코어를 보면서 바깥에서 다가오는 표적을 코어에 닿기 전에 클릭하세요. 맞히면 +2초, 빗맞히거나 코어에 닿으면 -1초. 시야 검사가 아닌 무료 브라우저 클릭 게임입니다.";
 
 export const metadata = {
   title,
   description,
-  keywords: ["주변시야 훈련", "주변시야 훈련 게임", "주변 시야 테스트", "시야 넓히기", "주변시 훈련", "터널 시야", "주변시야 반응속도", "주변시야 게임"],
+  keywords: ["주변시야 훈련 게임", "주변시야 훈련", "주변시야 게임", "터널 시야", "주변 위협 스위퍼"],
   alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper') },
   openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
   twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
@@ -60,7 +60,7 @@ const softwareApplicationSchema = {
   url,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
 };
 
 const webApplicationSchema = {
@@ -73,7 +73,7 @@ const webApplicationSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url,
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
 };
 
 const videoGameSchema = {
@@ -86,7 +86,7 @@ const videoGameSchema = {
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -105,7 +105,7 @@ const faqs = [
   },
   {
     "q": "점수와 시간은 어떻게 계산되나요?",
-    "a": "표적을 클릭하면 100점에 콤보와 레벨 배수가 곱해지고 시간이 0.6초 늘어납니다. 콤보 배율은 최대 3.0배입니다. 표적이 중앙 코어에 닿거나 빈 곳을 클릭하면 콤보가 초기화되고, 페널티를 켠 경우 0.8초가 줄어듭니다."
+    "a": "표적을 클릭하면 100점에 콤보와 레벨 배수가 곱해지고 시간이 2초 늘어납니다(최대 60초). 시작 시간은 45초이고 콤보 배율은 최대 3.0배입니다. 표적이 중앙 코어에 닿거나 빈 곳을 클릭하면 콤보가 초기화되고 1초가 줄어듭니다. 이 감점은 항상 적용되며 설정으로 끌 수 없습니다."
   },
   {
     "q": "난이도는 어떻게 올라가나요?",
@@ -176,7 +176,7 @@ const howToSchema = {
 const guideProps = {
   "heading": "주변시야 훈련 게임 가이드",
   "intro": [
-    "주변 위협 스위퍼는 화면 중앙의 코어를 보면서 바깥에서 다가오는 표적을 클릭하는 브라우저 게임입니다. 시선을 고정한 채 주변의 움직임을 알아채는 연습이 됩니다.",
+    "주변 위협 스위퍼는 브라우저에서 하는 주변시야 훈련 게임입니다. 화면 중앙의 코어를 보면서 바깥에서 다가오는 표적을 코어에 닿기 전에 클릭합니다. 맞히면 2초가 늘고, 빗맞히거나 표적이 코어에 닿으면 1초가 줄어듭니다.",
     "시선을 옮기지 않고도 주의를 화면의 다른 위치로 돌릴 수 있다는 연구가 있습니다(Posner, 1980). 대비가 큰 움직이는 표적은 주변에서도 눈에 잘 띕니다(Treisman & Gelade, 1980). 이 드릴은 이런 과제를 게임으로 만든 것입니다.",
     "처음에는 약 1.4초 간격으로 천천히 시작해 표적 위치를 익히고, 점수가 오를수록 표적 속도(최대 520px/s)와 생성 간격(최소 0.20초)이 빨라집니다. 클릭할 때는 먼저 크게 이동하고 마지막에 작게 보정하는 방식이 효율적입니다(Woodworth, 1899; Fitts, 1954).",
     "결과는 연습 기록입니다. 시야 검사, 진단, 치료를 대신하지 않습니다. 시야가 좁아졌거나 이상이 느껴지면 안과 진료를 받으세요."
@@ -246,7 +246,7 @@ const guideProps = {
     "화면 중앙 코어를 보며 편하게 앉습니다.",
     "바깥에서 다가오는 표적을 눈동자를 움직이지 않고 알아챕니다.",
     "표적이 코어에 닿기 전에 클릭합니다.",
-    "콤보와 추가 시간을 유지하며 점수를 올립니다."
+    "맞힐 때마다 얻는 2초와 콤보를 유지하며 점수를 올립니다."
   ],
   "audience": "주변 움직임에 대한 반응을 게임으로 연습해 보고 싶은 사용자와, 시선을 고정한 채 주변을 보는 감각을 훈련해 보려는 게이머.",
   faqs,
@@ -299,7 +299,7 @@ export default function PeripheralThreatSweeperKoPage() {
           rulesItems: [
             {
               "title": "표적 클릭과 시간 연장",
-              "text": "바깥에서 다가오는 표적을 클릭하면 100점(콤보와 레벨 배수 적용)과 0.6초의 추가 시간을 얻습니다."
+              "text": "바깥에서 다가오는 표적을 클릭하면 100점(콤보와 레벨 배수 적용)과 2초의 추가 시간(최대 60초)을 얻습니다."
             },
             {
               "title": "콤보 배율",
@@ -311,7 +311,7 @@ export default function PeripheralThreatSweeperKoPage() {
             },
             {
               "title": "코어 침범과 빗맞힘",
-              "text": "표적이 중앙 코어에 닿거나 빈 곳을 클릭하면 콤보가 초기화되고, 페널티를 켠 경우 0.8초가 줄어듭니다."
+              "text": "표적이 중앙 코어에 닿거나 빈 곳을 클릭하면 콤보가 초기화되고 1초가 줄어듭니다."
             }
           ],
           aboutTitle: "주변시야 훈련 안내",

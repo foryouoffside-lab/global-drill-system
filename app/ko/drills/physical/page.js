@@ -5,54 +5,34 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 
 const physicalDrills = DRILLS.filter((d) => d.category === 'physical');
 
+const title = '피지컬 테스트 | 무료 마우스 게임 11종 | SkillDrills';
+const description = '피지컬 테스트를 브라우저에서 무료로 해 보세요. 움직이는 표적 클릭, 장애물 피하기, 커서 안정성, 경로 기억 등 마우스로 하는 11가지 피지컬 게임입니다. 실제 체력 측정이 아닌 조작 연습입니다.';
+
 export const metadata = {
-  title: '신체 순발력 & 반사신경 훈련 테스트 (11개 드릴) | SkillDrills',
-  description: '온라인 신체 순발력 및 반사신경 훈련. 11가지 과학적 드릴: 반응속도, 신체 균형 감각, 손 눈 협응력, 사다리 풋워크 및 장애물 회피 테스트.',
-  keywords: [
-    '신체 순발력 훈련', '반사신경 테스트 게임', '반응속도 테스트 온라인',
-    '균형 감각 테스트 온라인', '손 눈 협응력 게임', '사다리 스텝 민첩성 훈련',
-    '마우스 피하기 게임 순발력', '주변 시야 테스트 게임', '고노고 반응 억제 훈련',
-    '동적 장애물 회피 테스트', '자 떨어뜨리기 반응속도', '순발력 기르는 운동',
-    '양측 정중선 교차 협응', '운동신경 반응속도 올리는법', '무료 브라우저 순발력 게임'
-  ],
+  title,
+  description,
+  keywords: ['피지컬 테스트', '피지컬 테스트 게임', '마우스 피지컬 테스트', '마우스 게임', '무료 마우스 게임', '피지컬 게임'],
   openGraph: {
-    title: '신체 순발력 & 반사신경 훈련 테스트 (11개 드릴) | SkillDrills',
-    description: '온라인 신체 순발력 및 반사신경 훈련. 11가지 과학적 드릴: 반응속도, 신체 균형 감각, 손 눈 협응력, 사다리 풋워크 및 장애물 회피 테스트.',
+    title,
+    description,
     type: 'website',
     url: 'https://skilldrills.online/ko/drills/physical',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
-    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630, alt: '반응속도·민첩성 훈련 | 순발력 테스트 | SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630, alt: title }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '신체 순발력 & 반사신경 훈련 테스트 (11개 드릴) | SkillDrills',
-    description: '11가지 과학적 신체 순발력 및 반사신경 테스트. 반응속도, 신체 균형감각, 사다리 스텝, 장애물 회피를 브라우저에서 무료로 훈련하세요.',
+    title,
+    description,
     images: ['https://skilldrills.online/opengraph-image'],
   },
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://skilldrills.online/ko/drills/physical',
-    languages: getAlternateLanguages('/ko/drills/physical'),
+    languages: getAlternateLanguages('/drills/physical'),
   },
 };
-
-Object.assign(metadata, {
-  title: '반응속도·민첩성 훈련 | 순발력 테스트 11종 | SkillDrills',
-  description: '순발력 테스트, 반응속도, 민첩성, 균형감각과 손눈협응을 브라우저에서 연습하는 11개 무료 피지컬 드릴.',
-  keywords: ['순발력 테스트', '순발력 테스트 게임', '순발력 훈련', '반응속도 테스트', '민첩성 훈련', '반사신경 테스트', '손눈협응', '균형감각 훈련', '발놀림 훈련', '방향전환 훈련', '마우스 회피 게임', '무료 반응 훈련'],
-  openGraph: {
-    ...metadata.openGraph,
-    title: '반응속도·민첩성 훈련 | 순발력 테스트 11종 | SkillDrills',
-    description: '반응속도, 순발력, 균형감각과 손눈협응을 연습하는 11개 무료 브라우저 드릴.',
-  },
-  twitter: {
-    ...metadata.twitter,
-    title: '반응속도·민첩성 훈련 | 순발력 테스트 | SkillDrills',
-    description: '반응속도와 민첩성을 연습하는 11개 무료 피지컬 드릴.',
-  },
-  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -60,7 +40,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
     { "@type": "ListItem", "position": 2, "name": "전체 훈련 도감", "item": "https://skilldrills.online/ko/drills" },
-    { "@type": "ListItem", "position": 3, "name": "신체 순발력 & 반사 훈련", "item": "https://skilldrills.online/ko/drills/physical" }
+    { "@type": "ListItem", "position": 3, "name": "피지컬 테스트", "item": "https://skilldrills.online/ko/drills/physical" }
   ]
 };
 
@@ -68,10 +48,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "ko",
-  "dateModified": "2026-09-20",
-  "name": "신체 순발력 & 반사신경 훈련 도감 (11개 드릴)",
+  "dateModified": "2026-11-10",
+  "name": "피지컬 테스트 · 마우스 게임 11종",
   "url": "https://skilldrills.online/ko/drills/physical",
-  "description": "11가지 인터랙티브 신체 반사신경, 균형 감각, 손 눈 협응, 풋워크 민첩성 및 장애물 회피 테스트.",
+  "description": "표적 클릭, 장애물 피하기, 커서 안정성, 경로 기억과 타이밍을 마우스로 연습하는 11가지 브라우저 피지컬 테스트.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": physicalDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ko', drill.name);
@@ -91,22 +71,22 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ko",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-10",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "컴퓨터 화면 사다리 훈련이 실제 발놀림과 민첩성에 도움이 되나요?",
+      "name": "화면 사다리 게임이 실제 발놀림과 민첩성에 도움이 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "화면 사다리 드릴은 신호를 보고 방향을 정해 입력하는 시각 타이밍과 리듬을 연습합니다. 실제 발놀림이나 근력 훈련을 대신하지는 않으며, 스포츠 민첩성에 미치는 효과를 이 페이지에서 주장하지 않습니다. 같은 기기에서 기록 변화를 비교하는 보조 연습으로 쓰세요."
+        "text": "화면 사다리 드릴은 아래로 내려오는 사다리의 왼쪽·오른쪽 칸에 커서를 순서대로 옮기는 타이밍과 리듬을 연습합니다. 실제 발놀림이나 근력 훈련을 대신하지는 않으며, 스포츠 민첩성에 미치는 효과를 이 페이지에서 주장하지 않습니다. 같은 기기에서 기록 변화를 비교하는 보조 연습으로 쓰세요."
       }
     },
     {
       "@type": "Question",
-      "name": "반응 체인과 충동 조절 훈련은 어떤 연습인가요?",
+      "name": "오버에임 교정 훈련(반응 체인)은 어떤 연습인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "신호에 반응하다가 페이크나 유인 신호가 나오면 입력을 멈추는 연습입니다. 성급한 입력을 줄이는 감각을 기르는 데 쓸 수 있지만, 실제 경기에서의 오버커밋을 막는다고 보장하지는 않습니다."
+        "text": "움직이는 노드 안에서 커서를 완전히 멈춰야 점수를 얻고, 멈추지 않고 지나치거나 노드를 놓치면 콤보가 끊기고 1초가 줄어드는 제동 연습입니다. 실제 게임의 에임이 좋아진다고 보장하지는 않습니다."
       }
     },
     {
@@ -119,10 +99,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "양측 정중선 교차 훈련은 왜 하나요?",
+      "name": "눈 손 협응력 테스트는 무엇을 하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "좌우 손이나 방향을 번갈아 쓰는 과제로 좌우 전환과 순서 기억을 연습합니다. 뇌 반구 사이의 정보 교환 같은 효과는 이 페이지에서 주장하지 않으며, 협응 연습을 위한 보조 과제로 보세요."
+        "text": "시작 노드에 커서를 올린 뒤 화면을 가로질러 목표 노드까지 정해진 통로 안에서 커서를 옮기는 과제입니다. 통로를 벗어나면 콤보만 초기화됩니다. 뇌 반구 사이의 정보 교환 같은 효과는 주장하지 않습니다."
       }
     },
     {
@@ -143,7 +123,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "신체 순발력 훈련의 권장 루틴과 주기는 어떻게 되나요?",
+      "name": "피지컬 테스트는 얼마나 자주 하면 좋나요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "정해진 정답은 없습니다. 집중이 유지되는 15~25분 안팎의 세션을 주 몇 회 하고, 피로하면 쉬는 방식이 부담이 적습니다. 눈이나 손목에 통증이 있으면 중단하세요."
@@ -151,7 +131,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "온라인 반사신경 게임이 실제 체육관과 필드 훈련을 보완할 수 있나요?",
+      "name": "마우스 게임이 실제 체육관과 필드 훈련을 보완할 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "근력, 플라이오메트릭, 종목 훈련을 대체하지는 않습니다. 화면 신호를 보고 판단해 입력하는 시각 타이밍과 판단 속도를 연습하는 보조 도구로 활용할 수 있습니다."
@@ -168,7 +148,7 @@ faqSchema.mainEntity.push(
   },
   {
     "@type": "Question",
-    "name": "브라우저 반응 훈련이 실제 체력 훈련을 대신할 수 있나요?",
+    "name": "피지컬 테스트가 실제 체력 훈련을 대신할 수 있나요?",
     "acceptedAnswer": { "@type": "Answer", "text": "아닙니다. 이 드릴은 시각 타이밍, 판단 속도, 조작 정확도와 움직임 순서를 연습합니다. 근력, 순발력, 가동성 또는 종목별 코칭을 대신하지 않고 보완하는 도구입니다." }
   }
 );

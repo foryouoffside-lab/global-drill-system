@@ -5,13 +5,13 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/ko/drills/physical/fitness/speed-drill';
-const title = '에임 반응속도 테스트 | 클릭 속도 게임 | SkillDrills';
-const description = '작아지는 표적을 빠르게 클릭하는 무료 에임 반응속도 테스트 게임. 클릭 속도와 조준 정확도, 콤보 유지력을 브라우저에서 연습하세요.';
+const title = '클릭 게임 | 작아지는 표적 맞히기 | SkillDrills';
+const description = '움직이며 작아지는 표적을 사라지기 전에 마우스로 맞히는 무료 클릭 게임입니다. 명중하면 2초가 늘고, 빗맞히거나 놓치면 1초가 줄어듭니다. 45초에서 시작해 콤보와 레벨 배수로 점수를 쌓아 보세요.';
 
 export const metadata = {
   title,
   description,
-  keywords: ['에임 반응속도 테스트', '클릭 속도 게임', '마우스 반응속도 테스트', '클릭 속도 훈련', '순발력 테스트', '에임 속도 테스트', '표적 클릭 게임', '타겟 조준 훈련', '무료 에임 연습'],
+  keywords: ['클릭 게임', '마우스 클릭 게임', '작아지는 표적 클릭', '표적 클릭 게임', '움직이는 표적 맞히기', '무료 클릭 게임'],
   alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/fitness/speed-drill') },
   openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
   twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
@@ -24,15 +24,14 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'SkillDrills 홈', item: 'https://skilldrills.online/ko' },
     { '@type': 'ListItem', position: 2, name: '신체 훈련 허브', item: 'https://skilldrills.online/ko/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: '피트니스 및 순발력', item: 'https://skilldrills.online/ko/drills/physical/fitness' },
-    { '@type': 'ListItem', position: 4, name: '에임 반응속도 테스트', item: url },
+    { '@type': 'ListItem', position: 3, name: '클릭 게임', item: url },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: '에임 반응속도 테스트 · 클릭 속도 게임',
+  name: '클릭 게임 · 작아지는 표적 맞히기',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -40,20 +39,20 @@ const softwareApplicationSchema = {
   url,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: '에임 반응속도 테스트 웹 앱',
+  name: '클릭 게임 웹 앱',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'HTML5 Canvas를 지원하는 최신 브라우저',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url,
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
 };
 
 const videoGameSchema = {
@@ -61,22 +60,22 @@ const videoGameSchema = {
   '@type': 'VideoGame',
   name: '스피드 드릴: 작아지는 표적 클릭 게임',
   url,
-  description: '움직이며 작아지는 표적이 사라지기 전에 클릭하는 반응속도·조준 게임.',
-  genre: ['Action Game', 'Aim Trainer', 'Reflex Game'],
-  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  description: '움직이며 작아지는 표적이 사라지기 전에 클릭하는 마우스 클릭 게임.',
+  genre: ['Action Game', 'Casual Game'],
+  gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-10',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const faqs = [
-  { q: '에임 반응속도 테스트는 무엇을 하나요?', a: '움직이며 작아지는 표적이 사라지기 전에 클릭하는 게임입니다. 표적을 찾는 시간, 커서를 옮기는 속도, 클릭 정확도가 한 번에 쓰이고 점수와 콤보로 기록됩니다. 의료용 반응 검사가 아니라 브라우저 연습 도구입니다.' },
-  { q: '표적은 왜 계속 작아지나요?', a: '표적이 작을수록 맞히기 어려워지는 관계는 피츠의 법칙(Fitts, 1954)으로 설명됩니다. 이 드릴은 표적을 45px에서 12px까지 줄여, 늦게 클릭할수록 어려워지게 만듭니다. 크게 보일 때 빨리 클릭하는 것이 요령입니다.' },
-  { q: '점수와 시간은 어떻게 계산되나요?', a: '표적을 맞힐 때마다 100점에 콤보와 레벨 배수가 곱해지고 남은 시간이 0.6초 늘어납니다. 기본 시간은 45초이며 1,750점마다 레벨이 오릅니다. 표적이 사라지거나 빈 곳을 클릭하면 콤보가 1.0배로 돌아갑니다.' },
-  { q: '클릭 속도 측정(CPS)과 무엇이 다른가요?', a: '클릭 속도 측정은 정해진 시간 동안 같은 자리를 몇 번 누르는지 세는 도구입니다. 이 드릴은 위치가 계속 바뀌는 표적을 맞혀야 해서 연타 횟수보다 조준과 반응이 점수를 좌우합니다. 연타 속도만 재려면 연타 훈련 페이지를 이용하세요.' },
-  { q: '레벨이 오르면 무엇이 달라지나요?', a: '표적의 이동 속도가 기본 1.0배에서 최대 3.8배까지, 축소 속도가 0.6배에서 2.2배 이상까지 빨라집니다. 연속 성공 시 콤보 배율은 최대 3.0배까지 오릅니다. 속도와 정확도를 같이 유지해야 점수가 크게 오릅니다.' },
-  { q: '빗맞히면 어떤 불이익이 있나요?', a: '표적이 사라지거나 빈 곳을 클릭하면 콤보가 즉시 초기화됩니다. 설정에서 페널티를 켜면 실수 1회마다 0.8초가 줄어듭니다. 천천히 정확히 하는 것보다 빠르고 안정적으로 맞히는 균형이 필요합니다.' },
+  { q: '이 클릭 게임은 무엇을 하나요?', a: '움직이며 작아지는 표적이 사라지기 전에 클릭하는 게임입니다. 표적을 찾는 시간, 커서를 옮기는 속도, 클릭 정확도가 한 번에 쓰이고 점수와 콤보로 기록됩니다. 의료용 반응 검사가 아니라 브라우저 연습 도구입니다.' },
+  { q: '표적은 왜 계속 작아지나요?', a: '표적이 작을수록 맞히기 어려워지는 관계는 피츠의 법칙(Fitts, 1954)으로 설명됩니다. 이 드릴의 표적은 생성된 뒤 계속 줄어들다가 반지름 4px 이하가 되면 사라지므로, 늦게 클릭할수록 어려워집니다(타임아웃 설정을 끄면 표적이 줄어들지 않습니다). 크게 보일 때 빨리 클릭하는 것이 요령입니다.' },
+  { q: '점수와 시간은 어떻게 계산되나요?', a: '표적을 맞힐 때마다 100점에 콤보와 레벨 배수가 곱해지고 남은 시간이 2초 늘어납니다(최대 60초). 시작 시간은 45초이며 1,750점마다 레벨이 오릅니다. 표적이 사라지거나 빈 곳을 클릭하면 콤보가 초기화되고 1초가 줄어듭니다.' },
+  { q: '초당 클릭 수를 재는 테스트인가요?', a: '아닙니다. 이 게임은 클릭 횟수나 속도를 측정하지 않습니다. 위치가 계속 바뀌는 표적을 한 번씩 정확히 맞혀야 하며, 빈 곳을 누르면 1초가 줄어들기 때문에 연타는 오히려 손해입니다.' },
+  { q: '레벨이 오르면 무엇이 달라지나요?', a: '표적의 이동 속도와 축소 속도가 점점 빨라지고, 새로 나오는 표적의 크기도 작아집니다(반지름 32px에서 최소 10px). 연속 성공 시 콤보 배율은 최대 3.0배까지 오릅니다. 속도와 정확도를 같이 유지해야 점수가 크게 오릅니다.' },
+  { q: '빗맞히면 어떤 불이익이 있나요?', a: '표적이 사라지거나 빈 곳을 클릭하면 콤보가 즉시 초기화되고 남은 시간이 1초 줄어듭니다. 이 감점은 항상 적용됩니다. 천천히 정확히 하는 것보다 빠르고 안정적으로 맞히는 균형이 필요합니다.' },
   { q: 'FPS 게임 실력이 늘어나나요?', a: '이 페이지는 FPS 실력 향상을 보장하지 않습니다. 움직이는 작은 표적을 빠르게 맞히는 동작은 에임 연습과 비슷하지만 게임 감도, 화면, 규칙이 달라 같은 결과로 이어진다고 단정할 수 없습니다. 연습 기록을 비교하는 용도로 쓰세요.' },
   { q: '마우스 설정은 어떻게 하면 좋나요?', a: '정해진 정답은 없습니다. 평소 쓰는 DPI와 감도, 파지법으로 시작하고, 설정을 바꿨다면 바꾸기 전후 점수를 같은 조건에서 비교하세요. 손목이나 손가락에 통증이 있으면 쉬거나 중단합니다.' },
   { q: '모니터 주사율과 마우스 폴링레이트가 영향을 주나요?', a: '주사율이 높으면 표적 움직임이 더 자주 갱신되어 보이고, 폴링레이트가 높으면 마우스 입력이 더 자주 전달됩니다. 두 값은 지연 시간에 영향을 주는 요소로 알려져 있지만(Woods et al., 2015) 이 드릴에서 점수가 얼마나 달라지는지는 측정하지 않았습니다.' },
@@ -93,7 +92,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: '에임 반응속도 테스트 하는 방법 4단계',
+  name: '클릭 게임 하는 방법 4단계',
   description: '작아지는 표적을 빠르게 클릭해 점수와 콤보를 쌓는 방법입니다.',
   step: [
     { '@type': 'HowToStep', position: 1, name: '표적 위치 확인', text: '화면 중앙을 넓게 보며 표적이 나타나는 위치를 빠르게 찾습니다.', url: `${url}#step-1` },
@@ -104,14 +103,14 @@ const howToSchema = {
 };
 
 const speedGuide = {
-  heading: '에임 반응속도 테스트 가이드',
+  heading: '클릭 게임 가이드',
   intro: {
-    title: '에임 반응속도 테스트란?',
+    title: '작아지는 표적 클릭 게임이란?',
     paragraphs: [
-      '스피드 드릴은 움직이며 작아지는 원형 표적을 사라지기 전에 클릭하는 브라우저 게임입니다. 한 번의 클릭에 표적 탐색, 커서 이동, 클릭 정확도가 모두 들어가므로 단순 반응 시간 테스트와는 다른 종류의 연습이 됩니다.',
+      '스피드 드릴은 움직이며 작아지는 원형 표적을 사라지기 전에 클릭하는 무료 브라우저 클릭 게임입니다. 한 번의 클릭에 표적 탐색, 커서 이동, 클릭 정확도가 모두 들어가므로 단순 반응 시간 테스트와는 다른 종류의 연습이 됩니다.',
       '빠른 마우스 조준은 먼저 크게 움직이고 마지막에 작게 보정하는 두 단계로 설명되곤 합니다(Woodworth, 1899). 표적이 작을수록 맞히기 어려워지는 관계는 피츠의 법칙(Fitts, 1954)이 설명합니다. 이 드릴은 표적이 계속 줄어들기 때문에 먼저 크게 움직이는 단계를 빨리 시작하는 것이 유리합니다.',
       '밝고 대비가 큰 움직이는 표적은 주변 시야에서도 눈에 잘 띕니다(Treisman & Gelade, 1980). 화면 한 점만 보지 말고 전체를 넓게 보면 새 표적을 더 빨리 찾을 수 있습니다.',
-      '점수는 같은 마우스, 감도, 모니터에서 비교하세요. 주사율과 입력 장치도 지연에 영향을 줄 수 있습니다(Woods et al., 2015). 결과는 연습 기록이며 의학적 반응속도 검사나 선수 등급이 아닙니다.',
+      '점수는 같은 마우스, 감도, 모니터에서 비교하세요. 주사율과 입력 장치도 지연에 영향을 줄 수 있습니다(Woods et al., 2015). 결과는 연습 기록이며 의학적 검사나 선수 등급이 아닙니다.',
     ],
   },
   benchmarks: {
@@ -138,10 +137,10 @@ const speedGuide = {
   steps: [
     '편하게 앉아 커서를 화면 중앙에 둡니다.',
     '표적이 나타나면 커서를 한 번에 표적 근처로 옮깁니다.',
-    '표적이 작아지기 전에 클릭해 점수와 추가 시간 0.6초를 얻습니다.',
+    '표적이 작아지기 전에 클릭해 점수와 추가 시간 2초를 얻습니다.',
     '연속 성공으로 콤보를 쌓아 점수를 올립니다.',
   ],
-  audience: '클릭 속도와 조준 정확도, 손·눈 협응을 가볍게 연습하려는 게이머와 일반 사용자.',
+  audience: '움직이는 표적을 정확히 맞히는 마우스 조작과 손·눈 협응을 가볍게 연습하려는 게이머와 일반 사용자.',
   faqs,
   sources: pickSources('woodworth1899', 'fitts1954', 'treisman1980', 'lee1976', 'woods2015'),
 };
@@ -157,20 +156,19 @@ export default function LocalizedSpeedDrillPageKo() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <SpeedDrillClient
         copy={{
-          title: '에임 반응속도 테스트',
-          subtitle: '작아지는 표적을 빠르고 정확하게 맞히기',
+          title: '클릭 게임',
           hudLabels: { score: '현재 점수', time: '남은 시간', bestScore: '최고 점수', bestCombo: '최대 콤보' },
           rulesTitle: '진행 규칙과 점수 계산',
           rulesItems: [
-            { title: '표적 클릭과 시간 연장', text: '표적이 사라지기 전에 클릭하세요. 성공할 때마다 100점(콤보와 레벨 배수 적용)과 0.6초의 추가 시간이 주어집니다.' },
+            { title: '표적 클릭과 시간 연장', text: '표적이 사라지기 전에 클릭하세요. 성공할 때마다 100점(콤보와 레벨 배수 적용)과 2초의 추가 시간(최대 60초)이 주어집니다.' },
             { title: '콤보 배율', text: '실수 없이 표적을 연속으로 맞히면 콤보 배율이 최대 3.0배까지 오릅니다.' },
             { title: '점진적 난이도 상승', text: '1,750점을 얻을 때마다 레벨이 오르고, 표적의 이동 속도와 축소 속도가 빨라집니다.' },
-            { title: '놓침과 빗맞힘', text: '표적이 사라지거나 빈 곳을 클릭하면 콤보가 초기화되고, 페널티를 켠 경우 0.8초가 줄어듭니다.' },
+            { title: '놓침과 빗맞힘', text: '표적이 사라지거나 빈 곳을 클릭하면 콤보가 초기화되고 남은 시간이 1초 줄어듭니다.' },
           ],
           aboutTitle: '스피드 드릴 안내',
           aboutSections: [
             { title: '크게 움직이고 작게 보정하기', subtitle: '우드워스(Woodworth, 1899)의 두 단계 운동 설명', content: '빠른 조준은 먼저 크게 이동한 뒤 마지막에 작게 보정하는 두 단계로 설명됩니다. 레벨이 오를수록 보정할 시간이 짧아집니다.' },
-            { title: '작아지는 표적과 피츠의 법칙', subtitle: '표적 크기가 줄수록 어려워지는 관계', content: '표적이 45px에서 12px로 줄면 허용 오차가 좁아집니다. 크게 보일 때 빠르게 클릭하는 것이 핵심입니다.' },
+            { title: '작아지는 표적과 피츠의 법칙', subtitle: '표적 크기가 줄수록 어려워지는 관계', content: '표적이 반지름 4px까지 줄어들수록 허용 오차가 좁아집니다. 크게 보일 때 빠르게 클릭하는 것이 핵심입니다.' },
             { title: '눈에 띄는 움직이는 표적', subtitle: '트리즈먼(Treisman, 1980) 시각 탐색 연구', content: '대비가 큰 움직이는 표적은 주변 시야에서도 눈에 잘 띕니다. 화면 전체를 넓게 보면 새 표적을 빨리 찾을 수 있습니다.' },
             { title: '사라지기까지 남은 시간 가늠하기', subtitle: '리(Lee, 1976)의 접촉 시간 연구', content: '움직이거나 커지고 작아지는 대상까지 남은 시간을 사람이 가늠하는 방식에 관한 연구입니다. 표적이 사라지기 전 클릭 타이밍을 잡는 데 참고가 됩니다.' },
           ],

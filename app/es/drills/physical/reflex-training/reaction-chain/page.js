@@ -4,409 +4,197 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Spain & Latin America (ES / ES-ES / ES-MX)
-// Primary Intent: entrenamiento de frenado de punteria raton, como corregir overflick, test de inhibicion motora
-// Hispanic Gaming Context: Corrección de overflicking en Valorant y CS2, frenado cinético de ratón, inhibición de respuesta
-// High-Demand, Low-Competition Target Keywords:
-//   - "entrenamiento de frenado de punteria raton" (Mouse aim braking training)
-//   - "como corregir overflick raton" (How to fix overflick with mouse)
-//   - "test de inhibicion motora reflejos" (Motor inhibition reflex test)
-//   - "juego de frenado de raton y reflejos" (Mouse stopping reflex game)
-//   - "ejercicio de desaceleracion de raton" (Mouse deceleration exercise)
-//   - "parada cinetica punteria raton" (Kinetic arrest aim reflex)
-//   - "test de precision y reflejos raton" (Mouse precision and reflex test)
-//   - "juego de velocidad de reaccion raton" (Mouse reaction speed game)
-// ============================================================
+const url = 'https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain';
+const title = 'Frenado de Puntería: Para la Mira sin Pasarte | SkillDrills';
+const description = 'Frenado de puntería con el ratón: detén el cursor dentro de objetivos que llegan desde los bordes. Cada paso sin frenar u objetivo perdido resta 1 segundo.';
 
 export const metadata = {
-  title: "Frenado de puntería | Test de reflejos",
-  description: "Entrenamiento gratis de puntería en el navegador. Acierta objetivos móviles, detén el ratón con precisión y practica el control del overflick.",
-  keywords: [
-    "entrenamiento de frenado de puntería",
-    "entrenamiento de puntería online gratis",
-    "cómo corregir overflick con el ratón",
-    "test de inhibición motora",
-    "juego de reflejos y parada del ratón",
-    "ejercicio de desaceleración del ratón",
-    "test de precisión del ratón",
-    "juego de velocidad de reacción",
-    "cómo frenar la mira en FPS",
-    "entrenar puntería Valorant"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain',
-    languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Frenado de puntería | Test de reflejos",
-    description: "Acierta objetivos móviles, detén el ratón con precisión y practica el control del overflick en el navegador.",
-    url: 'https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain',
-    siteName: 'SkillDrills',
-    locale: 'es_ES',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Frenado de puntería | Test de reflejos",
-    description: "Acierta el objetivo, frena el ratón con precisión y practica el control del overflick.",
-  },
+  title,
+  description,
+  keywords: ['frenado de puntería', 'parar la mira dentro del objetivo', 'evitar pasarse (overflick)', 'overflick', 'frenar el ratón en el objetivo'],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'es_ES', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
+  robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Inicio",
-      "item": "https://skilldrills.online/es"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Ejercicios",
-      "item": "https://skilldrills.online/es/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Entrenamiento de Reflejos",
-      "item": "https://skilldrills.online/es/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Cadena de Reacción (Frenado de Puntería)",
-      "item": "https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Inicio', item: 'https://skilldrills.online/es' },
+    { '@type': 'ListItem', position: 2, name: 'Juegos de agilidad con el ratón', item: 'https://skilldrills.online/es/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Frenado de puntería', item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
-  "name": "Entrenamiento de Frenado de Puntería & Inhibición Motora (Reaction Chain)",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Módulo neurobiomecánico para entrenar la desaceleración motora, la inhibición de respuesta y la supresión del overflicking en movimientos de ratón a alta velocidad.",
-  "url": "https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/es"
-  },
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Frenado de puntería: para la mira sin pasarte (Reaction Chain)',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'Navegador con HTML5 Canvas y Pointer Lock, ratón',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
+  inLanguage: 'es-ES',
+  dateModified: '2026-11-10',
 };
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Frenado de Puntería – Inhibición Motora | SkillDrills",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Requires HTML5 Canvas and JavaScript enabled browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const faqs = [
+  {
+    q: '¿Qué practica este ejercicio de frenado de puntería?',
+    a: 'Los nodos entran en línea recta desde uno de los cuatro bordes de la pantalla. Llevas el cursor a un nodo y lo detienes por completo dentro de él. Evitar pasarte (overflick) depende justo de ese último momento de frenado, y el ejercicio lo aísla.',
   },
-  "url": "https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain",
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Entrenamiento de Frenado de Puntería & Inhibición Motora",
-  "url": "https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain",
-  "genre": ["Reflex Game", "Motor Control Trainer", "Esports Precision"],
-  "playMode": "SinglePlayer",
-  "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
-  "description": "Intercepte nodos a velocidades de hasta 1.800 px/s y detenga la velocidad del cursor por debajo de 1,5 px/frame dentro del objetivo para lograr multiplicadores de hasta 3,0x."
-};
+  {
+    q: '¿Cómo se calculan los puntos?',
+    a: 'Una parada dentro del nodo (indicador ARREST READY) da 50 puntos × multiplicador. No se hace clic. Desde 5 paradas seguidas: 1,2x; desde 10: 1,5x; desde 25: 2,0x; desde 40: el máximo de 3,0x.',
+  },
+  {
+    q: '¿Qué pasa si fallo?',
+    a: 'Un fallo es atravesar un nodo sin detenerte o dejar que un nodo salga de la pantalla. Cada fallo resta 1 segundo al tiempo restante y devuelve el multiplicador a 1,0x. No se restan puntos. Esta penalización de tiempo está siempre activa y no se puede desactivar.',
+  },
+  {
+    q: '¿Cuándo cuenta una parada?',
+    a: 'En cuanto el cursor, dentro del nodo, se mueve a menos de 1,5 píxeles por fotograma. Si va más rápido, el contacto cuenta como atravesarlo. Es un umbral propio del ejercicio.',
+  },
+  {
+    q: '¿Cómo aumenta la dificultad?',
+    a: 'El nivel sube con la puntuación, del 1 al 10 (a los 250, 500, 1.000, 2.000, 3.500, 5.500, 8.000, 11.000 y 15.000 puntos). La velocidad de los nodos pasa de 360 a 1.800 px/s, hay de 1 a 5 nodos a la vez y su radio baja de 15 a 6 px.',
+  },
+  {
+    q: '¿Es más difícil frenar que arrancar?',
+    a: 'Mucha gente lo siente así, aunque varía según la persona. Un modelo conocido describe el arranque y la parada como una carrera entre dos procesos (Logan & Cowan, 1984); si la parada llega tarde, la inercia lleva el cursor más allá del objetivo. La puntuación no mide un tiempo de reacción de parada.',
+  },
+  {
+    q: '¿Mejoraré en Valorant o CS2?',
+    a: 'No se puede garantizar. El ejercicio practica el frenado sobre el objetivo, pero la sensibilidad, la pantalla y las reglas de cada juego son distintas. Úsalo para comparar tus propias partidas.',
+  },
+  {
+    q: '¿Qué necesito?',
+    a: 'Un ratón. Tras la cuenta atrás se activa el Pointer Lock y juegas solo moviendo el ratón; el ejercicio no arranca en dispositivos solo táctiles. Usa tus DPI y tu sensibilidad habituales y compara los cambios en las mismas condiciones.',
+  },
+  {
+    q: '¿Dónde se guardan los resultados?',
+    a: 'La mejor puntuación, el mejor multiplicador y el nivel máximo se guardan solo en el almacenamiento local de tu navegador y no se envían a ningún servidor. Si borras los datos del navegador, se pierden.',
+  },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Por qué detener un movimiento de ratón con precisión milimétrica es más complejo que acelerar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La aceleración procede de la contracción motora explosiva de los músculos agonistas. Sin embargo, detener el cursor exige que los grupos antagonistas generen fuerzas opuestas milimétricamente calibradas en una ventana de milisegundos. Como demostró Woodworth (1899), la fase de frenado final depende de la retroalimentación visual y somatosensorial con un retraso fisiológico de 100 a 150 ms; cualquier descoordinación muscular provoca que la inercia desplace el cursor más allá del blanco (overflick)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qué postula el Modelo de Carrera de Caballos de Logan y Cowan (1984)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El modelo postula que la orden motora de ejecución ('proceso Go') y la señal de frenado o cancelación ('proceso Stop') compiten de forma independiente dentro de los ganglios basales. Para detener un movimiento rápido antes de rebasar el objetivo, la señal de parada debe ganar la carrera neuronal e inhibir la contracción antes de que la inercia supere la fricción estática."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qué es el Stop-Signal Reaction Time (SSRT) y cómo repercute en los shooters tácticos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El SSRT mide el tiempo de latencia neuronal interno (habitualmente de 180 a 250 ms) necesario para que el giro frontal inferior derecho (rIFG) y el núcleo subtalámico (STN) cancelen una orden motora en curso (Verbruggen & Logan, 2008). Un SSRT reducido permite anular un flick impreciso y clavar la mira en la cabeza del adversario sin oscilaciones parásitas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cuál es la causa biomecánica fundamental del overflick en Valorant y Counter-Strike 2?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El desequilibrio en la cocontracción de los músculos flexores y extensores del antebrazo. Al imprimir un impulso inicial excesivo sin una dosificación gradual de frenado, la energía cinética acumulada desborda el agarre estático del ratón sobre la alfombrilla. Este ejercicio condiciona la adherencia mecánica con las yemas de los dedos y la base del sensor."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cómo influye la Ley de Fitts (Fitts, 1954) cuando la velocidad de los nodos se incrementa?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Según la Ley de Fitts, el índice de dificultad (ID) se eleva logarítmicamente conforme disminuye la anchura de tolerancia espacial en relación con la distancia recorrida. A velocidades de 1.800 px/s, la ventana de corrección visual intermedia se reduce a cero, forzando al sistema neuromuscular a ejecutar una desaceleración balística de bucle abierto completamente calculada de antemano."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qué significa la condición de 'menos de 1,5 px/frame' para convalidar una parada cinética?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es un umbral biomecánico estricto diseñado para neutralizar el 'slice-through' o deslizamiento superficial donde el jugador atraviesa el nodo sin detenerse. A 144 Hz, 1,5 px/frame equivale a menos de 216 px/s, demostrando físicamente que los músculos aplicaron una frenada real y que el ratón entró en régimen de fricción estática."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "De qué modo afectan la superficie de la alfombrilla y los skates al control de frenado?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Las alfombrillas de vidrio o de tela ultra-deslizante facilitan la aceleración inicial pero ofrecen una retención de frenado (stopping power) prácticamente nula, sobrecargando los músculos estabilizadores. Para perfeccionar la desaceleración, las alfombrillas híbridas o de control con amortiguación intermedia proporcionan la fricción estática ideal para anclar la retícula."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por qué es indispensable un monitor de 144Hz o 240Hz para el entrenamiento de inhibición motora?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tal como acreditaron Woods et al. (2015), los paneles de 60Hz introducen 16,6 ms de desfase y borrosidad estroboscópica en las desaceleraciones críticas. A 240Hz (4,1 ms), la trayectoria continua del nodo se representa con nitidez submilimétrica, facultando a la corteza visual para emitir la orden de frenado más de 10 ms antes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cuál es la dosificación diaria recomendada para no saturar el sistema nervioso?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dado que la inhibición de respuesta consume elevados recursos cognitivos y sinápticos, se sugieren sesiones de 15 a 20 minutos diarios (10 a 15 rondas de 45 segundos con pausas de 45 segundos). Si se percibe fatiga muscular o agarrotamiento en la muñeca, debe suspenderse la práctica de inmediato para evitar vicios de sobretensión."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cómo transferir el rendimiento de este drill a situaciones reales de combate en shooters?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Conserve idéntica sensibilidad efectiva (eDPI) y agarre que en sus partidas competitivas. Durante la práctica, focalice su mente en 'bloquear' el cursor dentro del centro del objetivo en lugar de simplemente 'hacer clic'. Esa disciplina motora estabiliza el primer impacto en duelos directos."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'es-ES',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Guía de Entrenamiento de Frenado de Puntería e Inhibición Motora",
-  "description": "Protocolo estructurado en 4 fases para interceptar objetivos veloces y suprimir por completo la inercia cinemática del cursor.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Bloqueo de Puntero y Posición Central",
-      "text": "Haga clic sobre el lienzo interactivo para fijar el cursor y centre la retícula en la zona media."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Anticipación Vectorial y Flick Balístico",
-      "text": "Calcule la trayectoria del nodo entrante y proyecte un flick de aceleración rápida cubriendo el 80% de la distancia."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Frenado Antagonista y Arresto Cinético",
-      "text": "Al cruzar el borde del objetivo, aplique tensión antagonista y presión descendente para frenar por debajo de 1,5 px/frame."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Mantenimiento del Combo y Superación de 15.000 Puntos",
-      "text": "Encadene detenciones sin fallos durante 45 segundos para sostener el multiplicador 3,0x y quebrar la barrera de los 15.000 puntos."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Cómo hacer el ejercicio de frenado de puntería',
+  description: 'Cuatro pasos para detener el cursor limpiamente dentro del objetivo.',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Acercarte rápido', text: 'En cuanto aparezca un nodo, lleva el cursor con rapidez a su trayectoria.' },
+    { '@type': 'HowToStep', position: 2, name: 'Frenar antes del borde', text: 'Reduce la velocidad justo antes de llegar al borde del nodo.' },
+    { '@type': 'HowToStep', position: 3, name: 'Parar dentro del objetivo', text: 'Detén el cursor por completo dentro del nodo hasta que aparezca ARREST READY.' },
+    { '@type': 'HowToStep', position: 4, name: 'Mantener la racha', text: 'Para en un nodo tras otro sin atravesarlos. Cada fallo cuesta 1 segundo.' },
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
 const guideProps = {
-  sources: pickSources('logan1984', 'woodworth1899', 'fitts1954', 'woods2015'),
-  intro: {
-    title: "Neurofisiología de la Inhibición Motora y Biomecánica del Arresto Cinético",
-    paragraphs: [
-      "Impulsar el ratón a velocidad terminal hacia una coordenada es una acción muscular elemental; detener su desplazamiento sin deslizar ni un solo píxel adicional constituye la verdadera cima del control motor. Mientras los entrenadores convencionales se limitan a registrar el instante del clic, Reaction Chain aísla y entrena la capacidad del sistema nervioso para disipar la inercia física de manera instantánea tras interceptar un objetivo en movimiento (Kinetic Arrest).",
-      "En el célebre 'Modelo de Carrera de Caballos' de Gordon D. Logan y William B. Cowan (1984), el impulso motor excitador ('proceso Go') y el mandato inhibidor ('proceso Stop') compiten de modo independiente en los ganglios basales. Para clavar el cursor sobre un nodo dinámico, el giro frontal inferior derecho (rIFG) y el núcleo subtalámico (STN) deben desencadenar una contracción antagonista ultrarrápida que neutralice el momento cinético antes de que se produzca un rebase (Verbruggen & Logan, 2008).",
-      "El modelo de control en dos fases de Robert S. Woodworth (1899) certificó que toda maniobra ágil consta de un impulso balístico inicial en bucle abierto y una desaceleración óptica terminal. Bajo la Ley de Fitts (1954), cuando los nodos aceleran a 1.800 px/s, el margen temporal de ajuste visual se extingue: solo un cálculo previo de deceleración almacenado en el cerebelo permite eludir el descontrol del overflick.",
-      "Respaldado por la precisión temporal de performance.now(), este simulador computa el desplazamiento cuadro a cuadro y requiere una reducción por debajo de 1,5 px/frame para homologar la parada. Al practicarse en pantallas de 144Hz o 240Hz junto con sensores a 1000Hz, el retardo total se comprime por debajo de los 4 ms, reduciendo el retardo del sistema (Woods et al., 2015)."
-    ]
-  },
+  heading: 'Frenado de puntería: guía',
+  intro: [
+    'Reaction Chain es un ejercicio de frenado de puntería en el navegador: frenas el cursor sobre nodos que llegan desde los bordes de la pantalla y lo detienes por completo dentro de ellos. No hay clic; solo cuenta la parada. Una partida dura 45 segundos y cada fallo cuesta 1 segundo.',
+    'Un modelo conocido describe el arranque y la parada como una carrera entre dos procesos (Logan & Cowan, 1984). Un movimiento de apuntado rápido consta de un desplazamiento amplio y una corrección fina (Woodworth, 1899), y cuanto más pequeño es el objetivo, más precisa debe ser la parada (Fitts, 1954).',
+    'Compara resultados con el mismo ratón, la misma sensibilidad y el mismo monitor; la frecuencia de refresco y el dispositivo influyen en la latencia (Woods et al., 2015). Las cifras son registros de práctica y no garantizan ningún rendimiento en juegos.',
+  ],
   benchmarks: {
-    title: "Baremos Oficiales de Frenado de Puntería e Inhibición Motora (5 Niveles)",
-    headers: ["Rango de Habilidad", "Título Oficial", "Puntuación de Corte", "Tasa de Parada con Éxito", "Grado Global", "Perfil Neuromotor"],
+    title: 'Niveles y dificultad (valores del juego)',
+    headers: ['Nivel', 'Desde (puntos)', 'Velocidad de los nodos', 'Nodos a la vez', 'Radio del nodo'],
     rows: [
-      ["Etapa 1", "Muy avanzada", "15.000+ pts", "95%+ / 1500+ px/s", "Grade S", "Capacidad de inhibición sobrehumana: detención instantánea a 1.800 px/s sin overflick (Logan 1984; Woodworth 1899)"],
-      ["Etapa 2", "Avanzada", "11.000 – 14.999 pts", "90 – 94% / 1200 – 1499 px/s", "Grade A", "Desaceleración excepcional mediada por las yemas de los dedos; bloqueo firme tras aceleraciones violentas"],
-      ["Etapa 3", "Sólida", "7.500 – 10.999 pts", "82 – 89% / 900 – 1199 px/s", "Grade B", "Frenada consistente a velocidad media; fallos ocasionales de deslizamiento a máxima aceleración"],
-      ["Etapa 4", "En desarrollo", "4.000 – 7.499 pts", "70 – 81% / 600 – 899 px/s", "Grade C", "Promedio adulto estándar. Propensión a sobrepasar el blanco debido a una activación retardada de los músculos antagonistas"],
-      ["Etapa 5", "Inicial", "< 4.000 pts", "< 70% / < 600 px/s", "Grade D", "Inhibición motora deficiente con fallos constantes; requiere asimilar la frenada mecánica mediante fricción sobre la alfombrilla"]
+      ['1', '0', '360 px/s', '1', '15 px'],
+      ['2', '250', '420 px/s', '1', '14 px'],
+      ['3', '500', '500 px/s', '2', '13 px'],
+      ['4', '1.000', '600 px/s', '2', '12 px'],
+      ['5', '2.000', '720 px/s', '2', '11 px'],
+      ['6', '3.500', '850 px/s', '3', '10 px'],
+      ['7', '5.500', '1.000 px/s', '3', '9 px'],
+      ['8', '8.000', '1.200 px/s', '4', '8 px'],
+      ['9', '11.000', '1.450 px/s', '4', '7 px'],
+      ['10', '15.000', '1.800 px/s', '5', '6 px'],
     ],
-    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Calibrado conforme al Modelo de Carrera de Logan (1984), el control motor bifásico de Woodworth (1899) y la Ley de Fitts (1954)."
+    note: 'Estos valores están fijados en el código del ejercicio. No son estadísticas de usuarios ni percentiles.',
   },
   techniques: {
-    title: "Técnicas Prácticas de Frenado de Puntería",
+    title: 'Cuatro técnicas para una parada limpia',
     items: [
-      {
-        name: "Frenado Anticipado de Logan (Logan Kinetic Brake)",
-        desc: "Intentar detener el ratón una vez alcanzado el objetivo provoca inevitablemente un exceso de carrera debido a la latencia nerviosa. Inicie la desaceleración al cubrir el 80% de la distancia para converger a velocidad cero exactamente sobre el centro del nodo.",
-        tips: "Visualice el gesto no como tocar el objetivo, sino como incrustar firmemente la retícula en su centro."
-      },
-      {
-        name: "Fricción Descendente con las Yemas (Fingertip Downforce)",
-        desc: "No intente absorber toda la fuerza únicamente con la muñeca. En el instante de detención, aplique una leve presión hacia abajo con la yema de los dedos sobre el cuerpo del ratón para incrementar la fricción estática de la base.",
-        tips: "Aproveche la amortiguación del tejido de la alfombrilla para multiplicar el agarre de frenado."
-      },
-      {
-        name: "Supresión Radical del Slice-Through",
-        desc: "Atravesar el nodo mientras se hace clic desestabiliza la puntería en partidas reales. Exija que el cursor se detenga completamente hasta que el indicador verde 'ARREST READY' confirme la parada.",
-        tips: "La inmovilidad rigurosa en el interior del nodo prevalece sobre la velocidad precipitada."
-      },
-      {
-        name: "Gestión de Rachas para Multiplicador 3,0x",
-        desc: "Los errores de frenado no restan puntos pero reinician el multiplicador a 1,0x. Asegure una efectividad del 100% en los niveles iniciales para entrar a las fases de alta velocidad con la bonificación máxima activa.",
-        tips: "Más del 80% del puntaje récord se genera durante los periodos en los que se conserva el multiplicador 3,0x."
-      }
-    ]
+      { name: 'Frenar antes del borde', desc: 'Frenar justo en el borde del nodo es demasiado tarde. Empieza a reducir un poco antes.', tips: 'Al principio fíjate más en ARREST READY que en los puntos.' },
+      { name: 'Parar con suavidad', desc: 'Los dedos y la muñeca tensos hacen temblar el cursor. Frena con suavidad, como si dejaras que la inercia se apague.', tips: 'La alfombrilla y los patines cambian la sensación de parada: compara siempre con el mismo equipo.' },
+      { name: 'No atravesar', desc: 'Pasar rápido por encima de un nodo no cuenta como parada, cuesta 1 segundo y rompe la racha.', tips: 'Mantén la parada un instante.' },
+      { name: 'No dejar escapar ningún nodo', desc: 'Un nodo que sale de la pantalla también cuesta 1 segundo. Con varios nodos, atiende primero el más cercano.', tips: 'El multiplicador solo llega a 3,0x tras 40 paradas seguidas: la calma compensa.' },
+    ],
   },
   steps: [
-    "Active la fijación del puntero en el área de juego y adopte un agarre estable (fingertip o claw).",
-    "Fije la vista en el nodo entrante e inicie un movimiento balístico de aceleración decidida.",
-    "Antes de cruzar la frontera del blanco, accione la frenada antagonista y la presión de dedos para situar la velocidad bajo 1,5 px/frame.",
-    "Repita la maniobra con absoluta solvencia durante 45 segundos para preservar el multiplicador 3,0x y superar los 15.000 puntos."
+    'Haz clic en Empezar y espera a que se active el Pointer Lock tras la cuenta atrás.',
+    'Lleva el cursor con rapidez a la trayectoria del nodo.',
+    'Frena justo antes del borde y detente por completo dentro del nodo.',
+    'Encadena paradas durante 45 segundos. Cada fallo cuesta 1 segundo.',
   ],
-  audience: "Jugadores de Counter-Strike 2, Valorant, Apex Legends y Overwatch 2 que buscan erradicar el overflick y perfeccionar la parada de primer disparo en la cabeza, así como deportistas que requieran una inhibición neuromotora veloz.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('logan1984', 'woodworth1899', 'fitts1954', 'woods2015')
+  audience: 'Jugadores de FPS que quieren reducir el overflick con práctica específica, y cualquiera que quiera practicar el frenado del ratón.',
+  faqs: { title: 'Preguntas frecuentes', items: faqs },
+  sources: pickSources('logan1984', 'woodworth1899', 'fitts1954', 'woods2015'),
 };
 
 export default function LocalizedReactionChainPageEs() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <ReactionChainClient
         copy={{
-          title: "Frenado de Puntería",
-          subtitle: "Acierta el objetivo y detén el ratón",
-          badge: "Test de Inhibición Motora",
-          description: "Frenar en seco sobre un objetivo es biomecánicamente mucho más difícil que acelerar hacia él. La ejecución motora y la orden de detención compiten de forma independiente en el cerebro (Logan & Cowan, 1984). Un retraso en el frenado provoca el temido overflick por inercia (Woodworth, 1899). Intercepte los nodos y detenga el cursor al instante.",
+          title: 'Frenado de Puntería: Para la Mira sin Pasarte',
+          subtitle: 'Lleva el cursor al objetivo y detente en seco',
+          description: 'Detener un movimiento rápido justo sobre el objetivo cuesta a muchos más que iniciarlo. Un modelo conocido describe el arranque y la parada como una carrera entre dos procesos (Logan & Cowan, 1984); si la parada llega tarde, la inercia lleva el cursor más allá del objetivo. Pruébalo con los nodos.',
           hudLabels: {
-            score: "Puntuación",
-            time: "Tiempo",
-            accuracy: "Precisión de Parada",
-            bestScore: "Mejor Puntuación",
-            getReady: "PREPÁRATE"
+            score: 'Puntos',
+            time: 'Tiempo restante',
+            accuracy: 'Tasa de paradas',
+            bestScore: 'Mejor puntuación',
+            getReady: 'Prepárate',
           },
-          pauseTitle: "Entrenamiento en Pausa",
-          pauseSubtitle: "Haga clic en la pantalla para reactivar el bloqueo del puntero.",
           resultLabels: {
-            newBest: "NUEVO RÉCORD",
-            points: "Puntos",
-            accuracy: "Precisión",
-            totalArrests: "Paradas Cinéticas",
-            maxCombo: "Racha Máxima",
-            peakLevel: "Nivel Máximo",
-            playAgain: "Jugar de Nuevo"
+            newBest: 'Nuevo récord',
+            points: 'Puntos',
+            accuracy: 'Tasa de paradas',
+            totalArrests: 'Paradas',
+            maxCombo: 'Mejor multiplicador',
+            peakLevel: 'Nivel máximo',
+            playAgain: 'Jugar otra vez',
           },
-          rulesTitle: "Reglas del Drill & Sistema de Puntos",
+          rulesTitle: 'Reglas y puntuación',
           rulesItems: [
-            { title: "Parada Cinética (+50 Puntos)", text: "Intercepte el nodo entrante y detenga totalmente el cursor en su interior (ARREST READY) para sumar 50 puntos." },
-            { title: "Multiplicador de Racha (hasta 3,0x)", text: "Encadenar detenciones sin fallos eleva el multiplicador de forma progresiva hasta el límite de 3,0x." },
-            { title: "Paso en Falso & Deslizamientos", text: "Atravesar el nodo sin detenerse o errar el contacto reinicia la racha a 1,0x (sin restar puntos acumulados)." },
-            { title: "Aceleración Brutal", text: "A medida que su puntuación se incrementa, los nodos aceleran hasta 1.800 px/s y el radio de parada se reduce." }
+            { title: 'Parada en el nodo (+50 pts)', text: 'Detén el cursor por completo dentro del nodo (ARREST READY): 50 puntos × multiplicador. No se hace clic.' },
+            { title: 'Multiplicador (máx. 3,0x)', text: 'Desde 5 paradas seguidas 1,2x, desde 10 1,5x, desde 25 2,0x, desde 40 3,0x.' },
+            { title: 'Atravesar / objetivo perdido (-1 s)', text: 'Atravesar un nodo sin detenerte o dejar que salga de la pantalla cuesta 1 segundo y devuelve el multiplicador a 1,0x (no se restan puntos).' },
+            { title: 'Niveles 1 a 10', text: 'Con la puntuación suben la velocidad de los nodos (hasta 1.800 px/s) y su número (hasta 5); los nodos se hacen más pequeños.' },
           ],
-          aboutTitle: "Sobre el Frenado de Puntería & la Inhibición Neuromotora",
+          aboutTitle: 'Sobre el frenado de puntería',
           aboutSections: [
-            {
-              title: "Frenado Cinético & Neurofisiología de la Inhibición",
-              content: "Reaction Chain aísla y condiciona su capacidad de desaceleración motora e inhibición de respuesta. En lugar de limitarse a hacer clic en objetivos móviles, debe interceptar los nodos y obligar a sus músculos antagonistas a neutralizar la inercia del cursor dentro del área delimitada."
-            },
-            {
-              title: "Modelo de Carrera de Logan & Estabilización de Primer Disparo",
-              content: "La práctica asidua del arresto cinético reconfigura las conexiones en el núcleo subtalámico y la corteza motora (Logan et al., 1984). Esto erradica el overflick descontrolado y forja un anclaje impecable de primer disparo en juegos tácticos como CS2 y Valorant."
-            }
+            { title: 'Practicar solo la parada', content: 'Reaction Chain aísla el frenado sobre el objetivo. No hay clic; solo hay puntos si el cursor queda completamente quieto dentro del nodo.' },
+            { title: 'Una carrera entre arrancar y parar', content: 'Un modelo conocido describe el arranque y la parada como una carrera entre dos procesos (Logan & Cowan, 1984). Si la parada llega tarde, el cursor se pasa del objetivo. El efecto del ejercicio no está demostrado; sirve para comparar tus propias partidas.' },
           ],
           aboutCards: [
-            {
-              title: "Público Objetivo",
-              desc: "Jugadores de FPS decididos a suprimir el overflicking y deportistas que requieran una detención neuromuscular rápida.",
-              bgClass: "bg-blue-600/30",
-              iconClass: "text-blue-400"
-            },
-            {
-              title: "Capacidades Entrenadas",
-              desc: "Desaceleración milimétrica, control de fricción estática, inhibición de señal de parada (SSRT) e interceptación espacial.",
-              bgClass: "bg-emerald-600/30",
-              iconClass: "text-emerald-400"
-            },
-            {
-              title: "Frenado Cinético",
-              desc: "Intercepte nodos a hasta 1.800 px/s y deténgase bajo 1,5 px/frame para maximizar multiplicadores de 3,0x.",
-              bgClass: "bg-purple-600/30",
-              iconClass: "text-purple-400"
-            }
-          ]
+            { title: 'Para quién', desc: 'Jugadores de FPS que quieren pasarse menos del objetivo, y cualquiera que quiera practicar el frenado del ratón.', bgClass: 'bg-blue-600/30', iconClass: 'text-blue-400' },
+            { title: 'Qué practicas', desc: 'El momento de frenar, la parada en objetivos pequeños y la intercepción de objetivos que cruzan la pantalla.', bgClass: 'bg-emerald-600/30', iconClass: 'text-emerald-400' },
+            { title: 'Criterio de parada', desc: 'Moverse a menos de 1,5 píxeles por fotograma dentro del nodo cuenta como parada.', bgClass: 'bg-purple-600/30', iconClass: 'text-purple-400' },
+          ],
         }}
       >
         <DrillGuide {...guideProps} />
-        <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+        <RelatedDrills />
       </ReactionChainClient>
     </>
   );

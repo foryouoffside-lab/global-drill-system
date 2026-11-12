@@ -59,7 +59,7 @@ const saveData = (data) => {
 const RULES_ITEMS = [
   { title: "Charge & Launch", text: "Hold mouse click over your player dot to charge jump velocity and release to launch vertically." },
   { title: "Mid-Air Steering", text: "Move mouse left and right while in mid-air to steer your trajectory toward the dynamic target." },
-  { title: "Combo Multiplier", text: "Chain unbroken target hits in a single jump or streak to build combo multiplier up to 3.0x max." },
+  { title: "Combo Multiplier", text: "Chain consecutive target hits to build the combo multiplier up to 3.0x max." },
   { title: "Streak Reset", text: "Landing on the ground without hitting the target resets your combo streak to 1.0x." }
 ];
 
@@ -69,9 +69,9 @@ const RULES_ITEMS = [
 const ABOUT_SECTIONS = [
   {
     icon: Target,
-    title: "Stretch-Shortening Cycle & Vertical Impulse Regulation",
-    subtitle: "Biomechanical force potentiation and launch velocity calibration",
-    content: "Jump sequence training demands precise regulation of vertical takeoff impulse through neuromuscular stretch-shortening mechanics (Komi, 2000). By varying ground charge duration, the motor cortex modulates elastic energy storage in lower-limb extensor groups, translating force into reproducible ballistic flight parabolas. This is a cursor interception drill: it trains that prediction, and does not measure vertical jump or stretch-shortening cycle mechanics, which need force-plate measurement (Komi, 2000)."
+    title: "Charge Duration & Launch Height",
+    subtitle: "How long you hold decides how high you fly",
+    content: "Holding the mouse button over the player dot fills the charge meter (full in about 1 second); releasing launches the dot straight up, and a longer charge means a higher jump. Picking the charge that matches the target's height is the first half of every attempt. This is a cursor timing game: it does not measure or train vertical jump, leg power or stretch-shortening cycle mechanics, which need force-plate measurement (Komi, 2000)."
   },
   {
     icon: Move,
@@ -706,12 +706,12 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
           <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Jump Sequence Training"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
+            {copy?.subtitle && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy.subtitle}
+              </p>
+            )}
           </div>
         )}
 

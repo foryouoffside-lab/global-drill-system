@@ -4,394 +4,147 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Brazil & Portugal (PT / PT-BR)
-// Primary Intent: jogo de desviar o mouse, jogo de desviar com o mouse, teste de reflexo desviar
-// Brazilian Gaming & Athletic Context: Clássico jogo do mouse de desviar de bolinhas & treino de micro-movimentação para LoL e FPS
-// High-Demand, Low-Competition Target Keywords:
-//   - "jogo de desviar o mouse" (Core viral browser reflex game query)
-//   - "jogo de desviar com o mouse" (High-intent gameplay query)
-//   - "teste de reflexo desviar" (Reflex evasion assessment query)
-//   - "jogo de esquiva mouse" (Evasion mechanics query)
-//   - "treino de reflexo mouse" (Mouse reflex training query)
-//   - "teste de reflexos online" (Browser reflex testing query)
-//   - "jogo de desviar de projeteis" (Projectile dodging challenge query)
-//   - "treino de micro movimentacao mouse" (Competitive esports micro-stepping drill)
-//   - "coordenação motora fina mouse" (Fine motor control query)
-//   - "teste de agilidade e reflexo" (Agility & motor chronometry test)
-// ============================================================
+const url = 'https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge';
+const title = "Jogo de Desviar com o Mouse: Fuja dos Projéteis | SkillDrills";
+const description = "Jogo de desviar grátis no navegador: mova o mouse para fugir dos projéteis vermelhos que vêm de todas as bordas na direção do cursor. Rodadas de 45 segundos.";
 
 export const metadata = {
-  title: "Jogo de Desviar o Mouse | Teste de Reflexos",
-  description: "Jogo de desviar o mouse grátis no navegador. Esquive projéteis, sobreviva mais tempo e treine reflexos e controle fino.",
-  keywords: [
-    "jogo de desviar o mouse",
-    "jogo de desviar com o mouse",
-    "teste de reflexo desviar",
-    "jogo de esquiva mouse",
-    "treino de reflexo com mouse",
-    "teste de reflexos online",
-    "jogo de desviar de projéteis",
-    "controle fino do mouse",
-    "coordenação motora com mouse",
-    "teste de agilidade e reflexo"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge',
-    languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Jogo de Desviar o Mouse | Teste de Reflexos",
-    description: "Jogo de desviar o mouse grátis no navegador. Esquive projéteis, sobreviva mais tempo e treine reflexos e controle fino.",
-    url: 'https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge',
-    siteName: 'SkillDrills',
-    locale: 'pt_BR',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Jogo de Desviar o Mouse | Teste de Reflexos",
-    description: "Jogo de desviar o mouse grátis no navegador. Esquive projéteis, sobreviva mais tempo e treine reflexos e controle fino.",
-  },
+  title,
+  description,
+  keywords: ["jogo de desviar", "jogo de desviar online", "desviar de projéteis com o mouse", "jogo de desviar de obstáculos", "jogo de mouse no navegador"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_BR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Início",
-      "item": "https://skilldrills.online/pt"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Centro de Treino Físico",
-      "item": "https://skilldrills.online/pt/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Treino de Reflexos",
-      "item": "https://skilldrills.online/pt/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Jogo de Desviar o Mouse & Quick Dodge",
-      "item": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge"
-    }
-  ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "Jogo de Desviar o Mouse e Treinador de Esquiva Kinetica",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge",
-  "description": "Jogo grátis para desviar de projéteis com o mouse e treinar reflexos, sobrevivência e controle fino.",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-};
-
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Simulador de Esquiva de Projéteis e Modelos Preditivos Cerebelares",
-  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge",
-  "description": "Drill de navegador para desviar de projéteis e praticar reflexos, tempo de reação e controle do mouse.",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Evasion, Esports"
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Início', item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: 'Treino Físico', item: 'https://skilldrills.online/pt/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Reflexos', item: 'https://skilldrills.online/pt/drills/physical/reflex-training' },
+    { '@type': 'ListItem', position: 4, name: 'Jogo de Desviar com o Mouse', item: url },
+  ],
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Jogo de Desviar o Mouse e Teste de Reflexos",
-  "gamePlatform": "Web Browser",
-  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "applicationSubCategory": "Esports Motor Chronometry Drill"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Jogo de Desviar com o Mouse (Quick Dodge)',
+  url,
+  description,
+  genre: ['Action Game', 'Browser Game'],
+  gamePlatform: ['Web Browser', 'Desktop'],
+  applicationCategory: 'Game',
+  operatingSystem: 'All',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-11-10',
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
+
+const faqs = [
+  { q: "Como funciona o jogo de desviar?", a: "Projéteis vermelhos e redondos surgem em uma das quatro bordas da tela e voam em linha reta para o ponto onde o cursor estava quando apareceram. Se um projétil sai da tela sem te acertar, conta como um desvio. Cada rodada dura 45 segundos." },
+  { q: "Os projéteis perseguem o cursor?", a: "Não. Eles miram na posição do cursor no momento em que surgem e depois seguem reto, sem mudar de direção. No caminho ficam um pouco maiores, então desvie com alguma folga." },
+  { q: "Como são calculados os pontos e o combo?", a: "Cada projétil desviado vale pontos base vezes o multiplicador de combo. Os pontos base sobem de 2 para 20 conforme o nível. O multiplicador fica em 1,1x a partir de 3 desvios seguidos, 1,5x com 10, 2,0x com 20, 2,5x com 30 e 3,0x com 50." },
+  { q: "Como a dificuldade aumenta?", a: "Toda rodada começa no nível 1. O nível sobe 1 a cada 250 pontos e mais 1 a cada 4 desvios seguidos. A velocidade vai de 300 px/s até 1.600 px/s no nível 15 e continua subindo depois; um combo longo soma até 200 px/s. O intervalo entre projéteis cai de 0,65 para 0,10 segundo e podem existir de 8 até 58 projéteis na tela ao mesmo tempo." },
+  { q: "O que acontece se eu for atingido?", a: "O combo volta a 1,0x, todos os projéteis somem da tela e aparecem um flash vermelho e um tremor. Você não perde pontos nem tempo. O flash vermelho pode ser desligado no botão do canto inferior direito durante o jogo." },
+  { q: "Qual controle é usado?", a: "Só o mouse. Ao começar, o ponteiro é travado (pointer lock) e a sensibilidade das configurações do site é aplicada. No teclado, só Esc (sair) é usado. Recomendamos um PC com mouse." },
+  { q: "Como a nota é definida?", a: "A pontuação final é comparada com 17.000 pontos: S+ a partir de cerca de 15.350, S de cerca de 12.300, A de cerca de 9.550, B de 6.120, C de cerca de 3.450 e D de 1.530. São faixas de prática do SkillDrills, não estatísticas de usuários nem percentis." },
+  { q: "Qual a diferença para o jogo da grade 3x3?", a: "Aqui você foge de projéteis livres que vêm de todos os lados. No jogo da grade 3x3 da mesma categoria você escolhe uma de 9 casas fixas antes que ela exploda." },
+  { q: "É grátis? Onde ficam os recordes?", a: "Sim, grátis, sem instalação nem cadastro, direto no navegador. Recorde e melhor combo ficam só no armazenamento local do seu navegador." },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Por que desviar de projéteis velozes é um problema de predição e não apenas de reação?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quando um projétil viaja a 400–600 px/s, o atraso neurológico do feedback visual (100 a 150 ms) faz com que qualquer reação puramente reativa chegue tarde demais. Conforme demonstrado por Mitsuo Kawato (1999), o cerebelo utiliza modelos internos de avanço (Forward Models) para simular a trajetória futura em malha aberta, antecipando o movimento para uma zona segura antes do impacto."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que fugir para os cantos da tela é a pior estratégia em níveis avançados?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ao levar o cursor para as bordas ou cantos, o leque de escape físico é reduzido para menos de 90 graus, facilitando o encurralamento por projéteis cruzados. A estratégia mais segura consiste em manter a base nos 30% centrais da tela, permitindo saídas em 360 graus com micro-ajustes milimétricos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como a pontuação e os multiplicadores de combo se acumulam durante a partida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A cada segundo de sobrevivência pontos contínuos são somados. Quando você realiza uma 'raspagem rente' (Close Shave) passando a poucos pixels de uma esfera, o combo salta rapidamente até o teto de 3.0x. Completar os 45 segundos sem colisões é o único meio de chegar à faixa mais alta de pontuação."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a precisão do ponto de colisão (hitbox) do cursor do mouse?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O cursor possui um ponto vital central calibrado com raio estrito de 4 px. A distância euclidiana até as esferas em movimento (raio de 10 a 25 px) é calculada a nível de subpixel a cada quadro por meio da API performance.now(), eliminando imprecisões de contato."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a penalidade aplicada caso o cursor seja atingido por uma esfera?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Qualquer contato físico com um projétil dispara um clarão de alerta vermelho na tela, reduz a vida útil da rodada e zera instantaneamente todo o multiplicador de combo para 1.0x, destruindo a velocidade de pontuação."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Este treino de esquiva ajuda no desvio de skillshots em jogos como LoL e Valorant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim, diretamente. O exercício condiciona os mesmos circuitos neurais de 'leitura visual de vetor e micro-frenagem de punho' necessários para desviar de habilidades lineares no League of Legends ou realizar strafes e contra-movimentações evasivas em jogos de tiro como Valorant e CS2."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual estilo de pegada do mouse (Grip) oferece melhor rendimento na esquiva?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "As pegadas Fingertip e Claw são muito superiores à Palm Grip. Elas permitem que o jogador execute guinadas e correções de 5 a 15 px movimentando apenas a articulação das falanges, sem a inércia pesada de arrastar todo o antebraço pelo mousepad."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a vantagem de utilizar monitores de 144Hz ou 240Hz em jogos de esquiva rápida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Em 60Hz, um projétil rápido salta cerca de 8,3 px por quadro, gerando borrões cinéticos. Em 240Hz (4,1 ms por quadro), o salto cai para apenas 2,1 px, fornecendo uma leitura fluida da trajetória que torna a previsão dos espaços vazios muito mais confiável."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como evitar fadiga muscular ou lesões no punho durante sessões de micro-movimentação?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Segure o mouse com suavidade, sem apertar os botões com força excessiva. Apoie o antebraço confortavelmente e faça pausas ativas de 60 segundos a cada 3 rodadas para alongar e soltar os tendões flexores dos dedos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Meus registros de pontuação e estatísticas são salvos em servidores externos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Não. Toda a mecânica de renderização e cronometria é processada localmente na CPU do seu navegador. Seus recordes permanecem salvos exclusivamente no localStorage do seu aparelho com total privacidade."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-11-10',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
+const steps = [
+  "Clique em Iniciar; depois da contagem de 3 segundos o cursor começa no centro da tela.",
+  "Quando um projétil surgir na borda, lembre que ele vem para onde você está agora e saia para o lado.",
+  "Faça movimentos curtos e fique nos espaços livres entre os projéteis.",
+  "Desvie em sequência sem ser atingido, suba o combo e busque seu recorde em 45 segundos.",
+];
+
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Protocolo em 4 Etapas para Esquiva de Projéteis e Micro-Movimentação Preditiva",
-  "description": "Metodologia prática para prever vetores de colisão, preservar espaço no centro e sustentar combos de 3.0x sob densidade máxima.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Calibração Neutra no Centro (Center Calibration)",
-      "text": "Alinhe o cursor no centro do tabuleiro e posicione os dedos na pegada Fingertip para permitir impulsos imediatos em 360 graus.",
-      "url": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Predição Trajetorial de Kawato (Kawato Trajectory Prediction)",
-      "text": "Observe os projéteis emergindo nas bordas e antecipe os vazios deixados pelo cruzamento das esferas em vez de reagir tardiamente.",
-      "url": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Esquiva Milimétrica por Micro-Ajuste (Micro-Evasion Snapping)",
-      "text": "Evite movimentos circulares amplos. Desvie passando a 5–10 px das esferas com toques curtos dos dedos para conservar a área útil.",
-      "url": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Manutenção do Calor de Combo (Streak Heat Maintenance)",
-      "text": "Sobreviva aos 45 segundos sem nenhuma colisão para manter o multiplicador no teto de 3.0x e alcançar mais de 24.000 pontos.",
-      "url": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Como jogar o jogo de desviar com o mouse',
+  description: 'Quatro passos para desviar dos projéteis e subir o combo.',
+  step: steps.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, name: `Passo ${i + 1}`, text, url: `${url}#step-${i + 1}` })),
 };
 
 const dodgeGuide = {
-  heading: "Guia de Biomecânica da Esquiva com Mouse, Dinâmica de Projéteis e Modelos Cerebelares",
-  intro: {
-    title: "Bases Científicas dos Modelos Internos de Kawato e Flicks Evasivos de Woodworth",
-    paragraphs: [
-      "O Quick Dodge é uma plataforma avançada de treinamento perceptivo-motor concebida para lapidar a capacidade de navegar através de densas tempestades de projéteis com manobras microscópicas de mouse. Mais do que um mero teste de reação visual passiva, o exercício demanda a resolução proativa de problemas de intercepção espacial inversa: calcular vazios transitórios em um ambiente dinâmico sob constante aceleração.",
-      "Segundo a teoria dos modelos internos cerebelares de Mitsuo Kawato (1999), a velocidade dos projéteis (superando 500 px/s) inviabiliza a correção contínua por feedback visual direto devido ao atraso de latência aferente (100 a 150 ms). O cérebro humano sobrevive antecipando a cinemática dos corpos: ao captar o ângulo de nascimento de uma esfera, o cerebelo dispara um programa motor balístico em malha aberta pré-calculado para posicionar a mão na rota de menor risco.",
-      "Conforme o modelo de controle motor bifásico de Robert S. Woodworth (1899), cada ação rápida inicia-se com um impulso de aceleração aberto e finaliza-se com uma frenagem de precisão. Em velocidades críticas, a Lei de Fitts (1954) dita que a redução da área livre (W) eleva dramaticamente o índice de dificuldade. Realizar movimentos excessivamente longos desperdiça espaço e sela a derrota; o domínio pertence à micro-movimentação contida em raios inferiores a 15 px.",
-      "O simulador opera por meio da API performance.now() do navegador. Em telas de 144Hz ou 240Hz acopladas a mouses gamer de 1000Hz de polling rate, o atraso de exibição é reduzido para menos de 4 ms, eliminando borrões em velocidades extremas e assegurando precisão pura (Woods et al., 2015). Seus dados ficam salvos unicamente no seu dispositivo."
-    ]
-  },
+  heading: 'Guia do jogo de desviar com o mouse',
+  intro: [
+    "O jogo de desviar com o mouse (Quick Dodge) é um jogo de navegador em que projéteis vermelhos vêm de todas as bordas na direção do cursor e você foge deles movendo o mouse. O objetivo é não ser atingido; quanto mais desvios seguidos, maior o multiplicador de combo.",
+    "Cada projétil mira na posição do cursor quando surge e depois segue reto. Quem fica parado é atingido; quem dá um passo para o lado escapa. Movimentos rápidos são planejados antes de começar (Kawato, 1999), então vale decidir o destino assim que o projétil aparece.",
+    "Com o nível, os projéteis ficam mais rápidos, mais frequentes e maiores. Quanto menores os espaços livres, mais precisão o movimento exige (Fitts, 1954). Ser atingido limpa a tela e só zera o combo.",
+    "Os resultados são registros de prática dentro do SkillDrills, não um exame médico nem medida de desempenho esportivo. Taxa de atualização e periférico influenciam a latência (Woods et al., 2015); compare pontuações com o mesmo equipamento.",
+  ],
   benchmarks: {
-    title: "Tabela Oficial de Classificação em 5 Níveis para Esquiva com Mouse",
-    headers: ["Nível e Categoria", "Título (Rank Title)", "Meta de Pontuação", "Taxa de Sobrevivência e Velocidade", "Classificação", "Perfil Neuromotor"],
+    title: 'Faixas de nota (faixas de prática SkillDrills)',
+    headers: ['Nota', 'Pontos'],
     rows: [
-      ["Faixa 1", "Muito alta", "24.000+ pontos", "> 95% / 500+ px/s", "Grade S", "Predição cerebelar perfeita de Kawato e micro-movimentação impecável entre mais de 50 projéteis (Kawato 1999; Woodworth 1899)"],
-      ["Faixa 2", "Alta", "17.000 – 23.999 pontos", "90 – 94% / 400 – 499 px/s", "Grade A", "Excelente controle de espaço e posicionamento central estável sob fogo intenso"],
-      ["Faixa 3", "Boa", "11.000 – 16.999 pontos", "82 – 89% / 300 – 399 px/s", "Grade B", "Controle consistente de punho e boa capacidade de leitura precoce das ameaças"],
-      ["Faixa 4", "Intermediária", "6.000 – 10.999 pontos", "70 – 81% / 200 – 299 px/s", "Grade C", "Média da população adulta. Tendência a fugir para os cantos em velocidades elevadas; recomenda-se treino de recentralização"],
-      ["Faixa 5", "Inicial", "< 6.000 pontos", "< 70% / < 200 px/s", "Grade D", "Fase inicial. Colisões frequentes por atraso visual; recomenda-se relaxar a mão e ampliar o foco para a tela inteira"]
+      ['S+', 'a partir de cerca de 15.350'],
+      ['S', 'a partir de cerca de 12.300'],
+      ['A', 'a partir de cerca de 9.550'],
+      ['B', 'a partir de 6.120'],
+      ['C', 'a partir de cerca de 3.450'],
+      ['D', 'a partir de 1.530'],
     ],
-    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Critérios objetivos baseados nos modelos de Kawato (1999), análise bifásica de Woodworth (1899) e escala de dificuldade de Fitts (1954)."
+    note: 'As faixas comparam a pontuação final com 17.000 pontos e são faixas de prática do SkillDrills. Não são estatísticas de usuários nem percentis.',
   },
   techniques: {
-    title: "4 Protocolos Práticos para Esquiva de Projéteis e Maestria de Mouse",
+    title: 'Dicas para pontuar mais',
     items: [
-      {
-        name: "Anticipação Cerebelar de Kawato (Kawato Cerebellar Anticipation)",
-        desc: "Não espere o projétil se aproximar para reagir. Identifique a trajetória no instante em que ele surge na borda e posicione o cursor na brecha vazia que surgirá no cruzamento.",
-        tips: "Foque o olhar nos espaços vazios entre as esferas, e não nas esferas em si."
-      },
-      {
-        name: "Micro-Frenagem com as Pontas dos Dedos (Woodworth Micro-Snap)",
-        desc: "Evite varreduras circulares amplas. Restrinja seus deslocamentos a raios de 10 a 20 px e utilize a pressão das falanges para estancar o mouse com firmeza.",
-        tips: "Use a base do mousepad como apoio estável para impedir deslizamentos involuntários."
-      },
-      {
-        name: "Disciplina de Ancoragem Central (Central Anchoring Discipline)",
-        desc: "Fugir para a parede ou canto fecha as saídas em 90 graus e causa morte rápida. Imediatamente após desviar de uma onda, retorne o cursor para a zona central de 30%.",
-        tips: "Crie o reflexo automático de 'desviar e recentralizar' em um único ciclo fluído."
-      },
-      {
-        name: "Varredura Periférica Panorâmica (Peripheral Cluster Scanning)",
-        desc: "Não fixe os olhos fixamente na ponta da seta. Mantenha o olhar aberto sobre toda a área de jogo e controle a posição do cursor através da propriocepção.",
-        tips: "Manter o foco difuso no centro revela o padrão e o fluxo de todas as ameaças de forma integrada."
-      }
-    ]
+      { name: 'Olhe o surgimento', desc: 'O projétil vai para onde o cursor estava quando ele surgiu. Um passo curto para o lado costuma bastar.', tips: 'Não fique muito tempo no mesmo lugar.' },
+      { name: 'Movimentos curtos', desc: 'Movimentos grandes levam o cursor direto para novos projéteis. Fique nos espaços livres com movimentos curtos.', tips: 'O lado por onde um projétil acabou de passar costuma estar livre.' },
+      { name: 'Conte com o crescimento', desc: 'Os projéteis crescem no caminho. Prefira desviar com folga a passar raspando.', tips: 'Na fase rápida, segurança primeiro.' },
+      { name: 'Mantenha o combo', desc: 'Quanto maior a sequência, mais sobem multiplicador e nível. Depois de um acerto a tela fica vazia: recomece com calma.', tips: 'Relaxe punho e ombro e pare se sentir dor.' },
+    ],
   },
-  steps: [
-    "Adote uma postura equilibrada e alinhe o cursor no centro do tabuleiro.",
-    "Antecipe a trajetória das esferas emergentes e desloque o mouse minimamente para os espaços seguros.",
-    "Retorne imediatamente para a área central após cada desvio para não ser encurralado nas bordas.",
-    "Sobreviva durante 45 segundos sem colisões para consolidar o multiplicador 3.0x e buscar 24.000 pontos."
-  ],
-  audience: "Jogadores de LoL, Valorant, CS2 e Apex que desejam aprimorar desvio de skillshots e micro-movimentação de mouse, bem como qualquer pessoa interessada em elevar agilidade e reflexos motores.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('kawato1999', 'woodworth1899', 'fitts1954', 'woods2015')
+  steps,
+  audience: 'Quem quer um jogo de desviar online no navegador e quem quer treinar o controle do mouse.',
+  faqs,
+  sources: pickSources('kawato1999', 'fitts1954', 'woods2015'),
 };
 
 export default function LocalizedQuickDodgePagePt() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <QuickDodgeClient
         copy={{
-          title: "Jogo de Desviar o Mouse",
-          subtitle: "Desvie dos projéteis e sobreviva mais",
-          description: "Desviar de um perseguidor é um problema de previsão, não de mera reação: no momento em que você enxerga onde ele está, ele já se moveu. Movimentos rápidos são planejados antecipadamente por modelos internos do cerebelo (Kawato, 1999) em vez de corrigidos continuamente em voo, pois a visão necessita de 100 a 150 ms para intervir (Woodworth, 1899). Conforme a velocidade sobe, a margem de correção desaparece e apenas a predição assegura a sobrevivência.",
-          badge: "Teste de Esquiva e Reflexos",
-          hudLabels: {
-            score: "Pontuação",
-            time: "Tempo",
-            bestScore: "Melhor Pontuação",
-            bestCombo: "Melhor Combo",
-            getReady: "PREPARE-SE"
-          },
-          resultLabels: {
-            newBest: "NOVO RECORDE",
-            points: "Pontos",
-            accuracy: "Precisão",
-            dodges: "Desvios",
-            peakSpeed: "Vel. Máxima",
-            peakLevel: "Nível Máximo",
-            playAgain: "Jogar Novamente"
-          },
-          rulesTitle: "Regras do Drill e Sistema de Pontuação",
+          title: "Jogo de Desviar com o Mouse",
+          hudLabels: { score: "Pontos", time: "Tempo", bestScore: "Recorde", bestCombo: "Melhor Combo", getReady: "PREPARE-SE" },
+          resultLabels: { newBest: "NOVO RECORDE", points: "Pontos", accuracy: "Taxa de desvio", dodges: "Desvios", peakSpeed: "Vel. máx.", peakLevel: "Nível máx.", playAgain: "Jogar de novo" },
+          rulesTitle: "Regras e pontuação",
           rulesItems: [
-            { title: "Esquiva de Projéteis e Pontuação", text: "Evite o contato com as esferas vermelhas. A cada segundo de sobrevivência pontos contínuos são adicionados." },
-            { title: "Raspagem Rente (Close Shave)", text: "Passe raspando pelas esferas para receber pontos adicionais de bonificação e acelerar seu combo." },
-            { title: "Aceleração Progressiva", text: "Ao avançar na pontuação, os projéteis aceleram até 500 px/s e o intervalo entre ondas se reduz drasticamente." },
-            { title: "Penalidade de Colisão", text: "Tocar em qualquer projétil zera o multiplicador de combo para 1.0x e dispara um sinal visual de alerta." }
+            { title: "Desvie dos projéteis", text: "Projéteis vermelhos surgem na borda e voam para onde o cursor estava naquele momento. Se saírem da tela sem te acertar, conta um desvio." },
+            { title: "Multiplicador de combo", text: "Desvios seguidos aumentam o multiplicador até 3,0x (com 50 seguidos)." },
+            { title: "Dificuldade crescente", text: "Com pontos e sequências o nível sobe; os projéteis vão de 300 px/s a mais de 1.600 px/s e surgem com mais frequência." },
+            { title: "Atingido", text: "O combo volta a 1,0x e a tela é limpa. Pontos e a rodada de 45 segundos não mudam." },
           ],
-          aboutTitle: "Sobre o Jogo de Desviar o Mouse e Biomecânica da Esquiva",
+          aboutTitle: "Sobre o jogo de desviar",
           aboutSections: [
-            {
-              title: "Evasão de Colisão Cinética e Modelos Preditivos de Kawato",
-              subtitle: "Simulação cerebelar de trajetórias antes da latência visual aferente",
-              content: "Desviar de objetos em alta velocidade exige a antecipação cerebelar teorizada por Kawato (1999). A leitura imediata do ângulo inicial projeta o cursor na rota de escape antes que o atraso óptico comprometa a ação."
-            },
-            {
-              title: "Controle Bifásico de Woodworth e Micro-Frenagem",
-              subtitle: "Harmonia entre impulso balístico inicial e travamento milimétrico",
-              content: "Cada manobra rápida é composta por um impulso inicial e uma desaceleração controlada (Woodworth, 1899). O travamento preciso com as falanges impede deslizamentos que levariam a impactos subsequentes."
-            },
-            {
-              title: "Lei de Fitts e Contração do Espaço Seguro",
-              subtitle: "Aumento logarítmico da dificuldade sob alta densidade de projéteis",
-              content: "Conforme o tabuleiro se povoa de esferas, a largura utilizável dos corredores de fuga (W) diminui drasticamente, exigindo controle motor de alta precisão (Fitts, 1954)."
-            },
-            {
-              title: "Taxas de Atualização Elevadas e Resolução de Movimento",
-              subtitle: "Monitores de 144Hz/240Hz e latência sub-4ms para leitura límpida",
-              content: "Painéis de alta frequência eliminam o salto visual em projéteis velozes, garantindo que o cérebro processe a cinemática sem borrões ou distorções de quadros (Woods et al., 2015)."
-            }
-          ]
+            { title: "Projéteis em linha reta", content: "Cada projétil mira no cursor quando surge e depois segue reto. Regra básica: sair para o lado assim que ele aparece." },
+            { title: "Decida antes", subtitle: "Kawato, 1999", content: "Movimentos rápidos são planejados antes. Defina o destino assim que um projétil surgir." },
+            { title: "Espaços cada vez menores", subtitle: "Fitts, 1954", content: "Quanto mais projéteis, menores os espaços livres e mais preciso o movimento precisa ser." },
+            { title: "Equipamento e comparação", subtitle: "Woods et al., 2015", content: "Taxa de atualização e periférico influenciam a latência. Compare resultados com o mesmo equipamento." },
+          ],
         }}
       />
-      <DrillGuide {...dodgeGuide} />
+      <DrillGuide guide={dodgeGuide} />
       <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/quick-dodge" />
     </>
   );

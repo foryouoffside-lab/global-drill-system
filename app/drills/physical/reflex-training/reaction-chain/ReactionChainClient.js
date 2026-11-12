@@ -55,7 +55,7 @@ const saveData = (data) => {
 const RULES_ITEMS = [
   { num: "1", text: "Kinetic Arrest", highlight: "+50 PTS", result: "Stop cursor completely inside a node (ARREST READY)" },
   { num: "2", text: "Combo Multiplier", highlight: "Up to 3.0x", result: "Chain arrests without errors" },
-  { num: "3", text: "Slice-Through / Miss", highlight: "-1s + resets combo", result: "Wrong arrests and missed nodes cost time" },
+  { num: "3", text: "Slice-Through / Miss", highlight: "-1s + resets combo", result: "Moving through a node without stopping, or letting it leave the screen, costs 1 second" },
   { num: "4", text: "Speed Scaling", highlight: "Up to 1800 px/s", result: "Nodes shrink and accelerate with score" }
 ];
 
@@ -724,7 +724,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
               <span data-seo-kw="1">{copy?.title || "Reaction Chain Trainer"}</span>
             </h1>
             <p className="text-xs sm:text-sm text-slate-400 font-medium">
-              {copy?.subtitle || "Impulse Arrest & Motor Inhibition • 15 Levels"}
+              {copy?.subtitle || "Impulse Arrest & Motor Inhibition • 10 Levels"}
             </p>
           </div>
         )}
@@ -826,7 +826,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
               icon={Crosshair}
               accent="emerald"
               title={copy?.title || "Reaction Chain"}
-              subtitle={copy?.subtitle || "Impulse Arrest & Motor Inhibition • 15 Levels"}
+              subtitle={copy?.subtitle || "Impulse Arrest & Motor Inhibition • 10 Levels"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -953,10 +953,10 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
                     {copy?.aboutSections?.[0]?.title || "Kinetic Braking & Response Inhibition Neurophysiology"}
                   </h3>
                   <p className="text-xs sm:text-sm leading-relaxed mb-3 text-gray-300">
-                    {copy?.aboutSections?.[0]?.content || "Reaction Chain isolates and trains your motor deceleration capacity and response inhibition. Instead of simply clicking moving targets, you must steer your crosshair to intercept incoming nodes and force your antagonist forearm muscles to arrest cursor momentum completely within the node perimeter."}
+                    {copy?.aboutSections?.[0]?.content || "Reaction Chain isolates cursor deceleration. There is no clicking: you steer your crosshair onto nodes that fly in from the screen edges and bring the cursor to a full stop inside the node perimeter."}
                   </p>
                   <p className="text-xs sm:text-sm leading-relaxed text-gray-300">
-                    {copy?.aboutSections?.[1]?.content || "By consistently conditioning kinetic arrests, players rewire the subthalamic nucleus and motor cortex to execute rapid motor braking (Logan et al. 1984). This eradicates lazy over-flicking and builds razor-sharp first-shot stabilization in tactical shooters like Counter-Strike 2 and Valorant."}
+                    {copy?.aboutSections?.[1]?.content || "Stopping and going are often modelled as a race between two processes (Logan et al. 1984). The drill practises the stopping half of a flick; no study cited here shows that it removes over-flicking in Counter-Strike 2, Valorant or any other game."}
                   </p>
                 </section>
 
@@ -980,14 +980,14 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
                           <div className="w-6 h-6 rounded-lg bg-blue-600/30 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-blue-400" /></div>
                           <h4 className="text-xs font-bold text-white">Target Athletes</h4>
                         </div>
-                        <p className="text-[11px] text-gray-300 leading-relaxed">FPS players seeking to eliminate over-flicking, and athletes requiring rapid neuromuscular motor arrest.</p>
+                        <p className="text-[11px] text-gray-300 leading-relaxed">FPS players who want to practise stopping on target instead of flicking past it.</p>
                       </div>
                       <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02]">
                         <div className="flex items-center gap-2 mb-1.5">
                           <div className="w-6 h-6 rounded-lg bg-emerald-600/30 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-emerald-400" /></div>
                           <h4 className="text-xs font-bold text-white">Conditioned Skills</h4>
                         </div>
-                        <p className="text-[11px] text-gray-300 leading-relaxed">Precision deceleration, kinetic friction control, stop-signal inhibition, and spatial interception.</p>
+                        <p className="text-[11px] text-gray-300 leading-relaxed">Decelerating on time, stopping inside a small zone, and intercepting targets that cross the screen.</p>
                       </div>
                       <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02]">
                         <div className="flex items-center gap-2 mb-1.5">

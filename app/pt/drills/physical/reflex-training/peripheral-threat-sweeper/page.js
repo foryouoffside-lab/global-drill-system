@@ -4,54 +4,36 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Brazil & Portugal (PT / PT-BR)
-// Primary Intent: treinar visão periférica, teste de visão periférica online, expandir campo visual
-// Brazilian & Portuguese Gaming/Athletic Context: Prevenção de visão de túnel em FPS (CS2, Valorant) e expansão do campo visual útil (UFOV) para atletas
-// High-Demand, Low-Competition Target Keywords:
-//   - "treinar visão periférica" (Core high-demand vision conditioning query)
-//   - "teste de visão periférica online" (Diagnostic & training visual field query)
-//   - "expandir campo visual" (Functional peripheral expansion query)
-//   - "campo de visão eSports" (Gamer awareness & spatial detection query)
-//   - "evitar visão de túnel" (Tunnel vision prevention under combat stress)
-//   - "exercícios para visão periférica" (Athletic peripheral training drills)
-//   - "teste de reflexos periféricos" (Peripheral reaction chronometry query)
-//   - "teste ufov online" (Useful Field of View assessment query)
-//   - "coordenação olho mão reflexos" (Hand-eye coordination query)
-//   - "treino de percepção visual rápida" (Rapid visual perception query)
-// ============================================================
+const url = 'https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper';
+const title = "Defesa Radial: Treino de Visão Periférica | SkillDrills";
+const description = "Defesa Radial: olhe para o núcleo central e clique nas ameaças das bordas antes que cheguem nele. +2 s por acerto, -1 s por erro. Grátis; não é exame de vista.";
 
 export const metadata = {
-  title: "Defesa Radial: Treino de Visão Periférica",
-  description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
+  title,
+  description,
   keywords: [
-    "treinar visão periférica",
-    "teste de visão periférica online",
-    "exercícios para visão periférica",
-    "expandir campo visual",
-    "teste de reflexos periféricos",
-    "teste UFOV online",
-    "visão periférica para esportes",
-    "evitar visão de túnel",
-    "coordenação olho-mão e reflexos",
-    "treino de percepção visual rápida"
+    "Defesa Radial",
+    "visão periférica no jogo",
+    "ameaças vindo das bordas",
+    "jogo de visão periférica",
+    "Peripheral Threat Sweeper"
   ],
   alternates: {
-    canonical: 'https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper',
+    canonical: url,
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Defesa Radial: Treino de Visão Periférica",
-    description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
-    url: 'https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper',
+    title,
+    description,
+    url,
     siteName: 'SkillDrills',
     locale: 'pt_BR',
     type: 'website',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Defesa Radial: Treino de Visão Periférica",
-    description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
+    title,
+    description,
   },
   robots: { index: true, follow: true },
 };
@@ -60,252 +42,170 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Início",
-      "item": "https://skilldrills.online/pt"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Centro de Treino Físico",
-      "item": "https://skilldrills.online/pt/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Treino de Reflexos",
-      "item": "https://skilldrills.online/pt/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Treino de Visão Periférica & Defesa Radial",
-      "item": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills Início", "item": "https://skilldrills.online/pt" },
+    { "@type": "ListItem", "position": 2, "name": "Centro de Treino Físico", "item": "https://skilldrills.online/pt/drills/physical" },
+    { "@type": "ListItem", "position": 3, "name": "Treino de Reflexos", "item": "https://skilldrills.online/pt/drills/physical/reflex-training" },
+    { "@type": "ListItem", "position": 4, "name": "Defesa Radial", "item": url }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision"],
-  "name": "Simulador de Visão Periférica e Expansão de Campo Visual (UFOV)",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "name": "Defesa Radial (Peripheral Threat Sweeper)",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
-  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper",
-  "description": "Treino gratuito para detectar ameaças nas bordas, praticar reflexos e desenvolver o campo visual útil.",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  description,
+  url,
+  "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/pt" },
+  "inLanguage": "pt",
+  "dateModified": "2026-11-10"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Treinador de Atenção Encoberta e Interceptação Radial 360°",
-  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper",
-  "description": "Drill de navegador para fixar o olhar no centro, detectar ameaças periféricas e treinar o campo visual útil.",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Vision, Attention"
+  "name": "Defesa Radial (app web)",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Navegador atual com HTML5 Canvas e entrada por ponteiro",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  url,
+  "inLanguage": "pt",
+  "dateModified": "2026-11-10"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Treino de Visão Periférica e Defesa Radial",
-  "gamePlatform": "Web Browser",
-  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "applicationSubCategory": "Esports Cognitive Vision Drill"
+  "name": "Defesa Radial (Peripheral Threat Sweeper)",
+  url,
+  description,
+  "genre": ["Action Game", "Reflex Game"],
+  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "applicationCategory": "Game",
+  "inLanguage": "pt",
+  "dateModified": "2026-11-10",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
+
+const faqs = [
+  {
+    q: "O que eu faço na Defesa Radial?",
+    a: "Você olha para o núcleo no centro da tela e clica nas ameaças que vêm das bordas em direção a ele, antes que cheguem. É um jeito de praticar perceber movimentos ao redor sem mover os olhos. É um jogo de navegador, não um exame de vista nem tratamento."
+  },
+  {
+    q: "Qual a diferença entre visão central e visão periférica?",
+    a: "A visão central enxerga letras e detalhes numa área pequena em volta do ponto para onde você olha; a periférica percebe, fora dessa área, principalmente movimento e mudanças maiores. O jogo pede que você mantenha o olhar no centro e reaja às ameaças que vêm das bordas."
+  },
+  {
+    q: "Posso mexer os olhos?",
+    a: "A ideia é continuar olhando para o núcleo e só perceber as bordas. Se você segue as ameaças com os olhos, está praticando outra coisa. O navegador não consegue registrar para onde você olha, então isso depende de você."
+  },
+  {
+    q: "Como são calculados pontos e tempo?",
+    a: "Cada acerto vale 100 pontos com multiplicador de combo e de nível e dá +2 segundos, até no máximo 60 segundos. A partida começa com 45 segundos e o multiplicador vai até 3,0x. Se uma ameaça chega ao núcleo ou você clica no vazio, o combo volta para 1,0x e você perde 1 segundo. Essa penalidade vale sempre e não pode ser desligada."
+  },
+  {
+    q: "Como a dificuldade aumenta?",
+    a: "Conforme a pontuação sobe, as ameaças ficam mais rápidas, de cerca de 80 até 520 px/s, e o intervalo entre novas ameaças cai de cerca de 1,4 para no mínimo 0,20 segundo. Mais adiante aparecem ameaças mais rápidas e outras que vêm oscilando de lado."
+  },
+  {
+    q: "O que é visão de túnel?",
+    a: "Sob estresse ou muito concentrado num ponto, a gente tende a perceber menos o que está em volta; isso costuma ser chamado de visão de túnel. Este jogo pratica manter o centro em foco sem perder as bordas. Ele não detecta perda de campo visual por doença; para isso, procure um oftalmologista."
+  },
+  {
+    q: "Este treino aumenta meu campo de visão?",
+    a: "Não podemos prometer isso. Quem pratica uma tarefa costuma melhorar naquela tarefa, mas o efeito deste jogo não foi estudado. Use-o para comparar seus próprios resultados."
+  },
+  {
+    q: "Tamanho e distância da tela fazem diferença?",
+    a: "Quanto maior e mais perto a tela, mais para fora do seu campo de visão as ameaças aparecem. Compare resultados sempre com a mesma distância e postura. Taxa de atualização e atraso de entrada também podem influenciar (Woods et al., 2015)."
+  },
+  {
+    q: "Onde ficam salvos meus resultados?",
+    a: "Pontuação, precisão e melhor combo ficam no armazenamento local do seu navegador e este drill não os envia para nenhum servidor. Se você apagar os dados do navegador, eles somem. Veja os detalhes na política de privacidade."
+  }
+];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Como este exercício treina a visão periférica sem exigir o movimento direto dos olhos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O drill fundamenta-se no paradigma de orientação de atenção espacial encoberta de Michael Posner (1980). Ao manter o olhar fixo no núcleo central, os atletas aprendem a deslocar seu foco atencional pelo canto dos olhos por toda a periferia radial de 360°, eliminando o tempo morto de 150 a 200 ms exigido pelas saccadas oculares convencionais."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que diz a teoria de integração de características de Anne Treisman sobre a detecção de ameaças?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Segundo Anne Treisman (1980), alvos periféricos com forte contraste cromático (nós vermelhos e laranjas em movimento convergente) ativam detectores pré-atencionais na retina periférica. Esses nós produzem um efeito de destaque imediato (pop-out), alertando o córtex parietal para o cálculo imediato do ângulo de intercepção."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como o modelo motor de Woodworth (1899) é aplicado nos flicks radiais de varredura?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cada varredura radial obedece ao modelo de dois estágios de Robert S. Woodworth: uma projeção balística inicial de punho cobrindo mais de 85% do trajeto em malha aberta, seguida de uma rápida correção visual em malha fechada ao atingir o nó da ameaça antes que este cruze o perímetro do núcleo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que é o Campo Visual Útil (UFOV) e de que modo ele é expandido neste drill?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O Useful Field of View (UFOV), pesquisado por Karlene Ball et al. (1988), define a área visual a partir da qual o cérebro consegue extrair e processar informações em uma fração de segundo sem mover os olhos ou a cabeça. Aumentar a velocidade das ameaças para 520 px/s e encurtar o tempo de geração para 0,20 s condiciona o córtex a alargar essa margem funcional, combatendo a visão de túnel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que o cursor deve retornar imediatamente ao centro após cada varredura?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Manter o cursor centrado no núcleo preserva a equidistância física em relação a qualquer novo vetor de ameaça que surja nos 360° do perímetro. Deixar o mouse na borda externa após um clique dobra a distância necessária para alcançar uma ameaça no lado oposto, violando a Lei de Fitts e resultando em brechas na defesa."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que ocorre quando uma ameaça consegue romper o escudo e atingir o núcleo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quando um vetor rompe o perímetro do núcleo (breach), o multiplicador de combo acumulado é zerado instantaneamente para 1.0x e a tela emite um clarão de alarme vermelho. Evitar brechas é crucial para manter o calor da sequência e ultrapassar o patamar de 24.000 pontos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a sensibilidade de mouse recomendada para varreduras radiais de 360 graus?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Recomenda-se uma sensibilidade média a alta (eDPI entre 800 e 1400 em shooters táticos) que permita ao jogador realizar flicks para qualquer quadrante de 360° sem levantar o mousepad ou forçar a rotação total do ombro, priorizando movimentos ágeis de punho e dedos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como a taxa de atualização do monitor afeta a detecção no canto dos olhos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A retina periférica é hiper-sensível ao movimento e à cintilação. Telas de 144Hz e 240Hz exibem o movimento contínuo dos nós a 520 px/s com fidelidade absoluta de 4,1 ms, ativando as células ganglionares magnocelulares muito mais rápido do que um monitor comum de 60Hz."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quantos minutos de treino diário são recomendados para evitar fadiga ocular?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sugere-se realizar de 3 a 5 partidas diárias de 45 segundos, reservando 1 minuto de repouso entre elas olhando para um ponto distante (regra 20-20-20). O treino de visão periférica exige alto esforço dos lobos parietais, devendo ser breve e focado para garantir consolidação neural."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Os dados das minhas sessões de visão periférica são transmitidos para servidores remotos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Não. Todo o motor de renderização em lona (Canvas), a cronometria de precisão via performance.now() e os cálculos de intercepção operam exclusivamente no navegador do seu dispositivo. As pontuações e recordes são guardados no localStorage local com privacidade total."
-      }
-    }
-  ]
+  "inLanguage": "pt",
+  "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Protocolo em 4 Etapas para Varredura Periférica e Defesa Radial 360°",
-  "description": "Metodologia científica para ampliar o campo visual útil, aperfeiçoar a atenção encoberta e defender o núcleo contra múltiplos vetores.",
+  "name": "Como jogar Defesa Radial",
+  "description": "Olhar no centro e interceptar as ameaças das bordas, em quatro passos.",
   "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Fixação Central Foveal e Atenção Encoberta (Core Eye Fixation)",
-      "text": "Fixe o olhar firmemente no núcleo central e evite mover os olhos para as bordas, abrindo a percepção periférica pelos cantos da visão (Posner, 1980).",
-      "url": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Identificação Pré-Atencional de Pop-Out (Treisman Saliency Detection)",
-      "text": "Detecte os nós vermelhos e laranjas convergentes na retina periférica instantaneamente através dos mapas de contraste pré-atencionais.",
-      "url": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Flick Balístico Radial de Woodworth (Radial Ballistic Flick)",
-      "text": "Execute um movimento rápido com o punho em direção ao vetor e acione o clique antes que o nó invada o perímetro do escudo (+0,6s de bônus).",
-      "url": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Recentralização Instantânea e Maintien de Combo (Core Reset)",
-      "text": "Retorne o cursor imediatamente ao centro após cada eliminação para rearmar a equidistância de 360° rumo ao patamar de 24.000 pontos.",
-      "url": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper#step-4"
-    }
-  ]
+    { "@type": "HowToStep", "position": 1, "name": "Olhe para o centro", "text": "Olhe para o núcleo no centro da tela e evite mexer os olhos." },
+    { "@type": "HowToStep", "position": 2, "name": "Perceba as bordas", "text": "Note as ameaças que vêm das bordas sem tirar o olhar do centro." },
+    { "@type": "HowToStep", "position": 3, "name": "Clique antes do núcleo", "text": "Clique na ameaça antes que ela chegue ao núcleo." },
+    { "@type": "HowToStep", "position": 4, "name": "Mantenha o combo", "text": "Continue acertando sem erros para somar +2 segundos e o multiplicador de combo." }
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` }))
 };
 
 const guideProps = {
-  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015'),
-  intro: {
-    title: "Fundamentos Biomecânicos da Visão Periférica e do Campo Visual Útil (UFOV)",
-    paragraphs: [
-      "No sistema visual humano, a fóvea central — responsável pela máxima acuidade e resolução de cores — ocupa apenas de 1 a 2 graus de todo o campo visual. Toda a região periférica circundante apresenta menor resolução espacial estática, mas possui altíssima concentração de células fotorreceptoras do tipo bastonete, especializadas na detecção imediata de movimento, cintilação e luminosidade. Este exercício foi planejado para condicionar a atenção espacial encoberta (Posner, 1980): a capacidade neural de alocar processamento atencional no canto dos olhos sem desviar a direção foveal primária.",
-      "A dinâmica de cada varredura periférica é regida pela clássica Lei de Fitts (1954) e pelo modelo de controle motor bifásico de Woodworth (1899). O tempo de resposta aumenta logaritmicamente conforme a distância radial até o vetor cresce e o diâmetro da ameaça diminui. Ao rebater ameaças velozes em aproximação contínua, o atleta precisa lançar o mouse com um movimento balístico em malha aberta cobrindo 85%+ do trajeto, aplicando uma desaceleração microscópica no ponto de impacto antes do clique.",
-      "Estudos clássicos de Karlene Ball et al. (1988) evidenciam que, sob situações de estresse e fadiga competitiva, o campo de visão funcional pode sofrer uma contração drástica conhecida como 'visão de túnel'. O simulador contrapõe esse colapso iniciando com intervalos moderados de 1,4 segundo e progredindo dinamicamente até cadências extremas de 0,20 segundo com nós a 520 px/s. Esse estímulo contínuo força o córtex parietal a expandir permanentemente o Useful Field of View (UFOV), conferindo consciência espacial panorâmica inabalável.",
-      "O sistema mede tempos de reação por meio da API performance.now() do navegador. Em telas gamer com taxas de 144Hz ou 240Hz, o borrão de arraste dos nós radiais a 520 px/s é eliminado, possibilitando discriminação perceptiva sem atraso de renderização (Woods et al., 2015). Seus recordes permanecem guardados unicamente no seu computador, preservando total sigilo."
-    ]
-  },
+  heading: "Guia da Defesa Radial",
+  intro: [
+    "Defesa Radial é um jogo grátis de navegador para treinar a atenção à visão periférica dentro do jogo: você olha para o núcleo no centro e clica nas ameaças que vêm das bordas antes que cheguem nele. Cada acerto dá +2 segundos; cada erro ou ameaça no núcleo tira 1 segundo.",
+    "Pesquisas mostram que dá para deslocar a atenção sem mover os olhos (Posner, 1980). Alvos em movimento e de alto contraste chamam atenção rápido mesmo nas bordas (Treisman & Gelade, 1980). O jogo transforma isso numa tarefa de clique.",
+    "No começo as ameaças surgem a cada 1,4 segundo, mais ou menos; com a pontuação elas ficam mais rápidas (até 520 px/s) e mais frequentes (até 0,20 segundo de intervalo). Para clicar, ajuda fazer um movimento grande e uma pequena correção final (Woodworth, 1899; Fitts, 1954).",
+    "Os resultados são registros de treino. Não substituem exame de vista, diagnóstico ou tratamento. Se notar mudanças na visão, procure um oftalmologista."
+  ],
   benchmarks: {
-    title: "Tabela Oficial de Classificação para Visão Periférica e Defesa Radial",
-    headers: ['Nível (Tier)', 'Título & Classificação', 'Pontuação Meta', 'Precisão & Velocidade', 'Grau', 'Nível de Percepção'],
+    title: "Faixas de pontuação (referência)",
+    headers: ["Faixa", "Pontos", "Foco do treino"],
     rows: [
-      ['Faixa 1', 'Muito alta', '24.000+ pts', '90%+ Acertos / 450+ px/s', 'Grau S', 'UFOV Extraordinário'],
-      ['Faixa 2', 'Alta', '17.000 – 23.999 pts', '82–89% Acertos / 350–449 px/s', 'Grau A', 'Nível Competitivo'],
-      ['Faixa 3', 'Boa', '11.000 – 16.999 pts', '74–81% Acertos / 250–349 px/s', 'Grau B', 'Percepção Consistente'],
-      ['Faixa 4', 'Intermediária', '6.000 – 10.999 pts', '65–73% Acertos / 160–249 px/s', 'Grau C', 'Média (Jogadores Regulares)'],
-      ['Faixa 5', 'Inicial', '< 6.000 pts', '< 65% Acertos / < 160 px/s', 'Grau D', 'Básico (Expansão de UFOV Recomendada)'],
+      ["1", "menos de 6.000", "Manter o olhar no centro"],
+      ["2", "6.000 – 10.999", "Interceptar antes do núcleo"],
+      ["3", "11.000 – 16.999", "Manter o combo sem interrupção"],
+      ["4", "17.000 – 23.999", "Não olhar direto nem com ameaças rápidas"],
+      ["5", "24.000 ou mais", "Resolver várias ameaças em sequência"]
     ],
-    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. A avaliação leva em conta pontos totais, quantidade de brechas sofridas no núcleo, velocidade máxima sobrevivida e comprimento máximo de combo.",
+    note: "Estas faixas são níveis de treino da SkillDrills. Não são estatísticas de usuários, percentis nem critério de exame de vista."
   },
-  protocols: {
-    title: "Protocolo de 4 Fases para Maximização da Visão Periférica",
-    description: "Programa sistemático para ancorar a visão foveal, aguçar a percepção pelo canto dos olhos e acelerar a defesa radial.",
+  techniques: {
+    title: "4 dicas para pontuar mais",
     items: [
       {
-        title: "Protocolo 1: Condicionamento de Atenção Encoberta de Posner",
-        description: "Mantenha os olhos travados no ponto central e iniba a necessidade reflexa de seguir novos alvos com os olhos. Elimine a latência das saccadas focando mentalmente em todos os 4 quadrantes (Posner 1980)."
+        name: "Olhar fixo no centro",
+        desc: "Olhar para o núcleo sem mexer os olhos é o centro do exercício. Seguir as ameaças com os olhos é praticar outra coisa.",
+        tips: "Se os olhos escapam, crie o hábito primeiro nos níveis baixos."
       },
       {
-        title: "Protocolo 2: Detecção Pré-Atencional de Pop-Out de Treisman",
-        description: "Treine a retina periférica para tratar nós convergentes vermelhos e laranjas nas margens mais externas como sinais de destaque imediato, sem busca sequencial lenta (Treisman & Gelade 1980)."
+        name: "Ver a tela inteira de forma suave",
+        desc: "Não se concentre numa direção; perceba a tela toda de uma vez, de forma relaxada. Assim o movimento chama atenção antes.",
+        tips: "Relaxe os olhos e deixe o foco suave."
       },
       {
-        title: "Protocolo 3: Flick Radial Balístico de Woodworth com Frenagem Final",
-        description: "Ao registrar o vetor de ameaça, projete o cursor com aceleração imediata do punho cobrindo a trajetória em malha aberta, freando com as pontas dos dedos no instante do clique (Woodworth 1899)."
+        name: "Movimento grande, ajuste fino",
+        desc: "Sabendo a posição, leve o cursor de uma vez para perto e só desacelere no final.",
+        tips: "Cliques afobados perto do núcleo custam o combo e 1 segundo."
       },
       {
-        title: "Protocolo 4: Expansão de UFOV sob Alta Densidade e Priorização",
-        description: "Nos níveis avançados com frequência de 0,20 s, calcule a distância relativa de múltiplos nós simultaneamente e abata primeiro os vetores em maior iminência de invasão (Woods et al. 2015)."
+        name: "Partidas curtas, com pausas",
+        desc: "Olhos cansados derrubam a concentração. Jogue partidas curtas e desvie o olhar da tela entre elas.",
+        tips: "Pare se sentir dor ou tontura."
       }
     ]
   },
-  faqs: {
-    title: "Perguntas Frequentes (FAQ) sobre Visão Periférica e Defesa de Ameaças",
-    items: faqSchema.mainEntity.map(q => ({
-      q: q.name,
-      a: q.acceptedAnswer.text
-    }))
-  }
+  steps: [
+    "Sente-se confortável e olhe para o núcleo no centro da tela.",
+    "Perceba as ameaças vindo das bordas sem mexer os olhos.",
+    "Clique na ameaça antes que ela chegue ao núcleo.",
+    "Some +2 segundos por acerto e mantenha o combo para subir a pontuação."
+  ],
+  audience: "Quem quer praticar de forma leve a reação a movimentos nas bordas da tela, e gamers que querem testar manter o olhar no centro sem perder o que acontece em volta.",
+  faqs,
+  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015')
 };
 
-export default function LocalizedPeripheralThreatSweeperPagePt() {
+export default function PeripheralThreatSweeperPtPage() {
   return (
     <>
       <script
@@ -334,54 +234,47 @@ export default function LocalizedPeripheralThreatSweeperPagePt() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "Defesa Radial: Treino de Visão Periférica",
-          subtitle: "Fixe o centro e detecte ameaças nas bordas",
-          description: "A visão periférica é aquilo que você consegue detectar sem olhar diretamente. Os detalhes diminuem acentuadamente a partir do centro do olhar, mas a atenção pode ser direcionada para um ponto periférico enquanto os olhos permanecem parados, acelerando a resposta motora (Posner, 1980). Uma característica única como a cor é localizada quase no mesmo tempo independentemente de distrações, enquanto alvos que combinam traços exigem busca atencional ativa (Treisman & Gelade, 1980) — o que torna algumas ameaças fáceis de interceptar na borda e outras desafiadoras.",
+          title: "Defesa Radial",
+          subtitle: "Olhar no centro, ameaças vindo das bordas",
           hudLabels: {
-            score: "Pontuação",
+            score: "Pontos",
             time: "Tempo",
-            bestScore: "Melhor Pontuação",
-            bestCombo: "Melhor Combo",
-            getReady: "PREPARE-SE",
+            bestScore: "Recorde",
+            bestCombo: "Melhor combo",
             accuracy: "Precisão",
-            sweeps: "Varreduras",
-            breaches: "Brechas",
-            peakLevel: "Nível Máximo"
+            sweeps: "Acertos",
+            breaches: "No núcleo",
+            peakLevel: "Nível",
+            getReady: "PREPARE-SE"
           },
-          resultLabels: {
-            accuracy: "Precisão",
-            sweeps: "Varreduras",
-            breaches: "Brechas",
-            peakLevel: "Nível Máximo"
-          },
-          rulesTitle: "Instruções do Drill e Sistema de Pontuação",
+          rulesTitle: "Regras e pontuação",
           rulesItems: [
-            { title: "Defesa do Núcleo e Pontos", text: "Clique nos nós vermelhos e laranjas convergentes antes que eles atinjam o núcleo central. Cada varredura concede 100 pontos base (multiplicados por nível e combo) e +0,6s de tempo." },
-            { title: "Penalidade por Brecha", text: "Se um nó atingir o núcleo central, ocorre uma brecha (breach): o multiplicador de combo é reiniciado imediatamente para 1.0x e a tela pisca em vermelho." },
-            { title: "Escalação Contínua de Ameaças", text: "Conforme a pontuação sobe, os intervalos de surgimento caem de 1,4s para 0,20s e a velocidade dos vetores acelera de 160 px/s até 520 px/s." },
-            { title: "Recentralização Tática", text: "Retorne o cursor para o núcleo central após cada eliminação para garantir equidistância de 360° diante de ameaças em qualquer quadrante." }
+            { title: "Intercepte e ganhe tempo", text: "Clique nas ameaças que vêm das bordas para ganhar 100 pontos (com multiplicador de combo e nível) e +2 segundos (máximo de 60 segundos)." },
+            { title: "Multiplicador de combo", text: "Acertos seguidos sem erro elevam o multiplicador até 3,0x." },
+            { title: "Dificuldade crescente", text: "Com a pontuação, as ameaças ficam mais rápidas (até 520 px/s) e mais frequentes (até 0,20 s de intervalo)." },
+            { title: "Núcleo atingido e cliques errados", text: "Se uma ameaça chega ao núcleo ou você clica no vazio, o combo volta para 1,0x e você perde 1 segundo." }
           ],
-          aboutTitle: "Sobre o Treino de Visão Periférica e Atenção Encoberta",
+          aboutTitle: "Sobre a Defesa Radial",
           aboutSections: [
             {
-              title: "Orientação de Atenção Encoberta e Varredura Periférica",
-              subtitle: "Direcionamento espacial de Posner sem desvio da fixação foveal",
-              content: "A interceptação de ameaças periféricas treina a orientação encoberta da atenção visual (Posner, 1980). Em vez de deslocar os olhos constantemente, o jogador mantém a fixação central enquanto projeta recursos atencionais pelos 360° da periferia."
+              title: "Mover a atenção sem mover os olhos",
+              subtitle: "Posner (1980): atenção espacial",
+              content: "Dá para levar a atenção a outro ponto sem mexer os olhos. Aqui o olhar fica no núcleo enquanto você percebe as ameaças nas bordas."
             },
             {
-              title: "Integração Pré-Atencional e Mapas de Saliência",
-              subtitle: "Busca visual paralela de Treisman por ângulos radiais",
-              content: "Novos vetores de ameaça ativam detectores pré-atencionais de cor e movimento na retina periférica (Treisman & Gelade, 1980). Nós contrastantes geram o efeito pop-out, alertando o cérebro para rebater o perigo."
+              title: "Alvos em movimento chamam atenção",
+              subtitle: "Treisman (1980): busca visual",
+              content: "Alvos de alto contraste e em movimento se destacam rápido mesmo nas bordas. Quem observa a tela toda de forma relaxada percebe novas ameaças antes."
             },
             {
-              title: "Flick Balístico e Proteção do Núcleo",
-              subtitle: "Movimento rápido de Woodworth conjugado com frenagem final",
-              content: "As varreduras exigem o clássico controle motor em duas fases de Woodworth (1899): um golpe balístico de punho cobrindo mais de 85% da distância radial, seguido de microajustes visuais para capturar a ameaça antes da brecha."
+              title: "Movimento grande, ajuste fino",
+              subtitle: "Woodworth (1899) e Fitts (1954)",
+              content: "Apontar rápido combina um movimento grande com uma pequena correção final. Perto do núcleo, desacelere e clique com precisão."
             },
             {
-              title: "Campo Visual Útil e Processamento Multivetorial",
-              subtitle: "Expansão da capacidade cognitiva em alta densidade de aparição",
-              content: "Com a redução do tempo de geração e aumento da velocidade para 520 px/s, o exercício expande o Useful Field of View (UFOV), condicionando o sistema nervoso a processar múltiplos perigos simultaneamente."
+              title: "Várias ameaças ao mesmo tempo",
+              subtitle: "Intervalos menores mais adiante",
+              content: "Mais adiante as ameaças chegam em sequência e a atenção precisa ser dividida. Mantenha o olhar no centro e resolva primeiro as mais próximas do núcleo."
             }
           ]
         }}

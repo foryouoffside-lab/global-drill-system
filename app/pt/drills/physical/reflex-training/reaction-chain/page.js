@@ -4,410 +4,197 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — Brazil & Portugal (PT / PT-BR)
-// Primary Intent: treino de frenagem de mira mouse, como corrigir overflick, teste de inibição motora
-// Brazilian Gaming Context: Correção de overflick no Valorant e CS2, frenagem cinética do mouse, inibição de resposta
-// High-Demand, Low-Competition Target Keywords:
-//   - "treino de frenagem de mira mouse" (Mouse aim braking training)
-//   - "como corrigir overflick no mouse" (How to fix overflick)
-//   - "teste de inibição motora reflexo" (Motor inhibition reflex test)
-//   - "jogo de reflexo e parada do mouse" (Mouse stop reflex game)
-//   - "treino de controle e desaceleração do mouse" (Mouse deceleration control training)
-//   - "parada cinética mira reflexo" (Kinetic arrest aim reflex)
-//   - "teste de precisão e reflexo do mouse" (Mouse precision & reflex test)
-//   - "jogo de velocidade de reação mouse" (Mouse reaction speed game)
-// ============================================================
+const url = 'https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain';
+const title = 'Frenagem de Mira: Pare o Cursor Dentro do Alvo | SkillDrills';
+const description = 'Frenagem de mira grátis: pare o cursor por completo dentro de alvos que vêm das bordas da tela. Passar direto ou deixar um alvo escapar tira 1 segundo.';
 
 export const metadata = {
-  title: "Frenagem de Mira | Treino de Reflexos",
-  description: "Treino grátis de mira no navegador. Acerte alvos móveis, pare o cursor com precisão e pratique controle do overflick e tempo de reação.",
-  keywords: [
-    "treino de frenagem de mira mouse",
-    "treino de mira online grátis",
-    "como corrigir overflick no mouse",
-    "teste de inibição motora",
-    "jogo de reflexo e parada do mouse",
-    "controle e desaceleração do mouse",
-    "teste de precisão do mouse",
-    "jogo de velocidade de reação",
-    "como parar a mira no alvo",
-    "treino de mira Valorant",
-    "frenagem de mira no CS2"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain',
-    languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Frenagem de Mira | Treino de Reflexos",
-    description: "Acerte alvos móveis, pare o cursor com precisão e pratique controle do overflick em um treino grátis no navegador.",
-    url: 'https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain',
-    siteName: 'SkillDrills',
-    locale: 'pt_BR',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Frenagem de Mira | Treino de Reflexos",
-    description: "Acerte o alvo, freie o cursor com precisão e pratique controle do overflick.",
-  },
+  title,
+  description,
+  keywords: ['frenagem de mira', 'parar a mira no alvo', 'evitar overflick', 'overflick', 'parar o cursor no alvo'],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_BR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
+  robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Início",
-      "item": "https://skilldrills.online/pt"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Exercícios",
-      "item": "https://skilldrills.online/pt/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Treino de Reflexos",
-      "item": "https://skilldrills.online/pt/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Cadeia de Reação (Frenagem de Mira)",
-      "item": "https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Início', item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: 'Drills Físicos', item: 'https://skilldrills.online/pt/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Frenagem de Mira', item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
-  "name": "Treino de Frenagem de Mira & Inibição Motora no Mouse (Reaction Chain)",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Módulo biomecânico interativo para treinar a desaceleração motora, o controle de inibição de resposta e a eliminação de overflicking em miras rápidas.",
-  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/pt"
-  },
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Frenagem de Mira (Reaction Chain)',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'Navegador com HTML5 Canvas e Pointer Lock, mouse',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  inLanguage: 'pt-BR',
+  dateModified: '2026-11-10',
 };
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Frenagem de Mira – Inibição Motora no Mouse | SkillDrills",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Requires HTML5 Canvas and JavaScript enabled browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const faqs = [
+  {
+    q: 'O que se pratica na frenagem de mira?',
+    a: 'Alvos (nós) entram em linha reta por uma das quatro bordas da tela. Você leva o cursor até um nó e para por completo dentro dele. Para evitar overflick, esse último instante de frenagem é o que importa, e o drill treina só ele.',
   },
-  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Treino de Frenagem de Mira & Inibição Motora no Mouse",
-  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain",
-  "genre": ["Reflex Game", "Motor Control Trainer", "Esports Precision"],
-  "playMode": "SinglePlayer",
-  "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
-  "description": "Intercepte nós a até 1.800 px/s e force o cursor a desacelerar para menos de 1,5 px/frame dentro do perímetro para acumular combos de até 3,0x."
-};
+  {
+    q: 'Como os pontos são calculados?',
+    a: 'Parar dentro do nó (aviso ARREST READY) vale 50 pontos × multiplicador. Não há clique. Com 5 paradas seguidas o multiplicador vai a 1,2x, com 10 a 1,5x, com 25 a 2,0x e com 40 ao máximo de 3,0x.',
+  },
+  {
+    q: 'O que acontece quando eu erro?',
+    a: 'Erro é passar direto por um nó sem parar ou deixar um nó sair da tela. Cada erro tira 1 segundo do tempo restante e volta o multiplicador para 1,0x. Pontos não são descontados. Essa penalidade está sempre ativa e não pode ser desligada.',
+  },
+  {
+    q: 'Quando uma parada conta?',
+    a: 'Quando o cursor, dentro do nó, se move a menos de 1,5 pixel por quadro. Mais rápido que isso, o contato conta como passar direto. É um critério interno do drill.',
+  },
+  {
+    q: 'Como a dificuldade aumenta?',
+    a: 'O nível sobe com a pontuação de 1 a 10 (aos 250, 500, 1.000, 2.000, 3.500, 5.500, 8.000, 11.000 e 15.000 pontos). A velocidade dos nós vai de 360 a 1.800 px/s, aparecem de 1 a 5 nós ao mesmo tempo e o raio do nó cai de 15 para 6 px.',
+  },
+  {
+    q: 'Parar é mais difícil que começar o movimento?',
+    a: 'Muita gente sente isso, mas varia de pessoa para pessoa. Um modelo conhecido descreve começar e parar como uma corrida entre dois processos (Logan & Cowan, 1984); se a parada chega tarde, o embalo leva a mira além do alvo. A pontuação não mede tempo de reação de parada.',
+  },
+  {
+    q: 'Vou jogar melhor Valorant ou CS2?',
+    a: 'Não dá para garantir. O drill pratica frear no alvo, mas sensibilidade, tela e regras do jogo são diferentes. Use-o para comparar suas próprias partidas.',
+  },
+  {
+    q: 'O que preciso para jogar?',
+    a: 'Um mouse. Depois da contagem o Pointer Lock é ativado e você controla só com o movimento do mouse; em aparelhos só de toque o drill não inicia. Use seu DPI e sensibilidade de sempre e compare mudanças nas mesmas condições.',
+  },
+  {
+    q: 'Onde ficam meus resultados?',
+    a: 'Melhor pontuação, melhor multiplicador e nível máximo ficam só no armazenamento local do navegador e não vão para nenhum servidor. Se você apagar os dados do navegador, eles somem.',
+  },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Por que travar o mouse milimetricamente no alvo é neurologicamente mais complexo do que acelerar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A aceleração motora decorre de uma contração direta dos músculos agonistas. Já a desaceleração de precisão exige que os grupos musculares antagonistas produzam forças opostas com calibração milimétrica em frações de milissegundo. Conforme Woodworth (1899), a fase final de controle óptico possui uma latência inerente de 100 a 150 ms; qualquer erro no comando de freio faz com que a inércia física projete o cursor para além do alvo (overflick)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que estabelece o Modelo de Corrida de Cavalos (Logan & Cowan, 1984) sobre a inibição motora?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O modelo propõe que o comando de execução ('Go process') e o comando de inibição/parada ('Stop process') disputam de forma independente nos gânglios da base. Para que um movimento rápido seja contido antes de ultrapassar o alvo, o sinal de parada precisa alcançar a linha de chegada neural antes que o impulso motor atinja o pico muscular."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que é o Stop-Signal Reaction Time (SSRT) e como ele impacta a mira em jogos de tiro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O SSRT representa a latência neural interna (geralmente entre 180 e 250 ms) necessária para que o giro frontal inferior direito (rIFG) e o núcleo subtalâmico (STN) interrompam uma ação motora já engatilhada (Verbruggen & Logan, 2008). Um SSRT veloz permite abortar um flick errôneo e travar a retícula instantaneamente na cabeça do adversário."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a principal causa biomecânica do overflick em jogos como Valorant e CS2?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "O desequilíbrio na cocontração dos flexores e extensores do antebraço. Aplicar força balística excessiva faz com que a energia cinética do mouse supere o coeficiente de atrito estático do mousepad. O treino de frenagem condiciona a aderência mecânica através das pontas dos dedos e da base do mouse."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como a Lei de Fitts (Fitts, 1954) afeta o exercício quando a velocidade dos nós aumenta?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pela Lei de Fitts, o índice de dificuldade (ID) cresce logaritmicamente à medida que a tolerância espacial (tamanho útil do alvo) diminui em relação à distância percorrida. A 1.800 px/s, a janela temporal de ajuste visual fecha completamente, exigindo desaceleração em malha aberta puramente antecipada pelo cerebelo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que significa a exigência de 'menos de 1,5 px/frame' para validar uma parada cinética?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Esse critério elimina o 'slice-through' — o vício de apenas passar o cursor raspando pelo nó em alta velocidade. A 144 Hz, 1,5 px/frame equivale a menos de 216 px/s, confirmando que os músculos realmente absorveram o momento cinético e entraram em atrito estático real."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O tipo de mousepad e os skates do mouse afetam a eficiência de parada?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim. Mousepads de vidro ou tecidos ultra-rápidos reduzem a força inicial, mas oferecem baixíssimo poder de frenagem (stopping power), sobrecarregando os músculos do antebraço. Para dominar a desaceleração, pads híbridos ou de controle proporcionam maior atrito estático, facilitando travar a mira."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Monitores de 144Hz ou 240Hz fazem diferença no treino de inibição motora?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Conforme Woods et al. (2015), telas de 60Hz introduzem 16,6 ms de atraso por quadro e geram borrões nos momentos críticos de parada. Em 240Hz (4,1 ms), a trajetória subpixel do nó é renderizada de forma contínua, permitindo ao córtex visual emitir o sinal de freio com mais de 10 ms de antecipação."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é o tempo diário ideal para treinar sem gerar estresse muscular ou neural?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sessões de 15 a 20 minutos por dia (10 a 15 repetições de 45 segundos com intervalos de 45 segundos) são perfeitas. Por envolver inibição ativa do sistema nervoso central, fadiga excessiva leva à rigidez do punho; caso sinta tensão muscular contínua, interrompa o treino de imediato."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como aplicar a precisão desenvolvida no Reaction Chain diretamente nas partidas competitivas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mantenha rigorosamente a mesma sensibilidade e pegada (grip) utilizadas em seu jogo principal. Durante o exercício, foque não em 'clicar no alvo', mas na sensação tátil de 'ancorar' o cursor no centro do nó. Esse hábito motor estabiliza o primeiro tiro sob pressão real de combate."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt-BR',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Passo a Passo para o Treino de Frenagem de Mira e Inibição Motora",
-  "description": "Protocolo de 4 fases para interceptar alvos em deslocamento veloz e zerar a inércia física do cursor.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Ativação do Pointer Lock e Centralização",
-      "text": "Clique na área de treino para prender o cursor e posicione a mira no ponto central da tela."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Antecipação de Trajetória e Flick Balístico",
-      "text": "Identifique o vetor do nó surgindo nas extremidades e projete um flick acelerado até 80% da distância."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Ativação Antagonista e Parada Cinética",
-      "text": "Ao adentrar a borda do nó, acione a musculatura antagonista e pressão descendente das pontas dos dedos para parar sob 1,5 px/frame."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Manutenção de Combo e Meta de 15.000 Pontos",
-      "text": "Sustente paradas limpas e ininterruptas durante 45 segundos para atingir o multiplicador de 3,0x e superar 15.000 pontos."
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Como fazer a frenagem de mira',
+  description: 'Quatro passos para parar o cursor dentro do alvo.',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Aproximar', text: 'Quando um nó aparecer, leve o cursor rapidamente para a trajetória dele.' },
+    { '@type': 'HowToStep', position: 2, name: 'Frear antes da borda', text: 'Desacelere pouco antes de chegar à borda do nó.' },
+    { '@type': 'HowToStep', position: 3, name: 'Parar dentro', text: 'Pare o cursor por completo dentro do nó até aparecer ARREST READY.' },
+    { '@type': 'HowToStep', position: 4, name: 'Manter a sequência', text: 'Pare nó após nó sem passar direto. Cada erro custa 1 segundo.' },
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
 const guideProps = {
-  sources: pickSources('logan1984', 'woodworth1899', 'fitts1954', 'woods2015'),
-  intro: {
-    title: "Neurofisiologia da Inibição Motora e Biomecânica da Parada Cinética",
-    paragraphs: [
-      "Arremessar o cursor com velocidade máxima em direção a um alvo é uma habilidade comum; interromper seu deslocamento sem deslizar um único pixel além da coordenada exata é o verdadeiro ápice da maestria neuromotora. Enquanto a maioria dos treinadores de mira foca unicamente no instante do clique, o Reaction Chain isola a capacidade do sistema nervoso de estancar a inércia física logo após a interceptação (Kinetic Arrest).",
-      "De acordo com o célebre 'Modelo de Corrida de Cavalos' de Gordon D. Logan e William B. Cowan (1984), o impulso de execução ('Go process') e o impulso inibitório ('Stop process') competem de modo concorrente nos gânglios da base. Para congelar o cursor sobre um nó dinâmico, o núcleo subtalâmico (STN) e o giro frontal inferior (rIFG) precisam disparar contrações antagonistas ultrarrápidas capazes de sobrepujar o momento de aceleração (Verbruggen & Logan, 2008).",
-      "O modelo bifásico de Robert S. Woodworth (1899) demonstrou que miras velozes dividem-se em um disparo balístico em malha aberta e uma desaceleração óptica terminal. Quando a velocidade atinge 1.800 px/s, a Lei de Fitts (1954) dita o fechamento total da margem de erro: correções visuais tardias tornam-se biologicamente impossíveis, restando apenas o planejamento motor prévio como proteção contra o overflick.",
-      "Com a precisão milimétrica da API performance.now(), este módulo calcula em tempo real o deslocamento do cursor quadro a quadro e exige velocidade inferior a 1,5 px/frame para registrar a parada. Quando praticado em monitores de 144Hz ou 240Hz com mouses a 1000Hz, o atraso de exibição cai para menos de 4 ms, propiciando o ambiente ideal para neuroplasticidade (Woods et al., 2015)."
-    ]
-  },
+  heading: 'Frenagem de mira: guia para parar o cursor no alvo',
+  intro: [
+    'A frenagem de mira (Reaction Chain) é um drill de navegador em que você para o cursor por completo dentro de nós que chegam das bordas da tela. Não há clique: só a parada conta. Cada partida dura 45 segundos e cada erro tira 1 segundo.',
+    'Um modelo conhecido descreve começar e parar como uma corrida entre dois processos (Logan & Cowan, 1984). Movimentos rápidos de mira têm um deslocamento grande e uma correção fina (Woodworth, 1899), e quanto menor o alvo, mais precisa a parada precisa ser (Fitts, 1954).',
+    'Compare resultados no mesmo mouse, sensibilidade e monitor; taxa de atualização e dispositivo de entrada afetam o atraso (Woods et al., 2015). Os números são registros de prática e não garantem desempenho em jogo.',
+  ],
   benchmarks: {
-    title: "Escala Oficial de 5 Níveis para Frenagem de Mira e Inibição Motora",
-    headers: ["Nível de Habilidade", "Título Oficial", "Faixa de Pontuação", "Taxa de Sucesso na Parada", "Classificação", "Perfil Neuromotor"],
+    title: 'Níveis e dificuldade (valores do jogo)',
+    headers: ['Nível', 'A partir de', 'Velocidade do nó', 'Nós ao mesmo tempo', 'Raio do nó'],
     rows: [
-      ["Faixa 1", "Muito alta", "15.000+ pts", "95%+ / 1500+ px/s", "Grade S", "Controle de inibição: estanca instantaneamente mesmo em nós a 1.800 px/s sem qualquer overflick (Logan 1984; Woodworth 1899)"],
-      ["Faixa 2", "Alta", "11.000 – 14.999 pts", "90 – 94% / 1200 – 1499 px/s", "Grade A", "Excelente desaceleração via pontas dos dedos; travamento sólido após flicadas intensas"],
-      ["Faixa 3", "Boa", "7.500 – 10.999 pts", "82 – 89% / 900 – 1199 px/s", "Grade B", "Frenagem consistente em médias velocidades; falhas esporádicas de derrapagem em velocidades extremas"],
-      ["Faixa 4", "Intermediária", "4.000 – 7.499 pts", "70 – 81% / 600 – 899 px/s", "Grade C", "Média padrão. Tendência a passar do alvo por falta de engajamento antagonista no momento certo"],
-      ["Faixa 5", "Inicial", "< 4.000 pts", "< 70% / < 600 px/s", "Grade D", "Atraso na inibição motora gera erros frequentes; necessário treinar desaceleração mecânica no mousepad"]
+      ['1', '0', '360 px/s', '1', '15 px'],
+      ['2', '250', '420 px/s', '1', '14 px'],
+      ['3', '500', '500 px/s', '2', '13 px'],
+      ['4', '1.000', '600 px/s', '2', '12 px'],
+      ['5', '2.000', '720 px/s', '2', '11 px'],
+      ['6', '3.500', '850 px/s', '3', '10 px'],
+      ['7', '5.500', '1.000 px/s', '3', '9 px'],
+      ['8', '8.000', '1.200 px/s', '4', '8 px'],
+      ['9', '11.000', '1.450 px/s', '4', '7 px'],
+      ['10', '15.000', '1.800 px/s', '5', '6 px'],
     ],
-    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Calibrado com base no Modelo de Corrida de Logan (1984), no controle bifásico de Woodworth (1899) e na Lei de Fitts (1954)."
+    note: 'Valores definidos no código do drill. Não são estatísticas de usuários nem percentis.',
   },
   techniques: {
-    title: "Técnicas Práticas de Frenagem de Mira",
+    title: 'Quatro técnicas para uma parada limpa',
     items: [
-      {
-        name: "Frenagem Antecipada de Logan (Logan Kinetic Brake)",
-        desc: "Tentar travar o mouse apenas após tocar o nó resulta invariavelmente em ultrapassagem devido ao atraso neural. Dispare o comando de freio ao cobrir 80% do trajeto para que o cursor atinja velocidade zero exatamente ao cruzar o nó.",
-        tips: "Visualize a ação não como bater no nó, mas como pregar o cursor firmemente no centro dele."
-      },
-      {
-        name: "Pressão Descendente com as Pontas dos Dedos (Fingertip Downforce)",
-        desc: "Evite depender apenas das articulações do punho para frear. No momento do bloqueio, exerça leve pressão descendente com os dedos contra o mousepad para maximizar o atrito estático da base.",
-        tips: "Aproveite a maciez do tecido do mousepad para gerar frenagem mecânica imediata."
-      },
-      {
-        name: "Eliminação Total do Slice-Through",
-        desc: "Passar direto pelo nó clicando no caminho prejudica o recoil e a precisão do primeiro tiro. Certifique-se de que o cursor pare por completo até que o indicador verde 'ARREST READY' confirme o acerto.",
-        tips: "A firmeza de parada dentro da área do nó é muito mais valiosa do que a pressa descontrolada."
-      },
-      {
-        name: "Manutenção de Combo 3,0x",
-        desc: "Erros de ultrapassagem não subtraem pontuação, mas resetam o combo para 1,0x. Complete os níveis iniciais com 100% de paradas para usufruir do multiplicador 3,0x nas fases velozes.",
-        tips: "Mais de 80% da pontuação total é conquistada durante os períodos com multiplicador máximo."
-      }
-    ]
+      { name: 'Frear antes da borda', desc: 'Frear só ao tocar a borda do nó já é tarde. Comece a desacelerar um pouco antes.', tips: 'No início, olhe mais para o ARREST READY do que para os pontos.' },
+      { name: 'Parar com a mão solta', desc: 'Dedos e pulso tensos fazem o cursor tremer. Pare de forma relaxada, deixando o embalo morrer.', tips: 'Mousepad e mouse feet mudam a sensação de parada; compare sempre com o mesmo setup.' },
+      { name: 'Não passar direto', desc: 'Atravessar o nó rápido não conta como parada, custa 1 segundo e zera a sequência.', tips: 'Segure a parada por um instante.' },
+      { name: 'Não deixar nó escapar', desc: 'Um nó que sai da tela também custa 1 segundo. Com vários nós, resolva primeiro o mais próximo.', tips: 'O multiplicador só chega a 3,0x com 40 paradas seguidas; calma rende pontos.' },
+    ],
   },
   steps: [
-    "Ative o bloqueio do cursor na área de jogo e posicione a mira com empunhadura estável (fingertip ou claw).",
-    "Mire no nó que se aproxima e inicie um movimento de aceleração balística firme.",
-    "Antes de cruzar a borda do alvo, acione a frenagem antagonista e pressão nos dedos para estancar sob 1,5 px/frame.",
-    "Repita o procedimento com perfeição por 45 segundos para conservar o combo de 3,0x e superar 15.000 pontos."
+    'Clique em iniciar e espere o Pointer Lock ser ativado após a contagem.',
+    'Leve o cursor rapidamente até a trajetória do nó.',
+    'Desacelere pouco antes da borda e pare por completo dentro do nó.',
+    'Acumule paradas seguidas por 45 segundos. Cada erro tira 1 segundo.',
   ],
-  audience: "Jogadores de Valorant, CS2, Overwatch 2 e Apex Legends que buscam extinguir o overflick e alcançar precisão cirúrgica de primeiro disparo, bem como qualquer pessoa em busca de refinamento neuromotor.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('logan1984', 'woodworth1899', 'fitts1954', 'woods2015')
+  audience: 'Jogadores de FPS que querem reduzir o overflick com prática focada e quem quer treinar a frenagem do mouse.',
+  faqs: { title: 'Perguntas frequentes', items: faqs },
+  sources: pickSources('logan1984', 'woodworth1899', 'fitts1954', 'woods2015'),
 };
 
 export default function LocalizedReactionChainPagePt() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <ReactionChainClient
         copy={{
-          title: "Frenagem de Mira",
-          subtitle: "Acerte o alvo e pare o cursor com precisão",
-          badge: "Teste de Inibição Motora",
-          description: "Travar um movimento rápido exatamente sobre um alvo é biomecanicamente mais exigente do que acelerar. Os processos de execução e inibição disputam espaço no cérebro (Logan & Cowan, 1984). Se o freio atrasar, a inércia provoca o temido overflick (Woodworth, 1899). Intercepte os nós e estanque o cursor instantaneamente.",
+          title: 'Frenagem de Mira',
+          subtitle: 'Leve o cursor ao alvo e pare por completo',
+          description: 'Parar um movimento rápido exatamente no alvo costuma ser mais difícil do que começá-lo. Um modelo conhecido descreve começar e parar como uma corrida entre dois processos (Logan & Cowan, 1984); se a parada chega tarde, o embalo leva a mira além do alvo. Experimente nos nós.',
           hudLabels: {
-            score: "Pontuação",
-            time: "Tempo",
-            accuracy: "Precisão de Parada",
-            bestScore: "Melhor Pontuação",
-            getReady: "PREPARE-SE"
+            score: 'Pontos',
+            time: 'Tempo',
+            accuracy: 'Taxa de parada',
+            bestScore: 'Recorde',
+            getReady: 'Prepare-se',
           },
-          pauseTitle: "Treino Pausado",
-          pauseSubtitle: "Clique na tela para reativar o bloqueio do cursor.",
           resultLabels: {
-            newBest: "NOVO RECORDE",
-            points: "Pontos",
-            accuracy: "Precisão",
-            totalArrests: "Paradas Cinéticas",
-            maxCombo: "Combo Máximo",
-            peakLevel: "Nível Máximo",
-            playAgain: "Jogar Novamente"
+            newBest: 'Novo recorde',
+            points: 'Pontos',
+            accuracy: 'Taxa de parada',
+            totalArrests: 'Paradas',
+            maxCombo: 'Maior multiplicador',
+            peakLevel: 'Nível máximo',
+            playAgain: 'Jogar de novo',
           },
-          rulesTitle: "Regras do Drill & Sistema de Pontos",
+          rulesTitle: 'Regras e pontuação',
           rulesItems: [
-            { title: "Parada Cinética (+50 PTS)", text: "Intercepte o nó e pare completamente o cursor dentro do perímetro (ARREST READY) para somar 50 pontos." },
-            { title: "Multiplicador de Combo (até 3,0x)", text: "Sequências perfeitas de frenagem aumentam o multiplicador progressivamente até o teto de 3,0x." },
-            { title: "Passagem Direta & Erros", text: "Passar raspando sem parar ou errar o nó reinicia o combo (sem perda de pontuação acumulada)." },
-            { title: "Aceleração Extrema", text: "Conforme sua pontuação sobe, os nós aceleram até 1.800 px/s e o raio de parada se contrai." }
+            { title: 'Parada no nó (+50 pts)', text: 'Pare o cursor por completo dentro do nó (ARREST READY): 50 pontos × multiplicador. Não há clique.' },
+            { title: 'Multiplicador (até 3,0x)', text: '5 paradas seguidas: 1,2x; 10: 1,5x; 25: 2,0x; 40: 3,0x.' },
+            { title: 'Passar direto / deixar escapar (-1 s)', text: 'Atravessar um nó sem parar ou deixá-lo sair da tela custa 1 segundo e volta o multiplicador a 1,0x (sem perder pontos).' },
+            { title: 'Níveis 1–10', text: 'Com a pontuação sobem a velocidade (até 1.800 px/s) e o número de nós (até 5); os nós ficam menores.' },
           ],
-          aboutTitle: "Sobre Frenagem de Mira & Inibição Neuromotora",
+          aboutTitle: 'Sobre a frenagem de mira',
           aboutSections: [
-            {
-              title: "Frenagem Cinética & Neurofisiologia da Inibição",
-              content: "O Reaction Chain condiciona a capacidade de desaceleração motora e inibição de resposta. Em vez de simplesmente clicar em alvos em movimento, você deve interceptar os nós e forçar os músculos antagonistas a absorverem a energia do cursor dentro da área demarcada."
-            },
-            {
-              title: "Modelo de Corrida de Logan & Mira Cirúrgica",
-              content: "A prática contínua da parada cinética recalibra o núcleo subtalâmico e o córtex motor (Logan et al., 1984). Isso erradica o overflick descontrolado e consolida uma estabilização de primeiro disparo impecável em jogos como CS2 e Valorant."
-            }
+            { title: 'Treinar só a parada', content: 'O Reaction Chain isola a frenagem no alvo. Não há clique; só pontua quando o cursor fica totalmente parado dentro do nó.' },
+            { title: 'Corrida entre começar e parar', content: 'Um modelo conhecido descreve começar e parar como uma corrida entre dois processos (Logan & Cowan, 1984). Se a parada atrasa, o cursor passa do alvo. O efeito do drill não foi comprovado; ele serve para comparar suas partidas.' },
           ],
           aboutCards: [
-            {
-              title: "Atletas Alvo",
-              desc: "Jogadores de FPS focados em eliminar o overflicking e esportistas que demandam rápida frenagem motora.",
-              bgClass: "bg-blue-600/30",
-              iconClass: "text-blue-400"
-            },
-            {
-              title: "Habilidades Desenvolvidas",
-              desc: "Desaceleração precisa, controle de atrito estático, inibição de sinal de parada (SSRT) e interceptação espacial.",
-              bgClass: "bg-emerald-600/30",
-              iconClass: "text-emerald-400"
-            },
-            {
-              title: "Frenagem Cinética",
-              desc: "Intercepte nós a até 1.800 px/s e estanque sob 1,5 px/frame para sustentar multiplicadores de 3,0x.",
-              bgClass: "bg-purple-600/30",
-              iconClass: "text-purple-400"
-            }
-          ]
+            { title: 'Para quem', desc: 'Jogadores de FPS que querem passar menos do alvo e quem quer treinar a frenagem do mouse.', bgClass: 'bg-blue-600/30', iconClass: 'text-blue-400' },
+            { title: 'O que você pratica', desc: 'Momento de frear, parar em alvos pequenos e interceptar alvos que cruzam a tela.', bgClass: 'bg-emerald-600/30', iconClass: 'text-emerald-400' },
+            { title: 'Critério de parada', desc: 'Menos de 1,5 pixel por quadro dentro do nó conta como parada.', bgClass: 'bg-purple-600/30', iconClass: 'text-purple-400' },
+          ],
         }}
       >
         <DrillGuide {...guideProps} />
-        <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+        <RelatedDrills />
       </ReactionChainClient>
     </>
   );

@@ -5,53 +5,36 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — Germany (DE)
-// Primary Intent: Koordinationsleiter Übungen, Koordinationsleiter Fußball, Beinarbeit Trainieren, Schnelligkeitstraining
-// German Context: Beinarbeit & Rhythmus im Fußball/Handball/Tennis & eSports Counter-Strafing
-// Target clusters from native sports and footwork search language; competition is unmeasured:
-//   - "Koordinationsleiter Übungen" (High-intent athletic agility ladder exercises)
-//   - "Koordinationsleiter Fußball" (Sport-specific agility search)
-//   - "Beinarbeit Trainieren" (Footwork agility training)
-//   - "Schnelligkeitstraining Übungen" (Speed & quickness conditioning)
-//   - "Agility Leiter Training" (Ladder coordination training)
-//   - "Motorische Sequenzierung" (Motor sequencing & neural programming)
-//   - "Hand-Auge-Rhythmus" (Sensomotoric rhythm query)
-//   - "Koordinationsleiter Sportabzeichen" (Fitness evaluation test)
-//   - "Counter Strafing Rhythmus" (Gaming strafe movement rhythm)
-//   - "Schnelligkeit Beinarbeit" (Quickness footwork coordination)
+// SEO (2026-11-10, docs/seo/research/physical-2026-11/de.md)
+// Primary: Agility-Ladder-Rhythmusspiel (no-demand descriptive).
+// Dropped Koordinationsleiter Übungen / Fußball / Sportabzeichen: that SERP is
+// equipment shops, and this is a mouse sequence game, not a ladder workout.
 // ============================================================
 
+const TITLE = 'Agility-Ladder-Rhythmusspiel mit der Maus | SkillDrills';
+const DESCRIPTION = 'Kostenloses Agility-Ladder-Rhythmusspiel: Fahre die 4 Sprossen jeder Leiter links-rechts-links-rechts mit dem Mauszeiger ab. 45 Sekunden, Combo, mehr Tempo.';
+const URL = 'https://skilldrills.online/de/drills/physical/fitness/agility-ladder';
+
 export const metadata = {
-  title: "Koordinationsleiter Übungen | SkillDrills",
-  description: 'Kostenlose Koordinationsleiter-Übungen online. Folge abwechselnden Sprossen und trainiere Beinarbeit, Schrittfolgen, Tempo und Rhythmus im Browser.',
-  keywords: [
-    "Koordinationsleiter Übungen",
-    "Koordinationsleiter Fußball",
-    "Reaktionsleiter Training",
-    "Schnelligkeitstraining Übungen",
-    "Agility Leiter Training",
-    "Motorische Sequenzierung",
-    "Hand-Auge-Rhythmus",
-    "Koordinationsleiter Sportabzeichen",
-    "Counter Strafing Rhythmus",
-    "Schnelligkeit Beinarbeit"
-  ],
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: ['Agility-Ladder-Rhythmusspiel', 'Agility Ladder Maus-Version', 'Rhythmusspiel Maus', 'Reihenfolge Mausspiel', 'Browserspiel kostenlos'],
   alternates: {
-    canonical: 'https://skilldrills.online/de/drills/physical/fitness/agility-ladder',
+    canonical: URL,
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Koordinationsleiter Übungen | SkillDrills",
-    description: "Kostenlose Koordinationsleiter-Übungen online. Folge abwechselnden Sprossen und trainiere Beinarbeit, Schrittfolgen, Tempo und Rhythmus im Browser.",
-    url: 'https://skilldrills.online/de/drills/physical/fitness/agility-ladder',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
     siteName: 'SkillDrills',
     locale: 'de_DE',
     type: 'website',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Koordinationsleiter Übungen | SkillDrills",
-    description: "Kostenlose Koordinationsleiter-Übungen online. Folge abwechselnden Sprossen und trainiere Beinarbeit, Schrittfolgen, Tempo und Rhythmus im Browser.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
 };
@@ -60,323 +43,141 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills Startseite",
-      "item": "https://skilldrills.online/de"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Körperliches Training",
-      "item": "https://skilldrills.online/de/drills/physical"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Fitness & Schnelligkeit",
-      "item": "https://skilldrills.online/de/drills/physical/fitness"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Koordinationsleiter-Übungen & Beinarbeit",
-      "item": "https://skilldrills.online/de/drills/physical/fitness/agility-ladder"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills Startseite", "item": "https://skilldrills.online/de" },
+    { "@type": "ListItem", "position": 2, "name": "Körperliches Training", "item": "https://skilldrills.online/de/drills/physical" },
+    { "@type": "ListItem", "position": 3, "name": "Fitness", "item": "https://skilldrills.online/de/drills/physical/fitness" },
+    { "@type": "ListItem", "position": 4, "name": "Agility-Ladder-Rhythmusspiel", "item": URL }
   ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Agility"],
-  "name": "Koordinationsleiter-Training & Motorische Sequenzierung",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Kostenloses browserbasiertes Trainingswerkzeug zur Schulung von Beinarbeits-Rhythmus, motorischer Sequenzierung und Schnelligkeit an herabscrollenden Leitersprossen.",
-  "url": "https://skilldrills.online/de/drills/physical/fitness/agility-ladder",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/de"
-  },
-  "inLanguage": "de",
-  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Koordinationsleiter-Übungen Web-App",
+  "name": "Agility-Ladder-Rhythmusspiel",
+  "description": "Kostenloses 45-Sekunden-Browserspiel: die 4 Sprossen jeder herabscrollenden Leiter links-rechts-links-rechts mit dem Mauszeiger abfahren.",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas und Zeigererfassung (Pointer Lock) fähiger moderner Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/de/drills/physical/fitness/agility-ladder",
+  "browserRequirements": "Aktueller Browser mit HTML5 Canvas und Maus",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": URL,
   "inLanguage": "de",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-10"
 };
 
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Agility-Leiter Rhythmus-Spiel (Agility Ladder)",
-  "url": "https://skilldrills.online/de/drills/physical/fitness/agility-ladder",
-  "description": "Kostenloses Action- und Fitness-Geschicklichkeitsspiel zum Durchqueren alternierender Sprossenleitern.",
-  "genre": [
-    "Fitness Game",
-    "Coordination",
-    "Rhythm Game",
-    "Agility"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const FAQS = [
+  {
+    q: "Was ist das Agility-Ladder-Rhythmusspiel?",
+    a: "Ein kostenloses Browserspiel: Von oben scrollen Leitern herab, und du fährst bei jeder Leiter die 4 Sprossen (links, rechts, links, rechts) in fester Reihenfolge mit dem Mauszeiger ab. Eine Runde dauert 45 Sekunden, jede fertige Leiter bringt Punkte."
+  },
+  {
+    q: "Wie steuere ich? Muss ich klicken?",
+    a: "Nein, Klicken ist nicht nötig. Bewege das Fadenkreuz über die aktuelle Sprosse (grüner Rahmen); dann gilt sie als getroffen und die nächste wird aktiv. Die Reihenfolge ist 1 (links) → 2 (rechts) → 3 (links) → 4 (rechts). Mit Escape beendest du den Drill."
+  },
+  {
+    q: "Wie werden Punkte und Combo berechnet?",
+    a: "Jede fertige Leiter bringt 100 Punkte mal Combo-Multiplikator. Der Multiplikator steigt mit der Serie: ab 3 Leitern in Folge 1,1x, ab 5 1,25x, ab 10 1,5x, ab 20 2,0x und ab 50 maximal 3,0x."
+  },
+  {
+    q: "Was ändert sich mit steigendem Level?",
+    a: "Alle 250 Punkte steigt das Level um 1, dazu kommt alle 4 Leitern in Serie ein Bonuslevel. Die Leitern scrollen anfangs mit 150 px/s, auf Level 15 mit 750 px/s und danach immer schneller. Die Trefferzone der Sprossen schrumpft von 18 px auf 10 px."
+  },
+  {
+    q: "Was passiert, wenn ich eine Sprosse verpasse?",
+    a: "Erreicht eine Leiter den unteren Bildschirmrand, bevor alle 4 Sprossen abgefahren sind, wird die Combo auf 0 gesetzt, es gibt einen roten Blitz und ein kurzes Wackeln. Punkte und Restzeit werden nicht abgezogen."
+  },
+  {
+    q: "Ersetzt das Spiel Übungen an der Koordinationsleiter?",
+    a: "Nein. Das Spiel überträgt nur die Links-Rechts-Reihenfolge einer Leiterübung auf die Maus. Es misst und verspricht keine bessere Beinarbeit, Fitness oder Schnelligkeit."
+  },
+  {
+    q: "Wie wird die Note am Ende vergeben?",
+    a: "Die Note hängt nur von der Endpunktzahl ab: ab 15.343 S+, ab 12.283 S, ab 9.563 A, ab 6.120 B, ab 3.443 C, ab 1.530 D, darunter F. Das sind SkillDrills-Übungsstufen, keine Vergleichsstatistik mit anderen Spielern."
+  },
+  {
+    q: "Wo werden meine Ergebnisse gespeichert?",
+    a: "Bestwert, beste Combo und höchstes Level werden nur im localStorage deines Browsers gespeichert und nicht an einen Server gesendet. Ohne Anmeldung und ohne Installation kostenlos spielbar."
   }
-};
+];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Wie überträgt sich das digitale Sprossentraining auf die echte Beinarbeit und Schnelligkeit im Sport (z. B. Fußball, Handball, Tennis)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die zentralnervöse Bewegungssteuerung in Basalganglien, prämotorischem Kortex und Kleinhirn nutzt für rhythmische Muskelaktivierungen bei Händen und Füßen identische neuronale Taktgeber. Das präzise Abfangen alternierender Leitersprossen im festen Metronom-Rhythmus schärft die zeitliche Taktung (Temporal Cadence) und verbessert Richtungswechsel sowie schnelle Beinarbeit auf dem Spielfeld."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was besagt Karl Lashleys (1951) Theorie der seriellen Bewegungsordnung und des motorischen Chunkings?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Karl Lashley wies nach, dass blitzschnelle motorische Sequenzen unmöglich Schritt für Schritt über sensorisches Feedback gesteuert werden können, da neuronale Rückkopplungsschleifen 100 bis 150 ms beanspruchen. Stattdessen fasst das motorische Zentrum die 4 Sprossen (Links-Rechts-Links-Rechts) vorab zu einem geschlossenen Bewegungspaket (Motor Chunk) zusammen und führt diesen Schwung als eine einzige fließende Einheit aus."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Rolle spielt die 'relative Timing-Invarianz' nach Richard A. Schmidts (1975) Generalized Motor Program (GMP)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nach Schmidts Konzept des verallgemeinerten motorischen Programms (GMP) behält ein Sportler bei steigender Geschwindigkeit das relative Zeitverhältnis der Teilbewegungen (1:1:1:1) exakt bei. Beschleunigt die Leiter von 150 px/s auf 750 px/s, ändert das Gehirn nicht die relative Struktur der Bewegung, sondern erhöht lediglich den skalierenden Kraft- und Ausführungsparameter."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Vorteile bietet das Agility-Leiter-Training für das Counter-Strafing und Movement in Ego-Shootern (CS2, Valorant)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Erfolgreiches Counter-Strafing verlangt exakt getaktete A/D-Tastaturwechsel kombiniert mit stabiler Fadenkreuzführung. Die alternierenden horizontalen Cursorschwünge in diesem Drill schulen die rhythmische Muskelinhibition und verhindern Verkrampfungen im Handgelenk bei rasanten Richtungswechseln an Türrahmen und Ecken."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie verändern sich Scrollgeschwindigkeit und Sprossentrefferzonen mit steigendem Level?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Alle 250 Punkte klettert der Schwierigkeitsgrad um ein Level (bis Level 15). Die Abwärtsgeschwindigkeit steigt von anfänglichen 150 px/s bis auf 750 px/s an, während die Trefferbreite der Sprossen von 18 px auf 10 px abnimmt. Ab Level 4 treten zudem leichte Zufallsversätze auf, die starres Durchklicken verhindern."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Gibt es Punktabzug oder Zeitverlust, wenn eine Sprosse verfehlt wird oder eine Leiter durchrutscht?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Ein Fehler oder das Verfehlen einer Sprosse setzt lediglich den Combo-Multiplikator auf 1,0x zurück und erzeugt einen roten optischen Warnblitz. Die erreichte Gesamtpunktzahl und die 45-Sekunden-Uhr bleiben unberührt, um mutige Höchstgeschwindigkeitsversuche zu fördern."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Mauseinstellungen (DPI) und Grifftechniken sind für schnelle horizontale Sprossenwechsel optimal?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Fingertip- oder Claw-Grip bietet klare Vorteile: Schnelle 80-px-Schwünge können präzise aus den Fingergrundgelenken und dem Handgelenk ausgeführt werden, ohne den gesamten Unterarm ermüdend zu versetzen. Eine mittlere Mausempfindlichkeit ohne Windows-Zeigerbeschleunigung unterstützt eine gleichmäßigere Wegstrecke."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie sollte der Blick fokussiert werden, um bei Maximalgeschwindigkeit (750 px/s) nicht den Faden zu verlieren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das starre visuelle Verfolgen jeder einzelnen Sprosse scheitert an der Verzögerung sakkadischer Augenbewegungen (30–50 ms). Der Blick sollte stattdessen entspannt auf der zentralen vertikalen Mittelachse verankert bleiben, sodass das periphere Sehen beide Leitersprossen simultan erfasst."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welchen Einfluss haben Monitor-Bildwiederholraten (60 Hz vs. 144 Hz/240 Hz) auf das Treffen bewegter Sprossen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei 750 px/s springt ein Objekt auf einem 60-Hz-Monitor um 12,5 Pixel pro Bild frame, was das exakte Treffen einer 10 px schmalen Sprosse erschwert. Gaming-Displays mit 144 Hz (5,2 px) oder 240 Hz (3,1 px) bieten eine flüssige, kontinuierliche Bewegungskurve und erleichtern das präzise Abfangen nach Fitts' Gesetz erheblich."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Werden während der Trainingseinheit persönliche Bewegungs- oder Leistungsdaten an Server übertragen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Alle Berechnungen, Zeitstempel via performance.now() und Combo-Metriken laufen zu 100 % lokal im Browser auf Ihrem Rechner. Ihre Highscores verbleiben verschlüsselt im browserinternen localStorage. Es findet keinerlei Tracking oder Datenweitergabe statt."
-      }
-    }
-  ]
+  "inLanguage": "de",
+  "dateModified": "2026-11-10",
+  "mainEntity": FAQS.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
 };
+
+const STEPS = [
+  "Auf Start klicken; nach dem Countdown (3-2-1) beginnt die Runde (am Desktop wird der Mauszeiger gesperrt).",
+  "Das Fadenkreuz über die erste Sprosse der herabscrollenden Leiter führen (links, grüner Rahmen).",
+  "Sprosse 2 (rechts), 3 (links) und 4 (rechts) im selben Rhythmus abfahren, um die Leiter abzuschließen.",
+  "45 Sekunden lang keine Leiter verpassen und so den Combo-Multiplikator hochtreiben."
+];
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Koordinationsleiter-Training: 4-Stufen-Protokoll für Schnelligkeit und Rhythmus",
-  "description": "Systematische Anleitung zum fehlerfreien Durchqueren herabscrollender Sprossenleitern und zur Schulung motorischer Sequenzierung.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Blick zentrieren und Zeiger sperren",
-      "text": "Aktivieren Sie die Zeigererfassung per Startklick, richten Sie den Blick auf die vertikale Mittelachse und erwarten Sie die erste Leiter.",
-      "url": "https://skilldrills.online/de/drills/physical/fitness/agility-ladder#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Oberste Sprosse abfangen und Richtungswechsel einleiten",
-      "text": "Steuern Sie die oberste linke Sprosse 1 mit einem scharfen Flick an und leiten Sie sofort den Gegenimpuls zur rechten Sprosse 2 ein.",
-      "url": "https://skilldrills.online/de/drills/physical/fitness/agility-ladder#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "4-Sprossen-Sequenz als Einheit vollenden",
-      "text": "Durchqueren Sie Sprosse 3 (links) und Sprosse 4 (rechts) in einem einzigen, ununterbrochenen Rhythmus-Chunk, um das grüne Häkchen zu setzen.",
-      "url": "https://skilldrills.online/de/drills/physical/fitness/agility-ladder#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "3,0x-Combo aufrechterhalten und Höchsttempo meistern",
-      "text": "Halten Sie die Kette ohne Fehltritt aufrecht, maximieren Sie den Combo-Faktor auf 3,0x und überstehen Sie die 750-px/s-Zone über 45 Sekunden.",
-      "url": "https://skilldrills.online/de/drills/physical/fitness/agility-ladder#step-4"
-    }
-  ]
+  "name": "So spielst du das Agility-Ladder-Rhythmusspiel",
+  "description": "Die 4 Sprossen jeder Leiter links-rechts-links-rechts mit dem Mauszeiger abfahren.",
+  "step": STEPS.map((text, i) => ({ "@type": "HowToStep", "position": i + 1, "name": `Schritt ${i + 1}`, "text": text }))
 };
 
 const ladderGuide = {
-  heading: "Wissenschaftlicher Leitfaden: Koordinationsleiter & Motorische Sequenzierung",
-  subtitle: "Lashley-Bewegungsordnung, Schmidt-GMP und Fitts-Interzeption im schnelligkeitsorientierten Rhythmustraining",
+  heading: "Agility-Ladder-Rhythmusspiel: Anleitung",
   intro: [
-    "Das Training an der Koordinationsleiter (Agility Ladder Drill) bildet im Spitzenfußball, Handball, Kampfsport und in der Leichtathletik das Fundament für blitzschnelle Beinarbeit, Gewandtheit und neuromuskuläre Richtungswechsel. Diese digitale Trainingsanwendung überträgt die Bodenleiter auf eine dynamische vertikale Achse und trainiert die beidseitige motorische Sequenzierung (Bilateral Motor Sequencing) – das taktreine, wechselseitige Abfangen herabscrollender Leitersprossen.",
-    "Nach Karl Lashleys bahnbrechender Arbeit zur 'seriellen Ordnung im Verhalten' (1951) können Hochgeschwindigkeitssequenzen nicht durch schrittweises Feedback reguliert werden, da die sensorische Reizleitung zu träge ist. Der prämotorische Kortex muss die 4-teilige Sprossenfolge (Links-Rechts-Links-Rechts) vor Bewegungsbeginn als integriertes motorisches Paket ('Motor Chunk') vorbereiten und als kontinuierliche Impulswelle abrufen.",
-    "Richard A. Schmidts (1975) Theorie des verallgemeinerten motorischen Programms (GMP) beweist, dass koordinierte Athleten bei Geschwindigkeitssteigerungen die relative Phasenzeit (1:1:1:1) stabil beibehalten. Wenn sich die Scrollgeschwindigkeit von 150 px/s auf 750 px/s verfünffacht, bewahrt der geübte Sportler die metronomische Rhythmusstruktur und erhöht lediglich den neuromuskulären Grundantrieb.",
-    "Präzisions- und Hardwarehinweis: Die Zeiterfassung erfolgt lokal im Browser über die hochauflösende performance.now()-Schnittstelle. Bildwiederholfrequenzen (60 Hz = 16,7 ms Framezeit vs. 240 Hz = 4,1 ms) und USB-Abtastraten (125 Hz vs. 1.000 Hz) bedingen physikalische Toleranzen. Differenzen unter 5 ms gelten als reguläres Messrauschen. Sämtliche Messwerte verbleiben privat in Ihrem Browser."
+    "Das Agility-Ladder-Rhythmusspiel überträgt die Links-rechts-links-rechts-Schrittfolge einer Koordinationsleiter auf die Maus. Von oben scrollen Leitern herab, und du fährst die 4 Sprossen in fester Reihenfolge mit dem Fadenkreuz ab. Geklickt wird nicht, nur die Mausbewegung zählt.",
+    "Eine Runde dauert 45 Sekunden. Jede fertige Leiter bringt 100 Punkte mal Combo-Multiplikator (bis 3,0x). Alle 250 Punkte steigt das Level: Die Leitern scrollen schneller und die Trefferzone der Sprossen wird kleiner.",
+    "Schnelle Bewegungsfolgen laufen stabiler, wenn die vier Schritte als ein vorgeplantes Paket ausgeführt werden statt Schritt für Schritt (Lashley, 1951; Schmidt, 1975). Das Spiel übt diese Reihenfolge und den Rhythmus mit der Hand; Beinarbeit oder Fitness trainiert es nicht."
   ],
   benchmarks: {
-    title: "Wissenschaftliche 5-Stufen-Normtabelle für die Koordinationsleiter",
-    headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert (45s)", "Erreichtes Level", "Max. Scrollgeschwindigkeit", "Neuromotorisches Profil"],
+    title: "Notenstufen (SkillDrills-Übungsstufen)",
+    headers: ["Note", "Endpunktzahl"],
     rows: [
-      ["Stufe 1: Fortgeschrittenes Leiter-Timing ", "Apex Ladder Master", "17.000+ Punkte", "Level 12 – 15", "600 – 750 px/s", "Vollendetes Lashley-Chunking, fehlerfreies Halten des relativen Timings bei maximalem Tempo von 750 px/s (Lashley 1951; Schmidt 1975)"],
-      ["Stufe 2: Rhythmus-Sprinter ", "Elite Rhythm Sprinter", "13.000 – 16.999 Punkte", "Level 9 – 11", "480 – 599 px/s", "Exzellente beidseitige Umschaltgeschwindigkeit, präzise Fitts-Abbremskurven auf komprimierten 10–12-px-Sprossen"],
-      ["Stufe 3: Kompetenter Sprossensequenzer", "Proficient Step Sequencer", "9.500 – 12.999 Punkte", "Level 6 – 8", "350 – 479 px/s", "Solides Leistungsniveau im Leistungs- und eSport, stabile Links-Rechts-Rhythmik mit kontrolliertem Handgelenksnap"],
-      ["Stufe 4: Mittlerer Rhythmuslerner", "Intermediate Cadence Learner", "6.000 – 9.499 Punkte", "Level 3 – 5", "230 – 349 px/s", "Durchschnittliches motorisches Reaktionsniveau, sensorische Feedback-Verzögerungen führen ab 350 px/s zu Sprossenfehlern"],
-      ["Stufe 5: Einsteiger / Basisschulung", "Novice Rung Climber", "< 6.000 Punkte", "Level 1 – 2", "< 230 px/s", "Stockende Einzelreaktionen, Rhythmusabbrüche durch visuelles Suchen, Übung von Blickzentrierung und Vorprogrammierung empfohlen"]
+      ["S+", "ab 15.343"],
+      ["S", "12.283 – 15.342"],
+      ["A", "9.563 – 12.282"],
+      ["B", "6.120 – 9.562"],
+      ["C", "3.443 – 6.119"],
+      ["D", "1.530 – 3.442"],
+      ["F", "unter 1.530"]
     ],
-    note: "Normiert nach den chronometrischen Standards der motorischen Programmierung (Lashley 1951, Schmidt 1975, Fitts 1954, Woods et al. 2015). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
+    note: "Aus der Notenformel des Spiels berechnete SkillDrills-Übungsstufen; keine Vergleichsstatistik und keine Perzentile."
   },
   techniques: {
-    title: "Methodische Trainingsprotokolle für Beinarbeit & Sprossenschnelligkeit",
+    title: "Tipps für mehr Punkte",
     items: [
-      {
-        name: "Lashley 4-Sprossen-Bewegungschunking (Lashley Serial Chunking)",
-        desc: "Versuchen Sie niemals, jede Sprosse einzeln mit den Augen abzusichern. Programmieren Sie die 4-fache Zickzack-Bewegung (Links-Rechts-Links-Rechts) als geschlossene Einheit im Kopf vor und lösen Sie den Schwung mit dem ersten Kontakt explosiv aus.",
-        tips: "Verbinden Sie die Sprossen im Geiste zu einer fließenden Wellenlinie, anstatt an jeder Kante ruckartig abzustoppen."
-      },
-      {
-        name: "Schmidt Rhythmus-Invarianz bei Tempoverschärfung (GMP Invariant Rhythm)",
-        desc: "Lassen Sie sich durch zunehmende Scrollgeschwindigkeit nicht zu hektischem Zittern verleiten. Das relative Timing (1:1:1:1) bleibt unverändert – erhöhen Sie lediglich die Spannkraft und Entschlossenheit des Cursorschwungs.",
-        tips: "Zählen Sie innerlich einen gleichmäßigen 4er-Takt mit und synchronisieren Sie die Amplitude Ihrer Handbewegung mit diesem Metronom."
-      },
-      {
-        name: "Fitts Vertikaler Vorhaltewinkel und Abbremsung (Moving Target Interception)",
-        desc: "Da die Leiter senkrecht nach unten wandert, zielt ein direkter horizontaler Schwung hinter die Sprosse. Führen Sie den Cursorschwung in einem leichten Abwärtswinkel aus, um die Sprosse auf ihrer Falllinie abzufangen.",
-        tips: "Zielen Sie 2 bis 3 Pixel unterhalb der Sprossenoberkante, um durch das Nachrücken der Leiter exakt in der Treffermitte zu landen."
-      },
-      {
-        name: "Zentraler Ankerblick bei 750 px/s Höchstgeschwindigkeit (Metronomic Fixation)",
-        desc: "Ab Level 10 bricht die foveale Blickverfolgung bei über 550 px/s zusammen. Fixieren Sie die vertikale Leitermitte mit ruhigem Blick und nutzen Sie das periphere Sehfeld.",
-        tips: "Verlassen Sie sich im Grenzbereich voll auf das antizipierte Muskelgedächtnis und den Rhythmustakt Ihrer Finger."
-      }
+      { name: "Vier Sprossen als ein Zug", desc: "Wer jede Sprosse einzeln anschaut und reagiert, ist zu spät. Fahre das Zickzack links-rechts-links-rechts als eine durchgehende Bewegung.", tips: "Zwischen den Sprossen nicht anhalten." },
+      { name: "Etwas tiefer zielen", desc: "Die Leiter scrollt ständig nach unten. Ziele leicht unter die aktuelle Position der Sprosse, dann liegst du in der Trefferzone.", tips: "Je höher das Tempo, desto weiter vorausplanen." },
+      { name: "Blick in die Mitte", desc: "Die Sprossen erscheinen links und rechts der senkrechten Mittelachse. Mit dem Blick in der Mitte siehst du beide Seiten.", tips: "Ab Level 4 verschieben sich die Leitern leicht seitlich." }
     ]
   },
-  steps: [
-    "Nehmen Sie eine ergonomische Sitzhaltung ein und zentrieren Sie den Zeiger auf der Mittelachse.",
-    "Sobald die erste Leiter erscheint, flicken Sie blitzschnell auf die oberste linke Sprosse 1.",
-    "Durchqueren Sie Sprosse 2 (rechts), 3 (links) und 4 (rechts) in einem einzigen, ununterbrochenen Rhythmus.",
-    "Halten Sie die Serie fehlerfrei aufrecht, maximieren Sie den 3,0x-Combo-Faktor und überstehen Sie 45 Sekunden."
-  ],
-  audience: "Sportler (Fußball, Handball, Tennis, Kampfsport) zur Schulung von Fußschnelligkeit und Rhythmus sowie FPS-Gamer zur Optimierung von Counter-Strafing und Fadenkreuzruhe.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('lashley1951', 'schmidt1975', 'fitts1954', 'woodworth1899', 'woods2015')
+  steps: STEPS,
+  audience: "Wer ein kurzes Rhythmus- und Reihenfolgespiel mit der Maus sucht oder schnelles Links-rechts-Pendeln des Mauszeigers üben will.",
+  faqs: FAQS,
+  sources: pickSources('lashley1951', 'schmidt1975', 'fitts1954')
 };
 
 export default function AgilityLadderPageDe() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <MotorSequencingClient
         copy={{
-          title: "Koordinationsleiter Übungen",
-          subtitle: "Abwechselnde Sprossen mit Tempo und Rhythmus • 15 Level",
-          rulesTitle: "Trainingsregeln & Punktesystem",
+          title: "Agility-Ladder-Rhythmusspiel",
+          hudLabels: { score: "Punkte", timeLeft: "Restzeit", bestScore: "Bestwert", bestCombo: "Beste Combo" },
+          rulesTitle: "Spielregeln",
           rules: [
-            { title: "4-Sprossen-Sequenz meistern", text: "Durchqueren Sie die Sprossen der herabscrollenden Leiter in exakter Links-Rechts-Folge (1→2→3→4)." },
-            { title: "Combo-Multiplikator aufbauen", text: "Vollenden Sie Leitern in Serie fehlerfrei, um den Combo-Faktor bis auf 3,0x zu steigern." },
-            { title: "Beschleunigung & Präzision", text: "Alle 250 Punkte steigt das Level; das Scrolltempo zieht an und die Sprossentrefferzonen verengen sich." },
-            { title: "Verhalten bei Fehltritten", text: "Das Auslassen einer Sprosse setzt den Combo-Multiplikator auf 1,0x zurück, ohne dass Punkte abgezogen werden." }
+            { title: "4 Sprossen der Reihe nach", text: "Fahre die Sprossen jeder Leiter in der Reihenfolge 1 (links) → 2 (rechts) → 3 (links) → 4 (rechts) mit dem Fadenkreuz ab. Kein Klick nötig." },
+            { title: "Combo-Multiplikator", text: "Leitern in Serie erhöhen den Multiplikator bis maximal 3,0x. Jede Leiter bringt 100 Punkte mal Multiplikator." },
+            { title: "Level-Anstieg", text: "Alle 250 Punkte steigt das Level: schnelleres Scrollen, kleinere Trefferzone." },
+            { title: "Verpasste Leiter", text: "Erreicht eine unfertige Leiter den unteren Rand, wird die Combo zurückgesetzt. Punkte und Zeit bleiben." }
           ],
-          aboutTitle: "Über das Koordinationsleiter-Training",
-          aboutHeading: "Motorische Sequenzierung und Beinarbeit-Neurobiologie",
-          aboutText: "Das digitale Koordinationsleiter-Training (Motor Sequencing) basiert auf Karl Lashleys (1951) Theorie der seriellen Bewegungsordnung und Richard A. Schmidts (1975) verallgemeinertem motorischen Programm (GMP). Es schult das neuromuskuläre System darin, bei Geschwindigkeiten von 150 bis 750 px/s eine invariante zeitliche Taktung zu wahren – unverzichtbar für athletische Fußschnelligkeit und taktisches Counter-Strafing im eSport."
+          aboutTitle: "Über das Agility-Ladder-Rhythmusspiel",
+          aboutHeading: "Reihenfolge und Rhythmus mit der Maus",
+          aboutText: "Das Agility-Ladder-Rhythmusspiel überträgt die Links-rechts-Schrittfolge einer Koordinationsleiter auf einen 45-Sekunden-Drill mit der Maus. Wer die 4 Sprossen einer herabscrollenden Leiter der Reihe nach mit dem Fadenkreuz abfährt, schließt sie ab; mit steigender Punktzahl wird das Tempo von 150 px/s über 750 px/s auf Level 15 hinaus immer höher. Es übt Reihenfolge und Rhythmus mit der Hand und misst keine Verbesserung von Beinarbeit oder Fitness."
         }}
       />
       <DrillGuide guide={ladderGuide} />

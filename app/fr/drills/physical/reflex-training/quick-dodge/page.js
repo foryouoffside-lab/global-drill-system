@@ -4,444 +4,146 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — France & Francophonie (FR / FR-FR / FR-CA)
-// Primary Intent: jeu d'esquive souris, jeu pour esquiver à la souris, test de réflexe esquive
-// French Gaming & Athletic Context: Jeu classique d'esquive à la souris (bullet hell) et entraînement des micro-mouvements pour LoL et FPS
-// High-Demand, Low-Competition Target Keywords:
-//   - "jeu d'esquive souris" (Core viral browser reflex game query)
-//   - "jeu pour esquiver à la souris" (High-intent variation)
-//   - "test de réflexe esquive" (Reflex evasion assessment query)
-//   - "jeu d'esquive de projectiles" (Projectile evasion challenge)
-//   - "entraînement réflexes souris" (Mouse reflex training)
-//   - "micro-mouvements souris esport" (Competitive gamer mouse movement drill)
-//   - "bullet hell entraînement souris en ligne" (Online bullet hell mouse drill)
-// ============================================================
+const url = 'https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge';
+const title = "Jeu d’esquive à la souris : projectiles | SkillDrills";
+const description = "Jeu d’esquive à la souris gratuit : déplacez le curseur pour éviter les projectiles rouges qui arrivent de tous les bords vers vous. Parties de 45 s.";
 
 export const metadata = {
-  title: "Jeu d’esquive à la souris : projectiles | SkillDrills",
-  description: "Jeu d’esquive gratuit à la souris : évitez les sphères rouges le plus longtemps possible. Vitesse et fréquence croissantes, sans compte.",
-  keywords: [
-    "jeu d'esquive souris",
-    "jeu pour esquiver à la souris",
-    "test de réflexe esquive",
-    "jeu d'esquive de projectiles",
-    "entraînement réflexes souris",
-    "micro-mouvements souris esport",
-    "esquive de projectiles en ligne",
-    "temps de réaction moteur esquive",
-    "jeu de réflexes souris gratuit",
-    "contrôle précis du curseur"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge',
-    languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Jeu d’esquive à la souris : projectiles | SkillDrills",
-    description: "Jeu d’esquive gratuit à la souris : évitez les sphères rouges le plus longtemps possible. Vitesse et fréquence croissantes, sans compte.",
-    url: 'https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge',
-    siteName: 'SkillDrills',
-    locale: 'fr_FR',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Jeu d’esquive à la souris : projectiles | SkillDrills",
-    description: "Évitez les projectiles, survivez plus longtemps et entraînez vos réflexes dans ce jeu gratuit au navigateur.",
-  },
+  title,
+  description,
+  keywords: ["jeu d’esquive à la souris", "jeu d’esquive", "éviter les projectiles", "jeu d’esquive en ligne", "jeu de souris en ligne"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'fr_FR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
+  robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Accueil",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Exercices",
-      "item": "https://skilldrills.online/fr/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Entraînement des Réflexes",
-      "item": "https://skilldrills.online/fr/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Jeu d’esquive à la souris",
-      "item": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge"
-    }
-  ]
-};
-
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Jeu d’esquive à la souris : projectiles",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "Jeu d’esquive gratuit dans le navigateur : évitez des sphères rouges à la souris pendant 45 secondes, avec une difficulté croissante.",
-  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online"
-  },
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
-};
-
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Jeu d’esquive à la souris",
-  "description": "Jeu d’esquive de projectiles jouable à la souris, avec vitesse et fréquence croissantes.",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Navigateur moderne avec JavaScript",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills Accueil', item: 'https://skilldrills.online/fr' },
+    { '@type': 'ListItem', position: 2, name: 'Entraînement physique', item: 'https://skilldrills.online/fr/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Jeu d’esquive à la souris', item: url },
+  ],
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Quick Dodge : jeu d’esquive à la souris",
-  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge",
-  "description": "Évitez les sphères rouges qui convergent et survivez le plus longtemps possible.",
-  "genre": [
-    "Action",
-    "Reflex Game"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Jeu d’esquive à la souris (Quick Dodge)',
+  url,
+  description,
+  genre: ['Action Game', 'Browser Game'],
+  gamePlatform: ['Web Browser', 'Desktop'],
+  applicationCategory: 'Game',
+  operatingSystem: 'All',
+  inLanguage: 'fr',
+  dateModified: '2026-11-10',
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
+
+const faqs = [
+  { q: "Comment fonctionne ce jeu d’esquive à la souris ?", a: "Des projectiles rouges et ronds apparaissent sur l’un des quatre bords de l’écran et filent en ligne droite vers l’endroit où se trouvait votre curseur à leur apparition. Un projectile qui sort de l’écran sans vous toucher compte comme une esquive. Une partie dure 45 secondes." },
+  { q: "Les projectiles suivent-ils le curseur ?", a: "Non. Ils visent la position du curseur au moment où ils apparaissent, puis continuent tout droit sans changer de direction. Ils grossissent un peu en chemin : gardez de la marge." },
+  { q: "Comment sont calculés les points et le combo ?", a: "Chaque projectile esquivé rapporte des points de base multipliés par le combo. Les points de base passent de 2 à 20 avec le niveau. Le multiplicateur vaut 1,1x dès 3 esquives d’affilée, 1,5x à 10, 2,0x à 20, 2,5x à 30 et 3,0x à 50." },
+  { q: "Comment la difficulté augmente-t-elle ?", a: "Chaque partie commence au niveau 1. Le niveau monte de 1 tous les 250 points et de 1 de plus toutes les 4 esquives d’affilée. La vitesse passe de 300 px/s à 1 600 px/s au niveau 15 et continue ensuite ; un long combo ajoute jusqu’à 200 px/s. L’intervalle entre projectiles descend de 0,65 à 0,10 seconde, et de 8 à 58 projectiles peuvent être à l’écran en même temps." },
+  { q: "Que se passe-t-il si je suis touché ?", a: "Le combo retombe à 1,0x, tous les projectiles disparaissent de l’écran, avec un flash rouge et une secousse. Le score et le temps restant ne bougent pas. Le flash rouge se désactive pendant la partie avec le bouton en bas à droite." },
+  { q: "Quelles commandes utilise-t-on ?", a: "Uniquement la souris. Au lancement, le pointeur est verrouillé et la sensibilité des réglages du site s’applique. Au clavier, seule la touche Échap (quitter) sert. Un ordinateur avec souris est recommandé." },
+  { q: "Comment la note est-elle attribuée ?", a: "Le score final est comparé à 17 000 points : S+ dès environ 15 350, S dès environ 12 300, A dès environ 9 550, B dès 6 120, C dès environ 3 450, D dès 1 530. Ce sont des paliers d’entraînement SkillDrills, ni statistiques d’utilisateurs ni centiles." },
+  { q: "Quelle différence avec le jeu sur grille 3x3 ?", a: "Ici, vous fuyez des projectiles libres venus de tous les côtés. Dans le jeu sur grille 3x3 de la même catégorie, vous choisissez l’une des 9 cases fixes avant qu’elle n’explose." },
+  { q: "Est-ce gratuit ? Où sont gardés mes records ?", a: "Oui, gratuit, sans installation ni compte, directement dans le navigateur. Le meilleur score et le meilleur combo restent dans le stockage local de votre navigateur." },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Comment fonctionne ce jeu d’esquive à la souris ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Des sphères rouges arrivent de plusieurs directions. Vous déplacez le curseur pour éviter tout contact pendant 45 secondes : chaque seconde sans collision rapporte des points et un contact ramène le multiplicateur à 1.0x."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi anticiper plutôt que réagir ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La boucle visuo-motrice prend du temps entre la perception et le geste. Quand plusieurs projectiles arrivent vite, il vaut mieux placer le curseur dans un espace libre en avance, ce qui rejoint l’idée de modèles prédictifs du mouvement (Kawato, 1999)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que dit la loi de Fitts sur la difficulté du jeu ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Selon Fitts (1954), plus le passage à viser est étroit, plus le mouvement demande de précision. Quand les projectiles se multiplient, l’espace libre se réduit et le jeu devient plus difficile."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Faut-il regarder les projectiles ou le curseur ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Beaucoup de joueurs gardent un regard large vers le centre pour voir plusieurs projectiles à la fois plutôt que de fixer le curseur. Testez les deux et gardez ce qui vous réussit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que sont les esquives rapprochées ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Frôler un projectile à quelques pixels donne un bonus et fait monter plus vite le multiplicateur, mais augmente le risque de collision."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle sensibilité de souris choisir ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il n’y a pas de réglage universel. Une sensibilité très haute rend l’arrêt difficile, une sensibilité très basse oblige à de grands gestes. Gardez celle de votre jeu et comparez vos séances avec le même réglage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi vaut-il mieux faire de petits mouvements ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les grands déplacements demandent plus de temps et un freinage plus long. Rester près du centre avec de petites corrections laisse plus d’espace pour les vagues suivantes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Un écran à 144 Hz ou 240 Hz aide-t-il ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "L’affichage ajoute un délai propre : 16,7 ms entre deux images à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015). Comparez vos séances sur le même écran."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ce jeu aide-t-il à esquiver dans d’autres jeux ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Aucune étude ne le démontre. Il travaille l’anticipation et les petits mouvements de souris ; le transfert vers un autre jeu reste à vérifier."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Mes records sont-ils envoyés à un serveur ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Le jeu s’exécute dans votre navigateur et vos records restent dans son LocalStorage."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'fr',
+  dateModified: '2026-11-10',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
+const steps = [
+  "Cliquez sur Démarrer ; après un compte à rebours de 3 secondes, le curseur part du centre de l’écran.",
+  "Quand un projectile apparaît sur un bord, il vise votre position actuelle : décalez-vous sur le côté.",
+  "Faites des mouvements courts et restez dans les espaces libres entre les projectiles.",
+  "Enchaînez les esquives sans être touché, montez le combo et visez votre record en 45 secondes.",
+];
+
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Comment jouer au jeu d’esquive à la souris",
-  "description": "Quatre étapes pour anticiper les projectiles et rester au centre.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Centrez le curseur",
-      "text": "Placez le curseur au centre de l’arène et gardez un regard large.",
-      "url": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Anticipez les trajectoires",
-      "text": "Repérez d’où arrivent les projectiles et préparez de petites déviations avant qu’ils n’entrent en zone critique.",
-      "url": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Revenez vers le centre",
-      "text": "Évitez de vous réfugier dans les coins, où l’espace de fuite est réduit, et recentrez le curseur après chaque esquive.",
-      "url": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Tenez 45 secondes",
-      "text": "Survivez sans collision pour garder le multiplicateur 3.0x et monter votre score.",
-      "url": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Comment jouer au jeu d’esquive à la souris',
+  description: 'Quatre étapes pour éviter les projectiles et faire monter le combo.',
+  step: steps.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, name: `Étape ${i + 1}`, text, url: `${url}#step-${i + 1}` })),
 };
 
 const dodgeGuide = {
-  "heading": "Jeu d’esquive à la souris : comment ça marche",
-  "intro": {
-    "title": "Anticipation et petits mouvements : bases du jeu",
-    "paragraphs": [
-      "Ce jeu d’esquive à la souris vous demande d’éviter des sphères rouges qui convergent de plusieurs directions pendant 45 secondes. Chaque seconde sans collision rapporte des points, et la vitesse comme la fréquence augmentent avec le score. C’est un jeu d’entraînement gratuit, sans compte.",
-      "Le temps entre la perception d’un projectile et le geste est trop long pour tout corriger en réaction ; il faut donc anticiper et placer le curseur dans un espace libre avant l’arrivée des sphères. Kawato (1999) décrit des modèles internes qui prédisent les conséquences d’un mouvement, une idée qui éclaire cette anticipation.",
-      "Le modèle en deux phases de Woodworth (1899) décrit une impulsion rapide suivie d’une correction fine. Quand les projectiles dépassent 500 px/s, la loi de Fitts (1954) rappelle que plus le passage est étroit, plus la précision demandée augmente : de petits mouvements précis valent mieux que de grands gestes.",
-      "Mesure et matériel : le jeu s’exécute dans votre navigateur avec l’horloge performance.now(), dont la résolution est limitée. L’affichage ajoute un délai (16,7 ms à 60 Hz, 6,9 ms à 144 Hz, 4,1 ms à 240 Hz ; Woods et al., 2015) : comparez vos séances sur le même matériel."
-    ]
-  },
-  "benchmarks": {
-    "title": "Paliers du jeu d’esquive (5 niveaux de repère)",
-    "headers": [
-      "Palier",
-      "Plafond de score",
-      "Précision et vitesse",
-      "Lecture"
-    ],
-    "rows": [
-      [
-        "Palier 1",
-        "24 000+ pts",
-        "95 %+ / 500+ px/s",
-        "Esquive fiable face à de nombreux projectiles"
-      ],
-      [
-        "Palier 2",
-        "17 000 – 23 999 pts",
-        "90 – 94 % / 400 – 499 px/s",
-        "Bonne tenue du centre face aux trajectoires croisées"
-      ],
-      [
-        "Palier 3",
-        "11 000 – 16 999 pts",
-        "82 – 89 % / 300 – 399 px/s",
-        "Contrôle stable et bonne anticipation des points d’apparition"
-      ],
-      [
-        "Palier 4",
-        "6 000 – 10 999 pts",
-        "70 – 81 % / 200 – 299 px/s",
-        "Tendance à se faire acculer dans les coins"
-      ],
-      [
-        "Palier 5",
-        "Moins de 6 000 pts",
-        "Moins de 70 % / moins de 200 px/s",
-        "Point de départ : travaillez le recentrage"
-      ]
-    ],
-    "note": "Repères éditoriaux propres à cet exercice, sans lien avec une norme clinique ni un classement de population."
-  },
-  "steps": [
-    "Installez-vous et placez le curseur au centre de l’arène.",
-    "Anticipez les trajectoires et déviez le curseur vers les zones libres.",
-    "Recentrez le curseur après chaque esquive.",
-    "Tenez les 45 secondes sans collision pour garder le multiplicateur 3.0x."
+  heading: 'Guide du jeu d’esquive à la souris',
+  intro: [
+    "Ce jeu d’esquive à la souris (Quick Dodge) se joue dans le navigateur : des projectiles rouges arrivent de tous les bords vers votre curseur et vous les évitez en bougeant la souris. Le but est de ne pas être touché ; plus les esquives s’enchaînent, plus le multiplicateur de combo monte.",
+    "Chaque projectile vise la position du curseur à son apparition, puis file tout droit. Rester immobile, c’est être touché ; un pas de côté suffit souvent. Les mouvements rapides sont planifiés avant de démarrer (Kawato, 1999) : décidez où aller dès qu’un projectile apparaît.",
+    "Avec le niveau, les projectiles deviennent plus rapides, plus fréquents et plus gros. Plus les espaces libres rétrécissent, plus le mouvement doit être précis (Fitts, 1954). Être touché vide l’écran et remet seulement le combo à zéro.",
+    "Les résultats sont des relevés d’entraînement propres à SkillDrills, pas un examen médical ni une mesure de performance sportive. La fréquence d’écran et le périphérique influent sur la latence (Woods et al., 2015) : comparez vos scores avec le même matériel.",
   ],
-  "audience": "Joueurs et curieux qui veulent s’exercer à l’anticipation et aux petits mouvements de souris.",
-  "protocols": {
-    "title": "Quatre techniques pour survivre plus longtemps",
-    "description": "Quatre habitudes simples pour éviter plus longtemps.",
-    "items": [
-      {
-        "title": "Anticiper les trajectoires",
-        "description": "N’attendez pas qu’une sphère soit proche. Dès son apparition, imaginez sa trajectoire et placez le curseur dans l’espace libre. Regardez les espaces libres entre les sphères plutôt que les sphères elles-mêmes."
-      },
-      {
-        "title": "Petites corrections",
-        "description": "Évitez les grands cercles à travers l’écran. Corrigez par petites impulsions de quelques pixels avec les doigts. Gardez la souris bien posée et utilisez les doigts pour freiner."
-      },
-      {
-        "title": "Revenir vers le centre",
-        "description": "Les bords et les coins réduisent vos directions de fuite. Après chaque manœuvre, ramenez le curseur vers le centre de l’arène. Prenez le réflexe de revenir au centre après chaque esquive."
-      },
-      {
-        "title": "Garder un regard large",
-        "description": "Fixer uniquement le curseur vous prive de la vue d’ensemble. Gardez un regard détendu vers le centre pour repérer plusieurs trajectoires. Si cela ne vous réussit pas, suivez le curseur : testez les deux."
-      }
-    ]
+  benchmarks: {
+    title: 'Paliers de note (paliers d’entraînement SkillDrills)',
+    headers: ['Note', 'Points'],
+    rows: [
+      ['S+', 'dès environ 15 350'],
+      ['S', 'dès environ 12 300'],
+      ['A', 'dès environ 9 550'],
+      ['B', 'dès 6 120'],
+      ['C', 'dès environ 3 450'],
+      ['D', 'dès 1 530'],
+    ],
+    note: 'Les paliers comparent le score final à 17 000 points et sont des paliers d’entraînement SkillDrills. Ni statistiques d’utilisateurs ni centiles.',
   },
-  "faqs": faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  "sources": pickSources('kawato1999', 'woodworth1899', 'fitts1954', 'woods2015')
+  techniques: {
+    title: 'Conseils pour marquer plus',
+    items: [
+      { name: 'Regardez l’apparition', desc: 'Le projectile part vers l’endroit où était le curseur à son apparition. Un court pas de côté suffit souvent.', tips: 'Ne restez pas longtemps au même endroit.' },
+      { name: 'Petits mouvements', desc: 'Les grands gestes envoient le curseur droit sur de nouveaux projectiles. Restez dans les espaces libres avec des mouvements courts.', tips: 'Le côté où un projectile vient de passer est souvent libre.' },
+      { name: 'Anticipez la taille', desc: 'Les projectiles grossissent en chemin. Esquivez avec de la marge plutôt qu’au ras.', tips: 'Dans la phase rapide, la sécurité d’abord.' },
+      { name: 'Gardez le combo', desc: 'Plus la série est longue, plus le multiplicateur et le niveau montent. Après un contact, l’écran est vide : repartez calmement.', tips: 'Détendez poignet et épaule, arrêtez en cas de douleur.' },
+    ],
+  },
+  steps,
+  audience: 'Pour qui cherche un jeu d’esquive en ligne dans le navigateur, et pour les joueurs qui veulent travailler le contrôle de la souris.',
+  faqs,
+  sources: pickSources('kawato1999', 'fitts1954', 'woods2015'),
 };
 
 export default function LocalizedQuickDodgePageFr() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <QuickDodgeClient
         copy={{
           title: "Jeu d’esquive à la souris",
-          subtitle: "Évitez les projectiles, survivez plus longtemps",
-          description: "Esquiver des projectiles relève surtout de l’anticipation : le temps que vos yeux perçoivent une trajectoire, la sphère a déjà avancé. Les modèles internes décrits par Kawato (1999) éclairent cette anticipation. Quand la cadence s’accélère, la fenêtre de correction se réduit et le placement en amont du curseur compte davantage.",
-          badge: "Jeu d'esquive",
-          hudLabels: {
-            score: "Score",
-            time: "Temps",
-            bestScore: "Meilleur Score",
-            bestCombo: "Meilleur Combo",
-            getReady: "PRÉPAREZ-VOUS"
-          },
-          resultLabels: {
-            newBest: "NOUVEAU RECORD",
-            points: "Points",
-            accuracy: "Précision",
-            dodges: "Esquives",
-            peakSpeed: "Vitesse Max",
-            peakLevel: "Niveau Max",
-            playAgain: "Rejouer"
-          },
-          rulesTitle: "Règles du jeu et système de points",
+          hudLabels: { score: "Score", time: "Temps", bestScore: "Meilleur score", bestCombo: "Meilleur combo", getReady: "PRÊT ?" },
+          resultLabels: { newBest: "NOUVEAU RECORD", points: "Points", accuracy: "Taux d’esquive", dodges: "Esquives", peakSpeed: "Vitesse max.", peakLevel: "Niveau max.", playAgain: "Rejouer" },
+          rulesTitle: "Règles et calcul du score",
           rulesItems: [
-            { title: "Évitement de Projectiles & Score", text: "Évitez tout contact avec les sphères rouges. Chaque seconde de survie sans collision incrémente continuellement votre score." },
-            { title: "Esquives Rapprochées (Close Shave)", text: "Frôlez les projectiles à quelques pixels de distance pour décrocher des bonus et accélérer la montée du multiplicateur de combo." },
-            { title: "Accélération Continue du Rythme", text: "Au fur et à mesure que votre score s'élève, les projectiles atteignent 500 px/s et la fréquence d'apparition s'intensifie drastiquement." },
-            { title: "Pénalité de Collision", text: "Toucher un projectile réinitialise immédiatement votre multiplicateur à 1.0x et déclenche un avertissement visuel rouge." }
+            { title: "Esquiver les projectiles", text: "Des projectiles rouges apparaissent sur un bord et filent vers l’endroit où était le curseur à cet instant. S’ils sortent de l’écran sans vous toucher, c’est une esquive." },
+            { title: "Multiplicateur de combo", text: "Les esquives d’affilée font monter le multiplicateur jusqu’à 3,0x (à 50 d’affilée)." },
+            { title: "Difficulté croissante", text: "Le niveau monte avec les points et les séries ; les projectiles passent de 300 px/s à plus de 1 600 px/s et apparaissent plus souvent." },
+            { title: "Touché", text: "Le combo retombe à 1,0x et l’écran est vidé. Le score et la partie de 45 secondes ne changent pas." },
           ],
-          aboutTitle: "À propos du jeu d’esquive à la souris",
+          aboutTitle: "À propos du jeu d’esquive",
           aboutSections: [
-            {
-              title: "Évasion de Menaces Cinétiques & Modèles Prédictifs de Kawato",
-              subtitle: "Prédire la trajectoire avant que le retard visuel ne s'impose",
-              content: "Esquiver des objets rapides repose sur l'anticipation motrice décrite par Kawato (1999). Extraire l'angle de départ permet d'engager la souris sur une voie dégagée avant que le retard visuel ne condamne le mouvement."
-            },
-            {
-              title: "Contrôle Bifasique de Woodworth & Micro-Freinage",
-              subtitle: "Équilibre entre impulsion balistique initiale et verrouillage micrométrique",
-              content: "Tout mouvement réactif associe une accélération première et une décélération de précision (Woodworth, 1899). Bloquer net la trajectoire avec les doigts évite les glissements incontrôlés propices aux impacts."
-            },
-            {
-              title: "Loi de Fitts & Réduction de la Marge de Sécurité",
-              subtitle: "Croissance logarithmique de la difficulté au sein du champ dense de projectiles",
-              content: "Quand les obstacles prolifèrent, la largeur de passage sécurisé diminue de façon critique, exigeant une rigueur motrice millimétrique pour naviguer sans heurts (Fitts, 1954)."
-            },
-            {
-              title: "Taux de Rafraîchissement Élevé & Fluidité Temporelle",
-              subtitle: "Dalles 144Hz/240Hz et intervalle de 4,1 ms entre deux images",
-              content: "Un écran à haute fréquence réduit l'intervalle entre deux images, ce qui rend les projectiles plus fluides à l'écran (Woods et al., 2015)."
-            }
-          ]
+            { title: "Des projectiles en ligne droite", content: "Chaque projectile vise le curseur à son apparition puis va tout droit. Règle de base : se décaler dès qu’il apparaît." },
+            { title: "Décider avant", subtitle: "Kawato, 1999", content: "Les mouvements rapides sont planifiés à l’avance. Fixez votre destination dès qu’un projectile surgit." },
+            { title: "Des espaces qui rétrécissent", subtitle: "Fitts, 1954", content: "Plus il y a de projectiles, plus les espaces libres sont petits et plus le geste doit être précis." },
+            { title: "Matériel et comparaison", subtitle: "Woods et al., 2015", content: "La fréquence d’écran et le périphérique influent sur la latence. Comparez vos résultats avec le même matériel." },
+          ],
         }}
       />
-      <DrillGuide {...dodgeGuide} />
+      <DrillGuide guide={dodgeGuide} />
       <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/quick-dodge" />
     </>
   );
