@@ -437,10 +437,10 @@ export default function ZigZagPathPursuitClient({ copy }: { copy?: { title?: str
           <div>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Zig-Zag Path Pursuit"}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                {copy?.subtitle || "Eye Tracking Coordination Drill"}
-              </span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
+              {copy?.subtitle || "Eye Tracking Coordination Drill"}
+            </p>
           </div>
         )}
 

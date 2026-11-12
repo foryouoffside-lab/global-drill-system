@@ -457,10 +457,10 @@ export default function SplitScreenTrackingClient({ copy }: { copy?: { title?: s
           <div>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Split-Screen Tracking"}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                {copy?.subtitle || "Divided Attention Tracking Drill"}
-              </span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
+              {copy?.subtitle || "Divided Attention Tracking Drill"}
+            </p>
           </div>
         )}
 

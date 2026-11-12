@@ -128,7 +128,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Trigger Immediate Reaction",
-      "text": "Respond instantly with spacebar or touch input while maintaining smooth pursuit continuity on the central target."
+      "text": "Keep your eyes on the centre crosshair and notice each dot that flashes at the edges without looking at it. There is nothing to click and no score."
     }
   ]
 };
@@ -223,9 +223,9 @@ const faqSchema = {
 const guide = {
   heading: "Peripheral Ping Pursuit - Ocular Motor Training Standards",
   intro: [
-    "Peripheral Ping Pursuit is a free peripheral vision training game. You keep your eyes on the centre of the screen and react to targets that appear at the edges without looking away from the middle. Set the difficulty, press start, and respond to each ping while holding your gaze steady.",
+    "Peripheral Ping Pursuit is a free peripheral vision training game. You keep your eyes on the centre crosshair and notice dots that flash at the edges without looking away from the middle. Choose the duration and speed, press start, and hold your gaze steady. It is watch-only: no clicking, no score.",
     "The human retina is characterized by functional division of labor: high-acuity foveal vision occupies only the central 1° to 2° of the visual field (parvocellular pathway), while the vast majority of our visual space is processed by the peripheral retina, dominated by rod photoreceptors and the magnocellular pathway specialized for motion and luminance dynamics (Wolfe, 1994; Leigh & Zee, 2015). Under natural instinct, the brain fires ballistic saccades toward any eccentric flash.",
-    "Peripheral Ping Pursuit conditions the vital cognitive skill of covert spatial attention—the ability to expand your functional visual field and detect transient events across peripheral sectors without moving your eyes away from a central target (Posner, 1980; Eriksen & St. James, 1986). By enforcing strict foveal fixation on the central target, this drill trains the frontal eye field to tonically suppress involuntary saccades while conditioning magnocellular pathways to register eccentric flashes instantly (Findlay & Walker, 1999).",
+    "Peripheral Ping Pursuit conditions the vital cognitive skill of covert spatial attention—the ability to expand your functional visual field and notice transient events across peripheral sectors without moving your eyes away from the centre crosshair (Posner, 1980; Eriksen & St. James, 1986). By enforcing strict foveal fixation on the central target, this drill trains the frontal eye field to tonically suppress involuntary saccades while conditioning magnocellular pathways to register eccentric flashes instantly (Findlay & Walker, 1999).",
     "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores remain stored strictly in local browser storage."
   ],
   benchmarks: {
@@ -245,7 +245,7 @@ const guide = {
     items: [
       {
         name: "Foveal Anchoring Protocol",
-        desc: "Discipline ocular motor circuits to remain strictly locked on the moving central reticle. Suppress the primitive reflex to glance at peripheral flashes, avoiding saccadic suppression intervals (Findlay & Walker, 1999).",
+        desc: "Discipline ocular motor circuits to remain on the fixed centre crosshair. Suppress the primitive reflex to glance at peripheral flashes, avoiding saccadic suppression intervals (Findlay & Walker, 1999).",
         tips: "Treat your central gaze as an unbreakable magnetic line while extending mental awareness outwardly like a wide net."
       },
       {

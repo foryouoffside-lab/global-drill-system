@@ -414,10 +414,10 @@ export default function InfinityPursuitClient({ copy }: { copy?: { title?: strin
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Infinity Pursuit"}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-0.5 normal-case tracking-normal">
-                {copy?.subtitle || "Figure-8 Eye Tracking Exercise"}
-              </span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-0.5 normal-case tracking-normal">
+              {copy?.subtitle || "Figure-8 Eye Tracking Exercise"}
+            </p>
           </div>
         )}
 

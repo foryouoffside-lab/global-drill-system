@@ -426,10 +426,10 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{ui.title}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-0.5 normal-case tracking-normal">
-                {ui.subtitle}
-              </span>
             </h1>
+            <p className="block text-sm font-semibold text-slate-400 mt-0.5 normal-case tracking-normal">
+              {ui.subtitle}
+            </p>
           </div>
         )}
 

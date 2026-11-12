@@ -5,7 +5,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Eye Fixation Stability Training – Ghosting | SkillDrills",
+  title: "Ghost Trail Pursuit – Follow a Fading-Trail Target | SkillDrills",
   description: "Free browser drill: keep following a moving target while visual trails and ghost images try to pull your attention away. No sign-up.",
   keywords: [
     "ghosting suppress pursuit",
@@ -27,7 +27,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Eye Fixation Stability Training – Ghosting | SkillDrills",
+    title: "Ghost Trail Pursuit – Follow a Fading-Trail Target | SkillDrills",
     description: "Free browser drill: keep following a moving target while visual trails and ghost images try to pull your attention away. No sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/ghosting-suppress-pursuit",
     siteName: 'SkillDrills',
@@ -36,7 +36,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Eye Fixation Stability Training – Ghosting | SkillDrills",
+    title: "Ghost Trail Pursuit – Follow a Fading-Trail Target | SkillDrills",
     description: "Free browser drill: keep following a moving target while visual trails and ghost images try to pull your attention away. No sign-up.",
   },
 };
@@ -84,7 +84,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-11-12"
 };
 
 const webAppSchema = {
@@ -100,7 +100,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/drills/visual-tracking/ghosting-suppress-pursuit",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -132,7 +132,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "How to Train Eye Tracking with Ghosting Suppress Pursuit",
   "description": "Free browser drill: keep following a moving target while visual trails and ghost images try to pull your attention away. No sign-up.",
-  "dateModified": "2026-09-12",
+  "dateModified": "2026-11-12",
   "step": [
     {
       "@type": "HowToStep",
