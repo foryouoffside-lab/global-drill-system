@@ -5,8 +5,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const PAGE_URL = 'https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement';
-const TITLE = "Exercice de coordination visuo-motrice à la souris | SkillDrills";
-const DESCRIPTION = "Exercice de coordination visuo-motrice à la souris : guidez le curseur d'un bord de l'écran à l'autre sans sortir d'un couloir étroit. Parties de 45 s, gratuit.";
+const TITLE = "Exercice de coordination visuo-motrice | SkillDrills";
+const DESCRIPTION = "Exercice de coordination visuo-motrice à la souris : guidez le curseur d'un bord de l'écran à l'autre sans sortir d'un couloir étroit. 45 s, gratuit.";
 
 export const metadata = {
   title: TITLE,

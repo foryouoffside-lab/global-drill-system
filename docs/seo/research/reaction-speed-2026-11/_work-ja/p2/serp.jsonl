@@ -1,0 +1,5 @@
+{"query":"go no go テスト","cc":"jp","lang":"ja-JP","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"反応抑制 テスト","cc":"jp","lang":"ja-JP","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"valorant クリアリング 練習","cc":"jp","lang":"ja-JP","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"置きエイム 練習","cc":"jp","lang":"ja-JP","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"体内時計ゲーム","cc":"jp","lang":"ja-JP","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}

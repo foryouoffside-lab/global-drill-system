@@ -5,7 +5,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/de/drills/physical/balance-training/stability-challenge';
-const title = 'Maus-Stabilitätstest: Fadenkreuz im Ring halten | SkillDrills';
+const title = 'Maus-Stabilitätstest: Fadenkreuz ruhig halten | SkillDrills';
 const description = 'Kostenloser Maus-Stabilitätstest: Ein wechselnder Wind schiebt dein Fadenkreuz weg. Gleiche die Drift 45 Sekunden lang aus und bleib im schrumpfenden Ring.';
 
 export const metadata = {

@@ -13,7 +13,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper';
 const title = "Ejercicios de Visión Periférica: Juego Online | SkillDrills";
-const description = "Ejercicios de visión periférica en forma de juego: mira el núcleo central y haz clic en las amenazas que llegan del borde. +2 s por acierto, -1 s por fallo.";
+const description = "Ejercicios de visión periférica como juego: mira el núcleo central y haz clic en las amenazas que llegan del borde. +2 s por acierto, -1 s por fallo.";
 
 export const metadata = {
   title,

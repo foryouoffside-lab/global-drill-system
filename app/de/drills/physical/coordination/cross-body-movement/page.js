@@ -5,7 +5,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const PAGE_URL = 'https://skilldrills.online/de/drills/physical/coordination/cross-body-movement';
-const TITLE = "Koordinationstest mit der Maus – Korridor-Spiel | SkillDrills";
+const TITLE = "Koordinationstest mit der Maus – Korridorspiel | SkillDrills";
 const DESCRIPTION = "Koordinationstest mit der Maus: Führe den Cursor durch einen schmalen Korridor von einem Bildschirmrand zum anderen. 45 Sekunden, kostenlos im Browser.";
 
 export const metadata = {

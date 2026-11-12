@@ -5,8 +5,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/de/drills/physical/reflex-training/drop-catch';
-const title = "Fallende Ziele fangen: Grün klicken, Rot meiden | SkillDrills";
-const description = "Fallende Ziele fangen im Browser: nur grüne Ziele klicken, rote Köder fallen lassen. +2 s pro Fang, 1 s Abzug bei Fehlern. Kostenlos und ohne Anmeldung spielen.";
+const title = "Fallende Ziele fangen: Grün ja, Rot nein | SkillDrills";
+const description = "Fallende Ziele fangen im Browser: nur grüne Ziele klicken, rote Köder fallen lassen. +2 s pro Fang, 1 s Abzug bei Fehlern. Kostenlos, ohne Anmeldung.";
 
 export const metadata = {
   title,

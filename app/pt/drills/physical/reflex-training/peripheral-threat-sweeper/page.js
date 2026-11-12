@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper';
 const title = "Defesa Radial: Treino de Visão Periférica | SkillDrills";
-const description = "Defesa Radial: olhe para o núcleo central e clique nas ameaças das bordas antes que cheguem nele. +2 s por acerto, -1 s por erro. Grátis; não é exame de vista.";
+const description = "Defesa Radial: olhe para o núcleo central e clique nas ameaças das bordas antes que cheguem. +2 s por acerto, -1 s por erro. Grátis; não é exame de vista.";
 
 export const metadata = {
   title,

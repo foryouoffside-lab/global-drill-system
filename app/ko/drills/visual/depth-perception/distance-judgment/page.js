@@ -40,7 +40,7 @@ const softwareApplicationSchema = {
   url,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-12',
 };
 
 const webAppSchema = {
@@ -53,7 +53,7 @@ const webAppSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url,
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-12',
 };
 
 const videoGameSchema = {
@@ -66,7 +66,7 @@ const videoGameSchema = {
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-12',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -118,7 +118,7 @@ const faqs = [
   },
   {
     "q": "점수는 어떻게 계산되나요?",
-    "a": "구체가 기준 링과 겹치는 시점에서 깊이 오차가 5% 미만이면 150점, 12% 미만이면 100점을 얻습니다. 시간 초과나 빗나감에는 감점이 없고 점수 없이 다음 표적이 나옵니다. 세션은 45초이며 레벨이 오르면 구체 속도가 빨라집니다."
+    "a": "구체가 기준 링과 겹치는 시점에서 깊이 오차가 7% 이내면 150점, 16% 이내면 100점을 얻습니다. 레벨이 오를수록 이 허용 범위가 각각 4%, 10%까지 좁아집니다. 빗나감에는 감점이 없고 점수 없이 다음 구체가 나옵니다. 세션은 45초이며 750점마다 레벨이 오르고 구체 속도가 빨라집니다."
   },
   {
     "q": "구체의 커지는 속도로 거리를 가늠할 수 있나요?",
@@ -158,7 +158,7 @@ const distanceGuideKo = {
   "intro": [
     "이 드릴은 터널 깊은 곳에서 다가오는 3D 구체가 기준 링과 같은 크기로 보이는 순간에 클릭하는 거리감 연습 게임입니다. 구체가 커지는 속도를 보고 도달 시점을 가늠하는 판단과 클릭 타이밍을 함께 연습합니다.",
     "다가오는 물체가 커지는 속도로 부딪히기까지 남은 시간을 가늠할 수 있다는 연구가 있습니다(Lee, 1976; Regan & Beverley, 1978). 하워드-돌먼 장치는 전통적인 깊이 판단 검사로 알려져 있지만(Howard, 1919), 이 게임은 그 검사가 아닙니다.",
-    "세션은 45초이며 깊이 오차가 5% 미만이면 150점, 12% 미만이면 100점을 얻습니다. 레벨이 오르면 구체 속도가 빨라지고, 빗나가도 감점은 없습니다.",
+    "세션은 45초이며 깊이 오차가 7% 이내면 150점, 16% 이내면 100점을 얻습니다. 750점마다 레벨이 오르고, 레벨이 오르면 구체 속도가 빨라지며 허용 오차가 각각 4%, 10%까지 좁아집니다. 빗나가도 감점은 없습니다.",
     "결과는 연습 기록입니다. 입체시 검사나 운전면허 적성검사를 대신하지 않으며, 시력 문제가 의심되면 안과 진료를 받으세요. 주사율과 입력 장치도 클릭 시점에 영향을 줄 수 있으니(Woods et al., 2015) 같은 환경에서 비교하세요."
   ],
   "benchmarks": {
@@ -181,17 +181,17 @@ const distanceGuideKo = {
       ],
       [
         "3단계",
-        "10 – 16%",
+        "7 – 16%",
         "일정한 리듬으로 클릭하기"
       ],
       [
         "4단계",
-        "5 – 10%",
+        "4 – 7%",
         "빠른 속도에서도 타이밍 유지하기"
       ],
       [
         "5단계",
-        "5% 미만",
+        "4% 미만",
         "같은 오차율을 여러 판 유지하기"
       ]
     ],
@@ -265,10 +265,10 @@ const copyKo = {
   rulesTitle: '규칙과 점수 계산',
   rule1Text: '완벽한 거리 일치',
   rule1Highlight: '+150점',
-  rule1Result: '깊이 오차 5% 미만',
+  rule1Result: '깊이 오차 7% 이내 (고레벨 4%)',
   rule2Text: '근접 거리 일치',
   rule2Highlight: '+100점',
-  rule2Result: '깊이 오차 12% 미만',
+  rule2Result: '깊이 오차 16% 이내 (고레벨 10%)',
   rule3Text: '단계별 속도 가속',
   rule3Highlight: '고속 접근',
   rule3Result: '레벨 상승 시 구체 속도 증가',

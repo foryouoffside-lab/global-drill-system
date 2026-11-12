@@ -7,7 +7,7 @@ const physicalDrills = DRILLS.filter((d) => d.category === 'physical');
 
 const url = 'https://skilldrills.online/es/drills/physical';
 const title = "Juegos de agilidad con el ratón: 11 ejercicios | SkillDrills";
-const description = "Juegos de agilidad con el ratón, gratis en el navegador: 11 ejercicios para hacer clic en objetivos, esquivar, estabilizar el cursor y memorizar recorridos.";
+const description = "Juegos de agilidad con el ratón, gratis online: 11 ejercicios para hacer clic en objetivos, esquivar, estabilizar el cursor y memorizar recorridos.";
 
 export const metadata = {
   title,

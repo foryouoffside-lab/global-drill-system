@@ -6,45 +6,30 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const visualDrills = DRILLS.filter((d) => d.category === 'visual');
 
 export const metadata = {
-  title: '動体視力テスト・深視力検査・視覚トレーニング | SkillDrills',
-  description: '動体視力トレーニング、深視力検査（三桿法）、光反応速度、多目標追従（MOT）、視覚探索など9種類の科学的視覚機能検査と眼球運動ドリル。無料ブラウザ測定。',
-  keywords: [
-    '動体視力テスト', '動体視力トレーニング', '深視力検査',
-    '深視力コツ三桿法', '眼球運動トレーニング', '光反応速度測定',
-    '視覚反射神経テスト', '周辺視野トレーニング', '多目標追従テスト',
-    '視覚探索課題', 'ビジョントレーニング無料', 'スムーズパシュート眼球運動',
-    '視覚的注意検査', '動体追従能力測定', 'スポーツビジョントレーニング'
-  ],
+  title: '動体視力トレーニング 無料・ブラウザで9種 | SkillDrills',
+  description: '無料・ブラウザで動体視力トレーニング。動く標的の追従、複数対象の追跡、視覚探索、奥行き判断、光への反応を練習できる9種類のドリル。登録不要です。',
+  keywords: ['動体視力トレーニング', '動体視力トレーニング 無料', '動体視力トレーニング ブラウザ', '動体視力 ゲーム', '視覚探索', '周辺視', '奥行き判断', '多目標追跡', '眼球運動'],
   openGraph: {
-    title: '動体視力テスト・深視力検査・視覚トレーニング | SkillDrills',
-    description: '動体視力トレーニング、深視力検査（三桿法）、光反応速度、多目標追従（MOT）、視覚探索など9種類の科学的視覚機能検査と眼球運動ドリル。無料ブラウザ測定。',
+    title: '動体視力トレーニング 無料・ブラウザで9種 | SkillDrills',
+    description: '無料・ブラウザで動体視力トレーニング。動く標的の追従、複数対象の追跡、視覚探索、奥行き判断、光への反応を練習できる9種類のドリル。登録不要です。',
     type: 'website',
     url: 'https://skilldrills.online/ja/drills/visual',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'SkillDrills 視覚機能・動体視力トレーニング' }],
+    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'SkillDrills 動体視力トレーニング' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '動体視力テスト・深視力検査・視覚トレーニング | SkillDrills',
-    description: '動体視力トレーニング、深視力検査、多目標追従（MOT）、視覚探索など9種類の無料視覚認知ドリル。',
+    title: '動体視力トレーニング 無料・ブラウザで9種 | SkillDrills',
+    description: '無料・ブラウザで動体視力トレーニング。動く標的の追従、複数対象の追跡、視覚探索、奥行き判断、光への反応を練習できる9種類のドリル。登録不要です。',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/visual',
-    languages: getAlternateLanguages('/ja/drills/visual'),
+    languages: getAlternateLanguages('/drills/visual'),
   },
 };
-
-Object.assign(metadata, {
-  title: '動体視力・視覚探索 | 無料トレーニング | SkillDrills',
-  description: '動体視力テスト、視覚探索、周辺視、奥行き判断、反応速度を練習できる9種類の無料ブラウザドリル。',
-  keywords: ['動体視力テスト', '視覚探索 テスト', '反応速度 テスト', 'スポーツビジョン', '周辺視 トレーニング', '眼球運動 トレーニング', '奥行き知覚 テスト', '多目標追跡', '無料 視覚トレーニング'],
-  openGraph: { ...metadata.openGraph, title: '動体視力・視覚探索 | 無料トレーニング | SkillDrills', description: '動体視力、視覚探索、周辺視、奥行き判断を練習できる9種類の無料ブラウザドリル。' },
-  twitter: { ...metadata.twitter, title: '動体視力・視覚探索 | SkillDrills', description: '動体視力と視覚探索を練習できる9種類の無料ドリル。' },
-  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -60,10 +45,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "ja",
-  "dateModified": "2026-09-20",
-  "name": "視覚機能トレーニング & 動体視力検査 (9種目)",
+  "dateModified": "2026-11-12",
+  "name": "動体視力トレーニング・視覚ドリル (9種目)",
   "url": "https://skilldrills.online/ja/drills/visual",
-  "description": "動体視力、深視力検査、光反応速度、多目標追従、視覚探索、時間分解能を鍛える9種類の視覚認知ドリル。",
+  "description": "動く標的の追従、多目標追跡、光への反応、視覚探索、奥行き判断をブラウザで練習する9種類の視覚ドリル。",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": visualDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ja', drill.name);
@@ -83,70 +68,70 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ja",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "動体視力（DVA）の向上は野球やテニス、FPSゲームの反応にどのような効果がありますか？",
+      "name": "動体視力トレーニングは野球やテニス、FPSゲームに役立ちますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "静止視力と異なり、動体視力は高速移動する物体の像を網膜中心窩（fovea）にブレずに保持し続ける視覚機能です。移動物体の弾道予測と網膜への像固定ドリルを反復することで外眼筋と視覚皮質の連係が強化され、野球や卓球のインパクトタイミングやFPSにおけるトラッキングエイムの精度が飛躍的に高まります。"
+        "text": "動体視力は動く対象をはっきり捉え続ける力を指します。ここの追従ドリルは動く標的を目とマウスで追う練習ですが、野球・テニスやFPSの成績が上がることは保証しません。同じ機器で自分の記録の変化を見る補助練習として使ってください。"
       }
     },
     {
       "@type": "Question",
-      "name": "三桿法による深視力検査（Distance Judgment）とは何を測定しているのですか？",
+      "name": "奥行き判断ドリルは深視力検査（三桿法）の代わりになりますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "三桿法は左右の網膜に生じる視差（両眼視差）を手がかりに、前後に移動する棒が中央で並んだ瞬間を捉えて遠近感・立体感を測る検査です。大型免許や二種免許の合格基準（平均誤差20mm以内）を満たすだけでなく、高速道路走行時の車間距離把握や球技の距離感判断に不可欠な立体視機能を鍛えます。"
+        "text": "なりません。平面モニターには両眼視差がないため、立体視や三桿法の深視力は測れません。近づいてくる球が画面上で大きくなる様子を見て、表示された距離に届いた瞬間にクリックする、距離とタイミングの判断練習です。"
       }
     },
     {
       "@type": "Question",
-      "name": "多目標追従（MOT: Multiple Object Tracking）はなぜ周辺視野やゲームの状況判断に効くのですか？",
+      "name": "多目標追跡（MOT）はどんな練習ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "MOT課題は頭頂葉（Parietal Lobe）が司る空間的分割注意と視覚性ワーキングメモリを極限まで刺激します。視野中央に固定視線を保ちながら周囲を不規則に飛び回る複数のターゲットを同時追尾することで有効視野（UFOV）が拡大し、集団球技でのパスコース把握やFPSの多方向クリアリングが迅速になります。"
+        "text": "同じ見た目の動く物体の中から、指定された標的を見失わずに追い続ける課題です。分割注意と視覚的作業記憶を使いますが、有効視野が広がる、運転や球技に効果があるといった保証はありません。"
       }
     },
     {
       "@type": "Question",
-      "name": "スムーズパシュート（滑動性追従眼球運動）とは何ですか？サッケード跳躍との違いは？",
+      "name": "滑動性追従（スムーズパシュート）とサッケードの違いは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "スムーズパシュートは滑らかに移動する対象を視線が跳躍（サッケード）することなく連続的に追従する眼球運動です。対象の速度変化やノイズに対してサッケードによる視界のブラックアウトを防ぎ、ターゲットの細部や回転を常に鮮明に視認し続けるために不可欠な基礎眼球機能です。"
+        "text": "滑動性追従は動く対象を滑らかに目で追う動き、サッケードは視線をすばやく跳ばす動きです。追従ドリルは主に前者を使いますが、このサイトは目の動きそのものを測定していません。"
       }
     },
     {
       "@type": "Question",
-      "name": "光反応速度測定（Light Reaction）と通常のボタン押し反射テストの違いは何ですか？",
+      "name": "光反応ドリルは何を測っていますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "一般的な反射神経テストは色の弁別や形状認識の認知判断が介在しますが、光反応テストはストロボ閃光刺激による網膜の光電変換から運動野の筋収縮指令に至る純粋な光受容・神経伝達遅延（Visual-Motor Latency）をミリ秒単位で測定し、視覚反射の基礎限界値を明らかにします。"
+        "text": "画面に光の合図が出てからクリックするまでの時間を測ります。結果には画面、マウス、ブラウザの遅延も含まれるため、神経の伝達速度そのものではありません。"
       }
     },
     {
       "@type": "Question",
-      "name": "高密度な視覚探索（Visual Search）ドリルは脳のどの認知プロセスを活性化させますか？",
+      "name": "視覚探索ドリルではどんな力を練習しますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "視覚探索課題は多数の妨害刺激（ディストラクター）の中から特定の結合特徴を持つ標的を瞬間特定する訓練です。視覚野の特徴統合（Feature Integration）と前頭前野のノイズ抑制メカニズムを同時に動員するため、乱雑な視覚情報から瞬時に重要な対象だけを拾い上げる情報処理速度が向上します。"
+        "text": "妨害刺激の中から標的を探し出す課題で、選択的注意と探す速さをその課題の中で練習します。日常生活への効果は個人差があり、保証されません。"
       }
     },
     {
       "@type": "Question",
-      "name": "視覚トレーニングを行う際の最適な頻度と1回のセッション時間はどれくらいですか？",
+      "name": "結果はモニターやマウスに左右されますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "視覚機能と外眼筋は非常に繊細で高エネルギーを消費するため、1回あたり15〜20分、週3〜5回のセッションが最も推奨されます。30分以上の過度な連続トレーニングは毛様体筋の疲労や眼精疲労を招き、パフォーマンスの低下につながるため、短時間の集中反復が効果的です。"
+        "text": "はい。画面は60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1msごとに更新されます。記録を比べるときは同じ画面、マウス、ブラウザを使ってください。"
       }
     },
     {
       "@type": "Question",
-      "name": "ブラウザベースのビジョントレーニングは実用的なスポーツビジョン訓練として有効ですか？",
+      "name": "1回どれくらい練習すればよいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい。特殊な医療機器や大型機器を用いずとも、高リフレッシュレート対応のHTML5キャンバスにより、サブピクセル単位の眼球運動・光反応・周辺視野刺激を日常的に反復可能です。スポーツ現場や運転免許試験対策における自主トレーニングツールとして極めて高い実用性を誇ります。"
+        "text": "決まった正解はありません。目が疲れないよう短いセッションを無理なく繰り返し、合間に遠くを見て休みましょう。痛みや頭痛、違和感があれば中止してください。"
       }
     }
   ]

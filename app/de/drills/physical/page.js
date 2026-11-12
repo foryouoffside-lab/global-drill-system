@@ -7,7 +7,7 @@ const physicalDrills = DRILLS.filter((d) => d.category === 'physical');
 
 const url = 'https://skilldrills.online/de/drills/physical';
 const title = "Koordinationsspiele online | 11 Maus-Drills | SkillDrills";
-const description = "Koordinationsspiele online und kostenlos: 11 Maus-Drills für Zielen, Ausweichen, ruhige Cursorführung, Wege merken und Timing. Kein Fitnesstest, kein Login.";
+const description = "Koordinationsspiele online und kostenlos: 11 Maus-Drills für Zielen, Ausweichen, ruhige Cursorführung, Wege merken und Timing. Kein Fitnesstest.";
 
 export const metadata = {
   title,

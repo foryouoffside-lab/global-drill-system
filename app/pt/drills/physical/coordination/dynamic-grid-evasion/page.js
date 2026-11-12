@@ -5,7 +5,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion';
-const title = "Jogo de Esquiva em Grade: Saia Antes da Explosão | SkillDrills";
+const title = "Jogo de Esquiva em Grade: Fuja da Explosão | SkillDrills";
 const description = "Jogo de esquiva em grade grátis: leve o cursor para fora das casas que piscam em laranja na grade 3x3 antes que explodam. Rodadas de 45 segundos.";
 
 export const metadata = {

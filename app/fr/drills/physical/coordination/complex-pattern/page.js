@@ -5,7 +5,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const PAGE_URL = 'https://skilldrills.online/fr/drills/physical/coordination/complex-pattern';
-const TITLE = "Jeu visuo-spatial en ligne : retracer un parcours | SkillDrills";
+const TITLE = "Jeu visuo-spatial : retracer un parcours | SkillDrills";
 const DESCRIPTION = "Ce jeu visuo-spatial en ligne affiche un parcours de 3 à 8 points pendant un instant : mémorisez-le puis retracez-le à la souris. Parties de 45 s, gratuit.";
 
 export const metadata = {

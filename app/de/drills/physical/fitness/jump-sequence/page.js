@@ -11,7 +11,7 @@ import { pickSources } from '@/lib/drillSources';
 // this is a charge-release-steer mouse game, not jump training.
 // ============================================================
 
-const TITLE = 'Sprung-Zielspiel: aufladen, abspringen, steuern | SkillDrills';
+const TITLE = 'Sprung-Zielspiel: aufladen, springen, steuern | SkillDrills';
 const DESCRIPTION = 'Kostenloses Sprung-Zielspiel: Maustaste halten zum Aufladen, loslassen zum Abspringen und in der Luft auf ein bewegtes Ziel lenken. 45 Sekunden pro Runde.';
 const URL = 'https://skilldrills.online/de/drills/physical/fitness/jump-sequence';
 

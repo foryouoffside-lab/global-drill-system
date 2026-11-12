@@ -6,45 +6,30 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const visualDrills = DRILLS.filter((d) => d.category === 'visual');
 
 export const metadata = {
-  title: '시각 훈련 & 동체시력·입체시 테스트 | SkillDrills',
-  description: '동체시력, 입체시(원근감), 시각 반응속도, 다중 객체 추적(MOT), 시각 탐색 훈련 등 9가지 신경과학 기반 무료 시각 기능 훈련 및 시력 검사 도구.',
-  keywords: [
-    '동체시력 테스트', '동체시력 훈련 게임', '입체시 검사',
-    '원근감 테스트', '눈 운동 훈련 프로그램', '시각 반응속도 검사',
-    '빛 반응속도 테스트', '다중 객체 추적 검사', '주변 시야 테스트',
-    '시각 탐색 훈련', '안구 운동 트레이닝', '스무스 퍼슈트 눈 운동',
-    '시각 주의력 검사', '선택적 주의력 테스트', '스포츠 시각 훈련 도구'
-  ],
+  title: '동체시력·시각 탐색 훈련 | 동체시력 테스트 9종 | SkillDrills',
+  description: '동체시력 테스트·훈련 게임, 시각 탐색, 주변시, 거리 판단과 시각 반응속도를 연습하는 9개 무료 브라우저 드릴.',
+  keywords: ['동체시력 테스트', '동체시력 훈련', '동체시력 게임', '시각 탐색 검사', '반응속도 테스트', '주변시 훈련', '시각 훈련', '눈손협응', '거리 판단 테스트', '다중 객체 추적', '무료 시각 훈련'],
   openGraph: {
-    title: '시각 훈련 & 동체시력·입체시 테스트 | SkillDrills',
-    description: '동체시력, 입체시(원근감), 시각 반응속도, 다중 객체 추적(MOT), 시각 탐색 훈련 등 9가지 신경과학 기반 무료 시각 기능 훈련 및 시력 검사 도구.',
+    title: '동체시력·시각 탐색 훈련 | 동체시력 테스트 9종 | SkillDrills',
+    description: '동체시력, 시각 탐색, 주변시와 거리 판단을 연습하는 9개 무료 브라우저 드릴.',
     type: 'website',
     url: 'https://skilldrills.online/ko/drills/visual',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
-    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630, alt: 'SkillDrills 시각 기능 및 동체시력 훈련' }],
+    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630, alt: 'SkillDrills 동체시력·시각 탐색 훈련' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '시각 훈련 & 동체시력·입체시 테스트 | SkillDrills',
-    description: '동체시력, 입체시(원근감), 다중 객체 추적(MOT), 시각 반응속도 등 9가지 신경과학 기반 무료 시각 훈련 도구.',
+    title: '동체시력·시각 탐색 훈련 | SkillDrills',
+    description: '동체시력과 시각 탐색을 연습하는 9개 무료 드릴.',
     images: ['https://skilldrills.online/opengraph-image'],
   },
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://skilldrills.online/ko/drills/visual',
-    languages: getAlternateLanguages('/ko/drills/visual'),
+    languages: getAlternateLanguages('/drills/visual'),
   },
 };
-
-Object.assign(metadata, {
-  title: '동체시력·시각 탐색 훈련 | 동체시력 테스트 9종 | SkillDrills',
-  description: '동체시력 테스트·훈련 게임, 시각 탐색, 주변시, 거리 판단과 시각 반응속도를 연습하는 9개 무료 브라우저 드릴.',
-  keywords: ['동체시력 테스트', '동체시력 훈련', '동체시력 게임', '시각 탐색 검사', '반응속도 테스트', '주변시 훈련', '시각 훈련', '눈손협응', '거리 판단 테스트', '다중 객체 추적', '무료 시각 훈련'],
-  openGraph: { ...metadata.openGraph, title: '동체시력·시각 탐색 훈련 | 동체시력 테스트 9종 | SkillDrills', description: '동체시력, 시각 탐색, 주변시와 거리 판단을 연습하는 9개 무료 브라우저 드릴.' },
-  twitter: { ...metadata.twitter, title: '동체시력·시각 탐색 훈련 | SkillDrills', description: '동체시력과 시각 탐색을 연습하는 9개 무료 드릴.' },
-  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
-});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -60,10 +45,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "ko",
-  "dateModified": "2026-09-20",
-  "name": "시각 기능 훈련 & 동체시력 검사 (9개 종목)",
+  "dateModified": "2026-11-12",
+  "name": "동체시력·시각 탐색 훈련 (9개 드릴)",
   "url": "https://skilldrills.online/ko/drills/visual",
-  "description": "동체시력, 입체시 검사, 광학 반응속도, 다중 객체 추적, 시각 탐색 및 주기 분해능을 평가하는 9가지 시각 인지 훈련.",
+  "description": "움직이는 표적 추적, 다중 객체 추적, 시각 반응속도, 시각 탐색과 거리 판단을 브라우저에서 연습하는 9개 시각 드릴.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": visualDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ko', drill.name);
@@ -83,7 +68,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ko",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
@@ -95,10 +80,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "원근감·입체시 테스트는 무엇을 연습하나요?",
+      "name": "거리 판단 드릴은 입체시 검사인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "화면 속 물체의 거리를 비교해 판단하는 과제입니다. 양안 시차를 정밀하게 재는 임상 입체시 검사가 아니므로 진단에 쓸 수 없으며, 거리 판단을 연습하는 용도로만 활용하세요."
+        "text": "아닙니다. 평면 모니터에는 양안 시차가 없으므로 입체시를 검사할 수 없습니다. 다가오는 구가 화면에서 커지는 모습을 보고 표시된 거리에 닿는 순간 클릭하는 거리·타이밍 판단 연습입니다."
       }
     },
     {

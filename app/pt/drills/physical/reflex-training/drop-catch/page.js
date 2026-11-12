@@ -5,7 +5,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/pt/drills/physical/reflex-training/drop-catch';
-const title = "Pegar Alvos em Queda: Ignore as Iscas Vermelhas | SkillDrills";
+const title = "Pegar Alvos em Queda: Evite as Iscas Vermelhas | SkillDrills";
 const description = "Pegar alvos em queda no navegador: clique só nos verdes e deixe as iscas vermelhas passarem. +2 s por acerto, -1 s por erro. Jogo grátis, sem cadastro.";
 
 export const metadata = {

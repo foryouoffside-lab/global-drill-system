@@ -1,0 +1,7 @@
+{"query":"에임 반응속도 테스트","cc":"kr","lang":"ko-KR","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"에임 테스트","cc":"kr","lang":"ko-KR","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"충동성 테스트","cc":"kr","lang":"ko-KR","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"순간 판단력 테스트","cc":"kr","lang":"ko-KR","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"고노고 과제","cc":"kr","lang":"ko-KR","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"시선처리 게임","cc":"kr","lang":"ko-KR","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"타이밍 테스트","cc":"kr","lang":"ko-KR","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}

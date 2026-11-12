@@ -12,7 +12,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 const TITLE = 'Agility-Ladder-Rhythmusspiel mit der Maus | SkillDrills';
-const DESCRIPTION = 'Kostenloses Agility-Ladder-Rhythmusspiel: Fahre die 4 Sprossen jeder Leiter links-rechts-links-rechts mit dem Mauszeiger ab. 45 Sekunden, Combo, mehr Tempo.';
+const DESCRIPTION = 'Kostenloses Agility-Ladder-Rhythmusspiel: Fahre die 4 Sprossen jeder Leiter links-rechts-links-rechts mit dem Mauszeiger ab. 45 s, Combo, mehr Tempo.';
 const URL = 'https://skilldrills.online/de/drills/physical/fitness/agility-ladder';
 
 export const metadata = {

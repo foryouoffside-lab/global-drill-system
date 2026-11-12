@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge';
 const title = 'Mira Tremendo? Treino de Firmeza do Mouse | SkillDrills';
-const description = 'Mira tremendo? Um vento muda de direção e empurra o retículo para fora do centro. Corrija com o mouse e segure a mira estável no anel por 45 segundos. Grátis.';
+const description = 'Mira tremendo? Um vento muda de direção e empurra o retículo para fora do centro. Corrija com o mouse e segure a mira estável no anel por 45 s. Grátis.';
 
 export const metadata = {
   title,

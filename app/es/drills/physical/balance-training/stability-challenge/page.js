@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/es/drills/physical/balance-training/stability-challenge';
 const title = 'Estabilidad del cursor con el ratón | SkillDrills';
-const description = 'Estabilidad del cursor con el ratón: un viento que cambia de dirección empuja la mira. Compénsalo y mantente 45 segundos dentro del anillo. Ejercicio gratis.';
+const description = 'Estabilidad del cursor con el ratón: un viento que cambia de dirección empuja la mira. Compénsalo y mantente 45 s dentro del anillo. Ejercicio gratis.';
 
 export const metadata = {
   title,

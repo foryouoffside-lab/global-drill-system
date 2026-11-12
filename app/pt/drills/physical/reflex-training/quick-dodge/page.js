@@ -5,8 +5,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge';
-const title = "Jogo de Desviar com o Mouse: Fuja dos Projéteis | SkillDrills";
-const description = "Jogo de desviar grátis no navegador: mova o mouse para fugir dos projéteis vermelhos que vêm de todas as bordas na direção do cursor. Rodadas de 45 segundos.";
+const title = "Jogo de Desviar com o Mouse: Evite Projéteis | SkillDrills";
+const description = "Jogo de desviar grátis no navegador: mova o mouse para fugir dos projéteis vermelhos que vêm de todas as bordas na direção do cursor. Rodadas de 45 s.";
 
 export const metadata = {
   title,

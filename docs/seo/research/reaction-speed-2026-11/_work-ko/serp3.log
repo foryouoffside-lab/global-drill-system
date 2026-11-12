@@ -1,0 +1,11 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+browserContext.newPage: Target crashed 
+    at C:\Users\sangmesh\Desktop\global-drill-system-nextjs - Copy\scripts\keywords\serp_probe.mjs:32:26 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v22.18.0

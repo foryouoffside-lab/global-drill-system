@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/es/drills/physical/reflex-training/drop-catch';
 const title = 'Atrapar objetos que caen: verdes sí, rojos no | SkillDrills';
-const description = 'Atrapar objetos que caen en el navegador: haz clic solo en los verdes y deja pasar los señuelos rojos. +2 s por captura, -1 s por error. Gratis y sin registro.';
+const description = 'Atrapar objetos que caen: haz clic solo en los verdes y deja pasar los señuelos rojos. +2 s por captura, -1 s por error. Gratis y sin registro.';
 
 export const metadata = {
   title,

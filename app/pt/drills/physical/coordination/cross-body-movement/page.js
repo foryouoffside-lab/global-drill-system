@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const PAGE_URL = 'https://skilldrills.online/pt/drills/physical/coordination/cross-body-movement';
 const TITLE = "Coordenação Mão-Olho: Trace Linhas com o Mouse | SkillDrills";
-const DESCRIPTION = "Coordenação Mão-Olho no navegador: leve o cursor de um nó na borda da tela até o nó do lado oposto sem sair de um corredor estreito. Rodadas de 45 s, grátis.";
+const DESCRIPTION = "Coordenação Mão-Olho no navegador: leve o cursor de um nó na borda da tela até o nó do lado oposto sem sair de um corredor estreito. 45 s, grátis.";
 
 export const metadata = {
   title: TITLE,

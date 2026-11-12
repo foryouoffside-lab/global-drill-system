@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/fr/drills/physical/fitness/speed-drill';
 const title = 'Jeu de clic : cibles mobiles qui rétrécissent | SkillDrills';
-const description = 'Jeu de clic gratuit : touchez à la souris des cibles mobiles qui rétrécissent avant qu’elles disparaissent. Chaque touche ajoute 2 s, chaque raté retire 1 s.';
+const description = 'Jeu de clic gratuit : touchez des cibles mobiles qui rétrécissent avant qu’elles disparaissent. Chaque touche ajoute 2 s, chaque raté retire 1 s.';
 
 export const metadata = {
   title,

@@ -12,8 +12,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 const url = 'https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper';
-const title = "Jeu de vision périphérique : défendre le centre | SkillDrills";
-const description = "Jeu de vision périphérique : gardez les yeux sur le noyau central et cliquez les menaces venues des bords. +2 s par prise, -1 s par erreur. Pas un test de vue.";
+const title = "Jeu de vision périphérique : garder le centre | SkillDrills";
+const description = "Jeu de vision périphérique : fixez le noyau central et cliquez les menaces venues des bords. +2 s par prise, -1 s par erreur. Pas un test de vue.";
 
 export const metadata = {
   title,

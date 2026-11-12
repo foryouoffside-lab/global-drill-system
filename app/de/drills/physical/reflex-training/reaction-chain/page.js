@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain';
 const title = 'Overflicking stoppen | Flick-Stopp-Training | SkillDrills';
-const description = 'Overflicking stoppen: Bremse den Cursor auf Zielen, die vom Bildrand heranfliegen. Jedes Durchrauschen oder verpasste Ziel kostet 1 Sekunde. Gratis im Browser.';
+const description = 'Overflicking stoppen: Bremse den Cursor auf Zielen, die vom Bildrand heranfliegen. Jedes Durchrauschen oder verpasste Ziel kostet 1 s. Gratis im Browser.';
 
 export const metadata = {
   title,
