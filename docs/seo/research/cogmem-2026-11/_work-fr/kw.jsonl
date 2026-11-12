@@ -35,3 +35,6 @@
 {"phrase": "attention divisée", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
 {"phrase": "test d'attention", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
 {"phrase": "test sdmt", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "jeux de mémoire gratuits", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test mémoire des chiffres", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "reflex test", "cc": "fr", "lang": "fr-FR", "exact": 80, "broad": 80, "status": "ok"}
