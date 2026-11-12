@@ -1,0 +1,41 @@
+phrase,cc,lang,bing_exact,bing_broad,status,source,measured
+teste de visão online,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste visão online,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste de visão,br,pt-BR,56,56,ok,bing_kw.py,2026-11-12
+treino visual,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+treino de visão,br,pt-BR,,,error,bing_kw.py,2026-11-12
+jogos para treinar a visão,br,pt-BR,,,error,bing_kw.py,2026-11-12
+percepção visual,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste de percepção visual,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste de percepção visual online,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+percepção de profundidade,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste de profundidade visual,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+rastreamento visual,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+rastreamento visual jogo,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+exercícios de rastreamento visual,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+rastreamento de múltiplos objetos,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste de atenção,br,pt-BR,0,22,ok,bing_kw.py,2026-11-12
+teste de atenção online,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste de atenção visual,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste de atenção concentrada,br,pt-BR,22,22,ok,bing_kw.py,2026-11-12
+teste de atenção concentrada online,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste de atenção alternada,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste de atenção alternada online,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste psicotécnico online,br,pt-BR,7,10,ok,bing_kw.py,2026-11-12
+jogo de atenção,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+jogos de atenção,br,pt-BR,0,20,ok,bing_kw.py,2026-11-12
+busca visual,br,pt-BR,3,3,ok,bing_kw.py,2026-11-12
+jogo de encontrar a letra,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+jogo de encontrar objetos,br,pt-BR,0,27,ok,bing_kw.py,2026-11-12
+jogo de encontrar anomalia,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+jogo de encontrar o diferente,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+perseguição ocular,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+seguir o alvo,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+alvo em movimento,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+teste de ghosting,br,pt-BR,124,147,ok,bing_kw.py,2026-11-12
+ghosting monitor,br,pt-BR,0,121,ok,bing_kw.py,2026-11-12
+treino estroboscópico,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+visão estroboscópica,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+exercícios oculares,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+como treinar visão periférica,br,pt-BR,0,0,ok,bing_kw.py,2026-11-12
+coordenação motora,br,pt-BR,201,1367,ok,bing_kw.py,2026-11-12

@@ -45,8 +45,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills Startseite", "item": "https://skilldrills.online/de" },
     { "@type": "ListItem", "position": 2, "name": "Körperliches Training", "item": "https://skilldrills.online/de/drills/physical" },
-    { "@type": "ListItem", "position": 3, "name": "Fitness", "item": "https://skilldrills.online/de/drills/physical/fitness" },
-    { "@type": "ListItem", "position": 4, "name": "Agility-Ladder-Rhythmusspiel", "item": URL }
+    { "@type": "ListItem", "position": 3, "name": "Agility-Ladder-Rhythmusspiel", "item": URL }
   ]
 };
 

@@ -44,8 +44,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills ホーム", "item": "https://skilldrills.online/ja" },
     { "@type": "ListItem", "position": 2, "name": "身体機能トレーニングハブ", "item": "https://skilldrills.online/ja/drills/physical" },
-    { "@type": "ListItem", "position": 3, "name": "反射神経トレーニング", "item": "https://skilldrills.online/ja/drills/physical/reflex-training" },
-    { "@type": "ListItem", "position": 4, "name": "周辺視野トレーニングゲーム", "item": url }
+    { "@type": "ListItem", "position": 3, "name": "周辺視野トレーニングゲーム", "item": url }
   ]
 };
 

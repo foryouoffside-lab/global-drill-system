@@ -64,8 +64,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/' },
     { '@type': 'ListItem', position: 2, name: 'Physical Training', item: 'https://skilldrills.online/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: 'Coordination', item: 'https://skilldrills.online/drills/physical/coordination' },
-    { '@type': 'ListItem', position: 4, name: 'Hand Eye Coordination Game', item: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement' },
+    { '@type': 'ListItem', position: 3, name: 'Hand Eye Coordination Game', item: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement' },
   ],
 };
 

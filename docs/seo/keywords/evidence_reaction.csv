@@ -1,0 +1,73 @@
+locale,url,primary,bing_volume,volume_source,gsc_pos,competition,competition_source,verdict
+de,/de/drills/reaction-speed/barrier-sequence-pursuit,Peek-Training,,not measured (no peek phrase in de kw files),,unknown,no SERP probe,unmeasured
+es,/es/drills/reaction-speed/barrier-sequence-pursuit,Entrenar peek,,not measured (es.md has no barrier row),,unknown,no SERP probe,unmeasured
+fr,/fr/drills/reaction-speed/barrier-sequence-pursuit,Réaction au peek,,not measured; valorant peek trainer/training 0 (_work-fr2/kw.jsonl),,unknown,no SERP probe,unmeasured
+ja,/ja/drills/reaction-speed/barrier-sequence-pursuit,ピーク反応練習,,exact not measured; ピーク 練習/ジグルピーク 0 (ja.csv 2026-09-04),,unknown,no SERP probe,unmeasured
+ko,/ko/drills/reaction-speed/barrier-sequence-pursuit,지글피킹 연습,,not in _work-ko kw files; ko.md states 지글피킹 Bing 0,,unknown,no SERP probe,unmeasured
+pt,/pt/drills/reaction-speed/barrier-sequence-pursuit,treino de mira valorant,363,reaction-speed-2026-11/_work-p3-retry.jsonl,,unknown,no SERP probe,demand-unknown-comp
+de,/de/drills/reaction-speed/fps-tracking-trainer,bewegliche Ziele treffen,,not measured,,unknown,no SERP probe,unmeasured
+es,/es/drills/reaction-speed/fps-tracking-trainer,disparar a objetivos en movimiento,,not measured; aim tracking 2 (_work-ptes),,unknown,no SERP probe,unmeasured
+fr,/fr/drills/reaction-speed/fps-tracking-trainer,tir sur cible mobile,,not measured; tracking aim trainer 2 (_work-fr2),,unknown,no SERP probe,unmeasured
+ja,/ja/drills/reaction-speed/fps-tracking-trainer,動く的 エイム練習,,exact not measured; トラッキングエイム/追いエイム variants 0 (_work-p3-retry.jsonl),,unknown,no SERP probe,unmeasured
+ko,/ko/drills/reaction-speed/fps-tracking-trainer,트래킹 에임 연습,0,reaction-speed-2026-11/_work-ko/kw1.jsonl,,unknown,ko.csv UNKNOWN; GSC 7.9 is /ko/drills/fps not this URL,no-demand
+pt,/pt/drills/reaction-speed/fps-tracking-trainer,acertar alvo em movimento,,not measured,,unknown,no SERP probe,unmeasured
+de,/de/drills/reaction-speed/market-doors-pursuit,Ecken checken,,not measured,,unknown,no SERP probe,unmeasured
+es,/es/drills/reaction-speed/market-doors-pursuit,Limpiar ángulos,,not measured,,unknown,no SERP probe,unmeasured
+fr,/fr/drills/reaction-speed/market-doors-pursuit,Vérifier les angles,,not measured,,unknown,no SERP probe,unmeasured
+ja,/ja/drills/reaction-speed/market-doors-pursuit,索敵エイム練習,,exact not measured; クリアリング/ピーク 練習 0 (ja.csv),,unknown,no SERP probe,unmeasured
+ko,/ko/drills/reaction-speed/market-doors-pursuit,각도 확인 에임 훈련,,not in _work-ko kw files,,unknown,no SERP probe,unmeasured
+pt,/pt/drills/reaction-speed/market-doors-pursuit,treino de mira,390,reaction-speed-2026-11/_work-ptes/kw.jsonl (2026-11-08),,unknown,pt.csv UNKNOWN (probe timed out),demand-unknown-comp
+de,/de/drills/reaction-speed/reaction-game,Reaktionsspiel online,0,reaction-speed-2026-11/_work-defr/kw2.jsonl,,unknown,no SERP probe,no-demand
+es,/es/drills/reaction-speed/reaction-game,juego de reacción online,0,reaction-speed-2026-11/_work-ptes/kw_p2_es.jsonl,,unknown,juego de reacción SERP captured but not rated,no-demand
+fr,/fr/drills/reaction-speed/reaction-game,jeu de réaction en ligne,,not measured (fr.md: jeu de réaction UNKNOWN); jeu de reflexe* 0,,unknown,no SERP probe,unmeasured
+ja,/ja/drills/reaction-speed/reaction-game,反応速度ゲーム,0,"reaction-speed-2026-11/ja.csv (反応速度 ゲーム, 2026-09-04)",,unknown,ja.csv UNKNOWN,no-demand
+ko,/ko/drills/reaction-speed/reaction-game,반응속도 게임,0,reaction-speed-2026-11/ko.csv (2026-09-04 reused),,low,ko.csv SERP LOW; GSC 8.1 is hub URL,no-demand
+pt,/pt/drills/reaction-speed/reaction-game,jogo de reflexo online,,exact not measured; jogo de reflexo 0 (pt.csv),,unknown,no SERP probe,unmeasured
+de,/de/drills/reaction-speed/reaction-time-test,Zeitgefühl-Test,,not measured,,unknown,no SERP probe,unmeasured
+fr,/fr/drills/reaction-speed/reaction-time-test,jeu de perception du temps,,not measured,,unknown,no SERP probe,unmeasured
+ja,/ja/drills/reaction-speed/reaction-time-test,体内時計ゲーム,0,reaction-speed-2026-11/_work-ja/kw2.jsonl,,unknown,ja.csv UNKNOWN,no-demand
+ko,/ko/drills/reaction-speed/reaction-time-test,시간 감각 게임,,exact not measured; 시간 감각 테스트/시간 맞추기 게임 0 (_work-ko),,unknown,no SERP probe,unmeasured
+pt,/pt/drills/reaction-speed/reaction-time-test,jogo de noção de tempo,0,reaction-speed-2026-11/_work-p3-retry.jsonl,,unknown,no SERP probe,no-demand
+de,/de/drills/reaction-speed/reflex-training-drill,Reflexe trainieren,,not in de kw files (de.md states 0); reflexe testen 0,,unknown,no SERP probe,unmeasured
+es,/es/drills/reaction-speed/reflex-training-drill,juego de reflejos,0,reaction-speed-2026-11/es.csv (juegos de reflejos ES 0; juego de reflejos MX 0),,low,es.csv SERP LOW (juegos de reflejos: game portals),no-demand
+fr,/fr/drills/reaction-speed/reflex-training-drill,test de réflexe,51,reaction-speed-2026-11/_work-defr/kw.jsonl (unaccented test de reflexe; accented 0),5.0,low,GSC pos 5.0 (fr.csv); SERP medium,low-demand
+ja,/ja/drills/reaction-speed/reflex-training-drill,反射神経ゲーム,1054,reaction-speed-2026-11/ja.csv (2026-10),,medium,ja.csv SERP LOW-MED (thin tools + arealme),demand-unknown-comp
+ko,/ko/drills/reaction-speed/reflex-training-drill,순발력 테스트,170,reaction-speed-2026-11/ko.csv (2026-09-04 reused),,low,ko.csv SERP LOW; GSC 11.3 is hub URL,high-demand-low-comp
+pt,/pt/drills/reaction-speed/reflex-training-drill,jogo de reflexo rápido,,exact not measured; jogo de reflexo 0 (pt.csv),,unknown,no SERP probe,unmeasured
+de,/de/drills/reaction-speed/saccadic-gallery,Augentraining,18,reaction-speed-2026-11/_work-defr/kw.jsonl,,unknown,no SERP probe,low-demand
+es,/es/drills/reaction-speed/saccadic-gallery,Ejercicios Sacádicos,0,reaction-speed-2026-11/_work-ptes/kw_p2_es.jsonl,,unknown,no SERP probe,no-demand
+fr,/fr/drills/reaction-speed/saccadic-gallery,exercice saccades oculaires,,not measured; exercice yeux 0,,unknown,no SERP probe,unmeasured
+ja,/ja/drills/reaction-speed/saccadic-gallery,眼球運動 トレーニング,21,reaction-speed-2026-11/_work-ja/kw2.jsonl,,unknown,ja.csv UNKNOWN,low-demand
+ko,/ko/drills/reaction-speed/saccadic-gallery,시선 이동 훈련,0,reaction-speed-2026-11/_work-ko/kw1.jsonl,,unknown,ko.csv UNKNOWN,no-demand
+pt,/pt/drills/reaction-speed/saccadic-gallery,Exercícios Sacádicos,,exact not measured; movimentos sacádicos 0 (_work-p3-retry.jsonl),,unknown,no SERP probe,unmeasured
+de,/de/drills/reaction-speed/visual-tracking-speed-test,dynamisches Sehen testen,,exact not measured; dynamisches sehen trainieren 0 (_work-defr/kw2.jsonl),,unknown,no SERP probe,unmeasured
+es,/es/drills/reaction-speed/visual-tracking-speed-test,test de visión dinámica,,not measured,,unknown,no SERP probe,unmeasured
+fr,/fr/drills/reaction-speed/visual-tracking-speed-test,test de vision dynamique,,not measured; acuité visuelle dynamique 0,,unknown,probe error,unmeasured
+ja,/ja/drills/reaction-speed/visual-tracking-speed-test,動体視力テスト,254,reaction-speed-2026-11/ja.csv (2026-10),14.0,medium,ja.csv SERP LOW-MED; GSC page 14.0 (_work-ja/gsc_jp.tsv),demand-unknown-comp
+ko,/ko/drills/reaction-speed/visual-tracking-speed-test,동체시력 테스트,56,reaction-speed-2026-11/ko.csv (2026-09-04 reused),4.2,low,GSC pos 4.2 (ko.csv); SERP LOW,low-demand
+pt,/pt/drills/reaction-speed/visual-tracking-speed-test,teste de visão dinâmica,,exact not measured; teste de acuidade visual dinâmica 0,,unknown,no SERP probe,unmeasured
+ko,/ko/drills/reaction-speed,반응속도 훈련,0,reaction-speed-2026-11/ko.csv (2026-09-04 reused),6.1,low,GSC hub pos 6.1/443 (ko.csv),no-demand
+ja,/ja/drills/reaction-speed,反射神経 鍛える,165,reaction-speed-2026-11/ja.csv (2026-10),9.8,low,GSC hub pos 9.8 (_work-ja/gsc_jp.tsv); SERP MED,high-demand-low-comp
+de,/de/drills/reaction-speed,Reaktionstraining,,exact not measured; reaktionstraining online 0 (_work-defr/kw.jsonl),,unknown,no SERP probe,unmeasured
+fr,/fr/drills/reaction-speed,temps de réaction,66,reaction-speed-2026-11/_work-defr/kw.jsonl (unaccented 71),,high,fr.csv SERP: driving-school informational + cps-check (hard),low-demand
+pt,/pt/drills/reaction-speed,jogos de reflexo,128,reaction-speed-2026-11/pt.csv (2026-09-05),,unknown,pt.csv UNKNOWN,demand-unknown-comp
+es,/es/drills/reaction-speed,test de reflejos,32,reaction-speed-2026-11/es.csv (2026-10),,low,es.csv SERP LOW (thin tools/quizzes),low-demand
+ko,/ko/drills/visual/reaction-speed/light-reaction,반응속도 테스트,10032,reaction-speed-2026-11/ko.csv (2026-09-04 reused),,medium,ko.csv SERP MEDIUM; page not indexed (hub 8.8),demand-unknown-comp
+ja,/ja/drills/visual/reaction-speed/light-reaction,反射神経テスト,3487,reaction-speed-2026-11/ja.csv (2026-10),,low,ja.csv SERP LOW (thin tools); page has no GSC rows,high-demand-low-comp
+de,/de/drills/visual/reaction-speed/light-reaction,Reaktionstest,931,reaction-speed-2026-11/_work-defr/kw.jsonl,,medium,de.csv SERP medium (tool sites),demand-unknown-comp
+fr,/fr/drills/visual/reaction-speed/light-reaction,test de réaction,95,reaction-speed-2026-11/_work-defr/kw2.jsonl (test de reaction 95; accented 41),,medium,fr.md SERP medium (test temps de réaction: tool sites),low-demand
+pt,/pt/drills/visual/reaction-speed/light-reaction,teste de reflexo,209,reaction-speed-2026-11/pt.csv (2026-09-04),,medium,pt.csv SERP MEDIUM,demand-unknown-comp
+es,/es/drills/visual/reaction-speed/light-reaction,test de reacción,125,"reaction-speed-2026-11/es.csv (2026-10; Sep 10, volatile)",,low,es.csv SERP LOW,high-demand-low-comp
+ko,/ko/drills/visual/reaction-speed/go/no-go,고노고 과제,,"exact not in kw files; 고노고 테스트 0, go no go 테스트 0 (_work-ko/kw1.jsonl)",,unknown,ko.csv UNKNOWN,unmeasured
+ja,/ja/drills/visual/reaction-speed/go/no-go,Go/No-Go課題,0,reaction-speed-2026-11/_work-ja/p2/kw.jsonl,,unknown,all ja SERP probes timed out,no-demand
+de,/de/drills/visual/reaction-speed/go/no-go,Go/No-Go-Test,0,reaction-speed-2026-11/_work-defr/kw.jsonl (go no go test),,unknown,SERP probe timeout,no-demand
+fr,/fr/drills/visual/reaction-speed/go/no-go,Test Go/No-Go,57,reaction-speed-2026-11/_work-defr/kw.jsonl (go no go; mixed intent),,unknown,test go no go probe invalid (speedtest results),low-demand
+pt,/pt/drills/visual/reaction-speed/go/no-go,Teste Go/No-Go,0,reaction-speed-2026-11/_work-ptes/kw.jsonl (teste go no go),,unknown,SERP probe timeout,no-demand
+es,/es/drills/visual/reaction-speed/go/no-go,Test Go/No-Go,0,reaction-speed-2026-11/_work-ptes/kw_p2_es.jsonl (test go no go); PASS3 figure 29 not found in files,,unknown,no SERP probe,no-demand
+es,/es/drills/reaction-speed/reaction-time-test,parar el cronómetro a ciegas,,exact not measured; juego parar el cronómetro 0 (_work-ptes/kw_p2_es.jsonl),,unknown,no SERP probe,unmeasured
+ko,/ko/drills/motor/movement-speed/keyboard-tester,키보드 테스트,3445,motor-2026-11/_work-ko/kw.jsonl,,unknown,no SERP probe,demand-unknown-comp
+ja,/ja/drills/motor/movement-speed/keyboard-tester,キーボードテスト,7968,motor-2026-11/ja.csv (prior 2026-10 run),,unknown,no SERP probe,demand-unknown-comp
+de,/de/drills/motor/movement-speed/keyboard-tester,Tastatur Test,1038,motor-2026-11/_work-de/kw.jsonl,,unknown,SERP probe error (motor de.md),demand-unknown-comp
+fr,/fr/drills/motor/movement-speed/keyboard-tester,test clavier,2354,motor-2026-11/_work-fr/kw.jsonl,,unknown,SERP probe invalid (speedtest results),demand-unknown-comp
+pt,/pt/drills/motor/movement-speed/keyboard-tester,teste de teclado,15966,motor-2026-11/_work-pt/kw.jsonl,,unknown,no SERP probe,demand-unknown-comp
+es,/es/drills/motor/movement-speed/keyboard-tester,test de teclado,370,motor-2026-11/_work-es/kw.jsonl,,unknown,no SERP probe,demand-unknown-comp

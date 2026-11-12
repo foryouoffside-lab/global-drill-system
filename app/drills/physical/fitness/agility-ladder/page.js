@@ -73,8 +73,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/' },
     { '@type': 'ListItem', position: 2, name: 'Physical Training', item: 'https://skilldrills.online/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: 'Fitness', item: 'https://skilldrills.online/drills/physical/fitness' },
-    { '@type': 'ListItem', position: 4, name: 'Agility Ladder Drills', item: 'https://skilldrills.online/drills/physical/fitness/agility-ladder' },
+    { '@type': 'ListItem', position: 3, name: 'Agility Ladder Drills', item: 'https://skilldrills.online/drills/physical/fitness/agility-ladder' },
   ],
 };
 

@@ -24,8 +24,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'SkillDrills ホーム', item: 'https://skilldrills.online/ja' },
     { '@type': 'ListItem', position: 2, name: 'フィジカルトレーニング', item: 'https://skilldrills.online/ja/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: 'コーディネーション', item: 'https://skilldrills.online/ja/drills/physical/coordination' },
-    { '@type': 'ListItem', position: 4, name: '危険マス回避ゲーム', item: url },
+    { '@type': 'ListItem', position: 3, name: '危険マス回避ゲーム', item: url },
   ],
 };
 

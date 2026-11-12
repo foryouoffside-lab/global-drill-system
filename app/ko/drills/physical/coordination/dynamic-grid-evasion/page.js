@@ -24,8 +24,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'SkillDrills 홈', item: 'https://skilldrills.online/ko' },
     { '@type': 'ListItem', position: 2, name: '피지컬 테스트', item: 'https://skilldrills.online/ko/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: '협응 훈련', item: 'https://skilldrills.online/ko/drills/physical/coordination' },
-    { '@type': 'ListItem', position: 4, name: '칸 피하기 게임', item: url },
+    { '@type': 'ListItem', position: 3, name: '칸 피하기 게임', item: url },
   ],
 };
 

@@ -109,7 +109,7 @@ const getLevelConfig = (level, combo = 0) => {
 // MAIN COMPONENT
 // ============================================================
 export default function JumpSequenceClient({ copy = {} } = {}) {
-  const { locale } = useTranslation();
+  const { locale, t: i18nT } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -719,19 +719,19 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full">
             <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.score || "Score"}</div>
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.score || i18nT('ui.score', 'Score')}</div>
               <div className="text-lg sm:text-2xl font-black text-white tabular-nums">{uiScore}</div>
             </div>
             <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.timeLeft || "Time"}</div>
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.timeLeft || i18nT('ui.time', 'Time')}</div>
               <div className={`text-lg sm:text-2xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
             </div>
             <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestScore || "Best Score"}</div>
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestScore || i18nT('ui.bestScore', 'Best Score')}</div>
               <div className="text-lg sm:text-2xl font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
             <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestCombo || "Best Combo"}</div>
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestCombo || i18nT('ui.bestCombo', 'Best Combo')}</div>
               <div className="text-lg sm:text-2xl font-black text-rose-400 tabular-nums">{bestCombo}x</div>
             </div>
           </div>
@@ -756,11 +756,11 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{i18nT('ui.score', 'Score')}</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{i18nT('ui.time', 'Time')}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -779,7 +779,7 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Miss Flash"
+                title={i18nT('ui.toggleFlash', 'Toggle Miss Flash')}
               >
                 {flashEnabled ? <Zap className="w-4 h-4 text-red-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
               </button>
@@ -793,7 +793,7 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Sound"
+                title={i18nT('ui.toggleSound', 'Toggle Sound')}
               >
                 {soundEnabled ? <Volume2 className="w-4 h-4 text-emerald-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
@@ -819,7 +819,7 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={i18nT('ui.getReady', 'GET READY')} />
           )}
 
           {/* END SCREEN */}
@@ -830,19 +830,19 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
               <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(6,182,212,.12), transparent 70%)' }}>
                 {isNewBest && (
                   <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
+                    {i18nT('ui.newBest', 'New Best').toUpperCase()}
                   </span>
                 )}
                 <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
                   {analytics.grade.letter}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
+                  {i18nT(`ui.grade${analytics.grade.label.toLowerCase().replace(/(^|\s)(\w)/g, (_, _s, c) => c.toUpperCase())}`, analytics.grade.label)}
                 </div>
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}
                 </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
+                <div className="text-[9px] uppercase tracking-widest text-slate-500">{i18nT('ui.points', 'Points')}</div>
               </div>
 
               {/* Right Stats & Actions Panel */}
@@ -852,19 +852,19 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{i18nT('ui.accuracy', 'Accuracy')}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.sequencesCleared}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Target Hits</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{i18nT('ui.targetHits', 'Target Hits')}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.peakSpeed} px/s</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Speed</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{i18nT('ui.peakSpeed', 'Peak Speed')}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
+                    <p className="text-sm sm:text-base font-black text-white">{i18nT('ui.lv', 'Lv.')} {analytics.finalLevel}</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{i18nT('ui.resultPeakLevel', 'Peak Level')}</p>
                   </div>
                 </div>
 
@@ -874,19 +874,19 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
                     onClick={enterDrill} 
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {i18nT('ui.playAgain', 'Play Again')}
                   </button>
                   <button 
                     onClick={shareScore} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
+                    title={i18nT('ui.shareScore', 'Share Score')}
                   >
                     <Share2 className="w-4 h-4 text-emerald-400" />
                   </button>
                   <button 
                     onClick={handleExitDrill} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Drill & Return"
+                    title={i18nT('ui.exit', 'Exit Drill & Return')}
                   >
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>

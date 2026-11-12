@@ -91,8 +91,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://skilldrills.online' },
     { '@type': 'ListItem', position: 2, name: 'Physical Training', item: 'https://skilldrills.online/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: 'Fitness', item: 'https://skilldrills.online/drills/physical/fitness' },
-    { '@type': 'ListItem', position: 4, name: 'Speed Drill Training', item: 'https://skilldrills.online/drills/physical/fitness/speed-drill' },
+    { '@type': 'ListItem', position: 3, name: 'Speed Drill Training', item: 'https://skilldrills.online/drills/physical/fitness/speed-drill' },
   ],
 };
 

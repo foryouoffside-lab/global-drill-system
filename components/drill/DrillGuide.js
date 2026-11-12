@@ -443,9 +443,7 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, fram
             ))}
           </ol>
           <p className="text-[11.5px] text-slate-500 mt-3 leading-relaxed">
-            SkillDrills collects no aggregate performance data &mdash; scores stay in your
-            browser&apos;s local storage and are never uploaded. Every figure quoted on this page
-            comes from the published work listed above, not from this site&apos;s visitors.
+            {t('guide.noDataNote', "SkillDrills collects no aggregate performance data — scores stay in your browser's local storage and are never uploaded. Every figure quoted on this page comes from the published work listed above, not from this site's visitors.")}
           </p>
         </GuidePanel>
       ) : null}

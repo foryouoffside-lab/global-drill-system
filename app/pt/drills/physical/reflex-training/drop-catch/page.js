@@ -44,8 +44,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills Início", "item": "https://skilldrills.online/pt" },
     { "@type": "ListItem", "position": 2, "name": "Centro de Treino Físico", "item": "https://skilldrills.online/pt/drills/physical" },
-    { "@type": "ListItem", "position": 3, "name": "Treino de Reflexos", "item": "https://skilldrills.online/pt/drills/physical/reflex-training" },
-    { "@type": "ListItem", "position": 4, "name": "Pegar Alvos em Queda", "item": url }
+    { "@type": "ListItem", "position": 3, "name": "Pegar Alvos em Queda", "item": url }
   ]
 };
 

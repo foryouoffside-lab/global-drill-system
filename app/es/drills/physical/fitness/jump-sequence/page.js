@@ -45,8 +45,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills Inicio", "item": "https://skilldrills.online/es" },
     { "@type": "ListItem", "position": 2, "name": "Entrenamiento Físico", "item": "https://skilldrills.online/es/drills/physical" },
-    { "@type": "ListItem", "position": 3, "name": "Acondicionamiento y Agilidad", "item": "https://skilldrills.online/es/drills/physical/fitness" },
-    { "@type": "ListItem", "position": 4, "name": "Juego de Saltar y Apuntar", "item": URL }
+    { "@type": "ListItem", "position": 3, "name": "Juego de Saltar y Apuntar", "item": URL }
   ]
 };
 

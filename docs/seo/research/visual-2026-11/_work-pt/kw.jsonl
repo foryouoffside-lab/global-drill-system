@@ -1,0 +1,40 @@
+{"phrase": "teste de visão online", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste visão online", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste de visão", "cc": "br", "lang": "pt-BR", "exact": 56, "broad": 56, "status": "ok"}
+{"phrase": "treino visual", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "treino de visão", "cc": "br", "lang": "pt-BR", "exact": null, "broad": null, "status": "error:<urlopen error [WinError 10054] An existing connection was forcibly closed by th"}
+{"phrase": "jogos para treinar a visão", "cc": "br", "lang": "pt-BR", "exact": null, "broad": null, "status": "error:<urlopen error [WinError 10054] An existing connection was forcibly closed by th"}
+{"phrase": "percepção visual", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste de percepção visual", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste de percepção visual online", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "percepção de profundidade", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste de profundidade visual", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "rastreamento visual", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "rastreamento visual jogo", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "exercícios de rastreamento visual", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "rastreamento de múltiplos objetos", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste de atenção", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 22, "status": "ok"}
+{"phrase": "teste de atenção online", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste de atenção visual", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste de atenção concentrada", "cc": "br", "lang": "pt-BR", "exact": 22, "broad": 22, "status": "ok"}
+{"phrase": "teste de atenção concentrada online", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste de atenção alternada", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste de atenção alternada online", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste psicotécnico online", "cc": "br", "lang": "pt-BR", "exact": 7, "broad": 10, "status": "ok"}
+{"phrase": "jogo de atenção", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "jogos de atenção", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 20, "status": "ok"}
+{"phrase": "busca visual", "cc": "br", "lang": "pt-BR", "exact": 3, "broad": 3, "status": "ok"}
+{"phrase": "jogo de encontrar a letra", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "jogo de encontrar objetos", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 27, "status": "ok"}
+{"phrase": "jogo de encontrar anomalia", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "jogo de encontrar o diferente", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "perseguição ocular", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "seguir o alvo", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "alvo em movimento", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "teste de ghosting", "cc": "br", "lang": "pt-BR", "exact": 124, "broad": 147, "status": "ok"}
+{"phrase": "ghosting monitor", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 121, "status": "ok"}
+{"phrase": "treino estroboscópico", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "visão estroboscópica", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "exercícios oculares", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "como treinar visão periférica", "cc": "br", "lang": "pt-BR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "coordenação motora", "cc": "br", "lang": "pt-BR", "exact": 201, "broad": 1367, "status": "ok"}

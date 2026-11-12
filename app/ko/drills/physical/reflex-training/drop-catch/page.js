@@ -37,12 +37,6 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "반사신경 및 순발력",
-      "item": "https://skilldrills.online/ko/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
       "name": "떨어지는 표적 잡기 게임 · 드롭 캐치",
       "item": "https://skilldrills.online/ko/drills/physical/reflex-training/drop-catch"
     }

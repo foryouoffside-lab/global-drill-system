@@ -44,8 +44,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills Startseite", "item": "https://skilldrills.online/de" },
     { "@type": "ListItem", "position": 2, "name": "Physisches Training", "item": "https://skilldrills.online/de/drills/physical" },
-    { "@type": "ListItem", "position": 3, "name": "Reflextraining", "item": "https://skilldrills.online/de/drills/physical/reflex-training" },
-    { "@type": "ListItem", "position": 4, "name": "Peripheres Blickfeld Spiel", "item": url }
+    { "@type": "ListItem", "position": 3, "name": "Peripheres Blickfeld Spiel", "item": url }
   ]
 };
 

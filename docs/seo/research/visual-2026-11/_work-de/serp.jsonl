@@ -1,0 +1,2 @@
+{"query":"visuelle suche","cc":"de","lang":"de","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"visuelle suche","cc":"de","lang":"de","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}

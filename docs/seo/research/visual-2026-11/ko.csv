@@ -1,0 +1,41 @@
+phrase,cc,lang,exact,broad,status
+동체시력 훈련,kr,ko-KR,0,0,ok
+동체시력 테스트,kr,ko-KR,0,0,ok
+동체시력 키우는 법,kr,ko-KR,0,0,ok
+동체시력 반응속도 테스트,kr,ko-KR,0,0,ok
+동체시력 테스트 게임,kr,ko-KR,0,0,ok
+동체시력 훈련 게임,kr,ko-KR,0,0,ok
+동체시력 측정,kr,ko-KR,0,0,ok
+동체시력 키우기,kr,ko-KR,0,0,ok
+시각 훈련,kr,ko-KR,0,0,ok
+시각 주의력 훈련,kr,ko-KR,0,0,ok
+시각 인지 훈련,kr,ko-KR,,,error:<urlopen error [Errno 11001] getaddrinfo failed>
+입체시 테스트,kr,ko-KR,,,error:<urlopen error [Errno 11001] getaddrinfo failed>
+입체시 검사,kr,ko-KR,,,error:<urlopen error [Errno 11001] getaddrinfo failed>
+입체시 훈련,kr,ko-KR,,,error:<urlopen error [Errno 11001] getaddrinfo failed>
+거리감 테스트,kr,ko-KR,,,error:<urlopen error [Errno 11001] getaddrinfo failed>
+거리감각 테스트,kr,ko-KR,,,error:<urlopen error [Errno 11001] getaddrinfo failed>
+깊이 지각 테스트,kr,ko-KR,,,error:<urlopen error [Errno 11001] getaddrinfo failed>
+주변시 훈련,kr,ko-KR,,,error:<urlopen error [Errno 11001] getaddrinfo failed>
+주변시야,kr,ko-KR,0,0,ok
+주변시 반응속도,kr,ko-KR,0,0,ok
+fps 주변시,kr,ko-KR,0,0,ok
+다중 객체 추적,kr,ko-KR,0,0,ok
+시선 추적 게임,kr,ko-KR,0,0,ok
+시선 추적 훈련,kr,ko-KR,0,0,ok
+시선 추적 테스트,kr,ko-KR,0,0,ok
+안구 운동 게임,kr,ko-KR,0,0,ok
+안구 트레이닝,kr,ko-KR,0,0,ok
+시각 탐색,kr,ko-KR,0,0,ok
+글자 찾기 게임,kr,ko-KR,0,0,ok
+숨은 글자 찾기,kr,ko-KR,0,0,ok
+다른 글자 찾기,kr,ko-KR,0,0,ok
+틀린 글자 찾기,kr,ko-KR,0,0,ok
+숫자 찾기 게임,kr,ko-KR,0,0,ok
+집중력 테스트 게임,kr,ko-KR,0,0,ok
+순간 집중력 테스트,kr,ko-KR,0,0,ok
+시각 반응속도 테스트,kr,ko-KR,0,0,ok
+빛 반응속도 테스트,kr,ko-KR,0,0,ok
+깜빡임 테스트,kr,ko-KR,0,0,ok
+고노고 과제,kr,ko-KR,0,0,ok
+클릭속도 테스트,kr,ko-KR,920,920,ok

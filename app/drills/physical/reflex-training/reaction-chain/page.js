@@ -87,8 +87,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://skilldrills.online' },
     { '@type': 'ListItem', position: 2, name: 'Physical Training', item: 'https://skilldrills.online/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: 'Reflex Training', item: 'https://skilldrills.online/drills/physical/reflex-training' },
-    { '@type': 'ListItem', position: 4, name: 'Reaction Chain', item: 'https://skilldrills.online/drills/physical/reflex-training/reaction-chain' },
+    { '@type': 'ListItem', position: 3, name: 'Reaction Chain', item: 'https://skilldrills.online/drills/physical/reflex-training/reaction-chain' },
   ],
 };
 

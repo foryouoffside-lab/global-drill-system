@@ -57,12 +57,6 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "反射神経トレーニング",
-      "item": "https://skilldrills.online/ja/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
       "name": "落下キャッチゲーム",
       "item": url
     }

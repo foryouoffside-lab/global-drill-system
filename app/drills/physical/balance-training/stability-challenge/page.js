@@ -65,8 +65,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/' },
     { '@type': 'ListItem', position: 2, name: 'Physical Training', item: 'https://skilldrills.online/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: 'Balance Training', item: 'https://skilldrills.online/drills/physical/balance-training' },
-    { '@type': 'ListItem', position: 4, name: 'Stability Challenge', item: 'https://skilldrills.online/drills/physical/balance-training/stability-challenge' },
+    { '@type': 'ListItem', position: 3, name: 'Stability Challenge', item: 'https://skilldrills.online/drills/physical/balance-training/stability-challenge' },
   ],
 };
 

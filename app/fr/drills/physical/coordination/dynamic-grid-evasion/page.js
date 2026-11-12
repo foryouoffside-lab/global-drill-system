@@ -24,8 +24,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'SkillDrills Accueil', item: 'https://skilldrills.online/fr' },
     { '@type': 'ListItem', position: 2, name: 'Entraînement physique', item: 'https://skilldrills.online/fr/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: 'Coordination', item: 'https://skilldrills.online/fr/drills/physical/coordination' },
-    { '@type': 'ListItem', position: 4, name: 'Jeu d’évitement sur grille 3x3', item: url },
+    { '@type': 'ListItem', position: 3, name: 'Jeu d’évitement sur grille 3x3', item: url },
   ],
 };
 

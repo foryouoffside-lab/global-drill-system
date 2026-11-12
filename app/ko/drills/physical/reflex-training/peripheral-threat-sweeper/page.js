@@ -37,12 +37,6 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "반사신경 및 순발력",
-      "item": "https://skilldrills.online/ko/drills/physical/reflex-training"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
       "name": "주변시야 훈련 게임",
       "item": "https://skilldrills.online/ko/drills/physical/reflex-training/peripheral-threat-sweeper"
     }

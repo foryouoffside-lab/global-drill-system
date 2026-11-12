@@ -24,8 +24,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'SkillDrills Início', item: 'https://skilldrills.online/pt' },
     { '@type': 'ListItem', position: 2, name: 'Treino Físico', item: 'https://skilldrills.online/pt/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: 'Reflexos', item: 'https://skilldrills.online/pt/drills/physical/reflex-training' },
-    { '@type': 'ListItem', position: 4, name: 'Jogo de Desviar com o Mouse', item: url },
+    { '@type': 'ListItem', position: 3, name: 'Jogo de Desviar com o Mouse', item: url },
   ],
 };
 

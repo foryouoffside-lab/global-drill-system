@@ -51,8 +51,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Accueil SkillDrills", "item": "https://skilldrills.online/fr" },
     { "@type": "ListItem", "position": 2, "name": "Centre d'Entraînement Physique", "item": "https://skilldrills.online/fr/drills/physical" },
-    { "@type": "ListItem", "position": 3, "name": "Entraînement des Réflexes", "item": "https://skilldrills.online/fr/drills/physical/reflex-training" },
-    { "@type": "ListItem", "position": 4, "name": "Jeu de vision périphérique", "item": url }
+    { "@type": "ListItem", "position": 3, "name": "Jeu de vision périphérique", "item": url }
   ]
 };
 

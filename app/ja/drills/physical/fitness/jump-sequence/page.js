@@ -45,8 +45,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills ホーム", "item": "https://skilldrills.online/ja" },
     { "@type": "ListItem", "position": 2, "name": "身体機能トレーニング", "item": "https://skilldrills.online/ja/drills/physical" },
-    { "@type": "ListItem", "position": 3, "name": "フィットネス", "item": "https://skilldrills.online/ja/drills/physical/fitness" },
-    { "@type": "ListItem", "position": 4, "name": "ジャンプゲーム", "item": URL }
+    { "@type": "ListItem", "position": 3, "name": "ジャンプゲーム", "item": URL }
   ]
 };
 

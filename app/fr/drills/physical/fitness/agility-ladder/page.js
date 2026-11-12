@@ -45,8 +45,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills Accueil", "item": "https://skilldrills.online/fr" },
     { "@type": "ListItem", "position": 2, "name": "Entraînement Physique", "item": "https://skilldrills.online/fr/drills/physical" },
-    { "@type": "ListItem", "position": 3, "name": "Condition Physique et Vivacité", "item": "https://skilldrills.online/fr/drills/physical/fitness" },
-    { "@type": "ListItem", "position": 4, "name": "Échelle d’agilité en ligne", "item": URL }
+    { "@type": "ListItem", "position": 3, "name": "Échelle d’agilité en ligne", "item": URL }
   ]
 };
 

@@ -30,6 +30,7 @@ import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -106,6 +107,7 @@ const ABOUT_SECTIONS = [
 ];
 
 export default function SpeedDrillClient({ copy = {} } = {}) {
+  const { t: i18nT } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -645,19 +647,19 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full">
             <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.score || 'Score'}</div>
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.score || i18nT('ui.score', 'Score')}</div>
               <div className="text-lg sm:text-2xl font-black text-white tabular-nums">{uiScore}</div>
             </div>
             <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.time || 'Time'}</div>
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.time || i18nT('ui.time', 'Time')}</div>
               <div className={`text-lg sm:text-2xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
             </div>
             <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestScore || 'Best Score'}</div>
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestScore || i18nT('ui.bestScore', 'Best Score')}</div>
               <div className="text-lg sm:text-2xl font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
             <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestCombo || 'Best Combo'}</div>
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestCombo || i18nT('ui.bestCombo', 'Best Combo')}</div>
               <div className="text-lg sm:text-2xl font-black text-amber-400 tabular-nums">{bestCombo}x</div>
             </div>
           </div>
@@ -683,12 +685,12 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col gap-1">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudLabels?.score || 'Score'}</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudLabels?.score || i18nT('ui.score', 'Score')}</p>
                   <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
                 </div>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudLabels?.time || 'Time'}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudLabels?.time || i18nT('ui.time', 'Time')}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -707,7 +709,7 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Miss Flash"
+                title={i18nT('ui.toggleFlash', 'Toggle Miss Flash')}
               >
                 {flashEnabled ? <Zap className="w-4 h-4 text-red-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
               </button>
@@ -721,7 +723,7 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Sound"
+                title={i18nT('ui.toggleSound', 'Toggle Sound')}
               >
                 {soundEnabled ? <Volume2 className="w-4 h-4 text-emerald-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
@@ -747,7 +749,7 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle={copy?.hudLabels?.getReady || "GET READY"} />
+            <DrillCountdown value={countdownValue} subtitle={copy?.hudLabels?.getReady || i18nT('ui.getReady', 'GET READY')} />
           )}
 
           {/* UNIVERSAL RESULT CARD */}
@@ -758,10 +760,10 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { label: copy?.resultLabels?.accuracy || 'Accuracy', value: analytics.accuracy, suffix: '%' },
-                { label: copy?.resultLabels?.hits || 'Hits', value: analytics.hits },
-                { label: copy?.resultLabels?.bestReaction || 'Best Reaction', value: analytics.bestReaction, suffix: 'ms' },
-                { label: copy?.resultLabels?.peakLevel || 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
+                { label: copy?.resultLabels?.accuracy || i18nT('ui.accuracy', 'Accuracy'), value: analytics.accuracy, suffix: '%' },
+                { label: copy?.resultLabels?.hits || i18nT('ui.hits', 'Hits'), value: analytics.hits },
+                { label: copy?.resultLabels?.bestReaction || i18nT('ui.bestReaction', 'Best Reaction'), value: analytics.bestReaction, suffix: 'ms' },
+                { label: copy?.resultLabels?.peakLevel || i18nT('ui.resultPeakLevel', 'Peak Level'), value: `${i18nT('ui.lv', 'Lv.')} ${analytics.finalLevel}` },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

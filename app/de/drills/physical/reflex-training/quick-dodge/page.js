@@ -24,8 +24,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'SkillDrills Startseite', item: 'https://skilldrills.online/de' },
     { '@type': 'ListItem', position: 2, name: 'Koordinationsspiele', item: 'https://skilldrills.online/de/drills/physical' },
-    { '@type': 'ListItem', position: 3, name: 'Reflex-Drills', item: 'https://skilldrills.online/de/drills/physical/reflex-training' },
-    { '@type': 'ListItem', position: 4, name: 'Dodge Game', item: url },
+    { '@type': 'ListItem', position: 3, name: 'Dodge Game', item: url },
   ],
 };
 

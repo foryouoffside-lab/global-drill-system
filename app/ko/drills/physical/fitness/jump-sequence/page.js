@@ -45,8 +45,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills 홈", "item": "https://skilldrills.online/ko" },
     { "@type": "ListItem", "position": 2, "name": "신체 훈련 허브", "item": "https://skilldrills.online/ko/drills/physical" },
-    { "@type": "ListItem", "position": 3, "name": "피트니스", "item": "https://skilldrills.online/ko/drills/physical/fitness" },
-    { "@type": "ListItem", "position": 4, "name": "점프 타이밍 게임", "item": URL }
+    { "@type": "ListItem", "position": 3, "name": "점프 타이밍 게임", "item": URL }
   ]
 };
 
