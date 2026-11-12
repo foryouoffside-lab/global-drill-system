@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/es/drills/visual-tracking/sine-wave-pursuit';
 const title = "Seguimiento ocular sinusoidal | SkillDrills";
-const description = "Ejercicio gratis: sigue con la vista un objetivo que va y viene de izquierda a derecha subiendo y bajando por una trayectoria sinusoidal fija. Velocidad ajustable.";
+const description = "Ejercicio gratis: sigue con la vista un objetivo que va y viene de izquierda a derecha, subiendo y bajando por una trayectoria sinusoidal fija.";
 
 export const metadata = {
   title,

@@ -1,291 +1,189 @@
 import SpatialShiftPursuitClient from '@/app/drills/visual-tracking/spatial-shift-pursuit/SpatialShiftPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
-import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
+import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/pt/drills/visual-tracking/spatial-shift-pursuit';
+const title = "Rastreamento visual com mudança espacial | SkillDrills";
+const description = "Exercício grátis: o alvo avança em linha reta, ressalta nas margens e muda de direção e velocidade sem aviso. Siga-o com o olhar sem o perder.";
+
 export const metadata = {
-  title: "Rastreamento visual com mudança espacial | SkillDrills",
-  description: "Siga um alvo enquanto o campo visual muda. Exercício gratuito no navegador com reação, reaquisição e erro de posição.",
-  keywords: [
-    "mudança espacial rastreamento visual",
-    "remapeamento visual treino",
-    "tela tremendo mira treino",
-    "seguir alvo com campo visual móvel",
-    "atenção espacial exercício",
-    "reaquisição visual treino",
-    "mudança de referencial visual",
-    "rastreamento sob movimento de tela",
-    "coordenação olho alvo",
-    "erro de posição visual",
-    "treino de rastreamento visual",
-    "treino de mira"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/pt/drills/visual-tracking/spatial-shift-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/spatial-shift-pursuit'),
-  },
+  title,
+  description,
+  keywords: ["rastreamento visual com mudança espacial", "mudança de trajetória", "rastreamento ocular", "exercício para os olhos online", "seguir alvo em movimento", "exercício ocular grátis"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/spatial-shift-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'pt_PT', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Rastreamento visual com mudança espacial | SkillDrills",
-    description: "Siga um alvo enquanto o campo visual muda. Exercício gratuito no navegador com reação, reaquisição e erro de posição.",
-    url: "https://skilldrills.online/pt/drills/visual-tracking/spatial-shift-pursuit",
-    siteName: 'SkillDrills',
-    locale: 'pt_PT',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Rastreamento visual com mudança espacial | SkillDrills",
-    description: "Siga um alvo enquanto o campo visual muda. Exercício gratuito no navegador com reação, reaquisição e erro de posição.",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Início",
-      "item": "https://skilldrills.online/pt"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Exercícios",
-      "item": "https://skilldrills.online/pt/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Rastreamento Visual",
-      "item": "https://skilldrills.online/pt/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Rastreamento com Mudança Espacial",
-      "item": "https://skilldrills.online/pt/drills/visual-tracking/spatial-shift-pursuit"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Início", item: 'https://skilldrills.online/pt' },
+    { '@type': 'ListItem', position: 2, name: "Exercícios", item: 'https://skilldrills.online/pt/drills' },
+    { '@type': 'ListItem', position: 3, name: "Rastreamento Visual", item: 'https://skilldrills.online/pt/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "Rastreamento visual com mudança espacial", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "Rastreamento com Mudança Espacial",
-  "operatingSystem": "Navegador Web",
-  "applicationCategory": "GameApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD"
-  },
-  "description": "Aplicação de treino visual adaptativo para observar a recuperação do olhar sob deslocamentos espaciais dinâmicos.",
-  "dateModified": "2026-09-20"
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Exercício de Rastreamento com Mudança Espacial",
-  "url": "https://skilldrills.online/pt/drills/visual-tracking/spatial-shift-pursuit",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "Todos os navegadores modernos",
-  "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Rastreamento visual com mudança espacial",
-  "description": "Exercício de rastreamento em que o campo visual se desloca de repente e o jogador precisa reencontrar e seguir o alvo.",
-  "genre": ["Treino Visual", "Seguimento Ocular", "Treino de Reflexos"],
-  "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Rastreamento visual com mudança espacial",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
+  inLanguage: 'pt',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Como Treinar o Rastreamento sob Mudança Espacial",
-  "description": "Passo a passo para reencontrar e voltar a acompanhar o alvo depois de uma mudança brusca no campo visual.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Estabeleça a Fixação Inicial",
-      "text": "Posicione-se a 50-70 cm da tela. Comece o acompanhamento mantendo o alvo no centro da visão."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Identifique o Deslocamento Global",
-      "text": "Quando o quadro girar ou se deslocar de repente, perceba primeiro a direção do deslocamento em vez de procurar às cegas."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Execute a Sacada Balística de Recuperação",
-      "text": "Leve o olhar de forma direta para a nova posição do alvo, sem muitas correções intermediárias."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Retome o Acompanhamento Suave",
-      "text": "Assim que reencontrar o alvo, volte a acompanhar a nova trajetória na mesma velocidade dele."
-    }
-  ],
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Como fazer o rastreamento visual com mudança espacial",
+  description: "Quatro passos para seguir um alvo que muda bruscamente de direção e velocidade.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Postura confortável",
+    "text": "Sente-se a uma distância confortável do ecrã e relaxe ombros e pescoço."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Seguir as retas",
+    "text": "Siga o alvo com calma enquanto avança em linha reta e ressalta nas margens do ecrã."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Reajustar após a mudança",
+    "text": "Quando a direção e a velocidade mudarem de repente, reajuste o olhar ao novo movimento e continue."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Um ajuste de cada vez",
+    "text": "Quando ficar fácil, aumente a velocidade ou ative Ocultar linha e Velocidade aleatória, um de cada vez."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Como se move o alvo no rastreamento visual com mudança espacial?",
+    "a": "O alvo avança em linha reta, ressalta nas margens e fica um pouco mais rápido a cada ressalto (cerca de 2%). Em momentos aleatórios muda, sem aviso, de direção e velocidade: o sentido horizontal e o vertical invertem-se ou não, e a velocidade é multiplicada por 0,8 a 1,3. Não há saltos nem movimento do ecrã. É um exercício do olhar, não um exame de visão."
+  },
+  {
+    "q": "Com que frequência muda a trajetória?",
+    "a": "Sem ritmo fixo, ao acaso, geralmente cerca de uma vez por segundo. Com Random Speed, a probabilidade de mudança duplica e a velocidade também oscila."
+  },
+  {
+    "q": "Para que serve a linha no alvo?",
+    "a": "Mostra a direção e a velocidade atuais. Com Hide Line desaparece, e tem de notar a mudança apenas pelo movimento do alvo."
+  },
+  {
+    "q": "O exercício mede os movimentos dos olhos ou dá pontuação?",
+    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. Não existe pontuação: apenas o número de sessões concluídas fica guardado neste navegador. Manter o olhar onde o exercício pede depende de si."
+  },
+  {
+    "q": "Que definições posso mudar?",
+    "a": "Depois de uma contagem 3-2-1, a sessão dura 30, 45, 60, 90 ou 120 segundos (60 por defeito). Pode ajustar a velocidade de 0,5x a 9,0x, o tamanho do alvo de 10 a 50 px, a cor, as opções Hide Line (ocultar linha), Random Speed (velocidade aleatória), Gaze Trail (rasto), Neon Glow e Scanlines, e fundo claro ou escuro. A tecla Esc termina a sessão a qualquer momento."
+  },
+  {
+    "q": "Isto melhora a minha visão ou a minha mira?",
+    "a": "Não há garantia. Não é um exame de visão nem uma terapia, mas uma ferramenta para praticar o olhar sobre um alvo. Não promete melhor acuidade nem melhor pontaria. Se notar algum problema nos olhos, consulte um profissional."
+  },
+  {
+    "q": "Quanto tempo devo praticar?",
+    "a": "Algumas sessões de 1 a 2 minutos com pausas chegam. Se os olhos ficarem cansados ou secos, pisque e olhe ao longe; pare se sentir dor, tontura, náusea ou dor de cabeça."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "O que é o exercício de rastreamento com mudança espacial?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É um exercício em que o campo visual se desloca ou gira de repente e você precisa reencontrar o alvo e voltar a acompanhá-lo (Krauzlis, 2004). A página registra o desempenho nessa tarefa; não mede a visão."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como mudanças bruscas de referencial afetam a visão?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quando o espaço visual se desloca ou gira rapidamente, a imagem do alvo muda de posição na retina e o olhar precisa se reajustar para reencontrá-lo (Robinson, 1965)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual o papel do córtex parietal posterior (PPC) neste exercício?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A pesquisa descreve o PPC como uma região que combina sinais da retina com informação motora para relacionar a posição do alvo na retina com a posição no espaço (Findlay & Gilchrist, 1999). O exercício não mede essa atividade cerebral."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que é a sacada de recuperação balística?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "É um salto rápido do olhar que leva a visão central até a nova posição do alvo antes de o acompanhamento suave recomeçar (Rashbass, 1961)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Este treino ajuda na mira de jogos FPS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Em jogos de tiro há recuo, tremor de tela e giros bruscos de câmera que desviam o alvo do centro. O exercício pratica reencontrar um alvo depois de uma mudança assim, mas não há garantia de transferência para a mira no jogo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Serve para esportes dinâmicos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Em esportes como futebol, basquete ou automobilismo, bola e adversários se movem em trajetórias cruzadas. O exercício pratica o acompanhamento visual na tela; não substitui treino esportivo nem garante ganho em campo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como funciona a transição da sacada para o acompanhamento suave?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Depois do salto do olhar, o acompanhamento precisa recomeçar na velocidade do alvo. Quanto mais cedo isso acontece, menos tempo você passa sem acompanhar o alvo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quantas sessões de treino são recomendadas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Uma sugestão prática é fazer algumas séries curtas de 60 segundos, com pausas. Não há um número fixo comprovado; pare se sentir cansaço ou desconforto visual."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Este exercício é gratuito e funciona sem cadastro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim, o SkillDrills oferece o treino gratuitamente no navegador, sem download e sem criar conta."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "A taxa de atualização da tela tem impacto no treino?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Monitores de 144 Hz ou mais mostram o movimento com mais quadros por segundo e reduzem o atraso entre quadros (Woods et al., 2015). Compare sessões apenas no mesmo equipamento."
-      }
-    }
-  ],
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'pt',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Fundamentos Científicos do Rastreamento com Mudança Espacial e Adaptação Ocular",
-  intro: [
-    "No dia a dia e no esporte, o rastreamento visual raramente acontece sobre cenários parados. Em sprints em piso irregular, na direção em alta velocidade ou em jogos de tiro em primeira pessoa, com tremores de tela e giros bruscos de câmera, o quadro de referência do observador pode se deslocar ou girar de repente (Krauzlis, 2004; Robinson, 1965). Reencontrar e manter o alvo na visão central nessas condições exige adaptação rápida.",
-    "Pesquisas de Findlay & Gilchrist (1999) e Kahlon & Lisberger (1996) descrevem que a posição dos estímulos é inicialmente representada em relação à retina. Quando todo o cenário se desloca, essa referência muda de uma vez, e regiões como o córtex parietal posterior ajudam a relacionar sinais visuais e comandos motores para localizar o alvo no espaço. Este exercício não mede essas estruturas; ele registra seu desempenho na tarefa.",
-    "Em seguida, o olhar costuma dar um salto rápido (sacada) até a nova posição do alvo e, ao chegar, retoma o acompanhamento suave na velocidade dele (Rashbass, 1961). O exercício pratica essa sequência de reencontrar o alvo e voltar a segui-lo sem hesitar."
+  ...{
+  "heading": "Rastreamento visual com mudança espacial: guia",
+  "intro": [
+    "O rastreamento visual com mudança espacial consiste em seguir com o olhar um alvo que avança em linha reta, ressalta nas margens e muda de direção e velocidade sem aviso. As mudanças são aleatórias e frequentes; o alvo não salta e o ecrã não se mexe.",
+    "Quando um alvo muda bruscamente de direção, o seguimento suave chega atrasado e juntam-se movimentos rápidos de correção (Robinson, 1965; Krauzlis, 2004). O exercício repete esses reajustes.",
+    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Não há pontuação nem percentagem de precisão: compare antes o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
   ],
-  benchmarks: {
-    title: "Faixas de Referência em Mudança Espacial e Reencontro do Alvo",
-    headers: ["Nível de Desempenho", "Tempo de Recentralização (ms)", "Precisão de Rastreamento (%)", "Estabilidade Pós-Sacádica", "Perfil Adaptativo"],
-    rows: [
-      ["Faixa 1 (Muito alta)", "< 220 ms", "> 95%", "> 96% (Fixação imediata)", "Transição muito rápida da sacada para o acompanhamento contínuo."],
-      ["Faixa 2 (Alta)", "220 – 280 ms", "88% – 94%", "90% – 95%", "Boa adaptação espacial, com recuperação rápida do alvo e pouco desvio."],
-      ["Faixa 3 (Boa)", "281 – 360 ms", "78% – 87%", "80% – 89%", "Recuperação consistente, com leve hesitação em rotações simultâneas."],
-      ["Faixa 4 (Intermediária)", "361 – 450 ms", "65% – 77%", "68% – 79%", "Dificuldade visível em mudanças bruscas, com várias sacadas corretivas."],
-      ["Faixa 5 (Inicial)", "> 450 ms", "< 65%", "< 68%", "Perda do referencial e busca visual reativa."]
+  "benchmarks": {
+    "title": "Etapas de prática (referência SkillDrills)",
+    "headers": [
+      "Etapa",
+      "Objetivo de prática"
     ],
-    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. ※ Referência para telas 1080p a 50–70 cm, velocidades de 1.0x a 1.5x e desvios aleatórios do referencial, avaliada pelo tempo de recentralização e pela estabilidade após a sacada."
+    "rows": [
+      [
+        "Etapa 1",
+        "1,0x, linha visível, reajustar após cada mudança"
+      ],
+      [
+        "Etapa 2",
+        "Quase não perder o alvo nas mudanças"
+      ],
+      [
+        "Etapa 3",
+        "Subir a velocidade e seguir mudanças mais rápidas"
+      ],
+      [
+        "Etapa 4",
+        "Juntar Hide Line ou Random Speed, um de cada vez"
+      ]
+    ],
+    "note": "Etapas de prática sugeridas pela SkillDrills: não são normas de teste, estatísticas de utilizadores nem percentis."
   },
-  techniques: {
-    title: "Quatro Estratégias para o Rastreamento com Mudança Espacial",
-    items: [
+  "techniques": {
+    "title": "Dicas de execução",
+    "items": [
       {
-        name: "Perceba o Deslocamento Global",
-        desc: "No momento da mudança, não procure apenas o ponto isolado. Perceba para onde o quadro inteiro se deslocou e use essa informação para reencontrar o alvo.",
-        tips: "Concentre-se em perceber para onde todo o ambiente saltou."
+        "name": "Não se antecipar demais",
+        "desc": "Mesmo nas retas, conte com uma mudança a qualquer momento e mantenha o olhar no alvo. Olhar demasiado à frente faz perdê-lo na mudança.",
+        "tips": "Se o perder muitas vezes, baixe a velocidade e mantenha a linha de direção visível."
       },
       {
-        name: "Recentralização Direta",
-        desc: "Assim que perceber a nova posição, leve o olhar até ela de uma vez. A hesitação gera vários saltos pequenos que atrasam a fixação.",
-        tips: "Leve o olhar com um movimento firme e direto."
+        "name": "Olhar para o alvo, não para o cursor",
+        "desc": "O rato não é usado. Pouse a mão e siga apenas com os olhos.",
+        "tips": "Confirme de vez em quando que a cabeça e o pescoço não acompanham o movimento."
       },
       {
-        name: "Retomada Fluida",
-        desc: "Ao reencontrar o alvo, não pare. Entre imediatamente no sentido do movimento dele para seguir acompanhando.",
-        tips: "Volte ao acompanhamento com fluidez, sem frear."
+        "name": "Dificultar uma coisa de cada vez",
+        "desc": "Aumente separadamente a velocidade, Ocultar linha e Velocidade aleatória. Se o conforto se perder, volte à definição anterior.",
+        "tips": "Depois de mudar uma definição, não compare diretamente com sessões antigas."
       },
       {
-        name: "Referência no Centro da Tela",
-        desc: "Quando a mudança incluir rotação, use o centro da tela como ponto de referência para manter a orientação.",
-        tips: "Use o centro do monitor como referência."
+        "name": "Sessões curtas e pausas",
+        "desc": "Entre sessões curtas, pisque e olhe ao longe. Mais tempo não é melhor.",
+        "tips": "Pare de imediato se sentir dor ou tontura."
       }
     ]
   },
-  steps: [
-    { title: "Fixe o alvo inicial", text: "Sente-se a uma distância confortável e acompanhe o alvo sem mover a cabeça." },
-    { title: "Observe a mudança do campo", text: "Quando a tela se deslocar, perceba primeiro a direção do movimento do quadro inteiro." },
-    { title: "Recupere o alvo", text: "Leve o olhar diretamente para a nova posição do alvo e observe o tempo de reaquisição." },
-    { title: "Retome o rastreamento", text: "Assim que reencontrar o alvo, acompanhe sua trajetória e compare precisão e erro de posição." }
+  "steps": [
+    "Sente-se a uma distância confortável do ecrã e relaxe ombros e pescoço.",
+    "Comece com 30 a 60 segundos, velocidade 1,0x e linha visível.",
+    "Quando a direção e a velocidade mudarem de repente, reajuste o olhar ao novo movimento e continue a seguir.",
+    "Depois aumente a velocidade ou ative Ocultar linha e Velocidade aleatória, um de cada vez."
   ],
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "Quem quer praticar, de forma simples, seguir com o olhar movimentos imprevisíveis."
+},
+  faqs,
   sources: pickSources('krauzlis2004', 'findlay1999', 'robinson1965', 'rashbass1961', 'kahlon1996', 'woods2015'),
   related: [
     { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Exercício de seguimento ocular lento" },
@@ -294,21 +192,21 @@ const guideProps = {
     { href: "/pt/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supressão de imagem fantasma" },
     { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Exercício ocular em oito" },
     { href: "/pt/drills/visual-tracking/sine-wave-pursuit", label: "Rastreamento em onda senoidal" }
-  ]
+  ],
 };
 
-export default function SpatialShiftPursuitPage() {
+export default function PortugueseSpatialShiftPursuitPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SpatialShiftPursuitClient copy={{ title: "Rastreamento visual com mudança espacial", subtitle: "Siga um alvo enquanto o campo visual muda" }} />
+      <SpatialShiftPursuitClient copy={{"title": "Rastreamento visual com mudança espacial", "subtitle": "Seguir um alvo que muda de direção e velocidade sem aviso", "description": "Rastreamento visual com mudança espacial: o alvo avança em linha reta, ressalta e muda em momentos aleatórios de direção e velocidade. Hide Line esconde a linha de direção. Sem cliques nem pontuação; o navegador não regista o seu olhar."}} />
+
       <DrillGuide guide={guideProps} />
+
       <RelatedDrills />
       <DrillFooter />
     </>

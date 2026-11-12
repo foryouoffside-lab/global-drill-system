@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit';
 const title = "Sinuswellen-Blickverfolgung | SkillDrills";
-const description = "Kostenlose Augenübung: Folge einem Ziel, das auf einer festen Sinuskurve von links nach rechts und zurück pendelt und dabei auf- und absteigt. Tempo einstellbar.";
+const description = "Kostenlose Augenübung: Folge einem Ziel, das auf einer festen Sinuskurve von links nach rechts und zurück pendelt und dabei auf- und absteigt.";
 
 export const metadata = {
   title,

@@ -5,283 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// JAPANESE SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "視界ブレ エイム 練習" (Screen shake aim practice) / "空間シフト 追従"
-// Secondary:    "空間認知 動体視力 トレーニング", "座標系 再編 視線", "カメラ移動 エイム 安定化", "頭頂葉 空間リマッピング"
-// LSI / Domain:  "リファレンスフレーム 変換", "網膜座標系 頭部中心座標系", "急激な視野ズレ 克服",
-//               "弾道的サッケード 再捕捉", "後頭頂皮質 PPC", "スムーズパシュート 再同期"
-// Authentic Domain Terms: 空間シフト追従（Spatial Shift Pursuit）, 座標系変換（Coordinate Transformation）, 網膜中心座標（Retinotopic Coordinates）, 頭部中心・環境中心座標（Craniotopic/Allocentric Coordinates）, 後頭頂皮質（Posterior Parietal Cortex / PPC）, サッケード再捕捉（Saccadic Re-acquisition）
-// ============================================================
+const url = 'https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit';
+const title = "軌道が急変する標的の追視トレーニング | SkillDrills";
+const description = "直線に動いて壁で跳ね返り、予告なく向きと速さが急に変わる標的を目で追う無料の追視トレーニング。速度と時間を調整できます。";
 
 export const metadata = {
-  title: "視界ブレ追従トレーニング｜空間認知ドリル | SkillDrills",
-  description: "画面や視野が動く中で標的を追う無料ブラウザ練習。空間認知、再捕捉までの時間、位置ずれを記録。",
-  keywords: [
-    "視界ブレ エイム 練習",
-    "空間シフト 追従",
-    "動体視力トレーニング",
-    "動体視力テスト",
-    "深視力 トレーニング",
-    "ビジョン トレーニング",
-    "空間認知 視線",
-    "視野ズレ 練習",
-    "カメラ移動 エイム 安定化",
-    "視線 再捕捉 練習",
-    "画面揺れ 標的追従",
-    "動く画面 追視"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "視界ブレ追従トレーニング｜空間認知ドリル | SkillDrills",
-    description: "画面や視野が動く中で標的を追う無料ブラウザ練習。空間認知、再捕捉までの時間、位置ずれを記録。",
-    type: "website",
-    url: "https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit",
-    siteName: "SkillDrills",
-    locale: "ja_JP",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "視界ブレ追従トレーニング｜空間認知ドリル | SkillDrills",
-    description: "画面や視野が動く中で標的を追う無料ブラウザ練習。空間認知、再捕捉までの時間、位置ずれを記録。",
-  },
+  title,
+  description,
+  keywords: ["軌道が急変する標的の追視トレーニング", "軌道変化 追視", "視線追従 練習", "眼球運動 トレーニング", "動く標的 追う", "無料 ブラウザ ドリル"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/spatial-shift-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ja_JP', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: "https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/spatial-shift-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://skilldrills.online/ja" },
-    { "@type": "ListItem", "position": 2, "name": "ドリル一覧", "item": "https://skilldrills.online/ja/drills" },
-    { "@type": "ListItem", "position": 3, "name": "視覚追従・アイトラッキング", "item": "https://skilldrills.online/ja/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "空間シフト追従トレーニング・視野座標系適応テスト", "item": "https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit" }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "ホーム", item: 'https://skilldrills.online/ja' },
+    { '@type': 'ListItem', position: 2, name: "ドリル一覧", item: 'https://skilldrills.online/ja/drills' },
+    { '@type': 'ListItem', position: 3, name: "視覚追従・アイトラッキング", item: 'https://skilldrills.online/ja/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "軌道が急変する標的の追視トレーニング", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "空間シフト追従トレーニング・視野座標系適応テスト",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "視野全体の参照枠（リファレンスフレーム）が突発的にオフセットまたは回転する条件下で、後頭頂皮質（PPC）の空間再マッピングを駆動して標的を即座に再捕捉するブラウザビジョントレーナー。",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit",
-  "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ja" },
-  "inLanguage": "ja",
-  "dateModified": "2026-09-20"
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "視界ブレ追従トラッカー",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas対応ブラウザ（Chrome, Edge, Firefox, Safari）",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit",
-  "inLanguage": "ja",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "視界ブレ追従エイムトレーニング",
-  "url": "https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit",
-  "description": "画面揺れや激しい視点移動の中でも標的をロストせず、弾道サッケードと即座のスムーズ追従を結合させるFPS向け適応型エイムゲーム。",
-  "genre": ["エイム練習", "視線追従", "ビジョントレーニング", "視覚ドリル"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
-  "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "軌道が急変する標的の追視トレーニング",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ja' },
+  inLanguage: 'ja',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "空間シフト追従および視野座標系リマッピングの訓練手順",
-  "description": "参照枠の突発的シフトに対して後頭頂皮質の座標変換を起動し、瞬時に追従を回復する4段階のプロトコル。",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "基本ターゲットの滑動性追従",
-      "text": "静止した基準座標系の中で滑らかに動くターゲットを中心窩でロックし、通常の円滑追従（Smooth Pursuit）に入ります。"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "空間参照系シフト発生時の視覚検知",
-      "text": "座標枠全体が瞬間的に移動・回転した瞬間、網膜上の急激な像ズレを網膜スリップ信号として即座に知覚します。"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "弾道サッケードによる瞬時再センタリング",
-      "text": "ズレた目標の新座標へ向けて最短時間の修正サッケード（跳躍眼球運動）を放ち、目標を中心窩へ引き戻します。"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "新座標系でのスムーズパシュート即時再開",
-      "text": "着地と同時に新座標系における標的の速度ベクトルと眼球速度を同期させ、追従利得1.0をミリ秒単位で再確立します。"
-    }
-  ],
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "軌道が急変する標的の追視トレーニングのやり方",
+  description: "急に向きと速さが変わる標的を見失わずに追う4ステップの練習です。",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "楽な姿勢をとる",
+    "text": "画面から楽な距離をとって座り、肩と首の力を抜きます。"
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "直線部分を追う",
+    "text": "標的が直線に動き、画面の端で跳ね返る間、目でなめらかに追います。"
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "急変に合わせ直す",
+    "text": "標的の向きと速さが急に変わったら、新しい動きに視線を合わせ直して追い続けます。"
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "設定は一つずつ",
+    "text": "慣れたら速度を上げるか、線を隠す・ランダム速度を一つずつオンにします。"
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "この追視トレーニングで標的はどう動きますか？",
+    "a": "標的は直線に動いて画面の端で跳ね返り、跳ね返るたびに少しずつ（約2%）速くなります。さらにランダムな瞬間に予告なく向きと速さが変わります。横・縦の向きがそれぞれ反転するかそのままで、速さは0.8〜1.3倍に変わります。瞬間移動や画面の揺れはありません。視線だけを使うブラウザ練習で、視力検査ではありません。"
+  },
+  {
+    "q": "向きの変化はどれくらいの頻度で起きますか？",
+    "a": "決まった周期はなくランダムに起き、たいてい1秒に1回前後と頻繁に変わります。Random Speedをオンにすると変化の確率が2倍になり、移動速度も揺れ続けます。"
+  },
+  {
+    "q": "標的から伸びる線は何ですか？",
+    "a": "現在の進行方向と速さを示す線です。Hide Lineをオンにすると消えるので、標的の動きだけから向きの変化に気づく必要があります。"
+  },
+  {
+    "q": "目の動きやスコアを記録しますか？",
+    "a": "いいえ。ブラウザは視線の向きを知ることができず、クリックや命中判定もありません。スコアはなく、終えたセッション数だけがこのブラウザに保存されます。視線を保つのは自分自身です。"
+  },
+  {
+    "q": "どんな設定を変えられますか？",
+    "a": "3-2-1のカウントダウン後、30・45・60・90・120秒（初期値60秒）のセッションが始まります。速度0.5〜9.0倍、標的サイズ10〜50px、標的の色、Hide Line（線を隠す）・Random Speed（ランダム速度）・Gaze Trail（残像）・Neon Glow・Scanlinesの各トグル、明るい／暗い背景を選べます。Escキーでいつでも終了できます。"
+  },
+  {
+    "q": "視力やゲームの腕が上がりますか？",
+    "a": "保証はできません。視力検査や治療ではなく、目で標的を見る練習ツールです。視力の改善やエイムの向上は約束しません。目の不調が気になる場合は専門医に相談してください。"
+  },
+  {
+    "q": "どれくらい練習すればよいですか？",
+    "a": "1〜2分のセッションを数回行って休む、短いブロックで十分です。目が疲れたり乾いたりしたら遠くを見てまばたきし、痛み・めまい・吐き気・頭痛があれば中止してください。"
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "空間シフト追従（Spatial Shift Pursuit）とは何ですか？通常の追従とどう違いますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "通常の追従訓練は固定された静止空間内で標的を追いますが、空間シフト追従では標的が動くだけでなく、標的が属する空間座標系（リファレンスフレーム）自体が突発的にオフセットしたり回転したりします。網膜上の像が根底から覆るため、大脳皮質後頭頂野による瞬時の座標系リマッピングが必須となります（Kahlon & Lisberger, 1996）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "FPSゲームでの「画面揺れ（スクリーンシェイク）」や激しい視点変更にどう役立ちますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "爆風による被弾ブレ、急激な視点フリック後の反動、グラップルやスライディング中の激しいカメラ回転下では、敵の相対位置が劇的に変化します。本ドリルで座標系シフトへの適応力を鍛えることで、画面が激しく揺れても敵の位置を見失わず、一瞬でクロスヘアを吸い付かせる視覚回復力が手に入ります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "座標変換（Coordinate Transformation）とは脳内で何が行われているのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "目に入った光はまず網膜上の位置（網膜中心座標：Retinotopic Frame）として処理されますが、頭や視界が動くと網膜座標は無効化されます。後頭頂皮質（PPC）は眼球位置信号と視覚入力を統合し、頭部中心座標（Craniotopic）や世界中心座標（Allocentric）へと超高速で再計算（リマッピング）を行います（Findlay & Gilchrist, 1999）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "シフト発生直後に視線が迷子になる（見当識障害）のを防ぐには？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "シフトが起きた瞬間にパニックを起こして周囲を無作為に見渡すのではなく、視野全体の『背景基準線』の変化からシフトのベクトル（方向と変位量）を直感的に把握し、標的の新位置へ最短の弾道サッケードを一閃させることが極意です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "サッケードで着地した直後、なぜ追従がカクついてしまうのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "サッケードは位置のズレを埋める運動であり、速度情報を直接補正するわけではありません。着地直後に標的の新しい速度ベクトルに外眼筋を加速同期（Post-saccadic Acceleration）させないと、着地後すぐに標的が視界から逃げてしまうためです（Krauzlis, 2004）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "モータースポーツや球技など現実スポーツでも空間シフトの適応力は使われますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "極めて頻繁に使われます。レーシングカーで縁石に乗り上げて車体が激しく跳ねた瞬間や、サッカーで相手選手と激しく接触しながらボールをコントロールする際、激動する視界の中で目標物を中心窩に固定し続けるためにこの神経系がフル稼働しています。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "難易度（スピードやシフト頻度）を上げるときのステップは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "まずは標準速度（1.0x）でシフト発生時のリカバリー時間（目標へ視線が戻るまでのラグ）を250ms以下に抑えることを目指します。慣れてきたら速度を1.5x〜2.5xへ上げ、座標回転が加わった高難度モードへ挑戦してください。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "モニターのリフレッシュレートは空間シフトの検知にどう影響しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "144Hzや240Hzの高リフレッシュレート環境では、座標枠がシフトした瞬間の過渡的なフレームブレが最小化され、シフト後の新座標が即座にクッキリと表示されます。これにより脳の座標リマッピング時間が約30〜50ms短縮されます（Woods et al., 2015）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "1日のトレーニング量と眼精疲労対策のポイントは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "空間認知とサッケード・パシュート統合は脳疲労が激しいため、1回60秒を3〜5セッション（計3〜5分）で十分です。終了後は目を温めるか、遠くの景色をぼんやり眺めて視覚皮質を休ませてください。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "長期間のトレーニングで脳の空間リマッピング回路は強化されますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "はい。繰り返しの訓練で、視界が揺れても標的を見失いにくくなる可能性があります。効果には個人差があります。"
-      }
-    }
-  ],
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'ja',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "空間シフト追従トレーニングの科学的根拠と視野座標適応ガイド",
-  intro: [
-    "視界ブレ追従トレーニングとは、画面や視野が揺れたりずれたりする中でも標的を見失わずに追う練習です。このページでは視野のずれのあとに標的を再び捉えるまでの時間や位置のズレを確認できます。",
-    "生物の視覚システムは、自己の身体や頭部が静止していることのみを前提にして作られているわけではありません。激しい運動、疾走、転倒、あるいは対戦ゲームにおける激しいカメラワークや被弾ショックなど、自己を取り巻く視野の基準枠（Reference Frame）そのものが急激に変位する状況下でも、生存に関わる重要対象を中心窩（Fovea）に捕捉し続けなければなりません。この過酷な視覚課題をクリアする脳の能力が「空間シフト適応的追従（Spatial Shift Adaptive Pursuit）」です。",
-    "視覚神経科学の権威フィンドレイ（Findlay & Gilchrist, 1999）およびカーロン＆リスバーガー（Kahlon & Lisberger, 1996）の研究によれば、目に入った視覚像は最初、網膜の中心からの相対位置である「網膜中心座標系（Retinotopic Frame）」にマッピングされます。しかし、空間全体が突発的にズレるとこの座標は完全に破綻します。後頭頂皮質（Posterior Parietal Cortex: PPC）は、眼球位置情報と前庭感覚（頭部の傾き）を統合し、網膜座標を即座に「頭部中心座標（Craniotopic）」および「空間・環境中心座標（Allocentric）」へと瞬時に変換（Coordinate Transformation）します。",
-    "この座標リマッピングが行われると、脳は直ちに2段階の運動命令を発行します。第1段階は、ズレてしまった標的の新座標へと視線を最短時間（約20〜40msの飛行時間）で跳躍させる「弾道的サッケード（Ballistic Saccade）」です。そして第2段階は、着地した瞬間に新座標系における標的の速度ベクトルを即座に学習・同期させる「サッケード後スムーズパシュート加速（Post-saccadic Pursuit Acceleration）」です（Krauzlis, 2004; Rashbass, 1961）。この連携が1ミリ秒でも乱れると、視線は標的の遥か後方に置き去りにされます。",
-    "本ドリル（Spatial Shift Pursuit）は、標的の追従中に座標枠全体を予告なく跳躍・変位させ、後頭頂皮質と前頭眼野の座標変換ネットワークに極限の負荷をかけます。激しい画面揺れや混沌とした乱戦下でも一瞬の迷いなく標的を再ロックする、真のプロフェッショナルな視覚適応力を手に入れてください。"
+  ...{
+  "heading": "軌道が急変する標的の追視トレーニングガイド",
+  "intro": [
+    "軌道が急変する標的の追視トレーニングは、直線に動いて壁で跳ね返り、予告なく向きと速さが急に変わる標的を目で追うブラウザ練習です。変化はランダムかつ頻繁に起き、標的が瞬間移動したり画面が動いたりすることはありません。",
+    "動く標的の向きが急に変わると、なめらかな追従だけでは遅れ、視線を素早く移す補正の動きが混ざると説明されています（Robinson, 1965; Krauzlis, 2004）。この練習はそうした合わせ直しがくり返される場面をつくります。",
+    "ブラウザが知っているのは標的を描いた位置と設定だけで、目が実際にどこを見たかは記録できません。スコアや正確さの数値もないので、同じ画面・距離・設定で自分の楽さと集中を比べてください。リフレッシュレートや表示遅延も見え方に影響します（Woods et al., 2015）。"
   ],
-  benchmarks: {
-    title: "空間シフト適応力および座標再編リカバリー標準ベンチマーク (Spatial Shift Recovery)",
-    headers: ["習熟度クラス", "シフト後 追従復帰時間 (ms)", "空間再捕捉精度 (Accuracy %)", "サッケード着地後 安定度", "適応的空間プロファイル"],
-    rows: [
-      ["最上位段階", "220ms 未満 (電光石火の復帰)", "95% 以上", "96% 以上 (着地即時ロック)", "安定した後頭頂葉リマッピングと無遅延再同期"],
-      ["マスター (Master)", "220ms ~ 280ms", "88% ~ 94%", "90% ~ 95%", "極めて高い適応力、画面揺れへの即時耐性"],
-      ["ダイヤモンド (Diamond)", "281ms ~ 360ms", "78% ~ 87%", "80% ~ 89%", "標準的リカバリー、激しい回転シフト時に微遅延"],
-      ["ゴールド (Gold)", "361ms ~ 450ms", "65% ~ 77%", "68% ~ 79%", "シフト直後に見当識の迷い、追従再開に遅れ"],
-      ["ビギナー (Beginner)", "450ms 超過", "65% 未満", "68% 未満", "空間座標崩壊、標的を完全にロスト"]
+  "benchmarks": {
+    "title": "練習の段階（SkillDrillsの目安）",
+    "headers": [
+      "段階",
+      "練習の目標"
     ],
-    note: "※ 本基準は1080p解像度、標準速度1.0x〜1.5x、ランダム空間シフトモードにおける実測データに基づきます。シフト発生から標的中心窩捕捉が再確立されるまでのレイテンシを評価しています。"
+    "rows": [
+      [
+        "段階1",
+        "1.0倍・方向線表示で急変後に合わせ直す"
+      ],
+      [
+        "段階2",
+        "向きが変わってもほとんど見失わない"
+      ],
+      [
+        "段階3",
+        "速度を上げ、速い急変に慣れる"
+      ],
+      [
+        "段階4",
+        "Hide LineかRandom Speedを一つずつ追加"
+      ]
+    ],
+    "note": "SkillDrillsの練習段階の目安であり、検査基準・利用者統計・パーセンタイルではありません。"
   },
-  techniques: {
-    title: "空間シフトと視野ブレを制圧する4大適応技術",
-    items: [
+  "techniques": {
+    "title": "練習のコツ",
+    "items": [
       {
-        name: "後頭頂皮質の座標系瞬間リマッピング (PPC Coordinate Remapping)",
-        desc: "画面がズレた瞬間、ターゲットそのものを目で探すのではなく、画面全体のシフト方向と距離を一瞬で知覚し、頭の中で座標軸を平行移動させます。視覚皮質ではなく頭頂葉の空間認識を起動することがカギです。",
-        tips: "「目標がどこへ行ったか」ではなく、「空間全体が右にどれだけズレたか」を視野全体で直感してください。"
+        "name": "先回りしすぎない",
+        "desc": "直線部分でもいつでも向きが変わり得ると考え、標的そのものに視線を置きます。先を見すぎると急変で大きく見失います。",
+        "tips": "よく見失うなら速度を下げ、方向線を表示した状態に戻します。"
       },
       {
-        name: "弾道的再センタリングサッケード (Ballistic Re-Centering)",
-        desc: "新座標を認識したら、躊躇なく一息に視線を新位置へ跳ばします。途中で視線を修正しようとすると二段サッケードになり、回復時間が100ms以上遅延します。",
-        tips: "迷わず一撃で新位置のスナップを打つイメージで、視線の跳躍を一閃させてください。"
+        "name": "カーソルではなく標的を見る",
+        "desc": "マウスは使わなくて構いません。手を置いたまま、目だけで標的を見ます。",
+        "tips": "頭や首が一緒に動いていないか時々確認します。"
       },
       {
-        name: "サッケード直後の追従ハンドシェイク (Post-Saccadic Gain Handshake)",
-        desc: "視線が標的に着地した瞬間、視覚フィードバックを待たずに新座標系での標的速度に合わせて外眼筋を加速させます。位置の修正と速度の同期をシームレスに結合させます。",
-        tips: "着地した瞬間にピタッと止まらず、着地と同時に目標の進む方向へ視線をスライドさせましょう。"
+        "name": "難しくするのは一つずつ",
+        "desc": "速度、線を隠す、ランダム速度は別々に上げます。楽さが崩れたら前の設定に戻します。",
+        "tips": "設定を変えたら前のセッションと直接比べないでください。"
       },
       {
-        name: "視野回転に対する見当識維持 (Rotational Desorientation Shield)",
-        desc: "座標系が回転を伴う場合、上下左右の認知が一瞬狂いやすくなります。画面の中心軸をアンカー（錨）として意識しておくことで、回転シフト後も即座に方向感覚を復元できます。",
-        tips: "視界の中心点に意識の芯を残しておくと、空間が回転しても身体の平衡感覚がブレなくなります。"
+        "name": "短くやって休む",
+        "desc": "短いセッションの間にまばたきし、遠くを見ます。長くやれば良いわけではありません。",
+        "tips": "痛みやめまいがあればすぐにやめます。"
       }
     ]
   },
-  steps: [
-    "準備と視認性確保: ディスプレイから約50〜70cmの距離を保ち、頭部を真っ直ぐ固定して視野の中心を捉えます。",
-    "基準追従の開始: [開始] ボタンを押し、まずは静止空間内で動くターゲットを中心に視線を合わせます。",
-    "空間シフトへの即応: 突然枠組みがジャンプ・回転したら、直ちに頭頂葉で新座標を計算し、弾道サッケードで再捕捉します。",
-    "60秒間の極限集中: 連続して発生する突発的空間シフトに対し、一度も標的を見失わないよう食らいつき続けます。",
-    "回復タイムと精度の確認: セッション終了後、シフトごとの平均リカバリー時間（ms）と追従精度を確認し、空間適応力の向上度を記録します。"
+  "steps": [
+    "画面から楽な距離をとって座り、肩と首の力を抜きます。",
+    "30〜60秒、速度1.0倍、線を表示した状態で始めます。",
+    "標的の向きと速さが急に変わったら、新しい動きに視線を合わせ直して追います。",
+    "慣れたら速度を上げるか、線を隠す・ランダム速度を一つずつオンにします。"
   ],
-  audience: "Apex、VALORANT、Fortniteなどで被弾ブレや急激なカメラ回転下でも敵を見失わないエイム力を鍛えたいゲーマー、格闘技や球技で激しい体勢変化の中でもボールや相手を捉え続けたいアスリート、空間認識と動体適応力を高めたいすべての人。",
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "予測しにくい動きを目で追う練習を、気軽に試したい人。"
+},
+  faqs,
   sources: pickSources('krauzlis2004', 'findlay1999', 'robinson1965', 'rashbass1961', 'kahlon1996', 'woods2015'),
   related: [
     { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング" },
@@ -290,49 +192,22 @@ const guideProps = {
     { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像抑制固視トレーニング" },
     { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字眼球運動トレーニング" },
     { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "遮蔽軌道予測テスト" }
-  ]
+  ],
 };
 
 export default function JapaneseSpatialShiftPursuitPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SpatialShiftPursuitClient
-        copy={{
-          title: "視界ブレ追従トレーニング",
-          subtitle: "動く画面で標的を追う空間認知ドリル",
-          description: "画面や視野が動く中で標的を追い、再捕捉までの時間と位置ずれを記録する無料ブラウザ練習です。"
-        }}
-      />
+      <SpatialShiftPursuitClient copy={{"title": "軌道が急変する標的の追視トレーニング", "subtitle": "予告なく向きと速さが変わる標的を追う", "description": "直線に動いて壁で跳ね返り、ランダムな瞬間に向きと速さが変わる標的を目で追う練習です。Hide Lineで方向線が消えます。クリックやスコアはなく、ブラウザは視線を記録しません。"}} />
 
       <DrillGuide guide={guideProps} />
 
       <RelatedDrills />
-
       <DrillFooter />
     </>
   );

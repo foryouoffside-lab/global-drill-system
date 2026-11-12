@@ -5,287 +5,185 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/fr/drills/visual-tracking/spatial-shift-pursuit';
+const title = "Poursuite visuelle à trajectoire changeante | SkillDrills";
+const description = "Exercice gratuit : la cible avance en ligne droite, rebondit sur les bords et change sans prévenir de direction et de vitesse. Gardez-la dans votre regard.";
+
 export const metadata = {
-  title: "Poursuite visuelle avec saut spatial | SkillDrills",
-  description: "Suivez une cible pendant un changement du champ visuel. Exercice gratuit avec temps de réaction, réacquisition et écart de position.",
-  keywords: [
-    "saut spatial poursuite visuelle",
-    "remappage visuel exercice",
-    "écran qui tremble entraînement visuel",
-    "suivre une cible dans un champ mobile",
-    "attention spatiale exercice",
-    "réacquisition visuelle entraînement",
-    "changement de repère visuel",
-    "poursuite sous mouvement d'écran",
-    "coordination œil cible",
-    "écart de position visuelle",
-    "exercice de poursuite visuelle",
-    "entraînement de suivi de cible"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/fr/drills/visual-tracking/spatial-shift-pursuit",
-    languages: getAlternateLanguages('/drills/visual-tracking/spatial-shift-pursuit'),
-  },
+  title,
+  description,
+  keywords: ["poursuite visuelle à trajectoire changeante", "changement de trajectoire", "poursuite oculaire", "exercice des yeux en ligne", "suivre une cible mobile", "exercice oculaire gratuit"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/spatial-shift-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'fr_FR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Poursuite visuelle avec saut spatial | SkillDrills",
-    description: "Suivez une cible pendant un changement du champ visuel. Exercice gratuit avec temps de réaction, réacquisition et écart de position.",
-    url: "https://skilldrills.online/fr/drills/visual-tracking/spatial-shift-pursuit",
-    siteName: 'SkillDrills',
-    locale: 'fr_FR',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Poursuite visuelle avec saut spatial | SkillDrills",
-    description: "Suivez une cible pendant un changement du champ visuel. Exercice gratuit avec temps de réaction, réacquisition et écart de position.",
-  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Accueil",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Exercices",
-      "item": "https://skilldrills.online/fr/drills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Poursuite Visuelle",
-      "item": "https://skilldrills.online/fr/drills/visual-tracking"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Poursuite avec Saut Spatial",
-      "item": "https://skilldrills.online/fr/drills/visual-tracking/spatial-shift-pursuit"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: "Accueil", item: 'https://skilldrills.online/fr' },
+    { '@type': 'ListItem', position: 2, name: "Exercices", item: 'https://skilldrills.online/fr/drills' },
+    { '@type': 'ListItem', position: 3, name: "Poursuite Visuelle", item: 'https://skilldrills.online/fr/drills/visual-tracking' },
+    { '@type': 'ListItem', position: 4, name: "Poursuite visuelle à trajectoire changeante", item: url },
+  ],
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "Poursuite avec Saut Spatial",
-  "operatingSystem": "Navigateur Web",
-  "applicationCategory": "HealthApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD"
-  },
-  "description": "Outil de pratique visuelle pour observer la récupération du regard lors des changements du repère spatial.",
-  "dateModified": "2026-09-20"
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Exercice de Poursuite avec Saut Spatial",
-  "url": "https://skilldrills.online/fr/drills/visual-tracking/spatial-shift-pursuit",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Tous les navigateurs modernes",
-  "browserRequirements": "Nécessite le support de JavaScript et HTML5 Canvas",
-  "dateModified": "2026-09-20"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Poursuite visuelle avec saut spatial",
-  "description": "Exercice de poursuite oculaire : le champ visuel se décale ou pivote pendant que vous suivez une cible, et le temps de réacquisition est mesuré.",
-  "genre": ["Entraînement visuel", "Poursuite lente", "Entraînement des réflexes"],
-  "playMode": "SinglePlayer",
-  "gamePlatform": "Navigateur Web",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Poursuite visuelle à trajectoire changeante",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
+  inLanguage: 'fr',
+  dateModified: '2026-11-12',
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Comment suivre une cible quand le champ visuel se décale",
-  "description": "Quatre étapes pour retrouver la cible après un saut spatial et reprendre la poursuite.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Suivre la cible au départ",
-      "text": "Placez-vous à 50-70 cm de l’écran et gardez une poursuite continue sur la trajectoire initiale."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Repérer le décalage du champ",
-      "text": "Quand l’écran se décale ou pivote, repérez d’abord la direction du mouvement d’ensemble sans balayer au hasard."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Retrouver la cible d’un seul saut",
-      "text": "Dirigez le regard vers la nouvelle position de la cible sans hésitation."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Reprendre la poursuite",
-      "text": "Dès que la cible est retrouvée, suivez sa trajectoire de façon fluide et comparez ensuite votre écart de position."
-    }
-  ],
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "Comment suivre une cible à trajectoire changeante",
+  description: "Quatre étapes pour suivre une cible qui change brusquement de direction et de vitesse.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "S’installer confortablement",
+    "text": "Asseyez-vous à une distance confortable de l’écran, épaules et nuque relâchées."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Suivre les lignes droites",
+    "text": "Suivez la cible calmement pendant qu’elle avance en ligne droite et rebondit sur les bords."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Se recaler après un changement",
+    "text": "Quand la direction et la vitesse changent soudain, recalez le regard sur le nouveau mouvement et continuez."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Un réglage à la fois",
+    "text": "Quand c’est facile, augmentez la vitesse ou activez Masquer la ligne puis Vitesse aléatoire, l’un après l’autre."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "Comment la cible se déplace-t-elle dans cet exercice ?",
+    "a": "La cible avance en ligne droite, rebondit sur les bords et accélère légèrement à chaque rebond (environ 2 %). À des moments aléatoires, elle change sans prévenir de direction et de vitesse : le sens horizontal et le sens vertical s’inversent ou non, et la vitesse est multipliée par 0,8 à 1,3. Il n’y a ni saut ni mouvement de l’écran. C’est un exercice du regard, pas un examen de la vue."
+  },
+  {
+    "q": "À quelle fréquence la trajectoire change-t-elle ?",
+    "a": "Sans rythme fixe, au hasard, le plus souvent environ une fois par seconde. Avec Random Speed, la probabilité de changement double et la vitesse varie en plus en continu."
+  },
+  {
+    "q": "À quoi sert le trait sur la cible ?",
+    "a": "Il montre la direction et la vitesse actuelles. Avec Hide Line, il disparaît : il faut alors repérer le changement au seul mouvement de la cible."
+  },
+  {
+    "q": "L’exercice mesure-t-il mes mouvements oculaires ou un score ?",
+    "a": "Non. Le navigateur ne sait pas où vous regardez et il n’y a ni clic ni détection de touche. Il n’y a pas de score : seul le nombre de séances terminées est enregistré dans ce navigateur. C’est à vous de garder le regard là où l’exercice le demande."
+  },
+  {
+    "q": "Quels réglages sont disponibles ?",
+    "a": "Après un compte à rebours 3-2-1, la séance dure 30, 45, 60, 90 ou 120 secondes (60 par défaut). Vous réglez la vitesse de 0,5x à 9,0x, la taille de la cible de 10 à 50 px, sa couleur, les options Hide Line (masquer la ligne), Random Speed (vitesse aléatoire), Gaze Trail (traînée), Neon Glow et Scanlines, ainsi qu’un fond clair ou sombre. Échap arrête la séance à tout moment."
+  },
+  {
+    "q": "Est-ce que ma vue ou ma visée vont s’améliorer ?",
+    "a": "Rien n’est garanti. Ce n’est ni un examen de la vue ni une thérapie, mais un outil pour s’exercer à regarder une cible. Il ne promet ni meilleure acuité ni meilleure visée. En cas de gêne visuelle, consultez un professionnel."
+  },
+  {
+    "q": "Combien de temps s’entraîner ?",
+    "a": "Quelques séances de 1 à 2 minutes avec des pauses suffisent. Si vos yeux sont fatigués ou secs, clignez et regardez au loin ; arrêtez en cas de douleur, vertige, nausée ou mal de tête."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Qu’est-ce qu’une poursuite visuelle avec saut spatial ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Vous suivez une cible pendant que le champ visuel se décale ou pivote d’un coup. L’exercice mesure le temps que vous mettez à la retrouver, puis votre précision et votre écart de position. Ce n’est pas un test médical."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi le décalage du champ perturbe-t-il le suivi ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quand tout le champ bouge d’un coup, la position de la cible sur la rétine change brutalement. Le regard doit retrouver la cible avant de reprendre une poursuite fluide (Robinson, 1965 ; Krauzlis, 2004)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qu’est-ce qu’une saccade ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "C’est un saut très rapide du regard d’un point à un autre. Après un saut spatial, une saccade ramène la fovéa sur la cible avant que la poursuite lente reprenne (Rashbass, 1961)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que signifie le temps de réacquisition affiché ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "C’est le délai entre le décalage du champ et le moment où votre regard est de nouveau sur la cible. Il dépend de l’écran, de la distance, de la vitesse choisie et de votre attention, donc comparez vos séries dans les mêmes conditions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cet exercice aide-t-il dans les jeux de tir ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il reproduit la reprise de cible après un à-coup de caméra ou un recul, mais aucune étude ne démontre à ce jour un gain de score en jeu à partir de cet exercice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Faut-il anticiper le saut ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Les sauts sont aléatoires : il vaut mieux repérer la direction du mouvement d’ensemble, puis retrouver la cible d’un seul saut du regard plutôt que de la chercher en balayant l’écran."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que faire si je perds régulièrement la cible ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Baissez la vitesse, gardez la tête immobile et fixez le centre de l’écran comme repère. Augmentez la vitesse seulement quand vous retrouvez la cible régulièrement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "La fréquence de rafraîchissement de l’écran compte-t-elle ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, un peu. Un écran à 144 Hz affiche le mouvement plus souvent qu’un écran à 60 Hz, ce qui peut rendre le décalage plus lisible. Comparez toujours sur le même écran (Woods et al., 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cet exercice est-il gratuit ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. Il fonctionne gratuitement dans votre navigateur, sans inscription, et vos résultats restent enregistrés localement sur votre appareil."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Combien de temps s’entraîner ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quelques séries de 60 secondes, soit 5 à 8 minutes par séance, suffisent pour suivre votre progression. Arrêtez-vous en cas de fatigue ou d’inconfort visuel."
-      }
-    }
-  ],
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'fr',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guideProps = {
-  heading: "Poursuite avec saut spatial : principes et repères",
-  intro: [
-    "Cet exercice de poursuite visuelle avec saut spatial vous demande de suivre une cible alors que le champ visuel se décale ou pivote d’un coup. Il mesure le temps pour retrouver la cible, votre précision de suivi et l’écart de position. C’est un entraînement avec des repères personnels, pas un examen médical.",
-    "Quand tout le champ bouge, la cible quitte le centre de votre regard. Une saccade, saut rapide du regard, la ramène sur la fovéa, puis la poursuite lente reprend (Rashbass, 1961 ; Krauzlis, 2004). Le cerveau doit pour cela mettre à jour la position de la cible dans l’espace (Findlay & Gilchrist, 1999).",
-    "Le résultat dépend de l’écran, de la distance, de la vitesse choisie et de votre attention. Comparez vos séances dans les mêmes conditions."
+  ...{
+  "heading": "Poursuite visuelle à trajectoire changeante : le guide",
+  "intro": [
+    "La poursuite visuelle à trajectoire changeante consiste à suivre des yeux une cible qui avance en ligne droite, rebondit sur les bords et change sans prévenir de direction et de vitesse. Les changements sont aléatoires et fréquents ; la cible ne saute pas et l’écran ne bouge pas.",
+    "Quand une cible change brusquement de direction, la poursuite lisse arrive en retard et de rapides mouvements de correction s’y ajoutent (Robinson, 1965 ; Krauzlis, 2004). L’exercice répète ces réajustements.",
+    "Le navigateur connaît seulement la position où la cible est dessinée et vos réglages, pas l’endroit où vos yeux regardent réellement. Il n’affiche ni score ni précision : comparez plutôt votre aisance et votre concentration avec le même écran, la même distance et les mêmes réglages. La fréquence de rafraîchissement et la latence d’affichage changent aussi le rendu du mouvement (Woods et al., 2015)."
   ],
-  benchmarks: {
-    title: "Repères indicatifs de réacquisition après un saut spatial",
-    headers: ["Palier", "Temps de réacquisition", "Précision de suivi", "Lecture"],
-    rows: [
-      ["Très rapide", "Moins de 220 ms", "Plus de 95 %", "Retrouve la cible d’un seul saut et reprend la poursuite aussitôt"],
-      ["Rapide", "220 – 280 ms", "88 – 94 %", "Réacquisition rapide avec une dérive minime"],
-      ["Correct", "281 – 360 ms", "78 – 87 %", "Récupération régulière, légère hésitation quand le champ pivote"],
-      ["À travailler", "361 – 450 ms", "65 – 77 %", "Désorientation après les sauts brusques, saccades correctrices"],
-      ["Débutant", "Plus de 450 ms", "Moins de 65 %", "Suivi surtout réactif ; réduisez la vitesse"]
+  "benchmarks": {
+    "title": "Étapes de pratique (repères SkillDrills)",
+    "headers": [
+      "Étape",
+      "Objectif de pratique"
     ],
-    note: "Repères éditoriaux propres à cet exercice, pour un écran à 50-70 cm entre 1.0x et 1.5x. Ce ne sont ni des normes cliniques ni un classement de population."
+    "rows": [
+      [
+        "Étape 1",
+        "1,0x, trait visible, se recaler après chaque changement"
+      ],
+      [
+        "Étape 2",
+        "Ne presque plus perdre la cible lors des changements"
+      ],
+      [
+        "Étape 3",
+        "Augmenter la vitesse, suivre des changements plus rapides"
+      ],
+      [
+        "Étape 4",
+        "Ajouter Hide Line ou Random Speed, un à la fois"
+      ]
+    ],
+    "note": "Repères de pratique proposés par SkillDrills : ni normes de test, ni statistiques d’utilisateurs, ni percentiles."
   },
-  techniques: {
-    title: "Quatre points de technique après un saut spatial",
-    items: [
+  "techniques": {
+    "title": "Conseils d’exécution",
+    "items": [
       {
-        name: "Repérer le mouvement d’ensemble",
-        desc: "Ne cherchez pas seulement le point isolé : repérez dans quelle direction le champ entier s’est décalé, puis dirigez le regard vers la position attendue.",
-        tips: "Demandez-vous d’abord de quel côté l’ensemble de l’écran a bougé."
+        "name": "Ne pas anticiper à l’excès",
+        "desc": "Même en ligne droite, attendez-vous à un changement à tout moment et gardez le regard sur la cible. Regarder trop loin devant fait perdre la cible au changement.",
+        "tips": "Si vous la perdez souvent, baissez la vitesse et gardez le trait de direction visible."
       },
       {
-        name: "Retrouver la cible d’un seul saut",
-        desc: "Une fois la direction repérée, envoyez le regard franchement vers la nouvelle position. L’hésitation allonge le temps de réacquisition.",
-        tips: "Évitez de balayer l’écran ; visez directement le point attendu."
+        "name": "Regarder la cible, pas le curseur",
+        "desc": "La souris n’est pas utilisée. Posez la main et suivez uniquement avec les yeux.",
+        "tips": "Vérifiez de temps en temps que la tête et la nuque ne tournent pas."
       },
       {
-        name: "Enchaîner avec la poursuite",
-        desc: "Ne bloquez pas le regard à l’arrivée : reprenez tout de suite le mouvement fluide dans la direction de la cible.",
-        tips: "Accompagnez la cible dès que vous l’avez retrouvée."
+        "name": "Un seul paramètre plus difficile à la fois",
+        "desc": "Augmentez séparément la vitesse, Masquer la ligne et Vitesse aléatoire. Si l’aisance disparaît, revenez au réglage précédent.",
+        "tips": "Après un changement, ne comparez pas directement avec les anciennes séances."
       },
       {
-        name: "Garder un repère au centre",
-        desc: "Quand le champ pivote, le centre de l’écran sert de repère stable pour se réorienter.",
-        tips: "Gardez la tête immobile et revenez au centre si vous perdez la cible."
+        "name": "Court, avec des pauses",
+        "desc": "Entre deux séances courtes, clignez des yeux et regardez au loin. Plus long n’est pas mieux.",
+        "tips": "Arrêtez immédiatement en cas de douleur ou de vertige."
       }
     ]
   },
-  steps: [
-    { title: "Fixez la cible au départ", text: "Installez-vous à une distance confortable et suivez la cible sans bouger la tête." },
-    { title: "Observez le changement du champ", text: "Quand l’écran se déplace, repérez d’abord la direction du mouvement de l’ensemble." },
-    { title: "Récupérez la cible", text: "Déplacez le regard directement vers sa nouvelle position et observez le temps de réacquisition." },
-    { title: "Reprenez la poursuite", text: "Une fois la cible retrouvée, suivez sa trajectoire et comparez précision et écart de position." }
+  "steps": [
+    "Asseyez-vous à une distance confortable de l’écran, épaules et nuque relâchées.",
+    "Commencez par 30 à 60 secondes, vitesse 1,0x, ligne visible.",
+    "Quand la direction et la vitesse changent soudain, recalez le regard sur le nouveau mouvement et continuez à suivre.",
+    "Ensuite, augmentez la vitesse ou activez Masquer la ligne puis Vitesse aléatoire, un réglage à la fois."
   ],
-  faqs: faqSchema.mainEntity.map(item => ({
-    q: item.name,
-    a: item.acceptedAnswer.text
-  })),
+  "audience": "Toute personne qui veut s’exercer simplement à suivre des yeux des mouvements imprévisibles."
+},
+  faqs,
   sources: pickSources('krauzlis2004', 'findlay1999', 'robinson1965', 'rashbass1961', 'kahlon1996', 'woods2015'),
   related: [
     { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Exercice de poursuite lente constante" },
@@ -294,21 +192,21 @@ const guideProps = {
     { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Suppression des images fantômes" },
     { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Exercice oculaire en forme de huit" },
     { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite visuelle en onde sinusoïdale" }
-  ]
+  ],
 };
 
-export default function SpatialShiftPursuitPage() {
+export default function FrenchSpatialShiftPursuitPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SpatialShiftPursuitClient copy={{ title: "Poursuite visuelle avec saut spatial", subtitle: "Suivez une cible pendant un changement du champ visuel" }} />
+      <SpatialShiftPursuitClient copy={{"title": "Poursuite visuelle à trajectoire changeante", "subtitle": "Suivre une cible qui change de direction et de vitesse sans prévenir", "description": "Poursuite visuelle à trajectoire changeante : la cible avance en ligne droite, rebondit et change à des moments aléatoires de direction et de vitesse. Hide Line masque le trait de direction. Pas de clic ni de score ; le navigateur n’enregistre pas votre regard."}} />
+
       <DrillGuide guide={guideProps} />
+
       <RelatedDrills />
       <DrillFooter />
     </>

@@ -33,3 +33,5 @@
 {"phrase": "test vitesse de lecture", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
 {"phrase": "test multitâche", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
 {"phrase": "attention divisée", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test d'attention", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test sdmt", "cc": "fr", "lang": "fr-FR", "exact": 0, "broad": 0, "status": "ok"}
