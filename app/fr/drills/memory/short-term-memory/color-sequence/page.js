@@ -6,7 +6,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
   title: "Jeu Simon en ligne | Mémoire des couleurs | SkillDrills",
-  description: "Joue à Simon gratuitement : mémorise une suite de couleurs et de sons qui s'allonge, puis reproduis-la dans le bon ordre.",
+  description: "Jeu Simon en ligne gratuit : mémorise la suite de couleurs qui s'allume, puis reproduis-la sur 6 touches. Dès 3 couleurs, une de plus à chaque réussite.",
   keywords: [
     "jeu Simon en ligne",
     "jeu de mémoire de couleurs",
@@ -35,7 +35,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Jeu Simon en ligne | Mémoire des couleurs | SkillDrills",
-    description: "Joue à Simon gratuitement : mémorise une suite de couleurs et de sons qui s'allonge, puis reproduis-la dans le bon ordre.",
+    description: "Jeu Simon en ligne gratuit : mémorise la suite de couleurs qui s'allume, puis reproduis-la sur 6 touches. Dès 3 couleurs, une de plus à chaque réussite.",
     url: "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -44,7 +44,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Jeu Simon en ligne | Mémoire des couleurs | SkillDrills",
-    description: "Joue à Simon gratuitement : mémorise une suite de couleurs et de sons qui s'allonge, puis reproduis-la dans le bon ordre.",
+    description: "Jeu Simon en ligne gratuit : mémorise la suite de couleurs qui s'allume, puis reproduis-la sur 6 touches. Dès 3 couleurs, une de plus à chaque réussite.",
   },
 };
 
@@ -66,7 +66,7 @@ export default function FrenchColorSequencePage() {
     "name": "Jeu Simon en ligne",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Jeu gratuit dans le navigateur : retenez et reproduisez des suites de couleurs de plus en plus longues pour exercer la mémoire de travail visuelle.",
     "genre": "Entraînement cognitif / mémoire visuelle de travail",
@@ -83,8 +83,8 @@ export default function FrenchColorSequencePage() {
     "@type": "WebApplication",
     "name": "Jeu Simon en ligne",
     "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence",
-    "description": "Jeu de mémoire Simon gratuit dans le navigateur, avec 6 touches colorées et une difficulté adaptative.",
-    "dateModified": "2026-09-16",
+    "description": "Jeu de mémoire de type Simon, gratuit dans le navigateur : 6 touches colorées, 3 couleurs au niveau 1, une couleur de plus à chaque suite réussie.",
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
@@ -113,7 +113,7 @@ export default function FrenchColorSequencePage() {
         "name": "Qu’est-ce que le jeu Simon et comment fonctionne-t-il ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le jeu Simon est un défi de mémorisation séquentielle. Une suite de signaux lumineux et sonores s’allonge à chaque manche, et vous devez la reproduire dans le même ordre en cliquant sur les touches colorées."
+          "text": "C’est un jeu de mémoire de type Simon (pas le jouet Hasbro). Les couleurs s’allument une à une dans le cercle central, puis vous les reproduisez dans le même ordre sur les 6 touches colorées. Le niveau 1 compte 3 couleurs (longueur = niveau + 2) ; une suite réussie fait monter d’un niveau, une erreur fait descendre d’un niveau. Chaque manche est une nouvelle suite aléatoire et la séance dure 45 secondes."
         }
       },
       {
@@ -129,7 +129,7 @@ export default function FrenchColorSequencePage() {
         "name": "Quelle est la limite d’empan selon Luck et Vogel (1997) ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Luck et Vogel (1997) ont montré que la mémoire de travail visuelle retient environ 3 à 4 éléments en même temps. Au-delà, regrouper les éléments en blocs devient nécessaire."
+          "text": "Luck et Vogel (1997) ont montré que la mémoire de travail visuelle retient environ 3 à 4 éléments en même temps. Leur étude portait sur des objets montrés simultanément, pas sur des suites, mais elle explique pourquoi regrouper les couleurs en blocs aide sur les suites longues."
         }
       },
       {
@@ -153,7 +153,7 @@ export default function FrenchColorSequencePage() {
         "name": "Y a-t-il une pénalité en cas d’erreur ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Aucun temps n’est retiré du chronomètre et les points déjà gagnés sont conservés. Après une erreur ou un délai dépassé, la suite recule d’un niveau pour que la séance continue."
+          "text": "Aucun temps n’est retiré du chronomètre et les points déjà gagnés sont conservés. Une mauvaise couleur, ou 8 secondes sans appuyer, fait reculer d’un niveau (minimum niveau 1) et une nouvelle suite aléatoire commence."
         }
       },
       {
@@ -161,7 +161,7 @@ export default function FrenchColorSequencePage() {
         "name": "Quel niveau correspond à une bonne performance ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les paliers du tableau sont des repères propres à ce jeu : à partir du niveau 8, vous retenez des suites de plus de quatre couleurs, ce qui suppose un regroupement actif. Ce ne sont pas des statistiques de population."
+          "text": "Il n’existe pas de norme officielle. Les paliers du tableau sont des repères propres à ce jeu : au niveau L, la suite compte L + 2 couleurs et une suite réussie rapporte 100 × (1 + 0,1 × L) points. Dès le niveau 8 (10 couleurs), il faut regrouper activement. Ce ne sont pas des statistiques de population."
         }
       },
       {
@@ -202,7 +202,7 @@ export default function FrenchColorSequencePage() {
         "position": 1,
         "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence#step-1",
         "name": "Suivez l’allumage des touches",
-        "text": "Gardez le regard au centre des six boutons pour capter la succession de lumières et de sons sans vous précipiter."
+        "text": "Gardez le regard sur le cercle central où les couleurs s’allument une à une."
       },
       {
         "@type": "HowToStep",
@@ -223,7 +223,7 @@ export default function FrenchColorSequencePage() {
         "position": 4,
         "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence#step-4",
         "name": "Montez de niveau",
-        "text": "À chaque réussite, la suite s’allonge d’une couleur et le bonus de niveau augmente vos points."
+        "text": "À chaque réussite, le niveau monte : la nouvelle suite aléatoire compte une couleur de plus et rapporte davantage de points."
       }
     ]
   };
@@ -231,7 +231,7 @@ export default function FrenchColorSequencePage() {
   const frCopy = {
     title: 'Jeu Simon en ligne',
     subtitle: 'Mémorise les couleurs et reproduis la suite exacte',
-    caption: 'Suivez la suite lumineuse et reproduisez-la dans l’ordre exact à mesure qu’elle s’allonge.',
+    caption: 'Les couleurs s’allument une à une dans le cercle central : reproduisez la suite dans le même ordre. Chaque réussite rallonge la suite suivante d’une couleur.',
     statScore: 'Score',
     statTime: 'Temps',
     statLevel: 'Niveau',
@@ -245,16 +245,16 @@ export default function FrenchColorSequencePage() {
     rule2Result: 'Les suites plus longues rapportent plus de points',
     rule3Text: 'Erreur ou délai dépassé',
     rule3Highlight: '-1 Niveau',
-    rule3Result: 'Aucun point perdu ; la difficulté est réajustée',
+    rule3Result: 'Mauvaise couleur ou 8 s sans appui : aucun point ni temps perdu, nouvelle suite',
     rule4Text: 'Difficulté adaptative',
     rule4Highlight: 'Dynamique',
-    rule4Result: 'La longueur de la suite suit votre capacité du moment',
+    rule4Result: 'Niveau L = L + 2 couleurs ; l’affichage accélère à chaque niveau',
     aboutTitle: 'À propos du jeu Simon de suite de couleurs',
     overviewTitle: 'Que travaille le jeu de mémoire des couleurs ?',
-    overviewLead: 'La mémoire de travail visuelle ne retient qu’environ 4 éléments simples à la fois (Luck & Vogel, 1997 ; Cowan, 2001). Une suite de couleurs qui s’allonge pousse directement contre cette limite.',
+    overviewLead: 'La mémoire de travail visuelle ne retient qu’environ 4 éléments simples à la fois (Luck & Vogel, 1997 ; Cowan, 2001). Une suite de couleurs qui s’allonge permet de s’exercer près de cette limite.',
     aboutIntro: [
       'Ce jeu entraîne l’encodage, le maintien et la reproduction de suites de stimuli dans un ordre précis.',
-      'À force de répéter des suites de couleurs, vous affinez le regroupement en blocs (chunking) et votre calme face au chronomètre.',
+      'À force de reproduire des suites de couleurs, vous vous exercez au regroupement en blocs (chunking) et au calme face au chronomètre.',
     ],
     aboutCards: [
       { title: 'À qui s’adresse ce jeu ?', text: 'Étudiants, seniors, joueurs et toute personne qui veut s’exercer à retenir des suites.' },
@@ -266,25 +266,25 @@ export default function FrenchColorSequencePage() {
   const frColorSequenceGuide = {
     heading: 'Guide du jeu Simon et de la mémoire visuelle de travail',
     intro: [
-      'Le jeu Simon en ligne vous montre une suite de couleurs et de sons qui s’allonge à chaque manche ; vous la reproduisez dans le bon ordre. Il travaille la mémoire de travail visuelle, dont la capacité tourne autour de 4 éléments (Cowan, 2001). C’est un exercice gratuit dans le navigateur, pas un test médical.',
-      'Le jeu électronique Simon a été popularisé par Ralph Baer et Howard Morrison (1978). Cette version l’étend à six touches avec une difficulté adaptative : vous encodez des stimuli colorés, les organisez en blocs mentaux, puis les restituez dans l’ordre.',
+      'Le jeu Simon en ligne vous montre une suite de couleurs, une couleur à la fois ; vous la reproduisez dans le bon ordre, et chaque réussite rallonge la suite suivante d’une couleur. Il travaille la mémoire de travail visuelle, dont la capacité tourne autour de 4 éléments (Cowan, 2001). C’est un exercice gratuit dans le navigateur, pas un test médical.',
+      'Le jeu électronique Simon a été popularisé par Ralph Baer et Howard Morrison (1978). Cette version de type Simon passe à six touches avec une difficulté adaptative : vous encodez des stimuli colorés, les organisez en blocs mentaux, puis les restituez dans l’ordre.',
       'Alors que George A. Miller (1956) évoquait 7 ± 2 éléments, les travaux de Nelson Cowan (2001) et de Luck et Vogel (1997) situent la capacité de la mémoire de travail visuelle autour de 4 unités indépendantes. Sans stratégie de regroupement, la rétention chute vite au-delà de quatre éléments consécutifs.',
-      'Dans le modèle de Baddeley et Hitch (1974), les suites visuelles passent par le calepin visuo-spatial. Associer les couleurs à de petits sons ou à un mot intérieur donne un double encodage qui peut aider à retenir plus longtemps.',
-      'Mesure et matériel : chaque appui est horodaté localement avec l’horloge performance.now() du navigateur, dont la résolution est volontairement limitée. Votre écran affiche une image toutes les 16,7 ms à 60 Hz et toutes les 6,9 ms à 144 Hz (Woods et al., 2015) : comparez vos séances sur le même matériel.',
-      'Confidentialité : vos scores et vos records restent dans le stockage local (localStorage) de votre navigateur.',
+      'Dans le modèle de Baddeley et Hitch (1974), les suites visuelles passent par le calepin visuo-spatial. Nommer chaque couleur intérieurement ajoute un encodage verbal (boucle phonologique ; Baddeley, 2000) qui peut aider à retenir plus longtemps.',
+      'Ce qui est mesuré : en 45 secondes, le jeu enregistre le score, le niveau maximal atteint (longueur de la suite) et la précision (part de manches réussies). Le temps de réaction par appui n’est pas mesuré. Au niveau L, la suite compte L + 2 couleurs parmi 6 ; chaque couleur reste affichée moins longtemps à mesure que le niveau monte (d’environ 0,7 s à 0,25 s minimum), puis vous avez 8 secondes pour chaque appui.',
+      'Confidentialité : vos scores et vos records restent dans le stockage local (localStorage) de votre navigateur. SkillDrills ne collecte pas de statistiques d’utilisateurs : cette page ne donne ni moyennes, ni percentiles.',
       'Avertissement : ce jeu d’entraînement n’est ni un dispositif médical ni un outil de diagnostic. En cas d’inquiétude sur votre mémoire, consultez un médecin ou un neuropsychologue.'
     ],
     benchmarks: {
       title: 'Paliers de performance au jeu Simon (séance de 45 secondes)',
-      headers: ['Palier', 'Niveau atteint', 'Score (45 s)', 'Stratégie de mémorisation'],
+      headers: ['Palier', 'Niveau atteint', 'Score sans erreur', 'Stratégie de mémorisation'],
       rows: [
-        ['Palier 1 (très avancé)', 'Niveau 11+', 'Plus de 1 500 PTS', 'Regroupement en blocs maîtrisé ; encodage visuel et sonore'],
-        ['Palier 2 (avancé)', 'Niveau 8 – 10', '1 100 – 1 499 PTS', 'Suites de plus de 4 couleurs retenues grâce au regroupement binaire'],
-        ['Palier 3 (solide)', 'Niveau 5 – 7', '700 – 1 099 PTS', 'Capacité classique de mémoire à court terme ; hésitation aux cadences rapides'],
-        ['Palier 4 (en progression)', 'Niveau 3 – 4', '350 – 699 PTS', 'Mémoire de travail à sa limite ; regroupement encore peu structuré'],
-        ['Palier 5 (débutant)', 'Sous le niveau 3', 'Moins de 350 PTS', 'Difficulté dès le 3e signal ; commencez par les niveaux lents']
+        ['Palier 1', 'Niveau 11+ (13+ couleurs)', 'env. 1 550+ PTS', 'Nommer les couleurs et les regrouper en blocs'],
+        ['Palier 2', 'Niveau 8 – 10 (10–12 couleurs)', 'env. 980 – 1 549 PTS', 'Regroupement stable par deux ou trois'],
+        ['Palier 3', 'Niveau 5 – 7 (7–9 couleurs)', 'env. 500 – 979 PTS', 'Les couleurs du milieu se perdent quand l’affichage accélère'],
+        ['Palier 4', 'Niveau 3 – 4 (5–6 couleurs)', 'env. 230 – 499 PTS', 'Couleurs retenues une à une, sans regroupement'],
+        ['Palier 5', 'Niveau 1 – 2 (3–4 couleurs)', 'moins de 230 PTS', 'Découverte des règles et du rythme']
       ],
-      note: 'Repères éditoriaux propres à ce jeu (suites à 6 teintes, séance de 45 secondes). Ce ne sont ni des normes cliniques ni un classement de population.'
+      note: 'Paliers d’entraînement SkillDrills, ni normes cliniques ni classement de population. Le score indiqué correspond à un parcours sans erreur jusqu’à ce niveau (points par suite = 100 × (1 + 0,1 × niveau)) ; une erreur fait baisser le niveau, donc les scores réels varient.'
     },
     techniques: {
       title: '4 méthodes pour mémoriser des suites de couleurs plus longues',
@@ -295,32 +295,32 @@ export default function FrenchColorSequencePage() {
           tips: 'Scindez la suite en paires dès qu’elle dépasse 4 éléments.'
         },
         {
-          name: 'Visualiser un trajet',
-          desc: 'Reliez les touches éclairées par un fil imaginaire (triangle, diagonale, arc) au lieu de manipuler des noms de couleurs.',
-          tips: 'Retenir une figure géométrique est souvent plus simple que retenir une liste.'
+          name: 'Visualiser un trajet sur les touches',
+          desc: 'Les couleurs s’allument dans le cercle central, mais les 6 touches de réponse (grille 3 × 2) ont une place fixe. À chaque couleur, imaginez la touche correspondante et retenez le trajet de votre doigt (Logie, 1995).',
+          tips: 'Repérez la disposition des touches avant de commencer.'
         },
         {
-          name: 'S’appuyer sur les sons',
-          desc: 'Chaque couleur a sa tonalité. Retenez la petite mélodie obtenue pour doubler l’encodage visuel par un encodage auditif.',
-          tips: 'Gardez le son activé pour profiter du double codage.'
+          name: 'Nommer les couleurs à voix intérieure',
+          desc: 'Dites mentalement le nom de chaque couleur qui s’allume (« rouge, bleu, vert ») pour ajouter un encodage verbal à l’image (Baddeley, 2000).',
+          tips: 'Récitez par paires, sur un rythme régulier.'
         },
         {
-          name: 'Concentrer l’attention sur la dernière touche',
-          desc: 'Le début de la suite reste identique d’un tour à l’autre : consacrez l’essentiel de votre attention à l’élément qui vient de s’ajouter.',
-          tips: 'Révisez le début en tâche de fond et concentrez-vous sur la fin.'
+          name: 'Protéger le milieu de la suite',
+          desc: 'Chaque manche est une suite aléatoire entièrement nouvelle : la précédente ne sert à rien. Le début et la fin se retiennent mieux, le milieu se perd le plus facilement (effet de position sérielle). Regroupez donc le milieu en priorité.',
+          tips: 'Récitez le début tout de suite en bloc et laissez la fin à l’image encore fraîche.'
         }
       ]
     },
     steps: [
-      'Lancez la séance de 45 secondes et fixez le centre des touches.',
-      'Observez la suite de lumières et de sons.',
+      'Lancez la séance de 45 secondes et fixez le cercle central.',
+      'Observez les couleurs qui s’allument une à une.',
       'Regroupez mentalement la suite en blocs de deux ou trois couleurs.',
       'Dès que la main passe à vous, appuyez sur les touches dans l’ordre.',
       'Franchissez les niveaux pour augmenter votre score et votre record.'
     ],
     audience: 'Étudiants, candidats à des concours, seniors et joueurs qui veulent s’exercer au regroupement et à la mémorisation de suites.',
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'luck1997', 'woods2015'),
+    sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'luck1997'),
     related: [
       { href: "/fr/drills/memory/short-term-memory/digit-span", label: "Test d’empan de chiffres" },
       { href: "/fr/drills/memory/short-term-memory/word-recall", label: "Test de mémoire verbale" },

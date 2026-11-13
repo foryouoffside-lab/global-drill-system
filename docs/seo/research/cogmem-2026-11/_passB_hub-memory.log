@@ -1,1 +1,6 @@
 ko | 기억력 테스트 (kept) | Bing 0; AC 기억력 테스트 무료/게임 -> keep | keyword dedupe only (기억력 게임 dup -> 기억력 테스트 무료); copy already accurate | audit OK
+ja | 記憶力テスト 無料 | Bing 記憶力テスト 149; GSC 記憶力 テスト 無料 p10.1 -> map Phase B title tweak | title/H1 -> 記憶力テスト 無料・記憶力トレーニング; desc lists our actual tasks; intro leads with 無料の記憶力テスト | audit OK
+de | Gedaechtnistraining (lead 'Gedaechtnistraining online kostenlos') | Bing gedaechtnistraining 494/3,085; GSC long-tail p1-4 | title -> Gedaechtnistraining online kostenlos; H1 + Gedaechtnistest; desc names 7 tests; intro leads with primary | audit OK
+fr | jeux de mémoire (title kept) | Bing jeux de mémoire 186/210, test de mémoire 44/107; GSC p6.4 -> keep | desc lists 7 real tests; intro leads with jeux de mémoire + states no card-pair game; keywords drop killed/borrowed terms; FAQs already accurate | audit OK
+pt | teste de memória (title kept) | Bing teste de memória 38/38, jogos de memória 8; map keep | desc + intro lead with teste de memória online, list 7 real tasks; keywords drop hardware-ambiguous/borrowed terms; FAQs already accurate | audit OK
+es | juegos de memoria online (+ test de memoria) | Bing juegos de memoria 164/430, online 17/133, test de memoria 33/51; GSC hub 128i p9.09; map retarget | title/H1 -> Juegos de memoria online y test de memoria; desc/intro list 7 real tasks + state no card-pair game; keywords | audit OK

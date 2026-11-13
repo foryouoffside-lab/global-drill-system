@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Teste de memória visual online | SkillDrills",
-  description: "Teste sua memória visual online: memorize padrões de quadrados iluminados em uma grade e reconstrua o desenho direto no navegador.",
-  keywords: ['teste de memória visual', 'jogo de memória visual', 'teste de memória espacial', 'matriz de memória', 'memória visuoespacial', 'grelha de memória', 'teste de padrões visuais', 'memória de trabalho visual', 'treino de memória visual', 'teste de memória online'],
+  description: "Teste de memória visual online grátis: memorize os quadrados que acendem por 1,5 segundo na grade e repita o padrão, de 4x4 até 12 células em 5x5.",
+  keywords: ['teste de memória visual', 'teste de memória visual online', 'matriz de memória', 'memória visuoespacial', 'grelha de memória', 'teste de padrões visuais', 'memória de trabalho visual', 'treino de memória visual', 'teste de memória online'],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de memória visual online | SkillDrills",
-    description: "Teste sua memória visual: memorize quadrados iluminados e reconstrua o padrão na grade, sem cadastro.",
+    description: "Teste de memória visual online grátis: memorize os quadrados que acendem por 1,5 segundo na grade e repita o padrão, de 4x4 até 12 células em 5x5.",
     type: 'website',
     url: 'https://skilldrills.online/pt/drills/memory/spatial-memory/grid-memorization',
     siteName: 'SkillDrills',
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de memória visual online | SkillDrills",
-    description: "Teste sua memória visual: memorize quadrados iluminados e reconstrua o padrão na grade, sem cadastro.",
+    description: "Teste de memória visual online grátis: memorize os quadrados que acendem por 1,5 segundo na grade e repita o padrão, de 4x4 até 12 células em 5x5.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -50,7 +50,7 @@ const webAppSchema = {
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "sameAs": "https://pt.wikipedia.org/wiki/Mem%C3%B3ria_espacial",
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -58,8 +58,8 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Teste de Memória Visual Online (Jogo de Grade)",
   "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/grid-memorization",
-  "description": "Avaliação neurocognitiva interativa que mede a memória operacional visoespacial, a retenção de padrões matriciais e a capacidade de chunking geométrico.",
-  "dateModified": "2026-09-11",
+  "description": "Teste de memória visual gratuito no navegador: memorize as células que acendem por 1,5 segundo numa grade de 4x4 a 5x5 e repita o padrão.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Memory Game", "Cognitive Training", "Brain Training", "Spatial Memory"],
   "playMode": "SinglePlayer",
@@ -77,7 +77,7 @@ const softwareSchema = {
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
@@ -85,7 +85,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como treinar a memória visual em grades matriciais",
-  "description": "Protocolo sistemático de quatro etapas para codificar, agrupar e reconstruir com exatidão padrões espaciais sob pressão de tempo.",
+  "description": "Quatro passos práticos para guardar um padrão de células acesas em 1,5 segundo e repeti-lo na grade.",
   "step": [
     {
       "@type": "HowToStep",
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "O que é um teste de memória visual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Um teste de memória visual avalia a memória de trabalho visoespacial: sua habilidade de perceber, codificar e manter ativas na mente configurações visuais e coordenadas espaciais sem depender de repetição verbal."
+        "text": "Aqui é um exercício de memória de trabalho visoespacial: você memoriza quais células acendem na grade e depois as marca de memória, sem repetir as posições em palavras. É um jogo de treino gratuito, não um teste clínico, psicotécnico ou do Detran."
       }
     },
     {
@@ -139,15 +139,15 @@ const faqSchema = {
       "name": "Como funciona o treino de memória em grade?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em uma grade de 4x4 ou 5x5, diversas células acendem em branco por 1,5 segundo. Quando a grade apaga, você clica nas posições exatas que estavam acesas. Cada acerto aumenta a complexidade do padrão."
+        "text": "Numa grade 4x4, 5 células acendem em roxo por 1,5 segundo. Quando apagam, você clica em todas as que estavam acesas. Cada padrão completo vale 150 pontos e acrescenta uma célula. Depois de 7 células na 4x4, a grade passa para 5x5 (de 5 até no máximo 12 células). O relógio de 60 segundos só corre enquanto você repete o padrão."
       }
     },
     {
       "@type": "Question",
-      "name": "O que é o Visual Patterns Test (VPT)?",
+      "name": "Isto é o Visual Patterns Test (VPT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Criado em 1997 por Sergio Della Sala, Robert H. Logie e equipe, o Visual Patterns Test (VPT) é o padrão ouro na neuropsicologia para medir a capacidade pura de memória de curto prazo para padrões visuais estáticos."
+        "text": "Não. O Visual Patterns Test (Della Sala et al., 1997) é um instrumento neuropsicológico de pesquisa com padrões em grade. Este exercício é um jogo de treino gratuito com formato parecido, mas não segue o procedimento nem as normas desse teste."
       }
     },
     {
@@ -160,10 +160,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Qual a média normal de memória visual em matrizes?",
+      "name": "Como a pontuação é calculada?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dados normativos em adultos saudáveis (Della Sala et al., 1997, 1999) mostram capacidade média de 6 a 8 células em matrizes de 4x4 a 5x5. Resultados acima de 10 a 14 células indicam domínio avançado de chunking espacial."
+        "text": "Cada padrão repetido por completo vale 150 pontos. A nota na tela de resultado é uma faixa de treino do SkillDrills, com 1.150 pontos no topo da escala; não é média nem valor normativo."
       }
     },
     {
@@ -187,7 +187,7 @@ const faqSchema = {
       "name": "Por que os padrões de grade desaparecem tão rápido após 1,5 segundo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A memória sensorial icônica se esvai em 250 a 500 milissegundos. Sem a rápida consolidação na memória operacional por meio de chunking ou traçado mental, a impressão visual é rapidamente apagada por novos estímulos."
+        "text": "Neste exercício a exibição dura sempre 1,5 segundo. A memória icônica guarda a imagem por muito pouco tempo; o que você não agrupar em formas ou numa linha imaginada nesse intervalo tende a se perder antes de clicar."
       }
     },
     {
@@ -195,7 +195,7 @@ const faqSchema = {
       "name": "Existe penalidade de pontuação ao errar uma célula?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. Clicar em uma célula errada não deduz pontos nem consome o tempo restante. A rodada simplesmente recomeça no mesmo nível para você treinar com segurança na sua zona de desenvolvimento."
+        "text": "Não. Uma célula errada só encerra a rodada atual, sem perder pontos nem tempo. Em seguida aparece um padrão novo no mesmo nível."
       }
     },
     {
@@ -203,7 +203,7 @@ const faqSchema = {
       "name": "Como a memória visual ajuda no dia a dia e nos jogos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Favorece a leitura rápida do minimapa em jogos de tiro tático (CS2, Valorant), acelera a interpretação de gráficos e plantas de engenharia e fortalece o raciocínio espacial e rotação mental 3D em ciências exatas."
+        "text": "O exercício se parece com situações em que você vê uma disposição por um instante e precisa lembrá-la, como o minimapa ou um tabuleiro de xadrez. Não há garantia de melhora em outras atividades."
       }
     }
   ]
@@ -211,57 +211,30 @@ const faqSchema = {
 
 const gridGuide = {
   intro: [
-  "O Teste de Memória Visual (Grid Memorization / Memory Matrix) é um exercício neurocognitivo interativo desenvolvido para mensurar a memória de trabalho visoespacial, a velocidade de codificação de padrões e a retenção matricial de curto prazo. Diferente de avaliações verbais baseadas em repetição fonológica, esta tarefa isola a arquitetura visual não-verbal do cérebro.",
-  "A investigação clínica do span visoespacial começou com Pietro Corsi (1972) por meio do Teste dos Blocos de Corsi, que comprovou que a memória espacial opera em redes neurais distintas do span de dígitos verbal (Milner, 1971). Em 1997, Sergio Della Sala, Robert H. Logie e colaboradores criaram o Visual Patterns Test (VPT) especificamente para dissociar a retenção de matrizes estáticas de sequências motoras ativas.",
+  "Este teste de memória visual online mostra por 1,5 segundo células acesas numa grade, e depois você repete o padrão de memória. Você começa com 5 células numa grade 4x4; cada padrão certo acrescenta uma célula, e na grade 5x5 o desafio vai até 12 células. Serve como treino de memória visual, inclusive para quem pratica para provas de atenção e memória, mas não é um teste psicotécnico oficial.",
+  "A investigação clínica do span visoespacial começou com Pietro Corsi (1972) por meio do Teste dos Blocos de Corsi, que comprovou que a memória espacial opera em redes neurais distintas do span de dígitos verbal (Milner, 1971). Em 1997, Sergio Della Sala, Robert H. Logie e colaboradores publicaram o Visual Patterns Test (VPT) para dissociar a retenção de matrizes estáticas de sequências motoras ativas. Este exercício usa um formato parecido, mas não é o VPT.",
   "Na neurociência cognitiva moderna, Robert H. Logie (1995) e Alan Baddeley (2000) dividiram o esboço visoespacial em 'Cache Visual' (armazenamento passivo de formas, cores e imagens estáticas) e 'Escriba Interno' (mecanismo ativo de repetição espacial e planejamento motor). Pesquisas de Steven J. Luck & Edward K. Vogel (1997) e Nelson Cowan (2001) confirmaram que a capacidade visual bruta sem agrupamento é limitada a 3 ou 4 itens. Expandir essa marca exige chunking espacial: combinar células acesas em formas Gestalt reconhecíveis.",
-  "Calibrado com precisão cronométrica digital (Woods et al., 2015), o teste conta com janela padronizada de 1,5 segundo para memorização e progressão adaptativa para mensurar o limite real da sua capacidade de retenção visoespacial.",
-  "Metodologia de medição: todos os eventos são computados pelo relógio de alta resolução performance.now() do navegador no seu próprio dispositivo, sem envio de pontuações para servidores. Por segurança, os cronômetros de navegadores têm resolução ajustada a ~1 ms e sincronizam com a taxa de atualização da tela (~16,7 ms a 60 Hz; Woods et al., 2015). Diferenças abaixo de 5 ms constituem ruído de medição; compare seus desempenhos sempre no mesmo equipamento.",
-  "Transparência de dados: o SkillDrills não coleta dados agregados. Seus resultados e configurações ficam salvos apenas no localStorage do seu navegador. Todas as métricas apresentadas fundamentam-se em estudos acadêmicos revisados por pares.",
+  "Como funciona: cada padrão aparece por 1,5 segundo. O relógio de 60 segundos só corre enquanto você repete o padrão. Um padrão completo vale 150 pontos; uma célula errada encerra a rodada sem perder pontos nem tempo, e vem um padrão novo no mesmo nível. Tempo de reação não é medido.",
+  "Dados: sua pontuação e seu recorde ficam salvos apenas no localStorage do navegador e não são enviados a servidores.",
   "Este exercício é um jogo gratuito voltado ao treino e autoconhecimento cognitivo. Não é dispositivo médico nem instrumento de diagnóstico clínico. Em caso de dúvidas sobre sua saúde cognitiva, procure um profissional habilitado."
 ],
   benchmarks: {
-    title: "Baremos normativos de span de memória visoespacial",
-    headers: ["Nível de Desempenho", "Span de Padrão (Células)", "Pontuação", "Perfil Cognitivo e Chunking"],
+    title: "Faixas de treino SkillDrills (uma partida)",
+    headers: ["Faixa", "Pontos", "Padrões completos", "Dificuldade alcançada"],
     rows: [
-  [
-    "Tier 1 (Superior / Topo 1%)",
-    "10 – 14+ Células",
-    "1.150+ Pontos",
-    "Desempenho visoespacial avançado; divide padrões complexos em 2-3 primitivas geométricas Gestalt; retenção impecável no cache visual; cadência de clique abaixo de 450 ms."
-  ],
-  [
-    "Tier 2 (Acima da Média / Topo 15%)",
-    "8 – 9 Células",
-    "850 – 1.149 Pontos",
-    "Supera a média adulta normal; realiza chunking rápido de formas ('L', linhas, trincas); resistente à interferência visual; cadência de 450 a 650 ms."
-  ],
-  [
-    "Tier 3 (Média Adulta / 50%)",
-    "6 – 7 Células",
-    "550 – 849 Pontos",
-    "Padrão normal da população adulta (Della Sala et al., 1997); processa blocos simples pareados; perde células periféricas em grades 5x5; cadência de 650 a 900 ms."
-  ],
-  [
-    "Tier 4 (Abaixo da Média / Gargalo)",
-    "5 Células",
-    "350 – 549 Pontos",
-    "Opera próximo ao limite bruto sem agrupamento (Cowan, 2001); tenta memorizar células uma a uma; cadência de 900 a 1.200 ms."
-  ],
-  [
-    "Tier 5 (Necessita Treino / Baixo)",
-    "< 5 Células",
-    "< 350 Pontos",
-    "Rápido esvanecimento do traço visual; vulnerabilidade ao ruído sensorial; dificuldade em reter mais de 4 células após 1,5s; cadência acima de 1.200 ms."
-  ]
-],
-    note: "O span de células reflete a maior configuração de matriz completada com sucesso durante a sessão de 45 segundos (Della Sala et al., 1997; Woods et al., 2015)."
+      ["Faixa alta", "1.200 ou mais", "8 ou mais", "Grade 5x5, 10 a 12 células"],
+      ["Faixa intermediária", "600 – 1.050", "4 – 7", "Grade 5x5, 6 a 9 células"],
+      ["Faixa inicial", "150 – 450", "1 – 3", "4x4 com 6 a 7 células; após 3 padrões, 5x5"],
+      ["Início", "0", "0", "Grade 4x4, 5 células"]
+    ],
+    note: "Pontos = padrões completos × 150. As faixas são calculadas a partir das regras do jogo: são referências de treino do SkillDrills, não estatísticas populacionais nem normas clínicas."
   },
   techniques: {
     title: "Técnicas comprovadas para expandir a memória visual matricial",
     items: [
   {
     "name": "Chunking de formas espaciais (Gestalt)",
-    "desc": "Agrupe mentalmente as células iluminadas em formas geométricas básicas como triângulos, retas, quadrados ou letras (Wertheimer, 1923; Della Sala et al., 1999). Comprimir 7 coordenadas em 2 figuras reduz a carga cognitiva em mais de 60 %.",
+    "desc": "Agrupe mentalmente as células iluminadas em formas geométricas básicas como triângulos, retas, quadrados ou letras (Wertheimer, 1923; Della Sala et al., 1999). Agrupar 7 coordenadas em 2 ou 3 figuras reduz o número de unidades a lembrar.",
     "tips": "Foque de imediato em linhas contínuas e cantos em vez de olhar pontos soltos."
   },
   {
@@ -290,7 +263,7 @@ const gridGuide = {
 ],
   audience: "Jogadores de FPS que buscam melhor percepção de minimapa, estudantes de exatas e arquitetura, enxadristas, médicos radiologistas e qualquer pessoa focada em elevar sua memória não-verbal.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
+  sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971'),
   related: [
   {
     "href": "/pt/drills/memory/working-memory/n-back",
@@ -344,7 +317,7 @@ export default function LocalizedGridMemorizationPage() {
       />
       <GridMemorizationClient copy={{
         "h1Keyword": "Teste de memória visual online",
-        "h1Suffix": " – Memória espacial",
+        "h1Suffix": "",
         "subtitle": "Memorize quadrados iluminados em uma grade",
         "caption": "A memória de trabalho visual armazena cerca de quatro objetos distintos simultaneamente; o limite é o número de itens e não o detalhe individual de cada um (Luck & Vogel, 1997). As grades matriciais avaliam o 'cache visual', o depósito passivo de formas e disposição espacial (Logie, 1995).",
         "statScore": "Pontos",
@@ -375,19 +348,19 @@ export default function LocalizedGridMemorizationPage() {
                         "num": "2",
                         "text": "Progressão de Nível",
                         "highlight": "4x4 → 5x5",
-                        "result": "A grade e a quantidade de alvos aumentam conforme você acerta"
+                        "result": "Uma célula a mais por padrão certo, até 12 células na 5x5"
                 },
                 {
                         "num": "3",
-                        "text": "Erro / Tempo Esgotado",
+                        "text": "Erro",
                         "highlight": "Sem Penalidades",
-                        "result": "Nenhum ponto ou tempo é subtraído por cliques incorretos"
+                        "result": "A rodada termina, sem perder pontos nem tempo"
                 },
                 {
                         "num": "4",
                         "text": "Nível Mantido",
                         "highlight": "Mesmo Nível",
-                        "result": "Em caso de falha, a rodada reinicia no mesmo patamar"
+                        "result": "Após um erro, vem um padrão novo no mesmo nível"
                 }
         ]
 }} />

@@ -8,7 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: "Schnelllesetest | RSVP-Lesetraining | SkillDrills",
   description: "Kostenloser Schnelllesetest im Browser: Verarbeite Wörter an einem festen Punkt und verfolge WPM und Genauigkeit. Kein klinischer Test.",
-  keywords: ["Schnelllesetest", "Schnelllesetest online", "Lesegeschwindigkeit Test", "Lesegeschwindigkeit messen", "RSVP-Schnelllesetest", "Wörter pro Minute", "Schnelllesen üben", "Lesetempo testen"],
+  keywords: ["Schnelllesetest", "Schnelllesetest online", "RSVP", "RSVP-Lesetraining", "Lesegeschwindigkeit", "Wörter pro Minute", "Schnelllesen üben"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Schnelllesetest | RSVP-Lesetraining | SkillDrills",
     description: "Kostenloser Schnelllesetest im Browser: Verarbeite Wörter an einem festen Punkt und verfolge WPM und Genauigkeit. Kein klinischer Test.",
@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation"],
-  "name": "RSVP Schnelllesetest und WPM-Geschwindigkeitsmesser",
+  "name": "RSVP Schnelllesetest",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Kostenloser RSVP-Schnelllesetest. Trainiere Wortverarbeitungsgeschwindigkeiten bis 850 WPM ohne Sakkaden durch serielle optische Textprasentation (Optimal Recognition Point).",
+  "description": "Kostenloser RSVP-Schnelllesetest im Browser: Wörter eines englischen Textes erscheinen einzeln an einem festen Punkt in 5 Tempostufen von 250 bis 850 WPM. Klicke, wenn das Zielwort kommt. Kein Test des Textverständnisses.",
   "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/rsvp-reader",
   "publisher": {
     "@type": "Organization",
@@ -79,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Schnelllesetest RSVP – Lesegeschwindigkeit Test WPM",
+  "name": "Schnelllesetest – RSVP-Lesetraining",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -96,15 +96,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/rsvp-reader",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "RSVP Schnelllesetest – High-Speed Wortprasentationsspiel",
+  "name": "RSVP Schnelllesetest – Zielwort-Spiel",
   "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/rsvp-reader",
-  "description": "Kostenloser RSVP-Schnelllesetest. Trainiere Wortverarbeitungsgeschwindigkeiten bis 850 WPM ohne Sakkaden durch serielle optische Textprasentation (Optimal Recognition Point).",
+  "description": "Kostenloser RSVP-Schnelllesetest im Browser: Wörter eines englischen Textes erscheinen einzeln an einem festen Punkt in 5 Tempostufen von 250 bis 850 WPM. Klicke, wenn das Zielwort kommt. Kein Test des Textverständnisses.",
   "genre": [
     "Action",
     "Brain Game",
@@ -116,7 +116,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -133,7 +133,47 @@ const faqSchema = {
       "name": "Was ist RSVP (Rapid Serial Visual Presentation)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein Verfahren, bei dem Worter nacheinander an einem festen Bildschirmpunkt aufblitzen, wodurch Blicksprunge (Sakkaden) vollstandig entfallen."
+        "text": "Ein Verfahren, bei dem Wörter nacheinander an einem festen Punkt erscheinen, sodass der Blick nicht von Wort zu Wort springen muss. Es garantiert kein besseres Textverständnis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie läuft der Schnelllesetest ab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oben steht ein Zielwort. In der Mitte erscheinen englische Wörter einzeln; klickst du die Erkennungstaste, während das Zielwort zu sehen ist, gibt es 100 Punkte. Ein Durchgang dauert 45 Sekunden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Tempostufen gibt es?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stufe 1 (250 WPM), 2 (350), 3 (480), 4 (650) und Stufe 5 (850 WPM). Alle 2 erkannten Zielwörter (alle 200 Punkte) geht es eine Stufe höher."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert bei Fehlklicks oder verpassten Zielwörtern?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ein Klick bei einem anderen Wort zählt als Fehler und sperrt die Taste 1 Sekunde. Läuft das Zielwort ohne Klick vorbei, zählt es als verpasst. Beides senkt die Genauigkeit, kostet aber keine Zeit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was zeigt das Ergebnis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Punkte, Treffer, Fehler, Genauigkeit und die erreichte Tempostufe. WPM ist hier die Anzeigegeschwindigkeit der Stufe, nicht deine gemessene Lesegeschwindigkeit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Misst der Test mein Leseverständnis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Es gibt keine Verständnisfragen. Der Drill prüft nur, ob du das Zielwort im schnellen Wortstrom erkennst."
       }
     },
     {
@@ -141,15 +181,7 @@ const faqSchema = {
       "name": "Was ist der Optimal Recognition Point (ORP)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die optimale Fixationsstelle innerhalb eines Wortes, an der das visuelle System das Wort am schnellsten decodiert (Rayner, 1998)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum lesen die meisten Menschen langsam?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bis zu 80 % der Lesezeit gehen fur Sakkaden und unbewusste Ruckspul-Blicksprunge (Regressionen) verloren (Rayner, 2016)."
+        "text": "Die Stelle im Wort, an der sich der Blick gut fixieren lässt, meist etwas links der Mitte. Der Drill hebt diesen Buchstaben farbig hervor."
       }
     },
     {
@@ -157,55 +189,23 @@ const faqSchema = {
       "name": "Was ist die durchschnittliche Lesegeschwindigkeit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Erwachsene lesen durchschnittlich 200–250 Worter pro Minute (WPM). Mit Training sind 400–600 WPM realistisch."
+        "text": "Für stilles Lesen englischer Texte werden oft etwa 200–300 Wörter pro Minute genannt (Rayner, 1998). Mit den Tempostufen dieses Drills ist das nicht direkt vergleichbar."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche Geschwindigkeitsstufen gibt es?",
+      "name": "Werde ich durch Üben schneller lesen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Level 1 (250 WPM) bis hin zu Spitzenwerten in Level 5 (850 WPM)."
+        "text": "Im Erkennen von Zielwörtern im schnellen Wortstrom wirst du mit Übung meist besser. Bei höherem Tempo kann das Verständnis sinken; schnelleres Lesen im Alltag ist nicht garantiert."
       }
     },
     {
       "@type": "Question",
-      "name": "Warum muss man Zielworter bestatigen?",
+      "name": "Ist der Schnelllesetest kostenlos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Um sicherzustellen, dass die Worter kognitiv erfasst und nicht nur passiv ubersehen werden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Fordert RSVP die Denkgeschwindigkeit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, es trainiert die schnelle lexikalische Entschlusselung im visuellen Wortformareal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Einfluss der Bildwiederholrate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Monitore mit 144Hz sichern prazise Frame-Intervalle ohne Bildflackern (Woods et al., 2015)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Fur wen eignet sich das Training?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Fur Studenten, Forscher, Viel-Leser und Gamer, die Textnachrichten in Sekundenschnelle erfassen wollen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist das Tool kostenlos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, SkillDrills stellt diesen Schnelllesetest vollig kostenfrei im Browser zur Verfugung."
+        "text": "Ja, er ist kostenlos und läuft ohne Anmeldung direkt im Browser."
       }
     }
   ]
@@ -214,8 +214,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Schnelllesetest RSVP",
-  "description": "Kostenloser RSVP-Schnelllesetest. Trainiere Wortverarbeitungsgeschwindigkeiten bis 850 WPM ohne Sakkaden durch serielle optische Textprasentation (Optimal Recognition Point).",
+  "name": "So funktioniert der Schnelllesetest",
+  "description": "Kostenloser RSVP-Schnelllesetest im Browser: Wörter eines englischen Textes erscheinen einzeln an einem festen Punkt in 5 Tempostufen von 250 bis 850 WPM. Klicke, wenn das Zielwort kommt. Kein Test des Textverständnisses.",
   "step": [
     {
       "@type": "HowToStep",
@@ -234,15 +234,15 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "High-Speed-Wortstrom erfassen",
-      "text": "Nehmen Sie die voruberziehenden Worter ohne Augenbewegungen flussig auf.",
+      "name": "Dem Wortstrom folgen",
+      "text": "Verfolgen Sie die englischen Wörter, die einzeln an derselben Stelle erscheinen, und warten Sie auf das Zielwort.",
       "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/rsvp-reader#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Rechtzeitiger Klick bei Zielwort-Erscheinen",
-      "text": "Tippen Sie sofort auf TARGET DETECTED, wenn das Wort im Fokus aufleuchtet.",
+      "text": "Klicken Sie die Erkennungstaste, solange das Zielwort angezeigt wird. Ein Klick bei einem anderen Wort sperrt die Taste 1 Sekunde.",
       "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/rsvp-reader#step-4"
     }
   ]
@@ -251,15 +251,15 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('rayner1998', 'rayner2016', 'woods2015'),
   intro: {
-    title: "Schnelllesetest RSVP – Lesegeschwindigkeit Test WPM",
+    title: "Schnelllesetest – RSVP-Lesetraining",
     paragraphs: [
-      "Kostenloser RSVP-Schnelllesetest. Trainiere Wortverarbeitungsgeschwindigkeiten bis 850 WPM ohne Sakkaden durch serielle optische Textprasentation (Optimal Recognition Point).",
-      "Die optimale Fixationsstelle innerhalb eines Wortes, an der das visuelle System das Wort am schnellsten decodiert (Rayner, 1998).",
-      "Bis zu 80 % der Lesezeit gehen fur Sakkaden und unbewusste Ruckspul-Blicksprunge (Regressionen) verloren (Rayner, 2016).",
+      "Der kostenlose Schnelllesetest zeigt Wörter im RSVP-Verfahren einzeln an einem festen Punkt (ORP). Erscheint das Zielwort aus dem Banner, klickst du die Erkennungstaste; alle 2 Treffer steigt das Tempo um eine Stufe, von 250 bis maximal 850 Wörter pro Minute. Der angezeigte Text ist englisch.",
+      "Der Optimal Recognition Point ist die Stelle im Wort, an der sich der Blick gut fixieren lässt, meist etwas links der Mitte. Der Drill hebt diesen Buchstaben hervor, damit der Blick an einem Punkt bleibt.",
+      "Beim normalen Lesen springt der Blick von Wort zu Wort (Sakkaden) und manchmal zurück (Rayner, 1998). RSVP spart diese Sprünge, doch bei hohem Tempo kann das Verständnis sinken (Rayner u. a., 2016). Der Drill misst kein Textverständnis.",
     ],
   },
   benchmarks: {
-    title: 'Standardisierte kognitive Leistungs-Benchmarks',
+    title: 'SkillDrills-Übungsstufen (Genauigkeit)',
     headers: ['Übungsstufe', 'Bezeichnung', 'Leistungsbereich', 'Erreichte Stufe', 'Genauigkeit', 'Einordnung'],
     note: 'Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.',
     rows: [
@@ -271,13 +271,13 @@ const guideProps = {
     ],
   },
   protocols: {
-    title: '4 wissenschaftliche Trainingsprotokolle zur Steigerung der kognitiven Ausdauer',
-    description: 'Wissenschaftlich fundiertes RSVP-Schnelllesetraining zur Fixierung des optimalen Erkennungspunkts (ORP, Rayner, 1998) und Eliminierung sakkadischer Blickbewegungsverluste für maximale visuelle Wortverarbeitungsgeschwindigkeit.',
+    title: 'Ablauf des Schnelllesetests',
+    description: 'Die vier Schritte eines Durchgangs: Blick auf einen Punkt halten und das Zielwort im Wortstrom erkennen.',
     items: [
       { title: "Zielwort in der Anzeige einpragen", description: "Merken Sie sich das oben eingeblendete gesuchte Zielwort." },
       { title: "Fokussierung auf den roten ORP-Mittelpunkt", description: "Halten Sie den Blick starr auf dem farblich markierten Ankerbuchstaben." },
-      { title: "High-Speed-Wortstrom erfassen", description: "Nehmen Sie die voruberziehenden Worter ohne Augenbewegungen flussig auf." },
-      { title: "Rechtzeitiger Klick bei Zielwort-Erscheinen", description: "Tippen Sie sofort auf TARGET DETECTED, wenn das Wort im Fokus aufleuchtet." },
+      { title: "Dem Wortstrom folgen", description: "Verfolgen Sie die englischen Wörter, die einzeln an derselben Stelle erscheinen, und warten Sie auf das Zielwort." },
+      { title: "Rechtzeitiger Klick bei Zielwort-Erscheinen", description: "Klicken Sie die Erkennungstaste, solange das Zielwort angezeigt wird. Ein Klick bei einem anderen Wort sperrt die Taste 1 Sekunde." },
     ],
   },
   faqs: {
@@ -320,7 +320,7 @@ export default function LocalizedCognitivePage() {
         copy={{
           title: "Schnelllesetest",
           subtitle: "Wörter an einem festen Fokuspunkt verarbeiten und Lesetempo trainieren",
-          startTitle: "RSVP-Schnelllesetest",
+          startTitle: "Schnelllesetest",
           startSubtitle: "Worterkennung • ORP-Fokus",
           stageCaption: "Wörter erscheinen nacheinander in der Mitte. Klicke, sobald das Zielwort auftaucht.",
           rulesTitle: "Drill-Anleitung und Punktesystem",
@@ -328,17 +328,17 @@ export default function LocalizedCognitivePage() {
           faqTitle: "Häufige Fragen",
           labels: { score: "Punkte", time: "Zeit", speed: "Tempo", bestScore: "Bestwert", timeLeft: "Restzeit", targetWord: "Zielwort", detected: "ZIELWORT ERKANNT", ready: "BEREIT", accuracy: "Genauigkeit", hits: "Treffer", errors: "Fehler", points: "Punkte", playAgain: "Nochmal spielen" },
           aboutLead: "RSVP zeigt Wörter nacheinander an einem festen Punkt. Dadurch entfällt ein Teil der Blicksprünge; bei höherem Tempo kann jedoch das Textverständnis sinken.",
-          aboutText: "Dieser Drill trainiert Worterkennung am optimalen Erkennungspunkt (ORP). WPM beschreibt die Anzeigegeschwindigkeit; Bildschirm- und Eingabelatenz beeinflussen das Ergebnis. 850 WPM ist die höchste Drill-Stufe, kein allgemeiner Verständlichkeitswert.",
+          aboutText: "Dieser Drill trainiert Worterkennung am optimalen Erkennungspunkt (ORP) mit einem englischen Text. WPM beschreibt die Anzeigegeschwindigkeit; Bildschirm- und Eingabelatenz beeinflussen das Ergebnis. 850 WPM ist die höchste Drill-Stufe, kein allgemeiner Verständlichkeitswert.",
           aboutCards: [
             { title: "Für wen ist das sinnvoll?", desc: "Für Studierende, Berufstätige und alle, die viele Texte lesen oder Schnelllesen üben möchten." },
             { title: "Welche Fähigkeiten werden trainiert?", desc: "Worterkennung, Arbeitsgedächtnis und anhaltende Aufmerksamkeit bei hohem visuellen Tempo." },
-            { title: "Stufenweise schneller", desc: "Fünf Stufen von 250 bis 850 WPM erhöhen das Tempo, während du die Genauigkeit kontrollierst." }
+            { title: "Stufenweise schneller", desc: "Fünf Stufen von 250 bis 850 WPM; alle 2 erkannten Zielwörter steigt das Tempo um eine Stufe." }
           ],
           rulesItems: [
             { num: "1", text: "Zielwort", highlight: "Oberes Banner", result: "Im Wortstrom erkennen" },
             { num: "2", text: "ORP-Fokus", highlight: "Blicksprünge reduzieren", result: "An einer Stelle lesen" },
-            { num: "3", text: "Zielwort erkannt", highlight: "+100 Punkte", result: "Erkennungstaste klicken" },
-            { num: "4", text: "Tempostufe", highlight: "250 → 850 WPM", result: "Fünf Schwierigkeitsstufen" }
+            { num: "3", text: "Zielwort erkannt", highlight: "+100 Punkte", result: "Taste klicken, solange es sichtbar ist" },
+            { num: "4", text: "Tempostufe", highlight: "250 → 850 WPM", result: "Alle 2 Treffer eine Stufe höher" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

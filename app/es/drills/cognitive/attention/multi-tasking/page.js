@@ -7,24 +7,22 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de Multitarea | Rastreo Doble | SkillDrills",
-  description: "Test gratis de multitarea en navegador: sigue dos flujos visuales a la vez. No es un diagnóstico clínico, sino un autocheck cognitivo.",
+  description: "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. No es un diagnóstico clínico, sino un autocheck.",
   keywords: [
     "test de multitarea",
     "test de flexibilidad cognitiva",
     "test de alternancia de tareas",
-    "test de atencion dividida online",
     "juego de multitarea mental",
     "entrenamiento de procesamiento paralelo",
     "evaluacion de sobrecarga cognitiva",
     "coste de cambio cognitivo test",
     "test de capacidad multitarea online",
     "ejercicios de agilidad mental gratis",
-    "coordinacion interhemisferica test",
     "velocidad de alternancia atencional"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de Multitarea – Foco en Flujo Doble | SkillDrills",
-    description: "Test de multitarea y flexibilidad cognitiva online: Rastrea dos flujos visuales opuestos en tiempo real y evalua el coste de alternancia mental sin registro.",
+    title: "Test de Multitarea | Rastreo Doble | SkillDrills",
+    description: "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. No es un diagnóstico clínico, sino un autocheck.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -32,8 +30,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de Multitarea – Foco en Flujo Doble | SkillDrills",
-    description: "Test de multitarea y flexibilidad cognitiva online: Rastrea dos flujos visuales opuestos en tiempo real y evalua el coste de alternancia mental sin registro.",
+    title: "Test de Multitarea | Rastreo Doble | SkillDrills",
+    description: "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. No es un diagnóstico clínico, sino un autocheck.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -76,7 +74,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Task_switching_(psychology)", "https://en.wikipedia.org/wiki/Human_multitasking"],
-  "name": "Test de Multitarea — Entrenamiento de Atencion en Flujo Doble",
+  "name": "Test de Multitarea – Entrenamiento de Atención en Flujo Doble",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -84,7 +82,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test de multitarea y flexibilidad cognitiva online: Rastrea dos flujos visuales opuestos en tiempo real y evalua el coste de alternancia mental sin registro.",
+  "description": "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. No es un diagnóstico clínico, sino un autocheck.",
   "url": "https://skilldrills.online/es/drills/cognitive/attention/multi-tasking",
   "publisher": {
     "@type": "Organization",
@@ -92,7 +90,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -109,7 +107,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/cognitive/attention/multi-tasking",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -117,7 +115,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Juego de Multitarea – Flujo Visual Dual",
   "url": "https://skilldrills.online/es/drills/cognitive/attention/multi-tasking",
-  "description": "Test de multitarea y flexibilidad cognitiva online: Rastrea dos flujos visuales opuestos en tiempo real y evalua el coste de alternancia mental sin registro.",
+  "description": "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. No es un diagnóstico clínico, sino un autocheck.",
   "genre": [
     "Accion",
     "Juego Mental",
@@ -142,82 +140,82 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Que es el Test de Multitarea (Dual-Target Flow)?",
+      "name": "¿Qué es el Test de Multitarea (Dual-Target Flow)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es una prueba neurocognitiva disenada para desafiar al cerebro a rastrear dos flujos continuos de figuras geometricas en sentidos opuestos, evaluando la atencion bilateral y la agilidad de discriminacion."
+        "text": "Es un ejercicio de práctica: la pantalla se divide en dos carriles (izquierda/derecha en horizontal, arriba/abajo en vertical) donde las figuras salen del centro hacia fuera. Haces clic o tocas solo el símbolo objetivo que aparece en cada carril. No es un test clínico."
       }
     },
     {
       "@type": "Question",
-      "name": "Que es el coste de cambio (switch cost) segun Rogers y Monsell (1995)?",
+      "name": "¿Qué es el coste de cambio (switch cost) según Rogers y Monsell (1995)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es el decremento observable en velocidad de respuesta y precision que ocurre cuando el sistema ejecutivo debe reconfigurar sus redes cognitivas al alternar entre criterios de tarea diferentes."
+        "text": "Es la pérdida de rapidez y precisión al pasar de una regla de tarea a otra, en lugar de repetir la misma."
       }
     },
     {
       "@type": "Question",
-      "name": "Puede el cerebro humano procesar tareas complejas en paralelo?",
+      "name": "¿Puede el cerebro hacer de verdad dos cosas a la vez?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La evidencia neurocientifica senala que ante tareas que exigen atencion focalizada deliberada, el cerebro realiza un procesamiento serial con division temporal rapida (Pashler, 1994)."
+        "text": "Para decisiones no automatizadas, los estudios sobre el cuello de botella central sugieren una alternancia rápida más que un procesamiento realmente paralelo (Pashler, 1994)."
       }
     },
     {
       "@type": "Question",
-      "name": "Que hallaron Ophir, Nass y Wagner (2009) en usuarios de multitarea intensiva?",
+      "name": "¿Qué observaron Ophir, Nass y Wagner (2009) en usuarios de multitarea intensiva?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Comprobaron que quienes practican multitarea continua en medios digitales experimentan mayor propension a la distraccion y menor capacidad para filtrar estimulos irrelevantes."
+        "text": "Las personas con mucha multitarea mediática rindieron peor en tareas que exigen ignorar estímulos irrelevantes. El estudio es correlacional y no demuestra causa."
       }
     },
     {
       "@type": "Question",
-      "name": "Como se activa el rastreo bi-hemisferico en este ejercicio?",
+      "name": "¿Cómo se calcula la puntuación?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Al presentar flujos independientes en ambos hemicampos visuales, se estimulan simultaneamente los circuitos parieto-occipitales de ambos hemisferios, exigiendo comunicacion por el cuerpo calloso."
+        "text": "Cada objetivo acertado vale 100 puntos base multiplicados por el combo y el nivel, y suma +2 s (máximo 60 s). Pulsar un símbolo equivocado o dejar pasar un símbolo objetivo resta 1 s y reinicia el combo. Precisión = aciertos ÷ (aciertos + errores). La nota depende de la puntuación (24.000 puntos = nota máxima) y es una referencia de práctica de SkillDrills."
       }
     },
     {
       "@type": "Question",
-      "name": "Que estrategias optimizan el rendimiento en flujo doble?",
+      "name": "¿Qué estrategias ayudan a puntuar más?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Centra tu mirada en el espacio intermedio entre ambos canales y utiliza la vision periferica para detectar las figuras correctas antes de activar la respuesta motora."
+        "text": "No fijes la vista en un solo carril: mira cerca del límite entre ambos y revisa los dos lados. Los símbolos objetivo cambian cada 20 segundos, así que comprueba el indicador de cada carril a menudo."
       }
     },
     {
       "@type": "Question",
-      "name": "Como incrementa la dificultad la progresion de niveles?",
+      "name": "¿Cómo aumenta la dificultad con el nivel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aumenta la velocidad de avance, los patrones diana cambian con mayor dinamismo y la ventana temporal util se acorta, poniendo a prueba el control ejecutivo superior."
+        "text": "El nivel sube con la puntuación: las figuras avanzan más rápido y aparecen más a menudo. Desde el nivel 3, los dos carriles tienen símbolos objetivo distintos."
       }
     },
     {
       "@type": "Question",
-      "name": "Afecta la latencia del hardware la evaluacion de multitarea?",
+      "name": "¿Influye la frecuencia de la pantalla en el resultado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Si, monitores de 144Hz o superiores y dispositivos de entrada de baja latencia minimizan el desenfoque de movimiento (Woods et al., 2015), facilitando la discriminacion precisa."
+        "text": "Una frecuencia alta puede mostrar más nítidas las figuras rápidas, pero no hemos medido su efecto en la puntuación. Compara resultados en el mismo dispositivo."
       }
     },
     {
       "@type": "Question",
-      "name": "Cuanto tiempo se recomienda entrenar la atencion multitarea?",
+      "name": "¿Cuánto dura una partida?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sesiones diarias de 10 a 15 minutos permiten activar adaptaciones neuroplasticas sin sobrecargar el sistema de control ejecutivo."
+        "text": "El reloj empieza en 45 segundos: +2 s por acierto (máximo 60 s) y −1 s por error. La partida termina cuando el tiempo llega a cero. Compara varias partidas en las mismas condiciones."
       }
     },
     {
       "@type": "Question",
-      "name": "Es gratuito y accesible este test de multitarea?",
+      "name": "¿Es gratuito este test de multitarea?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Si, SkillDrills ofrece esta evaluacion de forma 100% gratuita directamente en el navegador, sin descargas ni registros previos."
+        "text": "Sí, SkillDrills lo ofrece gratis en el navegador, sin descargas ni registro."
       }
     }
   ]
@@ -226,35 +224,35 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Como Realizar el Test de Multitarea",
-  "description": "Metodologia para rastrear flujos visuales paralelos y entrenar la agilidad de conmutacion atencional.",
+  "name": "Cómo Realizar el Test de Multitarea",
+  "description": "Guía práctica para vigilar dos flujos de símbolos y pulsar solo los objetivos de cada carril.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "Centra la Mirada en la Zona Intermedia",
-      "text": "Enfoca la vista en el punto central entre ambos flujos para supervisar de manera equilibrada los dos canales.",
+      "text": "Mira cerca del límite entre los dos carriles para vigilar ambos lados.",
       "url": "https://skilldrills.online/es/drills/cognitive/attention/multi-tasking#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Reconoce los Simbolos Objetivo",
-      "text": "Memoriza las plantillas de figuras diana activas que aparecen senaladas en el panel informativo superior.",
+      "name": "Reconoce los Símbolos Objetivo",
+      "text": "Comprueba el símbolo objetivo que aparece en cada carril; cambia cada 20 segundos.",
       "url": "https://skilldrills.online/es/drills/cognitive/attention/multi-tasking#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Presiona las Figuras Coincidentes",
-      "text": "Haz clic o toca con rapidez sobre los simbolos que coincidan con las figuras activas antes de que salgan de la pantalla.",
+      "text": "Haz clic o toca los símbolos iguales al objetivo de su carril antes de que lleguen al borde (+2 s). Un símbolo equivocado cuesta 1 s.",
       "url": "https://skilldrills.online/es/drills/cognitive/attention/multi-tasking#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Conserva el Ritmo con Aceleracion",
-      "text": "Adapta tus reflejos al incremento gradual de velocidad para extender tu racha de aciertos y maximizar la puntuacion.",
+      "name": "Conserva el Ritmo con la Aceleración",
+      "text": "La velocidad sube con el nivel y, desde el nivel 3, cada carril tiene su propio objetivo. Sin errores, el multiplicador de combo crece.",
       "url": "https://skilldrills.online/es/drills/cognitive/attention/multi-tasking#step-4"
     }
   ]
@@ -263,15 +261,15 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('rogers1995', 'monsell2003', 'pashler1994', 'wickens2002', 'ophir2009', 'woods2015'),
   intro: {
-    title: "Test de Multitarea y Flexibilidad Cognitiva",
+    title: "Test de Multitarea: Guía",
     paragraphs: [
-      "El test de multitarea en flujo doble pone a prueba la capacidad del sistema ejecutivo superior para procesar canales sensoriales concurrentes bajo exigencia temporal estricta.",
-      "El coste de conmutacion (switch cost) refleja la demora y el incremento en errores que surgen al cambiar entre objetivos cognitivos divergentes en lugar de sostener una sola regla operativa (Rogers & Monsell, 1995).",
-      "Estudios en ergonomia cognitiva y neurociencia avalan que la coordinacion atencional bilateral se fortalece mediante el entrenamiento sistematico de la alternancia deliberada (Pashler, 1994; Wickens, 2002).",
+      "Este test de multitarea gratis te pide vigilar dos flujos de símbolos a la vez y pulsar solo el objetivo de cada carril. Es una autoevaluación no clínica.",
+      "El coste de cambio (switch cost) es la demora y el aumento de errores al pasar de una regla a otra en lugar de mantener una sola (Rogers & Monsell, 1995).",
+      "Aquí los objetivos cambian cada 20 segundos y son distintos entre carriles desde el nivel 3, así que hay que actualizar la regla de cada lado (Pashler, 1994; Wickens, 2002).",
     ],
   },
   benchmarks: {
-    title: 'Estandares y Baremos de Rendimiento en Multitarea',
+    title: 'Etapas de práctica SkillDrills (precisión)',
     headers: ['Nivel', 'Rango', 'Calificacion', 'Precision', 'Marcador de práctica'],
     note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas.",
 
@@ -284,13 +282,13 @@ const guideProps = {
     ],
   },
   protocols: {
-    title: 'Protocolos de Estimulacion Neurocognitiva',
-    description: 'Pautas contrastadas cientificamente para potenciar la flexibilidad y la velocidad de conmutacion mental.',
+    title: 'Pasos de una partida',
+    description: 'Cómo vigilar los dos carriles sin perder el combo.',
     items: [
-      { title: "Centra la Mirada en la Zona Intermedia", description: "Enfoca la vista en el punto central entre ambos flujos para supervisar de manera equilibrada los dos canales." },
-      { title: "Reconoce los Simbolos Objetivo", description: "Memoriza las plantillas de figuras diana activas que aparecen senaladas en el panel informativo superior." },
-      { title: "Presiona las Figuras Coincidentes", description: "Haz clic o toca con rapidez sobre los simbolos que coincidan con las figuras activas antes de que salgan de la pantalla." },
-      { title: "Conserva el Ritmo con Aceleracion", description: "Adapta tus reflejos al incremento gradual de velocidad para extender tu racha de aciertos y maximizar la puntuacion." },
+      { title: "Centra la Mirada en la Zona Intermedia", description: "Mira cerca del límite entre los dos carriles para vigilar ambos lados." },
+      { title: "Reconoce los Símbolos Objetivo", description: "Comprueba el símbolo objetivo que aparece en cada carril; cambia cada 20 segundos." },
+      { title: "Presiona las Figuras Coincidentes", description: "Haz clic o toca los símbolos iguales al objetivo de su carril antes de que lleguen al borde (+2 s). Un símbolo equivocado cuesta 1 s." },
+      { title: "Conserva el Ritmo con la Aceleración", description: "La velocidad sube con el nivel y, desde el nivel 3, cada carril tiene su propio objetivo. Sin errores, el multiplicador de combo crece." },
     ],
   },
   faqs: {
@@ -330,15 +328,15 @@ export default function EnhancedPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <DualTargetFlowClient copy={{
-        title: "Test de Multitarea", subtitle: "Sigue dos flujos visuales al mismo tiempo",
+        title: "Test de Multitarea", subtitle: "Vigila dos flujos de símbolos al mismo tiempo",
         statScore: "Puntos", statTime: "Tiempo", timeLeft: "Tiempo restante", statLevel: "Nivel", statBest: "Mejor puntuación",
         startTitle: "Test de Multitarea", startSubtitle: "Dos flujos · foco periférico", getReady: "Prepárate", accuracy: "Precisión", hits: "Aciertos", peakLevel: "Nivel máximo", maxCombo: "Combo máximo",
         caption: "Encuentra símbolos iguales en dos flujos opuestos y responde antes de que aumente la velocidad.",
         rulesTitle: "Instrucciones y puntuación", ruleItems: [
-          { text: "Acierta el objetivo izquierdo", highlight: "+puntos", result: "Pulsa el símbolo mostrado" },
-          { text: "Acierta el objetivo derecho", highlight: "Combo", result: "Sigue ambos flujos" },
-          { text: "Evita errores", highlight: "Precisión", result: "Ignora símbolos distintos" },
-          { text: "Adáptate al ritmo", highlight: "Sube el nivel", result: "Mantén equilibrados los dos lados" },
+          { text: "Acierta el objetivo", highlight: "+100 PTS, +2 s", result: "Símbolo del carril" },
+          { text: "Dos carriles", highlight: "Desde nivel 3", result: "Un objetivo por carril" },
+          { text: "Error / objetivo perdido", highlight: "Combo a cero", result: "−1 s" },
+          { text: "Cambio de objetivo", highlight: "Cada 20 s", result: "Revisa el símbolo" },
         ],
         aboutTitle: "Sobre multitarea y flujo de doble objetivo", aboutLead: "Este autocheck cognitivo no clínico combina dos flujos visuales y observa la precisión practicada y la velocidad de cambio atencional, no una capacidad general para todas las tareas cotidianas.",
         audienceTitle: "Para quién sirve", audienceText: "Para jugadores que vigilan varios elementos en pantalla, estudiantes y personas que quieren organizar información simultánea.",

@@ -20,12 +20,13 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Stroop-Test | Selektive Aufmerksamkeit | SkillDrills",
-  description: "Kostenloser Stroop-Test im Browser: Wähle die Schriftfarbe statt des Wortes. Kein klinischer Test, sondern ein kognitiver Selbstcheck.",
+  title: "Stroop-Test online kostenlos | Farb-Wort-Test | SkillDrills",
+  description: "Stroop-Test online kostenlos: Tippe die Schriftfarbe, nicht das Wort, und übe selektive Aufmerksamkeit. Start mit 45 s, +2 s pro Treffer. Kein klinischer Test.",
   keywords: [
     "Stroop-Test",
     "Stroop-Test online",
-    "stroop test online kostenlos",
+    "Stroop-Test online kostenlos",
+    "Farb-Wort-Test",
     "stroop test farben",
     "stroop test auswertung",
     "Stroop-Effekt-Test",
@@ -33,8 +34,8 @@ export const metadata = {
     "kognitive Inhibition"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Stroop-Test | Selektive Aufmerksamkeit | SkillDrills",
-    description: "Kostenloser Stroop-Test im Browser: Wähle die Schriftfarbe statt des Wortes. Kein klinischer Test, sondern ein kognitiver Selbstcheck.",
+    title: "Stroop-Test online kostenlos | Farb-Wort-Test | SkillDrills",
+    description: "Stroop-Test online kostenlos: Tippe die Schriftfarbe, nicht das Wort, und übe selektive Aufmerksamkeit. Start mit 45 s, +2 s pro Treffer. Kein klinischer Test.",
     type: "website",
     url: "https://skilldrills.online/de/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
@@ -42,8 +43,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Stroop-Test | Selektive Aufmerksamkeit | SkillDrills",
-    description: "Kostenloser Stroop-Test im Browser: Wähle die Schriftfarbe statt des Wortes. Kein klinischer Test, sondern ein kognitiver Selbstcheck.",
+    title: "Stroop-Test online kostenlos | Farb-Wort-Test | SkillDrills",
+    description: "Stroop-Test online kostenlos: Tippe die Schriftfarbe, nicht das Wort, und übe selektive Aufmerksamkeit. Start mit 45 s, +2 s pro Treffer. Kein klinischer Test.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -66,12 +67,12 @@ export default function DistractionFighterPageDe() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Stroop_effect", "https://en.wikipedia.org/wiki/Inhibitory_control"],
-    "name": "Stroop-Test Online (Farb-Wort-Interferenz)",
+    "name": "Stroop-Test online kostenlos (Farb-Wort-Test)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Kostenloser interaktiver Online-Stroop-Test zur Messung von kognitiver Inhibition, selektiver Aufmerksamkeit und Impulskontrolle.",
+    "description": "Kostenloser Stroop-Test online: Schriftfarbe statt Wortbedeutung wählen und so selektive Aufmerksamkeit und Hemmung üben.",
     "genre": "Kognitives Training / Aufmerksamkeit / Stroop-Effekt",
     "url": "https://skilldrills.online/de/drills/cognitive/focus/distraction-fighter",
     "publisher": {
@@ -84,23 +85,23 @@ export default function DistractionFighterPageDe() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Stroop-Test Online (Farb-Wort-Interferenz)",
+    "name": "Stroop-Test online kostenlos (Farb-Wort-Test)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "HTML5, JavaScript fähiger Webbrowser",
-    "description": "Kostenloser interaktiver Online-Stroop-Test zur Messung von kognitiver Inhibition, selektiver Aufmerksamkeit und Impulskontrolle.",
+    "description": "Kostenloser Stroop-Test online: Schriftfarbe statt Wortbedeutung wählen und so selektive Aufmerksamkeit und Hemmung üben.",
     "url": "https://skilldrills.online/de/drills/cognitive/focus/distraction-fighter"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Stroop-Test Online (Farb-Wort-Interferenz)",
+    "name": "Stroop-Test online kostenlos (Farb-Wort-Test)",
     "url": "https://skilldrills.online/de/drills/cognitive/focus/distraction-fighter",
     "description": "Kostenloser browserbasierter Stroop-Test. Bestimme die Schriftfarbe inkongruenter Farbwörter und unterdrücke automatisierte Leseimpulse.",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "gamePlatform": "Web Browser",
     "genre": ["Kognitives Training", "Gehirntraining", "Stroop-Test", "Aufmerksamkeit"],
     "playMode": "SinglePlayer",
@@ -112,14 +113,14 @@ export default function DistractionFighterPageDe() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "Was ist der Stroop-Test und was misst er?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Der Stroop-Test ist ein klassisches psychologisches Experiment, das 1935 von J. Ridley Stroop entwickelt wurde. Er misst die kognitive Interferenzkontrolle und selektive Aufmerksamkeit, indem er prüft, wie schnell und präzise eine Person die Druckfarbe eines Wortes benennen kann, dessen Textbedeutung eine andere Farbe beschreibt (z. B. das Wort 'BLAU' in roter Schrift)."
+          "text": "Der Stroop-Test ist ein klassisches psychologisches Experiment, das 1935 von J. Ridley Stroop entwickelt wurde. In der Forschung untersucht er Interferenzkontrolle und selektive Aufmerksamkeit, indem er prüft, wie schnell und präzise eine Person die Druckfarbe eines Wortes benennen kann, dessen Textbedeutung eine andere Farbe beschreibt (z. B. das Wort 'BLAU' in roter Schrift). Diese Online-Version ist eine Übung, kein psychologischer Test."
         }
       },
       {
@@ -151,7 +152,7 @@ export default function DistractionFighterPageDe() {
         "name": "Welche Hirnareale werden beim Stroop-Test aktiviert?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Neuroimaging-Studien zeigen eine starke Aktivierung im dorsolateralen präfrontalen Kortex (DLPFC) für die Zielaufrechterhaltung und im anterioren cingulären Kortex (ACC) für die Erkennung und Auflösung kognitiver Konflikte (Posner & Petersen, 1990)."
+          "text": "Studien berichten eine Beteiligung des dorsolateralen präfrontalen Kortex (DLPFC) und des anterioren cingulären Kortex (ACC) an der Konfliktverarbeitung (Posner & Petersen, 1990). Dieser Drill misst keine Hirnaktivität."
         }
       },
       {
@@ -167,7 +168,7 @@ export default function DistractionFighterPageDe() {
         "name": "Hilft das Training gegen Ablenkungen im Großraumbüro?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. Das regelmäßige Training der hemmenden Kontrollnetzwerke senkt den neuronalen Energieaufwand, um störende Gespräche, visuelle Bewegungen oder Smartphone-Benachrichtigungen auszublenden."
+          "text": "Das ist nicht belegt. Mit Übung steigt meist dein Punktestand in diesem Drill, aber ob sich das auf Ablenkungen im Alltag überträgt, ist wissenschaftlich offen. Nutze ihn als kurzes Aufwärmen."
         }
       },
       {
@@ -175,7 +176,7 @@ export default function DistractionFighterPageDe() {
         "name": "Kann dieser Test ADHS oder kognitive Störungen diagnostizieren?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nein. Dies ist ein wissenschaftlich inspirierter Trainings- und Selbsttest-Drill im Webbrowser, kein medizinisches Diagnoseinstrument. Bei Verdacht auf Aufmerksamkeitsstörungen sollte stets fachärztlicher Rat eingeholt werden."
+          "text": "Nein. Dies ist ein Übungsspiel im Webbrowser, kein medizinisches Diagnoseinstrument. Bei Verdacht auf Aufmerksamkeitsstörungen sollte stets fachärztlicher Rat eingeholt werden."
         }
       },
       {
@@ -183,7 +184,7 @@ export default function DistractionFighterPageDe() {
         "name": "Werden Fehlklicks mit Zeitstrafen belegt?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Falsche Antworten setzen den aktuellen Combo-Multiplikator zurück. Wenn die Zeitstrafen-Option aktiviert ist, wird zusätzlich Rundenzeit abgezogen (-0,8 Sekunden)."
+          "text": "Ja. Eine falsche Antwort setzt die Combo zurück und zieht immer 1 Sekunde ab. Dasselbe gilt, wenn ein Wort unbeantwortet abläuft (bei aktivierter Zeitlimit-Option, standardmäßig an). Jeder Treffer bringt +2 Sekunden, die Uhr ist auf 60 Sekunden begrenzt."
         }
       },
       {
@@ -191,7 +192,7 @@ export default function DistractionFighterPageDe() {
         "name": "Ist dieser Online-Stroop-Test kostenlos und touch-kompatibel?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja, der Test ist vollständig kostenlos und läuft ohne Installation auf PCs, Tablets und Smartphones mit sofortiger Touch- und Klick-Reaktion."
+          "text": "Ja, der Test ist vollständig kostenlos und läuft ohne Installation auf PCs (Mausklick), Tablets und Smartphones (Tippen). Eine Tastatursteuerung gibt es nicht."
         }
       }
     ]
@@ -201,7 +202,7 @@ export default function DistractionFighterPageDe() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Anleitung zum Stroop-Farb-Wort-Interferenztest",
-    "description": "In 4 Schritten kognitive Hemmung und Aufmerksamkeitskontrolle im Stroop-Test perfektionieren.",
+    "description": "So läuft eine Runde des Stroop-Tests online ab.",
     "step": [
       {
         "@type": "HowToStep",
@@ -228,7 +229,7 @@ export default function DistractionFighterPageDe() {
         "@type": "HowToStep",
         "position": 4,
         "name": "Combo-Serien aufbauen und Tempo steigern",
-        "text": "Halte einen gleichmäßigen Rhythmus ohne Fehlklicks, um höhere Punktmultiplikatoren und Stufen zu erreichen.",
+        "text": "Halte einen gleichmäßigen Rhythmus ohne Fehlklicks: Treffer bringen +2 s (max. 60 s), Fehler und abgelaufene Wörter kosten 1 s. Bei 0 Sekunden endet die Runde.",
         "url": "https://skilldrills.online/de/drills/cognitive/focus/distraction-fighter#step-4"
       }
     ]
@@ -237,23 +238,25 @@ export default function DistractionFighterPageDe() {
   const distractionFighterGuide = {
     heading: "Leitfaden zum Stroop-Test & Neurobiologie der kognitiven Inhibition",
     intro: [
-      "Der Stroop-Effekt zählt seit seiner Erstveröffentlichung durch J. Ridley Stroop (1935) zu den am gründlichsten erforschten und replizierten Phänomenen der experimentellen Kognitionspsychologie und Neurowissenschaft. Werden Probanden mit Farbwörtern konfrontiert, deren Textinhalt von der Druckfarbe abweicht (z. B. das Wort 'GRÜN' in roter Farbe), verlangsamen sich die Reaktionszeiten dramatisch und die Fehleranfälligkeit steigt.",
-      "Die neurobiologische Ursache liegt in der asymmetrischen Verarbeitungsgeschwindigkeit: Das semantische Lesen geschriebener Wörter ist im erwachsenen Gehirn durch jahrelange Praxis hochgradig automatisiert (MacLeod, 1991). Die Benennung der reinen Farbe erfordert hingegen willkürliche, kontrollierte visuelle Aufmerksamkeit. Nach dem Horse-Race-Modell von Gordon D. Logan & Nelson J. Cowan (1984) gewinnt der automatische Leseimpuls das interne Verarbeitungsrennen, sofern er nicht durch top-down-gesteuerte neuronale Hemmung aktiv gestoppt wird.",
-      "Funktionelle Bildgebungsstudien belegen, dass diese kognitive Konfliktlösung primär im vorderen cingulären Kortex (ACC) und im dorsolateralen präfrontalen Kortex (DLPFC) stattfindet (Posner & Petersen, 1990). Das regelmäßige Durchlaufen dieses Drills trainiert die Fähigkeit, irrelevante Störreize im Keim zu ersticken und Aufgabenfokus unter Zeitdruck aufrechtzuerhalten.",
-      "Zeit- und Messmethodik: Jedes Reaktionsereignis wird clientseitig über die hochauflösende performance.now() API des Browsers erfasst. Moderne Browser vergröbern Zeitgeber als Sicherheitsmaßnahme gegen spekulative Seitenkanalangriffe wie Spectre auf rund 1 ms, während der Bildschirm Aktualisierungen auf die jeweilige Bildwiederholrate quantisiert: ca. 16,7 ms pro Frame bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz (Woods et al., 2015). Vergleichen Sie Ihre Fortschritte am besten auf demselben Endgerät statt Rohwerte zwischen unterschiedlichen Systemen gegenüberzustellen.",
+      "Der Stroop-Effekt zählt seit seiner Erstveröffentlichung durch J. Ridley Stroop (1935) zu den am gründlichsten erforschten und replizierten Phänomenen der experimentellen Kognitionspsychologie und Neurowissenschaft. Werden Probanden mit Farbwörtern konfrontiert, deren Textinhalt von der Druckfarbe abweicht (z. B. das Wort 'GRÜN' in roter Farbe), verlangsamen sich die Reaktionszeiten und die Fehleranfälligkeit steigt.",
+      "Die neurobiologische Ursache liegt in der asymmetrischen Verarbeitungsgeschwindigkeit: Das semantische Lesen geschriebener Wörter ist im erwachsenen Gehirn durch jahrelange Praxis hochgradig automatisiert (MacLeod, 1991). Die Benennung der reinen Farbe erfordert hingegen willkürliche, kontrollierte visuelle Aufmerksamkeit. Das Stoppen automatischer Reaktionen wird in der Forschung zur Reaktionshemmung als Wettlauf beschrieben (Logan & Cowan, 1984); beim Stroop-Test entsteht ein Fehler, wenn der Leseimpuls nicht rechtzeitig gebremst wird.",
+      "Funktionelle Bildgebungsstudien belegen, dass diese kognitive Konfliktlösung primär im vorderen cingulären Kortex (ACC) und im dorsolateralen präfrontalen Kortex (DLPFC) stattfindet (Posner & Petersen, 1990). Dieser Drill lässt dich diesen Konflikt wiederholt üben; eine bessere Konzentration im Alltag ist damit nicht garantiert.",
+      "Zeitmessung: Der Drill zeigt keine Reaktionszeiten an, sondern Punkte, Genauigkeit und erreichte Stufe. Das Zeitfenster pro Wort läuft clientseitig über Browser-Timer. Moderne Browser vergröbern Zeitgeber als Sicherheitsmaßnahme gegen spekulative Seitenkanalangriffe wie Spectre auf rund 1 ms, während der Bildschirm Aktualisierungen auf die jeweilige Bildwiederholrate quantisiert: ca. 16,7 ms pro Frame bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz (Woods et al., 2015). Vergleichen Sie Ihre Fortschritte am besten auf demselben Endgerät statt Rohwerte zwischen unterschiedlichen Systemen gegenüberzustellen.",
       "Datentransparenz und medizinischer Hinweis: SkillDrills erfasst und speichert keinerlei aggregierte Nutzerdaten auf externen Servern. Sämtliche Punktzahlen und Einstellungen verbleiben ausschließlich im lokalen Speicher (localStorage) Ihres Webbrowsers. Diese Übung ist ein kostenloses kognitives Trainingsspiel zu Bildungs- und Unterhaltungszwecken. Sie stellt kein medizinisches Diagnoseinstrument und kein therapeutisches Verfahren für ADHS oder neurologische Aufmerksamkeitsstörungen dar. Bei klinischen Fragestellungen wenden Sie sich bitte an qualifizierte Mediziner oder Therapeuten."
     ],
     benchmarks: {
-      title: "Stroop-Test Leistungsstufen & Interferenz-Benchmarks (45-Sekunden-Lauf)",
-      headers: ["Leistungsstufe", "Punktzahl (45s)", "Genauigkeitsquote", "Neurokognitive Bewertung"],
+      title: "Stroop-Test: Notenstufen (Punkte pro Runde)",
+      headers: ["Stufe", "Punkte"],
       rows: [
-        ["Stufe 5 (höchste Übungsstufe)", "Über 18.000 PTS", "Über 96%", "Vollständige Impulskontrolle; reflexartiges Ausblenden der Wortbedeutung bei maximaler Reaktionsschnelligkeit"],
-        ["Tier 2 (Fortgeschritten / Turnier-Niveau)", "12.000 – 17.999 PTS", "92 – 95%", "Sehr geringe Stroop-Interferenz; stabiler Klicktakt bei exzellenter kognitiver Flexibilität"],
-        ["Tier 3 (Solider Durchschnitt)", "7.000 – 11.999 PTS", "85 – 91%", "Typische gesunde Interferenzverzögerung; gelegentliches Zögern bei stark kontrastierenden Farben"],
-        ["Tier 4 (Basis / Gelegentliche Ablenkung)", "3.000 – 6.999 PTS", "75 – 84%", "Starke Neigung, dem Leseimpuls nachzugeben; Verlangsamung bei steigender Reizdichte"],
-        ["Tier 5 (Einsteiger / Hohe Impulsivität)", "Unter 3.000 PTS", "Unter 75%", "Häufige Fehlklicks und Zeitüberschreitungen; Anzeichen von mentaler Übermüdung"]
+        ["S+", "ab 21.660"],
+        ["S", "17.340 – 21.659"],
+        ["A", "13.500 – 17.339"],
+        ["B", "8.640 – 13.499"],
+        ["C", "4.860 – 8.639"],
+        ["D", "2.160 – 4.859"],
+        ["F", "unter 2.160"]
       ],
-      note: "Die Punktzahlen spiegeln eine 45-Sekunden-Session mit dynamisch ansteigender Farbvielfalt und verkürzten Zeitfenstern wider (Stroop, 1935; Woods et al., 2015)."
+      note: "SkillDrills-Übungsbänder, direkt aus der Notenformel des Endbildschirms berechnet (Anteil an 24.000 Referenzpunkten); keine Nutzerstatistik und keine Normwerte. Jeder Treffer bringt 100 Punkte × Combo-Multiplikator (bis 3x) × Stufenfaktor."
     },
     techniques: {
       title: "4 Strategien zur Überwindung der Stroop-Interferenz",
@@ -266,16 +269,16 @@ export default function DistractionFighterPageDe() {
         {
           name: "Strikte Unterdrückung innerer Vorlese-Stimmen",
           desc: "Wer das Wort im Kopf ausspricht, verstärkt die Interferenz im Sprachzentrum. Das Ziel ist die direkte Verbindung von Farbwahrnehmung und motorischer Tippreaktion.",
-          tips: "Atme ruhig aus und vermeide es, die Ziffern oder Farbnamen innerlich zu murmeln."
+          tips: "Atme ruhig aus und vermeide es, die Farbnamen innerlich zu murmeln."
         },
         {
           name: "Rhythmisches Reaktions-Timing",
-          desc: "Hektisches Schnellklicken führt zu katastrophalen Fehlerserien. Ein gleichmäßiges, kontrolliertes Tempo schützt deinen Combo-Multiplikator.",
+          desc: "Hektisches Schnellklicken führt zu Fehlerserien, und jeder Fehler kostet 1 Sekunde. Ein gleichmäßiges, kontrolliertes Tempo schützt deinen Combo-Multiplikator.",
           tips: "Priorisiere Präzision vor Höchstgeschwindigkeit; die Geschwindigkeit stellt sich automatisch ein."
         },
         {
           name: "Kurze tägliche Reizüberflutungs-Resilienz",
-          desc: "Kognitive Inhibition verbraucht rasch Glukose im Präfrontalkortex. Tägliche kurze Einheiten von 3 bis 5 Minuten erzielen den größten Trainingseffekt.",
+          desc: "Mit Ermüdung steigen die Fehler. Kurze tägliche Einheiten von 3 bis 5 Minuten lassen sich gut durchhalten.",
           tips: "Nutze diesen Drill ideal als Aufwärmübung vor anspruchsvoller Denkarbeit oder Wettkampf-Matches."
         }
       ]
@@ -285,9 +288,9 @@ export default function DistractionFighterPageDe() {
       "Ein Farbwort erscheint in einer abweichenden Schriftfarbe (z. B. 'GELB' in blauer Farbe).",
       "Unterdrücke den Impuls, das Wort 'GELB' zu lesen, und erkenne die blaue Farbe.",
       "Tippe am unteren Bildschirmrand auf den Button der entsprechenden Druckfarbe.",
-      "Halte die Serie fehlerfrei aufrecht, um Combo-Punkte und höhere Schwierigkeitsstufen zu erreichen."
+      "Die Uhr startet bei 45 Sekunden; halte die Serie fehlerfrei, um Combo-Punkte, Zeitgutschriften und höhere Stufen zu erreichen."
     ],
-    audience: "Schüler, Studierende, Wissensarbeiter, E-Sportler und alle, die ihre Konzentrationsdisziplin und Impulskontrolle gegen digitale Ablenkungen stärken wollen.",
+    audience: "Schüler, Studierende, Wissensarbeiter, E-Sportler und alle, die den Stroop-Effekt selbst ausprobieren wollen.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('macLeod1991', 'logan1984', 'posner1990', 'woods2015'),
     related: [
@@ -327,23 +330,23 @@ export default function DistractionFighterPageDe() {
       />
       <DistractionFighterClient
         copy={{
-          title: "Stroop-Test",
-          subtitle: "Farb-Wort-Interferenz & Kognitive Inhibition",
+          title: "Stroop-Test online kostenlos",
+          subtitle: "Farb-Wort-Test: Schriftfarbe statt Wortbedeutung wählen",
           caption: "Benenne die Schriftfarbe und ignoriere die Textbedeutung. Die Interferenz zwischen automatischem Lesen und Farberkennung misst deine kognitive Hemmungskontrolle (Stroop, 1935).",
           stageCaption: "Wähle den Button der Schriftfarbe aus und ignoriere die widersprüchliche Wortbedeutung.",
           rulesTitle: "Drill-Anleitung & Punktesystem",
           aboutTitle: "Über den Stroop-Test & Kognitive Inhibition",
-          aboutText: "Der Stroop-Effekt beschreibt die Verzögerung beim Benennen der Schriftfarbe eines Wortes, wenn Text und Farbe im Widerspruch stehen (Stroop, 1935; MacLeod, 1991).\n\nLesen ist ein hochgradig automatisierter Prozess. Das Gehirn muss im präfrontalen Kortex den Leseimpuls aktiv unterdrücken, um die reine Farbwahrnehmung durchzusetzen.\n\nRegelmäßiges Training stärkt die willkürliche Aufmerksamkeitskontrolle und hilft, Störreize in lauten Umgebungen souverän auszublenden.",
+          aboutText: "Der Stroop-Effekt beschreibt die Verzögerung beim Benennen der Schriftfarbe eines Wortes, wenn Text und Farbe im Widerspruch stehen (Stroop, 1935; MacLeod, 1991).\n\nLesen ist ein hochgradig automatisierter Prozess. Das Gehirn muss im präfrontalen Kortex den Leseimpuls aktiv unterdrücken, um die reine Farbwahrnehmung durchzusetzen.\n\nDer Drill macht diesen Konflikt übbar; eine bessere Konzentration im Alltag ist nicht garantiert.",
           aboutCards: [
             { title: "Für wen geeignet?", desc: "Wissensarbeiter im Großraumbüro, Schüler und Studierende sowie Gamer, die ihre Impulskontrolle gegen Benachrichtigungen schärfen wollen.", color: "bg-blue-600" },
             { title: "Trainierte Fähigkeiten", desc: "Widerstandskraft gegen Stroop-Interferenz, kognitive Hemmung, Top-down-Aufmerksamkeitssteuerung und Impulsdämpfung.", color: "bg-emerald-600" },
             { title: "Inhibitionskontrolle", desc: "Unterdrücke den automatischen Leseimpuls und isoliere die reine Farbwahrnehmung unter steigendem Zeitdruck.", color: "bg-purple-600" }
           ],
           rulesItems: [
-            { title: "Stroop-Interferenz", text: "Ein Farbwort erscheint auf dem Bildschirm (z. B. 'BLAU') in abweichender Schriftfarbe (z. B. rote Tinte)." },
-            { title: "Auswahlregel", text: "Tippe auf den Button der SCHRIFTFARBE (im Beispiel: Rot) und ignoriere die geschriebene Bedeutung (+100 Pkt × Combo × Stufe, +0,6s)." },
-            { title: "Fehlversuche", text: "Ein Fehlklick setzt deine Combo zurück (und zieht bei aktivierter Strafe 0,8s ab). Das Spiel läuft bis zum Ablauf der Zeit." },
-            { title: "Serien & Boni", text: "Längere Trefferserien multiplizieren deine Punkte. Höhere Stufen fordern schnellere Entscheidungen bei mehr Farbauswahl." }
+            { num: "1", text: "Farbwort in fremder Farbe", highlight: "Schriftfarbe wählen", result: "Wort ignorieren" },
+            { num: "2", text: "Treffer", highlight: "100 × Combo × Stufe", result: "+2 s (max. 60 s)" },
+            { num: "3", text: "Fehler / abgelaufen", highlight: "Combo weg", result: "-1 s" },
+            { num: "4", text: "Höhere Stufe", highlight: "kürzeres Zeitfenster", result: "ab Stufe 4: 6 Farben" }
           ]
         }}
         faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}

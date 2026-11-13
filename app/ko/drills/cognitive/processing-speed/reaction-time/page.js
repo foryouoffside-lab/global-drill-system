@@ -8,7 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: "선택 반응 시간 테스트 | 색상 규칙 전환 훈련 | SkillDrills",
   description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련이며 임상 검사가 아닙니다.",
-  keywords: ["선택 반응 시간 테스트", "선택 반응 시간", "선택 반응 테스트", "판단 속도 테스트", "색상 규칙 전환 훈련", "반응속도 테스트", "인지 처리 속도"],
+  keywords: ["선택 반응 시간 테스트", "선택 반응 시간", "선택 반응 테스트", "판단 속도 테스트", "색상 규칙 전환 훈련", "인지 처리 속도"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "선택 반응 시간 테스트 | 색상 규칙 전환 훈련 | SkillDrills",
     description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련이며 임상 검사가 아닙니다.",
@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "선택 반응시간 및 판단 속도 진단 도구",
+  "name": "선택 반응 시간 테스트",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "KRW"
   },
-  "description": "무료 브라우저 선택 반응시간(CRT) 측정 도구. 동적으로 뒤바뀌는 색상 규칙을 식별하고 올바른 표적을 타격하여 두뇌의 시지각 분별 속도와 의사결정 지연 시간을 밀리초 단위로 평가합니다.",
+  "description": "무료 브라우저 선택 반응 시간 테스트. 빨강·파랑 표적 중 상단 규칙에 맞는 색을 눌러 판단 속도와 정확도를 연습합니다. 결과는 점수·정확도·최고 레벨이며 밀리초 기록이나 임상 검사가 아닙니다.",
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time",
   "publisher": {
     "@type": "Organization",
@@ -79,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ko-KR",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "선택 반응시간 테스트・판단 속도 측정 – 힉의 법칙 인지속도",
+  "name": "선택 반응 시간 테스트 – 색상 규칙 전환 훈련",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -96,15 +96,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time",
   "inLanguage": "ko-KR",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "선택 반응시간 테스트 – 동적 규칙 판별 및 반사신경 게임",
+  "name": "선택 반응 시간 테스트 – 색상 규칙 전환 게임",
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time",
-  "description": "무료 브라우저 선택 반응시간(CRT) 측정 도구. 동적으로 뒤바뀌는 색상 규칙을 식별하고 올바른 표적을 타격하여 두뇌의 시지각 분별 속도와 의사결정 지연 시간을 밀리초 단위로 평가합니다.",
+  "description": "무료 브라우저 선택 반응 시간 테스트. 빨강·파랑 표적 중 상단 규칙에 맞는 색을 눌러 판단 속도와 정확도를 연습합니다. 결과는 점수·정확도·최고 레벨이며 밀리초 기록이나 임상 검사가 아닙니다.",
   "genre": [
     "Action",
     "Brain Game",
@@ -129,18 +129,18 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "선택 반응시간(CRT, Choice Reaction Time)이란?",
+      "name": "선택 반응 시간(Choice Reaction Time)이란?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "여러 개의 자극 중 유효한 대상을 분별하고 알맞은 동작을 선택하여 실행하기까지 걸리는 총 의사결정 소요 시간입니다."
+        "text": "여러 자극 중 규칙에 맞는 대상을 구별하고 알맞은 반응을 골라 실행하기까지 걸리는 시간입니다. 이 드릴에서는 빨강과 파랑 중 현재 규칙에 맞는 색을 누릅니다."
       }
     },
     {
       "@type": "Question",
-      "name": "단순 반응시간과의 차이점은?",
+      "name": "단순 반응 시간과의 차이점은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "자극 출현 즉시 누르는 단순 반응(~200ms)과 달리, 자극 식별과 행동 선택 단계가 추가되어 반응 시간이 대체로 수십 ms 더 길어집니다(Donders, 1868)."
+        "text": "단순 반응은 하나의 예상된 자극에 바로 반응합니다. 선택 반응은 자극을 구별하고 반응을 고르는 단계가 더해져 일반적으로 더 느립니다(Donders). 이 드릴은 여기에 규칙 전환을 더했습니다."
       }
     },
     {
@@ -148,63 +148,63 @@ const faqSchema = {
       "name": "힉의 법칙(Hick's Law, 1952)이란?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "선택지의 수가 늘어날수록 반응 시간이 로그 함수 형태로 길어진다는 인지공학의 기본 법칙입니다."
+        "text": "선택지의 수가 늘어날수록 반응 시간이 로그 함수 형태로 길어진다는 법칙입니다. 이 드릴은 매번 규칙을 확인하게 해 판단 단계를 연습하게 합니다."
       }
     },
     {
       "@type": "Question",
-      "name": "일반 성인의 평균 선택 반응속도는?",
+      "name": "규칙 전환은 어떻게 작동하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "일반 성인의 평균은 280~350ms이며, 연습과 기기 환경(고주사율 모니터 등)에 따라 이보다 짧은 기록이 나오기도 합니다(Der & Deary, 2006)."
+        "text": "상단 배너가 누를 색(빨강 또는 파랑)을 알려 줍니다. 레벨 2부터는 현재 색을 일정 횟수 맞히면 규칙이 바뀌고, 레벨이 오를수록 바뀌기까지 필요한 횟수가 줄어듭니다(최소 2회)."
       }
     },
     {
       "@type": "Question",
-      "name": "규칙 전환(Rule-Switching)이 추가된 이유는?",
+      "name": "시간은 어떻게 계산되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "빨간색과 파란색 표적 규칙이 수시로 바뀌어, 전두엽의 인지적 유연성과 충동 억제력을 함께 평가하기 위함입니다."
+        "text": "45초로 시작합니다. 정답마다 2초가 더해지며 최대 60초입니다. 다른 색을 누르거나 표적 시간 초과(설정의 Target Timeouts가 켜져 있을 때)가 나면 1초가 줄고 콤보가 초기화됩니다. 시간이 0이 되면 종료됩니다."
       }
     },
     {
       "@type": "Question",
-      "name": "훈련을 통해 판단 속도가 빨라질 수 있나요?",
+      "name": "점수와 등급은 어떻게 정해지나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "네, 신경 전달 경로가 효율화되고 시각 변별 패턴이 뇌에 각인되어 불필요한 망설임 시간이 단축됩니다."
+        "text": "정답 한 번에 100점에 콤보 배율과 레벨 배율을 곱한 점수를 얻습니다. 최종 점수는 SkillDrills가 정한 고정 기준과 비교해 F부터 S+까지 등급으로 표시됩니다."
       }
     },
     {
       "@type": "Question",
-      "name": "나이가 들면 반응시간이 느려지나요?",
+      "name": "반응 시간을 밀리초로 알려 주나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "20대 중반 이후 점진적으로 지연되지만, 지속적인 인지 훈련을 통해 상당 부분 감퇴를 늦출 수 있습니다."
+        "text": "아니요. 결과는 점수, 정확도(전체 시도 중 정답 비율), 최고 레벨, 최대 콤보입니다. 개별 반응 시간을 밀리초로 기록하지 않습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "모니터와 마우스 성능이 측정에 미치는 영향은?",
+      "name": "연습하면 좋아지나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "144Hz 고주사율 모니터와 1000Hz 폴링레이트 마우스는 하드웨어 지연을 최소화합니다(Woods et al., 2015)."
+        "text": "이 과제의 점수는 연습할수록 대체로 오릅니다. 매번 규칙 배너를 먼저 확인하고 정확도를 유지해 콤보를 쌓는 것이 핵심입니다. 다른 일상 과제의 반응 속도 향상을 보장하지는 않습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "가장 권장하는 일일 연습 방식은?",
+      "name": "의학적 검사인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "집중력이 높은 시간대에 하루 10~15분 동안 반복하는 것이 최적입니다."
+        "text": "아니요. 연습용 브라우저 드릴이며 진단이나 선별 검사가 아닙니다. 결과는 기기와 컨디션에 따라 달라지므로 같은 기기에서 자신의 기록 변화를 비교하세요."
       }
     },
     {
       "@type": "Question",
-      "name": "검사는 무료로 진행되나요?",
+      "name": "무료인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "네, SkillDrills의 모든 검사는 회원가입 없이 무료로 브라우저에서 바로 제공됩니다."
+        "text": "네, 회원가입 없이 무료로 브라우저에서 바로 이용할 수 있습니다."
       }
     }
   ]
@@ -214,7 +214,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "선택 반응시간 테스트・판단 속도 측정",
-  "description": "무료 브라우저 선택 반응시간(CRT) 측정 도구. 동적으로 뒤바뀌는 색상 규칙을 식별하고 올바른 표적을 타격하여 두뇌의 시지각 분별 속도와 의사결정 지연 시간을 밀리초 단위로 평가합니다.",
+  "description": "무료 브라우저 선택 반응 시간 테스트. 빨강·파랑 표적 중 상단 규칙에 맞는 색을 눌러 판단 속도와 정확도를 연습합니다. 결과는 점수·정확도·최고 레벨이며 밀리초 기록이나 임상 검사가 아닙니다.",
   "step": [
     {
       "@type": "HowToStep",
@@ -227,14 +227,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 2,
       "name": "스폰된 타깃 실시간 분별",
-      "text": "필드에 생성되는 타깃들 중 현재 활성화된 규칙 색상과 일치하는 노드를 시각적으로 식별합니다.",
+      "text": "화면에 함께 나타나는 빨강·파랑 표적 중 현재 규칙 색상과 같은 표적을 찾습니다.",
       "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "오답 회피 및 전광석화 클릭",
-      "text": "다른 색상의 노드를 피해 정답 타깃을 소멸 시간 전에 번개처럼 클릭합니다.",
+      "text": "다른 색 표적은 피하고, 표적이 바뀌기 전에 정답 표적을 누릅니다. 오답이나 시간 초과는 1초 감점과 콤보 초기화입니다.",
       "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time#step-3"
     },
     {
@@ -250,11 +250,11 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('donders1969', 'hick1952', 'hyman1953', 'der2006', 'woods2015'),
   intro: {
-    title: "선택 반응시간 테스트・판단 속도 측정 – 힉의 법칙 인지속도",
+    title: "선택 반응 시간 테스트 – 색상 규칙 전환 훈련",
     paragraphs: [
-      "무료 브라우저 선택 반응시간(CRT) 측정 도구. 동적으로 뒤바뀌는 색상 규칙을 식별하고 올바른 표적을 눌러 시각 분별과 판단에 걸리는 시간을 연습합니다. 선택 반응 시간은 여러 자극 중 규칙에 맞는 반응을 고르는 데 걸리는 시간입니다. 사람과 기기에 따라 값이 크게 다르므로 같은 기기에서 본인의 기록 변화를 비교하세요.",
-      "자극 출현 즉시 누르는 단순 반응(~200ms)과 달리, 자극 식별과 행동 선택 단계가 추가되어 반응 시간이 대체로 수십 ms 더 길어집니다(Donders, 1868).",
-      "선택지의 수가 늘어날수록 반응 시간이 로그 함수 형태로 길어진다는 인지공학의 기본 법칙입니다.",
+      "선택 반응 시간 테스트는 여러 자극 중 규칙에 맞는 것을 골라 반응하는 과제입니다. 이 드릴에서는 빨강·파랑 표적이 함께 나타나고, 상단 배너가 가리키는 색을 눌러야 합니다. 레벨 2부터 규칙이 바뀌므로 매번 규칙을 다시 확인해야 합니다.",
+      "자극이 하나뿐인 단순 반응과 달리, 선택 반응에는 자극을 구별하고 반응을 고르는 단계가 더해져 일반적으로 더 느립니다(Donders, 1868/1969).",
+      "선택지가 늘수록 판단 시간이 로그 형태로 길어진다는 경향은 힉의 법칙(Hick, 1952)으로 알려져 있습니다. 이 드릴은 밀리초 기록 대신 점수, 정확도, 최고 레벨, 최대 콤보를 보여 주며 임상 검사가 아닙니다.",
     ],
   },
   benchmarks: {
@@ -270,12 +270,12 @@ const guideProps = {
     note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계, 백분위 또는 임상 기준이 아닙니다.',
   },
   protocols: {
-    title: '두뇌 처리 속도와 집중력을 극대화하는 4대 훈련 프로토콜',
-    description: '힉의 법칙(Hick, 1952)과 돈더스 감산법(Donders, 1969)에 기반한, 시각 분별 시간과 신경 결정 지연을 단축시키는 과학적 선택 반응시간 훈련 프로토콜입니다.',
+    title: '선택 반응 시간 테스트 진행 순서',
+    description: '두 색 표적과 바뀌는 규칙에 맞춰 판단과 정확도를 연습하는 순서입니다. 선택지와 판단 시간의 관계는 힉의 법칙(Hick, 1952)으로 설명됩니다.',
     items: [
       { title: "상단 활성 규칙 인지", description: "상단 배너에 표시된 지정 타깃 색상(TAP RED 또는 TAP BLUE)을 확인합니다." },
-      { title: "스폰된 타깃 실시간 분별", description: "필드에 생성되는 타깃들 중 현재 활성화된 규칙 색상과 일치하는 노드를 시각적으로 식별합니다." },
-      { title: "오답 회피 및 전광석화 클릭", description: "다른 색상의 노드를 피해 정답 타깃을 소멸 시간 전에 번개처럼 클릭합니다." },
+      { title: "스폰된 타깃 실시간 분별", description: "화면에 함께 나타나는 빨강·파랑 표적 중 현재 규칙 색상과 같은 표적을 찾습니다." },
+      { title: "오답 회피 및 전광석화 클릭", description: "다른 색 표적은 피하고, 표적이 바뀌기 전에 정답 표적을 누릅니다. 오답이나 시간 초과는 1초 감점과 콤보 초기화입니다." },
       { title: "규칙 역전에 대한 즉각 대응", description: "규칙 배너가 반전되는 즉시 과거의 반응을 억제하고 새로운 색상으로 즉시 전환합니다." },
     ],
   },
@@ -336,9 +336,9 @@ export default function LocalizedCognitivePage() {
           ],
           rulesItems: [
             { num: "1", text: "활성 규칙", highlight: "빨강 / 파랑", result: "상단 배너 따르기" },
-            { num: "2", text: "정답 표적", highlight: "+100점", result: "콤보·레벨 배율 적용" },
-            { num: "3", text: "규칙 전환", highlight: "자동 변경", result: "레벨이 오를수록 빨라짐" },
-            { num: "4", text: "오답 / 시간 초과", highlight: "콤보 초기화", result: "설정 시 -0.8초" }
+            { num: "2", text: "정답 표적", highlight: "+100점", result: "콤보·레벨 배율, +2초(최대 60초)" },
+            { num: "3", text: "규칙 전환", highlight: "레벨 2부터", result: "레벨이 오를수록 더 자주 바뀜" },
+            { num: "4", text: "오답 / 시간 초과", highlight: "콤보 초기화", result: "-1초" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

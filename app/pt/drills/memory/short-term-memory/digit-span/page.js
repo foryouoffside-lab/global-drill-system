@@ -5,10 +5,11 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de memória de números | Span de dígitos | SkillDrills",
-  description: "Teste de memória de números grátis: memorize sequências numéricas cada vez maiores e repita tudo na ordem certa pelo navegador.",
+  title: "Teste de memória numérica | Span de dígitos | SkillDrills",
+  description: "Teste de memória numérica grátis: memorize a sequência de números que aparece rápido e digite na mesma ordem. Começa com 3 dígitos e vai até 15.",
   keywords: [
-    "teste de memória de números",
+    "teste de memória numérica",
+    "teste de memória com números",
     "teste de dígitos online",
     "span de dígitos",
     "amplitude de dígitos",
@@ -16,7 +17,6 @@ export const metadata = {
     "memória de curto prazo números",
     "jogo de memória numérica",
     "teste de retenção de números",
-    "teste de dígitos WAIS",
     "sequência numérica memória",
     "alça fonológica",
     "agrupamento de números",
@@ -25,8 +25,8 @@ export const metadata = {
     "extensão de dígitos"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Teste de memória de números | Span de dígitos | SkillDrills",
-    description: "Teste de memória de números grátis: memorize sequências numéricas cada vez maiores e repita tudo na ordem certa pelo navegador.",
+    title: "Teste de memória numérica | Span de dígitos | SkillDrills",
+    description: "Teste de memória numérica grátis: memorize a sequência de números que aparece rápido e digite na mesma ordem. Começa com 3 dígitos e vai até 15.",
     type: 'website',
     url: 'https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span',
     siteName: 'SkillDrills',
@@ -34,8 +34,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Teste de memória de números | Span de dígitos | SkillDrills",
-    description: "Teste de memória de números grátis: memorize sequências numéricas cada vez maiores e repita tudo na ordem certa pelo navegador.",
+    title: "Teste de memória numérica | Span de dígitos | SkillDrills",
+    description: "Teste de memória numérica grátis: memorize a sequência de números que aparece rápido e digite na mesma ordem. Começa com 3 dígitos e vai até 15.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -51,14 +51,14 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://skilldrills.online/pt" },
     { "@type": "ListItem", "position": 2, "name": "Treino de Memória", "item": "https://skilldrills.online/pt/drills/memory" },
     { "@type": "ListItem", "position": 3, "name": "Memória de Curto Prazo", "item": "https://skilldrills.online/pt/drills/memory/short-term-memory" },
-    { "@type": "ListItem", "position": 4, "name": "Teste de Dígitos", "item": "https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span" }
+    { "@type": "ListItem", "position": 4, "name": "Teste de memória numérica", "item": "https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span" }
   ]
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Teste de Dígitos Online (Span de Dígitos)",
+  "name": "Teste de memória numérica (span de dígitos)",
   "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -66,16 +66,16 @@ const webAppSchema = {
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
   "sameAs": ["https://pt.wikipedia.org/wiki/Mem%C3%B3ria_de_trabalho"],
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Teste de Dígitos Online (Span de Dígitos)",
+  "name": "Teste de memória numérica (span de dígitos)",
   "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span",
-  "description": "Avaliação neuropsicológica interativa que mede a memória operacional numérica, a retenção na alça fonológica e a velocidade de repetição subvocal.",
-  "dateModified": "2026-09-11",
+  "description": "Jogo gratuito de memória com números: a sequência aparece de uma vez por pouco tempo e você digita na mesma ordem. Começa com 3 dígitos, +1 a cada acerto.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Memory Game", "Cognitive Training", "Brain Training", "Working Memory"],
   "playMode": "SinglePlayer",
@@ -88,52 +88,48 @@ const videoGameSchema = {
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Teste de Dígitos Online (Span de Dígitos)",
+  "name": "Teste de memória numérica (span de dígitos)",
   "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Como treinar a memória de dígitos e o span de memória",
-  "description": "Protocolo sistemático de quatro etapas para codificar e reproduzir sequências numéricas usando chunking rítmico.",
+  "name": "Como fazer o teste de memória numérica",
+  "description": "Quatro passos para memorizar uma sequência de números e digitá-la na mesma ordem (sessão de 45 segundos).",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span#step-1",
-      
-      "name": "Fixar a atenção no centro",
-      "text": "Mantenha o foco no centro da tela durante os 3 segundos de exibição da sequência numérica."
+      "name": "Veja a sequência de uma vez",
+      "text": "A sequência inteira aparece de uma só vez: 2,5 segundos no início e 0,1 segundo a menos a cada acerto (mínimo de 0,8 segundo)."
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span#step-2",
-      
-      "name": "Agrupamento rítmico (Chunking)",
-      "text": "Agrupe os dígitos em blocos de 2 a 3 números (como um telefone: '739 - 281') para reduzir o esforço cognitivo."
+      "name": "Agrupe os números",
+      "text": "Divida os dígitos em blocos de 2 ou 3, como um número de telefone (ex.: '739-281')."
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span#step-3",
-      
-      "name": "Repetição subvocal (Alça Fonológica)",
-      "text": "Repita os números mentalmente em ritmo rápido para evitar o esquecimento natural após 1,5 a 2 segundos."
+      "name": "Repita mentalmente",
+      "text": "Depois que os números somem, repita os blocos na cabeça (alça fonológica) até digitar."
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span#step-4",
-      
-      "name": "Digitação ágil no teclado",
-      "text": "Insira os dígitos com cadência regular assim que o teclado for liberado antes do esvaecimento da lembrança."
+      "name": "Digite em até 8 segundos",
+      "text": "Digite os números na mesma ordem no teclado da tela ou nas teclas numéricas do computador e confirme com Enter. Backspace apaga um dígito."
     }
   ]
 };
@@ -144,82 +140,82 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O que é o teste de dígitos (Digit Span)?",
+      "name": "Como funciona este teste de memória numérica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É uma avaliação neuropsicológica fundamental utilizada para medir a memória de trabalho verbal, a memória de curto prazo e a atenção concentrada. O participante observa números e os reproduz na mesma sequência."
+        "text": "Uma sequência de números aleatórios aparece rapidamente de uma só vez e depois você digita na mesma ordem (ordem direta). Começa com 3 dígitos; cada acerto acrescenta 1 dígito (máximo 15) e cada erro, ou 8 segundos sem confirmar, tira 1 (mínimo 3). A sessão dura 45 segundos."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual a média normal de dígitos que um adulto consegue memorizar?",
+      "name": "Quantos números uma pessoa consegue memorizar em média?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A média da população adulta em ordem direta fica entre 5 e 7 dígitos (desvio padrão 1–2). Acertar 7 dígitos reflete o marco clássico de Miller ($7 \\pm 2$). Resultados de 9 ou mais dígitos revelam uso avançado de chunking."
+        "text": "Na pesquisa, Miller (1956) falou em cerca de 7 ± 2 itens; sem repetição nem agrupamento, Cowan (2001) aponta algo perto de 4. A SkillDrills não coleta dados de usuários, então não mostramos médias nem percentis deste jogo, que por ter tempo limite e ajuste automático não se compara diretamente com valores de laboratório. Use as faixas de prática abaixo e seus próprios recordes."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual a diferença entre dígitos na ordem direta e inversa?",
+      "name": "Existe também a ordem inversa?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A ordem direta afere o armazenamento passivo na alça fonológica. A ordem inversa requer inverter mentalmente a sequência, demandando controle executivo central e refletindo a verdadeira memória operacional ativa."
+        "text": "Não, este teste usa só a ordem direta. Na ordem inversa é preciso inverter a sequência mentalmente, o que exige mais da memória operacional; essa variante não está disponível aqui."
       }
     },
     {
       "@type": "Question",
-      "name": "O que é o subteste de dígitos da escala WAIS?",
+      "name": "É o mesmo subteste de dígitos da WAIS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É uma prova central da Escala Wechsler de Inteligência para Adultos (WAIS-IV) que compõe o Índice de Memória Operacional (IMO), avaliando processamento sequencial e foco contra distrações."
+        "text": "Não. O formato é parecido com o de repetição de dígitos, mas não é o subteste da WAIS e não calcula QI nem escore ponderado. É um jogo gratuito de prática."
       }
     },
     {
       "@type": "Question",
-      "name": "Como a alça fonológica atua na retenção de números?",
+      "name": "Qual o papel da alça fonológica na memória de números?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No modelo de Baddeley, os números ficam guardados no depósito fonológico e são renovados pela repetição subvocal ('voz interna'). Como o som esvanece em cerca de 2 segundos, a velocidade de repetição determina o limite da memória."
+        "text": "No modelo de Baddeley, os números ficam guardados como som no armazenamento fonológico e são mantidos pela repetição interna. Sem repetir, o traço some em cerca de 2 segundos, por isso vale começar a repetir assim que a sequência desaparece."
       }
     },
     {
       "@type": "Question",
-      "name": "O que é a Lei de Miller e o número mágico 7?",
+      "name": "Como a pontuação é calculada?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Publicada em 1956 por George A. Miller, estabelece que o limite de armazenamento imediato humano é de cerca de $7 \\pm 2$ itens. Estudos recentes (Cowan, 2001) comprovam que a capacidade bruta pura é de apenas 4 itens."
+        "text": "Cada sequência certa vale 100 × (1 + 0,1 × (dígitos − 3)) pontos: 100 pontos com 3 dígitos e 220 com 15. Errar não tira pontos nem tempo, só reduz 1 dígito."
       }
     },
     {
       "@type": "Question",
-      "name": "Como o agrupamento (chunking) expande a memória numérica?",
+      "name": "Como o chunking ajuda no teste de memória com números?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Reunir dígitos em pequenos blocos rítmicos ('839 - 241') converte 6 números avulsos em 2 pacotes de informação, superando facilmente a barreira biológica da memória de curto prazo."
+        "text": "Agrupando os números como um telefone ('839-241'), você guarda 6 dígitos como 2 blocos. Com menos unidades para segurar, fica mais fácil manter sequências longas."
       }
     },
     {
       "@type": "Question",
-      "name": "Por que a quantidade de dígitos diminui após um erro?",
+      "name": "Por que a sequência diminui 1 dígito quando eu erro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O treino utiliza o protocolo adaptativo de escada 1-up / 1-down. Reduzir 1 dígito após falhas evita frustração e estabiliza a mensuração precisa da sua capacidade máxima real."
+        "text": "Acertos somam 1 dígito e erros tiram 1 (1-up/1-down), então o tamanho oscila perto do seu limite atual. O tempo de exibição também cai 0,1 s após um acerto e sobe 0,2 s após um erro (entre 0,8 e 2,5 s)."
       }
     },
     {
       "@type": "Question",
-      "name": "Treinar dígitos traz benefícios reais para o cérebro?",
+      "name": "Treinar com números melhora a memória no dia a dia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, desenvolve o controle atencional, diminui devaneios mentais e aprimora a retenção de dados sequenciais para estudos, cálculos matemáticos e raciocínio lógico."
+        "text": "Não há garantia. Com prática você tende a melhorar neste jogo, mas a transferência para a memória do dia a dia, estudos ou trabalho é discutida na pesquisa. Se tiver preocupação com sua memória, procure um médico."
       }
     },
     {
       "@type": "Question",
-      "name": "Este teste de dígitos online é gratuito?",
+      "name": "O teste é gratuito e funciona no celular?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, o teste no SkillDrills é 100% gratuito, funciona direto no navegador sem login e calcula tempos de resposta com exatidão de milissegundos."
+        "text": "Sim, é gratuito, sem cadastro nem instalação. No celular use o teclado numérico da tela; no computador, também as teclas de 0 a 9, Backspace e Enter. Seus recordes ficam só no navegador."
       }
     }
   ]
@@ -227,86 +223,60 @@ const faqSchema = {
 
 const digitSpanGuide = {
   intro: [
-  "O Teste de Dígitos (Digit Span Memory Test) é o procedimento de referência na neuropsicologia clínica para aferir a memória verbal de curto prazo, o span da memória operacional e a alça fonológica.",
-  "A fundamentação teórica teve início com o histórico artigo de George A. Miller (1956) sobre o 'número mágico 7 ± 2'. David Wechsler (1939, 1955, 2008) integrou os dígitos diretos e inversos na escala WAIS, estabelecendo o padrão ouro para o Índice de Memória Operacional (IMO).",
-  "No modelo de Alan Baddeley (1974, 2000), os números são retidos na 'Alça Fonológica'. O eco sonoro decai em menos de dois segundos se não houver renovação pela repetição subvocal. Além disso, Nelson Cowan (2001) constatou que a capacidade pura sem agrupamento é restrita a 4 ± 1 unidades – elevar esse limite requer técnicas de chunking rítmico.",
-  "Calibrado com cronometria digital precisa (Woods et al., 2015), o teste conta com apresentação visual de 3 segundos e algoritmo de progressão adaptativa para mensurar com fidelidade o seu span máximo.",
-  "Metodologia de medição: cada resposta é registrada pelo relógio de alta resolução performance.now() no navegador, processando tudo localmente. Os cronômetros de navegadores têm precisão de ~1 ms e alinham-se à taxa de atualização do monitor (~16,7 ms a 60 Hz; Woods et al., 2015). Acompanhe seu progresso ao longo do tempo no mesmo aparelho.",
-  "Transparência de dados: o SkillDrills não armazena dados de usuários em servidores externos. Seus recordes permanecem salvos apenas no localStorage do seu navegador. Todas as tabelas comparativas são respaldadas por periódicos científicos revisados por pares.",
-  "Este treino é um jogo cognitivo gratuito voltado ao autoconhecimento e prática mental, não sendo um dispositivo médico ou diagnóstico clínico. Em caso de dúvidas médicas, consulte um especialista habilitado."
+  "O teste de memória numérica mostra rapidamente uma sequência de números que você digita depois na mesma ordem. É uma versão de prática da tarefa de span de dígitos, usada há muito tempo pela psicologia para estudar a memória de curto prazo, e não é um teste clínico nem de QI.",
+  "A pergunta sobre o tamanho do span ficou famosa com o 'número mágico 7 ± 2' de George A. Miller (1956). Um formato parecido aparece na escala Wechsler (WAIS), mas este jogo não é esse subteste e não calcula escores.",
+  "No modelo de memória operacional de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), sequências de números são mantidas pela alça fonológica e somem em cerca de 2 segundos sem repetição. Segundo Nelson Cowan (2001), a capacidade bruta sem repetir nem agrupar fica perto de 4 unidades; para sequências longas, o chunking ajuda.",
+  "Como funciona: começa com 3 dígitos; a sequência aparece inteira de uma vez (2,5 s no início, 0,1 s a menos a cada acerto até 0,8 s, 0,2 s a mais após um erro). Depois você tem 8 segundos para digitar no teclado da tela ou do computador. Acerto: +1 dígito (máximo 15); erro ou tempo esgotado: −1 dígito (mínimo 3). O jogo registra pontuação, maior sequência e precisão (porcentagem de rodadas certas); o tempo de reação não é medido.",
+  "Transparência de dados: a SkillDrills não coleta pontuações em servidores; tudo fica no localStorage do seu navegador. Por isso esta página não mostra médias de usuários, percentis nem número de usuários; os números citados vêm dos estudos listados abaixo.",
+  "Aviso: este jogo de prática não é dispositivo médico nem exame diagnóstico. Se tiver preocupação com memória ou concentração, consulte um médico ou neuropsicólogo."
 ],
   benchmarks: {
-    title: "Baremos normativos de span de dígitos e memória operacional",
-    headers: ["Nível de Desempenho", "Span (Dígitos)", "Escore Ponderado WAIS", "Perfil Cognitivo e Chunking"],
+    title: "Faixas de prática do teste de memória numérica (SkillDrills, 45 s)",
+    headers: ["Faixa", "Tamanho alcançado", "Pontos sem erro até lá", "Estratégia típica"],
     rows: [
-  [
-    "Tier 1 (Superior / Topo 1%)",
-    "9 – 12+ Dígitos",
-    "Escore 16 – 19",
-    "Nível mnemônico avançado; organiza números em blocos de 3 a 4 algarismos; retenção perfeita na alça fonológica; cadência abaixo de 350 ms."
-  ],
-  [
-    "Tier 2 (Acima da Média / Topo 15%)",
-    "7 – 8 Dígitos",
-    "Escore 12 – 15",
-    "Atinge o padrão de Miller (7 dígitos); forma agrupamentos estáveis; resistente ao esvaecimento temporal; cadência de 350 a 500 ms."
-  ],
-  [
-    "Tier 3 (Média Adulta / 50%)",
-    "5 – 6 Dígitos",
-    "Escore 8 – 11",
-    "Padrão normal da população adulta; processa pares simples; acima de 6 dígitos surgem confusões acústicas; cadência de 500 a 700 ms."
-  ],
-  [
-    "Tier 4 (Abaixo da Média / Gargalo)",
-    "4 Dígitos",
-    "Escore 5 – 7",
-    "Opera no limite biológico básico de Cowan; falha ao ultrapassar 4 dígitos sem ensaio verbal; cadência de 700 a 950 ms."
-  ],
-  [
-    "Tier 5 (Necessita Treino / Baixo)",
-    "3 Dígitos",
-    "Escore 1 – 4",
-    "Dificuldade para reter 3 dígitos em sequência; vulnerável à distração e esquecimento rápido; cadência acima de 950 ms."
-  ]
+  ["Faixa 1", "13+ dígitos", "cerca de 1.450+", "Blocos de 3 ou 4 e repetição interna rápida"],
+  ["Faixa 2", "11–12 dígitos", "cerca de 1.080–1.449", "Blocos de 3 estáveis"],
+  ["Faixa 3", "9–10 dígitos", "cerca de 750–1.079", "Agrupa em 2 ou 3, mas perde números do meio"],
+  ["Faixa 4", "7–8 dígitos", "cerca de 460–749", "Repete um número por vez, sem agrupar"],
+  ["Faixa 5", "3–6 dígitos", "menos de 460", "Aprendendo as regras e o ritmo de exibição"]
 ],
-    note: "O span reflete o maior número de algarismos reproduzido sem erros. A equivalência com o WAIS fundamenta-se em normas clínicas internacionais (Wechsler, 2008; Woods et al., 2015)."
+    note: "Faixas de prática da SkillDrills, não normas populacionais nem escores da WAIS. Os pontos valem para uma sessão sem erros desde 3 dígitos até esse tamanho (pontos por rodada = 100 × (1 + 0,1 × (dígitos − 3))); erros encurtam a sequência, então a pontuação real varia."
   },
   techniques: {
-    title: "Estratégias eficazes para aumentar o span de dígitos",
+    title: "Estratégias para lembrar mais números",
     items: [
   {
-    "name": "Ritmo fonético e chunking em tríadas",
-    "desc": "Fracione sequências numéricas em grupos de 3 algarismos (ex.: '739 - 281 - 405') adotando a cadência de números telefônicos (Miller, 1956). Nove números soltos passam a ocupar apenas 3 gavetas mentais.",
-    "tips": "Suba levemente a entonação mental no primeiro dígito de cada bloco para demarcar os limites."
+    "name": "Blocos ritmados de 3 dígitos",
+    "desc": "Divida a sequência como um telefone ('739 - 281 - 405'; Miller, 1956): 9 dígitos viram 3 blocos.",
+    "tips": "Dê uma leve ênfase mental ao primeiro número de cada bloco para marcar as fronteiras."
   },
   {
-    "name": "Sincronização da repetição subvocal",
-    "desc": "Repita mentalmente a sequência em um ciclo veloz e contínuo (Baddeley, 1986). A repetição ágil mantém a informação viva no depósito fonológico antes que ela se apague em 2 segundos.",
-    "tips": "Fale os números mentalmente como palavras completas e não como algarismos isolados."
+    "name": "Repetição interna rápida",
+    "desc": "Repita os blocos na cabeça em ciclo (alça fonológica; Baddeley, 2000). Sem repetição o traço some em cerca de 2 segundos, então comece assim que a sequência desaparecer.",
+    "tips": "Fale cada bloco como uma palavra só, e não dígito por dígito."
   },
   {
-    "name": "Rastreamento espacial no teclado numérico",
-    "desc": "Associe os números ao caminho físico desenhado sobre o teclado numérico 3x3 (Logie, 1995). A memória motora do trajeto complementa e reforça a lembrança auditiva.",
-    "tips": "Mentalize o zigue-zague dos dedos sobre o teclado enquanto os números piscam na tela."
+    "name": "Caminho do dedo no teclado",
+    "desc": "Transforme a sequência em um caminho sobre o teclado numérico da tela (Logie, 1995), somando uma pista espacial à sonora.",
+    "tips": "Enquanto os números aparecem, desenhe mentalmente a linha entre as teclas."
   },
   {
-    "name": "Efeito de primazia e recência",
-    "desc": "Os primeiros números consolidam-se com a repetição inicial (primazia) e os dois últimos continuam frescos no eco auditivo (recência). Dedique seu esforço ativo para memorizar os números do meio.",
-    "tips": "Grave de imediato os primeiros 3 dígitos e confie no eco auditivo para fechar os números finais."
+    "name": "Proteja o meio da sequência",
+    "desc": "Começo e fim costumam ficar melhor; os dígitos do meio são os que mais se perdem (efeito de posição serial). Concentre a repetição nos blocos centrais.",
+    "tips": "Fixe logo os 3 primeiros dígitos e deixe os 2 últimos para a memória imediata."
   }
 ]
   },
   steps: [
-  "Fixe o olhar no visor e aguarde a apresentação de 3 segundos.",
-  "Divida imediatamente os algarismos em blocos de 2 ou 3 números.",
-  "Repita a sequência mentalmente em loop contínuo para barrar o esquecimento.",
-  "Com o teclado ativo, digite os números na ordem exata de modo ágil.",
-  "Deixe o sistema adaptativo calibrar e ampliar continuamente seu span de memória."
+  "Inicie a sessão de 45 segundos e olhe para o centro da tela.",
+  "Quando a sequência aparecer, divida-a logo em blocos de 2 ou 3 dígitos.",
+  "Depois que ela some, repita os blocos mentalmente.",
+  "Digite os números na mesma ordem em até 8 segundos e confirme com Enter.",
+  "Acertos aumentam a sequência e erros diminuem: compare pontuação e maior sequência com seus próprios recordes."
 ],
-  audience: "Estudantes, candidatos de concursos públicos e vestibulares, programadores e qualquer pessoa que queira aprimorar a retenção mental e agilidade de raciocínio.",
+  audience: "Estudantes, concurseiros, profissionais e curiosos que querem saber quantos números conseguem memorizar e praticar a memória operacional.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'woods2015'),
+  sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995'),
   related: [
   {
     "href": "/pt/drills/memory/working-memory/n-back",
@@ -359,10 +329,10 @@ export default function LocalizedDigitSpanPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <DigitSpanClient copy={{
-        "h1Keyword": "Teste de memória de números",
+        "h1Keyword": "Teste de memória numérica",
         "h1Suffix": " – Span de dígitos",
         "subtitle": "Memorize números e repita a sequência exata",
-        "caption": "Memorize a sequência numérica crescente e digite os números na mesma ordem quando ela desaparecer.",
+        "caption": "A sequência de números aparece de uma vez e some: digite na mesma ordem. Cada acerto deixa a próxima sequência um dígito mais longa.",
         "statScore": "Pontos",
         "statTime": "Tempo",
         "statSpan": "Span",
@@ -372,7 +342,7 @@ export default function LocalizedDigitSpanPage() {
         "hudTime": "Tempo",
         "memorizeTitle": "MEMORIZE A SEQUÊNCIA",
         "evaluating": "Avaliando...",
-        "startTitle": "Teste de Dígitos Pro",
+        "startTitle": "Teste de memória numérica",
         "startSubtitle": "Memória numérica • span de dígitos",
         "countdownSubtitle": "PREPARE-SE",
         "newBest": "NOVO RECORDE",
@@ -393,19 +363,19 @@ export default function LocalizedDigitSpanPage() {
                         "num": "2",
                         "text": "Bônus de Extensão",
                         "highlight": "Até +120% PTS",
-                        "result": "Sequências maiores rendem mais pontos a cada rodada correta"
+                        "result": "Rodada = 100 × (1 + 0,1 × (dígitos − 3)) pontos"
                 },
                 {
                         "num": "3",
                         "text": "Erro / Tempo Esgotado",
                         "highlight": "-1 Dígito",
-                        "result": "Sem perda de pontos; o teste recua 1 dígito para estabilizar"
+                        "result": "Erro ou 8 s sem confirmar: sem perder pontos nem tempo, próxima sequência 1 dígito menor"
                 },
                 {
                         "num": "4",
                         "text": "Escada Adaptativa",
                         "highlight": "Ajuste dinâmico",
-                        "result": "Converge com precisão para seu span real de memória"
+                        "result": "Acerto +1 dígito, erro −1 dígito (3 a 15)"
                 }
         ]
 }} />

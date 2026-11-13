@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Räumlicher Gedächtnistest online | SkillDrills",
-  description: "Teste dein räumliches Gedächtnis online: Merke dir, wo Objekte im Raster waren, und finde ihre Position nach kurzer Einblendung wieder.",
+  description: "Räumlicher Gedächtnistest online: Objektposition merken – Emojis erscheinen 1,5 Sekunden im Raster, dann tippst du an, wo das gesuchte Objekt lag. Kostenlos.",
   keywords: ['räumlicher gedächtnistest', 'räumliches gedächtnis', 'gedächtnisraster', 'objektposition merken', 'objektlokalisierung', 'visuell-räumliches arbeitsgedächtnis', 'positionsgedächtnis', 'räumliche orientierung test', 'räumliches gedächtnistraining', 'wo war was test'],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/memory/spatial-memory/object-location",
@@ -18,7 +18,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Räumlicher Gedächtnistest online | SkillDrills",
-    description: "Merke dir Objektpositionen im Raster und finde die gesuchte Stelle nach kurzer Einblendung wieder – kostenlos im Browser.",
+    description: "Räumlicher Gedächtnistest online: Objektposition merken – Emojis erscheinen 1,5 Sekunden im Raster, dann tippst du an, wo das gesuchte Objekt lag. Kostenlos.",
     url: "https://skilldrills.online/de/drills/memory/spatial-memory/object-location",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Räumlicher Gedächtnistest online | SkillDrills",
-    description: "Merke dir Objektpositionen im Raster und finde die gesuchte Stelle nach kurzer Einblendung wieder – kostenlos im Browser.",
+    description: "Räumlicher Gedächtnistest online: Objektposition merken – Emojis erscheinen 1,5 Sekunden im Raster, dann tippst du an, wo das gesuchte Objekt lag. Kostenlos.",
   },
 };
 
@@ -48,13 +48,13 @@ export default function LocalizedObjectLocationPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Räumliches Gedächtnistest (Objekt-Positions-Gedächtnis)",
+    "name": "Räumlicher Gedächtnistest (Objektposition merken)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Interaktiver neuropsychologischer Test zur Erfassung von Objekt-Orts-Bindung (Feature Binding), räumlicher Orientierung und Matrix-Positionswiedergabe auf expandierenden Rastern.",
-    "genre": "Cognitive Assessment / Spatial Memory",
+    "description": "Kostenloser räumlicher Gedächtnistest im Browser: Emoji-Objekte 1,5 Sekunden im Raster einprägen und danach die Position des gesuchten Objekts antippen.",
+    "genre": "Memory Game / Spatial Memory",
     "url": "https://skilldrills.online/de/drills/memory/spatial-memory/object-location",
     "publisher": {
       "@type": "Organization",
@@ -66,10 +66,10 @@ export default function LocalizedObjectLocationPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Räumliches Gedächtnistest (Objekt-Positions-Gedächtnis)",
+    "name": "Räumlicher Gedächtnistest (Objektposition merken)",
     "url": "https://skilldrills.online/de/drills/memory/spatial-memory/object-location",
-    "description": "Interaktiver neuropsychologischer Test zur Erfassung von Objekt-Orts-Bindung (Feature Binding), räumlicher Orientierung und Matrix-Positionswiedergabe auf expandierenden Rastern.",
-    "dateModified": "2026-09-05",
+    "description": "Kostenloser räumlicher Gedächtnistest im Browser: Emoji-Objekte 1,5 Sekunden im Raster einprägen und danach die Position des gesuchten Objekts antippen.",
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "sameAs": "https://de.wikipedia.org/wiki/R%C3%A4umliches_Ged%C3%A4chtnis",
     "operatingSystem": "All",
@@ -80,8 +80,8 @@ export default function LocalizedObjectLocationPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Räumliches Gedächtnistest (Objekt-Positions-Gedächtnis)",
-    "description": "Interaktiver neuropsychologischer Test zur Erfassung von Objekt-Orts-Bindung (Feature Binding), räumlicher Orientierung und Matrix-Positionswiedergabe auf expandierenden Rastern.",
+    "name": "Räumlicher Gedächtnistest (Objektposition merken)",
+    "description": "Kostenloser räumlicher Gedächtnistest im Browser: Emoji-Objekte 1,5 Sekunden im Raster einprägen und danach die Position des gesuchten Objekts antippen.",
     "url": "https://skilldrills.online/de/drills/memory/spatial-memory/object-location",
     "genre": ["Memory Game", "Cognitive Training", "Spatial Memory"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
@@ -102,14 +102,14 @@ export default function LocalizedObjectLocationPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
             "@type": "Question",
             "name": "Was ist ein räumlicher Gedächtnistest (Object Location Memory Test)?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Ein kognitiver Test, der erfasst, wie effektiv das Gehirn visuelle Objektmerkmale ('Was ist es?') mit exakten Raumkoordinaten ('Wo befindet es sich?') zu einer einheitlichen Repräsentation verknüpft (Feature Binding)."
+                  "text": "Hier ist es ein kostenloses Übungsspiel: Sie merken sich, welches Objekt wo im Raster lag, und finden danach die Position eines gesuchten Objekts wieder. Es ist kein neuropsychologischer oder diagnostischer Test; das Ergebnis ist nur ein persönlicher Übungswert."
             }
       },
       {
@@ -117,15 +117,15 @@ export default function LocalizedObjectLocationPage() {
             "name": "Wie funktioniert dieser Übungsmodus?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Auf einem Raster von 3x3 bis 7x7 werden verschiedene Emoji-Objekte für 1,5 Sekunden eingeblendet. Nach dem Ausblenden erscheint oben ein bestimmtes Zielobjekt, dessen ursprüngliche Position auf dem leeren Raster angeklickt werden muss."
+                  "text": "Auf einem 3x3-Raster erscheinen 2 Emoji-Objekte für 1,5 Sekunden. Danach wird oben ein Zielobjekt angezeigt, und Sie haben 8 Sekunden, um das Feld anzutippen, auf dem es lag. Ein Treffer bringt 150 Punkte und ein Level mehr; pro Level kommt ein Objekt hinzu (maximal 10). Ab Level 8 ist das Raster 4x4, ab Level 15 5x5. Die Gesamtzeit beträgt 45 Sekunden."
             }
       },
       {
             "@type": "Question",
-            "name": "Was ist das Silverman-Eals-Paradigma zur Objektposition?",
+            "name": "Ist das die Objektpositions-Aufgabe von Silverman und Eals?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Ein 1994 von Marion Eals und Irwin Silverman vorgestellter Meilenstein der Neuropsychologie, der bewies, dass das Ortsgedächtnis für Objekte evolutionär unabhängig von mentaler Rotation und euklidischer Raumorientierung funktioniert."
+                  "text": "Nein. Eals und Silverman (1994) untersuchten das Objektortsgedächtnis mit einer Forschungsaufgabe, bei der nach dem Betrachten einer Objektanordnung Positionen abgefragt wurden. Dieses Spiel nutzt eine ähnliche Idee, folgt aber weder deren Ablauf noch deren Normwerten."
             }
       },
       {
@@ -138,10 +138,10 @@ export default function LocalizedObjectLocationPage() {
       },
       {
             "@type": "Question",
-            "name": "Was ist eine durchschnittliche Leistung bei diesem Test?",
+            "name": "Wie wird die Punktzahl berechnet?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "In klinischen Tests wie CANTAB PAL lokalisieren gesunde Erwachsene typischerweise 4 bis 6 Objekte auf mittleren Rastern. Da dies ein browserbasiertes Trainingsspiel ist, dienen die Punkte Ihrer persönlichen Orientierung und sind keine medizinische Diagnostik."
+                  "text": "Jede richtig gefundene Zielposition bringt 150 Punkte. Die Bewertung im Ergebnisbildschirm ist eine SkillDrills-Übungsstufe mit 1.000 Punkten als oberer Marke – kein Durchschnitts- oder klinischer Normwert."
             }
       },
       {
@@ -149,7 +149,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "Worin liegt der Unterschied zu einem reinen Matrix-Gedächtnistest?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Ein reiner Matrix-Test erfordert nur das Merken erleuchteter Felder (binäres Muster), was einfache Gestalt-Gruppierungen erlaubt. Beim Objekt-Positions-Test muss jedoch für jedes Feld die exakte Objektidentität mit der Koordinate verknüpft werden."
+                  "text": "Beim visuellen Gedächtnistest (Gitter-Muster) tippen Sie das ganze leuchtende Muster nach und können es zu Formen bündeln. Hier merken Sie sich, welches Objekt auf welchem Feld lag, und suchen dann nur die Position eines einzigen Zielobjekts."
             }
       },
       {
@@ -157,7 +157,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "Warum ist das Merken von Objektpositionen anspruchsvoller als einfache Formen?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Weil das Verknüpfen zweier Merkmalsdimensionen (Identität und Raum) erhebliche Aufmerksamkeitsressourcen im Arbeitsgedächtnis bindet (Luck & Vogel, 1997) und die kognitive Last verdoppelt."
+                  "text": "Weil das Verknüpfen zweier Merkmalsdimensionen (Identität und Raum) erhebliche Aufmerksamkeitsressourcen im Arbeitsgedächtnis bindet (Luck & Vogel, 1997)."
             }
       },
       {
@@ -173,7 +173,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "Gibt es Strafpunkte für Fehlklicks?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Nein. Falsche Klicks führen weder zu Punktabzügen noch zu Zeitverlust. Die Runde wird im selben Level wiederholt, sodass Sie Ihre Ankertechnik stressfrei verbessern können."
+                  "text": "Nein. Ein falscher Klick oder das Überschreiten der 8 Sekunden beendet nur die Runde, ohne Punktabzug. Das Level sinkt nicht, es folgt eine neue Anordnung auf derselben Stufe. Die 45-Sekunden-Uhr läuft dabei weiter."
             }
       },
       {
@@ -181,7 +181,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "Wie hilft das Training im Alltag und beim Gaming?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Es verbessert das Merken von Schlüsselablageorten, Parkplätzen und Werkzeugen und schärft beim Gaming (FPS, MOBA) die Übersicht über gegnerische Positionen und Minimap-Ereignisse."
+                  "text": "Die Übung ähnelt Situationen, in denen Sie sich kurz eine Anordnung merken – etwa wo Schlüssel oder Werkzeuge liegen oder was auf der Minikarte zu sehen war. Eine Verbesserung in anderen Bereichen ist nicht garantiert."
             }
       }
 ]
@@ -191,7 +191,7 @@ export default function LocalizedObjectLocationPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Wie Sie das Objekt-Positions-Gedächtnis und räumliche Anker trainieren",
-    "description": "Systematisches 4-Stufen-Protokoll mit Quadranten-Scanning und Landmark-Verankerung zur Steigerung der visuellen Bindungskapazität.",
+    "description": "Vier praktische Schritte mit Quadranten-Scanning und Landmark-Verankerung, um Objektpositionen in 1,5 Sekunden zu merken und wiederzufinden.",
     "step": [
       {
             "@type": "HowToStep",
@@ -199,7 +199,7 @@ export default function LocalizedObjectLocationPage() {
       "url": "https://skilldrills.online/de/drills/memory/spatial-memory/object-location#step-1",
             
             "name": "Quadranten-Scanning durchführen",
-            "text": "Teilen Sie das Raster in den ersten 500 ms mental in 4 Sektoren (oben links, oben rechts, unten links, unten rechts) ein, um die Verteilung zu erfassen."
+            "text": "Teilen Sie das Raster beim Erscheinen der Objekte mental in 4 Sektoren (oben links, oben rechts, unten links, unten rechts) ein, um die Verteilung zu erfassen."
       },
       {
             "@type": "HowToStep",
@@ -230,51 +230,23 @@ export default function LocalizedObjectLocationPage() {
 
   const objectLocationGuide = {
     intro: [
-      "Der Räumliche Gedächtnistest (Object Location Memory Test) ist ein interaktives neuropsychologisches Assessment zur Erfassung von Positionsgedächtnis, visuellem Feature Binding (Merkmalsverknüpfung) und räumlicher Rekonstruktion. Im Gegensatz zu simplen Matrix-Tests, die lediglich das Aufleuchten anonymer Zellen messen, verlangt diese Aufgabe das feste Verknüpfen konkreter visueller Tokens mit exakten Raumkoordinaten.",
-      "Die wissenschaftliche Grundlage schufen Marion Eals und Irwin Silverman (1994) in ihren Pionierarbeiten zur Raumkognition. Sie wiesen nach, dass das Gedächtnis für Objektpositionen als spezialisierter evolutionärer Mechanismus getrennt von mentaler Rotation agiert. Bereits zuvor begründete Edward C. Tolman (1948) das Konzept der kognitiven Landkarte (Cognitive Map), das beschreibt, wie Organismen interne Raummodelle ihrer Umwelt konstruieren.",
-      "Im Modell des Arbeitsgedächtnisses zeigten Robert H. Logie (1995) und Alan Baddeley (2000), dass die Objekt-Orts-Bindung durch den episodischen Puffer (Episodic Buffer) gesteuert wird, der Eingaben des visuellen Zwischenspeichers (Objektidentitäten) mit denen des inneren Schreibers (Raumkoordinaten) zusammenführt. Steven J. Luck und Edward K. Vogel (1997) bewiesen, dass Merkmalsverknüpfungen erhebliche Aufmerksamkeitsressourcen binden, während Nelson Cowan (2001) nachwies, dass das ungestützte fokale Arbeitsgedächtnis strikt auf 3 bis 4 Elementpaare begrenzt ist.",
-      "Unter Einhaltung der von Woods et al. (2015) definierten chronometrischen Standards nutzt diese Übung ein festes 1,5-Sekunden-Einprägefenster und eine adaptive Schwierigkeitstreppe (von 3x3 bis 7x7 Rastern), um Ihre individuelle Bindungsgrenze präzise zu ermitteln.",
-      "Funktionsweise der Messung: Jede Eingabe wird lokal über den hochauflösenden performance.now()-Timer Ihres Browsers erfasst – es findet keinerlei Datenübertragung an externe Server statt. Browsertimer werden aus Sicherheitsgründen (Spectre-Schutz) auf etwa 1 ms gerundet; Bildschirme quantisieren Änderungen anhand ihrer Bildwiederholrate (bei 60 Hz ca. 16,7 ms pro Frame; Woods et al., 2015). Differenzen unter 5 ms sind als Messrauschen zu betrachten.",
-      "Datentransparenz: SkillDrills speichert keinerlei Nutzerdaten zentral. Ihre Rekorde und Einstellungen verbleiben ausschließlich im localStorage Ihres Browsers. Wir veröffentlichen keine globalen Durchschnittswerte oder Ranglisten; sämtliche Benchmarks basieren auf publizierten Fachstudien im Referenzbereich.",
+      "Dieser räumliche Gedächtnistest online zeigt Emoji-Objekte 1,5 Sekunden lang in einem Raster. Danach wird ein Zielobjekt genannt, und Sie tippen das Feld an, auf dem es lag – Objektposition merken statt Muster nachtippen. Sie starten mit 2 Objekten auf 3x3; jeder Treffer bringt ein Objekt mehr (maximal 10), ab Level 8 wird das Raster 4x4, ab Level 15 5x5.",
+      "Die wissenschaftliche Grundlage schufen Marion Eals und Irwin Silverman (1994) in ihren Pionierarbeiten zur Raumkognition. Sie wiesen nach, dass das Gedächtnis für Objektpositionen als spezialisierter evolutionärer Mechanismus getrennt von mentaler Rotation agiert. Dieses Spiel ist nicht deren Forschungsaufgabe, sondern eine ähnlich aufgebaute Übung. Bereits zuvor begründete Edward C. Tolman (1948) das Konzept der kognitiven Landkarte (Cognitive Map), das beschreibt, wie Organismen interne Raummodelle ihrer Umwelt konstruieren.",
+      "Im Modell des Arbeitsgedächtnisses zeigten Robert H. Logie (1995) und Alan Baddeley (2000), dass die Objekt-Orts-Bindung durch den episodischen Puffer (Episodic Buffer) gesteuert wird, der Eingaben des visuellen Zwischenspeichers (Objektidentitäten) mit denen des inneren Schreibers (Raumkoordinaten) zusammenführt. Steven J. Luck und Edward K. Vogel (1997) bewiesen, dass Merkmalsverknüpfungen erhebliche Aufmerksamkeitsressourcen binden, während Nelson Cowan (2001) die Kapazität des fokalen Arbeitsgedächtnisses auf etwa 3 bis 4 Elemente schätzte.",
+      "Ablauf: Die Anordnung ist 1,5 Sekunden sichtbar, danach haben Sie 8 Sekunden für die Antwort. Ein Treffer bringt 150 Punkte und ein Level mehr; ein Fehlklick oder Zeitablauf beendet die Runde ohne Punktabzug, und es folgt eine neue Anordnung auf derselben Stufe. Die Gesamtzeit beträgt 45 Sekunden; Reaktionszeiten werden nicht gemessen.",
+      "Daten: Punktzahl und Bestwert werden nur im localStorage Ihres Browsers gespeichert und nicht an einen Server gesendet.",
       "Dieses Tool ist ein kostenloses kognitives Browserspiel zur Übung und Selbstbeobachtung. Es stellt kein medizinisches Diagnoseinstrument dar und ersetzt keine ärztliche Abklärung. Wenden Sie sich bei Gedächtnisproblemen an qualifiziertes medizinisches Fachpersonal."
 ],
     benchmarks: {
-      title: "Normative Benchmarks zur räumlichen Objekt-Bindungskapazität",
-      headers: ["Leistungsstufe", "Objektanzahl & Raster", "Punkte", "Kognitives Bindungs- & Raumprofil"],
-      note: "Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.",
+      title: "SkillDrills-Übungsstufen (ein Durchgang)",
+      headers: ["Stufe", "Punkte", "Treffer", "Erreichte Schwierigkeit"],
       rows: [
-        [
-                "Stufe 1",
-                "Level 8 – 10+ (8–10+ Objekte, 6x6–7x7 Raster)",
-                "1.000+ Punkte",
-                "Fortgeschrittene Stufe: nutzt Quadranten-Scanning und Landmark-Verankerung; bindet 8+ Objekt-Orts-Paare mühelos; Zielsuche unter 500 ms"
-        ],
-        [
-                "Stufe 2",
-                "Level 6 – 7 (6–7 Objekte, 5x5–6x6 Raster)",
-                "750 – 999 Punkte",
-                "Deutlich über Normbereich; robuste semantisch-räumliche Paarung; hohe Resistenz gegen visuelle Interferenz; Zielsuche 500–700 ms"
-        ],
-        [
-                "Stufe 3",
-                "Level 4 – 5 (4–5 Objekte, 4x4–5x5 Raster)",
-                "450 – 749 Punkte",
-                "Normaler Populationsdurchschnitt (Eals & Silverman, 1994); bewältigt ca. 4 Verknüpfungen (Cowan-Limit); verliert zentrale Objekte auf 5x5; 700–950 ms"
-        ],
-        [
-                "Stufe 4",
-                "Level 3 (3 Objekte, 3x3–4x4 Raster)",
-                "250 – 449 Punkte",
-                "Erinnert nur 2–3 isolierte Objekte; verwechselt benachbarte Koordinaten; anfällig bei Zunahme von Distraktoren; 950–1.300 ms"
-        ],
-        [
-                "Stufe 5",
-                "Level 1 – 2 (2 Objekte, 3x3 Raster)",
-                "< 250 Punkte",
-                "Schneller Zerfall visueller Spuren; mangelnde Objekt-Orts-Verknüpfung; Zielfindung selbst nach 1,5 s Verzögerung erschwert; über 1.300 ms Latenz"
-        ]
-],
-      note: "Objektanzahl und Rastergröße entsprechen der höchsten in 45 Sekunden erreichten Stufe; normiert nach Silverman-Eals OLM und CANTAB PAL Standards."
+        ["Obere Übungsstufe", "ab 1.050", "7 oder mehr", "Level 8+, 9–10 Objekte, 4x4 (ab 14 Treffern 5x5)"],
+        ["Mittlere Übungsstufe", "600 – 900", "4 – 6", "Level 5–7, 6–8 Objekte, 3x3"],
+        ["Einstiegsstufe", "150 – 450", "1 – 3", "Level 2–4, 3–5 Objekte, 3x3"],
+        ["Start", "0", "0", "Level 1, 2 Objekte, 3x3"]
+      ],
+      note: "Punkte = Treffer × 150. Die Stufen sind aus den Spielregeln abgeleitete SkillDrills-Übungsmarken, keine Bevölkerungsstatistik oder klinischen Normen."
     },
     techniques: {
       title: "Evidenzbasierte Strategien zur Steigerung der Objekt-Orts-Bindung",
@@ -282,7 +254,7 @@ export default function LocalizedObjectLocationPage() {
         {
                 "name": "Landmark-Verankerung (Landmark Anchoring)",
                 "desc": "Verankern Sie Objekte an festen topologischen Fixpunkten wie den 4 Ecken, Kanten oder der Mitte (Tolman, 1948). 'Der Diamant ist in der linken oberen Ecke' ersetzt komplexe Koordinatenberechnungen durch markante Baken.",
-                "tips": "Prüfen Sie in den ersten 500 ms gezielt, welche Symbole an Ecken oder Rändern liegen."
+                "tips": "Prüfen Sie direkt nach dem Erscheinen gezielt, welche Symbole an Ecken oder Rändern liegen."
         },
         {
                 "name": "Semantisch-räumliche Paarung",
@@ -291,7 +263,7 @@ export default function LocalizedObjectLocationPage() {
         },
         {
                 "name": "Quadranten-Zoning",
-                "desc": "Unterteilen Sie größere 5x5- oder 7x7-Raster mental in 4 Quadranten. Das Vorabzählen der Objekte pro Quadrant schränkt das spätere Suchfeld enorm ein.",
+                "desc": "Unterteilen Sie größere 4x4- oder 5x5-Raster mental in 4 Quadranten. Das Vorabzählen der Objekte pro Quadrant schränkt das spätere Suchfeld enorm ein.",
                 "tips": "Zählen Sie erst die Anzahl der Objekte pro Sektor, bevor Sie deren genaue Zellen fixieren."
         },
         {
@@ -306,11 +278,11 @@ export default function LocalizedObjectLocationPage() {
       "Verbinden Sie während der 1,5 s Präsentation jedes Objekt mit festen Landmarken.",
       "Bilden Sie blitzschnelle semantisch-räumliche Assoziationen zwischen Symbol und Ort.",
       "Rufen Sie nach dem Leeren des Rasters Ihre mentale Karte ab und tippen Sie das gesuchte Feld an.",
-      "Meistern Sie schrittweise erweiterte 3x3- bis 7x7-Matrizen zur Steigerung Ihrer Bindungskapazität."
+      "Mit jedem Level kommt ein Objekt hinzu und das Raster wächst von 3x3 auf 4x4 und 5x5 – wenden Sie dieselben Anker auf mehr Objekte an."
 ],
     audience: "Gamer (Minimap- und Cooldown-Tracking), Radiologen, Studierende technischer Fächer und alle, die ihr visuell-räumliches Arbeitsgedächtnis trainieren möchten.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994', 'woods2015'),
+    sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994'),
     related: [
       {
             "href": "/de/drills/memory/spatial-memory/grid-memorization",
@@ -364,7 +336,7 @@ export default function LocalizedObjectLocationPage() {
       <ObjectLocationClient
         copy={{
         "h1Keyword": "Räumlicher Gedächtnistest online",
-        "h1Suffix": " – Objektposition",
+        "h1Suffix": "",
         "subtitle": "Objekte im Raster merken und wiederfinden",
         "statScore": "Punkte",
         "statTime": "Zeit",
@@ -394,14 +366,14 @@ export default function LocalizedObjectLocationPage() {
                 {
                         "num": "2",
                         "text": "Raster-Progression",
-                        "highlight": "3x3 → 7x7",
-                        "result": "Mit steigendem Level wachsen Rastergröße und Objektanzahl"
+                        "highlight": "3x3 → 4x4 → 5x5",
+                        "result": "Pro Level ein Objekt mehr (max. 10), ab Level 8 4x4, ab Level 15 5x5"
                 },
                 {
                         "num": "3",
                         "text": "Fehlklick / Zeitablauf",
                         "highlight": "Keine Strafpunkte",
-                        "result": "Kein Punkte- oder Zeitverlust; Runde wird wiederholt"
+                        "result": "Runde endet ohne Punktabzug; 8 s Antwortzeit, die 45-s-Uhr läuft weiter"
                 },
                 {
                         "num": "4",

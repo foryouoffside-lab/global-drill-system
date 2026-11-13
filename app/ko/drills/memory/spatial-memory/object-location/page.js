@@ -48,13 +48,13 @@ export default function LocalizedObjectLocationPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "공간 기억력 테스트 (물체 위치 기억 검사)",
+    "name": "공간 기억력 테스트 (물체 위치 기억 게임)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "확장되는 격자 매트릭스 위 사물 위치를 순간 기억하고 목표 좌표를 찾는 공간 위치 기억, 시각-공간 특징 결합 및 인지 지도 형성 검사.",
-    "genre": "Cognitive Assessment / Spatial Memory",
+    "description": "격자에 1.5초 동안 나타난 사물 이모지의 위치를 기억했다가, 제시된 목표 사물이 있던 칸을 찾아 누르는 무료 공간 기억력 테스트 게임입니다.",
+    "genre": "Memory Game / Spatial Memory",
     "url": "https://skilldrills.online/ko/drills/memory/spatial-memory/object-location",
     "publisher": {
       "@type": "Organization",
@@ -66,10 +66,10 @@ export default function LocalizedObjectLocationPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "공간 기억력 테스트 (물체 위치 기억 검사)",
+    "name": "공간 기억력 테스트 (물체 위치 기억 게임)",
     "url": "https://skilldrills.online/ko/drills/memory/spatial-memory/object-location",
-    "description": "확장되는 격자 매트릭스 위 사물 위치를 순간 기억하고 목표 좌표를 찾는 공간 위치 기억, 시각-공간 특징 결합 및 인지 지도 형성 검사.",
-    "dateModified": "2026-09-05",
+    "description": "격자에 1.5초 동안 나타난 사물 이모지의 위치를 기억했다가, 제시된 목표 사물이 있던 칸을 찾아 누르는 무료 공간 기억력 테스트 게임입니다.",
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "sameAs": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EA%B0%84_%EA%B8%B0%EC%96%B5",
     "operatingSystem": "All",
@@ -80,8 +80,8 @@ export default function LocalizedObjectLocationPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "공간 기억력 테스트 (물체 위치 기억 검사)",
-    "description": "확장되는 격자 매트릭스 위 사물 위치를 순간 기억하고 목표 좌표를 찾는 공간 위치 기억, 시각-공간 특징 결합 및 인지 지도 형성 검사.",
+    "name": "공간 기억력 테스트 (물체 위치 기억 게임)",
+    "description": "격자에 1.5초 동안 나타난 사물 이모지의 위치를 기억했다가, 제시된 목표 사물이 있던 칸을 찾아 누르는 무료 공간 기억력 테스트 게임입니다.",
     "url": "https://skilldrills.online/ko/drills/memory/spatial-memory/object-location",
     "genre": ["Memory Game", "Cognitive Training", "Spatial Memory"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
@@ -102,14 +102,14 @@ export default function LocalizedObjectLocationPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
             "@type": "Question",
             "name": "공간 기억력 테스트(Object Location Memory Test)란 무엇인가요?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "사물이 무엇인가(시각적 정체성)와 어디에 위치해 있는가(공간적 좌표)를 뇌 속에서 동시에 결합하고 유지하는 능력(특징 결합 / Feature Binding)을 측정하는 대표적인 신경심리학적 인지 평가입니다."
+                  "text": "사물이 무엇인지와 어디에 있었는지를 함께 기억하는 능력(물체-위치 결합)을 연습하는 무료 브라우저 게임입니다. 신경심리검사나 진단 도구가 아니며, 결과는 개인 연습 기록으로만 보세요."
             }
       },
       {
@@ -117,15 +117,15 @@ export default function LocalizedObjectLocationPage() {
             "name": "이 훈련의 진행 방식과 규칙은 어떻게 되나요?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "3x3에서 7x7까지 점진적으로 커지는 격자 매트릭스에 여러 사물 이모지가 1.5초 동안 나타납니다. 격자가 비워진 후 상단에 지정된 하나의 목표 사물이 제시되며, 해당 사물이 위치했던 원래 좌표를 클릭하여 정답을 맞힙니다."
+                  "text": "3x3 격자에 사물 이모지 2개가 1.5초 동안 나타납니다. 이모지가 사라지면 상단에 목표 사물 하나가 제시되고, 8초 안에 그 사물이 있던 칸을 누르면 150점을 얻고 레벨이 1 오릅니다. 레벨마다 사물이 1개씩 늘어나며(최대 10개), 레벨 8부터 4x4, 레벨 15부터 5x5 격자가 됩니다. 제한 시간은 전체 45초입니다."
             }
       },
       {
             "@type": "Question",
-            "name": "실버먼-얼스(Silverman-Eals) 물체 위치 기억 과제란 무엇인가요?",
+            "name": "실버먼-얼스(Silverman-Eals) 물체 위치 기억 과제와 같은 것인가요?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "1994년 매리언 얼스와 어윈 실버먼이 개발한 획기적인 신경심리학 과제입니다. 공간 인지에서 3차원 회전 능력과 독립적으로 작동하는 부수적 물체 위치 기억이라는 진화적 메커니즘을 규명했습니다."
+                  "text": "아닙니다. 얼스와 실버먼(Eals & Silverman, 1994)은 사물 배열을 보여 준 뒤 위치를 묻는 연구 과제로 물체 위치 기억을 다뤘습니다. 이 게임은 비슷한 아이디어를 쓴 연습용 게임이며, 그 과제의 절차나 기준값을 따르지 않습니다."
             }
       },
       {
@@ -138,10 +138,10 @@ export default function LocalizedObjectLocationPage() {
       },
       {
             "@type": "Question",
-            "name": "물체 위치 기억 테스트의 일반적인 성인 평균 점수는 얼마인가요?",
+            "name": "점수는 어떻게 계산되나요?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "CANTAB PAL과 같은 표준 임상 평가에서 정상 성인은 중간 크기 격자에서 약 4~6개의 사물 위치를 정확히 결합합니다. 본 도구는 독자적인 난이도와 시간 제약을 가진 웹 게임이므로 의학적 진단이 아닌 개인 연습용 지표로 참고하시기 바랍니다."
+                  "text": "목표 사물의 위치를 맞힐 때마다 150점입니다. 결과 화면의 등급은 1,000점을 최상위 기준으로 한 SkillDrills 연습용 등급이며, 성인 평균이나 임상 기준값이 아닙니다."
             }
       },
       {
@@ -149,7 +149,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "순수 격자 기억 테스트(Visual Matrix)와 어떤 점이 다른가요?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "순수 격자 기억은 켜진 타일의 흑백 패턴만을 기억하므로 기하학적 형태 청킹이 가능합니다. 반면 물체 위치 기억은 '어떤 사물이 어떤 좌표에 있었는가'를 결합해야 하므로 인지적 부담이 훨씬 높습니다."
+                  "text": "순간 기억력 테스트(격자 기억)는 켜진 칸 전체의 패턴을 다시 눌러야 하므로 모양으로 묶어 기억할 수 있습니다. 물체 위치 기억은 여러 사물 중 '어떤 사물이 어느 칸에 있었는가'를 묶어 기억했다가 목표 사물 하나의 위치만 찾는 방식입니다."
             }
       },
       {
@@ -173,7 +173,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "잘못된 위치를 클릭하면 감점이나 페널티가 있나요?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "아닙니다. 오답을 클릭해도 점수 감점이나 남은 시간 차감 페널티가 전혀 없습니다. 현재 레벨에서 바로 재도전할 수 있어 차분하게 공간 전략을 가다듬을 수 있습니다."
+                  "text": "아닙니다. 오답을 누르거나 8초 안에 답하지 못하면 그 라운드만 끝나고 점수는 깎이지 않습니다. 레벨도 내려가지 않고 같은 레벨의 새 배치가 나옵니다. 다만 45초 제한 시간은 계속 흐릅니다."
             }
       },
       {
@@ -181,7 +181,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "공간 기억력 향상이 일상생활과 게임 플레이에 어떤 도움이 되나요?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "열쇠나 스마트폰을 둔 위치, 주차 위치 등을 기억하는 일상 능력이 개선되며, FPS나 MOBA 게임에서 미니맵의 적 위치, 스킬 쿨타임, 오브젝트 배치를 순간적으로 파악하는 공간 지각력이 크게 향상됩니다."
+                  "text": "물건을 둔 자리나 미니맵의 배치를 잠깐 보고 기억하는 상황과 비슷한 연습입니다. 다른 활동에서의 향상은 보장되지 않습니다."
             }
       }
 ]
@@ -191,7 +191,7 @@ export default function LocalizedObjectLocationPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "공간 기억력 테스트로 사물 위치 기억과 시각 결합 능력을 강화하는 방법",
-    "description": "사분면 분할 스캔과 기준점 앵커링 기법을 적용하여 격자 위 사물의 위치와 특징을 정확히 결합하고 회상하는 4단계 실전 프로토콜.",
+    "description": "사분면 분할과 기준점 앵커링으로 1.5초 동안 본 사물 위치를 기억하고 목표 위치를 찾는 4단계 요령.",
     "step": [
       {
             "@type": "HowToStep",
@@ -199,7 +199,7 @@ export default function LocalizedObjectLocationPage() {
       "url": "https://skilldrills.online/ko/drills/memory/spatial-memory/object-location#step-1",
             
             "name": "격자 사분면 분할 스캔",
-            "text": "사물이 나타나는 첫 500밀리초 동안 격자를 4개 사분면(좌상, 우상, 좌하, 우하)으로 나누어 전체적인 분포를 빠르게 파악합니다."
+            "text": "사물이 나타나면 먼저 격자를 4개 사분면(좌상, 우상, 좌하, 우하)으로 나누어 전체적인 분포를 빠르게 파악합니다."
       },
       {
             "@type": "HowToStep",
@@ -230,50 +230,23 @@ export default function LocalizedObjectLocationPage() {
 
   const objectLocationGuide = {
     intro: [
-      "공간 기억력 테스트(Object Location Memory Test)는 공간 위치 기억, 시각-공간 특징 결합(Object-Location Binding), 그리고 배치 회상 능력을 평가하고 훈련하기 위해 설계된 신경인지 평가 도구입니다. 단순히 점등된 칸의 위치만을 암기하는 단순 격자 테스트와 달리, 고유한 시각적 토큰과 정확한 공간 좌표를 뇌 속에서 결합하는 고차원적 인지 과정을 측정합니다.",
-      "사물 위치 기억의 임상적 토대는 매리언 얼스와 어윈 실버먼(Eals & Silverman, 1994)의 선구적인 연구를 통해 확립되었습니다. 이들은 사물 위치 기억이 심상 회전(Mental Rotation)과 같은 유클리드 공간 조작과 구별되는 진화적 특화 기제임을 밝혔습니다. 이에 앞서 에드워드 톨먼(Tolman, 1948)은 유기체가 환경의 내부 공간 모델을 형성하는 방식을 설명하는 '인지 지도(Cognitive Map)'의 개념을 제시했습니다.",
-      "작업기억 아키텍처에서 로버트 로기(Logie, 1995)와 앨런 배들리(Baddeley, 2000)는 사물 위치 결합이 일화 완충기(Episodic Buffer)에 의해 조율되며 시각 캐시(사물 정체성)와 내부 서기(공간 좌표)의 입력을 통합함을 입증했습니다. 스티븐 럭과 에드워드 보겔(Luck & Vogel, 1997)은 특징 결합이 상당한 주의 집중 부하를 유발함을 밝혔으며, 넬슨 코완(Cowan, 2001)은 비보조 초점 작업기억 용량이 엄격하게 3~4개의 사물-위치 쌍으로 제한됨을 증명했습니다.",
-      "Woods 등(2015)의 시간 측정 표준에 맞추어 본 훈련은 고정된 1.5초 암기 창과 3x3에서 7x7로 확장되는 적응형 난이도 계단을 활용하여 사용자의 정밀한 공간 결합 한계를 측정합니다.",
-      "측정 원리: 모든 사용자 상호작용은 브라우저의 performance.now() 고해상도 타이머를 통해 사용자 기기 내에서만 실시간 측정되며, 점수가 외부 서버로 업로드되지 않습니다. 브라우저 타이머는 스펙터 완화 조치로 약 1ms 단위로 반올림되며 디스플레이 재생 빈도(60Hz 기준 프레임당 약 16.7ms)에 따라 양자화됩니다(Woods et al., 2015). 5ms 미만의 차이는 측정 노이즈로 간주하고 다른 사람의 기기와 비교하기보다 동일한 환경에서 자신의 기록 추이를 관찰하십시오.",
-      "데이터 투명성: SkillDrills는 일체의 집계 데이터를 수집하지 않습니다. 점수와 설정은 브라우저의 localStorage에만 저장되고 외부로 전송되지 않으므로, 본 사이트는 사용자 평균이나 순위를 게시하지 않습니다. 본 페이지에 인용된 모든 수치는 하단 참고문헌 패널에 명시된 공인 학술 연구에서 비롯되었습니다.",
+      "이 공간 기억력 테스트는 격자에 1.5초 동안 나타난 사물 이모지의 위치를 기억했다가, 화면이 비워진 뒤 제시된 목표 사물이 있던 칸을 찾는 물체 위치 기억 게임입니다. 3x3 격자의 사물 2개로 시작해 맞힐 때마다 사물이 1개씩 늘어나고(최대 10개), 레벨 8부터 4x4, 레벨 15부터 5x5 격자가 됩니다. 켜진 칸의 패턴만 외우는 격자 기억과 달리, 어떤 사물이 어느 칸에 있었는지를 함께 기억해야 합니다.",
+      "사물 위치 기억의 임상적 토대는 매리언 얼스와 어윈 실버먼(Eals & Silverman, 1994)의 선구적인 연구를 통해 확립되었습니다. 이들은 사물 위치 기억이 심상 회전(Mental Rotation)과 같은 유클리드 공간 조작과 구별되는 진화적 특화 기제임을 밝혔습니다. 이 게임은 그 연구 과제 자체가 아니라 비슷한 형식의 연습 게임입니다. 이에 앞서 에드워드 톨먼(Tolman, 1948)은 유기체가 환경의 내부 공간 모델을 형성하는 방식을 설명하는 '인지 지도(Cognitive Map)'의 개념을 제시했습니다.",
+      "작업기억 아키텍처에서 로버트 로기(Logie, 1995)와 앨런 배들리(Baddeley, 2000)는 사물 위치 결합이 일화 완충기(Episodic Buffer)에 의해 조율되며 시각 캐시(사물 정체성)와 내부 서기(공간 좌표)의 입력을 통합함을 입증했습니다. 스티븐 럭과 에드워드 보겔(Luck & Vogel, 1997)은 특징 결합이 상당한 주의 집중 부하를 유발함을 밝혔으며, 넬슨 코완(Cowan, 2001)은 초점 작업기억 용량을 약 3~4개 항목으로 정리했습니다.",
+      "진행 규칙: 배치는 1.5초 동안 보이고, 목표 사물의 위치는 8초 안에 눌러야 합니다. 정답은 150점과 레벨 +1, 오답이나 시간 초과는 감점 없이 같은 레벨의 새 배치로 넘어갑니다. 전체 제한 시간은 45초이며 반응 시간은 측정하지 않습니다.",
+      "데이터: 점수와 최고 기록은 브라우저의 localStorage에만 저장되고 외부 서버로 전송되지 않습니다.",
       "본 도구는 두뇌 훈련과 재미를 위한 무료 브라우저 게임입니다. 의료 기기나 진단 도구가 아니며, 이곳의 결과가 의학적 진단이나 뇌 건강 상태를 증명하지 않습니다. 인지 기능이나 기억력에 이상을 느끼신다면 전문 의료진과 상담하시기 바랍니다."
 ],
     benchmarks: {
-      title: "공간 위치 결합 용량 표준 규준 벤치마크",
-      headers: ["성능 등급", "사물 개수 & 격자 규모", "훈련 점수", "인지 결합 및 공간 인지 지도 프로필"],
+      title: "SkillDrills 연습 기준 (1회 플레이)",
+      headers: ["단계", "점수", "맞힌 라운드", "도달 난이도"],
       rows: [
-        [
-                "1등급 (최우수 / 최상위 단계)",
-                "레벨 8 – 10+ (8~10개 이상, 6x6~7x7 격자)",
-                "1,000점 이상",
-                "시각공간 최상위권. 신속한 사분면 분할과 랜드마크 앵커링 구사; 8개 이상의 사물-위치 결합을 손쉽게 처리; 500ms 미만의 초고속 목표 식별"
-        ],
-        [
-                "2등급 (우수 / 상급 단계)",
-                "레벨 6 – 7 (6~7개, 5x5~6x6 격자)",
-                "750 – 999점",
-                "일반 성인 평균 상회; 견고한 의미-공간 연상 기법 구사; 대형 격자에서의 시각적 역행 간섭에 강력한 저항력; 500~700ms 식별"
-        ],
-        [
-                "3등급 (표준 단계)",
-                "레벨 4 – 5 (4~5개, 4x4~5x5 격자)",
-                "450 – 749점",
-                "일반 인구 평균 기준치(Eals & Silverman, 1994). 코완 한계인 4개 사물 결합 완벽 수행; 5x5 격자의 중앙부 사물에서 망각 시작; 700~950ms 식별"
-        ],
-        [
-                "4등급 (주의 필요 / 특징 결합 병목)",
-                "레벨 3 (3개, 3x3~4x4 격자)",
-                "250 – 449점",
-                "2~3개의 고립된 사물만 회상 가능; 인접 칸의 좌표 혼동 발생; 방해 요소 추가 시 급격한 정확도 하락; 950~1,300ms 식별"
-        ],
-        [
-                "5등급 (훈련 권장 / 단기 보유 한계)",
-                "레벨 1 – 2 (2개, 3x3 격자)",
-                "250점 미만",
-                "급격한 시각 잔상 소멸; 사물과 위치의 결합 실패; 1.5초의 짧은 지연 후에도 목표 위치 탐색 지연; 식별 지연 시간 1,300ms 초과"
-        ]
-],
-      note: "사물 개수와 격자 규모는 45초 동안 달성한 최고 난이도를 반영하며 Silverman-Eals OLM 및 CANTAB PAL 표준 기준에 매핑되었습니다."
+        ["상위 연습 단계", "1,050점 이상", "7회 이상", "레벨 8 이상, 사물 9~10개, 4x4 격자 (14회 정답부터 5x5)"],
+        ["중간 연습 단계", "600~900점", "4~6회", "레벨 5~7, 사물 6~8개, 3x3 격자"],
+        ["초기 연습 단계", "150~450점", "1~3회", "레벨 2~4, 사물 3~5개, 3x3 격자"],
+        ["시작", "0점", "0회", "레벨 1, 사물 2개, 3x3 격자"]
+      ],
+      note: "점수 = 맞힌 라운드 수 × 150. 단계는 게임 규칙에서 계산한 SkillDrills 연습용 기준이며, 인구 통계나 임상 기준값이 아닙니다."
     },
     techniques: {
       title: "공간 위치 기억 결합 용량을 확장하는 실전 기법",
@@ -281,7 +254,7 @@ export default function LocalizedObjectLocationPage() {
         {
                 "name": "상대적 랜드마크 앵커링 (Landmark Anchoring)",
                 "desc": "모서리 4곳, 중앙 셀, 외곽 경계선 등 고정된 기준점에 사물의 위치를 묶어 앵커를 생성합니다(Tolman, 1948). '다이아몬드는 좌상단 모서리'처럼 직관적인 랜드마크와 결합하면 좌표 계산 부하를 대폭 줄일 수 있습니다.",
-                "tips": "사물이 나타난 첫 500ms 안에 모서리나 외곽선에 위치한 사물을 가장 먼저 파악하세요."
+                "tips": "사물이 나타나면 모서리나 외곽선에 위치한 사물을 가장 먼저 파악하세요."
         },
         {
                 "name": "의미-공간 연상 페어링 (Semantic-Spatial Pairing)",
@@ -290,7 +263,7 @@ export default function LocalizedObjectLocationPage() {
         },
         {
                 "name": "사분면 분할 구역화 (Quadrantal Zoning)",
-                "desc": "5x5나 7x7 같은 대형 격자를 머릿속에서 4개 사분면(좌상, 우상, 좌하, 우하)으로 분할합니다. 각 구역에 사물이 몇 개씩 배치되어 있는지 파악하면 탐색 범위를 크게 좁힐 수 있습니다.",
+                "desc": "4x4나 5x5 같은 큰 격자를 머릿속에서 4개 사분면(좌상, 우상, 좌하, 우하)으로 분할합니다. 각 구역에 사물이 몇 개씩 배치되어 있는지 파악하면 탐색 범위를 크게 좁힐 수 있습니다.",
                 "tips": "구역별 사물 개수를 먼저 세고, 그 후 각 구역 내 세부 위치를 파악하세요."
         },
         {
@@ -305,11 +278,11 @@ export default function LocalizedObjectLocationPage() {
       "1.5초의 암기 시간 동안 각 사물을 랜드마크(모서리, 경계선, 중앙)에 신속히 앵커링합니다.",
       "사물 아이콘과 위치를 연결하는 즉각적인 의미-공간 연상 페어를 형성합니다.",
       "격자가 비워지고 목표 아이콘이 제시되면 마음속 인지 지도에서 해당 위치를 즉시 탭합니다.",
-      "3x3부터 7x7까지 확장되는 매트릭스에 도전하여 대용량 시각 결합 능력을 구축합니다."
+      "레벨이 오르면 사물이 늘고 격자가 3x3에서 4x4, 5x5로 커지니 같은 요령을 더 많은 사물에 적용합니다."
 ],
     audience: "미니맵과 전장 인지 능력을 극대화하려는 FPS 및 MOBA 게이머, 의료 영상 판독 능력을 향상하려는 전문가, 이공계 학생 및 시각-공간 작업기억 능력을 강화하려는 모든 사용자.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994', 'woods2015'),
+    sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994'),
     related: [
       {
             "href": "/ko/drills/memory/spatial-memory/grid-memorization",
@@ -393,14 +366,14 @@ export default function LocalizedObjectLocationPage() {
                 {
                         "num": "2",
                         "text": "점진적 난이도 확장",
-                        "highlight": "3x3 → 7x7",
-                        "result": "레벨이 오를수록 격자 크기와 사물 개수가 자연스럽게 증가"
+                        "highlight": "3x3 → 4x4 → 5x5",
+                        "result": "레벨마다 사물 +1(최대 10개), 레벨 8부터 4x4, 레벨 15부터 5x5"
                 },
                 {
                         "num": "3",
                         "text": "오답 및 시간 초과",
                         "highlight": "무감점",
-                        "result": "점수나 시간 차감 없이 현재 난이도에서 즉시 재도전"
+                        "result": "라운드 종료, 감점 없음. 답할 시간은 8초, 45초 제한 시간은 계속 흐름"
                 },
                 {
                         "num": "4",

@@ -8,9 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: "처리속도 테스트 | 기호 숫자 매칭 훈련 | SkillDrills",
   description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습하며 임상 검사가 아닙니다.",
-  keywords: ["처리속도 테스트", "처리속도 훈련", "기호 숫자 매칭 인지속도", "SDMT 인지 검사", "정보처리속도 테스트", "기호 쓰기 검사 온라인", "DSST 테스트", "시각 탐색 검사", "단기 연상기억 훈련", "두뇌 인지속도 측정", "신경심리 검사 무료", "성인 뇌 반응속도",
-    "기호숫자검사",
-    "웨슬러 인지처리속도"],
+  keywords: ["처리속도 테스트", "처리속도 훈련", "기호 숫자 매칭", "정보처리속도 테스트", "기호 숫자 대응 게임", "시각 탐색 연습"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "처리속도 테스트 | 기호 숫자 매칭 훈련 | SkillDrills",
     description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습하며 임상 검사가 아닙니다.",
@@ -65,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "기호 숫자 매칭 SDMT 인지속도 측정기",
+  "name": "처리속도 테스트 – 기호 숫자 매칭",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -73,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "KRW"
   },
-  "description": "무료 온라인 기호 숫자 매칭 인지 검사(SDMT). 고유 기호와 숫자의 매핑 관계를 신속히 대조하여 정보 처리 속도, 시각 탐색 효율성, 단기 연상 기억력을 정밀하게 측정합니다.",
+  "description": "무료 온라인 처리속도 테스트. 상단 키에서 6개 기호와 숫자 1~6의 짝을 보고, 제시된 기호에 맞는 숫자를 누릅니다. SDMT 형식을 참고한 연습용 게임이며 임상 검사가 아닙니다.",
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching",
   "publisher": {
     "@type": "Organization",
@@ -81,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "기호 숫자 매칭 인지속도・SDMT 인지 검사 – 정보처리속도 테스트",
+  "name": "처리속도 테스트 – 기호 숫자 매칭 훈련",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -98,15 +96,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "기호 숫자 매칭 SDMT – 기호 숫자 고속 대조 게임",
+  "name": "기호 숫자 매칭 – 처리속도 게임",
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching",
-  "description": "무료 온라인 기호 숫자 매칭 인지 검사(SDMT). 고유 기호와 숫자의 매핑 관계를 신속히 대조하여 정보 처리 속도, 시각 탐색 효율성, 단기 연상 기억력을 정밀하게 측정합니다.",
+  "description": "무료 온라인 처리속도 테스트. 상단 키에서 6개 기호와 숫자 1~6의 짝을 보고, 제시된 기호에 맞는 숫자를 누릅니다. SDMT 형식을 참고한 연습용 게임이며 임상 검사가 아닙니다.",
   "genre": [
     "Action",
     "Brain Game",
@@ -118,7 +116,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -135,7 +133,7 @@ const faqSchema = {
       "name": "기호 숫자 양식 검사(SDMT, Symbol Digit Modalities Test)란?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aaron Smith(1973)가 개발한 표준 신경심리 평가로, 기호와 숫자의 대응표를 참조하여 신속하게 대조 입력하는 정보 처리 속도 검사입니다."
+        "text": "Aaron Smith(1973)가 만든 신경심리 검사로, 기호-숫자 대응표를 보고 기호에 맞는 숫자를 답합니다. 이 드릴은 그 형식만 참고한 연습용 게임이며 SDMT가 아닙니다."
       }
     },
     {
@@ -143,23 +141,39 @@ const faqSchema = {
       "name": "DSST 검사와의 차이점은 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "DSST는 숫자를 보고 복잡한 기호를 직접 그려야 하지만, SDMT는 기호를 보고 친숙한 숫자를 입력하므로 그리기 동작의 영향을 줄이고 기호 대응과 입력 속도에 초점을 맞춥니다."
+        "text": "DSST는 숫자를 보고 기호를 그리고, SDMT는 기호를 보고 숫자를 답합니다. 이 드릴은 SDMT처럼 기호를 보고 숫자 버튼을 누릅니다."
       }
     },
     {
       "@type": "Question",
-      "name": "어떤 두뇌 능력을 집중 측정하나요?",
+      "name": "이 처리속도 테스트는 어떻게 진행되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "(1) 중추 정보 처리 속도, (2) 시각 탐색 기민성, (3) 단기 연상 기억 형성력, (4) 지속적 집행 주의력입니다."
+        "text": "상단 키에 6개 기호와 숫자 1~6의 짝이 나옵니다. 가운데 기호가 나오면 맞는 숫자 버튼을 누릅니다. 키는 세션마다 바뀌고 한 세션 동안은 고정됩니다."
       }
     },
     {
       "@type": "Question",
-      "name": "정상 성인의 평균 수행 기준은?",
+      "name": "시간과 감점은 어떻게 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "이 드릴은 임상 SDMT가 아니며 대응표와 시간이 달라 임상 규준을 그대로 적용할 수 없습니다. 연령에 따라 처리 속도가 달라진다는 연구가 있으므로(Der & Deary, 2006), 같은 기기에서 본인의 기록 변화를 비교하세요."
+        "text": "45초로 시작해 정답마다 2초가 더해집니다(최대 60초). 틀린 숫자나 시간 초과(Target Timeouts가 켜져 있을 때)는 1초가 줄고 콤보가 초기화됩니다. 시간이 0이 되면 끝납니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "점수와 난이도는 어떻게 정해지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "정답 한 번에 100점에 콤보 배율과 레벨 배율을 곱합니다. 점수가 오르면 레벨이 올라가고, 레벨이 높을수록 기호 하나에 주어지는 응답 시간이 짧아집니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "결과로 무엇을 알 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "점수, 정확도, 적중·오답 수, 최고 레벨과 SkillDrills 고정 기준에 따른 F~S+ 등급입니다. 임상 규준이나 IQ와는 비교할 수 없습니다."
       }
     },
     {
@@ -167,47 +181,31 @@ const faqSchema = {
       "name": "공식적인 의료 진단 검사인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "아닙니다. 본 훈련은 동일한 인지 패러다임을 차용한 무료 두뇌 트레이닝 도구이며 질환의 진단 목적으로 사용할 수 없습니다."
+        "text": "아닙니다. 무료 연습용 게임이며 질환의 진단이나 선별에 사용할 수 없습니다. 기억력이나 사고력이 걱정되면 전문가와 상담하세요."
       }
     },
     {
       "@type": "Question",
-      "name": "대응표 암기가 속도에 미치는 영향은?",
+      "name": "점수를 올리는 요령은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "기호와 숫자의 짝을 작업기억에 초반에 각인시키면 상단 표로 시선이 오가는 표를 확인하는 시선 이동이 줄어 속도가 빨라질 수 있습니다."
+        "text": "세션 초반에 키를 익혀 두고, 상단 키와 가운데 기호 사이의 시선 이동을 줄이세요. 오답은 1초와 콤보를 잃으므로 정확도를 우선하는 것이 좋습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "점수를 극대화하는 핵심 전략은?",
+      "name": "연습하면 처리속도가 빨라지나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "상단 표와 중앙 영역 사이의 시선 이동 반경을 최소화하고, 기호를 2~3개씩 묶어서(Chunking) 처리하는 것입니다."
+        "text": "이 과제의 점수는 연습할수록 대체로 오릅니다. 다만 다른 일상 과제까지 빨라진다는 보장은 없습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "나이가 들면 정보 처리 속도가 저하되나요?",
+      "name": "모바일에서도 할 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "연령이 높아질수록 처리 속도가 완만하게 느려지는 경향이 보고되어 있습니다(Der & Deary, 2006). 개인차가 크며, 이 드릴이 노화에 따른 변화를 막는다고 주장하지는 않습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "권장 훈련 주기는 어떻게 되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "정해진 정답은 없습니다. 하루 10분 안팎의 짧은 세션을 반복하며 같은 조건에서 기록을 비교하는 방식이 부담이 적습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "모바일 터치 환경에서도 정밀한가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "네, 모바일 화면 하단에 1~6 숫자 키패드가 최적 크기로 배치되어 있어 편리하게 검사할 수 있습니다."
+        "text": "네, 화면 하단의 1~6 숫자 버튼을 터치해 진행합니다. 회원가입 없이 무료입니다."
       }
     }
   ]
@@ -216,8 +214,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "기호 숫자 매칭 인지속도・SDMT 인지 검사",
-  "description": "무료 온라인 기호 숫자 매칭 인지 검사(SDMT). 고유 기호와 숫자의 매핑 관계를 신속히 대조하여 정보 처리 속도, 시각 탐색 효율성, 단기 연상 기억력을 정밀하게 측정합니다.",
+  "name": "처리속도 테스트 진행 방법",
+  "description": "무료 온라인 처리속도 테스트. 상단 키에서 6개 기호와 숫자 1~6의 짝을 보고, 제시된 기호에 맞는 숫자를 누릅니다. SDMT 형식을 참고한 연습용 게임이며 임상 검사가 아닙니다.",
   "step": [
     {
       "@type": "HowToStep",
@@ -237,14 +235,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "일치하는 숫자 키 즉각 입력",
-      "text": "작업기억 또는 신속한 표 스캔을 통해 해당하는 숫자 키패드를 탭합니다.",
+      "text": "키를 기억하거나 다시 확인해 해당 숫자 버튼(1~6)을 누릅니다. 틀리거나 시간 초과 시 1초 감점과 콤보 초기화입니다.",
       "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "연속적인 연상 리듬 유지",
-      "text": "기호와 숫자의 연합을 자동화하여 끊김 없는 고속 스트릭을 달성합니다.",
+      "text": "정확도를 유지해 콤보를 이어 갑니다. 레벨이 오를수록 기호당 응답 시간이 짧아집니다.",
       "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching#step-4"
     }
   ]
@@ -253,11 +251,11 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('smith1973', 'der2006', 'woods2015'),
   intro: {
-    title: "기호 숫자 매칭 인지속도・SDMT 인지 검사 – 정보처리속도 테스트",
+    title: "처리속도 테스트 – 기호 숫자 매칭 훈련",
     paragraphs: [
-      "무료 온라인 기호 숫자 매칭 인지 검사(SDMT). 고유 기호와 숫자의 매핑 관계를 신속히 대조하여 정보 처리 속도, 시각 탐색 효율성, 단기 연상 기억력을 정밀하게 측정합니다.",
-      "DSST는 숫자를 보고 복잡한 기호를 직접 그려야 하지만, SDMT는 기호를 보고 친숙한 숫자를 입력하므로 그리기 동작의 영향을 줄이고 기호 대응과 입력 속도에 초점을 맞춥니다.",
-      "(1) 중추 정보 처리 속도, (2) 시각 탐색 기민성, (3) 단기 연상 기억 형성력, (4) 지속적 집행 주의력입니다.",
+      "처리속도 테스트: 상단 키에 6개 기호와 숫자 1~6의 짝이 표시되고, 가운데 나온 기호에 맞는 숫자 버튼을 누르는 무료 연습입니다. 키는 세션마다 새로 섞입니다. 45초로 시작해 정답마다 2초가 더해지고(최대 60초), 오답·시간 초과는 1초 감점입니다.",
+      "기호를 보고 숫자로 답하는 방식은 SDMT(Smith, 1973)와 같은 형식이며, 숫자를 보고 기호를 쓰는 DSST와는 방향이 반대입니다. 이 드릴은 두 검사 모두 아니며 임상 규준과 비교할 수 없습니다.",
+      "결과는 점수, 정확도, 적중·오답 수, 최고 레벨로 표시됩니다. 진단, IQ 또는 인지 기능 평가가 아닌 연습용 게임입니다.",
     ],
   },
   benchmarks: {
@@ -273,13 +271,13 @@ const guideProps = {
     note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계, 백분위 또는 임상 기준이 아닙니다.',
   },
   protocols: {
-    title: '두뇌 처리 속도와 집중력을 극대화하는 4대 훈련 프로토콜',
-    description: '스미스 기호 숫자 양식 검사(SDMT, Smith, 1973) 및 신경인지 처리 속도 규준에 기반한, 시각-기호 즉각 연합과 작업기억 전환을 극대화하는 과학적 인지 훈련 프로토콜입니다.',
+    title: '처리속도 테스트 진행 순서',
+    description: '상단 키를 보고 제시된 기호에 맞는 숫자를 고르는 순서입니다. 형식은 SDMT(Smith, 1973)를 참고했지만 임상 검사는 아닙니다.',
     items: [
       { title: "상단 기호-숫자 매칭 표 확인", description: "상단 헤더에 나열된 6개 기호와 1~6번 숫자의 연결 관계를 파악합니다." },
       { title: "중앙 제시 기호 순간 식별", description: "중앙 박스에 출현하는 타깃 기호를 눈으로 즉시 포착합니다." },
-      { title: "일치하는 숫자 키 즉각 입력", description: "작업기억 또는 신속한 표 스캔을 통해 해당하는 숫자 키패드를 탭합니다." },
-      { title: "연속적인 연상 리듬 유지", description: "기호와 숫자의 연합을 자동화하여 끊김 없는 고속 스트릭을 달성합니다." },
+      { title: "일치하는 숫자 키 즉각 입력", description: "키를 기억하거나 다시 확인해 해당 숫자 버튼(1~6)을 누릅니다. 틀리거나 시간 초과 시 1초 감점과 콤보 초기화입니다." },
+      { title: "연속적인 연상 리듬 유지", description: "정확도를 유지해 콤보를 이어 갑니다. 레벨이 오를수록 기호당 응답 시간이 짧아집니다." },
     ],
   },
   faqs: {
@@ -338,9 +336,9 @@ export default function LocalizedCognitivePage() {
           ],
           rulesItems: [
             { num: "1", text: "기호-숫자 키", highlight: "6개 대응", result: "상단 키에서 숫자 확인" },
-            { num: "2", text: "표적 기호", highlight: "+100점", result: "콤보·레벨 배수 적용" },
-            { num: "3", text: "틀린 숫자", highlight: "콤보 초기화", result: "설정 시 시간 차감" },
-            { num: "4", text: "연속 기록·패널티", highlight: "시간 초과·오입력", result: "활성화 시 −0.8초" }
+            { num: "2", text: "표적 기호", highlight: "+100점", result: "콤보·레벨 배수, +2초(최대 60초)" },
+            { num: "3", text: "틀린 숫자", highlight: "콤보 초기화", result: "−1초" },
+            { num: "4", text: "시간 초과", highlight: "응답 시간 단축", result: "−1초·콤보 초기화" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

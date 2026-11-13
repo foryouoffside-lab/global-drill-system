@@ -724,8 +724,8 @@ export default function ObjectLocationClient({ copy = null }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {(copy?.rulesItems || [
                 { num: "1", text: "Memorize Positions & Find Target", highlight: "+150 PTS", result: "Level Up (+1 Obj)" },
-                { num: "2", text: "Level Progression", highlight: "Grid 3x3 → 7x7", result: "Difficulty naturally scales" },
-                { num: "3", text: "Miss / Timeout", highlight: "Zero Penalties", result: "No score or time loss" },
+                { num: "2", text: "Level Progression", highlight: "Grid 3x3 → 4x4 → 5x5", result: "One more object per level (max 10); grid grows at levels 8 and 15" },
+                { num: "3", text: "Miss / Timeout", highlight: "Zero Penalties", result: "Round ends, no score loss; 8s to answer, 45s clock keeps running" },
                 { num: "4", text: "Difficulty Never Drops", highlight: "Stays at Current Level", result: "A miss or 8s timeout loads a new layout at the same level" }
               ]).map((r, i) => (
                 <DrillRuleItem key={i} num={r.num} text={r.text} highlight={r.highlight} result={r.result} />
@@ -747,10 +747,10 @@ export default function ObjectLocationClient({ copy = null }) {
                     <Brain className="w-4 h-4 text-emerald-400" /> What Is Object Location Training?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Object Location Training</strong> is a core spatial position memory exercise designed to measure visual mapping capacity. The <strong>Object Location drill</strong> presents multiple emoji objects on 3x3 to 7x7 matrices, testing your ability to lock in object positions and identify specific target locations when the grid goes blank. Eals and Silverman (1994) measured object-location memory with object arrays much like this one, and it runs into the same ceiling of about four items as other visual working memory tasks (Luck & Vogel, 1997).
+                    <strong>Object Location Training</strong> is a core spatial position memory exercise designed to measure visual mapping capacity. The <strong>Object Location drill</strong> presents 2 to 10 emoji objects on a grid that grows from 3x3 to 4x4 and 5x5, testing your ability to lock in object positions and identify specific target locations when the grid goes blank. Eals and Silverman (1994) measured object-location memory with object arrays much like this one, and it runs into the same ceiling of about four items as other visual working memory tasks (Luck & Vogel, 1997).
                   </p>
                   <p className="text-sm leading-relaxed">
-                    By practicing <strong>spatial position anchoring</strong>, you expand your visual short-term memory buffer and increase your layout retrieval speed under time pressure.
+                    <strong>Spatial position anchoring</strong> (tying each object to a corner, edge or the center cell) is the main strategy to practice here, with an 8-second window to answer each round.
                   </p>
                 </section>
   

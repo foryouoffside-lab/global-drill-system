@@ -4,20 +4,13 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// Native research (2026-09-20): Bing pt-BR returned 0 exact / 0 broad for
-// "teste n-back"; pt-PT returned 0 exact / 1 broad for "n-back". Current
-// Portuguese results use "teste N-Back", "memória de trabalho", and training
-// intent, so this page avoids unsupported volume claims.
-// ============================================================
-
 export const metadata = {
   title: "Teste N-Back online | Memória de trabalho | SkillDrills",
-  description: "Faça um teste N-Back online e grátis para praticar a atualização da memória de trabalho em 2-back e 3-back, direto no navegador.",
-  keywords: ['teste n-back online', 'teste n-back', 'memória de trabalho', 'treino de memória de trabalho', 'dual n-back', 'tarefa n-back', '2-back', '3-back', 'teste de memória online', 'treino cognitivo'],
+  description: "Teste N-Back online e grátis: diga se a letra na tela é igual à de N passos atrás. Começa no 3-back e sobe um nível a cada 8 acertos.",
+  keywords: ['teste n-back', 'n back teste online', 'teste de memória de trabalho', 'memória de trabalho', '3-back', 'tarefa n-back'],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste N-Back online | Memória de trabalho | SkillDrills",
-    description: "Faça um teste N-Back online e grátis para praticar a atualização da memória de trabalho em 2-back e 3-back.",
+    description: "Teste N-Back grátis no navegador: compare cada letra com a de N passos atrás e treine a memória de trabalho a partir do 3-back, sem cadastro.",
     type: "website",
     url: "https://skilldrills.online/pt/drills/memory/working-memory/n-back",
     siteName: "SkillDrills",
@@ -26,7 +19,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Teste N-Back online | Memória de trabalho | SkillDrills",
-    description: "Faça um teste N-Back online e grátis para praticar a atualização da memória de trabalho em 2-back e 3-back.",
+    description: "Teste N-Back grátis no navegador: compare cada letra com a de N passos atrás e treine a memória de trabalho a partir do 3-back, sem cadastro.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -35,97 +28,94 @@ export const metadata = {
   },
 };
 
+const appDescription = "Teste N-Back grátis no navegador: letras aparecem uma a uma e você indica se cada uma é igual à de N passos atrás. Começa no 3-back e sobe um nível a cada 8 acertos.";
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/" },
-    { "@type": "ListItem", "position": 2, "name": "Treino de Memória", "item": "https://skilldrills.online/pt/drills/memory" },
-    { "@type": "ListItem", "position": 3, "name": "Memória Operacional", "item": "https://skilldrills.online/pt/drills/memory/working-memory" },
-    { "@type": "ListItem", "position": 4, "name": "Teste N-Back Online", "item": "https://skilldrills.online/pt/drills/memory/working-memory/n-back" }
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://skilldrills.online/pt" },
+    { "@type": "ListItem", "position": 2, "name": "Treino de memória", "item": "https://skilldrills.online/pt/drills/memory" },
+    { "@type": "ListItem", "position": 3, "name": "Memória de trabalho", "item": "https://skilldrills.online/pt/drills/memory/working-memory" },
+    { "@type": "ListItem", "position": 4, "name": "Teste N-Back", "item": "https://skilldrills.online/pt/drills/memory/working-memory/n-back" }
   ]
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Teste N-Back Online (Treino de Memória Operacional)",
+  "name": "Teste N-Back online (memória de trabalho)",
   "url": "https://skilldrills.online/pt/drills/memory/working-memory/n-back",
+  "description": appDescription,
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
-  "sameAs": "https://pt.wikipedia.org/wiki/N-back",
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-11",
-  "educationalUse": ["Capacidade de Memória Operacional", "Atualização Contínua de Informação", "Controle Executivo", "Inteligência Fluida"]
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Jogo Teste N-Back Online – Memória e Atenção",
+  "name": "Teste N-Back online (memória de trabalho)",
   "url": "https://skilldrills.online/pt/drills/memory/working-memory/n-back",
-  "description": "Jogo cognitivo gratuito no navegador para treinar a atualização contínua da memória operacional comparando letras N passos atrás.",
-  "dateModified": "2026-09-11",
+  "description": appDescription,
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
-  "genre": ["Cognitive Training", "Working Memory", "Brain Training", "N-Back"],
+  "genre": ["Working Memory", "N-Back"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
-
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Teste N-Back Online (Dual N-Back)",
+  "name": "Teste N-Back online (memória de trabalho)",
   "url": "https://skilldrills.online/pt/drills/memory/working-memory/n-back",
+  "description": appDescription,
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Como Treinar a Memória Operacional com o Teste N-Back",
-  "description": "Estratégia de 4 passos fundamentada em neurociência para dominar a atualização contínua em tarefas N-Back.",
+  "name": "Como fazer o teste N-Back",
+  "description": "Quatro passos para comparar cada letra com a de N passos atrás.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "url": "https://skilldrills.online/pt/drills/memory/working-memory/n-back#step-1",
-      
-      "name": "Subvocalizar a janela-alvo como uma fila circular",
-      "text": "Recite mentalmente a sequência ativa em ordem cronológica, sustentando um buffer interno deslizante (por ex., segurando 'A-T-M' no 3-back)."
+      "name": "Memorizar as 3 primeiras letras",
+      "text": "As 3 primeiras letras ainda não têm com o que ser comparadas: só memorize. Enquanto isso, o relógio não corre."
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "url": "https://skilldrills.online/pt/drills/memory/working-memory/n-back#step-2",
-      
-      "name": "Comparar o estímulo atual com o item de N passos atrás",
-      "text": "Assim que um novo estímulo surgir, compare-o imediatamente com o item mais antigo de seu buffer ativo."
+      "name": "Comparar com a letra de N passos atrás",
+      "text": "A cada nova letra, confira se ela é igual à de exatamente N passos atrás (3 no início)."
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "url": "https://skilldrills.online/pt/drills/memory/working-memory/n-back#step-3",
-      
-      "name": "Descartar o item mais antigo e anexar o novo",
-      "text": "Execute uma atualização mental imediata: remova o item verificado e adicione a nova letra à frente da fila mental."
+      "name": "Escolher Igual ou Diferente",
+      "text": "Clique ou toque em 'Igual' se for a mesma letra, senão em 'Diferente'. A janela de resposta começa em 2 segundos."
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "url": "https://skilldrills.online/pt/drills/memory/working-memory/n-back#step-4",
-      
-      "name": "Manter ritmo atencional consistente sem hesitar",
-      "text": "Ritme sua respiração e evite remoer erros. Em fluxos contínuos, hesitar provoca a perda em cadeia dos elementos seguintes."
+      "name": "Atualizar a lista na cabeça",
+      "text": "Depois de cada resposta, descarte a letra mais antiga e acrescente a nova para manter sempre as últimas N."
     }
   ]
 };
@@ -133,85 +123,70 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O que é o teste de memória operacional N-Back?",
+      "name": "Como funciona o teste N-Back?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O teste N-Back é uma avaliação neurocognitiva clássica que mede a atualização contínua da memória operacional. Os participantes observam uma sequência de estímulos e indicam se o item atual corresponde ao exibido N passos antes."
+        "text": "Letras aparecem uma de cada vez. Se a letra atual for igual à de exatamente N passos atrás, toque em 'Igual'; se não, em 'Diferente'. Cada acerto vale +150 pontos. As N primeiras letras são só para memorizar, e o relógio não corre nesse período."
       }
     },
     {
       "@type": "Question",
-      "name": "Quem criou a tarefa N-Back e com qual propósito?",
+      "name": "Em que nível o teste começa e como ele sobe?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Wayne K. Kirchner desenvolveu a tarefa N-Back em 1958 para investigar o impacto do envelhecimento na retenção de informações dinâmicas que mudam rapidamente."
+        "text": "O teste começa no 3-back. A cada 1.200 pontos (8 acertos) o nível sobe para 4-back, 5-back e assim por diante; a nova distância vale já a partir da próxima letra. Errar nunca faz o nível cair."
       }
     },
     {
       "@type": "Question",
-      "name": "Quais faculdades cognitivas o N-Back principalmente avalia?",
+      "name": "Quanto tempo tenho para responder?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Avalia o controle executivo central, a atualização dinâmica do buffer de memória operacional no córtex pré-frontal dorsolateral (DLPFC) e a inibição de interferências."
+        "text": "Você tem 2 segundos por letra; a janela diminui 0,1 segundo a cada nível, até no mínimo 1,2 segundo. A sessão dura 45 segundos e o relógio fica parado enquanto você memoriza as N primeiras letras."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual é a diferença entre N-Back e testes de span simples (Digit Span)?",
+      "name": "O que acontece se eu errar ou não responder?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Testes de span simples medem armazenamento passivo estático. O N-Back exige manipulação ativa ininterrupta: a cada novo estímulo, o item mais antigo deve ser ejetado e o mais novo integrado."
+        "text": "Você não perde pontos nem tempo. Erros e falta de resposta contam como falha na precisão e a próxima letra aparece. Cerca de uma letra em cada três é igual, então responder 'Diferente' é tão importante quanto."
       }
     },
     {
       "@type": "Question",
-      "name": "O treino com N-Back pode melhorar a inteligência fluida (QI)?",
+      "name": "É um teste dual N-Back?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Jaeggi et al. (2008, PNAS) relataram ganhos em matrizes de raciocínio após treino adaptativo com N-back, mas as replicações têm resultados mistos e este treino não garante ganhos de inteligência."
+        "text": "Não. É um N-Back simples, só com letras. O dual N-Back compara dois estímulos ao mesmo tempo, como posição e som; essa variante não está disponível aqui."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual é a pontuação ou acurácia média de adultos no 3-Back?",
+      "name": "Dá para jogar pelo teclado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Adultos jovens saudáveis costumam atingir entre 65% e 80% de precisão em uma tarefa 3-back padrão. Sustentar precisão acima de 85% indica excelente controle executivo."
+        "text": "Por enquanto, você responde pelos dois botões da tela, com clique do mouse ou toque. Atalhos de teclado não são suportados."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual a diferença entre Single N-Back e Dual N-Back?",
+      "name": "O N-Back aumenta o QI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Single N-Back apresenta um único fluxo sensorial (letras). Dual N-Back apresenta dois fluxos simultâneos (posições visuais em grade e consoantes faladas), exigindo atenção dividida."
+        "text": "Isso não está comprovado. Jaeggi et al. (2008) relataram uma relação entre treino de N-Back e inteligência fluida, mas estudos posteriores tiveram resultados divergentes. Com prática, sua pontuação nesta tarefa específica pode subir."
       }
     },
     {
       "@type": "Question",
-      "name": "Como a repetição subvocal ajuda no desempenho do N-Back?",
+      "name": "Meus resultados são salvos? Têm valor médico?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A repetição interna ativa a alça fonológica (Baddeley, 1986). Repetir mentalmente a sequência atual de N itens preserva o traço mnêmico contra o decaimento temporal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Por que o desempenho cai drasticamente no 4-Back e 5-Back?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "De acordo com Nelson Cowan (2001), a atenção consciente tem um teto de capacidade biológica de cerca de 4±1 unidades. Níveis superiores extrapolam essa barreira natural."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como a memória operacional se aplica a tarefas do cotidiano?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Apoia decisões complexas sob pressão, raciocínio em programação de software, compreensão de leitura avançada, análise financeira de múltiplos fatores e tomada de decisão tática em esports."
+        "text": "A melhor pontuação e o nível máximo ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. São marcas de treino e não diagnosticam problemas de memória de trabalho nem TDAH."
       }
     }
   ]
@@ -220,82 +195,80 @@ const faqSchema = {
 const nBackClientCopyPt = {
   h1Keyword: "Teste N-Back online",
   h1Suffix: " – Memória de trabalho",
-  subtitle: "Prática 2-back para atualizar letras em sequência",
-  caption: "A tarefa N-back avalia se o estímulo atual coincide com o exibido N passos antes, exigindo armazenamento e manipulação dinâmica simultâneos segundo o modelo de Baddeley & Hitch (1974).",
-  statScore: "Pontuação",
+  subtitle: "A letra é igual à de N passos atrás? Começa no 3-back.",
+  statScore: "Pontos",
   statTime: "Tempo",
   statLevel: "Nível",
   statBest: "Recorde",
-  hudScore: "Pontuação",
+  hudScore: "Pontos",
   hudTime: "Tempo",
-  modeSuffix: "-BACK TREINO",
+  modeSuffix: "-BACK",
   memorizingText: "Memorizando as primeiras {n} letras...",
-  btnMatch: "IGUAL (MATCH)",
+  btnMatch: "IGUAL",
   btnNoMatch: "DIFERENTE",
-  startTitle: "Dual N-Back Pro",
-  startSubtitle: "Memória de trabalho • 2-Back",
+  startTitle: "Teste N-Back",
+  startSubtitle: "Memória de trabalho • a partir do 3-back",
   countdownSubtitle: "PREPARE-SE",
   newBest: "NOVO RECORDE",
-  pointsLabel: "Pontos",
+  statPoints: "Pontos",
   statAccuracy: "Precisão",
-  statPeakLevel: "Nível Máximo",
+  statPeakLevel: "Nível máximo",
   statPerfects: "Acertos",
-  btnPlayAgain: "Jogar Novamente",
-  rulesTitle: "Instruções e Sistema de Pontuação",
+  btnPlayAgain: "Jogar de novo",
+  rulesTitle: "Regras e pontuação",
   rulesItems: [
-    { num: "1", text: "Igual / Diferente (N Passos Atrás)", highlight: "+150 PTS", result: "Por decisão correta" },
-    { num: "2", text: "Progressão de Nível", highlight: "3-Back → 4-Back+", result: "A cada 1.200 pontos" },
-    { num: "3", text: "Aceleração de Exibição", highlight: "2.000 ms → 1.200 ms", result: "Estímulos mais rápidos em níveis altos" },
-    { num: "4", text: "Sem Resposta (Timeout)", highlight: "Zero Penalidade", result: "Sem perda de pontos ou tempo" },
-    { num: "5", text: "Resposta Incorreta", highlight: "Zera Sequência", result: "Não reduz tempo — dura os 45 segundos completos" }
+    { num: "1", text: "Igual / Diferente (N passos atrás)", highlight: "+150 PTS", result: "Por acerto" },
+    { num: "2", text: "Subida de nível", highlight: "3-Back → 4-Back+", result: "A cada 1.200 pontos (8 acertos)" },
+    { num: "3", text: "Janela de resposta menor", highlight: "2,0 s → mín. 1,2 s", result: "0,1 s a menos por nível" },
+    { num: "4", text: "Sem resposta", highlight: "Sem desconto", result: "Sem perda de pontos ou tempo, conta como falha" },
+    { num: "5", text: "Resposta errada", highlight: "Sem desconto", result: "O nível se mantém, o relógio de 45 s segue normal" }
   ]
 };
 
 const guidePt = {
-  heading: "Guia do Teste N-Back & Padrões de Desempenho",
   intro: [
-    "O teste N-Back de memória operacional é o protocolo neuropsicológico primordial para avaliar a atualização contínua de informações, o controle executivo cognitivo e a manutenção ativa sob pressão de tempo. Com raízes no trabalho clássico de Wayne K. Kirchner (1958), tornou-se referência absoluta em neurociência cognitiva.",
-    "Diferente de avaliações passivas de retenção, o N-Back exige constante manipulação e reconfiguração de um buffer mental dinâmico. Conforme as letras aparecem velozmente, o usuário deve comparar a letra presente com a de exatamente N posições atrás.",
-    "Metodologia de mensuração: os eventos são cronometrados localmente com o relógio de alta precisão performance.now() do navegador, sem envio de dados a servidores. Diferenças menores que 5 ms decorrem de variações de quantização do sistema e devem ser consideradas margem de medida normal.",
-    "Transparência de dados: SkillDrills não coleta dados pessoais de pontuação. Suas marcas permanecem salvas apenas no localStorage do seu dispositivo.",
-    "Este exercício é um jogo de navegador gratuito voltado ao treino e interesse cognitivo. Não é um dispositivo médico nem um teste de diagnóstico clínico."
+    "O teste N-Back online é um treino grátis de memória de trabalho no navegador: letras aparecem uma a uma e você indica se cada uma é igual à de exatamente N passos atrás. Como é preciso guardar as últimas N letras e atualizar a lista a cada nova letra, a tarefa exige sobretudo a atualização da memória de trabalho (Kirchner, 1958).",
+    "O teste começa no 3-back. As 3 primeiras letras são só para memorizar; depois, você responde 'Igual' ou 'Diferente' a cada letra. Cada acerto vale +150 pontos e a cada 1.200 pontos (8 acertos) o nível sobe para 4-back, 5-back e assim por diante. A janela de resposta começa em 2 segundos e diminui 0,1 segundo por nível, até 1,2 segundo.",
+    "A sessão dura 45 segundos; o relógio fica parado enquanto você memoriza as primeiras letras. Erros e falta de resposta não custam pontos nem tempo e não fazem o nível cair: só contam como falha na precisão. É um N-Back simples com letras, não um teste dual N-Back (posição + som). Resposta por clique ou toque nos botões.",
+    "Transparência de dados: os resultados ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. Por isso o SkillDrills não publica médias de usuários nem rankings.",
+    "Esta ferramenta é um jogo grátis de treino no navegador. Não é um dispositivo médico nem uma ferramenta de diagnóstico, e os resultados não indicam problemas de memória, TDAH ou QI."
   ],
-  metrics: [
-    { label: "Nível N-Back Máximo", desc: "Maior profundidade atingida (3-Back referência, 4-Back avançado, 5-Back+ muito avançado)." },
-    { label: "Pontuação Total", desc: "Total acumulado durante os 45 segundos (+150 PTS por acerto, sem penalidade)." },
-    { label: "Acurácia de Julgamento", desc: "Percentual de decisões corretas frente a erros de falso alarme e omissão." },
-    { label: "Velocidade de Atualização", desc: "Rapidez decisória e latência de resposta durante a apresentação dos estímulos." }
+  benchmarks: {
+    title: "Faixas de treino SkillDrills (pontos = acertos × 150)",
+    headers: ["Faixa", "Acertos", "Pontos", "Nível alcançado"],
+    rows: [
+      ["Iniciante", "0–3", "0–450", "3-back. Aprendendo as regras e o ritmo"],
+      ["Básico", "4–7", "600–1.050", "Ainda 3-back. Atualização estável das 3 últimas letras"],
+      ["Intermediário", "8–15", "1.200–2.250", "4-back alcançado, janela de 1,9 s"],
+      ["Avançado", "16+", "2.400+", "5-back ou mais, janela de 1,8 s ou menos"]
+    ],
+    note: "Estas faixas são calculadas a partir das regras de pontuação do jogo; não são normas populacionais nem limites clínicos."
+  },
+  techniques: {
+    title: "Dicas para o teste N-Back",
+    items: [
+      { name: "Repetir baixinho", desc: "Repita mentalmente as últimas N letras num ritmo fixo (ex.: B-M-T → M-T-R). Quando chegar uma nova, compare com a primeira e descarte-a.", tips: "Nomes curtos para as letras ajudam a manter o ritmo." },
+      { name: "Cuidado com letras próximas", desc: "Uma letra vista há 1 ou 2 passos parece familiar, mas não é a certa. Confira se são exatamente N passos.", tips: "Familiaridade sozinha não é motivo para tocar em 'Igual'." },
+      { name: "Responder 'Diferente' sem medo", desc: "Só cerca de uma letra em três é igual. Hesitar demais faz a resposta expirar.", tips: "Escolha sempre uma das duas respostas dentro da janela." },
+      { name: "Recomeçar rápido depois de se perder", desc: "Se perder a sequência, não tente lembrar o passado: monte a lista de novo a partir da letra atual.", tips: "Depois de N letras você volta a comparar com segurança." }
+    ]
+  },
+  steps: [
+    "Toque em Iniciar e espere a contagem regressiva de 3 segundos.",
+    "Memorize as 3 primeiras letras (o relógio não corre).",
+    "Depois, a cada letra, escolha 'Igual' se for a mesma de 3 passos atrás, senão 'Diferente'.",
+    "A cada 8 acertos o nível sobe para 4-back, 5-back e a janela de resposta encurta.",
+    "Depois de 45 segundos, veja sua pontuação, nível máximo e precisão."
   ],
-  benchmarks: [
-    { tier: "Faixa 1: Domínio avançado", range: "4-Back a 5-Back+ (1.200+ Pontos)", desc: "Controle executivo avançado; fila FIFO mental de 4 a 5 itens; latência inferior a 600 ms; acurácia superior a 92%." },
-    { tier: "Faixa 2: Avançada", range: "3-Back sólido com transição a 4-Back (900 – 1.199 Pontos)", desc: "Supera a média adulta; atualização 3-back contínua com poucas intrusões; acurácia de 80% a 91%." },
-    { tier: "Faixa 3: Sólida", range: "3-Back Estável (600 – 899 Pontos)", desc: "Padrão adulto normativo (Kirchner, 1958); mantém buffer de 3 itens com falhas ocasionais; acurácia de 65% a 79%." },
-    { tier: "Faixa 4: Em desenvolvimento", range: "3-Back Instável (400 – 599 Pontos)", desc: "Dificuldade na atualização contínua de 3 itens; confusão com itens de 2 passos atrás; acurácia de 50% a 64%." },
-    { tier: "Faixa 5: Inicial", range: "Abaixo de 3-Back (< 400 Pontos)", desc: "Gargalo severo na atualização contínua; lapsos por timeout frequentes; acurácia inferior a 50%. Faixas editoriais de prática, não estatísticas de população." }
-  ],
-  science: [
-    { title: "Wayne K. Kirchner (1958): Criação do paradigma N-Back", body: "Propôs a tarefa para avaliar os efeitos do envelhecimento na retenção de estímulos em rápida alteração." },
-    { title: "Alan Baddeley (1986, 2000): Controle pelo Executivo Central", body: "No modelo multicomponente, N-back exige coordenação entre alça fonológica e córtex pré-frontal." },
-    { title: "Adele Diamond (2013): Tríade das Funções Executivas", body: "Definiu atualização de memória operacional, controle inibitório e flexibilidade cognitiva como base." },
-    { title: "Susanne M. Jaeggi et al. (2008): Ganhos em inteligência fluida", body: "Relatou ganhos no raciocínio abstrato e na inteligência fluida após treino adaptativo de N-back; replicações têm resultados mistos." },
-    { title: "Nelson Cowan (2001): Limite de capacidade 4±1", body: "Identificou que o foco consciente processa cerca de 4 blocos não agrupados de informação." },
-    { title: "David L. Woods et al. (2015): Cronometria cognitiva padronizada", body: "Estabeleceu critérios rigorosos para métricas de tempo de reação e d' em exames computadorizados." }
-  ],
-  protocols: [
-    { title: "Subvocalização em fila deslizante", body: "Repita internamente a tríade de letras com ritmo fixo (por exemplo, 'B-M-T' evoluindo para 'M-T-R')." },
-    { title: "Inibição atenta contra estímulos de atalho", body: "Controle o impulso de marcar letras que apareceram há 1 ou 2 passos em vez de exatamente 3 passos." },
-    { title: "Dupla codificação fonológica e espacial", body: "Mentalize 3 espaços horizontais onde as letras deslizam para a esquerda a cada nova exibição." },
-    { title: "Reinício atencional sem lamentação", body: "Se perder o encadeamento, encare a próxima letra como o passo 1 e reconstrua a sequência sem hesitar." }
-  ],
-  sources: pickSources('baddeley1974', 'baddeley1986', 'cowan2001', 'woods2015'),
+  audience: "Quem quer fazer um teste N-Back ou um teste de memória de trabalho direto no navegador, estudantes conhecendo a tarefa e quem procura um jogo rápido de raciocínio.",
   faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text })),
+  sources: pickSources('baddeley1974', 'cowan2001'),
   related: [
-    { href: "/pt/drills/memory/spatial-memory/path-tracing", title: "Teste de Rastreamento de Caminho", desc: "Memorizar trajetórias dinâmicas em matrizes progressivas." },
-    { href: "/pt/drills/memory/spatial-memory/grid-memorization", title: "Teste de Memória Visual de Grade", desc: "Memorizar padrões em tabuleiros 2D e testar capacidade de retenção visual." },
-    { href: "/pt/drills/memory/spatial-memory/object-location", title: "Teste de Localização de Objetos", desc: "Medir a memória espacial e a retenção de posições em mapas de múltiplos quadrantes." },
-    { href: "/pt/drills/memory/short-term-memory/digit-span", title: "Teste de Extensão de Dígitos (Digit Span)", desc: "Avaliar capacidade de retenção numérica e a alça fonológica." },
-    { href: "/pt/drills/memory/short-term-memory/word-recall", title: "Teste de Memória Verbal", desc: "Avaliar recordação imediata e agrupamento semântico sob tempo restrito." },
-    { href: "/pt/drills/memory/short-term-memory/color-sequence", title: "Jogo de Memória de Cores", desc: "Memorizar sequências progressivas de cores em velocidade crescente." }
+    { href: "/pt/drills/memory/spatial-memory/path-tracing", label: "Teste de Corsi" },
+    { href: "/pt/drills/memory/spatial-memory/grid-memorization", label: "Teste de Memória Visual" },
+    { href: "/pt/drills/memory/spatial-memory/object-location", label: "Teste de Memória Espacial" },
+    { href: "/pt/drills/memory/short-term-memory/digit-span", label: "Teste de Dígitos" },
+    { href: "/pt/drills/memory/short-term-memory/word-recall", label: "Teste de Memória Verbal" }
   ]
 };
 
@@ -311,7 +284,7 @@ export default function NBackPagePt() {
 
       <NBackClient copy={nBackClientCopyPt} />
 
-      <DrillGuide {...guidePt} />
+      <DrillGuide guide={guidePt} />
 
       <RelatedDrills />
     </>

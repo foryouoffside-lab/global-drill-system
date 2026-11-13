@@ -20,10 +20,13 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Schulte-Tabelle online | Konzentrationsgitter | SkillDrills",
-  description: "Kostenlose Schulte-Tabelle im Browser: Finde Zahlen der Reihe nach und übe visuelles Suchen. Kein klinischer Test, sondern ein kognitiver Selbstcheck.",
+  title: "Schulte-Tabelle: Konzentrationsübung online | SkillDrills",
+  description: "Schulte-Tabelle als kostenlose Konzentrationsübung online: Zahlen 45 Sekunden lang der Reihe nach antippen, das Gitter wächst ab 3x3. Kein klinischer Test.",
   keywords: [
     "Schulte-Tabelle",
+    "Konzentrationsübungen",
+    "Konzentrationsübung online",
+    "Konzentrationstraining",
     "Schulte Tabelle online",
     "Schulte Tabelle kostenlos",
     "Konzentrationsgitter",
@@ -37,8 +40,8 @@ export const metadata = {
     "augentraining fokus test online"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Schulte-Tabelle Online – Konzentrationsgitter | SkillDrills",
-    description: "Kostenlose Schulte-Tabelle online: Trainiere peripheres Sehen, Schnelllesen und visuelle Suchgeschwindigkeit auf anpassbaren Zahlen-Gittern.",
+    title: "Schulte-Tabelle: Konzentrationsübung online | SkillDrills",
+    description: "Kostenlose Konzentrationsübung online: Zahlen auf der Schulte-Tabelle der Reihe nach antippen, 45 Sekunden lang auf wachsenden Gittern von 3x3 bis 8x8.",
     type: "website",
     url: "https://skilldrills.online/de/drills/cognitive/focus/concentration-grid",
     siteName: "SkillDrills",
@@ -46,8 +49,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Schulte-Tabelle Online – Konzentrationsgitter | SkillDrills",
-    description: "Kostenlose Schulte-Tabelle online: Trainiere peripheres Sehen, Schnelllesen und visuelle Suchgeschwindigkeit auf anpassbaren Zahlen-Gittern.",
+    title: "Schulte-Tabelle: Konzentrationsübung online | SkillDrills",
+    description: "Kostenlose Konzentrationsübung online: Zahlen auf der Schulte-Tabelle der Reihe nach antippen, 45 Sekunden lang auf wachsenden Gittern von 3x3 bis 8x8.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -73,7 +76,7 @@ export default function ConcentrationGridPageDe() {
     "name": "Schulte-Tabelle Online (Konzentrationsgitter)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Kostenloses browserbasiertes Schulte-Tabellen-Training zur Erweiterung des peripheren Sehens und der visuellen Suchgeschwindigkeit.",
     "genre": "Kognitives Training / Aufmerksamkeit",
@@ -91,7 +94,7 @@ export default function ConcentrationGridPageDe() {
     "name": "Schulte-Tabelle Online (Konzentrationsgitter)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "HTML5 Canvas, JavaScript fähiger Browser",
     "description": "Kostenlose interaktive Schulte-Tabelle online. Trainiere peripheres Sehen und Aufmerksamkeitsausdauer auf expandierenden Zahlenfeldern.",
@@ -104,7 +107,7 @@ export default function ConcentrationGridPageDe() {
     "name": "Schulte-Tabelle Online (Konzentrationsgitter)",
     "url": "https://skilldrills.online/de/drills/cognitive/focus/concentration-grid",
     "description": "Kostenlose interaktive Schulte-Tabelle online. Finde sequentielle Zahlen auf expandierenden Gittern von 3x3 bis 8x8.",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "gamePlatform": "Web Browser",
     "genre": ["Kognitives Training", "Peripheres Sehen", "Schulte-Tabelle", "Konzentrationsgitter"],
     "playMode": "SinglePlayer",
@@ -116,14 +119,14 @@ export default function ConcentrationGridPageDe() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "Was ist eine Schulte-Tabelle und wozu dient sie?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Die Schulte-Tabelle wurde 1962 vom deutschen Psychiater Walter Schulte als psychodiagnostisches Verfahren entwickelt. Sie besteht aus einem Gitter mit zufällig verteilten Zahlen, die in aufsteigender Reihenfolge gefunden werden müssen, um die visuelle Verarbeitungsgeschwindigkeit und Aufmerksamkeitskapazität zu messen."
+          "text": "Die Schulte-Tabelle ist nach dem deutschen Psychiater Walter Schulte benannt. Sie besteht aus einem Gitter mit zufällig verteilten Zahlen, die in aufsteigender Reihenfolge gefunden werden müssen, und wird heute vor allem als Konzentrationsübung für visuelles Suchen genutzt. Diese Version ist eine Übung, kein psychologischer Test."
         }
       },
       {
@@ -139,7 +142,7 @@ export default function ConcentrationGridPageDe() {
         "name": "Warum ist die Schulte-Tabelle für Schnellleser (Speed Reading) so wertvoll?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Schnellleser erfassen ganze Wortgruppen mit einem einzigen Blick. Das Schulte-Gitter vergrößert die perzeptuelle Blickspanne (Rayner, 1998) und reduziert die Anzahl unnötiger Sakkaden und Fixationspausen pro Textzeile drastisch."
+          "text": "Beim Lesen wechseln sich Fixationen und Sakkaden ab (Rayner, 1998). Das Schulte-Gitter übt, Ziffern am Rand des Blickfelds zu erfassen, ohne jede Zahl einzeln anzuspringen, und wird deshalb gern als Ergänzung zum Schnelllesen genutzt. Eine schnellere Lesegeschwindigkeit ist damit nicht garantiert; der Drill misst sie nicht."
         }
       },
       {
@@ -147,7 +150,7 @@ export default function ConcentrationGridPageDe() {
         "name": "Was besagt die zentrale Fixationsregel beim Training?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Die maximale Trainingswirkung entsteht, wenn der Blick ruhig in der Mitte der Tabelle ruht. Die Suche nach der nächsten Ziffer erfolgt rein über die periphere Wahrnehmung ohne direkte Augenwanderung."
+          "text": "Der Blick ruht möglichst ruhig in der Mitte der Tabelle, und die nächste Ziffer wird über das periphere Blickfeld gesucht statt mit großen Augenbewegungen. Das ist die übliche Übungsregel, keine bewiesene Bestmethode."
         }
       },
       {
@@ -160,18 +163,18 @@ export default function ConcentrationGridPageDe() {
       },
       {
         "@type": "Question",
-        "name": "Welche Zeit auf einer 5x5 Schulte-Tabelle gilt als guter Richtwert?",
+        "name": "Gibt es einen Richtwert für die Zeit auf einer 5x5 Schulte-Tabelle?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Eine Zeit unter 30 Sekunden ist ein sinnvolles Zwischenziel. Mit Übung lässt sich ein 5x5-Gitter (Zahlen 1 bis 25) oft in unter 20 bis 25 Sekunden bewältigen; die Werte sind redaktionelle Richtwerte, keine Normdaten."
+          "text": "Es gibt keinen verbindlichen Richtwert; Zeiten hängen stark von Bildschirmgröße und Eingabegerät ab, und SkillDrills sammelt keine Nutzerdaten. Dieser Drill misst keine Einzelzeit für 5x5, sondern eine 45-Sekunden-Runde ab 3x3. Vergleiche Punkte und gelöste Gitter mit deinen eigenen früheren Runden."
         }
       },
       {
         "@type": "Question",
-        "name": "Profitieren E-Sportler und Rennfahrer von Konzentrationsgittern?",
+        "name": "Hilft das Konzentrationsgitter E-Sportlern und Rennfahrern?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. In wettkampforientierten Shootern und im Motorsport müssen Bedrohungen und Anzeigen am Bildschirmrand erkannt werden, ohne das Fadenkreuz von der Straßen- oder Ziellinie abzuwenden."
+          "text": "Ein Nutzen für die Spielleistung ist nicht belegt. Die Übung ähnelt aber der Aufgabe, Anzeigen am Bildschirmrand zu erfassen, ohne den Blick von der Mitte abzuwenden; nutze sie als Ergänzung."
         }
       },
       {
@@ -179,7 +182,7 @@ export default function ConcentrationGridPageDe() {
         "name": "Wie oft sollte man mit der Schulte-Tabelle trainieren?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tägliche kurze Einheiten von 5 bis 10 Durchgängen (ca. 10 bis 15 Minuten) erzielen optimale neuroplastische Anpassungen ohne visuelle Ermüdung der Augenmuskeln."
+          "text": "Es gibt keine feste Vorgabe. Kurze tägliche Einheiten von einigen Durchgängen (etwa 10 Minuten) mit Pausen sind angenehm für die Augen und leicht durchzuhalten."
         }
       },
       {
@@ -241,25 +244,26 @@ export default function ConcentrationGridPageDe() {
   const concentrationGridGuide = {
     heading: "Leitfaden für Schulte-Tabellen & Peripheres Sehtraining",
     intro: [
-      "Die Schulte-Tabelle (Schulte Table) ist ein traditionsreiches kognitives Trainings- und Diagnosewerkzeug, das 1962 von dem deutschen Psychiater Walter Schulte an der Universität Tübingen entwickelt wurde. Ursprünglich zur Untersuchung der Aufmerksamkeitsökonomie und psychischen Leistungsfähigkeit konzipiert, fordert das klassische Raster Probanden auf, die Ziffern 1 bis 25 in aufsteigender Reihenfolge auf einem 5x5-Gitter zu lokalisieren, während der Blick im Idealfall auf der Mitte fixiert bleibt.",
-      "In der angewandten Sportpsychologie entwickelte sich daraus das 'Konzentrationsgitter' (Harris & Harris, 1984), das von Spitzentrainern im Tennis, Motorsport und Baseball eingesetzt wird, um Blickgeschwindigkeit und mentale Gegenwärtigkeit unter Zeitdruck zu schulen. Eine ereigniskorrelierte Potenzialstudie (ERP) an Kindern zeigte, dass die sequentielle Zahlensuche im Schulte-Gitter signifikant höhere neuronale Ressourcen beansprucht als die Einzelsuche und dass zusätzliche Farbdistraktoren die Latenzen im EEG messbar verzögern (Lu et al., 2022).",
-      "Der SkillDrills Schulte-Tabellen-Trainer transformiert diesen statischen Test in eine moderne, hochdynamische Continuous Performance Task. Anstelle einer einzelnen isolierten Matrix erweitert sich das Gitter bei jedem Abschluss dynamisch von 3x3 bis zu 8x8, wobei ab Stufe 5x5 leichte Rotationsverzerrungen hinzutreten. Dies fordert die maximale funktionelle Blickspanne und die parafoveale Koordination innerhalb eines fixen 45-Sekunden-Zeitfensters.",
+      "Die Schulte-Tabelle (Schulte Table) ist eine klassische Konzentrationsübung, benannt nach dem deutschen Psychiater Walter Schulte. Unter den Konzentrationsübungen für visuelles Suchen ist sie eine der bekanntesten: Das klassische Raster fordert Probanden auf, die Ziffern 1 bis 25 in aufsteigender Reihenfolge auf einem 5x5-Gitter zu lokalisieren, während der Blick im Idealfall auf der Mitte fixiert bleibt.",
+      "In der angewandten Sportpsychologie entwickelte sich daraus das 'Konzentrationsgitter' (Harris & Harris, 1984), das in Sportpsychologie-Ratgebern als Übung für Blickgeschwindigkeit und Konzentration unter Zeitdruck beschrieben wird. Eine ereigniskorrelierte Potenzialstudie (ERP) an Kindern zeigte, dass die sequentielle Zahlensuche im Schulte-Gitter signifikant höhere neuronale Ressourcen beansprucht als die Einzelsuche und dass zusätzliche Farbdistraktoren die Latenzen im EEG messbar verzögern (Lu et al., 2022).",
+      "Der SkillDrills Schulte-Tabellen-Trainer macht aus dieser statischen Tabelle eine durchgehende 45-Sekunden-Runde. Anstelle einer einzelnen isolierten Matrix erweitert sich das Gitter bei jedem Abschluss dynamisch von 3x3 bis zu 8x8, wobei ab Stufe 5x5 leichte Rotationsverzerrungen hinzutreten. Auf kleinen Bildschirmen (unter 380 px Breite) endet das Wachstum bei 7x7. So übst du, ein immer größeres Feld innerhalb eines festen 45-Sekunden-Zeitfensters abzusuchen.",
       "Messmethodik und Präzision: Jedes Klick- und Touch-Ereignis wird clientseitig über die hochauflösende performance.now() API des Browsers erfasst. Moderne Browser vergröbern Zeitgeber aus Sicherheitsgründen (Spectre-Mitigation) auf rund 1 ms, während Displays Änderungen auf ihre Bildwiederholrate quantisieren (ca. 16,7 ms pro Frame bei 60 Hz, Woods et al., 2015). Vergleichen Sie Ihre Resultate am besten auf derselben Hardwarekonfiguration.",
-      "Datentransparenz: SkillDrills erhebt und überträgt keinerlei aggregierte Nutzerdaten. Alle Bestwerte und Einstellungen verbleiben ausschließlich im lokalen Speicher (localStorage) Ihres Webbrowsers. Sämtliche Richtwerte und Interpretationen stützen sich auf die in den Quellen aufgeführten wissenschaftlichen Fachpublikationen.",
+      "Datentransparenz: SkillDrills erhebt und überträgt keinerlei aggregierte Nutzerdaten. Alle Bestwerte und Einstellungen verbleiben ausschließlich im lokalen Speicher (localStorage) Ihres Webbrowsers. Die Hintergrundangaben stammen aus den aufgeführten Quellen; Punktstufen sind SkillDrills-Übungsbänder, keine Normwerte.",
       "Diese Übung ist ein kostenloses Trainingsspiel für Sport, Studium und persönliche Leistungssteigerung. Sie stellt kein medizinisches Diagnoseinstrument, kein therapeutisches Hilfsmittel und kein Screening-Verfahren für ADHS oder Aufmerksamkeitsstörungen dar. Bei gesundheitlichen oder neuropsychologischen Beschwerden wenden Sie sich bitte an qualifizierte Mediziner."
     ],
     benchmarks: {
-      title: "Schulte-Tabelle & Konzentrationsgitter Leistungsklassen (45-Sekunden-Lauf)",
-      headers: ["Leistungsstufe", "Punktzahl (45s)", "Maximales Gitter", "Suchlatenz", "Neurokognitive Bewertung"],
+      title: "Schulte-Tabelle: Notenstufen (Punkte pro 45-Sekunden-Runde)",
+      headers: ["Stufe", "Punkte (45 s)"],
       rows: [
-        ["S+ (Stufe 5)", "8.000+ PTS", "7x7+ (49+ Felder)", "< 300 ms / Ziffer", "Fokus: sehr schnelle Suche, weite periphere Blickspanne und Rotationsinvarianz."],
-        ["S (Master)", "6.000 – 7.999 PTS", "6x6 (36 Felder)", "300 – 450 ms / Ziffer", "Exzellente visuelle Sucheffizienz; nahtloses parafoveales Caching und minimale Fixationspausen."],
-        ["A (Fortgeschritten)", "4.500 – 5.999 PTS", "5x5 (25 Felder)", "450 – 600 ms / Ziffer", "Starke visuelle Feldverarbeitung; konsistente paarweise Vorausschau bei mittlerer Gitterdichte."],
-        ["B (Kompetent)", "3.000 – 4.499 PTS", "4x4 (16 Felder)", "600 – 800 ms / Ziffer", "Überdurchschnittliche Suchdisziplin; gelegentliche zentrale Refixationspausen bei größeren Rastern."],
-        ["C (Mittelstufe)", "1.800 – 2.999 PTS", "3x3 (9 Felder)", "800 – 1.100 ms / Ziffer", "Solide Grundleistung; stützt sich überwiegend auf serielle foveale Einzelsakkaden."],
-        ["D (In Entwicklung)", "< 1.800 PTS", "3x3 (teilweise)", "> 1.100 ms / Ziffer", "Visuelle Enge (Crowding); erhöhte Sakkadenzahl und zögerliche Zifferndiskrimination."]
+        ["S+", "ab 7.220"],
+        ["S", "5.780 – 7.219"],
+        ["A", "4.500 – 5.779"],
+        ["B", "2.880 – 4.499"],
+        ["C", "1.620 – 2.879"],
+        ["D", "720 – 1.619"],
+        ["F", "unter 720"]
       ],
-      note: "Diese Leistungsstufen basieren auf empirischen Forschungsarbeiten zur visuellen Suche und Aufmerksamkeit (Lu et al., 2022; Treisman & Gelade, 1980; Rayner, 1998; Wolfe, 2007). Individuelle Ergebnisse variieren je nach Bildwiederholfrequenz, Eingabemethode und Augenermüdung."
+      note: "SkillDrills-Übungsbänder, direkt aus der Notenformel des Endbildschirms berechnet (Anteil an 8.000 Referenzpunkten); keine Nutzerstatistik und keine Normwerte. Jeder richtige Tipp bringt 100 Punkte plus Tempobonus (bis 120), jedes gelöste Gitter einen Bonus proportional zur Feldzahl."
     },
     techniques: {
       title: "Wissenschaftliche Methoden für maximale Schulte-Gitter-Leistung",
@@ -271,12 +275,12 @@ export default function ConcentrationGridPageDe() {
         },
         {
           name: "Parafoveales Vorab-Caching der Nachbarzahlen",
-          desc: "Während du Ziffer 3 antippst, sollte deine periphere Aufmerksamkeit bereits die Ziffern 4 und 5 im Vorfeld registrieren (Rayner, 1998). Dies eliminiert die Suchpause zwischen Klicks.",
+          desc: "Während du Ziffer 3 antippst, sollte deine periphere Aufmerksamkeit bereits die Ziffern 4 und 5 im Vorfeld registrieren (Rayner, 1998). Das verkürzt die Suchpause zwischen Klicks.",
           tips: "Denke immer zwei Ziffern im Voraus, anstatt erst nach dem Klick mit der neuen Suche zu beginnen."
         },
         {
           name: "Vermeidung von subvokaler Zählung",
-          desc: "Das innerliche laute Mitsprechen der Zahlen im Kopf begrenzt deine Verarbeitungsgeschwindigkeit auf das Sprechtempo (ca. 3–4 Wörter pro Sekunde).",
+          desc: "Das innerliche laute Mitsprechen der Zahlen im Kopf bindet dein Suchtempo leicht an dein Sprechtempo.",
           tips: "Erkenne die Form der Zahl direkt als visuelles Muster, ohne ihren Namen innerlich auszusprechen."
         },
         {
@@ -334,7 +338,7 @@ export default function ConcentrationGridPageDe() {
       <ConcentrationGridClient
         copy={{
           h1Keyword: "Schulte-Tabelle",
-          h1Suffix: " – Konzentrationsgitter Online",
+          h1Suffix: ": Konzentrationsübung online",
           subtitle: "Zahlen der Reihe nach finden: schneller visuell suchen und die Aufmerksamkeit fokussieren",
           startTitle: "Schulte-Tabelle",
           startSubtitle: "Zahlen der Reihe nach finden • wachsende Gitter",
@@ -356,8 +360,8 @@ export default function ConcentrationGridPageDe() {
           stageCaption: "Scanne und tippe Zahlen in strikt aufsteigender Reihenfolge auf expandierenden Schulte-Gittern.",
           rulesTitle: "Drill-Anleitung & Punktesystem",
           aboutTitle: "Über die Schulte-Tabelle & Konzentrationsgitter",
-          aboutLead: "Die Schulte-Tabelle ist ein psychodiagnostisches Verfahren zur Vergrößerung des peripheren Gesichtsfeldes und zur Reduktion der Fixationslatenz bei sequentieller visueller Suche (Lu et al., 2022; Rayner, 1998).",
-          aboutText: "Das Konzentrationsgitter schult schnelle Augenbewegungen (Sakkaden) und fokussierte Aufmerksamkeit unter progressiver visueller Enge (Treisman & Gelade, 1980; Wolfe, 2007).\n\nDurch das systematische Absuchen von Zahlenketten trainierst du die Effizienz mikrosakkadischer Fixationen und die periphere Zielerkennung.\n\nDa jede Session auf einem festen 45-Sekunden-Timer läuft, belohnt der Drill kontinuierliche Präzision ohne hastige Fehlschüsse.",
+          aboutLead: "Die Schulte-Tabelle ist eine klassische Konzentrationsübung: Zufällig verteilte Zahlen werden der Reihe nach gesucht, wobei Blickführung und peripheres Sehen geübt werden (Lu et al., 2022; Rayner, 1998).",
+          aboutText: "Das Konzentrationsgitter schult schnelle Augenbewegungen (Sakkaden) und fokussierte Aufmerksamkeit unter progressiver visueller Enge (Treisman & Gelade, 1980; Wolfe, 2007).\n\nDurch das systematische Absuchen von Zahlenketten übst du Blickführung und periphere Zielerkennung; eine Verbesserung ist nicht garantiert.\n\nDa jede Session auf einem festen 45-Sekunden-Timer läuft, belohnt der Drill kontinuierliche Präzision ohne hastige Fehlschüsse.",
           aboutCards: [
             { title: "Für wen geeignet?", text: "Athleten, Piloten, Schnellleser und E-Sportler, die auf schnelle visuelle Informationsverarbeitung unter Zeitdruck angewiesen sind.", color: "bg-blue-600" },
             { title: "Trainierte Fähigkeiten", text: "Visuelle Suchgeschwindigkeit, mikrosakkadische Effizienz, periphere Blickspannenerweiterung und kognitive Aufmerksamkeitsausdauer.", color: "bg-emerald-600" },

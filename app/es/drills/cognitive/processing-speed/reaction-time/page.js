@@ -8,16 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: "Tiempo de Reacción de Elección | Velocidad de Decisión",
   description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual; no es clínico.",
-  keywords: [
-    "test de reacción",
-    "test de reacción online",
-    "tiempo de reacción",
-    "tiempo de reacción de elección",
-    "test de reflejos",
-    "velocidad de decisión",
-    "discriminación visual",
-    "ley de Hick"
-  ],
+  keywords: ["tiempo de reacción de elección", "reacción de elección", "velocidad de decisión", "cambio de regla", "ley de Hick"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Tiempo de Reacción de Elección | Velocidad de Decisión",
     description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual; no es clínico.",
@@ -72,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "Test de Tiempo de Reacción de Elección – CRT",
+  "name": "Tiempo de Reacción de Elección",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -80,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test de tiempo de reacción de elección online gratis: Mide tu velocidad de toma de decisiones, discriminación visual y flexibilidad cognitiva sin registro.",
+  "description": "Ejercicio gratis de tiempo de reacción de elección en el navegador: pulsa el objetivo del color que indica una regla cambiante. Resultado en puntos, precisión y nivel, sin medición en milisegundos.",
   "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time",
   "publisher": {
     "@type": "Organization",
@@ -88,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "es-ES",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test de Tiempo de Reacción de Elección",
+  "name": "Tiempo de Reacción de Elección | Velocidad de Decisión",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requiere un navegador web moderno compatible con JavaScript",
@@ -105,15 +96,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time",
   "inLanguage": "es-ES",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Test de Tiempo de Reacción de Elección – Juego Mental",
+  "name": "Tiempo de Reacción de Elección – Juego de Regla de Color",
   "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time",
-  "description": "Test de tiempo de reacción de elección online gratis: Mide tu velocidad de toma de decisiones, discriminación visual y flexibilidad cognitiva sin registro.",
+  "description": "Ejercicio gratis de tiempo de reacción de elección en el navegador: pulsa el objetivo del color que indica una regla cambiante. Resultado en puntos, precisión y nivel, sin medición en milisegundos.",
   "genre": [
     "Action",
     "Brain Game",
@@ -138,10 +129,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué es el tiempo de reacción de elección (CRT)?",
+      "name": "¿Qué es el tiempo de reacción de elección?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El tiempo de reacción de elección es el tiempo necesario para percibir un estímulo, discriminar su identidad entre varias opciones y ejecutar la respuesta motora adecuada."
+        "text": "Es el tiempo para identificar, entre varios estímulos, el que corresponde a una regla y elegir la respuesta correcta. Aquí aparecen un objetivo rojo y uno azul, y pulsas el color que pide la regla activa."
       }
     },
     {
@@ -149,7 +140,7 @@ const faqSchema = {
       "name": "¿Cuál es la diferencia entre tiempo de reacción simple y de elección?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El tiempo simple (SRT, ~200ms) responde a un único estímulo previsto. El tiempo de elección (CRT, ~280-350ms) añade una fase de deliberación y discriminación perceptual antes de actuar (Donders, 1868)."
+        "text": "En la reacción simple respondes a un único estímulo esperado. En la de elección se añaden la discriminación y la selección de la respuesta, por eso suele ser más lenta (Donders). Este ejercicio añade además cambios de regla."
       }
     },
     {
@@ -157,63 +148,63 @@ const faqSchema = {
       "name": "¿Qué dice la Ley de Hick (Hick, 1952)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La Ley de Hick establece que el tiempo de reacción aumenta de forma logarítmica a medida que se incrementa el número de alternativas de estímulo-respuesta: RT = a + b * log2(n)."
+        "text": "El tiempo de reacción crece de forma logarítmica con el número de opciones. Como debes comprobar la regla antes de cada pulsación, el ejercicio trabaja precisamente esa fase de decisión."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuáles son los valores promedio normales en humanos?",
+      "name": "¿Cómo funciona el cambio de regla?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En adultos sanos, el promedio oscila entre 280ms y 350ms. Registros de entre 180ms y 230ms son poco habituales y dependen del dispositivo (Der & Deary, 2006)."
+        "text": "El aviso superior indica qué color pulsar (rojo o azul). Desde el nivel 2, la regla se invierte tras una serie de aciertos; cuanto más alto el nivel, menos aciertos hacen falta para el cambio (mínimo 2)."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Por qué cambian las reglas de color durante el ejercicio?",
+      "name": "¿Cómo funciona el tiempo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La alternancia dinámica de reglas fuerza a la corteza prefrontal a reconfigurar la respuesta y suprimir hábitos motores automáticos, entrenando la flexibilidad cognitiva."
+        "text": "La ronda empieza con 45 segundos. Cada acierto suma 2 segundos, hasta 60. Pulsar el color equivocado, o dejar que caduque una pareja de objetivos (con Target Timeouts activado), resta 1 segundo y reinicia el combo. La ronda termina al llegar a 0."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Es posible acelerar la velocidad de decisión con práctica?",
+      "name": "¿Cómo se calculan los puntos y la nota?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. El entrenamiento continuado consolida las rutas sinápticas, acelera la categorización visual y reduce la vacilación motora previa al clic."
+        "text": "Cada acierto da 100 puntos multiplicados por el multiplicador de combo y el de nivel. La puntuación final se compara con una referencia fija de SkillDrills y se muestra como nota de F a S+."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cómo influye la edad en el tiempo de reacción?",
+      "name": "¿El ejercicio mide mi tiempo de reacción en milisegundos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La velocidad alcanza su cúspide entre los 18 y 25 años. A partir de entonces se produce un retraso gradual de 1 a 2ms anuales, compensable mediante entrenamiento cognitivo habitual."
+        "text": "No. Muestra puntos, precisión (aciertos sobre todos los intentos), nivel máximo y mejor combo. No registra tiempos de respuesta individuales en milisegundos."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Afectan el monitor y el ratón a la precisión del test?",
+      "name": "¿Se puede mejorar con práctica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pantallas de 144Hz o superiores y ratones con sondeo de 1000Hz minimizan el retraso de entrada del hardware (Woods et al., 2015)."
+        "text": "Tu puntuación en esta tarea suele subir con la práctica. Revisa la regla antes de cada pulsación y mantén la precisión alta para que crezca el combo. Eso no garantiza reacciones más rápidas en otras situaciones."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuál es la rutina de entrenamiento óptima?",
+      "name": "¿Es una prueba médica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "De 10 a 15 minutos al día son suficientes para activar la coordinación neuromuscular y optimizar los tiempos de respuesta antes de tareas exigentes."
+        "text": "No. Es un ejercicio de práctica en el navegador, no un diagnóstico, cribado ni test psicotécnico oficial. El resultado también depende del dispositivo y del día; compara tus propias sesiones en el mismo dispositivo."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Este test de velocidad de reacción es gratuito?",
+      "name": "¿Es gratis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, SkillDrills ofrece esta evaluación de forma completamente gratuita, directa en el navegador, sin suscripciones ni descargas."
+        "text": "Sí, es gratis, sin registro, y funciona directamente en el navegador."
       }
     }
   ]
@@ -222,8 +213,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Cómo Realizar el Test de Tiempo de Reacción de Elección",
-  "description": "Test de tiempo de reacción de elección online gratis: Mide tu velocidad de toma de decisiones, discriminación visual y flexibilidad cognitiva sin registro.",
+  "name": "Cómo hacer el ejercicio de tiempo de reacción de elección",
+  "description": "Ejercicio gratis de tiempo de reacción de elección en el navegador: pulsa el objetivo del color que indica una regla cambiante. Resultado en puntos, precisión y nivel, sin medición en milisegundos.",
   "step": [
     {
       "@type": "HowToStep",
@@ -236,14 +227,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 2,
       "name": "Discrimina los Objetivos Visuales",
-      "text": "Cuando surjan los objetivos en el panel, identifica inmediatamente cuál coincide con la regla de color activa.",
+      "text": "Aparecen a la vez un objetivo rojo y uno azul: identifica cuál coincide con la regla de color activa.",
       "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Ejecuta el Clic de Decisión",
-      "text": "Pulsa sobre el objetivo correcto con máxima celeridad antes de que finalice el contador de tiempo.",
+      "text": "Pulsa el objetivo correcto antes de que cambie la pareja. Un error o un tiempo agotado cuestan 1 segundo y el combo.",
       "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time#step-3"
     },
     {
@@ -259,33 +250,32 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('donders1969', 'hick1952', 'hyman1953', 'der2006', 'woods2015'),
   intro: {
-    title: "Neurociencia del Tiempo de Reacción de Elección & Velocidad de Decisión",
+    title: "Tiempo de Reacción de Elección",
     paragraphs: [
-      "El tiempo de reacción de elección (CRT - Choice Reaction Time) constituye una de las métricas clásicas más representativas de la neuropsicología para evaluar el procesamiento central de la información bajo presión temporal.",
-      "A diferencia de la reacción simple (SRT, ~200ms), donde solo se responde a una señal prefijada, la prueba de elección añade fases corticales de discriminación perceptual y selección de respuesta, situando el promedio humano en 280–350ms (Donders, 1868).",
-      "La Ley de Hick-Hyman (Hick, 1952; Hyman, 1953) demuestra que la latencia de respuesta crece logarítmicamente con el número de opciones disponibles. Este ejercicio incorpora cambios imprevistos de reglas para desafiar la flexibilidad ejecutiva y el control inhibitorio frontal.",
+      "El tiempo de reacción de elección es el tiempo que tardas en identificar, entre varios estímulos, el que cumple una regla y elegir la respuesta correcta. En este ejercicio gratis aparecen a la vez un objetivo rojo y uno azul, y pulsas el color que indica el aviso superior. Desde el nivel 2 la regla se invierte, así que revísala antes de cada pulsación.",
+      "A diferencia de la reacción simple a un único estímulo, la reacción de elección añade la discriminación del estímulo y la selección de la respuesta, por lo que suele ser más lenta (Donders).",
+      "La Ley de Hick-Hyman (Hick, 1952; Hyman, 1953) describe el aumento logarítmico del tiempo de decisión con el número de opciones. El ejercicio muestra puntos, precisión, nivel máximo y mejor combo; no mide milisegundos y no es una prueba clínica.",
     ],
   },
   benchmarks: {
-    title: 'Estándares de Rendimiento Cognitivo & Baremos de Reacción de Elección (CRT)',
-    headers: ['Nivel', 'Rango', 'Latencia de Respuesta', 'Tasa de Precisión', 'Marcador de práctica'],
-    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas.",
-
+    title: 'Etapas de práctica SkillDrills (precisión)',
+    headers: ['Nivel', 'Rango', 'Tasa de Precisión', 'Marcador de práctica'],
+    note: "Etapas de práctica definidas por SkillDrills para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas.",
     rows: [
-      { tier: 'Etapa 1', rank: 'Muy avanzada', stat: '< 210 ms', accuracy: '98%+', marker: 'Ritmo muy alto con alta precisión' },
-      { tier: 'Etapa 2', rank: 'Avanzada', stat: '210 – 249 ms', accuracy: '94-97%', marker: 'Ritmo alto y regular' },
-      { tier: 'Etapa 3', rank: 'Sólida', stat: '250 – 289 ms', accuracy: '88-93%', marker: 'Ritmo estable con algunos errores' },
-      { tier: 'Etapa 4', rank: 'En desarrollo', stat: '290 – 349 ms', accuracy: '78-87%', marker: 'Ritmo medio con margen de mejora' },
-      { tier: 'Etapa 5', rank: 'Inicial', stat: '≥ 350 ms', accuracy: '< 78%', marker: 'Punto de partida' },
+      { tier: 'Etapa 1', rank: 'Muy precisa', accuracy: '98%+', marker: 'Casi sin errores, incluso tras los cambios de regla' },
+      { tier: 'Etapa 2', rank: 'Avanzada', accuracy: '94-97%', marker: 'Regular' },
+      { tier: 'Etapa 3', rank: 'Sólida', accuracy: '88-93%', marker: 'Buen equilibrio entre velocidad y precisión' },
+      { tier: 'Etapa 4', rank: 'En desarrollo', accuracy: '78-87%', marker: 'Errores sobre todo tras los cambios de regla' },
+      { tier: 'Etapa 5', rank: 'Inicial', accuracy: '< 78%', marker: 'Punto de partida' },
     ],
   },
   protocols: {
-    title: 'Protocolos de Optimización Neuroplástica',
-    description: 'Pautas contrastadas experimentalmente para el desarrollo de reflejos y rapidez de decisión.',
+    title: 'Cómo se juega',
+    description: 'Los cuatro pasos de cada ronda.',
     items: [
       { title: "Observa la Regla Superior Activa", description: "Fíjate en el cartel superior que indica el color del objetivo válido (ejemplo: TOCA ROJO o TOCA AZUL)." },
-      { title: "Discrimina los Objetivos Visuales", description: "Cuando surjan los objetivos en el panel, identifica inmediatamente cuál coincide con la regla de color activa." },
-      { title: "Ejecuta el Clic de Decisión", description: "Pulsa sobre el objetivo correcto con máxima celeridad antes de que finalice el contador de tiempo." },
+      { title: "Discrimina los Objetivos Visuales", description: "Aparecen a la vez un objetivo rojo y uno azul: identifica cuál coincide con la regla de color activa." },
+      { title: "Ejecuta el Clic de Decisión", description: "Pulsa el objetivo correcto antes de que cambie la pareja. Un error o un tiempo agotado cuestan 1 segundo y el combo." },
       { title: "Reacciona a los Cambios de Regla", description: "Cuando la regla se invierta, inhibe el hábito anterior y comienza a pulsar de inmediato sobre el nuevo color marcado." },
     ],
   },
@@ -329,11 +319,11 @@ export default function EnhancedPageEs() {
         copy={{
           title: "Tiempo de Reacción de Elección",
           subtitle: "Elige el objetivo según el color activo y entrena la velocidad de decisión",
-          startTitle: "Test de Reacción",
+          startTitle: "Tiempo de Reacción de Elección",
           startSubtitle: "Reacción de elección • Velocidad de decisión",
           stageCaption: "Pulsa el objetivo que coincide con la regla activa. Los colores y la regla cambian rápido.",
           rulesTitle: "Instrucciones del ejercicio y puntuación",
-          aboutTitle: "¿Qué mide el test de reacción?",
+          aboutTitle: "¿Qué es el tiempo de reacción de elección?",
           faqTitle: "Preguntas frecuentes",
           labels: { score: "Puntuación", time: "Tiempo", level: "Nivel", bestScore: "Mejor puntuación", timeLeft: "Tiempo restante", rule: "REGLA", ready: "PREPÁRATE", accuracy: "Precisión", hits: "Aciertos", peakLevel: "Nivel máximo", maxCombo: "Combo máximo" },
           ruleBanner: { RED: "OBJETIVO ROJO", BLUE: "OBJETIVO AZUL" },
@@ -346,9 +336,9 @@ export default function EnhancedPageEs() {
           ],
           rulesItems: [
             { num: "1", text: "Regla activa", highlight: "ROJO / AZUL", result: "Sigue el aviso superior" },
-            { num: "2", text: "Objetivo correcto", highlight: "+100 pts.", result: "Bono de combo y nivel" },
-            { num: "3", text: "Cambio de regla", highlight: "Automático", result: "Acelera con el nivel" },
-            { num: "4", text: "Objetivo erróneo / tiempo", highlight: "Reinicia el combo", result: "−0,8 s con penalización" }
+            { num: "2", text: "Objetivo correcto", highlight: "+100 pts.", result: "Combo × nivel, +2 s (máx. 60 s)" },
+            { num: "3", text: "Cambio de regla", highlight: "Desde el nivel 2", result: "Más frecuente al subir de nivel" },
+            { num: "4", text: "Objetivo erróneo / tiempo", highlight: "Reinicia el combo", result: "−1 s" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

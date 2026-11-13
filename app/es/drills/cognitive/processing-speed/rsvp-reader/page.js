@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Lectura Rápida Online | Lector RSVP | SkillDrills",
-  description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
-  keywords: ["lectura rápida", "test de velocidad de lectura", "velocidad de lectura", "lector rápido online", "RSVP lectura", "palabras por minuto", "entrenamiento de lectura rápida"],
+  description: "Lectura rápida online gratis: las palabras aparecen una a una en un punto fijo, de 250 a 850 palabras por minuto, y pulsas la palabra objetivo. No mide comprensión.",
+  keywords: ["lectura rápida", "lectura rápida online", "ejercicios de lectura rápida", "palabras por minuto", "RSVP", "lector RSVP"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Lectura Rápida Online | Lector RSVP | SkillDrills",
-    description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
+    description: "Lectura rápida online gratis: las palabras aparecen una a una en un punto fijo, de 250 a 850 palabras por minuto, y pulsas la palabra objetivo. No mide comprensión.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Lectura Rápida Online | Lector RSVP | SkillDrills",
-    description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
+    description: "Lectura rápida online gratis: las palabras aparecen una a una en un punto fijo, de 250 a 850 palabras por minuto, y pulsas la palabra objetivo. No mide comprensión.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation"],
-  "name": "Lector RSVP – Test de Velocidad de Lectura WPM",
+  "name": "Lectura Rápida Online – Lector RSVP",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Lector RSVP y test de lectura rápida online gratis: Elimina saltos sacádicos oculares y entrena tu velocidad léxica y comprensión hasta 850 WPM sin registro.",
+  "description": "Lectura rápida online gratis con el método RSVP: palabras de un texto en inglés aparecen una a una en un punto fijo, de 250 a 850 PPM, y pulsas cuando sale la palabra objetivo. No mide comprensión.",
   "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/rsvp-reader",
   "publisher": {
     "@type": "Organization",
@@ -79,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Lector RSVP Online",
+  "name": "Lectura Rápida Online",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requiere un navegador moderno compatible con JavaScript",
@@ -96,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/rsvp-reader",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Entrenamiento de Lectura Rápida RSVP",
   "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/rsvp-reader",
-  "description": "Lector RSVP y test de lectura rápida online gratis: Elimina saltos sacádicos oculares y entrena tu velocidad léxica y comprensión hasta 850 WPM sin registro.",
+  "description": "Lectura rápida online gratis con el método RSVP: palabras de un texto en inglés aparecen una a una en un punto fijo, de 250 a 850 PPM, y pulsas cuando sale la palabra objetivo. No mide comprensión.",
   "genre": [
     "Action",
     "Brain Game",
@@ -116,7 +116,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -133,63 +133,63 @@ const faqSchema = {
       "name": "¿Qué es la técnica RSVP (Presentación Visual Serial Rápida)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "RSVP es una tecnología de lectura que proyecta palabras de manera individual y sucesiva en un punto focal fijo, suprimiendo los saltos sacádicos oculares."
+        "text": "Es una forma de lectura en la que las palabras aparecen una a una en el mismo punto de la pantalla, sin que la mirada tenga que recorrer la línea. No garantiza mejor comprensión."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué significa Punto de Reconocimiento Óptimo (ORP)?",
+      "name": "¿Cómo funciona este ejercicio de lectura rápida online?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El ORP (Optimal Recognition Point) es la posición intra-palabra (ligeramente a la izquierda del centro) donde la fóvea visual identifica el término con la menor latencia posible (Rayner, 1998)."
+        "text": "El banner muestra una palabra objetivo. En el centro pasan palabras en inglés, una a una; pulsar el botón mientras la palabra objetivo está en pantalla da 100 puntos. Cada ronda dura 45 segundos."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Por qué la lectura tradicional tiene un límite de velocidad?",
+      "name": "¿Cómo sube la velocidad?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En papel o pantalla convencional, hasta el 80% del tiempo lector se invierte en micro-movimientos sacádicos (20-40ms) y fijaciones, limitando el promedio a 200-250 palabras por minuto (Rayner, 2016)."
+        "text": "La ronda empieza en el nivel 1 (250 palabras por minuto). Cada 2 palabras objetivo detectadas (cada 200 puntos) sube un nivel: 350, 480, 650 y 850 PPM en el nivel 5."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuál es la velocidad promedio y cuánto se puede mejorar con RSVP?",
+      "name": "¿Qué pasa si me equivoco o se me escapa el objetivo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El promedio adulto se sitúa en 200-250 WPM. Mediante entrenamiento regular con RSVP, los lectores dinámicos pueden alcanzar entre 500 y 850 WPM manteniendo una sólida comprensión."
+        "text": "Pulsar otra palabra cuenta como error y bloquea el botón 1 segundo. Dejar pasar la palabra objetivo cuenta como fallo. Ambos bajan la precisión, pero no restan tiempo."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Se pierde comprensión lectora al utilizar lectores RSVP?",
+      "name": "¿Las PPM mostradas son mi velocidad de lectura?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En rangos de 400 a 600 WPM para textos estructurados, la retención es equivalente a la lectura convencional. Por encima de 800 WPM, se requiere mayor disciplina de atención."
+        "text": "No. Son la velocidad de presentación de cada nivel. El resultado muestra puntos, aciertos, errores, precisión y nivel alcanzado, no tu velocidad de lectura personal."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cómo ayuda RSVP a erradicar la subvocalización?",
+      "name": "¿Mide la comprensión lectora?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La subvocalización consiste en pronunciar internamente las palabras. Al mostrar el texto a velocidades superiores a la articulación vocal (>350 WPM), el cerebro asimila el significado directamente."
+        "text": "No. No hay preguntas sobre el texto. Los estudios indican que la comprensión puede bajar cuando sube el ritmo de RSVP (Rayner et al., 2016)."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuánto tiempo se recomienda entrenar cada día?",
+      "name": "¿Cuál es la velocidad media de lectura?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sesiones cortas de 10 a 15 minutos diarios son óptimas para acondicionar la musculatura ocular y la velocidad de decodificación léxica sin causar fatiga."
+        "text": "Para la lectura silenciosa en inglés se suelen citar unas 200 a 300 palabras por minuto (Rayner, 1998). No es directamente comparable con los niveles de este ejercicio."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Es eficaz el lector RSVP en teléfonos móviles?",
+      "name": "¿Puedo practicar con texto en español?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, resulta especialmente ventajoso en smartphones al concentrar todo el texto en una sola línea fija, suprimiendo la necesidad de desplazamientos continuos."
+        "text": "Todavía no: el flujo de palabras está en inglés."
       }
     },
     {
@@ -197,15 +197,15 @@ const faqSchema = {
       "name": "¿Por qué se destaca una letra de cada palabra en color rojo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La letra destacada marca con precisión el ORP de la palabra, guiando a la fóvea hacia el punto neurálgico para captar el término en un solo impacto perceptual."
+        "text": "Marca el punto de reconocimiento óptimo (ORP), un poco a la izquierda del centro, para que la mirada se quede en un mismo lugar."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Esta herramienta y test de velocidad lectora son gratis?",
+      "name": "¿Este ejercicio de lectura rápida es gratis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, SkillDrills proporciona esta herramienta en línea de forma 100% gratuita y sin necesidad de registro ni descargas."
+        "text": "Sí, es gratis, sin registro ni descargas, directamente en el navegador."
       }
     }
   ]
@@ -214,35 +214,35 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Cómo Entrenar con el Lector RSVP",
-  "description": "Lector RSVP y test de lectura rápida online gratis: Elimina saltos sacádicos oculares y entrena tu velocidad léxica y comprensión hasta 850 WPM sin registro.",
+  "name": "Cómo hacer el ejercicio de lectura rápida",
+  "description": "Lectura rápida online gratis con el método RSVP: palabras de un texto en inglés aparecen una a una en un punto fijo, de 250 a 850 PPM, y pulsas cuando sale la palabra objetivo. No mide comprensión.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Fija la Mirada en la Línea Central",
-      "text": "Relaja la visión y sitúa el foco sobre la guía central fija sin desplazar los ojos lateralmente.",
+      "name": "Fija la mirada en la letra roja",
+      "text": "Relaja la vista sobre la letra roja central sin mover los ojos de lado a lado.",
       "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Configura tu Velocidad Inicial (WPM)",
-      "text": "Comienza a una velocidad accesible (ejemplo: 300 WPM) para adaptar la agilidad de reconocimiento léxico.",
+      "name": "Empieza a 250 PPM",
+      "text": "Cada ronda empieza en el nivel 1 (250 PPM) para que te acostumbres al flujo de palabras.",
       "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Suprime la Voz Mental Interna",
-      "text": "Evita articular internamente los sonidos de las palabras y permítete comprender la idea visualmente.",
+      "name": "Pulsa la palabra objetivo",
+      "text": "Recuerda la palabra del banner y pulsa el botón mientras está en pantalla. Pulsar otra palabra bloquea el botón 1 segundo.",
       "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Incrementa la Velocidad Progresivamente",
-      "text": "Añade incrementos de 50 WPM conforme domines cada fragmento hasta superar marcas de 600 WPM.",
+      "name": "La velocidad sube sola",
+      "text": "Cada 2 palabras objetivo detectadas, la velocidad sube un nivel, hasta 850 PPM.",
       "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time#step-4"
     }
   ]
@@ -251,34 +251,33 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('rayner1998', 'rayner2016', 'woods2015'),
   intro: {
-    title: "Neurociencia de la Lectura Rápida RSVP & Punto de Reconocimiento Óptimo",
+    title: "Lectura Rápida Online con RSVP",
     paragraphs: [
-      "La Presentación Visual Serial Rápida (RSVP - Rapid Serial Visual Presentation) es una metodología de la psicología cognitiva concebida para superar las limitaciones biomecánicas del sistema oculomotor.",
-      "En la lectura habitual de textos impresos o pantallas, aproximadamente el 80% del tiempo transcurre realizando movimientos sacádicos (20 a 40ms) y fijaciones foveales (200 a 250ms), agravados por saltos regresivos debidos a distracciones externas (Rayner, 1998, 2016).",
-      "Al anclar de forma estricta cada término en su Punto de Reconocimiento Óptimo (ORP), la tecnología RSVP proyecta las palabras directamente sobre la fóvea visual, facilitando velocidades de procesamiento léxico de hasta 850 palabras por minuto sin cansancio muscular.",
+      "Lectura rápida online con el método RSVP: las palabras aparecen una a una en el mismo punto de la pantalla, con la letra del ORP en rojo. Pulsa el botón cuando aparezca la palabra objetivo del banner; cada 2 aciertos la velocidad sube un nivel, de 250 a 850 palabras por minuto. El texto que se muestra está en inglés.",
+      "En la lectura habitual, la mirada salta de palabra en palabra (movimientos sacádicos) y a veces retrocede (Rayner, 1998). RSVP elimina esos saltos, pero a ritmos altos la comprensión puede bajar (Rayner et al., 2016).",
+      "Este ejercicio solo mide si detectas la palabra objetivo: muestra puntos, aciertos, errores, precisión y nivel alcanzado. No es un curso de lectura rápida, no mide comprensión y no es una prueba clínica.",
     ],
   },
   benchmarks: {
-    title: 'Estándares de Velocidad Lectora & Baremos Cognitivos (WPM)',
-    headers: ['Nivel', 'Categoría', 'Velocidad de Lectura', 'Tasa de Comprensión', 'Marcador de práctica'],
-    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas.",
-
+    title: 'Etapas de práctica SkillDrills (nivel alcanzado)',
+    headers: ['Nivel', 'Categoría', 'Nivel alcanzado', 'Precisión', 'Marcador de práctica'],
+    note: "Etapas de práctica definidas por SkillDrills para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas, y no miden comprensión.",
     rows: [
-      { tier: 'Etapa 1', rank: 'Muy avanzada', stat: '650 – 850+ WPM', accuracy: '95%+', marker: 'Ritmo muy alto con alta precisión' },
-      { tier: 'Etapa 2', rank: 'Avanzada', stat: '450 – 649 WPM', accuracy: '90-94%', marker: 'Ritmo alto y regular' },
-      { tier: 'Etapa 3', rank: 'Sólida', stat: '300 – 449 WPM', accuracy: '85-89%', marker: 'Ritmo estable con algunos errores' },
-      { tier: 'Etapa 4', rank: 'En desarrollo', stat: '200 – 299 WPM', accuracy: '75-84%', marker: 'Ritmo medio con margen de mejora' },
-      { tier: 'Etapa 5', rank: 'Inicial', stat: '< 200 WPM', accuracy: '< 75%', marker: 'Punto de partida' },
+      { tier: 'Etapa 1', rank: 'Muy avanzada', stat: 'Nivel 5 (850 PPM)', accuracy: '95%+', marker: 'Flujo más rápido seguido con precisión' },
+      { tier: 'Etapa 2', rank: 'Avanzada', stat: 'Nivel 4 (650 PPM)', accuracy: '90-94%', marker: 'Buen seguimiento a alta velocidad' },
+      { tier: 'Etapa 3', rank: 'Sólida', stat: 'Nivel 3 (480 PPM)', accuracy: '85-89%', marker: 'Seguimiento estable' },
+      { tier: 'Etapa 4', rank: 'En desarrollo', stat: 'Nivel 2 (350 PPM)', accuracy: '75-84%', marker: 'En progreso' },
+      { tier: 'Etapa 5', rank: 'Inicial', stat: 'Nivel 1 (250 PPM)', accuracy: '< 75%', marker: 'Punto de partida' },
     ],
   },
   protocols: {
-    title: 'Protocolos de Optimización de Velocidad Lectora',
-    description: 'Directrices basadas en evidencia científica para maximizar el procesamiento visual.',
+    title: 'Cómo se juega',
+    description: 'Los cuatro pasos de cada ronda.',
     items: [
-      { title: "Fija la Mirada en la Línea Central", description: "Relaja la visión y sitúa el foco sobre la guía central fija sin desplazar los ojos lateralmente." },
-      { title: "Configura tu Velocidad Inicial (WPM)", description: "Comienza a una velocidad accesible (ejemplo: 300 WPM) para adaptar la agilidad de reconocimiento léxico." },
-      { title: "Suprime la Voz Mental Interna", description: "Evita articular internamente los sonidos de las palabras y permítete comprender la idea visualmente." },
-      { title: "Incrementa la Velocidad Progresivamente", description: "Añade incrementos de 50 WPM conforme domines cada fragmento hasta superar marcas de 600 WPM." },
+      { title: "Fija la mirada en la letra roja", description: "Relaja la vista sobre la letra roja central sin mover los ojos de lado a lado." },
+      { title: "Empieza a 250 PPM", description: "Cada ronda empieza en el nivel 1 (250 PPM) para que te acostumbres al flujo de palabras." },
+      { title: "Pulsa la palabra objetivo", description: "Recuerda la palabra del banner y pulsa el botón mientras está en pantalla. Pulsar otra palabra bloquea el botón 1 segundo." },
+      { title: "La velocidad sube sola", description: "Cada 2 palabras objetivo detectadas, la velocidad sube un nivel, hasta 850 PPM." },
     ],
   },
   faqs: {
@@ -321,7 +320,7 @@ export default function EnhancedPageEs() {
         copy={{
           title: "Lectura rápida online",
           subtitle: "Procesa palabras en un punto fijo y entrena tu velocidad de lectura",
-          startTitle: "Entrenamiento RSVP",
+          startTitle: "Lectura rápida online",
           startSubtitle: "Reconocimiento de palabras • Enfoque ORP",
           stageCaption: "Las palabras aparecen en el centro. Pulsa cuando aparezca la palabra objetivo.",
           rulesTitle: "Instrucciones del ejercicio y puntuación",
@@ -329,17 +328,17 @@ export default function EnhancedPageEs() {
           faqTitle: "Preguntas frecuentes",
           labels: { score: "Puntos", time: "Tiempo", speed: "Velocidad", bestScore: "Mejor puntuación", timeLeft: "Tiempo restante", targetWord: "Palabra objetivo", detected: "OBJETIVO DETECTADO", ready: "PREPÁRATE", accuracy: "Precisión", hits: "Aciertos", errors: "Errores", points: "Puntos", playAgain: "Jugar de nuevo" },
           aboutLead: "RSVP muestra las palabras una a una en el mismo punto de la pantalla. Reduce parte de los saltos oculares, pero la comprensión puede bajar cuando el ritmo aumenta.",
-          aboutText: "Este ejercicio entrena el reconocimiento de palabras en el punto óptimo de reconocimiento (ORP). PPM describe el ritmo de presentación; la latencia de la pantalla y del toque también influye. 850 PPM es el nivel superior del ejercicio, no una promesa de comprensión general a esa velocidad.",
+          aboutText: "Este ejercicio entrena el reconocimiento de palabras de un texto en inglés en el punto óptimo de reconocimiento (ORP). PPM describe el ritmo de presentación; la latencia de la pantalla y del toque también influye. 850 PPM es el nivel superior del ejercicio, no una promesa de comprensión general a esa velocidad.",
           aboutCards: [
             { title: "¿Para quién sirve?", desc: "Para estudiantes, profesionales y personas que leen mucho o quieren practicar lectura rápida." },
             { title: "¿Qué habilidades entrena?", desc: "Reconocimiento de palabras, memoria de trabajo y atención sostenida ante información visual rápida." },
-            { title: "Ritmo progresivo", desc: "Cinco niveles de 250 a 850 PPM suben el ritmo mientras controlas la precisión." }
+            { title: "Ritmo progresivo", desc: "Cinco niveles de 250 a 850 PPM; cada 2 palabras objetivo detectadas el ritmo sube un nivel." }
           ],
           rulesItems: [
             { num: "1", text: "Palabra objetivo", highlight: "Banner superior", result: "Encontrarla en el flujo central" },
             { num: "2", text: "Foco ORP", highlight: "Reduce los movimientos oculares", result: "Lee en el mismo punto" },
-            { num: "3", text: "Objetivo detectado", highlight: "+100 puntos", result: "Pulsa el botón de detección" },
-            { num: "4", text: "Nivel de ritmo", highlight: "250 → 850 PPM", result: "Cinco niveles de dificultad" }
+            { num: "3", text: "Objetivo detectado", highlight: "+100 puntos", result: "Pulsa mientras aparece" },
+            { num: "4", text: "Nivel de ritmo", highlight: "250 → 850 PPM", result: "Sube cada 2 aciertos" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

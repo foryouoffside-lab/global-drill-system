@@ -4,20 +4,13 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// Native research (2026-09-20): Bing de-DE exact demand was 8 for
-// "N-Back Test" and 7 for "dual n-back". Current German results also use
-// "Arbeitsgedächtnis-Test" for the intent qualifier; this is not a claim of
-// high volume or guaranteed ranking.
-// ============================================================
-
 export const metadata = {
   title: "N-Back Test online | Arbeitsgedächtnis | SkillDrills",
-  description: "N-Back-Test online: Prüfe die Aktualisierung des Arbeitsgedächtnisses in 2-Back und 3-Back direkt im Browser – kostenlos und ohne Anmeldung.",
-  keywords: ['n-back test online', 'n-back test', 'arbeitsgedächtnis-test', 'dual n-back', 'n-back aufgabe', 'arbeitsgedächtnis training', '2-back test', '3-back test', 'arbeitsgedächtnis online', 'kognitives training n-back'],
+  description: "N-Back Test online, kostenlos: Ist der Buchstabe gleich dem von vor N Schritten? Start bei 3-Back, nach 8 richtigen Antworten eine Stufe höher.",
+  keywords: ['n-back test online', 'n-back test', 'arbeitsgedächtnis trainieren', 'n-back aufgabe', '3-back', 'arbeitsgedächtnis'],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "N-Back Test online | Arbeitsgedächtnis | SkillDrills",
-    description: "N-Back-Test online: Prüfe die Aktualisierung des Arbeitsgedächtnisses in 2-Back und 3-Back direkt im Browser – kostenlos.",
+    description: "Kostenloser N-Back Test im Browser: Buchstaben mit dem von vor N Schritten vergleichen und dein Arbeitsgedächtnis trainieren, ab 3-Back, ohne Anmeldung.",
     type: "website",
     url: "https://skilldrills.online/de/drills/memory/working-memory/n-back",
     siteName: "SkillDrills",
@@ -26,7 +19,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "N-Back Test online | Arbeitsgedächtnis | SkillDrills",
-    description: "N-Back-Test online: Prüfe die Aktualisierung des Arbeitsgedächtnisses in 2-Back und 3-Back direkt im Browser – kostenlos.",
+    description: "Kostenloser N-Back Test im Browser: Buchstaben mit dem von vor N Schritten vergleichen und dein Arbeitsgedächtnis trainieren, ab 3-Back, ohne Anmeldung.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -35,97 +28,94 @@ export const metadata = {
   },
 };
 
+const appDescription = "Kostenloser N-Back Test im Browser: Buchstaben erscheinen einzeln, und du entscheidest per Treffer/Kein Treffer, ob der aktuelle dem von vor N Schritten entspricht. Start bei 3-Back, alle 8 richtigen Antworten eine Stufe höher.";
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/" },
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://skilldrills.online/de" },
     { "@type": "ListItem", "position": 2, "name": "Gedächtnistraining", "item": "https://skilldrills.online/de/drills/memory" },
     { "@type": "ListItem", "position": 3, "name": "Arbeitsgedächtnis", "item": "https://skilldrills.online/de/drills/memory/working-memory" },
-    { "@type": "ListItem", "position": 4, "name": "N-Back Test Online", "item": "https://skilldrills.online/de/drills/memory/working-memory/n-back" }
+    { "@type": "ListItem", "position": 4, "name": "N-Back Test", "item": "https://skilldrills.online/de/drills/memory/working-memory/n-back" }
   ]
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "N-Back Test Online (Arbeitsgedächtnis-Training)",
+  "name": "N-Back Test online (Arbeitsgedächtnis)",
   "url": "https://skilldrills.online/de/drills/memory/working-memory/n-back",
+  "description": appDescription,
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
-  "sameAs": "https://de.wikipedia.org/wiki/N-back",
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-11",
-  "educationalUse": ["Arbeitsgedächtnis-Kapazität", "Informationsaktualisierung", "Exekutive Funktionen", "Fluide Intelligenz"]
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "N-Back Test – Kognitives Gedächtnisspiel Online",
+  "name": "N-Back Test online (Arbeitsgedächtnis)",
   "url": "https://skilldrills.online/de/drills/memory/working-memory/n-back",
-  "description": "Prüfen Sie kontinuierlich, ob der aktuelle Buchstabe mit dem vor N Schritten gezeigten übereinstimmt.",
-  "dateModified": "2026-09-11",
+  "description": appDescription,
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
-  "genre": ["Cognitive Training", "Working Memory", "Brain Training", "N-Back"],
+  "genre": ["Working Memory", "N-Back"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
-
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "N-Back Test Online (Dual N-Back)",
+  "name": "N-Back Test online (Arbeitsgedächtnis)",
   "url": "https://skilldrills.online/de/drills/memory/working-memory/n-back",
+  "description": appDescription,
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Wie man das Arbeitsgedächtnis mit dem N-Back Test trainiert",
-  "description": "Wissenschaftlich fundierte 4-Schritte-Strategie zur Beherrschung der kontinuierlichen Arbeitsgedächtnis-Aktualisierung.",
+  "name": "So funktioniert der N-Back Test",
+  "description": "Vier Schritte, um Buchstaben mit dem von vor N Schritten zu vergleichen.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "url": "https://skilldrills.online/de/drills/memory/working-memory/n-back#step-1",
-      
-      "name": "Aktives Zielfenster als rotierende FIFO-Warteschlange rezitieren",
-      "text": "Wiederholen Sie die letzten N Buchstaben innerlich in chronologischer Reihenfolge (phonologische Schleife) wie einen gleitenden Puffer."
+      "name": "Die ersten 3 Buchstaben merken",
+      "text": "Für die ersten 3 Buchstaben gibt es noch nichts zu vergleichen, du merkst sie dir nur. In dieser Zeit läuft die Uhr nicht."
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "url": "https://skilldrills.online/de/drills/memory/working-memory/n-back#step-2",
-      
-      "name": "Aktuellen Reiz mit dem vor N Schritten vergleichen",
-      "text": "Sobald ein neuer Buchstabe erscheint, vergleichen Sie ihn unverzüglich mit dem ältesten Eintrag in Ihrem Puffer."
+      "name": "Mit dem Buchstaben von vor N Schritten vergleichen",
+      "text": "Prüfe bei jedem neuen Buchstaben, ob er genau dem von vor N Schritten (anfangs 3) entspricht."
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "url": "https://skilldrills.online/de/drills/memory/working-memory/n-back#step-3",
-      
-      "name": "Ältesten Eintrag verwerfen und neuen Buchstaben anfügen",
-      "text": "Führen Sie ein sofortiges mentales Update durch: Ältesten verifizierten Buchstaben löschen und neuen Buchstaben vorne anhängen."
+      "name": "Treffer oder Kein Treffer wählen",
+      "text": "Klicke oder tippe auf 'Treffer', wenn er gleich ist, sonst auf 'Kein Treffer'. Das Antwortfenster beginnt bei 2 Sekunden."
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "url": "https://skilldrills.online/de/drills/memory/working-memory/n-back#step-4",
-      
-      "name": "Gleichmäßigen Aufmerksamkeitsrhythmus ohne Verharren halten",
-      "text": "Halten Sie Ihr Tempo und verharren Sie nicht bei Fehlern. Wer Fehlern nachhängt, verliert die nachfolgenden Pufferpositionen."
+      "name": "Die Liste im Kopf aktualisieren",
+      "text": "Nach jeder Antwort streichst du den ältesten Buchstaben und hängst den neuen an, sodass du immer die letzten N behältst."
     }
   ]
 };
@@ -133,85 +123,70 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was ist der N-Back Arbeitsgedächtnis-Test?",
+      "name": "Wie funktioniert der N-Back Test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der N-Back Test ist ein klassisches neuropsychologisches Paradigma zur Messung der kontinuierlichen Informationsaktualisierung im Arbeitsgedächtnis. Teilnehmer beobachten eine Reizabfolge und entscheiden, ob der aktuelle Reiz mit dem vor genau N Schritten gezeigten übereinstimmt."
+        "text": "Buchstaben erscheinen einzeln nacheinander. Ist der aktuelle Buchstabe genau derselbe wie der von vor N Schritten, drückst du 'Treffer', sonst 'Kein Treffer'. Jede richtige Antwort bringt +150 Punkte. Die ersten N Buchstaben merkst du dir nur; in dieser Zeit läuft die Uhr nicht."
       }
     },
     {
       "@type": "Question",
-      "name": "Wer erfand die N-Back-Aufgabe und zu welchem Zweck?",
+      "name": "Bei welcher Stufe startet der Test und wie steigt sie?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Wayne K. Kirchner entwickelte die N-Back-Aufgabe 1958, um altersbedingte Unterschiede beim kurzzeitigen Behalten sich schnell verändernder Informationen zu untersuchen."
+        "text": "Der Test startet bei 3-Back. Alle 1.200 Punkte (8 richtige Antworten) steigt die Stufe um 1 auf 4-Back, 5-Back usw.; ab dem nächsten Buchstaben gilt der neue Abstand. Fehler senken die Stufe nicht."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche kognitiven Fähigkeiten misst N-Back primär?",
+      "name": "Wie viel Zeit habe ich?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "N-Back testet vor allem die kontinuierliche Aktualisierung (Updating) des Arbeitsgedächtnisses und die zentrale exekutive Kontrolle im dorsolateralen präfrontalen Kortex (DLPFC)."
+        "text": "Pro Buchstabe hast du 2 Sekunden zum Antworten; mit jeder Stufe wird das Fenster 0,1 Sekunden kürzer, bis minimal 1,2 Sekunden. Die Sitzung dauert 45 Sekunden, und die Uhr steht still, solange du die ersten N Buchstaben einprägst."
       }
     },
     {
       "@type": "Question",
-      "name": "Worin unterscheidet sich N-Back von einfachen Zahlen-Merktests (Digit Span)?",
+      "name": "Was passiert bei falschen oder fehlenden Antworten?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Einfache Zahlenspannen messen die passive Speicherkapazität (statisches Halten). N-Back erfordert aktive Manipulation und ständige Aktualisierung: Bei jedem Reiz muss der älteste Eintrag gelöscht und der neueste angehängt werden."
+        "text": "Es gibt keinen Punkt- oder Zeitabzug. Falsche und ausgelassene Antworten zählen in der Genauigkeit als Fehler, dann folgt der nächste Buchstabe. Etwa jeder dritte Buchstabe ist ein Treffer, deshalb ist 'Kein Treffer' genauso wichtig."
       }
     },
     {
       "@type": "Question",
-      "name": "Kann N-Back-Training die fluide Intelligenz (IQ) steigern?",
+      "name": "Ist das ein Dual N-Back?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die vielbeachtete Studie von Jaeggi et al. (2008, PNAS) zeigte, dass adaptives N-Back-Training zu Verbesserungen der fluiden Intelligenz (Gf) führte. Auch wenn die Transfereffekte in der Forschung diskutiert werden, stärkt N-Back nachweislich die Aufmerksamkeitskontrolle."
+        "text": "Nein. Es ist ein einfaches N-Back nur mit Buchstaben. Beim Dual N-Back werden zwei Reize gleichzeitig verglichen, etwa Position und Ton; diese Variante gibt es hier nicht."
       }
     },
     {
       "@type": "Question",
-      "name": "Was ist ein normaler Wert für Erwachsene beim 3-Back-Test?",
+      "name": "Kann ich mit der Tastatur spielen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Gesunde junge Erwachsene erreichen bei Standard-3-Back-Aufgaben typischerweise eine Genauigkeit von 65% bis 80%. Werte über 85% oder das Meistern von 4-Back weisen auf eine überdurchschnittliche exekutive Kapazität hin."
+        "text": "Derzeit antwortest du über die beiden Schaltflächen auf dem Bildschirm, per Mausklick oder Touch. Tastenkürzel werden nicht unterstützt."
       }
     },
     {
       "@type": "Question",
-      "name": "Was ist der Unterschied zwischen Single N-Back und Dual N-Back?",
+      "name": "Kann man mit N-Back den IQ steigern?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Single N-Back verwendet eine Reizmodalität (z. B. Buchstaben). Dual N-Back präsentiert zeitgleich zwei unabhängige Reizströme (typischerweise Gitterpositionen und gesprochene Laute), was geteilte Aufmerksamkeit erfordert."
+        "text": "Das ist nicht belegt. Jaeggi et al. (2008) berichteten einen Zusammenhang zwischen N-Back-Training und fluider Intelligenz, spätere Studien kamen jedoch zu uneinheitlichen Ergebnissen. Mit Übung kann dein Ergebnis in genau dieser Aufgabe steigen."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie hilft das innerliche Mitsprechen (subvokales Wiederholen)?",
+      "name": "Werden meine Ergebnisse gespeichert? Haben sie medizinische Aussagekraft?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Subvokalisieren aktiviert die phonologische Schleife (Baddeley, 1986). Das rhythmische innerliche Wiederholen der aktuellen N Einträge schützt vor schnellem Zerfall der Gedächtnisspuren."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum bricht die Leistung bei 4-Back und 5-Back oft deutlich ein?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nach Nelson Cowans (2001) Arbeitsgedächtnismodell liegt die biologische Kapazität des bewussten Aufmerksamkeitsfokus bei etwa 4±1 Elementen. 4-Back und 5-Back überschreiten diese Grenze."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie überträgt sich die Arbeitsgedächtniskapazität auf den Alltag?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ein trainiertes Arbeitsgedächtnis unterstützt komplexe Entscheidungen unter Zeitdruck, Software-Debugging, das Verfolgen mehrerer Variablen in Finanzanalysen sowie blitzschnelle Lagebeurteilungen im E-Sport."
+        "text": "Bestwert und höchste Stufe werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Die Ergebnisse sind Übungswerte und diagnostizieren weder Arbeitsgedächtnisstörungen noch ADHS."
       }
     }
   ]
@@ -220,87 +195,80 @@ const faqSchema = {
 const nBackClientCopyDe = {
   h1Keyword: "N-Back Test online",
   h1Suffix: " – Arbeitsgedächtnis",
-  subtitle: "2-Back-Training für laufende Informationsaktualisierung",
-  caption: "Die N-Back-Aufgabe verlangt die kontinuierliche Entscheidung, ob der aktuelle Reiz mit dem vor N Schritten gezeigten übereinstimmt. Gemäß dem Arbeitsgedächtnismodell von Baddeley & Hitch (1974) kombiniert dies simultane Speicherung und aktive Aktualisierung.",
+  subtitle: "Entspricht der Buchstabe dem von vor N Schritten? Start bei 3-Back.",
   statScore: "Punkte",
   statTime: "Zeit",
-  statLevel: "Level",
-  statBest: "Highscore",
+  statLevel: "Stufe",
+  statBest: "Bestwert",
   hudScore: "Punkte",
   hudTime: "Zeit",
-  modeSuffix: "-BACK TRAINING",
-  memorizingText: "Erste {n} Buchstaben einprägen...",
-  btnMatch: "TREFFER (MATCH)",
+  modeSuffix: "-BACK",
+  memorizingText: "Erste {n} Buchstaben merken...",
+  btnMatch: "TREFFER",
   btnNoMatch: "KEIN TREFFER",
-  startTitle: "Dual N-Back Training Pro",
-  startSubtitle: "Arbeitsgedächtnis • 2-Back",
+  startTitle: "N-Back Test",
+  startSubtitle: "Arbeitsgedächtnis • ab 3-Back",
   countdownSubtitle: "BEREITMACHEN",
   newBest: "NEUER REKORD",
-  pointsLabel: "Punkte",
+  statPoints: "Punkte",
   statAccuracy: "Genauigkeit",
-  statPeakLevel: "Höchstes Level",
-  statPerfects: "Treffer",
+  statPeakLevel: "Höchste Stufe",
+  statPerfects: "Richtige",
   btnPlayAgain: "Erneut spielen",
-  rulesTitle: "Anleitung & Punktesystem",
+  rulesTitle: "Regeln & Punkte",
   rulesItems: [
-    { num: "1", text: "Treffer / Kein Treffer (vor N Schritten)", highlight: "+150 Punkte", result: "Pro korrekte Entscheidung" },
-    { num: "2", text: "Levelaufstieg", highlight: "3-Back → 4-Back+", result: "Alle 1.200 Punkte" },
-    { num: "3", text: "Schnellere Reizdauer", highlight: "2.000 ms → 1.200 ms", result: "Schnellere Buchstaben auf höheren Stufen" },
-    { num: "4", text: "Zeitüberschreitung", highlight: "Kein Punkteabzug", result: "Kein Verlust von Zeit oder Punkten" },
-    { num: "5", text: "Falsche Eingabe", highlight: "Unterbricht Serie", result: "Kein Zeitabzug — läuft die vollen 45 Sekunden" }
+    { num: "1", text: "Treffer / Kein Treffer (vor N Schritten)", highlight: "+150 PKT", result: "Pro richtiger Antwort" },
+    { num: "2", text: "Stufenaufstieg", highlight: "3-Back → 4-Back+", result: "Alle 1.200 Punkte (8 richtige Antworten)" },
+    { num: "3", text: "Kürzeres Antwortfenster", highlight: "2,0 s → min. 1,2 s", result: "0,1 s kürzer pro Stufe" },
+    { num: "4", text: "Keine Antwort", highlight: "Kein Abzug", result: "Kein Punkte- oder Zeitverlust, zählt als Fehler" },
+    { num: "5", text: "Falsche Antwort", highlight: "Kein Abzug", result: "Stufe bleibt, die 45-Sekunden-Uhr läuft normal weiter" }
   ]
 };
 
 const guideDe = {
-  heading: "N-Back Test Leitfaden & Kognitive Benchmarks",
   intro: [
-    "Der N-Back Arbeitsgedächtnis-Test ist das führende neuropsychologische Paradigma zur Bewertung der kontinuierlichen Informationsaktualisierung, exekutiven kognitiven Kontrolle und aktiven Informationserhaltung unter Zeitdruck. Ausgehend von Wayne K. Kirchners (1958) bahnbrechenden Untersuchungen ist die N-Back-Aufgabe zum weltweiten Standard in den kognitiven Neurowissenschaften geworden.",
-    "Im Gegensatz zu passiven Gedächtnistests erfordert N-Back die kontinuierliche Aktualisierung eines dynamischen mentalen Puffers. Während Buchstaben in schneller Folge erscheinen, müssen Sie entscheiden, ob der aktuelle Buchstabe mit dem vor genau N Schritten gezeigten übereinstimmt.",
-    "Messmethodik: Alle Zeitstempel werden mit der hochauflösenden performance.now() Systemuhr Ihres Browsers direkt auf Ihrem Gerät erfasst – es werden keine Daten übertragen. Behandeln Sie Differenzen unter 5 ms als Messtoleranz und vergleichen Sie Ihre Durchläufe stets auf derselben Hardware.",
-    "Datentransparenz: SkillDrills erfasst keine aggregierten Nutzerdaten. Ihre Ergebnisse verbleiben ausschließlich im localStorage Ihres Browsers.",
-    "Dieser Test ist ein kostenloses Browserspiel zu Übungs- und Trainingszwecken. Er ist kein Medizinprodukt und stellt kein diagnostisches Instrument dar."
-  ],
-  metrics: [
-    { label: "Spitzen-N-Back-Level", desc: "Höchste erreichte Stufe (3-Back Basis, 4-Back Fortgeschritten, 5-Back+ höchste Übungsstufe)." },
-    { label: "Gesamtpunktzahl", desc: "In 45 Sekunden erzielte Punkte (+150 Punkte pro korrekte Entscheidung)." },
-    { label: "Urteilsgenauigkeit", desc: "Prozentsatz korrekter Treffer- und Nicht-Treffer-Entscheidungen." },
-    { label: "Aktualisierungsrate", desc: "Entscheidungsgeschwindigkeit und Reaktionslatenz während der Reizfenster." }
+    "Der N-Back Test online ist ein kostenloses Browser-Training für das Arbeitsgedächtnis: Buchstaben erscheinen einzeln, und du entscheidest bei jedem, ob er genau dem Buchstaben von vor N Schritten entspricht. Weil du die letzten N Buchstaben ständig behalten und mit jedem neuen aktualisieren musst, fordert die Aufgabe vor allem das Aktualisieren des Arbeitsgedächtnisses (Kirchner, 1958).",
+    "Der Test startet bei 3-Back. Die ersten 3 Buchstaben merkst du dir nur, danach antwortest du bei jedem Buchstaben mit 'Treffer' oder 'Kein Treffer'. Jede richtige Antwort bringt +150 Punkte, alle 1.200 Punkte (8 richtige Antworten) steigt die Stufe auf 4-Back, 5-Back usw. Das Antwortfenster beginnt bei 2 Sekunden und wird pro Stufe 0,1 Sekunden kürzer, bis minimal 1,2 Sekunden.",
+    "Die Sitzung dauert 45 Sekunden; während du die ersten Buchstaben einprägst, steht die Uhr still. Falsche oder fehlende Antworten kosten keine Punkte und keine Zeit, die Stufe sinkt nicht, sie zählen nur in der Genauigkeit als Fehler. Es ist ein einfaches N-Back mit Buchstaben, kein Dual N-Back (Position + Ton). Antworten per Klick oder Touch auf die Schaltflächen.",
+    "Datentransparenz: Ergebnisse werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Deshalb veröffentlicht SkillDrills keine Nutzer-Durchschnitte oder Ranglisten.",
+    "Dieses Tool ist ein kostenloses Browserspiel zum Üben, um dein Arbeitsgedächtnis zu trainieren. Es ist weder ein Medizinprodukt noch ein Diagnoseinstrument, und die Ergebnisse sagen nichts über Gedächtnisstörungen, ADHS oder Intelligenz aus."
   ],
   benchmarks: {
-    title: 'Leistungsstufen',
-    headers: ['Stufe', 'Bereich', 'Profil'],
-    note: 'Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.',
+    title: "SkillDrills-Übungsstufen (Punkte = richtige Antworten × 150)",
+    headers: ["Übungsstufe", "Richtige Antworten", "Punkte", "Erreichte Stufe"],
     rows: [
-    ["Stufe 1: Sehr stabiles Arbeitsgedächtnis", "4-Back bis 5-Back+ (1.200+ Punkte)", "Hält eine 4-5-Elemente-FIFO-Warteschlange im Kopf; Latenz unter 600 ms; Genauigkeit über 92%."],
-    ["Stufe 2: Stabil", "Stabiles 3-Back mit 4-Back-Übergang (900 – 1.199 Punkte)", "Übertrifft die durchschnittliche Norm; meistert 3-Back mit minimalen Fehlern; Genauigkeit 80%–91%."],
-    ["Stufe 3: Solide Basis", "Solides 3-Back (600 – 899 Punkte)", "Normative Basislinie gesunder Erwachsener (Kirchner, 1958); 65%–79% Genauigkeit."],
-    ["Stufe 4: Im Aufbau", "Instabiles 3-Back (400 – 599 Punkte)", "Schwierigkeiten bei 3 Elementen; häufige Verwechslung mit 2-Back; Genauigkeit 50%–64%."],
-    ["Stufe 5: Einstieg", "Unter 3-Back (< 400 Punkte)", "Deutlicher Engpass bei der kontinuierlichen Informationsaktualisierung; Genauigkeit unter 50%."]
+      ["Einstieg", "0–3", "0–450", "3-Back. Regeln und Antwortrhythmus kennenlernen"],
+      ["Basis", "4–7", "600–1.050", "Noch 3-Back. Die Liste der letzten 3 Buchstaben stabil aktualisieren"],
+      ["Geübt", "8–15", "1.200–2.250", "4-Back erreicht, Antwortfenster 1,9 s"],
+      ["Fortgeschritten", "16+", "2.400+", "5-Back oder höher, Antwortfenster 1,8 s oder kürzer"]
+    ],
+    note: "Diese Stufen sind aus den Punkteregeln des Spiels berechnete SkillDrills-Übungsstufen, keine Bevölkerungsnormen und keine klinischen Grenzwerte."
+  },
+  techniques: {
+    title: "Tipps für den N-Back Test",
+    items: [
+      { name: "Leise mitsprechen", desc: "Wiederhole die letzten N Buchstaben innerlich in festem Rhythmus (z. B. B-M-T → M-T-R). Kommt ein neuer, vergleichst du ihn mit dem vordersten und streichst diesen.", tips: "Kurze Buchstabennamen halten den Rhythmus stabil." },
+      { name: "Nicht auf nahe Buchstaben hereinfallen", desc: "Ein Buchstabe von vor 1 oder 2 Schritten wirkt vertraut, ist aber kein Treffer. Prüfe, ob es genau N Schritte sind.", tips: "Vertrautheit allein ist kein Grund für 'Treffer'." },
+      { name: "'Kein Treffer' aktiv wählen", desc: "Nur etwa jeder dritte Buchstabe ist ein Treffer. Wer bei Unsicherheit zögert, verliert die Antwort durch Zeitablauf.", tips: "Wähle innerhalb des Fensters immer eine der beiden Antworten." },
+      { name: "Nach dem Verlieren neu aufbauen", desc: "Hast du die Reihenfolge verloren, versuch nicht, dich zu erinnern, sondern baue die Liste ab dem aktuellen Buchstaben neu auf.", tips: "Nach N Buchstaben kannst du wieder sicher vergleichen." }
     ]
   },
-  science: [
-    { title: "Wayne K. Kirchner (1958): Ursprung des N-Back-Paradigmas", body: "Kirchner führte die Aufgabe ein, um das Behalten sich schnell verändernder Daten zu untersuchen." },
-    { title: "Alan Baddeley (1986, 2000): Die zentrale Exekutive", body: "Im Arbeitsgedächtnismodell fordert N-Back die Koordination von phonologischer Schleife und dorsolateralem präfrontalem Kortex." },
-    { title: "Adele Diamond (2013): Triade der exekutiven Funktionen", body: "Diamond identifizierte Arbeitsgedächtnisaktualisierung, Inhibition und kognitive Flexibilität als Fundament." },
-    { title: "Susanne M. Jaeggi et al. (2008): Transfer auf fluide Intelligenz", body: "Zeigte signifikante Zuwächse bei Matrizentests durch adaptives N-Back-Training." },
-    { title: "Nelson Cowan (2001): Das 4±1-Kapazitätslimit", body: "Der bewusste Aufmerksamkeitsfokus fasst etwa 4 unstrukturierte Informationseinheiten." },
-    { title: "David L. Woods et al. (2015): Chronometrische Standards", body: "Standardisierte computergestützte Reaktionszeit- und Signalentdeckungsmetriken." }
+  steps: [
+    "Start drücken und den 3-Sekunden-Countdown abwarten.",
+    "Die ersten 3 Buchstaben einprägen (die Uhr läuft nicht).",
+    "Danach bei jedem Buchstaben 'Treffer' wählen, wenn er dem von vor 3 Schritten entspricht, sonst 'Kein Treffer'.",
+    "Alle 8 richtigen Antworten steigt die Stufe auf 4-Back, 5-Back, und das Antwortfenster wird kürzer.",
+    "Nach 45 Sekunden Punkte, höchste Stufe und Genauigkeit ansehen."
   ],
-  protocols: [
-    { title: "Gleitende verbale Warteschlange", body: "Wiederholen Sie die letzten 3 Buchstaben innerlich wie eine Endlosschleife (z. B. 'B-M-T' wird zu 'M-T-R')." },
-    { title: "Inhibitorische Kontrolle gegen Täuschungsreize", body: "Vermeiden Sie voreilige Klicks auf Buchstaben, die vor 1 oder 2 Schritten zu sehen waren." },
-    { title: "Duale phonologisch-räumliche Verankerung", body: "Stellen Sie sich drei mentale Fächer vor, durch die die Buchstaben nach links durchwandern." },
-    { title: "Schneller mentaler Neustart", body: "Wenn Sie den Faden verlieren, setzen Sie sofort beim nächsten Reiz neu an." }
-  ],
-  sources: pickSources('baddeley1974', 'baddeley1986', 'cowan2001', 'woods2015'),
+  audience: "Alle, die einen N-Back Test sofort im Browser ausprobieren und ihr Arbeitsgedächtnis trainieren möchten, Studierende, die die Aufgabe kennenlernen wollen, und alle, die ein kurzes Denkspiel suchen.",
   faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text })),
+  sources: pickSources('baddeley1974', 'cowan2001'),
   related: [
-    { href: "/de/drills/memory/spatial-memory/path-tracing", title: "Pfadverfolgungs-Gedächtnistest", desc: "Räumliche Routen auf dynamischen Gittern nachvollziehen." },
-    { href: "/de/drills/memory/spatial-memory/grid-memorization", title: "Visueller Gittertest", desc: "2D-Schachbrettmuster memorieren und visuelle Speicherkapazität testen." },
-    { href: "/de/drills/memory/spatial-memory/object-location", title: "Objektplatzierungs-Test", desc: "Räumliche Relationen und Positionen auf Quadrantenkarten behalten." },
-    { href: "/de/drills/memory/short-term-memory/digit-span", title: "Zahlenspannen-Test (Digit Span)", desc: "Kurzzeitgedächtnis und phonologische Schleife prüfen." },
-    { href: "/de/drills/memory/short-term-memory/word-recall", title: "Wort-Wiedererkennungstest", desc: "Verbales Erinnerungsvermögen unter Zeitdruck messen." },
-    { href: "/de/drills/memory/short-term-memory/color-sequence", title: "Farbgedächtnis-Spiel", desc: "Farbsequenzen bei steigender Frequenz fehlerfrei wiederholen." }
+    { href: "/de/drills/memory/spatial-memory/path-tracing", label: "Corsi-Block-Test" },
+    { href: "/de/drills/memory/spatial-memory/grid-memorization", label: "Visueller Gedächtnistest" },
+    { href: "/de/drills/memory/spatial-memory/object-location", label: "Objekt-Positions-Gedächtnis" },
+    { href: "/de/drills/memory/short-term-memory/digit-span", label: "Zahlenspannen-Test" },
+    { href: "/de/drills/memory/short-term-memory/word-recall", label: "Verbaler Gedächtnistest" }
   ]
 };
 
@@ -316,7 +284,7 @@ export default function NBackPageDe() {
 
       <NBackClient copy={nBackClientCopyDe} />
 
-      <DrillGuide {...guideDe} />
+      <DrillGuide guide={guideDe} />
 
       <RelatedDrills />
     </>

@@ -6,8 +6,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Stroop | Attention sélective | SkillDrills",
-  description: "Test de Stroop gratuit dans le navigateur : choisissez la couleur de l’encre, pas le mot. Auto-test cognitif non clinique.",
+  title: "Test de Stroop en ligne gratuit | SkillDrills",
+  description: "Test de Stroop en ligne gratuit : choisissez la couleur de l’encre, pas le mot, pour ressentir l’effet Stroop et exercer l’attention sélective. Exercice non clinique.",
   keywords: [
     "test de stroop",
     "test de stroop en ligne",
@@ -23,8 +23,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/cognitive/focus/distraction-fighter')
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de Stroop | Attention sélective | SkillDrills",
-    description: "Test de Stroop gratuit dans le navigateur : choisissez la couleur de l’encre, pas le mot. Auto-test cognitif non clinique.",
+    title: "Test de Stroop en ligne gratuit | SkillDrills",
+    description: "Test de Stroop en ligne gratuit : choisissez la couleur de l’encre, pas le mot, pour ressentir l’effet Stroop et exercer l’attention sélective. Exercice non clinique.",
     url: "https://skilldrills.online/fr/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
     locale: "fr_FR",
@@ -32,8 +32,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Test de Stroop | Attention sélective | SkillDrills",
-    description: "Test de Stroop gratuit dans le navigateur : choisissez la couleur de l’encre, pas le mot. Auto-test cognitif non clinique."
+    title: "Test de Stroop en ligne gratuit | SkillDrills",
+    description: "Test de Stroop en ligne gratuit : choisissez la couleur de l’encre, pas le mot, pour ressentir l’effet Stroop et exercer l’attention sélective. Exercice non clinique."
   }
 };
 
@@ -54,20 +54,20 @@ export default function DistractionFighterPageFR() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Stroop_effect", "https://en.wikipedia.org/wiki/Inhibitory_control"],
     "name": "Test de Stroop Trainer",
-    "dateModified": "2026-09-20",
-    "applicationCategory": "HealthApplication",
+    "dateModified": "2026-11-12",
+    "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entraînement neurocognitif de contrôle exécutif et d inhibition des automatismes par le test d interférence couleur-mot de Stroop."
+    "description": "Test de Stroop en ligne gratuit : exercice couleur-mot où l on choisit la couleur de l encre plutôt que le sens du mot."
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Test de Stroop en Ligne Interactif",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "url": "https://skilldrills.online/fr/drills/cognitive/focus/distraction-fighter",
-    "applicationCategory": "TrainingTool",
+    "applicationCategory": "EducationalApplication",
     "browserRequirements": "Requires JavaScript. HTML5 Canvas compatible."
   };
 
@@ -76,7 +76,7 @@ export default function DistractionFighterPageFR() {
     "@type": "VideoGame",
     "name": "Défi d Inhibition Cognitive de Stroop",
     "gamePlatform": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "genre": ["Brain Training", "Cognitive Drill", "Focus Training"]
   };
 
@@ -84,7 +84,7 @@ export default function DistractionFighterPageFR() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Comment Passer le Test de Stroop en Ligne",
-    "description": "Protocole pour désactiver la lecture automatique et discriminer la couleur de police.",
+    "description": "Déroulement d une manche du test de Stroop en ligne.",
     "step": [
       {
         "@type": "HowToStep",
@@ -104,7 +104,7 @@ export default function DistractionFighterPageFR() {
       {
         "@type": "HowToStep",
         "name": "Enchaînement Régulier",
-        "text": "Conservez une cadence stable pendant 45 secondes afin d optimiser votre multiplicateur de points."
+        "text": "Le chrono démarre à 45 secondes : chaque bonne réponse ajoute 2 s (60 s max), chaque erreur ou mot expiré retire 1 s. La manche s arrête à 0."
       }
     ]
   };
@@ -142,7 +142,7 @@ export default function DistractionFighterPageFR() {
         "name": "Quel est l intérêt pour les athlètes et les joueurs d esports?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Il développe la capacité de bloquer les leurres visuels et d éliminer les tirs réflexes intempestifs en situation de stress intense."
+          "text": "Aucun effet sur la performance sportive ou en jeu n est démontré. L exercice fait simplement pratiquer le fait d ignorer une information trompeuse sous pression de temps ; utilisez-le en complément."
         }
       },
       {
@@ -150,7 +150,7 @@ export default function DistractionFighterPageFR() {
         "name": "Combien de temps faut-il s entraîner chaque jour?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Des séries de 5 à 10 minutes par jour en sessions courtes de 45 secondes suffisent à stimuler la plasticité frontale sans causer de fatigue mentale."
+          "text": "Il n y a pas de règle fixe. Quelques minutes par jour, avec des pauses, suffisent pour s exercer sans fatigue ; aucun progrès n est garanti."
         }
       },
       {
@@ -158,7 +158,7 @@ export default function DistractionFighterPageFR() {
         "name": "L effet Stroop s estompe-t-il avec l entraînement régulier?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le temps de latence se réduit significativement, mais l automatisme de lecture reste gravé et ne disparaît jamais intégralement chez un individu alphabétisé."
+          "text": "Avec la pratique, l interférence diminue souvent un peu, mais elle ne disparaît pas chez un lecteur habitué (MacLeod, 1991). Dans cet exercice, vos progrès se voient surtout au score et à la précision."
         }
       },
       {
@@ -166,7 +166,7 @@ export default function DistractionFighterPageFR() {
         "name": "Existe-t-il une méthode pour réduire l interférence?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Fixer le bord ou l empattement d une lettre isolée plutôt que le mot entier permet d atténuer l activation involontaire des réseaux linguistiques."
+          "text": "Certains joueurs fixent le bord d une lettre plutôt que le mot entier pour moins le lire ; c est une astuce de pratique, pas une méthode prouvée."
         }
       },
       {
@@ -174,7 +174,7 @@ export default function DistractionFighterPageFR() {
         "name": "Comment le calcul de points s effectue-t-il?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le score combine la rapidité de clic en millisecondes, la régularité sans faute et l accumulation des multiplicateurs de combo successifs."
+          "text": "Chaque bonne réponse rapporte 100 points × multiplicateur de combo (jusqu à 3x) × facteur de niveau, et ajoute 2 secondes au chrono (60 s max). Une erreur ou un mot expiré (option Délai activée, par défaut) remet le combo à zéro et retire 1 seconde. Les mots de couleur s affichent pour l instant en anglais (RED, BLUE…)."
         }
       },
       {
@@ -182,7 +182,7 @@ export default function DistractionFighterPageFR() {
         "name": "Les personnes daltoniennes peuvent-elles utiliser ce module?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Un daltonisme sévère peut poser des difficultés sur certains tons, mais l interface emploie des teintes très contrastées pour faciliter la distinction."
+          "text": "Difficilement : l exercice utilise rouge, vert, orange, jaune, bleu et violet, et ne propose pas de mode adapté au daltonisme."
         }
       },
       {
@@ -190,7 +190,7 @@ export default function DistractionFighterPageFR() {
         "name": "Quel impact ce test a-t-il sur la concentration au quotidien?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Il renforce le bouclier inhibiteur frontal, rendant plus aisé d ignorer les notifications, les discussions environnantes et les distractions numériques."
+          "text": "Ce n est pas démontré. Le score progresse souvent avec la pratique, mais le transfert vers la concentration au quotidien reste incertain. Utilisez-le comme un court échauffement."
         }
       }
     ]
@@ -199,23 +199,25 @@ export default function DistractionFighterPageFR() {
   const guide = {
     title: "Guide Scientifique du Test de Stroop et Neurobiologie de l Inhibition",
     intro: [
-      "L effet Stroop, documenté pour la première fois par J. Ridley Stroop (1935), est l une des manifestations les plus étudiées de la psychologie cognitive. Lorsque la couleur de la police contredit le texte (par exemple, le mot 'ROUGE' affiché en bleu), la vitesse de réponse chute et le taux d erreur grimpe en flèche.",
-      "Ce décalage provient de la dissymétrie de vitesse entre automatismes et processus contrôlés: lire est une compétence hyper-automatisée chez l adulte (MacLeod, 1991). Suivant le modèle de Logan & Cowan (1984), le réflexe de lecture l emporte sur la désignation de la couleur à moins que les structures préfrontales ne déclenchent un freinage inhibiteur précoce.",
-      "Les recherches en imagerie démontrent le rôle central du cortex cingulaire antérieur et du cortex préfrontal dorsolatéral dans la résolution de ce conflit. Un entraînement ciblé consolide l attention sélective et le filtrage des distracteurs sous contrainte de temps.",
-      "Méthodologie chronométrique: chaque événement est horodaté via l'horloge haute précision performance.now() du navigateur, directement sur votre terminal. Les navigateurs intègrent une limitation délibérée pour parer aux failles matérielles de type Spectre (résolution d'environ 1 ms), et votre écran quantifie chaque rafraîchissement: environ 16,7 ms par image à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015). Évaluez votre progression sur un même matériel plutôt que de comparer des valeurs brutes entre configurations hétérogènes.",
+      "L effet Stroop, documenté pour la première fois par J. Ridley Stroop (1935), est l une des manifestations les plus étudiées de la psychologie cognitive. Lorsque la couleur de la police contredit le texte (par exemple, le mot 'ROUGE' affiché en bleu), la réponse ralentit et les erreurs augmentent.",
+      "Ce décalage provient de la dissymétrie de vitesse entre automatismes et processus contrôlés: lire est une compétence hyper-automatisée chez l adulte (MacLeod, 1991). La recherche sur l inhibition décrit l arrêt d une réponse automatique comme une course (Logan & Cowan, 1984) : dans le test de Stroop, une erreur survient quand la lecture n est pas freinée à temps.",
+      "Des études d imagerie associent le cortex cingulaire antérieur et le cortex préfrontal dorsolatéral à la résolution de ce conflit (Posner & Petersen, 1990). Cet exercice fait pratiquer l attention sélective sous contrainte de temps, sans mesurer l activité cérébrale ni garantir de progrès.",
+      "Chronométrage : l exercice n affiche pas de temps de réaction, mais un score, une précision et un niveau atteint. La fenêtre de réponse de chaque mot est gérée par les minuteurs du navigateur, sur votre terminal. Les navigateurs intègrent une limitation délibérée pour parer aux failles matérielles de type Spectre (résolution d'environ 1 ms), et votre écran quantifie chaque rafraîchissement: environ 16,7 ms par image à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015). Évaluez votre progression sur un même matériel plutôt que de comparer des valeurs brutes entre configurations hétérogènes.",
       "Transparence des données et avertissement éducatif: SkillDrills ne collecte aucune donnée agrégée et ne transmet aucun historique à des serveurs tiers. Vos scores et préférences résident exclusivement dans le localStorage de votre navigateur. Ce module constitue un jeu d'entraînement cognitif à vocation pédagogique et ludique; il ne s'agit pas d'un dispositif médical, d'un outil de diagnostic ou de dépistage du TDAH ou d'autres troubles cognitifs."
     ],
     benchmarks: {
-      title: "Repères de Performance au Test de Stroop (Session de 45 Secondes)",
-      headers: ["Niveau de Maîtrise", "Score (45s)", "Taux de Précision", "Évaluation Neurocognitive"],
+      title: "Test de Stroop : paliers de note (points par manche)",
+      headers: ["Palier", "Points"],
       rows: [
-        ["Tier 1 (Palier Avancé)", "18.000+ PTS", "96%+", "Contrôle des impulsions parfait; blocage réflexe de la lecture avec réactivité maximale."],
-        ["Tier 2 (Avancé / Niveau Compétition)", "12.000 – 17.999 PTS", "92% – 95%", "Interférence minimale; cadence stable avec remarquable flexibilité cognitive."],
-        ["Tier 3 (Moyen / Pratiquant Régulier)", "7.000 – 11.999 PTS", "85% – 91%", "Latence d interférence saine standard; hésitations ponctuelles sur fortes oppositions."],
-        ["Tier 4 (Base / Attention Discontinue)", "3.000 – 6.999 PTS", "75% – 84%", "Domination du réflexe de lecture; fort ralentissement quand le rythme s accélère."],
-        ["Tier 5 (Débutant / Forte Impulsivité)", "< 3.000 PTS", "< 75%", "Fautes fréquentes et temps dépassé; sensibilité prononcée à la fatigue mentale."]
+        ["S+", "21 660 et plus"],
+        ["S", "17 340 – 21 659"],
+        ["A", "13 500 – 17 339"],
+        ["B", "8 640 – 13 499"],
+        ["C", "4 860 – 8 639"],
+        ["D", "2 160 – 4 859"],
+        ["F", "moins de 2 160"]
       ],
-      note: "Barèmes établis sur des sessions de 45 secondes avec complexité dynamique et délais de réponse rétrécis (Stroop, 1935; Woods et al., 2015)."
+      note: "Paliers d entraînement SkillDrills, calculés directement à partir de la formule de note de l écran final (part de 24 000 points de référence) ; ni statistiques d utilisateurs ni normes. Chaque bonne réponse vaut 100 points × combo (jusqu à 3x) × facteur de niveau."
     },
     techniques: {
       title: "4 Stratégies pour Surmonter l'Interférence de Stroop",
@@ -237,8 +239,8 @@ export default function DistractionFighterPageFR() {
         },
         {
           name: "Entraînement fractionné à la résistance aux distracteurs",
-          desc: "L'inhibition cognitive sollicite intensément le cortex préfrontal. Des blocs quotidiens de 3 à 5 minutes favorisent une meilleure régulation de l'attention sans fatigue excessive.",
-          tips: "Idéal comme échauffement neurocognitif avant une session de travail exigeante."
+          desc: "La fatigue fait grimper les erreurs. Des blocs quotidiens de 3 à 5 minutes sont faciles à tenir.",
+          tips: "Utilisable comme court échauffement avant une session de travail."
         }
       ]
     },
@@ -246,9 +248,9 @@ export default function DistractionFighterPageFR() {
       "Fixez le mot affiché au centre sans chercher à le décoder vocalement.",
       "Freinez le réflexe de lecture et ciblez uniquement la teinte de l'encre.",
       "Appuyez sur le bouton de couleur correspondant à l'encre affichée.",
-      "Enchaînez les réponses justes pour alimenter le combo et progresser dans les paliers de difficulté."
+      "Enchaînez les réponses justes : +2 s par bonne réponse (60 s max), -1 s par erreur, jusqu à ce que le chrono atteigne 0."
     ],
-    audience: "Étudiants, cadres en open space, esportifs et toute personne souhaitant renforcer son filtrage attentionnel face aux sollicitations numériques.",
+    audience: "Étudiants, cadres en open space, esportifs et toute personne curieuse de ressentir l effet Stroop.",
     faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources
   };
@@ -282,23 +284,23 @@ export default function DistractionFighterPageFR() {
 
       <DistractionFighterClient
         copy={{
-          title: "Test de Stroop",
-          subtitle: "Interférence Couleur-Mot & Inhibition Cognitive",
+          title: "Test de Stroop en ligne gratuit",
+          subtitle: "Effet Stroop et attention sélective : choisissez la couleur de l encre, pas le mot",
           caption: "Nommez la couleur de police et ignorez le sens du mot. L interférence entre lecture automatique et identification de couleur mesure votre contrôle inhibiteur exécutif (Stroop, 1935).",
           stageCaption: "Cliquez sur le bouton de la couleur de police et ignorez le mot contradictoire.",
           rulesTitle: "Consignes de l Exercice et Système de Points",
           aboutTitle: "À Propos du Test de Stroop et du Contrôle Inhibiteur",
-          aboutText: "L effet Stroop caractérise le délai pour nommer la couleur d un mot lorsque l encre et le sens s opposent (Stroop, 1935; MacLeod, 1991).\n\nLire est un automatisme profond. Le cortex préfrontal doit freiner volontairement la lecture pour laisser place à la perception chromatique.\n\nUn entraînement régulier aide à ignorer les bruits et interruptions de l environnement.",
+          aboutText: "L effet Stroop caractérise le délai pour nommer la couleur d un mot lorsque l encre et le sens s opposent (Stroop, 1935; MacLeod, 1991).\n\nLire est un automatisme profond. Le cortex préfrontal doit freiner volontairement la lecture pour laisser place à la perception chromatique.\n\nL exercice permet de pratiquer ce conflit ; il ne garantit pas une meilleure concentration au quotidien.",
           aboutCards: [
             { title: "Public Conseillé", desc: "Professionnels en espaces ouverts, étudiants et joueurs de jeux d action compétitifs.", color: "bg-blue-600" },
             { title: "Qualités Développées", desc: "Résistance à l interférence, inhibition cognitive, attention focalisée et maîtrise des impulsions.", color: "bg-emerald-600" },
             { title: "Contrôle Inhibiteur", desc: "Freinez le réflexe de lecture et ciblez les teintes avec précision sous cadence rapide.", color: "bg-purple-600" }
           ],
           rulesItems: [
-            { title: "Interférence de Stroop", text: "Un mot s affiche (ex: 'JAUNE') avec une couleur de police distincte (ex: bleu)." },
-            { title: "Règle de Choix", text: "Cliquez sur le bouton de la COULEUR DE POLICE (Bleu) sans lire le mot (+100 Pts x Combo x Niveau, +0,6s)." },
-            { title: "Erreurs", text: "Une faute remet le combo à zéro et fait perdre du temps. La manche prend fin à l écoulement du chronomètre." },
-            { title: "Séries Réussies", text: "Enchaîner les réussites multiplie vos points alors que la variété de couleurs augmente." }
+            { num: "1", text: "Mot de couleur (en anglais)", highlight: "choisir l encre", result: "ignorer le mot" },
+            { num: "2", text: "Bonne réponse", highlight: "100 × combo × niveau", result: "+2 s (60 s max)" },
+            { num: "3", text: "Erreur / mot expiré", highlight: "combo à zéro", result: "-1 s" },
+            { num: "4", text: "Niveau supérieur", highlight: "délai plus court", result: "6 couleurs dès niv. 4" }
           ]
         }}
         faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}

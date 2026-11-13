@@ -92,7 +92,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "fr-FR",
-      "dateModified": "2026-09-20"
+      "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -109,7 +109,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/cognitive/attention/concentration-stamina",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -145,7 +145,7 @@ const faqSchema = {
       "name": "Qu'est-ce que le test d'attention soutenue et d'endurance de concentration ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Il s'agit d'une évaluation continue (CPT) mesurant la stabilité de l'attention sélective, la résistance à la fatigue mentale et le contrôle inhibiteur dans le temps."
+        "text": "C'est un exercice de 45 secondes au format CPT (tâche de performance continue) : des lettres et des chiffres défilent, vous réagissez seulement à ceux qui respectent la règle active (voyelles ou nombres premiers) et ignorez les autres. Ce n'est pas un test clinique ni un outil de diagnostic."
       }
     },
     {
@@ -153,7 +153,7 @@ const faqSchema = {
       "name": "Que désigne le déclin de vigilance de Mackworth (1948) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C'est la dégradation prévisible de la détection de signaux critiques après 20 à 30 minutes d'effort continu, causée par l'épuisement des ressources attentionnelles centrales."
+        "text": "Mackworth (1948) a observé chez des opérateurs radar que la détection de signaux rares baisse à mesure que la surveillance se prolonge. Une partie de ce test ne dure que 45 secondes : elle ne reproduit pas ce déclin, elle entraîne la concentration sous un rythme rapide."
       }
     },
     {
@@ -161,15 +161,15 @@ const faqSchema = {
       "name": "Pourquoi les règles changent-elles au cours de la session ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L'inversion régulière de consignes sollicite le cortex préfrontal pour surmonter l'inertie motrice et réinitialiser les critères en mémoire de travail (Monsell, 2003)."
+        "text": "Toutes les 10 secondes, la règle cible alterne entre voyelles (A E I O U) et nombres premiers (2 3 5 7). Vous entraînez ainsi le passage immédiat à un nouveau critère (changement de tâche, Monsell, 2003)."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle différence avec un simple test de temps de réaction ?",
+      "name": "Comment le score est-il calculé ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ce test évalue l'endurance attentionnelle sur la durée et comptabilise les erreurs d'inattention (omission) et les erreurs d'impulsivité (commission)."
+        "text": "Le score ne mesure pas un temps de réaction en millisecondes : il compte les bonnes cibles (+100 points), les cibles manquées (omissions) et les fausses alertes (commissions). La précision = bonnes cibles ÷ (bonnes cibles + omissions + fausses alertes)."
       }
     },
     {
@@ -177,15 +177,15 @@ const faqSchema = {
       "name": "Quels sont les indices révélateurs d'une baisse de concentration ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un allongement progressif des temps de réaction ou des déclenchements impulsifs sur des cibles invalides signalent une dégradation de la vigilance."
+        "text": "Dans ce test, une baisse de concentration se voit surtout aux cibles manquées et aux fausses alertes. Chaque fausse alerte déclenche un flash rouge et bloque la saisie pendant 1 seconde ; aucun point n'est retiré."
       }
     },
     {
       "@type": "Question",
-      "name": "Cet entraînement est-il utile pour les personnes atteintes de TDAH ?",
+      "name": "Ce test peut-il dépister un TDAH ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, les exercices de type CPT renforcent la capacité de régulation du focus et la résistance aux distractions en milieu répétitif."
+        "text": "Non. C'est un exercice d'entraînement non clinique : il ne dépiste ni ne diagnostique aucun trouble de l'attention et ne remplace pas l'avis d'un professionnel de santé."
       }
     },
     {
@@ -193,7 +193,7 @@ const faqSchema = {
       "name": "Quel est le rythme d'entraînement recommandé ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une pratique quotidienne de 10 à 15 minutes avant le travail ou les études prépare idéalement le cerveau à des phases d'attention prolongée."
+        "text": "Quelques parties (45 secondes chacune) avant le travail ou les études suffisent ; comparez vos scores à la même heure et sur le même appareil. Une amélioration dans la vie quotidienne n'est pas garantie."
       }
     },
     {
@@ -209,7 +209,7 @@ const faqSchema = {
       "name": "Que signifient les paliers de performance indiqués ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ils positionnent votre score par rapport aux données normatives de vigilance établies lors d'études neuropsychologiques standardisées."
+        "text": "Ce sont des repères de pratique SkillDrills fondés sur votre précision, pour comparer vos propres séances. Ils ne reposent sur aucune donnée normative ni étude clinique."
       }
     },
     {
@@ -247,7 +247,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Réagissez Uniquement aux Cibles Valides",
-      "text": "Appuyez sur la touche ou touchez l écran uniquement lorsque l élément affiché satisfait la consigne.",
+      "text": "Cliquez, touchez l'écran ou appuyez sur Espace ou Entrée uniquement lorsque l'élément affiché satisfait la consigne.",
       "url": "https://skilldrills.online/fr/drills/cognitive/attention/concentration-stamina#step-3"
     },
     {
@@ -265,9 +265,9 @@ const guideProps = {
   intro: {
     title: "Test de Concentration et Attention Soutenue : Guide",
     paragraphs: [
-      "Ce test gratuit de concentration mesure l’attention soutenue, l’inhibition et les changements de règle comme une autoévaluation non clinique. Le résultat varie selon l’état du jour et l’habitude et ne remplace pas un avis professionnel.",
-      "Démontré par Norman Mackworth (1948) lors de travaux avec des opérateurs radar, le taux de détection de signaux décline systématiquement après 20 à 30 minutes sous l effet de la déplétion des ressources préfrontales et pariétales (Parasuraman, 1979; Robertson et al., 1997).",
-      "Ce protocole intègre des renversements périodiques de consignes toutes les 10 secondes pour contraindre le cerveau à désactiver les schémas moteurs automatiques et maintenir une vigilance active (Monsell, 2003).",
+      "Ce test gratuit de concentration en 45 secondes mesure l’attention soutenue, l’inhibition et les changements de règle comme une autoévaluation non clinique. Le résultat varie selon l’état du jour et l’habitude et ne remplace pas un avis professionnel.",
+      "Mackworth (1948) a observé chez des opérateurs radar que la détection de signaux rares baisse à mesure que la surveillance se prolonge, et ce déclin est plus marqué quand les événements sont rapides (Parasuraman, 1979). Ce test condense l'exercice en 45 secondes.",
+      "Toutes les 10 secondes, la règle alterne entre voyelles et nombres premiers : il faut abandonner l'ancien critère et appliquer le nouveau aussitôt (Monsell, 2003).",
     ],
   },
   benchmarks: {
@@ -289,7 +289,7 @@ const guideProps = {
     items: [
       { title: "Consultez la Règle Active Supérieure", description: "Repérez la consigne sur le bandeau en haut qui définit les cibles valides (ex: Voyelles ou Nombres Premiers)." },
       { title: "Maintenez une Vigilance Ininterrompue", description: "Surveillez attentivement le défilement continu des stimuli sans quitter la zone focale des yeux." },
-      { title: "Réagissez Uniquement aux Cibles Valides", description: "Appuyez sur la touche ou touchez l écran uniquement lorsque l élément affiché satisfait la consigne." },
+      { title: "Réagissez Uniquement aux Cibles Valides", description: "Cliquez, touchez l'écran ou appuyez sur Espace ou Entrée uniquement lorsque l'élément affiché satisfait la consigne." },
       { title: "Ajustez-vous aux Inversions de Règles", description: "Toutes les 10 secondes, adaptez instantanément votre sélection selon le nouveau critère affiché sans précipitation." },
     ],
   },
@@ -332,7 +332,7 @@ export default function EnhancedPageFr() {
       <ConcentrationStaminaClient copy={{
         title: "Test de Concentration | Attention Soutenue", subtitle: "Autoévaluation non clinique de l’attention continue, du repérage et du contrôle inhibiteur",
         statScore: "Score", statTime: "Temps", statLevel: "Niveau", statBest: "Meilleur score", ruleLabel: "Règle", vowels: "Voyelles (A E I O U)", primes: "Nombres premiers (2 3 5 7)", startTitle: "Test de Concentration", startSubtitle: "Attention soutenue • Entraînement type CPT", getReady: "Préparez-vous", flashTitle: "Flash d’erreur", soundTitle: "Son", newBest: "Nouveau record", points: "Points", accuracy: "Précision", misses: "Erreurs", peakLevel: "Niveau maximal", playAgain: "Rejouer", shareScore: "Partager le score", exitDrill: "Quitter l’exercice",
-        caption: "Réagissez uniquement aux stimuli correspondant à la règle active et filtrez les distractions lors de chaque changement.", rulesTitle: "Consignes et système de score", ruleItems: [{ text: "Règle cible", highlight: "Change toutes les 10 s", result: "Voyelles ↔ Premiers" }, { text: "Bonne cible", highlight: "+100 PTS", result: "Touchez ou appuyez espace" }, { text: "Non-cible", highlight: "Inhiber", result: "Ignorez l’élément différent" }, { text: "Fausse alerte", highlight: "Pénalité", result: "Réduit la précision" }],
+        caption: "Réagissez uniquement aux stimuli correspondant à la règle active et filtrez les distractions lors de chaque changement.", rulesTitle: "Consignes et système de score", ruleItems: [{ text: "Règle cible", highlight: "Change toutes les 10 s", result: "Voyelles ↔ Premiers" }, { text: "Bonne cible", highlight: "+100 PTS", result: "Clic/toucher, Espace ou Entrée" }, { text: "Non-cible", highlight: "Inhiber", result: "Ignorez l’élément différent" }, { text: "Fausse alerte", highlight: "Blocage 1 s", result: "Réduit la précision" }],
         aboutTitle: "À propos du test de concentration", aboutLead: "L’attention soutenue peut diminuer lors de la surveillance prolongée de signaux rares. Ce test court mesure les changements de règle, le repérage et les erreurs comme autoévaluation non clinique.", aboutText: "L’attention soutenue permet de sélectionner les signaux pertinents dans une séquence répétitive. Répétez dans les mêmes conditions et observez l’évolution du score et des erreurs.\n\nLe sommeil, le stress, l’écran et l’habitude influencent le résultat ; ce test ne remplace pas une évaluation professionnelle.", audienceTitle: "À qui s’adresse-t-il ?", audienceText: "Aux étudiants avant de longues épreuves, aux joueurs qui veulent garder leur précision et aux personnes qui doivent rester concentrées longtemps.", skillsTitle: "Compétences entraînées", skillsText: "Attention soutenue, repérage des cibles, vigilance sous fatigue et contrôle des impulsions.", flexibilityTitle: "Flexibilité cognitive", flexibilityText: "Alterner voyelles et nombres premiers toutes les 10 secondes entraîne le changement rapide de règle."
       }} />
       <DrillGuide {...guideProps} />

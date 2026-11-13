@@ -22,7 +22,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
   title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
-  description: 'Senso-Spiel kostenlos im Browser: Merke dir eine wachsende Folge aus Farben und Tönen und wiederhole sie in der richtigen Reihenfolge.',
+  description: 'Senso Spiel online kostenlos: Merke dir die aufleuchtende Farbfolge aus 6 Farben und tippe sie in gleicher Reihenfolge nach. Start mit 3 Farben, 45 Sekunden.',
   keywords: [
     'senso online kostenlos',
     'farbsequenz spiel',
@@ -30,7 +30,6 @@ export const metadata = {
     'simon spiel online',
     'senso spiel online',
     'farben merken spiel',
-    'simon says spiel online',
     'farbsequenz gedaechtnistest',
     'visuelles arbeitsgedaechtnis test',
     'farben reihenfolge merken',
@@ -51,7 +50,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
-    description: 'Senso-Spiel kostenlos im Browser: Merke dir eine wachsende Folge aus Farben und Tönen und wiederhole sie in der richtigen Reihenfolge.',
+    description: 'Senso Spiel online kostenlos: Merke dir die aufleuchtende Farbfolge aus 6 Farben und tippe sie in gleicher Reihenfolge nach. Start mit 3 Farben, 45 Sekunden.',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -60,14 +59,14 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
-    description: 'Senso-Spiel kostenlos im Browser: Merke dir eine wachsende Folge aus Farben und Tönen und wiederhole sie in der richtigen Reihenfolge.',
+    description: 'Senso Spiel online kostenlos: Merke dir die aufleuchtende Farbfolge aus 6 Farben und tippe sie in gleicher Reihenfolge nach. Start mit 3 Farben, 45 Sekunden.',
   },
 };
 
 const copyDe = {
   title: 'Senso-Spiel online',
-  subtitle: 'Farbenfolge merken und exakt wiederholen',
-  caption: 'Beobachte und reproduziere die aufleuchtende Farb-Reihenfolge in exakter Abfolge. Mit jeder erfolgreichen Runde wächst die Sequenz.',
+  subtitle: 'Farbfolge merken und in gleicher Reihenfolge nachtippen – im Stil von Senso',
+  caption: 'Im Kreis leuchtet eine Farbe nach der anderen auf. Tippe die Farbtasten danach in derselben Reihenfolge. Jede gelöste Runde macht die nächste, neue Folge um eine Farbe länger.',
   statScore: 'Punkte',
   statTime: 'Restzeit',
   statLevel: 'Stufe',
@@ -78,16 +77,16 @@ const copyDe = {
   rule1Result: 'Tippe die aufleuchtenden Farbfelder in exakter Reihenfolge nach',
   rule2Text: 'Stufen-Bonus',
   rule2Highlight: '+10% PTS / Stufe',
-  rule2Result: 'Längere Farbfolgen bringen exponentiell mehr Punkte',
+  rule2Result: 'Runde auf Stufe L bringt 100 × (1 + 0,1 × L) Punkte',
   rule3Text: 'Fehlversuch / Timeout',
   rule3Highlight: '-1 Stufe',
-  rule3Result: 'Kein Punktverlust oder Zeitabzug; Sequenz wird wiederholt',
+  rule3Result: 'Falsche Farbe oder 8 s ohne Eingabe: kein Punkt- oder Zeitabzug, danach neue Zufallsfolge',
   rule4Text: 'Adaptive Schwierigkeit',
   rule4Highlight: 'Dynamisch',
-  rule4Result: 'Die Kettenlänge passt sich direkt deinem Leistungsstand an',
+  rule4Result: 'Stufe L = L + 2 Farben; Anzeige wird mit jeder Stufe schneller',
   aboutTitle: 'Über das Senso-Spiel & Visuelles Arbeitsgedächtnis',
   overviewTitle: 'Was trainiert das Farben-Merkspiel (Senso / Simon)?',
-  overviewLead: 'Das visuelle Arbeitsgedächtnis kann im Normalzustand nur etwa vier isolierte Einheiten gleichzeitig speichern (Luck & Vogel, 1997; Cowan, 2001). Eine stetig wachsende Farb-Sequenz konfrontiert das Gehirn direkt mit diesem neurobiologischen Engpass.',
+  overviewLead: 'Das visuelle Arbeitsgedächtnis kann im Normalzustand nur etwa vier isolierte Einheiten gleichzeitig speichern (Luck & Vogel, 1997; Cowan, 2001). Eine länger werdende Farbfolge ist eine Übung genau an dieser Grenze.',
   aboutCards: [
     { title: 'Für wen geeignet?', text: 'Schüler, Studierende, E-Sportler und Senioren, die ihr kurzzeitiges visuelles Erinnerungsvermögen und ihre Konzentration stärken möchten.' },
     { title: 'Trainierte Fähigkeiten', text: 'Visuelle Merkspanne, sequenzielle Enkodierung im visuell-räumlichen Notizblock (Baddeley & Hitch, 1974) und Konzentration unter Zeitdruck.' },
@@ -110,13 +109,12 @@ export default function GermanColorSequencePage() {
   const softwareSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Senso Spiel Online – Farben merken Gedächtnistest',
+    name: 'Senso Spiel online – Farbfolge merken',
     applicationCategory: 'EducationalApplication',
     operatingSystem: 'Web Browser',
-    dateModified: '2026-09-15',
+    dateModified: '2026-11-12',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-    sameAs: ['https://de.wikipedia.org/wiki/Senso_%28Spiel%29'],
-    description: 'Kostenloses Online-Senso-Spiel zum Testen und Trainieren des visuellen Arbeitsgedächtnisses, der Chunking-Fähigkeit und der sequenziellen Merkspanne.',
+    description: 'Kostenloses Farbfolgen-Merkspiel im Stil von Senso: 45 Sekunden lang länger werdende Farbfolgen merken und nachtippen, um visuelles Arbeitsgedächtnis und Chunking zu üben.',
     genre: 'Cognitive Training / Visual Working Memory',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence',
     publisher: {
@@ -131,8 +129,8 @@ export default function GermanColorSequencePage() {
     '@type': 'WebApplication',
     name: 'Senso Spiel Online',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence',
-    description: 'Kostenloses browserbasiertes Senso- und Simon-Gedächtnisspiel mit 6 leuchtenden Farben und adaptiver Längenanpassung.',
-    dateModified: '2026-09-15',
+    description: 'Kostenloses Farbfolgen-Merkspiel im Browser mit 6 Farben: Start mit 3 Farben, jede gelöste Runde eine Farbe mehr, jeder Fehler eine weniger.',
+    dateModified: '2026-11-12',
     applicationCategory: 'GameApplication',
     operatingSystem: 'All',
     isAccessibleForFree: true,
@@ -144,7 +142,7 @@ export default function GermanColorSequencePage() {
     '@type': 'VideoGame',
     name: 'Senso Spiel – Farben merken',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence',
-    description: 'Klassisches elektronisches Farbsequenz-Gedächtnisspiel im Browser zur Steigerung von Merkspanne und Fokus.',
+    description: 'Farbfolgen-Merkspiel im Stil von Senso: Farben leuchten nacheinander im zentralen Kreis auf und werden über 6 Farbtasten in derselben Reihenfolge nachgetippt.',
     genre: ['Memory Game', 'Brain Training', 'Puzzle'],
     gamePlatform: ['Web Browser', 'Mobile', 'Tablet', 'Desktop'],
     applicationCategory: 'Game',
@@ -157,10 +155,10 @@ export default function GermanColorSequencePage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Was ist das Senso-Spiel (Simon Says) und wie funktioniert es?',
+        name: 'Wie funktioniert dieses Senso Spiel online?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Das Senso-Spiel (international als Simon bekannt) ist ein klassisches elektronisches Gedächtnisspiel. Das System spielt eine wachsende Abfolge farbiger Lichtsignale und Töne vor. Der Spieler muss sich die Sequenz einprägen und sie anschließend fehlerfrei in derselben Reihenfolge durch Antippen der Farbfelder wiederholen.',
+          text: 'Es ist ein Merkspiel im Stil des elektronischen Klassikers Senso (international Simon), nicht das Originalprodukt. Im zentralen Kreis leuchtet eine Farbe nach der anderen auf; danach tippst du die 6 Farbtasten in derselben Reihenfolge. Stufe 1 hat 3 Farben (Länge = Stufe + 2). Eine gelöste Runde hebt die Stufe um 1, ein Fehler senkt sie um 1. Jede Runde ist eine neue Zufallsfolge, eine Sitzung dauert 45 Sekunden.',
         },
       },
       {
@@ -168,7 +166,7 @@ export default function GermanColorSequencePage() {
         name: 'Welche Gehirnfunktionen werden beim Merken von Farbsequenzen trainiert?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Das Spiel fordert primär das visuelle Arbeitsgedächtnis und den visuell-räumlichen Notizblock (Visuospatial Sketchpad nach Baddeley & Hitch, 1974). Zudem werden selektive Aufmerksamkeit, sequenzielle Enkodierung und die synaptische Plastizität im präfrontalen Kortex beansprucht.',
+          text: 'Das Spiel fordert primär das visuelle Arbeitsgedächtnis und den visuell-räumlichen Notizblock (Visuospatial Sketchpad nach Baddeley & Hitch, 1974). Zudem sind selektive Aufmerksamkeit und das Enkodieren der Reihenfolge gefragt.',
         },
       },
       {
@@ -176,7 +174,7 @@ export default function GermanColorSequencePage() {
         name: 'Was besagt die 4-Elemente-Grenze von Luck & Vogel (1997)?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Steven J. Luck und Edward K. Vogel wiesen 1997 in Nature nach, dass das visuelle Arbeitsgedächtnis im Schnitt auf 3 bis 4 visuelle Objekte begrenzt ist. Ohne aktive Strukturierung stößt das Gehirn ab Sequenzlänge 5 an seine Kapazitätsgrenze.',
+          text: 'Steven J. Luck und Edward K. Vogel wiesen 1997 in Nature nach, dass das visuelle Arbeitsgedächtnis im Schnitt auf 3 bis 4 visuelle Objekte begrenzt ist. Die Studie nutzte gleichzeitig gezeigte Objekte, nicht Folgen; sie erklärt aber, warum es bei längeren Farbfolgen hilft, Farben zu Gruppen zusammenzufassen.',
         },
       },
       {
@@ -184,7 +182,7 @@ export default function GermanColorSequencePage() {
         name: 'Was ist die Chunking-Methode und wie hilft sie im Spiel?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Chunking (nach George A. Miller, 1956) bezeichnet das Zusammenfassen einzelner Informationseinheiten zu bedeutungsvollen Blöcken. Indem man sich nicht sechs Einzelfarben merkt, sondern zwei Dreiergruppen (z. B. Rot-Gelb-Blau als ein Block), wird die kognitive Belastung halbiert.',
+          text: 'Chunking (nach George A. Miller, 1956) bezeichnet das Zusammenfassen einzelner Informationseinheiten zu bedeutungsvollen Blöcken. Indem man sich nicht sechs Einzelfarben merkt, sondern zwei Dreiergruppen (z. B. Rot-Gelb-Blau als ein Block), sinkt die Zahl der Einheiten, die du einzeln halten musst.',
         },
       },
       {
@@ -200,15 +198,15 @@ export default function GermanColorSequencePage() {
         name: 'Gibt es eine Zeitstrafe bei Fehlversuchen?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Nein, es gibt keinen Zeitabzug bei Fehlern. Nach einer falschen Eingabe stuft das adaptive System die Sequenzlänge lediglich um eine Stufe herab, sodass man ohne Frustration weiter trainieren kann.',
+          text: 'Nein, es gibt weder Punkt- noch Zeitabzug. Tippst du eine falsche Farbe oder 8 Sekunden lang keine Farbe, sinkt die Stufe um 1 (mindestens Stufe 1) und eine neue Zufallsfolge startet.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Welche Punktzahl oder Stufe gilt als überdurchschnittlich gut?',
+        name: 'Welche Punktzahl oder Stufe ist gut?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Das Erreichen von Stufe 7 bis 8 (Sequenzlänge von 7–8 Farben) entspricht dem soliden Durchschnitt. Stufen ab Level 10 (über 1.300 Punkte) erfordern konsequentes Chunking und gehören zur fortgeschrittenen Übungsstufe.',
+          text: 'Es gibt keinen offiziellen Normwert. SkillDrills sammelt keine Nutzerdaten und nennt daher keine Durchschnitte oder Perzentile. Stufe L zeigt L + 2 Farben, eine gelöste Runde bringt 100 × (1 + 0,1 × L) Punkte. Nutze die Übungsstufen unten und vergleiche dich mit deinen eigenen Bestwerten.',
         },
       },
       {
@@ -216,7 +214,7 @@ export default function GermanColorSequencePage() {
         name: 'Hilft das Training gegen Alltagsvergesslichkeit?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Ja. Das systematische Enkodieren sequenzieller Reize stärkt die neuronale Konzentrationsausdauer und erleichtert das kurzzeitige Behalten von Telefonnummern, Codes, Wegbeschreibungen und Arbeitsschritten.',
+          text: 'Das ist nicht garantiert. Mit Übung wird man in genau diesem Spiel meist besser, ob sich das auf das Gedächtnis im Alltag überträgt, ist in der Forschung umstritten. Nutze es als Merkspiel; bei echten Gedächtnisproblemen wende dich an eine Ärztin oder einen Arzt.',
         },
       },
       {
@@ -224,7 +222,7 @@ export default function GermanColorSequencePage() {
         name: 'Ist das Senso-Spiel für Touchscreens und Smartphones optimiert?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Ja, die Benutzeroberfläche reagiert latenzfrei auf Touch-Eingaben auf Smartphones und Tablets sowie auf Mausklicks am Desktop-PC.',
+          text: 'Ja, die Farbtasten lassen sich per Touch auf Smartphone und Tablet sowie per Mausklick am PC bedienen.',
         },
       },
       {
@@ -232,7 +230,7 @@ export default function GermanColorSequencePage() {
         name: 'Ist dieses Online-Senso-Spiel kostenlos und ohne Installation spielbar?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Ja, das Spiel ist vollständig kostenlos, werbefrei spielbar und erfordert weder Registrierung noch Download. Alle Bestwerte verbleiben lokal in Ihrem Browser.',
+          text: 'Ja, das Spiel ist kostenlos und braucht weder Registrierung noch Download. Alle Bestwerte bleiben lokal in deinem Browser.',
         },
       },
     ],
@@ -248,7 +246,7 @@ export default function GermanColorSequencePage() {
         '@type': 'HowToStep',
         position: 1,
         name: 'Farbsequenz aufmerksam beobachten',
-        text: 'Starte das Spiel und verfolge konzentriert die aufleuchtenden Farbfelder und Töne.',
+        text: 'Starte das Spiel und verfolge konzentriert die Farben, die nacheinander im zentralen Kreis aufleuchten.',
         url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence#step-1',
       },
       {
@@ -269,7 +267,7 @@ export default function GermanColorSequencePage() {
         '@type': 'HowToStep',
         position: 4,
         name: 'Stufen steigern und Highscore aufbauen',
-        text: 'Mit jeder gemeisterten Sequenz verlängert sich die Kette um eine Farbe für höhere Multiplikatoren.',
+        text: 'Jede gelöste Runde hebt die Stufe um 1: Die nächste, neue Zufallsfolge ist eine Farbe länger und bringt mehr Punkte.',
         url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence#step-4',
       },
     ],
@@ -278,25 +276,25 @@ export default function GermanColorSequencePage() {
   const sensoGuide = {
     heading: 'Leitfaden zum Senso-Farbsequenzspiel & Arbeitsgedächtnis',
     intro: [
-      'Das Wiedergeben von Farbsequenzen zählt zu den traditionsreichsten und wirkungsvollsten Tests für das visuelle und serielle Arbeitsgedächtnis. Bekannt geworden durch Ralph H. Baers und Howard J. Morrisons elektronisches Senso-Spiel (1978), fordert dieses adaptive Paradigma die sofortige Speicherung, strukturierte Pufferung und exakte Rekonstruktion dynamischer Reizketten in präziser zeitlicher Reihenfolge.',
+      'Das Wiedergeben von Farbfolgen ist eine der bekanntesten Übungen für das visuelle und serielle Arbeitsgedächtnis. Bekannt geworden durch Ralph H. Baers und Howard J. Morrisons elektronisches Senso-Spiel (1978), fordert dieses adaptive Paradigma die sofortige Speicherung, strukturierte Pufferung und exakte Rekonstruktion dynamischer Reizketten in präziser zeitlicher Reihenfolge.',
       'Die neurokognitive Architektur des menschlichen Kurzzeitgedächtnisses wurde über Jahrzehnte hinweg tiefgehend erforscht. Während George A. Miller (1956) den verbalen Flaschenhals von $7 \\pm 2$ Informationseinheiten identifizierte, wiesen Nelson Cowan (2001) sowie Steven J. Luck & Edward K. Vogel (1997) nach, dass das reine visuelle Arbeitsgedächtnis strikt auf etwa 4 distinkte Objekte begrenzt ist. Ohne aktive Rekodierungsstrategien bricht die menschliche Merkspanne jenseits von vier sequentiellen Elementen rapide ein.',
-      'Im Mehrkomponenten-Modell des Arbeitsgedächtnisses von Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000) rekrutiert die serielle Reizverarbeitung den visuell-räumlichen Notizblock (Visuospatial Sketchpad). Robert H. Logie (1995) unterteilte diesen weiter in den passiven visuellen Cache (Farben und Formen) und den aktiven \'Inner Scribe\' (räumlich-zeitliche Bewegungsmuster). Geübte Anwender koppeln diesen Pfad zudem an die phonologische Schleife, um durch duale Enkodierung (visuell und subvokal) die Pufferkapazität effektiv zu verdoppeln.',
-      'Mit hochauflösender digitaler Millisekunden-Chronometrie (Woods et al., 2015) erfasst dieses Trainingsmodul sowohl die maximale Sequenzspanne als auch die motorische Reaktionslatenz pro Eingabe. Dadurch entsteht ein verlässlicher Benchmark für die Integrität des Arbeitsgedächtnisses und die kognitive Belastbarkeit unter Zeitdruck.',
-      'Messmethodik und Hardware-Latenz: Jeder Interaktionszeitpunkt wird lokal im Browser über die hochauflösende performance.now()-Uhr erfasst – es werden keinerlei Leistungsdaten übertragen. Moderne Browser runden Timer zur Abwehr von Timing-Angriffen (Spectre) auf etwa 1 ms ab, während Monitore Bildwechsel auf ihre Bildwiederholrate quantisieren (~16,7 ms bei 60 Hz, ~6,9 ms bei 144 Hz, ~4,1 ms bei 240 Hz; Woods et al., 2015). Abweichungen unter 5 ms stellen messtechnisches Rauschen dar; vergleichen Sie Ihre Durchläufe daher stets auf identischer Hardware.',
-      'Datentransparenz und Privatsphäre: SkillDrills erfasst keine aggregierten Nutzerstatistiken. Ihre Punktzahlen, Reaktionszeiten und Rekorde verbleiben ausschließlich im lokalen Speicher (localStorage) Ihres Browsers und werden niemals hochgeladen. Alle auf dieser Seite genannten Richtwerte stammen direkt aus den in der Referenztabelle aufgeführten wissenschaftlichen Fachpublikationen.',
+      'Im Mehrkomponenten-Modell des Arbeitsgedächtnisses von Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000) rekrutiert die serielle Reizverarbeitung den visuell-räumlichen Notizblock (Visuospatial Sketchpad). Robert H. Logie (1995) unterteilte diesen weiter in den passiven visuellen Cache (Farben und Formen) und den aktiven \'Inner Scribe\' (räumlich-zeitliche Bewegungsmuster). Geübte Anwender koppeln diesen Pfad zudem an die phonologische Schleife, um die Folge durch duale Enkodierung (visuell und subvokal) zusätzlich zu stützen.',
+      'Das Spiel zeichnet in 45 Sekunden die Punktzahl, die höchste erreichte Stufe (Länge der Farbfolge) und die Trefferquote (Anteil gelöster Runden) auf. Reaktionszeiten pro Eingabe werden nicht gemessen.',
+      'So läuft eine Runde: Stufe L zeigt L + 2 Farben aus 6 möglichen, jede Runde eine neue Zufallsfolge. Mit steigender Stufe leuchtet jede Farbe kürzer (von rund 0,7 s bis mindestens 0,25 s). Danach hast du für jede Eingabe 8 Sekunden; eine falsche Farbe oder Zeitüberschreitung senkt die Stufe um 1.',
+      'Datentransparenz und Privatsphäre: SkillDrills erfasst keine aggregierten Nutzerstatistiken. Ihre Punktzahlen und Rekorde verbleiben ausschließlich im lokalen Speicher (localStorage) Ihres Browsers und werden niemals hochgeladen. Deshalb nennt diese Seite keine Nutzerdurchschnitte, Perzentile oder Nutzerzahlen; zitierte Zahlen stammen aus den unten aufgeführten Studien.',
       'Medizinischer Hinweis: Diese Web-Anwendung ist ein kostenloses Trainings- und Übungsspiel zur geistigen Fitness. Sie stellt kein medizinisches Diagnoseinstrument, Screening-Verfahren oder Therapiewerkzeug dar. Bei klinischen Bedenken bezüglich Ihrer Gedächtnisleistung oder Konzentrationsfähigkeit konsultieren Sie bitte einen qualifizierten Facharzt oder Neuropsychologen.'
     ],
     benchmarks: {
-      title: 'Senso-Spiel & Sequenzgedächtnis Leistungsstufen (45-Sekunden-Lauf)',
-      headers: ['Leistungsstufe', 'Erreichte Stufe', 'Punktzahl (45s)', 'Merkstrategie & Kognitive Bewertung'],
+      title: 'Senso Spiel online – Übungsstufen (SkillDrills, 45-Sekunden-Lauf)',
+      headers: ['Übungsstufe', 'Erreichte Stufe', 'Punkte bei fehlerfreiem Lauf', 'Typische Merkstrategie'],
       rows: [
-        ['Stufe 5 (fortgeschrittenes Chunking)', 'Level 11+', 'Über 1.500 PTS', 'Exzellentes multimodales Chunking; simultane visuelle und rhythmisch-auditive Enkodierung'],
-        ['Tier 2 (Fortgeschritten / Turnier-Niveau)', 'Level 8 – 10', '1.100 – 1.499 PTS', 'Sichere Überwindung der Cowan-Kapazitätsgrenze (4 Elemente); stabiles 2er/3er-Chunking'],
-        ['Tier 3 (Solider Durchschnitt)', 'Level 5 – 7', '700 – 1.099 PTS', 'Typische gesunde Kurzzeitgedächtnis-Kapazität; leichte Unsicherheit bei schnellem Farbwechsel'],
-        ['Tier 4 (Basis / Gelegentliche Aussetzer)', 'Level 3 – 4', '350 – 699 PTS', 'Arbeitsgedächtnis operiert an der natürlichen Kapazitätsgrenze; noch kein systematisches Chunking'],
-        ['Tier 5 (Einsteiger / Hohe Vergessensrate)', 'Unter Level 3', 'Unter 350 PTS', 'Schwierigkeiten bei Ketten ab 3 Farben; Ablenkung durch visuelle Nachbilder']
+        ['Stufe A', 'Level 11+ (13+ Farben)', 'ca. 1.550+ PTS', 'Farbnamen mitsprechen und Chunking kombiniert'],
+        ['Stufe B', 'Level 8 – 10 (10–12 Farben)', 'ca. 980 – 1.549 PTS', 'Stabiles Chunking in 2er-/3er-Gruppen'],
+        ['Stufe C', 'Level 5 – 7 (7–9 Farben)', 'ca. 500 – 979 PTS', 'Mittlere Farben gehen bei schnellem Wechsel verloren'],
+        ['Stufe D', 'Level 3 – 4 (5–6 Farben)', 'ca. 230 – 499 PTS', 'Farben einzeln gemerkt, noch kein Chunking'],
+        ['Stufe E', 'Level 1 – 2 (3–4 Farben)', 'unter 230 PTS', 'Regeln und Tempo kennenlernen']
       ],
-      note: 'Die Benchmarks basieren auf einem 45-Sekunden-Durchlauf mit dynamisch wachsenden 6-Farben-Ketten (Luck & Vogel, 1997; Cowan, 2001; Woods et al., 2015).'
+      note: 'SkillDrills-Übungsstufen, keine Bevölkerungsnormen. Die Punkte gelten für einen fehlerfreien Lauf bis zu dieser Stufe (Punkte pro Runde = 100 × (1 + 0,1 × Stufe)); Fehler senken die Stufe, daher weichen echte Werte ab.'
     },
     techniques: {
       title: '4 praxiserprobte Gedächtnisstrategien für längere Sequenzen',
@@ -307,32 +305,32 @@ export default function GermanColorSequencePage() {
           tips: 'Gruppiere die Kette immer in Zweier- oder Dreierpaare, sobald sie 4 Farben überschreitet.'
         },
         {
-          name: 'Räumliche Bewegungsmuster visualisieren',
-          desc: 'Verbinde die aufleuchtenden Felder im Geist zu einer geometrischen Linie (z. B. Dreieck oder Zickzack-Muster), statt dir abstrakte Farbnamen zu merken.',
-          tips: 'Das räumliche Gedächtnis im Parietallappen unterstützt die Speicherung ungemein.'
+          name: 'Weg über die Farbtasten merken',
+          desc: 'Die Farben leuchten nur im zentralen Kreis auf, aber die 6 Farbtasten (3 × 2) haben feste Plätze. Stell dir bei jeder Farbe die passende Taste vor und merke dir den Weg deines Fingers (Logie, 1995).',
+          tips: 'Schau dir vor dem Start einmal die Anordnung der Tasten an.'
         },
         {
-          name: 'Tonhöhe als auditiven Zweitkanal nutzen',
-          desc: 'Jede Farbe erzeugt einen charakteristischen Synthesizer-Ton. Präge dir die Melodie der Sequenz ein, um das auditorische Kurzzeitgedächtnis als redundanten Speicher zu nutzen.',
-          tips: 'Lass den Ton eingeschaltet, um von der dualen visuellen und auditiven Kodierung zu profitieren.'
+          name: 'Farbnamen innerlich mitsprechen',
+          desc: 'Sprich bei jeder aufleuchtenden Farbe den Namen leise mit („Rot, Blau, Grün“). So kommt zur visuellen Spur eine sprachliche hinzu (phonologische Schleife; Baddeley, 2000).',
+          tips: 'Sprich in Zweiergruppen und in festem Rhythmus.'
         },
         {
-          name: 'Fokus auf das Kettenende richten',
-          desc: 'Die ersten Farben der Kette wiederholen sich in jeder Runde. Konzentriere deine Aufmerksamkeit primär auf die neu hinzugefügte Endfarbe.',
-          tips: 'Verankere den Anfang fest im Langzeitpuffer und nutze den Kurzzeitspeicher für die neuesten Signale.'
+          name: 'Die Mitte der Folge sichern',
+          desc: 'Jede Runde ist eine komplett neue Zufallsfolge, die vorige Runde hilft also nicht. Anfang und Ende bleiben meist gut hängen, die mittleren Farben gehen am leichtesten verloren (Positionseffekt). Bündle deshalb gezielt die Mitte.',
+          tips: 'Sprich den Anfang sofort als Gruppe mit und verlass dich beim Ende auf das frische Bild.'
         }
       ]
     },
     steps: [
-      'Starte die 45-Sekunden-Session und blicke auf den zentralen Farbring.',
-      'Beobachte aufmerksam die aufleuchtende Farb- und Tonfolge.',
+      'Starte die 45-Sekunden-Session und blicke auf den zentralen Kreis.',
+      'Beobachte, wie eine Farbe nach der anderen aufleuchtet.',
       'Reorganisiere die Kette gedanklich in rhythmische Zweier- oder Dreierblöcke.',
       'Tippe die Farben nach Beendigung des Signals in exakt derselben Reihenfolge an.',
-      'Steigere deine Stufe kontinuierlich für höhere Multiplikatoren und Punktwerte.'
+      'Jede gelöste Runde bringt eine längere Folge und mehr Punkte pro Runde.'
     ],
     audience: 'Gedächtnissportler, Schüler, Studierende, E-Sportler und alle, die ihr Arbeitsgedächtnis, ihre Konzentration und ihre mentale Merkspanne gezielt trainieren möchten.',
     faqs: faqSchema.mainEntity.map((q) => ({ q: q.name, a: q.acceptedAnswer.text })),
-    sources: pickSources('cowan2001', 'luck1997', 'baddeley1974', 'miller1956', 'woods2015'),
+    sources: pickSources('cowan2001', 'luck1997', 'baddeley1974', 'baddeley2000', 'logie1995', 'miller1956'),
     related: [
       { href: '/de/drills/memory/working-memory/n-back', label: 'Dual N-Back Gedächtnistest' },
       { href: '/de/drills/memory/short-term-memory/digit-span', label: 'Digit Span Zahlenmerktest' },

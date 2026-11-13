@@ -6,8 +6,8 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Corsi-Block-Test online | SkillDrills",
-  description: "Teste dein räumliches Sequenzgedächtnis online: Merke dir aufleuchtende Blöcke und tippe sie in derselben Reihenfolge wieder an.",
-  keywords: ['corsi-block-test', 'corsi block test online', 'corsi block tapping test', 'raumspanne test', 'räumliches sequenzgedächtnis', 'visuell-räumliches arbeitsgedächtnis', 'block-tapping-test', 'räumliches gedächtnistraining', 'sequenzgedächtnis test', 'corsi span'],
+  description: "Kostenloser Corsi-Block-Test online: Merke dir, welche Felder nacheinander aufleuchten, und tippe sie in derselben Reihenfolge an. Pfade wachsen bis 7x7.",
+  keywords: ['corsi-block-test', 'corsi block test online', 'räumliche blockspanne', 'räumliches sequenzgedächtnis', 'visuell-räumliches arbeitsgedächtnis', 'block-tapping-test'],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/path-tracing', 'de'),
@@ -17,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Corsi-Block-Test online | Räumliches Sequenzgedächtnis",
-    description: "Merke dir aufleuchtende Blöcke und tippe sie in derselben Reihenfolge wieder an. Kostenlos im Browser, ohne Anmeldung.",
+    title: "Corsi-Block-Test online | SkillDrills",
+    description: "Kostenloser Corsi-Block-Test: aufleuchtende Felder in derselben Reihenfolge antippen. Übe deine räumliche Blockspanne im Browser, ohne Anmeldung.",
     url: "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -26,14 +26,16 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Corsi-Block-Test online | Räumliches Sequenzgedächtnis",
-    description: "Merke dir aufleuchtende Blöcke und tippe sie in derselben Reihenfolge wieder an. Kostenlos im Browser, ohne Anmeldung.",
+    title: "Corsi-Block-Test online | SkillDrills",
+    description: "Kostenloser Corsi-Block-Test: aufleuchtende Felder in derselben Reihenfolge antippen. Übe deine räumliche Blockspanne im Browser, ohne Anmeldung.",
   },
 };
 
 export const dynamic = 'force-static';
 
 export default function LocalizedPathTracingPage() {
+  const appDescription = "Kostenloser Corsi-Block-Test im Browser: Benachbarte Felder leuchten nacheinander auf und bilden einen Pfad, den du in derselben Reihenfolge antippst. Jeder gelöste Pfad wird einen Schritt länger.";
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -48,13 +50,13 @@ export default function LocalizedPathTracingPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Corsi-Block-Test (Sequenzgedächtnis Online)",
+    "name": "Corsi-Block-Test online",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Interaktiver neuropsychologischer Test zur Erfassung von sequentiellem visuell-räumlichem Arbeitsgedächtnis, Routenrekonstruktion und Corsi-Block-Spanne auf expandierenden Rastern.",
-    "genre": "Cognitive Assessment / Spatial Memory",
+    "description": appDescription,
+    "genre": "Spatial Memory",
     "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing",
     "publisher": {
       "@type": "Organization",
@@ -66,24 +68,23 @@ export default function LocalizedPathTracingPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Corsi-Block-Test (Sequenzgedächtnis Online)",
+    "name": "Corsi-Block-Test online",
     "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing",
-    "description": "Interaktiver neuropsychologischer Test zur Erfassung von sequentiellem visuell-räumlichem Arbeitsgedächtnis, Routenrekonstruktion und Corsi-Block-Spanne auf expandierenden Rastern.",
-    "dateModified": "2026-09-05",
+    "description": appDescription,
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "sameAs": ["https://neurabrain.app/de/test/corsi-block"]
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Corsi-Block-Test (Sequenzgedächtnis Online)",
-    "description": "Interaktiver neuropsychologischer Test zur Erfassung von sequentiellem visuell-räumlichem Arbeitsgedächtnis, Routenrekonstruktion und Corsi-Block-Spanne auf expandierenden Rastern.",
+    "name": "Corsi-Block-Test online",
+    "description": appDescription,
     "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing",
-    "genre": ["Memory Game", "Cognitive Training", "Spatial Sequence Memory"],
+    "genre": ["Memory Game", "Spatial Sequence Memory"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
     "applicationCategory": "Game",
     "operatingSystem": "Any",
@@ -102,237 +103,188 @@ export default function LocalizedPathTracingPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
-            "@type": "Question",
-            "name": "Was ist der Corsi-Block-Test (Path Tracing Memory Test)?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Ein neuropsychologisches Messverfahren zur Bestimmung des sequentiellen visuell-räumlichen Arbeitsgedächtnisses. Die Testperson beobachtet eine Abfolge aufleuchtender Felder und muss den Pfad in exakt gleicher Reihenfolge wiederholen."
-            }
+        "@type": "Question",
+        "name": "Wie läuft der Corsi-Block-Test ab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Felder im Raster leuchten im Abstand von 0,5 Sekunden nacheinander auf und zeigen einen Pfad. Danach hast du 10 Sekunden, um dieselben Felder in derselben Reihenfolge anzuklicken oder anzutippen. Ein vollständiger Pfad bringt +150 Punkte, und der nächste Pfad ist einen Schritt länger."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Was misst die Corsi-Block-Spanne im Gehirn?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Sie erfasst die Kapazität des 'Inner Scribe' im visuell-räumlichen Arbeitsgedächtnis (Logie, 1995), der für dynamische Bewegungsabläufe, motorische Planung und zeitlich geordnete Pfadsequenzen zuständig ist."
-            }
+        "@type": "Question",
+        "name": "Ist das der klinische Corsi-Block-Tapping-Test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Das Prinzip entspricht der Corsi-Block-Aufgabe (Corsi, 1972): Positionen in ihrer Reihenfolge merken und wiedergeben. Hier wird jedoch ein quadratisches Raster verwendet, jeder Schritt führt nur zu einem direkt angrenzenden Feld (oben, unten, links, rechts), und kein Feld wird zweimal besucht. Es ist ein Übungsspiel, kein klinischer Test und kein Diagnoseinstrument."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Was ist der 'Inner Scribe' im Arbeitsgedächtnismodell?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Robert H. Logie (1995) unterteilte das visuell-räumliche Arbeitsgedächtnis in den passiven 'Visual Cache' (für statische Bilder) und den aktiven 'Inner Scribe' (ein motorisch-räumliches Rehearsal-System für Bewegungsfolgen)."
-            }
+        "@type": "Question",
+        "name": "Wie wachsen Pfadlänge und Rastergröße?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Level 1 beginnt mit einem Pfad aus 3 Schritten. Jeder gelöste Pfad erhöht Level und Pfadlänge um 1. Das Raster ist bis 5 Schritte 3x3, bei 6 bis 8 Schritten 4x4, bei 9 bis 12 Schritten 5x5, bei 13 bis 16 Schritten 6x6 und ab 17 Schritten 7x7."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Was ist eine normale Corsi-Spanne bei gesunden Erwachsenen?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "In normierten Studien (Kessels et al., 2000) liegt die durchschnittliche Vorwärtsspanne gesunder Erwachsener bei 5,4 ± 0,9 Schritten. Werte ab 8 Schritten gelten als herausragend."
-            }
+        "@type": "Question",
+        "name": "Wie wird die Zeit gezählt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Sitzungsuhr hat 60 Sekunden und läuft nur, während du den Pfad eingibst. Die Vorführung des Pfads und die Ergebnisanzeige zählen nicht. Jeder einzelne Pfad muss innerhalb von 10 Sekunden nach Eingabebeginn fertig sein."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Wie funktioniert Richtungsvektor-Chunking?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Statt einzelne Rasterpunkte separat abzuspeichern, fasst man diese zu Richtungsblöcken zusammen (z. B. 'Diagonale nach rechts, Haken nach unten'). Dadurch wird die Belastung unter das Cowan-Limit (4 Einheiten) gesenkt."
-            }
+        "@type": "Question",
+        "name": "Was passiert bei einem falschen Feld?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Runde endet sofort und ein neuer Pfad gleicher Länge erscheint. Es gibt keinen Punkt- oder Zeitabzug, und das Level sinkt nicht. Eine Überschreitung der 10 Sekunden wird genauso behandelt; beides zählt in der Genauigkeit als Fehlversuch."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Worin unterscheidet sich dieser Test von Matrix-Mustern?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Statische Matrizen blitzen alle gleichzeitig auf und werden als ein einziges Bild gespeichert. Pfadverfolgung erfordert hingegen die exakte zeitliche Reihenfolgekodierung jedes einzelnen Schrittes."
-            }
+        "@type": "Question",
+        "name": "Wie merke ich mir lange Pfade besser?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da der Pfad immer zu einem Nachbarfeld weiterläuft, hilft es, Richtungsblöcke statt Einzelfelder zu speichern, etwa 'zwei rechts, eins hoch' (Chunking, Miller, 1956). Behalte während der Vorführung das ganze Raster im Blick und merke dir vor allem die Knickpunkte."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Warum fallen lange Schrittfolgen so schwer?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Weil das ungestützte fokale Arbeitsgedächtnis laut Nelson Cowan (2001) strikt auf etwa 4 Elemente begrenzt ist. Ohne geometrisches Chunking zerfällt die Spur nach 4 bis 5 Schritten."
-            }
+        "@type": "Question",
+        "name": "Was unterscheidet den Test vom visuellen Gedächtnistest (Memory Matrix)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bei der Memory Matrix leuchten mehrere Felder gleichzeitig auf und lassen sich als ein Muster merken. Beim Corsi-Block-Test leuchten die Felder einzeln nacheinander auf, du musst also neben den Positionen auch die Reihenfolge behalten."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Wie hilft räumliches Sequenzgedächtnis im Alltag und beim Gaming?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Es steuert die Wegfindung im Straßenverkehr, das Erlernen von Choreografien und beim Gaming das automatisierte Abrufen von Rotationspfaden und Fähigkeitskombinationen."
-            }
-      },
-      {
-            "@type": "Question",
-            "name": "Gibt es Strafpunkte für falsche Schritte?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Nein. Fehlklicks führen weder zu Punktabzügen noch zu Zeitverlust. Die Runde wird im selben Level wiederholt, sodass Sie Ihre Chunking-Technik stressfrei verfeinern können."
-            }
-      },
-      {
-            "@type": "Question",
-            "name": "Lässt sich das Pfadgedächtnis gezielt trainieren?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Ja. Gezieltes Üben automatisiert die Vektorbündelung, stärkt den Inner Scribe und erhöht die Abrufgeschwindigkeit unter Zeitdruck."
-            }
+        "@type": "Question",
+        "name": "Werden meine Ergebnisse gespeichert? Haben sie medizinische Aussagekraft?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bestwert und höchstes Level werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Die Ergebnisse sind Übungswerte und sagen nichts über Gedächtnisstörungen oder die Gesundheit des Gehirns aus."
+        }
       }
-]
+    ]
   };
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Wie Sie Ihr räumliches Sequenzgedächtnis mit Pfadverfolgung trainieren",
-    "description": "Systematisches 4-Phasen-Protokoll mit Richtungsvektor-Chunking und innerem Bewegungssimulations-Rehearsal.",
+    "name": "So spielst du den Corsi-Block-Test",
+    "description": "Vier Schritte, um einen nacheinander aufleuchtenden Pfad in derselben Reihenfolge wiederzugeben.",
     "step": [
       {
-            "@type": "HowToStep",
-      "position": 1,
-      "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing#step-1",
-            
-            "name": "Startpunkt fixieren und Bewegung antizipieren",
-            "text": "Richten Sie den Blick auf den ersten aufblitzenden Punkt, ohne den Augen hektisch hinterherzuspringen, um den Gesamtvektor wahrzunehmen."
+        "@type": "HowToStep",
+        "position": 1,
+        "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing#step-1",
+        "name": "Das ganze Raster ansehen",
+        "text": "Verfolge während der Vorführung nicht nur das erste Feld, sondern achte auf das ganze Raster und darauf, wo der Pfad abbiegt."
       },
       {
-            "@type": "HowToStep",
-      "position": 2,
-      "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing#step-2",
-            
-            "name": "Einzelschritte in Richtungsvektoren bündeln",
-            "text": "Fassen Sie benachbarte Punkte mental zu Sinneinheiten zusammen (z. B. 'zwei rechts, einer hoch' oder 'L-Form')."
+        "@type": "HowToStep",
+        "position": 2,
+        "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing#step-2",
+        "name": "In Richtungen bündeln",
+        "text": "Jeder Schritt geht zu einem Nachbarfeld, also merke dir Richtungsblöcke wie 'rechts 2, hoch 1'."
       },
       {
-            "@type": "HowToStep",
-      "position": 3,
-      "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing#step-3",
-            
-            "name": "Dynamische Route im Inner Scribe wiederholen",
-            "text": "Nutzen Sie die kurze Verzögerung, um den Pfad im motorischen Kortex innerlich als kontinuierliche Linie nachzuziehen."
+        "@type": "HowToStep",
+        "position": 3,
+        "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing#step-3",
+        "name": "In derselben Reihenfolge antippen",
+        "text": "Nach der Vorführung klickst oder tippst du innerhalb von 10 Sekunden die Felder ab dem Startfeld in derselben Reihenfolge an."
       },
       {
-            "@type": "HowToStep",
-      "position": 4,
-      "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing#step-4",
-            
-            "name": "In gleichmäßigem motorischem Rhythmus abrufen",
-            "text": "Tippen Sie die Felder zügig und rhythmisch an. Zögern beschleunigt den Zerfall der Gedächtnisspur."
+        "@type": "HowToStep",
+        "position": 4,
+        "url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing#step-4",
+        "name": "Nach Fehlern direkt weitermachen",
+        "text": "Fehler kosten weder Punkte noch ein Level, konzentriere dich also gleich auf den neuen Pfad gleicher Länge."
       }
-]
+    ]
   };
 
   const pathTracingGuide = {
     intro: [
-      "Der Corsi-Block-Test (Path Tracing Memory Test) ist ein interaktives neuropsychologisches Assessment zur Erfassung des sequentiellen räumlichen Arbeitsgedächtnisses, der dynamischen Routenerinnerung und der Rekonstruktion von Richtungstrajektorien auf Matrizen von 3x3 bis 7x7. Verwurzelt im klassischen Corsi-Block-Tapping-Paradigma (Milner, 1971; Corsi, 1972) und Robert H. Logies (1995) 'Inner Scribe'-Modell, isoliert dieser Test die aktive raumzeitliche Bewegungskodierung von statischen Bildmustern.",
-      "In jedem Durchgang leuchtet eine Sequenz von Feldern in standardisierten 500-ms-Intervallen auf. Die Testperson muss sowohl die Koordinaten als auch die zeitliche Abfolge behalten und anschließend in exakter chronologischer Reihenfolge innerhalb eines 45-Sekunden-Fensters nachzeichnen.",
-      "Im Modell des Arbeitsgedächtnisses wiesen Logie (1995) und Alan Baddeley (2000) nach, dass sequentielle Bewegungsabläufe vom 'Inner Scribe' – einer aktiven räumlichen Wiederholungsschleife – gestützt werden. George A. Miller (1956) und Herbert A. Simon (1974) bewiesen die Notwendigkeit hierarchischer Bündelung (Chunking), während Nelson Cowan (2001) die Kapazitätsgrenze des ungestützten fokalen Arbeitsgedächtnisses auf etwa 4 Elemente festlegte.",
-      "Standardisierte Normdaten computerisierter Corsi-Aufgaben (Kessels et al., 2000) beziffern die durchschnittliche Spanne gesunder Erwachsener auf 5,4 ± 0,9 Schritte. Diese Spanne reagiert hochsensibel auf kognitive Ermüdung, Schlafmangel und exekutive Funktionen.",
-      "Funktionsweise der Messung: Jede Eingabe wird lokal über den hochauflösenden performance.now()-Timer Ihres Browsers erfasst – ohne Datenübertragung an externe Server. Browsertimer werden aus Sicherheitsgründen (Spectre-Schutz) auf etwa 1 ms gerundet; Bildschirme quantisieren Änderungen anhand ihrer Bildwiederholrate (bei 60 Hz ca. 16,7 ms; Woods et al., 2015). Differenzen unter 5 ms sind als Messrauschen zu betrachten.",
-      "Datentransparenz: SkillDrills speichert keinerlei Nutzerdaten zentral. Ihre Rekorde und Einstellungen verbleiben ausschließlich im localStorage Ihres Browsers. Wir veröffentlichen keine globalen Durchschnittswerte oder Ranglisten; sämtliche Benchmarks basieren auf publizierten Fachstudien im Referenzbereich.",
-      "Dieses Tool ist ein kostenloses kognitives Browserspiel zur Übung und Selbstbeobachtung. Es stellt kein medizinisches Diagnoseinstrument dar und ersetzt keine ärztliche Abklärung. Wenden Sie sich bei Gedächtnisproblemen an qualifiziertes medizinisches Fachpersonal."
-],
+      "Der Corsi-Block-Test online ist ein kostenloses Reihenfolge-Gedächtnisspiel: Felder in einem Raster leuchten nacheinander auf, und du tippst sie danach in derselben Reihenfolge an. Er überträgt das Prinzip der Corsi-Block-Aufgabe (Milner, 1971; Corsi, 1972) auf einen Pfad im Raster und trainiert so deine räumliche Blockspanne und das visuell-räumliche Arbeitsgedächtnis.",
+      "Level 1 zeigt einen Pfad aus 3 Schritten auf einem 3x3-Raster. Die Felder leuchten im Abstand von 0,5 Sekunden auf; jeder Schritt führt zu einem Feld oben, unten, links oder rechts, und kein Feld wird zweimal besucht. Jeder gelöste Pfad bringt +150 Punkte, Level +1 und einen Schritt mehr; das Raster wächst über 4x4, 5x5 und 6x6 bis 7x7.",
+      "Die Sitzungsuhr hat 60 Sekunden und läuft nur während der Eingabe. Jeder Pfad muss innerhalb von 10 Sekunden fertig sein. Ein falsches Feld oder eine Zeitüberschreitung beendet die Runde ohne Abzug; es folgt ein neuer Pfad gleicher Länge, und das Level sinkt nicht. Eingabe per Mausklick oder Touch.",
+      "Datentransparenz: Ergebnisse werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Deshalb veröffentlicht SkillDrills keine Nutzer-Durchschnitte oder Ranglisten.",
+      "Dieses Tool ist ein kostenloses Browserspiel zum Üben. Es ist weder der offizielle Corsi-Test noch ein Medizinprodukt oder Diagnoseinstrument, und die Ergebnisse sagen nichts über Gedächtnisstörungen aus. Wende dich bei Gedächtnisproblemen an medizinisches Fachpersonal."
+    ],
     benchmarks: {
-      title: "Normative Benchmarks zum sequentiellen Corsi-Block-Gedächtnis",
-      headers: ["Leistungsstufe", "Spannengröße & Raster", "Punkte", "Kognitives Profil & Trajektorien-Repertoire"],
-      note: "Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.",
+      title: "SkillDrills-Übungsstufen (Punkte = gelöste Pfade × 150)",
+      headers: ["Übungsstufe", "Erreichte Pfadlänge · Raster", "Punkte", "Bedeutung"],
       rows: [
-        [
-                "Stufe 1",
-                "Spanne 10 – 14+ Schritte (6x6–7x7 Raster)",
-                "1.200+ Punkte",
-                "Fortgeschrittene Stufe: zerlegt komplexe Routen in 2–3 Makrovektoren; exzellentes Inner-Scribe-Rehearsal; flüssiger Abruf unter 400 ms"
-        ],
-        [
-                "Stufe 2",
-                "Spanne 8 – 9 Schritte (5x5–6x6 Raster)",
-                "900 – 1.199 Punkte",
-                "Deutlich über Populationsdurchschnitt; nutzt geometrisches Chunking (L-Turns, Zickzack); hohe Interferenzresistenz; 400–600 ms"
-        ],
-        [
-                "Stufe 3",
-                "Spanne 5 – 7 Schritte (4x4–5x5 Raster)",
-                "600 – 899 Punkte",
-                "Normaler Populationsdurchschnitt (Corsi, 1972; Kessels et al., 2000, 5,4 ± 0,9 Spanne); meistert 5–6 Schritte; verliert Wegpunkte auf 5x5; 600–850 ms"
-        ],
-        [
-                "Stufe 4",
-                "Spanne 4 Schritte (3x3–4x4 Raster)",
-                "400 – 599 Punkte",
-                "Arbeitet an der Cowan-Grenze (2001); versucht Punkte isoliert zu merken; anfällig für Reihenfolgefehler; 850–1.100 ms"
-        ],
-        [
-                "Stufe 5",
-                "Spanne < 4 Schritte (3x3 Raster)",
-                "< 400 Punkte",
-                "Schneller Spurenzerfall; häufige Vertauschung der Reihenfolge; Schwierigkeiten ab 3 Schritten; Latenz über 1.100 ms"
-        ]
-],
-      note: "Spannenlänge und Rastergröße entsprechen der höchsten in 45 Sekunden erreichten Stufe; normiert nach Corsi-Block-Tapping-Standards."
+        ["Einstieg", "3–4 Schritte · 3x3", "0–150", "0–1 Pfade gelöst. Regeln und Eingaberhythmus kennenlernen"],
+        ["Basis", "5–7 Schritte · 3x3–4x4", "300–600", "2–4 Pfade gelöst. Das Raster wird 4x4"],
+        ["Geübt", "8–12 Schritte · 4x4–5x5", "750–1.350", "5–9 Pfade gelöst. Richtungsblöcke werden nötig"],
+        ["Fortgeschritten", "13+ Schritte · 6x6–7x7", "1.500+", "10+ Pfade gelöst. Lange Pfade in 60 Sekunden Eingabezeit hintereinander"]
+      ],
+      note: "Diese Stufen sind aus den Punkteregeln des Spiels berechnete SkillDrills-Übungsstufen, keine Bevölkerungsnormen und keine klinischen Grenzwerte."
     },
     techniques: {
-      title: "Evidenzbasierte Strategien zur Steigerung der Sequenzspanne",
+      title: "Tipps für längere Pfade",
       items: [
         {
-                "name": "Richtungsvektor-Chunking (Miller 1956; Simon 1974)",
-                "desc": "Fassen Sie Schritte mental zu Makropfeilen zusammen (z. B. 'zwei rechts, einer hoch'). Die Bündelung zu geometrischen Figuren senkt die kognitive Last um mehr als 60 %.",
-                "tips": "Suchen Sie nach L-Mustern, Dreiecken oder Treppenformen statt nach einzelnen Punkten."
+          "name": "Richtungsblöcke bilden",
+          "desc": "Der Pfad läuft immer zu einem Nachbarfeld weiter. Merke dir daher Richtungsblöcke wie 'rechts 2, hoch 1, links 1' statt einzelner Felder (Miller, 1956).",
+          "tips": "Gib Formen Namen: L, Treppe, Zickzack."
         },
         {
-                "name": "Kinästhetisches Inner-Scribe-Rehearsal (Logie 1995)",
-                "desc": "Aktivieren Sie während des Zusehens den motorischen Kortex, indem Sie die Linie gedanklich mit den Fingern nachziehen. Motorisches Vorplanen festigt die Spur.",
-                "tips": "Spüren Sie die Bewegung in der Hand, bevor Sie den Bildschirm berühren."
+          "name": "Knickpunkte markieren",
+          "desc": "Gerade Abschnitte bleiben leicht hängen. Präge dir vor allem das Startfeld und die Felder ein, an denen die Richtung wechselt.",
+          "tips": "Ruf vor der Eingabe Startfeld und letzten Richtungswechsel ab."
         },
         {
-                "name": "Parafoveale Zentrums-Fixierung",
-                "desc": "Fixieren Sie die Rastermitte, um die Bewegung periphere zu erfassen, statt hektische Blicksprünge zu jedem einzelnen Feld auszuführen.",
-                "tips": "Halten Sie Augen und Kopf ruhig und erfassen Sie die Sequenz im Gesamtblick."
+          "name": "Das ganze Raster im Blick behalten",
+          "desc": "Statt jedem aufleuchtenden Feld hinterherzuspringen, schaust du nahe der Rastermitte und verfolgst den Verlauf.",
+          "tips": "Besonders hilfreich auf 6x6- und 7x7-Rastern."
         },
         {
-                "name": "Rhythmische Ausführung (Pacing)",
-                "desc": "Tippen Sie die Folge zügig in einem gleichmäßigen Takt ein. Zögern führt zum Verfall späterer Wegpunkte; führen Sie den Chunk als geschlossenen motorischen Burst aus.",
-                "tips": "Tippen Sie im Takt eines inneren Metronoms, ohne bei Einzelschritten innezuhalten."
+          "name": "Gleichmäßig eingeben",
+          "desc": "Mit 10 Sekunden Eingabezeit musst du nicht hetzen, aber lange Pausen lassen die späteren Schritte verblassen.",
+          "tips": "Gib Block für Block ein."
         }
-]
+      ]
     },
     steps: [
-      "Fokussieren Sie die Mitte des Rasters und beobachten Sie die aufleuchtende Schrittfolge.",
-      "Bündeln Sie die Einzelschritte mental zu zusammenhängenden Richtungsvektoren.",
-      "Wiederholen Sie die kontinuierliche Linie in der kurzen Pause mit dem Inner Scribe.",
-      "Tippen Sie die Koordinaten in exakter Reihenfolge mit rhythmischem Schwung ab.",
-      "Erweitern Sie Ihre sequentielle Raumspanne auf Rastern von 3x3 bis 7x7."
-],
-    audience: "Gamer (Laufwege und Skill-Sequenzen), Tänzer, Sportler, MINT-Studierende und alle, die ihr visuell-räumliches Sequenzgedächtnis schärfen wollen.",
+      "Start drücken und den 3-Sekunden-Countdown abwarten.",
+      "Den Pfad ansehen, während die Felder einzeln aufleuchten.",
+      "Innerhalb von 10 Sekunden dieselben Felder in derselben Reihenfolge anklicken oder antippen.",
+      "Bei Erfolg wird der Pfad einen Schritt länger, bei einem Fehler kommt ein neuer Pfad gleicher Länge.",
+      "Nach 60 Sekunden Eingabezeit Punkte, höchstes Level und Genauigkeit ansehen."
+    ],
+    audience: "Alle, die ihre räumliche Blockspanne und ihr visuell-räumliches Arbeitsgedächtnis spielerisch üben wollen, Gamer und Sportler, die sich Laufwege oder Bewegungsfolgen merken müssen, und alle, die ein kurzes Gedächtnisspiel suchen.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'cowan2001', 'baddeley2000', 'miller1956', 'simon1974', 'kessels2000', 'woods2015'),
+    sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'miller1956'),
     related: [
       {
-            "href": "/de/drills/memory/spatial-memory/grid-memorization",
-            "label": "Visueller Gedächtnistest (Memory Matrix)"
+        "href": "/de/drills/memory/spatial-memory/grid-memorization",
+        "label": "Visueller Gedächtnistest (Memory Matrix)"
       },
       {
-            "href": "/de/drills/memory/spatial-memory/object-location",
-            "label": "Objekt-Positions-Gedächtnis (Object Location)"
+        "href": "/de/drills/memory/spatial-memory/object-location",
+        "label": "Objekt-Positions-Gedächtnis (Object Location)"
       },
       {
-            "href": "/de/drills/memory/short-term-memory/digit-span",
-            "label": "Zahlenspannen-Test (Digit Span)"
+        "href": "/de/drills/memory/short-term-memory/digit-span",
+        "label": "Zahlenspannen-Test (Digit Span)"
       },
       {
-            "href": "/de/drills/memory/short-term-memory/word-recall",
-            "label": "Verbaler Gedächtnistest (Word Recall)"
+        "href": "/de/drills/memory/short-term-memory/word-recall",
+        "label": "Verbaler Gedächtnistest (Word Recall)"
       },
       {
-            "href": "/de/drills/memory/working-memory/n-back",
-            "label": "Dual N-Back Test"
+        "href": "/de/drills/memory/working-memory/n-back",
+        "label": "N-Back Test"
       }
-]
+    ]
   };
 
   return (
@@ -364,15 +316,15 @@ export default function LocalizedPathTracingPage() {
       <PathTracingClient
         copy={{
         "h1Keyword": "Corsi-Block-Test online",
-        "h1Suffix": " – Sequenzgedächtnis",
-        "subtitle": "Aufleuchtende Blöcke merken und in derselben Reihenfolge antippen.",
+        "h1Suffix": " – räumliche Blockspanne",
+        "subtitle": "Merke dir, welche Felder nacheinander aufleuchten, und tippe sie in derselben Reihenfolge an.",
         "statScore": "Punkte",
         "statTime": "Zeit",
         "statLevel": "Level",
         "statBestScore": "Bester Score",
         "levelPrefix": "Lv.",
-        "startTitle": "Pfadverfolgung Pro",
-        "startSubtitle": "Räumliches Sequenzgedächtnis • Corsi-Test",
+        "startTitle": "Corsi-Block-Test",
+        "startSubtitle": "Räumliche Blockspanne • Sequenzgedächtnis",
         "countdownSubtitle": "BEREITMACHEN",
         "newBest": "NEUER REKORD",
         "pointsLabel": "Punkte",
@@ -380,32 +332,32 @@ export default function LocalizedPathTracingPage() {
         "statPeakLevel": "Höchstes Level",
         "statPerfects": "Perfekt",
         "btnPlayAgain": "Erneut spielen",
-        "rulesTitle": "Anleitung & Punktesystem",
-        "aboutTitle": "Über das Pfadverfolgungs- & Corsi-Block-Training",
+        "rulesTitle": "Regeln & Punkte",
+        "aboutTitle": "Über den Corsi-Block-Test",
         "rulesItems": [
                 {
                         "num": "1",
-                        "text": "Pfad merken & Reihenfolge nachzeichnen",
+                        "text": "Pfad in derselben Reihenfolge wiedergeben",
                         "highlight": "+150 PKT",
-                        "result": "Aufleuchtende Sequenz einprägen und in exakter Reihenfolge antippen"
+                        "result": "Bei Erfolg Level +1 und ein Schritt mehr (10 s Eingabezeit)"
                 },
                 {
                         "num": "2",
-                        "text": "Raster- & Spannen-Progression",
+                        "text": "Raster wächst",
                         "highlight": "3x3 → 7x7",
-                        "result": "Mit steigendem Level wachsen Rastergröße und Pfadlänge"
+                        "result": "Mit längeren Pfaden wird das Raster automatisch größer"
                 },
                 {
                         "num": "3",
                         "text": "Fehlklick / Zeitablauf",
-                        "highlight": "Keine Strafpunkte",
-                        "result": "Kein Punkte- oder Zeitverlust; Runde wird wiederholt"
+                        "highlight": "Kein Abzug",
+                        "result": "Kein Punkte- oder Zeitverlust; neuer Pfad gleicher Länge"
                 },
                 {
                         "num": "4",
-                        "text": "Level bleibt stabil",
+                        "text": "Level bleibt",
                         "highlight": "Kein Abstieg",
-                        "result": "Schwierigkeit sinkt nicht, sodass Sie Ihre Vektor-Chunking-Strategie festigen können"
+                        "result": "Das Level sinkt nie; die 60 Sekunden laufen nur während der Eingabe"
                 }
         ]
 }}

@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de memoria visual online | SkillDrills",
-  description: "Pon a prueba tu memoria visual online: memoriza patrones iluminados en una cuadrícula y reprodúcelos directamente en el navegador.",
-  keywords: ['test de memoria visual', 'memoria visual test', 'test de memoria espacial', 'juego de memoria visual', 'matriz de memoria', 'memoria visoespacial', 'patrones visuales', 'memoria de trabajo visual', 'test de memoria online', 'entrenamiento de memoria visual'],
+  description: "Test de memoria visual online gratis: memoriza las casillas que se iluminan 1,5 segundos en la cuadrícula y repite el patrón, de 4x4 hasta 12 casillas en 5x5.",
+  keywords: ['test de memoria visual', 'test de memoria visual online', 'memoria visual test', 'matriz de memoria', 'memoria visoespacial', 'patrones visuales', 'memoria de trabajo visual', 'test de memoria online', 'entrenamiento de memoria visual'],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de memoria visual online | SkillDrills",
-    description: "Pon a prueba tu memoria visual online: memoriza patrones iluminados en una cuadrícula y reprodúcelos directamente en el navegador.",
+    description: "Test de memoria visual online gratis: memoriza las casillas que se iluminan 1,5 segundos en la cuadrícula y repite el patrón, de 4x4 hasta 12 casillas en 5x5.",
     type: 'website',
     url: 'https://skilldrills.online/es/drills/memory/spatial-memory/grid-memorization',
     siteName: 'SkillDrills',
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de memoria visual online | SkillDrills",
-    description: "Pon a prueba tu memoria visual online: memoriza patrones iluminados en una cuadrícula y reprodúcelos directamente en el navegador.",
+    description: "Test de memoria visual online gratis: memoriza las casillas que se iluminan 1,5 segundos en la cuadrícula y repite el patrón, de 4x4 hasta 12 casillas en 5x5.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -50,7 +50,7 @@ const webAppSchema = {
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "sameAs": "https://es.wikipedia.org/wiki/Memoria_espacial",
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -58,8 +58,8 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Test de Memoria Visual Online (Juego de Cuadrícula)",
   "url": "https://skilldrills.online/es/drills/memory/spatial-memory/grid-memorization",
-  "description": "Evaluación neurocognitiva interactiva que mide la retención visoespacial, el agrupamiento mental de figuras y la capacidad de almacenamiento de patrones matriciales.",
-  "dateModified": "2026-09-11",
+  "description": "Test de memoria visual gratis en el navegador: memoriza las casillas que se iluminan 1,5 segundos en una cuadrícula de 4x4 a 5x5 y repite el patrón.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Memory Game", "Cognitive Training", "Brain Training", "Spatial Memory"],
   "playMode": "SinglePlayer",
@@ -77,7 +77,7 @@ const softwareSchema = {
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
@@ -85,7 +85,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo entrenar la memoria visual en cuadrículas matriciales",
-  "description": "Protocolo sistemático de cuatro pasos para codificar, agrupar y reconstruir con precisión patrones espaciales en la memoria de trabajo.",
+  "description": "Cuatro pasos prácticos para retener en 1,5 segundos un patrón de casillas iluminadas y repetirlo en la cuadrícula.",
   "step": [
     {
       "@type": "HowToStep",
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "¿Qué es un test de memoria visual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un test de memoria visual evalúa la memoria de trabajo visoespacial: tu capacidad para percibir, codificar y retener temporalmente patrones visuales y coordenadas espaciales sin recurrir a la repetición verbal interna."
+        "text": "Aquí es un ejercicio de memoria de trabajo visoespacial: memorizas qué casillas se iluminan en la cuadrícula y luego las pulsas de memoria, sin repetir las posiciones con palabras. Es un juego de práctica gratuito, no una prueba clínica ni un psicotécnico oficial."
       }
     },
     {
@@ -139,15 +139,15 @@ const faqSchema = {
       "name": "¿Cómo funciona el ejercicio de memoria en cuadrícula?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En una cuadrícula de 4x4 o 5x5 se ilumina un conjunto de casillas durante 1,5 segundos. Al apagarse, debes pulsar exactamente las mismas casillas. A medida que aciertas, el número de casillas y la matriz aumentan de tamaño."
+        "text": "En una cuadrícula de 4x4 se iluminan 5 casillas en morado durante 1,5 segundos. Al apagarse, pulsas todas las que estaban encendidas. Cada patrón completo suma 150 puntos y añade una casilla. Tras 7 casillas en 4x4, pasas a 5x5 (de 5 a un máximo de 12 casillas). El reloj de 60 segundos solo corre mientras repites el patrón."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué es el Visual Patterns Test (VPT)?",
+      "name": "¿Es esto el Visual Patterns Test (VPT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Diseñado en 1997 por Sergio Della Sala, Robert H. Logie y colaboradores, el Visual Patterns Test (VPT) es una prueba neuropsicológica de referencia para medir la memoria visual a corto plazo puramente estática, aislada de movimientos motores secuenciales."
+        "text": "No. El Visual Patterns Test (Della Sala et al., 1997) es una prueba neuropsicológica de investigación con patrones en cuadrícula. Este ejercicio es un juego de práctica gratuito con un formato parecido, pero no sigue su procedimiento ni sus normas."
       }
     },
     {
@@ -160,10 +160,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿Cuál es la puntuación media de memoria visual en adultos?",
+      "name": "¿Cómo se calcula la puntuación?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Los estudios normativos de Della Sala et al. (1997, 1999) demuestran que un adulto promedio retiene patrones de 6 a 8 casillas en matrices de 4x4 a 5x5. Puntuaciones superiores a 10-14 casillas corresponden a personas con técnicas avanzadas de chunking geométrico."
+        "text": "Cada patrón repetido por completo suma 150 puntos. La nota de la pantalla de resultados es una franja de práctica de SkillDrills con 1.150 puntos como referencia superior; no es una media ni un valor normativo."
       }
     },
     {
@@ -187,7 +187,7 @@ const faqSchema = {
       "name": "¿Por qué los patrones se olvidan tan rápido tras 1,5 segundos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La memoria sensorial icónica se desvanece en 250-500 milisegundos. Si el patrón no se traslada rápidamente a la memoria de trabajo mediante chunking o trazado mental, la huella visual es sobreescrita por nueva información sensorial."
+        "text": "En este ejercicio la exposición dura siempre 1,5 segundos. La memoria icónica conserva la imagen muy poco tiempo; lo que no agrupes en figuras o en una línea imaginaria en ese intervalo suele perderse antes de pulsar."
       }
     },
     {
@@ -195,7 +195,7 @@ const faqSchema = {
       "name": "¿Hay penalizaciones de puntuación por hacer clic en una casilla errónea?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Pulsar una casilla incorrecta no resta puntos ni reduce el tiempo restante. La ronda se reinicia en el mismo nivel de dificultad para que puedas entrenar en tu umbral de rendimiento sin frustración."
+        "text": "No. Una casilla incorrecta solo termina la ronda actual, sin restar puntos ni tiempo. Después aparece un patrón nuevo en el mismo nivel."
       }
     },
     {
@@ -203,7 +203,7 @@ const faqSchema = {
       "name": "¿Cómo ayuda la memoria visual en los videojuegos y la vida cotidiana?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Mejora la lectura del minimapa en juegos de disparos tácticos (Valorant, CS2), acelera la comprensión de planos arquitectónicos y esquemas técnicos, y potencia la capacidad de rotación mental tridimensional en disciplinas STEM."
+        "text": "El ejercicio se parece a situaciones en las que ves una disposición un instante y tienes que recordarla, como el minimapa o un tablero de ajedrez. No se garantiza una mejora en otras actividades."
       }
     }
   ]
@@ -211,57 +211,30 @@ const faqSchema = {
 
 const gridGuide = {
   intro: [
-  "El Test de Memoria Visual (Grid Memorization / Memory Matrix) es una herramienta neurocognitiva diseñada para medir la memoria de trabajo visoespacial, la capacidad de codificación de patrones y la retención matricial a corto plazo. A diferencia de las pruebas verbales que emplean la repetición acústica, este ejercicio aísla la arquitectura visual no verbal del cerebro.",
-  "El estudio clínico del span visoespacial fue iniciado por Pietro Corsi (1972) con el test de bloques de Corsi, demostrando que la memoria visoespacial opera en un sistema neural independiente del span de dígitos verbales (Milner, 1971). En 1997, Sergio Della Sala, Robert H. Logie y colaboradores desarrollaron el Visual Patterns Test (VPT) para aislar la retención de patrones matriciales estáticos respecto a movimientos secuenciales dinámicos.",
+  "Este test de memoria visual online muestra durante 1,5 segundos unas casillas iluminadas en una cuadrícula y luego repites el patrón de memoria. Empiezas con 5 casillas en una cuadrícula de 4x4; cada patrón correcto añade una casilla y en la cuadrícula de 5x5 se llega hasta 12 casillas. Se trata de recordar la forma del patrón, no de describirlo con palabras.",
+  "El estudio clínico del span visoespacial fue iniciado por Pietro Corsi (1972) con el test de bloques de Corsi, demostrando que la memoria visoespacial opera en un sistema neural independiente del span de dígitos verbales (Milner, 1971). En 1997, Sergio Della Sala, Robert H. Logie y colaboradores publicaron el Visual Patterns Test (VPT) para aislar la retención de patrones matriciales estáticos respecto a movimientos secuenciales dinámicos. Este ejercicio usa un formato parecido, pero no es el VPT.",
   "En la neurociencia cognitiva moderna, Robert H. Logie (1995) y Alan Baddeley (2000) subdividieron la agenda visoespacial en el 'Caché Visual' (almacén pasivo de forma, color y patrones estáticos) y el 'Escriba Interno' (mecanismo activo de planificación y repaso espacial). Además, investigaciones de Steven J. Luck & Edward K. Vogel (1997) y Nelson Cowan (2001) confirmaron que la memoria de trabajo visual pura está limitada a 3 o 4 elementos independientes. Expandir este límite exige aplicar chunking espacial: agrupar casillas en figuras Gestalt completas.",
-  "Calibrado con precisión cronométrica digital (Woods et al., 2015), este ejercicio cuenta con una exposición estandarizada de 1,5 segundos y un escalado adaptativo de dificultad para calcular con rigor tu límite de retención visoespacial.",
-  "Cómo se mide: cada interacción se registra con el reloj de alta resolución performance.now() del navegador, ejecutándose 100% en tu dispositivo local. Los temporizadores del navegador se sincronizan con la tasa de refresco de pantalla (~16,7 ms a 60 Hz; Woods et al., 2015). Las diferencias inferiores a 5 ms corresponden a variaciones normales del hardware, por lo que recomendamos comparar tus propios registros en el mismo equipo.",
-  "Transparencia de datos: SkillDrills no recopila ni almacena puntuaciones en servidores externos. Tus datos se guardan exclusivamente en el localStorage de tu navegador. Todos los valores de referencia proceden de investigaciones científicas publicadas.",
+  "Cómo funciona: cada patrón se muestra 1,5 segundos. El reloj de 60 segundos solo corre mientras repites el patrón. Un patrón completo suma 150 puntos; una casilla incorrecta termina la ronda sin restar puntos ni tiempo, y aparece un patrón nuevo en el mismo nivel. No se mide el tiempo de reacción.",
+  "Datos: tu puntuación y tu récord se guardan solo en el localStorage del navegador y no se envían a ningún servidor.",
   "Este ejercicio es un juego cognitivo gratuito orientado a la práctica y el entrenamiento mental; no es un dispositivo médico ni una prueba diagnóstica clínica. Si tienes dudas sobre tu salud cognitiva, consulta con un profesional médico."
 ],
   benchmarks: {
-    title: "Baremos normativos de retención de patrones visoespaciales",
-    headers: ["Nivel de Rendimiento", "Span de Patrón (Celdas)", "Puntuación", "Perfil Cognitivo y Chunking"],
+    title: "Franjas de práctica SkillDrills (una partida)",
+    headers: ["Franja", "Puntos", "Patrones completos", "Dificultad alcanzada"],
     rows: [
-  [
-    "Etapa 1",
-    "10 – 14+ Celdas",
-    "1.150+ Puntos",
-    "Rendimiento visoespacial avanzado; descompone patrones complejos en 2-3 primitivas geométricas Gestalt; retención en caché visual impecable; cadencia de clic menor a 450 ms."
-  ],
-  [
-    "Etapa 2",
-    "8 – 9 Celdas",
-    "850 – 1.149 Puntos",
-    "Supera el promedio adulto; ejecuta chunking geométrico rápido (formas de 'L', tríadas); resistente a la interferencia visual; cadencia de 450 a 650 ms."
-  ],
-  [
-    "Etapa 3",
-    "6 – 7 Celdas",
-    "550 – 849 Puntos",
-    "Línea base de la población adulta sana (Della Sala et al., 1997); gestiona agrupaciones simples; pierde celdas periféricas en cuadrículas de 5x5; cadencia de 650 a 900 ms."
-  ],
-  [
-    "Etapa 4",
-    "5 Celdas",
-    "350 – 549 Puntos",
-    "Opera en el límite fisiológico sin chunking (Cowan, 2001); intenta memorizar celdas individuales sin agrupar figuras; cadencia de 900 a 1.200 ms."
-  ],
-  [
-    "Etapa 5",
-    "< 5 Celdas",
-    "< 350 Puntos",
-    "Rápido desvanecimiento de la huella visual; vulnerabilidad al ruido perceptual; dificultad para retener más de 4 celdas tras 1,5s; cadencia superior a 1.200 ms."
-  ]
-],
-    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. El span de celdas refleja la configuración máxima de casillas completada con éxito durante la sesión de 45 segundos (Della Sala et al., 1997; Woods et al., 2015)."
+      ["Franja alta", "1.200 o más", "8 o más", "Cuadrícula 5x5, 10 a 12 casillas"],
+      ["Franja media", "600 – 1.050", "4 – 7", "Cuadrícula 5x5, 6 a 9 casillas"],
+      ["Franja inicial", "150 – 450", "1 – 3", "4x4 con 6 a 7 casillas; tras 3 patrones, 5x5"],
+      ["Inicio", "0", "0", "Cuadrícula 4x4, 5 casillas"]
+    ],
+    note: "Puntos = patrones completos × 150. Las franjas se calculan a partir de las reglas del juego: son referencias de práctica de SkillDrills, no estadísticas de población ni normas clínicas."
   },
   techniques: {
     title: "Técnicas comprobadas para ampliar la memoria visual matricial",
     items: [
   {
     "name": "Agrupamiento de formas espaciales (Chunking Gestalt)",
-    "desc": "Agrupa mentalmente las celdas encendidas contiguas en formas geométricas familiares como triángulos, líneas, cuadrados o letras (Wertheimer, 1923; Della Sala et al., 1999). Convertir 7 coordenadas en 2 figuras geométricas reduce la carga cognitiva en más de un 60 %.",
+    "desc": "Agrupa mentalmente las celdas encendidas contiguas en formas geométricas familiares como triángulos, líneas, cuadrados o letras (Wertheimer, 1923; Della Sala et al., 1999). Convertir 7 coordenadas en 2 o 3 figuras reduce el número de unidades que hay que recordar.",
     "tips": "Busca esquinas y líneas continuas de inmediato en lugar de observar casillas aisladas."
   },
   {
@@ -290,7 +263,7 @@ const gridGuide = {
 ],
   audience: "Jugadores de esports que buscan mejorar su visión de minimapa, estudiantes de carreras técnicas o arquitectura, ajedrecistas, radiólogos y cualquier persona interesada en entrenar su memoria visoespacial.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
+  sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971'),
   related: [
   {
     "href": "/es/drills/memory/working-memory/n-back",
@@ -344,7 +317,7 @@ export default function LocalizedGridMemorizationPage() {
       />
       <GridMemorizationClient copy={{
         "h1Keyword": "Test de memoria visual online",
-        "h1Suffix": " – Matriz de memoria",
+        "h1Suffix": "",
         "subtitle": "Memoriza patrones iluminados en una cuadrícula",
         "caption": "La memoria de trabajo visual almacena aproximadamente cuatro objetos distintos a la vez; el cuello de botella es la cantidad de objetos y no el nivel de detalle (Luck & Vogel, 1997). Las cuadrículas matriciales estáticas evalúan el 'caché visual', el almacén pasivo de formas y disposición espacial (Logie, 1995).",
         "statScore": "Puntos",
@@ -375,19 +348,19 @@ export default function LocalizedGridMemorizationPage() {
                         "num": "2",
                         "text": "Progresión de Nivel",
                         "highlight": "4x4 → 5x5",
-                        "result": "La dificultad y el tamaño del tablero aumentan gradualmente"
+                        "result": "Una casilla más por patrón correcto, hasta 12 casillas en 5x5"
                 },
                 {
                         "num": "3",
-                        "text": "Error / Tiempo límite",
+                        "text": "Error",
                         "highlight": "Sin Penalización",
-                        "result": "No se descuentan puntos ni tiempo por fallar una casilla"
+                        "result": "La ronda termina, sin restar puntos ni tiempo"
                 },
                 {
                         "num": "4",
                         "text": "Nivel Estable",
                         "highlight": "Mantiene Nivel",
-                        "result": "Un fallo repite la ronda sin descender en dificultad"
+                        "result": "Tras un fallo, un patrón nuevo en el mismo nivel"
                 }
         ]
 }} />

@@ -158,7 +158,7 @@ const howToSchema = {
       "position": 3,
       "url": "https://skilldrills.online/drills/cognitive/focus/distraction-fighter#step-3",
       "name": "Avoid Impulse Tapping",
-      "text": "Do not rush. Clean matches add +0.6s to the clock. Incorrect selections and timeouts reset your combo and deduct 0.8s when time penalty is enabled in settings; neither ends the run early."
+      "text": "Do not rush. Clean matches add 2 seconds to the clock (capped at 60 seconds). Incorrect selections and timeouts reset your combo and cost 1 second; neither ends the run early."
     },
     {
       "@type": "HowToStep",

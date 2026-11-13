@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de Concentración | Atención Sostenida | SkillDrills",
-  description: "Test gratis de concentración en navegador: evalúa atención sostenida, control inhibitorio y cambios de regla. No es diagnóstico clínico.",
+  description: "Test de concentración online gratis de 45 segundos: evalúa atención sostenida, control inhibitorio y cambios de regla. No es diagnóstico clínico.",
   keywords: [
     "test de concentración",
     "test de concentración gratis",
@@ -24,7 +24,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Concentración | Atención Sostenida | SkillDrills",
-    description: "Test gratis de concentración en navegador: evalúa atención sostenida, control inhibitorio y cambios de regla. No es diagnóstico clínico.",
+    description: "Test de concentración online gratis de 45 segundos: evalúa atención sostenida, control inhibitorio y cambios de regla. No es diagnóstico clínico.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de Concentración | Atención Sostenida | SkillDrills",
-    description: "Test gratis de concentración en navegador: evalúa atención sostenida, control inhibitorio y cambios de regla. No es diagnóstico clínico.",
+    description: "Test de concentración online gratis de 45 segundos: evalúa atención sostenida, control inhibitorio y cambios de regla. No es diagnóstico clínico.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -84,7 +84,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test de concentración y atención sostenida online gratis: Mide decaimiento de vigilancia, foco visual continuo y control inhibitorio sin registro.",
+  "description": "Test de concentración online gratis de 45 segundos: responde solo a las vocales o a los números primos de la regla activa y entrena la atención sostenida.",
   "url": "https://skilldrills.online/es/drills/cognitive/attention/concentration-stamina",
   "publisher": {
     "@type": "Organization",
@@ -92,7 +92,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "es-ES",
-      "dateModified": "2026-09-20"
+      "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -109,7 +109,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/cognitive/attention/concentration-stamina",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -117,7 +117,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Juego de Resistencia de Foco y Concentración",
   "url": "https://skilldrills.online/es/drills/cognitive/attention/concentration-stamina",
-  "description": "Test de concentración y atención sostenida online gratis: Mide decaimiento de vigilancia, foco visual continuo y control inhibitorio sin registro.",
+  "description": "Test de concentración online gratis de 45 segundos: responde solo a las vocales o a los números primos de la regla activa y entrena la atención sostenida.",
   "genre": [
     "Action",
     "Brain Game",
@@ -145,7 +145,7 @@ const faqSchema = {
       "name": "¿Qué es el Test de Atención Sostenida y Resistencia de Concentración?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es una prueba de rendimiento continuo (CPT) que valora la capacidad del cerebro para mantener un estado de alerta óptimo, detectar señales infrecuentes y suprimir distracciones."
+        "text": "Es un ejercicio de 45 segundos con formato CPT (tarea de rendimiento continuo): aparecen letras y números en secuencia y solo respondes a los que cumplen la regla activa (vocales o números primos), ignorando el resto. No es un test clínico ni una herramienta de diagnóstico."
       }
     },
     {
@@ -153,7 +153,7 @@ const faqSchema = {
       "name": "¿Qué significa el decaimiento de vigilancia (Mackworth, 1948)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es la disminución sistemática en la tasa de detección de estímulos tras periodos prolongados de atención continua, ocasionada por el agotamiento de recursos atencionales."
+        "text": "Mackworth (1948) observó en operadores de radar que la detección de señales poco frecuentes baja a medida que la vigilancia se alarga. Este test dura solo 45 segundos: no reproduce ese decaimiento, sino que entrena la concentración a ritmo rápido."
       }
     },
     {
@@ -161,15 +161,15 @@ const faqSchema = {
       "name": "¿Por qué cambian las reglas de clasificación periódicamente?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La alternancia entre reglas (ej: vocales vs números primos) exige a la corteza prefrontal reconfigurar la memoria de trabajo y evitar automatismos mecánicos (Monsell, 2003)."
+        "text": "Cada 10 segundos la regla alterna entre vocales (A E I O U) y números primos (2 3 5 7). Así entrenas el paso inmediato a un nuevo criterio (cambio de tarea, Monsell, 2003)."
       }
     },
     {
       "@type": "Question",
-      "name": "¿En qué se diferencia de una prueba de reacción motora simple?",
+      "name": "¿Cómo se calcula la puntuación?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Evalúa la resistencia temporal del foco y la tasa de errores de comisión (pulsar ante estímulos incorrectos) y omisión (no pulsar ante objetivos válidos)."
+        "text": "La puntuación no mide tiempo de reacción en milisegundos: cuenta los aciertos (+100 puntos), los objetivos no respondidos (omisiones) y las falsas alarmas (comisiones). Precisión = aciertos ÷ (aciertos + omisiones + falsas alarmas)."
       }
     },
     {
@@ -177,15 +177,15 @@ const faqSchema = {
       "name": "¿Cómo saber si mi concentración está decayendo durante la prueba?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un incremento abrupto en los tiempos de respuesta o fallos frecuentes por precipitación reflejan cansancio y pérdida de vigilancia ejecutiva."
+        "text": "En este test, la caída de concentración se ve en los objetivos no respondidos y en las falsas alarmas. Cada falsa alarma muestra un destello rojo y bloquea la respuesta durante 1 segundo; no se restan puntos."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Es beneficioso para personas con dificultades atencionales o TDAH?",
+      "name": "¿Este test puede detectar el TDAH?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, las evaluaciones de tipo CPT entrenan activamente el control inhibitorio y la capacidad de perseverar en tareas monótonas de alta exigencia."
+        "text": "No. Es un ejercicio de práctica no clínico: no detecta ni diagnostica ningún trastorno de atención y no sustituye la valoración de un profesional sanitario."
       }
     },
     {
@@ -193,7 +193,7 @@ const faqSchema = {
       "name": "¿Cuál es la frecuencia ideal de práctica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Una sesión diaria de 10 a 15 minutos previa a jornadas de estudio o trabajo exigente fortalece la resistencia mental y el foco sostenido."
+        "text": "Unas cuantas partidas (45 segundos cada una) antes de estudiar o trabajar son suficientes; compara tus puntuaciones a la misma hora y en el mismo dispositivo. No se garantiza una mejora en la vida diaria."
       }
     },
     {
@@ -209,7 +209,7 @@ const faqSchema = {
       "name": "¿Qué significan los niveles de rendimiento obtenidos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Comparan tu índice de estabilidad atencional y precisión con baremos normalizados de baterías neuropsicológicas estandarizadas."
+        "text": "Son etapas de práctica de SkillDrills basadas en tu precisión, para comparar tus propias sesiones. No se basan en baremos, datos normativos ni estudios clínicos."
       }
     },
     {
@@ -227,7 +227,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo Realizar el Test de Concentración Continua",
-  "description": "Test de concentración y atención sostenida online gratis: Mide decaimiento de vigilancia, foco visual continuo y control inhibitorio sin registro.",
+  "description": "Test de concentración online gratis de 45 segundos: responde solo a las vocales o a los números primos de la regla activa y entrena la atención sostenida.",
   "step": [
     {
       "@type": "HowToStep",
@@ -247,7 +247,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Pulsa Únicamente ante Objetivos Válidos",
-      "text": "Acciona la tecla o pulsa la pantalla con rapidez y precisión solo cuando el carácter cumpla la condición activa.",
+      "text": "Haz clic, toca la pantalla o pulsa Espacio o Intro solo cuando el carácter cumpla la regla activa.",
       "url": "https://skilldrills.online/es/drills/cognitive/attention/concentration-stamina#step-3"
     },
     {
@@ -265,13 +265,13 @@ const guideProps = {
   intro: {
     title: "Test de Concentración y Atención Sostenida: Guía",
     paragraphs: [
-      "Este test gratis de concentración registra atención sostenida, control inhibitorio y cambios de regla como una autoevaluación no clínica. El resultado varía según el estado del día y la familiaridad y no sustituye una evaluación profesional.",
-      "Las investigaciones clásicas de Norman Mackworth (1948) con operadores de radar revelaron que la detección de señales decae de forma crítica a partir de los 20-30 minutos por agotamiento de recursos noradrenérgicos en el córtex prefrontal (Parasuraman, 1979; Robertson et al., 1997).",
-      "Este ejercicio desafía adicionalmente la resistencia ejecutiva mediante el cambio dinámico de consignas cada 10 segundos, obligando al cerebro a reiniciar los conjuntos de tareas activas (Monsell, 2003).",
+      "Este test de concentración online gratis de 45 segundos registra atención sostenida, control inhibitorio y cambios de regla como una autoevaluación no clínica. El resultado varía según el estado del día y la familiaridad y no sustituye una evaluación profesional.",
+      "Mackworth (1948) observó en operadores de radar que la detección de señales poco frecuentes baja a medida que la vigilancia se alarga, y la caída es mayor cuando los eventos son rápidos (Parasuraman, 1979). Este test condensa el ejercicio en 45 segundos.",
+      "Cada 10 segundos la regla alterna entre vocales y números primos: hay que abandonar el criterio anterior y aplicar el nuevo al instante (Monsell, 2003).",
     ],
   },
   benchmarks: {
-    title: 'Estándares de Rendimiento Cognitivo & Baremos de Atención Sostenida (CPT)',
+    title: 'Etapas de Práctica de Atención Sostenida (CPT)',
     headers: ['Nivel', 'Categoría', 'Rango de Rendimiento', 'Precisión', 'Marcador de práctica'],
     note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas.",
 
@@ -285,11 +285,11 @@ const guideProps = {
   },
   protocols: {
     title: 'Protocolos de Resistencia Atencional y Foco',
-    description: 'Estrategias basadas en la neurociencia para optimizar la perseverancia mental y evitar distracciones.',
+    description: 'Pautas de práctica para mantener el foco durante toda la partida y evitar distracciones.',
     items: [
       { title: "Consulta la Regla Activa Inicial", description: "Verifica en el banner superior cuál es el criterio que define un objetivo válido (ejemplo: Vocales o Números Primos)." },
       { title: "Mantén la Mirada Fija y Atenta", description: "Observa el flujo sucesivo de caracteres sin apartar la atención del centro del panel interactivo." },
-      { title: "Pulsa Únicamente ante Objetivos Válidos", description: "Acciona la tecla o pulsa la pantalla con rapidez y precisión solo cuando el carácter cumpla la condición activa." },
+      { title: "Pulsa Únicamente ante Objetivos Válidos", description: "Haz clic, toca la pantalla o pulsa Espacio o Intro solo cuando el carácter cumpla la regla activa." },
       { title: "Adáptate a la Inversión de Reglas", description: "Cada 10 segundos, reconfigura tu criterio mental sin titubear cuando el cartel superior indique la nueva condición." },
     ],
   },
@@ -332,7 +332,7 @@ export default function EnhancedPageEs() {
       <ConcentrationStaminaClient copy={{
         title: "Test de Concentración | Atención Sostenida", subtitle: "Autoevaluación no clínica de foco continuo, detección de objetivos y control inhibitorio",
         statScore: "Puntos", statTime: "Tiempo", statLevel: "Nivel", statBest: "Mejor puntuación", ruleLabel: "Regla", vowels: "Vocales (A E I O U)", primes: "Primos (2 3 5 7)", startTitle: "Test de Concentración", startSubtitle: "Atención sostenida • Entrenamiento tipo CPT", getReady: "Prepárate", flashTitle: "Flash de error", soundTitle: "Sonido", newBest: "Nuevo récord", points: "Puntos", accuracy: "Precisión", misses: "Errores", peakLevel: "Nivel máximo", playAgain: "Jugar de nuevo", shareScore: "Compartir puntuación", exitDrill: "Salir del ejercicio",
-        caption: "Responde solo a los estímulos que coinciden con la regla activa y filtra las distracciones cuando cambie.", rulesTitle: "Instrucciones y sistema de puntuación", ruleItems: [{ text: "Regla objetivo", highlight: "Cambia cada 10 s", result: "Vocales ↔ Primos" }, { text: "Acierto", highlight: "+100 PTS", result: "Pulsa o usa espacio" }, { text: "No objetivo", highlight: "Inhibir", result: "Ignora el que no coincide" }, { text: "Falsa alarma", highlight: "Penalización", result: "Afecta a la precisión" }],
+        caption: "Responde solo a los estímulos que coinciden con la regla activa y filtra las distracciones cuando cambie.", rulesTitle: "Instrucciones y sistema de puntuación", ruleItems: [{ text: "Regla objetivo", highlight: "Cambia cada 10 s", result: "Vocales ↔ Primos" }, { text: "Acierto", highlight: "+100 PTS", result: "Clic/toque, Espacio o Intro" }, { text: "No objetivo", highlight: "Inhibir", result: "Ignora el que no coincide" }, { text: "Falsa alarma", highlight: "Bloqueo de 1 s", result: "Afecta a la precisión" }],
         aboutTitle: "Sobre el test de concentración", aboutLead: "La atención sostenida puede disminuir al vigilar señales poco frecuentes durante mucho tiempo. Este test breve registra cambios de regla, detección y errores como autoevaluación no clínica.", aboutText: "La atención sostenida permite seleccionar señales relevantes dentro de una secuencia repetitiva. Repítelo en las mismas condiciones y observa cómo cambian tus puntos y errores.\n\nEl sueño, el estrés, la pantalla y la familiaridad influyen en el resultado; no sustituye una evaluación profesional.", audienceTitle: "¿Para quién es útil?", audienceText: "Para estudiantes antes de exámenes largos, jugadores que buscan mantener la precisión y personas que necesitan concentrarse durante periodos prolongados.", skillsTitle: "Habilidades entrenadas", skillsText: "Atención sostenida, detección de objetivos, vigilancia bajo fatiga y control de impulsos.", flexibilityTitle: "Flexibilidad cognitiva", flexibilityText: "Cambiar entre vocales y números primos cada 10 segundos entrena la alternancia rápida entre reglas."
       }} />
       <DrillGuide {...guideProps} />

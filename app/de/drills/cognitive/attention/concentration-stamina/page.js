@@ -79,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "de-DE",
-      "dateModified": "2026-09-20"
+      "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -96,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/cognitive/attention/concentration-stamina",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -132,7 +132,7 @@ const faqSchema = {
       "name": "Was ist ein Continuous Performance Test (CPT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein neuropsychologisches Messverfahren zur Erfassung der Daueraufmerksamkeit (Vigilanz) und inhibitorischen Impulskontrolle uber langere Zeitintervalle."
+        "text": "Ein CPT ist ein Aufgabenformat, bei dem man in einer schnellen Reizfolge nur auf Zielreize reagiert und alle anderen ignoriert. Dieser Konzentrationstest nutzt das Format als 45-Sekunden-Übung; er ist kein standardisiertes neuropsychologisches Verfahren und kein Diagnosetest."
       }
     },
     {
@@ -140,7 +140,7 @@ const faqSchema = {
       "name": "Was besagt der Mackworth-Vigilanzabfall (1948)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dass die menschliche Signalerkennungsleistung bei monotoner Uberwachung bereits nach 20 bis 30 Minuten drastisch nachlasst."
+        "text": "Mackworth (1948) beobachtete bei Radarbeobachtern, dass die Trefferquote für seltene Signale mit zunehmender Überwachungsdauer sinkt. Eine Runde dieses Tests dauert nur 45 Sekunden; sie bildet diesen Effekt nicht nach, sondern übt Konzentration bei schnellem Reiztempo."
       }
     },
     {
@@ -148,7 +148,7 @@ const faqSchema = {
       "name": "Warum wechseln die Regeln zwischen Vokalen und Primzahlen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Weil das standige Umschalten alle 10 Sekunden das Arbeitsgedachtnis fordert und task-set inertia (Monsell, 2003) uberwinden muss."
+        "text": "Alle 10 Sekunden wechselt die Zielregel zwischen Vokalen (A E I O U) und Primzahlen (2 3 5 7). So übst du, sofort auf das neue Kriterium umzuschalten (Aufgabenwechsel, Monsell, 2003)."
       }
     },
     {
@@ -156,7 +156,7 @@ const faqSchema = {
       "name": "Unterschied zwischen selektiver und Daueraufmerksamkeit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Selektive Aufmerksamkeit blendet Storungen aus (Broadbent, 1958), wahrend Daueraufmerksamkeit die zeitliche Ausdauer dieser Filterfunktion darstellt."
+        "text": "Selektive Aufmerksamkeit blendet Störungen aus (Broadbent, 1958), wahrend Daueraufmerksamkeit die zeitliche Ausdauer dieser Filterfunktion darstellt."
       }
     },
     {
@@ -164,7 +164,7 @@ const faqSchema = {
       "name": "Was bedeuten viele Fehlalarme (False Alarms)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein Hinweis auf unzureichende inhibitorische Kontrolle und impulsive Handlungsmuster (Robertson et al., 1997)."
+        "text": "Ein Fehlalarm ist eine voreilige Reaktion auf ein Zeichen, das nicht zur Regel passt; solche Fehler sind typisch für Hemmungsaufgaben (Robertson et al., 1997). Hier sperrt jeder Fehlalarm die Eingabe für 1 Sekunde und senkt die Genauigkeit; Punkte werden nicht abgezogen."
       }
     },
     {
@@ -172,23 +172,23 @@ const faqSchema = {
       "name": "Kann man mentale Ausdauer trainieren?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, gezielte Vigilanzdrills starken die frontalen Aufmerksamkeitsnetzwerke gegen kognitive Ermudung."
+        "text": "Mit Wiederholung unter gleichen Bedingungen steigen Punkte und Genauigkeit in dieser Aufgabe oft durch Übung. Eine bessere Konzentration im Alltag ist dadurch nicht garantiert. Mit jedem Treffer steigt das Level und die Zeichen werden kürzer angezeigt."
       }
     },
     {
       "@type": "Question",
-      "name": "Welchen Einfluss hat korperliche Fitness?",
+      "name": "Welchen Einfluss hat die Tagesform?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ausdauertraining steigert die zerebrale Durchblutung und erhoht die kognitive Belastbarkeit deutlich."
+        "text": "Schlaf, Pausen und Tagesform beeinflussen das Ergebnis. Vergleiche Runden am besten zur gleichen Tageszeit und unter ähnlichen Bedingungen."
       }
     },
     {
       "@type": "Question",
-      "name": "Hardware-Prazision bei CPT-Tests?",
+      "name": "Spielt die Hardware eine Rolle?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Moderne 144Hz-Displays eliminieren Frame-Jitter (Woods et al., 2015) und sichern exakte millisekundengenaue Erfassung."
+        "text": "Der Test wertet keine Reaktionszeiten in Millisekunden aus, sondern nur Treffer, verpasste Ziele und Fehlalarme; die Bildwiederholrate spielt daher eine kleine Rolle. Auf hohen Levels erscheint ein Zeichen nur etwa 0,26 Sekunden, ein Display mit geringer Verzögerung hilft also beim Erkennen (Woods et al., 2015)."
       }
     },
     {
@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "Empfohlene Trainingsfrequenz?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "10 Minuten vor anspruchsvollen Lern- oder Arbeitsphasen bringen das Gehirn in optimalen Fokus."
+        "text": "Spiele vor dem Lernen oder Arbeiten ein paar Runden (je 45 Sekunden) und vergleiche Punkte und Genauigkeit zur gleichen Tageszeit auf dem gleichen Gerät."
       }
     },
     {
@@ -227,21 +227,21 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 2,
       "name": "Aufblitzende Reize blitzschnell bewerten",
-      "text": "Prufen Sie jeden erscheinenden Buchstaben bzw. jede Ziffer gegen das aktive Kriterium.",
+      "text": "Prüfen Sie jeden erscheinenden Buchstaben bzw. jede Ziffer gegen das aktive Kriterium.",
       "url": "https://skilldrills.online/de/drills/cognitive/attention/concentration-stamina#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Prazise reagieren und Fehlimpulse unterdrucken",
-      "text": "Tippen Sie nur bei exakter Ubereinstimmung und lassen Sie unpassende Zeichen verstreichen.",
+      "name": "Präzise reagieren und Fehlimpulse unterdrücken",
+      "text": "Klicken oder tippen Sie nur bei exakter Übereinstimmung (alternativ Space oder Enter) und lassen Sie unpassende Zeichen verstreichen.",
       "url": "https://skilldrills.online/de/drills/cognitive/attention/concentration-stamina#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Blitzschneller Regelwechsel nach 10 Sekunden",
-      "text": "Stellen Sie sich sofort auf das neue Kriterium um, ohne in alte Reaktionsmuster zu verfallen.",
+      "text": "Achten Sie beim Wechsel auf die Regelanzeige oben und stellen Sie sich sofort auf das neue Kriterium um.",
       "url": "https://skilldrills.online/de/drills/cognitive/attention/concentration-stamina#step-4"
     }
   ]
@@ -252,9 +252,9 @@ const guideProps = {
   intro: {
     title: "Konzentrationstest und Daueraufmerksamkeit: Leitfaden",
     paragraphs: [
-      "Dieser kostenlose Konzentrationstest im Browser erfasst Daueraufmerksamkeit, Impulskontrolle und Regelwechsel als nicht-klinische Selbstprüfung. Die Ergebnisse hängen von Tagesform und Übung ab und ersetzen keine medizinische Diagnostik.",
-      "Dass die menschliche Signalerkennungsleistung bei monotoner Uberwachung bereits nach 20 bis 30 Minuten drastisch nachlasst.",
-      "Weil das standige Umschalten alle 10 Sekunden das Arbeitsgedachtnis fordert und task-set inertia (Monsell, 2003) uberwinden muss.",
+      "Dieser kostenlose Konzentrationstest im Browser erfasst in 45 Sekunden Daueraufmerksamkeit, Impulskontrolle und Regelwechsel als nicht-klinische Selbstprüfung. Die Ergebnisse hängen von Tagesform und Übung ab und ersetzen keine medizinische Diagnostik.",
+      "Mackworth (1948) beobachtete bei Radarbeobachtern, dass die Trefferquote für seltene Signale mit zunehmender Überwachungsdauer sinkt. Eine Runde dieses Tests dauert nur 45 Sekunden; sie bildet diesen Effekt nicht nach, sondern übt Konzentration bei schnellem Reiztempo.",
+      "Alle 10 Sekunden wechselt die Zielregel zwischen Vokalen (A E I O U) und Primzahlen (2 3 5 7). So übst du, sofort auf das neue Kriterium umzuschalten (Aufgabenwechsel, Monsell, 2003).",
     ],
   },
   benchmarks: {
@@ -274,9 +274,9 @@ const guideProps = {
     description: 'Neurowissenschaftlich fundierte Trainingsroutinen zur Steigerung von Daueraufmerksamkeit und Impulskontrolle (CPT).',
     items: [
       { title: "Blick zentrieren und Ausgangsregel erfassen", description: "Fixieren Sie die Mitte des Bildschirms und beachten Sie die vorgegebene Regel (Vokale oder Primzahlen)." },
-      { title: "Aufblitzende Reize blitzschnell bewerten", description: "Prufen Sie jeden erscheinenden Buchstaben bzw. jede Ziffer gegen das aktive Kriterium." },
-      { title: "Prazise reagieren und Fehlimpulse unterdrucken", description: "Tippen Sie nur bei exakter Ubereinstimmung und lassen Sie unpassende Zeichen verstreichen." },
-      { title: "Blitzschneller Regelwechsel nach 10 Sekunden", description: "Stellen Sie sich sofort auf das neue Kriterium um, ohne in alte Reaktionsmuster zu verfallen." },
+      { title: "Aufblitzende Reize blitzschnell bewerten", description: "Prüfen Sie jeden erscheinenden Buchstaben bzw. jede Ziffer gegen das aktive Kriterium." },
+      { title: "Präzise reagieren und Fehlimpulse unterdrücken", description: "Klicken oder tippen Sie nur bei exakter Übereinstimmung (alternativ Space oder Enter) und lassen Sie unpassende Zeichen verstreichen." },
+      { title: "Blitzschneller Regelwechsel nach 10 Sekunden", description: "Achten Sie beim Wechsel auf die Regelanzeige oben und stellen Sie sich sofort auf das neue Kriterium um." },
     ],
   },
   faqs: {
@@ -318,7 +318,7 @@ export default function LocalizedCognitivePage() {
       <ConcentrationStaminaClient copy={{
         title: "Konzentrationstest | Daueraufmerksamkeit", subtitle: "Nicht-klinische Selbstprüfung für Daueraufmerksamkeit, Zielerkennung und Impulskontrolle",
         statScore: "Punkte", statTime: "Restzeit", statLevel: "Level", statBest: "Highscore", ruleLabel: "Regel", vowels: "Vokale (A E I O U)", primes: "Primzahlen (2 3 5 7)", startTitle: "Konzentrationstest", startSubtitle: "Daueraufmerksamkeit • CPT-Training", getReady: "Bereit machen", flashTitle: "Fehlblitz", soundTitle: "Ton", newBest: "Neuer Highscore", points: "Punkte", accuracy: "Genauigkeit", misses: "Fehler", peakLevel: "Höchstes Level", playAgain: "Erneut spielen", shareScore: "Score teilen", exitDrill: "Training beenden",
-        caption: "Reagiere nur auf Reize, die zur aktiven Regel passen, und unterdrücke Ablenkungen bei jedem Regelwechsel.", rulesTitle: "Anleitung und Punktesystem", ruleItems: [{ text: "Zielregel", highlight: "Wechselt alle 10 Sekunden", result: "Vokale ↔ Primzahlen" }, { text: "Zieltreffer", highlight: "+100 PKT", result: "Tippen oder Leertaste" }, { text: "Kein Ziel", highlight: "Unterdrücken", result: "Nicht reagieren" }, { text: "Fehlreaktion", highlight: "Strafe", result: "Beeinflusst Genauigkeit" }],
+        caption: "Reagiere nur auf Reize, die zur aktiven Regel passen, und unterdrücke Ablenkungen bei jedem Regelwechsel.", rulesTitle: "Anleitung und Punktesystem", ruleItems: [{ text: "Zielregel", highlight: "Wechselt alle 10 Sekunden", result: "Vokale ↔ Primzahlen" }, { text: "Zieltreffer", highlight: "+100 PKT", result: "Klick/Tippen, Space oder Enter" }, { text: "Kein Ziel", highlight: "Unterdrücken", result: "Nicht reagieren" }, { text: "Fehlreaktion", highlight: "1 s Eingabesperre", result: "Senkt Genauigkeit" }],
         aboutTitle: "Über den Konzentrationstest", aboutLead: "Bei längerer Überwachung seltener Signale kann Daueraufmerksamkeit sinken. Diese kurze Selbstprüfung erfasst Regelwechsel, Zielerkennung und Fehlreaktionen; sie ist kein klinischer Diagnosetest.", aboutText: "Daueraufmerksamkeit bedeutet, wichtige Signale auch in einer monotonen Reizfolge zuverlässig zu erkennen. Wiederhole den Test unter gleichen Bedingungen und beobachte deinen Verlauf.\n\nSchlaf, Stress, Bildschirm und Vertrautheit beeinflussen das Ergebnis; interpretiere es nicht als medizinische Diagnose.", audienceTitle: "Für wen ist der Test geeignet?", audienceText: "Für Lernende vor langen Prüfungen, Gamer mit konstantem Präzisionsbedarf und Menschen in Berufen mit hoher Wachsamkeit.", skillsTitle: "Trainierte Fähigkeiten", skillsText: "Daueraufmerksamkeit, Zielerkennung, Wachsamkeit unter Ermüdung und Impulskontrolle.", flexibilityTitle: "Kognitive Flexibilität", flexibilityText: "Der Wechsel zwischen Vokalen und Primzahlen alle 10 Sekunden trainiert schnelles Umschalten zwischen Aufgabenregeln."
       }} />
       <DrillGuide {...guideProps} />

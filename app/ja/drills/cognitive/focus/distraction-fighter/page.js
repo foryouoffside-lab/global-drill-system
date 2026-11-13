@@ -15,11 +15,13 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 // ============================================================
 
 export const metadata = {
-  title: 'ストループテスト | 選択的注意トレーニング | SkillDrills',
+  title: 'ストループテスト｜ストループ課題 無料 | SkillDrills',
   description:
-    '無料ブラウザのストループテストで、文字ではなくインクの色を選びます。選択的注意を練習する非臨床セルフチェックです。',
+    '無料のストループテスト（ストループ課題）をブラウザで。色名の文字の意味ではなくインクの色を選び、ストループ効果を体験できます。45秒から始まり正解ごとに+2秒、誤答は-1秒の練習ゲームで、診断ではありません。',
   keywords: [
     'ストループテスト',
+    'ストループ課題',
+    'ストループ効果',
     'ストループテスト 無料',
     'ストループテスト やり方',
     'ストループテスト 何がわかる',
@@ -33,9 +35,9 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/cognitive/focus/distraction-fighter'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'ストループテスト | 選択的注意トレーニング | SkillDrills',
+    title: 'ストループテスト｜ストループ課題 無料 | SkillDrills',
     description:
-      '無料ブラウザのストループテストで、文字ではなくインクの色を選びます。選択的注意を練習する非臨床セルフチェックです。',
+      '無料のストループテスト（ストループ課題）をブラウザで。色名の文字の意味ではなくインクの色を選び、ストループ効果を体験できます。45秒から始まり正解ごとに+2秒、誤答は-1秒の練習ゲームで、診断ではありません。',
     url: 'https://skilldrills.online/ja/drills/cognitive/focus/distraction-fighter',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -43,8 +45,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'ストループテスト | 選択的注意トレーニング | SkillDrills',
-    description: '無料ブラウザのストループテストで、文字ではなくインクの色を選びます。選択的注意を練習する非臨床セルフチェックです。',
+    title: 'ストループテスト｜ストループ課題 無料 | SkillDrills',
+    description: '無料のストループテスト（ストループ課題）をブラウザで。色名の文字の意味ではなくインクの色を選び、ストループ効果を体験できます。45秒から始まり正解ごとに+2秒、誤答は-1秒の練習ゲームで、診断ではありません。',
   },
   robots: { index: true, follow: true },
 };
@@ -65,12 +67,12 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Stroop_effect", "https://en.wikipedia.org/wiki/Inhibitory_control"],
-  name: 'ストループテスト – 無料オンライン認知干渉・抑制機能テスト',
+  name: 'ストループテスト（ストループ課題）オンライン',
   alternateName: ['ストループテスト', 'ストループ効果テスト', 'Stroop Test Online Japan'],
-  applicationCategory: 'HealthApplication',
+  applicationCategory: 'EducationalApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
-  description: '文字の意味とインク色の不一致を瞬時に見極め、認知的抑制機能（インヒビション）と情報処理速度を測定・訓練する無料ゲームツール。',
+  description: '文字の意味とインク色が食い違う色名を見て、インクの色を選ぶストループ課題の無料練習ゲーム。',
   browserRequirements: 'JavaScript対応の最新Webブラウザ（Chrome, Edge, Safari, Firefox）',
   softwareVersion: '2.0',
 };
@@ -78,9 +80,9 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'ストループテスト — 無料オンライン認知干渉・抑制機能テスト | SkillDrills',
+  name: 'ストループテスト｜ストループ課題 無料 | SkillDrills',
   url: 'https://skilldrills.online/ja/drills/cognitive/focus/distraction-fighter',
-  description: '無料オンラインのストループ効果テスト。色名単語のインク色を瞬時に判別し、認知抑制力と情報処理速度を測定・トレーニングします。',
+  description: '無料オンラインのストループテスト。色名の文字のインク色を選び、ストループ効果による干渉を体験・練習できます。',
   applicationCategory: 'EducationalApplication',
   operatingSystem: 'All',
   browserRequirements: 'JavaScript対応の最新Webブラウザが必要。',
@@ -88,7 +90,7 @@ const webAppSchema = {
   author: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   isAccessibleForFree: true,
   learningResourceType: 'Educational Game',
-  teaches: 'ストループ効果, 認知的抑制, 選択的注意, 情報処理速度, 前頭前野機能',
+  teaches: 'ストループ効果, 認知的抑制, 選択的注意',
 };
 
 
@@ -97,8 +99,8 @@ const videoGameSchema = {
   '@type': 'VideoGame',
   name: 'ストループテスト オンライン (Stroop Test Game)',
   url: 'https://skilldrills.online/ja/drills/cognitive/focus/distraction-fighter',
-  description: '文字の意味とインク色の不一致を瞬時に見極める認知干渉抑制テスト・脳トレゲーム。',
-  dateModified: '2026-09-20',
+  description: '文字の意味とインク色の不一致を見極めるストループ課題の脳トレゲーム。',
+  dateModified: '2026-11-12',
   gamePlatform: 'Web Browser',
   genre: ['認知トレーニング', '脳トレ', 'ストループテスト', '注意力テスト'],
   playMode: 'SinglePlayer',
@@ -110,22 +112,22 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'ストループテストで認知抑制力を鍛える4ステップ',
-  description: '文字の自動的な読み衝動を抑え、色識別と集中力を高めるステップ。',
+  name: 'ストループテストのやり方（4ステップ）',
+  description: 'このストループ課題を1回プレイする手順。',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
       url: 'https://skilldrills.online/ja/drills/cognitive/focus/distraction-fighter#step-1',
       name: 'インクの色にのみ意識を集中する',
-      text: '画面に表示される文字の意味（漢字・カタカナ）を読まず、物理的なフォントの色（インク色）だけを注視します。',
+      text: '画面に表示される文字の意味（赤・青などの漢字）を読まず、物理的なフォントの色（インク色）だけを注視します。',
     },
     {
       '@type': 'HowToStep',
       position: 2,
       url: 'https://skilldrills.online/ja/drills/cognitive/focus/distraction-fighter#step-2',
       name: '該当する色の選択ボタンを素早く押す',
-      text: '表示された文字の意味に惑わされず、インク色と一致する選択肢ボタン（赤・青・緑・黄など）をタップします。',
+      text: '表示された文字の意味に惑わされず、インク色と一致する選択肢ボタン（最初は4色、レベル4から6色）をタップします。',
     },
     {
       '@type': 'HowToStep',
@@ -139,7 +141,7 @@ const howToSchema = {
       position: 4,
       url: 'https://skilldrills.online/ja/drills/cognitive/focus/distraction-fighter#step-4',
       name: 'レベルアップによる制限時間の短縮に対応する',
-      text: '正解を重ねるごとに制限時間が短くなり、認知的負荷が増加。45秒間のセッションで限界スコアを目指します。',
+      text: 'レベルが上がるほど1語あたりの制限時間が短くなります。時計は45秒から始まり、正解で+2秒（最大60秒）、誤答やタイムアウトで-1秒。0秒になると終了です。',
     },
   ],
 };
@@ -147,14 +149,14 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-12',
   mainEntity: [
     {
       '@type': 'Question',
       name: 'ストループテストとは何ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'ストループテスト（Stroop test）は、1935年にJ.リドリー・ストループによって発表された心理学の古典的実験課題です。「赤」という文字が青色のインクで書かれている場合のように、文字の意味と物理的な色が食い違う状況において、文字の意味を無視して「青」と答える課題を通じて、脳の認知的抑制機能や選択的注意力を測定します。',
+        text: 'ストループテスト（Stroop test）は、1935年にJ.リドリー・ストループによって発表された心理学の古典的実験課題です。「赤」という文字が青色のインクで書かれている場合のように、文字の意味と物理的な色が食い違う状況において、文字の意味を無視して「青」と答える課題を通じて、認知的抑制や選択的注意を調べる課題です。このページはその課題を練習用ゲームにしたもので、心理検査ではありません。',
       },
     },
     {
@@ -186,7 +188,15 @@ const faqSchema = {
       name: 'このドリルはスマートフォンのタッチ操作にも対応していますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい。PCのキーボード・マウスクリックだけでなく、スマートフォンやタブレットのタッチスクリーンにも完全最適化されています。親指や人差し指でテンポよく画面下部の色ボタンをタップしてトレーニングできます。',
+        text: 'はい。PCではマウスクリック、スマートフォンやタブレットではタップで画面下部の色ボタンを選びます。キーボードでの回答には対応していません（Escキーは中断のみ）。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'このストループテストのルールと採点は？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '表示される色名は必ずインクの色と食い違います。インク色のボタンを押すと正解で、100点 × コンボ倍率（最大3倍）× レベル倍率が入り、時計が2秒増えます（最大60秒）。誤答や制限時間切れ（タイムアウト設定がオンのとき。初期設定はオン）はコンボがリセットされ1秒減ります。時計は45秒から始まり、0秒で終了します。',
       },
     },
     {
@@ -202,7 +212,7 @@ const faqSchema = {
       name: 'なぜ人間はこれほど気が散りやすいのですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '人間には新奇性や動き、目立つ刺激に無意識に注意を向ける「定位反射」が備わっています。これは危険や獲物を瞬時に察知するための進化的な生存本能です。現代のデジタル環境では通知や画面のチラつきがこの反射を過剰に刺激するため、前頭前野の抑制制御を鍛えて自動反射を意識的に抑え込む訓練が必要です。',
+        text: '人間には新奇性や動き、目立つ刺激に無意識に注意を向ける「定位反射」が備わっています。これは危険や獲物を瞬時に察知するための進化的な生存本能です。現代のデジタル環境では通知や画面のチラつきがこの反射を過剰に刺激するため、気が散りやすいのは自然なことです。ストループ課題はその「つい反応してしまう」感覚を安全に体験できる練習です。',
       },
     },
     {
@@ -218,7 +228,7 @@ const faqSchema = {
       name: 'ストループ効果のトレーニングは仕事や学習の生産性向上に役立ちますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい。オフィスでの周囲の話し声やPC・スマホの通知など、現代の作業環境は誘惑や妨害で溢れています。認知的抑制機能を鍛えることで、無関係な刺激を遮断する脳の消費エネルギーが削減され、長時間の深い集中（ディープワーク）を持続できるようになります。',
+        text: '保証はできません。練習でこのドリルのスコアは上がり得ますが、その効果が仕事や勉強の集中力に移ることを示す根拠は限られています。作業前の短いウォームアップとして使ってください。',
       },
     },
     {
@@ -226,7 +236,7 @@ const faqSchema = {
       name: 'このストループドリルでADHDや発達障害の診断・治療はできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'いいえ。本ドリルは認知機能の向上とセルフチェックを目的とした無料のブラウザゲームであり、医療機器や診断ツールではありません。スコアの高低はADHD等の医学的診断を示すものではありません。集中力や注意力についてお悩みの場合は、専門医や医療機関にご相談ください。',
+        text: 'いいえ。本ドリルは練習用の無料ブラウザゲームであり、医療機器や診断ツールではありません。スコアの高低はADHD等の医学的診断を示すものではありません。集中力や注意力についてお悩みの場合は、専門医や医療機関にご相談ください。',
       },
     },
   ],
@@ -246,9 +256,15 @@ export default function JapaneseDistractionFighterPage() {
 
       <DistractionFighterClient
         copy={{
-          title: 'ストループテスト (Stroop Test)',
-          subtitle: 'ストループテスト オンライン — 文字色識別・認知干渉抑制テスト',
-          caption: '文字の意味に惑わされず、表示された文字のインク色を素早く判断してタップ。自動的な読みの衝動を抑える認知的抑制機能を測定・トレーニングします。',
+          title: 'ストループテスト｜ストループ課題 無料',
+          subtitle: '文字の意味ではなくインクの色を選ぶ、ストループ効果の練習ゲーム',
+          caption: '文字の意味に惑わされず、表示された文字のインク色を素早く判断してタップします。',
+          rulesItems: [
+            { num: '1', text: '色と意味が違う文字', highlight: 'インク色を選ぶ', result: '意味は無視' },
+            { num: '2', text: '正解', highlight: '100点×コンボ×レベル', result: '+2秒（最大60秒）' },
+            { num: '3', text: '誤答・タイムアウト', highlight: 'コンボリセット', result: '-1秒' },
+            { num: '4', text: 'レベル上昇', highlight: '制限時間が短縮', result: 'Lv4から6色' },
+          ],
         }}
         faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
       />
@@ -259,85 +275,76 @@ export default function JapaneseDistractionFighterPage() {
         sources={sources}
       >
         <p>
-          ストループテストとは、色の名前を表す文字が別の色のインクで書かれているときに、文字の意味ではなくインクの色を答える課題です。読む自動処理を抑える必要があるため、色と文字が一致するときより答えるのが遅くなります。このページでは45秒間、インク色を素早く選んで反応の速さと正確さを確かめられます。
+          ストループテストとは、色の名前を表す文字が別の色のインクで書かれているときに、文字の意味ではなくインクの色を答える課題です。読む自動処理を抑える必要があるため、色と文字が一致するときより答えるのが遅くなります。このページでは45秒から始まる時計（正解ごとに+2秒、最大60秒）でインク色を素早く選び、スコア・正解率・到達レベルを確かめられます。
         </p>
+        <h3>ストループ効果とは</h3>
         <p>
           ストループ効果（Stroop Effect）は、1935年にJ.リドリー・ストループによって報告されて以来、認知心理学および神経科学において最も堅牢で信頼性の高い知見の一つとして知られています（Stroop, 1935）。文字の意味と異なるインク色を提示された際、人間の反応速度は著しく低下し、エラー率が上昇します。
         </p>
 
-        <h3>自動的読解と選択的抑制の競合（MacLeod, 1991; Logan &amp; Cowan, 1984）</h3>
+        <h3>自動的読解と選択的抑制の競合（MacLeod, 1991）</h3>
         <p>
-          成人にとって文字の読解は日常の反復により無意識かつ自動的な処理として確立されています。一方で、フォントの「色」を同定する処理は意図的な視覚注意を必要とします。不一致条件（例：青色インクで書かれた「あか」）では、強力な読解衝動とインク色命名の命令が脳内で競合（レースモデル：Logan &amp; Cowan, 1984）し、前頭前野背外側部（DLPFC）と前帯状皮質（ACC）が不要な単語情報を抑制するために活動します。
+          成人にとって文字の読解は日常の反復により無意識かつ自動的な処理として確立されています。一方で、フォントの「色」を同定する処理は意図的な視覚注意を必要とします。不一致条件（例：青色インクで書かれた「あか」）では、読む反応とインク色を答える反応が競合し、読む反応を抑えられないと誤答が生じます。自動的な反応を止める過程は、反応抑制の研究では「競争（レース）」として説明されることもあります（Logan &amp; Cowan, 1984）。
         </p>
 
         <h3>神経画像研究と前頭前野抑制回路（Posner &amp; Petersen, 1990）</h3>
         <p>
-          機能的磁気共鳴画像法（fMRI）の研究知見によれば、ストループ課題における葛藤解決と認知的抑制は、主に前帯状皮質（ACC）と背外側前頭前野（DLPFC）の神経ネットワークによって制御されています（Posner &amp; Petersen, 1990）。継続的なストループ反復訓練は、日常環境における無関係な認知的ノイズを迅速に遮断する選択的抑制機能と実行制御力を効果的に強化します。
+          機能的磁気共鳴画像法（fMRI）の研究知見によれば、ストループ課題における葛藤解決と認知的抑制は、主に前帯状皮質（ACC）と背外側前頭前野（DLPFC）の神経ネットワークによって制御されています（Posner &amp; Petersen, 1990）。このドリルは脳活動を測定せず、日常の集中力の向上も保証しません。
         </p>
 
-        <h3>高精度デジタル時間計測とハードウェア遅延（Woods et al., 2015）</h3>
+        <h3>タイミングとハードウェア遅延（Woods et al., 2015）</h3>
         <p>
-          計測精度について：本テストはブラウザの performance.now() 高分解能タイマーを用い、端末内で完結してミリ秒単位で処理されます。ブラウザ仕様としてSpectre対策のためタイマー分解能が約1msに丸められている点、およびディスプレイのリフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms; Woods et al., 2015）による物理的表示量子化が存在します。5ms未満の微小な差異は測定ノイズとして扱い、他者の環境ではなく同一ハードウェア環境での自己記録比較を行ってください。
+          タイミングについて：本ドリルは反応時間を表示せず、スコア・正解率・到達レベルを記録します。1語ごとの制限時間はブラウザのタイマーで端末内で処理されます。ブラウザ仕様としてSpectre対策のためタイマー分解能が約1msに丸められている点、およびディスプレイのリフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms; Woods et al., 2015）による物理的表示量子化が存在します。他者の環境ではなく同一ハードウェア環境での自己記録比較を行ってください。
         </p>
 
         <h3>データ透明性と非医療用免責事項</h3>
         <p>
-          データ透明性と非医療用免責事項：アカウント登録は不要で、スコアや設定値はお使いのブラウザのローカルストレージに保存されます。サイト全体のアクセス状況は匿名で計測しています（詳細はプライバシーポリシー）。本ドリルは認知機能向上とセルフチェックを目的とした無料ブラウザゲームであり、医療機器やADHD等の診断ツールではありません。注意や集中に関する医学的な懸念がある場合は、専門医にご相談ください。
+          データ透明性と非医療用免責事項：アカウント登録は不要で、スコアや設定値はお使いのブラウザのローカルストレージに保存されます。サイト全体のアクセス状況は匿名で計測しています（詳細はプライバシーポリシー）。本ドリルは練習用の無料ブラウザゲームであり、医療機器やADHD等の診断ツールではありません。注意や集中に関する医学的な懸念がある場合は、専門医にご相談ください。
         </p>
 
-        <h3>ストループテスト 実力判定基準（45秒セッション）</h3>
+        <h3>ストループテスト ランク目安（1回のスコア）</h3>
         <div className="overflow-x-auto my-4">
           <table className="w-full text-left border-collapse border border-white/10 text-xs sm:text-sm">
             <thead>
               <tr className="bg-white/5 text-slate-200">
                 <th className="p-2.5 border border-white/10 font-bold">ランク</th>
-                <th className="p-2.5 border border-white/10 font-bold">スコア目安</th>
-                <th className="p-2.5 border border-white/10 font-bold">正解率</th>
-                <th className="p-2.5 border border-white/10 font-bold">認知抑制評価</th>
-                <th className="p-2.5 border border-white/10 font-bold">総合判定</th>
+                <th className="p-2.5 border border-white/10 font-bold">スコア</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5 text-slate-300">
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-red-400">Tier 1 (神速)</td>
-                <td className="p-2.5 border border-white/10">&gt; 18,000 PTS</td>
-                <td className="p-2.5 border border-white/10">&gt; 96%</td>
-                <td className="p-2.5 border border-white/10">完全な衝動遮断・高速弁別</td>
-                <td className="p-2.5 border border-white/10">高い安定性</td>
+                <td className="p-2.5 border border-white/10 font-bold">S+</td>
+                <td className="p-2.5 border border-white/10">21,660 以上</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-amber-400">Tier 2 (上級)</td>
-                <td className="p-2.5 border border-white/10">12,000 – 17,999 PTS</td>
-                <td className="p-2.5 border border-white/10">92 – 95%</td>
-                <td className="p-2.5 border border-white/10">わずかな干渉・安定タップ</td>
-                <td className="p-2.5 border border-white/10">安定した集中の持続</td>
+                <td className="p-2.5 border border-white/10 font-bold">S</td>
+                <td className="p-2.5 border border-white/10">17,340 – 21,659</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-blue-400">Tier 3 (中級)</td>
-                <td className="p-2.5 border border-white/10">7,000 – 11,999 PTS</td>
-                <td className="p-2.5 border border-white/10">85 – 91%</td>
-                <td className="p-2.5 border border-white/10">標準的なストループ干渉</td>
-                <td className="p-2.5 border border-white/10">中程度の水準</td>
+                <td className="p-2.5 border border-white/10 font-bold">A</td>
+                <td className="p-2.5 border border-white/10">13,500 – 17,339</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-slate-400">Tier 4 (初級)</td>
-                <td className="p-2.5 border border-white/10">3,000 – 6,999 PTS</td>
-                <td className="p-2.5 border border-white/10">75 – 84%</td>
-                <td className="p-2.5 border border-white/10">単語の読みに引きずられがち</td>
-                <td className="p-2.5 border border-white/10">トレーニングによる改善余地大</td>
+                <td className="p-2.5 border border-white/10 font-bold">B</td>
+                <td className="p-2.5 border border-white/10">8,640 – 13,499</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-rose-500">Tier 5 (入門)</td>
-                <td className="p-2.5 border border-white/10">&lt; 3,000 PTS</td>
-                <td className="p-2.5 border border-white/10">&lt; 75%</td>
-                <td className="p-2.5 border border-white/10">衝動的誤答・タイムアウト多数</td>
-                <td className="p-2.5 border border-white/10">疲労や注意散漫の可能性</td>
+                <td className="p-2.5 border border-white/10 font-bold">C</td>
+                <td className="p-2.5 border border-white/10">4,860 – 8,639</td>
+              </tr>
+              <tr>
+                <td className="p-2.5 border border-white/10 font-bold">D</td>
+                <td className="p-2.5 border border-white/10">2,160 – 4,859</td>
+              </tr>
+              <tr>
+                <td className="p-2.5 border border-white/10 font-bold">F</td>
+                <td className="p-2.5 border border-white/10">2,160 未満</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p className="text-xs text-slate-400 mt-1 mb-4 leading-relaxed">
-          ※この表は45秒セッション向けに編集した練習の目安です。Stroop（1935）、MacLeod（1991）、Woodsら（2015）の研究を背景にしていますが、標準化された基準や統計ではありません。
+          ※SkillDrillsの練習目安です。結果画面のランク計算式（基準24,000点に対する割合）からそのまま算出したもので、利用者の統計や臨床基準ではありません。
         </p>
 
         <h3>認知的抑制力を鍛える4つの実践プロトコル</h3>
@@ -352,49 +359,10 @@ export default function JapaneseDistractionFighterPage() {
             <strong>リズミカルな判断テンポ：</strong> 焦って衝動的にクリックすると誤答が増加します。確実な弁別リズムを保ちながら徐々にテンポを上げましょう。
           </li>
           <li>
-            <strong>短時間・高頻度セッション：</strong> 認知的抑制は脳のエネルギーを激しく消費します。1日3〜5分のセッションを継続することが最も効果的です。
+            <strong>短時間・高頻度セッション：</strong> 疲れると誤答が増えます。1日3〜5分程度の短いセッションが続けやすくおすすめです。
           </li>
         </ul>
 
-        <h3>よくある質問（FAQ）</h3>
-        <div className="space-y-4 my-4">
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">ストループテストとは何ですか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              ストループテスト（Stroop test）は、文字の意味とインクの色が異なる刺激を用いて、脳の認知的葛藤と抑制機能を測定する代表的な心理学テストです。文字を無意識に読んでしまう自動的反応を抑え、インク色を素早く判断する能力を評価します。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">ストループ効果が起きる理由は何ですか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              人間にとって文字を読む処理（言語処理）は高度に自動化されているため、色を識別する視覚処理よりも速く脳内で活性化します。意味と色が一致しない場合、脳の前頭前野や前帯状皮質が自動的な読みの衝動を抑制しなければならず、判断の遅延（干渉）が生じます（MacLeod, 1991）。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">認知的抑制機能（インヒビション）とは何ですか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              認知的抑制機能とは、無関係な刺激や自動的な衝動を抑制し、目的に沿った適切な行動を選択・維持するための実行機能（エグゼクティブ・ファンクション）の一つです。集中力の維持、マルチタスク、誘惑への抵抗、仕事やゲームのパフォーマンスに役立つ可能性があります。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">ストループテストで良いスコアを出すコツはありますか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              単語全体を読もうとせず、文字の輪郭や色そのものに視線を集中させることが効果的です。焦って誤タップするとコンボが途切れるため、最初は正確性を重視し、徐々にテンポを上げていくのがハイスコアへの近道です。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">このドリルはスマートフォンのタッチ操作にも対応していますか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              はい。PCのマウスクリックだけでなく、スマートフォンやタブレットのタッチスクリーンにも完全対応しています。ブラウザ上でインストール不要ですぐにプレイできます。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">ストループテストの利用は無料ですか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              はい、完全無料です。アカウント登録やダウンロードは不要で、ブラウザからいつでも何度でもトレーニングできます。
-            </p>
-          </div>
-        </div>
       </DrillGuide>
       <RelatedDrills />
       <DrillFooter />

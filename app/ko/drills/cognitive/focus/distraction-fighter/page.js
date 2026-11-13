@@ -69,9 +69,9 @@ export default function DistractionFighterPageKo() {
     "name": "스트룹 검사 온라인 (Stroop Test)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "설치 없이 웹 브라우저에서 실행되는 무료 온라인 스트룹 검사(Stroop Test). 인지 억제 조절 능력과 선택적 주의력을 측정하고 단련합니다.",
+    "description": "설치 없이 웹 브라우저에서 실행되는 무료 온라인 스트룹 검사(Stroop Test). 단어 뜻이 아닌 글자 색을 골라 선택적 주의와 반응 억제를 연습합니다.",
     "genre": "인지 훈련 / 스트룹 효과 / 억제 조절",
     "url": "https://skilldrills.online/ko/drills/cognitive/focus/distraction-fighter",
     "publisher": {
@@ -87,10 +87,10 @@ export default function DistractionFighterPageKo() {
     "name": "스트룹 검사 온라인 (Stroop Test)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "HTML5, JavaScript 지원 웹 브라우저",
-    "description": "설치 없이 웹 브라우저에서 실행되는 무료 온라인 스트룹 검사(Stroop Test). 인지 억제 조절 능력과 선택적 주의력을 측정하고 단련합니다.",
+    "description": "설치 없이 웹 브라우저에서 실행되는 무료 온라인 스트룹 검사(Stroop Test). 단어 뜻이 아닌 글자 색을 골라 선택적 주의와 반응 억제를 연습합니다.",
     "url": "https://skilldrills.online/ko/drills/cognitive/focus/distraction-fighter"
   };
 
@@ -99,8 +99,8 @@ export default function DistractionFighterPageKo() {
     "@type": "VideoGame",
     "name": "스트룹 검사 온라인 (Stroop Test)",
     "url": "https://skilldrills.online/ko/drills/cognitive/focus/distraction-fighter",
-    "description": "글자의 물리적 색상과 의미가 일치하지 않는 자극을 통해 전두엽 인지 억제 조절력을 훈련하는 뇌 인지 게임.",
-    "dateModified": "2026-09-20",
+    "description": "글자의 색과 뜻이 항상 다르게 제시되는 스트룹 과제를 시간 압박 속에서 연습하는 브라우저 게임.",
+    "dateModified": "2026-11-12",
     "gamePlatform": "Web Browser",
     "genre": ["인지 훈련", "두뇌 게임", "스트룹 검사", "집중력"],
     "playMode": "SinglePlayer",
@@ -112,14 +112,14 @@ export default function DistractionFighterPageKo() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "스트룹 검사(Stroop Test)란 무엇인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "스트룹 검사는 1935년 미국의 심리학자 J. 리들리 스트룹(J. Ridley Stroop)이 발표한 고전적인 인지 심리학 실험 과제입니다. '빨강'이라는 단어가 파란색 잉크로 인쇄되어 있을 때, 단어의 의미를 무시하고 잉크 색상인 '파랑'을 신속하게 맞히는 과정을 통해 뇌의 인지적 억제 제어력과 선택적 주의력을 측정합니다."
+          "text": "스트룹 검사는 1935년 미국의 심리학자 J. 리들리 스트룹(J. Ridley Stroop)이 발표한 고전적인 인지 심리학 실험 과제입니다. '빨강'이라는 단어가 파란색 잉크로 인쇄되어 있을 때, 단어의 의미를 무시하고 잉크 색상인 '파랑'을 신속하게 맞히는 과정을 통해 간섭을 이겨내는 억제 제어와 선택적 주의를 살펴보는 과제입니다. 이 드릴은 그 과제를 연습용 게임으로 만든 것입니다."
         }
       },
       {
@@ -151,7 +151,7 @@ export default function DistractionFighterPageKo() {
         "name": "이 검사는 뇌의 어느 부위를 활성화하나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "목표 유지를 담당하는 배외측 전전두피질(DLPFC)과 인지적 갈등을 감지하고 해결하는 전방 대상피질(ACC)이 강력하게 활성화됩니다 (Posner & Petersen, 1990)."
+          "text": "목표 유지를 담당하는 배외측 전전두피질(DLPFC)과 인지적 갈등을 감지하는 전방 대상피질(ACC)이 스트룹 과제에 관여한다고 연구에서 보고됩니다 (Posner & Petersen, 1990). 이 드릴은 뇌 활동을 측정하지 않습니다."
         }
       },
       {
@@ -167,7 +167,7 @@ export default function DistractionFighterPageKo() {
         "name": "직장 업무나 공부 집중력 향상에도 실질적인 도움이 되나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "네. 스마트폰 알림, 주변 대화 소음 등 산만한 환경에서 불필요한 자극을 걸러내는 뇌의 에너지 소모를 줄여주어 딥워크(Deep Work) 몰입 시간을 획기적으로 늘려줍니다."
+          "text": "보장할 수 없습니다. 스트룹 과제 연습으로 점수는 오를 수 있지만, 그 효과가 업무나 공부 집중력으로 옮겨진다는 근거는 제한적입니다. 공부나 업무 전 짧은 워밍업 정도로 활용하세요."
         }
       },
       {
@@ -183,7 +183,7 @@ export default function DistractionFighterPageKo() {
         "name": "오답을 누르면 어떤 페널티가 주어지나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "잘못된 색상을 누르면 연속 콤보 배율이 초기화됩니다. 시간 페널티 설정을 켠 상태에서는 0.8초의 잔여 시간이 차감됩니다."
+          "text": "잘못된 색상을 누르면 콤보가 초기화되고 남은 시간이 1초 줄어듭니다. 제한 시간 안에 답하지 못한 단어(타임아웃 설정이 켜져 있을 때, 기본값 켜짐)도 같은 처리를 받습니다. 정답은 +2초(시계 최대 60초)를 더해 줍니다."
         }
       },
       {
@@ -201,7 +201,7 @@ export default function DistractionFighterPageKo() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "스트룹 검사로 인지 억제력을 단련하는 4단계",
-    "description": "스트룹 색상-단어 간섭 과제를 통해 전두엽 억제 제어력을 극대화하는 훈련법.",
+    "description": "스트룹 색상-단어 과제 한 판을 진행하는 방법.",
     "step": [
       {
         "@type": "HowToStep",
@@ -228,7 +228,7 @@ export default function DistractionFighterPageKo() {
         "@type": "HowToStep",
         "position": 4,
         "name": "콤보 유지 및 반응 속도 가속화",
-        "text": "오답 없이 연속 정답을 기록하여 콤보 점수를 쌓고 고난도 레벨에 도달합니다.",
+        "text": "연속 정답으로 콤보 배율을 쌓습니다. 정답마다 +2초, 오답이나 타임아웃마다 -1초이며 시계가 0이 되면 끝납니다.",
         "url": "https://skilldrills.online/ko/drills/cognitive/focus/distraction-fighter#step-4"
       }
     ]
@@ -238,22 +238,24 @@ export default function DistractionFighterPageKo() {
     heading: "스트룹 검사 완벽 가이드 & 인지 억제 조절의 신경과학",
     intro: [
       "스트룹 효과(Stroop Effect)는 1935년 J. 리들리 스트룹(J. Ridley Stroop)에 의해 학계에 보고된 이래 인지 심리학과 뇌 인지 과학 역사상 가장 널리 입증된 현상입니다. 글자의 의미와 물리적 잉크 색상이 일치하지 않을 때(예: 빨간색으로 쓰인 '파랑'), 인간의 판단 속도는 급격히 느려지고 실수 확률이 증가합니다.",
-      "인지 신경과학적으로 성인의 글자 읽기(독해)는 일상적인 반복을 통해 무의식적이고 자동화된(Automatic) 프로세스로 굳어져 있습니다 (MacLeod, 1991). 반면 잉크의 색상을 식별하는 작업은 의식적인 노력을 요구합니다. 고든 D. 로건(Gordon D. Logan)과 넬슨 J. 코완(Nelson J. Cowan)의 경주 모델(Race Model, 1984)에 따르면, 자동화된 단어 읽기가 뇌의 인출 경쟁에서 우위를 점하므로, 전두엽이 이를 능동적으로 억제(Inhibition)하지 않으면 실수가 발생합니다.",
-      "기능적 뇌 영상 촬영(fMRI) 결과에 따르면, 이러한 인지적 갈등 해결은 주로 전방 대상피질(ACC)과 배외측 전전두피질(DLPFC)의 신경망에 의해 매개됩니다 (Posner & Petersen, 1990). 규칙적인 스트룹 과제 훈련은 주변의 불필요한 자극을 순간적으로 차단하는 선택적 억제 조절 능력을 강화합니다.",
-      "정밀 측정 크로노메트리: 본 테스트는 브라우저의 고해상도 performance.now() 타이머를 통해 사용자 기기 로컬에서 1밀리초(ms) 단위로 반응을 측정합니다. 브라우저는 Spectre 취약점 방어를 위해 타이머 정밀도를 미세하게 조정(약 1ms)하며, 모니터 주사율(60Hz 시 프레임당 약 16.7ms, 144Hz 시 6.9ms, 240Hz 시 4.1ms)에 따라 화면 갱신이 양자화됩니다 (Woods et al., 2015). 서로 다른 기기 간의 단순 점수 비교보다는 동일한 환경에서 자신의 반응 속도 및 억제력 개선 추이를 측정하는 것이 가장 정확합니다.",
-      "데이터 프라이버시 및 비의료용 면책 안내: SkillDrills는 어떠한 사용자 식별 데이터나 개인 기록도 원격 서버로 수집·전송하지 않습니다. 모든 훈련 점수와 설정값은 사용자의 웹 브라우저 로컬 저장소(localStorage)에만 안전하게 보관됩니다. 본 스트룹 과제는 인지 억제 기능 단련과 자기 평가를 위한 무료 브라우저 훈련 도구이며, ADHD(주의력결핍 과잉행동장애) 등의 신경학적 질환을 진단하거나 치료하기 위한 의료기기가 아닙니다. 주의력 및 인지 기능에 관한 임상적 상담이 필요한 경우 전문 의료기관을 방문하십시오."
+      "인지 신경과학적으로 성인의 글자 읽기(독해)는 일상적인 반복을 통해 무의식적이고 자동화된(Automatic) 프로세스로 굳어져 있습니다 (MacLeod, 1991). 반면 잉크의 색상을 식별하는 작업은 의식적인 노력을 요구합니다. 자동으로 튀어나오는 반응을 멈추는 과정은 반응 억제 연구에서 '경주(race)'로 설명되기도 합니다 (Logan & Cowan, 1984). 스트룹 과제에서도 자동화된 단어 읽기를 누르지 못하면 실수가 생깁니다.",
+      "기능적 뇌 영상 촬영(fMRI) 결과에 따르면, 이러한 인지적 갈등 해결은 주로 전방 대상피질(ACC)과 배외측 전전두피질(DLPFC)의 신경망에 의해 매개됩니다 (Posner & Petersen, 1990). 이 드릴은 그런 간섭 상황을 반복해서 연습하게 해 주지만, 일상 집중력 향상을 보장하지는 않습니다.",
+      "타이밍 안내: 이 드릴은 반응 시간을 표시하지 않고 점수, 정확도, 도달 레벨을 기록합니다. 단어별 제한 시간은 사용자 기기에서 브라우저 타이머로 처리됩니다. 브라우저는 Spectre 취약점 방어를 위해 타이머 정밀도를 미세하게 조정(약 1ms)하며, 모니터 주사율(60Hz 시 프레임당 약 16.7ms, 144Hz 시 6.9ms, 240Hz 시 4.1ms)에 따라 화면 갱신이 양자화됩니다 (Woods et al., 2015). 서로 다른 기기 간의 점수 비교보다는 같은 환경에서 자신의 이전 기록과 비교하세요.",
+      "데이터 프라이버시 및 비의료용 면책 안내: SkillDrills는 어떠한 사용자 식별 데이터나 개인 기록도 원격 서버로 수집·전송하지 않습니다. 모든 훈련 점수와 설정값은 사용자의 웹 브라우저 로컬 저장소(localStorage)에만 안전하게 보관됩니다. 본 스트룹 과제는 연습용 무료 브라우저 게임이며, ADHD(주의력결핍 과잉행동장애) 등의 신경학적 질환을 진단하거나 치료하기 위한 의료기기가 아닙니다. 주의력 및 인지 기능에 관한 임상적 상담이 필요한 경우 전문 의료기관을 방문하십시오."
     ],
     benchmarks: {
-      title: "스트룹 검사 성능 등급 & 인지 억제 벤치마크 (45초 세션)",
-      headers: ["퍼포먼스 티어", "세션 획득 점수", "적중 정확도", "신경 인지 평가"],
+      title: "스트룹 테스트 등급 구간 (한 판 점수 기준)",
+      headers: ["등급", "점수"],
       rows: [
-        ["Tier 1 (신속 / 초월적 억제력)", "18,000점 초과", "96% 이상", "완벽한 충동 차단; 글자 의미의 간섭을 완전히 배제하고 빛의 속도로 색상 분별"],
-        ["Tier 2 (상급 단계)", "12,000 – 17,999점", "92 – 95%", "매우 낮은 스트룹 간섭; 안정적인 템포와 뛰어난 인지 유연성 보유"],
-        ["Tier 3 (중급 / 건강한 일반 성인)", "7,000 – 11,999점", "85 – 91%", "일반적인 간섭 지연; 색상 대비가 강할 때 일시적인 망설임 발생"],
-        ["Tier 4 (초급 / 빈번한 산만함)", "3,000 – 6,999점", "75 – 84%", "글자 읽기 충동에 쉽게 이끌림; 자극 밀도가 높아지면 반응 속도 저하"],
-        ["Tier 5 (입문 / 고도 충동성)", "3,000점 미만", "75% 미만", "잦은 오답과 시간 초과; 뇌 피로도 또는 심한 집중력 저하 상태"]
+        ["S+", "21,660점 이상"],
+        ["S", "17,340 – 21,659점"],
+        ["A", "13,500 – 17,339점"],
+        ["B", "8,640 – 13,499점"],
+        ["C", "4,860 – 8,639점"],
+        ["D", "2,160 – 4,859점"],
+        ["F", "2,160점 미만"]
       ],
-      note: "45초 제한 시간 동안 난이도가 점진적으로 상승하는 표준 테스트 기준입니다 (Stroop, 1935; Woods et al., 2015)."
+      note: "SkillDrills 연습 구간입니다. 결과 화면의 등급 공식(기준 24,000점 대비 비율)으로 직접 계산했으며, 사용자 통계나 임상 기준이 아닙니다. 정답 1개는 100점 × 콤보 배율(최대 3배) × 레벨 배율입니다."
     },
     techniques: {
       title: "스트룹 간섭 극복을 위한 4가지 인지 전략",
@@ -271,11 +273,11 @@ export default function DistractionFighterPageKo() {
         {
           name: "안정적인 탭 템포 유지",
           desc: "과도하게 서두르면 자동적인 읽기 충동에 굴복하게 됩니다. 한 박자 차분하게 색을 확인한 후 누르는 리듬이 최고 점수를 만듭니다.",
-          tips: "속도보다 정확도가 우선입니다. 연속 정답 콤보가 점수를 기하급수적으로 높입니다."
+          tips: "속도보다 정확도가 우선입니다. 오답 한 번이면 콤보가 0으로 돌아가고 1초가 줄어듭니다."
         },
         {
           name: "짧고 집중적인 데일리 세션",
-          desc: "인지 억제는 전두엽의 에너지를 빠르게 소모합니다. 하루 3~5분씩 집중하여 반복 훈련하는 것이 꾸준히 이어가기에 좋습니다.",
+          desc: "집중이 흐트러지면 오답이 늘어납니다. 하루 3~5분씩 집중하여 반복 훈련하는 것이 꾸준히 이어가기에 좋습니다.",
           tips: "공부나 중요한 업무를 시작하기 전 뇌를 깨우는 웜업으로 활용하세요."
         }
       ]
@@ -285,9 +287,9 @@ export default function DistractionFighterPageKo() {
       "의미와 색상이 다른 단어가 깜빡이며 나타납니다 (예: 노란색 글씨로 쓰인 '파랑').",
       "'파랑'이라는 단어를 읽지 말고 노란색이라는 시각 정보를 파악합니다.",
       "하단의 보기 중에서 실제 잉크 색상인 '노랑' 버튼을 터치합니다.",
-      "정답 콤보를 이어가며 제한 시간 45초 동안 최고 레벨에 도전합니다."
+      "45초에서 시작하는 시계를 정답(+2초, 최대 60초)으로 늘리며 시계가 0이 될 때까지 최고 레벨에 도전합니다."
     ],
-    audience: "주의 집중력 강화가 필요한 수험생, 직장인, 멀티태스킹 환경에서 업무 효율을 극대화하고자 하는 전문가 및 게이머.",
+    audience: "주의 집중력 강화가 필요한 수험생, 직장인, 스트룹 효과를 직접 체험해 보고 싶은 학생과 게이머.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('macLeod1991', 'logan1984', 'posner1990', 'woods2015'),
     related: [
@@ -333,17 +335,17 @@ export default function DistractionFighterPageKo() {
           stageCaption: "단어의 의미를 무시하고 실제 글자 잉크 색상에 해당하는 버튼을 터치하세요.",
           rulesTitle: "훈련 규칙 & 점수 체계",
           aboutTitle: "스트룹 효과 & 인지 억제 제어 상세 안내",
-          aboutText: "스트룹 효과는 단어의 의미와 잉크 색상이 다를 때 색상 명명 속도가 지연되는 현상입니다 (Stroop, 1935; MacLeod, 1991).\n\n글자 읽기는 고도로 자동화된 인지 프로세스입니다. 뇌는 무의식적으로 튀어나오는 읽기 반응을 전두엽에서 능동적으로 억제해야만 올바른 색상을 골라낼 수 있습니다.\n\n정기적인 훈련은 상위 인지 제어력을 단련하여 산만한 외부 자극 속에서도 깊은 집중력을 발휘하도록 돕습니다.",
+          aboutText: "스트룹 효과는 단어의 의미와 잉크 색상이 다를 때 색상 명명 속도가 지연되는 현상입니다 (Stroop, 1935; MacLeod, 1991).\n\n글자 읽기는 고도로 자동화된 인지 프로세스입니다. 뇌는 무의식적으로 튀어나오는 읽기 반응을 전두엽에서 능동적으로 억제해야만 올바른 색상을 골라낼 수 있습니다.\n\n이 드릴은 그 간섭 상황을 반복 연습하는 게임이며, 집중력 향상을 보장하지는 않습니다.",
           aboutCards: [
             { title: "누구에게 필요한가요?", desc: "주변 소음과 알림 속에서 집중력을 지켜야 하는 학습자, 직장인, 충동 제어 훈련이 필요한 모든 사람.", color: "bg-blue-600" },
             { title: "훈련되는 인지 역량", desc: "스트룹 간섭 저항력, 인지적 억제 제어, 하향식 주의 집중력, 자동 반사 억제.", color: "bg-emerald-600" },
             { title: "억제 조절 훈련", desc: "단어를 읽으려는 무의식적 충동을 누르고 시간 압박 속에서 순수한 색상 지각만을 분리해 터치합니다.", color: "bg-purple-600" }
           ],
           rulesItems: [
-            { title: "스트룹 효과 과제", text: "화면에 색상 단어가 깜빡입니다 (예: 빨간색 잉크로 적힌 '파랑')." },
-            { title: "목표 선택 규칙", text: "글자 뜻을 무시하고 실제 잉크 색상(예: 빨강) 버튼을 터치합니다 (+100점 × 콤보 × 레벨, +0.6초)." },
-            { title: "오답 페널티", text: "오답 시 콤보가 초기화됩니다 (시간 페널티 설정 시 -0.8초). 45초 동안 게임은 계속 진행됩니다." },
-            { title: "연속 콤보", text: "오답 없이 정답을 이어갈수록 점수 배율이 곱해지며, 레벨이 오를수록 선택지가 확장됩니다." }
+            { num: "1", text: "색과 뜻이 다른 단어", highlight: "글자 색 선택", result: "뜻은 무시" },
+            { num: "2", text: "정답", highlight: "100점 × 콤보 × 레벨", result: "+2초 (최대 60초)" },
+            { num: "3", text: "오답 · 타임아웃", highlight: "콤보 초기화", result: "-1초" },
+            { num: "4", text: "레벨 상승", highlight: "제한 시간 단축", result: "레벨 4부터 버튼 6개" }
           ]
         }}
         faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}

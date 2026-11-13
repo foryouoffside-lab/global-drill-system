@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Zahlenspanne Test online | Zahlen merken | SkillDrills",
-  description: "Kostenloser Zahlenspanne-Test: Merke dir länger werdende Ziffernfolgen und gib sie im Browser in der richtigen Reihenfolge ein.",
+  description: "Kostenloser Zahlenspanne Test online: Ziffernfolge kurz merken und in gleicher Reihenfolge eingeben. Start mit 3 Ziffern, je Treffer eine mehr, bis 15.",
   keywords: [
     "zahlenspanne test online",
     "zahlenspanne test",
@@ -26,7 +26,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Zahlenspanne Test online | Zahlen merken | SkillDrills",
-    description: "Kostenloser Zahlenspanne-Test: Merke dir länger werdende Ziffernfolgen und gib sie im Browser in der richtigen Reihenfolge ein.",
+    description: "Kostenloser Zahlenspanne Test online: Ziffernfolge kurz merken und in gleicher Reihenfolge eingeben. Start mit 3 Ziffern, je Treffer eine mehr, bis 15.",
     type: 'website',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/digit-span',
     siteName: 'SkillDrills',
@@ -35,7 +35,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Zahlenspanne Test online | Zahlen merken | SkillDrills",
-    description: "Kostenloser Zahlenspanne-Test: Merke dir länger werdende Ziffernfolgen und gib sie im Browser in der richtigen Reihenfolge ein.",
+    description: "Kostenloser Zahlenspanne Test online: Ziffernfolge kurz merken und in gleicher Reihenfolge eingeben. Start mit 3 Ziffern, je Treffer eine mehr, bis 15.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -66,7 +66,7 @@ const webAppSchema = {
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
   "sameAs": ["https://de.wikipedia.org/wiki/Arbeitsged%C3%A4chtnis"],
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -74,8 +74,8 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Zahlenspannen-Test Online (Digit Span)",
   "url": "https://skilldrills.online/de/drills/memory/short-term-memory/digit-span",
-  "description": "Interaktiver neuropsychologischer Test zur Messung der Ziffernspanne, der phonologischen Schleife und der numerischen Kurzzeitgedächtnis-Kapazität.",
-  "dateModified": "2026-09-11",
+  "description": "Kostenloses Zahlen-merken-Spiel: Eine Ziffernfolge erscheint kurz auf einmal und wird in derselben Reihenfolge eingegeben. Start mit 3 Ziffern, je Treffer eine mehr.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Memory Game", "Cognitive Training", "Brain Training", "Working Memory"],
   "playMode": "SinglePlayer",
@@ -93,47 +93,43 @@ const softwareSchema = {
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Wie man die Zahlenspanne und das Arbeitsgedächtnis trainiert",
-  "description": "Vierstufiges evidenzbasiertes Protokoll zur Steigerung der Ziffernspanne durch Chunking und artikulatorisches Rehearsal.",
+  "name": "So funktioniert der Zahlenspanne Test",
+  "description": "In 4 Schritten Ziffernfolgen merken und in derselben Reihenfolge eingeben (45-Sekunden-Lauf).",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "url": "https://skilldrills.online/de/drills/memory/short-term-memory/digit-span#step-1",
-      
-      "name": "Zentralen Blick fixieren",
-      "text": "Konzentriere dich während des 3-sekündigen Präsentationsfensters auf die Bildschirmmitte, um die Ziffernfolge optimal aufzunehmen."
+      "name": "Ziffernfolge auf einen Blick erfassen",
+      "text": "Die ganze Ziffernfolge erscheint auf einmal. Anfangs ist sie 2,5 Sekunden sichtbar, nach jedem Treffer 0,1 Sekunden kürzer (mindestens 0,8 Sekunden)."
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "url": "https://skilldrills.online/de/drills/memory/short-term-memory/digit-span#step-2",
-      
-      "name": "Rhythmisches 3er-Chunking anwenden",
-      "text": "Teile die Ziffern wie bei einer Telefonnummer in 2- bis 3-stellige Blöcke auf (z.B. '739 - 281'), um die kognitive Last zu minimieren."
+      "name": "In 2er- oder 3er-Gruppen teilen",
+      "text": "Teile die Ziffern wie eine Telefonnummer in Gruppen (z. B. '739-281'), damit du weniger Einheiten halten musst."
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "url": "https://skilldrills.online/de/drills/memory/short-term-memory/digit-span#step-3",
-      
-      "name": "Artikulatorisches Rehearsal im Kopf",
-      "text": "Wiederhole die Ziffernblöcke innerlich in einer schnellen Schleife, um den Zerfall der auditiven Spur nach 1,5–2 Sekunden zu verhindern."
+      "name": "Innerlich wiederholen",
+      "text": "Sprich die Gruppen nach dem Ausblenden leise im Kopf weiter (phonologische Schleife), bis du eingibst."
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "url": "https://skilldrills.online/de/drills/memory/short-term-memory/digit-span#step-4",
-      
-      "name": "Zügige Zifferneingabe",
-      "text": "Tippe die Ziffern nach Erscheinen des Tastenfelds in gleichmäßigem Tempo ein, solange die Erinnerungsspur frisch ist."
+      "name": "Innerhalb von 8 Sekunden eingeben",
+      "text": "Tippe die Ziffern über das Tastenfeld oder die Zifferntasten der Tastatur in derselben Reihenfolge ein und bestätige mit Enter. Mit Backspace löschst du; für die Eingabe hast du 8 Sekunden."
     }
   ]
 };
@@ -144,34 +140,34 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was ist der Zahlenspannen-Test (Digit Span Test)?",
+      "name": "Wie funktioniert dieser Zahlenspanne Test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Zahlenspannen-Test ist ein grundlegendes neuropsychologisches Verfahren zur Messung des verbalen Kurzzeitgedächtnisses, der Arbeitsgedächtniskapazität und der Aufmerksamkeit. Testpersonen prägen sich Ziffernfolgen ein und geben sie in exakter Reihenfolge wieder."
+        "text": "Eine zufällige Ziffernfolge wird kurz auf einmal angezeigt. Danach gibst du sie in derselben Reihenfolge (vorwärts) ein. Du startest mit 3 Ziffern; ein Treffer verlängert die nächste Folge um 1 Ziffer (maximal 15), ein Fehler oder 8 Sekunden ohne Eingabe verkürzt sie um 1 (mindestens 3). Ein Lauf dauert 45 Sekunden."
       }
     },
     {
       "@type": "Question",
-      "name": "Was ist ein normaler Durchschnittswert beim Zahlenspannen-Test?",
+      "name": "Wie viele Zahlen kann man sich durchschnittlich merken?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die durchschnittliche vorwärts gerichtete Zahlenspanne bei Erwachsenen liegt bei 5 bis 7 Ziffern (Standardabweichung 1–2). 7 Ziffern entsprechen George A. Millers klassischem '7 ± 2'-Richtwert; Werte ab 9 Ziffern zeugen von herausragendem Chunking."
+        "text": "In der Forschung nannte Miller (1956) etwa 7 ± 2 Einheiten; ohne Wiederholen und Gruppieren liegt die Kapazität laut Cowan (2001) eher bei etwa 4. SkillDrills sammelt keine Nutzerdaten und nennt daher keine Durchschnitte oder Perzentile für dieses Spiel. Wegen Zeitlimit und automatischer Anpassung ist es mit Laborwerten nicht direkt vergleichbar; nutze die Übungsstufen unten."
       }
     },
     {
       "@type": "Question",
-      "name": "Was ist der Unterschied zwischen Vorwärts- und Rückwärts-Zahlenspanne?",
+      "name": "Gibt es auch eine Rückwärts-Zahlenspanne?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Vorwärtsspanne misst die passive Speicherung in der phonologischen Schleife. Die Rückwärtsspanne erfordert das mentale Umkehren der Folge vor der Eingabe, beansprucht die zentrale Exekutive und misst somit aktives Arbeitsgedächtnis."
+        "text": "Nein, dieser Test fragt nur vorwärts ab. Bei der Rückwärts-Variante müssen die Ziffern im Kopf umgedreht werden, was das Arbeitsgedächtnis stärker fordert; sie wird hier nicht angeboten."
       }
     },
     {
       "@type": "Question",
-      "name": "Was ist der WAIS-Zahlenspannen-Untertest?",
+      "name": "Ist das der Zahlennachsprechen-Untertest aus dem WAIS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein Kernuntertest des Wechsler-Intelligenztests (WAIS-IV) zur Ermittlung des Arbeitsgedächtnisindex (AGI). Er prüft sequenzielle Verarbeitung, mentale Flexibilität und Ablenkungsresistenz."
+        "text": "Nein. Das Format ähnelt dem Zahlennachsprechen, es ist aber kein WAIS-Untertest und berechnet weder IQ noch Wertpunkte. Es ist ein kostenloses Übungsspiel."
       }
     },
     {
@@ -179,23 +175,23 @@ const faqSchema = {
       "name": "Wie beeinflusst die phonologische Schleife die Leistung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nach Baddeleys Modell werden Ziffern im phonologischen Speicher gehalten und durch inneres Wiederholen ('inner voice') aufgefrischt. Da akustische Spuren nach 1,5 bis 2 Sekunden verblassen, bestimmt das Sprechtempo im Kopf die maximale Spanne."
+        "text": "Im Arbeitsgedächtnismodell von Baddeley werden Ziffern als Klang im phonologischen Speicher gehalten und durch inneres Wiederholen aufgefrischt. Ohne Wiederholen verblasst die Spur nach etwa 2 Sekunden, deshalb hilft es, sofort nach dem Ausblenden innerlich mitzusprechen."
       }
     },
     {
       "@type": "Question",
-      "name": "Was besagt Millers Gesetz (Magische Zahl 7 ± 2)?",
+      "name": "Wie wird die Punktzahl berechnet?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "George A. Miller stellte 1956 fest, dass das menschliche Kurzzeitgedächtnis auf etwa 7 ± 2 Informationseinheiten begrenzt ist. Moderne Modelle (Cowan, 2001) zeigen, dass die reine Kapazität ohne Chunking bei 4 Einheiten liegt."
+        "text": "Eine richtig eingegebene Folge bringt 100 × (1 + 0,1 × (Ziffern − 3)) Punkte: 3 Ziffern = 100, 15 Ziffern = 220 Punkte. Fehler kosten weder Punkte noch Zeit, nur eine Ziffer Länge."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie hilft Chunking beim Merken von Zahlen?",
+      "name": "Wie hilft Chunking beim Zahlen merken?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chunking fasst Einzelziffern zu rhythmischen Gruppen zusammen (z.B. '839 - 241'). Dadurch werden 6 Ziffern zu 2 Einheiten komprimiert, was den Engpass des Arbeitsgedächtnisses elegant überwindet."
+        "text": "Wer Ziffern wie eine Telefonnummer gruppiert ('839-241'), merkt sich 6 Ziffern als 2 Blöcke. Weniger Einheiten lassen sich leichter halten, auch bei langen Folgen."
       }
     },
     {
@@ -203,7 +199,7 @@ const faqSchema = {
       "name": "Warum verringert sich die Ziffernlänge nach einem Fehler?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Test nutzt ein adaptives 1-up / 1-down Staircase-Verfahren. Nach einem Fehler sinkt die Ziffernanzahl um 1, um deine tatsächliche Leistungsgrenze ermüdungsfrei und statistisch präzise zu bestimmen."
+        "text": "Treffer verlängern um 1 Ziffer, Fehler verkürzen um 1 (1-up/1-down). So pendelt die Länge um deine aktuelle Grenze. Zusätzlich wird die Anzeigezeit nach einem Treffer 0,1 s kürzer und nach einem Fehler 0,2 s länger (0,8 bis 2,5 s)."
       }
     },
     {
@@ -211,7 +207,7 @@ const faqSchema = {
       "name": "Kann Zahlenspannentraining Konzentration und Denkleistung steigern?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Regelmäßiges Training stärkt die Aufmerksamkeitskontrolle, verringert Tagträumen und schult das Gehirn in strategischem Chunking – vorteilhaft für Mathematik, Programmierung und Studium."
+        "text": "Das ist nicht garantiert. Mit Übung steigt meist der Wert in genau diesem Spiel; ob sich das auf Alltag, Lernen oder Denkleistung überträgt, ist in der Forschung umstritten. Bei echten Gedächtnissorgen wende dich an eine Ärztin oder einen Arzt."
       }
     },
     {
@@ -219,7 +215,7 @@ const faqSchema = {
       "name": "Ist dieser Online-Test kostenlos und ohne Installation nutzbar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, der SkillDrills Zahlenspannen-Test ist 100 % kostenlos, läuft vollständig im Browser ohne Anmeldung und misst Tastaturlatenzen auf die Millisekunde genau."
+        "text": "Ja, kostenlos, ohne Installation und ohne Konto. Eingabe per Tastenfeld (Touch oder Klick) oder über die Zifferntasten der Tastatur; deine Bestwerte bleiben nur im Browser gespeichert."
       }
     }
   ]
@@ -227,87 +223,60 @@ const faqSchema = {
 
 const digitSpanGuide = {
   intro: [
-  "Der Zahlenspannen-Test (Digit Span Memory Test) ist das führende neuropsychologische Verfahren zur Erfassung des verbalen Kurzzeitgedächtnisses, der Arbeitsgedächtnisspanne und der phonologischen Verarbeitungskapazität. Seit über einem Jahrhundert bildet er das Fundament kognitiver Intelligenztests.",
-  "Die theoretische Basis geht auf George A. Millers (1956) bahnbrechende Arbeit 'The Magical Number Seven, Plus or Minus Two' zurück. David Wechsler (1939, 1955, 2008) integrierte die Zahlenspanne in die Wechsler Adult Intelligence Scale (WAIS), wo sie als Goldstandard für den Arbeitsgedächtnisindex (AGI) dient.",
-  "Im Mehrkomponentenmodell von Alan Baddeley (1974, 2000) werden Ziffernfolgen in der 'phonologischen Schleife' aufrechterhalten. Der auditive Speicher hält Spuren etwa 1,5 bis 2,0 Sekunden lang, bevor sie durch artikulatorisches Rehearsal erneuert werden müssen. Nelson Cowan (2001) wies zudem nach, dass die ungebündelte Fokalkapazität strikt auf 4 ± 1 Einheiten beschränkt ist – längere Spannen erfordern zwingend rhythmische Chunking-Strategien.",
-  "Diese Übung ist mit digitaler Hochpräzisions-Chronometrie (Woods et al., 2015) kalibriert und ermittelt über eine adaptive Treppenprogression zuverlässig deine persönliche Leistungsgrenze.",
-  "Messmethodik: Alle Eingaben werden lokal im Browser mittels performance.now() mit Millisekundenpräzision erfasst. Es werden keine Daten übertragen. Browser-Timer sind aus Sicherheitsgründen auf ca. 1 ms gerundet und mit der Bildwiederholrate (ca. 16,7 ms bei 60 Hz) synchronisiert (Woods et al., 2015). Vergleiche deine Werte stets auf demselben Gerät.",
-  "Datentransparenz: SkillDrills speichert keine Messdaten auf externen Servern. Deine Bestwerte verbleiben lokal im Browser (localStorage). Alle Richtwerte stammen aus peer-reviewten Fachpublikationen.",
-  "Diese Übung dient der kognitiven Unterhaltung und dem Training. Sie ist kein Medizinprodukt und stellt keine klinische Diagnose dar. Bei gesundheitlichen Bedenken wende dich an medizinisches Fachpersonal."
+  "Der Zahlenspanne Test zeigt dir kurz eine Ziffernfolge, die du danach in derselben Reihenfolge eingibst. Er ist eine Übungsversion der Zahlenspanne-Aufgabe (Digit Span), mit der die Psychologie seit Langem das Kurzzeitgedächtnis untersucht, und kein klinischer Test oder IQ-Test.",
+  "Bekannt wurde die Frage nach der Spanne durch George A. Millers „magische Zahl 7 ± 2“ (1956). Ein ähnliches Zahlennachsprechen steckt auch im Wechsler-Intelligenztest (WAIS); dieses Spiel ist aber kein WAIS-Untertest und berechnet keine Wertpunkte.",
+  "Im Arbeitsgedächtnismodell von Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000) werden Ziffernfolgen in der phonologischen Schleife gehalten und verblassen ohne inneres Wiederholen nach etwa 2 Sekunden. Nelson Cowan (2001) zufolge liegt die reine Kapazität ohne Wiederholen und Gruppieren bei etwa 4 Einheiten; für lange Folgen hilft daher Chunking.",
+  "So läuft der Test: Start mit 3 Ziffern; die ganze Folge erscheint auf einmal (anfangs 2,5 s, nach jedem Treffer 0,1 s kürzer bis mindestens 0,8 s, nach einem Fehler 0,2 s länger). Danach hast du 8 Sekunden für die Eingabe über das Tastenfeld oder die Tastatur. Ein Treffer bringt 1 Ziffer mehr (maximal 15), ein Fehler oder Zeitablauf 1 weniger (mindestens 3). Aufgezeichnet werden Punktzahl, längste Folge und Trefferquote (Anteil gelöster Runden); Reaktionszeiten werden nicht gemessen.",
+  "Datentransparenz: SkillDrills sammelt keine Punktzahlen auf Servern. Alle Werte bleiben im localStorage deines Browsers. Deshalb nennt diese Seite keine Nutzerdurchschnitte, Perzentile oder Nutzerzahlen; zitierte Zahlen stammen aus den unten aufgeführten Studien.",
+  "Medizinischer Hinweis: Dieses Übungsspiel ist kein Medizinprodukt und kein Diagnoseverfahren. Bei Sorgen um Gedächtnis oder Konzentration wende dich an eine Fachärztin oder einen Facharzt."
 ],
   benchmarks: {
-    title: "Normative Benchmarks für Zahlenspanne und Arbeitsgedächtnis",
-    headers: ["Leistungsstufe", "Zahlenspanne (Länge)", "WAIS-Skalenwert Äquiv.", "Kognitives Speicher- & Verarbeitungsprofil"],
-    note: "Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.",
+    title: "Zahlenspanne Test – Übungsstufen (SkillDrills, 45-Sekunden-Lauf)",
+    headers: ["Übungsstufe", "Erreichte Ziffernlänge", "Punkte bei fehlerfreiem Lauf", "Typische Merkstrategie"],
     rows: [
-  [
-    "Stufe 1",
-    "9 – 12+ Ziffern",
-    "Skalenwert 16 – 19",
-    "Mnemotechnisches Spitzenniveau; nutzt 3- bis 4-stellige rhythmische Chunks; fehlerfreie phonologische Schleife; Klicktakt unter 350 ms."
-  ],
-  [
-    "Stufe 2",
-    "7 – 8 Ziffern",
-    "Skalenwert 12 – 15",
-    "Erreicht Millers 7-Ziffern-Schwelle; bildet stabile Ziffernpaare/-triplets; unempfindlich gegen Zeitverfall; 350 – 500 ms Kadenz."
-  ],
-  [
-    "Stufe 3",
-    "5 – 6 Ziffern",
-    "Skalenwert 8 – 11",
-    "Normaler Durchschnitt gesunder Erwachsener; bewältigt einfache Paare; ab 7 Ziffern setzt akustische Überlagerung ein; 500 – 700 ms Kadenz."
-  ],
-  [
-    "Stufe 4",
-    "4 Ziffern",
-    "Skalenwert 5 – 7",
-    "Arbeitet an Cowans reiner 4-Punkte-Kapazitätsgrenze; ohne inneres Vorsagen scheitern Folgen über 4 Ziffern; 700 – 950 ms Kadenz."
-  ],
-  [
-    "Stufe 5",
-    "3 Ziffern",
-    "Skalenwert 1 – 4",
-    "Schwierigkeiten bei 3 Ziffern in Folge; hohe Anfälligkeit für sofortigen Spurzerfall und Ablenkung; Tastkadenz über 950 ms."
-  ]
+  ["Stufe A", "13+ Ziffern", "ca. 1.450+", "3er-/4er-Chunking plus schnelles inneres Wiederholen"],
+  ["Stufe B", "11–12 Ziffern", "ca. 1.080–1.449", "Stabile 3er-Gruppen"],
+  ["Stufe C", "9–10 Ziffern", "ca. 750–1.079", "Gruppiert in 2er/3er, verliert aber oft Ziffern in der Mitte"],
+  ["Stufe D", "7–8 Ziffern", "ca. 460–749", "Ziffern einzeln wiederholt, noch kein Gruppieren"],
+  ["Stufe E", "3–6 Ziffern", "unter 460", "Regeln und Anzeigetempo kennenlernen"]
 ],
-    note: "Die Zahlenspanne entspricht der maximal fehlerfrei wiederholten Ziffernlänge. WAIS-Skalenwerte basieren auf offiziellen Standardisierungen (Wechsler, 2008; Woods et al., 2015)."
+    note: "SkillDrills-Übungsstufen, keine Bevölkerungsnormen und keine WAIS-Werte. Die Punkte gelten für einen fehlerfreien Lauf ab 3 Ziffern bis zu dieser Länge (Punkte pro Runde = 100 × (1 + 0,1 × (Ziffern − 3))); Fehler verkürzen die Folge, daher weichen echte Werte ab."
   },
   techniques: {
-    title: "Evidenzbasierte Protokolle zur Erweiterung der Zahlenspanne",
+    title: "Strategien für eine längere Zahlenspanne",
     items: [
   {
-    "name": "Phonetischer Rhythmus & 3er-Chunking",
-    "desc": "Teile Ziffernketten wie eine Telefonnummer in 3er-Gruppen auf (z.B. '739 - 281 - 405') (Miller, 1956). 9 Einzelziffern schrumpfen dadurch auf 3 handhabbare Einheiten zusammen.",
-    "tips": "Betone die erste Ziffer jedes Blocks gedanklich etwas höher, um klare Grenzen zu setzen."
+    "name": "Rhythmisches 3er-Chunking",
+    "desc": "Teile die Ziffern wie eine Telefonnummer in 3er-Gruppen (z. B. '739 - 281 - 405'; Miller, 1956). Aus 9 Ziffern werden 3 Blöcke.",
+    "tips": "Betone innerlich die erste Ziffer jeder Gruppe leicht, dann bleiben die Grenzen klar."
   },
   {
-    "name": "Artikulatorische Schleifen-Synchronisation",
-    "desc": "Spreche die Ziffernblöcke innerlich in einer schnellen, kontinuierlichen Schleife auf (Baddeley, 1986). Schnelles inneres Wiederholen frischt das Signal vor dem Zerfall nach 2 Sekunden auf.",
-    "tips": "Spreche Ziffern nicht isoliert aus, sondern wie flüssige mehrsilbige Kunstwörter."
+    "name": "Schnelles inneres Wiederholen",
+    "desc": "Sprich die Gruppen im Kopf zügig im Kreis (phonologische Schleife; Baddeley, 2000). Ohne Wiederholen verblasst die Spur nach etwa 2 Sekunden, also direkt nach dem Ausblenden beginnen.",
+    "tips": "Sprich jede Gruppe als ein Wort, nicht Ziffer für Ziffer."
   },
   {
-    "name": "Kinästhetische Tastenfeld-Pfade",
-    "desc": "Verbinde Ziffern mit Bewegungsmustern auf dem 3x3-Ziffernblock (Logie, 1995). Die Übersetzung in räumliche Fingerbewegungen aktiviert den Motorkortex als Zweitspeicher.",
-    "tips": "Visualisiere den Zickzack-Pfad über das Tastenfeld, während die Zahlen aufleuchten."
+    "name": "Fingerweg auf dem Tastenfeld vorstellen",
+    "desc": "Verwandle die Folge in einen Weg über das Tastenfeld (Logie, 1995). So kommt zur Klangspur eine räumliche Spur hinzu.",
+    "tips": "Zeichne beim Anschauen gedanklich die Linie über die Tasten."
   },
   {
-    "name": "Primacy-Recency-Positionsaufteilung",
-    "desc": "Die ersten Ziffern profitieren vom Start-Rehearsal (Primacy), während die letzten 2 Ziffern als frisches Echo im Ohr nachklingen (Recency). Konzentriere dein inneres Wiederholen auf die Ziffern in der Mitte.",
-    "tips": "Sichere die ersten 3 Ziffern sofort und verlasse dich für die letzten Ziffern auf den akustischen Nachhall."
+    "name": "Die Mitte sichern (Positionseffekt)",
+    "desc": "Anfang und Ende bleiben meist besser hängen, Ziffern in der Mitte gehen am leichtesten verloren. Richte dein Wiederholen gezielt auf die mittleren Gruppen.",
+    "tips": "Leg die ersten 3 Ziffern sofort fest und verlass dich bei den letzten 2 auf das frische Bild."
   }
 ]
   },
   steps: [
-  "Blicke auf das Ziffernfeld und warte auf die 3-sekündige Präsentationsphase.",
-  "Teile die erscheinenden Ziffern sofort in 2- oder 3-stellige rhythmische Gruppen ein.",
-  "Wiederhole die Gruppen innerlich wie ein Mantra, um den Zerfall zu stoppen.",
-  "Tippe die Ziffern nach Erscheinen der Tastatur zügig in exakter Reihenfolge ein.",
-  "Lass das adaptive Treppenverfahren deine persönliche Kapazitätsgrenze kontinuierlich erweitern."
+  "Starte den 45-Sekunden-Lauf und richte den Blick auf die Bildschirmmitte.",
+  "Sobald die Ziffernfolge erscheint, teile sie sofort in 2er- oder 3er-Gruppen.",
+  "Wiederhole die Gruppen nach dem Ausblenden schnell im Kopf.",
+  "Gib die Ziffern innerhalb von 8 Sekunden in derselben Reihenfolge ein und bestätige mit Enter.",
+  "Treffer verlängern die Folge, Fehler verkürzen sie: Vergleiche Punktzahl und längste Folge mit deinen eigenen Bestwerten."
 ],
-  audience: "Schüler, Studenten, Berufstätige und Kandidaten für Eignungstests (WAIS, Assessment-Center), die ihr Arbeitsgedächtnis und ihren Fokus schärfen möchten.",
+  audience: "Schüler, Studierende, Berufstätige und alle, die ausprobieren möchten, wie viele Zahlen sie sich merken können, und ihr Arbeitsgedächtnis spielerisch üben wollen.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'woods2015'),
+  sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995'),
   related: [
   {
     "href": "/de/drills/memory/working-memory/n-back",
@@ -388,25 +357,25 @@ export default function LocalizedDigitSpanPage() {
                         "num": "1",
                         "text": "Zahlenabruf",
                         "highlight": "+100 PKT",
-                        "result": "Aufblitzende Ziffernfolge merken und über das Tastenfeld eingeben"
+                        "result": "Kurz angezeigte Ziffernfolge merken und per Tastenfeld oder Tastatur eingeben"
                 },
                 {
                         "num": "2",
                         "text": "Level-Bonus",
                         "highlight": "Bis zu +120% PKT",
-                        "result": "Höhere Ziffernspanne bringt mehr Punkte pro Treffer"
+                        "result": "Runde = 100 × (1 + 0,1 × (Ziffern − 3)) Punkte"
                 },
                 {
                         "num": "3",
                         "text": "Fehler / Timeout",
                         "highlight": "-1 Ziffer",
-                        "result": "Kein Punkteverlust; Spanne sinkt um 1 Ziffer zur Stabilisierung"
+                        "result": "Fehler oder 8 s ohne Eingabe: kein Punkt- oder Zeitabzug, neue Folge 1 Ziffer kürzer"
                 },
                 {
                         "num": "4",
                         "text": "Adaptiver Test",
                         "highlight": "Steigt & fällt",
-                        "result": "Konvergiert exakt auf deine tatsächliche Gedächtnisspanne"
+                        "result": "Treffer +1 Ziffer, Fehler −1 Ziffer (3 bis 15)"
                 }
         ]
 }} />

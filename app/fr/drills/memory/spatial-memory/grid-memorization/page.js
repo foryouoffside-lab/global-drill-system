@@ -6,12 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de mémoire visuelle en ligne | SkillDrills",
-  description: "Teste ta mémoire visuelle en ligne : mémorise des cases éclairées dans une grille et reproduis le motif dans ton navigateur.",
+  description: "Test de mémoire visuelle en ligne : retiens les cases qui s’allument 1,5 seconde dans une grille et reproduis le motif, de 4x4 jusqu’à 12 cases en 5x5.",
   keywords: [
     "test de mémoire visuelle",
     "test mémoire visuelle",
-    "test de mémoire spatiale",
-    "jeu de mémoire visuelle",
+    "motifs à mémoriser",
     "mémoire des motifs",
     "matrice de mémoire",
     "mémoire visuo-spatiale",
@@ -29,7 +28,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de mémoire visuelle en ligne | SkillDrills",
-    description: "Teste ta mémoire visuelle : mémorise des cases éclairées et reproduis le motif dans une grille, sans inscription.",
+    description: "Test de mémoire visuelle en ligne : retiens les cases qui s’allument 1,5 seconde dans une grille et reproduis le motif, de 4x4 jusqu’à 12 cases en 5x5.",
     url: "https://skilldrills.online/fr/drills/memory/spatial-memory/grid-memorization",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -38,7 +37,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de mémoire visuelle en ligne | SkillDrills",
-    description: "Teste ta mémoire visuelle : mémorise des cases éclairées et reproduis le motif dans une grille, sans inscription.",
+    description: "Test de mémoire visuelle en ligne : retiens les cases qui s’allument 1,5 seconde dans une grille et reproduis le motif, de 4x4 jusqu’à 12 cases en 5x5.",
   },
 };
 
@@ -78,7 +77,7 @@ const webAppSchema = {
   "@type": "WebApplication",
   "name": "Test de Mémoire Visuelle en Ligne",
   "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/grid-memorization",
-  "description": "Test neuropsychologique gratuit mesurant la memoire de travail visuo-spatiale, la reconnaissance de motifs et la capacite du cache visuel sur grille matricielle.",
+  "description": "Test de mémoire visuelle gratuit dans le navigateur : retenir les cases allumées 1,5 seconde dans une grille 4x4 à 5x5 et reproduire le motif.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
@@ -93,7 +92,7 @@ const webAppSchema = {
   },
   "sameAs": "https://fr.wikipedia.org/wiki/M%C3%A9moire_visuelle",
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-11-12"
 };
 
 const softwareSchema = {
@@ -108,7 +107,7 @@ const softwareSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "dateModified": "2026-09-16",
+  "dateModified": "2026-11-12",
   "author": {
     "@type": "Organization",
     "name": "SkillDrills"
@@ -120,8 +119,8 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Test de Mémoire Visuelle en Ligne",
   "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/grid-memorization",
-  "description": "Jeu cognitif interactif mesurant l empan visuel, le chunking spatial et la restitution de motifs matriciels sans contrainte verbale.",
-  "dateModified": "2026-09-16",
+  "description": "Exercice de mémoire visuelle gratuit : des cases s’allument 1,5 seconde dans une grille, puis tu reproduis le motif de mémoire.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Memory Game", "Cognitive Training", "Brain Training", "Spatial Memory"],
   "playMode": "SinglePlayer",
@@ -138,7 +137,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Comment s entrainer a la memoire visuelle matricielle",
-  "description": "Protocole en 4 etapes pour encoder, regrouper par formes geometriques et restituer sans faute des motifs sur grille matricielle.",
+  "description": "Quatre étapes pratiques pour retenir un motif de cases allumées en 1,5 seconde et le reproduire.",
   "step": [
     {
       "@type": "HowToStep",
@@ -174,14 +173,14 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-16",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu est-ce que le test de memoire visuelle matricielle (Visual Patterns Test) ?",
+      "name": "Comment fonctionne ce test de mémoire visuelle ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le test de memoire visuelle sur grille matricielle est inspire du Visual Patterns Test (VPT) developpe par Della Sala et al. (1997). Il evalue la capacite de retention a court terme de motifs visuo-spatiaux statiques, isolant le cache visuel passif des processus de mouvement sequentiel."
+        "text": "Sur une grille 4x4, 5 cases s’allument en violet pendant 1,5 seconde. Ensuite, tu cliques sur toutes les cases qui étaient allumées. Chaque motif complet rapporte 150 points et ajoute une case. Après 7 cases en 4x4, la grille passe en 5x5 (de 5 à 12 cases au maximum). Le chrono de 60 secondes ne tourne que pendant la reproduction. Le format rappelle le Visual Patterns Test (Della Sala et al., 1997), mais ce n’est pas ce test et il n’en reprend ni la procédure ni les normes."
       }
     },
     {
@@ -194,10 +193,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Quelle est la capacite moyenne de retention d un motif sur une grille ?",
+      "name": "Combien de cases peut-on retenir d’un coup ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Selon les etudes fondamentales de Luck & Vogel (1997) et de Cowan (2001), la memoire de travail visuelle humaine peut retenir environ 4 elements integres sans encodage verbal. Grace au chunking visuel, un adulte entraine peut atteindre 8 a 12 cases memorisees simultanement."
+        "text": "Selon Luck & Vogel (1997) et Cowan (2001), la mémoire de travail visuelle retient environ 3 à 4 objets à la fois. Regrouper les cases en formes permet d’en retenir davantage. Dans cet exercice, chaque motif réussi vaut 150 points ; le rang affiché en fin de partie est un repère d’entraînement SkillDrills (1 150 points en haut de l’échelle), pas une moyenne ni une norme."
       }
     },
     {
@@ -218,10 +217,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Pourquoi le temps d exposition est-il limite a 1,5 seconde ?",
+      "name": "Que se passe-t-il si je clique sur une mauvaise case ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une duree de 1,5 seconde permet une capture foveale et parafoveale complete du motif tout en empechant la verbalisation phonologique sub-vocale (comme compter les colonnes ou nommer les coordonnees), garantissant une evaluation stricte de la memoire visuelle."
+        "text": "La manche s’arrête, sans perte de points ni de temps. Un nouveau motif apparaît au même niveau : la difficulté ne baisse jamais après une erreur."
       }
     },
     {
@@ -234,18 +233,18 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Comment le sommeil et la fatigue affectent-ils le cache visuel ?",
+      "name": "Pourquoi le motif ne s’affiche-t-il que 1,5 seconde ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La privation de sommeil et la charge mentale reduisent significativement la bande passante du calepin visuo-spatial dans le cortex parietal et occipital, abaissant l empan de 20 a 30 % et augmentant les fausses alertes lors de la restitution."
+        "text": "L’affichage est fixé à 1,5 seconde dans cet exercice. C’est court pour nommer chaque case ou compter les colonnes, ce qui pousse à retenir la forme d’ensemble du motif plutôt qu’une liste de coordonnées."
       }
     },
     {
       "@type": "Question",
-      "name": "L entrainement matriciel ameliore-t-il les performances dans les jeux video ?",
+      "name": "Est-ce utile pour les jeux vidéo ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, les joueurs de jeux tactiques, de MOBA et de FPS beneficient directement d un cache visuel aiguise: cela accelere la lecture de la mini-carte, la memorisation instantanee de la position des adversaires et la perception globale de l environnement de combat."
+        "text": "L’exercice ressemble à des situations où l’on voit une disposition brièvement et doit la retenir, comme la mini-carte ou un échiquier. Aucun transfert vers d’autres activités n’est garanti."
       }
     },
     {
@@ -253,7 +252,7 @@ const faqSchema = {
       "name": "Ce test en ligne de memoire visuelle est-il gratuit et sans inscription ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, le test de memoire visuelle SkillDrills est 100% gratuit, fonctionne entierement cote client dans votre navigateur web sans telechargement ni compte utilisateur, et fournit un retour immediat sur votre empan visuo-spatial."
+        "text": "Oui, le test de memoire visuelle SkillDrills est 100% gratuit, fonctionne entierement cote client dans votre navigateur web sans telechargement ni compte utilisateur, et affiche ton score, ta précision et ton meilleur niveau à la fin de chaque partie."
       }
     }
   ]
@@ -262,32 +261,30 @@ const faqSchema = {
 const gridGuide = {
   heading: "Guide Scientifique de la Mémoire Visuelle & Matrice de Grille",
   intro: [
-    "Le test de mémoire visuelle sur grille matricielle (Visual Memory Test) évalue la capacité de stockage et de restitution du calepin visuo-spatial, l'une des composantes centrales de la mémoire de travail humaine. Contrairement aux tests verbaux reposant sur la boucle phonologique et la répétition acoustique, cette épreuve isole l'architecture visuelle non verbale pure du cerveau.",
-    "L'étude clinique de l'empan visuo-spatial a été inaugurée par Pietro Corsi (1972) à travers le test des blocs de Corsi, démontrant que la mémoire visuo-spatiale constitue un système mnésique indépendant de l'empan verbal de chiffres (Milner, 1971). En 1997, Sergio Della Sala, Robert H. Logie et leurs collègues ont mis au point le Visual Patterns Test (VPT) afin d'isoler spécifiquement la rétention de motifs matriciels statiques des processus de mouvement séquentiel.",
+    "Ce test de mémoire visuelle en ligne affiche pendant 1,5 seconde des cases allumées dans une grille, puis tu reproduis le motif de mémoire. Tu commences avec 5 cases sur une grille 4x4 ; chaque motif réussi ajoute une case, et la grille 5x5 monte jusqu'à 12 cases. Ce sont des motifs à mémoriser par leur forme, sans les décrire avec des mots.",
+    "L'étude clinique de l'empan visuo-spatial a été inaugurée par Pietro Corsi (1972) à travers le test des blocs de Corsi, démontrant que la mémoire visuo-spatiale constitue un système mnésique indépendant de l'empan verbal de chiffres (Milner, 1971). En 1997, Sergio Della Sala, Robert H. Logie et leurs collègues ont publié le Visual Patterns Test (VPT) afin d'isoler la rétention de motifs matriciels statiques des processus de mouvement séquentiel. Cet exercice utilise un format proche, mais ce n'est pas le VPT.",
     "Dans les neurosciences cognitives modernes, Robert H. Logie (1995) et Alan Baddeley (2000) ont subdivisé le calepin visuo-spatial en deux registres : le « cache visuel » (espace passif dédié aux représentations statiques de forme, de couleur et d'agencement) et le « scribe interne » (mécanisme actif de planification motrice et de répétition spatiale). Les recherches pionnières de Steven J. Luck & Edward K. Vogel (1997) et de Nelson Cowan (2001) confirment que la mémoire de travail visuelle brute est strictement plafonnée à 3 ou 4 unités indépendantes : repousser cette limite impose un regroupement spatial en formes gestaltistes (chunking).",
-    "Calibré avec une haute rigueur chronométrique (Woods et al., 2015), cet entraînement repose sur une fenêtre d'exposition standardisée de 1,5 seconde et une progression adaptative pas-à-pas pour mesurer votre plafond d'empan matriciel sous forte contrainte temporelle.",
-    "Méthodologie de mesure : chaque interaction est horodatée avec l'horloge haute résolution performance.now() de votre navigateur, directement sur votre appareil — aucun résultat n'est téléversé vers un serveur. Les minuteurs des navigateurs sont volontairement discrétisés face aux vulnérabilités matérielles (de l'ordre de 1 ms), et l'affichage quantifie chaque transition à l'intervalle de rafraîchissement d'écran (environ 16,7 ms par image à 60 Hz ; Woods et al., 2015). Les écarts inférieurs à 5 ms relèvent du bruit de mesure ; pour suivre vos progrès, comparez vos sessions sur le même matériel.",
-    "Transparence des données et respect de la vie privée : SkillDrills ne collecte aucune donnée agrégée. Vos scores et préférences demeurent stockés exclusivement dans le localStorage de votre navigateur web, garantissant qu'aucune moyenne globale ni profil d'utilisateur n'est publié. Toutes les références numériques et scientifiques citées ici proviennent directement des publications avec comité de lecture répertoriées ci-dessous.",
+    "Déroulement : chaque motif s'affiche 1,5 seconde. Le chrono de 60 secondes ne tourne que pendant la reproduction. Un motif complet rapporte 150 points et ajoute une case ; une case erronée termine la manche sans perte de points ni de temps, et un nouveau motif apparaît au même niveau. Aucun temps de réaction n'est mesuré.",
+    "Transparence des données et respect de la vie privée : SkillDrills ne collecte aucune donnée agrégée. Vos scores et préférences demeurent stockés exclusivement dans le localStorage de votre navigateur web, garantissant qu'aucune moyenne globale ni profil d'utilisateur n'est publié.",
     "Cet entraînement est un jeu interactif sur navigateur conçu à des fins d'entraînement personnel et pédagogique. Il ne constitue pas un dispositif médical, un outil d'évaluation clinique, ni un protocole de diagnostic pour le TDAH, les troubles de la mémoire ou les affections neurocognitives. Si vous avez des interrogations sur votre santé cognitive ou vos capacités de mémorisation, consultez un neuropsychologue ou un médecin qualifié."
   ],
   benchmarks: {
-    title: "Paliers de Référence Normatifs de l'Empan Matriciel Visuo-Spatial",
-    headers: ["Palier de Performance", "Empan Matriciel (Cases)", "Score à l'Exercice", "Profil de Stockage & Stratégie de Chunking"],
+    title: "Repères d'entraînement SkillDrills (une partie)",
+    headers: ["Palier", "Points", "Motifs réussis", "Difficulté atteinte"],
     rows: [
-      ["Palier 1", "Empan 10 – 14+ cases", "1 150+ points", "Décomposition des motifs complexes en 2-3 formes géométriques de Gestalt ; rétention parfaite dans le cache visuel ; cadence de clic sub-450 ms."],
-      ["Palier 2", "Empan 8 – 9 cases", "850 – 1 149 points", "Supérieur à la moyenne adulte ; exécution rapide du chunking de formes (triplets, formes en L) ; grande résistance au bruit visuel ; cadence 450 – 650 ms."],
-      ["Palier 3", "Empan 6 – 7 cases", "550 – 849 points", "Ligne de base de la population adulte saine (Della Sala et al., 1997) ; gère des regroupements simples ; perte des cases périphériques sur grilles 5x5 ; cadence 650 – 900 ms."],
-      ["Palier 4", "Empan 5 cases", "350 – 549 points", "Proche de la limite brute de capacité sans chunking (Cowan, 2001) ; mémorisation isolée case par case sans regroupement géométrique ; cadence 900 – 1 200 ms."],
-      ["Palier 5", "Empan < 5 cases", "< 350 points", "Dégradation rapide de la trace visuelle ; vulnérabilité aux interférences ; difficulté à retenir plus de 4 cases après le délai de 1,5 s ; cadence supérieure à 1 200 ms."]
+      ["Palier haut", "1 200 et plus", "8 ou plus", "Grille 5x5, 10 à 12 cases"],
+      ["Palier intermédiaire", "600 – 1 050", "4 – 7", "Grille 5x5, 6 à 9 cases"],
+      ["Palier de départ", "150 – 450", "1 – 3", "4x4 avec 6 à 7 cases, passage en 5x5 après 3 motifs"],
+      ["Début", "0", "0", "Grille 4x4, 5 cases"]
     ],
-    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. L'empan correspond à la configuration matricielle maximale complétée sans faute durant la session de 45 secondes (Della Sala et al., 1997 ; Luck & Vogel, 1997 ; Woods et al., 2015)."
+    note: "Points = motifs réussis × 150. Ces paliers sont calculés à partir des règles du jeu : ce sont des repères d'entraînement SkillDrills, pas des statistiques de population ni des normes cliniques."
   },
   techniques: {
     title: "Protocoles Scientifiques pour Développer la Mémoire Matricielle",
     items: [
       {
         name: "Regroupement Spatial et Formes Gestaltistes",
-        desc: "Regroupez mentalement les cases allumées adjacentes en formes géométriques familières telles que des triangles, des lignes, des carrés ou des lettres (Wertheimer, 1923 ; Della Sala et al., 1999). Combiner 7 coordonnées isolées en deux formes reconnues réduit la charge cognitive de plus de 60 %.",
+        desc: "Regroupez mentalement les cases allumées adjacentes en formes géométriques familières telles que des triangles, des lignes, des carrés ou des lettres (Wertheimer, 1923 ; Della Sala et al., 1999). Regrouper 7 coordonnées en 2 ou 3 formes réduit le nombre d'unités à retenir.",
         tips: "Recherchez immédiatement les lignes connectées et les blocs d'angles plutôt que de fixer des cases isolées."
       },
       {
@@ -316,7 +313,7 @@ const gridGuide = {
   ],
   audience: "Joueurs de jeux tactiques et FPS (lecture rapide de mini-carte), étudiants en sciences et ingénierie (géométrie spatiale), radiologues, joueurs d'échecs et toute personne souhaitant développer sa mémoire de travail non verbale.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
+  sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971'),
   related: [
     { href: "/fr/drills/memory/spatial-memory/path-tracing", label: "Test de Mémorisation de Trajet" },
     { href: "/fr/drills/memory/spatial-memory/object-location", label: "Test de Mémoire de Localisation" },
@@ -355,7 +352,7 @@ export default function GridMemorizationFrenchPage() {
       />
       <GridMemorizationClient copy={{
         "h1Keyword": "Test de mémoire visuelle en ligne",
-        "h1Suffix": " – Mémoire spatiale",
+        "h1Suffix": "",
         "subtitle": "Mémorise les cases éclairées d’une grille",
         "caption": "La mémoire de travail visuelle stocke environ quatre objets intégrés simultanément, la limite étant fixée par le nombre d'objets plutôt que par la complexité visuelle (Luck & Vogel, 1997). Les grilles matricielles sollicitent le cache visuel passif pour la forme et l'organisation spatiale (Logie, 1995).",
         "statScore": "Score",
@@ -386,19 +383,19 @@ export default function GridMemorizationFrenchPage() {
             "num": "2",
             "text": "Progression de niveau",
             "highlight": "4x4 → 5x5",
-            "result": "La taille de la grille et le nombre de cases augmentent"
+            "result": "Une case de plus par motif réussi, jusqu’à 12 cases en 5x5"
           },
           {
             "num": "3",
-            "text": "Clic erroné / Délai dépassé",
+            "text": "Clic erroné",
             "highlight": "Aucune pénalité",
-            "result": "Aucune déduction de points en cas d'erreur"
+            "result": "Fin de la manche, sans perte de points ni de temps"
           },
           {
             "num": "4",
             "text": "Niveau maintenu",
             "highlight": "Même palier",
-            "result": "La manche est répétée au niveau actuel après une erreur"
+            "result": "Après une erreur, un nouveau motif au même niveau"
           }
         ]
       }} />

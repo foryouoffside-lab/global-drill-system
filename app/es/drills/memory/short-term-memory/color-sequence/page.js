@@ -6,7 +6,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
   title: "Juego Simón online | Secuencia de colores | SkillDrills",
-  description: "Juega a Simón online gratis: observa una secuencia creciente de colores y sonidos y repítela en el mismo orden desde el navegador.",
+  description: "Juego Simón online gratis, estilo Simon: memoriza la secuencia de colores que se ilumina y repítela en 6 botones. Empieza con 3 colores, +1 por acierto.",
   keywords: [
     "juego Simón",
     "Simón online",
@@ -35,7 +35,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Juego Simón online | Secuencia de colores | SkillDrills",
-    description: "Juega a Simón online gratis: observa una secuencia creciente de colores y sonidos y repítela en el mismo orden desde el navegador.",
+    description: "Juego Simón online gratis, estilo Simon: memoriza la secuencia de colores que se ilumina y repítela en 6 botones. Empieza con 3 colores, +1 por acierto.",
     url: "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -44,7 +44,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Juego Simón online | Secuencia de colores | SkillDrills",
-    description: "Juega a Simón online gratis: observa una secuencia creciente de colores y sonidos y repítela en el mismo orden desde el navegador.",
+    description: "Juego Simón online gratis, estilo Simon: memoriza la secuencia de colores que se ilumina y repítela en 6 botones. Empieza con 3 colores, +1 por acierto.",
   },
 };
 
@@ -66,7 +66,7 @@ export default function SpanishColorSequencePage() {
     "name": "Juego Simón Online",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Juego gratuito de memoria de secuencias de colores: practica la memoria de trabajo visual, el agrupamiento (chunking) y la atención sostenida en el navegador.",
     "genre": "Entrenamiento cognitivo / Memoria visual de trabajo",
@@ -83,8 +83,8 @@ export default function SpanishColorSequencePage() {
     "@type": "WebApplication",
     "name": "Juego Simón Online",
     "url": "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence",
-    "description": "Juego tipo Simón gratuito en el navegador, con 6 paneles de colores y una secuencia que se alarga o se acorta según tus aciertos.",
-    "dateModified": "2026-09-16",
+    "description": "Juego estilo Simon gratuito en el navegador, con 6 botones de colores: la secuencia gana un color por acierto y pierde uno por fallo.",
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
@@ -97,7 +97,7 @@ export default function SpanishColorSequencePage() {
     "@type": "VideoGame",
     "name": "Juego Simón – Secuencia de colores",
     "url": "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence",
-    "description": "Versión online del clásico juego electrónico de memoria: observa la secuencia de colores y sonidos y repítela en el mismo orden.",
+    "description": "Juego de memoria estilo Simon: los colores se iluminan uno a uno en el círculo central y los repites en el mismo orden con 6 botones.",
     "genre": ["Juego de memoria", "Entrenamiento mental", "Puzzle"],
     "gamePlatform": ["Navegador web", "Móvil", "Tablet", "Escritorio"],
     "applicationCategory": "Game",
@@ -113,7 +113,7 @@ export default function SpanishColorSequencePage() {
         "name": "¿Qué es el juego Simón y cómo se juega online?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Es un juego de memoria secuencial inspirado en el aparato electrónico Simon de 1978. La página ilumina una secuencia de paneles de colores con su sonido y tú la repites pulsando los mismos paneles en el mismo orden. En cada ronda acertada se añade un color más."
+          "text": "Es un juego de memoria estilo Simon, inspirado en el aparato electrónico de 1978 (no es el producto oficial de Hasbro). Los colores se iluminan uno a uno en el círculo central y tú los repites pulsando los 6 botones de colores en el mismo orden. El nivel 1 tiene 3 colores (longitud = nivel + 2); acertar sube un nivel y fallar baja uno. Cada ronda es una secuencia aleatoria nueva y la sesión dura 45 segundos."
         }
       },
       {
@@ -129,7 +129,7 @@ export default function SpanishColorSequencePage() {
         "name": "¿Cuántos elementos podemos retener según Luck y Vogel (1997)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Luck y Vogel (1997) y Cowan (2001) describen una capacidad de memoria de trabajo visual de unos 4 elementos independientes. Para recordar secuencias más largas hace falta agruparlos en bloques, es decir, usar chunking."
+          "text": "Luck y Vogel (1997) y Cowan (2001) describen una capacidad de memoria de trabajo visual de unos 4 elementos independientes. Su estudio usaba objetos mostrados a la vez, no secuencias, pero explica por qué agrupar los colores en bloques (chunking) ayuda con secuencias largas."
         }
       },
       {
@@ -153,7 +153,7 @@ export default function SpanishColorSequencePage() {
         "name": "¿Se pierde tiempo o puntos al fallar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No se resta tiempo del cronómetro ni se pierden los puntos ya acumulados. Al fallar, la secuencia retrocede un nivel y puedes seguir jugando hasta que termine la sesión de 45 segundos."
+          "text": "No se resta tiempo del cronómetro ni se pierden los puntos ya acumulados. Si pulsas un color equivocado o pasan 8 segundos sin pulsar, bajas un nivel (mínimo nivel 1) y empieza una secuencia aleatoria nueva."
         }
       },
       {
@@ -161,7 +161,7 @@ export default function SpanishColorSequencePage() {
         "name": "¿Qué nivel o puntuación es un buen punto de referencia?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Como referencia personal, los niveles 8 a 10 (de 1.100 a 1.499 puntos) forman la Etapa 2 de la tabla y el nivel 11 o superior (más de 1.500 puntos) la Etapa 1. Son etapas editoriales de práctica, no estadísticas de población: compara tus sesiones en el mismo dispositivo."
+          "text": "No hay una norma oficial. En el nivel N la secuencia tiene N + 2 colores y cada ronda acertada da 100 × (1 + 0,1 × N) puntos. Como referencia, llegar sin fallos al nivel 8 (10 colores) supone unos 980 puntos y al nivel 11, unos 1.550. Son etapas de práctica de SkillDrills, no estadísticas de población."
         }
       },
       {
@@ -177,7 +177,7 @@ export default function SpanishColorSequencePage() {
         "name": "¿Funciona en móvil y tablet?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Los paneles responden a toques en teléfonos y tabletas y a clics de ratón en ordenador. El rendimiento depende del dispositivo, por eso conviene comparar tus puntuaciones en el mismo aparato."
+          "text": "Sí. Los botones de colores responden a toques en teléfonos y tabletas y a clics de ratón en ordenador."
         }
       },
       {
@@ -202,7 +202,7 @@ export default function SpanishColorSequencePage() {
         "position": 1,
         "url": "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence#step-1",
         "name": "Observa los destellos",
-        "text": "Fija la mirada en el centro de los 6 paneles y sigue el orden de las luces y los sonidos."
+        "text": "Fija la mirada en el círculo central y sigue el orden en que se iluminan los colores."
       },
       {
         "@type": "HowToStep",
@@ -216,22 +216,22 @@ export default function SpanishColorSequencePage() {
         "position": 3,
         "url": "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence#step-3",
         "name": "Repite la secuencia",
-        "text": "Pulsa los paneles en el mismo orden, con un ritmo constante y sin vacilar."
+        "text": "Pulsa los botones de colores en el mismo orden; tienes 8 segundos para cada pulsación."
       },
       {
         "@type": "HowToStep",
         "position": 4,
         "url": "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence#step-4",
         "name": "Sube de nivel",
-        "text": "Cada ronda superada añade un color más a la secuencia y aumenta el multiplicador de puntos."
+        "text": "Cada ronda superada sube un nivel: la siguiente secuencia, nueva y aleatoria, tiene un color más y da más puntos."
       }
     ]
   };
 
   const esCopy = {
     title: 'Juego Simón online',
-    subtitle: 'Memoriza los colores y repite la secuencia exacta',
-    caption: 'Observa la secuencia de luces y sonidos y repítela en el mismo orden a medida que se alarga.',
+    subtitle: 'Juego estilo Simon: memoriza los colores y repite la secuencia exacta',
+    caption: 'Los colores se iluminan uno a uno en el círculo central. Repítelos en el mismo orden; cada acierto alarga la siguiente secuencia en un color.',
     statScore: 'Puntuación',
     statTime: 'Tiempo',
     statLevel: 'Nivel',
@@ -242,23 +242,23 @@ export default function SpanishColorSequencePage() {
     rule1Result: 'Repite los destellos en el mismo orden en que aparecieron',
     rule2Text: 'Bonus de nivel',
     rule2Highlight: '+10% PTS / nivel',
-    rule2Result: 'Las secuencias más largas acumulan multiplicadores progresivos',
+    rule2Result: 'Ronda en el nivel N = 100 × (1 + 0,1 × N) puntos',
     rule3Text: 'Fallo o tiempo agotado',
     rule3Highlight: '-1 nivel',
-    rule3Result: 'No pierdes los puntos acumulados; la secuencia se acorta',
+    rule3Result: 'Color equivocado u 8 s sin pulsar: sin perder puntos ni tiempo; secuencia nueva más corta',
     rule4Text: 'Dificultad adaptativa',
     rule4Highlight: 'Dinámica',
-    rule4Result: 'La longitud de la secuencia se ajusta a tus aciertos',
+    rule4Result: 'Nivel N = N + 2 colores; los destellos se aceleran con cada nivel',
     aboutTitle: 'Sobre el juego Simón de secuencia de colores',
     overviewTitle: '¿Qué se practica con el juego de memoria de colores?',
-    overviewLead: 'La memoria de trabajo visual retiene unos 4 elementos independientes a la vez (Luck & Vogel, 1997; Cowan, 2001). Una secuencia de colores que se alarga pone a prueba ese límite de forma directa.',
+    overviewLead: 'La memoria de trabajo visual retiene unos 4 elementos independientes a la vez (Luck & Vogel, 1997; Cowan, 2001). Una secuencia de colores que se alarga permite practicar cerca de ese límite.',
     aboutIntro: [
       'Este juego practica la memoria visual: ver una secuencia de colores, retenerla y repetirla en el mismo orden.',
       'Al repetir secuencias cada vez más largas aprendes a agruparlas en bloques (chunking) y a mantener la atención durante la sesión.',
     ],
     aboutCards: [
       { title: '¿Para quién es?', text: 'Para estudiantes, opositores, profesionales y jugadores de esports que quieran practicar la memoria a corto plazo y la concentración.' },
-      { title: 'Qué se practica', text: 'Amplitud de memoria visual, recuerdo en orden con la agenda visoespacial (Baddeley & Hitch, 1974) y rapidez de respuesta.' },
+      { title: 'Qué se practica', text: 'Amplitud de memoria visual y recuerdo en orden con la agenda visoespacial (Baddeley & Hitch, 1974).' },
       { title: 'Estrategia de chunking', text: 'Agrupa los colores en bloques con ritmo o en trayectorias para superar el límite de unos 4 elementos de la memoria de trabajo (Miller, 1956).' },
     ],
   };
@@ -266,26 +266,26 @@ export default function SpanishColorSequencePage() {
   const esColorSequenceGuide = {
     heading: 'Guía del juego Simón y la memoria de trabajo visual',
     intro: [
-      'El juego Simón online consiste en ver una secuencia de colores y sonidos y repetirla en el mismo orden; cada ronda superada añade un color. Aquí tiene 6 paneles y sesiones de 45 segundos. Practica la memoria de trabajo visual y el chunking, y sirve para comparar tus propias puntuaciones en el mismo dispositivo.',
-      'El Juego de Memoria de Secuencias de Colores es una herramienta interactiva rigurosa diseñada para evaluar, desafiar y expandir la memoria de trabajo visual y la retención secuencial de patrones. Popularizado por el dispositivo electrónico Simon, de Ralph Baer y Howard Morrison (1978), este formato exige la codificación inmediata de estímulos cromáticos dinámicos, su organización en búferes estructurados y su recuperación en estricto orden temporal.',
+      'El juego Simón online consiste en ver una secuencia de colores, uno a uno, y repetirla en el mismo orden; cada ronda superada alarga la siguiente secuencia en un color. Esta versión estilo Simon tiene 6 botones y sesiones de 45 segundos. Practica la memoria de trabajo visual y el chunking, y sirve para comparar tus propias puntuaciones en el mismo dispositivo.',
+      'El juego de secuencias de colores es un ejercicio para practicar la memoria de trabajo visual y la retención del orden. Popularizado por el dispositivo electrónico Simon, de Ralph Baer y Howard Morrison (1978), este formato exige la codificación inmediata de estímulos cromáticos dinámicos, su organización en búferes estructurados y su recuperación en estricto orden temporal.',
       'Los límites arquitectónicos de la memoria humana a corto plazo han sido cartografiados exhaustivamente por la psicología cognitiva. Mientras que George A. Miller (1956) identificó el cuello de botella verbal de $7 \\pm 2$ elementos, las investigaciones fundamentales de Nelson Cowan (2001) y Steven J. Luck & Edward K. Vogel (1997) demostraron que la capacidad pura de la memoria de trabajo visual está estrictamente limitada a unas 4 unidades independientes. Sin estrategias estructuradas de recodificación, la retención humana colapsa rápidamente más allá de cuatro elementos secuenciales.',
-      'En el modelo multicomponente de memoria de trabajo de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), retener secuencias visuales activa la agenda visoespacial (Visuospatial Sketchpad). Robert H. Logie (1995) subdividió este componente en el retén visual pasivo (que almacena colores y formas) y el escriba interno (que ensaya activamente patrones espaciotemporales). Los ejecutantes avanzados reclutan sistemáticamente el bucle fonológico para crear representaciones de codificación dual (visual y subvocal), duplicando con eficacia la capacidad del búfer.',
-      'Con cronometría digital de alta precisión en milisegundos (Woods et al., 2015), este ejercicio mide tanto la amplitud de la secuencia retenida como la latencia de respuesta motora por pulsación, lo que te permite seguir tu propia evolución, sin que sea una medida clínica de la memoria operativa.',
-      'Metodología de medición y latencia de hardware: Cada evento interactivo se registra localmente en el navegador mediante el reloj de alta resolución performance.now() – ningún dato de rendimiento se sube a la red. Los navegadores limitan deliberadamente los temporizadores a ~1 ms como mitigación frente a ataques de temporización (Spectre), y su monitor cuantiza cada cambio a su intervalo de refresco nativo (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz; Woods et al., 2015). Variaciones menores a 5 ms constituyen ruido instrumental habitual; compare sus puntuaciones principalmente sobre el mismo hardware.',
-      'Transparencia y privacidad de datos: SkillDrills no recopila datos agregados de usuarios ni métricas de telemetría. Sus puntuaciones, tiempos de reacción y progresiones de nivel permanecen guardadas estrictamente en el almacenamiento local (localStorage) de su navegador web y jamás se envían a servidores externos. Las referencias científicas se citan en el panel inferior; las etapas de la tabla son marcadores editoriales de práctica.',
+      'En el modelo multicomponente de memoria de trabajo de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), retener secuencias visuales activa la agenda visoespacial (Visuospatial Sketchpad). Robert H. Logie (1995) subdividió este componente en el retén visual pasivo (que almacena colores y formas) y el escriba interno (que ensaya activamente patrones espaciotemporales). Los ejecutantes avanzados reclutan sistemáticamente el bucle fonológico para crear representaciones de codificación dual (visual y subvocal), que ayuda a sostener la secuencia.',
+      'Qué se registra: en 45 segundos el juego guarda la puntuación, el nivel máximo alcanzado (longitud de la secuencia) y la precisión (porcentaje de rondas acertadas). No mide el tiempo de reacción por pulsación y no es una medida clínica de la memoria operativa.',
+      'Cómo funciona una ronda: en el nivel N aparecen N + 2 colores de 6 posibles, siempre en una secuencia aleatoria nueva. Cuanto más alto el nivel, menos tiempo se ilumina cada color (de unos 0,7 s hasta un mínimo de 0,25 s). Después tienes 8 segundos para cada pulsación; un color equivocado o el tiempo agotado bajan un nivel.',
+      'Transparencia y privacidad de datos: SkillDrills no recopila datos agregados de usuarios ni métricas de telemetría. Sus puntuaciones y progresiones de nivel permanecen guardadas estrictamente en el almacenamiento local (localStorage) de su navegador web y jamás se envían a servidores externos. Las referencias científicas se citan en el panel inferior; las etapas de la tabla son marcadores editoriales de práctica.',
       'Aviso médico y descargo de responsabilidad: Este ejercicio es un juego cognitivo web gratuito orientado al entrenamiento mental y la práctica personal. No constituye un dispositivo médico, una herramienta de diagnóstico clínico ni un tratamiento para el deterioro cognitivo o afecciones neurológicas. Si tiene inquietudes sobre su memoria o agudeza cognitiva, consulte a un profesional médico o neuropsicólogo colegiado.'
     ],
     benchmarks: {
       title: 'Etapas de práctica en el juego Simón (sesión de 45 segundos)',
-      headers: ['Etapa', 'Nivel alcanzado', 'Puntuación (45 s)', 'Estrategia de memoria'],
+      headers: ['Etapa', 'Nivel alcanzado', 'Puntos sin fallos hasta ese nivel', 'Estrategia de memoria'],
       rows: [
-        ['Etapa 1', 'Nivel 11 o más', 'Más de 1.500 PTS', 'Chunking constante; combina el recuerdo visual con el de los tonos'],
-        ['Etapa 2', 'Nivel 8 – 10', '1.100 – 1.499 PTS', 'Supera con regularidad el límite de unos 4 elementos agrupando en parejas'],
-        ['Etapa 3', 'Nivel 5 – 7', '700 – 1.099 PTS', 'Recuerda bien secuencias cortas; vacila cuando el ritmo se acelera'],
-        ['Etapa 4', 'Nivel 3 – 4', '350 – 699 PTS', 'Memoria de trabajo en su límite natural; todavía sin agrupar en bloques'],
-        ['Etapa 5', 'Menos de nivel 3', 'Menos de 350 PTS', 'Se pierde a partir del tercer color; los destellos anteriores interfieren']
+        ['Etapa 1', 'Nivel 11+ (13+ colores)', 'unos 1.550+ PTS', 'Nombra los colores y los agrupa en bloques'],
+        ['Etapa 2', 'Nivel 8 – 10 (10–12 colores)', 'unos 980 – 1.549 PTS', 'Agrupa con soltura en parejas o tríos'],
+        ['Etapa 3', 'Nivel 5 – 7 (7–9 colores)', 'unos 500 – 979 PTS', 'Pierde los colores del medio cuando los destellos se aceleran'],
+        ['Etapa 4', 'Nivel 3 – 4 (5–6 colores)', 'unos 230 – 499 PTS', 'Recuerda color a color, todavía sin agrupar'],
+        ['Etapa 5', 'Nivel 1 – 2 (3–4 colores)', 'menos de 230 PTS', 'Aprendiendo las reglas y el ritmo']
       ],
-      note: 'Etapas editoriales de práctica para comparar tus propias sesiones de 45 segundos con secuencias adaptativas de 6 colores; no son estadísticas de población ni normas clínicas. Referencias sobre el límite de la memoria de trabajo: Luck & Vogel (1997); Cowan (2001); Woods et al. (2015).'
+      note: 'Etapas de práctica de SkillDrills, no estadísticas de población ni normas clínicas. La puntuación corresponde a llegar sin fallos a ese nivel (puntos por ronda = 100 × (1 + 0,1 × nivel)); los fallos bajan el nivel, así que la puntuación real varía.'
     },
     techniques: {
       title: 'Cuatro estrategias para recordar secuencias de colores más largas',
@@ -296,32 +296,32 @@ export default function SpanishColorSequencePage() {
           tips: 'Divide la secuencia en bloques de 2 o 3 colores en cuanto pase de 4 elementos.'
         },
         {
-          name: 'Trayectorias en el espacio',
-          desc: 'Imagina una línea que una las posiciones de los paneles encendidos (triángulos, zigzag o rombos) en lugar de retener nombres sueltos.',
-          tips: 'Una figura es más fácil de recordar que una lista de posiciones.'
+          name: 'Trayectoria sobre los botones',
+          desc: 'Los colores se iluminan solo en el círculo central, pero los 6 botones de respuesta (cuadrícula 3 × 2) tienen un sitio fijo. Con cada color, imagina su botón y recuerda el recorrido del dedo (Logie, 1995).',
+          tips: 'Mira la disposición de los botones antes de empezar.'
         },
         {
-          name: 'Asociación con los tonos',
-          desc: 'Cada panel suena con una nota distinta. Memoriza la melodía resultante para que la memoria auditiva te sirva de apoyo.',
-          tips: 'Mantén el sonido activado para recordar también con el oído.'
+          name: 'Nombrar los colores en voz baja',
+          desc: 'Di mentalmente el nombre de cada color que se ilumina ("rojo, azul, verde") para sumar un registro verbal al visual (bucle fonológico; Baddeley, 2000).',
+          tips: 'Recita por parejas y con ritmo fijo.'
         },
         {
-          name: 'Atención en el último color',
-          desc: 'El principio de la secuencia se repite en cada turno; concentra la atención en el color nuevo que se añade al final.',
-          tips: 'Repite en voz baja el tramo inicial y reserva la atención para el último destello.'
+          name: 'Proteger el centro de la secuencia',
+          desc: 'Cada ronda es una secuencia aleatoria completamente nueva, así que la anterior no ayuda. El principio y el final se recuerdan mejor y los colores del medio son los que más se olvidan (efecto de posición serial): agrupa sobre todo el centro.',
+          tips: 'Recita el principio enseguida como bloque y confía en la imagen reciente para el final.'
         }
       ]
     },
     steps: [
-      'Inicia la sesión de 45 segundos y fija la mirada en el centro de los paneles.',
-      'Sigue con atención la secuencia de destellos y tonos.',
+      'Inicia la sesión de 45 segundos y fija la mirada en el círculo central.',
+      'Sigue con atención los colores que se iluminan uno a uno.',
       'Reorganiza mentalmente la secuencia en bloques de dos o tres colores.',
       'Cuando termine la muestra, pulsa los paneles en el mismo orden y con ritmo firme.',
-      'Sube de nivel poco a poco para aumentar el multiplicador y mejorar tu récord.'
+      'Cada acierto sube un nivel: secuencias más largas y más puntos por ronda.'
     ],
     audience: 'Estudiantes, profesionales, opositores y jugadores de esports que quieran practicar la memoria de trabajo, el chunking y la concentración con límite de tiempo.',
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'luck1997', 'woods2015'),
+    sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'luck1997'),
     related: [
       { href: "/es/drills/memory/short-term-memory/digit-span", label: "Test de dígitos (Digit Span)" },
       { href: "/es/drills/memory/short-term-memory/word-recall", label: "Test de memoria verbal" },

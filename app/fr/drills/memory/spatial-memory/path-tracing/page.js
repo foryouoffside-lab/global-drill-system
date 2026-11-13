@@ -6,19 +6,8 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test des blocs de Corsi en ligne | SkillDrills",
-  description: "Teste ton empan visuo-spatial en ligne : mémorise les blocs éclairés et reproduis la séquence dans le même ordre.",
-  keywords: [
-    "test des blocs de Corsi",
-    "test de Corsi en ligne",
-    "empan visuo-spatial",
-    "mémoire séquentielle spatiale",
-    "mémoire de travail visuo-spatiale",
-    "blocs de Corsi",
-    "test mémoire spatiale",
-    "séquence de positions",
-    "entraînement mémoire spatiale",
-    "tapotement de blocs"
-  ],
+  description: "Test des blocs de Corsi gratuit en ligne : retiens les cases qui s'allument une à une et touche-les dans le même ordre. Parcours de plus en plus longs.",
+  keywords: ['test des blocs de Corsi', 'blocs de Corsi en ligne', 'empan visuo-spatial', 'mémoire séquentielle spatiale', 'mémoire de travail visuo-spatiale', 'test de Corsi'],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/path-tracing'),
@@ -28,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test des blocs de Corsi en ligne | Empan visuo-spatial",
-    description: "Mémorise les blocs éclairés et reproduis la séquence dans le même ordre. Test gratuit de mémoire spatiale, sans inscription.",
+    title: "Test des blocs de Corsi en ligne | SkillDrills",
+    description: "Test des blocs de Corsi gratuit : touche les cases éclairées dans le même ordre et entraîne ton empan visuo-spatial dans le navigateur, sans inscription.",
     url: "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -37,296 +26,252 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test des blocs de Corsi en ligne | Empan visuo-spatial",
-    description: "Mémorise les blocs éclairés et reproduis la séquence dans le même ordre. Test gratuit de mémoire spatiale, sans inscription.",
+    title: "Test des blocs de Corsi en ligne | SkillDrills",
+    description: "Test des blocs de Corsi gratuit : touche les cases éclairées dans le même ordre et entraîne ton empan visuo-spatial dans le navigateur, sans inscription.",
   },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Entrainements de Memoire",
-      "item": "https://skilldrills.online/fr/drills/memory"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Memoire Spatiale",
-      "item": "https://skilldrills.online/fr/drills/memory/spatial-memory"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Test des Blocs de Corsi",
-      "item": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing"
-    }
-  ]
-};
-
-const softwareSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Test des Blocs de Corsi (Mémoire Séquentielle)",
-  "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Web Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "dateModified": "2026-09-16",
-  "author": {
-    "@type": "Organization",
-    "name": "SkillDrills"
-  }
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Test des Blocs de Corsi (Mémoire Séquentielle)",
-  "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing",
-  "description": "Test interactif mesurant l empan spatial de Corsi, la retention de trajectoires et la memoire visuo-motrice sequentielle.",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "SkillDrills"
-  },
-  "isAccessibleForFree": true,
-  "dateModified": "2026-09-16",
-  "sameAs": ["https://neurabrain.app/fr/test/corsi-block", "https://fr.wikipedia.org/wiki/M%C3%A9moire_de_travail"]
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Test des Blocs de Corsi (Mémoire Séquentielle)",
-  "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing",
-  "description": "Jeu cognitif mesurant la capacite a reproduire des parcours spatiaux animes de difficulte croissante sur grille dynamique.",
-  "dateModified": "2026-09-16",
-  "gamePlatform": "Web Browser",
-  "genre": ["Memory Game", "Cognitive Training", "Brain Training", "Spatial Memory"],
-  "playMode": "SinglePlayer",
-  "applicationCategory": "Game",
-  "operatingSystem": "Web Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-};
-
-const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Comment s entrainer a la memoire sequentielle de Corsi",
-  "description": "Methode en 4 etapes pour encoder les trajectoires spatiales et reproduire des suites de clics sans hesitation.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing#step-1",
-      "name": "Suivre le point lumineux des yeux",
-      "text": "Fixez chaque activation lumineuse sans bouger la souris pour capturer le rythme et l orientation de la trajectoire."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing#step-2",
-      "name": "Encoder les vecteurs directionnels",
-      "text": "Traduisez les deplacements successifs en vecteurs mentaux continus (ex: haut-droite, diagonale bas, gauche) pour former une ligne unifiee."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing#step-3",
-      "name": "Rejouer le parcours mentalement",
-      "text": "Pendant la courte pause avant votre tour, faites defiler mentalement le chemin dans le scribe interne visuo-spatial."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing#step-4",
-      "name": "Cliquer dans l ordre chronologique",
-      "text": "Reproduisez methodiquement la serie de blocs dans le meme ordre temporel pour valider le niveau et etendre votre empan."
-    }
-  ]
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-16",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Qu est-ce que le test des blocs de Corsi et le Path Tracing ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Concu a l origine par Philip M. Corsi en 1972 a l Universite McGill, ce test neuropsychologique evalue la memoire de travail visuo-spatiale sequentielle en mesurant la plus longue suite d emplacements qu un individu peut reproduire dans l ordre exact."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle est la valeur normale de l empan spatial de Corsi chez l adulte ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Selon les etalonnages cliniques de Kessels et al. (2000, 2008), l empan moyen chez l adulte sain se situe entre 5 et 6 blocs (environ 5,4 ± 0,8). Un score de 7 ou plus reflete une excellente capacite de retention sequentielle."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "En quoi le test de Corsi differe-t-il de l empan de chiffres ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "L empan de chiffres sollicite la boucle phonologique verbale (hemisphere gauche), tandis que le test des blocs de Corsi engage activement le calepin visuo-spatial et l hemisphere droit, sans mediation linguistique obligatoire."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quel est le role du scribe interne selon le modele de Logie ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Robert Logie (1995) a demontre que le scribe interne est le mecanisme de repetition actif de la memoire spatiale: il rafraichit continuellement les coordonnees motrices et la sequence des deplacements pour eviter l estompement de la trace mnesique."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelles sont les bases neurologiques de la memoire spatiale sequentielle ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les recherches de Milner (1971) et les etudes d imagerie moderne demontrent que le test de Corsi recrute l hippocampe droit, le lobe temporal median et le cortex prefrontal dorsolateral droit responsable de l ordonnancement temporel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment le chunking vectoriel permet-il d augmenter son empan ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Plutot que de memoriser des cases separees, le chunking vectoriel relie les etapes en segments geometriques (formes en Z, triangles ou lignes droites), condensant plusieurs cibles en un trace continu unique."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi l empan arriere est-il plus difficile que l empan direct ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Reproduire la trajectoire en sens inverse exige d inverser l ordre temporel stocke tout en maintenant les positions spatiales, sollicitant fortement les fonctions executives et le controle inhibiteur prefrontal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quel est l impact de la fatigue sur la precision sequentielle ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La fatigue mentale degrade l attention soutenue necessaire pour suivre les transitions de cibles, entrainant des omissions d etapes intermediaires et une reduction moyenne de l empan de 1 a 2 unites."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "L entrainement de Corsi aide-t-il dans les jeux video et le sport ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, memoriser des patterns de deplacement, anticiper les rotations d adversaires et executer des sequences motrices complexes constituent des facteurs cles de succes en e-sport et dans les sports collectifs rapides."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ce test des blocs de Corsi en ligne est-il gratuit ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, le test des blocs de Corsi SkillDrills est 100% gratuit, fonctionne de maniere fluide sur ordinateur et mobile sans enregistrement requis, et calcule automatiquement votre empan spatial."
-      }
-    }
-  ]
-};
-
-const pathTracingGuide = {
-  heading: "Guide Scientifique : Test des Blocs de Corsi & Mémoire Séquentielle",
-  intro: [
-    "Le test de mémoire de trajectoire spatiale (Path Tracing / Blocs de Corsi) évalue la mémoire de travail visuo-spatiale séquentielle, la rétention d'itinéraires dynamiques et la reconstruction vectorielle à travers des matrices évolutives de 3x3 à 7x7. Ancré dans le paradigme neuropsychologique historique des blocs de Corsi (Milner, 1971 ; Corsi, 1972) et le modèle du « scribe interne » de Robert H. Logie (1995), ce test isole l'encodage spatio-temporel actif du stockage passif de motifs statiques.",
-    "Durant chaque manche, une cible animée illumine une série de coordonnées matricielles à intervalles calibrés de 500 ms. L'utilisateur doit encoder à la fois les coordonnées spatiales et l'ordre chronologique strict, puis retracer fidèlement la trajectoire complète durant la fenêtre d'évaluation de 45 secondes.",
-    "Dans l'architecture cognitive de la mémoire de travail, Logie (1995) et Alan Baddeley (2000) ont établi que les mouvements séquentiels sont répétés et maintenus par le scribe interne, boucle de répétition spatiale active. George A. Miller (1956) et Herbert A. Simon (1974) ont prouvé que la rétention séquentielle repose sur le regroupement vectoriel directionnel (chunking), tandis que Nelson Cowan (2001) a formalisé que la mémoire focale humaine est bornée à environ 4 unités d'information non assistées.",
-    "Les études normatives standardisées sur tâches de Corsi informatisées (Kessels et al., 2000) situent l'empan spatial moyen de l'adulte sain à 5,4 ± 0,9 étapes, démontrant une forte sensibilité à la fatigue cognitive, au sommeil et aux fonctions exécutives préfrontales.",
-    "Méthodologie de mesure : chaque étape est horodatée avec l'horloge haute résolution performance.now() de votre navigateur, directement sur votre appareil — aucune donnée n'est téléversée vers un serveur distant. Les minuteurs des navigateurs sont volontairement discrétisés face aux vulnérabilités matérielles (de l'ordre de 1 ms), et l'affichage quantifie chaque transition à l'intervalle de rafraîchissement d'écran (environ 16,7 ms par trame à 60 Hz ; Woods et al., 2015). Les variations inférieures à 5 ms relèvent du bruit expérimental ; pour évaluer vos progrès réels, préservez le même matériel.",
-    "Transparence et respect de la vie privée : SkillDrills ne collecte aucune donnée agrégée. Vos scores et préférences demeurent exclusivement enregistrés dans le localStorage de votre navigateur web, garantissant qu'aucune moyenne globale ni profil d'utilisateur n'est diffusé. Toutes les références numériques et scientifiques mentionnées ici proviennent directement des publications scientifiques évaluées par des pairs répertoriées ci-dessous.",
-    "Cet entraînement est une application interactive sur navigateur destinée à l'entraînement cognitif personnel et à l'intérêt pédagogique. Il ne constitue pas un dispositif médical, un outil de diagnostic neuropsychologique formel, ni un protocole de dépistage clinique pour les troubles de la mémoire, le TDAH ou les déficits exécutifs. En cas de préoccupation médicale sur vos capacités cognitives, consultez un neuropsychologue ou un médecin qualifié."
-  ],
-  benchmarks: {
-    title: "Paliers Normatifs de l'Empan Séquentiel de Trajectoire Spatiale",
-    headers: ["Palier de Performance", "Empan & Échelle de Grille", "Score à l'Exercice", "Profil Cognitif & Rétention de Trajectoire"],
-    rows: [
-      ["Palier 1", "Empan 10 – 14+ étapes (grille 6x6–7x7)", "1 200+ points", "Décomposition des parcours complexes en 2–3 macro-vecteurs directionnels ; mémorisation parfaite dans le scribe interne ; cadence de clic sub-400 ms."],
-      ["Palier 2", "Empan 8 – 9 étapes (grille 5x5–6x6)", "900 – 1 199 points", "Dépassement net des moyennes adultes standards ; groupement vectoriel robuste (virages en L, diagonales, zigzags) ; résistance aux interférences sérielles ; cadence 400 – 600 ms."],
-      ["Palier 3", "Empan 5 – 7 étapes (grille 4x4–5x5)", "600 – 899 points", "Norme adulte saine (Corsi, 1972 ; Kessels et al., 2000, empan 5,4 ± 0,9) ; rétention fluide de séquences de 5–6 étapes ; perte des points de virage intermédiaires sur grilles 5x5 ; cadence 600 – 850 ms."],
-      ["Palier 4", "Empan 4 étapes (grille 3x3–4x4)", "400 – 599 points", "Proche de la limite brute sans chunking (Cowan, 2001) ; tentative de mémoriser chaque coordonnée isolément sans regrouper les vecteurs ; cadence 850 – 1 100 ms."],
-      ["Palier 5", "Empan < 4 étapes (grille 3x3)", "< 400 points", "Dégradation temporelle rapide de la trace ; vulnérabilité aux inversions d'ordre séquentiel ; difficulté à maintenir plus de 3 étapes après le délai de rétention ; cadence supérieure à 1 100 ms."]
-    ],
-    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. La longueur de l'empan et la dimension de la grille reflètent le niveau maximal validé durant la session de 45 secondes ; repères éditoriaux inspirés des standards des Blocs de Corsi (Corsi, 1972 ; Kessels et al., 2000 ; Woods et al., 2015)."
-  },
-  techniques: {
-    title: "Protocoles Scientifiques pour Développer la Mémoire de Trajectoire",
-    items: [
-      {
-        name: "Chunking Vectoriel Directionnel (Miller 1956 ; Simon 1974)",
-        desc: "Regroupez mentalement les étapes séquentielles isolées en macro-vecteurs de direction. Par exemple, au lieu de mémoriser 5 coordonnées distinctes, encodez le trajet comme « deux cases à droite, une case en haut, deux cases à gauche ». Cette compression vectorielle réduit la charge mnésique brute de plus de 60 %.",
-        tips: "Identifiez des formes géométriques telles que des virages en L, des triangles ou des escaliers plutôt que des points individuels."
-      },
-      {
-        name: "Pré-Planification Kinésique du Scribe Interne (Logie 1995)",
-        desc: "Mobilisez le cortex moteur dès la présentation du stimulus en traçant mentalement la ligne continue reliant les cases illuminées. Pré-activer les circuits de planification motrice renforce les traces visuelles passives par une répétition kinesthésique active.",
-        tips: "Ressentez le geste dans votre main avant même d'entrer en contact avec l'écran."
-      },
-      {
-        name: "Ancrage Parafovéal sur le Centroïde de la Grille",
-        desc: "Fixez votre regard au centre géométrique de la matrice plutôt que d'effectuer des saccades oculaires précipitées sur chaque case allumée. La vision parafovéale enregistre fidèlement le vecteur de mouvement sans subir la latence de suppression saccadique.",
-        tips: "Gardez la tête et les yeux stables pour laisser les flashs lumineux s'imprimer dans l'ensemble de votre champ visuel."
-      },
-      {
-        name: "Cadence et Rythme Moteur Fluide",
-        desc: "Restituez la trajectoire enregistrée avec une frappe régulière et rythmée. Hésiter entre les clics favorise l'oubli temporel des étapes tardives du parcours. Exécutez le vecteur mémorisé en une seule séquence motrice fluide.",
-        tips: "Enchaînez la séquence d'un geste continu sans marquer de temps d'arrêt entre deux cases."
-      }
-    ]
-  },
-  steps: [
-    "Fixez votre regard sur le centre de la grille et suivez le parcours lumineux de la cible.",
-    "Regroupez mentalement les coordonnées illuminées en vecteurs de direction continus (ex. « droite-haut-droite »).",
-    "Pendant le court délai de rétention, répétez mentalement la trajectoire avec le scribe interne.",
-    "Retracez la séquence de coordonnées dans l'ordre chronologique exact avec une cadence rythmique fluide.",
-    "Progressez à travers les matrices de 3x3 à 7x7 pour étendre votre empan spatial séquentiel."
-  ],
-  audience: "Joueurs compétitifs (gestion des routes de patrouille et rotations de compétences), étudiants en sciences et ingénierie, chorégraphes, conducteurs et toute personne souhaitant renforcer sa mémoire de travail spatio-temporelle.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'cowan2001', 'baddeley2000', 'miller1956', 'simon1974', 'kessels2000', 'woods2015'),
-  related: [
-    { href: "/fr/drills/memory/spatial-memory/grid-memorization", label: "Test de Mémoire Visuelle" },
-    { href: "/fr/drills/memory/spatial-memory/object-location", label: "Test de Mémoire de Localisation" },
-    { href: "/fr/drills/memory/short-term-memory/digit-span", label: "Test d'Empan Numérique" },
-    { href: "/fr/drills/memory/short-term-memory/word-recall", label: "Test de Mémoire Verbale" },
-    { href: "/fr/drills/memory/working-memory/n-back", label: "Test de Mémoire de Travail N-Back" }
-  ]
-};
+export const dynamic = 'force-static';
 
 export default function PathTracingFrenchPage() {
+  const appDescription = "Test des blocs de Corsi gratuit dans le navigateur : des cases voisines s'allument une à une et forment un parcours que tu reproduis dans le même ordre. Chaque parcours réussi s'allonge d'une étape.";
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
+      { "@type": "ListItem", "position": 2, "name": "Entraînements de mémoire", "item": "https://skilldrills.online/fr/drills/memory" },
+      { "@type": "ListItem", "position": 3, "name": "Mémoire spatiale", "item": "https://skilldrills.online/fr/drills/memory/spatial-memory" },
+      { "@type": "ListItem", "position": 4, "name": "Test des blocs de Corsi", "item": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing" }
+    ]
+  };
+
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Test des blocs de Corsi en ligne",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web Browser",
+    "dateModified": "2026-11-12",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": appDescription,
+    "genre": "Spatial Memory",
+    "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing",
+    "publisher": {
+      "@type": "Organization",
+      "name": "SkillDrills",
+      "url": "https://skilldrills.online"
+    }
+  };
+
+  const webAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Test des blocs de Corsi en ligne",
+    "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing",
+    "description": appDescription,
+    "dateModified": "2026-11-12",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "All",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  };
+
+  const videoGameSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Test des blocs de Corsi en ligne",
+    "description": appDescription,
+    "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing",
+    "genre": ["Memory Game", "Spatial Sequence Memory"],
+    "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+    "applicationCategory": "Game",
+    "operatingSystem": "Any",
+    "numberOfPlayers": {
+      "@type": "QuantitativeValue",
+      "value": 1
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "dateModified": "2026-11-12",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment se déroule le test des blocs de Corsi ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Des cases de la grille s'allument une à une toutes les 0,5 seconde et dessinent un parcours. Ensuite, tu as 10 secondes pour cliquer ou toucher les mêmes cases dans le même ordre. Un parcours complet rapporte +150 points et le suivant compte une étape de plus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Est-ce le test de Corsi utilisé en clinique ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. Le principe est celui de la tâche des blocs de Corsi (Corsi, 1972) : retenir des positions dans leur ordre puis les reproduire. Ici, on utilise une grille carrée, chaque étape mène uniquement à une case voisine (haut, bas, gauche, droite) et aucune case n'est visitée deux fois. C'est un jeu d'entraînement, pas un test clinique ni un outil de diagnostic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment évoluent la longueur du parcours et la taille de la grille ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le niveau 1 commence avec un parcours de 3 étapes. Chaque parcours réussi augmente le niveau et la longueur d'une unité. La grille est en 3x3 jusqu'à 5 étapes, 4x4 de 6 à 8, 5x5 de 9 à 12, 6x6 de 13 à 16 et 7x7 à partir de 17."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment le temps est-il compté ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le chronomètre de session dure 60 secondes et ne tourne que pendant que tu reproduis le parcours. La démonstration et l'affichage du résultat ne sont pas décomptés. Chaque parcours doit être terminé dans les 10 secondes après le début de la saisie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Que se passe-t-il si je touche une mauvaise case ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La manche s'arrête aussitôt et un nouveau parcours de même longueur apparaît. Aucun point ni temps n'est retiré et le niveau ne baisse pas. Dépasser les 10 secondes est traité de la même façon ; dans les deux cas, l'essai compte comme raté dans la précision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment retenir des parcours plus longs ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Comme le parcours passe toujours à une case voisine, retiens des blocs de directions plutôt que des cases isolées, par exemple « deux à droite, une en haut » (regroupement, Miller, 1956). Pendant la démonstration, garde toute la grille en vue et repère surtout les virages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle différence avec le test de mémoire visuelle (grille) ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dans le test de mémoire visuelle, plusieurs cases s'allument en même temps et peuvent être retenues comme un seul motif. Dans le test des blocs de Corsi, les cases s'allument une à une : il faut retenir l'ordre en plus des positions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mes résultats sont-ils enregistrés ? Ont-ils une valeur médicale ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le meilleur score et le niveau maximal sont enregistrés uniquement dans le localStorage de ce navigateur, sans envoi à un serveur. Les résultats sont des scores d'entraînement et ne disent rien d'un trouble de la mémoire ou de la santé du cerveau."
+        }
+      }
+    ]
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Comment jouer au test des blocs de Corsi",
+    "description": "Quatre étapes pour reproduire dans le même ordre un parcours qui s'allume case par case.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing#step-1",
+        "name": "Regarder toute la grille",
+        "text": "Pendant la démonstration, ne suis pas seulement la première case : observe toute la grille et repère où le parcours tourne."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing#step-2",
+        "name": "Regrouper par directions",
+        "text": "Chaque étape mène à une case voisine : retiens des blocs de directions comme « droite 2, haut 1 »."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing#step-3",
+        "name": "Toucher dans le même ordre",
+        "text": "Après la démonstration, clique ou touche les cases dans le même ordre à partir de la case de départ, en moins de 10 secondes."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "url": "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing#step-4",
+        "name": "Enchaîner après une erreur",
+        "text": "Une erreur ne coûte ni points ni niveau : concentre-toi tout de suite sur le nouveau parcours de même longueur."
+      }
+    ]
+  };
+
+  const pathTracingGuide = {
+    intro: [
+      "Le test des blocs de Corsi en ligne est un jeu gratuit de mémoire de l'ordre : des cases d'une grille s'allument l'une après l'autre, puis tu les touches dans le même ordre. Il reprend le principe de la tâche des blocs de Corsi (Milner, 1971 ; Corsi, 1972) sous forme de parcours sur une grille pour entraîner ton empan visuo-spatial et ta mémoire de travail visuo-spatiale.",
+      "Au niveau 1, un parcours de 3 étapes apparaît sur une grille 3x3. Les cases s'allument toutes les 0,5 seconde ; chaque étape mène à une case en haut, en bas, à gauche ou à droite, et aucune case n'est visitée deux fois. Chaque parcours réussi rapporte +150 points, niveau +1 et une étape de plus ; la grille passe en 4x4, 5x5 et 6x6 jusqu'à 7x7.",
+      "Le chronomètre de session dure 60 secondes et ne tourne que pendant la saisie. Chaque parcours doit être terminé en 10 secondes. Une mauvaise case ou un dépassement de temps termine la manche sans pénalité ; un nouveau parcours de même longueur suit et le niveau ne baisse pas. Saisie au clic ou au toucher.",
+      "Transparence des données : les résultats sont enregistrés uniquement dans le localStorage de ce navigateur et ne sont envoyés à aucun serveur. SkillDrills ne publie donc ni moyennes d'utilisateurs ni classements.",
+      "Cet outil est un jeu gratuit d'entraînement dans le navigateur. Ce n'est ni le test de Corsi officiel, ni un dispositif médical, ni un outil de diagnostic, et les résultats ne renseignent pas sur un trouble de la mémoire. En cas d'inquiétude, consulte un professionnel de santé."
+    ],
+    benchmarks: {
+      title: "Paliers d'entraînement SkillDrills (points = parcours réussis × 150)",
+      headers: ["Palier", "Longueur atteinte · grille", "Points", "Signification"],
+      rows: [
+        ["Découverte", "3–4 étapes · 3x3", "0–150", "0 à 1 parcours réussi. Prise en main des règles et du rythme"],
+        ["Base", "5–7 étapes · 3x3–4x4", "300–600", "2 à 4 parcours réussis. La grille passe en 4x4"],
+        ["Confirmé", "8–12 étapes · 4x4–5x5", "750–1 350", "5 à 9 parcours réussis. Le regroupement par directions devient nécessaire"],
+        ["Avancé", "13+ étapes · 6x6–7x7", "1 500+", "10 parcours réussis ou plus. Longs parcours enchaînés en 60 secondes de saisie"]
+      ],
+      note: "Ces paliers sont calculés à partir des règles de score du jeu ; ce ne sont ni des normes de population ni des seuils cliniques."
+    },
+    techniques: {
+      title: "Astuces pour les longs parcours",
+      items: [
+        {
+          "name": "Former des blocs de directions",
+          "desc": "Le parcours passe toujours à une case voisine. Retiens donc des blocs comme « droite 2, haut 1, gauche 1 » plutôt que des cases isolées (Miller, 1956).",
+          "tips": "Nomme les formes : L, escalier, zigzag."
+        },
+        {
+          "name": "Repérer les virages",
+          "desc": "Les lignes droites se retiennent facilement. Fixe surtout la case de départ et les cases où la direction change.",
+          "tips": "Avant de saisir, rappelle-toi le départ et le dernier virage."
+        },
+        {
+          "name": "Garder toute la grille en vue",
+          "desc": "Plutôt que de sauter d'une case éclairée à l'autre, regarde près du centre de la grille et suis le tracé.",
+          "tips": "Particulièrement utile sur les grilles 6x6 et 7x7."
+        },
+        {
+          "name": "Saisir à rythme régulier",
+          "desc": "Avec 10 secondes de saisie, inutile de te précipiter, mais de longues pauses font oublier la fin du parcours.",
+          "tips": "Saisis bloc par bloc."
+        }
+      ]
+    },
+    steps: [
+      "Appuie sur Démarrer et attends le compte à rebours de 3 secondes.",
+      "Observe le parcours pendant que les cases s'allument une à une.",
+      "En moins de 10 secondes, clique ou touche les mêmes cases dans le même ordre.",
+      "En cas de réussite, le parcours s'allonge d'une étape ; en cas d'erreur, un nouveau parcours de même longueur apparaît.",
+      "Après 60 secondes de saisie, consulte ton score, ton niveau maximal et ta précision."
+    ],
+    audience: "Toute personne qui veut entraîner son empan visuo-spatial en jouant, les joueurs et sportifs qui doivent retenir des trajets ou des enchaînements, et quiconque cherche un jeu de mémoire court.",
+    faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
+    sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'miller1956'),
+    related: [
+      { href: "/fr/drills/memory/spatial-memory/grid-memorization", label: "Test de Mémoire Visuelle" },
+      { href: "/fr/drills/memory/spatial-memory/object-location", label: "Test de Mémoire de Localisation" },
+      { href: "/fr/drills/memory/short-term-memory/digit-span", label: "Test d'Empan Numérique" },
+      { href: "/fr/drills/memory/short-term-memory/word-recall", label: "Test de Mémoire Verbale" },
+      { href: "/fr/drills/memory/working-memory/n-back", label: "Test de Mémoire de Travail N-Back" }
+    ]
+  };
+
   return (
     <>
       <script
@@ -357,47 +302,47 @@ export default function PathTracingFrenchPage() {
         copy={{
           "h1Keyword": "Test des blocs de Corsi en ligne",
           "h1Suffix": " – Empan visuo-spatial",
-          "subtitle": "Mémorise les blocs éclairés et reproduis la séquence exacte.",
+          "subtitle": "Retiens les cases qui s'allument une à une et touche-les dans le même ordre.",
           "statScore": "Score",
           "statTime": "Temps",
           "statLevel": "Niveau",
           "statBestScore": "Meilleur Score",
           "levelPrefix": "Niv.",
-          "startTitle": "Suivi de Trajectoire Pro",
-          "startSubtitle": "Mémoire spatiale • Corsi",
-          "countdownSubtitle": "PRÉPAREZ-VOUS",
+          "startTitle": "Test des blocs de Corsi",
+          "startSubtitle": "Empan visuo-spatial • Mémoire de l'ordre",
+          "countdownSubtitle": "PRÉPARE-TOI",
           "newBest": "NOUVEAU RECORD",
           "pointsLabel": "Points",
           "statAccuracy": "Précision",
           "statPeakLevel": "Niveau Max",
           "statPerfects": "Sans faute",
           "btnPlayAgain": "Rejouer",
-          "rulesTitle": "Instructions et Système de Points",
-          "aboutTitle": "À propos du test de Corsi et de la mémoire séquentielle",
+          "rulesTitle": "Règles et points",
+          "aboutTitle": "À propos du test des blocs de Corsi",
           "rulesItems": [
             {
               "num": "1",
-              "text": "Mémoriser et reproduire la trajectoire",
+              "text": "Reproduire le parcours dans le même ordre",
               "highlight": "+150 PTS",
-              "result": "Mémorisez la séquence lumineuse et cliquez dans l'ordre exact"
+              "result": "Réussite : niveau +1 et une étape de plus (10 s de saisie)"
             },
             {
               "num": "2",
-              "text": "Progression de difficulté",
-              "highlight": "Niveau supérieur",
-              "result": "La grille s'étend et le parcours s'allonge avec chaque manche réussie"
+              "text": "La grille s'agrandit",
+              "highlight": "3x3 → 7x7",
+              "result": "La grille grandit automatiquement avec la longueur du parcours"
             },
             {
               "num": "3",
-              "text": "Clic hors séquence",
+              "text": "Mauvaise case / temps écoulé",
               "highlight": "Aucune pénalité",
-              "result": "Aucune perte de points ni pénalité de chronomètre en cas d'erreur"
+              "result": "Ni points ni temps retirés ; nouveau parcours de même longueur"
             },
             {
               "num": "4",
-              "text": "Maintien de manche",
-              "highlight": "Même palier",
-              "result": "La manche est rejouée au même niveau après une erreur de parcours"
+              "text": "Niveau conservé",
+              "highlight": "Pas de recul",
+              "result": "Le niveau ne baisse jamais ; les 60 secondes ne tournent que pendant la saisie"
             }
           ]
         }}

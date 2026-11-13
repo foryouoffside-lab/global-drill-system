@@ -7,12 +7,13 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de Stroop | Atención Selectiva | SkillDrills",
-  description: "Test de Stroop gratis en navegador: elige el color de la tinta, no la palabra. Es un autocheck cognitivo no clínico.",
+  description: "Test de Stroop online gratis: elige el color de la tinta, no la palabra, y comprueba el efecto Stroop en ti. Practica atención selectiva; no es un diagnóstico.",
   keywords: [
     "test de stroop",
     "test de stroop online",
     "test de stroop que mide",
     "test de stroop online gratis",
+    "efecto stroop",
     "efecto stroop ejercicios",
     "efecto stroop para que sirve",
     "atención selectiva",
@@ -24,7 +25,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Stroop | Atención Selectiva | SkillDrills",
-    description: "Test de Stroop gratis en navegador: elige el color de la tinta, no la palabra. Es un autocheck cognitivo no clínico.",
+    description: "Test de Stroop online gratis: elige el color de la tinta, no la palabra, y comprueba el efecto Stroop en ti. Practica atención selectiva; no es un diagnóstico.",
     url: "https://skilldrills.online/es/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
     locale: "es_ES",
@@ -33,7 +34,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Test de Stroop | Atención Selectiva | SkillDrills",
-    description: "Test de Stroop gratis en navegador: elige el color de la tinta, no la palabra. Es un autocheck cognitivo no clínico."
+    description: "Test de Stroop online gratis: elige el color de la tinta, no la palabra, y comprueba el efecto Stroop en ti. Practica atención selectiva; no es un diagnóstico."
   }
 };
 
@@ -54,20 +55,20 @@ export default function DistractionFighterPageES() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Stroop_effect", "https://en.wikipedia.org/wiki/Inhibitory_control"],
     "name": "Test de Stroop Trainer",
-    "dateModified": "2026-09-20",
-    "applicationCategory": "HealthApplication",
+    "dateModified": "2026-11-12",
+    "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entrenamiento neurocognitivo de inhibición atencional y control ejecutivo basado en el paradigma de interferencia color-palabra de Stroop."
+    "description": "Test de Stroop online gratis: ejercicio color-palabra en el que eliges el color de la tinta en lugar del significado de la palabra."
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Test de Stroop Online Interactivo",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "url": "https://skilldrills.online/es/drills/cognitive/focus/distraction-fighter",
-    "applicationCategory": "TrainingTool",
+    "applicationCategory": "EducationalApplication",
     "browserRequirements": "Requires JavaScript. HTML5 Canvas compatible."
   };
 
@@ -76,7 +77,7 @@ export default function DistractionFighterPageES() {
     "@type": "VideoGame",
     "name": "Desafío de Inhibición Cognitiva de Stroop",
     "gamePlatform": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-12",
     "genre": ["Brain Training", "Cognitive Drill", "Focus Training"]
   };
 
@@ -84,7 +85,7 @@ export default function DistractionFighterPageES() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Cómo Realizar el Test de Stroop Online",
-    "description": "Metodología para aislar el color de la fuente y suprimir la lectura automática de la palabra.",
+    "description": "Cómo se juega una ronda del test de Stroop online.",
     "step": [
       {
         "@type": "HowToStep",
@@ -94,7 +95,7 @@ export default function DistractionFighterPageES() {
       {
         "@type": "HowToStep",
         "name": "Supresión del Impulso Lector",
-        "text": "Inhiba activamente la respuesta automática de lectura y discrimine únicamente la longitud de onda de la tinta."
+        "text": "Inhiba activamente la respuesta automática de lectura y fíjese solo en el color de la tinta."
       },
       {
         "@type": "HowToStep",
@@ -104,7 +105,7 @@ export default function DistractionFighterPageES() {
       {
         "@type": "HowToStep",
         "name": "Sostenimiento del Ritmo",
-        "text": "Mantenga una cadencia constante a lo largo de los 45 segundos para potenciar su combo y multiplicador de puntuación."
+        "text": "El reloj empieza en 45 segundos: cada acierto suma 2 s (máx. 60 s) y cada error o palabra caducada resta 1 s. La ronda termina al llegar a cero."
       }
     ]
   };
@@ -118,7 +119,7 @@ export default function DistractionFighterPageES() {
         "name": "¿Qué es el efecto Stroop y a qué se debe?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Es el retraso en el tiempo de reacción cuando el color de la tinta entra en conflicto con el significado semántico de la palabra. Se produce porque la lectura es un proceso cerebral automático que compite con la identificación voluntaria del color."
+          "text": "El efecto Stroop es el retraso (y los errores extra) al nombrar el color de la tinta cuando la palabra escrita nombra otro color, por ejemplo 'ROJO' escrito en azul. Se produce porque leer es casi automático y compite con la identificación voluntaria del color (Stroop, 1935; MacLeod, 1991). En este test de Stroop online lo notarás como dudas o fallos al elegir el botón."
         }
       },
       {
@@ -126,7 +127,7 @@ export default function DistractionFighterPageES() {
         "name": "¿Qué estructuras cerebrales modulan este conflicto cognitivo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Intervienen de manera decisiva la corteza cingulada anterior (ACC), encargada de la detección de errores y conflictos, y la corteza prefrontal dorsolateral (DLPFC), responsable del control atencional top-down."
+          "text": "Los estudios de neuroimagen asocian la corteza cingulada anterior (ACC) y la corteza prefrontal dorsolateral (DLPFC) con la detección y resolución del conflicto (Posner & Petersen, 1990). Este ejercicio no mide la actividad cerebral."
         }
       },
       {
@@ -142,7 +143,7 @@ export default function DistractionFighterPageES() {
         "name": "¿En qué medida ayuda este ejercicio a deportistas y jugadores de videojuegos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Mejora la capacidad de ignorar estímulos visuales engañosos y previene errores por impulsividad en situaciones críticas de competición."
+          "text": "No hay evidencia de un efecto sobre el rendimiento deportivo o en videojuegos. El ejercicio solo practica ignorar una información engañosa bajo presión de tiempo; úsalo como complemento."
         }
       },
       {
@@ -150,7 +151,7 @@ export default function DistractionFighterPageES() {
         "name": "¿Cuánto tiempo se aconseja entrenar al día?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Entre 5 y 10 minutos al día en series cortas de 45 segundos resultan ideales para estimular la plasticidad prefrontal sin generar sobrecarga cognitiva."
+          "text": "No hay una regla fija. Unos minutos al día con pausas bastan para practicar sin cansarse; no se garantiza ninguna mejora."
         }
       },
       {
@@ -158,7 +159,7 @@ export default function DistractionFighterPageES() {
         "name": "¿Desaparece el efecto Stroop tras entrenar de forma continuada?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La latencia de interferencia disminuye de manera sustancial, pero la tendencia refleja a leer nunca desaparece por completo en individuos alfabetizados."
+          "text": "Con la práctica la interferencia suele reducirse algo, pero no desaparece en quien lee con fluidez (MacLeod, 1991). En este ejercicio el progreso se ve sobre todo en la puntuación y la precisión."
         }
       },
       {
@@ -166,7 +167,7 @@ export default function DistractionFighterPageES() {
         "name": "¿Existe algún truco para mejorar la velocidad en el test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dirigir la mirada hacia el borde o extremo de una sola letra en lugar de ver la palabra completa reduce la activación de los centros del lenguaje."
+          "text": "Algunos jugadores miran el borde de una letra en lugar de la palabra completa para leerla menos; es un truco práctico, no un método probado. Prioriza la precisión: cada error cuesta 1 segundo."
         }
       },
       {
@@ -174,7 +175,7 @@ export default function DistractionFighterPageES() {
         "name": "¿Cómo pondera el sistema la puntuación final?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tiene en cuenta el tiempo de respuesta en milisegundos, el número de aciertos consecutivos y el mantenimiento del combo multiplicador en rondas sucesivas."
+          "text": "Cada acierto vale 100 puntos × multiplicador de combo (hasta 3x) × factor de nivel y suma 2 segundos al reloj (máx. 60 s). Un error o una palabra caducada (opción Tiempo límite activada, por defecto) reinicia el combo y resta 1 segundo. La precisión es aciertos ÷ (aciertos + errores + caducadas). Por ahora las palabras de color se muestran en inglés (RED, BLUE…)."
         }
       },
       {
@@ -182,7 +183,7 @@ export default function DistractionFighterPageES() {
         "name": "¿Pueden realizarlo personas con dificultades para distinguir colores?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Personas con daltonismo marcado pueden experimentar discrepancias con ciertos tonos, aunque la interfaz utiliza combinaciones cromáticas contrastadas para mitigar confusiones."
+          "text": "Puede resultar difícil: el ejercicio usa rojo, verde, naranja, amarillo, azul y morado y no tiene modo para daltonismo."
         }
       },
       {
@@ -190,32 +191,34 @@ export default function DistractionFighterPageES() {
         "name": "¿Cómo repercute este entrenamiento en la capacidad de concentración diaria?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Fortalece las redes de inhibición frontal, facilitando el bloqueo de alertas del teléfono, conversaciones de fondo y pensamientos dispersos."
+          "text": "No está demostrado. La puntuación suele subir con la práctica, pero la transferencia a la concentración diaria es incierta. Úsalo como un calentamiento breve."
         }
       }
     ]
   };
 
   const guide = {
-    title: "Fundamentos Científicos del Test de Stroop y Neurobiología Inhibitoria",
+    title: "Efecto Stroop: qué es y cómo funciona este test de Stroop online",
     intro: [
-      "El efecto Stroop, descrito originalmente por J. Ridley Stroop en 1935, constituye uno de los hallazgos más sólidos de la psicología cognitiva. Al enfrentarse a palabras donde el texto contradice la tinta (por ejemplo, 'AMARILLO' en letras rojas), los tiempos de respuesta se demoran y la probabilidad de error se multiplica.",
-      "La explicación reside en la velocidad disimétrica de procesamiento cerebral: leer es una conducta casi refleja y automática (MacLeod, 1991). Según el modelo de carrera de Logan & Cowan (1984), el impulso de lectura gana la competición interna a menos que las áreas frontales ejerzan una inhibición deliberada.",
-      "La neurociencia confirma que la corteza cingulada anterior y la corteza prefrontal modulan esta resolución de interferencias. El entrenamiento sistemático incrementa la tolerancia a la distracción y afina el autocontrol bajo apremio de tiempo.",
-      "Metodología de cronometría: cada pulsación se registra con el reloj de alta precisión performance.now() del navegador en su propio dispositivo. Los temporizadores del navegador aplican una atenuación de seguridad frente a vulnerabilidades como Spectre (alrededor de 1 ms), mientras que la pantalla cuantiza los cambios según su frecuencia de actualización: aproximadamente 16,7 ms por fotograma a 60 Hz, 6,9 ms a 144 Hz y 4,1 ms a 240 Hz (Woods et al., 2015). Se recomienda valorar tendencias personales en un mismo dispositivo en lugar de comparar cifras aisladas entre hardware dispar.",
+      "El efecto Stroop, descrito originalmente por J. Ridley Stroop en 1935, constituye uno de los hallazgos más sólidos de la psicología cognitiva. Al enfrentarse a palabras donde el texto contradice la tinta (por ejemplo, 'AMARILLO' en letras rojas), los tiempos de respuesta se alargan y aumentan los errores: eso es el efecto Stroop.",
+      "La explicación reside en la velocidad disimétrica de procesamiento cerebral: leer es una conducta casi refleja y automática (MacLeod, 1991). La investigación sobre inhibición describe la detención de una respuesta automática como una carrera (Logan & Cowan, 1984): en el test de Stroop, el error aparece cuando la lectura no se frena a tiempo.",
+      "Estudios de neuroimagen asocian la corteza cingulada anterior y la corteza prefrontal a la resolución de esta interferencia (Posner & Petersen, 1990). Este ejercicio permite practicar la atención selectiva bajo presión de tiempo, sin medir actividad cerebral ni garantizar mejoras.",
+      "Cronometraje: el ejercicio no muestra tiempos de reacción, sino puntuación, precisión y nivel alcanzado. La ventana de respuesta de cada palabra la controlan los temporizadores del navegador en su propio dispositivo. Los temporizadores del navegador aplican una atenuación de seguridad frente a vulnerabilidades como Spectre (alrededor de 1 ms), mientras que la pantalla cuantiza los cambios según su frecuencia de actualización: aproximadamente 16,7 ms por fotograma a 60 Hz, 6,9 ms a 144 Hz y 4,1 ms a 240 Hz (Woods et al., 2015). Se recomienda valorar tendencias personales en un mismo dispositivo en lugar de comparar cifras aisladas entre hardware dispar.",
       "Transparencia de datos y aviso educativo: SkillDrills no recopila datos agregados ni almacena información en servidores remotos. Sus métricas y configuraciones se conservan exclusivamente en el almacenamiento local (localStorage) de su navegador. Este ejercicio es una herramienta interactiva de entrenamiento cognitivo para fines educativos y recreativos; no constituye un dispositivo médico, prueba de diagnóstico ni tratamiento para el TDAH u otras condiciones clínicas."
     ],
     benchmarks: {
-      title: "Baremos de Rendimiento en el Test de Stroop (Sesión de 45 Segundos)",
-      headers: ["Nivel de Habilidad", "Puntuación (45s)", "Tasa de Precisión", "Evaluación Neurocognitiva"],
+      title: "Test de Stroop: niveles de nota (puntos por ronda)",
+      headers: ["Nota", "Puntos"],
       rows: [
-        ["Tier 1 (Etapa Avanzada)", "18.000+ PTS", "96%+", "Control de impulsos sobresaliente; supresión instantánea de la lectura con respuesta ultrarrápida."],
-        ["Tier 2 (Avanzado / Nivel Competitivo)", "12.000 – 17.999 PTS", "92% – 95%", "Interferencia mínima de Stroop; cadencia sólida y elevada flexibilidad cognitiva."],
-        ["Tier 3 (Medio / Usuario Habitual)", "7.000 – 11.999 PTS", "85% – 91%", "Demora de interferencia normal en adultos sanos; ligeras vacilaciones ante contrastes marcados."],
-        ["Tier 4 (Básico / Atención Intermitente)", "3.000 – 6.999 PTS", "75% – 84%", "Influencia predominante del impulso lector; enlentecimiento claro ante mayor dificultad."],
-        ["Tier 5 (Iniciación / Alta Impulsividad)", "< 3.000 PTS", "< 75%", "Fallos reiterados y pérdidas de tiempo; alta propensión al cansancio atencional."]
+        ["S+", "21.660 o más"],
+        ["S", "17.340 – 21.659"],
+        ["A", "13.500 – 17.339"],
+        ["B", "8.640 – 13.499"],
+        ["C", "4.860 – 8.639"],
+        ["D", "2.160 – 4.859"],
+        ["F", "menos de 2.160"]
       ],
-      note: "Baremos obtenidos en sesiones de 45 segundos con diversidad de colores progresiva y tiempos de respuesta exigentes (Stroop, 1935; Woods et al., 2015)."
+      note: "Bandas de práctica de SkillDrills, calculadas directamente con la fórmula de nota de la pantalla final (fracción de 24.000 puntos de referencia); no son estadísticas de usuarios ni baremos clínicos. Cada acierto vale 100 puntos × combo (hasta 3x) × factor de nivel."
     },
     techniques: {
       title: "4 Estrategias para Superar la Interferencia de Stroop",
@@ -227,28 +230,28 @@ export default function DistractionFighterPageES() {
         },
         {
           name: "Supresión estricta de la voz interior",
-          desc: "Pronunciar mentalmente el nombre del color genera interferencia fonológica en el lóbulo temporal. Conecte de forma directa la percepción visual con el botón motor.",
+          desc: "Pronunciar mentalmente el nombre del color suele aumentar la interferencia. Conecte de forma directa la percepción visual con el botón motor.",
           tips: "Mantenga la lengua relajada y respire con tranquilidad sin susurrar los colores."
         },
         {
           name: "Cadencia de respuesta rítmica y controlada",
-          desc: "Hacer clics apresurados multiplica los errores por impulsividad y rompe el multiplicador. Un ritmo estable y pausado protege la racha y optimiza el tiempo de reacción neto.",
+          desc: "Hacer clics apresurados multiplica los errores por impulsividad y rompe el multiplicador. Un ritmo estable y pausado protege la racha y evita perder 1 segundo por error.",
           tips: "Priorice la precisión absoluta sobre la velocidad ciega."
         },
         {
           name: "Micro-sesiones de resistencia a la distracción",
-          desc: "El control inhibitorio frontal gasta glucosa rápidamente. Sesiones diarias de 3 a 5 minutos producen las mayores adaptaciones neuroplásticas en la corteza prefrontal.",
+          desc: "El cansancio aumenta los errores. Sesiones diarias de 3 a 5 minutos son fáciles de mantener.",
           tips: "Realice este ejercicio como activación mental previa a tareas de estudio o trabajo intensivo."
         }
       ]
     },
     steps: [
       "Observe el término presentado en pantalla sin leerlo mentalmente.",
-      "Inhiba el significado del texto y aísle la longitud de onda cromática de la tinta.",
+      "Ignore el significado del texto y fíjese solo en el color de la tinta.",
       "Seleccione el botón inferior correspondiente al color real del pigmento.",
-      "Encadene aciertos consecutivos para elevar el combo y activar niveles de alta velocidad."
+      "Encadene aciertos: +2 s por acierto (máx. 60 s), -1 s por error, hasta que el reloj llegue a cero."
     ],
-    audience: "Estudiantes, opositores, profesionales en oficinas abiertas, deportistas y jugadores de esports que requieran blindar su atención selectiva y suprimir distracciones automáticas.",
+    audience: "Estudiantes, opositores, profesionales en oficinas abiertas, deportistas, jugadores y cualquiera que quiera comprobar el efecto Stroop en sí mismo.",
     faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources
   };
@@ -283,22 +286,22 @@ export default function DistractionFighterPageES() {
       <DistractionFighterClient
         copy={{
           title: "Test de Stroop",
-          subtitle: "Interferencia Color-Palabra & Control Inhibitorio",
+          subtitle: "Test de Stroop online: efecto Stroop y atención selectiva",
           caption: "Indique el color de la tinta e ignore el significado del texto. La interferencia entre lectura automática y discriminación de color mide su control inhibitorio ejecutivo (Stroop, 1935).",
           stageCaption: "Pulse el botón del color de la tinta e ignore la palabra contradictoria.",
           rulesTitle: "Instrucciones del Ejercicio y Puntuación",
           aboutTitle: "Acerca del Test de Stroop y la Inhibición Cognitiva",
-          aboutText: "El efecto Stroop refleja la ralentización al indicar el color de una palabra cuando el significado entra en desacuerdo con la tinta (Stroop, 1935; MacLeod, 1991).\n\nLeer es una acción muy arraigada. La corteza cerebral debe inhibir voluntariamente la lectura para dar prioridad al color.\n\nEl entrenamiento metódico potencia la concentración frente a ruidos e interrupciones del entorno.",
+          aboutText: "El efecto Stroop refleja la ralentización al indicar el color de una palabra cuando el significado entra en desacuerdo con la tinta (Stroop, 1935; MacLeod, 1991).\n\nLeer es una acción muy arraigada. La corteza cerebral debe inhibir voluntariamente la lectura para dar prioridad al color.\n\nEl ejercicio permite practicar ese conflicto; no garantiza más concentración en el día a día.",
           aboutCards: [
             { title: "¿Para quién es útil?", desc: "Personas en entornos de oficina compartida, estudiantes y competidores de videojuegos de acción.", color: "bg-blue-600" },
             { title: "Capacidades Entrenadas", desc: "Tolerancia a la interferencia, inhibición cognitiva, atención focalizada y autocontrol.", color: "bg-emerald-600" },
             { title: "Control Inhibitorio", desc: "Suprima el impulso reflejo de lectura e identifique los colores con rapidez y precisión.", color: "bg-purple-600" }
           ],
           rulesItems: [
-            { title: "Interferencia de Stroop", text: "Aparece una palabra escrita (por ejemplo, 'VERDE') con una tinta de otro color (por ejemplo, azul)." },
-            { title: "Criterio de Elección", text: "Toque el botón del COLOR DE LA TINTA (Azul) ignorando el significado (+100 Pts x Combo x Nivel, +0,6s)." },
-            { title: "Errores", text: "Un fallo reinicia el combo y consume tiempo valioso. La ronda concluye al llegar a cero." },
-            { title: "Rachas de Acierto", text: "Encadenar respuestas correctas amplifica la puntuación en los niveles más avanzados." }
+            { num: "1", text: "Palabra de color (en inglés)", highlight: "elige la tinta", result: "ignora la palabra" },
+            { num: "2", text: "Acierto", highlight: "100 × combo × nivel", result: "+2 s (máx. 60 s)" },
+            { num: "3", text: "Error / palabra caducada", highlight: "combo a cero", result: "-1 s" },
+            { num: "4", text: "Nivel superior", highlight: "ventana más corta", result: "6 colores desde nivel 4" }
           ]
         }}
         faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}

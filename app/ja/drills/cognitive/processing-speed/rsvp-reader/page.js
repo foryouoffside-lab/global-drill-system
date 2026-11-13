@@ -8,7 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: "速読テスト | RSVP読書トレーニング | SkillDrills",
   description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",
-  keywords: ["速読テスト", "速読テスト 無料", "読書速度 測定", "速読トレーニング", "RSVP速読", "WPM 読書速度", "読解速度 テスト", "速読アプリ"],
+  keywords: ["速読テスト", "速読テスト 無料", "速読 トレーニング", "RSVP速読", "WPM", "速読 練習"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "速読テスト | RSVP読書トレーニング | SkillDrills",
     description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",
@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation"],
-  "name": "RSVP速読トレーニング・読書速度測定ツール",
+  "name": "速読テスト（RSVP）",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "description": "無料ブラウザ完結のRSVP速読トレーニングツール。視線跳躍（サッカード）を排除し、単語の最適認識点（ORP）へ高速連続表示することで、最大850WPMの超高速テキスト処理と読解速度を精密測定。",
+  "description": "無料ブラウザの速読テスト（RSVP）。英文の単語を画面の一点に250〜850WPMの5段階で1語ずつ表示し、ターゲット単語が出たらボタンを押します。結果はヒット数・正確さ・到達速度で、読解力の測定ではありません。",
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/rsvp-reader",
   "publisher": {
     "@type": "Organization",
@@ -79,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "速読トレーニング・RSVP読書速度測定 – 毎分単語数WPM診断",
+  "name": "速読テスト – RSVP読書トレーニング",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -96,15 +96,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/rsvp-reader",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "RSVP速読テスト – 超高速テキスト処理＆標的語検知ゲーム",
+  "name": "RSVP速読テスト – ターゲット単語検出ゲーム",
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/rsvp-reader",
-  "description": "無料ブラウザ完結のRSVP速読トレーニングツール。視線跳躍（サッカード）を排除し、単語の最適認識点（ORP）へ高速連続表示することで、最大850WPMの超高速テキスト処理と読解速度を精密測定。",
+  "description": "無料ブラウザの速読テスト（RSVP）。英文の単語を画面の一点に250〜850WPMの5段階で1語ずつ表示し、ターゲット単語が出たらボタンを押します。結果はヒット数・正確さ・到達速度で、読解力の測定ではありません。",
   "genre": [
     "Action",
     "Brain Game",
@@ -116,7 +116,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -133,23 +133,55 @@ const faqSchema = {
       "name": "RSVP（Rapid Serial Visual Presentation: 視覚性急速系列提示）とは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "画面の固定された1点に単語を1語ずつ高速で連続点滅表示させ、眼球の移動時間を完全にゼロにする先進的な速読技術です。"
+        "text": "画面の同じ位置に単語を1語ずつ連続表示し、視線を動かさずに読む方式です。理解度を保証する方法ではないため、速さだけで読解力は判断できません。"
       }
     },
     {
       "@type": "Question",
-      "name": "最適認識点（Optimal Recognition Point: ORP）とは何ですか？",
+      "name": "この速読テストはどう進みますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "単語の中で人間の脳が最も瞬時に語彙を識別できる文字位置（通常は単語の中央よりやや左側）のことです（Rayner, 1998）。"
+        "text": "上部バナーにターゲット単語が表示されます。中央に英単語が1語ずつ流れ、ターゲット単語が表示されている間に検出ボタンを押すと100点です。1回のプレイは45秒です。"
       }
     },
     {
       "@type": "Question",
-      "name": "通常の読書でスピードが制限される理由は？",
+      "name": "速度レベルはどう上がりますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "通常の読書では、時間の最大80%が単語間を移動するサッカード眼球運動（20〜40ms）と読み返し（回帰）に費やされているためです（Rayner, 2016）。"
+        "text": "レベル1（250WPM）から、350、480、650、最上位のレベル5（850WPM）まであります。ターゲット単語を2回見つけるごと（200点ごと）に1段階上がります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "押し間違えたり見逃したりするとどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ターゲット以外の単語で押すとエラーになり、ボタンが1秒間ロックされます。ターゲット単語を押さずに通過すると見逃しになります。どちらも正確さに反映されますが、残り時間は減りません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "結果では何がわかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "スコア、ヒット数、エラー、正確さ、到達した速度レベルが表示されます。WPMは単語の表示テンポで、あなた自身の読書速度を測った値ではありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "日本語の文章で速読テストできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "現在表示される文章は英文です。日本語の読書速度は通常「文字/分」で表すため、このドリルのWPMとはそのまま比べられません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "最適認識点（ORP）とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "単語の中で視線を置きやすい文字位置のことで、通常は中央よりやや左側です。このドリルではその文字を強調して、一点に視線を保ちやすくしています。"
       }
     },
     {
@@ -157,47 +189,15 @@ const faqSchema = {
       "name": "一般的な成人の読書速度（WPM）はどれくらいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "英語換算で一般成人の平均読書速度は200〜250WPMです。訓練された速読者は400〜600WPMを達成します。"
+        "text": "英語の黙読では毎分約200〜300語と報告されています（Rayner, 1998）。このドリルのレベル速度とは直接比較できません。"
       }
     },
     {
       "@type": "Question",
-      "name": "本ドリルで体験できる速度レベルは？",
+      "name": "練習すると速く読めるようになりますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "レベル1（250WPM）から始まり、レベル2（350WPM）、レベル3（480WPM）、レベル4（650WPM）、最上位のレベル5（850WPM）まで段階的に加速します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "ターゲット単語の検知システムがある理由は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ただ単語を目で流すだけでなく、脳が意味を確実にデコードして理解しているかを客観的に検証するためです。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "RSVP練習で脳の情報処理速度は向上しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "はい、視覚性単語形成領域（VWFA）での語彙認識速度とワーキングメモリのバッファ容量が鍛えられます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "画面のリフレッシュレートは影響しますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "144Hz以上のディスプレイは高速点滅時のフレーム抜けを防ぎ、クリアな文字視認性を担保します（Woods et al., 2015）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "どのような人に効果的ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "大量の論文や書類を処理する学生・専門職、UI情報を瞬時に読み取るeスポーツプレイヤーに最適です。"
+        "text": "速い単語の流れからターゲットを見つける課題は、練習で上達することが多いです。ただし速度を上げると理解が落ちることがあり、読書全般が速くなることは保証されません。"
       }
     },
     {
@@ -205,7 +205,7 @@ const faqSchema = {
       "name": "利用料金や登録は必要ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "いいえ、SkillDrillsは完全無料・登録不要で、いつでもブラウザから即座に利用可能です。"
+        "text": "いいえ、無料・登録不要で、ブラウザからすぐに利用できます。"
       }
     }
   ]
@@ -214,8 +214,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "速読トレーニング・RSVP読書速度測定",
-  "description": "無料ブラウザ完結のRSVP速読トレーニングツール。視線跳躍（サッカード）を排除し、単語の最適認識点（ORP）へ高速連続表示することで、最大850WPMの超高速テキスト処理と読解速度を精密測定。",
+  "name": "速読テストのやり方",
+  "description": "無料ブラウザの速読テスト（RSVP）。英文の単語を画面の一点に250〜850WPMの5段階で1語ずつ表示し、ターゲット単語が出たらボタンを押します。結果はヒット数・正確さ・到達速度で、読解力の測定ではありません。",
   "step": [
     {
       "@type": "HowToStep",
@@ -234,15 +234,15 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "超高速テキストストリームの受容",
-      "text": "サッカードを起こさず、網膜に流れ込む単語を流れるように意味理解します。",
+      "name": "単語の流れを追う",
+      "text": "同じ位置に1語ずつ現れる英単語を追いながら、ターゲット単語を待ちます。",
       "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/rsvp-reader#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "ターゲット出現時の瞬間検知タップ",
-      "text": "目標単語が中央に点滅した瞬間、即座に「TARGET DETECTED」をタップします。",
+      "text": "ターゲット単語が表示されている間に検出ボタンを押します。違う単語で押すと1秒間ボタンがロックされます。",
       "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/rsvp-reader#step-4"
     }
   ]
@@ -251,11 +251,11 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('rayner1998', 'rayner2016', 'woods2015'),
   intro: {
-    title: "速読トレーニング・RSVP読書速度測定 – 毎分単語数WPM診断",
+    title: "速読テスト – RSVP読書トレーニング",
     paragraphs: [
-      "速読テスト（RSVP）とは、単語を画面の一点に次々と表示し、読む速さ（WPM）と正確さを確かめる練習です。このドリルでは固定位置に表示される単語を読み、指定のターゲット単語が出たらタップします。視線移動の時間を省けますが、内容の理解は別に確かめる必要があります。",
-      "最適認識点（ORP）とは、単語の中で認識しやすい文字位置のことで、通常は単語の中央よりやや左側とされます（Rayner, 1998）。このドリルではその位置を強調して表示します。",
-      "通常の読書では、視線が単語間を移動するサッカードや読み返し（回帰）にも時間が使われます（Rayner, 2016）。RSVPはその移動を省きますが、速度を上げると理解が落ちることがあるため、WPMだけでなく正確さも併せて見てください。",
+      "速読テスト（RSVP）は、単語を画面の一点に1語ずつ表示する無料のブラウザ練習です。上部バナーのターゲット単語が出たらボタンを押し、2回見つけるごとに表示速度が250WPMから最大850WPMまで1段階ずつ上がります。表示される文章は英文で、WPMは英単語の表示テンポです（文字/分の計測ではありません）。",
+      "最適認識点（ORP）とは、単語の中で視線を置きやすい文字位置のことで、通常は中央よりやや左側とされます。このドリルではその文字を強調して表示します。",
+      "通常の読書では、視線が単語間を移動するサッカードや読み返しにも時間が使われます（Rayner, 1998）。RSVPはその移動を省きますが、速度を上げると理解が落ちることがあります（Rayner ほか, 2016）。このドリルは読解力を測定しません。",
     ],
   },
   benchmarks: {
@@ -266,18 +266,18 @@ const guideProps = {
       { tier: 'Tier 1', rank: '超高速情報処理の最上位段階', level: 'マスタリー（極限）', accuracy: '98% 以上' },
       { tier: 'Tier 2', rank: '上級速読スペシャリスト', level: 'ダイヤモンド（優秀）', accuracy: '94–97%' },
       { tier: 'Tier 3', rank: '熟練情報オペレーター', level: 'プラチナ（熟練）', accuracy: '88–93%' },
-      { tier: 'Tier 4', rank: '一般成人標準', level: 'ゴールド（標準）', accuracy: '78–87%' },
+      { tier: 'Tier 4', rank: '標準', level: 'ゴールド（標準）', accuracy: '78–87%' },
       { tier: 'Tier 5', rank: '入門・初期基準値', level: 'シルバー（基礎）', accuracy: '78% 未満' },
     ],
   },
   protocols: {
-    title: '脳の処理速度と集中力を高める4大トレーニングプロトコル',
-    description: '最適認識点（ORP, Rayner, 1998）固定とサッカード眼球移動の浪費排除に基づく、視覚語彙処理速度を極限まで引き上げる科学的RSVP速読トレーニングプロトコルです。',
+    title: '速読テストの進め方',
+    description: '一点に視線を置き、流れてくる単語の中からターゲット単語を見つける手順です。',
     items: [
       { title: "目標ターゲット単語の確認", description: "画面上部のバナーに表示されている「出現予定ターゲット単語」を記憶します。" },
       { title: "中央ORPアンカーへの視線固定", description: "視線を動かさず、中心のハイライトされたピボット文字に視線を集中します。" },
-      { title: "超高速テキストストリームの受容", description: "サッカードを起こさず、網膜に流れ込む単語を流れるように意味理解します。" },
-      { title: "ターゲット出現時の瞬間検知タップ", description: "目標単語が中央に点滅した瞬間、即座に「TARGET DETECTED」をタップします。" },
+      { title: "単語の流れを追う", description: "同じ位置に1語ずつ現れる英単語を追いながら、ターゲット単語を待ちます。" },
+      { title: "ターゲット出現時の瞬間検知タップ", description: "ターゲット単語が表示されている間に検出ボタンを押します。違う単語で押すと1秒間ボタンがロックされます。" },
     ],
   },
   faqs: {
@@ -320,7 +320,7 @@ export default function LocalizedCognitivePage() {
         copy={{
           title: "速読テスト",
           subtitle: "固定した視点で単語を処理し、読書速度と正確さを練習します",
-          startTitle: "RSVP速読テスト",
+          startTitle: "速読テスト",
           startSubtitle: "単語認識 • ORP集中",
           stageCaption: "中央に単語が連続表示されます。指定された単語が見えたらすぐにボタンを押してください。",
           rulesTitle: "ドリルの説明とスコア",
@@ -328,17 +328,17 @@ export default function LocalizedCognitivePage() {
           faqTitle: "よくある質問",
           labels: { score: "スコア", time: "時間", speed: "速度", bestScore: "ベストスコア", timeLeft: "残り時間", targetWord: "ターゲット単語", detected: "ターゲット検出", ready: "準備", accuracy: "正確さ", hits: "成功", errors: "ミス", points: "ポイント", playAgain: "もう一度" },
           aboutLead: "RSVPは単語を画面の同じ位置に一つずつ表示する読書方法です。左右に視線を移す負担を減らせますが、速度を上げるほど理解度が下がることがあるため、速さと正確さを一緒に見ます。",
-          aboutText: "このドリルでは中央のORPに視線を保ち、流れてくる単語を処理します。WPMは表示テンポの目安で、画面や端末の遅延も結果に影響します。850WPMはこのドリルの最上位レベルであり、すべての文章をその速度で理解できるという意味ではありません。",
+          aboutText: "このドリルでは中央のORPに視線を保ち、流れてくる英単語を処理します。WPMは表示テンポの目安で、画面や端末の遅延も結果に影響します。850WPMはこのドリルの最上位レベルであり、すべての文章をその速度で理解できるという意味ではありません。",
           aboutCards: [
             { title: "どんな人に向いていますか？", desc: "多くの文章を読む学生や仕事で読む人、速読を練習したい人に向いています。" },
             { title: "鍛えられる力", desc: "単語認識、ワーキングメモリ、高速な視覚情報への持続的な注意を練習します。" },
-            { title: "段階的な速度", desc: "250〜850WPMの5段階で、正確さを保ちながらテンポを上げます。" }
+            { title: "段階的な速度", desc: "250〜850WPMの5段階で、ターゲット単語を2回見つけるごとに1段階上がります。" }
           ],
           rulesItems: [
             { num: "1", text: "ターゲット単語", highlight: "上部バナー", result: "中央の流れから探す" },
             { num: "2", text: "ORP固定", highlight: "視線移動を抑える", result: "同じ位置で読む" },
-            { num: "3", text: "ターゲット検出", highlight: "+100点", result: "検出ボタンを押す" },
-            { num: "4", text: "速度レベル", highlight: "250 → 850 WPM", result: "5段階の難易度" }
+            { num: "3", text: "ターゲット検出", highlight: "+100点", result: "表示中に検出ボタンを押す" },
+            { num: "4", text: "速度レベル", highlight: "250 → 850 WPM", result: "2回検出ごとに1段階" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

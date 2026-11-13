@@ -85,7 +85,7 @@ const copyKo = {
   rule4Text: '적응형 난이도 엔진',
   rule4Highlight: '실시간 가변',
   rule4Result: '플레이어의 성공 여부에 따라 시퀀스 길이가 지능적으로 조절',
-  aboutTitle: '색깔 순서 기억 게임   aboutTitle: '사이먼 게임 & 시각 작업기억 정보', 시각 작업기억 정보',
+  aboutTitle: '색깔 순서 기억 게임 & 시각 작업기억 정보',
   overviewTitle: '색깔 순서 기억 훈련(사이먼 스타일)이란?',
   overviewLead: '인간의 시각 작업 기억은 한 번에 약 4개의 단순한 항목만을 유지할 수 있으며, 이 한계는 대상의 복잡성이 아닌 개수에 의해 결정됩니다 (Luck & Vogel, 1997; Cowan, 2001). 점진적으로 길어지는 색상 시퀀스는 이 인지적 한계를 직접 시험합니다.',
   aboutCards: [

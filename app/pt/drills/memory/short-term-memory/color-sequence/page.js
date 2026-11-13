@@ -5,25 +5,19 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: "Jogo Simon online | Sequência de cores | SkillDrills",
-  description: "Jogue Simon online grátis: memorize uma sequência crescente de cores e sons e repita tudo na mesma ordem no navegador.",
+  title: "Jogo estilo Genius online | Sequência de cores | SkillDrills",
+  description: "Jogo estilo Genius online e grátis: memorize a sequência de cores que acende e repita na mesma ordem em 6 botões. Começa com 3 cores, +1 a cada acerto.",
   keywords: [
-    "jogo Simon",
-    "jogo Simon online",
+    "jogo genius online",
+    "jogo tipo genius",
     "jogo de sequência de cores",
     "memória de cores",
-    "jogo da memoria online",
-    "jogo da memoria",
-    "jogo da memória",
-    "jogo de memoria",
-    "jogo de memória",
-    "jogo de memoria gratis online",
     "jogo da memoria de cores",
     "treino de memoria visual",
     "memoria de curto prazo teste",
     "memoria operacional visual",
-    "jogo genius online",
-    "simon game online",
+    "jogo genius online grátis",
+    "jogo simon",
     "teste de amplitude de memoria"
   ],
   alternates: {
@@ -35,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Jogo Simon online | Memória de cores",
-    description: "Memorize cores e sons e repita a sequência crescente na ordem exata. Jogue grátis no navegador, sem cadastro.",
+    title: "Jogo estilo Genius online | Sequência de cores | SkillDrills",
+    description: "Jogo estilo Genius online e grátis: memorize a sequência de cores que acende e repita na mesma ordem em 6 botões. Começa com 3 cores, +1 a cada acerto.",
     url: "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -44,8 +38,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Jogo Simon online | Memória de cores",
-    description: "Memorize cores e sons e repita a sequência crescente na ordem exata. Jogue grátis no navegador, sem cadastro.",
+    title: "Jogo estilo Genius online | Sequência de cores | SkillDrills",
+    description: "Jogo estilo Genius online e grátis: memorize a sequência de cores que acende e repita na mesma ordem em 6 botões. Começa com 3 cores, +1 a cada acerto.",
   },
 };
 
@@ -57,19 +51,19 @@ export default function PortugueseColorSequencePage() {
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos de Memória", "item": "https://skilldrills.online/pt/drills/memory" },
       { "@type": "ListItem", "position": 3, "name": "Memória de Curto Prazo", "item": "https://skilldrills.online/pt/drills/memory" },
-      { "@type": "ListItem", "position": 4, "name": "Jogo Simon Online", "item": "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence" }
+      { "@type": "ListItem", "position": 4, "name": "Jogo estilo Genius online", "item": "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Jogo Simon Online",
+    "name": "Jogo estilo Genius online",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
-    "description": "Treino interativo gratuito de memória operacional visual que avalia a retenção de padrões cromáticos sequenciais, capacidade de agrupamento e foco atencional.",
+    "description": "Jogo gratuito estilo Genius: durante 45 segundos, memorize sequências de cores cada vez mais longas e repita na mesma ordem para praticar memória operacional visual e agrupamento.",
     "genre": "Treinamento Cognitivo / Memória Visual de Trabalho",
     "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence",
     "publisher": {
@@ -82,10 +76,10 @@ export default function PortugueseColorSequencePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Jogo Simon Online",
+    "name": "Jogo estilo Genius online",
     "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence",
-    "description": "Jogo de memória online gratuito para navegador com 6 blocos cromáticos e protocolo adaptativo em escada. Pratique retenção de sequências e agrupamento cognitivo.",
-    "dateModified": "2026-09-11",
+    "description": "Jogo de sequência de cores estilo Genius, grátis no navegador: 6 botões coloridos, 3 cores no nível 1 e uma cor a mais a cada sequência certa.",
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
@@ -99,8 +93,8 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Jogo de Sequência de Cores Online (Treino de Memória)",
   "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence",
-  "description": "Jogo online de retenção e repetição de sequências cromáticas progressivas. Treine memória visual e atenção sequencial.",
-  "dateModified": "2026-09-11",
+  "description": "Jogo tipo Genius: as cores acendem uma a uma no círculo central e você repete a ordem nos 6 botões coloridos.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Treino de Memória", "Jogos Cognitivos", "Memória Visual", "Sequência de Cores"],
   "playMode": "SinglePlayer",
@@ -112,14 +106,14 @@ const videoGameSchema = {
 const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "O que é o Jogo Simon Online de sequências de cores?",
+        "name": "Como funciona este jogo estilo Genius online?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O Jogo Simon Online de sequências de cores é um exercício cognitivo interativo projetado para testar e expandir a memória operacional visual. O jogador observa uma sequência luminosa expansiva entre seis botões coloridos, retém a ordem temporal exata no buffer de memória de curto prazo e reproduz a cadeia de cores com precisão."
+          "text": "É um jogo de sequência de cores estilo Genius (o Genius da Estrela, conhecido lá fora como Simon); não é o produto oficial. As cores acendem uma de cada vez no círculo central e depois você toca os 6 botões coloridos na mesma ordem. O nível 1 tem 3 cores (tamanho = nível + 2); acertar sobe 1 nível, errar desce 1. Cada rodada é uma nova sequência aleatória e a sessão dura 45 segundos."
         }
       },
       {
@@ -140,10 +134,10 @@ const faqSchema = {
       },
       {
         "@type": "Question",
-        "name": "Como a mecânica clássica do jogo Genius / Simon estimula o cérebro?",
+        "name": "Que tipo de memória o jogo tipo Genius usa?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A reprodução de sequências cromáticas popularizada pelo Genius/Simon ativa tanto o cache visual (armazenamento temporário de cores) quanto o escriba interno (mecanismo que repassa trajetórias espaciais e sequências temporais), fortalecendo o foco sustentado e a resistência à interferência perceptual sob pressão de tempo."
+          "text": "Repetir sequências de cores, como no Genius, usa o cache visual (armazenamento temporário de cores) e o escriba interno (ensaio de trajetórias e ordens; Logie, 1995), além de atenção sustentada sob pressão de tempo."
         }
       },
       {
@@ -175,7 +169,7 @@ const faqSchema = {
         "name": "Treinar a memória sequencial visual ajuda nos estudos e na produtividade?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim. Exercícios consistentes de memória operacional visual fortalecem a atenção sustentada, reduzem a vulnerabilidade a distrações cotidianas e condicionam o controle executivo pré-frontal, fundamental para raciocínio lógico, programação, leitura analítica e esportes eletrônicos."
+          "text": "Não há garantia. Com prática você tende a melhorar neste jogo, mas a transferência para a memória do dia a dia, os estudos ou o trabalho é discutida na pesquisa. Use como exercício de memória; se tiver preocupação com sua memória, procure um médico."
         }
       },
       {
@@ -183,15 +177,15 @@ const faqSchema = {
         "name": "Como funciona o sistema adaptativo de dificuldade da escada?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O comprimento da sequência cresce dinamicamente conforme o nível atingido (comprimento = nível + 2). Rodadas perfeitas elevam o nível em 1 ponto, enquanto erros ou estouros de tempo reduzem 1 nível. Esse protocolo adaptativo mantém o desafio calibrado exatamente na fronteira da capacidade cognitiva individual."
+          "text": "O comprimento da sequência cresce dinamicamente conforme o nível atingido (comprimento = nível + 2). Rodadas certas elevam o nível em 1; tocar uma cor errada ou ficar 8 segundos sem tocar reduz 1 nível (mínimo nível 1), sem perder pontos nem tempo. Cada rodada certa vale 100 × (1 + 0,1 × nível) pontos e as cores piscam mais rápido a cada nível."
         }
       },
       {
         "@type": "Question",
-        "name": "O jogo Simon online é gratuito e funciona no celular e computador?",
+        "name": "O jogo genius online é gratuito e funciona no celular e computador?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim. O Jogo Simon Online da SkillDrills é 100% gratuito, roda direto no navegador em smartphones, tablets e computadores sem necessidade de download, instalação ou cadastro, medindo respostas localmente pelo relógio de alta resolução performance.now()."
+          "text": "Sim. O jogo estilo Genius da SkillDrills é gratuito e roda direto no navegador em smartphones, tablets e computadores, por toque ou clique, sem download, instalação ou cadastro. Seus recordes ficam salvos só no seu navegador."
         }
       }
     ]
@@ -208,7 +202,7 @@ const faqSchema = {
         "position": 1,
         "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence#step-1",
         "name": "Observe a Apresentação da Sequência",
-        "text": "Fixe o olhar no centro da grade de 6 botões e acompanhe cada flash luminoso sem tentar interagir antecipadamente."
+        "text": "Fixe o olhar no círculo central e acompanhe cada cor que acende, sem tentar tocar antes da hora."
       },
       {
         "@type": "HowToStep",
@@ -229,15 +223,15 @@ const faqSchema = {
         "position": 4,
         "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence#step-4",
         "name": "Expanda sua Capacidade de Memória de Curto Prazo",
-        "text": "Pratique de 3 a 5 sessões diárias para consolidar os circuitos frontoparietais e expandir o seu span de memória."
+        "text": "Cada acerto sobe o nível: a próxima sequência, nova e aleatória, tem uma cor a mais. Compare sua pontuação com os seus próprios recordes."
       }
     ]
   };
 
   const ptCopy = {
-    title: 'Jogo Simon online',
-    subtitle: 'Memorize cores e repita a sequência exata',
-    caption: 'Observe e reproduza a sequência luminosa de cores na ordem exata conforme o padrão se expande.',
+    title: 'Jogo estilo Genius online',
+    subtitle: 'Jogo de sequência de cores: memorize e repita na mesma ordem',
+    caption: 'As cores acendem uma a uma no círculo central. Repita a sequência na mesma ordem; cada acerto deixa a próxima sequência uma cor mais longa.',
     statScore: 'Pontuação',
     statTime: 'Tempo',
     statLevel: 'Nível',
@@ -248,16 +242,16 @@ const faqSchema = {
     rule1Result: 'Reproduza o padrão luminoso na ordem exata de exibição',
     rule2Text: 'Bônus de Nível',
     rule2Highlight: '+10% PTS / Nível',
-    rule2Result: 'Sequências mais longas acumulam multiplicadores maiores',
+    rule2Result: 'Rodada no nível N vale 100 × (1 + 0,1 × N) pontos',
     rule3Text: 'Erro ou Tempo Esgotado',
     rule3Highlight: '-1 Nível',
-    rule3Result: 'Sem perda de pontuação acumulada; ajusta a dificuldade',
+    rule3Result: 'Cor errada ou 8 s sem tocar: sem perder pontos nem tempo; nova sequência',
     rule4Text: 'Dificuldade Adaptativa',
     rule4Highlight: 'Sobe e Desce',
-    rule4Result: 'O tamanho da sequência acompanha sua capacidade atual',
-    aboutTitle: 'Sobre o Jogo Simon: Sequência de Cores',
+    rule4Result: 'Nível N = N + 2 cores; as cores piscam mais rápido a cada nível',
+    aboutTitle: 'Sobre o jogo estilo Genius: sequência de cores',
     overviewTitle: 'O que é o Treino de Memória Operacional Visual?',
-    overviewLead: 'A memória de trabalho visual armazena cerca de 4 itens simples por vez, limite determinado pela contagem de objetos e não pela complexidade de cada um (Luck & Vogel, 1997; Cowan, 2001). Uma sequência expansiva de cores desafia diretamente essa fronteira cognitiva.',
+    overviewLead: 'A memória de trabalho visual armazena cerca de 4 itens simples por vez, limite determinado pela contagem de objetos e não pela complexidade de cada um (Luck & Vogel, 1997; Cowan, 2001). Uma sequência de cores que fica mais longa permite praticar perto desse limite.',
     aboutIntro: [
       'O treino de memória visual isola e exercita a capacidade cerebral de codificar, reter e recuperar padrões cromáticos em sucessão temporal estrita.',
       'Ao praticar a reprodução sequencial de cores, você aprimora estratégias de agrupamento cognitivo (chunking) e desenvolve resistência à distração sob pressão de tempo.',
@@ -278,7 +272,7 @@ const faqSchema = {
     ],
     tapPrompt: 'Toque na Sequência em Ordem',
     evaluating: 'Avaliando...',
-    startCardTitle: 'Jogo Simon Online',
+    startCardTitle: 'Jogo estilo Genius',
     startCardSubtitle: 'Memória de cores • sequência crescente',
     getReady: 'PREPARE-SE',
     newBest: 'NOVO RECORDE',
@@ -292,27 +286,27 @@ const faqSchema = {
   };
 
   const ptColorSequenceGuide = {
-    heading: "Guia do Jogo Simon Online: Memória Operacional e Retenção Sequencial",
+    heading: "Guia do jogo estilo Genius online: memória operacional e sequência de cores",
     intro: [
-      "O Jogo Simon Online de sequências de cores é uma ferramenta interativa desenvolvida para mensurar, desafiar e expandir a capacidade de memória operacional visual e a retenção temporal de padrões. Diferente dos jogos tradicionais de encontrar pares estáticos de cartas em tabuleiros, este teste dinâmico desafia a amplitude imediata (span) do cérebro para reter estímulos cromáticos que surgem em ordem temporal estrita.",
+      "Este jogo genius online (estilo Genius, não o produto oficial da Estrela) é um jogo de sequência de cores para praticar a memória operacional visual e a retenção da ordem. Diferente dos jogos tradicionais de encontrar pares estáticos de cartas em tabuleiros, este teste dinâmico desafia a amplitude imediata (span) do cérebro para reter estímulos cromáticos que surgem em ordem temporal estrita.",
       "A arquitetura da memória humana foi amplamente documentada pela neuropsicologia cognitiva. Enquanto George A. Miller (1956) postulou o limite de $7 \pm 2$ itens para memória verbal, pesquisas contemporâneas em memória puramente visual conduzidas por Nelson Cowan (2001) e pela dupla Steven J. Luck & Edward K. Vogel (1997) comprovaram que a capacidade da memória operacional visual não agrupada é de aproximadamente 4 itens independentes. Sem estratégias ativas de recodificação, a capacidade de retenção imediata sofre colapso além do quarto elemento.",
-      "Segundo o modelo de memória operacional de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), o processamento de sequências visuais recruta ativamente o esboço visuoespacial (visuospatial sketchpad). Robert H. Logie (1995) subdividiu este componente em cache visual (armazenamento estático temporário de cores e formas) e escriba interno (mecanismo ativo de ensaio de sequências espaciais e temporais). Praticantes experientes conectam esse esboço à alça fonológica, gerando uma codificação dual (visual e subvocal) que dobra a resiliência do buffer de memória.",
-      "Utilizando cronometria de alta resolução pelo relógio performance.now() do navegador (Woods et al., 2015), o teste avalia tanto a extensão máxima da sequência retida quanto o tempo de reação motor por toque, fornecendo uma métrica confiável de velocidade de processamento cognitivo e resistência à fadiga mental sob pressão.",
-      "Como esta medição funciona: cada evento recebe registro temporal pela API performance.now(), executando exclusivamente no seu dispositivo -- nenhum dado pessoal é transmitido para servidores. Os cronômetros dos navegadores modernos sofrem atenuação intencional de precisão (~1 ms) para mitigar vulnerabilidades como Spectre, e a tela do monitor quantiza as atualizações conforme a taxa de quadros (cerca de 16,7 ms por quadro a 60 Hz; Woods et al., 2015). Diferenças inferiores a 5 ms devem ser interpretadas como ruído técnico, devendo o usuário comparar apenas desempenhos obtidos no mesmo dispositivo.",
-      "Transparência de dados: a SkillDrills não coleta métricas agregadas nem armazena resultados em servidores externos. Suas pontuações permanecem salvas apenas no localStorage do seu navegador, razão pela qual não divulgamos médias populacionais não verificadas. Todas as faixas de referência citadas baseiam-se em publicações científicas peer-reviewed listadas no painel de referências abaixo.",
-      "Isenção de responsabilidade médica: este jogo de navegador é uma ferramenta de treino reflexivo e entretenimento cognitivo. Não constitui dispositivo médico, exame diagnóstico ou terapia neurológica, e sua pontuação não reflete diagnóstico clínico. Em caso de dúvidas sobre sua memória ou cognição, consulte um médico especialista ou neuropsicólogo."
+      "Segundo o modelo de memória operacional de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), o processamento de sequências visuais recruta ativamente o esboço visuoespacial (visuospatial sketchpad). Robert H. Logie (1995) subdividiu este componente em cache visual (armazenamento estático temporário de cores e formas) e escriba interno (mecanismo ativo de ensaio de sequências espaciais e temporais). Praticantes experientes conectam esse esboço à alça fonológica, gerando uma codificação dual (visual e subvocal) que ajuda a segurar a sequência.",
+      "O que é registrado: em 45 segundos o jogo guarda a pontuação, o nível máximo (tamanho da sequência) e a precisão (porcentagem de rodadas certas). O tempo de reação por toque não é medido.",
+      "Como funciona uma rodada: no nível N aparecem N + 2 cores entre 6 possíveis, sempre numa sequência nova e aleatória. Quanto maior o nível, menos tempo cada cor fica acesa (de cerca de 0,7 s até no mínimo 0,25 s). Depois você tem 8 segundos para cada toque; cor errada ou tempo esgotado desce 1 nível.",
+      "Transparência de dados: a SkillDrills não coleta métricas agregadas nem armazena resultados em servidores externos. Suas pontuações permanecem salvas apenas no localStorage do seu navegador, razão pela qual não divulgamos médias populacionais não verificadas. As faixas da tabela abaixo são faixas de prática da SkillDrills calculadas pela pontuação do jogo; os números de pesquisa citados vêm das referências abaixo.",
+      "Isenção de responsabilidade médica: este jogo de navegador é um exercício de memória e entretenimento. Não constitui dispositivo médico, exame diagnóstico ou terapia neurológica, e sua pontuação não reflete diagnóstico clínico. Em caso de dúvidas sobre sua memória ou cognição, consulte um médico especialista ou neuropsicólogo."
     ],
     benchmarks: {
-      title: "Benchmarks de Memória Operacional Visual e Retenção Sequencial",
-      headers: ["Nível de Desempenho", "Extensão da Sequência (Cores)", "Nível da Escada Adaptativa", "Perfil de Armazenamento e Recuperação Cognitiva"],
+      title: "Faixas de prática do jogo estilo Genius (SkillDrills, sessão de 45 s)",
+      headers: ["Faixa", "Nível alcançado (cores)", "Pontos sem erro até o nível", "Estratégia típica"],
       rows: [
-        ["Nível 1 (Muito alto)", "9 a 11+ Cores", "Nível 7 a 9+", "Supera com facilidade o gargalo de 4 itens de Cowan; executa agrupamento bimodal contínuo (trajetória espacial + apoio subvocal rápido); latência média por clique < 400 ms."],
-        ["Nível 2 (Alto)", "7 a 8 Cores", "Nível 5 a 6", "Atinge o clássico limiar de 7 itens de Miller; constrói blocos associativos de 2 a 3 cores; retenção estável de ordem sequencial com cadência de 400 a 550 ms por estímulo."],
-        ["Nível 3 (Intermediário)", "5 a 6 Cores", "Nível 3 a 4", "Faixa intermediária; opera com agrupamento elementar, mas apresenta sensibilidade ao decaimento nos elementos centrais da cadeia; cadência de 550 a 750 ms."],
-        ["Nível 4 (Básico)", "4 Cores", "Nível 2", "Opera perto do limite de Cowan (cerca de 4 itens isolados); apresenta falhas quando a sequência exige recodificação sem auxílio verbal; cadência de 750 a 1.000 ms."],
-        ["Nível 5 (Inicial)", "3 Cores", "Nível 1", "Dificuldade para reter 3 estímulos cromáticos consecutivos; alta vulnerabilidade à interferência perceptual e decaimento imediato; cadência superior a 1.000 ms por toque."]
+        ["Faixa 1", "Nível 11+ (13+ cores)", "cerca de 1.550+", "Nomear as cores e agrupar em blocos"],
+        ["Faixa 2", "Nível 8 a 10 (10 a 12 cores)", "cerca de 980 a 1.549", "Agrupamento estável em pares ou trios"],
+        ["Faixa 3", "Nível 5 a 7 (7 a 9 cores)", "cerca de 500 a 979", "Cores do meio se perdem quando a exibição acelera"],
+        ["Faixa 4", "Nível 3 a 4 (5 a 6 cores)", "cerca de 230 a 499", "Cores guardadas uma a uma, ainda sem agrupar"],
+        ["Faixa 5", "Nível 1 a 2 (3 a 4 cores)", "menos de 230", "Aprendendo as regras e o ritmo"]
       ],
-      note: "Faixas editoriais para comparar suas próprias sessões, não médias de população nem normas clínicas. A extensão corresponde ao número de itens na sequência (nível + 2); a cadência de entrada afere o tempo médio entre a percepção e o toque em cada cor na fase de reprodução (Woods et al., 2015)."
+      note: "Faixas de prática da SkillDrills para comparar suas próprias sessões, não médias de população nem normas clínicas. Os pontos valem para uma sessão sem erros até aquele nível (pontos por rodada = 100 × (1 + 0,1 × nível)); erros descem o nível, então a pontuação real varia."
     },
     techniques: {
       title: "Técnicas Baseadas em Evidências para Ampliar a Memória Sequencial",
@@ -329,26 +323,26 @@ const faqSchema = {
         },
         {
           name: "Mapeamento Cinestésico de Trajetória Espacial",
-          desc: "Converta as posições dos botões em trajetórias geométricas sobre a matriz de 6 blocos (Logie, 1995). Em vez de memorizar apenas a cor, retenha o movimento do olhar ou o desenho vetorial formado pelos botões (ex.: 'triângulo horário' ou 'ziguezague descendente').",
-          tips: "Desenhe mentalmente uma linha poligonal conectando o centro de cada bloco no instante em que ele se ilumina."
+          desc: "As cores acendem só no círculo central, mas os 6 botões de resposta (grade 3 × 2) têm posição fixa. A cada cor, imagine o botão correspondente e guarde o caminho do dedo como um desenho (Logie, 1995).",
+          tips: "Olhe a disposição dos botões antes de começar para conseguir desenhar o caminho."
         },
         {
           name: "Blindagem de Posição Serial (Serial Position Shielding)",
-          desc: "Pelo efeito de posição serial, os itens centrais de uma sequência sofrem a maior taxa de esquecimento devido à interferência mútua. Fixe imediatamente o primeiro bloco na memória de trabalho ativa e confie no eco sensorial recente para o último elemento exibido.",
+          desc: "Cada rodada é uma sequência aleatória nova, então a rodada anterior não ajuda. Pelo efeito de posição serial, os itens centrais de uma sequência sofrem a maior taxa de esquecimento devido à interferência mútua. Fixe imediatamente o primeiro bloco na memória de trabalho ativa e confie no eco sensorial recente para o último elemento exibido.",
           tips: "Consolide o primeiro par logo no início da exibição e reproduza a resposta sem hesitar para aproveitar o rastro sensorial fresco."
         }
       ]
     },
     steps: [
-      "Mantenha o olhar fixo no centro da grade de 6 botões para abranger todo o campo visual periférico sem desvios bruscos.",
+      "Mantenha o olhar fixo no círculo central, onde as cores acendem uma a uma.",
       "Observe a sequência luminosa sem tentar clicar antecipadamente, mantendo a respiração estável e o foco absoluto.",
       "Agrupe as cores exibidas em pares mentais utilizando subvocalização rítmica ou trajetórias geométricas.",
       "Assim que o sinal de entrada for ativado, reproduza os toques na ordem exata com determinação e cadência fluida.",
-      "Aproveite a escada adaptativa de dificuldade: a cada acerto a sequência cresce, desafiando a fronteira máxima da sua memória de trabalho."
+      "A cada acerto o nível sobe e a próxima sequência, nova, tem uma cor a mais; a cada erro o nível desce 1."
     ],
-    audience: "Estudantes em preparação para concursos e vestibulares, praticantes de e-sports que demandam rápida leitura de tela, profissionais e entusiastas de condicionamento cognitivo que buscam treinar a amplitude da memória operacional, técnicas de agrupamento (chunking) e atenção sob limite de tempo.",
+    audience: "Estudantes em preparação para concursos e vestibulares, praticantes de e-sports que querem praticar leitura rápida de padrões, profissionais e entusiastas de condicionamento cognitivo que buscam treinar a amplitude da memória operacional, técnicas de agrupamento (chunking) e atenção sob limite de tempo.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'luck1997', 'simon1974', 'woods2015'),
+    sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'luck1997', 'simon1974'),
     related: [
       { href: "/pt/drills/memory/short-term-memory/digit-span", label: "Teste de Dígitos (Digit Span)" },
       { href: "/pt/drills/memory/short-term-memory/word-recall", label: "Teste de Memória Verbal" },

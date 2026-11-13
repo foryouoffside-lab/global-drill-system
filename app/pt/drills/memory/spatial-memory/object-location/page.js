@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Teste de memória espacial online | SkillDrills",
-  description: "Teste sua memória espacial online: memorize onde cada objeto estava na grade e encontre as posições após uma breve exibição.",
+  description: "Teste de memória espacial online grátis: objetos aparecem por 1,5 segundo na grade e você clica onde estava o objeto pedido. Treino de memória visuoespacial.",
   keywords: ['teste de memória espacial', 'memória espacial online', 'memória de localização de objetos', 'memória visuoespacial', 'teste de posições', 'memória de trabalho visuoespacial', 'localização de objetos', 'exercício de memória espacial', 'jogo de memória espacial', 'treino de memória espacial'],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/memory/spatial-memory/object-location",
@@ -18,7 +18,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de memória espacial online | SkillDrills",
-    description: "Memorize a posição dos objetos na grade e encontre o local-alvo após uma breve exibição, sem cadastro.",
+    description: "Teste de memória espacial online grátis: objetos aparecem por 1,5 segundo na grade e você clica onde estava o objeto pedido. Treino de memória visuoespacial.",
     url: "https://skilldrills.online/pt/drills/memory/spatial-memory/object-location",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de memória espacial online | SkillDrills",
-    description: "Memorize a posição dos objetos na grade e encontre o local-alvo após uma breve exibição, sem cadastro.",
+    description: "Teste de memória espacial online grátis: objetos aparecem por 1,5 segundo na grade e você clica onde estava o objeto pedido. Treino de memória visuoespacial.",
   },
 };
 
@@ -51,10 +51,10 @@ export default function LocalizedObjectLocationPage() {
     "name": "Teste de Memória Espacial (Localização de Objetos)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Avaliação neuropsicológica interativa de ligação de características visuais e espaciais (Feature Binding), mapas cognitivos e retenção de coordenadas em grades progressivas.",
-    "genre": "Cognitive Assessment / Spatial Memory",
+    "description": "Teste de memória espacial grátis no navegador: memorize onde os objetos aparecem por 1,5 segundo na grade e encontre a posição do objeto pedido.",
+    "genre": "Memory Game / Spatial Memory",
     "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/object-location",
     "publisher": {
       "@type": "Organization",
@@ -68,8 +68,8 @@ export default function LocalizedObjectLocationPage() {
     "@type": "WebApplication",
     "name": "Teste de Memória Espacial (Localização de Objetos)",
     "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/object-location",
-    "description": "Avaliação neuropsicológica interativa de ligação de características visuais e espaciais (Feature Binding), mapas cognitivos e retenção de coordenadas em grades progressivas.",
-    "dateModified": "2026-09-05",
+    "description": "Teste de memória espacial grátis no navegador: memorize onde os objetos aparecem por 1,5 segundo na grade e encontre a posição do objeto pedido.",
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "sameAs": "https://pt.wikipedia.org/wiki/Mem%C3%B3ria_espacial",
     "operatingSystem": "All",
@@ -81,7 +81,7 @@ export default function LocalizedObjectLocationPage() {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Teste de Memória Espacial (Localização de Objetos)",
-    "description": "Avaliação neuropsicológica interativa de ligação de características visuais e espaciais (Feature Binding), mapas cognitivos e retenção de coordenadas em grades progressivas.",
+    "description": "Teste de memória espacial grátis no navegador: memorize onde os objetos aparecem por 1,5 segundo na grade e encontre a posição do objeto pedido.",
     "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/object-location",
     "genre": ["Memory Game", "Cognitive Training", "Spatial Memory"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
@@ -102,14 +102,14 @@ export default function LocalizedObjectLocationPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
             "@type": "Question",
             "name": "O que é um teste de memória espacial de localização de objetos?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "É uma avaliação neuropsicológica que mede a habilidade do cérebro em integrar o que um objeto é (identidade visual) com onde ele está (coordenada espacial), processo denominado ligação de características (Feature Binding)."
+                  "text": "É um jogo de treino gratuito de memória de localização de objetos: você memoriza qual objeto estava em qual célula e depois encontra a posição de um objeto pedido. Não é uma avaliação neuropsicológica, um psicotécnico nem um teste do Detran; a pontuação é só uma referência pessoal de treino."
             }
       },
       {
@@ -117,15 +117,15 @@ export default function LocalizedObjectLocationPage() {
             "name": "Como funciona este exercício prático?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "O treino exibe múltiplos objetos em grades de 3x3 a 7x7 durante 1,5 segundo. Em seguida, a grade é esvaziada e um único objeto-alvo é indicado no topo; seu objetivo é clicar na célula onde ele estava posicionado."
+                  "text": "Numa grade 3x3, 2 objetos (emojis) aparecem por 1,5 segundo. Depois, um objeto-alvo é mostrado no topo e você tem 8 segundos para clicar na célula onde ele estava. Um acerto vale 150 pontos e sobe um nível; cada nível acrescenta um objeto (máximo de 10). A grade vira 4x4 no nível 8 e 5x5 no nível 15. A partida dura 45 segundos no total."
             }
       },
       {
             "@type": "Question",
-            "name": "O que foi a pesquisa de Silverman e Eals (1994)?",
+            "name": "Isto é a tarefa de localização de objetos de Silverman e Eals?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Foi um estudo clássico conduzido por Marion Eals e Irwin Silverman que demonstrou que a memória de localização de objetos funciona como um módulo cognitivo evolutivo independente da rotação mental euclidiana."
+                  "text": "Não. Eals e Silverman (1994) estudaram a memória de localização de objetos com uma tarefa de pesquisa em que se pergunta a posição de objetos depois de observá-los. Este jogo usa uma ideia parecida, mas não segue o procedimento nem as normas dessa tarefa."
             }
       },
       {
@@ -138,10 +138,10 @@ export default function LocalizedObjectLocationPage() {
       },
       {
             "@type": "Question",
-            "name": "Qual é a média de acertos de um adulto típico?",
+            "name": "Como a pontuação é calculada?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Em testes laboratoriais como o CANTAB PAL, adultos saudáveis localizam entre 4 e 6 objetos em grades intermediárias. Este jogo de navegador serve para treino e autoavaliação contínua, não consistindo em laudo médico."
+                  "text": "Cada posição-alvo encontrada vale 150 pontos. A nota na tela de resultado é uma faixa de treino do SkillDrills com 1.000 pontos no topo da escala; não é média nem norma clínica."
             }
       },
       {
@@ -149,7 +149,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "Qual a diferença deste teste para o de memória em grade comum?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "O teste de grade comum avalia somente a posição de blocos iluminados idênticos (padrão puramente geométrico). Já a localização de objetos exige associar cada figura específica ao seu ponto exato, elevando a carga de processamento."
+                  "text": "No teste de memória visual (grade), você repete todo um padrão de células acesas e pode agrupá-lo em formas. Aqui você memoriza qual objeto estava em qual célula e procura só a posição de um objeto-alvo."
             }
       },
       {
@@ -173,7 +173,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "Ocorrem penalidades de pontos ou tempo por cliques incorretos?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Não. Clicar na célula errada não deduz pontos nem reduz os segundos restantes. A rodada é reiniciada no nível atual para você aprimorar sua estratégia de memorização."
+                  "text": "Não. Um clique errado ou ficar 8 segundos sem responder encerra só a rodada, sem perder pontos. O nível não cai e aparece uma nova disposição no mesmo nível. O relógio de 45 segundos, porém, continua correndo."
             }
       },
       {
@@ -181,7 +181,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "De que forma essa memória ajuda no cotidiano e em jogos?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Facilita o hábito de recordar onde guardou chaves, documentos ou onde estacionou, além de conceder vantagem em jogos competitivos (FPS, MOBA) na vigilância rápida de minimapas e recursos."
+                  "text": "O exercício se parece com situações em que você guarda uma disposição de relance, como onde deixou as chaves ou posições no minimapa. Não há garantia de melhora em outras atividades."
             }
       }
 ]
@@ -191,7 +191,7 @@ export default function LocalizedObjectLocationPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Como treinar a memória espacial e a localização de objetos",
-    "description": "Protocolo metódico de 4 etapas para memorizar posições, ancorar marcos e identificar alvos em matrizes visuais.",
+    "description": "Quatro passos práticos para memorizar a posição dos objetos em 1,5 segundo e encontrar o objeto-alvo.",
     "step": [
       {
             "@type": "HowToStep",
@@ -199,7 +199,7 @@ export default function LocalizedObjectLocationPage() {
       "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/object-location#step-1",
             
             "name": "Varredura por quadrantes",
-            "text": "Nos primeiros 500 ms divida visualmente a grade em 4 partes (superior esquerda, superior direita, inferior esquerda e inferior direita) para mensurar a dispersão."
+            "text": "Assim que os objetos aparecerem, divida visualmente a grade em 4 partes (superior esquerda, superior direita, inferior esquerda e inferior direita) para mensurar a dispersão."
       },
       {
             "@type": "HowToStep",
@@ -230,50 +230,23 @@ export default function LocalizedObjectLocationPage() {
 
   const objectLocationGuide = {
     intro: [
-      "O Teste de Memória Espacial (Object Location Memory Test) é uma ferramenta neurocognitiva projetada para analisar a memória de posição, a vinculação de características objeto-localização (Object-Location Binding) e a reconstrução de disposições espaciais. Diferente de testes com grades anônimas, ele exige conectar figuras visuais singulares a coordenadas exatas.",
-      "A base científica dessa avaliação remonta ao trabalho pioneiro de Marion Eals e Irwin Silverman (1994), que comprovaram que a memória para localização de objetos constitui uma adaptação evolutiva distinta da rotação espacial geométrica. Antes disso, Edward C. Tolman (1948) concebeu a noção de mapa cognitivo (Cognitive Map), demonstrando como os organismos erguem maquetes espaciais internas do meio exterior.",
-      "Na arquitetura da memória operacional, Robert H. Logie (1995) e Alan Baddeley (2000) comprovaram que o pareamento objeto-posição é orquestrado pelo buffer episódico (Episodic Buffer), que junta os sinais do cache visual (as identidades dos itens) com o escriba interno (o mapa das coordenadas). Steven J. Luck e Edward K. Vogel (1997) evidenciaram o alto custo atencional da fusão de atributos, e Nelson Cowan (2001) comprovou o limite natural de 3 a 4 conjuntos mantidos no foco atencional simultâneo.",
-      "Seguindo as diretrizes cronométricas de Woods et al. (2015), esta aplicação adota um intervalo de exposição de 1,5 segundo e uma progressão de dificuldade adaptativa (de grades 3x3 até 7x7) para mapear o limite real da sua retenção visoespacial.",
-      "Precisão das medições: cada resposta é cronometrada no próprio navegador com a biblioteca de alta precisão performance.now(), sem envio de dados a servidores remotos. Em virtude de proteções como a Spectre, o timer é arredondado a cerca de 1 ms, e as atualizações de tela acompanham a taxa de atualização do monitor (cerca de 16,7 ms por quadro a 60 Hz; Woods et al., 2015). Variações abaixo de 5 ms constituem flutuações normais de hardware.",
-      "Transparência de dados: a SkillDrills não armazena estatísticas centrais. Suas pontuações e configurações residem apenas no localStorage do seu próprio dispositivo, de modo que não divulgamos rankings globais de jogadores. Todas as estimativas de referência citadas advêm de artigos revisados por pares indicados no rodapé.",
+      "Este teste de memória espacial online mostra objetos (emojis) por 1,5 segundo numa grade. Depois um objeto-alvo é pedido e você clica na célula onde ele estava: é um treino de memória visuoespacial de localização de objetos, não de padrões. Você começa com 2 objetos numa grade 3x3; cada acerto acrescenta um objeto (máximo de 10), a grade vira 4x4 no nível 8 e 5x5 no nível 15.",
+      "A base científica dessa avaliação remonta ao trabalho pioneiro de Marion Eals e Irwin Silverman (1994), que comprovaram que a memória para localização de objetos constitui uma adaptação evolutiva distinta da rotação espacial geométrica. Este jogo não é a tarefa de pesquisa deles, e sim um exercício de formato parecido. Antes disso, Edward C. Tolman (1948) concebeu a noção de mapa cognitivo (Cognitive Map), demonstrando como os organismos erguem maquetes espaciais internas do meio exterior.",
+      "Na arquitetura da memória operacional, Robert H. Logie (1995) e Alan Baddeley (2000) comprovaram que o pareamento objeto-posição é orquestrado pelo buffer episódico (Episodic Buffer), que junta os sinais do cache visual (as identidades dos itens) com o escriba interno (o mapa das coordenadas). Steven J. Luck e Edward K. Vogel (1997) evidenciaram o alto custo atencional da fusão de atributos, e Nelson Cowan (2001) estimou a capacidade do foco da memória operacional em cerca de 3 a 4 itens.",
+      "Como funciona: a disposição fica visível por 1,5 segundo e depois você tem 8 segundos para responder. Um acerto vale 150 pontos e sobe um nível; um erro ou tempo esgotado encerra a rodada sem perder pontos, e vem uma nova disposição no mesmo nível. A partida dura 45 segundos no total; tempo de reação não é medido.",
+      "Dados: sua pontuação e seu recorde ficam apenas no localStorage do navegador e não são enviados a servidores.",
       "Este aplicativo é um jogo web gratuito voltado a treino e curiosidade pessoal. Não substitui exames médicos nem tem valor de diagnóstico clínico. Se você tiver apreensões quanto à sua retenção de memória, procure avaliação médica profissional especializada."
 ],
     benchmarks: {
-      title: "Parâmetros normativos de capacidade de ligação de posições espaciais",
-      headers: ["Nível de Desempenho", "Objetos e Grade", "Pontuação", "Perfil de Vinculação e Mapa Cognitivo"],
+      title: "Faixas de treino SkillDrills (uma partida)",
+      headers: ["Faixa", "Pontos", "Acertos", "Dificuldade alcançada"],
       rows: [
-        [
-                "Faixa 1",
-                "Nível 8 – 10+ (8–10+ objetos, grade 6x6–7x7)",
-                "1.000+ Pontos",
-                "Desempenho visoespacial avançado; domina varredura por quadrantes e ancoragem em marcos; retém 8+ pares objeto-posição com facilidade; resposta em < 500 ms"
-        ],
-        [
-                "Faixa 2",
-                "Nível 6 – 7 (6–7 objetos, grade 5x5–6x6)",
-                "750 – 999 Pontos",
-                "Bem acima da média da população; estruturação semântico-espacial consistente; alta imunidade à interferência em grades amplas; resposta em 500–700 ms"
-        ],
-        [
-                "Faixa 3",
-                "Nivel 4 – 5 (4–5 objetos, grade 4x4–5x5)",
-                "450 – 749 Pontos",
-                "Padrão médio da população (Eals & Silverman, 1994); consolida 4 conjunções (limite de Cowan); começa a perder itens centrais em matrizes 5x5; resposta em 700–950 ms"
-        ],
-        [
-                "Faixa 4",
-                "Faixa 3",
-                "250 – 449 Pontos",
-                "Guarda apenas 2–3 itens isolados; confunde posições próximas; vulnerável com a inclusão de novos distratores; resposta em 950–1.300 ms"
-        ],
-        [
-                "Faixa 5",
-                "Nível 1 – 2 (2 objetos, grade 3x3)",
-                "< 250 Pontos",
-                "Declínio acelerado do vestígio visual; incapacidade de unir a figura à coordenada; tempo de localização acima de 1.300 ms"
-        ]
-],
-      note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. A contagem de objetos e as dimensões da grade retratam o patamar máximo completado em 45 segundos, equiparado aos parâmetros do Silverman-Eals OLM e do CANTAB PAL."
+        ["Faixa alta", "1.050 ou mais", "7 ou mais", "Nível 8+, 9 a 10 objetos, grade 4x4 (5x5 após 14 acertos)"],
+        ["Faixa intermediária", "600 – 900", "4 – 6", "Nível 5 a 7, 6 a 8 objetos, grade 3x3"],
+        ["Faixa inicial", "150 – 450", "1 – 3", "Nível 2 a 4, 3 a 5 objetos, grade 3x3"],
+        ["Início", "0", "0", "Nível 1, 2 objetos, grade 3x3"]
+      ],
+      note: "Pontos = acertos × 150. As faixas são calculadas a partir das regras do jogo: são referências de treino do SkillDrills, não estatísticas populacionais nem normas clínicas."
     },
     techniques: {
       title: "Estratégias cientificamente respaldadas para expandir a memória espacial",
@@ -281,7 +254,7 @@ export default function LocalizedObjectLocationPage() {
         {
                 "name": "Ancoragem em marcos (Landmark Anchoring)",
                 "desc": "Associe os itens a marcos fixos evidentes, como os 4 cantos, as bordas ou o centro (Tolman, 1948). Guardar que 'o diamante está no canto superior esquerdo' poupa o esforço de calcular coordenadas abstratas.",
-                "tips": "Nos primeiros 500 ms foque prioritariamente nos símbolos situados em cantos e extremidades."
+                "tips": "Assim que os objetos aparecerem, foque prioritariamente nos símbolos situados em cantos e extremidades."
         },
         {
                 "name": "Pareamento semântico-espacial",
@@ -290,7 +263,7 @@ export default function LocalizedObjectLocationPage() {
         },
         {
                 "name": "Divisão por quadrantes",
-                "desc": "Segmente grades extensas de 5x5 ou 7x7 em quatro zonas imaginárias. Contabilizar previamente quantos objetos ocupam cada setor limita enormemente a área de busca.",
+                "desc": "Segmente grades maiores de 4x4 ou 5x5 em quatro zonas imaginárias. Contabilizar previamente quantos objetos ocupam cada setor limita enormemente a área de busca.",
                 "tips": "Conte os itens por quadrante antes de registrar a célula precisa de cada um."
         },
         {
@@ -305,11 +278,11 @@ export default function LocalizedObjectLocationPage() {
       "Nos 1,5 s de visualização, prenda mentalmente cada figura a um marco de referência.",
       "Crie associações semântico-espaciais instantâneas ligando o ícone à coordenada.",
       "Assim que a tela for limpa e o alvo for indicado, consulte seu mapa mental e clique na posição certa.",
-      "Evolua por matrizes graduais de 3x3 a 7x7 desafiando o teto da sua retenção espacial."
+      "A cada nível entra um objeto e a grade cresce de 3x3 para 4x4 e 5x5: aplique os mesmos marcos a mais objetos."
 ],
     audience: "Jogadores focados em vigilância de minimapa e recarga de habilidades, radiologistas, estudantes das áreas de exatas e qualquer pessoa interessada em aprimorar a memória de trabalho visoespacial.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994', 'woods2015'),
+    sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994'),
     related: [
       {
             "href": "/pt/drills/memory/spatial-memory/grid-memorization",
@@ -363,7 +336,7 @@ export default function LocalizedObjectLocationPage() {
       <ObjectLocationClient
         copy={{
         "h1Keyword": "Teste de memória espacial online",
-        "h1Suffix": " – Localização de objetos",
+        "h1Suffix": "",
         "subtitle": "Memorize onde cada objeto estava na grade",
         "statScore": "Pontuação",
         "statTime": "Tempo",
@@ -393,14 +366,14 @@ export default function LocalizedObjectLocationPage() {
                 {
                         "num": "2",
                         "text": "Progressão em grade",
-                        "highlight": "3x3 → 7x7",
-                        "result": "Conforme você sobe de nível, o tabuleiro e o número de itens aumentam"
+                        "highlight": "3x3 → 4x4 → 5x5",
+                        "result": "Um objeto a mais por nível (máx. 10), 4x4 no nível 8, 5x5 no nível 15"
                 },
                 {
                         "num": "3",
                         "text": "Erro ou tempo esgotado",
                         "highlight": "Zero penalidade",
-                        "result": "Nenhum ponto ou tempo é deduzido; a rodada se repete no nível atual"
+                        "result": "A rodada termina sem perder pontos; 8 s para responder, o relógio de 45 s continua"
                 },
                 {
                         "num": "4",

@@ -6,12 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Reaktionszeit-Test mit Regelwechsel | SkillDrills",
-  description: "Kostenloser Reaktionszeit-Test im Browser (Wahlreaktion): Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
-  keywords: ["Reaktionstest", "Reaktionszeit Test", "Reaktionszeit Test online", "Reaktionszeit messen", "Wahlreaktionszeit", "Entscheidungsgeschwindigkeit", "Reaktionstest kostenlos", "visuelle Reaktionszeit"],
+  title: "Wahlreaktionstest mit Regelwechsel | SkillDrills",
+  description: "Kostenloser Wahlreaktionstest im Browser: Klicke das rote oder blaue Ziel nach einer wechselnden Farbregel. Übung für Entscheidungstempo, kein klinischer Test.",
+  keywords: ["Wahlreaktionstest", "Wahlreaktionstest online", "Wahlreaktionszeit", "Regelwechsel", "Entscheidungstempo", "Entscheidungsgeschwindigkeit"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Reaktionszeit-Test mit Regelwechsel | SkillDrills",
-    description: "Kostenloser Reaktionszeit-Test im Browser (Wahlreaktion): Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
+    title: "Wahlreaktionstest mit Regelwechsel | SkillDrills",
+    description: "Kostenloser Wahlreaktionstest im Browser: Klicke das rote oder blaue Ziel nach einer wechselnden Farbregel. Übung für Entscheidungstempo, kein klinischer Test.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Reaktionszeit-Test mit Regelwechsel | SkillDrills",
-    description: "Kostenloser Reaktionszeit-Test im Browser (Wahlreaktion): Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
+    title: "Wahlreaktionstest mit Regelwechsel | SkillDrills",
+    description: "Kostenloser Wahlreaktionstest im Browser: Klicke das rote oder blaue Ziel nach einer wechselnden Farbregel. Übung für Entscheidungstempo, kein klinischer Test.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -54,7 +54,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Wahlreaktionszeit Test",
+      "name": "Wahlreaktionstest",
       "item": "https://skilldrills.online/de/drills/cognitive/processing-speed/reaction-time"
     }
   ]
@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "Wahlreaktionszeit und kognitiver Geschwindigkeitstest",
+  "name": "Wahlreaktionstest mit Regelwechsel",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Kostenloser Wahlreaktionszeit-Test (Choice Reaction Time). Miss deine Entscheidungsgeschwindigkeit, visuelle Diskrimination und kognitive Flexibilitat bei dynamischen Farbwechseln.",
+  "description": "Kostenloser Wahlreaktionstest im Browser: Wähle zwischen rotem und blauem Ziel nach der aktiven Farbregel. Ergebnis sind Punkte, Genauigkeit und höchste Stufe, keine Millisekunden-Messung.",
   "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/reaction-time",
   "publisher": {
     "@type": "Organization",
@@ -79,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "de-DE",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Wahlreaktionszeit Test – Kognitive Reaktionszeit & Hick's Law",
+  "name": "Wahlreaktionstest mit Regelwechsel – Entscheidungstempo üben",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -96,15 +96,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/reaction-time",
   "inLanguage": "de-DE",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Wahlreaktionszeit Test – Dynamisches Regel-Reaktionsspiel",
+  "name": "Wahlreaktionstest – Farbregel-Spiel",
   "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/reaction-time",
-  "description": "Kostenloser Wahlreaktionszeit-Test (Choice Reaction Time). Miss deine Entscheidungsgeschwindigkeit, visuelle Diskrimination und kognitive Flexibilitat bei dynamischen Farbwechseln.",
+  "description": "Kostenloser Wahlreaktionstest im Browser: Wähle zwischen rotem und blauem Ziel nach der aktiven Farbregel. Ergebnis sind Punkte, Genauigkeit und höchste Stufe, keine Millisekunden-Messung.",
   "genre": [
     "Action",
     "Brain Game",
@@ -129,74 +129,74 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was ist die Wahlreaktionszeit (Choice Reaction Time: CRT)?",
+      "name": "Was ist ein Wahlreaktionstest?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Zeitspanne zur Identifikation eines spezifischen Reizes unter mehreren Optionen und zur Ausfuhrung der korrekten motorischen Antwort."
+        "text": "Ein Test, bei dem du aus mehreren Reizen den passenden erkennen und die richtige Antwort wählen musst. Hier erscheinen ein rotes und ein blaues Ziel, und du klickst die Farbe, die die aktive Regel vorgibt."
       }
     },
     {
       "@type": "Question",
-      "name": "Unterschied zur einfachen Reaktionszeit (SRT)?",
+      "name": "Was ist der Unterschied zur einfachen Reaktionszeit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SRT erfordert nur eine Reaktion auf einen bekannten Reiz (~200 ms). CRT fugt einen mentalen Entscheidungsschritt hinzu (~280–350 ms, Donders 1868)."
+        "text": "Bei der einfachen Reaktion antwortest du auf einen einzigen erwarteten Reiz. Bei der Wahlreaktion kommen Unterscheidung und Antwortauswahl hinzu, deshalb ist sie in der Regel langsamer (Donders). Dieser Drill ergänzt zusätzlich Regelwechsel."
       }
     },
     {
       "@type": "Question",
-      "name": "Was besagt das Hick'sche Gesetz (Hick, 1952)?",
+      "name": "Was besagt das Hicksche Gesetz (Hick, 1952)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Reaktionszeit steigt logarithmisch mit der Anzahl der verfugbaren Entscheidungsalternativen."
+        "text": "Die Reaktionszeit steigt logarithmisch mit der Anzahl der Entscheidungsalternativen. Weil du hier vor jedem Klick die Regel prüfen musst, übst du genau diesen Entscheidungsschritt."
       }
     },
     {
       "@type": "Question",
-      "name": "Was ist ein guter Durchschnittswert?",
+      "name": "Wie funktioniert der Regelwechsel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Durchschnitt liegt bei 280–350 ms. Geübte Personen erreichen je nach Aufgabe und Setup oft niedrigere Werte (Der & Deary, 2006)."
+        "text": "Das Banner oben zeigt, welche Farbe (Rot oder Blau) zu klicken ist. Ab Stufe 2 kippt die Regel nach einer Serie richtiger Treffer; je höher die Stufe, desto weniger Treffer bis zum Wechsel (mindestens 2)."
       }
     },
     {
       "@type": "Question",
-      "name": "Warum wechseln die Farbregeln standig?",
+      "name": "Wie funktioniert die Zeit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dies fordert das Frontalhirn, automatisierte Reaktionsmuster sofort zu hemmen und sich neuen Vorgaben anzupassen."
+        "text": "Ein Durchgang startet mit 45 Sekunden. Jeder richtige Klick bringt 2 Sekunden, bis maximal 60. Ein Klick auf die falsche Farbe oder ein abgelaufenes Zielpaar (wenn Target Timeouts aktiv ist) kostet 1 Sekunde und setzt die Combo zurück. Bei 0 endet der Durchgang."
       }
     },
     {
       "@type": "Question",
-      "name": "Lasst sich die Wahlreaktionszeit verbessern?",
+      "name": "Wie werden Punkte und Noten berechnet?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, gezieltes Training beschleunigt die neuronale Signalubertragung und eliminiert Zogern."
+        "text": "Jeder richtige Klick bringt 100 Punkte mal Combo-Multiplikator und Stufen-Multiplikator. Die Endpunktzahl wird mit einem festen SkillDrills-Richtwert verglichen und als Note von F bis S+ angezeigt."
       }
     },
     {
       "@type": "Question",
-      "name": "Einfluss des Alters auf die Reaktionszeit?",
+      "name": "Misst der Test meine Reaktionszeit in Millisekunden?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ab Mitte 20 verlangsamt sich die Reaktionszeit allmahlich, lasst sich jedoch durch Training lange stabilisieren."
+        "text": "Nein. Angezeigt werden Punkte, Genauigkeit (richtige Klicks im Verhältnis zu allen Versuchen), höchste Stufe und beste Combo. Einzelne Reaktionszeiten werden nicht in Millisekunden erfasst."
       }
     },
     {
       "@type": "Question",
-      "name": "Einfluss von Monitor und Maus?",
+      "name": "Werde ich mit Übung besser?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein 144Hz-Monitor und 1000Hz-Sensor minimieren Geratelatenzen auf ein Minimum (Woods et al., 2015)."
+        "text": "Dein Ergebnis in dieser Aufgabe steigt mit Übung meist an. Lies vor jedem Klick die Regel und halte die Genauigkeit hoch, damit die Combo wächst. Schnellere Reaktionen in anderen Situationen sind damit nicht garantiert."
       }
     },
     {
       "@type": "Question",
-      "name": "Optimale Trainingsdauer?",
+      "name": "Ist das ein medizinischer Test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "10 bis 15 Minuten vor mentalen Spitzenanforderungen reichen vollig aus."
+        "text": "Nein. Es ist eine Übung im Browser, keine Diagnose und kein Screening. Ergebnisse hängen auch von Gerät und Tagesform ab; vergleiche am besten deine eigenen Werte auf demselben Gerät."
       }
     },
     {
@@ -204,7 +204,7 @@ const faqSchema = {
       "name": "Ist die Nutzung kostenlos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, SkillDrills stellt diesen Test vollig kostenfrei im Browser bereit."
+        "text": "Ja, der Wahlreaktionstest ist kostenlos und läuft ohne Anmeldung direkt im Browser."
       }
     }
   ]
@@ -213,8 +213,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Wahlreaktionszeit Test",
-  "description": "Kostenloser Wahlreaktionszeit-Test (Choice Reaction Time). Miss deine Entscheidungsgeschwindigkeit, visuelle Diskrimination und kognitive Flexibilitat bei dynamischen Farbwechseln.",
+  "name": "Wahlreaktionstest",
+  "description": "Kostenloser Wahlreaktionstest im Browser: Wähle zwischen rotem und blauem Ziel nach der aktiven Farbregel. Ergebnis sind Punkte, Genauigkeit und höchste Stufe, keine Millisekunden-Messung.",
   "step": [
     {
       "@type": "HowToStep",
@@ -226,15 +226,15 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Auftauchende Knoten visuell diskriminieren",
-      "text": "Wahlen Sie blitzschnell den Knoten aus, der der aktuellen Regel entspricht.",
+      "name": "Rotes und blaues Ziel unterscheiden",
+      "text": "Von den gleichzeitig erscheinenden roten und blauen Zielen das finden, das zur aktuellen Regel passt.",
       "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/reaction-time#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Prazisen Reaktionsklick setzen",
-      "text": "Treffen Sie den passenden Knoten vor Ablauf der Verfallszeit.",
+      "text": "Das passende Ziel klicken, bevor das Paar wechselt. Fehlklick oder Zeitüberschreitung kosten 1 Sekunde und die Combo.",
       "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/reaction-time#step-3"
     },
     {
@@ -250,15 +250,15 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('donders1969', 'hick1952', 'hyman1953', 'der2006', 'woods2015'),
   intro: {
-    title: "Wahlreaktionszeit Test & Hicksches Gesetz",
+    title: "Wahlreaktionstest mit Regelwechsel",
     paragraphs: [
-      "Kostenloser Wahlreaktionszeit-Test (Choice Reaction Time). Miss deine Entscheidungsgeschwindigkeit, visuelle Diskrimination und kognitive Flexibilitat bei dynamischen Farbwechseln.",
-      "SRT erfordert nur eine Reaktion auf einen bekannten Reiz (~200 ms). CRT fugt einen mentalen Entscheidungsschritt hinzu (~280–350 ms, Donders 1868).",
-      "Die Reaktionszeit steigt logarithmisch mit der Anzahl der verfugbaren Entscheidungsalternativen.",
+      "Der Wahlreaktionstest ist eine kostenlose Browser-Übung: Ein rotes und ein blaues Ziel erscheinen gleichzeitig, und du klickst das Ziel, dessen Farbe das Banner oben vorgibt. Ab Stufe 2 wechselt die Regel, darum musst du sie vor jedem Klick prüfen.",
+      "Anders als bei einer einfachen Reaktion auf einen einzigen Reiz kommen bei der Wahlreaktion Reizunterscheidung und Antwortauswahl hinzu; sie ist deshalb in der Regel langsamer (Donders).",
+      "Dass die Entscheidungszeit mit der Zahl der Alternativen logarithmisch steigt, beschreibt das Hicksche Gesetz (Hick, 1952). Der Drill zeigt Punkte, Genauigkeit, höchste Stufe und beste Combo, misst keine Millisekunden und ist kein klinischer Test.",
     ],
   },
   benchmarks: {
-    title: 'Standardisierte kognitive Leistungs-Benchmarks',
+    title: 'SkillDrills-Übungsstufen (Genauigkeit)',
     headers: ['Übungsstufe', 'Bezeichnung', 'Leistungsbereich', 'Erreichte Stufe', 'Genauigkeit', 'Einordnung'],
     note: 'Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.',
     rows: [
@@ -270,12 +270,12 @@ const guideProps = {
     ],
   },
   protocols: {
-    title: '4 wissenschaftliche Trainingsprotokolle zur Steigerung der kognitiven Ausdauer',
-    description: 'Wissenschaftliche Trainingsprotokolle auf Basis des Hickschen Gesetzes (Hick, 1952) und der Donders-Subtraktionsmethode (1969) zur Minimierung von Entscheidungs- und Diskriminationslatenzen.',
+    title: 'Ablauf des Wahlreaktionstests',
+    description: 'Die vier Schritte eines Durchgangs. Warum mehr Alternativen die Entscheidung verlangsamen, beschreibt das Hicksche Gesetz (Hick, 1952).',
     items: [
       { title: "Aktive Regel im Banner ablesen", description: "Beachten Sie die aktuell geforderte Farbe (z. B. TAP RED oder TAP BLUE)." },
-      { title: "Auftauchende Knoten visuell diskriminieren", description: "Wahlen Sie blitzschnell den Knoten aus, der der aktuellen Regel entspricht." },
-      { title: "Prazisen Reaktionsklick setzen", description: "Treffen Sie den passenden Knoten vor Ablauf der Verfallszeit." },
+      { title: "Rotes und blaues Ziel unterscheiden", description: "Von den gleichzeitig erscheinenden roten und blauen Zielen das finden, das zur aktuellen Regel passt." },
+      { title: "Prazisen Reaktionsklick setzen", description: "Das passende Ziel klicken, bevor das Paar wechselt. Fehlklick oder Zeitüberschreitung kosten 1 Sekunde und die Combo." },
       { title: "Sofortige Anpassung bei Farbwechsel", description: "Schalten Sie bei Regelwechsel ohne Zogern auf die neue Zielfarbe um." },
     ],
   },
@@ -317,13 +317,13 @@ export default function LocalizedCognitivePage() {
       />
       <EliteNeuroSwitchClient
         copy={{
-          title: "Reaktionszeit-Test mit Regelwechsel",
+          title: "Wahlreaktionstest mit Regelwechsel",
           subtitle: "Wähle das passende Ziel nach wechselnden Farben und trainiere Entscheidungstempo",
-          startTitle: "Reaktionszeit-Test mit Regelwechsel",
+          startTitle: "Wahlreaktionstest mit Regelwechsel",
           startSubtitle: "Wahlreaktion • Entscheidungstempo",
           stageCaption: "Klicke das Ziel, das zur aktiven Regel passt. Farbe und Regel wechseln schnell.",
           rulesTitle: "Drill-Anleitung und Punktesystem",
-          aboutTitle: "Was misst der Reaktionszeit-Test?",
+          aboutTitle: "Was ist ein Wahlreaktionstest?",
           faqTitle: "Häufige Fragen",
           labels: { score: "Punkte", time: "Zeit", level: "Stufe", bestScore: "Bestwert", timeLeft: "Restzeit", rule: "REGEL", ready: "BEREIT", accuracy: "Genauigkeit", hits: "Treffer", peakLevel: "Höchste Stufe", maxCombo: "Max. Combo" },
           ruleBanner: { RED: "ROTES ZIEL", BLUE: "BLAUES ZIEL" },
@@ -336,9 +336,9 @@ export default function LocalizedCognitivePage() {
           ],
           rulesItems: [
             { num: "1", text: "Aktive Regel", highlight: "ROT / BLAU", result: "Oberes Banner beachten" },
-            { num: "2", text: "Richtiges Ziel", highlight: "+100 Pkt.", result: "Combo- und Stufenbonus" },
-            { num: "3", text: "Regelwechsel", highlight: "Automatisch", result: "Wird mit der Stufe schneller" },
-            { num: "4", text: "Fehlziel / Timeout", highlight: "Combo zurücksetzen", result: "Bei Strafe -0,8 s" }
+            { num: "2", text: "Richtiges Ziel", highlight: "+100 Pkt.", result: "Combo × Stufe, +2 s (max. 60 s)" },
+            { num: "3", text: "Regelwechsel", highlight: "Ab Stufe 2", result: "Mit steigender Stufe häufiger" },
+            { num: "4", text: "Fehlziel / Timeout", highlight: "Combo zurücksetzen", result: "-1 s" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

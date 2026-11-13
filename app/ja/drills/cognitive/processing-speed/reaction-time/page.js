@@ -8,7 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
   description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",
-  keywords: ["選択反応時間", "選択反応時間 テスト", "選択反応 テスト", "判断速度", "反射神経 テスト", "ヒックの法則"],
+  keywords: ["選択反応時間", "選択反応時間 テスト", "選択反応 テスト", "判断速度", "ヒックの法則"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
     description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",
@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "選択反応時間・判断速度診断ツール",
+  "name": "選択反応時間テスト",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "description": "無料ブラウザ完結の選択反応時間（CRT）測定ツール。動的に反転する色ルールを瞬時に判別して正しい標的をクリックし、意思決定潜時と前頭葉の認知柔軟性をミリ秒単位で精密診断。",
+  "description": "無料ブラウザの選択反応時間テスト。赤と青の標的から上部ルールに合う色を選び、判断速度と正確さを練習します。結果はスコア・正確さ・最高レベルで、ミリ秒計測や臨床検査ではありません。",
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time",
   "publisher": {
     "@type": "Organization",
@@ -79,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "選択反応時間テスト・判断速度測定 – ヒックの法則診断",
+  "name": "選択反応時間テスト – 判断速度トレーニング",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -96,15 +96,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time",
   "inLanguage": "ja-JP",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "選択反応時間テスト – 動的ルール判別＆反射神経ゲーム",
+  "name": "選択反応時間テスト – 色ルール切り替えゲーム",
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time",
-  "description": "無料ブラウザ完結の選択反応時間（CRT）測定ツール。動的に反転する色ルールを瞬時に判別して正しい標的をクリックし、意思決定潜時と前頭葉の認知柔軟性をミリ秒単位で精密診断。",
+  "description": "無料ブラウザの選択反応時間テスト。赤と青の標的から上部ルールに合う色を選び、判断速度と正確さを練習します。結果はスコア・正確さ・最高レベルで、ミリ秒計測や臨床検査ではありません。",
   "genre": [
     "Action",
     "Brain Game",
@@ -129,18 +129,18 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "選択反応時間（Choice Reaction Time: CRT）とは何ですか？",
+      "name": "選択反応時間（Choice Reaction Time）とは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "複数の刺激の中から正しいターゲットを識別・判断し、それに対応する正しい運動命令を出力するまでにかかる総合的な意思決定時間です。"
+        "text": "複数の刺激から条件に合うものを見分け、正しい反応を選んで実行するまでの時間です。このドリルでは赤と青のうち、現在のルールの色をクリックします。"
       }
     },
     {
       "@type": "Question",
-      "name": "単純反応時間（SRT）との決定的な違いは？",
+      "name": "単純反応時間との違いは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "単純反応（約200ms）が単一の刺激に即座に反応するのに対し、選択反応（約250〜350ms）は「刺激の弁別」と「反応の選択」という大脳皮質の判断ステージが加わります（Donders, 1868）。"
+        "text": "単純反応は予想された1つの刺激にすぐ反応します。選択反応では刺激の弁別と反応の選択が加わるため、一般に遅くなります（Donders）。このドリルはさらにルールの切り替えを加えています。"
       }
     },
     {
@@ -148,63 +148,63 @@ const faqSchema = {
       "name": "ヒックの法則（Hick's Law, 1952）とは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "選択肢の数が増えるほど、反応時間は対数関数的に増加するという数理法則です（RT = a + b * log2(n)）。"
+        "text": "選択肢の数が増えるほど反応時間が対数的に長くなるという法則です。このドリルでは毎回ルールを確認する必要があり、判断の段階を練習できます。"
       }
     },
     {
       "@type": "Question",
-      "name": "人間の平均的な選択反応時間の基準値は？",
+      "name": "ルールの切り替えはどう動きますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "一般成人の平均は280〜350msです。高度に訓練された練習や機器環境（高リフレッシュレートの画面など）によって、これより短い記録が出ることもあります（Der & Deary, 2006）。"
+        "text": "上部のバナーがクリックする色（赤または青）を示します。レベル2からは、現在の色を一定回数正解するとルールが反転し、レベルが上がるほど反転までの回数が減ります（最少2回）。"
       }
     },
     {
       "@type": "Question",
-      "name": "ルール反転が加わることの意義は？",
+      "name": "制限時間の仕組みは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ターゲット色が赤と青で交互に切り替わるため、前頭前野が直前の習慣的反応を抑制し、新しい規則へ適応する認知的柔軟性を試します。"
+        "text": "45秒から始まり、正解ごとに2秒加算されます（上限60秒）。違う色のクリック、または標的の時間切れ（Target Timeouts がオンのとき）で1秒減り、コンボがリセットされます。0秒で終了です。"
       }
     },
     {
       "@type": "Question",
-      "name": "選択反応速度はトレーニングで速くなりますか？",
+      "name": "スコアと評価はどう決まりますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、刺激の視覚弁別と運動出力を反復して練習することで、判断の迷いが減ることがあります。"
+        "text": "正解1回で100点にコンボ倍率とレベル倍率を掛けた点が入ります。最終スコアはSkillDrillsの固定基準と比べ、FからS+までの評価で表示されます。"
       }
     },
     {
       "@type": "Question",
-      "name": "年齢による反応速度の変化は？",
+      "name": "反応時間をミリ秒で表示しますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "20代前半をピークに加齢とともに年間約1〜2msずつ低下しますが、継続的な認知トレーニングで維持が可能です。"
+        "text": "いいえ。結果はスコア、正確さ（全試行に占める正解の割合）、最高レベル、最大コンボです。1回ごとの反応時間はミリ秒で記録しません。"
       }
     },
     {
       "@type": "Question",
-      "name": "ハードウェアによる遅延の誤差は？",
+      "name": "練習すると上達しますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "144Hzモニターと1000Hzマウスは入力・表示遅延を最小化します（Woods et al., 2015）。5ms以内の微差は計測ノイズとして扱われます。"
+        "text": "この課題のスコアは練習でたいてい伸びます。毎回ルールを先に確認し、正確さを保ってコンボを積むのがコツです。ほかの場面での反応が速くなることを保証するものではありません。"
       }
     },
     {
       "@type": "Question",
-      "name": "推奨される日常トレーニング時間は？",
+      "name": "医学的な検査ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "1日10〜15分、実戦ゲームや運転の前に行うことで神経伝達が目覚めます。"
+        "text": "いいえ。練習用のブラウザドリルで、診断やスクリーニングではありません。結果は端末や体調で変わるため、同じ端末で自分の記録を比べてください。"
       }
     },
     {
       "@type": "Question",
-      "name": "完全無料で測定できますか？",
+      "name": "無料で使えますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、SkillDrillsは完全無料・登録不要でブラウザ上ですぐに診断可能です。"
+        "text": "はい、登録不要・無料でブラウザからすぐに使えます。"
       }
     }
   ]
@@ -213,8 +213,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "選択反応時間テスト・判断速度測定",
-  "description": "無料ブラウザ完結の選択反応時間（CRT）測定ツール。動的に反転する色ルールを瞬時に判別して正しい標的をクリックし、意思決定潜時と前頭葉の認知柔軟性をミリ秒単位で精密診断。",
+  "name": "選択反応時間テストのやり方",
+  "description": "無料ブラウザの選択反応時間テスト。赤と青の標的から上部ルールに合う色を選び、判断速度と正確さを練習します。結果はスコア・正確さ・最高レベルで、ミリ秒計測や臨床検査ではありません。",
   "step": [
     {
       "@type": "HowToStep",
@@ -227,14 +227,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 2,
       "name": "出現ターゲットの瞬時弁別",
-      "text": "画面に現れるターゲット群の中から、現在の指定色と一致するノードを目で素早く識別します。",
+      "text": "同時に現れる赤と青の標的から、現在の指定色と同じ標的を見つけます。",
       "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "的確な打鍵の実行",
-      "text": "誤ったノードを避け、正しい色のノードを消滅する前にミリ秒単位のスピードでクリックします。",
+      "text": "違う色は避け、標的が入れ替わる前に正しい色をクリックします。誤答や時間切れは1秒減とコンボ解除です。",
       "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time#step-3"
     },
     {
@@ -250,11 +250,11 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('donders1969', 'hick1952', 'hyman1953', 'der2006', 'woods2015'),
   intro: {
-    title: "選択反応時間テスト・判断速度測定 – ヒックの法則診断",
+    title: "選択反応時間テスト – 判断速度トレーニング",
     paragraphs: [
-      "選択反応時間テストとは、複数の選択肢から条件に合うものを選んで反応するまでの時間を測るテストです。このドリルでは画面上部の色ルールに合う標的だけをクリックし、ルールが切り替わるたびに判断を更新します。単純反応より遅くなるのは、弁別と選択の段階が加わるためです。",
-      "単純反応（約200ms）が単一の刺激への即時の反応であるのに対し、選択反応（約250〜350ms）には刺激の弁別と反応の選択という段階が加わります（Donders, 1868）。数値は条件によって変わるため目安として見てください。",
-      "選択肢の数が増えるほど反応時間が長くなる傾向は、ヒックの法則として知られています（Hick, 1952）。結果は画面やマウスの遅延にも左右され、臨床検査ではありません。",
+      "選択反応時間テストとは、複数の選択肢から条件に合うものを選んで反応する課題です。このドリルでは赤と青の標的が同時に現れ、画面上部の色ルールに合う標的だけをクリックします。レベル2からルールが切り替わるため、毎回ルールを確認する必要があります。",
+      "単一の刺激にすぐ反応する単純反応と比べ、選択反応には刺激の弁別と反応の選択という段階が加わるため、一般に遅くなります（Donders）。",
+      "選択肢の数が増えるほど反応時間が長くなる傾向は、ヒックの法則として知られています（Hick, 1952）。このドリルはミリ秒ではなく、スコア・正確さ・最高レベル・最大コンボを表示します。臨床検査ではありません。",
     ],
   },
   benchmarks: {
@@ -265,17 +265,17 @@ const guideProps = {
       { tier: 'Tier 1', rank: '超高速判断の最上位段階', level: 'マスタリー（極限）', accuracy: '98% 以上' },
       { tier: 'Tier 2', rank: '上級認知弁別スペシャリスト', level: 'ダイヤモンド（優秀）', accuracy: '94–97%' },
       { tier: 'Tier 3', rank: '熟練オペレーター', level: 'プラチナ（熟練）', accuracy: '88–93%' },
-      { tier: 'Tier 4', rank: '一般成人標準', level: 'ゴールド（標準）', accuracy: '78–87%' },
+      { tier: 'Tier 4', rank: '標準', level: 'ゴールド（標準）', accuracy: '78–87%' },
       { tier: 'Tier 5', rank: '入門・初期基準値', level: 'シルバー（基礎）', accuracy: '78% 未満' },
     ],
   },
   protocols: {
-    title: '脳の処理速度と集中力を高める4大トレーニングプロトコル',
-    description: 'ヒックの法則（Hick, 1952）とドンデルス減算法（Donders, 1969）に基づく、視覚弁別速度と神経決定潜時を極限まで短縮する科学的選択反応時間トレーニングプロトコルです。',
+    title: '選択反応時間テストの進め方',
+    description: '2色の標的と切り替わるルールに合わせて、判断と正確さを練習する手順です。選択肢と判断時間の関係はヒックの法則（Hick, 1952）で説明されます。',
     items: [
       { title: "アクティブルール表示の確認", description: "画面上部に表示されている現在のターゲット色（TAP RED または TAP BLUE）を把握します。" },
-      { title: "出現ターゲットの瞬時弁別", description: "画面に現れるターゲット群の中から、現在の指定色と一致するノードを目で素早く識別します。" },
-      { title: "的確な打鍵の実行", description: "誤ったノードを避け、正しい色のノードを消滅する前にミリ秒単位のスピードでクリックします。" },
+      { title: "出現ターゲットの瞬時弁別", description: "同時に現れる赤と青の標的から、現在の指定色と同じ標的を見つけます。" },
+      { title: "的確な打鍵の実行", description: "違う色は避け、標的が入れ替わる前に正しい色をクリックします。誤答や時間切れは1秒減とコンボ解除です。" },
       { title: "ルール反転への瞬間順応", description: "上部のルール表示が切り替わった瞬間、即座に旧ルールを抑制して新ルール色へと照準を移します。" },
     ],
   },
@@ -319,11 +319,11 @@ export default function LocalizedCognitivePage() {
         copy={{
           title: "選択反応時間テスト",
           subtitle: "色のルールに合わせて標的を選ぶ判断速度トレーニング",
-          startTitle: "反応速度テスト",
+          startTitle: "選択反応時間テスト",
           startSubtitle: "選択反応 • 判断速度",
           stageCaption: "上部のルールと同じ色の標的を素早くタップ。ルールと色は途中で切り替わります。",
           rulesTitle: "ドリルの説明とスコア",
-          aboutTitle: "反応速度テストとは？",
+          aboutTitle: "選択反応時間テストとは？",
           faqTitle: "よくある質問",
           labels: { score: "スコア", time: "時間", level: "レベル", bestScore: "ベストスコア", timeLeft: "残り時間", rule: "ルール", ready: "準備", accuracy: "正確さ", hits: "成功回数", peakLevel: "最高レベル", maxCombo: "最大コンボ" },
           ruleBanner: { RED: "赤の標的", BLUE: "青の標的" },
@@ -336,9 +336,9 @@ export default function LocalizedCognitivePage() {
           ],
           rulesItems: [
             { num: "1", text: "有効なルール", highlight: "赤 / 青", result: "上部バナーを確認" },
-            { num: "2", text: "正しい標的", highlight: "+100点", result: "コンボ・レベル倍率" },
-            { num: "3", text: "ルール変更", highlight: "自動切替", result: "レベル上昇で高速化" },
-            { num: "4", text: "誤答 / 時間切れ", highlight: "コンボ解除", result: "設定時は -0.8秒" }
+            { num: "2", text: "正しい標的", highlight: "+100点", result: "コンボ・レベル倍率、+2秒（上限60秒）" },
+            { num: "3", text: "ルール変更", highlight: "レベル2から", result: "レベルが上がるほど頻繁に" },
+            { num: "4", text: "誤答 / 時間切れ", highlight: "コンボ解除", result: "-1秒" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

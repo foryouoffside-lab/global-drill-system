@@ -5,9 +5,9 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Corsi online | Memória espacial | SkillDrills",
-  description: "Teste sua memória espacial: memorize uma sequência de blocos iluminados e toque neles na mesma ordem, direto no navegador.",
-  keywords: ['teste de Corsi', 'teste dos blocos de Corsi', 'blocos de Corsi', 'memória sequencial', 'span visuoespacial', 'memória de trabalho visuoespacial', 'teste de memória espacial', 'sequência espacial', 'treino de memória espacial', 'teste Corsi online'],
+  title: "Teste de Corsi online | Memória sequencial | SkillDrills",
+  description: "Teste de Corsi online e grátis: memorize os quadrados que acendem um a um e toque neles na mesma ordem. Os percursos crescem a cada acerto, de 3x3 até 7x7.",
+  keywords: ['teste de Corsi', 'teste de Corsi online', 'blocos de Corsi', 'teste dos blocos de Corsi', 'memória sequencial', 'span visuoespacial'],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/path-tracing', 'pt'),
@@ -17,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Teste de Corsi online | Memória espacial",
-    description: "Memorize blocos iluminados e toque neles na mesma ordem. Teste gratuito de memória espacial no navegador, sem cadastro.",
+    title: "Teste de Corsi online | Memória sequencial | SkillDrills",
+    description: "Teste de Corsi grátis: toque nos quadrados iluminados na mesma ordem e treine a memória dos blocos de Corsi direto no navegador, sem cadastro.",
     url: "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -26,35 +26,37 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Teste de Corsi online | Memória espacial",
-    description: "Memorize blocos iluminados e toque neles na mesma ordem. Teste gratuito de memória espacial no navegador, sem cadastro.",
+    title: "Teste de Corsi online | Memória sequencial | SkillDrills",
+    description: "Teste de Corsi grátis: toque nos quadrados iluminados na mesma ordem e treine a memória dos blocos de Corsi direto no navegador, sem cadastro.",
   },
 };
 
 export const dynamic = 'force-static';
 
 export default function LocalizedPathTracingPage() {
+  const appDescription = "Teste de Corsi grátis no navegador: quadrados vizinhos acendem um a um e formam um percurso que você repete na mesma ordem. Cada percurso concluído fica um passo mais longo.";
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://skilldrills.online/pt" },
-      { "@type": "ListItem", "position": 2, "name": "Treino de Memória", "item": "https://skilldrills.online/pt/drills/memory" },
-      { "@type": "ListItem", "position": 3, "name": "Memória Espacial", "item": "https://skilldrills.online/pt/drills/memory/spatial-memory" },
-      { "@type": "ListItem", "position": 4, "name": "Teste de Memória Sequencial", "item": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing" }
+      { "@type": "ListItem", "position": 2, "name": "Treino de memória", "item": "https://skilldrills.online/pt/drills/memory" },
+      { "@type": "ListItem", "position": 3, "name": "Memória espacial", "item": "https://skilldrills.online/pt/drills/memory/spatial-memory" },
+      { "@type": "ListItem", "position": 4, "name": "Teste de Corsi", "item": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Teste de Memória Sequencial (Blocos de Corsi)",
+    "name": "Teste de Corsi online",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Avaliação neuropsicológica interativa de memória operacional visoespacial sequencial, retenção de trajetórias e span de blocos de Corsi em matrizes graduais.",
-    "genre": "Cognitive Assessment / Spatial Memory",
+    "description": appDescription,
+    "genre": "Spatial Memory",
     "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing",
     "publisher": {
       "@type": "Organization",
@@ -66,24 +68,23 @@ export default function LocalizedPathTracingPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Teste de Memória Sequencial (Blocos de Corsi)",
+    "name": "Teste de Corsi online",
     "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing",
-    "description": "Avaliação neuropsicológica interativa de memória operacional visoespacial sequencial, retenção de trajetórias e span de blocos de Corsi em matrizes graduais.",
-    "dateModified": "2026-09-05",
+    "description": appDescription,
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "sameAs": ["https://soundary.life/pt/test/spatial-span", "https://pt.wikipedia.org/wiki/Mem%C3%B3ria_espacial"]
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Teste de Memória Sequencial (Blocos de Corsi)",
-    "description": "Avaliação neuropsicológica interativa de memória operacional visoespacial sequencial, retenção de trajetórias e span de blocos de Corsi em matrizes graduais.",
+    "name": "Teste de Corsi online",
+    "description": appDescription,
     "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing",
-    "genre": ["Memory Game", "Cognitive Training", "Spatial Sequence Memory"],
+    "genre": ["Memory Game", "Spatial Sequence Memory"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
     "applicationCategory": "Game",
     "operatingSystem": "Any",
@@ -102,236 +103,188 @@ export default function LocalizedPathTracingPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
-            "@type": "Question",
-            "name": "O que é o teste de memória sequencial de trajetórias (Path Tracing)?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "É uma avaliação neurocognitiva da memória operacional visoespacial sequencial. O usuário observa uma série de células iluminadas em ordem e deve reproduzir exatamente o mesmo caminho cronológico."
-            }
+        "@type": "Question",
+        "name": "Como funciona o teste de Corsi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quadrados da grade acendem um a um a cada 0,5 segundo e desenham um percurso. Depois você tem 10 segundos para clicar ou tocar nos mesmos quadrados na mesma ordem. Cada percurso completo vale +150 pontos e o próximo tem um passo a mais."
+        }
       },
       {
-            "@type": "Question",
-            "name": "O que é o teste dos blocos de Corsi?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Criado por Pietro Corsi em 1972, é o exame padrão da neuropsicologia para aferir o span de memória espacial não verbal. Avalia quantos blocos tocados em sequência uma pessoa consegue repetir."
-            }
+        "@type": "Question",
+        "name": "É o mesmo teste dos blocos de Corsi usado em clínicas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O princípio é o da tarefa dos blocos de Corsi (Corsi, 1972): lembrar posições na ordem e reproduzi-las. Aqui, porém, a grade é quadrada, cada passo vai só para um quadrado vizinho (cima, baixo, esquerda, direita) e nenhum quadrado é visitado duas vezes. É um jogo de treino, não um teste clínico nem uma ferramenta de diagnóstico."
+        }
       },
       {
-            "@type": "Question",
-            "name": "O que representa o 'Escriba Interno' (Inner Scribe)?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Conceito de Robert H. Logie (1995) que define o subsistema ativo da memória visoespacial focado em ensaiar, guardar e atualizar percursos motores e trajetórias dinâmicas."
-            }
+        "@type": "Question",
+        "name": "Como aumentam o tamanho do percurso e da grade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O nível 1 começa com um percurso de 3 passos. Cada percurso concluído aumenta o nível e o comprimento em 1. A grade é 3x3 até 5 passos, 4x4 de 6 a 8, 5x5 de 9 a 12, 6x6 de 13 a 16 e 7x7 a partir de 17."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Qual é a média de retenção de um adulto saudável?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Em estudos normativos (Kessels et al., 2000), a média de span de blocos de Corsi em adultos situa-se em 5,4 ± 0,9 passos. Pontuações de 8 passos ou mais representam capacidade superior."
-            }
+        "@type": "Question",
+        "name": "Como o tempo é contado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O relógio da sessão tem 60 segundos e só corre enquanto você repete o percurso. A demonstração e a tela de resultado não contam. Cada percurso precisa ser concluído em até 10 segundos depois do início da resposta."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Como funciona o agrupamento por vetores direcionais?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Consiste em codificar o caminho como setas unificadas ('direita, cima, diagonal') em vez de pontos isolados, superando o teto biológico de 4 itens mantidos na atenção imediata."
-            }
+        "@type": "Question",
+        "name": "O que acontece se eu tocar no quadrado errado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A rodada termina na hora e aparece um novo percurso do mesmo tamanho. Você não perde pontos nem tempo, e o nível não cai. Passar dos 10 segundos é tratado da mesma forma; nos dois casos a tentativa conta como erro na precisão."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Qual a diferença deste teste para o teste de grade comum?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "O teste de grade comum exibe todos os blocos acesos juntos (foto instantânea). O teste sequencial exige guardar a ordem temporal exata de cada etapa, demandando ensaio dinâmico ininterrupto."
-            }
+        "@type": "Question",
+        "name": "Como lembrar percursos mais longos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Como o percurso sempre segue para um quadrado vizinho, guarde blocos de direção em vez de quadrados soltos, por exemplo 'dois à direita, um para cima' (agrupamento, Miller, 1956). Durante a demonstração, olhe a grade inteira e fixe principalmente as curvas."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Por que percursos longos se tornam tão desafiadores?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Porque, segundo Nelson Cowan (2001), o foco atencional sem agrupamento comporta apenas cerca de 4 elementos. Passando disso, o esquecimento atua rápido a menos que haja formação de padrões."
-            }
+        "@type": "Question",
+        "name": "Qual a diferença para o teste de memória visual (grade)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No teste de memória visual vários quadrados acendem ao mesmo tempo e podem ser lembrados como um único padrão. No teste de Corsi eles acendem um de cada vez, então é preciso lembrar a ordem além das posições."
+        }
       },
       {
-            "@type": "Question",
-            "name": "Como essa memória atua no cotidiano e em jogos?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "É vital para lembrar itinerários curva a curva, aprender passos de dança, esportes e, nos jogos eletrônicos (FPS, MOBAs), executar rotações táticas de mapa e combos de habilidades."
-            }
-      },
-      {
-            "@type": "Question",
-            "name": "Ocorrem penalidades de pontos ou tempo por cliques errados?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Não. Errar não desconta pontuação nem reduz o tempo restante. A rodada se repete no nível atual para você consolidar sua estratégia de retenção."
-            }
-      },
-      {
-            "@type": "Question",
-            "name": "É possível expandir a memória sequencial com treino contínuo?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Sim. A prática deliberada aprimora a simulação motora do escriba interno, automatiza o agrupamento direcional e confere cadência motora uniforme."
-            }
+        "@type": "Question",
+        "name": "Meus resultados são salvos? Têm valor médico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A melhor pontuação e o nível máximo ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. Os resultados são marcas de treino e não indicam problemas de memória nem a saúde do cérebro."
+        }
       }
-]
+    ]
   };
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Como treinar a memória sequencial e o span de Corsi",
-    "description": "Protocolo metódico de 4 etapas para agrupar vetores direcionais e reter trajetórias na memória visoespacial.",
+    "name": "Como jogar o teste de Corsi",
+    "description": "Quatro passos para repetir na mesma ordem um percurso que acende quadrado por quadrado.",
     "step": [
       {
-            "@type": "HowToStep",
-      "position": 1,
-      "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing#step-1",
-            
-            "name": "Fixar o início e observar a trajetória global",
-            "text": "Fixe o olhar na célula inicial e contemple a grade de forma panorâmica para perceber o fluxo de movimento sem saltos bruscos dos olhos."
+        "@type": "HowToStep",
+        "position": 1,
+        "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing#step-1",
+        "name": "Olhar a grade inteira",
+        "text": "Durante a demonstração, não siga só o primeiro quadrado: observe a grade inteira e veja onde o percurso vira."
       },
       {
-            "@type": "HowToStep",
-      "position": 2,
-      "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing#step-2",
-            
-            "name": "Agrupar passos em macrovetores de direção",
-            "text": "Junte os pontos individuais em blocos com sentido (ex.: 'dois para a direita, um para cima' ou 'em L')."
+        "@type": "HowToStep",
+        "position": 2,
+        "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing#step-2",
+        "name": "Agrupar por direções",
+        "text": "Cada passo vai para um quadrado vizinho, então guarde blocos de direção como 'direita 2, cima 1'."
       },
       {
-            "@type": "HowToStep",
-      "position": 3,
-      "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing#step-3",
-            
-            "name": "Ensaio motor pelo escriba interno",
-            "text": "Durante o breve intervalo antes de clicar, trace a linha contínua mentalmente com o córtex motor para blindar a memória."
+        "@type": "HowToStep",
+        "position": 3,
+        "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing#step-3",
+        "name": "Tocar na mesma ordem",
+        "text": "Depois da demonstração, clique ou toque nos quadrados na mesma ordem a partir do inicial, em até 10 segundos."
       },
       {
-            "@type": "HowToStep",
-      "position": 4,
-      "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing#step-4",
-            
-            "name": "Reprodução com cadência rítmica fluida",
-            "text": "Clique nas posições com ritmo constante sem pausas longas entre toques, concluindo a sequência num único impulso motor."
+        "@type": "HowToStep",
+        "position": 4,
+        "url": "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing#step-4",
+        "name": "Seguir em frente após um erro",
+        "text": "Errar não custa pontos nem nível, então foque logo no novo percurso do mesmo tamanho."
       }
-]
+    ]
   };
 
   const pathTracingGuide = {
     intro: [
-      "O Teste de Memória Sequencial (Path Tracing Memory Test) é um instrumento neurocognitivo desenvolvido para avaliar a memória de trabalho visoespacial sequencial, a retenção de percursos dinâmicos e a reconstrução de trajetórias em matrizes de 3x3 a 7x7. Fundamentado no paradigma clássico dos Blocos de Corsi (Milner, 1971; Corsi, 1972) e no modelo do 'Escriba Interno' de Robert H. Logie (1995), separa o processamento de movimento espaciotemporal ativo da mera retenção estática de imagens.",
-      "A cada rodada, uma sequência de células acende em intervalos regulares de 500 ms. O usuário precisa reter a posição no espaço e a ordem no tempo, repetindo a trajetória completa com exatidão num período de 45 segundos.",
-      "No âmbito da memória de trabalho, Logie (1995) e Alan Baddeley (2000) comprovaram que percursos sequenciais são geridos pelo Escriba Interno, um laço de ensaio espacial dinâmico. George A. Miller (1956) e Herbert A. Simon (1974) demonstraram a relevância da fragmentação em blocos (Chunking), enquanto Nelson Cowan (2001) comprovou que a capacidade focal desprovida de agrupamento é de cerca de 4 itens.",
-      "Estudos normativos computadorizados (Kessels et al., 2000) apontam o span espacial adulto em 5,4 ± 0,9 passos, evidenciando que essa competência é muito sensível ao cansaço mental, sono e funções executivas pré-frontais.",
-      "Precisão das medições: cada resposta é cronometrada no próprio navegador com a biblioteca performance.now(), sem envio de dados a servidores remotos. Em virtude de proteções como a Spectre, o timer é arredondado a cerca de 1 ms, e as atualizações de tela acompanham a taxa de atualização do monitor (cerca de 16,7 ms por quadro a 60 Hz; Woods et al., 2015). Variações abaixo de 5 ms constituem flutuações normais de hardware.",
-      "Transparência de dados: a SkillDrills não armazena estatísticas centrais. Suas pontuações e configurações residem apenas no localStorage do seu próprio dispositivo, de modo que não divulgamos rankings globais de jogadores. Todas as estimativas de referência citadas advêm de artigos revisados por pares indicados no rodapé.",
-      "Este aplicativo é um jogo web gratuito voltado a treino e curiosidade pessoal. Não substitui exames médicos nem tem valor de diagnóstico clínico. Se você tiver apreensões quanto à sua retenção de memória, procure avaliação médica profissional especializada."
-],
+      "O teste de Corsi online é um jogo grátis de memória de ordem: quadrados de uma grade acendem um depois do outro e, em seguida, você toca neles na mesma ordem. Ele leva o princípio da tarefa dos blocos de Corsi (Milner, 1971; Corsi, 1972) para um percurso na grade e treina a memória sequencial e o span visuoespacial.",
+      "No nível 1 aparece um percurso de 3 passos numa grade 3x3. Os quadrados acendem a cada 0,5 segundo; cada passo vai para um quadrado acima, abaixo, à esquerda ou à direita, e nenhum quadrado é visitado duas vezes. Cada percurso concluído vale +150 pontos, nível +1 e um passo a mais; a grade cresce para 4x4, 5x5 e 6x6 até 7x7.",
+      "O relógio da sessão tem 60 segundos e só corre durante a resposta. Cada percurso deve ser concluído em 10 segundos. Um quadrado errado ou o fim do tempo encerra a rodada sem desconto; vem um novo percurso do mesmo tamanho e o nível não cai. Resposta por clique ou toque.",
+      "Transparência de dados: os resultados ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. Por isso o SkillDrills não publica médias de usuários nem rankings.",
+      "Esta ferramenta é um jogo grátis de treino no navegador. Não é o teste de Corsi oficial, nem um dispositivo médico, nem uma ferramenta de diagnóstico, e os resultados não indicam problemas de memória. Se tiver preocupações, procure um profissional de saúde."
+    ],
     benchmarks: {
-      title: "Parâmetros normativos de span sequencial e blocos de Corsi",
-      headers: ["Nível de Desempenho", "Span e Grade", "Pontuação", "Perfil Cognitivo e Retenção de Trajetória"],
+      title: "Faixas de treino SkillDrills (pontos = percursos concluídos × 150)",
+      headers: ["Faixa", "Tamanho alcançado · grade", "Pontos", "Significado"],
       rows: [
-        [
-                "Faixa 1",
-                "Span 10 – 14+ passos (grade 6x6–7x7)",
-                "1.200+ Pontos",
-                "Desempenho visoespacial avançado; decompõe percursos em 2–3 macrovetores; ensaio perfeito no escriba interno; resposta fluida em < 400 ms"
-        ],
-        [
-                "Faixa 2",
-                "Span 8 – 9 passos (grade 5x5–6x6)",
-                "900 – 1.199 Pontos",
-                "Bem acima da média populacional; agrupamento direcional robusto (curvas em L, zigue-zagues); resistente à interferência; resposta em 400–600 ms"
-        ],
-        [
-                "Faixa 3",
-                "Span 5 – 7 passos (grade 4x4–5x5)",
-                "600 – 899 Pontos",
-                "Padrão médio da população (Corsi, 1972; Kessels et al., 2000, 5,4 ± 0,9 passos); executa 5–6 passos com facilidade; perde pontos intermediários em 5x5; 600–850 ms"
-        ],
-        [
-                "Faixa 4",
-                "Span 4 passos (grade 3x3–4x4)",
-                "400 – 599 Pontos",
-                "Opera no limite da retenção crua (Cowan, 2001); tenta guardar pontos soltos sem formar vetores, gerando saturação precoce; 850–1.100 ms"
-        ],
-        [
-                "Faixa 5",
-                "Span < 4 passos (grade 3x3)",
-                "< 400 Pontos",
-                "Rápido declínio do vestígio temporal; frequentes trocas de ordem; lentidão de resposta acima de 1.100 ms"
-        ]
-],
-      note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. O número de passos e a dimensão da grade representam o nível máximo atingido em 45 segundos, equiparado aos parâmetros de Corsi Block-Tapping."
+        ["Iniciante", "3–4 passos · 3x3", "0–150", "0 a 1 percurso concluído. Aprendendo as regras e o ritmo"],
+        ["Básico", "5–7 passos · 3x3–4x4", "300–600", "2 a 4 percursos concluídos. A grade passa a 4x4"],
+        ["Intermediário", "8–12 passos · 4x4–5x5", "750–1.350", "5 a 9 percursos concluídos. Agrupar por direções vira necessidade"],
+        ["Avançado", "13+ passos · 6x6–7x7", "1.500+", "10 ou mais percursos concluídos. Percursos longos seguidos em 60 segundos de resposta"]
+      ],
+      note: "Estas faixas são calculadas a partir das regras de pontuação do jogo; não são normas populacionais nem limites clínicos."
     },
     techniques: {
-      title: "Estratégias cientificamente respaldadas para expandir a memória sequencial",
+      title: "Dicas para percursos longos",
       items: [
         {
-                "name": "Agrupamento por vetores direcionais (Chunking)",
-                "desc": "Agrupe passos sucessivos em vetores contínuos (ex.: 'dois para a direita, um para cima'). Tratar o percurso como traçados geométricos em vez de células avulsas poupa mais de 60 % de carga atencional.",
-                "tips": "Busque formatos em L, triângulos ou escadas em vez de pontos individuais."
+          "name": "Montar blocos de direção",
+          "desc": "O percurso sempre segue para um quadrado vizinho. Guarde blocos como 'direita 2, cima 1, esquerda 1' em vez de quadrados soltos (Miller, 1956).",
+          "tips": "Dê nomes às formas: L, escada, zigue-zague."
         },
         {
-                "name": "Ensaio motor com o Escriba Interno (Logie 1995)",
-                "desc": "Simule mentalmente o desenho contínuo com o córtex motor enquanto observa a tela. A pré-ativação motora consolida a imagem visual com pistas cinestésicas.",
-                "tips": "Sinta o traçado na ponta dos dedos antes de encostar na tela."
+          "name": "Marcar as curvas",
+          "desc": "Trechos retos são fáceis de lembrar. Fixe principalmente o quadrado inicial e os quadrados onde a direção muda.",
+          "tips": "Antes de responder, relembre o início e a última curva."
         },
         {
-                "name": "Olhar centralizado e visão parafoveal",
-                "desc": "Fixe o foco no centro da grade para absorver o trajeto pela visão periférica, evitando saltos oculares desordenados que atrasam a percepção do todo.",
-                "tips": "Mantenha a cabeça firme e visualize o percurso como um filme contínuo."
+          "name": "Ver a grade inteira",
+          "desc": "Em vez de pular de um quadrado aceso para outro, olhe perto do centro da grade e acompanhe o traçado.",
+          "tips": "Ajuda principalmente nas grades 6x6 e 7x7."
         },
         {
-                "name": "Cadência e ritmo constante de toque",
-                "desc": "Execute os toques num andamento uniforme. A indecisão entre cliques corrói a retenção dos passos finais; libere o bloco num único gesto seguro.",
-                "tips": "Acompanhe um compasso contínuo sem parar para pensar passo a passo."
+          "name": "Responder em ritmo constante",
+          "desc": "Com 10 segundos de resposta não é preciso correr, mas pausas longas fazem você esquecer o final do percurso.",
+          "tips": "Responda bloco por bloco."
         }
-]
+      ]
     },
     steps: [
-      "Concentre o foco no meio da matriz e acompanhe a sequência de células acesas.",
-      "Agrupe mentalmente os pontos em vetores direcionais contínuos.",
-      "No breve intervalo antes do clique, repasse mentalmente a linha com o escriba interno.",
-      "Reproduza as posições na ordem exata num ritmo constante e fluido.",
-      "Avance por matrizes de 3x3 a 7x7 ampliando ao máximo seu span espacial sequencial."
-],
-    audience: "Jogadores focados em rotas de mapa e execução de sequências de habilidades, dançarinos, atletas, estudantes das áreas exatas e qualquer pessoa disposta a expandir a memória visoespacial sequencial.",
+      "Toque em Iniciar e espere a contagem regressiva de 3 segundos.",
+      "Observe o percurso enquanto os quadrados acendem um a um.",
+      "Em até 10 segundos, clique ou toque nos mesmos quadrados na mesma ordem.",
+      "Se acertar, o percurso ganha um passo; se errar, aparece um novo percurso do mesmo tamanho.",
+      "Depois de 60 segundos de resposta, veja sua pontuação, nível máximo e precisão."
+    ],
+    audience: "Quem quer treinar a memória sequencial e o span visuoespacial jogando, gamers e atletas que precisam decorar rotas ou sequências de movimentos, e quem procura um jogo de memória rápido.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'cowan2001', 'baddeley2000', 'miller1956', 'simon1974', 'kessels2000', 'woods2015'),
+    sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'miller1956'),
     related: [
       {
-            "href": "/pt/drills/memory/spatial-memory/grid-memorization",
-            "label": "Teste de Memória Visual (Memory Matrix)"
+        "href": "/pt/drills/memory/spatial-memory/grid-memorization",
+        "label": "Teste de Memória Visual (Memory Matrix)"
       },
       {
-            "href": "/pt/drills/memory/spatial-memory/object-location",
-            "label": "Teste de Memória Espacial (Object Location)"
+        "href": "/pt/drills/memory/spatial-memory/object-location",
+        "label": "Teste de Memória Espacial (Object Location)"
       },
       {
-            "href": "/pt/drills/memory/short-term-memory/digit-span",
-            "label": "Teste de Dígitos (Digit Span)"
+        "href": "/pt/drills/memory/short-term-memory/digit-span",
+        "label": "Teste de Dígitos (Digit Span)"
       },
       {
-            "href": "/pt/drills/memory/short-term-memory/word-recall",
-            "label": "Teste de Memória Verbal (Word Recall)"
+        "href": "/pt/drills/memory/short-term-memory/word-recall",
+        "label": "Teste de Memória Verbal (Word Recall)"
       },
       {
-            "href": "/pt/drills/memory/working-memory/n-back",
-            "label": "Teste Dual N-Back"
+        "href": "/pt/drills/memory/working-memory/n-back",
+        "label": "Teste N-Back"
       }
-]
+    ]
   };
 
   return (
@@ -363,48 +316,48 @@ export default function LocalizedPathTracingPage() {
       <PathTracingClient
         copy={{
         "h1Keyword": "Teste de Corsi online",
-        "h1Suffix": " – Memória espacial",
-        "subtitle": "Memorize blocos iluminados e repita a sequência exata.",
-        "statScore": "Pontuação",
+        "h1Suffix": " – Memória sequencial",
+        "subtitle": "Memorize os quadrados que acendem um a um e toque neles na mesma ordem.",
+        "statScore": "Pontos",
         "statTime": "Tempo",
         "statLevel": "Nível",
-        "statBestScore": "Melhor Récord",
+        "statBestScore": "Melhor pontuação",
         "levelPrefix": "Nv.",
-        "startTitle": "Traçado de Rotas Pro",
-        "startSubtitle": "Memória espacial • Corsi",
+        "startTitle": "Teste de Corsi",
+        "startSubtitle": "Blocos de Corsi • Memória sequencial",
         "countdownSubtitle": "PREPARE-SE",
         "newBest": "NOVO RECORDE",
         "pointsLabel": "Pontos",
         "statAccuracy": "Precisão",
-        "statPeakLevel": "Nível Máximo",
+        "statPeakLevel": "Nível máximo",
         "statPerfects": "Perfeitos",
-        "btnPlayAgain": "Jogar Novamente",
-        "rulesTitle": "Instruções & Sistema de Pontuação",
-        "aboutTitle": "Sobre o Treino de Memória Sequencial e Corsi",
+        "btnPlayAgain": "Jogar de novo",
+        "rulesTitle": "Regras e pontuação",
+        "aboutTitle": "Sobre o teste de Corsi",
         "rulesItems": [
                 {
                         "num": "1",
-                        "text": "Memorize e reproduza o trajeto",
+                        "text": "Repetir o percurso na mesma ordem",
                         "highlight": "+150 PTS",
-                        "result": "Observe a sequência luminosa e clique nas células na mesma ordem"
+                        "result": "Acerto: nível +1 e um passo a mais (10 s para responder)"
                 },
                 {
                         "num": "2",
-                        "text": "Progressão de grade e passos",
+                        "text": "A grade cresce",
                         "highlight": "3x3 → 7x7",
-                        "result": "Conforme você sobe de nível, o tabuleiro e o percurso aumentam"
+                        "result": "A grade aumenta sozinha conforme o percurso fica mais longo"
                 },
                 {
                         "num": "3",
-                        "text": "Erro ou tempo esgotado",
-                        "highlight": "Zero penalidade",
-                        "result": "Nenhum ponto ou tempo é deduzido; a rodada se repete no nível atual"
+                        "text": "Quadrado errado / tempo esgotado",
+                        "highlight": "Sem desconto",
+                        "result": "Sem perda de pontos ou tempo; novo percurso do mesmo tamanho"
                 },
                 {
                         "num": "4",
-                        "text": "Dificuldade consolidada",
-                        "highlight": "Sem rebaixamento",
-                        "result": "O nível não cai, permitindo aprimorar sua estratégia de agrupamento espacial"
+                        "text": "Nível mantido",
+                        "highlight": "Sem queda",
+                        "result": "O nível nunca cai; os 60 segundos só correm durante a resposta"
                 }
         ]
 }}

@@ -97,27 +97,27 @@ const getORP = (word) => {
 const RULES_ITEMS = [
   { num: "1", text: "Target Word", highlight: "Shown in Banner", result: "Watch the focal stream for a match" },
   { num: "2", text: "ORP Focal Stream", highlight: "Zero Eye Movement", result: "Words flash at a fixed focal point" },
-  { num: "3", text: "Target Catch", highlight: "+100 PTS", result: "Tap TARGET DETECTED instantly" },
-  { num: "4", text: "Speed Tiers", highlight: "250 → 850 WPM", result: "5 progressive difficulty levels" }
+  { num: "3", text: "Target Catch", highlight: "+100 PTS", result: "Tap TARGET DETECTED while it shows" },
+  { num: "4", text: "Speed Tiers", highlight: "250 → 850 WPM", result: "Next level every 2 catches" }
 ];
 
-const ABOUT_TEXT = `RSVP (Rapid Serial Visual Presentation) is a high-throughput reading technology and cognitive processing speed drill. In traditional reading, up to 80% of reading time is spent executing saccadic eye movements — jumping your eyes from word to word.
+const ABOUT_TEXT = `RSVP (Rapid Serial Visual Presentation) shows text one word at a time in a fixed spot, so your eyes do not have to jump along a line. Each word is aligned on a highlighted letter near its start to keep your focus in one place.
 
-RSVP eliminates saccadic eye movements by displaying text sequentially at a single focal point, aligned to the Optimal Recognition Point (ORP) of each word. This allows the visual cortex to process lexical tokens at speeds exceeding 850 words per minute.
+In this drill an English passage streams at a set speed while a target word is shown in the banner. Tap TARGET DETECTED while that word is on screen. Every 2 catches move you up a level, from 250 to 850 words per minute.
 
-Practicing RSVP trains visual token decoding speed, working memory buffer capacity, and attentional focus under high information throughput.`;
+The run lasts 45 seconds. A missed target or a wrong tap counts against accuracy, and a wrong tap locks the button for one second. The drill reports catches, accuracy and the speed level reached; it does not test comprehension.`;
 
 const FAQ_ITEMS = [
   { q: "How does the target word system work in RSVP Speed Reader?", a: "The banner at top center displays an upcoming target word. Watch the focal stream as words flash. The moment the target word appears, tap 'TARGET DETECTED'. Once detected or passed, a new upcoming target word is assigned." },
   { q: "What is an RSVP speed reader?", a: "RSVP (Rapid Serial Visual Presentation) displays words one at a time at a single focal point, eliminating saccadic eye movements. Words flash at the Optimal Recognition Point (ORP) for maximum reading throughput." },
-  { q: "What are the 5 difficulty levels?", a: "Level 1 (250 WPM), Level 2 (350 WPM), Level 3 (480 WPM), Level 4 (650 WPM), and Level 5 (850 WPM). Level increases progressively up to Level 5 as you hit target words with high precision." },
+  { q: "What are the 5 difficulty levels?", a: "Level 1 (250 WPM), Level 2 (350 WPM), Level 3 (480 WPM), Level 4 (650 WPM), and Level 5 (850 WPM). You move up one level for every 2 target words caught (every 200 points), up to Level 5." },
   { q: "What is the Optimal Recognition Point (ORP)?", a: "The ORP is the position within a word where the human visual cortex can recognize it most efficiently — typically just left of center, weighted toward the beginning. Aligning each word at its ORP lets your eyes stay fixed at one point while still decoding the full word, accelerating visual token decoding." },
-  { q: "Why do saccadic eye movements slow down normal reading?", a: "In conventional reading, the eyes don't move smoothly across a line — they jump between fixation points (saccades) and pause briefly at each word. Research suggests up to 80% of reading time is spent on these jumps and pauses rather than actual word recognition. RSVP removes the jumps entirely by bringing the words to a fixed focal point instead." },
-  { q: "Can RSVP training actually increase my reading speed?", a: "RSVP reliably increases raw word-recognition throughput because it removes eye-movement overhead, and regular practice measurably improves how quickly your visual cortex parses each flashed word. Comprehension at very high WPM tiers depends on the material and the reader, which is why this drill also tracks accuracy alongside speed rather than raw WPM alone." },
-  { q: "Is RSVP the same technique used in speed-reading apps?", a: "Yes. RSVP is the core mechanism behind most commercial speed-reading apps and browser extensions. This drill isolates the technique as a trainable cognitive skill — a target-detection task — rather than a passive reading tool, so you get a measurable score and progression instead of just a WPM counter." },
-  { q: "What is a good WPM score for this drill?", a: "The average adult reads prose at 200-300 WPM with full comprehension. Reaching Level 3 (480 WPM) with high accuracy is a strong result; sustaining Level 5 (850 WPM) while still catching target words reliably puts you in elite speed-reading territory." },
-  { q: "Who benefits most from RSVP training?", a: "Students processing dense reading loads, professionals who read large volumes of text daily, and competitive gamers who need to parse on-screen information streams quickly all benefit from sharper visual word-recognition speed." },
-  { q: "Is this RSVP speed reader free?", a: "Yes. SkillDrills RSVP Speed Reader is 100% free with no ads, downloads, or registration required. It runs entirely in your browser on desktop and mobile." }
+  { q: "Why do saccadic eye movements slow down normal reading?", a: "In conventional reading, the eyes don't move smoothly across a line — they jump between fixation points (saccades) and pause briefly at each word. RSVP removes those jumps by bringing each word to a fixed focal point instead." },
+  { q: "Can RSVP training actually increase my reading speed?", a: "You will get better at spotting words in a fast RSVP stream with practice. Research on RSVP shows comprehension tends to drop as the rate rises, so faster is not automatically better reading. This drill tracks accuracy alongside the speed level and does not measure comprehension." },
+  { q: "Is RSVP the same technique used in speed-reading apps?", a: "RSVP is the presentation method used by many one-word-at-a-time reading apps. This drill turns it into a target-detection task, so you get a score, accuracy and speed level instead of just a WPM counter." },
+  { q: "What is a good WPM score for this drill?", a: "Normal reading of prose is often cited at about 200-300 words per minute (Rayner, 1998). In this drill the speed is set by your level, not measured from you: reaching Level 3 (480 WPM) means you caught 4 targets, and Level 5 (850 WPM) is the top speed." },
+  { q: "Who might find RSVP practice useful?", a: "Anyone curious about one-word-at-a-time reading, or who wants a short task for practising fast word recognition and sustained attention." },
+  { q: "Is this RSVP speed reader free?", a: "Yes. SkillDrills RSVP Speed Reader is free with no downloads or registration required. It runs entirely in your browser on desktop and mobile." }
 ];
 
 function RuleItem({ num, text, highlight = '', result }) {
@@ -156,9 +156,9 @@ export default function RSVPReaderClient({ copy } = {}) {
   };
   const aboutText = copy?.aboutText || ABOUT_TEXT;
   const aboutCards = copy?.aboutCards || [
-    { title: 'Who Should Use This?', desc: 'Students and professionals who need to process large volumes of text quickly, speed-reading enthusiasts, and anyone wanting to train visual word-recognition throughput beyond normal saccadic reading speed.' },
-    { title: 'Skills Improved', desc: 'Visual word-recognition speed, working memory buffer capacity for rapid lexical streams, and sustained attention at high information throughput.' },
-    { title: 'Progressive Speed Tiers', desc: '5 professional WPM tiers (250 to 850) push your focal recognition point further with each level, training the visual cortex to decode words without saccadic eye movement.' },
+    { title: 'Who Should Use This?', desc: 'Speed-reading enthusiasts and anyone who wants a short task for practising fast word recognition in a one-word-at-a-time stream.' },
+    { title: 'Skills Practised', desc: 'Fast visual word recognition, holding a target word in mind, and sustained attention while words stream quickly.' },
+    { title: 'Progressive Speed Tiers', desc: '5 speed levels from 250 to 850 words per minute; every 2 target catches move you up one level.' },
   ];
   const faqItems = copy?.faqItems || FAQ_ITEMS;
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'

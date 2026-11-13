@@ -7,16 +7,16 @@ const cognitiveDrills = DRILLS.filter((d) => d.category === 'cognitive');
 
 export const metadata = {
   title: 'Entraînement cérébral et concentration | SkillDrills',
-  description: '8 exercices gratuits dans le navigateur pour attention, mémoire, réaction et vitesse de traitement. Sans inscription.',
+  description: "Entraînement cérébral gratuit : 8 exercices pour l'attention, la concentration, la réaction de choix et la vitesse de traitement, dont Stroop et Schulte.",
   keywords: [
-    'entraînement cognitif', 'jeux de cerveau gratuits', 'exercices de concentration', 'test de mémoire',
-    "test d'attention", 'vitesse de traitement', 'test de réaction', 'mémoire de travail',
+    'entraînement cognitif', 'jeux de cerveau gratuits', 'exercices de concentration', 'entraînement cérébral gratuit',
+    "test d'attention", 'vitesse de traitement', 'réaction de choix', 'lecture rapide',
     'test de Stroop', 'table de Schulte', "entraîner l'attention", 'jeux cérébraux en ligne',
     'gymnastique cérébrale', 'attention divisée', 'agilité mentale'
   ],
   openGraph: {
     title: 'Entraînement cérébral et concentration | SkillDrills',
-    description: '8 exercices gratuits dans le navigateur pour attention, mémoire, réaction et vitesse de traitement. Sans inscription.',
+    description: "Entraînement cérébral gratuit : 8 exercices pour l'attention, la concentration, la réaction de choix et la vitesse de traitement, dont Stroop et Schulte.",
     type: 'website',
     url: 'https://skilldrills.online/fr/drills/cognitive',
     siteName: 'SkillDrills',
@@ -26,7 +26,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Entraînement cérébral et concentration | SkillDrills',
-    description: '8 exercices gratuits pour attention, mémoire, réaction et vitesse de traitement dans le navigateur.',
+    description: "8 exercices gratuits d'entraînement cérébral pour l'attention, la concentration et la vitesse de traitement dans le navigateur.",
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,10 +50,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "name": "Entraînement cérébral et concentration (8 exercices)",
   "url": "https://skilldrills.online/fr/drills/cognitive",
-  "description": "8 exercices gratuits dans le navigateur pour attention, mémoire, réaction et vitesse de traitement.",
+  "description": "8 exercices gratuits dans le navigateur pour l'attention, la concentration, la réaction de choix et la vitesse de traitement.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": cognitiveDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'fr', drill.name);
@@ -73,14 +73,14 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "Qu'est-ce que l'entraînement cognitif et comment renforce-t-il les capacités mentales ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L'entraînement cognitif repose sur un ensemble d'exercices structurés issus des neurosciences cognitives, conçus pour stimuler et renforcer des réseaux neuronaux spécifiques tels que la mémoire de travail, l'attention sélective et la vitesse de traitement de l'information. La pratique répétée induit une plasticité synaptique au sein du cortex préfrontal et pariétal, augmentant la résistance à la fatigue mentale, la prise de décision rapide sous pression et la clarté conceptuelle."
+        "text": "L'entraînement cognitif regroupe des exercices répétables qui sollicitent l'attention sélective, l'attention divisée, le changement de règle et la vitesse de traitement de l'information. Contrairement à l'apprentissage par cœur, vous vous exercez à choisir la bonne réponse sous contrainte de temps. La pratique régulière rend généralement plus rapide et plus précis sur la même tâche ; un effet durable sur le fonctionnement du cerveau n'est pas démontré."
       }
     },
     {
@@ -88,7 +88,7 @@ const faqSchema = {
       "name": "Quels sont les domaines cognitifs fondamentaux entraînés par ces exercices ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La suite SkillDrills cible cinq piliers majeurs des fonctions exécutives : la vitesse de traitement perceptif (temps de reconnaissance et de catégorisation visuelle), le contrôle inhibiteur (capacité à réprimer les réponses impulsives automatiques via le test de Stroop), l'attention divisée (traitement parallèle de flux d'informations concurrents), l'exploration visuelle périphérique avec les tables de Schulte, et la flexibilité cognitive (basculement fluide entre des ensembles de règles distincts)."
+        "text": "Les 8 exercices couvrent cinq domaines : la vitesse de traitement (appariement de symboles, lecture rapide RSVP), l'inhibition des distracteurs (exercice Stroop), l'attention divisée et le multitâche (plusieurs flux à surveiller en même temps), la recherche visuelle avec la table de Schulte, et le changement de règle (réaction de choix dont la règle change). Les exercices de mémoire se trouvent dans la catégorie Mémoire."
       }
     },
     {
@@ -96,7 +96,7 @@ const faqSchema = {
       "name": "Comment fonctionne le test de Stroop et pourquoi est-il essentiel pour l'attention ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Mis au point par le psychologue John Ridley Stroop en 1935, l'effet Stroop quantifie l'interférence cognitive lorsque le sens sémantique d'un mot (par exemple VERT) entre en conflit avec la couleur physique de sa police (par exemple rouge). Résoudre ce conflit mobilise le cortex cingulaire antérieur et le cortex préfrontal dorsolatéral afin d'inhiber le réflexe automatique de lecture et de privilégier l'identification chromatique, renforçant ainsi la maîtrise de soi et la concentration ciblée."
+        "text": "Décrit par John Ridley Stroop en 1935, l'effet Stroop est l'interférence qui apparaît quand le sens d'un mot (par exemple VERT) entre en conflit avec la couleur de son encre (par exemple rouge) : il faut freiner le réflexe de lecture pour nommer la couleur. Le test classique mesure l'écart de temps entre les essais congruents et incongruents. L'exercice Stroop de SkillDrills est une pratique, pas un test diagnostique : vous choisissez la couleur de l'encre et le score, la précision et le niveau atteint sont enregistrés, sans score d'interférence."
       }
     },
     {
@@ -104,7 +104,7 @@ const faqSchema = {
       "name": "Quels sont les bénéfices de la table de Schulte pour la vitesse de lecture et le champ visuel ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La table de Schulte est une matrice numérique développée par Walter Schulte pour évaluer l'attention soutenue et l'amplitude du champ visuel périphérique. En fixant le centre de la grille tout en repérant les nombres en ordre séquentiel à l'aide de la vision périphérique, le cerveau apprend à élargir sa fenêtre d'attention visuelle sans saccades oculaires superflues, une compétence clé pour la lecture rapide, l'aviation et le repérage de cibles dans les jeux vidéo."
+        "text": "La table de Schulte est une grille de nombres mélangés, associée au psychiatre Walter Schulte, que l'on parcourt de 1 dans l'ordre croissant ; la version 5×5 est la plus connue. Dans SkillDrills, la grille commence en 3×3 et s'agrandit à chaque table terminée. Garder le regard au centre et repérer le nombre suivant en vision périphérique est une bonne stratégie d'exercice, mais aucun gain chiffré sur le champ visuel ou la lecture n'est garanti : suivez plutôt votre propre temps de résolution."
       }
     },
     {
@@ -112,7 +112,7 @@ const faqSchema = {
       "name": "Quelle est la durée d'entraînement recommandée pour observer des progrès mesurables ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les protocoles en neuro-ergonomie préconisent des séances courtes et régulières plutôt que de longues sessions éprouvantes. Une routine de 15 à 20 minutes par jour, 3 à 5 fois par semaine, suffit à stimuler la plasticité cérébrale sans générer de saturation cognitive. Intégrer ces exercices en guise d'échauffement avant une session de travail intense ou une compétition de jeu vidéo prépare de manière optimale les circuits de vigilance."
+        "text": "Il n'existe pas de durée optimale établie. Des séances courtes et concentrées, d'environ 10 à 15 minutes plusieurs fois par semaine, sont plus faciles à comparer que de longues séances fatigantes. Faites une pause dès que votre précision baisse."
       }
     },
     {
@@ -120,7 +120,7 @@ const faqSchema = {
       "name": "Les exercices cérébraux en ligne apportent-ils un réel avantage en compétition esport ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolument. Dans les jeux vidéo compétitifs à haute intensité, les joueurs doivent constamment traiter les alertes de la minicarte, anticiper les trajectoires adverses et exécuter des arbitrages tactiques en quelques dizaines de millisecondes. Développer le contrôle inhibiteur évite les réactions impulsives néfastes, tandis que l'entraînement de l'attention partagée permet de surveiller plusieurs menaces simultanées sans perte de précision."
+        "text": "Pas de manière garantie. Les progrès sont surtout démontrés sur des tâches très proches de celles entraînées ; le transfert vers les jeux vidéo, le travail ou la vie quotidienne reste incertain et varie selon les personnes. La recherche visuelle et l'inhibition des distracteurs ressemblent à certaines actions de jeu, comme lire la minicarte, et peuvent servir d'exercice complémentaire."
       }
     },
     {
@@ -128,7 +128,7 @@ const faqSchema = {
       "name": "Ces exercices conviennent-ils aux enfants, aux adultes et aux personnes âgées ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, les exercices de SkillDrills s'adaptent naturellement à tous les profils grâce à une mesure objective basée sur la précision et le temps de réaction en millisecondes. Chez les adolescents et adultes actifs, ils aiguisent la vitesse d'exécution et l'attention soutenue ; chez les personnes éprouvant des difficultés de concentration, ils structurent l'effort mental ; et chez les seniors, ils renforcent la réserve cognitive pour préserver l'autonomie intellectuelle."
+        "text": "Les exercices sont utilisables par les adolescents et les adultes, avec une difficulté qui augmente au fil des niveaux. Ce ne sont ni des tests médicaux ni des outils de diagnostic ou de prévention : ils ne traitent pas les troubles de l'attention et ne protègent pas du déclin cognitif. Servez-vous-en pour suivre vos propres résultats ; en cas de difficultés persistantes, consultez un professionnel de santé."
       }
     },
     {
@@ -136,7 +136,7 @@ const faqSchema = {
       "name": "Faut-il du matériel spécifique pour réaliser ces tests cognitifs ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aucun téléchargement ni installation n'est nécessaire : tous les drills s'exécutent directement dans le navigateur à 60-120 images par seconde. Pour des résultats chronométriques d'une fiabilité maximale, il est conseillé d'utiliser une souris réactive ou un écran tactile réactif, de désactiver l'accélération matérielle du pointeur dans les paramètres système et de fermer les onglets gourmands en arrière-plan."
+        "text": "Aucun téléchargement ni installation n'est nécessaire : tous les exercices fonctionnent directement dans le navigateur, à la souris ou au toucher. Pour des résultats plus comparables, utilisez le même appareil et le même navigateur, fermez les onglets gourmands en arrière-plan et évitez de changer de périphérique d'une séance à l'autre."
       }
     }
   ]

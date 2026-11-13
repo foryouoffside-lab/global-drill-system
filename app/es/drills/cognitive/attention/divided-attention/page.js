@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de Atención Dividida | Doble Tarea | SkillDrills",
-  description: "Test gratis de atención dividida en navegador: sigue un objetivo y clasifica números a la vez. No es un diagnóstico clínico.",
+  description: "Test de atención dividida online gratis: haz clic en los objetivos que aparecen y marca a la vez los números pares. Ejercicio de doble tarea, no es diagnóstico.",
   keywords: [
     "test de atencion dividida",
     "atencion dividida ejercicios",
@@ -18,13 +18,12 @@ export const metadata = {
     "test de atencion compartida",
     "multitarea cognitiva test",
     "rastreo visual y numeros",
-    "evaluacion neuropsicologica atencion dividida",
     "ejercicio de doble foco mental",
     "entrenamiento de doble tarea"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de Atención Dividida – Doble Tarea | SkillDrills",
-    description: "Test de atención dividida y doble tarea online gratis: Rastrea objetivos visuales móviles y procesa secuencias numéricas simultáneas sin registro previo.",
+    title: "Test de Atención Dividida | Doble Tarea | SkillDrills",
+    description: "Test de atención dividida online gratis: haz clic en los objetivos que aparecen y marca a la vez los números pares. Ejercicio de doble tarea, no es diagnóstico.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -32,8 +31,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de Atención Dividida – Doble Tarea | SkillDrills",
-    description: "Test de atención dividida y doble tarea online gratis: Rastrea objetivos visuales móviles y procesa secuencias numéricas simultáneas sin registro previo.",
+    title: "Test de Atención Dividida | Doble Tarea | SkillDrills",
+    description: "Test de atención dividida online gratis: haz clic en los objetivos que aparecen y marca a la vez los números pares. Ejercicio de doble tarea, no es diagnóstico.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -84,7 +83,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test de atención dividida y doble tarea online gratis: Rastrea objetivos visuales móviles y procesa secuencias numéricas simultáneas sin registro previo.",
+  "description": "Test de atención dividida online gratis: haz clic en los objetivos que aparecen y marca a la vez los números pares. Ejercicio de doble tarea, no es diagnóstico.",
   "url": "https://skilldrills.online/es/drills/cognitive/attention/divided-attention",
   "publisher": {
     "@type": "Organization",
@@ -92,7 +91,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -109,7 +108,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/cognitive/attention/divided-attention",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -117,7 +116,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Juego de Foco Dividido y Multitarea Cognitiva",
   "url": "https://skilldrills.online/es/drills/cognitive/attention/divided-attention",
-  "description": "Test de atención dividida y doble tarea online gratis: Rastrea objetivos visuales móviles y procesa secuencias numéricas simultáneas sin registro previo.",
+  "description": "Test de atención dividida online gratis: haz clic en los objetivos que aparecen y marca a la vez los números pares. Ejercicio de doble tarea, no es diagnóstico.",
   "genre": [
     "Action",
     "Brain Game",
@@ -145,7 +144,7 @@ const faqSchema = {
       "name": "¿Qué es la atención dividida y qué evalúa esta prueba?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La atención dividida es la facultad de procesar de manera simultánea dos o más fuentes de información ejecutando acciones paralelas con mínima interferencia."
+        "text": "La atención dividida consiste en atender dos fuentes de información a la vez. Aquí haces clic en los objetivos azules que aparecen en posiciones aleatorias y pulsas «Clasificar» cuando el dígito (0 a 9) del panel lateral es par. Es un ejercicio de práctica, no un test clínico."
       }
     },
     {
@@ -153,7 +152,7 @@ const faqSchema = {
       "name": "¿Qué es el Periodo Refractario Psicológico (PRP, Pashler 1994)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El PRP describe el retardo temporal que ocurre al procesar un segundo estímulo cuando se presenta instantes después del primero, debido a un cuello de botella central."
+        "text": "El PRP es el retraso de la segunda respuesta cuando un segundo estímulo aparece instantes después del primero, atribuido a un cuello de botella central en la selección de respuestas."
       }
     },
     {
@@ -161,7 +160,7 @@ const faqSchema = {
       "name": "¿Qué explica la Teoría de Recursos Múltiples de Wickens (2002)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Wickens descubrió que dividir la atención resulta mucho más eficiente cuando las tareas involucran códigos sensoriales y motores diferenciados."
+        "text": "Según Wickens, la atención se divide con más facilidad cuando las tareas usan canales sensoriales y códigos distintos (por ejemplo, espacial-visual y numérico)."
       }
     },
     {
@@ -169,47 +168,47 @@ const faqSchema = {
       "name": "¿Se puede entrenar la capacidad de realizar dos tareas a la vez?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. La práctica deliberada automatiza las respuestas primarias, liberando recursos ejecutivos prefrontales para procesar la tarea secundaria con soltura."
+        "text": "Tu puntuación en este ejercicio puede subir con la práctica, pero no se garantiza la transferencia a otras tareas ni a la vida diaria. Spelke et al. (1976) observaron que la práctica prolongada puede mejorar la realización de dos tareas a la vez."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Por qué combina seguimiento espacial y clasificación numérica?",
+      "name": "¿Por qué combina objetivos en pantalla y clasificación de números?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Porque estimula simultáneamente la vía visual dorsal (coordinación visoespacial) y la vía ventral/prefrontal (decodificación abstracta de reglas numéricas)."
+        "text": "Las dos tareas usan códigos distintos: localizar una posición en pantalla por un lado y aplicar una regla (par o impar) a un dígito por el otro. Es la situación que describe la teoría de recursos múltiples."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cómo mejora este test el rendimiento en videojuegos y deportes?",
+      "name": "¿Qué relación tiene con los videojuegos o la conducción?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Capacita al usuario para mantener el control mecánico de un objetivo mientras lee interfaces, mapas o comunicaciones sin ralentizar la respuesta motora."
+        "text": "El ejercicio reproduce la carga de vigilar dos flujos a la vez, como el minimapa y la acción en el juego o la carretera y el salpicadero al conducir. No garantiza mejoras en el juego ni al volante."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué es el coste de doble tarea (dual-task cost)?",
+      "name": "¿Cómo se calculan la puntuación y la nota?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es la merma porcentual en velocidad o acierto observada al llevar a cabo dos actividades concurrentes en relación a su ejecución individual."
+        "text": "Cada acierto vale 100 puntos base multiplicados por el combo y el nivel. La nota depende de la puntuación, y 24.000 puntos equivalen a la nota máxima; la precisión se muestra aparte. Son referencias de práctica de SkillDrills, no estadísticas de población."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuál es la pauta de práctica diaria óptima?",
+      "name": "¿Cuánto dura una partida?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "De 10 a 15 minutos diarios antes de actividades cognitivamente densas fortalecen la velocidad de alternancia atencional sin fatiga mental extrema."
+        "text": "El reloj empieza en 45 segundos: +2 s por acierto (máximo 60 s) y −1 s por error u objetivo perdido. La partida sigue hasta que el tiempo llega a cero; al subir la puntuación sube el nivel, los estímulos cambian más rápido y los objetivos se hacen más pequeños."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Afecta la edad a la atención dividida?",
+      "name": "¿Qué cuenta como error?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El coste de doble tarea tiende a incrementarse con los años, pero el acondicionamiento cognitivo habitual mantiene la elasticidad del procesamiento ejecutivo."
+        "text": "Pulsar «Clasificar» con un número impar, pulsar dos veces el mismo número, dejar que desaparezca un objetivo o dejar pasar un número par. Cada error muestra un destello rojo, reinicia el combo y resta 1 segundo."
       }
     },
     {
@@ -227,34 +226,34 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo Realizar el Test de Atención Dividida",
-  "description": "Test de atención dividida y doble tarea online gratis: Rastrea objetivos visuales móviles y procesa secuencias numéricas simultáneas sin registro previo.",
+  "description": "Test de atención dividida online gratis: haz clic en los objetivos que aparecen y marca a la vez los números pares. Ejercicio de doble tarea, no es diagnóstico.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Sigue el Objetivo Visoespacial Móvil",
-      "text": "Mantén la vista anclada en el objetivo en movimiento para intervenir con precisión en cuanto sea requerido.",
+      "name": "Haz Clic en el Objetivo Azul",
+      "text": "Haz clic o toca el objetivo azul que aparece en una posición aleatoria antes de que desaparezca: +2 s por acierto (máximo 60 s).",
       "url": "https://skilldrills.online/es/drills/cognitive/attention/divided-attention#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "name": "Decodifica el Flujo de Números",
-      "text": "Sin desviar por completo la mirada del centro, analiza si los dígitos mostrados cumplen la regla vigente.",
+      "text": "Vigila el panel lateral: si el dígito es par (0, 2, 4, 6, 8), pulsa «Clasificar»; si es impar, no hagas nada.",
       "url": "https://skilldrills.online/es/drills/cognitive/attention/divided-attention#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Ejecuta Respuestas Rápidas en Ambos Canales",
-      "text": "Acciona los controles correspondientes con el ratón o el teclado para responder a ambas demandas sin pausas.",
+      "name": "Responde con Ratón o Toque",
+      "text": "Las dos tareas se responden con clic o toque (el teclado no se usa, salvo Esc para salir).",
       "url": "https://skilldrills.online/es/drills/cognitive/attention/divided-attention#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Equilibra el Rendimiento Global",
-      "text": "Procura no descuidar ninguna de las dos pruebas: la puntuación premia la exactitud coordinada en paralelo.",
+      "text": "No descuides ninguna de las dos tareas: sin errores, el multiplicador de combo crece; cada error lo reinicia y cuesta 1 segundo.",
       "url": "https://skilldrills.online/es/drills/cognitive/attention/divided-attention#step-4"
     }
   ]
@@ -263,15 +262,15 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('pashler1994', 'wickens2002', 'strayer2001', 'spelke1976', 'woods2015'),
   intro: {
-    title: "Neurociencia de la Atención Dividida & Cuello de Botella Central de Pashler",
+    title: "Test de Atención Dividida: Guía",
     paragraphs: [
-      "La atención dividida representa la capacidad del cerebro para distribuir eficientemente recursos de procesamiento ejecutivo entre dos tareas que compiten de manera simultánea.",
-      "Los estudios de Harold Pashler (1994) sobre el Periodo Refractario Psicológico (PRP) evidencian que, si bien la percepción inicial puede ocurrir en paralelo, la selección de respuestas motrices sufre un cuello de botella serial en el córtex prefrontal.",
-      "Aplicando la Teoría de Recursos Múltiples de Christopher Wickens (2002), este ejercicio empareja una tarea de seguimiento espacial continuo con otra de clasificación numérica discreta, reduciendo interferencias directas y potenciando la alternancia rápida de foco.",
+      "Este test de atención dividida online gratis te pide dos tareas a la vez: hacer clic en los objetivos que aparecen y marcar los números pares. Es una autoevaluación no clínica.",
+      "Los estudios de Harold Pashler (1994) sobre el Periodo Refractario Psicológico (PRP) describen un cuello de botella central: cuando hay que elegir dos respuestas casi a la vez, la segunda se retrasa.",
+      "Inspirado en la Teoría de Recursos Múltiples de Christopher Wickens (2002), el ejercicio combina una tarea espacial (hacer clic en el objetivo) con otra numérica (par o impar).",
     ],
   },
   benchmarks: {
-    title: 'Estándares de Rendimiento Cognitivo & Baremos de Doble Tarea (Dual-Task)',
+    title: 'Etapas de práctica SkillDrills (precisión)',
     headers: ['Nivel', 'Categoría', 'Rango de Eficiencia', 'Precisión', 'Marcador de práctica'],
     note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas.",
 
@@ -285,12 +284,12 @@ const guideProps = {
   },
   protocols: {
     title: 'Protocolos de Optimización en Doble Tarea',
-    description: 'Estrategias con sustento experimental para mitigar el cuello de botella cognitivo y coordinar dos focos.',
+    description: 'Los pasos de una partida, para atender los dos canales sin perder el combo.',
     items: [
-      { title: "Sigue el Objetivo Visoespacial Móvil", description: "Mantén la vista anclada en el objetivo en movimiento para intervenir con precisión en cuanto sea requerido." },
-      { title: "Decodifica el Flujo de Números", description: "Sin desviar por completo la mirada del centro, analiza si los dígitos mostrados cumplen la regla vigente." },
-      { title: "Ejecuta Respuestas Rápidas en Ambos Canales", description: "Acciona los controles correspondientes con el ratón o el teclado para responder a ambas demandas sin pausas." },
-      { title: "Equilibra el Rendimiento Global", description: "Procura no descuidar ninguna de las dos pruebas: la puntuación premia la exactitud coordinada en paralelo." },
+      { title: "Haz Clic en el Objetivo Azul", description: "Haz clic o toca el objetivo azul que aparece en una posición aleatoria antes de que desaparezca: +2 s por acierto (máximo 60 s)." },
+      { title: "Decodifica el Flujo de Números", description: "Vigila el panel lateral: si el dígito es par (0, 2, 4, 6, 8), pulsa «Clasificar»; si es impar, no hagas nada." },
+      { title: "Responde con Ratón o Toque", description: "Las dos tareas se responden con clic o toque (el teclado no se usa, salvo Esc para salir)." },
+      { title: "Equilibra el Rendimiento Global", description: "No descuides ninguna de las dos tareas: sin errores, el multiplicador de combo crece; cada error lo reinicia y cuesta 1 segundo." },
     ],
   },
   faqs: {
@@ -330,18 +329,18 @@ export default function EnhancedPageEs() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <DividedAttentionClient copy={{
-        title: "Test de Atención Dividida", subtitle: "Sigue un objetivo y clasifica números al mismo tiempo",
+        title: "Test de Atención Dividida", subtitle: "Pulsa objetivos y clasifica números al mismo tiempo",
         statScore: "Puntos", statTime: "Tiempo", timeLeft: "Tiempo restante", statLevel: "Nivel", statBest: "Mejor puntuación",
         match: "Clasificar", evenNumbers: "NÚMEROS PARES", tapEven: "Pulsa con pares", startTitle: "Test de Atención Dividida", startSubtitle: "Doble tarea · cambio de foco",
         getReady: "Prepárate", dualAccuracy: "Precisión doble", hits: "Aciertos", misses: "Errores", peakLevel: "Nivel máximo",
-        caption: "Sigue el objetivo móvil y clasifica a la vez los números pares del flujo lateral.",
+        caption: "Pulsa el objetivo que aparece y clasifica a la vez los números pares del flujo lateral.",
         rulesTitle: "Instrucciones y puntuación", ruleItems: [
-          { text: "Acierta el objetivo", highlight: "+tiempo", result: "Pulsa el objetivo móvil" },
+          { text: "Acierta el objetivo", highlight: "+100 PTS", result: "Objetivo pulsado: +2 s (máx. 60 s)" },
           { text: "Clasifica los pares", highlight: "Respuesta correcta", result: "Pulsa cuando sea par" },
           { text: "Ignora los impares", highlight: "Sin error", result: "No pulses con impares" },
-          { text: "Equilibra los canales", highlight: "Mantén el combo", result: "Combina rastreo y clasificación" },
+          { text: "Error / objetivo perdido", highlight: "Combo a cero", result: "−1 s" },
         ],
-        aboutTitle: "Sobre atención dividida y doble tarea", aboutLead: "Este autocheck cognitivo no clínico combina rastreo visual y clasificación numérica para observar el rendimiento de los dos canales.",
+        aboutTitle: "Sobre atención dividida y doble tarea", aboutLead: "Este autocheck cognitivo no clínico combina pulsar objetivos y clasificación numérica para observar el rendimiento de los dos canales.",
         audienceTitle: "Para quién sirve", audienceText: "Para jugadores que miran minimapa y objetivo, estudiantes y personas que procesan varias entradas con rapidez.",
         skillsTitle: "Habilidades entrenadas", skillsText: "Procesamiento de doble tarea, rastreo visual, decisión numérica y reparto de la atención.", flexibilityTitle: "Procesamiento paralelo", flexibilityText: "Cambia entre ambos flujos sin dejar que caiga la precisión de un canal."
       }} />

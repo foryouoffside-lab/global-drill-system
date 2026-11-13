@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Visueller Gedächtnistest online | SkillDrills",
-  description: "Teste dein visuelles Gedächtnis online: Merke dir leuchtende Muster in einer Matrix und rekonstruiere sie direkt im Browser.",
-  keywords: ['visueller gedächtnistest', 'visuelles gedächtnis test', 'gedächtnistest matrix', 'memory matrix', 'muster merken test', 'visuell-räumliches gedächtnis', 'räumliches gedächtnis test', 'visuelles arbeitsgedächtnis', 'muster gedächtnis', 'gedächtnistraining online'],
+  description: "Visueller Gedächtnistest online: Merke dir die Felder, die 1,5 Sekunden in einer Matrix leuchten, und tippe das Muster nach – von 4x4 bis 5x5 mit 12 Feldern.",
+  keywords: ['visueller gedächtnistest', 'visuelles gedächtnis test', 'muster in matrix merken', 'gedächtnistest matrix', 'memory matrix', 'muster merken test', 'visuell-räumliches gedächtnis', 'räumliches gedächtnis test', 'visuelles arbeitsgedächtnis', 'muster gedächtnis', 'gedächtnistraining online'],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Visueller Gedächtnistest online | SkillDrills",
-    description: "Teste dein visuelles Gedächtnis online: Merke dir leuchtende Muster in einer Matrix und rekonstruiere sie direkt im Browser.",
+    description: "Visueller Gedächtnistest online: Merke dir die Felder, die 1,5 Sekunden in einer Matrix leuchten, und tippe das Muster nach – von 4x4 bis 5x5 mit 12 Feldern.",
     type: 'website',
     url: 'https://skilldrills.online/de/drills/memory/spatial-memory/grid-memorization',
     siteName: 'SkillDrills',
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Visueller Gedächtnistest online | SkillDrills",
-    description: "Teste dein visuelles Gedächtnis online: Merke dir leuchtende Muster in einer Matrix und rekonstruiere sie direkt im Browser.",
+    description: "Visueller Gedächtnistest online: Merke dir die Felder, die 1,5 Sekunden in einer Matrix leuchten, und tippe das Muster nach – von 4x4 bis 5x5 mit 12 Feldern.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -50,7 +50,7 @@ const webAppSchema = {
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "sameAs": "https://de.wikipedia.org/wiki/Visuelles_Ged%C3%A4chtnis",
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -58,8 +58,8 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Visueller Gedächtnistest Online (Memory Matrix)",
   "url": "https://skilldrills.online/de/drills/memory/spatial-memory/grid-memorization",
-  "description": "Interaktiver neuropsychologischer Test zur Messung des räumlich-visuellen Arbeitsgedächtnisses, der Mustererkennung und der visuellen Speicherkapazität auf Matrixgittern.",
-  "dateModified": "2026-09-11",
+  "description": "Kostenloser visueller Gedächtnistest im Browser: 1,5 Sekunden leuchtende Felder in einem 4x4- bis 5x5-Gitter merken und das Muster nachtippen.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Memory Game", "Cognitive Training", "Brain Training", "Spatial Memory"],
   "playMode": "SinglePlayer",
@@ -77,7 +77,7 @@ const softwareSchema = {
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
@@ -85,7 +85,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Wie man das visuelle Arbeitsgedächtnis auf Matrixgittern trainiert",
-  "description": "Vierstufiges evidenzbasiertes Protokoll zur Kodierung, Gestaltbündelung (Chunking) und fehlerfreien Rekonstruktion räumlicher Gittermuster.",
+  "description": "Vier praktische Schritte, um leuchtende Gittermuster in 1,5 Sekunden zu erfassen, zu Formen zu bündeln und nachzutippen.",
   "step": [
     {
       "@type": "HowToStep",
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "Was ist ein visueller Gedächtnistest?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein visueller Gedächtnistest erfasst das räumlich-visuelle Arbeitsgedächtnis – insbesondere die Fähigkeit, visuelle Muster und räumliche Koordinaten ohne sprachliche Wiederholung wahrzunehmen, zu enkodieren und kurzfristig abzurufen."
+        "text": "Hier ist es eine Übung für das visuell-räumliche Arbeitsgedächtnis: Du merkst dir, welche Felder in einer Matrix kurz aufleuchten, und tippst sie danach aus dem Gedächtnis nach – ohne die Positionen in Worten aufzusagen. Es ist ein kostenloses Übungsspiel, kein klinischer oder diagnostischer Test."
       }
     },
     {
@@ -139,15 +139,15 @@ const faqSchema = {
       "name": "Wie funktioniert die Gitter-Gedächtnisübung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Auf einem 4x4- oder 5x5-Gitter leuchtet 1,5 Sekunden lang ein Muster weißer Kacheln auf. Sobald das Gitter erlischt, klickst du alle zuvor beleuchteten Felder an. Mit jedem Erfolg steigt die Musterkomplexität."
+        "text": "Auf einem 4x4-Gitter leuchten 5 Felder 1,5 Sekunden lang violett auf. Danach tippst du alle zuvor leuchtenden Felder an. Jedes vollständige Muster bringt 150 Punkte und ein zusätzliches Feld. Nach 7 Feldern auf 4x4 geht es auf 5x5 weiter (5 bis maximal 12 Felder). Die 60-Sekunden-Uhr läuft nur, während du das Muster nachtippst."
       }
     },
     {
       "@type": "Question",
-      "name": "Was ist der Visual Patterns Test (VPT)?",
+      "name": "Ist das der Visual Patterns Test (VPT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der 1997 von Sergio Della Sala, Robert H. Logie und Kollegen entwickelte Visual Patterns Test (VPT) gilt als neuropsychologischer Goldstandard zur Messung des reinen statischen visuellen Kurzzeitgedächtnisses, unabhängig von sequenziellen Bewegungsabläufen."
+        "text": "Nein. Der Visual Patterns Test (Della Sala et al., 1997) ist ein neuropsychologisches Forschungsverfahren mit Gittermustern. Diese Übung ist ein kostenloses Trainingsspiel in ähnlichem Format, folgt aber weder dessen Ablauf noch dessen Normwerten."
       }
     },
     {
@@ -160,10 +160,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Was ist ein normaler Durchschnittswert bei einem visuellen Matrixtest?",
+      "name": "Wie wird die Punktzahl berechnet?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Normdaten gesunder Erwachsener (Della Sala et al., 1997, 1999) zeigen eine durchschnittliche Musterkapazität von 6 bis 8 Feldern auf 4x4- bis 5x5-Gittern. Spitzenreiter erreichen 10 bis 14+ Felder durch fortgeschrittenes geometrisches Chunking."
+        "text": "Jedes vollständig nachgetippte Muster bringt 150 Punkte. Die Bewertung im Ergebnisbildschirm ist eine SkillDrills-Übungsstufe mit 1.150 Punkten als oberer Marke – kein Durchschnitts- oder Normwert."
       }
     },
     {
@@ -171,7 +171,7 @@ const faqSchema = {
       "name": "Wie verbessert räumliches Chunking das visuelle Erinnerungsvermögen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das visuelle Arbeitsgedächtnis besitzt einen physiologischen Engpass von 3 bis 4 Einheiten (Luck & Vogel, 1997; Cowan, 2001). Räumliches Chunking überwindet dies, indem benachbarte Zellen zu Formen (z.B. Dreiecke, Linien, 'L'-Formen) zusammengefasst und als Einzelobjekt gespeichert werden."
+        "text": "Das visuelle Arbeitsgedächtnis hält nur etwa 3 bis 4 Objekte gleichzeitig (Luck & Vogel, 1997; Cowan, 2001). Fasst du benachbarte Felder zu Formen wie Linien, Dreiecken oder 'L'-Formen zusammen, musst du dir weniger Einheiten merken."
       }
     },
     {
@@ -187,7 +187,7 @@ const faqSchema = {
       "name": "Warum verblassen Gittermuster nach 1,5 Sekunden so schnell?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das ikonische sensorische Bildgedächtnis zerfällt innerhalb von 250 bis 500 Millisekunden. Ohne rasche Übertragung ins Arbeitsgedächtnis durch Chunking oder mentale Linienführung wird die visuelle Spur sofort durch neue Reize überschrieben."
+        "text": "Die Anzeige dauert in dieser Übung fest 1,5 Sekunden. Das ikonische Gedächtnis hält ein Bild nur sehr kurz; was du in dieser Zeit nicht zu Formen oder einer gedachten Linie bündelst, ist beim Nachtippen meist schon weg."
       }
     },
     {
@@ -195,7 +195,7 @@ const faqSchema = {
       "name": "Gibt es Punktabzüge für falsche Klicks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nein. Ein falscher Klick zieht weder Punkte ab noch verkürzt er die verbleibende Zeit. Die Runde startet einfach auf derselben Schwierigkeitsstufe neu, sodass du stressfrei an deiner Leistungsgrenze trainieren kannst."
+        "text": "Nein. Ein falscher Klick beendet nur die aktuelle Runde – ohne Punkt- oder Zeitabzug. Danach erscheint ein neues Muster auf derselben Schwierigkeitsstufe."
       }
     },
     {
@@ -203,7 +203,7 @@ const faqSchema = {
       "name": "Wie nützt visuelles Gedächtnis im Alltag und beim Gaming?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein starkes visuelles Arbeitsgedächtnis verbessert die Übersicht auf der Minikarte in Taktik-Shootern (Valorant, CS2), beschleunigt das Erfassen von Bauplänen und Diagrammen und schärft die 3D-Vorstellungskraft in MINT-Fächern."
+        "text": "Die Übung ähnelt Situationen, in denen du eine Anordnung kurz siehst und dir merken musst – etwa Positionen auf einer Minikarte oder eine Stellung auf dem Schachbrett. Eine Verbesserung in anderen Bereichen ist nicht garantiert."
       }
     }
   ]
@@ -211,58 +211,30 @@ const faqSchema = {
 
 const gridGuide = {
   intro: [
-  "Der Visuelle Gedächtnistest (Grid Memorization / Memory Matrix) ist eine wissenschaftlich fundierte neurokognitive Übung zur Messung des räumlich-visuellen Arbeitsgedächtnisses, der Musterenkodierung und des statischen Matrixabrufs. Im Gegensatz zu verbalen Gedächtnistests isoliert diese Aufgabe das reine visuelle Verarbeitungssystem des Gehirns.",
-  "Die klinische Untersuchung der räumlich-visuellen Gedächtnisspanne wurde durch Pietro Corsi (1972) mit dem Corsi-Block-Tapping-Test begründet, der nachwies, dass räumliche Gedächtnissysteme anatomisch getrennt von der verbalen Zahlenspanne arbeiten (Milner, 1971). 1997 entwickelten Sergio Della Sala, Robert H. Logie und Kollegen den Visual Patterns Test (VPT), um statische Matrixmuster von sequenziellen Bewegungspfaden abzugrenzen.",
+  "Dieser visuelle Gedächtnistest online zeigt dir 1,5 Sekunden lang leuchtende Felder in einer Matrix. Danach tippst du das Muster aus dem Gedächtnis nach. Du startest mit 5 Feldern auf einem 4x4-Gitter, jedes gelöste Muster bringt ein Feld mehr, und auf dem 5x5-Gitter geht es bis zu 12 Feldern. Es geht darum, Muster in der Matrix zu merken, nicht darum, sie in Worte zu fassen.",
+  "Die klinische Untersuchung der räumlich-visuellen Gedächtnisspanne wurde durch Pietro Corsi (1972) mit dem Corsi-Block-Tapping-Test begründet, der nachwies, dass räumliche Gedächtnissysteme anatomisch getrennt von der verbalen Zahlenspanne arbeiten (Milner, 1971). 1997 veröffentlichten Sergio Della Sala, Robert H. Logie und Kollegen den Visual Patterns Test (VPT), um statische Matrixmuster von sequenziellen Bewegungspfaden abzugrenzen. Diese Übung nutzt ein ähnliches Format, ist aber nicht der VPT.",
   "In der modernen kognitiven Neurowissenschaft unterteilten Robert H. Logie (1995) und Alan Baddeley (2000) den räumlich-visuellen Notizblock in den passiven 'Visual Cache' (Speicher für Farben, Helligkeit und statische Formen) und den aktiven 'Inner Scribe' (Mechanismus für räumliche Bewegungsplanung). Studien von Steven J. Luck & Edward K. Vogel (1997) sowie Nelson Cowan (2001) belegen, dass ungebündelte visuelle Information strikt auf 3 bis 4 Objekte begrenzt ist. Das Erweitern der Gedächtnisspanne erfordert räumliches Chunking – das Zusammenfassen von Feldern zu ganzheitlichen Gestaltmustern.",
-  "Diese Übung ist mit digitaler chronometrischer Präzision kalibriert (Woods et al., 2015), nutzt ein standardisiertes 1,5-Sekunden-Einprägefenster und passt die Schwierigkeit adaptiv an, um deine visuelle Kapazitätsgrenze exakt zu bestimmen.",
-  "Messmethodik: Alle Zeitstempel werden über die hochauflösende performance.now()-Schnittstelle deines Browsers lokal verarbeitet. Es werden keine Messdaten übertragen. Browser-Timer sind aus Sicherheitsgründen auf ca. 1 ms gerundet und mit der Bildwiederholrate deines Monitors (ca. 16,7 ms bei 60 Hz) synchronisiert (Woods et al., 2015). Differenzen unter 5 ms sind Messrauschen. Vergleiche deine Werte daher auf demselben Gerät.",
-  "Datentransparenz: SkillDrills speichert keine Nutzerdaten auf Servern. Alle Highscores verbleiben lokal in deinem Browser (localStorage). Alle Richtwerte stammen aus peer-reviewten Fachpublikationen.",
+  "Ablauf: Jedes Muster wird 1,5 Sekunden gezeigt. Die 60-Sekunden-Uhr läuft nur, während du nachtippst. Ein vollständiges Muster bringt 150 Punkte; ein falsches Feld beendet die Runde ohne Punkt- oder Zeitabzug, und es folgt ein neues Muster auf derselben Stufe. Reaktionszeiten werden nicht gemessen.",
+  "Daten: Punktzahl und Bestwert werden nur lokal in deinem Browser (localStorage) gespeichert und nicht an einen Server gesendet.",
   "Diese Übung dient der kognitiven Unterhaltung und dem Training. Sie ist kein Medizinprodukt und stellt keine klinische Diagnose dar. Bei gesundheitlichen Bedenken wende dich an medizinisches Fachpersonal."
 ],
   benchmarks: {
-    title: "Normative Benchmarks für visuelle Musterspannen",
-    headers: ["Leistungsstufe", "Musterspanne (Felder)", "Punktzahl", "Kognitives Profil & Chunking-Muster"],
-    note: "Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.",
+    title: "SkillDrills-Übungsstufen (ein Durchgang)",
+    headers: ["Stufe", "Punkte", "Gelöste Muster", "Erreichte Schwierigkeit"],
     rows: [
-  [
-    "Stufe 1",
-    "10 – 14+ Felder",
-    "1.150+ Punkte",
-    "Hervorragende räumliche Merkfähigkeit; zerlegt komplexe Muster in 2–3 Gestalt-Primitive; fehlerfreie Beibehaltung im visuellen Cache; Klickfrequenz unter 450 ms."
-  ],
-  [
-    "Stufe 2",
-    "8 – 9 Felder",
-    "850 – 1.149 Punkte",
-    "Übertrifft den normalen Erwachsenen-Durchschnitt; wendet schnelles Formen-Chunking an; robust gegen visuelle Ablenkung; 450 – 650 ms Klickintervall."
-  ],
-  [
-    "Stufe 3",
-    "6 – 7 Felder",
-    "550 – 849 Punkte",
-    "Standardwert gesunder Erwachsener (Della Sala et al., 1997); bewältigt einfache Paare; verliert Randfelder auf 5x5-Gittern; 650 – 900 ms Kadenz."
-  ],
-  [
-    "Stufe 4",
-    "5 Felder",
-    "350 – 549 Punkte",
-    "Arbeitet nahe der reinen physiologischen Kapazitätsgrenze (Cowan, 2001); versucht Felder einzeln ohne Formenbildung zu merken; 900 – 1.200 ms Kadenz."
-  ],
-  [
-    "Stufe 5",
-    "< 5 Felder",
-    "< 350 Punkte",
-    "Rascher Zerfall der visuellen Spur; anfällig für visuelles Rauschen; Schwierigkeiten bei Mustern über 4 Feldern nach 1,5s Pause; Kadenz über 1.200 ms."
-  ]
-],
-    note: "Die Musterspanne entspricht der maximal fehlerfrei rekonstruierten Matrixkonfiguration während des 45-Sekunden-Durchgangs (Della Sala et al., 1997; Woods et al., 2015)."
+      ["Obere Übungsstufe", "ab 1.200", "8 oder mehr", "5x5-Gitter, 10–12 Felder"],
+      ["Mittlere Übungsstufe", "600 – 1.050", "4 – 7", "5x5-Gitter, 6–9 Felder"],
+      ["Einstiegsstufe", "150 – 450", "1 – 3", "4x4 mit 6–7 Feldern, nach 3 Mustern 5x5"],
+      ["Start", "0", "0", "4x4-Gitter, 5 Felder"]
+    ],
+    note: "Punkte = gelöste Muster × 150. Die Stufen sind aus den Spielregeln abgeleitete SkillDrills-Übungsmarken, keine Bevölkerungsstatistik oder Normwerte."
   },
   techniques: {
     title: "Evidenzbasierte Techniken zur Steigerung des Matrix-Gedächtnisses",
     items: [
   {
     "name": "Gestalt-Form-Chunking",
-    "desc": "Gruppiere benachbarte leuchtende Felder mental zu bekannten geometrischen Grundformen wie Dreiecken, Linien oder Buchstaben (Wertheimer, 1923; Della Sala et al., 1999). 7 Koordinaten in 2 Formen zu bündeln senkt die kognitive Last um über 60 %.",
+    "desc": "Gruppiere benachbarte leuchtende Felder mental zu bekannten geometrischen Grundformen wie Dreiecken, Linien oder Buchstaben (Wertheimer, 1923; Della Sala et al., 1999). Wer 7 Koordinaten zu 2 bis 3 Formen bündelt, muss sich weniger Einheiten merken.",
     "tips": "Suche gezielt nach zusammenhängenden Kanten und Eckblöcken statt isolierten Einzelfeldern."
   },
   {
@@ -291,7 +263,7 @@ const gridGuide = {
 ],
   audience: "Gamer für verbesserte Minikarten-Wahrnehmung, MINT-Studenten für räumliches Denken, Schachspieler, Radiologen und alle, die ihr nonverbales Arbeitsgedächtnis trainieren wollen.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
+  sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971'),
   related: [
   {
     "href": "/de/drills/memory/working-memory/n-back",
@@ -345,7 +317,7 @@ export default function LocalizedGridMemorizationPage() {
       />
       <GridMemorizationClient copy={{
         "h1Keyword": "Visueller Gedächtnistest online",
-        "h1Suffix": " – Memory Matrix",
+        "h1Suffix": "",
         "subtitle": "Leuchtende Muster in einer Matrix merken",
         "caption": "Das visuelle Arbeitsgedächtnis speichert etwa vier separate Objekte gleichzeitig, wobei die Kapazitätsgrenze durch die Objektanzahl und nicht durch den Detailgrad bestimmt wird (Luck & Vogel, 1997). Statische Matrixgitter testen den visuellen Cache – den passiven Speicher für Form und räumliche Anordnung (Logie, 1995).",
         "statScore": "Punkte",
@@ -376,19 +348,19 @@ export default function LocalizedGridMemorizationPage() {
                         "num": "2",
                         "text": "Level-Progression",
                         "highlight": "4x4 → 5x5",
-                        "result": "Schwierigkeit skaliert stufenweise mit jedem Treffer"
+                        "result": "Jedes gelöste Muster bringt ein Feld mehr, bis 12 Felder auf 5x5"
                 },
                 {
                         "num": "3",
-                        "text": "Fehlklick / Timeout",
+                        "text": "Fehlklick",
                         "highlight": "Keine Abzüge",
-                        "result": "Kein Punkteverlust oder Zeitabzug bei Fehlern"
+                        "result": "Runde endet, kein Punkte- oder Zeitabzug"
                 },
                 {
                         "num": "4",
                         "text": "Schwierigkeit bleibt",
                         "highlight": "Aktuelles Level",
-                        "result": "Bei Fehler wird die Runde auf gleicher Stufe wiederholt"
+                        "result": "Nach einem Fehler folgt ein neues Muster auf gleicher Stufe"
                 }
         ]
 }} />

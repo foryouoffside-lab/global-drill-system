@@ -92,7 +92,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -109,7 +109,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/symbol-matching",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -129,7 +129,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -183,10 +183,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Pourquoi cet exercice fatigue-t-il autant ?",
+      "name": "Comment fonctionnent le chrono et les pénalités ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chaque essai enchaîne repérage du symbole, consultation de la clé et réponse. Cet enchaînement sans pause est exigeant ; faites des séances courtes."
+        "text": "La partie commence avec 45 secondes. Chaque bon chiffre ajoute 2 secondes (60 au maximum). Un mauvais chiffre, ou un symbole expiré (si Target Timeouts est activé), retire 1 seconde et remet le combo à zéro. Plus le niveau monte, moins vous avez de temps par symbole."
       }
     },
     {
@@ -199,10 +199,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Combien de temps s’entraîner ?",
+      "name": "Que montre le résultat ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Il n’existe pas de durée prouvée. Des séances courtes et régulières, sur le même appareil, suffisent pour suivre vos progrès sans saturation."
+        "text": "Score, exactitude, réussites, erreurs, niveau maximal et une note de F à S+ par rapport à une référence fixe de SkillDrills. Ces valeurs ne sont pas comparables aux normes cliniques du SDMT."
       }
     },
     {
@@ -234,7 +234,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 1,
       "name": "Consultez la clé du haut",
-      "text": "Examinez la table de correspondance qui associe chaque symbole géométrique à un chiffre.",
+      "text": "Examinez la table de correspondance qui associe chacun des six symboles à un chiffre de 1 à 6.",
       "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/symbol-matching#step-1"
     },
     {
@@ -286,7 +286,7 @@ const guideProps = {
     title: 'Quatre conseils pour aller plus vite',
     description: 'Des habitudes simples pour associer symboles et chiffres sans erreur.',
     items: [
-      { title: "Consultez la clé du haut", description: "Examinez la table de correspondance qui associe chaque symbole géométrique à un chiffre." },
+      { title: "Consultez la clé du haut", description: "Examinez la table de correspondance qui associe chacun des six symboles à un chiffre de 1 à 6." },
       { title: "Repérez le symbole cible", description: "Observez le symbole cible et trouvez le chiffre correspondant dans la clé." },
       { title: "Appuyez sur le chiffre associé", description: "Appuyez sur le bouton du chiffre correspondant, le plus vite possible et sans erreur." },
       { title: "Mémorisez les paires", description: "En retenant quelques paires, vous répondez sans revenir à la clé à chaque fois." },
@@ -348,9 +348,9 @@ export default function EnhancedPageFr() {
           ],
           rulesItems: [
             { num: "1", text: "Clé symbole-chiffre", highlight: "6 correspondances", result: "Consulter la clé supérieure" },
-            { num: "2", text: "Symbole cible", highlight: "+100 points", result: "Multiplicateurs de combo et niveau" },
-            { num: "3", text: "Chiffre incorrect", highlight: "Réinitialise le combo", result: "Temps retiré si la pénalité est active" },
-            { num: "4", text: "Série et pénalité", highlight: "Temps·appuis erronés", result: "Active : −0,8 seconde" }
+            { num: "2", text: "Symbole cible", highlight: "+100 points", result: "Combo × niveau, +2 s (max. 60 s)" },
+            { num: "3", text: "Chiffre incorrect", highlight: "Réinitialise le combo", result: "−1 seconde" },
+            { num: "4", text: "Délai dépassé", highlight: "Fenêtre plus courte", result: "−1 s et combo perdu" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

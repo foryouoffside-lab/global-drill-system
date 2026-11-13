@@ -5,12 +5,12 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "瞬間記憶テスト｜視覚記憶ゲーム | SkillDrills",
-  description: "無料の瞬間記憶テスト。グリッドで一瞬だけ光るマスの位置を覚え、同じパターンを再現して視覚記憶と空間記憶を鍛えます。",
-  keywords: ['瞬間記憶テスト', '視覚記憶テスト', '視覚記憶ゲーム', '空間記憶テスト', 'グリッド記憶', 'パターン記憶テスト', 'メモリーマトリクス', '記憶力トレーニング', '短期視覚記憶', '視覚的作業記憶'],
+  title: "瞬間記憶ゲーム｜視覚記憶テスト・トレーニング | SkillDrills",
+  description: "無料の瞬間記憶ゲーム。グリッドで1.5秒だけ光るマスの位置を覚えて押し直す視覚記憶トレーニングです。4×4の5マスから始まり、5×5で最大12マスまで難しくなります。",
+  keywords: ['瞬間記憶ゲーム', '瞬間記憶 トレーニング', '瞬間記憶テスト', '視覚記憶テスト', '視覚記憶ゲーム', '空間記憶テスト', 'グリッド記憶', 'パターン記憶テスト', 'メモリーマトリクス', '記憶力トレーニング', '短期視覚記憶', '視覚的作業記憶'],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "瞬間記憶テスト｜視覚記憶ゲーム | SkillDrills",
-    description: "無料の瞬間記憶テスト。グリッドで一瞬だけ光るマスの位置を覚え、同じパターンを再現します。",
+    title: "瞬間記憶ゲーム｜視覚記憶テスト・トレーニング | SkillDrills",
+    description: "無料の瞬間記憶ゲーム。1.5秒だけ光るマスの位置を覚えて押し直す視覚記憶トレーニング。",
     type: 'website',
     url: 'https://skilldrills.online/ja/drills/memory/spatial-memory/grid-memorization',
     siteName: 'SkillDrills',
@@ -18,8 +18,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "瞬間記憶テスト｜視覚記憶ゲーム | SkillDrills",
-    description: "無料の瞬間記憶テスト。グリッドで一瞬だけ光るマスの位置を覚え、同じパターンを再現します。",
+    title: "瞬間記憶ゲーム｜視覚記憶テスト・トレーニング | SkillDrills",
+    description: "無料の瞬間記憶ゲーム。1.5秒だけ光るマスの位置を覚えて押し直す視覚記憶トレーニング。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -35,14 +35,14 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://skilldrills.online/ja" },
     { "@type": "ListItem", "position": 2, "name": "記憶力トレーニング", "item": "https://skilldrills.online/ja/drills/memory" },
     { "@type": "ListItem", "position": 3, "name": "空間記憶", "item": "https://skilldrills.online/ja/drills/memory/spatial-memory" },
-    { "@type": "ListItem", "position": 4, "name": "瞬間記憶テスト", "item": "https://skilldrills.online/ja/drills/memory/spatial-memory/grid-memorization" }
+    { "@type": "ListItem", "position": 4, "name": "瞬間記憶ゲーム", "item": "https://skilldrills.online/ja/drills/memory/spatial-memory/grid-memorization" }
   ]
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "瞬間記憶テスト（視覚記憶・グリッド記憶）",
+  "name": "瞬間記憶ゲーム（視覚記憶・グリッド記憶）",
   "url": "https://skilldrills.online/ja/drills/memory/spatial-memory/grid-memorization",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -50,16 +50,16 @@ const webAppSchema = {
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "sameAs": "https://ja.wikipedia.org/wiki/%E8%A6%96%E8%A6%9A%E8%A8%98%E6%86%B6",
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "瞬間記憶テスト（視覚記憶・グリッド記憶）",
+  "name": "瞬間記憶ゲーム（視覚記憶・グリッド記憶）",
   "url": "https://skilldrills.online/ja/drills/memory/spatial-memory/grid-memorization",
-  "description": "4×4から5×5の拡張マトリックス上で瞬間点灯するグリッドパターンを記憶・再現し、視覚キャッシュ容量と空間チャンキング能力を測定する無料ブラウザ神経認知テスト。",
-  "dateModified": "2026-09-11",
+  "description": "4×4から5×5へ広がるグリッドで1.5秒間光ったマスの位置を覚え、押し直して再現する無料の瞬間記憶ゲーム。",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Memory Game", "Cognitive Training", "Brain Training", "Spatial Memory"],
   "playMode": "SinglePlayer",
@@ -72,19 +72,19 @@ const videoGameSchema = {
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "瞬間記憶テスト (Visual Memory Test)",
+  "name": "瞬間記憶ゲーム（視覚記憶テスト）",
   "url": "https://skilldrills.online/ja/drills/memory/spatial-memory/grid-memorization",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "グリッド瞬間記憶テストで視覚作業記憶を鍛える方法",
+  "name": "瞬間記憶ゲームでグリッドパターンを覚えるコツ",
   "description": "視覚性ワーキングメモリのボトルネックを克服し、瞬間提示されたグリッドパターンを効率的に記憶・再構成するための4段階実践プロトコル。",
   "step": [
     {
@@ -128,10 +128,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "瞬間記憶テスト（視覚記憶テスト）とは何ですか？",
+      "name": "瞬間記憶ゲームとは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "視覚性作業記憶（Visuospatial Working Memory）の能力を評価する検査です。言語的な音声リハーサル（内言語）に頼ることなく、視覚的なパターンや空間配置を瞬時に知覚・符号化し、短期的に保持・再現する脳の純粋な視覚記憶容量を測定します。"
+        "text": "グリッドで一瞬光ったマスの位置を覚え、消えた後に同じマスを押して再現する視空間ワーキングメモリの練習ゲームです。言葉で唱えるのではなく配置を目で覚える練習になります。いわゆる「瞬間記憶能力」を判定するものではなく、医療的な検査でもありません。"
       }
     },
     {
@@ -139,15 +139,15 @@ const faqSchema = {
       "name": "グリッド瞬間記憶ドリルの仕組みはどうなっていますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "4×4または5×5のグリッド上に複数の一致セルが1.5秒間白く点灯します。点灯が消えた後、記憶を頼りに光っていたマスをすべてクリックして正確に再現します。正解すると難易度とマトリックスサイズが段階的に上昇します。"
+        "text": "4×4のグリッドで5マスが1.5秒間紫色に光ります。消えたら光っていたマスをすべて押して再現し、完成するたびに150点を獲得、光るマスが1つ増えます。4×4で7マスをクリアすると5×5（5マスから最大12マス）へ進みます。60秒の制限時間は再現中だけ減ります。"
       }
     },
     {
       "@type": "Question",
-      "name": "視覚パターン検査（Visual Patterns Test / VPT）とは何ですか？",
+      "name": "このゲームは視覚パターン検査（VPT）と同じものですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "1997年にセルジオ・デラ・サラ（Sergio Della Sala）やロバート・ロギー（Robert H. Logie）らが開発した神経心理学検査です。2次元の正方形マトリックスを用いて、連続的な身体運動に依存しない純粋な静的視覚短期記憶の容量（スパン）を正確に測定するゴールドスタンダードです。"
+        "text": "いいえ。視覚パターン検査（Della Sala et al., 1997）はグリッドパターンを使う研究用の神経心理学検査です。このゲームは似た形式の無料練習ツールで、その検査の手順や基準値には従っていません。"
       }
     },
     {
@@ -160,10 +160,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "マトリックス記憶テストの成人の平均スコアはどのくらいですか？",
+      "name": "スコアはどう計算されますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Della Salaら（1997, 1999）の成人標準化データによると、健常な成人の平均的な瞬間視覚パターン記憶容量は4×4〜5×5グリッドで6〜8マスです。10〜14マス以上を記憶できる上位層は、高度な空間幾何学的チャンキングを駆使しています。"
+        "text": "パターンを1つ完全に再現するごとに150点です。結果画面の評価は1,150点を最上位の目安とするSkillDrillsの練習用ランクで、平均値や基準値ではありません。"
       }
     },
     {
@@ -195,7 +195,7 @@ const faqSchema = {
       "name": "間違ったマスをクリックした場合にスコア減点ペナルティはありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "いいえ、誤ったマスをクリックしてもスコアの減点や残りセッション時間の減少はありません。現在の難易度レベルのまま即座に次のラウンドが始まり、限界突破を目指して安全に練習を継続できます。"
+        "text": "いいえ。違うマスを押すとそのラウンドは終わりますが、減点や残り時間の減少はありません。同じ難易度で新しいパターンが出ます。"
       }
     },
     {
@@ -203,7 +203,7 @@ const faqSchema = {
       "name": "視覚記憶の向上は実生活やゲームにどう役立ちますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "FPSやタクティカルシューター（VALORANT、CS2、Apex）におけるミニマップの瞬間索敵と敵配置把握、チェスや将棋の盤面認識、建築図面やUIレイアウトの迅速な把握、STEM分野における空間認識・3Dメンタルローテーション能力に役立つ可能性があります。"
+        "text": "ミニマップの配置を一目で覚える、将棋やチェスの盤面を覚えるなど、短く見た配置を記憶する場面に近い練習です。ほかの作業への効果は保証されません。"
       }
     }
   ]
@@ -211,57 +211,30 @@ const faqSchema = {
 
 const gridGuide = {
   intro: [
-  "瞬間記憶テスト（Visual Memory Test / グリッド記憶）は、視空間ワーキングメモリ、瞬間パターン符号化能力、および静的マトリックス短期記憶を科学的に測定・トレーニングするための神経認知ドリルです。音声言語による反芻に依存する言語性記憶検査とは異なり、脳の純粋な非言語性視覚アーキテクチャを正確に分離して測定します。",
-  "視空間記憶スパンの臨床的研究はピエトロ・コルシ（Pietro Corsi, 1972）のコルシブロックテストに始まり、視空間記憶が言語性の数唱記憶とは解剖学的・機能的に独立した脳内システムであることが実証されました（Milner, 1971）。1997年にはセルジオ・デラ・サラ（Sergio Della Sala）やロバート・ロギー（Robert H. Logie）らが、動的な運動系列から静的マトリックスパターンの保持を分離する「視覚パターン検査（Visual Patterns Test / VPT）」を確立しました。",
+  "瞬間記憶ゲームは、グリッドで1.5秒だけ光るマスの位置を覚え、消えた後に押して再現する無料の視覚記憶トレーニングです。4×4の5マスから始まり、成功するたびに光るマスが増え、5×5では最大12マスまで進みます。言葉で唱えるのではなく、配置を目で覚える練習です。",
+  "視空間記憶スパンの臨床的研究はピエトロ・コルシ（Pietro Corsi, 1972）のコルシブロックテストに始まり、視空間記憶が言語性の数唱記憶とは解剖学的・機能的に独立した脳内システムであることが実証されました（Milner, 1971）。1997年にはセルジオ・デラ・サラ（Sergio Della Sala）やロバート・ロギー（Robert H. Logie）らが、動的な運動系列から静的マトリックスパターンの保持を分離する「視覚パターン検査（VPT）」を発表しました。このゲームは似た形式の練習ツールであり、VPTそのものではありません。",
   "現代の認知神経科学において、ロギー（Logie, 1995）およびアラン・バドリー（Alan Baddeley, 2000）は視空間スケッチパッドを「視覚キャッシュ（色・形・静止配置を保持する受動的保管庫）」と「インナースクライブ（運動計画と空間的更新を担う能動的機構）」に再定義しました。さらにLuck & Vogel（1997）およびCowan（2001）の研究が示す通り、未処理の視覚記憶容量は3〜4個の独立した項目に制限されます。マトリックス記憶スパンを拡張するには、点灯したマスをゲシュタルト図形としてまとめる「空間チャンキング」が不可欠です。",
-  "本ドリルは高精度デジタル時間計測（Woods et al., 2015）に基づいて設計され、1.5秒間の標準化された瞬間提示と適応型難易度スケーリングにより、高速度条件下におけるあなたの視空間記憶の限界値を正確に測定します。",
-  "測定の仕組み：すべてのイベントはブラウザの performance.now() 高精度クロックを用いてローカル環境でミリ秒単位で処理され、サーバーへの送信は一切行われません。Spectre脆弱性対策のためブラウザタイマーは約1msに丸められ、ディスプレイのリフレッシュレート（60Hz環境で約16.7ms）によって描画が同期されます（Woods et al., 2015）。5ms未満の微細な差は環境ノイズとして捉え、他人の記録と比較するのではなく同一環境での自己記録の推移を追跡してください。",
-  "データ透明性：SkillDrillsは個人データや集計データを一切収集しません。スコアや設定はお使いのブラウザのlocalStorageにのみ保存され、ユーザー平均値の勝手な推計などは行いません。記載されている基準値はすべて学術論文に基づいています。",
+  "進行ルール：パターンは1.5秒表示され、60秒の制限時間はマスを押して再現している間だけ減ります。完成で150点、違うマスを押しても減点はなく、同じ難易度の新しいパターンが出ます。反応時間は計測していません。",
+  "データ：スコアと自己ベストはブラウザのlocalStorageにのみ保存され、サーバーには送信されません。",
   "本ドリルは認知機能の理解と興味のための無料ブラウザゲームであり、医療機器や臨床的診断ツールではありません。認知機能に関する医学的な懸念がある場合は、必ず専門の医療機関にご相談ください。"
 ],
   benchmarks: {
-    title: "視空間パターン記憶スパンの標準ベンチマーク",
-    headers: ["パフォーマンス階層", "パターンスパン (マス数)", "ドリルスコア", "認知ストレージ & チャンキング特性"],
+    title: "SkillDrills 練習の目安（1プレイ）",
+    headers: ["段階", "スコア", "完成したパターン", "到達した難易度"],
     rows: [
-  [
-    "Tier 1（極めて優秀 / 最上級段階）",
-    "10 〜 14+ マス",
-    "1,150+ 点",
-    "卓越した視空間記憶。複雑なパターンを2〜3個の幾何学的ゲシュタルト単位に即座に分解。視覚キャッシュの保持が極めて強固で、450ms未満の打鍵間隔を維持。"
-  ],
-  [
-    "Tier 2（優秀 / 上級段階）",
-    "8 〜 9 マス",
-    "850 〜 1,149 点",
-    "一般成人の平均基準を大幅に超過。L字やトリプレットなどの迅速な形状チャンキングを実行。視覚的干渉に強く、450〜650msの正確なクリック間隔。"
-  ],
-  [
-    "Tier 3（成人平均ベースライン / 50%）",
-    "6 〜 7 マス",
-    "550 〜 849 点",
-    "健常成人の一般的な標準値（Della Sala et al., 1997）。ペアになった単純な塊を処理可能。5×5グリッドで周辺部のマスを取りこぼし始める。650〜900ms間隔。"
-  ],
-  [
-    "Tier 4（平均以下 / 認知的ボトルネック）",
-    "5 マス",
-    "350 〜 549 点",
-    "チャンキングを活用できない純粋な生容量の限界付近（Cowan, 2001）。図形化せずマスを個別に覚えようとする傾向。900〜1,200ms間隔。"
-  ],
-  [
-    "Tier 5（要トレーニング / 低スパン）",
-    "5 マス未満",
-    "350 点未満",
-    "視覚痕跡の減衰が極めて速い。視覚的ノイズに弱く、1.5秒の遅延中に4マスを超えるパターンを保持するのが困難。クリック間隔1,200ms超。"
-  ]
-],
-    note: "パターンスパンは45秒セッション中に完全にクリアした最大セル構成を示します。段階の区分は SkillDrills が設けた練習用の目安で、人口統計ではありません（背景: Della Sala et al., 1997; Luck & Vogel, 1997）。"
+      ["上位の練習段階", "1,200点以上", "8個以上", "5×5グリッド、10〜12マス"],
+      ["中位の練習段階", "600〜1,050点", "4〜7個", "5×5グリッド、6〜9マス"],
+      ["初期の練習段階", "150〜450点", "1〜3個", "4×4で6〜7マス、3個完成で5×5へ"],
+      ["スタート", "0点", "0個", "4×4グリッド、5マス"]
+    ],
+    note: "スコアは完成したパターン数×150点です。段階はゲームのルールから計算した SkillDrills の練習用の目安で、人口統計や基準値ではありません。"
   },
   techniques: {
     title: "マトリックス視覚記憶容量を拡張するエビデンスベースの技法",
     items: [
   {
     "name": "ゲシュタルト空間形状チャンキング",
-    "desc": "隣接する点灯マスを、三角形、直線、正方形、あるいは見慣れたアルファベットなどの幾何学的基本形状として心内でグループ化します（Wertheimer, 1923; Della Sala et al., 1999）。7個の独立した座標を2つの図形にまとめることで、認知負荷を60%以上圧縮できます。",
+    "desc": "隣接する点灯マスを、三角形、直線、正方形、あるいは見慣れたアルファベットなどの幾何学的基本形状として心内でグループ化します（Wertheimer, 1923; Della Sala et al., 1999）。7個の座標を2〜3個の図形にまとめれば、覚える単位が減ります。",
     "tips": "孤立したマスを1個ずつ見るのではなく、連結した線や角のブロックを最優先で視覚探索してください。"
   },
   {
@@ -290,7 +263,7 @@ const gridGuide = {
 ],
   audience: "FPSゲームでミニマップ状況把握を極めたいゲーマー、幾何学や立体図面を扱う理系学生、放射線科医、チェス・将棋プレイヤー、非言語性視覚記憶と集中力を高めたいすべての方。",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
+  sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971'),
   related: [
   {
     "href": "/ja/drills/memory/working-memory/n-back",
@@ -343,8 +316,8 @@ export default function LocalizedGridMemorizationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <GridMemorizationClient copy={{
-        "h1Keyword": "瞬間記憶テスト",
-        "h1Suffix": "（視覚記憶ゲーム）",
+        "h1Keyword": "瞬間記憶ゲーム",
+        "h1Suffix": "（視覚記憶テスト）",
         "subtitle": "光るマスの位置を覚えてパターンを再現",
         "caption": "視覚性作業記憶（ワーキングメモリ）は一度に約4つの独立したオブジェクトを保持でき、その制限は詳細度ではなくオブジェクトの個数に依存します（Luck & Vogel, 1997）。静的なグリッドパターンは形態と配置の受動的保持領域である視覚キャッシュ（Visual Cache）を直接測定・テストします（Logie, 1995）。",
         "statScore": "スコア",
@@ -379,15 +352,15 @@ export default function LocalizedGridMemorizationPage() {
                 },
                 {
                         "num": "3",
-                        "text": "ミス・時間切れ",
+                        "text": "ミス",
                         "highlight": "ペナルティなし",
-                        "result": "減点や制限時間の減少はありません"
+                        "result": "ラウンド終了、減点や時間の減少はなし"
                 },
                 {
                         "num": "4",
                         "text": "レベル維持",
                         "highlight": "現在レベルをキープ",
-                        "result": "ミスしてもレベルは下がらず、同じレベルで再挑戦"
+                        "result": "ミスしてもレベルは下がらず、同じレベルの新しいパターンで再挑戦"
                 }
         ]
 }} />

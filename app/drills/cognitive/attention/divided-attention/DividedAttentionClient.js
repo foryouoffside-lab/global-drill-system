@@ -88,11 +88,11 @@ const RULES_ITEMS = [
   { num: "4", text: "Miss / Mistake", highlight: "Resets Combo", result: "−1s Time" }
 ];
 
-const ABOUT_TEXT = `Divided Attention is a core cognitive drill designed to measure and train multi-channel visual tracking and simultaneous information processing. Based on dual-task psychological paradigms, this exercise forces the brain to allocate attention across two distinct channels at once: spatial motion tracking and numeric categorization.
+const ABOUT_TEXT = `Divided Attention is a core cognitive drill designed to measure and train multi-channel visual tracking and simultaneous information processing. Based on dual-task psychological paradigms, this exercise forces the brain to allocate attention across two distinct channels at once: spatial target detection and numeric categorization.
 
 In fast-paced tactical environments (such as esports, aviation, high-frequency trading, and emergency response), peak performers must process secondary telemetry while maintaining primary spatial awareness. Divided Attention builds cognitive flexibility by testing your ability to rapidly shift focus between spatial targets and symbolic data streams without sacrificing accuracy on either.
 
-By scaling target speeds and shrinking target dimensions as your score rises, the drill pushes prefrontal executive control networks to their absolute limit.`;
+As your score rises, targets and digits change faster and targets shrink, so the dual-task load keeps increasing for as long as the run lasts.`;
 
 export default function DividedAttentionClient({ copy } = {}) {
   const { locale } = useTranslation();
@@ -604,7 +604,7 @@ export default function DividedAttentionClient({ copy } = {}) {
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Divided Attention Test"}</span>
             </h1>
-            <p className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Divided attention test for tracking moving targets while matching numbers and training multitasking focus"}</p>
+            <p className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Divided attention test: click targets as they appear while matching even numbers in a second stream"}</p>
           </div>
         )}
 
@@ -818,7 +818,7 @@ export default function DividedAttentionClient({ copy } = {}) {
         {/* Stage Caption */}
         {!isFullscreen && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            {copy?.caption || 'Track moving spatial targets while simultaneously monitoring the number stream for even digits.'}
+            {copy?.caption || 'Click the blue targets as they appear while simultaneously monitoring the number stream for even digits.'}
           </p>
         )}
 

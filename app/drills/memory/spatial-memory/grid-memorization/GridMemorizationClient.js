@@ -699,7 +699,7 @@ export default function GridMemorizationClient({ copy = null }) {
                     <strong>Grid Memorization Training</strong> is a core spatial working memory exercise designed to measure visual pattern recall. The <strong>Grid Memorization drill</strong> presents illuminated cell patterns on 4x4 to 5x5 matrices, testing your ability to encode spatial maps and recreate them accurately. Visual working memory stores roughly four objects at once, and the limit is the number of objects rather than the detail in each (Luck & Vogel, 1997). Static grid patterns test the visual cache, the passive store for form and layout (Logie, 1995).
                   </p>
                   <p className="text-sm leading-relaxed">
-                    By practicing <strong>spatial shape chunking</strong>, you expand your visual short-term memory buffer and increase your pattern recognition speed under time pressure.
+                    <strong>Spatial shape chunking</strong> (grouping lit cells into lines, corners and blocks) is the main strategy to practice here: each pattern shows for 1.5 seconds, and the 60-second clock only runs while you rebuild it.
                   </p>
                 </section>
   
@@ -723,7 +723,7 @@ export default function GridMemorizationClient({ copy = null }) {
                       <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
                       <h4 className="text-xs font-bold text-white">Spatial Chunking</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Group lit cells into familiar shapes (like an &apos;L&apos;, square, or line) to bypass standard visual memory limits and handle larger grids.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">Group lit cells into familiar shapes (like an &apos;L&apos;, square, or line) so you hold fewer units and can handle larger patterns.</p>
                   </div>
                 </div>
   

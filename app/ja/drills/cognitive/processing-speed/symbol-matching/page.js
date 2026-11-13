@@ -6,14 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "符号数字置換検査 | SDMT方式の処理速度トレーニング | SkillDrills",
-  description: "無料ブラウザの符号数字置換検査：SDMT方式の記号と数字の照合で、情報処理速度と視覚探索を練習します。臨床検査ではありません。",
-  keywords: ["符号テスト SDMT", "情報処理速度 検査", "記号 数字 置換 テスト", "SDMT テスト 無料", "DSST テスト オンライン", "視覚走査 測定", "短期連想記憶 訓練", "認知機能 処理速度", "ウェクスラー 符号 検査", "脳トレ 記号合わせ",
-    "符号検査 オンライン",
-    "記号照合 脳トレ"],
+  title: "記号と数字の照合テスト | 処理速度トレーニング | SkillDrills",
+  description: "無料ブラウザの記号と数字の照合テスト。上部キーで6つの記号と数字1〜6の対応を確かめ、表示された記号に合う数字を押して処理速度と視覚探索を練習します。臨床検査ではありません。",
+  keywords: ["記号と数字の照合テスト", "処理速度 テスト", "記号 数字 照合", "処理速度 トレーニング", "視覚探索 練習", "記号照合 脳トレ"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "符号数字置換検査 | SDMT方式の処理速度トレーニング | SkillDrills",
-    description: "無料ブラウザの符号数字置換検査：SDMT方式の記号と数字の照合で、情報処理速度と視覚探索を練習します。臨床検査ではありません。",
+    title: "記号と数字の照合テスト | 処理速度トレーニング | SkillDrills",
+    description: "無料ブラウザの記号と数字の照合テスト。上部キーで6つの記号と数字1〜6の対応を確かめ、表示された記号に合う数字を押して処理速度と視覚探索を練習します。臨床検査ではありません。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -21,8 +19,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "符号数字置換検査 | SDMT方式の処理速度トレーニング | SkillDrills",
-    description: "無料ブラウザの符号数字置換検査：SDMT方式の記号と数字の照合で、情報処理速度と視覚探索を練習します。臨床検査ではありません。",
+    title: "記号と数字の照合テスト | 処理速度トレーニング | SkillDrills",
+    description: "無料ブラウザの記号と数字の照合テスト。上部キーで6つの記号と数字1〜6の対応を確かめ、表示された記号に合う数字を押して処理速度と視覚探索を練習します。臨床検査ではありません。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -56,7 +54,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "符号テスト SDMT",
+      "name": "記号と数字の照合テスト",
       "item": "https://skilldrills.online/ja/drills/cognitive/processing-speed/symbol-matching"
     }
   ]
@@ -65,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "符号テストSDMT・情報処理速度診断ツール",
+  "name": "記号と数字の照合テスト",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -73,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "description": "無料ブラウザ完結の符号テスト（Symbol Digit Modalities Test / SDMT）。記号と数字の対応マトリックスを照合して即座に入力し、情報処理速度、視覚スキャン効率、短期連想記憶を精密測定。",
+  "description": "無料ブラウザの記号と数字の照合テスト。上部キーの記号と数字1〜6の対応を見て、中央の記号に合う数字を押す処理速度トレーニングです。SDMTの形式を参考にした練習用ゲームで、臨床検査ではありません。",
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/symbol-matching",
   "publisher": {
     "@type": "Organization",
@@ -81,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "符号テストSDMT・記号数字置換 – 情報処理速度診断",
+  "name": "記号と数字の照合テスト – 処理速度トレーニング",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -98,15 +96,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/symbol-matching",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "符号テスト SDMT – 記号数字高速照合ゲーム",
+  "name": "記号と数字の照合テスト – 記号照合ゲーム",
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/symbol-matching",
-  "description": "無料ブラウザ完結の符号テスト（Symbol Digit Modalities Test / SDMT）。記号と数字の対応マトリックスを照合して即座に入力し、情報処理速度、視覚スキャン効率、短期連想記憶を精密測定。",
+  "description": "無料ブラウザの記号と数字の照合テスト。上部キーの記号と数字1〜6の対応を見て、中央の記号に合う数字を押す処理速度トレーニングです。SDMTの形式を参考にした練習用ゲームで、臨床検査ではありません。",
   "genre": [
     "Action",
     "Brain Game",
@@ -118,7 +116,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -132,10 +130,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "符号テスト（Symbol Digit Modalities Test: SDMT）とは？",
+      "name": "SDMT（Symbol Digit Modalities Test）とは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aaron Smith（1973）によって開発された、記号と数字の対応関係を素早く読み取って入力する標準的な神経心理学的情報処理速度テストです。"
+        "text": "Aaron Smith（1973）が作った神経心理学的検査で、記号と数字の対応表を見て記号に合う数字を答えます。このドリルはその形式を参考にした練習用ゲームで、SDMTそのものではありません。"
       }
     },
     {
@@ -143,23 +141,39 @@ const faqSchema = {
       "name": "DSST（Wechsler符号問題）との違いは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "DSSTが数字を見て記号を書くのに対し、SDMTは記号を見て数字を入力するため、手の運動器用さによる影響を減らして純粋な脳の認知処理速度を測定できます。"
+        "text": "DSSTは数字を見て記号を書き、SDMTは記号を見て数字を答えます。このドリルはSDMTと同じく、記号を見て数字ボタンを押します。"
       }
     },
     {
       "@type": "Question",
-      "name": "このテストで測定される認知領域は？",
+      "name": "記号と数字の照合テストはどう進みますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "(1)情報処理速度、(2)視覚スキャン効率、(3)短期の対連合学習・記憶、(4)持続的注意力の4領域です。"
+        "text": "上部キーに6つの記号と数字1〜6の対応が表示されます。中央に記号が出たら、合う数字ボタンを押します。キーはセッションごとに変わり、セッション中は固定です。"
       }
     },
     {
       "@type": "Question",
-      "name": "正常成人の平均スコア基準は？",
+      "name": "時間とペナルティの仕組みは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "臨床データにおいて、20〜34歳の健常成人は90秒間に平均65〜75個の正しい置換を達成します（Smith, 1973; Der & Deary, 2006）。"
+        "text": "45秒から始まり、正解ごとに2秒加算されます（上限60秒）。間違った数字や時間切れ（Target Timeouts がオンのとき）で1秒減り、コンボがリセットされます。0秒で終了です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スコアと難易度はどう決まりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "正解1回で100点にコンボ倍率とレベル倍率を掛けた点が入ります。スコアが上がるとレベルが上がり、1つの記号に使える回答時間が短くなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "結果からわかることは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "スコア、正確さ、ヒット数、ミス数、最高レベルと、SkillDrillsの固定基準によるFからS+の評価です。臨床の基準値やIQとは比較できません。"
       }
     },
     {
@@ -167,47 +181,31 @@ const faqSchema = {
       "name": "これは医学的な診断テストですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "いいえ。本ツールは同じ科学的パラダイムに基づいて作成された認知トレーニングゲームであり、医療診断や病気のスクリーニングを行うものではありません。"
+        "text": "いいえ。無料の練習用ゲームで、診断や病気のスクリーニングには使えません。記憶や思考が気になる場合は専門家に相談してください。"
       }
     },
     {
       "@type": "Question",
-      "name": "マトリックスの暗記はスコアにどう影響しますか？",
+      "name": "スコアを上げるコツは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "記号と数字のペアを短期記憶に定着させることで、毎回上部の凡例を見る視線移動時間がゼロになり、大幅にスコアが向上します。"
+        "text": "最初の数秒でキーを覚え、上部キーと中央の記号の間の視線移動を減らしましょう。誤答は1秒とコンボを失うので、正確さを優先するのが有利です。"
       }
     },
     {
       "@type": "Question",
-      "name": "視線の効率的な動かし方は？",
+      "name": "練習すると処理速度は上がりますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "凡例とターゲットの間を行き来する距離を最小限にし、2〜3個の記号をまとめてチャンク化して処理するのがコツです。"
+        "text": "この課題のスコアは練習でたいてい伸びます。ただし、ほかの日常の作業まで速くなることは保証されません。"
       }
     },
     {
       "@type": "Question",
-      "name": "加齢に伴う処理速度の変化は？",
+      "name": "スマートフォンでもできますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "情報処理速度は成人期早期以降に緩やかに低下しますが、日々の訓練や有酸素運動で低下を防ぐことができます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "おすすめのトレーニング頻度は？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "1日10分間集中して行うことで、視覚探索速度と作業記憶の呼び出し効率が向上します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "スマートフォンでも測定できますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "はい、画面下部に押しやすい1〜6のテンキーが配置され、スマホ・PC両方で快適に操作できます。"
+        "text": "はい、画面下部の1〜6の数字ボタンをタップして操作します。登録不要・無料です。"
       }
     }
   ]
@@ -216,8 +214,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "符号テストSDMT・記号数字置換",
-  "description": "無料ブラウザ完結の符号テスト（Symbol Digit Modalities Test / SDMT）。記号と数字の対応マトリックスを照合して即座に入力し、情報処理速度、視覚スキャン効率、短期連想記憶を精密測定。",
+  "name": "記号と数字の照合テストのやり方",
+  "description": "無料ブラウザの記号と数字の照合テスト。上部キーの記号と数字1〜6の対応を見て、中央の記号に合う数字を押す処理速度トレーニングです。SDMTの形式を参考にした練習用ゲームで、臨床検査ではありません。",
   "step": [
     {
       "@type": "HowToStep",
@@ -237,14 +235,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "対応数字キーの即時タップ",
-      "text": "記憶または素早い凡例スキャンに基づいて、対応する数字キー（1〜6）をタップします。",
+      "text": "キーを覚えるか見直して、対応する数字ボタン（1〜6）をタップします。誤答や時間切れは1秒減とコンボ解除です。",
       "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/symbol-matching#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "流れるような連想リズムの維持",
-      "text": "視線移動を減らして記号と数字の結合を自動化し、制限時間内に最大スコアを目指します。",
+      "text": "正確さを保ってコンボをつなぎます。レベルが上がるほど1つの記号に使える時間が短くなります。",
       "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/symbol-matching#step-4"
     }
   ]
@@ -253,33 +251,33 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('smith1973', 'der2006', 'woods2015'),
   intro: {
-    title: "符号テストSDMT・記号数字置換 – 情報処理速度診断",
+    title: "記号と数字の照合テスト – 処理速度トレーニング",
     paragraphs: [
-      "符号数字置換検査（SDMT方式）とは、記号と数字の対応表を見ながら、表示された記号に合う数字を素早く入力する課題です。このドリルでは上部の凡例を参照して数字キーを押し、情報処理速度と視覚探索を練習します。臨床用の検査そのものではなく、ブラウザ上の練習課題です。",
-      "DSSTが数字を見て記号を書くのに対し、SDMTは記号を見て数字を入力するため、手書きの器用さの影響を減らせます。",
-      "この課題で主に使うのは、(1)情報処理速度、(2)視覚スキャン、(3)短期の対連合記憶、(4)持続的注意の4つです。",
+      "記号と数字の照合テストは、上部キーに並ぶ6つの記号と数字1〜6の対応を見て、中央に出た記号に合う数字ボタンを押す無料の練習です。キーはセッションごとに入れ替わります。45秒から始まり、正解ごとに2秒加算（上限60秒）、誤答や時間切れで1秒減ります。",
+      "記号を見て数字で答える形式はSDMT（Smith, 1973）と同じで、数字を見て記号を書くDSSTとは向きが逆です。このドリルはどちらの検査でもなく、臨床の基準値とは比較できません。",
+      "結果はスコア、正確さ、ヒット数、ミス数、最高レベルで表示されます。診断やIQ・認知機能の評価ではありません。",
     ],
   },
   benchmarks: {
-    title: '認知パフォーマンス標準評価（ベンチマーク）',
+    title: 'SkillDrills 練習の目安（正答率）',
     headers: ['等級 (Tier)', '称号 (Rank)', '到達ランク', '正答率'],
     note: 'この表は練習の目安として編集したもので、統計や診断ではありません。環境によって結果は変わります。',
     rows: [
       { tier: 'Tier 1', rank: '超高速記号連想の最上位段階', level: 'マスタリー（極限）', accuracy: '98% 以上' },
       { tier: 'Tier 2', rank: '上級記号照合スペシャリスト', level: 'ダイヤモンド（優秀）', accuracy: '94–97%' },
       { tier: 'Tier 3', rank: '熟練視覚スキャナー', level: 'プラチナ（熟練）', accuracy: '88–93%' },
-      { tier: 'Tier 4', rank: '一般成人標準', level: 'ゴールド（標準）', accuracy: '78–87%' },
+      { tier: 'Tier 4', rank: '標準', level: 'ゴールド（標準）', accuracy: '78–87%' },
       { tier: 'Tier 5', rank: '入門・初期基準値', level: 'シルバー（基礎）', accuracy: '78% 未満' },
     ],
   },
   protocols: {
-    title: '脳の処理速度と集中力を高める4大トレーニングプロトコル',
-    description: 'スミス記号数字様式検査（SDMT, Smith, 1973）および神経心理学的処理速度基準に基づく、視覚記号の瞬間対連合と作業記憶変換を極限まで高める科学的認知トレーニングプロトコルです。',
+    title: '記号と数字の照合テストの進め方',
+    description: '上部キーを見て、表示された記号に合う数字を選ぶ手順です。形式はSDMT（Smith, 1973）を参考にしていますが、臨床検査ではありません。',
     items: [
       { title: "上部凡例キーマトリックスの確認", description: "ヘッダーに並ぶ6つの固有記号と数字（1〜6）の対応関係を素早く把握します。" },
       { title: "中央ターゲット記号の瞬間認識", description: "中央プロンプトに出現する記号を瞬時に視認します。" },
-      { title: "対応数字キーの即時タップ", description: "記憶または素早い凡例スキャンに基づいて、対応する数字キー（1〜6）をタップします。" },
-      { title: "流れるような連想リズムの維持", description: "視線移動を減らして記号と数字の結合を自動化し、制限時間内に最大スコアを目指します。" },
+      { title: "対応数字キーの即時タップ", description: "キーを覚えるか見直して、対応する数字ボタン（1〜6）をタップします。誤答や時間切れは1秒減とコンボ解除です。" },
+      { title: "流れるような連想リズムの維持", description: "正確さを保ってコンボをつなぎます。レベルが上がるほど1つの記号に使える時間が短くなります。" },
     ],
   },
   faqs: {
@@ -320,12 +318,12 @@ export default function LocalizedCognitivePage() {
       />
       <SymbolMatchingClient
         copy={{
-          title: "符号数字置換検査",
+          title: "記号と数字の照合テスト",
           subtitle: "記号と数字の対応を素早く見つけ、情報処理速度を練習します",
-          startTitle: "記号数字マッチング",
+          startTitle: "記号と数字の照合テスト",
           stageCaption: "中央のターゲット記号を上のキーと照合し、対応する数字を押してください。",
           rulesTitle: "ドリルの説明とスコア",
-          aboutTitle: "記号数字マッチングとは？",
+          aboutTitle: "記号と数字の照合テストとは？",
           faqTitle: "よくある質問",
           readyLabel: "準備",
           labels: { score: "スコア", time: "時間", level: "レベル", bestScore: "ベストスコア", timeLeft: "残り時間", targetSymbol: "ターゲット記号", accuracy: "正確さ", hits: "成功", misses: "ミス", peakLevel: "最高レベル" },
@@ -338,9 +336,9 @@ export default function LocalizedCognitivePage() {
           ],
           rulesItems: [
             { num: "1", text: "記号数字キー", highlight: "6つの対応", result: "上部キーで数字を確認" },
-            { num: "2", text: "ターゲット記号", highlight: "+100ポイント", result: "コンボとレベル倍率" },
-            { num: "3", text: "間違った数字", highlight: "コンボ解除", result: "設定時は時間を減算" },
-            { num: "4", text: "連続記録とペナルティ", highlight: "時間切れ・誤タップ", result: "有効時は−0.8秒" }
+            { num: "2", text: "ターゲット記号", highlight: "+100ポイント", result: "コンボ・レベル倍率、+2秒（上限60秒）" },
+            { num: "3", text: "間違った数字", highlight: "コンボ解除", result: "−1秒" },
+            { num: "4", text: "時間切れ", highlight: "回答時間が短縮", result: "−1秒・コンボ解除" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

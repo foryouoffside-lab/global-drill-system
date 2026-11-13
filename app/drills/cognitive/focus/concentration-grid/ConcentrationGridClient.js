@@ -644,7 +644,7 @@ export default function ConcentrationGridClient({ copy = null }) {
             <section>
               <div className="space-y-4">
                 <p className="text-sm leading-relaxed text-gray-300">
-                  {copy?.aboutLead || "The Schulte table is a psychodiagnostic visual search grid designed to widen the functional peripheral field and reduce fixation latency during sequential scanning (Lu et al., 2022; Rayner, 1998). This expanding grid drill trains rapid eye movements (saccades) and selective attention to locate numerical targets under progressive visual crowding (Treisman & Gelade, 1980; Wolfe, 2007), training visual search speed, broad peripheral span, and sustained focus stamina under time pressure."}
+                  {copy?.aboutLead || "The Schulte table is a classic visual search grid in which you find shuffled numbers in ascending order (Lu et al., 2022; Rayner, 1998). This expanding grid drill exercises rapid eye movements (saccades) and selective attention to locate numerical targets under progressive visual crowding (Treisman & Gelade, 1980; Wolfe, 2007), giving you timed practice in visual search speed and sustained focus."}
                 </p>
                 {(copy?.aboutText ? copy.aboutText.split('\n\n') : (locale === 'en' ? ABOUT_TEXT : '').split('\n\n').filter(Boolean)).map((para, i) => (
                   <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>

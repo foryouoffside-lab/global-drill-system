@@ -79,26 +79,24 @@ const getLevelConfig = (level, combo = 0) => {
 const RULES_ITEMS = [
   { num: "1", text: "Dynamic Rule", highlight: "TAP RED / TAP BLUE", result: "Follow the active top banner" },
   { num: "2", text: "Correct Target Hit", highlight: "+100 PTS", result: "× Combo × Level (+2s per hit, max 60s)" },
-  { num: "3", text: "Rule Switching", highlight: "Auto-Flips", result: "Switches faster as level climbs" },
-  { num: "4", text: "Wrong Target / Timeout", highlight: "Resets Combo", result: "−0.8s when penalties enabled" }
+  { num: "3", text: "Rule Switching", highlight: "From Level 2", result: "Flips after fewer hits as level climbs" },
+  { num: "4", text: "Wrong Target / Timeout", highlight: "Resets Combo", result: "−1s from the clock" }
 ];
 
-const ABOUT_TEXT = `Reaction Time (Dynamic Choice Discrimination) evaluates rapid visual reflex latencies and cognitive flexibility under high-speed execution pressure. Grounded in choice reaction time paradigms, this drill measures motor response speed while training the prefrontal cortex to adapt when rules switch dynamically.
+const ABOUT_TEXT = `Reaction Time (Dynamic Choice Discrimination) is a choice reaction drill: one red and one blue target appear together, and you tap the one named by the rule banner before the pair moves on. From level 2 the rule flips between RED and BLUE, so you must re-check the rule instead of tapping on habit.
 
-Unlike simple reaction tests with static targets, dynamic choice reaction tasks force the central nervous system to perform visual discrimination before issuing motor commands.
+Unlike simple reaction tests with a single stimulus, a choice task adds a decision step: identify the colour, compare it with the rule, then respond.
 
-Practicing Choice Reaction Speed sharpens visual reflex latency, motor execution speed, and decision-making efficiency for high-speed sports, gaming, and rapid tactical decision scenarios.`;
+The run starts with a 45-second clock. Each correct tap adds 2 seconds (up to 60), while a wrong tap or a target timeout costs 1 second and resets your combo. The drill reports score, accuracy, peak level and best combo; it does not time individual responses in milliseconds.`;
 
 const FAQ_ITEMS = [
-  { q: "What is a good reaction time in milliseconds?", a: "The average human visual reaction time is 200-250 milliseconds. Below 200ms is considered fast. Below 150ms is in the elite range typical of competitive esports players and trained athletes." },
-  { q: "How does rule switching work in this drill?", a: "The active rule banner at the top shows which color target to tap ('TAP RED' or 'TAP BLUE'). As you perform well and level up, the rule switches between RED and BLUE targets to test your cognitive switching speed." },
-  { q: "What does this reaction time test measure?", a: "This test measures choice visual reaction time (CRT) — the elapsed time from stimulus onset to motor response execution while discriminating between target rules." },
-  { q: "What is the difference between simple and choice reaction time?", a: "Simple reaction time (SRT) requires responding to a single expected stimulus and typically averages 200-250ms. Choice reaction time (CRT), like this drill, requires discriminating between multiple stimuli before responding, adding a decision-making stage that runs 50-100ms slower than SRT. This drill goes further by flipping which color is correct mid-session, layering cognitive flexibility on top of standard CRT." },
-  { q: "What is Hick\'s Law and how does it apply here?", a: "Hick\'s Law states that reaction time increases logarithmically with the number of choices you must discriminate between before responding. Because this drill forces you to actively verify the current rule before reacting, it directly exercises the decision-time component Hick\'s Law describes, rather than pure reflex speed alone." },
-  { q: "How can I improve my choice reaction time?", a: "Evidence-based approaches include: (1) deliberate practice on choice-based (not just simple) reaction drills, since the two skills don't fully transfer, (2) consistent sleep, since fatigue disproportionately slows the decision stage, (3) regular aerobic exercise, which improves neural conduction velocity, and (4) fast-paced action gaming, shown in research to sharpen visual-motor choice reaction speed." },
-  { q: "Why does reaction time matter for gaming and esports?", a: "In competitive gaming, choice reaction time determines how quickly you can distinguish a real threat from a decoy and execute the correct response — exactly the skill this drill isolates. Elite esports athletes consistently test in the 150-180ms range for choice reaction tasks, well below the general population average." },
-  { q: "How does scoring and grading work in this drill?", a: "Each correct tap on the active rule's target earns points. Tapping the wrong-colored target resets your combo multiplier. When enabled, an opt-in time penalty of 0.8s is deducted. Your final score is graded against an elite benchmark, awarding letter grades from D up to S+." },
-  { q: "Does reaction time change with age?", a: "Yes. Choice reaction time is fastest in the late teens to mid-20s, then slows gradually — roughly 1-2ms per year after age 25, accelerating past 60. Regular training can partially offset this decline by keeping the decision-making pathway well-practiced." },
+  { q: "How does rule switching work in this drill?", a: "The active rule banner at the top shows which color target to tap ('TAP RED' or 'TAP BLUE'). From level 2, the rule flips after a run of correct hits on the current color, and the number of hits before a flip shrinks as your level climbs (down to 2)." },
+  { q: "What does this choice reaction drill measure?", a: "It records your score, accuracy (correct taps out of all taps and timeouts), peak level and best combo. It does not report a reaction time in milliseconds; speed shows up as how long you survive and how high your level climbs as targets stay on screen for shorter and shorter windows." },
+  { q: "What is the difference between simple and choice reaction time?", a: "Simple reaction time means responding to a single expected stimulus. Choice reaction time, like this drill, requires discriminating between stimuli before responding, which adds a decision stage and makes responses slower than simple reactions. This drill also flips which color is correct mid-session, adding rule switching on top." },
+  { q: "What is Hick's Law and how does it apply here?", a: "Hick's Law states that reaction time increases logarithmically with the number of choices you must discriminate between before responding. Because this drill forces you to actively verify the current rule before reacting, it exercises the decision-time component Hick's Law describes, rather than pure reflex speed alone." },
+  { q: "How does the clock work?", a: "The run starts at 45 seconds. Every correct tap adds 2 seconds, up to a 60-second cap. A wrong-color tap, or a target pair that times out while Target Timeouts is on, costs 1 second and resets your combo. The run ends when the clock reaches zero." },
+  { q: "How does scoring and grading work in this drill?", a: "Each correct tap earns 100 points multiplied by your combo multiplier and a level multiplier. Tapping the wrong color resets your combo and costs 1 second. Your final score is graded against a fixed SkillDrills benchmark, with letter grades from F up to S+." },
+  { q: "How can I get better at this drill?", a: "Read the rule banner before every tap rather than only when you notice a flip, keep your accuracy high so your combo multiplier builds, and practise when you are rested. Expect your scores to improve with practice on this task; that does not guarantee faster reactions elsewhere." },
   { q: "Is this reaction time test free?", a: "Yes. This reaction time test on SkillDrills is completely free. No registration, downloads, or subscriptions required. It runs entirely in your browser on both desktop and mobile devices." }
 ];
 
@@ -117,9 +115,9 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
     maxCombo: copy?.labels?.maxCombo || 'Max Combo',
   };
   const aboutCards = copy?.aboutCards || [
-    { title: 'Who Should Use This?', desc: 'Competitive gamers and esports players who need split-second target discrimination, drivers and pilots training hazard response, and anyone wanting sharper visual-motor reflexes under rule-switching pressure.' },
+    { title: 'Who Should Use This?', desc: 'Gamers and anyone who wants to practise fast colour discrimination and accurate responses while the rule keeps switching.' },
     { title: 'Skills Improved', desc: 'Choice reaction time, visual discrimination speed, motor response execution, and resistance to interference from non-target stimuli.' },
-    { title: 'Rule-Switch Agility', desc: 'Every rule flip forces your prefrontal cortex to update its active response mapping on the fly, training rapid cognitive set-shifting alongside raw reflex speed.' },
+    { title: 'Rule-Switch Agility', desc: 'Every rule flip makes you update which colour to tap on the fly, practising quick rule switching alongside response speed.' },
   ];
   const faqItems = copy?.faqItems || FAQ_ITEMS;
   const aboutText = copy?.aboutText || ABOUT_TEXT;

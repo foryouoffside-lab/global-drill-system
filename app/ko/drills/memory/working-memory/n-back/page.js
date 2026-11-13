@@ -4,20 +4,13 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// Native research (2026-09-20): Bing ko-KR returned 0 exact / 0 broad for
-// "엔백 테스트" and "작업기억 테스트". Current Korean app results use
-// "듀얼 N-백", "작업기억력", and brain-training/game intent; no high-volume
-// or guaranteed-ranking claim is made.
-// ============================================================
-
 export const metadata = {
-  title: "듀얼 N-백 | 작업기억 훈련 게임 | SkillDrills",
-  description: "무료 듀얼 N-백 훈련 게임: N단계 전 자극을 비교하며 작업기억 갱신과 집중력을 브라우저에서 연습하세요.",
-  keywords: ['듀얼 N-백', 'N-백 게임', 'N-백 훈련', '작업기억력', '작업기억 훈련', '작업기억 갱신', 'N백 테스트', '두뇌 훈련 게임', '기억력 훈련', 'N-백 온라인'],
+  title: "엔백 게임 | N-back 작업기억 훈련 | SkillDrills",
+  description: "무료 엔백 게임: 화면에 하나씩 나오는 글자가 3개 전 글자와 같은지 판단하세요. 정답 8개마다 4-back, 5-back으로 올라가는 브라우저 N-back 작업기억 훈련으로 엔백 연습을 시작해 보세요.",
+  keywords: ['엔백 게임', '엔백 연습', '엔백 훈련', '엔백 테스트', 'N-back', '작업기억 훈련', '듀얼 엔백'],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "듀얼 N-백 | 작업기억 훈련 게임 | SkillDrills",
-    description: "무료 듀얼 N-백 훈련 게임: N단계 전 자극을 비교하며 작업기억 갱신을 브라우저에서 연습하세요.",
+    title: "엔백 게임 | N-back 작업기억 훈련 | SkillDrills",
+    description: "글자가 N개 전 글자와 같은지 판단하는 무료 엔백 게임. 3-back에서 시작해 단계가 오르는 브라우저 작업기억 훈련입니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/memory/working-memory/n-back",
     siteName: "SkillDrills",
@@ -25,8 +18,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "듀얼 N-백 | 작업기억 훈련 게임 | SkillDrills",
-    description: "무료 듀얼 N-백 훈련 게임: N단계 전 자극을 비교하며 작업기억 갱신을 브라우저에서 연습하세요.",
+    title: "엔백 게임 | N-back 작업기억 훈련 | SkillDrills",
+    description: "글자가 N개 전 글자와 같은지 판단하는 무료 엔백 게임. 3-back에서 시작해 단계가 오르는 브라우저 작업기억 훈련입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -35,97 +28,94 @@ export const metadata = {
   },
 };
 
+const appDescription = "화면에 하나씩 나오는 글자가 N개 전 글자와 같은지 '일치/불일치'로 판단하는 무료 브라우저 엔백 게임. 3-back에서 시작하며 정답 8개마다 한 단계씩 올라갑니다.";
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/" },
+    { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://skilldrills.online/ko" },
     { "@type": "ListItem", "position": 2, "name": "기억력 훈련", "item": "https://skilldrills.online/ko/drills/memory" },
     { "@type": "ListItem", "position": 3, "name": "작업기억", "item": "https://skilldrills.online/ko/drills/memory/working-memory" },
-    { "@type": "ListItem", "position": 4, "name": "N-Back 게임 및 연습 사이트", "item": "https://skilldrills.online/ko/drills/memory/working-memory/n-back" }
+    { "@type": "ListItem", "position": 4, "name": "엔백 게임", "item": "https://skilldrills.online/ko/drills/memory/working-memory/n-back" }
   ]
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "N-Back 게임 및 연습 사이트 (작업기억 훈련)",
+  "name": "엔백 게임 (N-back 작업기억 훈련)",
   "url": "https://skilldrills.online/ko/drills/memory/working-memory/n-back",
+  "description": appDescription,
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
-  "sameAs": "https://ko.wikipedia.org/wiki/N-back",
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-11",
-  "educationalUse": ["작업기억 용량", "연속 정보 갱신", "실행 제어 기능", "유동성 지능"]
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "N-Back 게임 – 무료 온라인 두뇌 트레이닝",
+  "name": "엔백 게임 (N-back 작업기억 훈련)",
   "url": "https://skilldrills.online/ko/drills/memory/working-memory/n-back",
-  "description": "연속 출력되는 문자가 N단계 전과 일치하는지 순간 판별하는 무료 브라우저 N-Back 게임 도구.",
-  "dateModified": "2026-09-11",
+  "description": appDescription,
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
-  "genre": ["Cognitive Training", "Working Memory", "Brain Training", "N-Back"],
+  "genre": ["Working Memory", "N-Back"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
-
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "N-백 작업기억 테스트 (N-Back)",
+  "name": "엔백 게임 (N-back 작업기억 훈련)",
   "url": "https://skilldrills.online/ko/drills/memory/working-memory/n-back",
+  "description": appDescription,
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "N-Back 과제로 작업기억 갱신 능력을 훈련하는 4단계 방법",
-  "description": "인지신경과학에 기반한 N-Back 과제 연속 갱신 및 실행 제어 실전 훈련 프로토콜.",
+  "name": "엔백 게임 하는 방법",
+  "description": "글자를 N개 전 글자와 비교해 일치/불일치를 고르는 4단계.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "url": "https://skilldrills.online/ko/drills/memory/working-memory/n-back#step-1",
-      
-      "name": "내적 시연을 통해 회전 큐(FIFO) 버퍼 유지",
-      "text": "제시되는 문자들을 머릿속으로 리드미컬하게 시연(음운 루프 활용)하며 최근 N개의 문자를 순서대로 유지합니다."
+      "name": "처음 3글자 외우기",
+      "text": "시작하면 처음 3글자는 비교할 대상이 없으므로 외우기만 합니다. 이 동안에는 시간이 줄지 않습니다."
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "url": "https://skilldrills.online/ko/drills/memory/working-memory/n-back#step-2",
-      
-      "name": "현재 자극과 정확히 N단계 전 자극 즉시 대조",
-      "text": "새로운 문자가 화면에 나타나는 즉시, 활성 버퍼에서 가장 오래된 항목(정확히 N단계 전 문자)과 일치 여부를 대조합니다."
+      "name": "N개 전 글자와 비교",
+      "text": "새 글자가 나오면 정확히 N개 전(처음에는 3개 전) 글자와 같은지 확인합니다."
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "url": "https://skilldrills.online/ko/drills/memory/working-memory/n-back#step-3",
-      
-      "name": "가장 오래된 항목을 방출하고 새 문자 갱신",
-      "text": "판정 직후 가장 오래된 문자를 초점 주의에서 지우고, 방금 나타난 새 문자를 큐의 맨 앞에 밀어 넣어 작업기억을 업데이트합니다."
+      "name": "일치 또는 불일치 누르기",
+      "text": "같으면 '일치', 다르면 '불일치' 버튼을 클릭하거나 탭합니다. 응답 시간은 2초에서 시작합니다."
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "url": "https://skilldrills.online/ko/drills/memory/working-memory/n-back#step-4",
-      
-      "name": "판정 오류에 머무르지 않고 일정한 주의 리듬 유지",
-      "text": "실수를 자책하며 멈칫하면 후속 버퍼가 연쇄 붕괴합니다. 순서를 놓쳤다면 즉시 다음 문자를 1단계로 삼아 버퍼를 신속하게 재구축하세요."
+      "name": "머릿속 목록 갱신",
+      "text": "판단 후에는 가장 오래된 글자를 버리고 새 글자를 목록 끝에 붙여 최근 N개를 유지합니다."
     }
   ]
 };
@@ -133,169 +123,152 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "N-Back 검사(과제)란 무엇인가요?",
+      "name": "엔백 게임은 어떻게 하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "N-Back 과제는 인지신경과학에서 작업기억의 연속 갱신(Updating)과 실행 제어 능력을 평가하는 대표적인 표준 인지 패러다임입니다. 연속적으로 나타나는 자극 스트림을 관찰하며 현재 자극이 정확히 N단계 전에 제시된 것과 일치하는지 판별합니다."
+        "text": "알파벳 글자가 하나씩 나옵니다. 각 글자가 정확히 N개 전에 나온 글자와 같으면 '일치', 다르면 '불일치'를 누르세요. 정답마다 +150점입니다. 처음 N개 글자는 비교 대상이 없어 외우기만 하며, 이 동안에는 시간이 줄지 않습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "N-Back 과제는 누가 언제 개발했나요?",
+      "name": "몇 back부터 시작하고 어떻게 올라가나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "1958년 심리학자 웨인 K. 커슈너(Wayne K. Kirchner)가 급변하는 동적 정보의 단기 파지 능력에서 나타나는 연령별 차이를 규명하기 위해 고안했습니다."
+        "text": "3-back에서 시작합니다. 1,200점(정답 8개)마다 한 단계씩 올라가 4-back, 5-back이 되며, 다음 글자부터 바로 새 단계 기준으로 비교합니다. 틀려도 단계는 내려가지 않습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "N-Back 훈련은 어떤 뇌 기능을 주로 향상시키나요?",
+      "name": "응답 시간과 제한 시간은 얼마인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "배외측 전전두엽(DLPFC)을 중심으로 한 중앙 실행기(Central Executive) 기능, 작업기억 용량의 동적 갱신, 주의력 통제 및 유혹 자극에 대한 간섭 억제 능력을 종합적으로 발달시킵니다."
+        "text": "글자마다 응답 시간은 2초이고, 단계가 오를 때마다 0.1초씩 줄어 최소 1.2초까지 짧아집니다. 세션 시계는 45초이며 처음 N글자를 외우는 동안에는 멈춰 있습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "단순 숫자 암기(Digit Span)와 N-Back의 차이점은 무엇인가요?",
+      "name": "틀리거나 응답하지 못하면 어떻게 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "단순 숫자 암기는 정보를 정적으로 보관했다가 출력하는 수동적 단기 기억을 평가합니다. 반면 N-Back은 새 자극이 들어올 때마다 가장 오래된 항목을 버리고 새 항목을 추가하는 능동적 조작과 갱신을 지속적으로 요구합니다."
+        "text": "감점이나 시간 차감은 없습니다. 오답과 무응답은 정확도에서 실패로 기록되고 다음 글자로 넘어갑니다. 일치 글자는 대략 3개 중 1개꼴로 나오므로 '불일치' 판단도 똑같이 중요합니다."
       }
     },
     {
       "@type": "Question",
-      "name": "N-Back 훈련이 지능을 향상시킬 수 있나요?",
+      "name": "듀얼 엔백과 같은 건가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "지능 향상은 확립되지 않았습니다. Jaeggi 등(2008년)의 연구 이후 결과가 일치하지 않는 보고도 있으며 전이 효과의 크기에는 논란이 있습니다. 이 연습은 N-Back 과제 성적을 확인하는 용도로 이용하세요."
+        "text": "아닙니다. 이 게임은 글자 하나만 추적하는 싱글 N-back입니다. 듀얼 엔백은 화면 위치와 소리처럼 두 가지 자극을 동시에 비교하는 변형이며, 여기서는 제공하지 않습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "성인의 표준 3-Back 과제 평균 점수와 정확도는 어느 정도인가요?",
+      "name": "키보드로 할 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "건강한 성인의 표준 3-Back 과제 평균 정확도는 65%~80% 수준입니다. 85% 이상의 높은 정확도를 꾸준히 유지하거나 4-Back 단계를 성공적으로 완수한다면 상위 퍼센타일의 우수한 작업기억 능력을 의미합니다."
+        "text": "현재는 화면의 '일치'와 '불일치' 버튼을 마우스로 클릭하거나 터치로 탭해 응답합니다. 키보드 단축키는 지원하지 않습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "싱글 N-Back과 듀얼 N-Back(Dual N-Back)의 차이는 무엇인가요?",
+      "name": "엔백 훈련을 하면 IQ가 오르나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "싱글 N-Back은 시각 문자 한 가지만 추적합니다. 듀얼 N-Back은 '화면 격자 위치(시각)'와 '음성 알파벳(청각)'의 두 가지 독립된 감각 자극을 동시에 제시하여 두 모달리티 모두에서 독립적으로 N단계 전 일치 여부를 판단하는 고난도 훈련입니다."
+        "text": "확립되지 않았습니다. Jaeggi 등(2008)이 N-back 훈련과 유동성 지능의 관계를 보고했지만 이후 연구 결과가 엇갈려 지능 향상 효과는 입증되지 않았습니다. 연습하면 이 과제 자체의 점수는 오를 수 있습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "머릿속으로 소리 내어 읊는 내적 시연이 훈련에 어떤 도움이 되나요?",
+      "name": "점수는 저장되나요? 의학적 의미가 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "내적 시연은 배들리 작업기억 모델의 '음운 루프(Phonological Loop)'를 가동합니다. 직전 N개의 문자를 리드미컬하게 되뇌임으로써 신경 흔적의 빠른 감쇠를 막고 일치 판별의 정확도를 크게 높여줍니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "왜 4-Back과 5-Back 단계에서는 난이도가 급격히 올라가나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "넬슨 코완(Nelson Cowan, 2001)의 연구에 따르면 인간의 의식적 초점 주의 용량 한계는 4±1 청크입니다. 4-Back과 5-Back은 이 생물학적 한계선에 직접 부딪히기 때문에 정보의 간섭과 탈락이 급증합니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "작업기억 갱신 능력은 현실 생활이나 게임에서 어떻게 발휘되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "복잡한 코딩 및 소프트웨어 디버깅, 다변수 금융 데이터 분석, 장문 독해력, 그리고 FPS나 전략 시뮬레이션 게임에서 급변하는 전황(적 위치, 쿨다운)을 순간적으로 갱신하고 최적의 판단을 내리는 능력에 도움이 될 수 있습니다."
+        "text": "최고 점수와 최고 단계는 이 브라우저의 localStorage에만 저장되며 서버로 전송되지 않습니다. 결과는 연습 기록일 뿐이며 작업기억 장애나 ADHD 등을 진단하지 않습니다."
       }
     }
   ]
 };
 
 const nBackClientCopyKo = {
-  h1Keyword: "듀얼 N-백",
-  h1Suffix: " 작업기억 게임",
-  subtitle: "N단계 전 자극을 비교하는 갱신 훈련",
-  caption: "N-Back 과제는 현재 자극이 정확히 N단계 전에 제시된 것과 일치하는지 판별하는 신경인지 평가입니다. 배들리와 히치(Baddeley & Hitch, 1974)의 작업기억 모델에 근거하여 정보의 보관과 능동적 갱신을 동시에 요구합니다.",
+  h1Keyword: "엔백 게임",
+  h1Suffix: " – N-back 작업기억 훈련",
+  subtitle: "글자가 N개 전 글자와 같은지 판단하세요. 3-back에서 시작합니다.",
   statScore: "점수",
   statTime: "남은 시간",
   statLevel: "단계",
   statBest: "최고 점수",
   hudScore: "점수",
   hudTime: "남은 시간",
-  modeSuffix: "-Back 훈련",
-  memorizingText: "첫 {n}개 문자를 암기하는 중...",
-  btnMatch: "일치 (MATCH)",
-  btnNoMatch: "불일치 (NO MATCH)",
-  startTitle: "듀얼 N-Back 트레이닝 프로",
-  startSubtitle: "작업기억 • 2-백",
+  modeSuffix: "-Back",
+  memorizingText: "처음 {n}글자를 외우는 중...",
+  btnMatch: "일치",
+  btnNoMatch: "불일치",
+  startTitle: "엔백 게임",
+  startSubtitle: "작업기억 • 3-back부터",
   countdownSubtitle: "준비하세요",
   newBest: "최고 기록 달성",
-  pointsLabel: "획득 점수",
+  statPoints: "점수",
   statAccuracy: "정확도",
   statPeakLevel: "최고 단계",
-  statPerfects: "완벽 판정",
+  statPerfects: "정답",
   btnPlayAgain: "다시 시작",
-  rulesTitle: "훈련 규칙 및 채점 체계",
+  rulesTitle: "규칙 & 점수 방식",
   rulesItems: [
-    { num: "1", text: "일치/불일치 판정 (N단계 전)", highlight: "+150 PTS", result: "정확한 판정마다 즉시 가산" },
-    { num: "2", text: "레벨 승급", highlight: "3-Back → 4-Back+", result: "1,200점 획득 시 단계 상승" },
-    { num: "3", text: "문자 노출 가속", highlight: "2,000ms → 1,200ms", result: "높은 단계일수록 빠른 갱신 요구" },
-    { num: "4", text: "시간 초과 (미응답)", highlight: "감점 없음", result: "점수나 시간 차감 없이 진행" },
-    { num: "5", text: "오답 판정 (미스)", highlight: "연속 판정 초기화", result: "시간 차감 없이 45초 풀타임 지속" }
+    { num: "1", text: "일치/불일치 판단 (N개 전 글자)", highlight: "+150 PTS", result: "정답 하나마다" },
+    { num: "2", text: "단계 상승", highlight: "3-Back → 4-Back+", result: "1,200점(정답 8개)마다" },
+    { num: "3", text: "응답 시간 단축", highlight: "2.0초 → 최소 1.2초", result: "단계마다 0.1초씩 짧아짐" },
+    { num: "4", text: "무응답", highlight: "감점 없음", result: "점수·시간 차감 없이 실패로만 기록" },
+    { num: "5", text: "오답", highlight: "감점 없음", result: "단계 유지, 45초 시계는 그대로 진행" }
   ]
 };
 
 const guideKo = {
-  heading: "N-Back 과제 가이드 및 작업기억 능력 기준",
   intro: [
-    "N-Back 작업기억 과제(N-Back Task)는 시간적 압박 속에서 연속적인 정보 갱신, 실행 제어 기능, 그리고 능동적 정보 유지 능력을 평가하는 인지신경과학의 최고 표준 패러다임입니다. 1958년 웨인 K. 커슈너(Wayne K. Kirchner)의 급변하는 정보 보유 연구에서 시작된 이 과제는 전두엽 실행 기능 평가의 핵심으로 자리잡았습니다.",
-    "단순히 정보를 담아두기만 하는 수동적인 기억 검사와 달리, N-Back 과제는 참가자에게 쉼 없이 변화하는 멘탈 버퍼의 실시간 갱신을 요구합니다. 문자가 연속해서 나타나는 동안 현재 문자가 정확히 N단계 전(기본 3-Back에서 시작하여 실력에 따라 4-Back, 5-Back으로 확장)에 나타난 문자와 일치하는지 순간적으로 결정해야 합니다.",
-    "측정 방식 안내: 모든 반응과 시간 측정은 귀하의 브라우저에서 performance.now() 고해상도 시계를 통해 100% 로컬(기기 내)에서 밀리초 단위로 타임스탬프가 기록됩니다. 서버로 개인 점수가 전송되지 않습니다. 브라우저 타이머는 보안 조치(Spectre 대응)로 인해 약 1ms 단위로 양자화되며 디스플레이 주사율(60Hz 기준 약 16.7ms)에 따른 지연이 존재하므로, 5ms 미만의 미세한 차이는 측정 오차로 간주하시고 동일 기기에서 자신의 이전 기록과 비교하시기 바랍니다.",
-    "데이터 투명성: SkillDrills는 어떠한 개인 성적 데이터도 수집하거나 서버에 저장하지 않습니다. 모든 점수와 설정은 사용자의 브라우저 localStorage에만 안전하게 보관됩니다. 본 페이지에 안내된 모든 벤치마크 수치는 하단 참고문헌 패널에 수록된 정식 출간 논문에 근거합니다.",
-    "본 도구는 인지 능력 훈련과 흥미를 위한 무료 브라우저 게임입니다. 의료 기기나 신경인지 진단 도구가 아니며, 어떠한 인지 질환의 진단이나 치료를 목적으로 하지 않습니다. 기억력이나 사고력에 우려가 있으시다면 공인된 전문 의료진과 상담하시기 바랍니다."
+    "엔백 게임은 화면에 하나씩 나오는 글자가 정확히 N개 전에 나온 글자와 같은지 판단하는 무료 브라우저 N-back 작업기억 훈련입니다. 최근 N개 글자를 머릿속에 유지하면서 새 글자가 올 때마다 목록을 갱신해야 하므로, 단순 암기보다 작업기억의 '갱신'을 많이 요구합니다(Kirchner, 1958).",
+    "게임은 3-back에서 시작합니다. 처음 3글자는 외우기만 하고, 그 뒤부터 글자마다 '일치' 또는 '불일치'를 누릅니다. 정답은 +150점이며 1,200점(정답 8개)마다 4-back, 5-back으로 올라갑니다. 응답 시간은 2초에서 시작해 단계마다 0.1초씩 줄어 최소 1.2초가 됩니다.",
+    "세션 시계는 45초이며 처음 글자를 외우는 동안에는 멈춥니다. 오답이나 무응답에는 감점이 없고 단계도 내려가지 않으며, 정확도에만 실패로 기록됩니다. 이 게임은 글자만 사용하는 싱글 N-back이며 듀얼 엔백(위치+소리)은 아닙니다. 입력은 화면 버튼 클릭 또는 터치입니다.",
+    "데이터 투명성: 점수는 이 브라우저의 localStorage에만 저장되며 서버로 전송되지 않습니다. 따라서 이 사이트는 사용자 평균이나 순위를 게시하지 않습니다.",
+    "이 도구는 연습과 재미를 위한 무료 브라우저 게임입니다. 의료 기기나 진단 도구가 아니며, 결과가 작업기억 장애, ADHD 또는 지능을 나타내지 않습니다."
   ],
-  metrics: [
-    { label: "최고 도달 N-Back 단계", desc: "세션 중 달성한 가장 높은 N-Back 깊이 (3-Back 기준치, 4-Back 고급, 5-Back 이상 최상위 단계)." },
-    { label: "종합 획득 점수", desc: "45초간 누적된 총 포인트 (정답 판정 시마다 +150점 가산, 감점 없음)." },
-    { label: "타깃 판정 정확도", desc: "오경보 및 누락 오류 대비 올바른 일치/불일치 판정의 백분율." },
-    { label: "작업기억 갱신 속도", desc: "자극 노출 창 내에서의 의사결정 신속성 및 반응 잠복기." }
+  benchmarks: {
+    title: "SkillDrills 연습 구간 (점수 = 정답 수 × 150점)",
+    headers: ["연습 구간", "정답 수", "점수", "도달 단계"],
+    rows: [
+      ["입문", "0~3개", "0~450점", "3-back. 규칙과 응답 리듬에 익숙해지는 단계"],
+      ["기본", "4~7개", "600~1,050점", "3-back 유지. 최근 3글자 목록을 안정적으로 갱신"],
+      ["숙련", "8~15개", "1,200~2,250점", "4-back 도달, 응답 시간 1.9초"],
+      ["상급", "16개 이상", "2,400점 이상", "5-back 이상, 응답 시간 1.8초 이하"]
+    ],
+    note: "이 표는 이 게임의 채점 규칙에서 계산한 SkillDrills 연습 구간이며, 인구 규준이나 임상 기준이 아닙니다."
+  },
+  techniques: {
+    title: "엔백 게임 요령",
+    items: [
+      { name: "작은 소리로 되뇌기", desc: "최근 N개 글자를 일정한 리듬으로 속으로 반복합니다(예: B-M-T → M-T-R). 새 글자가 오면 맨 앞 글자와 비교하고 버립니다.", tips: "글자 이름을 짧게 발음하면 리듬을 유지하기 쉽습니다." },
+      { name: "가까운 글자에 속지 않기", desc: "1~2개 전에 나온 글자는 익숙하게 느껴지지만 정답이 아닙니다. 정확히 N개 전인지 확인하세요.", tips: "익숙함만으로 '일치'를 누르지 마세요." },
+      { name: "'불일치'도 적극적으로", desc: "일치 글자는 대략 3개 중 1개꼴입니다. 확신이 없을 때 응답을 미루면 무응답 실패가 됩니다.", tips: "응답 시간 안에 반드시 하나를 고르세요." },
+      { name: "놓치면 바로 다시 시작", desc: "순서를 잃었으면 과거를 떠올리려 하지 말고 지금 글자부터 다시 목록을 쌓습니다.", tips: "N글자가 지나면 다시 정확하게 비교할 수 있습니다." }
+    ]
+  },
+  steps: [
+    "시작 버튼을 누르고 3초 카운트다운을 기다립니다.",
+    "처음 3글자를 외웁니다(시간이 줄지 않음).",
+    "이후 글자마다 3개 전 글자와 같으면 '일치', 다르면 '불일치'를 누릅니다.",
+    "정답 8개마다 4-back, 5-back으로 올라가며 응답 시간이 짧아집니다.",
+    "45초가 끝나면 점수, 최고 단계, 정확도를 확인합니다."
   ],
-  benchmarks: [
-    { tier: "Tier 1: 탁월한 작업기억 (최상위 단계)", range: "4-Back ~ 5-Back+ 단계 (1,200점 이상)", desc: "최상위 단계; 4~5개 항목의 멘탈 선입선출 큐 완벽 유지; 즉각적인 토큰 교체; 600ms 미만 반응 지연; 정확도 92% 이상." },
-    { tier: "Tier 2: 우수 수준 (Strong Updating Control / 상급 단계)", range: "견고한 3-Back 및 4-Back 진입 (900 ~ 1,199점)", desc: "표준 성인 기준 초과; 간섭 오류를 최소화하며 연속 3-Back 갱신 유지; 4-Back 시도로 순조롭게 전환; 정확도 80%~91%." },
-    { tier: "Tier 3: 일반 성인 정상 기준치 (표준 단계)", range: "안정적인 3-Back (600 ~ 899점)", desc: "정상 성인 기준선 (Kirchner, 1958; Jaeggi et al., 2008); 3개 항목 음운 버퍼 유지; 빠른 제시 속도에서 간헐적 탈락 발생; 정확도 65%~79%." },
-    { tier: "Tier 4: 평균 이하 (Executive Buffer Decay / 기초~중간 단계)", range: "불안정한 3-Back (400 ~ 599점)", desc: "연속적인 3개 항목 버퍼 갱신에 어려움; 2-Back과 3-Back 간섭 혼란 발생; 일치 시행 정확도 50%~64%로 저하." },
-    { tier: "Tier 5: 훈련 권장 (기초 단계)", range: "3-Back 미만 (< 400점)", desc: "작업기억 정보 갱신 병목 현상; 전환 과정에서 3개 연속 항목을 활성 버퍼에 유지하지 못함; 빈번한 시간 초과 발생." }
-  ],
-  science: [
-    { title: "Wayne K. Kirchner (1958): N-Back 패러다임의 창시", body: "커슈너는 1958년 연구에서 급변하는 정보의 파지 능력을 조사하기 위해 N-back 과제를 도입했습니다. 단순 단기 기억이 보존되어 있더라도, 낡은 정보를 실시간으로 버리고 새 정보를 추가하는 작업에서 결정적인 인지 병목이 발생함을 밝혔습니다." },
-    { title: "Alan Baddeley (1986, 2000): 중앙 실행기 제어 모델", body: "배들리의 다요소 작업기억 모델에서 N-back은 중앙 실행기를 평가하는 대표적 과제입니다. 음운 루프의 리허설과 배외측 전전두엽(DLPFC)의 능동적 주의 제어 간의 동시 협응을 요구합니다." },
-    { title: "Adele Diamond (2013): 실행 기능 3요소", body: "다이아몬드는 작업기억 갱신, 억제 제어, 인지적 유연성을 인간 실행 기능의 3대 핵심축으로 정의했습니다. N-back은 버퍼 갱신, 유혹 자극 억제, 유연한 정신적 재구성을 동시에 요구합니다." },
-    { title: "Susanne M. Jaeggi et al. (2008): 작업기억 훈련 연구 (PNAS)", body: "Jaeggi 연구팀의 PNAS 논문은 적응형 N-back 과제 훈련과 유동성 지능(Gf)의 관계를 조사한 연구이지만, 이후 연구에서는 결과가 일치하지 않아 지능에 대한 전이 효과는 확립되지 않았습니다." },
-    { title: "Nelson Cowan (2001, 2010): 4±1 용량 한계선", body: "코완의 작업기억 모델은 인간 의식의 초점 주의 용량이 묶이지 않은 순수 단위 기준 약 4개임을 증명했습니다. 3-back에서 4-back으로의 전환은 이 생물학적 한계점에 직접 부딪히는 과정입니다." },
-    { title: "David L. Woods et al. (2015): 인지 시간측정학 표준", body: "우즈 연구팀은 컴퓨터화된 인지 측정 기준을 정립하여 정답률, 오경보율, 민감도 지표(d')와 performance.now() 기반 밀리초 정밀도 검증 표준을 규정했습니다." }
-  ],
-  protocols: [
-    { title: "회전 큐 음운 시연 (Baddeley 1986)", body: "머릿속에서 3글자 언어 루프를 리드미컬하게 되뇝니다. 새 문자가 들어오면 루프의 첫 글자와 비교한 후, 첫 글자를 버리고 새 글자를 끝에 붙입니다 (예: 'B-M-T' → 'M-T-R')." },
-    { title: "친숙도 유혹 자극 억제 (Diamond 2013)", body: "정확히 3단계 전이 아니라 1~2단계 전에 나타났던 '유혹 자극'을 조심하세요. 막연한 익숙함 때문에 일치 버튼을 누르려는 충동을 전두엽에서 의식적으로 억제해야 합니다." },
-    { title: "음운-공간 이중 부호화", body: "머릿속 말소리 반복과 함께, 눈앞에 3개의 슬롯이 놓여 있고 문자가 왼쪽으로 한 칸씩 밀려나는 모습을 시각화하세요. 이중 부호화가 기억 흔적의 보존력을 극대화합니다." },
-    { title: "주의력 순간 재설정", body: "순서를 놓쳤더라도 당황하여 과거를 기억해내려 하지 마세요. 즉시 다음 문자를 1단계로 삼고, 이어지는 2개의 문자를 통해 신속하게 3개 버퍼를 다시 구성해야 합니다." }
-  ],
-  sources: pickSources('baddeley1974', 'baddeley1986', 'cowan2001', 'woods2015'),
+  audience: "엔백 연습이나 엔백 훈련을 브라우저에서 바로 해 보고 싶은 사람, 작업기억 과제를 체험해 보려는 학생, 짧은 두뇌 게임을 찾는 모든 사용자.",
   faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text })),
+  sources: pickSources('baddeley1974', 'cowan2001'),
   related: [
-    { href: "/ko/drills/memory/spatial-memory/path-tracing", title: "공간 경로 기억 테스트", desc: "동적 경로를 기억하고 격자 매트릭스 상에서 공간 작업기억 훈련." },
-    { href: "/ko/drills/memory/spatial-memory/grid-memorization", title: "시각 그리드 기억 테스트", desc: "정적 2D 체크보드 패턴을 암기하고 시각 캐시 용량 측정." },
-    { href: "/ko/drills/memory/spatial-memory/object-location", title: "사물 위치 기억 테스트", desc: "다분면 지도상에서 공간적 관계 결합 및 오브젝트 배치 기억 평가." },
-    { href: "/ko/drills/memory/short-term-memory/digit-span", title: "숫자 기억 테스트 (Digit Span)", desc: "순방향 숫자 단기 기억 용량과 음운 루프 시연 능력 측정." },
-    { href: "/ko/drills/memory/short-term-memory/word-recall", title: "단어 회상 기억력 테스트", desc: "제한 시간 내 즉각적인 언어 회상 및 의미적 군집화 능력 평가." },
-    { href: "/ko/drills/memory/short-term-memory/color-sequence", title: "색상 기억 게임", desc: "점점 빨라지는 색상 점멸 시퀀스를 순서대로 기억하는 게임." }
+    { href: "/ko/drills/memory/spatial-memory/path-tracing", label: "코르시 블록 테스트" },
+    { href: "/ko/drills/memory/spatial-memory/grid-memorization", label: "순간 기억 테스트" },
+    { href: "/ko/drills/memory/spatial-memory/object-location", label: "공간 기억력 테스트" },
+    { href: "/ko/drills/memory/short-term-memory/digit-span", label: "숫자 기억력 테스트" },
+    { href: "/ko/drills/memory/short-term-memory/word-recall", label: "단어 기억력 테스트" }
   ]
 };
 
@@ -311,7 +284,7 @@ export default function NBackPageKo() {
 
       <NBackClient copy={nBackClientCopyKo} />
 
-      <DrillGuide {...guideKo} />
+      <DrillGuide guide={guideKo} />
 
       <RelatedDrills />
     </>

@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de multitâche | Suivi double | SkillDrills",
-  description: "Test gratuit de multitâche dans le navigateur : suivez deux flux visuels à la fois. Non clinique, c’est un auto-test cognitif.",
+  description: "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. Non clinique, c’est un auto-test cognitif.",
   keywords: [
     "test de multitache",
     "test de flexibilite cognitive",
@@ -19,12 +19,11 @@ export const metadata = {
     "cout du switch cognitif test",
     "test de capacite multitache",
     "exercice agilite mentale gratuit",
-    "coordination interhemispherique test",
     "vitesse d alternance attentionnelle"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de Multitâche – Focale à Double Flux | SkillDrills",
-    description: "Test de multitache et flexibilite cognitive en ligne gratuit: Suivez deux flux visuels opposes en simultane et evaluez le cout d alternance sans inscription.",
+    title: "Test de multitâche | Suivi double | SkillDrills",
+    description: "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. Non clinique, c’est un auto-test cognitif.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -32,8 +31,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de Multitâche – Focale à Double Flux | SkillDrills",
-    description: "Test de multitache et flexibilite cognitive en ligne gratuit: Suivez deux flux visuels opposes en simultane et evaluez le cout d alternance sans inscription.",
+    title: "Test de multitâche | Suivi double | SkillDrills",
+    description: "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. Non clinique, c’est un auto-test cognitif.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -61,13 +60,13 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Entrainement Cognitif",
+      "name": "Entraînement cognitif",
       "item": "https://skilldrills.online/fr/drills/cognitive"
     },
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Test de Multitache",
+      "name": "Test de multitâche",
       "item": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking"
     }
   ]
@@ -76,7 +75,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Task_switching_(psychology)", "https://en.wikipedia.org/wiki/Human_multitasking"],
-  "name": "Test de Multitache — Entrainement Attentionnel a Double Flux",
+  "name": "Test de multitâche – suivi de deux flux",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -84,7 +83,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test de multitache et flexibilite cognitive en ligne gratuit: Suivez deux flux visuels opposes en simultane et evaluez le cout d alternance sans inscription.",
+  "description": "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. Non clinique, c’est un auto-test cognitif.",
   "url": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking",
   "publisher": {
     "@type": "Organization",
@@ -92,13 +91,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test de Multitache",
+  "name": "Test de multitâche",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Necessite un navigateur moderne avec support JavaScript",
@@ -109,15 +108,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Jeu de Multitache – Suivi a Double Flux",
+  "name": "Jeu de multitâche – suivi de deux flux",
   "url": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking",
-  "description": "Test de multitache et flexibilite cognitive en ligne gratuit: Suivez deux flux visuels opposes en simultane et evaluez le cout d alternance sans inscription.",
+  "description": "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. Non clinique, c’est un auto-test cognitif.",
   "genre": [
     "Action",
     "Jeu Cerebral",
@@ -142,82 +141,82 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu est-ce que le Test de Multitache (Dual-Target Flow) ?",
+      "name": "Qu’est-ce que le test de multitâche (Dual-Target Flow) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C est un exercice neurocognitif qui met au defi le cerveau en lui demandant de suivre deux flux continus de formes geometriques dans des directions opposees, testant l attention bi-hemispherique."
+        "text": "C’est un exercice d’entraînement : l’écran est divisé en deux couloirs (gauche/droite en paysage, haut/bas en portrait) où des formes partent du centre vers l’extérieur. Vous cliquez ou touchez seulement le symbole cible affiché dans chaque couloir. Ce n’est pas un test clinique."
       }
     },
     {
       "@type": "Question",
-      "name": "Qu est-ce que le cout de changement (switch cost) selon Rogers et Monsell (1995) ?",
+      "name": "Qu’est-ce que le coût de changement (switch cost) selon Rogers et Monsell (1995) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le cout d alternance est la baisse mesurable de rapidite et de precision qui survient lorsque le cortex prefrontal doit reorganiser ses reperes mentaux pour changer de consigne de tache."
+        "text": "C’est la baisse de rapidité et de précision observée quand on passe d’une règle de tâche à une autre."
       }
     },
     {
       "@type": "Question",
-      "name": "Le cerveau humain est-il capable de multitache reel simultane ?",
+      "name": "Le cerveau peut-il vraiment faire plusieurs choses à la fois ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les recherches en neurosciences cognitives attestent que pour les operations non automatisees, le cerveau effectue une alternance serielle a grande vitesse plutot qu un calcul parallele pur (Pashler, 1994)."
+        "text": "Pour les décisions non automatisées, les travaux sur le goulot d’étranglement central suggèrent une alternance rapide plutôt qu’un traitement réellement parallèle (Pashler, 1994)."
       }
     },
     {
       "@type": "Question",
-      "name": "Qu ont decouvert Ophir, Nass et Wagner (2009) sur les adeptes du multitache ?",
+      "name": "Qu’ont observé Ophir, Nass et Wagner (2009) chez les adeptes du multitâche ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ils ont mis en evidence que les utilisateurs chroniques du multitache numerique eprouvent plus de difficultes a filtrer les stimuli non pertinents et presentent un controle attentionnel moins performant."
+        "text": "Les gros utilisateurs du multitâche médiatique obtenaient de moins bons résultats dans des tâches où il faut ignorer des stimuli non pertinents. L’étude est corrélationnelle et ne montre pas de cause."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment s active la coordination bi-hemispherique dans cet entrainement ?",
+      "name": "Comment le score est-il calculé ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La projection simultanee d elements visuels dans les deux champs de vision sollicite les voies occipito-parietales des deux hemispheres et requiert une communication fluide par le corps calleux."
+        "text": "Chaque cible touchée rapporte 100 points de base multipliés par le combo et le niveau, et ajoute 2 s (60 s maximum). Toucher un mauvais symbole ou laisser filer un symbole cible retire 1 s et remet le combo à zéro. Précision = réussites ÷ (réussites + erreurs). La note dépend du score (24 000 points = meilleure note) : c’est un repère de pratique SkillDrills."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelles strategies permettent d ameliorer son score ?",
+      "name": "Quelles stratégies aident à améliorer son score ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Maintenez votre point de fixation au centre de la zone de vision et appuyez-vous sur votre regard peripherique pour anticiper les formes valides avant de declencher le geste moteur."
+        "text": "Ne fixez pas un seul couloir : regardez près de la limite entre les deux et vérifiez les deux côtés. Les symboles cibles changent toutes les 20 secondes, contrôlez donc leur affichage régulièrement."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment la difficulte evolue-t-elle au fil des niveaux ?",
+      "name": "Comment la difficulté évolue-t-elle au fil des niveaux ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La vitesse de defilement augmente, les cibles actives changent plus souvent et le temps de decision se reduit, poussant l efficacite executive a son niveau maximal."
+        "text": "Le niveau monte avec le score : les formes défilent plus vite et apparaissent plus souvent. À partir du niveau 3, les deux couloirs ont des symboles cibles différents."
       }
     },
     {
       "@type": "Question",
-      "name": "La latence d affichage influe-t-elle sur les resultats ?",
+      "name": "La fréquence de l’écran influe-t-elle sur les résultats ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, des moniteurs a 144Hz ou plus et des peripheriques a faible retard reduisent le flou de mouvement (Woods et al., 2015), assurant une distinction nette des formes rapides."
+        "text": "Un écran à fréquence élevée peut rendre les formes rapides plus nettes, mais nous n’avons pas mesuré l’effet sur le score. Comparez vos résultats sur le même appareil."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la duree ideale pour une session de travail multitache ?",
+      "name": "Combien de temps dure une partie ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une pratique ciblee de 10 a 15 minutes par jour suffit a solliciter la plasticite cerebrale sans provoquer d epuisement attentionnel prolongé."
+        "text": "Le chrono démarre à 45 secondes : +2 s par cible touchée (60 s maximum), −1 s par erreur. La partie se termine à 0. Comparez plusieurs parties jouées dans les mêmes conditions."
       }
     },
     {
       "@type": "Question",
-      "name": "Ce test de multitache est-il gratuit ?",
+      "name": "Ce test de multitâche est-il gratuit ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, SkillDrills fournit cet outil en acces direct et gratuit dans votre navigateur, sans inscription requise ni telechargement."
+        "text": "Oui, SkillDrills le propose gratuitement dans votre navigateur, sans inscription ni téléchargement."
       }
     }
   ]
@@ -226,35 +225,35 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment Passer le Test de Multitache",
-  "description": "Methode pratique pour surveiller deux flux simultanes et entrainer l alternance attentionnelle sous contrainte de vitesse.",
+  "name": "Comment passer le test de multitâche",
+  "description": "Méthode pratique pour surveiller deux flux de symboles et toucher seulement les cibles de chaque couloir.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Stabilisez Votre Regard au Centre",
-      "text": "Fixez la zone mediane entre les deux flux pour observer de maniere homogene les mouvements descendants ou lateraux.",
+      "name": "Regardez près du Centre",
+      "text": "Placez votre regard près de la limite entre les deux couloirs pour surveiller les deux côtés.",
       "url": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Reperer les Symboles Cibles",
-      "text": "Identifiez les formes actives presentees dans le bandeau superieur d affichage.",
+      "name": "Repérez les Symboles Cibles",
+      "text": "Repérez le symbole cible affiché dans chaque couloir ; il change toutes les 20 secondes.",
       "url": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Cliquez Rapidement sur les Correspondances",
-      "text": "Appuyez sans tarder sur les figures correspondantes avant qu elles ne franchissent les bords de l ecran.",
+      "text": "Cliquez ou touchez les symboles identiques à la cible de leur couloir avant qu’ils n’atteignent le bord (+2 s). Un mauvais symbole coûte 1 s.",
       "url": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Gerez l Acceleration Progressive",
-      "text": "Ajustez vos reflexes au fur et a mesure que les objets accelerent pour conserver votre multiplicateur de combo.",
+      "name": "Gérez l’Accélération",
+      "text": "Le défilement accélère avec le niveau et, dès le niveau 3, chaque couloir a sa propre cible. Sans erreur, le multiplicateur de combo augmente.",
       "url": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking#step-4"
     }
   ]
@@ -265,13 +264,13 @@ const guideProps = {
   intro: {
     title: "Test de Multitâche et Flexibilité Cognitive",
     paragraphs: [
-      "Le test de multitache a double flux permet d evaluer la resilience du reseau executif central face a des flux perceptifs concurrents soumis a une pression temporelle progressive.",
-      "Le cout du switch cognitif (switch cost) designe la degradation transitoire de reactivite et de precision observee lors de la bascule entre differentes regles d action (Rogers & Monsell, 1995).",
-      "Les decouvertes en ergonomie cognitive confirment que la coordination attentionnelle s optimise durablement par un entrainement methodique a l alternance mentale (Pashler, 1994; Wickens, 2002).",
+      "Ce test de multitâche gratuit vous demande de surveiller deux flux de symboles à la fois et de toucher seulement la cible de chaque couloir. C’est une auto-évaluation non clinique.",
+      "Le coût de changement (switch cost) désigne la baisse passagère de rapidité et de précision lors du passage d’une règle à une autre (Rogers & Monsell, 1995).",
+      "Ici, les cibles changent toutes les 20 secondes et deviennent différentes d’un couloir à l’autre à partir du niveau 3 : il faut donc mettre à jour la règle de chaque côté (Pashler, 1994 ; Wickens, 2002).",
     ],
   },
   benchmarks: {
-    title: 'Niveaux et Baremes de Performance en Multitache',
+    title: 'Paliers de pratique SkillDrills (précision)',
     headers: ['Palier', 'Rang', 'Evaluation', 'Precision', 'Repère de pratique'],
     note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques.",
 
@@ -284,13 +283,13 @@ const guideProps = {
     ],
   },
   protocols: {
-    title: 'Protocoles de Renforcement Neurocognitif',
-    description: 'Directives basees sur les neurosciences pour affuter l alternance attentionnelle et l endurance mentale.',
+    title: 'Étapes d’une partie',
+    description: 'Comment surveiller les deux couloirs sans perdre le combo.',
     items: [
-      { title: "Stabilisez Votre Regard au Centre", description: "Fixez la zone mediane entre les deux flux pour observer de maniere homogene les mouvements descendants ou lateraux." },
-      { title: "Reperer les Symboles Cibles", description: "Identifiez les formes actives presentees dans le bandeau superieur d affichage." },
-      { title: "Cliquez Rapidement sur les Correspondances", description: "Appuyez sans tarder sur les figures correspondantes avant qu elles ne franchissent les bords de l ecran." },
-      { title: "Gerez l Acceleration Progressive", description: "Ajustez vos reflexes au fur et a mesure que les objets accelerent pour conserver votre multiplicateur de combo." },
+      { title: "Regardez près du Centre", description: "Placez votre regard près de la limite entre les deux couloirs pour surveiller les deux côtés." },
+      { title: "Repérez les Symboles Cibles", description: "Repérez le symbole cible affiché dans chaque couloir ; il change toutes les 20 secondes." },
+      { title: "Cliquez Rapidement sur les Correspondances", description: "Cliquez ou touchez les symboles identiques à la cible de leur couloir avant qu’ils n’atteignent le bord (+2 s). Un mauvais symbole coûte 1 s." },
+      { title: "Gérez l’Accélération", description: "Le défilement accélère avec le niveau et, dès le niveau 3, chaque couloir a sa propre cible. Sans erreur, le multiplicateur de combo augmente." },
     ],
   },
   faqs: {
@@ -330,15 +329,15 @@ export default function EnhancedPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <DualTargetFlowClient copy={{
-        title: "Test de multitâche", subtitle: "Suivez deux flux visuels en parallèle",
+        title: "Test de multitâche", subtitle: "Surveillez deux flux de symboles en parallèle",
         statScore: "Points", statTime: "Temps", timeLeft: "Temps restant", statLevel: "Niveau", statBest: "Meilleur score",
         startTitle: "Test de multitâche", startSubtitle: "Deux flux · focus périphérique", getReady: "Préparez-vous", accuracy: "Précision", hits: "Réussites", peakLevel: "Niveau maximal", maxCombo: "Combo maximal",
         caption: "Repérez les symboles correspondants dans deux flux opposés et réagissez avant l’accélération.",
         rulesTitle: "Consignes et score", ruleItems: [
-          { text: "Touchez la cible gauche", highlight: "+points", result: "Cliquez le symbole affiché" },
-          { text: "Touchez la cible droite", highlight: "Combo", result: "Suivez les deux flux" },
-          { text: "Évitez les erreurs", highlight: "Précision", result: "Ignorez les symboles différents" },
-          { text: "Adaptez-vous au rythme", highlight: "Niveau supérieur", result: "Gardez les deux côtés équilibrés" },
+          { text: "Touchez la cible", highlight: "+100 PTS, +2 s", result: "Symbole du couloir" },
+          { text: "Deux couloirs", highlight: "Dès le niveau 3", result: "Une cible par couloir" },
+          { text: "Erreur / cible ratée", highlight: "Combo perdu", result: "−1 s" },
+          { text: "Changement de cible", highlight: "Toutes les 20 s", result: "Revérifiez le symbole" },
         ],
         aboutTitle: "À propos du multitâche et du double flux", aboutLead: "Cet auto-test cognitif non clinique associe deux flux visuels et observe la précision pratiquée ainsi que la vitesse de changement attentionnel, sans prétendre mesurer une capacité générale du quotidien.",
         audienceTitle: "Pour qui", audienceText: "Pour les joueurs qui surveillent plusieurs éléments, les apprenants et les personnes qui veulent organiser des informations simultanées.",

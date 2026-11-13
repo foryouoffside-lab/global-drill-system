@@ -8,10 +8,10 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: "マルチタスクテスト | 二重ターゲット追従 | SkillDrills",
   description: "無料ブラウザで二つのターゲットを同時に追従するマルチタスク練習。医学的診断ではない認知セルフチェックです。",
-  keywords: ["マルチタスク 練習", "マルチタスク テスト", "二重ターゲット 追従", "並行処理 能力 測定", "タスク切り替え コスト", "認知的柔軟性 テスト", "両視野 追従 訓練", "脳トレ マルチタスク", "注意配分 テスト", "大脳半球 協調 検査", "視覚ストリーム 処理", "情報処理速度 測定"],
+  keywords: ["マルチタスク 練習", "マルチタスク テスト", "二重ターゲット 追従", "並行処理 能力 測定", "タスク切り替え コスト", "認知的柔軟性 テスト", "両視野 追従 訓練", "脳トレ マルチタスク", "注意配分 テスト", "マルチタスク 能力 テスト", "視覚ストリーム 処理", "情報処理速度 測定"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "マルチタスクテスト・二重ターゲット追従 – 並行処理能力診断 | SkillDrills",
-    description: "無料ブラウザ完結のマルチタスクテスト。対向方向に流れる2つの独立した図形ストリームを両視野で同時に監視し、タスク切り替えコストと大脳半球間の協調処理能力を精密測定。",
+    title: "マルチタスクテスト | 二重ターゲット追従 | SkillDrills",
+    description: "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "マルチタスクテスト・二重ターゲット追従 – 並行処理能力診断 | SkillDrills",
-    description: "無料ブラウザ完結のマルチタスクテスト。対向方向に流れる2つの独立した図形ストリームを両視野で同時に監視し、タスク切り替えコストと大脳半球間の協調処理能力を精密測定。",
+    title: "マルチタスクテスト | 二重ターゲット追従 | SkillDrills",
+    description: "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Task_switching_(psychology)", "https://en.wikipedia.org/wiki/Human_multitasking"],
-  "name": "マルチタスク二重ターゲット追従診断ツール",
+  "name": "マルチタスクテスト（二重ターゲット追従）",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "description": "無料ブラウザ完結のマルチタスクテスト。対向方向に流れる2つの独立した図形ストリームを両視野で同時に監視し、タスク切り替えコストと大脳半球間の協調処理能力を精密測定。",
+  "description": "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking",
   "publisher": {
     "@type": "Organization",
@@ -79,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "マルチタスクテスト・二重ターゲット追従 – 並行処理能力診断",
+  "name": "マルチタスクテスト・二重ターゲット追従",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -96,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "マルチタスクテスト – 対向ストリーム並行追従ゲーム",
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking",
-  "description": "無料ブラウザ完結のマルチタスクテスト。対向方向に流れる2つの独立した図形ストリームを両視野で同時に監視し、タスク切り替えコストと大脳半球間の協調処理能力を精密測定。",
+  "description": "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
   "genre": [
     "Action",
     "Brain Game",
@@ -132,7 +132,7 @@ const faqSchema = {
       "name": "マルチタスクテスト（Dual-Target Flow）とは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "反対方向に流れる2つの図形ストリームを左右の両眼・両半球視野で同時に監視し、指定された形状のみを正確にタップする並行処理能力測定ゲームです。"
+        "text": "画面を2つのレーン（横画面は左右、縦画面は上下）に分け、中央から外側へ反対方向に流れる図形のうち、各レーンに表示された目標図形だけをクリックまたはタップする練習ゲームです。臨床検査ではありません。"
       }
     },
     {
@@ -140,7 +140,7 @@ const faqSchema = {
       "name": "タスク切り替えコスト（Switch Cost, Rogers & Monsell, 1995）とは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "異なる作業ルール間を行き来する際、前頭葉の認知リセットに伴って生じる反応速度の低下とエラー増加のことです。"
+        "text": "異なるルールの課題を切り替えるときに生じる、反応の遅れやエラーの増加のことです。"
       }
     },
     {
@@ -156,15 +156,15 @@ const faqSchema = {
       "name": "メディア・マルチタスクの落とし穴（Ophir et al., 2009）とは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "過度なマルチタスク習慣は注意散漫を招き、無関係な刺激をフィルタリングする能力を低下させることが実証されています。"
+        "text": "メディアを頻繁に同時利用する人は、無関係な刺激を無視する課題で成績が低い傾向があったと報告されています（相関研究であり因果は示されていません）。"
       }
     },
     {
       "@type": "Question",
-      "name": "両視野追従で鍛えられる脳の部位は？",
+      "name": "スコアはどう計算されますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "後頭葉・頭頂葉の空間視覚経路と、左右の視野を同時に処理する練習になります。"
+        "text": "目標図形を当てると基本100点にコンボ倍率とレベル倍率が掛かり、+2秒（最大60秒）。違う図形を押す、または目標図形を見逃すと-1秒でコンボがリセットされます。正確度＝成功÷（成功＋ミス）。結果ランクはスコア基準（24,000点が最上位）のSkillDrills練習用目安です。"
       }
     },
     {
@@ -172,7 +172,7 @@ const faqSchema = {
       "name": "高スコアを出すための視線使いのコツは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "一方のストリームを直視せず、両ストリームの中間地点にソフトフォーカス（広い視野）を置き、周辺視野で照合を行うことです。"
+        "text": "片方のレーンだけを見続けず、2つのレーンの境目付近を見ながら両方を確認することです。目標図形は20秒ごとに変わるので、各レーンの表示をこまめに確認しましょう。"
       }
     },
     {
@@ -180,23 +180,23 @@ const faqSchema = {
       "name": "レベルが上がるとどう難しくなりますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ストリームの流速が加速し、ターゲット図形の種類が複雑化して許容判定時間が短縮されます。"
+        "text": "スコアが上がるとレベルが上がり、図形の流れが速く、出現頻度も高くなります。レベル3からは2つのレーンの目標図形が別々になります。"
       }
     },
     {
       "@type": "Question",
-      "name": "入力遅延はスコアに影響しますか？",
+      "name": "モニターのリフレッシュレートは関係しますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "高速スクロール時の輪郭視認性には高リフレッシュレート（144Hz+）が有利に働きます（Woods et al., 2015）。"
+        "text": "高リフレッシュレートでは速く動く図形が見やすくなる可能性がありますが、スコアへの影響は測定していません。記録は同じ機器で比べてください。"
       }
     },
     {
       "@type": "Question",
-      "name": "1回の練習時間はどれくらいが適切ですか？",
+      "name": "1回のプレイ時間は？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "極度の認知疲労を避けるため、1回10〜15分のセッションが推奨されます。"
+        "text": "45秒から始まり、正解ごとに+2秒（最大60秒）、ミスごとに-1秒。時間が0になると終了します。同じ条件で数回プレイしてスコアを比べましょう。"
       }
     },
     {
@@ -204,7 +204,7 @@ const faqSchema = {
       "name": "スマートフォンでもプレイできますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、縦画面モード（上下フロー）と横画面モード（左右フロー）の両方に完全対応しています。"
+        "text": "はい。縦画面では2つのレーンが上下に、横画面では左右に並び、タッチで操作できます。"
       }
     }
   ]
@@ -214,12 +214,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "マルチタスクテスト・二重ターゲット追従",
-  "description": "無料ブラウザ完結のマルチタスクテスト。対向方向に流れる2つの独立した図形ストリームを両視野で同時に監視し、タスク切り替えコストと大脳半球間の協調処理能力を精密測定。",
+  "description": "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "両ストリーム中央への視線配置",
+      "name": "レーンの境目付近を見る",
       "text": "画面中央に視線を落ち着かせ、左右（または上下）の両方の流れを同時に視野に収めます。",
       "url": "https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking#step-1"
     },
@@ -227,21 +227,21 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 2,
       "name": "ターゲット図形の確認",
-      "text": "上部HUDに表示されているTOPおよびBOTTOMの目標図形テンプレートを記憶します。",
+      "text": "各レーンに表示されている目標図形を確認します。目標図形は20秒ごとに変わります。",
       "url": "https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "一致図形の高速タップ",
-      "text": "流れてくる図形の中でターゲットと一致するもののみを、通過する前に素早くタップします。",
+      "text": "流れてくる図形のうち、そのレーンの目標図形と同じものだけを画面外に出る前にクリックまたはタップします（+2秒）。違う図形を押すと-1秒です。",
       "url": "https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "加速するフローへの同調",
-      "text": "速度が上昇してもパニックを起こさず、一定のリズムを保ってコンボを積み上げます。",
+      "text": "レベルが上がると流れが速くなり、レベル3からは2つのレーンの目標が別々になります。ミスなく続けるとコンボ倍率が上がります。",
       "url": "https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking#step-4"
     }
   ]
@@ -250,33 +250,33 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('rogers1995', 'monsell2003', 'pashler1994', 'wickens2002', 'ophir2009', 'woods2015'),
   intro: {
-    title: "マルチタスクテスト・二重ターゲット追従 – 並行処理能力診断",
+    title: "マルチタスクテストのガイド",
     paragraphs: [
-      "無料ブラウザ完結のマルチタスクテスト。対向方向に流れる2つの独立した図形ストリームを両視野で同時に監視し、タスク切り替えコストと大脳半球間の協調処理能力を精密測定。",
-      "異なる作業ルール間を行き来する際、前頭葉の認知リセットに伴って生じる反応速度の低下とエラー増加のことです。",
+      "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
+      "異なるルールの課題を切り替えるときに生じる、反応の遅れやエラーの増加のことです。",
       "高度な注意を要する作業では、脳は並列処理ではなく高速な時分割シリアル処理（Pashler, 1994）を行っています。",
     ],
   },
   benchmarks: {
-    title: '認知パフォーマンス標準評価（ベンチマーク）',
+    title: 'SkillDrills 練習段階（正確度の目安）',
     note: '段階は SkillDrills が設けた練習用の目安であり、人口統計やパーセンタイルではありません。',
     headers: ['等級 (Tier)', '称号 (Rank)', '評価基準', '到達ランク', '正答率', '練習段階'],
     rows: [
       { tier: 'Tier 1', rank: 'マルチタスクの最上位段階', stat: '最上位段階', level: 'マスタリー（極限）', accuracy: '98% 以上', percentile: '最上位段階' },
       { tier: 'Tier 2', rank: 'アドバンス・並行処理スペシャリスト', stat: '上級段階', level: 'ダイヤモンド（優秀）', accuracy: '94–97%', percentile: '上級段階' },
       { tier: 'Tier 3', rank: '熟練オペレーター', stat: '中上級段階', level: 'プラチナ（熟練）', accuracy: '88–93%', percentile: '中上級段階' },
-      { tier: 'Tier 4', rank: '一般成人標準', stat: '標準段階', level: 'ゴールド（標準）', accuracy: '78–87%', percentile: '標準段階' },
+      { tier: 'Tier 4', rank: '標準の練習段階', stat: '標準段階', level: 'ゴールド（標準）', accuracy: '78–87%', percentile: '標準段階' },
       { tier: 'Tier 5', rank: '入門・初期基準値', stat: '基準値（基礎）', level: 'シルバー（基礎）', accuracy: '78% 未満', percentile: '基準値（下位）' },
     ],
   },
   protocols: {
-    title: '脳の処理速度と集中力を高める4大トレーニングプロトコル',
-    description: 'タスク切り替えコスト（Rogers & Monsell, 1995）の最小化と、大脳半球間の情報統合能力を最大化する科学的マルチタスクトレーニングプロトコルです。',
+    title: 'マルチタスク練習の4ステップ',
+    description: 'タスク切り替えコスト（Rogers & Monsell, 1995）を参考に、2つの流れを交互に確認する練習手順です。',
     items: [
-      { title: "両ストリーム中央への視線配置", description: "画面中央に視線を落ち着かせ、左右（または上下）の両方の流れを同時に視野に収めます。" },
-      { title: "ターゲット図形の確認", description: "上部HUDに表示されているTOPおよびBOTTOMの目標図形テンプレートを記憶します。" },
-      { title: "一致図形の高速タップ", description: "流れてくる図形の中でターゲットと一致するもののみを、通過する前に素早くタップします。" },
-      { title: "加速するフローへの同調", description: "速度が上昇してもパニックを起こさず、一定のリズムを保ってコンボを積み上げます。" },
+      { title: "レーンの境目付近を見る", description: "画面中央に視線を落ち着かせ、左右（または上下）の両方の流れを同時に視野に収めます。" },
+      { title: "ターゲット図形の確認", description: "各レーンに表示されている目標図形を確認します。目標図形は20秒ごとに変わります。" },
+      { title: "一致図形の高速タップ", description: "流れてくる図形のうち、そのレーンの目標図形と同じものだけを画面外に出る前にクリックまたはタップします（+2秒）。違う図形を押すと-1秒です。" },
+      { title: "加速するフローへの同調", description: "レベルが上がると流れが速くなり、レベル3からは2つのレーンの目標が別々になります。ミスなく続けるとコンボ倍率が上がります。" },
     ],
   },
   faqs: {
@@ -321,10 +321,10 @@ export default function LocalizedCognitivePage() {
         startTitle: "マルチタスクテスト", startSubtitle: "二重ストリーム・周辺フォーカス", getReady: "準備してください", accuracy: "正確度", hits: "成功", peakLevel: "最高レベル", maxCombo: "最大コンボ",
         caption: "反対方向に動く二つのターゲットストリームから、同じ図形を見つけて素早くタップします。",
         rulesTitle: "ドリルの手順とスコア基準", ruleItems: [
-          { text: "左のターゲット", highlight: "+スコア", result: "表示された図形をクリック" },
-          { text: "右のターゲット", highlight: "コンボ", result: "両方の流れを追従" },
-          { text: "誤反応を抑える", highlight: "正確さ", result: "違う図形は無視" },
-          { text: "速度に適応", highlight: "レベル上昇", result: "速くなっても両側を維持" },
+          { text: "目標図形を当てる", highlight: "+100点、+2秒", result: "レーンの図形をクリック" },
+          { text: "両レーンを確認", highlight: "レベル3から", result: "レーンごとに目標が別" },
+          { text: "誤タップ / 見逃し", highlight: "コンボリセット", result: "-1秒" },
+          { text: "目標の変更", highlight: "20秒ごと", result: "表示を再確認" },
         ],
         aboutTitle: "マルチタスクと二重ターゲット追従", aboutLead: "二つの視覚ストリームを追従する非臨床の認知セルフチェックです。実生活の万能なマルチタスク能力ではなく、練習中の切替速度と両側の正確さを見ます。",
         audienceTitle: "おすすめの人", audienceText: "ゲーム中に複数の画面要素を見る人、学習者、同時に入る情報を整理したい人に向いています。",

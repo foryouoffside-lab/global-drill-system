@@ -6,21 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Temps de réaction de choix : test en ligne | SkillDrills",
-  description: "Test gratuit de temps de réaction de choix : sélectionnez la cible selon une règle qui change. Entraînez la décision visuelle ; non clinique.",
-  keywords: [
-    "test temps de réaction",
-    "test de temps de réaction en ligne",
-    "test de réaction",
-    "temps de réaction",
-    "temps de réaction de choix",
-    "vitesse de décision",
-    "réaction visuelle",
-    "loi de Hick"
-  ],
+  title: "Réaction de choix avec règle changeante | SkillDrills",
+  description: "Réaction de choix avec règle changeante : cliquez la cible rouge ou bleue indiquée par la consigne. Exercice gratuit de vitesse de décision, non clinique.",
+  keywords: ["réaction de choix", "temps de réaction de choix", "changement de règle", "vitesse de décision", "loi de Hick"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Temps de réaction de choix : test en ligne | SkillDrills",
-    description: "Test gratuit de temps de réaction de choix : sélectionnez la cible selon une règle qui change. Entraînez la décision visuelle ; non clinique.",
+    title: "Réaction de choix avec règle changeante | SkillDrills",
+    description: "Réaction de choix avec règle changeante : cliquez la cible rouge ou bleue indiquée par la consigne. Exercice gratuit de vitesse de décision, non clinique.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -28,8 +19,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Temps de réaction de choix : test en ligne | SkillDrills",
-    description: "Test gratuit de temps de réaction de choix : sélectionnez la cible selon une règle qui change. Entraînez la décision visuelle ; non clinique.",
+    title: "Réaction de choix avec règle changeante | SkillDrills",
+    description: "Réaction de choix avec règle changeante : cliquez la cible rouge ou bleue indiquée par la consigne. Exercice gratuit de vitesse de décision, non clinique.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -63,7 +54,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Temps de Réaction de Choix",
+      "name": "Réaction de choix",
       "item": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time"
     }
   ]
@@ -72,7 +63,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "Test de Temps de Réaction de Choix – CRT",
+  "name": "Réaction de choix avec règle changeante",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": {
@@ -80,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test de temps de réaction de choix gratuit dans le navigateur : cliquez la bonne cible selon une règle qui change et suivez votre vitesse de décision.",
+  "description": "Exercice gratuit de réaction de choix dans le navigateur : cliquez la cible de la couleur indiquée par une règle qui change. Résultat en points, exactitude et niveau, sans mesure en millisecondes.",
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time",
   "publisher": {
     "@type": "Organization",
@@ -88,13 +79,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "fr-FR",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test de Temps de Réaction de Choix",
+  "name": "Réaction de choix avec règle changeante",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Nécessite un navigateur moderne avec support JavaScript",
@@ -105,15 +96,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time",
   "inLanguage": "fr-FR",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Test de Temps de Réaction de Choix – Jeu Cérébral",
+  "name": "Réaction de choix – jeu de règle de couleur",
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time",
-  "description": "Test de temps de réaction de choix gratuit dans le navigateur : cliquez la bonne cible selon une règle qui change et suivez votre vitesse de décision.",
+  "description": "Exercice gratuit de réaction de choix dans le navigateur : cliquez la cible de la couleur indiquée par une règle qui change. Résultat en points, exactitude et niveau, sans mesure en millisecondes.",
   "genre": [
     "Action",
     "Brain Game",
@@ -138,18 +129,18 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu'est-ce que le temps de réaction de choix (CRT) ?",
+      "name": "Qu'est-ce que la réaction de choix ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le temps de réaction de choix est le délai nécessaire pour identifier un stimulus spécifique parmi plusieurs options et exécuter l'action motrice correspondante."
+        "text": "C’est le fait de repérer, parmi plusieurs stimuli, celui qui correspond à une consigne puis de choisir la bonne réponse. Ici, une cible rouge et une bleue apparaissent et vous cliquez la couleur demandée par la règle active."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la différence entre temps simple et de choix ?",
+      "name": "Quelle est la différence entre temps de réaction simple et de choix ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le temps simple (SRT, ~200ms) réagit à un signal unique prévu. Le temps de choix (CRT, ~280-350ms) incorpore une délibération corticale et une discrimination visuelle (Donders, 1868)."
+        "text": "Une réaction simple répond à un seul stimulus attendu. Une réaction de choix ajoute la discrimination et la sélection de la réponse, elle est donc généralement plus lente (Donders). Cet exercice ajoute en plus des changements de règle."
       }
     },
     {
@@ -157,63 +148,63 @@ const faqSchema = {
       "name": "Que décrit la loi de Hick (Hick, 1952) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La loi de Hick stipule que le temps de réaction augmente de manière logarithmique en fonction du nombre d'alternatives disponibles : RT = a + b * log2(n)."
+        "text": "Le temps de réaction augmente de façon logarithmique avec le nombre de choix possibles. Comme vous devez vérifier la règle avant chaque clic, l’exercice sollicite justement cette étape de décision."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelles sont les valeurs moyennes observées chez l'être humain ?",
+      "name": "Comment fonctionne le changement de règle ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En laboratoire, le temps de réaction de choix d’un adulte se situe souvent autour de 280 à 350 ms, mais il dépend de la tâche, de l’âge et du matériel (Der & Deary, 2006). Les repères de ce test servent à suivre votre progression, pas à vous classer."
+        "text": "Le bandeau indique la couleur à cliquer (rouge ou bleu). À partir du niveau 2, la règle s’inverse après une série de bonnes réponses ; plus le niveau monte, moins il faut de réussites avant l’inversion (2 au minimum)."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi les règles de couleur changent-elles en cours de session ?",
+      "name": "Comment fonctionne le chrono ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le changement de règle vous oblige à abandonner la consigne précédente et à appliquer la nouvelle : c’est ce qui rend chaque cible plus exigeante qu’un simple clic de réaction."
+        "text": "La partie commence avec 45 secondes. Chaque bonne réponse ajoute 2 secondes, jusqu’à 60. Un clic sur la mauvaise couleur, ou une paire de cibles expirée (si Target Timeouts est activé), retire 1 seconde et remet le combo à zéro. La partie s’arrête à 0."
       }
     },
     {
       "@type": "Question",
-      "name": "Peut-on améliorer sa vitesse de décision avec l'entraînement ?",
+      "name": "Comment sont calculés les points et la note ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une pratique répétée de la même tâche améliore généralement les performances sur cette tâche. Rien ne prouve que le gain se transfère à d’autres situations : suivez votre progression d’une séance à l’autre sur le même matériel."
+        "text": "Chaque bonne réponse rapporte 100 points multipliés par le multiplicateur de combo et celui du niveau. Le score final est comparé à une référence fixe de SkillDrills et affiché en note de F à S+."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment l'âge influence-t-il le temps de réaction ?",
+      "name": "L’exercice mesure-t-il mon temps de réaction en millisecondes ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les temps de réaction tendent à s’allonger lentement avec l’âge (Der & Deary, 2006). Les écarts entre personnes sont importants : comparez-vous surtout à vos propres séances."
+        "text": "Non. Il affiche les points, l’exactitude (bonnes réponses sur l’ensemble des essais), le niveau maximal et le meilleur combo. Les temps de réponse individuels ne sont pas enregistrés en millisecondes."
       }
     },
     {
       "@type": "Question",
-      "name": "Le matériel informatique influe-t-il sur la mesure ?",
+      "name": "Peut-on progresser avec l’entraînement ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. L’écran, la souris et le navigateur ajoutent leur propre délai (Woods et al., 2015). Un écran à fréquence élevée réduit l’intervalle entre deux images : comparez vos séances sur le même matériel."
+        "text": "Votre score à cet exercice augmente généralement avec la pratique. Relisez la règle avant chaque clic et gardez une bonne exactitude pour faire monter le combo. Cela ne garantit pas des réactions plus rapides dans d’autres situations."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel protocole d'entraînement est recommandé ?",
+      "name": "Est-ce un test médical ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Il n’existe pas de protocole prouvé. Quelques séances courtes, régulières et reposées, sur le même appareil, permettent de suivre votre évolution sans fatigue."
+        "text": "Non. C’est un exercice d’entraînement dans le navigateur, ni diagnostic ni dépistage. Les résultats dépendent aussi de l’appareil et de la forme du jour ; comparez vos propres scores sur le même appareil."
       }
     },
     {
       "@type": "Question",
-      "name": "Ce test de temps de réaction est-il entièrement gratuit ?",
+      "name": "L’exercice est-il gratuit ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, SkillDrills propose cette évaluation gratuitement dans votre navigateur, sans téléchargement ni inscription."
+        "text": "Oui, il est gratuit, sans inscription, et fonctionne directement dans le navigateur."
       }
     }
   ]
@@ -222,8 +213,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment Réaliser le Test de Temps de Réaction de Choix",
-  "description": "Test de temps de réaction de choix gratuit dans le navigateur : cliquez la bonne cible selon une règle qui change et suivez votre vitesse de décision.",
+  "name": "Comment faire l’exercice de réaction de choix",
+  "description": "Exercice gratuit de réaction de choix dans le navigateur : cliquez la cible de la couleur indiquée par une règle qui change. Résultat en points, exactitude et niveau, sans mesure en millisecondes.",
   "step": [
     {
       "@type": "HowToStep",
@@ -236,14 +227,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 2,
       "name": "Distinguez les Cibles Visuelles",
-      "text": "Dès l'apparition des cibles à l'écran, déterminez instantanément quel élément correspond à la consigne active.",
+      "text": "Une cible rouge et une cible bleue apparaissent ensemble : repérez celle qui correspond à la consigne active.",
       "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Exécutez le Clic de Décision",
-      "text": "Appuyez sur la cible correcte le plus vite possible avant l'expiration du décompte temporel.",
+      "text": "Cliquez la bonne cible avant que la paire ne change. Une erreur ou un délai dépassé coûte 1 seconde et le combo.",
       "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time#step-3"
     },
     {
@@ -259,32 +250,32 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('donders1969', 'hick1952', 'hyman1953', 'der2006', 'woods2015'),
   intro: {
-    title: "Neurosciences du Temps de Réaction de Choix & Rapidité de Décision",
+    title: "Réaction de choix avec règle changeante",
     paragraphs: [
-      "Le temps de réaction de choix est le délai pour repérer la bonne cible parmi plusieurs et cliquer dessus. Ici, une règle de couleur change en cours de séance et vous mesurez votre vitesse de décision et votre exactitude. Avec un temps simple autour de 200 ms, un choix prend souvent 280 à 350 ms (Donders, 1868).",
-      "Le temps de réaction de choix (CRT - Choice Reaction Time) est une métrique fondamentale en neurosciences cognitives pour évaluer l'efficacité de traitement du système nerveux central face à des alternatives multiples.",
-      "Contrairement au temps de réaction simple (SRT, ~200ms) où la réponse est stéréotypée, la tâche de choix ajoute des étapes de discrimination sensorielle et de sélection d'action, portant le délai physiologique à 280–350ms (Donders, 1868).",
-      "La loi de Hick-Hyman (Hick, 1952; Hyman, 1953) démontre que la latence décisionnelle augmente selon une fonction logarithmique du nombre de choix. Cet exercice introduit des renversements de règles pour solliciter le contrôle inhibiteur frontal.",
+      "La réaction de choix avec règle changeante est un exercice gratuit dans le navigateur : une cible rouge et une cible bleue apparaissent ensemble et vous cliquez celle dont la couleur est indiquée par le bandeau. À partir du niveau 2, la règle s’inverse, il faut donc la relire avant chaque clic.",
+      "Contrairement à une réaction simple à un seul stimulus, la réaction de choix ajoute la discrimination du stimulus et la sélection de la réponse ; elle est donc en général plus lente (Donders).",
+      "La loi de Hick-Hyman (Hick, 1952 ; Hyman, 1953) décrit l’augmentation logarithmique du temps de décision avec le nombre de choix. L’exercice affiche points, exactitude, niveau maximal et meilleur combo ; il ne mesure pas de millisecondes et n’est pas un test clinique.",
     ],
   },
   benchmarks: {
-    title: 'Repères de performance au temps de réaction de choix',
-    headers: ['Palier', 'Profil', 'Latence de réaction', 'Exactitude', 'Lecture'],
+    title: 'Paliers d’entraînement SkillDrills (exactitude)',
+    headers: ['Palier', 'Profil', 'Exactitude', 'Lecture'],
     rows: [
-      { tier: 'Palier 1', rank: 'Très rapide', stat: '< 210 ms', level: 'Palier 1', accuracy: '98%+', marker: 'Très rapide et très précis' },
-      { tier: 'Palier 2', rank: 'Avancé', stat: '210 – 249 ms', level: 'Palier 2', accuracy: '94-97%', marker: 'Rapide et régulier' },
-      { tier: 'Palier 3', rank: 'Entraîné', stat: '250 – 289 ms', level: 'Palier 3', accuracy: '88-93%', marker: 'Bon niveau d’entraînement' },
-      { tier: 'Palier 4', rank: 'Intermédiaire', stat: '290 – 349 ms', level: 'Palier 4', accuracy: '78-87%', marker: 'Plage courante en laboratoire' },
-      { tier: 'Palier 5', rank: 'Débutant', stat: '≥ 350 ms', level: 'Palier 5', accuracy: '< 78%', marker: 'Point de départ' },
+      { tier: 'Palier 1', rank: 'Très précis', accuracy: '98%+', marker: 'Très peu d’erreurs, même après un changement de règle' },
+      { tier: 'Palier 2', rank: 'Avancé', accuracy: '94-97%', marker: 'Régulier' },
+      { tier: 'Palier 3', rank: 'Entraîné', accuracy: '88-93%', marker: 'Bon équilibre vitesse / précision' },
+      { tier: 'Palier 4', rank: 'Intermédiaire', accuracy: '78-87%', marker: 'Erreurs surtout après les changements de règle' },
+      { tier: 'Palier 5', rank: 'Débutant', accuracy: '< 78%', marker: 'Point de départ' },
     ],
+    note: 'Paliers d’entraînement définis par SkillDrills, sans statistiques d’utilisateurs ni valeur clinique.',
   },
   protocols: {
     title: 'Conseils pour décider plus vite',
     description: 'Quatre habitudes simples pour rester précis quand la règle change.',
     items: [
       { title: "Surveillez la Règle Active en Haut", description: "Observez le bandeau supérieur indiquant la couleur de la cible valide (ex: CLIQUEZ SUR ROUGE ou CLIQUEZ SUR BLEU)." },
-      { title: "Distinguez les Cibles Visuelles", description: "Dès l'apparition des cibles à l'écran, déterminez instantanément quel élément correspond à la consigne active." },
-      { title: "Exécutez le Clic de Décision", description: "Appuyez sur la cible correcte le plus vite possible avant l'expiration du décompte temporel." },
+      { title: "Distinguez les Cibles Visuelles", description: "Une cible rouge et une cible bleue apparaissent ensemble : repérez celle qui correspond à la consigne active." },
+      { title: "Exécutez le Clic de Décision", description: "Cliquez la bonne cible avant que la paire ne change. Une erreur ou un délai dépassé coûte 1 seconde et le combo." },
       { title: "Adaptez-vous aux Inversions de Règle", description: "Lorsque la consigne change, inhibez immédiatement le réflexe précédent et ciblez la nouvelle couleur désignée." },
     ],
   },
@@ -326,14 +317,14 @@ export default function EnhancedPageFr() {
       />
       <EliteNeuroSwitchClient
         copy={{
-          title: "Temps de réaction de choix",
+          title: "Réaction de choix avec règle changeante",
           subtitle: "Choisissez la cible selon la couleur active et entraînez votre vitesse de décision",
-          startTitle: "Temps de réaction de choix",
+          startTitle: "Réaction de choix avec règle changeante",
           startSubtitle: "Réaction de choix • Vitesse de décision",
           stageCaption: "Cliquez la cible qui correspond à la règle active. Les couleurs et la règle changent vite.",
           rulesTitle: "Instructions du test et score",
-          aboutTitle: "Que mesure le test de réaction ?",
-          faqTitle: "Test de réaction de choix : vos questions",
+          aboutTitle: "Qu’est-ce que la réaction de choix ?",
+          faqTitle: "Réaction de choix : questions fréquentes",
           labels: { score: "Score", time: "Temps", level: "Niveau", bestScore: "Meilleur score", timeLeft: "Temps restant", rule: "RÈGLE", ready: "PRÉPAREZ-VOUS", accuracy: "Précision", hits: "Réussites", peakLevel: "Niveau maximal", maxCombo: "Combo maximal" },
           ruleBanner: { RED: "CIBLE ROUGE", BLUE: "CIBLE BLEUE" },
           aboutLead: "Le temps de réaction de choix est l’intervalle nécessaire pour sélectionner la bonne réponse parmi plusieurs stimuli. Quand les choix augmentent, le temps de décision augmente généralement selon la loi de Hick.",
@@ -345,9 +336,9 @@ export default function EnhancedPageFr() {
           ],
           rulesItems: [
             { num: "1", text: "Règle active", highlight: "ROUGE / BLEU", result: "Suivez la bannière" },
-            { num: "2", text: "Bonne cible", highlight: "+100 pts", result: "Bonus de combo et niveau" },
-            { num: "3", text: "Changement de règle", highlight: "Automatique", result: "Accélère avec le niveau" },
-            { num: "4", text: "Erreur / délai", highlight: "Combo réinitialisé", result: "−0,8 s avec pénalité" }
+            { num: "2", text: "Bonne cible", highlight: "+100 pts", result: "Combo × niveau, +2 s (max. 60 s)" },
+            { num: "3", text: "Changement de règle", highlight: "Dès le niveau 2", result: "Plus fréquent quand le niveau monte" },
+            { num: "4", text: "Erreur / délai", highlight: "Combo réinitialisé", result: "−1 s" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

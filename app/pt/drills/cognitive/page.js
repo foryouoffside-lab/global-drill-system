@@ -7,16 +7,16 @@ const cognitiveDrills = DRILLS.filter((d) => d.category === 'cognitive');
 
 export const metadata = {
   title: 'Treino cerebral e concentração | SkillDrills',
-  description: '8 exercícios grátis no navegador para atenção, memória, reação e velocidade de processamento. Sem cadastro.',
+  description: 'Treino cerebral grátis: 8 jogos para treinar o cérebro online, com atenção seletiva e dividida, reação de escolha, Stroop e tabela de Schulte. Sem cadastro.',
   keywords: [
-    'treino cognitivo', 'jogos de cérebro', 'exercícios de concentração', 'teste de memória',
-    'teste de atenção', 'velocidade de processamento', 'teste de reação', 'treino de memória',
-    'teste Stroop', 'tabela de Schulte', 'memória de trabalho', 'jogos mentais grátis',
+    'treino cerebral', 'jogos para treinar o cérebro', 'exercícios para o cérebro', 'treino cognitivo',
+    'teste de atenção', 'velocidade de processamento', 'reação de escolha', 'atenção seletiva',
+    'teste Stroop', 'tabela de Schulte', 'jogos para treinar o cérebro online', 'jogos mentais grátis',
     'ginástica cerebral', 'atenção dividida', 'agilidade mental'
   ],
   openGraph: {
     title: 'Treino cerebral e concentração | SkillDrills',
-    description: '8 exercícios grátis no navegador para atenção, memória, reação e velocidade de processamento. Sem cadastro.',
+    description: 'Treino cerebral grátis: 8 jogos para treinar o cérebro online, com atenção seletiva e dividida, reação de escolha, Stroop e tabela de Schulte. Sem cadastro.',
     type: 'website',
     url: 'https://skilldrills.online/pt/drills/cognitive',
     siteName: 'SkillDrills',
@@ -26,7 +26,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Treino cerebral e concentração | SkillDrills',
-    description: '8 exercícios grátis para atenção, memória, reação e velocidade de processamento no navegador.',
+    description: 'Treino cerebral grátis no navegador: 8 exercícios para o cérebro com atenção, reação de escolha e velocidade de processamento.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,10 +50,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "name": "Treino Cognitivo & Ginástica Cerebral (8 Exercícios)",
   "url": "https://skilldrills.online/pt/drills/cognitive",
-  "description": "8 exercícios neurocientíficos interativos para treinar atenção seletiva, controle inibitório, efeito Stroop, tabelas de Schulte e velocidade mental.",
+  "description": "8 exercícios de treino cerebral no navegador para atenção seletiva e dividida, reação de escolha, efeito Stroop, tabela de Schulte e velocidade de processamento.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": cognitiveDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'pt', drill.name);
@@ -73,14 +73,14 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "O que é treino cognitivo e como ele fortalece a mente?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O treino cognitivo é composto por um conjunto estruturado de atividades neurocientíficas voltadas para exercitar e fortalecer redes neurais específicas, tais como a memória de trabalho, o controle inibitório e a velocidade de processamento da informação. A repetição sistemática desses estímulos promove a neuroplasticidade nas regiões pré-frontal e parietal, elevando a capacidade de foco sustentado, a tomada de decisões ágil e a resiliência à fadiga mental."
+        "text": "O treino cognitivo reúne tarefas repetíveis que exigem atenção seletiva, atenção dividida, troca de regra e velocidade de processamento. Em vez de decorar conteúdo, você pratica escolher a resposta certa sob pressão de tempo. Com prática regular, a pessoa costuma ficar mais rápida e precisa na mesma tarefa; um efeito duradouro no funcionamento do cérebro não está comprovado."
       }
     },
     {
@@ -88,7 +88,7 @@ const faqSchema = {
       "name": "Quais capacidades mentais essenciais são trabalhadas nestes exercícios?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A plataforma SkillDrills foca nos cinco pilares primordiais das funções executivas: velocidade de processamento perceptivo (tempo para decodificar e classificar estímulos visuais), controle inibitório (supressão ativa de impulsos incorretos através do efeito Stroop), atenção dividida (gerenciamento concomitante de múltiplos canais visuais), rastreamento periférico amplo com tabelas de Schulte e flexibilidade cognitiva para adaptação imediata a regras dinâmicas."
+        "text": "Os 8 exercícios cobrem cinco áreas: velocidade de processamento (pareamento de símbolos e leitura RSVP), inibição de distrações (exercício Stroop), atenção dividida e multitarefa (vários fluxos ao mesmo tempo), busca visual com a tabela de Schulte e troca de regra (reação de escolha com regra que muda). Os exercícios de memória ficam na categoria Memória."
       }
     },
     {
@@ -96,7 +96,7 @@ const faqSchema = {
       "name": "O que é o teste de Stroop e por que ele é crucial para o foco e autocontrole?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Descoberto em 1935 pelo psicólogo John Ridley Stroop, o teste avalia o grau de interferência cognitiva quando o significado semântico de uma palavra (como VERMELHO) entra em conflito com a cor real da sua fonte (por exemplo, verde). Resolver essa discrepância obriga o córtex pré-frontal dorsolateral e o córtex cingulado anterior a inibir a resposta automática de leitura, priorizando a identificação da cor e fortalecendo a atenção seletiva."
+        "text": "Descrito por John Ridley Stroop em 1935, o efeito Stroop é a interferência que surge quando o significado de uma palavra (como VERMELHO) entra em conflito com a cor da tinta (por exemplo, verde): é preciso frear o reflexo de leitura para responder a cor. O teste clássico mede a diferença de tempo entre itens congruentes e incongruentes. O exercício Stroop do SkillDrills é prática, não um teste diagnóstico: você escolhe a cor da tinta e são registrados pontuação, precisão e nível, sem escore de interferência."
       }
     },
     {
@@ -104,15 +104,15 @@ const faqSchema = {
       "name": "Como a tabela de Schulte ajuda na velocidade de leitura e visão periférica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A tabela de Schulte é uma matriz de números desordenados desenvolvida para aferir a atenção e expandir o campo de visão periférica. Ao fixar o olhar no centro da grade e localizar os números sequencialmente sem desviar os olhos para cada dígito, o cérebro aprende a explorar o campo visual lateral sem movimentos sacádicos desnecessários, habilidade vital para a leitura dinâmica, pilotos e identificação rápida de alvos em telas complexas."
+        "text": "A tabela de Schulte é uma grade de números embaralhados, associada ao psiquiatra Walter Schulte, que você percorre a partir do 1 em ordem crescente; a versão 5×5 é a mais conhecida. No SkillDrills, a grade começa em 3×3 e aumenta a cada tabela concluída. Manter o olhar no centro e achar o próximo número com a visão periférica é uma boa estratégia de prática, mas nenhum ganho numérico em visão periférica ou leitura é garantido: acompanhe o seu próprio tempo."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual a frequência e duração ideal de prática recomendada pelos especialistas?",
+      "name": "Com que frequência e por quanto tempo devo praticar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Estudos em neuropsicologia comprovam que treinos curtos e regulares são muito mais eficazes do que maratonas esporádicas. O protocolo sugerido é de 15 a 20 minutos por dia, de 3 a 5 dias por semana. Praticar alguns minutos antes do trabalho intelectual intenso ou de partidas ranqueadas em jogos competitivos aquece os circuitos neurais de vigilância sem esgotar as reservas de energia cognitiva."
+        "text": "Não existe uma duração ideal comprovada. Sessões curtas e concentradas, de cerca de 10 a 15 minutos algumas vezes por semana, são mais fáceis de comparar do que sessões longas e cansativas. Faça uma pausa quando a sua precisão cair."
       }
     },
     {
@@ -120,7 +120,7 @@ const faqSchema = {
       "name": "O treinamento mental e cognitivo online melhora o desempenho em esports?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, comprovadamente. Em esportes eletrônicos de alto nível, os jogadores precisam analisar o minimapa com visão periférica, predizer movimentos adversários e tomar decisões táticas em frações de segundo. Desenvolver o controle inibitório e a velocidade de processamento evita erros por impulso e visão em túnel, resultando em reações mais rápidas e consistentes sob grande pressão competitiva."
+        "text": "Não de forma garantida. Os ganhos aparecem principalmente em tarefas muito parecidas com as treinadas; a transferência para jogos, trabalho ou dia a dia é incerta e varia de pessoa para pessoa. Busca visual e ignorar distrações lembram algumas ações de jogo, como ler o minimapa, e podem servir como prática complementar."
       }
     },
     {
@@ -128,7 +128,7 @@ const faqSchema = {
       "name": "Os exercícios cognitivos são recomendados para crianças, adultos e idosos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, a arquitetura da SkillDrills é universal e adaptativa para todas as idades com base em métricas objetivas de milissegundos e taxa de acerto. Em jovens e adultos, desenvolve agilidade mental e foco produtivo; em pessoas com déficit de atenção ou hiperatividade (TDAH), aprimora o foco seletivo; e em pessoas idosas, estimula a reserva cognitiva, auxiliando na preservação da autonomia cerebral."
+        "text": "Os exercícios podem ser usados por adolescentes e adultos, com dificuldade que aumenta a cada nível. Eles não são testes médicos nem ferramentas de diagnóstico ou prevenção: não tratam TDAH e não protegem contra o declínio cognitivo. Use-os para acompanhar os seus próprios resultados; se as dificuldades persistirem, procure um profissional de saúde."
       }
     },
     {
@@ -136,7 +136,7 @@ const faqSchema = {
       "name": "É necessária alguma configuração técnica ou equipamento especial para treinar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. Todos os testes da SkillDrills são 100% baseados na web, funcionando diretamente no navegador a 60-120 FPS sem nenhum download ou cadastro. Para garantir máxima acurácia nas medições de tempo de reação, recomenda-se desativar o aprimoramento de precisão do ponteiro no sistema operacional, utilizar um mouse ou tela de boa resposta e fechar abas pesadas em segundo plano."
+        "text": "Não. Todos os exercícios funcionam direto no navegador, com mouse ou toque, sem download nem cadastro. Para resultados mais comparáveis, use o mesmo aparelho e navegador, feche abas pesadas em segundo plano e evite trocar de dispositivo entre as sessões."
       }
     }
   ]

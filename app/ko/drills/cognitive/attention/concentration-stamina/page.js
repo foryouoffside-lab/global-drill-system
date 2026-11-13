@@ -79,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ko-KR",
-      "dateModified": "2026-09-20"
+      "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -96,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/cognitive/attention/concentration-stamina",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -132,7 +132,7 @@ const faqSchema = {
       "name": "지속수행검사(CPT, Continuous Performance Test)란?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "연속적으로 제시되는 시각 자극 중에서 목표 자극에만 반응하고 방해 자극은 억제하는 능력을 장시간 측정하는 표준 신경심리 검사입니다."
+        "text": "지속수행과제(CPT)는 연속으로 나타나는 자극 중 목표 자극에만 반응하고 나머지는 억제하는 과제 형식입니다. 이 훈련은 그 형식을 빌린 45초짜리 연습이며, 의료용 표준 검사나 진단 도구가 아닙니다."
       }
     },
     {
@@ -140,7 +140,7 @@ const faqSchema = {
       "name": "맥워스의 각성 저하 법칙(Mackworth, 1948)이란 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "레이더 감시 연구에서 유래한 이론으로, 인간의 주의 집중 효율은 지속적 과제 수행 20~30분 후 급격히 저하된다는 사실을 입증했습니다."
+        "text": "레이더 감시 연구(Mackworth, 1948)에서 드문 신호를 오래 감시할수록 탐지 정확도가 떨어지는 각성 저하 현상이 보고되었습니다. 이 훈련은 한 판이 45초로 짧아 그 현상을 재현하기보다, 빠른 자극 속에서 집중을 유지하는 연습에 가깝습니다."
       }
     },
     {
@@ -148,7 +148,7 @@ const faqSchema = {
       "name": "모음과 소수 규칙 교대가 의미하는 바는?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "10초마다 판별 기준이 뒤바뀌므로 전두엽의 작업기억 갱신과 과제 전환 능력(Monsell, 2003)을 극한으로 시험합니다."
+        "text": "10초마다 표적 규칙이 모음(A E I O U)과 소수(2 3 5 7) 사이에서 바뀌므로, 새 기준으로 즉시 바꿔 판단하는 과제 전환(Monsell, 2003)을 연습하게 됩니다."
       }
     },
     {
@@ -164,7 +164,7 @@ const faqSchema = {
       "name": "오답 클릭(False Alarm)이 잦은 이유는?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "목표물이 아닌 자극을 보고 충동적으로 손가락이 나가는 현상으로, 전두엽의 반응 억제 조절력이 흔들릴 때 나타납니다(Robertson et al., 1997)."
+        "text": "규칙에 맞지 않는 자극에 성급하게 반응한 경우로, 반응 억제 과제에서 흔히 관찰됩니다(Robertson et al., 1997). 이 훈련에서는 오반응마다 붉은 플래시와 함께 1초간 입력이 잠기고, 정확도에 반영됩니다. 점수는 깎이지 않습니다."
       }
     },
     {
@@ -172,7 +172,7 @@ const faqSchema = {
       "name": "훈련을 통해 집중 지속 시간을 늘릴 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "네, 점진적으로 난이도를 높이는 지속 주의력 과제를 반복하면 뇌의 각성 유지 회로가 강화됩니다."
+        "text": "같은 조건으로 반복하면 이 과제의 점수와 정확도는 익숙해지면서 오를 수 있지만, 일상 집중력이 좋아진다는 보장은 없습니다. 적중할수록 레벨이 오르고 자극 표시 시간이 짧아집니다."
       }
     },
     {
@@ -188,7 +188,7 @@ const faqSchema = {
       "name": "모니터 주사율이 검사에 미치는 영향은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "144Hz 이상의 디스플레이는 자극 출현 타이밍의 오차를 줄이는 데 도움이 되어(Woods et al., 2015) 정밀한 측정에 도움이 됩니다."
+        "text": "이 훈련은 반응 시간(ms)을 점수로 쓰지 않고 적중·놓침·오반응만 기록하므로 주사율의 영향은 작습니다. 다만 높은 레벨에서는 자극이 약 0.26초만 표시되므로 화면 지연이 적은 환경이 보기 편합니다(Woods et al., 2015)."
       }
     },
     {
@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "추천하는 일일 훈련 방식은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "공부나 업무 시작 전 10분간 진행하면 뇌의 기본모드신경망(DMN)을 억제하고 집중에 최적화된 상태를 만듭니다."
+        "text": "공부나 업무 전에 몇 판(한 판 45초) 해 보고, 같은 시간대·같은 기기에서 점수와 정확도를 비교하는 방식을 권합니다."
       }
     },
     {
@@ -234,14 +234,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "정밀 격발 및 오반응 억제",
-      "text": "일치하는 표적이 떴을 때만 스페이스바나 화면을 탭하고, 비표적은 단호히 억제합니다.",
+      "text": "일치하는 표적이 떴을 때만 화면을 클릭·탭하거나 Space/Enter 키를 누르고, 비표적에는 반응하지 않습니다.",
       "url": "https://skilldrills.online/ko/drills/cognitive/attention/concentration-stamina#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "10초 주기 규칙 반전에 신속 적응",
-      "text": "규칙이 반전되는 순간 즉시 머릿속 기준을 교체하여 무결점 연속 스트릭을 유지합니다.",
+      "text": "규칙이 바뀌는 순간 상단 규칙 표시를 확인하고 즉시 새 기준으로 판단합니다.",
       "url": "https://skilldrills.online/ko/drills/cognitive/attention/concentration-stamina#step-4"
     }
   ]
@@ -252,9 +252,9 @@ const guideProps = {
   intro: {
     title: "집중력 테스트와 지속 주의력 측정 가이드",
     paragraphs: [
-      "이 무료 브라우저 집중력 테스트는 점멸 자극에서 지속 주의력, 오반응 억제, 규칙 전환 수행을 기록하는 비임상 자기 점검 도구입니다. 결과는 당일 컨디션과 익숙함의 영향을 받으며 의료 진단을 대신하지 않습니다.",
-      "레이더 감시 연구에서 유래한 이론으로, 인간의 주의 집중 효율은 지속적 과제 수행 20~30분 후 급격히 저하된다는 사실을 입증했습니다.",
-      "10초마다 판별 기준이 뒤바뀌므로 전두엽의 작업기억 갱신과 과제 전환 능력(Monsell, 2003)을 극한으로 시험합니다.",
+      "이 무료 브라우저 집중력 테스트는 45초 동안 점멸하는 문자·숫자 자극에서 지속 주의력, 오반응 억제, 규칙 전환 수행을 기록하는 비임상 자기 점검 도구입니다. 결과는 당일 컨디션과 익숙함의 영향을 받으며 의료 진단을 대신하지 않습니다.",
+      "레이더 감시 연구(Mackworth, 1948)에서 드문 신호를 오래 감시할수록 탐지 정확도가 떨어지는 각성 저하 현상이 보고되었습니다. 이 훈련은 한 판이 45초로 짧아 그 현상을 재현하기보다, 빠른 자극 속에서 집중을 유지하는 연습에 가깝습니다.",
+      "10초마다 표적 규칙이 모음(A E I O U)과 소수(2 3 5 7) 사이에서 바뀌므로, 새 기준으로 즉시 바꿔 판단하는 과제 전환(Monsell, 2003)을 연습하게 됩니다.",
     ],
   },
   benchmarks: {
@@ -265,7 +265,7 @@ const guideProps = {
       { tier: 'Tier 1', rank: '최상위 단계', stat: '최상위 단계', level: '마스터리 (최상위)', accuracy: '98% 이상', percentile: '최상위 단계' },
       { tier: 'Tier 2', rank: '고급 지속 집중자', stat: '상급 단계', level: '다이아몬드 (우수)', accuracy: '94–97%', percentile: '상급 단계' },
       { tier: 'Tier 3', rank: '숙련 조작자', stat: '중상급 단계', level: '플래티넘 (숙련)', accuracy: '88–93%', percentile: '중상급 단계' },
-      { tier: 'Tier 4', rank: '일반 성인 표준', stat: '표준 단계', level: '골드 (표준)', accuracy: '78–87%', percentile: '표준 단계' },
+      { tier: 'Tier 4', rank: '표준 단계', stat: '표준 단계', level: '골드 (표준)', accuracy: '78–87%', percentile: '표준 단계' },
       { tier: 'Tier 5', rank: '초보 / 입문 기준선', stat: '기준선 (기초)', level: '실버 (기초)', accuracy: '78% 미만', percentile: '기준선 (하위)' },
     ],
   },
@@ -275,8 +275,8 @@ const guideProps = {
     items: [
       { title: "화면 중앙 응시 및 기준 규칙 확인", description: "시선을 중앙 박스에 고정하고 상단에 표시된 현재의 규칙(모음 또는 소수)을 파악합니다." },
       { title: "순간적 표적 자극 식별", description: "빠르게 깜빡이는 문자·숫자 중 현재 규칙에 일치하는 대상이 나타나는지 집중 감시합니다." },
-      { title: "정밀 격발 및 오반응 억제", description: "일치하는 표적이 떴을 때만 스페이스바나 화면을 탭하고, 비표적은 단호히 억제합니다." },
-      { title: "10초 주기 규칙 반전에 신속 적응", description: "규칙이 반전되는 순간 즉시 머릿속 기준을 교체하여 무결점 연속 스트릭을 유지합니다." },
+      { title: "정밀 격발 및 오반응 억제", description: "일치하는 표적이 떴을 때만 화면을 클릭·탭하거나 Space/Enter 키를 누르고, 비표적에는 반응하지 않습니다." },
+      { title: "10초 주기 규칙 반전에 신속 적응", description: "규칙이 바뀌는 순간 상단 규칙 표시를 확인하고 즉시 새 기준으로 판단합니다." },
     ],
   },
   faqs: {
@@ -325,7 +325,7 @@ export default function LocalizedCognitivePage() {
         accuracy: "정확도", misses: "오반응", peakLevel: "최고 레벨", playAgain: "다시 하기", shareScore: "점수 공유", exitDrill: "훈련 종료",
         caption: "현재 규칙에 맞는 자극에만 빠르게 반응하고, 규칙이 바뀔 때 방해 자극을 억제하세요.",
         rulesTitle: "훈련 안내 및 점수 체계",
-        ruleItems: [{ text: "표적 규칙", highlight: "10초마다 전환", result: "모음 ↔ 소수" }, { text: "표적 적중", highlight: "+100점", result: "탭 또는 스페이스" }, { text: "비표적", highlight: "억제", result: "일치하지 않으면 무시" }, { text: "오반응", highlight: "패널티", result: "정확도에 반영" }],
+        ruleItems: [{ text: "표적 규칙", highlight: "10초마다 전환", result: "모음 ↔ 소수" }, { text: "표적 적중", highlight: "+100점", result: "클릭·탭 또는 Space/Enter" }, { text: "비표적", highlight: "억제", result: "일치하지 않으면 무시" }, { text: "오반응", highlight: "1초 입력 잠금", result: "정확도에 반영" }],
         aboutTitle: "집중력 테스트 정보",
         aboutLead: "희귀한 신호를 오래 감시할수록 지속 주의력이 떨어질 수 있습니다. 이 훈련은 짧은 세션에서 규칙 전환, 표적 판별, 오반응을 기록하며 의료 진단이 아닌 자기 점검을 제공합니다.",
         aboutText: "지속 주의력은 반복되는 자극 속에서 중요한 신호를 계속 골라내는 능력입니다. 같은 조건으로 반복해 점수와 오반응 변화를 비교하세요.\n\n결과는 수면, 스트레스, 화면 환경, 과제에 대한 익숙함의 영향을 받으므로 진단 결과로 해석하지 마세요.",

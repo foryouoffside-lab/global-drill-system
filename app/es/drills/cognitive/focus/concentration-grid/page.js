@@ -20,7 +20,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Tabla de Schulte online | Rejilla de foco | SkillDrills",
-  description: "Tabla de Schulte gratis en navegador: busca números en orden y practica exploración visual. No es un diagnóstico clínico, sino un autocheck cognitivo.",
+  description: "Tabla de Schulte online gratis: pulsa los números en orden durante 45 segundos en una cuadrícula que crece de 3x3 a 8x8. Ejercicio de foco, no diagnóstico.",
   keywords: [
     "tabla de schulte",
     "tabla de schulte online",
@@ -36,8 +36,8 @@ export const metadata = {
     "test de atencion y concentracion online"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Tabla de Schulte Online – Test de Concentración y Visión Periférica | SkillDrills",
-    description: "Entrena tu visión periférica, lectura rápida y velocidad de búsqueda visual con la tabla de Schulte online gratis. Encuentra números secuenciales en cuadrículas en expansión (3x3 a 8x8) sin descargas.",
+    title: "Tabla de Schulte online | Rejilla de foco | SkillDrills",
+    description: "Tabla de Schulte online gratis: encuentra los números en orden ascendente durante 45 segundos en cuadrículas que crecen de 3x3 a 8x8. Sin descargas.",
     type: "website",
     url: "https://skilldrills.online/es/drills/cognitive/focus/concentration-grid",
     siteName: "SkillDrills",
@@ -45,8 +45,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Tabla de Schulte Online – Test de Concentración y Visión Periférica | SkillDrills",
-    description: "Entrena tu visión periférica, lectura rápida y velocidad de búsqueda visual con la tabla de Schulte online gratis. Encuentra números secuenciales en cuadrículas en expansión (3x3 a 8x8) sin descargas.",
+    title: "Tabla de Schulte online | Rejilla de foco | SkillDrills",
+    description: "Tabla de Schulte online gratis: encuentra los números en orden ascendente durante 45 segundos en cuadrículas que crecen de 3x3 a 8x8. Sin descargas.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,14 +70,14 @@ const webAppSchema = {
   "@type": "WebApplication",
   "name": "Tabla de Schulte Online (Concentration Grid)",
   "url": "https://skilldrills.online/es/drills/cognitive/focus/concentration-grid",
-  "description": "Entrenador cognitivo interactivo basado en navegador que evalúa la velocidad de búsqueda visual y la atención sostenida mediante el toque secuencial de números en matrices en expansión.",
+  "description": "Tabla de Schulte online gratis: encuentra los números en orden ascendente en cuadrículas que crecen de 3x3 a 8x8 durante una ronda de 45 segundos.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-20",
-  "educationalUse": ["Velocidad de Búsqueda Visual", "Expansión de Campo Periférico", "Eficiencia Sacádica", "Atención Sostenida"]
+  "dateModified": "2026-11-12",
+  "educationalUse": ["Búsqueda Visual", "Visión Periférica", "Atención Sostenida"]
 };
 
 const softwareSchema = {
@@ -85,7 +85,7 @@ const softwareSchema = {
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Attention"],
   "name": "Tabla de Schulte Online (Concentration Grid)",
   "url": "https://skilldrills.online/es/drills/cognitive/focus/concentration-grid",
-  "description": "Entrenador cognitivo interactivo basado en navegador que evalúa la velocidad de búsqueda visual y la atención sostenida mediante el toque secuencial de números en matrices en expansión.",
+  "description": "Tabla de Schulte online gratis: encuentra los números en orden ascendente en cuadrículas que crecen de 3x3 a 8x8 durante una ronda de 45 segundos.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -97,8 +97,8 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Tabla de Schulte Online (Concentration Grid)",
   "url": "https://skilldrills.online/es/drills/cognitive/focus/concentration-grid",
-  "description": "Juego de búsqueda secuencial de números en tablas de Schulte en expansión. Entrena visión periférica y atención sostenida.",
-  "dateModified": "2026-09-20",
+  "description": "Juego de búsqueda secuencial de números en tablas de Schulte en expansión, en una ronda fija de 45 segundos.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Entrenamiento Cognitivo", "Búsqueda Visual", "Tabla de Schulte", "Concentration Grid"],
   "playMode": "SinglePlayer",
@@ -111,7 +111,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo entrenar con la Tabla de Schulte y Rejilla de Concentración",
-  "description": "Instrucciones paso a paso para entrenar la velocidad de búsqueda visual, la visión periférica y el enfoque sostenido.",
+  "description": "Cómo jugar una ronda de 45 segundos en la tabla de Schulte online.",
   "step": [
     {
       "@type": "HowToStep",
@@ -139,7 +139,7 @@ const howToSchema = {
       "position": 4,
       "url": "https://skilldrills.online/es/drills/cognitive/focus/concentration-grid#step-4",
       "name": "Avanza por cuadrículas en expansión",
-      "text": "Al completar cada cuadrícula pasarás a matrices más grandes (3x3, 4x4, 5x5...) con números rotados, desafiando tu concentración en 45 segundos."
+      "text": "Al completar cada cuadrícula pasarás a matrices más grandes (3x3, 4x4, 5x5...) con números ligeramente girados desde 5x5, dentro de la misma ronda de 45 segundos; en pantallas de menos de 380 px el máximo es 7x7."
     }
   ]
 };
@@ -147,14 +147,14 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "¿Qué es una tabla de Schulte y para qué sirve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La tabla de Schulte es una cuadrícula psicodiagnóstica desarrollada por el psiquiatra alemán Walter Schulte. Se utiliza para evaluar y entrenar la velocidad de búsqueda visual, la atención sostenida y la ampliación del campo de visión periférica, siendo clave en técnicas de lectura rápida y psicología deportiva."
+        "text": "La tabla de Schulte lleva el nombre del psiquiatra alemán Walter Schulte: una cuadrícula con números desordenados que hay que encontrar en orden ascendente. Hoy se usa sobre todo como ejercicio de búsqueda visual y concentración, también en cursos de lectura rápida. Esta versión online es un ejercicio, no un test psicológico."
       }
     },
     {
@@ -162,7 +162,7 @@ const faqSchema = {
       "name": "¿Cómo ayuda la tabla de Schulte a mejorar la lectura rápida?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Al obligar al cerebro a captar números sin mover directamente la fóvea a cada casilla, la tabla entrena la visión parafoveal. Esto permite a los lectores abarcar frases completas de un solo vistazo en lugar de leer palabra por palabra (Rayner, 1998)."
+        "text": "Al leer, la mirada alterna fijaciones y movimientos sacádicos (Rayner, 1998). La tabla practica captar dígitos fuera del punto de fijación sin saltar a cada casilla, por eso se asocia a la lectura rápida. No garantiza leer más rápido y el ejercicio no mide la velocidad de lectura."
       }
     },
     {
@@ -170,7 +170,7 @@ const faqSchema = {
       "name": "¿Cuál es la técnica adecuada para resolver una tabla de Schulte?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La técnica correcta consiste en fijar la vista en el centro exacto de la tabla y utilizar la visión periférica para detectar los números periféricos. Mover los ojos frenéticamente de esquina a esquina aumenta el tiempo total de resolución (Lu et al., 2022)."
+        "text": "La consigna habitual es mantener la vista cerca del centro de la tabla y localizar los números con la visión periférica, en lugar de recorrerla de esquina a esquina. Es una regla de práctica, no un método demostrado."
       }
     },
     {
@@ -178,7 +178,7 @@ const faqSchema = {
       "name": "¿Qué puntuación o tiempo se considera bueno en la tabla de Schulte?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En una tabla clásica de 5x5 (25 números), completar la búsqueda en menos de 25 segundos se considera un nivel excelente. En nuestro simulador dinámico de 45 segundos, alcanzar matrices de 6x6 o 7x7 y superar los 6.000 puntos es una marca alta dentro de este simulador."
+        "text": "No hay un tiempo de referencia oficial y SkillDrills no recopila datos de usuarios. Este ejercicio no mide una tabla 5x5 aislada, sino una ronda de 45 segundos desde 3x3: cada acierto suma 100 puntos más un bonus de rapidez (hasta 120) y cada cuadrícula completada un bonus proporcional a sus casillas. Compara tus puntos y cuadrículas completadas con tus propias rondas anteriores."
       }
     },
     {
@@ -186,7 +186,7 @@ const faqSchema = {
       "name": "¿Por qué las casillas cambian de tamaño y los números rotan?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A medida que limpias cada nivel, la cuadrícula crece para ensanchar progresivamente tu campo visual. La rotación de dígitos introduce ruido perceptual que obliga a la vía ventral del cerebro a extraer características invariantes y suprimir distracciones visuales (Treisman & Gelade, 1980)."
+        "text": "Cada cuadrícula completada da paso a otra con una casilla más por lado (hasta 8x8, o 7x7 en pantallas estrechas), así que hay más área que recorrer. Desde 5x5 los dígitos aparecen ligeramente girados (hasta 12°, y hasta 20° desde 7x7), lo que dificulta reconocerlos de un vistazo (Treisman & Gelade, 1980)."
       }
     },
     {
@@ -194,7 +194,7 @@ const faqSchema = {
       "name": "¿Esta herramienta es utilizada por deportistas profesionales?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Pilotos de automovilismo, aviadores militares y jugadores de esports utilizan cuadrículas de concentración y tablas de Schulte para desarrollar reflejos sacádicos y procesar múltiples estímulos visuales en milisegundos."
+        "text": "No hay evidencia de un efecto sobre el rendimiento deportivo. El ejercicio se parece a captar información en el borde de la pantalla sin apartar la vista del centro; úsalo como complemento."
       }
     },
     {
@@ -202,7 +202,7 @@ const faqSchema = {
       "name": "¿Cuántos minutos al día se recomienda practicar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Se recomiendan sesiones breves de 5 a 10 minutos diarios (3 a 5 rondas). La fatiga visual reduce la eficiencia de los movimientos sacádicos, por lo que la consistencia diaria supera a los entrenamientos prolongados."
+        "text": "No hay una regla fija. Sesiones breves de 5 a 10 minutos (unas pocas rondas) con pausas cuidan la vista y son fáciles de mantener; no se garantiza ninguna mejora."
       }
     },
     {
@@ -210,7 +210,7 @@ const faqSchema = {
       "name": "¿Cometer errores penaliza el tiempo restante?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No resta tiempo directo del reloj de 45 segundos, pero un clic incorrecto genera un destello de alerta y reduce tu porcentaje final de precisión, premiando la concentración disciplinada sobre el clic impulsivo."
+        "text": "No. Un toque incorrecto no resta tiempo ni puntos: genera un destello rojo de aviso y reduce tu porcentaje final de precisión."
       }
     },
     {
@@ -218,7 +218,7 @@ const faqSchema = {
       "name": "¿Se puede utilizar esta herramienta en teléfonos móviles y tablets?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. La plataforma está totalmente optimizada para pantallas táctiles de móviles y tabletas, permitiendo toques dactilares rápidos con baja latencia de entrada."
+        "text": "Sí, funciona con pantalla táctil y con ratón. En pantallas de menos de 380 px de ancho la cuadrícula máxima es 7x7."
       }
     },
     {
@@ -235,32 +235,33 @@ const faqSchema = {
 const concentrationGridGuideEs = {
   heading: "Guía Completa de la Tabla de Schulte y Psicología de la Atención Visual",
   intro: [
-    "La Tabla de Schulte (Concentration Grid) es uno de los instrumentos psicodiagnósticos y de acondicionamiento cognitivo más consolidados en la neurociencia visual. Diseñada originalmente por el psiquiatra alemán Walter Schulte (1962) para evaluar la eficiencia de la búsqueda visual y la fatiga mental, su paradigma tradicional exige localizar los números del 1 al 25 en orden estrictamente ascendente sobre una matriz de 5x5 manteniendo la fijación en el centro.",
-    "En la psicología del deporte aplicada, este ejercicio evolucionó hacia la denominada 'cuadrícula de concentración' (Harris & Harris, 1984), empleada por preparadores de élite en tenis, automovilismo y béisbol para entrenar la velocidad de barrido ocular y la disciplina atencional bajo presión temporal. Un estudio de potenciales relacionados con eventos (ERP) en niños de 8 a 11 años reveló que la búsqueda secuencial activa componentes neuronales sensiblemente más lentos que la localización simple, acentuándose la latencia ante estímulos dicromáticos (Lu et al., 2022).",
-    "El simulador de SkillDrills eleva este protocolo histórico a una tarea de rendimiento continuo (Continuous Performance Task). En lugar de una matriz aislada, la cuadrícula se expande dinámicamente desde 3x3 hasta 8x8 a medida que se completan las fases, introduciendo perturbaciones de rotación a partir del nivel 5x5 para desafiar la amplitud perceptual y la coordinación foveal-parafoveal en una sesión fija de 45 segundos (Treisman & Gelade, 1980; Wolfe, 2007).",
+    "La Tabla de Schulte es un ejercicio clásico de búsqueda visual y concentración que lleva el nombre del psiquiatra alemán Walter Schulte. Su formato tradicional exige localizar los números del 1 al 25 en orden estrictamente ascendente sobre una matriz de 5x5 manteniendo la fijación en el centro.",
+    "En la psicología del deporte aplicada, este ejercicio evolucionó hacia la denominada 'cuadrícula de concentración' (Harris & Harris, 1984), descrita en manuales de psicología del deporte como ejercicio de barrido ocular y concentración bajo presión de tiempo. Un estudio de potenciales relacionados con eventos (ERP) en niños de 8 a 11 años reveló que la búsqueda secuencial activa componentes neuronales sensiblemente más lentos que la localización simple, acentuándose la latencia ante estímulos dicromáticos (Lu et al., 2022).",
+    "La tabla de Schulte online de SkillDrills convierte la hoja estática en una ronda continua de 45 segundos. La cuadrícula crece desde 3x3 hasta 8x8 a medida que completas fases (7x7 en pantallas de menos de 380 px), con dígitos ligeramente girados desde 5x5. Así practicas recorrer un área cada vez mayor dentro de una ventana fija de 45 segundos (Treisman & Gelade, 1980; Wolfe, 2007).",
     "Metodología de cronometría: cada evento de pulsación se registra con el reloj de alta resolución performance.now() del navegador en su propio dispositivo. Los navegadores web aplican una atenuación deliberada por motivos de seguridad (mitigación de Spectre a ~1 ms) y la pantalla cuantiza las actualizaciones a su tasa de refresco: aproximadamente 16,7 ms por fotograma a 60 Hz (Woods et al., 2015). Se recomienda evaluar progresos en el mismo dispositivo.",
-    "Transparencia de datos: SkillDrills no recopila datos agregados de los usuarios. Sus mejores registros y configuraciones permanecen almacenados exclusivamente en el localStorage local de su navegador, sin transmisión a servidores remotos.",
-    "Este ejercicio es una herramienta interactiva de entrenamiento de reflejos y agilidad cognitiva con fines formativos. No constituye un instrumento diagnóstico médico ni una terapia para el TDAH, dislexia u otras condiciones clínicas. Ante dudas sobre su atención o visión, consulte con un profesional sanitario cualificado."
+    "Transparencia de datos: SkillDrills no recopila datos agregados de los usuarios. Sus mejores registros y configuraciones permanecen almacenados exclusivamente en el localStorage local de su navegador, sin transmisión a servidores remotos. Los niveles de puntuación son bandas de práctica de SkillDrills, no normas.",
+    "Este ejercicio es una herramienta interactiva de práctica de búsqueda visual con fines formativos. No constituye un instrumento diagnóstico médico ni una terapia para el TDAH, dislexia u otras condiciones clínicas. Ante dudas sobre su atención o visión, consulte con un profesional sanitario cualificado."
   ],
   benchmarks: {
-    title: "Baremos de Rendimiento de la Tabla de Schulte y Cuadrícula de Concentración (45s)",
-    headers: ["Nivel de Rendimiento", "Puntuación (45s)", "Cuadrícula Máxima", "Latencia de Búsqueda", "Interpretación Neurocognitiva"],
+    title: "Tabla de Schulte: niveles de nota (puntos por ronda de 45 s)",
+    headers: ["Nota", "Puntos (45 s)"],
     rows: [
-      ["S+ (Etapa Avanzada)", "8.000+ PTS", "7x7+ (49+ casillas)", "< 300 ms / objetivo", "Velocidad de escaneo visual muy alta, amplitud periférica sobresaliente e instantánea invarianza rotacional."],
-      ["S (Maestría)", "6.000 – 7.999 PTS", "6x6 (36 casillas)", "300 – 450 ms / objetivo", "Eficiencia superior de búsqueda visual; pre-visualización parafoveal fluida y mínimas pausas de fijación."],
-      ["A (Avanzado)", "4.500 – 5.999 PTS", "5x5 (25 casillas)", "450 – 600 ms / objetivo", "Sólido procesamiento del campo visual; chunking secuencial por pares constante en matrices de densidad media."],
-      ["B (Competente)", "3.000 – 4.499 PTS", "4x4 (16 casillas)", "600 – 800 ms / objetivo", "Disciplina de búsqueda por encima del promedio; pausas ocasionales de re-fijación central en cuadrículas mayores."],
-      ["C (Intermedio)", "1.800 – 2.999 PTS", "3x3 (9 casillas)", "800 – 1.100 ms / objetivo", "Rendimiento basal estándar; dependencia predominante de movimientos sacádicos foveales sucesivos."],
-      ["D (En desarrollo)", "< 1.800 PTS", "3x3 (parcial)", "> 1.100 ms / objetivo", "Interferencia por apiñamiento visual (crowding); alto conteo sacádico y discriminación numérica vacilante."]
+      ["S+", "7.220 o más"],
+      ["S", "5.780 – 7.219"],
+      ["A", "4.500 – 5.779"],
+      ["B", "2.880 – 4.499"],
+      ["C", "1.620 – 2.879"],
+      ["D", "720 – 1.619"],
+      ["F", "menos de 720"]
     ],
-    note: "Estos baremos se fundamentan en investigaciones experimentales sobre exploración visual y atención selectiva (Lu et al., 2022; Treisman & Gelade, 1980; Rayner, 1998; Wolfe, 2007). Las puntuaciones individuales varían según la tasa de refresco del monitor, el tipo de puntero y la fatiga ocular."
+    note: "Bandas de práctica de SkillDrills, calculadas directamente con la fórmula de nota de la pantalla final (fracción de 8.000 puntos de referencia); no son estadísticas de usuarios ni baremos clínicos. Cada acierto suma 100 puntos más un bonus de rapidez (hasta 120) y cada cuadrícula completada un bonus proporcional a sus casillas."
   },
   techniques: {
     title: "Protocolos y Estrategias Científicas de Optimización",
     items: [
       {
         name: "Anclaje Central Fóveo-Parafoveal",
-        desc: "Mantén la mirada descansada en el centro geométrico de la matriz. En lugar de mover activamente los ojos hacia cada número, permite que la visión parafoveal detecte las siluetas numéricas en los bordes (Lu et al., 2022).",
+        desc: "Mantén la mirada descansada en el centro geométrico de la matriz. En lugar de mover activamente los ojos hacia cada número, intenta detectar las siluetas numéricas con la visión periférica.",
         tips: "Evita girar la cabeza o perseguir los dígitos uno por uno con la mirada."
       },
       {
@@ -270,7 +271,7 @@ const concentrationGridGuideEs = {
       },
       {
         name: "Búsqueda Guiada e Integración de Rasgos (Wolfe, 2007)",
-        desc: "Las expectativas cognitivas de arriba hacia abajo (Top-Down) modulan los mapas de saliencia de la corteza visual. Mantener viva la forma geométrica del próximo número activa selectivamente los detectores de rasgos neuronales.",
+        desc: "Las expectativas de arriba hacia abajo (top-down) guían la búsqueda visual. Tener presente la forma del próximo número ayuda a reconocerlo al recorrer la tabla.",
         tips: "Visualiza mentalmente la forma del siguiente número antes de escanear la tabla."
       },
       {
@@ -287,7 +288,7 @@ const concentrationGridGuideEs = {
     "Avanza rápidamente para desbloquear cuadrículas superiores de 5x5, 6x6 y 7x7.",
     "Mantén la concentración frente a dígitos rotados durante los 45 segundos ininterrumpidos."
   ],
-  audience: "Lectores rápidos, estudiantes, pilotos, atletas de alto rendimiento, competidores de videojuegos tácticos y entusiastas del biohacking cerebral que buscan expandir su foco visual.",
+  audience: "Lectores rápidos, estudiantes, pilotos, atletas de alto rendimiento, jugadores de videojuegos y cualquiera que quiera practicar la búsqueda visual.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('lu2022', 'treisman1980', 'rayner1998', 'rayner2016', 'wolfe2007', 'woods2015'),
   related: [
@@ -303,7 +304,7 @@ const concentrationGridGuideEs = {
 const copyEs = {
   h1Keyword: "Tabla de Schulte",
   h1Suffix: " Online – Rejilla de Concentración",
-  caption: "Pulsa los números en estricto orden secuencial sobre cuadrículas Schulte en continua expansión. Entrena tu visión periférica, velocidad de búsqueda visual y resistencia atencional.",
+  caption: "Pulsa los números en orden ascendente en tablas de Schulte que crecen con cada cuadrícula completada. Practica búsqueda visual y concentración durante 45 segundos.",
   statScore: "Puntos",
   statTime: "Tiempo",
   statGridSize: "Cuadrícula",
@@ -326,14 +327,14 @@ const copyEs = {
     { title: "Búsqueda Secuencial", text: "Toca los números en orden numérico estricto desde el 1 hasta el número más alto de la matriz." },
     { title: "Cuadrículas en Expansión", text: "Completar una cuadrícula te hace avanzar a tamaños mayores (3x3 → 4x4 → 5x5...), retando tu visión periférica." },
     { title: "Sesión Fija de 45s", text: "Dispones de una única ventana de 45 segundos. Cada cuadrícula limpia amplía el tablero sin alterar el reloj." },
-    { title: "Precisión y Enfoque", text: "Los toques incorrectos emiten un destello de aviso y reducen tu precisión final, pero no detienen la sesión." }
+    { title: "Precisión y Enfoque", text: "Los toques incorrectos emiten un destello de aviso y reducen tu precisión final, sin restar puntos ni tiempo." }
   ],
   aboutTitle: "Acerca de la Tabla de Schulte y Rejilla de Concentración",
-  aboutLead: "La tabla de Schulte es una cuadrícula psicodiagnóstica de búsqueda visual concebida para ensanchar el campo periférico funcional y minimizar la latencia de fijación durante la lectura y exploración visual (Lu et al., 2022; Rayner, 1998).",
+  aboutLead: "La tabla de Schulte es una cuadrícula clásica de búsqueda visual: hay que encontrar números desordenados en orden ascendente, practicando la fijación de la mirada y la visión periférica (Lu et al., 2022; Rayner, 1998).",
   aboutCards: [
-    { title: "¿Quién debería usarla?", text: "Atletas de élite, pilotos, estudiantes y competidores de deportes electrónicos que necesitan procesar información visual a gran velocidad.", color: "bg-blue-600" },
-    { title: "Habilidades Desarrolladas", text: "Velocidad de escaneo visual, eficiencia en movimientos sacádicos, disciplina espacial y resistencia atencional.", color: "bg-emerald-600" },
-    { title: "Visión Periférica", text: "Cada nivel superado amplía la cuadrícula, forzando a la retina a abarcar un campo visual mucho más ancho sin perder la secuencia.", color: "bg-purple-600" }
+    { title: "¿Quién debería usarla?", text: "Estudiantes, lectores, deportistas y jugadores que quieren practicar búsqueda visual rápida bajo presión de tiempo.", color: "bg-blue-600" },
+    { title: "Habilidades Desarrolladas", text: "Velocidad de búsqueda visual, control de la mirada, uso de la visión periférica y atención sostenida.", color: "bg-emerald-600" },
+    { title: "Visión Periférica", text: "Cada nivel superado amplía la cuadrícula, así que hay que recorrer un área más ancha sin perder la secuencia.", color: "bg-purple-600" }
   ]
 };
 

@@ -6,17 +6,17 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const cognitiveDrills = DRILLS.filter((d) => d.category === 'cognitive');
 
 export const metadata = {
-  title: 'Gehirntraining & Konzentration online | SkillDrills',
-  description: 'Kostenlose Browser-Drills für Konzentration, Gedächtnis, Reaktionszeit und Verarbeitungsgeschwindigkeit. 8 Übungen ohne Anmeldung.',
+  title: 'Gehirnjogging online & Gehirntraining kostenlos | SkillDrills',
+  description: 'Gehirnjogging online: 8 kostenlose Übungen für Aufmerksamkeit, Konzentration und Verarbeitungsgeschwindigkeit, mit Stroop-Test und Schulte-Tabelle.',
   keywords: [
-    'Gehirntraining kostenlos', 'Gehirnjogging', 'Konzentrationstest online', 'kognitives Training',
-    'Gedächtnistraining', 'Reaktionszeit testen', 'Verarbeitungsgeschwindigkeit Test',
+    'Gehirntraining kostenlos', 'Gehirnjogging', 'Konzentrationsspiele', 'kognitives Training',
+    'Gehirnjogging online', 'Gehirntraining', 'Verarbeitungsgeschwindigkeit Test',
     'Stroop Test', 'Schulte Tabelle', 'Aufmerksamkeit trainieren', 'Arbeitsgedächtnis trainieren',
     'Gehirnspiele online', 'Denksport kostenlos', 'geteilte Aufmerksamkeit Test', 'mentale Agilität'
   ],
   openGraph: {
-    title: 'Gehirntraining & Konzentration online | SkillDrills',
-    description: 'Kostenlose Browser-Drills für Konzentration, Gedächtnis, Reaktionszeit und Verarbeitungsgeschwindigkeit. 8 Übungen ohne Anmeldung.',
+    title: 'Gehirnjogging online & Gehirntraining kostenlos | SkillDrills',
+    description: 'Gehirnjogging online: 8 kostenlose Übungen für Aufmerksamkeit, Konzentration und Verarbeitungsgeschwindigkeit, mit Stroop-Test und Schulte-Tabelle.',
     type: 'website',
     url: 'https://skilldrills.online/de/drills/cognitive',
     siteName: 'SkillDrills',
@@ -25,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gehirntraining & Konzentration online | SkillDrills',
-    description: '8 kognitive Übungen für Konzentration, Gedächtnis, Reaktion und Verarbeitungsgeschwindigkeit kostenlos im Browser.',
+    title: 'Gehirnjogging online & Gehirntraining kostenlos | SkillDrills',
+    description: 'Gehirnjogging online: 8 kostenlose Übungen für Aufmerksamkeit, Konzentration und Verarbeitungsgeschwindigkeit im Browser.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,10 +50,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "name": "Kostenloses Gehirntraining & Kognitive Übungen (8 Drills)",
   "url": "https://skilldrills.online/de/drills/cognitive",
-  "description": "8 wissenschaftliche Drills für selektive Aufmerksamkeit, Arbeitsgedächtnis, Stroop-Interferenz, visuelle Verarbeitungsgeschwindigkeit und Schulte-Tabellen.",
+  "description": "8 kostenlose Drills für selektive Aufmerksamkeit, Arbeitsgedächtnis, Stroop-Interferenz, visuelle Verarbeitungsgeschwindigkeit und Schulte-Tabellen.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": cognitiveDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'de', drill.name);
@@ -69,14 +69,14 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "Was versteht man unter kognitivem Training und welche neurobiologischen Prozesse werden aktiviert?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kognitives Training umfasst strukturierte mentale Übungen zur Stärkung der im präfrontalen Kortex verankerten exekutiven Funktionen. Im Gegensatz zum Auswendiglernen von Fakten beanspruchen diese Drills fundamentale neuronale Mechanismen: selektive Aufmerksamkeit, Arbeitsgedächtniskapazität, kognitive Flexibilität (Aufgabenwechsel) und Verarbeitungsgeschwindigkeit. Durch wiederholte Beanspruchung des frontoparietalen Kontrollnetzwerks wird die Neuroplastizität gefördert und die synaptische Signalübertragung nachhaltig optimiert."
+        "text": "Kognitives Training besteht aus wiederholbaren Aufgaben, die gezielt selektive Aufmerksamkeit, geteilte Aufmerksamkeit, Aufgabenwechsel und Verarbeitungsgeschwindigkeit beanspruchen. Anders als beim Auswendiglernen von Fakten übst du hier, unter Zeitdruck die richtige Reaktion zu wählen. Wer eine Aufgabe regelmäßig wiederholt, wird darin meist sicherer und schneller; eine dauerhafte Veränderung der Hirnfunktion ist damit nicht belegt."
       }
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       "name": "Können gezielte Gehirntraining-Übungen die visuelle Verarbeitungsgeschwindigkeit messbar beschleunigen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, zeitkritische visuelle Diskriminationsübungen verkürzen die Latenz in den visuomotorischen Schleifen zwischen primärem visuellen Kortex, parietalem Assoziationskortex und motorischen Arealen. Regelmäßiges Training verringert synaptisches Zögern bei Entscheidungen und optimiert das Top-Down-Filtern von Sinnesreizen. Dies führt dazu, dass Reize um 15 bis 30 % schneller identifiziert und in präzise motorische Aktionen umgesetzt werden – ohne Einbußen bei der Treffergenauigkeit."
+        "text": "Bei derselben Aufgabe werden Entscheidungen und Eingaben durch Wiederholung oft schneller. Dass sich dadurch die neuronale Verarbeitung allgemein beschleunigt, ist nicht belegt, und feste Prozentwerte lassen sich nicht versprechen. Vergleiche deine eigenen Ergebnisse über mehrere Sitzungen auf demselben Gerät."
       }
     },
     {
@@ -100,7 +100,7 @@ const faqSchema = {
       "name": "Was ist der Stroop-Effekt und wie wird damit die exekutive Hemmungskontrolle (Inhibition) gemessen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Stroop-Effekt demonstriert den Konflikt zwischen automatisierter Reizverarbeitung (Wortlesen) und bewusster exekutiver Steuerung (Benennen der Schriftfarbe). Steht beispielsweise das Wort 'Rot' in blauer Farbe geschrieben, registriert der anteriore cinguläre Kortex (ACC) einen Konflikt, woraufhin der dorsolaterale präfrontale Kortex (DLPFC) den automatischen Lesereflex unterdrücken muss. Die gemessene Interferenzzeit dient der Neurowissenschaft als exakter Indikator für inhibitorische Impulskontrolle und kognitive Flexibilität."
+        "text": "Der Stroop-Effekt beschreibt den Konflikt zwischen automatischem Wortlesen und dem bewussten Benennen der Schriftfarbe: Steht das Wort 'Rot' in blauer Farbe, muss der Lesereflex unterdrückt werden. Im klassischen Stroop-Test wird dazu der Zeitunterschied zwischen passenden und nicht passenden Farb-Wort-Paaren gemessen. Der Stroop-Drill von SkillDrills ist eine Übung, kein diagnostischer Test: Du wählst die Schriftfarbe, und gespeichert werden Punkte, Genauigkeit und erreichtes Level, kein Interferenzwert."
       }
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
       "name": "Wie trainiert das Schulte-Tabellen-Gitter das periphere Sehen und die visuelle Suchgeschwindigkeit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Schulte-Tabelle ist ein 5x5-Zahlengitter, das ursprünglich in der Flugpsychologie zur Messung der visuellen Suchleistung entwickelt wurde. Während der Blick starr auf das Zentrum fixiert bleibt, sucht das Auge die Zahlen 1 bis 25 in aufsteigender Reihenfolge rein über das periphere Gesichtsfeld. Dieses Training erweitert den nutzbaren parafovealen Wahrnehmungsradius, wodurch die Anzahl notwendiger Blicksprünge (Sakkaden) drastisch reduziert und das Erfassen relevanter Bildschirminformationen beschleunigt wird."
+        "text": "Die Schulte-Tabelle ist ein Zahlengitter, in dem du zufällig verteilte Zahlen ab 1 in aufsteigender Reihenfolge suchst; bekannt ist vor allem die 5×5-Variante. In der SkillDrills-Version beginnt das Gitter bei 3×3 und wird nach jeder vollständig gelösten Tabelle größer. Den Blick in der Mitte zu halten und die nächste Zahl peripher zu suchen, ist eine gute Übungsstrategie; dass sich peripheres Sehen oder Blicksprünge um einen festen Betrag verbessern, ist nicht belegt. Miss deinen Fortschritt an deiner eigenen Lösungszeit."
       }
     },
     {
@@ -116,7 +116,7 @@ const faqSchema = {
       "name": "Lassen sich die Trainingserfolge aus kognitiven Drills auf Gaming und berufliche Alltagsleistungen übertragen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die kognitive Neurowissenschaft unterscheidet klar zwischen Nah-Transfer und Fern-Transfer. Gezielte Drills erzeugen einen belegten 'Nah-Transfer': Fähigkeiten wie visuelle Suchgeschwindigkeit, Distraktor-Unterdrückung und Stroop-Hemmung verbessern sich direkt messbar und übertragen sich unmittelbar auf das Lesen von Mini-Maps in Games, fehlerfreies Multitasking im Beruf und schnelle Entscheidungsfindung unter Stress. Ein allgemeiner 'Fern-Transfer' auf den Gesamt-IQ ist wissenschaftlich nicht belegt."
+        "text": "Die Forschung unterscheidet Nah-Transfer und Fern-Transfer. Verbesserungen bei sehr ähnlichen Aufgaben (Nah-Transfer) sind gut dokumentiert. Ob sich das Training auf Gaming, Beruf oder Alltag überträgt, ist nicht gesichert und individuell verschieden. Visuelle Suche und das Ausblenden von Ablenkern ähneln zwar Tätigkeiten wie dem Lesen einer Minimap, ein Transfer darauf ist aber nicht garantiert. Auch ein Effekt auf den IQ ist nicht belegt."
       }
     },
     {
@@ -124,7 +124,7 @@ const faqSchema = {
       "name": "Wie oft und wie lange sollte man Gehirntraining durchführen, um kognitive Ermüdung zu vermeiden?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Da intensive exekutive Aufgaben erhebliche Mengen neuronaler Glukose verbrauchen, liegt das wissenschaftliche Optimum bei 10 bis 15 Minuten pro Tag, 3 bis 5 Mal pro Woche. Ein Training von über 20 Minuten führt häufig zu zentralnervöser Erschöpfung (Mental Fatigue), wodurch die Fehlerquote ansteigt und der neuroplastische Lerneffekt abflacht. Kurze, hochfokussierte Intervalle mit anschließenden Erholungsphasen bringen den maximalen Nutzen."
+        "text": "Ein festes wissenschaftliches Optimum gibt es nicht. Kurze, konzentrierte Einheiten von etwa 10 bis 15 Minuten mehrmals pro Woche lassen sich gut vergleichen. Wenn deine Genauigkeit durch Müdigkeit sinkt, ist eine Pause sinnvoller als ein längeres Training."
       }
     },
     {
@@ -132,7 +132,7 @@ const faqSchema = {
       "name": "Hilft kognitives Training Erwachsenen mit Konzentrationsschwächen (ADHS) und zur Prävention von Demenz?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, Drills zur Hemmungskontrolle und Aufmerksamkeitslenkung aktivieren dopaminerge und noradrenerge Signalwege und werden erfolgreich als ergänzende, nicht-medikamentöse Maßnahme bei ADHS-Symptomen im Erwachsenenalter eingesetzt. Zudem stärkt das regelmäßige Training von Arbeitsgedächtnis und Verarbeitungsgeschwindigkeit die sogenannte kognitive Reserve (Cognitive Reserve) des Gehirns, was maßgeblich zum Schutz vor altersbedingtem mentalen Abbau und Demenzerkrankungen beiträgt."
+        "text": "Nein, diese Drills ersetzen keine ärztliche Abklärung oder Behandlung. Sie sind weder eine Therapie bei ADHS noch ein Schutz vor Demenz und auch kein Diagnoseinstrument. Nutze sie als Übung, um deine eigenen Ergebnisse in Aufmerksamkeits- und Tempoaufgaben zu verfolgen. Bei anhaltenden Konzentrations- oder Gedächtnisproblemen wende dich an eine Ärztin oder einen Arzt."
       }
     }
   ]

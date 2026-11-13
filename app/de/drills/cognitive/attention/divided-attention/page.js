@@ -7,13 +7,13 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test der geteilten Aufmerksamkeit | SkillDrills",
-  description: "Kostenloser Dual-Task-Test im Browser: Verfolge ein Ziel und klassifiziere Zahlen gleichzeitig. Keine klinische Diagnose.",
+  description: "Kostenloser Test der geteilten Aufmerksamkeit: Klicke auftauchende Ziele an und prüfe gleichzeitig, ob die Zahl gerade ist. Dual-Task-Übung, keine Diagnose.",
   keywords: ["Test der geteilten Aufmerksamkeit", "geteilte Aufmerksamkeit Test", "Dual-Task-Test", "Dual Task Training", "Multitasking Aufmerksamkeit", "geteilte Aufmerksamkeit Übungen", "kognitiver Engpass", "visuelles Multitasking", "Gehirntraining Dual Task", "Konzentrationstest",
     "dual task test online",
     "geteilte aufmerksamkeit aufgaben"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test der geteilten Aufmerksamkeit | Dual Task | SkillDrills",
-    description: "Kostenloser Online-Test für geteilte Aufmerksamkeit (Dual-Task): Verfolge visuelle Ziele und klassifiziere Zahlenreihen zur Messung kognitiver Engpässe.",
+    title: "Test der geteilten Aufmerksamkeit | SkillDrills",
+    description: "Kostenloser Test der geteilten Aufmerksamkeit: Klicke auftauchende Ziele an und prüfe gleichzeitig, ob die Zahl gerade ist. Dual-Task-Übung, keine Diagnose.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -21,8 +21,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test der geteilten Aufmerksamkeit | Dual Task | SkillDrills",
-    description: "Kostenloser Online-Test für geteilte Aufmerksamkeit (Dual-Task): Verfolge visuelle Ziele und klassifiziere Zahlenreihen zur Messung kognitiver Engpässe.",
+    title: "Test der geteilten Aufmerksamkeit | SkillDrills",
+    description: "Kostenloser Test der geteilten Aufmerksamkeit: Klicke auftauchende Ziele an und prüfe gleichzeitig, ob die Zahl gerade ist. Dual-Task-Übung, keine Diagnose.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -73,7 +73,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Kostenloser Online-Test fur geteilte Aufmerksamkeit (Dual-Task). Verfolge bewegte visuelle Ziele und klassifiziere gleichzeitig Zahlenreihen zur Messung kognitiver Engpasse und Reaktionszeiten.",
+  "description": "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht. Keine klinische Diagnose.",
   "url": "https://skilldrills.online/de/drills/cognitive/attention/divided-attention",
   "publisher": {
     "@type": "Organization",
@@ -81,7 +81,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -98,7 +98,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/cognitive/attention/divided-attention",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -106,7 +106,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Geteilte Aufmerksamkeit – Dual-Task Zielverfolgungs-Spiel",
   "url": "https://skilldrills.online/de/drills/cognitive/attention/divided-attention",
-  "description": "Kostenloser Online-Test fur geteilte Aufmerksamkeit (Dual-Task). Verfolge bewegte visuelle Ziele und klassifiziere gleichzeitig Zahlenreihen zur Messung kognitiver Engpasse und Reaktionszeiten.",
+  "description": "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht. Keine klinische Diagnose.",
   "genre": [
     "Action",
     "Brain Game",
@@ -131,18 +131,18 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was versteht man unter geteilter Aufmerksamkeit (Divided Attention)?",
+      "name": "Was ist geteilte Aufmerksamkeit und wie läuft der Test ab?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Fahigkeit, mentale Ressourcen gleichzeitig auf zwei oder mehr unabhangige Informationsquellen zu verteilen und parallel zu verarbeiten."
+        "text": "Geteilte Aufmerksamkeit heißt, zwei Informationsquellen gleichzeitig zu beachten. Hier klickst du blaue Ziele an, die an zufälligen Stellen auftauchen, und drückst „Prüfen“, wenn die Zahl (0–9) im Seitenfeld gerade ist. Es ist eine Übung, kein klinischer Test."
       }
     },
     {
       "@type": "Question",
-      "name": "Was ist die Psychologische Refraktarperiode (PRP, Pashler 1994)?",
+      "name": "Was ist die psychologische Refraktärperiode (PRP, Pashler 1994)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die messbare Verzogerung der zweiten Reaktion, wenn zwei Reize in extrem kurzem Abstand aufeinander folgen, bedingt durch einen zentralen Verarbeitungsengpass."
+        "text": "Die Verzögerung der zweiten Reaktion, wenn zwei Reize sehr kurz nacheinander folgen – erklärt durch einen zentralen Verarbeitungsengpass."
       }
     },
     {
@@ -150,7 +150,7 @@ const faqSchema = {
       "name": "Was besagt die Multiple-Ressourcen-Theorie (Wickens, 2002)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aufgaben teilen sich Aufmerksamkeit besser, wenn sie unterschiedliche Sinneskanale und Kodes ansprechen (z. B. raumlich-visuell vs. numerisch-verbal)."
+        "text": "Aufgaben teilen sich Aufmerksamkeit besser, wenn sie unterschiedliche Sinneskanäle und Kodes ansprechen (z. B. räumlich-visuell vs. numerisch-verbal)."
       }
     },
     {
@@ -158,52 +158,52 @@ const faqSchema = {
       "name": "Kann man geteilte Aufmerksamkeit trainieren?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. Spelke et al. (1976) bewiesen, dass gezieltes Training Teile der Verarbeitung automatisiert und so den zentralen Flaschenhals entlastet."
+        "text": "Dein Punktestand in diesem Drill kann mit Übung steigen; eine Übertragung auf andere Aufgaben oder den Alltag ist aber nicht garantiert. Spelke et al. (1976) berichteten, dass lange Übung das gleichzeitige Ausführen zweier Aufgaben verbessern kann."
       }
     },
     {
       "@type": "Question",
-      "name": "Welchen Nutzen bringt dies im Alltag und Gaming?",
+      "name": "Was hat das mit Alltag und Gaming zu tun?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Besseres Situationsbewusstsein beim Autofahren, gleichzeitige Auswertung von Minimap und Fadenkreuz im Gaming sowie hohere Multitasking-Resistenz."
+        "text": "Der Drill übt die Belastung, zwei Informationsströme gleichzeitig zu beachten – ähnlich wie Tacho und Straße beim Fahren oder Gefecht und Minimap im Spiel. Bessere Fahr- oder Spielleistung ist damit nicht garantiert."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche Punktzahl gilt als exzellent?",
+      "name": "Wie wird die Bewertung berechnet?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Uber 15.000 Punkte bei einer Gesamtgenauigkeit von uber 92% liegen in der höchsten Übungsstufe dieses Drills; die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
+        "text": "Die Note richtet sich nach der Punktzahl; 24.000 Punkte sind die Marke für die beste Note. Jeder Treffer bringt 100 Basispunkte mal Combo- und Level-Multiplikator. Die Genauigkeit wird separat angezeigt. Alles sind SkillDrills-Übungsmarken, keine Bevölkerungsstatistik."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie wirkt sich Ubermudung aus?",
+      "name": "Wie wirkt sich Müdigkeit aus?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Schlafmangel verengt die kognitiven Ressourcen drastisch und fuhrt zum volligen Ubersehen peripherer Reize (Tunnelblick)."
+        "text": "Schlafmangel und Müdigkeit können dazu führen, dass du einen Kanal öfter übersiehst. Vergleiche Ergebnisse daher unter ähnlichen Bedingungen."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche Rolle spielt die Hardware-Latenz?",
+      "name": "Spielt die Bildwiederholrate eine Rolle?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein 144Hz-Monitor stellt Bewegungskonturen praziser dar (Woods et al., 2015), was die raumliche Belastung verringert."
+        "text": "Kaum: Die Ziele bewegen sich nicht, sie erscheinen an zufälligen Stellen und verschwinden wieder. Vergleiche Ergebnisse trotzdem auf demselben Gerät."
       }
     },
     {
       "@type": "Question",
-      "name": "Wie oft sollte trainiert werden?",
+      "name": "Wie lange dauert eine Runde?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "10 bis 15 Minuten taglich reichen vollkommen aus, um kognitive Flexibilitat aufzubauen."
+        "text": "Die Uhr startet bei 45 Sekunden: +2 s pro Treffer (maximal 60 s), −1 s pro Fehler oder verpasstem Ziel. Die Runde läuft, bis die Zeit abgelaufen ist; mit steigender Punktzahl steigt das Level, die Reize wechseln schneller und die Ziele werden kleiner."
       }
     },
     {
       "@type": "Question",
-      "name": "Ist der Test vollstandig kostenlos?",
+      "name": "Ist der Test vollständig kostenlos?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Ja, SkillDrills stellt den Drill komplett kostenfrei ohne Registrierung im Webbrowser bereit."
@@ -216,7 +216,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Geteilte Aufmerksamkeit Test",
-  "description": "Kostenloser Online-Test fur geteilte Aufmerksamkeit (Dual-Task). Verfolge bewegte visuelle Ziele und klassifiziere gleichzeitig Zahlenreihen zur Messung kognitiver Engpasse und Reaktionszeiten.",
+  "description": "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht. Keine klinische Diagnose.",
   "step": [
     {
       "@type": "HowToStep",
@@ -228,22 +228,22 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Bewegte Zielpunkte erfassen",
-      "text": "Tippen Sie auf wandernde blaue Zielkreise, bevor deren Timer ablauft, um Zeitboni zu erhalten.",
+      "name": "Blaue Ziele anklicken",
+      "text": "Klicken oder tippen Sie auf die blauen Zielkreise, die an zufälligen Stellen auftauchen, bevor sie verschwinden: +2 s pro Treffer (maximal 60 s).",
       "url": "https://skilldrills.online/de/drills/cognitive/attention/divided-attention#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Zahlenreihe simultan klassifizieren",
-      "text": "Behalten Sie das Seitenpanel im Blick und klicken Sie bei GERADEN Zahlen sofort auf MATCH.",
+      "text": "Behalten Sie das Seitenfeld im Blick und klicken Sie bei GERADEN Zahlen (0, 2, 4, 6, 8) auf „Prüfen“. Ein Klick bei ungerader Zahl oder ein zweiter Klick auf dieselbe Zahl zählt als Fehler.",
       "url": "https://skilldrills.online/de/drills/cognitive/attention/divided-attention#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Balance beider Kanale wahren",
-      "text": "Vermeiden Sie Fehlklicks auf beiden Kanalen, um maximale Combo-Multiplikatoren aufzubauen.",
+      "name": "Balance beider Kanäle wahren",
+      "text": "Ohne Fehler auf beiden Kanälen wächst der Combo-Multiplikator. Jeder Fehler setzt die Combo zurück und kostet 1 Sekunde.",
       "url": "https://skilldrills.online/de/drills/cognitive/attention/divided-attention#step-4"
     }
   ]
@@ -252,15 +252,15 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('pashler1994', 'wickens2002', 'strayer2001', 'spelke1976', 'woods2015'),
   intro: {
-    title: "Geteilte Aufmerksamkeit Test – Dual-Task Aufmerksamkeits-Drill",
+    title: "Test der geteilten Aufmerksamkeit: Anleitung",
     paragraphs: [
-      "Kostenloser Online-Test fur geteilte Aufmerksamkeit (Dual-Task). Verfolge bewegte visuelle Ziele und klassifiziere gleichzeitig Zahlenreihen zur Messung kognitiver Engpasse und Reaktionszeiten.",
-      "Die messbare Verzogerung der zweiten Reaktion, wenn zwei Reize in extrem kurzem Abstand aufeinander folgen, bedingt durch einen zentralen Verarbeitungsengpass.",
-      "Aufgaben teilen sich Aufmerksamkeit besser, wenn sie unterschiedliche Sinneskanale und Kodes ansprechen (z. B. raumlich-visuell vs. numerisch-verbal).",
+      "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht. Keine klinische Diagnose.",
+      "Die Verzögerung der zweiten Reaktion, wenn zwei Reize sehr kurz nacheinander folgen – erklärt durch einen zentralen Verarbeitungsengpass.",
+      "Aufgaben teilen sich Aufmerksamkeit besser, wenn sie unterschiedliche Sinneskanäle und Kodes ansprechen (z. B. räumlich-visuell vs. numerisch-verbal).",
     ],
   },
   benchmarks: {
-    title: 'Standardisierte kognitive Leistungs-Benchmarks',
+    title: 'SkillDrills-Übungsstufen (nach Genauigkeit)',
     headers: ['Übungsstufe', 'Bezeichnung', 'Leistungsbereich', 'Erreichte Stufe', 'Genauigkeit', 'Einordnung'],
     note: 'Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.',
     rows: [
@@ -272,13 +272,13 @@ const guideProps = {
     ],
   },
   protocols: {
-    title: '4 wissenschaftliche Trainingsprotokolle zur Steigerung der kognitiven Ausdauer',
-    description: 'Kognitionspsychologisch fundierte Dual-Task-Protokolle zur Überwindung des zentralen Verarbeitungsengpasses (PRP) und Maximierung der geteilten Aufmerksamkeit.',
+    title: 'Dual-Task-Übung in 4 Schritten',
+    description: 'Übungsablauf in Anlehnung an die Multiple-Ressourcen-Theorie (Wickens, 2002): beide Kanäle gleichzeitig bedienen.',
     items: [
       { title: "Dual-Task-Sitzung starten", description: "Klicken Sie auf Start, um sowohl das visuelle Zielfeld als auch die seitliche Zahlenreihe zu aktivieren." },
-      { title: "Bewegte Zielpunkte erfassen", description: "Tippen Sie auf wandernde blaue Zielkreise, bevor deren Timer ablauft, um Zeitboni zu erhalten." },
-      { title: "Zahlenreihe simultan klassifizieren", description: "Behalten Sie das Seitenpanel im Blick und klicken Sie bei GERADEN Zahlen sofort auf MATCH." },
-      { title: "Balance beider Kanale wahren", description: "Vermeiden Sie Fehlklicks auf beiden Kanalen, um maximale Combo-Multiplikatoren aufzubauen." },
+      { title: "Blaue Ziele anklicken", description: "Klicken oder tippen Sie auf die blauen Zielkreise, die an zufälligen Stellen auftauchen, bevor sie verschwinden: +2 s pro Treffer (maximal 60 s)." },
+      { title: "Zahlenreihe simultan klassifizieren", description: "Behalten Sie das Seitenfeld im Blick und klicken Sie bei GERADEN Zahlen (0, 2, 4, 6, 8) auf „Prüfen“. Ein Klick bei ungerader Zahl oder ein zweiter Klick auf dieselbe Zahl zählt als Fehler." },
+      { title: "Balance beider Kanäle wahren", description: "Ohne Fehler auf beiden Kanälen wächst der Combo-Multiplikator. Jeder Fehler setzt die Combo zurück und kostet 1 Sekunde." },
     ],
   },
   faqs: {
@@ -318,18 +318,18 @@ export default function LocalizedCognitivePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <DividedAttentionClient copy={{
-        title: "Test der geteilten Aufmerksamkeit", subtitle: "Bewegtes Ziel und Zahlen gleichzeitig verarbeiten",
+        title: "Test der geteilten Aufmerksamkeit", subtitle: "Auftauchende Ziele und Zahlen gleichzeitig verarbeiten",
         statScore: "Punkte", statTime: "Zeit", timeLeft: "Restzeit", statLevel: "Level", statBest: "Bestwert",
         match: "Prüfen", evenNumbers: "GERADE ZAHLEN", tapEven: "Bei gerade tippen", startTitle: "Test der geteilten Aufmerksamkeit", startSubtitle: "Dual-Task · Fokuswechsel",
         getReady: "Bereit machen", dualAccuracy: "Gesamtgenauigkeit", hits: "Treffer", misses: "Fehler", peakLevel: "Höchstlevel",
-        caption: "Verfolge das bewegte Ziel und prüfe parallel, ob im Zahlenstrom eine gerade Zahl erscheint.",
+        caption: "Klicke das auftauchende Ziel an und prüfe parallel, ob im Zahlenstrom eine gerade Zahl erscheint.",
         rulesTitle: "Anleitung und Wertung", ruleItems: [
-          { text: "Ziel treffen", highlight: "+Zeit", result: "Bewegten Kreis anklicken" },
+          { text: "Ziel treffen", highlight: "+100 PKT", result: "Kreis anklicken (+2 s, max. 60 s)" },
           { text: "Gerade Zahl prüfen", highlight: "Richtig reagieren", result: "Bei geraden Zahlen klicken" },
           { text: "Ungerade ignorieren", highlight: "Keine Fehlklicks", result: "Bei ungeraden Zahlen nicht klicken" },
-          { text: "Beide Kanäle balancieren", highlight: "Combo halten", result: "Tracking und Prüfung verbinden" },
+          { text: "Fehler / verpasst", highlight: "Combo weg", result: "−1 s" },
         ],
-        aboutTitle: "Geteilte Aufmerksamkeit und Dual-Task-Training", aboutLead: "Dieser nicht-klinische Selbstcheck verbindet visuelles Zieltracking mit Zahlenklassifikation und zeigt, wie stabil beide Kanäle zusammen funktionieren.",
+        aboutTitle: "Geteilte Aufmerksamkeit und Dual-Task-Training", aboutLead: "Dieser nicht-klinische Selbstcheck verbindet das Anklicken visueller Ziele mit Zahlenklassifikation und zeigt, wie stabil beide Kanäle zusammen funktionieren.",
         audienceTitle: "Für wen geeignet", audienceText: "Für Gamer mit Minimap- und Zielaufgaben, Lernende und Menschen, die mehrere Eingaben schnell verarbeiten möchten.",
         skillsTitle: "Trainierte Fähigkeiten", skillsText: "Dual-Task-Verarbeitung, visuelles Tracking, Zahlenentscheidung und Aufmerksamkeitsverteilung.", flexibilityTitle: "Parallele Verarbeitung", flexibilityText: "Wechsle zwischen beiden Informationsströmen, ohne die Genauigkeit eines Kanals zu vernachlässigen."
       }} />
