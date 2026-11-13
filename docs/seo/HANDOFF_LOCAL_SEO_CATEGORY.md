@@ -271,3 +271,4 @@ Known prior decisions to respect:
 - 2026-11-13 13:52 checkpoint: no-clinical scrub agents resumed on new account (cognitive, memory, visual, physical, reaction/fps/motor+shared). Resume rule unchanged: re-grep each scope with pattern in RESUME block; docs/qa/NO_CLINICAL_BRIEF.md. Keyword rebuild + VT audit jobs were cut off -> rerun after scrub.
 - 2026-11-13 14:02 auto-checkpoint (scrub in progress; resume per RESUME block)
 - 2026-11-13 14:23 auto-checkpoint (scrub in progress; resume per RESUME block)
+- 2026-11-13 14:28: NO-CLINICAL SCRUB COMPLETE site-wide (only ko 선별=selection + legal pages + citations remain). Next 15.5.29 installed locally, dev restarted. Running: GSC not-indexed diagnosis, keyword rebuild. Next: prod build audit (worktree), GSC fixes, commit, push.
