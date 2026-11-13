@@ -5,7 +5,16 @@ Trigger for a new chat: `Continue docs/seo/HANDOFF_LOCAL_SEO_CATEGORY.md`
 Read this file first, then `docs/seo/HANDOFF_DEMAND_RESEARCH.md` (tooling + rules), `docs/seo/GLOBAL_PAGE_SEO_AEO_GEO_STANDARD.md`, `docs/seo/NO_TRANSLATION_NATIVE_SEARCH_MANDATE.md`.
 Update the LOG section at the end of every step. Never leave work only in chat.
 
-## >>> RESUME HERE (2026-11-13 ~17:30 IST) <<<
+## >>> RESUME HERE (2026-11-13 ~19:30 IST, save before possible internet cut) <<<
+
+LIVE: fdbdd200 deployed + verified (live sitemap == local prod build). GSC sitemap resubmitted (648 URLs, 0 errors). Bing SubmitFeed OK. Owner: SKIP GSC Request-Indexing; check index results ~2026-11-20.
+TODO tomorrow:
+1. Bing: daily quota was 0 today. `python scripts/bing/bing.py quota`, then submit next 100 from docs/seo/research/_bing_pending_2026-11-13.txt (355 left; first 69 = pages changed in fdbdd200). Remove submitted lines from the file.
+2. Live crawl: docs/qa/live_crawl_2026-11-13/ (crawl.js, analyze.js, urls_N.txt, results_N.jsonl). Internet dropped mid-run -> 240 navError rows removed; re-crawl was running at save. Resume: copy each urls_N.txt+results_N.jsonl as urls.txt/results.jsonl next to crawl.js in a scratch dir, drop rows with "navError", run `node crawl.js "<repo root>"` (resumes skipping done paths), then merge results and `node analyze.js` -> write docs/qa/live_crawl_2026-11-13.md.
+3. React hydration #418 (args HTML) intermittent on ~11% of pages (47/408), pre-existing (old deploy 13/321), spread across unrelated routes incl /privacy -> shared layout component. debug-runtime agent was investigating at save; if no answer, re-run it (dev: NODE_OPTIONS='--inspect=9555 --max-old-space-size=6144' npx next dev -p 3000). Fix in main agent, verify with crawl on affected routes, commit, push.
+Other crawl categories (status/h1/canonical/noStart) were all navError artifacts, not real.
+
+## (older) RESUME HERE (2026-11-13 ~17:30 IST) <<<
 
 DONE this session: (a) no-clinical re-grep clean (only "patiently", exempt citations, a code comment, ko 선별=select); lastmod regen (649 routes, no change); prod build 737 OK in wt-deps @75c75ae0; audit 646/647 + home (about = known false positive); keyword registry rebuilt against prod :3100 (637 rows, 0 blank; keyword_tracker DEV defaults to :3000 - override k.DEV when dev is down); snapshot 28 rewritten (2026-11-13_28d.csv). Pushing to main now.
 NEXT: cache-busted live verify; GSC sitemap submit; Bing SubmitFeed + next 100 from _bing_pending_2026-11-13.txt; (b) live Playwright crawl -> docs/qa/live_crawl_2026-11-13.md.
