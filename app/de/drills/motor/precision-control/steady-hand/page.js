@@ -159,7 +159,7 @@ const faqSchema = {
       name: 'Hilft der Heiße Draht Grafikern und E-Sportlern?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Die Übung ähnelt Bewegungen aus digitaler Illustration und Tracking im E-Sport, bei denen der Zeiger ruhig auf einer schmalen Bahn bleiben muss. Wie stark sich das überträgt, ist individuell verschieden. Das Spiel ist kein medizinischer Tremor-Test.',
+        text: 'Die Übung ähnelt Bewegungen aus digitaler Illustration und Tracking im E-Sport, bei denen der Zeiger ruhig auf einer schmalen Bahn bleiben muss. Wie stark sich das überträgt, ist individuell verschieden.',
       },
     },
     {

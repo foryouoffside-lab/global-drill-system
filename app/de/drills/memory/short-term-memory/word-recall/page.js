@@ -140,7 +140,7 @@ export default function LocalizedWordRecallPage() {
         "name": "Wie viele Wörter kann man sich durchschnittlich merken?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SkillDrills sammelt keine Nutzerdaten und nennt daher keine Durchschnitte oder Perzentile. Wegen 2 Sekunden Anzeige und 12 Sekunden Eingabezeit ist das Spiel nicht mit klinischen Wortlisten-Tests vergleichbar. Vergleiche dich mit den Übungsstufen unten und deinen eigenen Bestwerten."
+          "text": "SkillDrills sammelt keine Nutzerdaten und nennt daher keine Durchschnitte oder Perzentile. Wegen 2 Sekunden Anzeige und 12 Sekunden Eingabezeit ist das Spiel nicht mit standardisierten Wortlisten-Tests vergleichbar. Vergleiche dich mit den Übungsstufen unten und deinen eigenen Bestwerten."
         }
       },
       {
@@ -188,7 +188,7 @@ export default function LocalizedWordRecallPage() {
         "name": "Verbessert dieses Training das Gedächtnis im Alltag?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Das ist nicht garantiert. Mit Übung wird man in genau diesem Spiel meist besser; ob sich das auf den Alltag überträgt, ist in der Forschung umstritten. Der Test ist kein Diagnoseverfahren; bei Gedächtnissorgen wende dich an eine Ärztin oder einen Arzt."
+          "text": "Das ist nicht garantiert. Mit Übung wird man in genau diesem Spiel meist besser; ob sich das auf den Alltag überträgt, ist in der Forschung umstritten."
         }
       },
       {
@@ -242,12 +242,11 @@ export default function LocalizedWordRecallPage() {
   const wordRecallGuide = {
     heading: "Wortgedächtnis Test – Leitfaden zur freien Wiedergabe",
     intro: [
-      "Der Wortgedächtnis Test zeigt dir kurz eine Wortliste; danach tippst du alle Wörter, die du dir merken konntest, in beliebiger Reihenfolge ein. Er ist eine Übungsversion der freien Wiedergabe aus der Gedächtnispsychologie und kein klinischer Test oder Diagnoseverfahren.",
+      "Der Wortgedächtnis Test zeigt dir kurz eine Wortliste; danach tippst du alle Wörter, die du dir merken konntest, in beliebiger Reihenfolge ein. Er ist eine Übungsversion der freien Wiedergabe aus der Gedächtnispsychologie.",
       "Die Forschung zu Wortlisten beginnt mit Hermann Ebbinghaus (1885). Bennet Murdock (1962) beschrieb bei freier Wiedergabe den seriellen Positionseffekt – Anfang und Ende einer Liste bleiben besser hängen –, und Endel Tulving (1962) zeigte, dass Menschen Wörter von sich aus zu Gruppen ordnen.",
       "Nach dem Ansatz der Verarbeitungstiefe (Craik & Lockhart, 1972) bleiben Wörter besser haften, wenn man über ihre Bedeutung nachdenkt oder sie verknüpft. Bei der kurzen Anzeige in diesem Spiel hilft es, die Wörter schnell zu einer Szene zu verbinden.",
       "So läuft der Test: Start mit 3 Wörtern; die ganze Liste erscheint 2 Sekunden lang auf einmal. Danach hast du 12 Sekunden, um die Wörter getrennt durch Leerzeichen oder Komma einzutippen und mit Enter abzusenden. Sind alle richtig und kein falsches dabei, kommt ein Wort dazu (maximal 12); fehlt eins, ist eins falsch oder läuft die Zeit ab, fällt eins weg (mindestens 3). Aufgezeichnet werden Punktzahl, längste Liste und Trefferquote (Anteil gelöster Runden); Reaktionszeiten werden nicht gemessen.",
-      "Datentransparenz: SkillDrills sammelt keine Ergebnisse auf Servern. Alle Werte bleiben im localStorage deines Browsers, deshalb nennt diese Seite keine Nutzerdurchschnitte, Perzentile oder Nutzerzahlen; die zitierten Studien stehen unten.",
-      "Medizinischer Hinweis: Dieses Übungsspiel ist kein Medizinprodukt und kein Diagnoseverfahren. Bei Sorgen um dein Gedächtnis wende dich an eine Fachärztin oder einen Facharzt."
+      "Datentransparenz: SkillDrills sammelt keine Ergebnisse auf Servern. Alle Werte bleiben im localStorage deines Browsers, deshalb nennt diese Seite keine Nutzerdurchschnitte, Perzentile oder Nutzerzahlen; die zitierten Studien stehen unten."
     ],
     benchmarks: {
       title: "Wortgedächtnis Test – Übungsstufen (SkillDrills, 45-Sekunden-Lauf)",

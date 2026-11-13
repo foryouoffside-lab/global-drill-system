@@ -183,7 +183,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "점수는 저장되나요? 의학적 의미가 있나요?",
+      "name": "점수는 저장되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "최고 점수와 최고 단계는 이 브라우저의 localStorage에만 저장되며 서버로 전송되지 않습니다."

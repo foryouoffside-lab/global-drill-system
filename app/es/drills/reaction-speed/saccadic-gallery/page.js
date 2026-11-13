@@ -141,7 +141,7 @@ const faqs = [
   },
   {
     q: '¿Pueden estos ejercicios mejorar la velocidad de lectura?',
-    a: 'Al leer la mirada salta de palabra en palabra, pero un juego en pantalla no es un ejercicio de lectura y no está demostrado que acelere la lectura. Si tienes dificultades de lectura o molestias oculares persistentes, consulta a un oftalmólogo u óptico-optometrista.',
+    a: 'Al leer la mirada salta de palabra en palabra, pero un juego en pantalla no es un ejercicio de lectura y no está demostrado que acelere la lectura.',
   },
   {
     q: '¿Con qué frecuencia debo practicar?',
@@ -179,7 +179,7 @@ const saccadicGuide = {
       ['Etapa 4', 'Más rápido con la misma precisión', 'Menos pasadas y correcciones'],
       ['Etapa 5', 'Sesiones más largas', 'Descansar antes de cansarse y comparar en las mismas condiciones'],
     ],
-    note: 'Esta tabla es una orientación de práctica de SkillDrills. No contiene normas de tiempo de reacción, estadísticas de usuarios, percentiles ni valores clínicos.',
+    note: 'Esta tabla es una orientación de práctica de SkillDrills. No contiene normas de tiempo de reacción, estadísticas de usuarios ni percentiles.',
   },
   techniques: {
     title: 'Consejos para saltos oculares más limpios',

@@ -18,7 +18,7 @@ import { pickSources } from '@/lib/drillSources';
 //                    "クリック速度"         — 109 exact searches/mo
 //                    "マイクラ 連打" / "マイクラ cps" — Minecraft PvP high-intent
 //                    "ジッタークリック" / "バタフライクリック" — Specialized technique queries
-// NATIVE TITLE:      連打測定・CPSテスト – 無料クリック速度測定＆連打力診断ツール | SkillDrills
+// NATIVE TITLE:      連打測定・CPSテスト – 無料クリック速度測定＆連打力測定ツール | SkillDrills
 // ============================================================
 
 export const metadata = {
@@ -77,7 +77,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
-  name: '連打測定・CPSテスト – クリック速度測定＆連打持久力診断ツール',
+  name: '連打測定・CPSテスト – クリック速度測定＆連打持久力測定ツール',
   alternateName: ['連打測定', 'CPSテスト', 'CPS測定', 'クリック速度測定', '秒間クリック数測定'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -129,7 +129,7 @@ const faqSchema = {
       name: '連打測定（CPSテスト）とは何ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '連打測定（CPSテスト、Clicks Per Second）とは、1秒間にマウスまたはタッチスクリーンを何回クリックできるかを測定するデジタル運動能力診断ツールです。高周波の神経筋伝達速度、指の腱の反復振動速度、および前腕筋群の持続的な筋持久力を傾向として把握できます。',
+        text: '連打測定（CPSテスト、Clicks Per Second）とは、1秒間にマウスまたはタッチスクリーンを何回クリックできるかを測定するデジタル運動能力測定ツールです。高周波の神経筋伝達速度、指の腱の反復振動速度、および前腕筋群の持続的な筋持久力を傾向として把握できます。',
       },
     },
     {

@@ -281,7 +281,7 @@ const reactionGuide = {
   "intro": [
     "Es un juego de parar el cronómetro a ciegas, no un test de reacción. Se muestra brevemente un tiempo objetivo de entre uno y ocho segundos, desaparece y haces clic cuando crees que ha pasado. El drill indica la diferencia entre tu clic y el objetivo en milisegundos. Para comprobar la rapidez con la que reaccionas a una señal visual, usa el Test de reacción (señal luminosa).",
     "Cada clic se marca con el reloj performance.now() del navegador, íntegramente en tu dispositivo. Tu pantalla cuantiza lo que ves a su intervalo de refresco: unos 16,7 ms por fotograma a 60 Hz, 6,9 ms a 144 Hz y 4,2 ms a 240 Hz (Woods et al., 2015). El sondeo del ratón añade unos 8 ms a 125 Hz frente a 1 ms a 1000 Hz.",
-    "Considera ruido de medición las diferencias de menos de unos 5 ms y compara tus propias sesiones con el mismo equipo, no con el de otra persona. Es una herramienta de práctica, no una medición clínica."
+    "Considera ruido de medición las diferencias de menos de unos 5 ms y compara tus propias sesiones con el mismo equipo, no con el de otra persona."
   ],
   "benchmarks": {
     "title": "Cómo se valora el error de timing",

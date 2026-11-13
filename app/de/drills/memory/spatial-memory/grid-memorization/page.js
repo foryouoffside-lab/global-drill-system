@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "Was ist ein visueller Gedächtnistest?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hier ist es eine Übung für das visuell-räumliche Arbeitsgedächtnis: Du merkst dir, welche Felder in einer Matrix kurz aufleuchten, und tippst sie danach aus dem Gedächtnis nach – ohne die Positionen in Worten aufzusagen. Es ist ein kostenloses Übungsspiel, kein klinischer oder diagnostischer Test."
+        "text": "Hier ist es eine Übung für das visuell-räumliche Arbeitsgedächtnis: Du merkst dir, welche Felder in einer Matrix kurz aufleuchten, und tippst sie danach aus dem Gedächtnis nach – ohne die Positionen in Worten aufzusagen. Es ist ein kostenloses Übungsspiel."
       }
     },
     {
@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "Ist das der Visual Patterns Test (VPT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nein. Der Visual Patterns Test (Della Sala et al., 1997) ist ein neuropsychologisches Forschungsverfahren mit Gittermustern. Diese Übung ist ein kostenloses Trainingsspiel in ähnlichem Format, folgt aber weder dessen Ablauf noch dessen Normwerten."
+        "text": "Nein. Der Visual Patterns Test (Della Sala et al., 1997) ist ein Forschungsverfahren mit Gittermustern. Diese Übung ist ein kostenloses Trainingsspiel in ähnlichem Format, folgt aber weder dessen Ablauf noch dessen Normwerten."
       }
     },
     {
@@ -212,11 +212,10 @@ const faqSchema = {
 const gridGuide = {
   intro: [
   "Dieser visuelle Gedächtnistest online zeigt dir 1,5 Sekunden lang leuchtende Felder in einer Matrix. Danach tippst du das Muster aus dem Gedächtnis nach. Du startest mit 5 Feldern auf einem 4x4-Gitter, jedes gelöste Muster bringt ein Feld mehr, und auf dem 5x5-Gitter geht es bis zu 12 Feldern. Es geht darum, Muster in der Matrix zu merken, nicht darum, sie in Worte zu fassen.",
-  "Die klinische Untersuchung der räumlich-visuellen Gedächtnisspanne wurde durch Pietro Corsi (1972) mit dem Corsi-Block-Tapping-Test begründet, der nachwies, dass räumliche Gedächtnissysteme anatomisch getrennt von der verbalen Zahlenspanne arbeiten (Milner, 1971). 1997 veröffentlichten Sergio Della Sala, Robert H. Logie und Kollegen den Visual Patterns Test (VPT), um statische Matrixmuster von sequenziellen Bewegungspfaden abzugrenzen. Diese Übung nutzt ein ähnliches Format, ist aber nicht der VPT.",
+  "Die Untersuchung der räumlich-visuellen Gedächtnisspanne wurde durch Pietro Corsi (1972) mit dem Corsi-Block-Tapping-Test begründet, der nachwies, dass räumliche Gedächtnissysteme anatomisch getrennt von der verbalen Zahlenspanne arbeiten (Milner, 1971). 1997 veröffentlichten Sergio Della Sala, Robert H. Logie und Kollegen den Visual Patterns Test (VPT), um statische Matrixmuster von sequenziellen Bewegungspfaden abzugrenzen. Diese Übung nutzt ein ähnliches Format, ist aber nicht der VPT.",
   "In der modernen kognitiven Neurowissenschaft unterteilten Robert H. Logie (1995) und Alan Baddeley (2000) den räumlich-visuellen Notizblock in den passiven 'Visual Cache' (Speicher für Farben, Helligkeit und statische Formen) und den aktiven 'Inner Scribe' (Mechanismus für räumliche Bewegungsplanung). Studien von Steven J. Luck & Edward K. Vogel (1997) sowie Nelson Cowan (2001) belegen, dass ungebündelte visuelle Information strikt auf 3 bis 4 Objekte begrenzt ist. Das Erweitern der Gedächtnisspanne erfordert räumliches Chunking – das Zusammenfassen von Feldern zu ganzheitlichen Gestaltmustern.",
   "Ablauf: Jedes Muster wird 1,5 Sekunden gezeigt. Die 60-Sekunden-Uhr läuft nur, während du nachtippst. Ein vollständiges Muster bringt 150 Punkte; ein falsches Feld beendet die Runde ohne Punkt- oder Zeitabzug, und es folgt ein neues Muster auf derselben Stufe. Reaktionszeiten werden nicht gemessen.",
-  "Daten: Punktzahl und Bestwert werden nur lokal in deinem Browser (localStorage) gespeichert und nicht an einen Server gesendet.",
-  "Diese Übung dient der kognitiven Unterhaltung und dem Training. Sie ist kein Medizinprodukt und stellt keine klinische Diagnose dar. Bei gesundheitlichen Bedenken wende dich an medizinisches Fachpersonal."
+  "Daten: Punktzahl und Bestwert werden nur lokal in deinem Browser (localStorage) gespeichert und nicht an einen Server gesendet."
 ],
   benchmarks: {
     title: "SkillDrills-Übungsstufen (ein Durchgang)",

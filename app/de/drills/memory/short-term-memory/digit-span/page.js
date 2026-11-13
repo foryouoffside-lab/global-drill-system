@@ -207,7 +207,7 @@ const faqSchema = {
       "name": "Kann Zahlenspannentraining Konzentration und Denkleistung steigern?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das ist nicht garantiert. Mit Übung steigt meist der Wert in genau diesem Spiel; ob sich das auf Alltag, Lernen oder Denkleistung überträgt, ist in der Forschung umstritten. Bei echten Gedächtnissorgen wende dich an eine Ärztin oder einen Arzt."
+        "text": "Das ist nicht garantiert. Mit Übung steigt meist der Wert in genau diesem Spiel; ob sich das auf Alltag, Lernen oder Denkleistung überträgt, ist in der Forschung umstritten."
       }
     },
     {
@@ -223,12 +223,11 @@ const faqSchema = {
 
 const digitSpanGuide = {
   intro: [
-  "Der Zahlenspanne Test zeigt dir kurz eine Ziffernfolge, die du danach in derselben Reihenfolge eingibst. Er ist eine Übungsversion der Zahlenspanne-Aufgabe (Digit Span), mit der die Psychologie seit Langem das Kurzzeitgedächtnis untersucht, und kein klinischer Test oder IQ-Test.",
+  "Der Zahlenspanne Test zeigt dir kurz eine Ziffernfolge, die du danach in derselben Reihenfolge eingibst. Er ist eine Übungsversion der Zahlenspanne-Aufgabe (Digit Span), mit der die Psychologie seit Langem das Kurzzeitgedächtnis untersucht.",
   "Bekannt wurde die Frage nach der Spanne durch George A. Millers „magische Zahl 7 ± 2“ (1956). Ein ähnliches Zahlennachsprechen steckt auch im Wechsler-Intelligenztest (WAIS); dieses Spiel ist aber kein WAIS-Untertest und berechnet keine Wertpunkte.",
   "Im Arbeitsgedächtnismodell von Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000) werden Ziffernfolgen in der phonologischen Schleife gehalten und verblassen ohne inneres Wiederholen nach etwa 2 Sekunden. Nelson Cowan (2001) zufolge liegt die reine Kapazität ohne Wiederholen und Gruppieren bei etwa 4 Einheiten; für lange Folgen hilft daher Chunking.",
   "So läuft der Test: Start mit 3 Ziffern; die ganze Folge erscheint auf einmal (anfangs 2,5 s, nach jedem Treffer 0,1 s kürzer bis mindestens 0,8 s, nach einem Fehler 0,2 s länger). Danach hast du 8 Sekunden für die Eingabe über das Tastenfeld oder die Tastatur. Ein Treffer bringt 1 Ziffer mehr (maximal 15), ein Fehler oder Zeitablauf 1 weniger (mindestens 3). Aufgezeichnet werden Punktzahl, längste Folge und Trefferquote (Anteil gelöster Runden); Reaktionszeiten werden nicht gemessen.",
-  "Datentransparenz: SkillDrills sammelt keine Punktzahlen auf Servern. Alle Werte bleiben im localStorage deines Browsers. Deshalb nennt diese Seite keine Nutzerdurchschnitte, Perzentile oder Nutzerzahlen; zitierte Zahlen stammen aus den unten aufgeführten Studien.",
-  "Medizinischer Hinweis: Dieses Übungsspiel ist kein Medizinprodukt und kein Diagnoseverfahren. Bei Sorgen um Gedächtnis oder Konzentration wende dich an eine Fachärztin oder einen Facharzt."
+  "Datentransparenz: SkillDrills sammelt keine Punktzahlen auf Servern. Alle Werte bleiben im localStorage deines Browsers. Deshalb nennt diese Seite keine Nutzerdurchschnitte, Perzentile oder Nutzerzahlen; zitierte Zahlen stammen aus den unten aufgeführten Studien."
 ],
   benchmarks: {
     title: "Zahlenspanne Test – Übungsstufen (SkillDrills, 45-Sekunden-Lauf)",

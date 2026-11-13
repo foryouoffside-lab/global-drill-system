@@ -142,7 +142,7 @@ const faqSchema = {
       "name": "Was unterscheidet SkillDrills von klassischen Gehirnjogging- oder Casual-Gaming-Seiten?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Im Gegensatz zu rein unterhaltenden Gelegenheitsspielen bietet SkillDrills empirisch validierte neuropsychologische Testparadigmen (wie N-Back, Stroop-Interferenz, Schulte-Gitter und Posner-Cueing) mit metrischer Auswertung. Nutzer erhalten Punkte, Genauigkeit und Reaktionszeiten zur Selbsteinschätzung und können ihren Verlauf über wiederholte Durchgänge beobachten."
+        "text": "Im Gegensatz zu rein unterhaltenden Gelegenheitsspielen bietet SkillDrills empirisch validierte Testparadigmen (wie N-Back, Stroop-Interferenz, Schulte-Gitter und Posner-Cueing) mit metrischer Auswertung. Nutzer erhalten Punkte, Genauigkeit und Reaktionszeiten zur Selbsteinschätzung und können ihren Verlauf über wiederholte Durchgänge beobachten."
       }
     },
     {

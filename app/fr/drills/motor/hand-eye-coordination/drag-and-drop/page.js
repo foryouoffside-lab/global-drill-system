@@ -160,7 +160,7 @@ const faqSchema = {
       name: 'Les graphistes et monteurs vidéo tirent-ils profit de cet exercice ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Le même geste sert sur une timeline de montage ou dans un logiciel de graphisme. Ce drill est un exercice de contrôle de la souris, pas un programme de prévention médicale.',
+        text: 'Le même geste sert sur une timeline de montage ou dans un logiciel de graphisme. Ce drill est un exercice de contrôle de la souris.',
       },
     },
     {

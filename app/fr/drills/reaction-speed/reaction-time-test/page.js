@@ -280,7 +280,7 @@ const reactionGuide = {
   "intro": [
     "C’est un jeu d’estimation du temps, pas un test de temps de réaction. Un temps cible compris entre une et huit secondes s’affiche brièvement, disparaît, et vous cliquez quand vous estimez qu’il s’est écoulé. L’exercice indique l’écart entre votre clic et la cible en millisecondes. Pour tester votre rapidité de réaction à un signal visuel, utilisez le Test de réaction (signal lumineux).",
     "Chaque clic est horodaté avec l’horloge performance.now() du navigateur, entièrement sur votre appareil. Votre écran quantifie ce que vous voyez selon son intervalle de rafraîchissement : environ 16,7 ms par image à 60 Hz, 6,9 ms à 144 Hz et 4,2 ms à 240 Hz (Woods et al., 2015). L’interrogation de la souris ajoute environ 8 ms à 125 Hz contre 1 ms à 1000 Hz.",
-    "Considérez les écarts inférieurs à environ 5 ms comme du bruit de mesure et comparez vos propres sessions sur le même matériel plutôt qu’avec la configuration d’une autre personne. C’est un outil d’entraînement, pas une mesure clinique."
+    "Considérez les écarts inférieurs à environ 5 ms comme du bruit de mesure et comparez vos propres sessions sur le même matériel plutôt qu’avec la configuration d’une autre personne."
   ],
   "benchmarks": {
     "title": "Comment l’erreur de timing est notée",

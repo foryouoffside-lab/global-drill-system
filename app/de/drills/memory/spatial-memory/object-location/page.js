@@ -109,7 +109,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "Was ist ein räumlicher Gedächtnistest (Object Location Memory Test)?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Hier ist es ein kostenloses Übungsspiel: Sie merken sich, welches Objekt wo im Raster lag, und finden danach die Position eines gesuchten Objekts wieder. Es ist kein neuropsychologischer oder diagnostischer Test; das Ergebnis ist nur ein persönlicher Übungswert."
+                  "text": "Hier ist es ein kostenloses Übungsspiel: Sie merken sich, welches Objekt wo im Raster lag, und finden danach die Position eines gesuchten Objekts wieder. Das Ergebnis ist ein persönlicher Übungswert."
             }
       },
       {
@@ -141,7 +141,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "Wie wird die Punktzahl berechnet?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Jede richtig gefundene Zielposition bringt 150 Punkte. Die Bewertung im Ergebnisbildschirm ist eine SkillDrills-Übungsstufe mit 1.000 Punkten als oberer Marke – kein Durchschnitts- oder klinischer Normwert."
+                  "text": "Jede richtig gefundene Zielposition bringt 150 Punkte. Die Bewertung im Ergebnisbildschirm ist eine SkillDrills-Übungsstufe mit 1.000 Punkten als oberer Marke – kein Durchschnittswert."
             }
       },
       {
@@ -234,8 +234,7 @@ export default function LocalizedObjectLocationPage() {
       "Die wissenschaftliche Grundlage schufen Marion Eals und Irwin Silverman (1994) in ihren Pionierarbeiten zur Raumkognition. Sie wiesen nach, dass das Gedächtnis für Objektpositionen als spezialisierter evolutionärer Mechanismus getrennt von mentaler Rotation agiert. Dieses Spiel ist nicht deren Forschungsaufgabe, sondern eine ähnlich aufgebaute Übung. Bereits zuvor begründete Edward C. Tolman (1948) das Konzept der kognitiven Landkarte (Cognitive Map), das beschreibt, wie Organismen interne Raummodelle ihrer Umwelt konstruieren.",
       "Im Modell des Arbeitsgedächtnisses zeigten Robert H. Logie (1995) und Alan Baddeley (2000), dass die Objekt-Orts-Bindung durch den episodischen Puffer (Episodic Buffer) gesteuert wird, der Eingaben des visuellen Zwischenspeichers (Objektidentitäten) mit denen des inneren Schreibers (Raumkoordinaten) zusammenführt. Steven J. Luck und Edward K. Vogel (1997) bewiesen, dass Merkmalsverknüpfungen erhebliche Aufmerksamkeitsressourcen binden, während Nelson Cowan (2001) die Kapazität des fokalen Arbeitsgedächtnisses auf etwa 3 bis 4 Elemente schätzte.",
       "Ablauf: Die Anordnung ist 1,5 Sekunden sichtbar, danach haben Sie 8 Sekunden für die Antwort. Ein Treffer bringt 150 Punkte und ein Level mehr; ein Fehlklick oder Zeitablauf beendet die Runde ohne Punktabzug, und es folgt eine neue Anordnung auf derselben Stufe. Die Gesamtzeit beträgt 45 Sekunden; Reaktionszeiten werden nicht gemessen.",
-      "Daten: Punktzahl und Bestwert werden nur im localStorage Ihres Browsers gespeichert und nicht an einen Server gesendet.",
-      "Dieses Tool ist ein kostenloses kognitives Browserspiel zur Übung und Selbstbeobachtung. Es stellt kein medizinisches Diagnoseinstrument dar und ersetzt keine ärztliche Abklärung. Wenden Sie sich bei Gedächtnisproblemen an qualifiziertes medizinisches Fachpersonal."
+      "Daten: Punktzahl und Bestwert werden nur im localStorage Ihres Browsers gespeichert und nicht an einen Server gesendet."
 ],
     benchmarks: {
       title: "SkillDrills-Übungsstufen (ein Durchgang)",
@@ -246,7 +245,7 @@ export default function LocalizedObjectLocationPage() {
         ["Einstiegsstufe", "150 – 450", "1 – 3", "Level 2–4, 3–5 Objekte, 3x3"],
         ["Start", "0", "0", "Level 1, 2 Objekte, 3x3"]
       ],
-      note: "Punkte = Treffer × 150. Die Stufen sind aus den Spielregeln abgeleitete SkillDrills-Übungsmarken, keine Bevölkerungsstatistik oder klinischen Normen."
+      note: "Punkte = Treffer × 150. Die Stufen sind aus den Spielregeln abgeleitete SkillDrills-Übungsmarken, keine Bevölkerungsstatistik."
     },
     techniques: {
       title: "Evidenzbasierte Strategien zur Steigerung der Objekt-Orts-Bindung",

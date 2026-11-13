@@ -279,7 +279,7 @@ const reactionGuide = {
   "intro": [
     "Dies ist ein Spiel zur Zeitschätzung und kein Test der Reaktionszeit auf ein Signal. Eine Zielzeit zwischen einer und acht Sekunden wird kurz gezeigt, verschwindet, und du klickst, wenn du sie für verstrichen hältst. Der Drill zeigt den Abstand zwischen Klick und Ziel in Millisekunden. Wie schnell du auf ein visuelles Signal reagierst, testest du mit dem Reaktionstest (Lichtsignal).",
     "Jeder Klick wird mit der Browser-Uhr performance.now() vollständig auf deinem Gerät erfasst. Dein Display rundet das Gesehene auf sein Aktualisierungsintervall: etwa 16,7 ms pro Bild bei 60 Hz, 6,9 ms bei 144 Hz und 4,2 ms bei 240 Hz (Woods et al., 2015). Die Mausabtastung fügt bei 125 Hz etwa 8 ms hinzu, bei 1000 Hz etwa 1 ms.",
-    "Unterschiede unter etwa 5 ms sind Messrauschen. Vergleiche deine eigenen Durchläufe auf derselben Hardware und nicht mit fremden Setups. Dies ist ein Übungswerkzeug, keine klinische Messung."
+    "Unterschiede unter etwa 5 ms sind Messrauschen. Vergleiche deine eigenen Durchläufe auf derselben Hardware und nicht mit fremden Setups."
   ],
   "benchmarks": {
     "title": "So wird der Timing-Fehler gewertet",

@@ -180,7 +180,7 @@ const saccadicGuide = {
       ['Etapa 4', 'Mais rápido com a mesma precisão', 'Menos ultrapassagens e correções'],
       ['Etapa 5', 'Sessões mais longas', 'Pausar antes do cansaço e comparar nas mesmas condições'],
     ],
-    note: 'Esta tabela é uma orientação de prática da SkillDrills. Não traz normas de tempo de reação, estatísticas de usuários, percentis nem valores clínicos.',
+    note: 'Esta tabela é uma orientação de prática da SkillDrills. Não traz normas de tempo de reação, estatísticas de usuários nem percentis.',
   },
   techniques: {
     title: 'Dicas para saltos do olhar mais limpos',

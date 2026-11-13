@@ -103,7 +103,7 @@ const faqSchema = {
       "name": "Comment travailler la stabilité du curseur ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les exercices de tracé et le jeu du fil électrique demandent de garder le curseur dans un couloir étroit. Ils font travailler le contrôle fin de la souris ; ils ne suppriment pas les tremblements et ne remplacent pas un avis médical."
+        "text": "Les exercices de tracé et le jeu du fil électrique demandent de garder le curseur dans un couloir étroit. Ils font travailler le contrôle fin de la souris."
       }
     },
     {

@@ -240,7 +240,7 @@ export default function VerticalAirTrackPtPage() {
       note: "Taxa de tracking = parte do tempo com o clique segurado em que a mira está sobre um alvo. Faixas próprias do SkillDrills, não normas científicas, estatísticas de usuários nem ranks de jogos."
     },
     techniques: {
-      title: "Protocolos Clínicos para Dominar a Mira Vertical",
+      title: "Protocolos para Dominar a Mira Vertical",
       items: [
         {
           name: "Equalização de Velocidade Retiniana no Eixo Y",

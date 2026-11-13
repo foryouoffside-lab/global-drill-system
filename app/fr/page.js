@@ -100,7 +100,7 @@ export default function FrenchHomePage() {
           { title: 'Statistiques de session en direct', description: 'Latence, précision et exactitude se mettent à jour pendant que vous jouez. Les mesures dépendent de votre écran et de votre périphérique d\'entrée' },
           { title: 'Courbes de progression locales', description: 'Suivez vos scores et votre progression en privé, dans le navigateur' },
           { title: 'Progression adaptative', description: 'La difficulté augmente avec votre série, pour que chaque exercice reste exigeant à mesure que vous progressez' },
-          { title: 'Paradigmes établis', description: 'Construit sur des tâches établies de psychologie cognitive et des schémas d\'entraînement esport. Ce n\'est pas un test clinique' },
+          { title: 'Paradigmes établis', description: 'Construit sur des tâches établies de psychologie cognitive et des schémas d\'entraînement esport' },
           { title: 'Axes de compétence ciblés', description: 'Ciblez des points faibles précis parmi 8 catégories de performance spécialisées' },
           { title: 'Zéro friction', description: '100% gratuit, exécution côté navigateur, sans compte ni carte bancaire' },
         ],

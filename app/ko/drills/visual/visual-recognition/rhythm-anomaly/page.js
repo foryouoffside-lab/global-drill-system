@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 const PAGE_URL = "https://skilldrills.online/ko/drills/visual/visual-recognition/rhythm-anomaly";
 const TITLE = "깜빡임 구별 게임: 시각 리듬 테스트 | SkillDrills";
-const DESCRIPTION = "깜빡임 구별 게임: 6x6 격자에서 혼자 다른 박자로 깜빡이는 칸을 찾아 클릭하세요. 45초 무료 시각 리듬 테스트이며 의료 검사가 아닙니다.";
+const DESCRIPTION = "깜빡임 구별 게임: 6x6 격자에서 혼자 다른 박자로 깜빡이는 칸을 찾아 클릭하세요. 45초 무료 시각 리듬 테스트입니다.";
 const FAQS = [
   [
     "깜빡임 구별 게임은 무엇을 측정하나요?",
-    "45초 동안 혼자 다른 박자로 깜빡이는 칸을 몇 번 찾았는지(1회 10점)와 연속 성공, 오답 수를 기록합니다. 시각 리듬을 비교하는 연습용 점수이며 시력이나 신경 기능을 진단하지 않습니다."
+    "45초 동안 혼자 다른 박자로 깜빡이는 칸을 몇 번 찾았는지(1회 10점)와 연속 성공, 오답 수를 기록합니다. 시각 리듬을 비교하는 연습용 점수입니다."
   ],
   [
     "플리커 검사(CFF)와 같은 건가요?",
@@ -87,7 +87,7 @@ const TIPS = [
   "기록은 같은 기기, 같은 화면 밝기에서 비교하세요."
 ];
 const INTRO = [
-  "깜빡임 구별 게임은 6x6 격자의 36칸이 같은 박자로 천천히 깜빡이는 가운데, 혼자 더 빠른 박자로 깜빡이는 칸 하나를 찾아 클릭하는 45초 시각 리듬 테스트입니다. 마우스나 터치로 브라우저에서 무료로 플레이하며, 시력 검사나 의료 검사가 아닙니다.",
+  "깜빡임 구별 게임은 6x6 격자의 36칸이 같은 박자로 천천히 깜빡이는 가운데, 혼자 더 빠른 박자로 깜빡이는 칸 하나를 찾아 클릭하는 45초 시각 리듬 테스트입니다. 마우스나 터치로 브라우저에서 무료로 플레이합니다.",
   "이상 칸의 주기는 주변 칸의 약 72%라서 약 1.4배 빠르게 깜빡이고, 가장 밝을 때 조금 더 밝습니다. 정답을 맞힐 때마다 격자 전체의 박자가 빨라집니다(주기 1.6초에서 최저 0.6초). 처음에는 쉽지만 후반에는 박자 차이를 더 빨리 읽어야 합니다.",
   "점멸 속도는 초당 약 0.6~2.5회로, 깜빡임이 하나의 빛으로 합쳐 보이는 임계 융합 빈도(약 50~60Hz; De Lange, 1958; Kelly, 1961)보다 훨씬 느립니다. 그래서 이 게임은 CFF나 플리커 검사가 아니라 여러 칸의 리듬을 비교하는 주의 과제에 가깝습니다. 두 자극이 같은 박자인지 판단하는 일은 깜빡임 자체를 알아차리는 것보다 훨씬 느린 속도에서 한계에 이릅니다(Holcombe, 2009)."
 ];
@@ -140,7 +140,7 @@ const softwareApplicationSchema = {
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "6x6 격자에서 혼자 더 빠른 박자로 깜빡이는 칸을 찾는 45초 브라우저 게임. 마우스·터치로 플레이하며 의료 검사가 아닙니다.",
+  "description": "6x6 격자에서 혼자 더 빠른 박자로 깜빡이는 칸을 찾는 45초 브라우저 게임. 마우스·터치로 플레이합니다.",
   "url": PAGE_URL,
   "inLanguage": "ko-KR",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
@@ -234,7 +234,7 @@ export default function KoreanRhythmAnomalyPage() {
             </tbody>
           </table>
         </div>
-        <p>{"SkillDrills 연습 구간입니다. 인구 통계나 백분위, 진단 기준이 아닙니다."}</p>
+        <p>{"SkillDrills 연습 구간입니다. 인구 통계나 백분위가 아닙니다."}</p>
 
         <h3>{"요령"}</h3>
         <ol className="list-decimal pl-5 space-y-2 my-4 text-slate-300">

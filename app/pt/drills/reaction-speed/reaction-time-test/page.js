@@ -279,7 +279,7 @@ const reactionGuide = {
   "intro": [
     "Este é um jogo de estimativa de tempo, não um teste de reação. Um tempo-alvo entre um e oito segundos aparece brevemente, some, e você clica quando acha que ele passou. O drill mostra a diferença entre o clique e o alvo em milissegundos. Para testar a rapidez com que você reage a um sinal visual, use o Teste de reação (sinal luminoso).",
     "Cada clique é marcado com o relógio performance.now() do navegador, inteiramente no seu dispositivo. A tela quantiza o que você vê pelo intervalo de atualização: cerca de 16,7 ms por quadro a 60 Hz, 6,9 ms a 144 Hz e 4,2 ms a 240 Hz (Woods et al., 2015). A leitura do mouse soma cerca de 8 ms a 125 Hz contra 1 ms a 1000 Hz.",
-    "Trate diferenças menores que cerca de 5 ms como ruído de medição e compare suas próprias sessões no mesmo equipamento, não com o de outra pessoa. É uma ferramenta de prática, não uma medição clínica."
+    "Trate diferenças menores que cerca de 5 ms como ruído de medição e compare suas próprias sessões no mesmo equipamento, não com o de outra pessoa."
   ],
   "benchmarks": {
     "title": "Como o erro de timing é avaliado",

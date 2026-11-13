@@ -94,7 +94,7 @@ export default function SpanishHomePage() {
           { title: 'Estadísticas de sesión en vivo', description: 'La latencia, la precisión y la exactitud se actualizan mientras juegas. Las mediciones dependen de tu pantalla y tu dispositivo de entrada' },
           { title: 'Curvas de progreso locales', description: 'Sigue tus puntuaciones y tu progreso de forma privada en el navegador' },
           { title: 'Progresión adaptativa', description: 'La dificultad sube con tu racha, así cada ejercicio sigue siendo un reto a medida que mejoras' },
-          { title: 'Paradigmas establecidos', description: 'Basado en tareas consolidadas de psicología cognitiva y en patrones de entrenamiento de esports. No es una prueba clínica' },
+          { title: 'Paradigmas establecidos', description: 'Basado en tareas consolidadas de psicología cognitiva y en patrones de entrenamiento de esports' },
           { title: 'Áreas de habilidad enfocadas', description: 'Ataca puntos débiles concretos en 8 categorías de rendimiento especializadas' },
           { title: 'Cero fricción', description: '100% gratis, se ejecuta en el navegador, sin cuenta ni tarjeta de crédito' },
         ],

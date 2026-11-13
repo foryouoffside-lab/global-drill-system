@@ -114,7 +114,7 @@ const howToSchema = {
 const faqs = [
   {
     q: 'Was macht dieses Augentraining genau?',
-    a: 'Ziele erscheinen einzeln an festen Rasterpunkten (am PC 4×3, auf dem Handy 3×3), nie zweimal hintereinander am selben Punkt. Du springst mit dem Blick hin und klickst. Geübt werden schnelle Blickwechsel (Sakkaden) und das Anklicken. Es ist ein Browser-Spiel, kein Sehtest und keine Therapie.',
+    a: 'Ziele erscheinen einzeln an festen Rasterpunkten (am PC 4×3, auf dem Handy 3×3), nie zweimal hintereinander am selben Punkt. Du springst mit dem Blick hin und klickst. Geübt werden schnelle Blickwechsel (Sakkaden) und das Anklicken. Es ist ein Browser-Spiel.',
   },
   {
     q: 'Wie funktionieren Zeit und Punkte?',
@@ -180,7 +180,7 @@ const saccadicGuide = {
       ['Stufe 4', 'Schneller bei gleicher Genauigkeit', 'Überschießen und Nachkorrigieren reduzieren'],
       ['Stufe 5', 'Längere Durchgänge halten', 'Vor der Ermüdung pausieren, gleiche Bedingungen vergleichen'],
     ],
-    note: 'Diese Tabelle ist eine Übungsorientierung von SkillDrills. Sie enthält keine Reaktionszeit-Normen, Nutzerstatistiken, Perzentile oder klinischen Werte.',
+    note: 'Diese Tabelle ist eine Übungsorientierung von SkillDrills. Sie enthält keine Reaktionszeit-Normen, Nutzerstatistiken oder Perzentile.',
   },
   techniques: {
     title: 'Tipps für sauberere Blicksprünge',

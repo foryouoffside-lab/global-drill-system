@@ -159,7 +159,7 @@ const faqSchema = {
       name: 'L\'exercice de main sûre est-il utile aux graphistes et joueurs e-sport ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Le geste ressemble à l\'encrage graphique et au tracking dans les jeux de tir, où le pointeur doit rester sur une trajectoire étroite. Le transfert varie selon les personnes, et ce jeu n\'est pas un test médical du tremblement.',
+        text: 'Le geste ressemble à l\'encrage graphique et au tracking dans les jeux de tir, où le pointeur doit rester sur une trajectoire étroite. Le transfert varie selon les personnes.',
       },
     },
     {
@@ -225,7 +225,7 @@ const guideProps = {
   intro: {
     title: 'Comment la stabilité de la main et la précision sont mesurées',
     paragraphs: [
-      'Le jeu du fil électrique en ligne vous demande de guider le curseur le long d’une ligne lumineuse sinueuse sans en sortir. Il entraîne la stabilité de la main et la précision de la souris : tours réussis, contacts et série sans erreur. Ce n’est pas un test médical de tremblement.',
+      'Le jeu du fil électrique en ligne vous demande de guider le curseur le long d’une ligne lumineuse sinueuse sans en sortir. Il entraîne la stabilité de la main et la précision de la souris : tours réussis, contacts et série sans erreur.',
       'Fiabilité des mesures et contraintes matérielles : La mesure temporelle provient de l\'API performance.now() du navigateur, quantifiée à ~1 ms pour des raisons de sécurité. L\'affichage est synchronisé avec le taux de rafraîchissement de l\'écran — ~16,7 ms à 60 Hz, ~6,9 ms à 144 Hz et ~4,1 ms à 240 Hz (Woods et al., 2015). Le taux d\'interrogation de la souris ajoute ~8 ms à 125 Hz contre ~1 ms à 1000 Hz. Tout écart inférieur à 5 ms relève du bruit de mesure. SkillDrills stocke vos performances uniquement dans votre navigateur.',
     ],
   },

@@ -139,10 +139,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Les résultats sont-ils des tests médicaux ?",
+      "name": "Comment lire les résultats ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": `Non. Ce sont des jeux d’entraînement sans valeur de diagnostic. Les paliers affichés sont des repères propres à chaque exercice, pas des classements de population. Pour une question de santé, consultez un professionnel.`
+        "text": `Les paliers affichés sont des repères propres à chaque exercice, pas des classements de population. Comparez surtout vos propres sessions sur le même appareil.`
       }
     },
     {

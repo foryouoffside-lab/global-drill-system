@@ -183,10 +183,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Werden meine Ergebnisse gespeichert? Haben sie medizinische Aussagekraft?",
+      "name": "Werden meine Ergebnisse gespeichert?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bestwert und höchste Stufe werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Die Ergebnisse sind Übungswerte und diagnostizieren weder Arbeitsgedächtnisstörungen noch ADHS."
+        "text": "Bestwert und höchste Stufe werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Die Ergebnisse sind Übungswerte."
       }
     }
   ]
@@ -230,8 +230,7 @@ const guideDe = {
     "Der N-Back Test online ist ein kostenloses Browser-Training für das Arbeitsgedächtnis: Buchstaben erscheinen einzeln, und du entscheidest bei jedem, ob er genau dem Buchstaben von vor N Schritten entspricht. Weil du die letzten N Buchstaben ständig behalten und mit jedem neuen aktualisieren musst, fordert die Aufgabe vor allem das Aktualisieren des Arbeitsgedächtnisses (Kirchner, 1958).",
     "Der Test startet bei 3-Back. Die ersten 3 Buchstaben merkst du dir nur, danach antwortest du bei jedem Buchstaben mit 'Treffer' oder 'Kein Treffer'. Jede richtige Antwort bringt +150 Punkte, alle 1.200 Punkte (8 richtige Antworten) steigt die Stufe auf 4-Back, 5-Back usw. Das Antwortfenster beginnt bei 2 Sekunden und wird pro Stufe 0,1 Sekunden kürzer, bis minimal 1,2 Sekunden.",
     "Die Sitzung dauert 45 Sekunden; während du die ersten Buchstaben einprägst, steht die Uhr still. Falsche oder fehlende Antworten kosten keine Punkte und keine Zeit, die Stufe sinkt nicht, sie zählen nur in der Genauigkeit als Fehler. Es ist ein einfaches N-Back mit Buchstaben, kein Dual N-Back (Position + Ton). Antworten per Klick oder Touch auf die Schaltflächen.",
-    "Datentransparenz: Ergebnisse werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Deshalb veröffentlicht SkillDrills keine Nutzer-Durchschnitte oder Ranglisten.",
-    "Dieses Tool ist ein kostenloses Browserspiel zum Üben, um dein Arbeitsgedächtnis zu trainieren. Es ist weder ein Medizinprodukt noch ein Diagnoseinstrument, und die Ergebnisse sagen nichts über Gedächtnisstörungen, ADHS oder Intelligenz aus."
+    "Datentransparenz: Ergebnisse werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Deshalb veröffentlicht SkillDrills keine Nutzer-Durchschnitte oder Ranglisten."
   ],
   benchmarks: {
     title: "SkillDrills-Übungsstufen (Punkte = richtige Antworten × 150)",
@@ -242,7 +241,7 @@ const guideDe = {
       ["Geübt", "8–15", "1.200–2.250", "4-Back erreicht, Antwortfenster 1,9 s"],
       ["Fortgeschritten", "16+", "2.400+", "5-Back oder höher, Antwortfenster 1,8 s oder kürzer"]
     ],
-    note: "Diese Stufen sind aus den Punkteregeln des Spiels berechnete SkillDrills-Übungsstufen, keine Bevölkerungsnormen und keine klinischen Grenzwerte."
+    note: "Diese Stufen sind aus den Punkteregeln des Spiels berechnete SkillDrills-Übungsstufen, keine Bevölkerungsnormen."
   },
   techniques: {
     title: "Tipps für den N-Back Test",

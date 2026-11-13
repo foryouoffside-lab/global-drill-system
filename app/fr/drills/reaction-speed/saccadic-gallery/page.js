@@ -249,7 +249,7 @@ const howToSchema = {
 const saccadicGuide = {
   "heading": "Exercice de saccades oculaires : repérer une cible et cliquer vite",
   "intro": [
-    "Cet exercice de saccades oculaires est un jeu gratuit : des cibles apparaissent une à une sur une grille de points fixes (4×3 sur ordinateur, 3×3 sur mobile) et vous cliquez dessus le plus vite possible. Il mesure votre temps de réaction, pas vos mouvements oculaires ; il fait travailler le repérage visuel, le déplacement du regard et la coordination œil-main. Ce n’est ni un test médical ni un test de vue.",
+    "Cet exercice de saccades oculaires est un jeu gratuit : des cibles apparaissent une à une sur une grille de points fixes (4×3 sur ordinateur, 3×3 sur mobile) et vous cliquez dessus le plus vite possible. Il mesure votre temps de réaction, pas vos mouvements oculaires ; il fait travailler le repérage visuel, le déplacement du regard et la coordination œil-main.",
     "Les saccades sont des sauts rapides des yeux d’un point à un autre (Rayner, 1998). Leur vitesse peut atteindre plusieurs centaines de degrés par seconde, et la perception est réduite pendant le saut (suppression saccadique ; Leigh & Zee, 2015). Le jeu ne suit pas vos yeux : il fait seulement intervenir un saut du regard avant le clic.",
     "Mesure et matériel : tous les calculs sont réalisés dans votre navigateur avec l’horloge performance.now(), dont la résolution est limitée. Votre écran affiche une image toutes les 16,7 ms à 60 Hz, toutes les 6,9 ms à 144 Hz et toutes les 4,2 ms à 240 Hz (Woods et al., 2015) : comparez vos séances sur le même matériel."
   ],
@@ -287,7 +287,7 @@ const saccadicGuide = {
         "Point de départ : concentrez-vous sur l’exactitude"
       ]
     ],
-    "note": "Paliers d’entraînement SkillDrills propres à cet exercice, ni normes issues de la recherche ni percentiles d’utilisateurs. Le temps affiché inclut le choix de la cible, le déplacement de la souris et les délais de l’écran : ce n’est pas une latence saccadique et ce n’est pas une norme clinique."
+    "note": "Paliers d’entraînement SkillDrills propres à cet exercice, ni normes issues de la recherche ni percentiles d’utilisateurs. Le temps affiché inclut le choix de la cible, le déplacement de la souris et les délais de l’écran : ce n’est pas une latence saccadique."
   },
   "techniques": {
     "title": "Quatre conseils pour des séances plus régulières",

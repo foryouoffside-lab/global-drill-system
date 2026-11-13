@@ -91,7 +91,7 @@ export default function LocalizedHomePage() {
           { title: 'Live-Sitzungswerte', description: 'Latenz-, Präzisions- und Genauigkeitswerte aktualisieren sich während des Spiels. Die Messwerte sind durch Display und Eingabegerät begrenzt' },
           { title: 'Lokale Fortschrittskurven', description: 'Verfolge Punktzahlen und Fortschritt privat direkt im Browser' },
           { title: 'Adaptive Progression', description: 'Die Schwierigkeit steigt mit deiner Serie, damit jeder Drill auch bei besserer Form fordernd bleibt' },
-          { title: 'Etablierte Testverfahren', description: 'Aufgebaut auf etablierten kognitionspsychologischen Aufgaben und Esports-Trainingsmustern. Kein klinischer Test' },
+          { title: 'Etablierte Testverfahren', description: 'Aufgebaut auf etablierten kognitionspsychologischen Aufgaben und Esports-Trainingsmustern' },
           { title: 'Gezielte Trainingsbereiche', description: 'Trainiere gezielt Schwachstellen in 8 spezialisierten Leistungskategorien' },
           { title: 'Ohne Hürden', description: '100% kostenlos, läuft komplett im Browser — ohne Konto, ohne Kreditkarte' },
         ],

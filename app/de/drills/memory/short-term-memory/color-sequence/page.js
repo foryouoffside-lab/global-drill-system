@@ -214,7 +214,7 @@ export default function GermanColorSequencePage() {
         name: 'Hilft das Training gegen Alltagsvergesslichkeit?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Das ist nicht garantiert. Mit Übung wird man in genau diesem Spiel meist besser, ob sich das auf das Gedächtnis im Alltag überträgt, ist in der Forschung umstritten. Nutze es als Merkspiel; bei echten Gedächtnisproblemen wende dich an eine Ärztin oder einen Arzt.',
+          text: 'Das ist nicht garantiert. Mit Übung wird man in genau diesem Spiel meist besser, ob sich das auf das Gedächtnis im Alltag überträgt, ist in der Forschung umstritten. Nutze es als Merkspiel.',
         },
       },
       {
@@ -281,8 +281,7 @@ export default function GermanColorSequencePage() {
       'Im Mehrkomponenten-Modell des Arbeitsgedächtnisses von Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000) rekrutiert die serielle Reizverarbeitung den visuell-räumlichen Notizblock (Visuospatial Sketchpad). Robert H. Logie (1995) unterteilte diesen weiter in den passiven visuellen Cache (Farben und Formen) und den aktiven \'Inner Scribe\' (räumlich-zeitliche Bewegungsmuster). Geübte Anwender koppeln diesen Pfad zudem an die phonologische Schleife, um die Folge durch duale Enkodierung (visuell und subvokal) zusätzlich zu stützen.',
       'Das Spiel zeichnet in 45 Sekunden die Punktzahl, die höchste erreichte Stufe (Länge der Farbfolge) und die Trefferquote (Anteil gelöster Runden) auf. Reaktionszeiten pro Eingabe werden nicht gemessen.',
       'So läuft eine Runde: Stufe L zeigt L + 2 Farben aus 6 möglichen, jede Runde eine neue Zufallsfolge. Mit steigender Stufe leuchtet jede Farbe kürzer (von rund 0,7 s bis mindestens 0,25 s). Danach hast du für jede Eingabe 8 Sekunden; eine falsche Farbe oder Zeitüberschreitung senkt die Stufe um 1.',
-      'Datentransparenz und Privatsphäre: SkillDrills erfasst keine aggregierten Nutzerstatistiken. Ihre Punktzahlen und Rekorde verbleiben ausschließlich im lokalen Speicher (localStorage) Ihres Browsers und werden niemals hochgeladen. Deshalb nennt diese Seite keine Nutzerdurchschnitte, Perzentile oder Nutzerzahlen; zitierte Zahlen stammen aus den unten aufgeführten Studien.',
-      'Medizinischer Hinweis: Diese Web-Anwendung ist ein kostenloses Trainings- und Übungsspiel zur geistigen Fitness. Sie stellt kein medizinisches Diagnoseinstrument, Screening-Verfahren oder Therapiewerkzeug dar. Bei klinischen Bedenken bezüglich Ihrer Gedächtnisleistung oder Konzentrationsfähigkeit konsultieren Sie bitte einen qualifizierten Facharzt oder Neuropsychologen.'
+      'Datentransparenz und Privatsphäre: SkillDrills erfasst keine aggregierten Nutzerstatistiken. Ihre Punktzahlen und Rekorde verbleiben ausschließlich im lokalen Speicher (localStorage) Ihres Browsers und werden niemals hochgeladen. Deshalb nennt diese Seite keine Nutzerdurchschnitte, Perzentile oder Nutzerzahlen; zitierte Zahlen stammen aus den unten aufgeführten Studien.'
     ],
     benchmarks: {
       title: 'Farbsequenz-Spiel im Senso-Stil – Übungsstufen (SkillDrills, 45-Sekunden-Lauf)',

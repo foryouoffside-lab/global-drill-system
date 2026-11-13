@@ -158,7 +158,7 @@ const faqSchema = {
       name: 'O treino de mão firme ajuda jogadores de FPS e desenhistas?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O movimento se parece com o tracking em jogos de tiro e com o traço na ilustração digital, em que o ponteiro precisa ficar numa trajetória estreita. O ganho varia de pessoa para pessoa, e o jogo não é um exame médico de tremor.',
+        text: 'O movimento se parece com o tracking em jogos de tiro e com o traço na ilustração digital, em que o ponteiro precisa ficar numa trajetória estreita. O ganho varia de pessoa para pessoa.',
       },
     },
     {

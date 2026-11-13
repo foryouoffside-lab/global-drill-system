@@ -237,7 +237,7 @@ export default function TargetSwitchingSwarmEsPage() {
       note: "La precisión es el valor de la pantalla final (aciertos ÷ clics totales). Los rangos son referencias de práctica de SkillDrills, no normas científicas, rangos de juego ni estadísticas de usuarios."
     },
     techniques: {
-      title: "Protocolos Clínicos para Maximizar el Target Switching",
+      title: "Protocolos para Maximizar el Target Switching",
       items: [
         {
           name: "Planificación Sacádica e Indexación Visual",

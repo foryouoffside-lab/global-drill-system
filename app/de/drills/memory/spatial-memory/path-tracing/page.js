@@ -115,10 +115,10 @@ export default function LocalizedPathTracingPage() {
       },
       {
         "@type": "Question",
-        "name": "Ist das der klinische Corsi-Block-Tapping-Test?",
+        "name": "Ist das der Corsi-Block-Tapping-Test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nein. Das Prinzip entspricht der Corsi-Block-Aufgabe (Corsi, 1972): Positionen in ihrer Reihenfolge merken und wiedergeben. Hier wird jedoch ein quadratisches Raster verwendet, jeder Schritt führt nur zu einem direkt angrenzenden Feld (oben, unten, links, rechts), und kein Feld wird zweimal besucht. Es ist ein Übungsspiel, kein klinischer Test und kein Diagnoseinstrument."
+          "text": "Nein. Das Prinzip entspricht der Corsi-Block-Aufgabe (Corsi, 1972): Positionen in ihrer Reihenfolge merken und wiedergeben. Hier wird jedoch ein quadratisches Raster verwendet, jeder Schritt führt nur zu einem direkt angrenzenden Feld (oben, unten, links, rechts), und kein Feld wird zweimal besucht. Es ist ein Übungsspiel."
         }
       },
       {
@@ -163,7 +163,7 @@ export default function LocalizedPathTracingPage() {
       },
       {
         "@type": "Question",
-        "name": "Werden meine Ergebnisse gespeichert? Haben sie medizinische Aussagekraft?",
+        "name": "Werden meine Ergebnisse gespeichert?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Bestwert und höchstes Level werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Die Ergebnisse sind Übungswerte und sagen nichts über Gedächtnisstörungen oder die Gesundheit des Gehirns aus."
@@ -214,8 +214,7 @@ export default function LocalizedPathTracingPage() {
       "Der Corsi-Block-Test online ist ein kostenloses Reihenfolge-Gedächtnisspiel: Felder in einem Raster leuchten nacheinander auf, und du tippst sie danach in derselben Reihenfolge an. Er überträgt das Prinzip der Corsi-Block-Aufgabe (Milner, 1971; Corsi, 1972) auf einen Pfad im Raster und trainiert so deine räumliche Blockspanne und das visuell-räumliche Arbeitsgedächtnis.",
       "Level 1 zeigt einen Pfad aus 3 Schritten auf einem 3x3-Raster. Die Felder leuchten im Abstand von 0,5 Sekunden auf; jeder Schritt führt zu einem Feld oben, unten, links oder rechts, und kein Feld wird zweimal besucht. Jeder gelöste Pfad bringt +150 Punkte, Level +1 und einen Schritt mehr; das Raster wächst über 4x4, 5x5 und 6x6 bis 7x7.",
       "Die Sitzungsuhr hat 60 Sekunden und läuft nur während der Eingabe. Jeder Pfad muss innerhalb von 10 Sekunden fertig sein. Ein falsches Feld oder eine Zeitüberschreitung beendet die Runde ohne Abzug; es folgt ein neuer Pfad gleicher Länge, und das Level sinkt nicht. Eingabe per Mausklick oder Touch.",
-      "Datentransparenz: Ergebnisse werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Deshalb veröffentlicht SkillDrills keine Nutzer-Durchschnitte oder Ranglisten.",
-      "Dieses Tool ist ein kostenloses Browserspiel zum Üben. Es ist weder der offizielle Corsi-Test noch ein Medizinprodukt oder Diagnoseinstrument, und die Ergebnisse sagen nichts über Gedächtnisstörungen aus. Wende dich bei Gedächtnisproblemen an medizinisches Fachpersonal."
+      "Datentransparenz: Ergebnisse werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Deshalb veröffentlicht SkillDrills keine Nutzer-Durchschnitte oder Ranglisten."
     ],
     benchmarks: {
       title: "SkillDrills-Übungsstufen (Punkte = gelöste Pfade × 150)",
@@ -226,7 +225,7 @@ export default function LocalizedPathTracingPage() {
         ["Geübt", "8–12 Schritte · 4x4–5x5", "750–1.350", "5–9 Pfade gelöst. Richtungsblöcke werden nötig"],
         ["Fortgeschritten", "13+ Schritte · 6x6–7x7", "1.500+", "10+ Pfade gelöst. Lange Pfade in 60 Sekunden Eingabezeit hintereinander"]
       ],
-      note: "Diese Stufen sind aus den Punkteregeln des Spiels berechnete SkillDrills-Übungsstufen, keine Bevölkerungsnormen und keine klinischen Grenzwerte."
+      note: "Diese Stufen sind aus den Punkteregeln des Spiels berechnete SkillDrills-Übungsstufen, keine Bevölkerungsnormen."
     },
     techniques: {
       title: "Tipps für längere Pfade",

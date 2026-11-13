@@ -239,7 +239,7 @@ export default function VerticalAirTrackEsPage() {
       note: "Porcentaje de tracking = parte del tiempo con el clic mantenido en que la mira está sobre un blanco. Niveles propios de SkillDrills, no normas científicas, estadísticas de usuarios ni rangos de juegos."
     },
     techniques: {
-      title: "Protocolos Clínicos para Maximizar la Puntería Vertical",
+      title: "Protocolos para Maximizar la Puntería Vertical",
       items: [
         {
           name: "Sincronización de Velocidad Retiniana en el Eje Y",

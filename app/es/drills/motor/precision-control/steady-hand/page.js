@@ -159,7 +159,7 @@ const faqSchema = {
       name: '¿Resulta útil este entrenamiento para dibujantes y jugadores de FPS?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'El gesto se parece al entintado digital y a la puntería de seguimiento en shooters, donde el puntero debe mantenerse en una trayectoria estrecha. La mejora varía de una persona a otra y el juego no es una prueba médica de temblor.',
+        text: 'El gesto se parece al entintado digital y a la puntería de seguimiento en shooters, donde el puntero debe mantenerse en una trayectoria estrecha. La mejora varía de una persona a otra.',
       },
     },
     {
@@ -225,7 +225,7 @@ const guideProps = {
   intro: {
     title: 'Cómo se mide el pulso y la estabilidad manual',
     paragraphs: [
-      'El juego del pulso online funciona como el clásico de feria: llevas el cursor por una línea iluminada hasta la meta y cualquier desvío te devuelve al inicio. Cuentan las vueltas que completes antes de que se agote el reloj de 45 segundos. No es una prueba médica de temblor.',
+      'El juego del pulso online funciona como el clásico de feria: llevas el cursor por una línea iluminada hasta la meta y cualquier desvío te devuelve al inicio. Cuentan las vueltas que completes antes de que se agote el reloj de 45 segundos.',
       'Precisión de la medición y consideraciones técnicas: El registro del tiempo proviene del reloj performance.now() del navegador, limitado a aproximadamente 1 ms por motivos de seguridad. La pantalla muestra los fotogramas según su tasa de refresco — unos 16,7 ms a 60 Hz, 6,9 ms a 144 Hz y 4,1 ms a 240 Hz (Woods et al., 2015). La tasa de sondeo del ratón aporta unos 8 ms a 125 Hz frente a 1 ms a 1000 Hz. Cualquier variación inferior a 5 ms debe considerarse ruido experimental. SkillDrills guarda tus puntuaciones únicamente en tu navegador.',
     ],
   },
