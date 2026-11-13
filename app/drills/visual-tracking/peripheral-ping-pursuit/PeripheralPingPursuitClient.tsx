@@ -13,6 +13,7 @@ import { createBackdropCache, isFrameSkippable } from '../trackingCanvas';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { setTargetCursor } from '@/lib/canvasCursor';
+import { usePursuitMetricsLabels } from '@/lib/i18n/drills/pursuitMetricsLabels';
 
 const STORAGE_KEY = 'skilldrills_visual_tracking_peripheral_ping_pursuit_v2';
 
@@ -42,6 +43,7 @@ const saveData = (data: { totalSessions: number }) => {
 };
 
 export default function PeripheralPingPursuitClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string } } = {}) {
+  const pm = usePursuitMetricsLabels();
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -573,10 +575,10 @@ export default function PeripheralPingPursuitClient({ copy }: { copy?: { title?:
                   <Check className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-lg sm:text-2xl font-black text-white text-center tracking-tight leading-tight mt-1">
-                  SESSION COMPLETE
+                  {pm.sessionComplete}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-400 text-center font-bold">
-                  Pointer tracking summary
+                  {pm.calibrated}
                 </div>
               </div>
 

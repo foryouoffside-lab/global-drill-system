@@ -128,7 +128,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Engage Post-Saccadic Pursuit Handshake",
-      "text": "Immediately blend saccadic landing into continuous smooth pursuit along the new trajectory vector to preserve unity gain."
+      "text": "Immediately blend saccadic landing into continuous smooth pursuit along the new path."
     }
   ]
 };
@@ -142,7 +142,7 @@ const faqSchema = {
       "name": "What is the Spatial Shift Pursuit drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Spatial Shift Pursuit drill conditions visual tracking agility by forcing your eyes to adapt to sudden randomized shifts in target velocity and spatial vectors, training fast re-acquisition and pursuit gain matching."
+        "text": "The Spatial Shift Pursuit drill presents sudden random shifts in target speed and direction, so you practise finding and following the target again after each shift."
       }
     },
     {
@@ -166,7 +166,7 @@ const faqSchema = {
       "name": "How does the cerebellum adapt to repeated velocity vector disruptions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Repeated exposure to sudden direction shifts stimulates cerebellar Purkinje cell plasticity, optimizing visual-motor gain and reducing re-acquisition latency over successive sessions (Kahlon & Lisberger, 1996)."
+        "text": "Lab studies of pursuit adaptation used repeated direction changes (Kahlon & Lisberger, 1996); this browser drill does not measure or promise such changes."
       }
     },
     {

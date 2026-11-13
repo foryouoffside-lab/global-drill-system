@@ -19,7 +19,7 @@ export const metadata = {
     "ocular motor control test",
     "esports eye tracking online",
     "gaze stability workout",
-    "pursuit gain evaluation"
+    "figure 8 pursuit practice"
   ],
   alternates: {
     canonical: "https://skilldrills.online/drills/visual-tracking/infinity-pursuit",
@@ -190,7 +190,7 @@ const faqSchema = {
       "name": "How does figure-8 tracking differ from standard circular pursuit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Circular pursuit operates with constant curvature and uniform directional bias. Figure-8 tracking introduces an intersection point where the velocity vector reverses rotational direction, challenging both ocular hemispheres and dynamic cerebellar gain modulation (Barnes, 2008)."
+        "text": "Circular pursuit operates with constant curvature and uniform directional bias. Figure-8 tracking introduces an intersection point where the velocity vector reverses rotational direction, so you practise following a change of rotation at the centre."
       }
     },
     {
@@ -259,7 +259,7 @@ const guide = {
     
     
       "Smooth pursuit is not a single muscle action; it requires continuous, proportional firing across all six extraocular muscles to guide the fovea along 2D spatial curves (Robinson, 1965; Leigh & Zee, 2015). While one-dimensional tracking exercises isolated horizontal or vertical muscles, real-world sports and gaming environments require simultaneous multi-axial coordination.",
-      "Infinity Pursuit utilizes a Lemniscate of Bernoulli figure-8 trajectory. This continuous curve transitions smoothly between left and right visual hemifields, forcing the brain to modulate pursuit gain across diagonal, vertical, and horizontal vectors while executing seamless directional reversals at the central intersection (Barnes, 2008; Krauzlis, 2004).",
+      "Infinity Pursuit utilizes a Lemniscate of Bernoulli figure-8 trajectory. This continuous curve transitions smoothly between left and right visual hemifields, so you practise following diagonal, vertical and horizontal motion and the change of direction at the centre.",
     "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores remain stored strictly in local browser storage."
   
   ],
@@ -285,7 +285,7 @@ const guide = {
     },
     {
         "q": "How does figure-8 tracking differ from standard circular pursuit?",
-        "a": "Circular pursuit operates with constant curvature and uniform directional bias. Figure-8 tracking introduces an intersection point where the velocity vector reverses rotational direction, challenging both ocular hemispheres and dynamic cerebellar gain modulation (Barnes, 2008)."
+        "a": "Circular pursuit operates with constant curvature and uniform directional bias. Figure-8 tracking introduces an intersection point where the velocity vector reverses rotational direction, so you practise following a change of rotation at the centre."
     },
     {
         "q": "Why is smooth pursuit crossing the midline challenging for the visual system?",

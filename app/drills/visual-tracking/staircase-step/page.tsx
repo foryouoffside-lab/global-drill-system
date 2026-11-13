@@ -13,7 +13,7 @@ export const metadata = {
     "vertical smooth pursuit drill",
     "elevation saccade training",
     "midbrain rimlf ocular pathway",
-    "vertical pursuit velocity gain",
+    "vertical pursuit practice",
     "staircase ocular trajectory",
     "recoil tracking eye drill",
     "dynamic vertical gaze stability",
@@ -77,7 +77,7 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Vertical and stepped oculomotor conditioning tool stimulating midbrain riMLF pathways to optimize elevation saccades and vertical smooth pursuit gain."
+  "description": "Browser practice for following a target along a vertical stepped path."
 };
 
 const webAppSchema = {
@@ -174,7 +174,7 @@ const faqSchema = {
       "name": "How does this drill transfer to ball sports like volleyball and tennis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Overhead spikes in volleyball, lobs in tennis, and rebounds in basketball require rapid vertical gaze shifts. Conditioning vertical pursuit gain improves intercept timing and spatial aerial awareness."
+        "text": "Overhead spikes in volleyball, lobs in tennis, and rebounds in basketball require rapid vertical gaze shifts. This drill lets you practise following vertical movement; it does not measure or promise changes in sport performance."
       }
     },
     {
@@ -182,7 +182,7 @@ const faqSchema = {
       "name": "Why must head movement be suppressed during vertical tracking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Unconscious neck tilting substitutes cervical movement for ocular muscle recruitment, depriving the midbrain riMLF circuits of the targeted stimulus needed to expand vertical velocity gain (Leigh & Zee, 2015)."
+        "text": "Tilting the neck lets the head do the following instead of the eyes, so keep the head still to practise following with the eyes."
       }
     },
     {
@@ -253,12 +253,12 @@ const guide = {
       },
       {
         name: "Upward Elevation Acceleration Surge",
-        desc: "Because elevation pursuit naturally suffers from lower physiological gain, proactively apply a burst of extraocular motor drive when ascending vertical steps.",
+        desc: "Upward following is often harder than downward (Rottach et al., 1996), so lower the speed if you lose the target on the way up.",
         tips: "Apply an intentional upward muscular pulse to overcome natural elevation phase lag."
       },
       {
         name: "Post-Corner Saccadic Re-Engagement",
-        desc: "Do not allow gaze to linger at step corners. Snap your fovea immediately to the start of the next ramp to preserve unity velocity gain without hesitation.",
+        desc: "Do not allow gaze to linger at step corners. Move your eyes straight to the start of the next ramp.",
         tips: "Think of your eyes as bounding cleanly up each step like a mountain climber with sharp footwork."
       }
     ]

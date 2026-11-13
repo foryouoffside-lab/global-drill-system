@@ -14,6 +14,7 @@ import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { getConstantSlowPursuitUi } from '@/lib/i18n/drills/constantSlowPursuitNative';
 import { setTargetCursor } from '@/lib/canvasCursor';
+import { usePursuitMetricsLabels } from '@/lib/i18n/drills/pursuitMetricsLabels';
 
 const STORAGE_KEY = 'skilldrills_visual_tracking_constant_slow_pursuit_v2';
 
@@ -51,6 +52,7 @@ const saveData = (data: { totalSessions: number }) => {
 };
 
 export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<string, any> } = {}) {
+  const pm = usePursuitMetricsLabels();
   const ui = copy || getConstantSlowPursuitUi().constantSlowPursuit;
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
@@ -578,7 +580,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
                   {ui.sessionComplete}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-400 text-center font-bold">
-                  {ui.calibrated}
+                  {pm.calibrated}
                 </div>
               </div>
 
@@ -588,13 +590,13 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
                 {/* 4 Stat Tiles */}
                 <div className="grid grid-cols-2 gap-2">
                   {[
-                    { label: ui.timeOnTarget, value: pursuitSummary?.timeOnTargetPct, unit: '%', sub: null },
-                    { label: ui.meanError, value: pursuitSummary?.meanErrorPx, unit: ' px', sub: pursuitSummary?.meanErrorRadiusPct },
-                    { label: ui.rmsError, value: pursuitSummary?.rmsErrorPx, unit: ' px', sub: pursuitSummary?.rmsErrorRadiusPct },
+                    { label: pm.timeOnTarget, value: pursuitSummary?.timeOnTargetPct, unit: '%', sub: null },
+                    { label: pm.meanError, value: pursuitSummary?.meanErrorPx, unit: ' px', sub: pursuitSummary?.meanErrorRadiusPct },
+                    { label: pm.rmsError, value: pursuitSummary?.rmsErrorPx, unit: ' px', sub: pursuitSummary?.rmsErrorRadiusPct },
                   ].map((m) => (
                     <div key={m.label} className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                       <p className="text-sm sm:text-base font-black text-white tabular-nums">{m.value == null ? '—' : `${m.value.toFixed(m.unit === '%' ? 1 : 0)}${m.unit}`}</p>
-                      {m.sub != null && <p className="text-[9px] text-slate-500 tabular-nums">{Math.round(m.sub)}% {ui.ofRadius}</p>}
+                      {m.sub != null && <p className="text-[9px] text-slate-500 tabular-nums">{Math.round(m.sub)}% {pm.ofRadius}</p>}
                       <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{m.label}</p>
                     </div>
                   ))}
@@ -611,7 +613,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{ui.sessionsCompleted}</p>
                   </div>
                 </div>
-                <p className="text-[9px] leading-snug text-slate-500">{ui.metricsNote}</p>
+                <p className="text-[9px] leading-snug text-slate-500">{pm.metricsNote}</p>
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">

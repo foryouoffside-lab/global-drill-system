@@ -66,7 +66,7 @@ export default function ZigZagPathPursuitStartCard({
       className="absolute inset-0 flex items-center justify-center z-40 bg-black/90 backdrop-blur-md p-2 sm:p-3 overflow-y-auto"
       onPointerDown={(e) => e.stopPropagation()}
     >
-      <div className="relative w-full max-w-[380px] max-h-[92vh] sm:max-h-[88vh] overflow-y-auto rounded-[24px] border border-white/10 bg-gradient-to-b from-[#0d0d18] to-[#0a0a13] shadow-[0_20px_60px_rgba(0,0,0,.7)] my-auto mx-auto font-sans">
+      <div className="relative w-full max-w-[380px] max-h-full overflow-y-auto rounded-[24px] border border-white/10 bg-gradient-to-b from-[#0d0d18] to-[#0a0a13] shadow-[0_20px_60px_rgba(0,0,0,.7)] my-auto mx-auto font-sans">
 
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-36 rounded-t-[24px]"
@@ -225,7 +225,7 @@ export default function ZigZagPathPursuitStartCard({
           <button
             type="button"
             onClick={onStart}
-            className="w-full py-[11px] rounded-[13px] bg-gradient-to-r from-red-600 to-rose-600 font-bold text-[12.5px] tracking-wide uppercase active:scale-[0.97] transition-transform shadow-[0_0_20px_rgba(239,68,68,.3)] cursor-pointer text-white flex items-center justify-center gap-2 mt-0.5"
+            className="w-full py-[11px] rounded-[13px] bg-gradient-to-r from-red-600 to-rose-600 font-bold text-[12.5px] tracking-wide uppercase active:scale-[0.97] transition-transform shadow-[0_0_20px_rgba(239,68,68,.3)] cursor-pointer text-white flex items-center justify-center gap-2 mt-0.5 sticky bottom-0 z-10"
           >
             <Play className="w-4 h-4 fill-white" /> {copy.start || t('ui.start', 'Start Drill')}
           </button>

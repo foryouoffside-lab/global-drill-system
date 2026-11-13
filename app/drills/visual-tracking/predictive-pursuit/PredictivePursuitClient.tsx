@@ -13,6 +13,7 @@ import { createBackdropCache, isFrameSkippable, createPursuitMetrics, samplePurs
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { setTargetCursor } from '@/lib/canvasCursor';
+import { usePursuitMetricsLabels } from '@/lib/i18n/drills/pursuitMetricsLabels';
 
 const STORAGE_KEY = 'skilldrills_visual_tracking_predictive_pursuit_v2';
 
@@ -42,6 +43,7 @@ const saveData = (data: { totalSessions: number }) => {
 };
 
 export default function PredictivePursuitClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string; [key: string]: string | undefined } } = {}) {
+  const pm = usePursuitMetricsLabels();
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -584,10 +586,10 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
                   <Check className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-lg sm:text-2xl font-black text-white text-center tracking-tight leading-tight mt-1">
-                  SESSION COMPLETE
+                  {pm.sessionComplete}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-400 text-center font-bold">
-                  {copy?.calibrated || 'Pointer tracking summary'}
+                  {pm.calibrated}
                 </div>
               </div>
 
@@ -597,13 +599,13 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
                 {/* 4 Stat Tiles */}
                 <div className="grid grid-cols-2 gap-2">
                   {[
-                    { label: copy?.timeOnTarget || 'Time on target', value: pursuitSummary?.timeOnTargetPct, unit: '%', sub: null },
-                    { label: copy?.meanError || 'Mean distance error', value: pursuitSummary?.meanErrorPx, unit: ' px', sub: pursuitSummary?.meanErrorRadiusPct },
-                    { label: copy?.rmsError || 'RMS distance error', value: pursuitSummary?.rmsErrorPx, unit: ' px', sub: pursuitSummary?.rmsErrorRadiusPct },
+                    { label: pm.timeOnTarget, value: pursuitSummary?.timeOnTargetPct, unit: '%', sub: null },
+                    { label: pm.meanError, value: pursuitSummary?.meanErrorPx, unit: ' px', sub: pursuitSummary?.meanErrorRadiusPct },
+                    { label: pm.rmsError, value: pursuitSummary?.rmsErrorPx, unit: ' px', sub: pursuitSummary?.rmsErrorRadiusPct },
                   ].map((m) => (
                     <div key={m.label} className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                       <p className="text-sm sm:text-base font-black text-white tabular-nums">{m.value == null ? '—' : `${m.value.toFixed(m.unit === '%' ? 1 : 0)}${m.unit}`}</p>
-                      {m.sub != null && <p className="text-[9px] text-slate-500 tabular-nums">{Math.round(m.sub)}% {copy?.ofRadius || 'of target radius'}</p>}
+                      {m.sub != null && <p className="text-[9px] text-slate-500 tabular-nums">{Math.round(m.sub)}% {pm.ofRadius}</p>}
                       <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{m.label}</p>
                     </div>
                   ))}
@@ -620,7 +622,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Sessions Completed</p>
                   </div>
                 </div>
-                <p className="text-[9px] leading-snug text-slate-500">{copy?.metricsNote || 'Pointer distance to the target centre, time-weighted. Eye position is not recorded.'}</p>
+                <p className="text-[9px] leading-snug text-slate-500">{pm.metricsNote}</p>
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">

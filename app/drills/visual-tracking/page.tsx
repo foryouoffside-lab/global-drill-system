@@ -81,7 +81,7 @@ const faqSchema = {
       "name": "What causes catch-up saccades during eye tracking, and how do you fix them?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Catch-up saccades occur when your smooth pursuit velocity falls behind target speed (pursuit gain < 1.0), forcing an involuntary eye jerk to catch up. Graduated speed drills—such as constant-slow pursuit and sinusoidal wave tracking—condition continuous ocular motor gain, smoothing eye movement and eliminating visual jitter."
+        "text": "Catch-up saccades occur when your smooth pursuit velocity falls behind target speed (pursuit gain < 1.0), forcing an involuntary eye jerk to catch up. Graduated speed drills such as constant-slow pursuit and sine-wave tracking let you practise following a target at controlled speeds; they record pointer distance, not eye movement, and do not promise to remove catch-up saccades."
       }
     },
     {

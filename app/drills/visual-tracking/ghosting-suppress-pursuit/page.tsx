@@ -159,7 +159,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Track Through Border Bounces",
-      "text": "Maintain steady pursuit gain and suppress distraction artifacts as the target bounces smoothly across boundary borders.",
+      "text": "Keep following the target and ignore the trail rings as it bounces off the edges.",
       "url": "https://skilldrills.online/drills/visual-tracking/ghosting-suppress-pursuit#step-4"
     }
   ]
@@ -258,7 +258,7 @@ const guide = {
     "Ghosting Suppress Pursuit is a free browser drill where you follow a moving target while visual trails and ghost images stream behind it. The goal is to keep your gaze on the real target and ignore the afterimages. Set the speed and duration, press start, and keep tracking the target.",
     
     
-      "When objects move across the visual field, physical display latency and biological retinal persistence can generate trailing ghost artifacts and perceptual motion smear (Burr, 1980). Without robust attentional filtering, trailing visual noise draws foveal gaze backward, disrupting smooth pursuit gain and causing targeting errors.",
+      "When objects move across the visual field, physical display latency and biological retinal persistence can generate trailing ghost artifacts and perceptual motion smear (Burr, 1980). Without robust attentional filtering, trailing visual noise can pull attention backward and make the target harder to follow.",
       "Ghosting Suppress Pursuit conditions foveal fixation stability. By projecting simulated ghosting rings behind a moving target, this drill exercises cortical distractor suppression circuits, training the visual system to lock gaze onto true target coordinates and ignore peripheral artifact clutter (Martinez-Conde et al., 2004; Rolfs, 2009; Leigh & Zee, 2015).",
     "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores remain stored strictly in local browser storage."
   
