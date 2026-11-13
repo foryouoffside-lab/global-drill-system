@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Teste de Stroop | Atenção Seletiva | SkillDrills",
-  description: "Teste de Stroop online grátis: escolha a cor da tinta, não a palavra, sinta o efeito Stroop e pratique atenção seletiva. Exercício, não diagnóstico clínico.",
+  description: "Teste de Stroop online grátis: escolha a cor da tinta, não a palavra, sinta o efeito Stroop e pratique atenção seletiva.",
   keywords: [
     "teste de stroop",
     "teste de stroop online",
@@ -24,7 +24,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Stroop | Atenção Seletiva | SkillDrills",
-    description: "Teste de Stroop online grátis: escolha a cor da tinta, não a palavra, sinta o efeito Stroop e pratique atenção seletiva. Exercício, não diagnóstico clínico.",
+    description: "Teste de Stroop online grátis: escolha a cor da tinta, não a palavra, sinta o efeito Stroop e pratique atenção seletiva.",
     url: "https://skilldrills.online/pt/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
     locale: "pt_BR",
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Teste de Stroop | Atenção Seletiva | SkillDrills",
-    description: "Teste de Stroop online grátis: escolha a cor da tinta, não a palavra, sinta o efeito Stroop e pratique atenção seletiva. Exercício, não diagnóstico clínico."
+    description: "Teste de Stroop online grátis: escolha a cor da tinta, não a palavra, sinta o efeito Stroop e pratique atenção seletiva."
   }
 };
 
@@ -203,7 +203,7 @@ export default function DistractionFighterPagePT() {
       "A base mecanicista decorre da velocidade assimétrica de processamento: a leitura semântica é uma rotina altamente automatizada no córtex cerebral adulto (MacLeod, 1991). A pesquisa sobre inibição descreve a interrupção de uma resposta automática como uma corrida (Logan & Cowan, 1984): no teste de Stroop, o erro acontece quando a leitura não é freada a tempo.",
       "Estudos de neuroimagem associam o córtex cingulado anterior (ACC) e o córtex pré-frontal dorsolateral (DLPFC) à resolução desse conflito (Posner & Petersen, 1990). Este exercício pratica a atenção seletiva sob pressão de tempo, sem medir atividade cerebral nem garantir melhora.",
       "Cronometragem: o exercício não mostra tempo de reação, e sim pontuação, precisão e nível alcançado. A janela de resposta de cada palavra é controlada pelos temporizadores do navegador, no seu dispositivo. Temporizadores em navegadores modernos utilizam atenuação contra ataques como Spectre (resolução aproximada de 1 ms), e a taxa de atualização da sua tela quantiza cada quadro: cerca de 16,7 ms a 60 Hz, 6,9 ms a 144 Hz e 4,1 ms a 240 Hz (Woods et al., 2015). Avalie seu progresso longitudinal no mesmo hardware em vez de comparar números isolados entre telas e periféricos heterogêneos.",
-      "Transparência de dados e aviso educacional: o SkillDrills não coleta dados agregados nem envia seu histórico para servidores remotos. Todas as suas pontuações e preferências ficam salvas apenas no localStorage do seu próprio navegador. Esta aplicação é um jogo de treino cognitivo para fins educativos e recreativos, não sendo um instrumento médico nem teste de diagnóstico para TDAH ou outras condições neurológicas."
+      "Transparência de dados e aviso educacional: o SkillDrills não coleta dados agregados nem envia seu histórico para servidores remotos. Todas as suas pontuações e preferências ficam salvas apenas no localStorage do seu próprio navegador. Esta aplicação é um jogo de treino cognitivo para fins educativos e recreativos."
     ],
     benchmarks: {
       title: "Teste de Stroop: faixas de nota (pontos por rodada)",

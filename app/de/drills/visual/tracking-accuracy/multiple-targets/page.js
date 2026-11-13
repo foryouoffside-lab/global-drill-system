@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Mehrfach-Objektverfolgung | MOT-Test | SkillDrills",
-  description: "Kostenloser MOT-Test zur Mehrfach-Objektverfolgung: Merke dir 3 markierte Kugeln und verfolge sie 60 s lang unter gleich aussehenden Kugeln. Kein Diagnosetest.",
+  description: "Kostenloser MOT-Test zur Mehrfach-Objektverfolgung: Merke dir 3 markierte Kugeln und verfolge sie 60 s lang unter gleich aussehenden Kugeln.",
   keywords: [
     "Mehrfach-Objektverfolgung",
     "Multiple Object Tracking Test",
@@ -17,7 +17,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Mehrfach-Objektverfolgung | MOT-Test | SkillDrills",
-    description: "Merke dir 3 markierte Kugeln und finde sie nach 60 Sekunden Bewegung wieder. Kostenloser MOT-Test im Browser, keine Diagnose.",
+    description: "Merke dir 3 markierte Kugeln und finde sie nach 60 Sekunden Bewegung wieder. Kostenloser MOT-Test im Browser.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets',
     siteName: 'SkillDrills',
@@ -59,7 +59,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Browser-Übung: Unter gleich aussehenden Kugeln leuchten 3 Ziele 2 Sekunden lang grün. Danach bewegen sich alle Kugeln 60 Sekunden lang und prallen voneinander ab; anschließend wählst du die 3 Ziele wieder aus. Kein Test zur Diagnose von Sehen oder Aufmerksamkeit.",
+  "description": "Browser-Übung: Unter gleich aussehenden Kugeln leuchten 3 Ziele 2 Sekunden lang grün. Danach bewegen sich alle Kugeln 60 Sekunden lang und prallen voneinander ab; anschließend wählst du die 3 Ziele wieder aus.",
   "featureList": [
     "Start mit 8 Kugeln, davon 3 für 2 Sekunden grün markiert",
     "60 Sekunden Bewegung: alle Kugeln sehen gleich aus und prallen von Wänden und voneinander ab",
@@ -166,7 +166,7 @@ const faqSchema = {
       "name": "Wie läuft der Multiple Object Tracking Test (MOT) ab?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Unter gleich aussehenden Kugeln leuchten 3 Ziele 2 Sekunden lang grün. Dann bewegen sich alle Kugeln 60 Sekunden lang, und wenn sie anhalten, wählst du die 3 Ziele aus und bestätigst. Pro richtigem Ziel gibt es 20 Punkte, maximal 60 pro Runde. Es ist kein medizinischer Test des Sehens oder der Aufmerksamkeit."
+        "text": "Unter gleich aussehenden Kugeln leuchten 3 Ziele 2 Sekunden lang grün. Dann bewegen sich alle Kugeln 60 Sekunden lang, und wenn sie anhalten, wählst du die 3 Ziele aus und bestätigst. Pro richtigem Ziel gibt es 20 Punkte, maximal 60 pro Runde."
       }
     },
     {
@@ -214,7 +214,7 @@ const faqSchema = {
       "name": "Verbessert das Training meine Leistung in Spielen oder im Sport?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Eine höhere Punktzahl zeigt, dass du in genau dieser Aufgabe geübter bist. Eine Übertragung auf Spiele, Sport oder Autofahren ist nicht garantiert, und die Übung ersetzt keine medizinische Abklärung."
+        "text": "Eine höhere Punktzahl zeigt, dass du in genau dieser Aufgabe geübter bist. Eine Übertragung auf Spiele, Sport oder Autofahren ist nicht garantiert."
       }
     },
     {
@@ -233,7 +233,7 @@ const guideData = {
   intro: [
     "Beim MOT-Test (Multiple Object Tracking) verfolgst du 3 markierte Ziele unter gleich aussehenden Kugeln und wählst sie am Ende wieder aus. Die Aufgabe geht auf das Experiment von Pylyshyn & Storm (1988) zurück und ist hier als einfaches Browser-Spiel umgesetzt.",
     "Nach dem Countdown leuchten 3 Kugeln 2 Sekunden lang grün, danach bewegen sich alle Kugeln gleich aussehend 60 Sekunden lang und prallen von Wänden und voneinander ab. Bleiben sie stehen, wählst du 3 Kugeln und bestätigst: 20 Punkte pro richtigem Ziel (max. 60), falsche Wahl ohne Abzug. Mit steigendem Bestwert kommen Kugeln dazu und das Tempo steigt leicht.",
-    "Mehrere Objekte gleichzeitig zu verfolgen gelingt nicht durch schnelles Hin- und Herschauen, sondern indem die Aufmerksamkeit auf mehrere Orte verteilt bleibt (Cavanagh & Alvarez, 2005). Der Test ist ein Übungsspiel dazu und misst oder diagnostiziert weder Aufmerksamkeit noch Sehvermögen."
+    "Mehrere Objekte gleichzeitig zu verfolgen gelingt nicht durch schnelles Hin- und Herschauen, sondern indem die Aufmerksamkeit auf mehrere Orte verteilt bleibt (Cavanagh & Alvarez, 2005). Der Test ist ein Übungsspiel dazu."
   ],
   benchmarks: {
     "title": "SkillDrills-Übungsstufen (nur für dieses Spiel)",

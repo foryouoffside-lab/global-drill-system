@@ -66,7 +66,7 @@ const softwareSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
   "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" },
-  "description": "Exercice gratuit de mémoire des mots : une liste s’affiche 2 secondes, puis vous tapez les mots retenus dans n’importe quel ordre. Ce n’est pas un test clinique."
+  "description": "Exercice gratuit de mémoire des mots : une liste s’affiche 2 secondes, puis vous tapez les mots retenus dans n’importe quel ordre."
 };
 
 const webAppSchema = {
@@ -160,7 +160,7 @@ const faqSchema = {
       "name": "Combien de mots retient-on en moyenne ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SkillDrills ne collecte pas de données d’utilisateurs et ne donne donc ni moyenne ni percentile. Avec 2 secondes d’affichage et 12 secondes de saisie, ce jeu n’est pas comparable aux tests cliniques de mémoire de mots. Utilisez les paliers ci-dessous et vos propres records."
+        "text": "SkillDrills ne collecte pas de données d’utilisateurs et ne donne donc ni moyenne ni percentile. Avec 2 secondes d’affichage et 12 secondes de saisie, ce jeu n’est pas comparable aux tests standardisés de mémoire de mots. Utilisez les paliers ci-dessous et vos propres records."
       }
     },
     {
@@ -208,7 +208,7 @@ const faqSchema = {
       "name": "S’entraîner améliore-t-il la mémoire au quotidien ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Rien n’est garanti. On progresse en général dans ce jeu précis, mais le transfert à la mémoire du quotidien reste discuté dans la recherche. Ce test n’est pas un outil de diagnostic ; en cas d’inquiétude, consultez un médecin."
+        "text": "Rien n’est garanti. On progresse en général dans ce jeu précis, mais le transfert à la mémoire du quotidien reste discuté dans la recherche."
       }
     },
     {
@@ -225,12 +225,11 @@ const faqSchema = {
 const wordRecallGuide = {
   heading: "Guide du test de mémoire des mots (rappel libre)",
   intro: [
-    "Le test de mémoire des mots affiche brièvement une liste, puis vous tapez dans n’importe quel ordre les mots retenus. C’est une version d’entraînement du rappel libre étudié en psychologie de la mémoire, pas un test clinique ni un outil de diagnostic.",
+    "Le test de mémoire des mots affiche brièvement une liste, puis vous tapez dans n’importe quel ordre les mots retenus. C’est une version d’entraînement du rappel libre étudié en psychologie de la mémoire.",
     "La recherche sur les listes de mots remonte à Hermann Ebbinghaus (1885). Bennet Murdock (1962) a décrit l’effet de position sérielle en rappel libre — le début et la fin d’une liste sont mieux retenus — et Endel Tulving (1962) a montré que l’on regroupe spontanément les mots.",
     "Selon les niveaux de traitement (Craik & Lockhart, 1972), les mots traités par leur sens ou reliés entre eux sont en général mieux retenus. Avec l’affichage court de ce jeu, relier vite les mots dans une scène aide.",
     "Déroulement : départ à 3 mots ; la liste s’affiche d’un bloc pendant 2 secondes. Vous avez ensuite 12 secondes pour taper les mots, séparés par des espaces ou des virgules, et valider avec Entrée. Tous justes sans mot en trop : un mot de plus (12 max) ; un oubli, un mot faux ou le délai dépassé : un de moins (3 min). Le jeu enregistre le score, la plus longue liste et la précision (part de manches réussies) ; le temps de réaction n’est pas mesuré.",
-    "Transparence : SkillDrills ne collecte pas vos résultats sur un serveur ; tout reste dans le localStorage de votre navigateur. Cette page ne donne donc ni moyenne d’utilisateurs, ni percentile, ni nombre d’utilisateurs ; les études citées figurent plus bas.",
-    "Avertissement : ce jeu d’entraînement n’est ni un dispositif médical ni un outil de diagnostic. En cas d’inquiétude sur votre mémoire, consultez un médecin."
+    "Transparence : SkillDrills ne collecte pas vos résultats sur un serveur ; tout reste dans le localStorage de votre navigateur. Cette page ne donne donc ni moyenne d’utilisateurs, ni percentile, ni nombre d’utilisateurs ; les études citées figurent plus bas."
   ],
   benchmarks: {
     title: "Paliers d’entraînement du test de mémoire des mots (SkillDrills, 45 s)",

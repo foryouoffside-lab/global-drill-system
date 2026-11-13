@@ -96,7 +96,7 @@ const faqSchema = {
       "name": "O que é o teste de Stroop e por que ele é crucial para o foco e autocontrole?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Descrito por John Ridley Stroop em 1935, o efeito Stroop é a interferência que surge quando o significado de uma palavra (como VERMELHO) entra em conflito com a cor da tinta (por exemplo, verde): é preciso frear o reflexo de leitura para responder a cor. O teste clássico mede a diferença de tempo entre itens congruentes e incongruentes. O exercício Stroop do SkillDrills é prática, não um teste diagnóstico: você escolhe a cor da tinta e são registrados pontuação, precisão e nível, sem escore de interferência."
+        "text": "Descrito por John Ridley Stroop em 1935, o efeito Stroop é a interferência que surge quando o significado de uma palavra (como VERMELHO) entra em conflito com a cor da tinta (por exemplo, verde): é preciso frear o reflexo de leitura para responder a cor. O teste clássico mede a diferença de tempo entre itens congruentes e incongruentes. O exercício Stroop do SkillDrills é prática: você escolhe a cor da tinta e são registrados pontuação, precisão e nível, sem escore de interferência."
       }
     },
     {
@@ -128,7 +128,7 @@ const faqSchema = {
       "name": "Os exercícios cognitivos são recomendados para crianças, adultos e idosos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Os exercícios podem ser usados por adolescentes e adultos, com dificuldade que aumenta a cada nível. Eles não são testes médicos nem ferramentas de diagnóstico ou prevenção: não tratam TDAH e não protegem contra o declínio cognitivo. Use-os para acompanhar os seus próprios resultados; se as dificuldades persistirem, procure um profissional de saúde."
+        "text": "Os exercícios podem ser usados por adolescentes e adultos, com dificuldade que aumenta a cada nível. Use-os para acompanhar os seus próprios resultados."
       }
     },
     {

@@ -59,7 +59,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Ejercicio de 45 segundos en el navegador: mantén el cursor (o el dedo) sobre un punto que cambia de velocidad y dirección. Solo se evalúa la posición del cursor; no hay medición de la mirada por cámara ni test de la vista o prueba médica.",
+  "description": "Ejercicio de 45 segundos en el navegador: mantén el cursor (o el dedo) sobre un punto que cambia de velocidad y dirección. Solo se evalúa la posición del cursor; no hay medición de la mirada por cámara.",
   "featureList": [
     "Ronda fija de 45 segundos; el punto cambia de velocidad y dirección al azar y rebota en los bordes",
     "Alrededor de 1 segundo de cursor sobre el punto (zona de contacto amplia): +5 puntos y racha +1",
@@ -206,7 +206,7 @@ const faqSchema = {
       "name": "¿Este entrenamiento mejora mi vista o mi puntería?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Una puntuación mayor indica que has mejorado en esta tarea. No se garantiza ninguna mejora de la vista, en juegos o en deportes, y el ejercicio no sustituye una revisión con un oftalmólogo."
+        "text": "Una puntuación mayor indica que has mejorado en esta tarea. No se garantiza ninguna mejora de la vista, en juegos o en deportes."
       }
     },
     {
@@ -225,7 +225,7 @@ const guideData = {
   intro: [
     "En la persecución con el cursor sigues con la mirada un punto en movimiento durante 45 segundos y mantienes el cursor encima. Solo cuenta el tiempo que el cursor pasa sobre el punto; tus ojos no se graban.",
     "Cada segundo, aproximadamente, de contacto continuo (zona amplia) vale +5 puntos y alarga la racha. El punto cambia de velocidad y dirección sin aviso, rebota en los bordes y se vuelve más pequeño y rápido a medida que sube la puntuación. Más de 2 segundos fuera solo reinicia la racha.",
-    "Los ojos siguen con suavidad un objeto lento; si va demasiado rápido, la mirada se queda atrás y lo alcanza con pequeños saltos (Krauzlis, 2004). El ejercicio lo convierte en una tarea sencilla de cursor y no mide ni diagnostica la vista ni los movimientos oculares."
+    "Los ojos siguen con suavidad un objeto lento; si va demasiado rápido, la mirada se queda atrás y lo alcanza con pequeños saltos (Krauzlis, 2004). El ejercicio lo convierte en una tarea sencilla de cursor."
   ],
   benchmarks: {
     "title": "Niveles de práctica SkillDrills (solo para este ejercicio, 60 Hz)",

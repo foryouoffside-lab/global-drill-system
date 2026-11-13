@@ -207,7 +207,7 @@ const faqSchema = {
       "name": "¿Entrenar con dígitos mejora la memoria del día a día?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No está garantizado. Con práctica sueles mejorar en este juego, pero la transferencia a la memoria cotidiana, los estudios o el trabajo es discutida en la investigación. Si te preocupa tu memoria, consulta a un médico."
+        "text": "No está garantizado. Con práctica sueles mejorar en este juego, pero la transferencia a la memoria cotidiana, los estudios o el trabajo es discutida en la investigación."
       }
     },
     {
@@ -223,12 +223,11 @@ const faqSchema = {
 
 const digitSpanGuide = {
   intro: [
-  "El test de dígitos muestra brevemente una secuencia de números que después escribes en el mismo orden. Es una versión de práctica de la tarea de span de dígitos, usada desde hace décadas en psicología para estudiar la memoria a corto plazo, y no es una prueba clínica, de CI ni un psicotécnico oficial.",
+  "El test de dígitos muestra brevemente una secuencia de números que después escribes en el mismo orden. Es una versión de práctica de la tarea de span de dígitos, usada desde hace décadas en psicología para estudiar la memoria a corto plazo, y no es una prueba de CI ni un psicotécnico oficial.",
   "La pregunta por la amplitud de memoria se hizo famosa con el 'número mágico 7 ± 2' de George A. Miller (1956). Un formato parecido aparece en las escalas Wechsler (WAIS, WISC), pero este juego no es ese subtest y no calcula puntuaciones escalares.",
   "En el modelo de memoria de trabajo de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), las secuencias de números se mantienen en el bucle fonológico y se desvanecen en unos 2 segundos sin repaso. Según Nelson Cowan (2001), la capacidad bruta sin repaso ni agrupamiento ronda las 4 unidades; para secuencias largas ayuda el chunking.",
   "Cómo funciona: empieza con 3 dígitos; la secuencia aparece completa de una vez (2,5 s al principio, 0,1 s menos tras cada acierto hasta 0,8 s, 0,2 s más tras un fallo). Después tienes 8 segundos para escribirla con el teclado de la pantalla o del ordenador. Acierto: +1 dígito (máximo 15); fallo o tiempo agotado: −1 dígito (mínimo 3). El juego registra puntuación, secuencia más larga y precisión (porcentaje de rondas acertadas); no mide el tiempo de reacción.",
-  "Transparencia de datos: SkillDrills no recoge puntuaciones en servidores; todo queda en el localStorage de tu navegador. Por eso esta página no muestra medias de usuarios, percentiles ni número de usuarios; las cifras citadas proceden de los estudios listados abajo.",
-  "Aviso: este juego de práctica no es un dispositivo médico ni una prueba diagnóstica. Si te preocupa tu memoria o tu concentración, consulta a un médico o neuropsicólogo."
+  "Transparencia de datos: SkillDrills no recoge puntuaciones en servidores; todo queda en el localStorage de tu navegador. Por eso esta página no muestra medias de usuarios, percentiles ni número de usuarios; las cifras citadas proceden de los estudios listados abajo."
 ],
   benchmarks: {
     title: "Etapas de práctica del test de dígitos (SkillDrills, 45 s)",

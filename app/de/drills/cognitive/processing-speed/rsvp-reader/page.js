@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Schnelllesetest | RSVP-Lesetraining | SkillDrills",
-  description: "Kostenloser Schnelllesetest im Browser: Verarbeite Wörter an einem festen Punkt und verfolge WPM und Genauigkeit. Kein klinischer Test.",
+  description: "Kostenloser Schnelllesetest im Browser: Verarbeite Wörter an einem festen Punkt und verfolge WPM und Genauigkeit.",
   keywords: ["Schnelllesetest", "Schnelllesetest online", "RSVP", "RSVP-Lesetraining", "Lesegeschwindigkeit", "Wörter pro Minute", "Schnelllesen üben"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Schnelllesetest | RSVP-Lesetraining | SkillDrills",
-    description: "Kostenloser Schnelllesetest im Browser: Verarbeite Wörter an einem festen Punkt und verfolge WPM und Genauigkeit. Kein klinischer Test.",
+    description: "Kostenloser Schnelllesetest im Browser: Verarbeite Wörter an einem festen Punkt und verfolge WPM und Genauigkeit.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Schnelllesetest | RSVP-Lesetraining | SkillDrills",
-    description: "Kostenloser Schnelllesetest im Browser: Verarbeite Wörter an einem festen Punkt und verfolge WPM und Genauigkeit. Kein klinischer Test.",
+    description: "Kostenloser Schnelllesetest im Browser: Verarbeite Wörter an einem festen Punkt und verfolge WPM und Genauigkeit.",
   },
   robots: { index: true, follow: true },
   alternates: {

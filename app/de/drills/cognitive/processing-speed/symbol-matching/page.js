@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Zahlen-Symbol-Test online | Verarbeitungsgeschwindigkeit",
-  description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
+  description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training.",
   keywords: ["Zahlen-Symbol-Test", "SDMT online", "Symbol-Ziffern-Zuordnung", "Verarbeitungsgeschwindigkeit üben", "visuelle Suche"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Zahlen-Symbol-Test online | Verarbeitungsgeschwindigkeit",
-    description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
+    description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Zahlen-Symbol-Test online | Verarbeitungsgeschwindigkeit",
-    description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
+    description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Kostenloser Zahlen-Symbol-Test im Browser: Sechs Symbole sind den Ziffern 1 bis 6 zugeordnet, und du tippst die Ziffer zum angezeigten Symbol. SDMT-inspiriertes Übungsspiel, kein klinischer Test.",
+  "description": "Kostenloser Zahlen-Symbol-Test im Browser: Sechs Symbole sind den Ziffern 1 bis 6 zugeordnet, und du tippst die Ziffer zum angezeigten Symbol. SDMT-inspiriertes Übungsspiel.",
   "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/symbol-matching",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Zahlen-Symbol-Test – Symbol-Ziffern-Zuordnungsspiel",
   "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/symbol-matching",
-  "description": "Kostenloser Zahlen-Symbol-Test im Browser: Sechs Symbole sind den Ziffern 1 bis 6 zugeordnet, und du tippst die Ziffer zum angezeigten Symbol. SDMT-inspiriertes Übungsspiel, kein klinischer Test.",
+  "description": "Kostenloser Zahlen-Symbol-Test im Browser: Sechs Symbole sind den Ziffern 1 bis 6 zugeordnet, und du tippst die Ziffer zum angezeigten Symbol. SDMT-inspiriertes Übungsspiel.",
   "genre": [
     "Action",
     "Brain Game",
@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "Was ist der Symbol Digit Modalities Test (SDMT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein neuropsychologischer Test von Aaron Smith (1973), bei dem man anhand eines Schlüssels zu Symbolen die passenden Ziffern nennt. Dieser Drill übernimmt nur das Format und ist nicht der SDMT."
+        "text": "Ein Test von Aaron Smith (1973), bei dem man anhand eines Schlüssels zu Symbolen die passenden Ziffern nennt. Dieser Drill übernimmt nur das Format und ist nicht der SDMT."
       }
     },
     {
@@ -173,15 +173,15 @@ const faqSchema = {
       "name": "Was zeigt das Ergebnis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Punkte, Genauigkeit, Treffer, Fehler, höchste Stufe und eine Note von F bis S+ gegenüber einem festen SkillDrills-Richtwert. Mit klinischen Normen oder IQ-Werten ist das nicht vergleichbar."
+        "text": "Punkte, Genauigkeit, Treffer, Fehler, höchste Stufe und eine Note von F bis S+ gegenüber einem festen SkillDrills-Richtwert. Mit SDMT-Normen oder IQ-Werten ist das nicht vergleichbar."
       }
     },
     {
       "@type": "Question",
-      "name": "Handelt es sich um eine medizinische Diagnose?",
+      "name": "Wie lese ich mein Ergebnis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nein. Es ist ein Übungsspiel im Browser und ersetzt keine ärztliche Untersuchung. Bei Sorgen um Gedächtnis oder Denken wende dich an eine Ärztin oder einen Arzt."
+        "text": "Am Ende siehst du Punkte, Genauigkeit, Treffer, Fehler, höchste Stufe und eine Note von F bis S+. Vergleiche deine Werte am besten mit deinen früheren Runden auf demselben Gerät."
       }
     },
     {
@@ -215,7 +215,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "So funktioniert der Zahlen-Symbol-Test",
-  "description": "Kostenloser Zahlen-Symbol-Test im Browser: Sechs Symbole sind den Ziffern 1 bis 6 zugeordnet, und du tippst die Ziffer zum angezeigten Symbol. SDMT-inspiriertes Übungsspiel, kein klinischer Test.",
+  "description": "Kostenloser Zahlen-Symbol-Test im Browser: Sechs Symbole sind den Ziffern 1 bis 6 zugeordnet, und du tippst die Ziffer zum angezeigten Symbol. SDMT-inspiriertes Übungsspiel.",
   "step": [
     {
       "@type": "HowToStep",
@@ -254,8 +254,8 @@ const guideProps = {
     title: "Zahlen-Symbol-Test – Übung zur Verarbeitungsgeschwindigkeit",
     paragraphs: [
       "Der kostenlose Zahlen-Symbol-Test zeigt oben einen Schlüssel aus sechs Symbolen und den Ziffern 1 bis 6. Erscheint in der Mitte ein Symbol, tippst du die passende Zifferntaste. Der Schlüssel wird jede Sitzung neu gemischt. Ein Durchgang startet mit 45 Sekunden, jeder Treffer bringt 2 Sekunden (max. 60), Fehler und Zeitüberschreitungen kosten 1 Sekunde.",
-      "Vom Symbol zur Ziffer zu antworten entspricht dem SDMT (Smith, 1973); beim DSST ist es umgekehrt (Ziffer zu Symbol). Dieser Drill ist keiner der beiden Tests, und seine Werte sind nicht mit klinischen Normen vergleichbar.",
-      "Angezeigt werden Punkte, Genauigkeit, Treffer, Fehler und höchste Stufe. Es ist ein Übungsspiel, keine Diagnose und keine IQ- oder Leistungsdiagnostik.",
+      "Vom Symbol zur Ziffer zu antworten entspricht dem SDMT (Smith, 1973); beim DSST ist es umgekehrt (Ziffer zu Symbol). Dieser Drill ist keiner der beiden Tests, und seine Werte sind nicht mit deren Normen vergleichbar.",
+      "Angezeigt werden Punkte, Genauigkeit, Treffer, Fehler und höchste Stufe. Es ist ein Übungsspiel und kein IQ-Test.",
     ],
   },
   benchmarks: {
@@ -272,7 +272,7 @@ const guideProps = {
   },
   protocols: {
     title: 'Ablauf des Zahlen-Symbol-Tests',
-    description: 'Die vier Schritte eines Durchgangs. Das Format folgt dem SDMT (Smith, 1973), ist aber kein klinischer Test.',
+    description: 'Die vier Schritte eines Durchgangs. Das Format folgt dem SDMT (Smith, 1973).',
     items: [
       { title: "Legende mit Symbol-Ziffern-Paaren erfassen", description: "Verschaffen Sie sich einen Uberblick uber die 6 Symbol-Zuordnungen am oberen Rand." },
       { title: "Zentrales Ziel-Symbol fixieren", description: "Erfassen Sie das in der Mitte aufblitzende Symbol ohne Zogern." },
@@ -327,8 +327,8 @@ export default function LocalizedCognitivePage() {
           faqTitle: "Häufige Fragen",
           readyLabel: "BEREIT",
           labels: { score: "Punkte", time: "Zeit", level: "Stufe", bestScore: "Bestwert", timeLeft: "Restzeit", targetSymbol: "Zielsymbol", accuracy: "Genauigkeit", hits: "Treffer", misses: "Fehler", peakLevel: "Höchststufe" },
-          aboutLead: "Bei einer Symbol-Ziffern-Aufgabe ordnest du unter Zeitdruck Zeichen und Zahlen zu. Dadurch trainierst du Verarbeitungsgeschwindigkeit und visuelle Suche, nicht Fachwissen. Dieser Drill ist ein Übungsspiel und kein klinisches Verfahren.",
-          aboutText: "Der Drill orientiert sich am Zuordnungsformat von SDMT und DSST. Du prüfst die Schlüsselzeile und wählst die passende Ziffer zum Zielsymbol. Wiederholte Durchgänge trainieren visuelle Suche, assoziatives Gedächtnis und Reaktionsauswahl. Der Score beschreibt nur diese Spielaufgabe und ist keine medizinische Diagnose.",
+          aboutLead: "Bei einer Symbol-Ziffern-Aufgabe ordnest du unter Zeitdruck Zeichen und Zahlen zu. Dadurch trainierst du Verarbeitungsgeschwindigkeit und visuelle Suche, nicht Fachwissen. Dieser Drill ist ein Übungsspiel.",
+          aboutText: "Der Drill orientiert sich am Zuordnungsformat von SDMT und DSST. Du prüfst die Schlüsselzeile und wählst die passende Ziffer zum Zielsymbol. Wiederholte Durchgänge trainieren visuelle Suche, assoziatives Gedächtnis und Reaktionsauswahl. Der Score beschreibt nur diese Spielaufgabe.",
           aboutCards: [
             { title: "Für wen ist das sinnvoll?", desc: "Für Studierende, Berufstätige und Gamer, die Verarbeitungsgeschwindigkeit und visuelle Suche gezielt üben möchten." },
             { title: "Welche Fähigkeiten werden trainiert?", desc: "Visuelle Suche, Symbol-Ziffern-Gedächtnis, Auswahlreaktion und anhaltende Aufmerksamkeit bei Wiederholungen." },

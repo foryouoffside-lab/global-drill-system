@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Multitasking-Test | Dual-Stream-Tracking | SkillDrills",
-  description: "Kostenloser Multitasking-Test: Tippe in zwei gegenläufigen Symbolströmen nur das jeweilige Zielsymbol an. Keine klinische Diagnose, sondern ein Selbstcheck.",
+  description: "Kostenloser Multitasking-Test: Tippe in zwei gegenläufigen Symbolströmen nur das jeweilige Zielsymbol an.",
   keywords: ["Multitasking Test", "Dual Stream Tracking", "Multitasking Gehirntraining", "Aufgabenumschaltung Test", "Kognitive Flexibilität Test", "zwei Symbolströme", "Multitasking Fähigkeit Test", "Exekutive Funktionen Training", "Gehirn Multitasking", "Visuelle Doppelaufgabe"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Multitasking-Test | Dual-Stream-Tracking | SkillDrills",
-    description: "Kostenloser Multitasking-Test: Tippe in zwei gegenläufigen Symbolströmen nur das jeweilige Zielsymbol an. Keine klinische Diagnose, sondern ein Selbstcheck.",
+    description: "Kostenloser Multitasking-Test: Tippe in zwei gegenläufigen Symbolströmen nur das jeweilige Zielsymbol an.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Multitasking-Test | Dual-Stream-Tracking | SkillDrills",
-    description: "Kostenloser Multitasking-Test: Tippe in zwei gegenläufigen Symbolströmen nur das jeweilige Zielsymbol an. Keine klinische Diagnose, sondern ein Selbstcheck.",
+    description: "Kostenloser Multitasking-Test: Tippe in zwei gegenläufigen Symbolströmen nur das jeweilige Zielsymbol an.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Kostenloser Multitasking-Test: Zwei Symbolströme laufen gegenläufig von der Mitte nach außen; tippe in jeder Spur nur das angezeigte Zielsymbol an. Keine klinische Diagnose.",
+  "description": "Kostenloser Multitasking-Test: Zwei Symbolströme laufen gegenläufig von der Mitte nach außen; tippe in jeder Spur nur das angezeigte Zielsymbol an.",
   "url": "https://skilldrills.online/de/drills/cognitive/attention/multi-tasking",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Multitasking-Test – Gegenläufiges Zielsymbol-Spiel",
   "url": "https://skilldrills.online/de/drills/cognitive/attention/multi-tasking",
-  "description": "Kostenloser Multitasking-Test: Zwei Symbolströme laufen gegenläufig von der Mitte nach außen; tippe in jeder Spur nur das angezeigte Zielsymbol an. Keine klinische Diagnose.",
+  "description": "Kostenloser Multitasking-Test: Zwei Symbolströme laufen gegenläufig von der Mitte nach außen; tippe in jeder Spur nur das angezeigte Zielsymbol an.",
   "genre": [
     "Action",
     "Brain Game",
@@ -132,7 +132,7 @@ const faqSchema = {
       "name": "Was trainiert der Multitasking-Test (Dual-Target Flow)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das gleichzeitige Überwachen zweier Spuren (Querformat links/rechts, Hochformat oben/unten), in denen Symbole von der Mitte nach außen laufen. Du klickst oder tippst nur das Zielsymbol der jeweiligen Spur an. Es ist eine Übung, kein klinischer Test."
+        "text": "Das gleichzeitige Überwachen zweier Spuren (Querformat links/rechts, Hochformat oben/unten), in denen Symbole von der Mitte nach außen laufen. Du klickst oder tippst nur das Zielsymbol der jeweiligen Spur an."
       }
     },
     {
@@ -214,7 +214,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Multitasking-Test",
-  "description": "Kostenloser Multitasking-Test: Zwei Symbolströme laufen gegenläufig von der Mitte nach außen; tippe in jeder Spur nur das angezeigte Zielsymbol an. Keine klinische Diagnose.",
+  "description": "Kostenloser Multitasking-Test: Zwei Symbolströme laufen gegenläufig von der Mitte nach außen; tippe in jeder Spur nur das angezeigte Zielsymbol an.",
   "step": [
     {
       "@type": "HowToStep",
@@ -252,7 +252,7 @@ const guideProps = {
   intro: {
     title: "Multitasking-Test: Anleitung",
     paragraphs: [
-      "Kostenloser Multitasking-Test: Zwei Symbolströme laufen gegenläufig von der Mitte nach außen; tippe in jeder Spur nur das angezeigte Zielsymbol an. Keine klinische Diagnose.",
+      "Kostenloser Multitasking-Test: Zwei Symbolströme laufen gegenläufig von der Mitte nach außen; tippe in jeder Spur nur das angezeigte Zielsymbol an.",
       "Der Zeit- und Genauigkeitsverlust beim Umschalten zwischen verschiedenen Aufgabenregeln (Rogers & Monsell, 1995).",
       "Bei anspruchsvollen kognitiven Entscheidungen nutzt das Gehirn schnelles serielles Time-Sharing statt echter paralleler Verarbeitung (Pashler, 1994).",
     ],
@@ -326,7 +326,7 @@ export default function LocalizedCognitivePage() {
           { text: "Fehlklick / verpasst", highlight: "Combo weg", result: "−1 s" },
           { text: "Zielwechsel", highlight: "Alle 20 s", result: "Symbol neu prüfen" },
         ],
-        aboutTitle: "Multitasking und Dual-Target-Flow", aboutLead: "Dieser nicht-klinische kognitive Selbstcheck verbindet zwei visuelle Zielströme und bewertet Übungsgenauigkeit sowie schnelle Aufmerksamkeitswechsel, nicht eine allgemeine Alltagstauglichkeit.",
+        aboutTitle: "Multitasking und Dual-Target-Flow", aboutLead: "Dieser kognitive Selbstcheck verbindet zwei visuelle Zielströme und bewertet Übungsgenauigkeit sowie schnelle Aufmerksamkeitswechsel, nicht eine allgemeine Alltagstauglichkeit.",
         audienceTitle: "Für wen geeignet", audienceText: "Für Gamer mit mehreren Bildschirmelementen, Lernende und Menschen, die gleichzeitige Informationen besser ordnen möchten.",
         skillsTitle: "Trainierte Fähigkeiten", skillsText: "Beidseitiges visuelles Tracking, peripheres Erkennen, Aufmerksamkeitswechsel und exekutive Kontrolle.", flexibilityTitle: "Aufgabenwechsel", flexibilityText: "Mit jedem Level ändern sich Tempo und Muster: Wechsle schnell zwischen beiden Strömen, ohne Genauigkeit zu verlieren."
       }} />

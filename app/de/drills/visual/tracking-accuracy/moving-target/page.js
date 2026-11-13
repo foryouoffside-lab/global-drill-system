@@ -17,7 +17,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Bewegte Ziele abfangen | Flugbahn vorhersagen | SkillDrills",
-    description: "Lies die Flugbahn einer abprallenden Kugel und klicke sie an, bevor sie weiterspringt. Kostenloses Browser-Training, kein medizinischer Test.",
+    description: "Lies die Flugbahn einer abprallenden Kugel und klicke sie an, bevor sie weiterspringt. Kostenloses Browser-Training.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -167,7 +167,7 @@ const faqSchema = {
       "name": "Wie funktioniert die Übung „Bewegte Ziele abfangen“?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Eine Kugel bewegt sich geradlinig über das Spielfeld und prallt von den Rändern ab. Nach einer kurzen Frist (anfangs etwa 1 Sekunde) springt sie an eine neue Stelle. Du klickst sie vorher an. Die Runde beginnt mit 45 Sekunden, jeder Treffer bringt +2 s (maximal 60 s), bei 0 endet sie. Es ist kein Sehtest und keine medizinische Untersuchung."
+        "text": "Eine Kugel bewegt sich geradlinig über das Spielfeld und prallt von den Rändern ab. Nach einer kurzen Frist (anfangs etwa 1 Sekunde) springt sie an eine neue Stelle. Du klickst sie vorher an. Die Runde beginnt mit 45 Sekunden, jeder Treffer bringt +2 s (maximal 60 s), bei 0 endet sie."
       }
     },
     {

@@ -255,7 +255,7 @@ const guideProps = {
     paragraphs: [
       "Leitura dinâmica online no método RSVP: as palavras aparecem uma a uma no mesmo ponto da tela, com a letra do ORP em vermelho. Toque no botão quando surgir a palavra-alvo do banner; a cada 2 acertos a velocidade sobe um nível, de 250 até 850 palavras por minuto. O texto exibido é em inglês.",
       "Na leitura comum, o olhar salta de palavra em palavra (sacadas) e às vezes volta atrás (Rayner, 1998). O RSVP elimina esses saltos, mas em ritmo alto a compreensão pode cair (Rayner et al., 2016).",
-      "Este treino mede só o reconhecimento da palavra-alvo: mostra pontos, acertos, erros, precisão e nível alcançado. Não é curso de leitura dinâmica, não mede compreensão e não é exame clínico.",
+      "Este treino mede só o reconhecimento da palavra-alvo: mostra pontos, acertos, erros, precisão e nível alcançado. Não é curso de leitura dinâmica, e não mede compreensão.",
     ],
   },
   benchmarks: {
@@ -268,7 +268,7 @@ const guideProps = {
       { tier: 'Tier 4', rank: 'Em evolução', stat: 'Nível 2 (350 PPM)', accuracy: '75-84%', marker: 'Em progresso' },
       { tier: 'Tier 5', rank: 'Início', stat: 'Nível 1 (250 PPM)', accuracy: '< 75%', marker: 'Ponto de partida' },
     ],
-    note: 'Faixas de treino definidas pela SkillDrills para comparar suas próprias sessões; não são percentis de população nem normas clínicas, e não medem compreensão.',
+    note: 'Faixas de treino definidas pela SkillDrills para comparar suas próprias sessões; não são percentis de população e não medem compreensão.',
   },
   protocols: {
     title: 'Como jogar',

@@ -155,7 +155,7 @@ const faqSchema = {
       name: 'Ersetzt diese Übung den Sehtest für den Führerschein?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Nein. Der Sehtest für die Fahrerlaubnis wird von einer anerkannten Stelle durchgeführt, etwa beim Augenarzt oder Optiker. Diese Übung ist ein Spiel zum Üben von Abfang-Timing und liefert keine Aussage über dein Sehvermögen.',
+        text: 'Nein. Diese Übung ist ein Spiel zum Üben von Abfang-Timing und liefert keine Aussage über dein Sehvermögen.',
       },
     },
     {
@@ -257,7 +257,7 @@ const distanceGuideDe = {
     'Klicke oder tippe genau in dem Moment, in dem die Kugel den Zielring ausfüllt.',
     'Bis 7 % Abweichung gibt es 150 Punkte, bis 16 % 100 Punkte. Mit jedem Level wird die Kugel schneller.'
   ],
-  audience: 'Gamer, Ballsportler und alle, die ihr Abfang-Timing und ihre Entfernungsschätzung am Bildschirm üben möchten. Wer sein Sehvermögen prüfen lassen will, geht zum Augenarzt oder Optiker.',
+  audience: 'Gamer, Ballsportler und alle, die ihr Abfang-Timing und ihre Entfernungsschätzung am Bildschirm üben möchten.',
   faqs: {
     title: 'Häufig gestellte Fragen zur Entfernungsschätzung',
     items: faqSchema.mainEntity.map((q) => ({

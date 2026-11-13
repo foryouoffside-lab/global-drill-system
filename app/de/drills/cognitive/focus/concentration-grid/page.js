@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — de-DE (concentration-grid / schulte-tabelle)
-// PRIMARY:  "Schulte-Tabelle"                 — Top DACH psychodiagnostic query
+// PRIMARY:  "Schulte-Tabelle"                 — Top DACH query
 //           "Schulte Tabelle online"          — High conversion web query
 // SECONDARY / LSI:
 //           "Schulte Tabelle kostenlos"       — High volume free tool search
@@ -21,7 +21,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Schulte-Tabelle: Konzentrationsübung online | SkillDrills",
-  description: "Schulte-Tabelle als kostenlose Konzentrationsübung online: Zahlen 45 Sekunden lang der Reihe nach antippen, das Gitter wächst ab 3x3. Kein klinischer Test.",
+  description: "Schulte-Tabelle als kostenlose Konzentrationsübung online: Zahlen 45 Sekunden lang der Reihe nach antippen, das Gitter wächst ab 3x3.",
   keywords: [
     "Schulte-Tabelle",
     "Konzentrationsübungen",
@@ -249,7 +249,7 @@ export default function ConcentrationGridPageDe() {
       "Der SkillDrills Schulte-Tabellen-Trainer macht aus dieser statischen Tabelle eine durchgehende 45-Sekunden-Runde. Anstelle einer einzelnen isolierten Matrix erweitert sich das Gitter bei jedem Abschluss dynamisch von 3x3 bis zu 8x8, wobei ab Stufe 5x5 leichte Rotationsverzerrungen hinzutreten. Auf kleinen Bildschirmen (unter 380 px Breite) endet das Wachstum bei 7x7. So übst du, ein immer größeres Feld innerhalb eines festen 45-Sekunden-Zeitfensters abzusuchen.",
       "Messmethodik und Präzision: Jedes Klick- und Touch-Ereignis wird clientseitig über die hochauflösende performance.now() API des Browsers erfasst. Moderne Browser vergröbern Zeitgeber aus Sicherheitsgründen (Spectre-Mitigation) auf rund 1 ms, während Displays Änderungen auf ihre Bildwiederholrate quantisieren (ca. 16,7 ms pro Frame bei 60 Hz, Woods et al., 2015). Vergleichen Sie Ihre Resultate am besten auf derselben Hardwarekonfiguration.",
       "Datentransparenz: SkillDrills erhebt und überträgt keinerlei aggregierte Nutzerdaten. Alle Bestwerte und Einstellungen verbleiben ausschließlich im lokalen Speicher (localStorage) Ihres Webbrowsers. Die Hintergrundangaben stammen aus den aufgeführten Quellen; Punktstufen sind SkillDrills-Übungsbänder, keine Normwerte.",
-      "Diese Übung ist ein kostenloses Trainingsspiel für Sport, Studium und persönliche Leistungssteigerung. Sie stellt kein medizinisches Diagnoseinstrument, kein therapeutisches Hilfsmittel und kein Screening-Verfahren für ADHS oder Aufmerksamkeitsstörungen dar. Bei gesundheitlichen oder neuropsychologischen Beschwerden wenden Sie sich bitte an qualifizierte Mediziner."
+      "Diese Übung ist ein kostenloses Trainingsspiel für Sport, Studium und persönliche Leistungssteigerung."
     ],
     benchmarks: {
       title: "Schulte-Tabelle: Notenstufen (Punkte pro 45-Sekunden-Runde)",

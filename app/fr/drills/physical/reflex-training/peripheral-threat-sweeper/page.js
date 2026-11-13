@@ -72,7 +72,7 @@ const webApplicationSchema = {
 const faqs = [
   {
     q: "Que fait-on dans ce jeu de vision périphérique ?",
-    a: "Vous gardez les yeux sur le noyau au centre de l’écran et cliquez sur les menaces qui arrivent des bords vers lui, avant qu’elles ne l’atteignent. On s’exerce ainsi à remarquer des mouvements en périphérie sans bouger le regard. C’est un jeu de navigateur, pas un test de la vue ni un traitement."
+    a: "Vous gardez les yeux sur le noyau au centre de l’écran et cliquez sur les menaces qui arrivent des bords vers lui, avant qu’elles ne l’atteignent. On s’exerce ainsi à remarquer des mouvements en périphérie sans bouger le regard. C’est un jeu de navigateur."
   },
   {
     q: "Quelle différence entre vision centrale et vision périphérique ?",
@@ -151,7 +151,7 @@ const guideProps = {
       ["D", "2 160 – 4 859"],
       ["F", "moins de 2 160"]
     ],
-    note: "Paliers d’entraînement SkillDrills calculés à partir de la formule de note du jeu ; ni statistique d’utilisateurs, ni percentiles, ni critère d’examen de la vue."
+    note: "Paliers d’entraînement SkillDrills calculés à partir de la formule de note du jeu ; ni statistique d’utilisateurs, ni percentiles."
   },
   techniques: {
     title: "4 conseils pour marquer plus",

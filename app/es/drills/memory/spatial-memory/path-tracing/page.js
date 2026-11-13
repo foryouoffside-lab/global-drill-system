@@ -115,10 +115,10 @@ export default function LocalizedPathTracingPage() {
       },
       {
         "@type": "Question",
-        "name": "¿Es el mismo test de bloques de Corsi que se usa en clínica?",
+        "name": "¿Es el mismo test de bloques de Corsi?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. El principio es el de la tarea de bloques de Corsi (Corsi, 1972): recordar posiciones en orden y reproducirlas. Aquí, sin embargo, la cuadrícula es cuadrada, cada paso va solo a una casilla vecina (arriba, abajo, izquierda, derecha) y ninguna casilla se visita dos veces. Es un juego de práctica, no un test clínico ni una herramienta de diagnóstico."
+          "text": "No. El principio es el de la tarea de bloques de Corsi (Corsi, 1972): recordar posiciones en orden y reproducirlas. Aquí, sin embargo, la cuadrícula es cuadrada, cada paso va solo a una casilla vecina (arriba, abajo, izquierda, derecha) y ninguna casilla se visita dos veces. Es un juego de práctica."
         }
       },
       {
@@ -163,10 +163,10 @@ export default function LocalizedPathTracingPage() {
       },
       {
         "@type": "Question",
-        "name": "¿Se guardan mis resultados? ¿Tienen valor médico?",
+        "name": "¿Se guardan mis resultados?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La mejor puntuación y el nivel máximo se guardan solo en el localStorage de este navegador y no se envían a ningún servidor. Los resultados son marcas de práctica y no indican problemas de memoria ni la salud del cerebro."
+          "text": "La mejor puntuación y el nivel máximo se guardan solo en el localStorage de este navegador y no se envían a ningún servidor. Los resultados son marcas de práctica."
         }
       }
     ]
@@ -214,8 +214,7 @@ export default function LocalizedPathTracingPage() {
       "El test de Corsi online es un juego gratuito de memoria del orden: las casillas de una cuadrícula se iluminan una tras otra y después las tocas en el mismo orden. Lleva el principio de la tarea de bloques de Corsi (Milner, 1971; Corsi, 1972) a un recorrido sobre la cuadrícula para practicar la memoria secuencial y el span visoespacial.",
       "En el nivel 1 aparece un recorrido de 3 pasos en una cuadrícula de 3x3. Las casillas se iluminan cada 0,5 segundos; cada paso va a una casilla de arriba, abajo, izquierda o derecha, y ninguna casilla se visita dos veces. Cada recorrido completado suma +150 puntos, nivel +1 y un paso más; la cuadrícula crece a 4x4, 5x5 y 6x6 hasta 7x7.",
       "El reloj de la sesión tiene 60 segundos y solo corre durante la respuesta. Cada recorrido debe completarse en 10 segundos. Una casilla equivocada o agotar el tiempo termina la ronda sin descuento; llega un recorrido nuevo de la misma longitud y el nivel no baja. Respuesta con clic o toque.",
-      "Transparencia de datos: los resultados se guardan solo en el localStorage de este navegador y no se envían a ningún servidor. Por eso SkillDrills no publica medias de usuarios ni clasificaciones.",
-      "Esta herramienta es un juego gratuito de práctica en el navegador. No es el test de Corsi oficial, ni un dispositivo médico, ni una herramienta de diagnóstico, y los resultados no indican problemas de memoria. Si te preocupa tu memoria, consulta a un profesional sanitario."
+      "Transparencia de datos: los resultados se guardan solo en el localStorage de este navegador y no se envían a ningún servidor. Por eso SkillDrills no publica medias de usuarios ni clasificaciones."
     ],
     benchmarks: {
       title: "Niveles de práctica SkillDrills (puntos = recorridos completados × 150)",
@@ -226,7 +225,7 @@ export default function LocalizedPathTracingPage() {
         ["Intermedio", "8–12 pasos · 4x4–5x5", "750–1.350", "5 a 9 recorridos completados. Agrupar por direcciones se vuelve necesario"],
         ["Avanzado", "13+ pasos · 6x6–7x7", "1.500+", "10 o más recorridos completados. Recorridos largos seguidos en 60 segundos de respuesta"]
       ],
-      note: "Estos niveles se calculan a partir de las reglas de puntuación del juego; no son normas de población ni umbrales clínicos."
+      note: "Estos niveles se calculan a partir de las reglas de puntuación del juego; no son normas de población."
     },
     techniques: {
       title: "Consejos para recorridos largos",

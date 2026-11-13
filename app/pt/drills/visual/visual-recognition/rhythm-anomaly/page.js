@@ -87,7 +87,7 @@ const TIPS = [
   "Compare resultados no mesmo aparelho e com o mesmo brilho de tela."
 ];
 const INTRO = [
-  "Neste jogo, as 36 células de uma grade 6x6 piscam devagar no mesmo compasso. Só uma célula pisca num ritmo mais rápido: encontre a célula fora do ritmo e clique nela. A sessão dura 45 segundos e roda grátis no navegador, com mouse ou toque. Não é exame de vista nem teste médico.",
+  "Neste jogo, as 36 células de uma grade 6x6 piscam devagar no mesmo compasso. Só uma célula pisca num ritmo mais rápido: encontre a célula fora do ritmo e clique nela. A sessão dura 45 segundos e roda grátis no navegador, com mouse ou toque.",
   "A célula diferente tem cerca de 72 % do período das outras: pisca cerca de 1,4 vez mais rápido e fica um pouco mais clara no pico. A cada acerto, a grade inteira acelera (período de 1,6 s até 0,6 s no mínimo). No começo é fácil; depois é preciso perceber a diferença de ritmo mais depressa.",
   "A grade pisca de 0,6 a 2,5 vezes por segundo, muito abaixo da frequência crítica de fusão (cerca de 50 a 60 Hz; De Lange, 1958; Kelly, 1961). Portanto não é um teste de cintilação (CFF), e sim uma tarefa de atenção de discriminação temporal visual, em que você compara ritmos. Julgar se dois estímulos estão no mesmo compasso só funciona em ritmos bem mais lentos do que detectar a cintilação em si (Holcombe, 2009)."
 ];
@@ -140,7 +140,7 @@ const softwareApplicationSchema = {
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Jogo de 45 segundos no navegador: encontre na grade 6x6 a célula que pisca mais rápido que as outras. Mouse ou toque, sem valor médico.",
+  "description": "Jogo de 45 segundos no navegador: encontre na grade 6x6 a célula que pisca mais rápido que as outras. Mouse ou toque.",
   "url": PAGE_URL,
   "inLanguage": "pt-BR",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },

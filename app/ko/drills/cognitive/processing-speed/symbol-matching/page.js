@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "처리속도 테스트 | 기호 숫자 매칭 훈련 | SkillDrills",
-  description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습하며 임상 검사가 아닙니다.",
+  description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습합니다.",
   keywords: ["처리속도 테스트", "처리속도 훈련", "기호 숫자 매칭", "정보처리속도 테스트", "기호 숫자 대응 게임", "시각 탐색 연습"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "처리속도 테스트 | 기호 숫자 매칭 훈련 | SkillDrills",
-    description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습하며 임상 검사가 아닙니다.",
+    description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습합니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "처리속도 테스트 | 기호 숫자 매칭 훈련 | SkillDrills",
-    description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습하며 임상 검사가 아닙니다.",
+    description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습합니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "KRW"
   },
-  "description": "무료 온라인 처리속도 테스트. 상단 키에서 6개 기호와 숫자 1~6의 짝을 보고, 제시된 기호에 맞는 숫자를 누릅니다. SDMT 형식을 참고한 연습용 게임이며 임상 검사가 아닙니다.",
+  "description": "무료 온라인 처리속도 테스트. 상단 키에서 6개 기호와 숫자 1~6의 짝을 보고, 제시된 기호에 맞는 숫자를 누릅니다. SDMT 형식을 참고한 연습용 게임입니다.",
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "기호 숫자 매칭 – 처리속도 게임",
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching",
-  "description": "무료 온라인 처리속도 테스트. 상단 키에서 6개 기호와 숫자 1~6의 짝을 보고, 제시된 기호에 맞는 숫자를 누릅니다. SDMT 형식을 참고한 연습용 게임이며 임상 검사가 아닙니다.",
+  "description": "무료 온라인 처리속도 테스트. 상단 키에서 6개 기호와 숫자 1~6의 짝을 보고, 제시된 기호에 맞는 숫자를 누릅니다. SDMT 형식을 참고한 연습용 게임입니다.",
   "genre": [
     "Action",
     "Brain Game",
@@ -173,15 +173,15 @@ const faqSchema = {
       "name": "결과로 무엇을 알 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "점수, 정확도, 적중·오답 수, 최고 레벨과 SkillDrills 고정 기준에 따른 F~S+ 등급입니다. 임상 규준이나 IQ와는 비교할 수 없습니다."
+        "text": "점수, 정확도, 적중·오답 수, 최고 레벨과 SkillDrills 고정 기준에 따른 F~S+ 등급입니다. SDMT 규준이나 IQ와는 비교할 수 없습니다."
       }
     },
     {
       "@type": "Question",
-      "name": "공식적인 의료 진단 검사인가요?",
+      "name": "결과는 어떻게 읽으면 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "아닙니다. 무료 연습용 게임이며 질환의 진단이나 선별에 사용할 수 없습니다. 기억력이나 사고력이 걱정되면 전문가와 상담하세요."
+        "text": "종료 화면에서 점수, 정확도, 적중·오답 수, 최고 레벨과 F~S+ 등급을 확인할 수 있습니다. 같은 기기에서 자신의 이전 기록과 비교하세요."
       }
     },
     {
@@ -215,7 +215,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "처리속도 테스트 진행 방법",
-  "description": "무료 온라인 처리속도 테스트. 상단 키에서 6개 기호와 숫자 1~6의 짝을 보고, 제시된 기호에 맞는 숫자를 누릅니다. SDMT 형식을 참고한 연습용 게임이며 임상 검사가 아닙니다.",
+  "description": "무료 온라인 처리속도 테스트. 상단 키에서 6개 기호와 숫자 1~6의 짝을 보고, 제시된 기호에 맞는 숫자를 누릅니다. SDMT 형식을 참고한 연습용 게임입니다.",
   "step": [
     {
       "@type": "HowToStep",
@@ -254,8 +254,8 @@ const guideProps = {
     title: "처리속도 테스트 – 기호 숫자 매칭 훈련",
     paragraphs: [
       "처리속도 테스트: 상단 키에 6개 기호와 숫자 1~6의 짝이 표시되고, 가운데 나온 기호에 맞는 숫자 버튼을 누르는 무료 연습입니다. 키는 세션마다 새로 섞입니다. 45초로 시작해 정답마다 2초가 더해지고(최대 60초), 오답·시간 초과는 1초 감점입니다.",
-      "기호를 보고 숫자로 답하는 방식은 SDMT(Smith, 1973)와 같은 형식이며, 숫자를 보고 기호를 쓰는 DSST와는 방향이 반대입니다. 이 드릴은 두 검사 모두 아니며 임상 규준과 비교할 수 없습니다.",
-      "결과는 점수, 정확도, 적중·오답 수, 최고 레벨로 표시됩니다. 진단, IQ 또는 인지 기능 평가가 아닌 연습용 게임입니다.",
+      "기호를 보고 숫자로 답하는 방식은 SDMT(Smith, 1973)와 같은 형식이며, 숫자를 보고 기호를 쓰는 DSST와는 방향이 반대입니다. 이 드릴은 두 검사 모두 아니며 그 규준과 비교할 수 없습니다.",
+      "결과는 점수, 정확도, 적중·오답 수, 최고 레벨로 표시됩니다. IQ 평가가 아닌 연습용 게임입니다.",
     ],
   },
   benchmarks: {
@@ -268,11 +268,11 @@ const guideProps = {
       { tier: 'Tier 4', rank: '일반 수준', stat: '평균 범위', level: '표준', accuracy: '78–87%', percentile: '기본 규칙 익히기' },
       { tier: 'Tier 5', rank: '입문', stat: '기준선', level: '기초', accuracy: '78% 미만', percentile: '천천히 정확하게 시작' },
     ],
-    note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계, 백분위 또는 임상 기준이 아닙니다.',
+    note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계나 백분위가 아닙니다.',
   },
   protocols: {
     title: '처리속도 테스트 진행 순서',
-    description: '상단 키를 보고 제시된 기호에 맞는 숫자를 고르는 순서입니다. 형식은 SDMT(Smith, 1973)를 참고했지만 임상 검사는 아닙니다.',
+    description: '상단 키를 보고 제시된 기호에 맞는 숫자를 고르는 순서입니다. 형식은 SDMT(Smith, 1973)를 참고했습니다.',
     items: [
       { title: "상단 기호-숫자 매칭 표 확인", description: "상단 헤더에 나열된 6개 기호와 1~6번 숫자의 연결 관계를 파악합니다." },
       { title: "중앙 제시 기호 순간 식별", description: "중앙 박스에 출현하는 타깃 기호를 눈으로 즉시 포착합니다." },
@@ -327,8 +327,8 @@ export default function LocalizedCognitivePage() {
           faqTitle: "자주 묻는 질문",
           readyLabel: "준비",
           labels: { score: "점수", time: "시간", level: "레벨", bestScore: "최고 점수", timeLeft: "남은 시간", targetSymbol: "표적 기호", accuracy: "정확도", hits: "적중", misses: "실수", peakLevel: "최고 레벨" },
-          aboutLead: "기호 숫자 과제는 제한 시간 안에 기호와 숫자의 대응을 찾아 지식보다 정보처리속도와 시각 탐색을 연습합니다. 이 드릴은 임상 도구가 아닌 연습용 게임입니다.",
-          aboutText: "이 드릴은 SDMT와 DSST에서 볼 수 있는 기호-숫자 대응 형식을 참고합니다. 키를 확인하고 표적 기호에 맞는 숫자를 선택하면서 시각 탐색, 연상기억, 선택 반응을 반복합니다. 점수는 이 게임의 수행을 나타내며 의료적 판단이나 진단이 아닙니다.",
+          aboutLead: "기호 숫자 과제는 제한 시간 안에 기호와 숫자의 대응을 찾아 지식보다 정보처리속도와 시각 탐색을 연습합니다. 이 드릴은 연습용 게임입니다.",
+          aboutText: "이 드릴은 SDMT와 DSST에서 볼 수 있는 기호-숫자 대응 형식을 참고합니다. 키를 확인하고 표적 기호에 맞는 숫자를 선택하면서 시각 탐색, 연상기억, 선택 반응을 반복합니다. 점수는 이 게임의 수행을 나타냅니다.",
           aboutCards: [
             { title: "누구에게 유용한가요?", desc: "정보처리속도와 시각 탐색을 집중적으로 연습하고 싶은 학생, 직장인, 게이머에게 유용합니다." },
             { title: "훈련하는 능력", desc: "시각 탐색, 기호-숫자 연상기억, 선택 반응, 반복 과제에서의 지속 집중력을 연습합니다." },

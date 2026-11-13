@@ -100,7 +100,7 @@ const faqSchema = {
       "name": "Was ist der Stroop-Effekt und wie wird damit die exekutive Hemmungskontrolle (Inhibition) gemessen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Stroop-Effekt beschreibt den Konflikt zwischen automatischem Wortlesen und dem bewussten Benennen der Schriftfarbe: Steht das Wort 'Rot' in blauer Farbe, muss der Lesereflex unterdrückt werden. Im klassischen Stroop-Test wird dazu der Zeitunterschied zwischen passenden und nicht passenden Farb-Wort-Paaren gemessen. Der Stroop-Drill von SkillDrills ist eine Übung, kein diagnostischer Test: Du wählst die Schriftfarbe, und gespeichert werden Punkte, Genauigkeit und erreichtes Level, kein Interferenzwert."
+        "text": "Der Stroop-Effekt beschreibt den Konflikt zwischen automatischem Wortlesen und dem bewussten Benennen der Schriftfarbe: Steht das Wort 'Rot' in blauer Farbe, muss der Lesereflex unterdrückt werden. Im klassischen Stroop-Test wird dazu der Zeitunterschied zwischen passenden und nicht passenden Farb-Wort-Paaren gemessen. Der Stroop-Drill von SkillDrills ist eine Übung: Du wählst die Schriftfarbe, und gespeichert werden Punkte, Genauigkeit und erreichtes Level, kein Interferenzwert."
       }
     },
     {
@@ -129,10 +129,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Hilft kognitives Training Erwachsenen mit Konzentrationsschwächen (ADHS) und zur Prävention von Demenz?",
+      "name": "Wie nutze ich kognitives Training am besten?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nein, diese Drills ersetzen keine ärztliche Abklärung oder Behandlung. Sie sind weder eine Therapie bei ADHS noch ein Schutz vor Demenz und auch kein Diagnoseinstrument. Nutze sie als Übung, um deine eigenen Ergebnisse in Aufmerksamkeits- und Tempoaufgaben zu verfolgen. Bei anhaltenden Konzentrations- oder Gedächtnisproblemen wende dich an eine Ärztin oder einen Arzt."
+        "text": "Nutze die Drills als kurze Übung, um deine eigenen Ergebnisse in Aufmerksamkeits- und Tempoaufgaben zu verfolgen, und vergleiche deine Werte am besten auf demselben Gerät."
       }
     }
   ]

@@ -20,7 +20,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Tabla de Schulte online | Rejilla de foco | SkillDrills",
-  description: "Tabla de Schulte online gratis: pulsa los números en orden durante 45 segundos en una cuadrícula que crece de 3x3 a 8x8. Ejercicio de foco, no diagnóstico.",
+  description: "Tabla de Schulte online gratis: pulsa los números en orden durante 45 segundos en una cuadrícula que crece de 3x3 a 8x8. Ejercicio de foco.",
   keywords: [
     "tabla de schulte",
     "tabla de schulte online",
@@ -240,7 +240,7 @@ const concentrationGridGuideEs = {
     "La tabla de Schulte online de SkillDrills convierte la hoja estática en una ronda continua de 45 segundos. La cuadrícula crece desde 3x3 hasta 8x8 a medida que completas fases (7x7 en pantallas de menos de 380 px), con dígitos ligeramente girados desde 5x5. Así practicas recorrer un área cada vez mayor dentro de una ventana fija de 45 segundos (Treisman & Gelade, 1980; Wolfe, 2007).",
     "Metodología de cronometría: cada evento de pulsación se registra con el reloj de alta resolución performance.now() del navegador en su propio dispositivo. Los navegadores web aplican una atenuación deliberada por motivos de seguridad (mitigación de Spectre a ~1 ms) y la pantalla cuantiza las actualizaciones a su tasa de refresco: aproximadamente 16,7 ms por fotograma a 60 Hz (Woods et al., 2015). Se recomienda evaluar progresos en el mismo dispositivo.",
     "Transparencia de datos: SkillDrills no recopila datos agregados de los usuarios. Sus mejores registros y configuraciones permanecen almacenados exclusivamente en el localStorage local de su navegador, sin transmisión a servidores remotos. Los niveles de puntuación son bandas de práctica de SkillDrills, no normas.",
-    "Este ejercicio es una herramienta interactiva de práctica de búsqueda visual con fines formativos. No constituye un instrumento diagnóstico médico ni una terapia para el TDAH, dislexia u otras condiciones clínicas. Ante dudas sobre su atención o visión, consulte con un profesional sanitario cualificado."
+    "Este ejercicio es una herramienta interactiva de práctica de búsqueda visual con fines formativos."
   ],
   benchmarks: {
     title: "Tabla de Schulte: niveles de nota (puntos por ronda de 45 s)",
@@ -254,7 +254,7 @@ const concentrationGridGuideEs = {
       ["D", "720 – 1.619"],
       ["F", "menos de 720"]
     ],
-    note: "Bandas de práctica de SkillDrills, calculadas directamente con la fórmula de nota de la pantalla final (fracción de 8.000 puntos de referencia); no son estadísticas de usuarios ni baremos clínicos. Cada acierto suma 100 puntos más un bonus de rapidez (hasta 120) y cada cuadrícula completada un bonus proporcional a sus casillas."
+    note: "Bandas de práctica de SkillDrills, calculadas directamente con la fórmula de nota de la pantalla final (fracción de 8.000 puntos de referencia); no son estadísticas de usuarios. Cada acierto suma 100 puntos más un bonus de rapidez (hasta 120) y cada cuadrícula completada un bonus proporcional a sus casillas."
   },
   techniques: {
     title: "Protocolos y Estrategias Científicas de Optimización",

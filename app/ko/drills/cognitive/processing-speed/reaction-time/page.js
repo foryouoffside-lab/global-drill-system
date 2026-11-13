@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "선택 반응 시간 테스트 | 색상 규칙 전환 훈련 | SkillDrills",
-  description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련이며 임상 검사가 아닙니다.",
+  description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련입니다.",
   keywords: ["선택 반응 시간 테스트", "선택 반응 시간", "선택 반응 테스트", "판단 속도 테스트", "색상 규칙 전환 훈련", "인지 처리 속도"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "선택 반응 시간 테스트 | 색상 규칙 전환 훈련 | SkillDrills",
-    description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련이며 임상 검사가 아닙니다.",
+    description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련입니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "선택 반응 시간 테스트 | 색상 규칙 전환 훈련 | SkillDrills",
-    description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련이며 임상 검사가 아닙니다.",
+    description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "KRW"
   },
-  "description": "무료 브라우저 선택 반응 시간 테스트. 빨강·파랑 표적 중 상단 규칙에 맞는 색을 눌러 판단 속도와 정확도를 연습합니다. 결과는 점수·정확도·최고 레벨이며 밀리초 기록이나 임상 검사가 아닙니다.",
+  "description": "무료 브라우저 선택 반응 시간 테스트. 빨강·파랑 표적 중 상단 규칙에 맞는 색을 눌러 판단 속도와 정확도를 연습합니다. 결과는 밀리초 기록이 아니라 점수·정확도·최고 레벨입니다.",
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "선택 반응 시간 테스트 – 색상 규칙 전환 게임",
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time",
-  "description": "무료 브라우저 선택 반응 시간 테스트. 빨강·파랑 표적 중 상단 규칙에 맞는 색을 눌러 판단 속도와 정확도를 연습합니다. 결과는 점수·정확도·최고 레벨이며 밀리초 기록이나 임상 검사가 아닙니다.",
+  "description": "무료 브라우저 선택 반응 시간 테스트. 빨강·파랑 표적 중 상단 규칙에 맞는 색을 눌러 판단 속도와 정확도를 연습합니다. 결과는 밀리초 기록이 아니라 점수·정확도·최고 레벨입니다.",
   "genre": [
     "Action",
     "Brain Game",
@@ -193,10 +193,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "의학적 검사인가요?",
+      "name": "결과는 어떻게 비교하면 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "아니요. 연습용 브라우저 드릴이며 진단이나 선별 검사가 아닙니다. 결과는 기기와 컨디션에 따라 달라지므로 같은 기기에서 자신의 기록 변화를 비교하세요."
+        "text": "결과는 기기와 컨디션에 따라 달라지므로 같은 기기에서 자신의 기록 변화를 비교하세요."
       }
     },
     {
@@ -214,7 +214,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "선택 반응시간 테스트・판단 속도 측정",
-  "description": "무료 브라우저 선택 반응 시간 테스트. 빨강·파랑 표적 중 상단 규칙에 맞는 색을 눌러 판단 속도와 정확도를 연습합니다. 결과는 점수·정확도·최고 레벨이며 밀리초 기록이나 임상 검사가 아닙니다.",
+  "description": "무료 브라우저 선택 반응 시간 테스트. 빨강·파랑 표적 중 상단 규칙에 맞는 색을 눌러 판단 속도와 정확도를 연습합니다. 결과는 밀리초 기록이 아니라 점수·정확도·최고 레벨입니다.",
   "step": [
     {
       "@type": "HowToStep",
@@ -254,7 +254,7 @@ const guideProps = {
     paragraphs: [
       "선택 반응 시간 테스트는 여러 자극 중 규칙에 맞는 것을 골라 반응하는 과제입니다. 이 드릴에서는 빨강·파랑 표적이 함께 나타나고, 상단 배너가 가리키는 색을 눌러야 합니다. 레벨 2부터 규칙이 바뀌므로 매번 규칙을 다시 확인해야 합니다.",
       "자극이 하나뿐인 단순 반응과 달리, 선택 반응에는 자극을 구별하고 반응을 고르는 단계가 더해져 일반적으로 더 느립니다(Donders, 1868/1969).",
-      "선택지가 늘수록 판단 시간이 로그 형태로 길어진다는 경향은 힉의 법칙(Hick, 1952)으로 알려져 있습니다. 이 드릴은 밀리초 기록 대신 점수, 정확도, 최고 레벨, 최대 콤보를 보여 주며 임상 검사가 아닙니다.",
+      "선택지가 늘수록 판단 시간이 로그 형태로 길어진다는 경향은 힉의 법칙(Hick, 1952)으로 알려져 있습니다. 이 드릴은 밀리초 기록 대신 점수, 정확도, 최고 레벨, 최대 콤보를 보여 줍니다.",
     ],
   },
   benchmarks: {
@@ -267,7 +267,7 @@ const guideProps = {
       { tier: 'Tier 4', rank: '일반 수준', stat: '평균 범위', level: '표준', accuracy: '78–87%', percentile: '기본 규칙 익히기' },
       { tier: 'Tier 5', rank: '입문', stat: '기준선', level: '기초', accuracy: '78% 미만', percentile: '천천히 정확하게 시작' },
     ],
-    note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계, 백분위 또는 임상 기준이 아닙니다.',
+    note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계나 백분위가 아닙니다.',
   },
   protocols: {
     title: '선택 반응 시간 테스트 진행 순서',

@@ -67,7 +67,7 @@ const softwareSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
   "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" },
-  "description": "Exercice gratuit de mémoire des chiffres : une suite de chiffres s’affiche brièvement, puis vous la retapez dans le même ordre. Ce n’est pas un test clinique."
+  "description": "Exercice gratuit de mémoire des chiffres : une suite de chiffres s’affiche brièvement, puis vous la retapez dans le même ordre."
 };
 
 const webAppSchema = {
@@ -185,7 +185,7 @@ const faqSchema = {
       "name": "L’entraînement régulier améliore-t-il l’empan ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Rien n’est garanti. Avec de la pratique, on progresse en général dans ce jeu précis ; le transfert à la mémoire du quotidien ou aux études reste discuté dans la recherche. En cas d’inquiétude sur votre mémoire, consultez un médecin."
+        "text": "Rien n’est garanti. Avec de la pratique, on progresse en général dans ce jeu précis ; le transfert à la mémoire du quotidien ou aux études reste discuté dans la recherche."
       }
     },
     {
@@ -226,12 +226,11 @@ const faqSchema = {
 const digitSpanGuide = {
   heading: "Guide du test d’empan de chiffres et de la mémoire de travail",
   intro: [
-    "Le test d’empan de chiffres affiche brièvement une suite de chiffres que vous retapez ensuite dans le même ordre. C’est une version d’entraînement de la tâche d’empan (digit span) utilisée depuis longtemps en psychologie pour étudier la mémoire à court terme, pas un test clinique ni un test de QI.",
+    "Le test d’empan de chiffres affiche brièvement une suite de chiffres que vous retapez ensuite dans le même ordre. C’est une version d’entraînement de la tâche d’empan (digit span) utilisée depuis longtemps en psychologie pour étudier la mémoire à court terme.",
     "La question de l’empan a été popularisée par le « nombre magique 7 ± 2 » de George A. Miller (1956). Une épreuve proche figure dans l’échelle de Wechsler (WAIS), mais ce jeu n’est pas ce sous-test et ne calcule pas de note standard.",
     "Dans le modèle d’Alan Baddeley (Baddeley & Hitch, 1974 ; Baddeley, 2000), les suites de chiffres sont maintenues par la boucle phonologique et s’estompent en 2 secondes environ sans répétition. Selon Nelson Cowan (2001), la capacité brute sans répétition ni regroupement tourne autour de 4 unités : pour les longues suites, le chunking aide.",
     "Déroulement : départ à 3 chiffres ; la suite s’affiche d’un bloc (2,5 s au début, 0,1 s de moins après chaque réussite jusqu’à 0,8 s, 0,2 s de plus après une erreur). Vous avez ensuite 8 secondes pour la saisir au pavé ou au clavier. Réussite : un chiffre de plus (15 max) ; erreur ou délai dépassé : un de moins (3 min). Le jeu enregistre le score, la plus longue suite et la précision (part de manches réussies) ; le temps de réaction n’est pas mesuré.",
-    "Transparence : SkillDrills ne collecte pas vos scores sur un serveur ; tout reste dans le localStorage de votre navigateur. Cette page ne donne donc ni moyenne d’utilisateurs, ni percentile, ni nombre d’utilisateurs ; les chiffres cités viennent des études listées plus bas.",
-    "Avertissement : ce jeu d’entraînement n’est ni un dispositif médical ni un outil de diagnostic. En cas d’inquiétude sur votre mémoire, consultez un médecin ou un neuropsychologue."
+    "Transparence : SkillDrills ne collecte pas vos scores sur un serveur ; tout reste dans le localStorage de votre navigateur. Cette page ne donne donc ni moyenne d’utilisateurs, ni percentile, ni nombre d’utilisateurs ; les chiffres cités viennent des études listées plus bas."
   ],
   benchmarks: {
     title: "Paliers d’entraînement du test d’empan de chiffres (SkillDrills, 45 s)",

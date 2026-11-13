@@ -107,7 +107,7 @@ const guide = {
   intro: [
     'Este ejercicio de estabilidad del cursor con el ratón es sencillo: un viento cuya dirección cambia al azar empuja la mira fuera del centro, y la devuelves con el ratón para seguir dentro del anillo de seguridad. Una partida dura exactamente 45 segundos.',
     'Un movimiento de apuntado rápido se describe como un desplazamiento amplio seguido de una corrección fina guiada por la vista (Woodworth, 1899). Aquí repites esa corrección sin parar, y cuanto más pequeño es el anillo, más precisa tiene que ser (Fitts, 1954).',
-    'Es un juego de estabilidad del cursor: no mide el equilibrio ni la salud. Compara tus resultados solo con tus propias partidas, con el mismo ratón, la misma sensibilidad y el mismo monitor; la frecuencia de refresco y el polling rate influyen en la latencia (Woods et al., 2015).',
+    'Es un juego de estabilidad del cursor. Compara tus resultados solo con tus propias partidas, con el mismo ratón, la misma sensibilidad y el mismo monitor; la frecuencia de refresco y el polling rate influyen en la latencia (Woods et al., 2015).',
   ],
   benchmarks: {
     title: 'Niveles de práctica de SkillDrills',

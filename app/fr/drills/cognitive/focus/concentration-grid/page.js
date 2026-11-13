@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Table de Schulte | Grille de concentration | SkillDrills",
-  description: "Table de Schulte gratuite dans le navigateur : trouvez les nombres dans l’ordre et entraînez la recherche visuelle. Auto-test non clinique.",
+  description: "Table de Schulte gratuite dans le navigateur : trouvez les nombres dans l’ordre et entraînez la recherche visuelle.",
   keywords: [
     "table de schulte",
     "table de schulte en ligne",
@@ -24,7 +24,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Table de Schulte en ligne – Grille de concentration | SkillDrills",
-    description: "Table de Schulte gratuite en ligne : touchez les nombres dans l’ordre pendant 45 secondes, sur une grille qui grandit de 3x3 à 8x8. Exercice, pas un test clinique.",
+    description: "Table de Schulte gratuite en ligne : touchez les nombres dans l’ordre pendant 45 secondes, sur une grille qui grandit de 3x3 à 8x8.",
     type: "website",
     url: "https://skilldrills.online/fr/drills/cognitive/focus/concentration-grid",
     siteName: "SkillDrills",
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Table de Schulte en ligne – Grille de concentration | SkillDrills",
-    description: "Table de Schulte gratuite en ligne : touchez les nombres dans l’ordre pendant 45 secondes, sur une grille qui grandit de 3x3 à 8x8. Exercice, pas un test clinique.",
+    description: "Table de Schulte gratuite en ligne : touchez les nombres dans l’ordre pendant 45 secondes, sur une grille qui grandit de 3x3 à 8x8.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -262,7 +262,7 @@ const concentrationGridGuideFr = {
     "Le simulateur de SkillDrills transforme cette table statique en une manche continue de 45 secondes. Plutôt qu une matrice statique isolée, la grille s élargit dynamiquement de 3x3 jusqu à 8x8 au fil des réussites, tout en introduisant des perturbations de rotation dès le niveau 5x5. Sur petit écran (moins de 380 px de large), la grille plafonne à 7x7. Vous vous entraînez ainsi à balayer un champ de plus en plus large dans une fenêtre stricte de 45 secondes (Treisman & Gelade, 1980 ; Wolfe, 2007).",
     "Méthodologie chronométrique : chaque action tactile ou clic est horodatée via l horloge haute résolution performance.now() du navigateur directement sur votre terminal. Les navigateurs intègrent une atténuation délibérée pour parer aux failles matérielles de type Spectre (résolution d environ 1 ms), et votre écran quantifie chaque affichage selon sa fréquence de rafraîchissement (environ 16,7 ms par image à 60 Hz, Woods et al., 2015). Évaluez votre progression sur un même matériel.",
     "Transparence des données : SkillDrills ne collecte aucune donnée agrégée. Vos scores et configurations sont conservés exclusivement dans le localStorage de votre navigateur et ne sont jamais transmis à des serveurs distants.",
-    "Ce module est un jeu d entraînement cognitif gratuit à visée pédagogique et sportive. Il ne s agit pas d un dispositif médical, d un outil de diagnostic ou de dépistage du TDAH, de la dyslexie ou d autres troubles neurodéveloppementaux."
+    "Ce module est un jeu d entraînement cognitif gratuit à visée pédagogique et sportive."
   ],
   benchmarks: {
     title: "Table de Schulte : paliers de note (points par manche de 45 s)",

@@ -96,7 +96,7 @@ const faqSchema = {
       "name": "Comment fonctionne le test de Stroop et pourquoi est-il essentiel pour l'attention ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Décrit par John Ridley Stroop en 1935, l'effet Stroop est l'interférence qui apparaît quand le sens d'un mot (par exemple VERT) entre en conflit avec la couleur de son encre (par exemple rouge) : il faut freiner le réflexe de lecture pour nommer la couleur. Le test classique mesure l'écart de temps entre les essais congruents et incongruents. L'exercice Stroop de SkillDrills est une pratique, pas un test diagnostique : vous choisissez la couleur de l'encre et le score, la précision et le niveau atteint sont enregistrés, sans score d'interférence."
+        "text": "Décrit par John Ridley Stroop en 1935, l'effet Stroop est l'interférence qui apparaît quand le sens d'un mot (par exemple VERT) entre en conflit avec la couleur de son encre (par exemple rouge) : il faut freiner le réflexe de lecture pour nommer la couleur. Le test classique mesure l'écart de temps entre les essais congruents et incongruents. L'exercice Stroop de SkillDrills est une pratique : vous choisissez la couleur de l'encre et le score, la précision et le niveau atteint sont enregistrés, sans score d'interférence."
       }
     },
     {
@@ -128,7 +128,7 @@ const faqSchema = {
       "name": "Ces exercices conviennent-ils aux enfants, aux adultes et aux personnes âgées ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les exercices sont utilisables par les adolescents et les adultes, avec une difficulté qui augmente au fil des niveaux. Ce ne sont ni des tests médicaux ni des outils de diagnostic ou de prévention : ils ne traitent pas les troubles de l'attention et ne protègent pas du déclin cognitif. Servez-vous-en pour suivre vos propres résultats ; en cas de difficultés persistantes, consultez un professionnel de santé."
+        "text": "Les exercices sont utilisables par les adolescents et les adultes, avec une difficulté qui augmente au fil des niveaux. Servez-vous-en pour suivre vos propres résultats."
       }
     },
     {

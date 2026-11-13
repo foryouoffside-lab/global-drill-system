@@ -181,7 +181,7 @@ const faqSchema = {
       "name": "Qu’est-ce que ce test de mémoire spatiale ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C’est un jeu d’entraînement gratuit sur la mémoire de la position des objets : tu retiens quel objet se trouvait dans quelle case, puis tu retrouves l’emplacement d’un objet demandé. Ce n’est pas un test neuropsychologique ni un outil de diagnostic ; ton score est un repère personnel d’entraînement."
+        "text": "C’est un jeu d’entraînement gratuit sur la mémoire de la position des objets : tu retiens quel objet se trouvait dans quelle case, puis tu retrouves l’emplacement d’un objet demandé. Ton score est un repère personnel d’entraînement."
       }
     },
     {
@@ -221,7 +221,7 @@ const faqSchema = {
       "name": "Comment le score est-il calculé ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chaque position cible retrouvée rapporte 150 points. Le rang affiché en fin de partie est un palier d’entraînement SkillDrills avec 1 000 points en haut de l’échelle ; ce n’est ni une moyenne ni une norme clinique."
+        "text": "Chaque position cible retrouvée rapporte 150 points. Le rang affiché en fin de partie est un palier d’entraînement SkillDrills avec 1 000 points en haut de l’échelle ; ce n’est pas une moyenne."
       }
     },
     {
@@ -263,11 +263,10 @@ const objectLocationGuide = {
   heading: "Guide Scientifique : Mémoire Spatiale et Liaison Objet-Localisation",
   intro: [
     "Ce test de mémoire spatiale en ligne affiche des objets (emojis) pendant 1,5 seconde dans une grille. Un objet cible est ensuite demandé et tu touches la case où il se trouvait : il s'agit de retenir la position des objets, pas un motif. Tu commences avec 2 objets sur une grille 3x3 ; chaque bonne réponse ajoute un objet (10 au maximum), la grille passe en 4x4 au niveau 8 et en 5x5 au niveau 15.",
-    "Les fondements cliniques de l'évaluation de la mémoire de localisation d'objets ont été posés par Marion Eals & Irwin Silverman (1994) dans leurs recherches pionnières sur la cognition spatiale, démontrant que la rétention des emplacements d'objets constitue un mécanisme évolutif spécialisé, distinct de la rotation mentale. Ce jeu n'est pas leur tâche de recherche, mais un exercice de format proche. Auparavant, Edward C. Tolman (1948) avait formalisé le concept de carte cognitive, illustrant comment les organismes construisent des modèles spatiaux internes de leur environnement.",
+    "Les fondements de l'étude de la mémoire de localisation d'objets ont été posés par Marion Eals & Irwin Silverman (1994) dans leurs recherches pionnières sur la cognition spatiale, démontrant que la rétention des emplacements d'objets constitue un mécanisme évolutif spécialisé, distinct de la rotation mentale. Ce jeu n'est pas leur tâche de recherche, mais un exercice de format proche. Auparavant, Edward C. Tolman (1948) avait formalisé le concept de carte cognitive, illustrant comment les organismes construisent des modèles spatiaux internes de leur environnement.",
     "Dans l'architecture de la mémoire de travail, Robert H. Logie (1995) et Alan Baddeley (2000) ont établi que la liaison objet-localisation est coordonnée par le tampon épisodique (Episodic Buffer), qui intègre les données du cache visuel (identités des objets) et du scribe interne (coordonnées spatiales). Les travaux de Steven J. Luck & Edward K. Vogel (1997) ont prouvé que la conjonction de traits visuo-spatiaux génère un coût attentionnel majeur, tandis que Nelson Cowan (2001) a estimé la capacité de la mémoire de travail focale à environ 3 ou 4 éléments.",
     "Déroulement : la disposition reste visible 1,5 seconde, puis tu as 8 secondes pour répondre. Une bonne réponse rapporte 150 points et fait monter d'un niveau ; une erreur ou l'absence de réponse termine la manche sans perte de points, et une nouvelle disposition apparaît au même niveau. La partie dure 45 secondes au total ; aucun temps de réaction n'est mesuré.",
-    "Données : ton score et ton record restent uniquement dans le localStorage de ton navigateur et ne sont envoyés à aucun serveur.",
-    "Cet entraînement est un jeu interactif sur navigateur conçu pour la pratique cognitive et l'intérêt intellectuel. Il ne constitue pas un dispositif médical, un outil d'évaluation clinique, ni un protocole de diagnostic pour le TDAH, les troubles de la mémoire ou les affections neurocognitives. En cas d'inquiétude sur vos capacités cognitives ou de mémoire, consultez un neuropsychologue ou un médecin qualifié."
+    "Données : ton score et ton record restent uniquement dans le localStorage de ton navigateur et ne sont envoyés à aucun serveur."
   ],
   benchmarks: {
     title: "Repères d'entraînement SkillDrills (une partie)",
@@ -278,7 +277,7 @@ const objectLocationGuide = {
       ["Palier de départ", "150 – 450", "1 – 3", "Niveau 2 à 4, 3 à 5 objets, grille 3x3"],
       ["Début", "0", "0", "Niveau 1, 2 objets, grille 3x3"]
     ],
-    note: "Points = bonnes réponses × 150. Ces paliers sont calculés à partir des règles du jeu : ce sont des repères d'entraînement SkillDrills, pas des statistiques de population ni des normes cliniques."
+    note: "Points = bonnes réponses × 150. Ces paliers sont calculés à partir des règles du jeu : ce sont des repères d'entraînement SkillDrills, pas des statistiques de population."
   },
   techniques: {
     title: "Protocoles Scientifiques pour Développer la Mémoire de Localisation",

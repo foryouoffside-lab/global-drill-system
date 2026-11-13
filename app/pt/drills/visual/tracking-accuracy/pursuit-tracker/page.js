@@ -59,7 +59,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "BRL"
   },
-  "description": "Exercício de 45 segundos no navegador: mantenha o cursor (ou o dedo) sobre um ponto que muda de velocidade e direção. Só a posição do cursor é avaliada; não há medição do olhar por câmera, nem exame de vista ou médico.",
+  "description": "Exercício de 45 segundos no navegador: mantenha o cursor (ou o dedo) sobre um ponto que muda de velocidade e direção. Só a posição do cursor é avaliada; não há medição do olhar por câmera.",
   "featureList": [
     "Rodada fixa de 45 segundos; o ponto muda de velocidade e direção ao acaso e quica nas bordas",
     "Cerca de 1 segundo de cursor sobre o ponto (área de contato generosa): +5 pontos e sequência +1",
@@ -206,7 +206,7 @@ const faqSchema = {
       "name": "Esse treino melhora minha visão ou minha mira?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Uma pontuação maior mostra que você melhorou nesta tarefa. Não há garantia de melhora na visão, em jogos ou esportes, e o exercício não substitui consulta com oftalmologista."
+        "text": "Uma pontuação maior mostra que você melhorou nesta tarefa. Não há garantia de melhora na visão, em jogos ou esportes."
       }
     },
     {
@@ -225,7 +225,7 @@ const guideData = {
   intro: [
     "Na perseguição suave com o cursor você acompanha com o olhar um ponto em movimento durante 45 segundos e mantém o cursor sobre ele. Só conta o tempo em que o cursor fica sobre o ponto; seus olhos não são filmados.",
     "Cada segundo, aproximadamente, de contato contínuo (área generosa) vale +5 pontos e aumenta a sequência. O ponto muda de velocidade e direção sem aviso, quica nas bordas e fica menor e mais rápido conforme a pontuação sobe. Mais de 2 segundos fora só zera a sequência.",
-    "Os olhos acompanham suavemente um objeto lento; se ele é rápido demais, o olhar fica para trás e recupera com pequenos saltos (Krauzlis, 2004). O exercício transforma isso numa tarefa simples de cursor e não mede nem diagnostica a visão ou os movimentos dos olhos."
+    "Os olhos acompanham suavemente um objeto lento; se ele é rápido demais, o olhar fica para trás e recupera com pequenos saltos (Krauzlis, 2004). O exercício transforma isso numa tarefa simples de cursor."
   ],
   benchmarks: {
     "title": "Faixas de treino SkillDrills (só para este exercício, 60 Hz)",

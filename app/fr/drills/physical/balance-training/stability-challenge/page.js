@@ -103,7 +103,7 @@ const guide = {
   intro: [
     'Cet exercice de stabilité de la visée à la souris est simple : un vent dont la direction change au hasard pousse le viseur hors du centre, et vous le ramenez à la souris pour rester dans l’anneau de sécurité. Une partie dure exactement 45 secondes.',
     'Un mouvement de visée rapide se décrit comme un grand déplacement suivi d’une correction fine guidée par la vue (Woodworth, 1899). Ici, vous répétez cette correction sans arrêt, et plus l’anneau est petit, plus elle doit être précise (Fitts, 1954).',
-    'C’est un jeu de stabilité du curseur : il ne mesure ni l’équilibre ni la santé. Comparez vos résultats uniquement avec vos propres parties, sur la même souris, la même sensibilité et le même écran ; fréquence d’affichage et taux d’interrogation influent sur la latence (Woods et al., 2015).',
+    'C’est un jeu de stabilité du curseur. Comparez vos résultats uniquement avec vos propres parties, sur la même souris, la même sensibilité et le même écran ; fréquence d’affichage et taux d’interrogation influent sur la latence (Woods et al., 2015).',
   ],
   benchmarks: {
     title: 'Paliers d’entraînement SkillDrills',

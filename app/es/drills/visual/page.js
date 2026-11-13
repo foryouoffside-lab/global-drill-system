@@ -139,7 +139,7 @@ const faqSchema = {
 
 faqSchema.mainEntity.push(
   { "@type": "Question", "name": "¿Cuántos ejercicios incluye la categoría de entrenamiento visual?", "acceptedAnswer": { "@type": "Answer", "text": "La categoría reúne 9 ejercicios de navegador en tres focos: reacción y control de impulsos, seguimiento y movimiento ocular, y reconocimiento y profundidad. Cada tarjeta abre el ejercicio correspondiente." } },
-  { "@type": "Question", "name": "¿Los ejercicios visuales del navegador sustituyen un examen de la vista?", "acceptedAnswer": { "@type": "Answer", "text": "No. Practican tareas repetibles de tiempo visual, seguimiento, búsqueda y juicio espacial. No diagnostican la vista ni enfermedades oculares y no sustituyen una consulta con un optometrista u oftalmólogo." } }
+  { "@type": "Question", "name": "¿Qué miden los ejercicios visuales del navegador?", "acceptedAnswer": { "@type": "Answer", "text": "Practican tareas repetibles de tiempo visual, seguimiento, búsqueda y juicio espacial. Compara tus puntuaciones en el mismo dispositivo y con la misma configuración." } }
 );
 
 export default function VisualDrillsPage() {

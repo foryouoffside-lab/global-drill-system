@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Teste de Atenção Dividida | Dupla Tarefa | SkillDrills",
-  description: "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa, não é diagnóstico.",
+  description: "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa.",
   keywords: [
     "teste de atencao dividida",
     "atencao dividida exercicios",
@@ -23,7 +23,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Atenção Dividida | Dupla Tarefa | SkillDrills",
-    description: "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa, não é diagnóstico.",
+    description: "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -32,7 +32,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de Atenção Dividida | Dupla Tarefa | SkillDrills",
-    description: "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa, não é diagnóstico.",
+    description: "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +83,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa, não é diagnóstico.",
+  "description": "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa.",
   "url": "https://skilldrills.online/pt/drills/cognitive/attention/divided-attention",
   "publisher": {
     "@type": "Organization",
@@ -116,7 +116,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Jogo de Foco Dividido e Multitarefa Cognitiva",
   "url": "https://skilldrills.online/pt/drills/cognitive/attention/divided-attention",
-  "description": "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa, não é diagnóstico.",
+  "description": "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa.",
   "genre": [
     "Action",
     "Brain Game",
@@ -144,7 +144,7 @@ const faqSchema = {
       "name": "O que é atenção dividida e o que este teste avalia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Atenção dividida é acompanhar duas fontes de informação ao mesmo tempo. Aqui você clica nos alvos azuis que aparecem em posições aleatórias e toca em “Classificar” quando o dígito (0 a 9) do painel lateral é par. É um treino, não um teste clínico nem o exame oficial do Detran."
+        "text": "Atenção dividida é acompanhar duas fontes de informação ao mesmo tempo. Aqui você clica nos alvos azuis que aparecem em posições aleatórias e toca em “Classificar” quando o dígito (0 a 9) do painel lateral é par. É um treino, não o exame oficial do Detran."
       }
     },
     {
@@ -226,7 +226,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Realizar o Teste de Atenção Dividida",
-  "description": "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa, não é diagnóstico.",
+  "description": "Teste de atenção dividida online grátis: clique nos alvos que aparecem e marque os números pares ao mesmo tempo. Treino de dupla tarefa.",
   "step": [
     {
       "@type": "HowToStep",
@@ -264,7 +264,7 @@ const guideProps = {
   intro: {
     title: "Teste de Atenção Dividida: Guia",
     paragraphs: [
-      "Este teste de atenção dividida online grátis pede duas tarefas ao mesmo tempo: clicar nos alvos que aparecem e marcar os números pares. É uma autoavaliação não clínica.",
+      "Este teste de atenção dividida online grátis pede duas tarefas ao mesmo tempo: clicar nos alvos que aparecem e marcar os números pares. É uma autoavaliação.",
       "Os estudos de Harold Pashler (1994) sobre o Período Refratário Psicológico (PRP) descrevem um gargalo central: quando duas respostas precisam ser escolhidas quase ao mesmo tempo, a segunda atrasa.",
       "Inspirado na Teoria dos Múltiplos Recursos de Christopher Wickens (2002), o treino combina uma tarefa espacial (clicar no alvo) com uma numérica (par ou ímpar).",
     ],
@@ -272,7 +272,7 @@ const guideProps = {
   benchmarks: {
     title: 'Faixas de prática SkillDrills (precisão)',
     headers: ['Nível', 'Classificação', 'Faixa de Rendimento', 'Precisão', 'Marcador de prática'],
-    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas.",
+    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população.",
 
     rows: [
       { tier: 'Faixa 1', rank: 'Muito avançada', stat: 'Ritmo muito alto', accuracy: '98%+', marker: 'Ritmo muito alto com alta precisão' },
@@ -340,7 +340,7 @@ export default function EnhancedPagePt() {
           { text: "Ignore os ímpares", highlight: "Sem erro", result: "Não pressione nos ímpares" },
           { text: "Erro / alvo perdido", highlight: "Combo zerado", result: "−1 s" },
         ],
-        aboutTitle: "Sobre atenção dividida e dupla tarefa", aboutLead: "Este é um autocheck cognitivo não clínico que combina clique em alvos com classificação numérica para observar o desempenho dos dois canais.",
+        aboutTitle: "Sobre atenção dividida e dupla tarefa", aboutLead: "Este é um autocheck cognitivo que combina clique em alvos com classificação numérica para observar o desempenho dos dois canais.",
         audienceTitle: "Para quem é", audienceText: "Para jogadores que acompanham minimapa e alvo, estudantes e pessoas que precisam lidar rapidamente com várias entradas.",
         skillsTitle: "Habilidades treinadas", skillsText: "Processamento em dupla tarefa, rastreamento visual, decisão numérica e distribuição da atenção.", flexibilityTitle: "Processamento paralelo", flexibilityText: "Alterne entre os dois fluxos sem deixar a precisão de um canal cair."
       }} />

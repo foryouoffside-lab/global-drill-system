@@ -19,7 +19,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Tabela de Schulte online | Treino de foco | SkillDrills",
-  description: "Tabela de Schulte online grátis: toque os números em ordem crescente por 45 segundos numa grade que cresce de 3x3 a 8x8. Treino de foco, não diagnóstico.",
+  description: "Tabela de Schulte online grátis: toque os números em ordem crescente por 45 segundos numa grade que cresce de 3x3 a 8x8. Treino de foco.",
   keywords: [
     "tabela de schulte",
     "tabela de schulte online",
@@ -239,7 +239,7 @@ const concentrationGridGuidePt = {
     "A tabela de Schulte online da SkillDrills transforma a folha estática em uma rodada contínua de 45 segundos. A grade cresce de 3x3 até 8x8 a cada etapa concluída (7x7 em telas com menos de 380 px), com dígitos levemente girados a partir de 5x5. Assim você pratica percorrer uma área cada vez maior dentro de uma janela fixa de 45 segundos.",
     "Metodologia de mensuração: cada interação é registrada com carimbo de alta precisão através do relógio performance.now() da API do navegador, processado integralmente no dispositivo do usuário — nenhuma pontuação é transmitida externamente. Os cronômetros dos navegadores são deliberadamente discretizados como mitigação de segurança contra vulnerabilidades do tipo Spectre (geralmente em torno de 1 ms), e a exibição quantiza cada transição à taxa de atualização do monitor, correspondendo a aproximadamente 16,7 ms por quadro a 60 Hz (Woods et al., 2015). Para análises comparativas de evolução, preserve as mesmas condições de hardware.",
     "Transparência de dados e privacidade: a SkillDrills não coleta métricas agregadas de desempenho. Seus recordes e configurações permanecem armazenados estritamente no localStorage do seu próprio navegador e nunca são enviados a servidores, de modo que esta plataforma não publica médias globais, percentis ou contagens de usuários. As informações de contexto vêm das fontes listadas; as faixas de pontuação são bandas de prática da SkillDrills, não normas.",
-    "Este treino é um aplicativo web gratuito desenvolvido para fins pedagógicos e aprimoramento reflexivo pessoal. Não constitui dispositivo médico, instrumento clínico de diagnóstico nem ferramenta de triagem ou tratamento para TDAH, dislexia ou qualquer condição neuropsicológica. Caso tenha preocupações clínicas sobre foco, atenção sustentada ou capacidade de memorização, consulte um neuropsicólogo ou médico qualificado."
+    "Este treino é um aplicativo web gratuito desenvolvido para fins pedagógicos e aprimoramento reflexivo pessoal."
   ],
   benchmarks: {
     title: "Tabela de Schulte: faixas de nota (pontos por rodada de 45 s)",

@@ -140,7 +140,7 @@ export default function LocalizedWordRecallPage() {
         "name": "¿Cuántas palabras recuerda una persona de media?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SkillDrills no recoge datos de usuarios, así que no damos medias ni percentiles. Con 2 segundos de exposición y 12 de escritura, este juego no se compara con tests clínicos de listas de palabras. Usa las etapas de práctica de abajo y tus propios récords."
+          "text": "SkillDrills no recoge datos de usuarios, así que no damos medias ni percentiles. Con 2 segundos de exposición y 12 de escritura, este juego no se compara con tests estandarizados de listas de palabras. Usa las etapas de práctica de abajo y tus propios récords."
         }
       },
       {
@@ -188,7 +188,7 @@ export default function LocalizedWordRecallPage() {
         "name": "¿Practicar con palabras mejora la memoria del día a día?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No está garantizado. Con práctica sueles mejorar en este juego, pero la transferencia al día a día es discutida en la investigación. Este test no es diagnóstico; si te preocupa tu memoria, consulta a un médico."
+          "text": "No está garantizado. Con práctica sueles mejorar en este juego, pero la transferencia al día a día es discutida en la investigación."
         }
       },
       {
@@ -242,12 +242,11 @@ export default function LocalizedWordRecallPage() {
   const wordRecallGuide = {
     heading: "Guía del test de memoria con palabras (recuerdo libre)",
     intro: [
-      "El test de memoria con palabras muestra brevemente una lista y después escribes, en cualquier orden, las palabras que recuerdes. Es una versión de práctica del recuerdo libre que estudia la psicología de la memoria y un test de memoria verbal de entrenamiento, no una prueba clínica ni diagnóstica.",
+      "El test de memoria con palabras muestra brevemente una lista y después escribes, en cualquier orden, las palabras que recuerdes. Es una versión de práctica del recuerdo libre que estudia la psicología de la memoria y un test de memoria verbal de entrenamiento.",
       "La investigación con listas de palabras empieza con Hermann Ebbinghaus (1885). Bennet Murdock (1962) describió el efecto de posición serial en el recuerdo libre —el principio y el final de la lista se recuerdan mejor— y Endel Tulving (1962) mostró que las personas agrupan las palabras por su cuenta.",
       "Según los niveles de procesamiento (Craik & Lockhart, 1972), las palabras que se piensan por su significado o se relacionan entre sí tienden a recordarse mejor. Con la exposición corta de este juego, ayuda unir las palabras rápidamente en una escena.",
       "Cómo funciona: empieza con 3 palabras; la lista aparece completa durante 2 segundos. Después tienes 12 segundos para escribir las palabras separadas por espacios o comas y enviar con Enter. Si aciertas todas sin palabras de más: +1 palabra (máximo 12); si falta alguna, hay una errónea o se acaba el tiempo: −1 palabra (mínimo 3). El juego registra puntuación, lista más larga y precisión (porcentaje de rondas acertadas); no mide el tiempo de reacción.",
-      "Transparencia de datos: SkillDrills no recoge resultados en servidores; todo queda en el localStorage de tu navegador. Por eso esta página no muestra medias de usuarios, percentiles ni número de usuarios; los estudios citados aparecen abajo.",
-      "Aviso: este juego de práctica no es un dispositivo médico ni una prueba diagnóstica. Si te preocupa tu memoria, consulta a un médico."
+      "Transparencia de datos: SkillDrills no recoge resultados en servidores; todo queda en el localStorage de tu navegador. Por eso esta página no muestra medias de usuarios, percentiles ni número de usuarios; los estudios citados aparecen abajo."
     ],
     benchmarks: {
       title: "Etapas de práctica del test de memoria con palabras (SkillDrills, 45 s)",

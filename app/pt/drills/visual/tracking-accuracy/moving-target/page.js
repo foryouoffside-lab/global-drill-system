@@ -17,7 +17,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Previsão de Trajetória | Interceptar Alvo Móvel | SkillDrills",
-    description: "Leia a trajetória de uma esfera que quica e clique nela antes que ela salte para outro lugar. Treino grátis no navegador, não é exame médico.",
+    description: "Leia a trajetória de uma esfera que quica e clique nela antes que ela salte para outro lugar. Treino grátis no navegador.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -167,7 +167,7 @@ const faqSchema = {
       "name": "Como funciona o treino de previsão de trajetória de alvo móvel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Uma esfera anda em linha reta pela área de jogo e quica nas bordas. Depois de um curto prazo (cerca de 1 segundo no início), ela salta para outro lugar. Você precisa clicar nela antes. A rodada começa com 45 segundos, cada acerto soma +2 s (máximo 60 s) e ela termina em 0. Não é exame de vista nem avaliação médica."
+        "text": "Uma esfera anda em linha reta pela área de jogo e quica nas bordas. Depois de um curto prazo (cerca de 1 segundo no início), ela salta para outro lugar. Você precisa clicar nela antes. A rodada começa com 45 segundos, cada acerto soma +2 s (máximo 60 s) e ela termina em 0."
       }
     },
     {
@@ -215,7 +215,7 @@ const faqSchema = {
       "name": "Esse treino melhora a minha visão?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Uma pontuação maior mostra que você melhorou nesta tarefa específica. Não há efeito comprovado na acuidade visual, no desempenho esportivo ou em outras tarefas, e o exercício não substitui uma consulta com oftalmologista."
+        "text": "Uma pontuação maior mostra que você melhorou nesta tarefa específica. Não há efeito comprovado na acuidade visual, no desempenho esportivo ou em outras tarefas."
       }
     },
     {

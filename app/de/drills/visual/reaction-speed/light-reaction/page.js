@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Reaktionstest online: Reaktionszeit in ms messen",
-  description: "Kostenloser Reaktionstest: Klicke, sobald das Licht aufblitzt, und miss deine Reaktionszeit in Millisekunden. Zum Üben, kein MPU- oder medizinischer Test.",
+  description: "Kostenloser Reaktionstest: Klicke, sobald das Licht aufblitzt, und miss deine Reaktionszeit in Millisekunden. Zum Üben.",
   keywords: [
     "Reaktionstest",
     "Reaktionstest online",
@@ -187,7 +187,7 @@ const faqSchema = {
 const lightReactionGuide = {
   heading: "Reaktionstest online: So misst du deine Reaktionszeit",
   intro: [
-    "Dieser Reaktionstest misst, wie schnell du auf ein Lichtsignal reagierst: Der Kreis in der Mitte blitzt nach einer zufälligen Wartezeit weiß auf, und du klickst oder tippst so schnell wie möglich. Das Ergebnis ist deine einfache visuelle Reaktionszeit in Millisekunden, gemessen im Browser. Mehrere Versuche hintereinander zeigen deinen Durchschnitt und wie gleichmäßig du reagierst. Der Test ist kostenlos, braucht keine Anmeldung und ist ein Übungswerkzeug, kein MPU- oder medizinischer Test.",
+    "Dieser Reaktionstest misst, wie schnell du auf ein Lichtsignal reagierst: Der Kreis in der Mitte blitzt nach einer zufälligen Wartezeit weiß auf, und du klickst oder tippst so schnell wie möglich. Das Ergebnis ist deine einfache visuelle Reaktionszeit in Millisekunden, gemessen im Browser. Mehrere Versuche hintereinander zeigen deinen Durchschnitt und wie gleichmäßig du reagierst. Der Test ist kostenlos, braucht keine Anmeldung und ist ein Übungswerkzeug.",
     "Die neuromuskuläre Kaskade umfasst vier distinkte physiologische Phasen: (1) retinale Fototransduktion (~20–40 ms für Rhodopsin-Isomerisierung), (2) afferente Weiterleitung über die Sehbahn zum primären visuellen Kortex V1 (~30–50 ms), (3) kortikale Wahrnehmungs- und Bewegungsvorbereitung im motorischen Kortex (~50–80 ms), und (4) efferente Weiterleitung über die Pyramidenbahn zur Fingermuskulatur (~30–50 ms), was den typischen gesunden Standardbereich von 200–250 ms begründet (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
     "Gemäß dem Piéron-Gesetz (Piéron, 1952; Pins & Bonnet, 1996) verkürzt sich die Reaktionszeit als hyperbolische Funktion der Stimulus-Leuchtdichte über den Hintergrundkontrast. Dieser Drill maximiert den Effekt durch einen schneeweißen Strobe-Blitz vor tiefschwarzem Hintergrund, um die maximale Ganglienzellen-Depolarisation zu erzeugen. Erkenntnisse zur räumlichen Aufmerksamkeit (Posner, 1980) und E-Sport-Reaktionsstudien (Dye et al., 2009) belegen die Trainierbarkeit dieses Systems.",
     "Messmethodik & Hardware-Standardisierung: Alle Reize und Tastenfreigaben werden hochpräzise mit der browserinternen performance.now() API erfasst. Hardware-Latenzen durch Monitor-Quantisierung und USB-Abtastung werden nach Woods et al. (2015) berücksichtigt, während alle Daten ausschließlich lokal auf dem Endgerät gespeichert werden."

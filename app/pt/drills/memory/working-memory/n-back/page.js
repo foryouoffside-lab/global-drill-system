@@ -183,10 +183,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Meus resultados são salvos? Têm valor médico?",
+      "name": "Meus resultados são salvos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A melhor pontuação e o nível máximo ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. São marcas de treino e não diagnosticam problemas de memória de trabalho nem TDAH."
+        "text": "A melhor pontuação e o nível máximo ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. São marcas de treino."
       }
     }
   ]
@@ -230,8 +230,7 @@ const guidePt = {
     "O teste N-Back online é um treino grátis de memória de trabalho no navegador: letras aparecem uma a uma e você indica se cada uma é igual à de exatamente N passos atrás. Como é preciso guardar as últimas N letras e atualizar a lista a cada nova letra, a tarefa exige sobretudo a atualização da memória de trabalho (Kirchner, 1958).",
     "O teste começa no 3-back. As 3 primeiras letras são só para memorizar; depois, você responde 'Igual' ou 'Diferente' a cada letra. Cada acerto vale +150 pontos e a cada 1.200 pontos (8 acertos) o nível sobe para 4-back, 5-back e assim por diante. A janela de resposta começa em 2 segundos e diminui 0,1 segundo por nível, até 1,2 segundo.",
     "A sessão dura 45 segundos; o relógio fica parado enquanto você memoriza as primeiras letras. Erros e falta de resposta não custam pontos nem tempo e não fazem o nível cair: só contam como falha na precisão. É um N-Back simples com letras, não um teste dual N-Back (posição + som). Resposta por clique ou toque nos botões.",
-    "Transparência de dados: os resultados ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. Por isso o SkillDrills não publica médias de usuários nem rankings.",
-    "Esta ferramenta é um jogo grátis de treino no navegador. Não é um dispositivo médico nem uma ferramenta de diagnóstico, e os resultados não indicam problemas de memória, TDAH ou QI."
+    "Transparência de dados: os resultados ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. Por isso o SkillDrills não publica médias de usuários nem rankings."
   ],
   benchmarks: {
     title: "Faixas de treino SkillDrills (pontos = acertos × 150)",
@@ -242,7 +241,7 @@ const guidePt = {
       ["Intermediário", "8–15", "1.200–2.250", "4-back alcançado, janela de 1,9 s"],
       ["Avançado", "16+", "2.400+", "5-back ou mais, janela de 1,8 s ou menos"]
     ],
-    note: "Estas faixas são calculadas a partir das regras de pontuação do jogo; não são normas populacionais nem limites clínicos."
+    note: "Estas faixas são calculadas a partir das regras de pontuação do jogo; não são normas populacionais."
   },
   techniques: {
     title: "Dicas para o teste N-Back",

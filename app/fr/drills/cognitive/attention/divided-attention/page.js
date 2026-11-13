@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test d’attention divisée | Double tâche | SkillDrills",
-  description: "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche, non clinique.",
+  description: "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche.",
   keywords: [
     "test attention divisee",
     "attention partagee exercices",
@@ -23,7 +23,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test d’attention divisée | Double tâche | SkillDrills",
-    description: "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche, non clinique.",
+    description: "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -32,7 +32,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test d’attention divisée | Double tâche | SkillDrills",
-    description: "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche, non clinique.",
+    description: "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +83,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche, non clinique.",
+  "description": "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche.",
   "url": "https://skilldrills.online/fr/drills/cognitive/attention/divided-attention",
   "publisher": {
     "@type": "Organization",
@@ -116,7 +116,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Jeu de Double Focalisation et Multitâche",
   "url": "https://skilldrills.online/fr/drills/cognitive/attention/divided-attention",
-  "description": "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche, non clinique.",
+  "description": "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche.",
   "genre": [
     "Action",
     "Brain Game",
@@ -144,7 +144,7 @@ const faqSchema = {
       "name": "Qu'est-ce que l'attention divisée et que mesure ce test ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L'attention divisée consiste à suivre deux sources d'information à la fois. Ici, vous cliquez les cibles bleues qui apparaissent à des endroits aléatoires et vous appuyez sur « Valider » quand le chiffre (0 à 9) du panneau latéral est pair. C'est un exercice d'entraînement, pas un test clinique."
+        "text": "L'attention divisée consiste à suivre deux sources d'information à la fois. Ici, vous cliquez les cibles bleues qui apparaissent à des endroits aléatoires et vous appuyez sur « Valider » quand le chiffre (0 à 9) du panneau latéral est pair."
       }
     },
     {
@@ -226,7 +226,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Comment Réaliser le Test d Attention Divisée",
-  "description": "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche, non clinique.",
+  "description": "Test d’attention divisée gratuit : cliquez les cibles qui apparaissent et validez en même temps les nombres pairs. Exercice de double tâche.",
   "step": [
     {
       "@type": "HowToStep",
@@ -264,7 +264,7 @@ const guideProps = {
   intro: {
     title: "Test d’attention divisée : guide",
     paragraphs: [
-      "Ce test d’attention divisée gratuit vous fait gérer deux tâches à la fois : cliquer les cibles qui apparaissent et valider les nombres pairs. C’est une auto-évaluation non clinique.",
+      "Ce test d’attention divisée gratuit vous fait gérer deux tâches à la fois : cliquer les cibles qui apparaissent et valider les nombres pairs. C’est une auto-évaluation.",
       "Les travaux de Harold Pashler (1994) sur la période réfractaire psychologique (PRP) décrivent un goulot d’étranglement central : quand deux réponses doivent être choisies presque en même temps, la seconde est retardée.",
       "En s’inspirant de la théorie des ressources multiples de Christopher Wickens (2002), l’exercice associe une tâche spatiale (cliquer la cible) à une tâche numérique (pair ou impair).",
     ],
@@ -272,7 +272,7 @@ const guideProps = {
   benchmarks: {
     title: 'Paliers de pratique SkillDrills (précision)',
     headers: ['Niveau', 'Rang', 'Performance', 'Exactitude', 'Repère de pratique'],
-    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques.",
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population.",
 
     rows: [
       { tier: 'Palier 1', rank: 'Très avancé', stat: 'Rythme très élevé', accuracy: '98%+', marker: 'Rythme très élevé et précis' },
@@ -340,7 +340,7 @@ export default function EnhancedPageFr() {
           { text: "Ignorez les impairs", highlight: "Sans erreur", result: "Ne touchez pas aux impairs" },
           { text: "Erreur / oubli", highlight: "Combo perdu", result: "−1 s" },
         ],
-        aboutTitle: "À propos de l’attention divisée et de la double tâche", aboutLead: "Cet auto-test cognitif non clinique associe clic sur cible et classement numérique pour observer la stabilité des deux canaux.",
+        aboutTitle: "À propos de l’attention divisée et de la double tâche", aboutLead: "Cet auto-test cognitif associe clic sur cible et classement numérique pour observer la stabilité des deux canaux.",
         audienceTitle: "Pour qui", audienceText: "Pour les joueurs qui surveillent une mini-carte et une cible, les apprenants et les personnes qui traitent plusieurs entrées rapidement.",
         skillsTitle: "Compétences travaillées", skillsText: "Traitement en double tâche, suivi visuel, décision numérique et partage de l’attention.", flexibilityTitle: "Traitement parallèle", flexibilityText: "Passez d’un flux à l’autre sans laisser la précision d’un canal s’effondrer."
       }} />

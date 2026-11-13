@@ -59,7 +59,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "45-Sekunden-Browser-Übung: Halte den Mauszeiger (oder Finger) auf einem Punkt, der Tempo und Richtung wechselt. Gewertet wird nur die Cursorposition; keine Kamera-Blickmessung, kein Seh- oder medizinischer Test.",
+  "description": "45-Sekunden-Browser-Übung: Halte den Mauszeiger (oder Finger) auf einem Punkt, der Tempo und Richtung wechselt. Gewertet wird nur die Cursorposition; keine Kamera-Blickmessung.",
   "featureList": [
     "Feste 45-Sekunden-Runde; der Punkt ändert zufällig Tempo und Richtung und prallt von den Rändern ab",
     "Je ca. 1 Sekunde Cursor auf dem Punkt (großzügige Trefferzone): +5 Punkte und Serie +1",
@@ -225,7 +225,7 @@ const guideData = {
   intro: [
     "Bei dieser Übung zur glatten Blickfolge (Smooth Pursuit) verfolgst du 45 Sekunden lang einen umherwandernden Punkt mit den Augen und hältst den Mauszeiger darauf. Gewertet wird nur, wie lange der Cursor auf dem Punkt bleibt; deine Augen werden nicht per Kamera erfasst.",
     "Bleibt der Cursor etwa 1 Sekunde ohne Unterbrechung auf dem Punkt (großzügige Trefferzone), gibt es +5 Punkte und die Serie steigt. Der Punkt wechselt ohne Vorwarnung Tempo und Richtung, prallt von den Rändern ab und wird mit steigender Punktzahl kleiner und schneller. Mehr als 2 Sekunden daneben setzt nur die Serie zurück.",
-    "Langsamen Objekten folgen die Augen gleitend; sind sie zu schnell, fällt der Blick zurück und holt mit kurzen Sprüngen auf (Krauzlis, 2004). Die Übung macht daraus eine einfache Cursor-Aufgabe und misst oder diagnostiziert weder Sehschärfe noch Augenbewegungen."
+    "Langsamen Objekten folgen die Augen gleitend; sind sie zu schnell, fällt der Blick zurück und holt mit kurzen Sprüngen auf (Krauzlis, 2004). Die Übung macht daraus eine einfache Cursor-Aufgabe."
   ],
   benchmarks: {
     "title": "SkillDrills-Übungsstufen (nur für diese Übung, 60 Hz)",

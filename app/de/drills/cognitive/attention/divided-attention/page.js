@@ -7,13 +7,13 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test der geteilten Aufmerksamkeit | SkillDrills",
-  description: "Kostenloser Test der geteilten Aufmerksamkeit: Klicke auftauchende Ziele an und prüfe gleichzeitig, ob die Zahl gerade ist. Dual-Task-Übung, keine Diagnose.",
+  description: "Kostenloser Test der geteilten Aufmerksamkeit: Klicke auftauchende Ziele an und prüfe gleichzeitig, ob die Zahl gerade ist. Eine Dual-Task-Übung.",
   keywords: ["Test der geteilten Aufmerksamkeit", "geteilte Aufmerksamkeit Test", "Dual-Task-Test", "Dual Task Training", "Multitasking Aufmerksamkeit", "geteilte Aufmerksamkeit Übungen", "kognitiver Engpass", "visuelles Multitasking", "Gehirntraining Dual Task", "Konzentrationstest",
     "dual task test online",
     "geteilte aufmerksamkeit aufgaben"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test der geteilten Aufmerksamkeit | SkillDrills",
-    description: "Kostenloser Test der geteilten Aufmerksamkeit: Klicke auftauchende Ziele an und prüfe gleichzeitig, ob die Zahl gerade ist. Dual-Task-Übung, keine Diagnose.",
+    description: "Kostenloser Test der geteilten Aufmerksamkeit: Klicke auftauchende Ziele an und prüfe gleichzeitig, ob die Zahl gerade ist. Eine Dual-Task-Übung.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test der geteilten Aufmerksamkeit | SkillDrills",
-    description: "Kostenloser Test der geteilten Aufmerksamkeit: Klicke auftauchende Ziele an und prüfe gleichzeitig, ob die Zahl gerade ist. Dual-Task-Übung, keine Diagnose.",
+    description: "Kostenloser Test der geteilten Aufmerksamkeit: Klicke auftauchende Ziele an und prüfe gleichzeitig, ob die Zahl gerade ist. Eine Dual-Task-Übung.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -73,7 +73,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht. Keine klinische Diagnose.",
+  "description": "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht.",
   "url": "https://skilldrills.online/de/drills/cognitive/attention/divided-attention",
   "publisher": {
     "@type": "Organization",
@@ -106,7 +106,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Geteilte Aufmerksamkeit – Dual-Task Zielverfolgungs-Spiel",
   "url": "https://skilldrills.online/de/drills/cognitive/attention/divided-attention",
-  "description": "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht. Keine klinische Diagnose.",
+  "description": "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht.",
   "genre": [
     "Action",
     "Brain Game",
@@ -134,7 +134,7 @@ const faqSchema = {
       "name": "Was ist geteilte Aufmerksamkeit und wie läuft der Test ab?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Geteilte Aufmerksamkeit heißt, zwei Informationsquellen gleichzeitig zu beachten. Hier klickst du blaue Ziele an, die an zufälligen Stellen auftauchen, und drückst „Prüfen“, wenn die Zahl (0–9) im Seitenfeld gerade ist. Es ist eine Übung, kein klinischer Test."
+        "text": "Geteilte Aufmerksamkeit heißt, zwei Informationsquellen gleichzeitig zu beachten. Hier klickst du blaue Ziele an, die an zufälligen Stellen auftauchen, und drückst „Prüfen“, wenn die Zahl (0–9) im Seitenfeld gerade ist."
       }
     },
     {
@@ -216,7 +216,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Geteilte Aufmerksamkeit Test",
-  "description": "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht. Keine klinische Diagnose.",
+  "description": "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht.",
   "step": [
     {
       "@type": "HowToStep",
@@ -254,7 +254,7 @@ const guideProps = {
   intro: {
     title: "Test der geteilten Aufmerksamkeit: Anleitung",
     paragraphs: [
-      "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht. Keine klinische Diagnose.",
+      "Kostenloser Test der geteilten Aufmerksamkeit (Dual-Task): Klicke blaue Ziele an, die an zufälligen Stellen auftauchen, und drücke gleichzeitig „Prüfen“, wenn im Zahlenstrom eine gerade Zahl steht.",
       "Die Verzögerung der zweiten Reaktion, wenn zwei Reize sehr kurz nacheinander folgen – erklärt durch einen zentralen Verarbeitungsengpass.",
       "Aufgaben teilen sich Aufmerksamkeit besser, wenn sie unterschiedliche Sinneskanäle und Kodes ansprechen (z. B. räumlich-visuell vs. numerisch-verbal).",
     ],
@@ -329,7 +329,7 @@ export default function LocalizedCognitivePage() {
           { text: "Ungerade ignorieren", highlight: "Keine Fehlklicks", result: "Bei ungeraden Zahlen nicht klicken" },
           { text: "Fehler / verpasst", highlight: "Combo weg", result: "−1 s" },
         ],
-        aboutTitle: "Geteilte Aufmerksamkeit und Dual-Task-Training", aboutLead: "Dieser nicht-klinische Selbstcheck verbindet das Anklicken visueller Ziele mit Zahlenklassifikation und zeigt, wie stabil beide Kanäle zusammen funktionieren.",
+        aboutTitle: "Geteilte Aufmerksamkeit und Dual-Task-Training", aboutLead: "Dieser Selbstcheck verbindet das Anklicken visueller Ziele mit Zahlenklassifikation und zeigt, wie stabil beide Kanäle zusammen funktionieren.",
         audienceTitle: "Für wen geeignet", audienceText: "Für Gamer mit Minimap- und Zielaufgaben, Lernende und Menschen, die mehrere Eingaben schnell verarbeiten möchten.",
         skillsTitle: "Trainierte Fähigkeiten", skillsText: "Dual-Task-Verarbeitung, visuelles Tracking, Zahlenentscheidung und Aufmerksamkeitsverteilung.", flexibilityTitle: "Parallele Verarbeitung", flexibilityText: "Wechsle zwischen beiden Informationsströmen, ohne die Genauigkeit eines Kanals zu vernachlässigen."
       }} />

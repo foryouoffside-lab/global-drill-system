@@ -109,7 +109,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "O que é um teste de memória espacial de localização de objetos?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "É um jogo de treino gratuito de memória de localização de objetos: você memoriza qual objeto estava em qual célula e depois encontra a posição de um objeto pedido. Não é uma avaliação neuropsicológica, um psicotécnico nem um teste do Detran; a pontuação é só uma referência pessoal de treino."
+                  "text": "É um jogo de treino gratuito de memória de localização de objetos: você memoriza qual objeto estava em qual célula e depois encontra a posição de um objeto pedido. Não é um psicotécnico nem um teste do Detran; a pontuação é só uma referência pessoal de treino."
             }
       },
       {
@@ -141,7 +141,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "Como a pontuação é calculada?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Cada posição-alvo encontrada vale 150 pontos. A nota na tela de resultado é uma faixa de treino do SkillDrills com 1.000 pontos no topo da escala; não é média nem norma clínica."
+                  "text": "Cada posição-alvo encontrada vale 150 pontos. A nota na tela de resultado é uma faixa de treino do SkillDrills com 1.000 pontos no topo da escala; não é uma média."
             }
       },
       {
@@ -234,8 +234,7 @@ export default function LocalizedObjectLocationPage() {
       "A base científica dessa avaliação remonta ao trabalho pioneiro de Marion Eals e Irwin Silverman (1994), que comprovaram que a memória para localização de objetos constitui uma adaptação evolutiva distinta da rotação espacial geométrica. Este jogo não é a tarefa de pesquisa deles, e sim um exercício de formato parecido. Antes disso, Edward C. Tolman (1948) concebeu a noção de mapa cognitivo (Cognitive Map), demonstrando como os organismos erguem maquetes espaciais internas do meio exterior.",
       "Na arquitetura da memória operacional, Robert H. Logie (1995) e Alan Baddeley (2000) comprovaram que o pareamento objeto-posição é orquestrado pelo buffer episódico (Episodic Buffer), que junta os sinais do cache visual (as identidades dos itens) com o escriba interno (o mapa das coordenadas). Steven J. Luck e Edward K. Vogel (1997) evidenciaram o alto custo atencional da fusão de atributos, e Nelson Cowan (2001) estimou a capacidade do foco da memória operacional em cerca de 3 a 4 itens.",
       "Como funciona: a disposição fica visível por 1,5 segundo e depois você tem 8 segundos para responder. Um acerto vale 150 pontos e sobe um nível; um erro ou tempo esgotado encerra a rodada sem perder pontos, e vem uma nova disposição no mesmo nível. A partida dura 45 segundos no total; tempo de reação não é medido.",
-      "Dados: sua pontuação e seu recorde ficam apenas no localStorage do navegador e não são enviados a servidores.",
-      "Este aplicativo é um jogo web gratuito voltado a treino e curiosidade pessoal. Não substitui exames médicos nem tem valor de diagnóstico clínico. Se você tiver apreensões quanto à sua retenção de memória, procure avaliação médica profissional especializada."
+      "Dados: sua pontuação e seu recorde ficam apenas no localStorage do navegador e não são enviados a servidores."
 ],
     benchmarks: {
       title: "Faixas de treino SkillDrills (uma partida)",
@@ -246,7 +245,7 @@ export default function LocalizedObjectLocationPage() {
         ["Faixa inicial", "150 – 450", "1 – 3", "Nível 2 a 4, 3 a 5 objetos, grade 3x3"],
         ["Início", "0", "0", "Nível 1, 2 objetos, grade 3x3"]
       ],
-      note: "Pontos = acertos × 150. As faixas são calculadas a partir das regras do jogo: são referências de treino do SkillDrills, não estatísticas populacionais nem normas clínicas."
+      note: "Pontos = acertos × 150. As faixas são calculadas a partir das regras do jogo: são referências de treino do SkillDrills, não estatísticas populacionais."
     },
     techniques: {
       title: "Estratégias cientificamente respaldadas para expandir a memória espacial",

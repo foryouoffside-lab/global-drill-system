@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Lecture rapide en ligne : entraînement RSVP | SkillDrills",
-  description: "Entraînement RSVP gratuit : repérez un mot cible dans un flux de 250 à 850 MPM, au même point de l’écran. Ni test de compréhension ni test clinique.",
+  description: "Entraînement RSVP gratuit : repérez un mot cible dans un flux de 250 à 850 MPM, au même point de l’écran. Ce n’est pas un test de compréhension.",
   keywords: ["lecture rapide en ligne", "lecture rapide", "RSVP", "vitesse de lecture", "mots par minute", "entraînement lecture rapide"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Lecture rapide en ligne : entraînement RSVP | SkillDrills",
-    description: "Entraînement RSVP gratuit : repérez un mot cible dans un flux de 250 à 850 MPM, au même point de l’écran. Ni test de compréhension ni test clinique.",
+    description: "Entraînement RSVP gratuit : repérez un mot cible dans un flux de 250 à 850 MPM, au même point de l’écran. Ce n’est pas un test de compréhension.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Lecture rapide en ligne : entraînement RSVP | SkillDrills",
-    description: "Entraînement RSVP gratuit : repérez un mot cible dans un flux de 250 à 850 MPM, au même point de l’écran. Ni test de compréhension ni test clinique.",
+    description: "Entraînement RSVP gratuit : repérez un mot cible dans un flux de 250 à 850 MPM, au même point de l’écran. Ce n’est pas un test de compréhension.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -253,7 +253,7 @@ const guideProps = {
   intro: {
     title: "Lecture rapide RSVP : comment fonctionne l’entraînement",
     paragraphs: [
-      "La lecture rapide en RSVP consiste à voir les mots défiler un par un au même endroit. Dans cet exercice gratuit, vous repérez un mot cible dans un flux de 250 à 850 mots par minute (MPM) et vous suivez votre score et votre exactitude. Ce n’est pas un test de compréhension ni un test médical.",
+      "La lecture rapide en RSVP consiste à voir les mots défiler un par un au même endroit. Dans cet exercice gratuit, vous repérez un mot cible dans un flux de 250 à 850 mots par minute (MPM) et vous suivez votre score et votre exactitude. Ce n’est pas un test de compréhension.",
       "Le RSVP est un paradigme de recherche sur la lecture : en affichant chaque mot au même endroit, on supprime les déplacements des yeux le long de la ligne. En lecture classique, les saccades et les fixations occupent une part importante du temps (Rayner, 1998, 2016).",
       "Chaque mot est affiché avec sa lettre ORP, le point où la reconnaissance est la plus aisée. Les MPM décrivent la cadence d’affichage ; la latence de l’écran et de l’appareil influence aussi le résultat (Woods et al., 2015). Le texte affiché est en anglais, et une cadence élevée ne garantit pas une bonne compréhension.",
     ],
@@ -268,7 +268,7 @@ const guideProps = {
       { tier: 'Palier 4', rank: 'Intermédiaire', stat: 'Niveau 2 (350 MPM)', accuracy: '75-84%', marker: 'En progression' },
       { tier: 'Palier 5', rank: 'Débutant', stat: 'Niveau 1 (250 MPM)', accuracy: '< 75%', marker: 'Point de départ' },
     ],
-    note: 'Paliers d’entraînement définis par SkillDrills, sans statistiques d’utilisateurs ni valeur clinique.',
+    note: 'Paliers d’entraînement définis par SkillDrills, sans statistiques d’utilisateurs.',
   },
   protocols: {
     title: 'Quatre conseils pour suivre le flux de mots',

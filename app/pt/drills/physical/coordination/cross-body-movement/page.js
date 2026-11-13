@@ -61,8 +61,8 @@ const faqItems = [
     "a": "Exatamente 45 segundos; o nível recomeça em 1 a cada rodada."
   },
   {
-    "q": "Este jogo avalia a coordenação de uma criança?",
-    "a": "Não. É um jogo de prática de controle do mouse, não uma avaliação de desenvolvimento ou de habilidades motoras e não substitui acompanhamento profissional."
+    "q": "Como não sair do corredor?",
+    "a": "Olhe o nó do outro lado antes de tocar o nó inicial e mantenha um ritmo calmo e uniforme. Com 4 px de tolerância nos níveis altos, um pouco menos de velocidade ajuda a manter a sequência."
   },
   {
     "q": "Funciona no celular?",
@@ -115,7 +115,7 @@ const guide = {
   "heading": "Coordenação Mão-Olho: como jogar e dicas",
   "intro": [
     "Coordenação Mão-Olho é um jogo gratuito no navegador em que você guia o cursor com precisão por um corredor estreito. Toque o nó ciano numa borda da tela e siga pela linha até o nó magenta do lado oposto. Na prática, é traçar diagonais sem sair do corredor; se sair, a tentativa termina e um novo par de nós aparece.",
-    "Cada rodada dura 45 segundos e o nível começa em 1. Conforme o nível sobe, a tolerância do corredor cai de 10 px para 4 px, o raio dos nós de 16 px para 8 px, e os nós vão para as bordas. A dificuldade segue a ideia da lei de Fitts (Fitts, 1954): quanto mais longo o trajeto e menor o alvo, mais difícil o movimento. É um jogo de prática de controle do mouse, não uma avaliação de coordenação nem uma terapia."
+    "Cada rodada dura 45 segundos e o nível começa em 1. Conforme o nível sobe, a tolerância do corredor cai de 10 px para 4 px, o raio dos nós de 16 px para 8 px, e os nós vão para as bordas. A dificuldade segue a ideia da lei de Fitts (Fitts, 1954): quanto mais longo o trajeto e menor o alvo, mais difícil o movimento. É um jogo de prática de controle do mouse."
   ],
   "techniques": {
     "title": "Dicas para não sair do corredor",

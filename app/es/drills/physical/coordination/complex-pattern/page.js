@@ -115,7 +115,7 @@ const guide = {
   heading: 'Juego de memoria visual: instrucciones y consejos',
   intro: [
     'Este juego de memoria visual gratis consiste en memorizar y trazar patrones: una ruta aparece un instante, la memorizas y luego la vuelves a dibujar con el ratón. Cuando la ruta desaparece, empiezas en el nodo cian, recorres los puntos en el orden recordado y sueltas el botón en el nodo final magenta. La cercanía de tu línea al original se calcula como porcentaje de similitud.',
-    'Una ronda dura 45 segundos. El nivel empieza en 1 y sube con los puntos y las rachas; hacia el nivel 15 el juego llega a 8 puntos, 0,6 segundos de visualización y un 85 % de similitud exigida. Como referencia para la dificultad se usaron el modelo de memoria de trabajo con su agenda visoespacial (Baddeley y Hitch, 1974) y los estudios que sitúan su capacidad en unas cuatro unidades (Cowan, 2001). Es un ejercicio de práctica, no un test de memoria con diagnóstico ni baremos.',
+    'Una ronda dura 45 segundos. El nivel empieza en 1 y sube con los puntos y las rachas; hacia el nivel 15 el juego llega a 8 puntos, 0,6 segundos de visualización y un 85 % de similitud exigida. Como referencia para la dificultad se usaron el modelo de memoria de trabajo con su agenda visoespacial (Baddeley y Hitch, 1974) y los estudios que sitúan su capacidad en unas cuatro unidades (Cowan, 2001). Es un ejercicio de práctica.',
   ],
   techniques: {
     title: 'Consejos para trazar con más precisión',

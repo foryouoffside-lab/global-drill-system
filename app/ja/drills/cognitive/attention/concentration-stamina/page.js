@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "集中力テスト | 持続的注意の測定 | SkillDrills",
-  description: "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを確認。医療診断ではないセルフチェックです。",
+  description: "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを確認。",
   keywords: ["集中力テスト", "集中力テスト 無料", "集中力 測定", "持続的注意 テスト", "注意力 テスト", "ビジランス テスト", "集中力 ゲーム", "抑制機能 テスト", "集中力 トレーニング", "集中力テスト ブラウザ", "CPTテスト オンライン"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "集中力テスト | 持続的注意の測定 | SkillDrills",
-    description: "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを確認。医療診断ではないセルフチェックです。",
+    description: "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを確認。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "集中力テスト | 持続的注意の測定 | SkillDrills",
-    description: "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを確認。医療診断ではないセルフチェックです。",
+    description: "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを確認。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "description": "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを記録する非臨床セルフチェックです。",
+  "description": "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを記録するセルフチェックです。",
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/concentration-stamina",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "集中力テスト – 持続的注意＆抑制コントロールゲーム",
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/concentration-stamina",
-  "description": "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを記録する非臨床セルフチェックです。",
+  "description": "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを記録するセルフチェックです。",
   "genre": [
     "Action",
     "Brain Game",
@@ -132,7 +132,7 @@ const faqSchema = {
       "name": "集中力持続テスト（Concentration Stamina / CPT）とは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "次々と表示される文字・数字の中から、現在のルール（母音または素数）に合うものだけに反応し、それ以外は見送る CPT（持続遂行課題）形式の練習です。1回45秒で、医療用の標準検査や診断ツールではありません。"
+        "text": "次々と表示される文字・数字の中から、現在のルール（母音または素数）に合うものだけに反応し、それ以外は見送る CPT（持続遂行課題）形式の練習です。1回45秒です。"
       }
     },
     {
@@ -214,7 +214,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "集中力テスト・持続的注意測定",
-      "description": "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを記録する非臨床セルフチェックです。",
+      "description": "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを記録するセルフチェックです。",
   "step": [
     {
       "@type": "HowToStep",
@@ -252,7 +252,7 @@ const guideProps = {
   intro: {
     title: "集中力テストと持続的注意の測定ガイド",
     paragraphs: [
-      "この無料ブラウザ集中力テストは、45秒間に点滅する文字・数字への持続的注意、誤反応の抑制、ルール切り替えを記録する非臨床のセルフチェックです。結果は体調や慣れに左右され、医学的診断の代わりにはなりません。",
+      "この無料ブラウザ集中力テストは、45秒間に点滅する文字・数字への持続的注意、誤反応の抑制、ルール切り替えを記録するセルフチェックです。結果は体調や慣れに左右されます。",
       "レーダー監視の研究（Mackworth, 1948）で、まれな信号を長く監視するほど検出精度が下がるビジランス低下が報告されました。このドリルは1回45秒と短いため、その現象を再現するというより、速い刺激の中で集中を保つ練習です。",
       "10秒ごとに標的ルールが母音（A E I O U）と素数（2 3 5 7）の間で切り替わるため、新しい基準へ素早く切り替えるタスク切り替え（Monsell, 2003）を練習できます。",
     ],
@@ -316,11 +316,11 @@ export default function LocalizedCognitivePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <ConcentrationStaminaClient copy={{
-        title: "集中力テスト | 持続的注意の測定", subtitle: "持続集中・標的判別・誤反応の抑制を記録する非臨床セルフチェック",
+        title: "集中力テスト | 持続的注意の測定", subtitle: "持続集中・標的判別・誤反応の抑制を記録するセルフチェック",
         statScore: "スコア", statTime: "残り時間", statLevel: "レベル", statBest: "自己ベスト", ruleLabel: "ルール", vowels: "母音 (A E I O U)", primes: "素数 (2 3 5 7)",
         startTitle: "集中力テスト", startSubtitle: "持続的注意 • CPT方式の集中トレーニング", getReady: "準備してください", flashTitle: "ミス表示", soundTitle: "サウンド", newBest: "自己ベスト", points: "ポイント", accuracy: "正答率", misses: "ミス", peakLevel: "最高レベル", playAgain: "もう一度", shareScore: "スコアを共有", exitDrill: "終了",
         caption: "現在のルールに合う刺激だけへ素早く反応し、ルール切り替え時は不要な刺激を抑えてください。", rulesTitle: "ルールとスコア計算", ruleItems: [{ text: "標的ルール", highlight: "10秒ごとに切替", result: "母音 ↔ 素数" }, { text: "標的ヒット", highlight: "+100点", result: "クリック・タップ / Space・Enter" }, { text: "非標的", highlight: "抑制", result: "不一致は無視" }, { text: "誤反応", highlight: "1秒入力ロック", result: "正答率に反映" }],
-        aboutTitle: "集中力テストについて", aboutLead: "まれな信号を長く監視すると持続的注意は低下することがあります。この練習は短いセッションでルール切り替え、標的判別、誤反応を記録するセルフチェックです。", aboutText: "持続的注意とは、繰り返し現れる刺激から重要な信号を選び続ける力です。同じ条件で繰り返し、スコアとミスの変化を確認しましょう。\n\n睡眠、疲労、画面環境、慣れで結果は変わるため、医学的な診断結果として扱わないでください。", audienceTitle: "どんな人に向いていますか？", audienceText: "長時間の試験を準備する人、試合後半も精度を保ちたいゲーマー、持続的な集中が必要な仕事をする人に向いています。", skillsTitle: "鍛えられる力", skillsText: "持続的注意、標的判別、疲労下の警戒、誤反応の抑制を練習します。", flexibilityTitle: "認知の柔軟性", flexibilityText: "10秒ごとに母音と素数の基準が変わり、刺激を新しいルールで分類する切り替え力を鍛えます。"
+        aboutTitle: "集中力テストについて", aboutLead: "まれな信号を長く監視すると持続的注意は低下することがあります。この練習は短いセッションでルール切り替え、標的判別、誤反応を記録するセルフチェックです。", aboutText: "持続的注意とは、繰り返し現れる刺激から重要な信号を選び続ける力です。同じ条件で繰り返し、スコアとミスの変化を確認しましょう。\n\n睡眠、疲労、画面環境、慣れで結果は変わります。", audienceTitle: "どんな人に向いていますか？", audienceText: "長時間の試験を準備する人、試合後半も精度を保ちたいゲーマー、持続的な集中が必要な仕事をする人に向いています。", skillsTitle: "鍛えられる力", skillsText: "持続的注意、標的判別、疲労下の警戒、誤反応の抑制を練習します。", flexibilityTitle: "認知の柔軟性", flexibilityText: "10秒ごとに母音と素数の基準が変わり、刺激を新しいルールで分類する切り替え力を鍛えます。"
       }} />
       <DrillGuide {...guideProps} />
       <RelatedDrills />

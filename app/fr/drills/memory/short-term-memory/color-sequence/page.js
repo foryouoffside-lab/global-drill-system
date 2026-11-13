@@ -265,13 +265,12 @@ export default function FrenchColorSequencePage() {
   const frColorSequenceGuide = {
     heading: 'Guide du jeu de couleurs façon Simon et de la mémoire visuelle de travail',
     intro: [
-      'Ce jeu de mémoire façon Simon vous montre une suite de couleurs, une couleur à la fois ; vous la reproduisez dans le bon ordre, et chaque réussite rallonge la suite suivante d’une couleur. Il travaille la mémoire de travail visuelle, dont la capacité tourne autour de 4 éléments (Cowan, 2001). C’est un exercice gratuit dans le navigateur, pas un test médical.',
+      'Ce jeu de mémoire façon Simon vous montre une suite de couleurs, une couleur à la fois ; vous la reproduisez dans le bon ordre, et chaque réussite rallonge la suite suivante d’une couleur. Il travaille la mémoire de travail visuelle, dont la capacité tourne autour de 4 éléments (Cowan, 2001). C’est un exercice gratuit dans le navigateur.',
       'Le principe a été popularisé par un jeu électronique de Ralph Baer et Howard Morrison (1978). Cette version façon Simon passe à six touches avec une difficulté adaptative : vous encodez des stimuli colorés, les organisez en blocs mentaux, puis les restituez dans l’ordre.',
       'Alors que George A. Miller (1956) évoquait 7 ± 2 éléments, les travaux de Nelson Cowan (2001) et de Luck et Vogel (1997) situent la capacité de la mémoire de travail visuelle autour de 4 unités indépendantes. Sans stratégie de regroupement, la rétention chute vite au-delà de quatre éléments consécutifs.',
       'Dans le modèle de Baddeley et Hitch (1974), les suites visuelles passent par le calepin visuo-spatial. Nommer chaque couleur intérieurement ajoute un encodage verbal (boucle phonologique ; Baddeley, 2000) qui peut aider à retenir plus longtemps.',
       'Ce qui est mesuré : en 45 secondes, le jeu enregistre le score, le niveau maximal atteint (longueur de la suite) et la précision (part de manches réussies). Le temps de réaction par appui n’est pas mesuré. Au niveau L, la suite compte L + 2 couleurs parmi 6 ; chaque couleur reste affichée moins longtemps à mesure que le niveau monte (d’environ 0,7 s à 0,25 s minimum), puis vous avez 8 secondes pour chaque appui.',
-      'Confidentialité : vos scores et vos records restent dans le stockage local (localStorage) de votre navigateur. SkillDrills ne collecte pas de statistiques d’utilisateurs : cette page ne donne ni moyennes, ni percentiles.',
-      'Avertissement : ce jeu d’entraînement n’est ni un dispositif médical ni un outil de diagnostic. En cas d’inquiétude sur votre mémoire, consultez un médecin ou un neuropsychologue.'
+      'Confidentialité : vos scores et vos records restent dans le stockage local (localStorage) de votre navigateur. SkillDrills ne collecte pas de statistiques d’utilisateurs : cette page ne donne ni moyennes, ni percentiles.'
     ],
     benchmarks: {
       title: 'Paliers de performance au jeu façon Simon (séance de 45 secondes)',
@@ -283,7 +282,7 @@ export default function FrenchColorSequencePage() {
         ['Palier 4', 'Niveau 3 – 4 (5–6 couleurs)', 'env. 230 – 499 PTS', 'Couleurs retenues une à une, sans regroupement'],
         ['Palier 5', 'Niveau 1 – 2 (3–4 couleurs)', 'moins de 230 PTS', 'Découverte des règles et du rythme']
       ],
-      note: 'Paliers d’entraînement SkillDrills, ni normes cliniques ni classement de population. Le score indiqué correspond à un parcours sans erreur jusqu’à ce niveau (points par suite = 100 × (1 + 0,1 × niveau)) ; une erreur fait baisser le niveau, donc les scores réels varient.'
+      note: 'Paliers d’entraînement SkillDrills, pas un classement de population. Le score indiqué correspond à un parcours sans erreur jusqu’à ce niveau (points par suite = 100 × (1 + 0,1 × niveau)) ; une erreur fait baisser le niveau, donc les scores réels varient.'
     },
     techniques: {
       title: '4 méthodes pour mémoriser des suites de couleurs plus longues',

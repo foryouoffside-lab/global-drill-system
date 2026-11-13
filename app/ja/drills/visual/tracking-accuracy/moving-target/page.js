@@ -22,7 +22,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "動体視力を鍛えるゲーム | 移動標的トレーニング | SkillDrills",
-    description: "動く標的を目で追い、別の位置へ移る前にクリックして当てる無料の動体視力を鍛えるゲーム。医療診断ではありません。",
+    description: "動く標的を目で追い、別の位置へ移る前にクリックして当てる無料の動体視力を鍛えるゲーム。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -60,7 +60,7 @@ const softwareApplicationSchema = {
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
-  "description": "壁で跳ね返りながら動き、一定時間で別の位置へ移動する球体をクリックして当てるブラウザ練習ゲーム。視力や眼球運動を測定・診断するものではありません。",
+  "description": "壁で跳ね返りながら動き、一定時間で別の位置へ移動する球体をクリックして当てるブラウザ練習ゲーム。",
   "featureList": [
     "壁で反射しながら動き、制限時間が切れると新しい位置へ移る標的",
     "命中150点 × コンボ倍率 × レベルボーナス、命中ごとに+2秒（上限60秒）",
@@ -148,7 +148,7 @@ const faqSchema = {
       "name": "この動体視力を鍛えるゲームはどんな内容ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "画面内を跳ね返る球体をクリック（タップ）して当てるブラウザゲームです。標的は一定時間（最初は約1秒、レベルやコンボが上がるほど短くなる）が過ぎると別の位置へ移ります。セッションは45秒から始まり、命中ごとに+2秒（上限60秒）、残り時間が0になると終了します。視力検査や医療診断ではありません。"
+        "text": "画面内を跳ね返る球体をクリック（タップ）して当てるブラウザゲームです。標的は一定時間（最初は約1秒、レベルやコンボが上がるほど短くなる）が過ぎると別の位置へ移ります。セッションは45秒から始まり、命中ごとに+2秒（上限60秒）、残り時間が0になると終了します。"
       }
     },
     {
@@ -188,7 +188,7 @@ const faqSchema = {
       "name": "このゲームで動体視力は鍛えられますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ゲーム内のスコアが伸びるのは、この課題に慣れたことを示します。実際の視力やスポーツの成績、他の課題への効果を保証するものではなく、眼科の検査の代わりにもなりません。"
+        "text": "ゲーム内のスコアが伸びるのは、この課題に慣れたことを示します。実際の視力やスポーツの成績、他の課題への効果を保証するものではありません。"
       }
     },
     {

@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Teste de Multitarefa | Rastreamento Duplo | SkillDrills",
-  description: "Teste de multitarefa grátis: em dois fluxos de símbolos opostos, toque só no símbolo-alvo de cada lado. Um jogo de multitarefa não clínico, sem cadastro.",
+  description: "Teste de multitarefa grátis: em dois fluxos de símbolos opostos, toque só no símbolo-alvo de cada lado. Um jogo de multitarefa, sem cadastro.",
   keywords: [
     "teste de multitarefa",
     "teste de flexibilidade cognitiva",
@@ -22,7 +22,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Multitarefa | Rastreamento Duplo | SkillDrills",
-    description: "Teste de multitarefa grátis: em dois fluxos de símbolos opostos, toque só no símbolo-alvo de cada lado. Um jogo de multitarefa não clínico, sem cadastro.",
+    description: "Teste de multitarefa grátis: em dois fluxos de símbolos opostos, toque só no símbolo-alvo de cada lado. Um jogo de multitarefa, sem cadastro.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -31,7 +31,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de Multitarefa | Rastreamento Duplo | SkillDrills",
-    description: "Teste de multitarefa grátis: em dois fluxos de símbolos opostos, toque só no símbolo-alvo de cada lado. Um jogo de multitarefa não clínico, sem cadastro.",
+    description: "Teste de multitarefa grátis: em dois fluxos de símbolos opostos, toque só no símbolo-alvo de cada lado. Um jogo de multitarefa, sem cadastro.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -82,7 +82,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Teste de multitarefa grátis: em dois fluxos de símbolos opostos, toque só no símbolo-alvo de cada lado. Um jogo de multitarefa não clínico, sem cadastro.",
+  "description": "Teste de multitarefa grátis: em dois fluxos de símbolos opostos, toque só no símbolo-alvo de cada lado. Um jogo de multitarefa, sem cadastro.",
   "url": "https://skilldrills.online/pt/drills/cognitive/attention/multi-tasking",
   "publisher": {
     "@type": "Organization",
@@ -115,7 +115,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Jogo de Multitarefa – Treino de Foco em Fluxo Duplo",
   "url": "https://skilldrills.online/pt/drills/cognitive/attention/multi-tasking",
-  "description": "Teste de multitarefa grátis: em dois fluxos de símbolos opostos, toque só no símbolo-alvo de cada lado. Um jogo de multitarefa não clínico, sem cadastro.",
+  "description": "Teste de multitarefa grátis: em dois fluxos de símbolos opostos, toque só no símbolo-alvo de cada lado. Um jogo de multitarefa, sem cadastro.",
   "genre": [
     "Acao",
     "Jogo Cerebral",
@@ -143,7 +143,7 @@ const faqSchema = {
       "name": "O que é o Teste de Multitarefa (Dual-Target Flow)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É um jogo de multitarefa: a tela é dividida em duas faixas (esquerda/direita na horizontal, em cima/embaixo na vertical) onde formas saem do centro para fora. Você clica ou toca só no símbolo-alvo mostrado em cada faixa. Não é um teste clínico."
+        "text": "É um jogo de multitarefa: a tela é dividida em duas faixas (esquerda/direita na horizontal, em cima/embaixo na vertical) onde formas saem do centro para fora. Você clica ou toca só no símbolo-alvo mostrado em cada faixa."
       }
     },
     {
@@ -263,7 +263,7 @@ const guideProps = {
   intro: {
     title: "Teste de Multitarefa: Guia",
     paragraphs: [
-      "Este teste de multitarefa grátis pede que você vigie dois fluxos de símbolos ao mesmo tempo e toque só no alvo de cada faixa. É uma autoavaliação não clínica.",
+      "Este teste de multitarefa grátis pede que você vigie dois fluxos de símbolos ao mesmo tempo e toque só no alvo de cada faixa. É uma autoavaliação.",
       "O custo de alternância (switch cost) é a queda passageira de rapidez e precisão ao passar de uma regra de tarefa para outra (Rogers & Monsell, 1995).",
       "Aqui os alvos mudam a cada 20 segundos e ficam diferentes entre as faixas a partir do nível 3, então é preciso atualizar a regra de cada lado (Pashler, 1994; Wickens, 2002).",
     ],
@@ -271,7 +271,7 @@ const guideProps = {
   benchmarks: {
     title: 'Faixas de prática SkillDrills (precisão)',
     headers: ['Nivel', 'Rank', 'Classificacao', 'Acuracia', 'Marcador de prática'],
-    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas.",
+    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população.",
 
     rows: [
       { tier: 'Faixa 1', rank: 'Muito avançada', stat: 'Ritmo muito alto', accuracy: '98%+', marker: 'Ritmo muito alto com alta precisão' },
@@ -338,7 +338,7 @@ export default function EnhancedPage() {
           { text: "Erro / alvo perdido", highlight: "Combo zerado", result: "−1 s" },
           { text: "Troca de alvo", highlight: "A cada 20 s", result: "Confira o símbolo" },
         ],
-        aboutTitle: "Sobre multitarefa e fluxo de dois alvos", aboutLead: "Este autocheck cognitivo não clínico combina dois fluxos visuais e observa a precisão praticada e a velocidade de alternância da atenção, não uma capacidade geral para todas as tarefas do dia a dia.",
+        aboutTitle: "Sobre multitarefa e fluxo de dois alvos", aboutLead: "Este autocheck cognitivo combina dois fluxos visuais e observa a precisão praticada e a velocidade de alternância da atenção, não uma capacidade geral para todas as tarefas do dia a dia.",
         audienceTitle: "Para quem é", audienceText: "Para jogadores que acompanham vários elementos na tela, estudantes e pessoas que querem organizar informações simultâneas.",
         skillsTitle: "Habilidades treinadas", skillsText: "Rastreamento visual bilateral, detecção periférica, alternância de atenção e controle executivo.", flexibilityTitle: "Velocidade de troca", flexibilityText: "A cada nível, ritmo e padrões mudam: alterne entre os fluxos sem perder precisão."
       }} />

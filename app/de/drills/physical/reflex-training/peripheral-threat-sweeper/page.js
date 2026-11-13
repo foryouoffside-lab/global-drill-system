@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper';
 const title = "Peripheres Blickfeld Spiel: Randziele abfangen | SkillDrills";
-const description = "Peripheres Blickfeld Spiel: Blick auf den Kern in der Mitte, Ziele vom Rand abfangen. +2 s pro Treffer, 1 s Abzug bei Fehlern. Browserspiel, kein Sehtest.";
+const description = "Peripheres Blickfeld Spiel: Blick auf den Kern in der Mitte, Ziele vom Rand abfangen. +2 s pro Treffer, 1 s Abzug bei Fehlern. Browserspiel.";
 
 export const metadata = {
   title,
@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     q: "Was ist Tunnelblick?",
-    a: "Unter Stress oder bei starker Konzentration auf einen Punkt nimmt man die Umgebung oft schlechter wahr – das nennt man umgangssprachlich Tunnelblick. Dieses Spiel übt, die Mitte im Blick zu halten und den Rand trotzdem nicht zu übersehen. Eine krankhafte Gesichtsfeldeinschränkung kann es nicht erkennen; dafür ist eine augenärztliche Untersuchung nötig."
+    a: "Unter Stress oder bei starker Konzentration auf einen Punkt nimmt man die Umgebung oft schlechter wahr – das nennt man umgangssprachlich Tunnelblick. Dieses Spiel übt, die Mitte im Blick zu halten und den Rand trotzdem nicht zu übersehen."
   },
   {
     q: "Wird mein Gesichtsfeld dadurch größer?",

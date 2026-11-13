@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de Stroop | Atención Selectiva | SkillDrills",
-  description: "Test de Stroop online gratis: elige el color de la tinta, no la palabra, y comprueba el efecto Stroop en ti. Practica atención selectiva; no es un diagnóstico.",
+  description: "Test de Stroop online gratis: elige el color de la tinta, no la palabra, y comprueba el efecto Stroop en ti. Practica atención selectiva.",
   keywords: [
     "test de stroop",
     "test de stroop online",
@@ -25,7 +25,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Stroop | Atención Selectiva | SkillDrills",
-    description: "Test de Stroop online gratis: elige el color de la tinta, no la palabra, y comprueba el efecto Stroop en ti. Practica atención selectiva; no es un diagnóstico.",
+    description: "Test de Stroop online gratis: elige el color de la tinta, no la palabra, y comprueba el efecto Stroop en ti. Practica atención selectiva.",
     url: "https://skilldrills.online/es/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
     locale: "es_ES",
@@ -34,7 +34,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Test de Stroop | Atención Selectiva | SkillDrills",
-    description: "Test de Stroop online gratis: elige el color de la tinta, no la palabra, y comprueba el efecto Stroop en ti. Practica atención selectiva; no es un diagnóstico."
+    description: "Test de Stroop online gratis: elige el color de la tinta, no la palabra, y comprueba el efecto Stroop en ti. Practica atención selectiva."
   }
 };
 
@@ -204,7 +204,7 @@ export default function DistractionFighterPageES() {
       "La explicación reside en la velocidad disimétrica de procesamiento cerebral: leer es una conducta casi refleja y automática (MacLeod, 1991). La investigación sobre inhibición describe la detención de una respuesta automática como una carrera (Logan & Cowan, 1984): en el test de Stroop, el error aparece cuando la lectura no se frena a tiempo.",
       "Estudios de neuroimagen asocian la corteza cingulada anterior y la corteza prefrontal a la resolución de esta interferencia (Posner & Petersen, 1990). Este ejercicio permite practicar la atención selectiva bajo presión de tiempo, sin medir actividad cerebral ni garantizar mejoras.",
       "Cronometraje: el ejercicio no muestra tiempos de reacción, sino puntuación, precisión y nivel alcanzado. La ventana de respuesta de cada palabra la controlan los temporizadores del navegador en su propio dispositivo. Los temporizadores del navegador aplican una atenuación de seguridad frente a vulnerabilidades como Spectre (alrededor de 1 ms), mientras que la pantalla cuantiza los cambios según su frecuencia de actualización: aproximadamente 16,7 ms por fotograma a 60 Hz, 6,9 ms a 144 Hz y 4,1 ms a 240 Hz (Woods et al., 2015). Se recomienda valorar tendencias personales en un mismo dispositivo en lugar de comparar cifras aisladas entre hardware dispar.",
-      "Transparencia de datos y aviso educativo: SkillDrills no recopila datos agregados ni almacena información en servidores remotos. Sus métricas y configuraciones se conservan exclusivamente en el almacenamiento local (localStorage) de su navegador. Este ejercicio es una herramienta interactiva de entrenamiento cognitivo para fines educativos y recreativos; no constituye un dispositivo médico, prueba de diagnóstico ni tratamiento para el TDAH u otras condiciones clínicas."
+      "Transparencia de datos y aviso educativo: SkillDrills no recopila datos agregados ni almacena información en servidores remotos. Sus métricas y configuraciones se conservan exclusivamente en el almacenamiento local (localStorage) de su navegador. Este ejercicio es una herramienta interactiva de entrenamiento cognitivo para fines educativos y recreativos."
     ],
     benchmarks: {
       title: "Test de Stroop: niveles de nota (puntos por ronda)",
@@ -218,7 +218,7 @@ export default function DistractionFighterPageES() {
         ["D", "2.160 – 4.859"],
         ["F", "menos de 2.160"]
       ],
-      note: "Bandas de práctica de SkillDrills, calculadas directamente con la fórmula de nota de la pantalla final (fracción de 24.000 puntos de referencia); no son estadísticas de usuarios ni baremos clínicos. Cada acierto vale 100 puntos × combo (hasta 3x) × factor de nivel."
+      note: "Bandas de práctica de SkillDrills, calculadas directamente con la fórmula de nota de la pantalla final (fracción de 24.000 puntos de referencia); no son estadísticas de usuarios. Cada acierto vale 100 puntos × combo (hasta 3x) × factor de nivel."
     },
     techniques: {
       title: "4 Estrategias para Superar la Interferencia de Stroop",

@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Réaction de choix avec règle changeante | SkillDrills",
-  description: "Réaction de choix avec règle changeante : cliquez la cible rouge ou bleue indiquée par la consigne. Exercice gratuit de vitesse de décision, non clinique.",
+  description: "Réaction de choix avec règle changeante : cliquez la cible rouge ou bleue indiquée par la consigne. Exercice gratuit de vitesse de décision.",
   keywords: ["réaction de choix", "temps de réaction de choix", "changement de règle", "vitesse de décision", "loi de Hick"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Réaction de choix avec règle changeante | SkillDrills",
-    description: "Réaction de choix avec règle changeante : cliquez la cible rouge ou bleue indiquée par la consigne. Exercice gratuit de vitesse de décision, non clinique.",
+    description: "Réaction de choix avec règle changeante : cliquez la cible rouge ou bleue indiquée par la consigne. Exercice gratuit de vitesse de décision.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Réaction de choix avec règle changeante | SkillDrills",
-    description: "Réaction de choix avec règle changeante : cliquez la cible rouge ou bleue indiquée par la consigne. Exercice gratuit de vitesse de décision, non clinique.",
+    description: "Réaction de choix avec règle changeante : cliquez la cible rouge ou bleue indiquée par la consigne. Exercice gratuit de vitesse de décision.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -193,10 +193,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Est-ce un test médical ?",
+      "name": "Comment comparer mes résultats ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. C’est un exercice d’entraînement dans le navigateur, ni diagnostic ni dépistage. Les résultats dépendent aussi de l’appareil et de la forme du jour ; comparez vos propres scores sur le même appareil."
+        "text": "Les résultats dépendent aussi de l’appareil et de la forme du jour ; comparez vos propres scores sur le même appareil."
       }
     },
     {
@@ -254,7 +254,7 @@ const guideProps = {
     paragraphs: [
       "La réaction de choix avec règle changeante est un exercice gratuit dans le navigateur : une cible rouge et une cible bleue apparaissent ensemble et vous cliquez celle dont la couleur est indiquée par le bandeau. À partir du niveau 2, la règle s’inverse, il faut donc la relire avant chaque clic.",
       "Contrairement à une réaction simple à un seul stimulus, la réaction de choix ajoute la discrimination du stimulus et la sélection de la réponse ; elle est donc en général plus lente (Donders).",
-      "La loi de Hick-Hyman (Hick, 1952 ; Hyman, 1953) décrit l’augmentation logarithmique du temps de décision avec le nombre de choix. L’exercice affiche points, exactitude, niveau maximal et meilleur combo ; il ne mesure pas de millisecondes et n’est pas un test clinique.",
+      "La loi de Hick-Hyman (Hick, 1952 ; Hyman, 1953) décrit l’augmentation logarithmique du temps de décision avec le nombre de choix. L’exercice affiche points, exactitude, niveau maximal et meilleur combo ; il ne mesure pas de millisecondes.",
     ],
   },
   benchmarks: {
@@ -267,7 +267,7 @@ const guideProps = {
       { tier: 'Palier 4', rank: 'Intermédiaire', accuracy: '78-87%', marker: 'Erreurs surtout après les changements de règle' },
       { tier: 'Palier 5', rank: 'Débutant', accuracy: '< 78%', marker: 'Point de départ' },
     ],
-    note: 'Paliers d’entraînement définis par SkillDrills, sans statistiques d’utilisateurs ni valeur clinique.',
+    note: 'Paliers d’entraînement définis par SkillDrills, sans statistiques d’utilisateurs.',
   },
   protocols: {
     title: 'Conseils pour décider plus vite',

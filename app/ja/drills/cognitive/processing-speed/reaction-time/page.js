@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
-  description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",
+  description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。",
   keywords: ["選択反応時間", "選択反応時間 テスト", "選択反応 テスト", "判断速度", "ヒックの法則"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
-    description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",
+    description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
-    description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",
+    description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "description": "無料ブラウザの選択反応時間テスト。赤と青の標的から上部ルールに合う色を選び、判断速度と正確さを練習します。結果はスコア・正確さ・最高レベルで、ミリ秒計測や臨床検査ではありません。",
+  "description": "無料ブラウザの選択反応時間テスト。赤と青の標的から上部ルールに合う色を選び、判断速度と正確さを練習します。結果はミリ秒計測ではなく、スコア・正確さ・最高レベルです。",
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "選択反応時間テスト – 色ルール切り替えゲーム",
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time",
-  "description": "無料ブラウザの選択反応時間テスト。赤と青の標的から上部ルールに合う色を選び、判断速度と正確さを練習します。結果はスコア・正確さ・最高レベルで、ミリ秒計測や臨床検査ではありません。",
+  "description": "無料ブラウザの選択反応時間テスト。赤と青の標的から上部ルールに合う色を選び、判断速度と正確さを練習します。結果はミリ秒計測ではなく、スコア・正確さ・最高レベルです。",
   "genre": [
     "Action",
     "Brain Game",
@@ -193,10 +193,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "医学的な検査ですか？",
+      "name": "結果はどのように比べればよいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "いいえ。練習用のブラウザドリルで、診断やスクリーニングではありません。結果は端末や体調で変わるため、同じ端末で自分の記録を比べてください。"
+        "text": "結果は端末や体調で変わるため、同じ端末で自分の記録を比べてください。"
       }
     },
     {
@@ -214,7 +214,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "選択反応時間テストのやり方",
-  "description": "無料ブラウザの選択反応時間テスト。赤と青の標的から上部ルールに合う色を選び、判断速度と正確さを練習します。結果はスコア・正確さ・最高レベルで、ミリ秒計測や臨床検査ではありません。",
+  "description": "無料ブラウザの選択反応時間テスト。赤と青の標的から上部ルールに合う色を選び、判断速度と正確さを練習します。結果はミリ秒計測ではなく、スコア・正確さ・最高レベルです。",
   "step": [
     {
       "@type": "HowToStep",
@@ -254,13 +254,13 @@ const guideProps = {
     paragraphs: [
       "選択反応時間テストとは、複数の選択肢から条件に合うものを選んで反応する課題です。このドリルでは赤と青の標的が同時に現れ、画面上部の色ルールに合う標的だけをクリックします。レベル2からルールが切り替わるため、毎回ルールを確認する必要があります。",
       "単一の刺激にすぐ反応する単純反応と比べ、選択反応には刺激の弁別と反応の選択という段階が加わるため、一般に遅くなります（Donders）。",
-      "選択肢の数が増えるほど反応時間が長くなる傾向は、ヒックの法則として知られています（Hick, 1952）。このドリルはミリ秒ではなく、スコア・正確さ・最高レベル・最大コンボを表示します。臨床検査ではありません。",
+      "選択肢の数が増えるほど反応時間が長くなる傾向は、ヒックの法則として知られています（Hick, 1952）。このドリルはミリ秒ではなく、スコア・正確さ・最高レベル・最大コンボを表示します。",
     ],
   },
   benchmarks: {
     title: '認知パフォーマンス標準評価（ベンチマーク）',
     headers: ['等級 (Tier)', '称号 (Rank)', '到達ランク', '正答率'],
-    note: 'この表は練習の目安として編集したもので、統計や診断ではありません。環境によって結果は変わります。',
+    note: 'この表は練習の目安として編集したもので、統計ではありません。環境によって結果は変わります。',
     rows: [
       { tier: 'Tier 1', rank: '超高速判断の最上位段階', level: 'マスタリー（極限）', accuracy: '98% 以上' },
       { tier: 'Tier 2', rank: '上級認知弁別スペシャリスト', level: 'ダイヤモンド（優秀）', accuracy: '94–97%' },

@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de Reacción Online: Mide tus Reflejos en ms",
-  description: "Test de reacción gratis: haz clic cuando se encienda la luz y mide tu tiempo de reacción en milisegundos. Compáralo con el promedio; no es prueba médica.",
+  description: "Test de reacción gratis: haz clic cuando se encienda la luz y mide tu tiempo de reacción en milisegundos. Compáralo con el promedio.",
   keywords: [
     "test de reacción",
     "test de reacción online",
@@ -218,10 +218,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿El test de reacción es gratis? ¿Es una prueba médica?",
+      "name": "¿El test de reacción es gratis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es gratis, funciona sin registro y los resultados se guardan en el almacenamiento local de tu navegador. No es una prueba médica ni una evaluación neurológica: es una herramienta de práctica. Si notas lentitud o falta de coordinación fuera de lo habitual, consulta con un profesional sanitario."
+        "text": "Es gratis, funciona sin registro y los resultados se guardan en el almacenamiento local de tu navegador. Es una herramienta de práctica."
       }
     }
   ]

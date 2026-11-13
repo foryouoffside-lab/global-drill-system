@@ -10,7 +10,7 @@ const DESCRIPTION = "Visueller Rhythmustest: Finde im pulsierenden 6x6-Raster di
 const FAQS = [
   [
     "Was misst der visuelle Rhythmustest?",
-    "Er zählt, wie oft du in 45 Sekunden die Zelle im abweichenden Takt findest (10 Punkte pro Treffer), dazu Trefferserie und Fehlklicks. Das ist ein Übungswert für den Rhythmusvergleich, keine Diagnose des Sehens oder des Nervensystems."
+    "Er zählt, wie oft du in 45 Sekunden die Zelle im abweichenden Takt findest (10 Punkte pro Treffer), dazu Trefferserie und Fehlklicks. Das ist ein Übungswert für den Rhythmusvergleich."
   ],
   [
     "Ist das ein Flimmerfusionstest (CFF)?",
@@ -87,7 +87,7 @@ const TIPS = [
   "Vergleiche Ergebnisse nur auf demselben Gerät mit gleicher Bildschirmhelligkeit."
 ];
 const INTRO = [
-  "Im visuellen Rhythmustest blinken alle 36 Zellen eines 6x6-Rasters langsam im gleichen Takt. Eine einzige Zelle blinkt in einem schnelleren Takt: Diese klickst du an. Eine Runde dauert 45 Sekunden, gespielt wird kostenlos im Browser mit Maus oder Touch. Es ist kein Sehtest und keine medizinische Untersuchung.",
+  "Im visuellen Rhythmustest blinken alle 36 Zellen eines 6x6-Rasters langsam im gleichen Takt. Eine einzige Zelle blinkt in einem schnelleren Takt: Diese klickst du an. Eine Runde dauert 45 Sekunden, gespielt wird kostenlos im Browser mit Maus oder Touch.",
   "Die abweichende Zelle hat etwa 72 % der Periode der übrigen Zellen, blinkt also rund 1,4-mal so schnell und wird am Höhepunkt etwas heller. Mit jedem Treffer wird der Takt des ganzen Rasters schneller (Periode von 1,6 s bis minimal 0,6 s). Am Anfang ist der Unterschied leicht zu sehen, später musst du ihn schneller erkennen.",
   "Das Raster blinkt etwa 0,6- bis 2,5-mal pro Sekunde, weit unter der Flimmerverschmelzungsfrequenz von etwa 50 bis 60 Hz (De Lange, 1958; Kelly, 1961). Die Übung misst also keine Flimmerfusion, sondern ist eine Aufmerksamkeitsaufgabe, bei der du Rhythmen vergleichst. Zu beurteilen, ob zwei Reize im selben Takt laufen, gelingt nur bei deutlich langsameren Raten als das bloße Erkennen von Flimmern (Holcombe, 2009)."
 ];
@@ -140,7 +140,7 @@ const softwareApplicationSchema = {
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "45-Sekunden-Browserspiel: Finde im pulsierenden 6x6-Raster die eine Zelle, die schneller blinkt. Steuerung per Maus oder Touch, kein medizinischer Test.",
+  "description": "45-Sekunden-Browserspiel: Finde im pulsierenden 6x6-Raster die eine Zelle, die schneller blinkt. Steuerung per Maus oder Touch.",
   "url": PAGE_URL,
   "inLanguage": "de-DE",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },

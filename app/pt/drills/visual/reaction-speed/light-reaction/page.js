@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Teste de Reflexo Online: Meça seu Tempo de Reação",
-  description: "Teste de reflexo online grátis: clique quando a luz acender e veja seu tempo de reação em milissegundos. Compare com a média humana; não é exame médico.",
+  description: "Teste de reflexo online grátis: clique quando a luz acender e veja seu tempo de reação em milissegundos. Compare com a média humana.",
   keywords: [
     "teste de reflexo",
     "teste de reflexo online",
@@ -218,10 +218,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "O teste de reflexo é grátis? É um exame médico?",
+      "name": "O teste de reflexo é grátis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É grátis, funciona sem cadastro e os resultados ficam no armazenamento local do seu navegador. Não é exame médico nem avaliação neurológica: é uma ferramenta de prática. Se você notar lentidão ou falta de coordenação fora do comum, procure um profissional de saúde."
+        "text": "É grátis, funciona sem cadastro e os resultados ficam no armazenamento local do seu navegador. É uma ferramenta de prática."
       }
     }
   ]

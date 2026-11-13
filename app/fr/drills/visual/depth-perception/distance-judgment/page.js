@@ -57,7 +57,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Jeu gratuit dans le navigateur : cliquez quand la sphère qui grossit coïncide avec l’anneau. Mesure l’écart en pourcentage, sans valeur médicale.",
+  "description": "Jeu gratuit dans le navigateur : cliquez quand la sphère qui grossit coïncide avec l’anneau. Mesure l’écart en pourcentage.",
   "url": "https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment",
   "publisher": {
     "@type": "Organization",
@@ -162,7 +162,7 @@ const faqSchema = {
       "name": "Peut-on s’améliorer en s’entraînant ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Il est probable que la répétition améliore votre timing sur cette tâche. Rien ne prouve un effet sur la conduite ou le sport. Pour une question de vision, consultez un ophtalmologue."
+        "text": "Il est probable que la répétition améliore votre timing sur cette tâche. Rien ne prouve un effet sur la conduite ou le sport."
       }
     },
     {
@@ -240,7 +240,7 @@ const howToSchema = {
 const distanceGuideFr = {
   "heading": "Test de perception de la profondeur : appréciation des distances",
   "intro": [
-    "Ce test de perception de la profondeur en ligne est un jeu d’appréciation des distances : il vous montre une sphère qui grossit dans un tunnel ; vous cliquez quand elle épouse l’anneau fixe. Le jeu calcule l’écart en pourcentage. Il s’appuie sur l’agrandissement de l’image et ne teste ni la vision stéréoscopique ni la vue : ce n’est pas un diagnostic.",
+    "Ce test de perception de la profondeur en ligne est un jeu d’appréciation des distances : il vous montre une sphère qui grossit dans un tunnel ; vous cliquez quand elle épouse l’anneau fixe. Le jeu calcule l’écart en pourcentage. Il s’appuie sur l’agrandissement de l’image et non sur la vision stéréoscopique.",
     "La perception de la profondeur combine plusieurs indices : disparité binoculaire, perspective, taille relative et agrandissement de l’image. L’appareil de Howard-Dolman (Howard, 1919) étudie la disparité avec des tiges réelles. Ici, vous utilisez surtout l’indice d’agrandissement décrit par Lee (1976) et Regan et Beverley (1978), qui donne une estimation du temps avant contact.",
     "Une séance dure 45 secondes et l’anneau change de profondeur à chaque essai. Jusqu’à 7 % d’écart : +150 points ; jusqu’à 16 % : +100 points. Tous les 750 points, vous montez d’un niveau : la sphère arrive plus vite et les marges se resserrent jusqu’à 4 % et 10 %. Un clic raté ne coûte aucun point.",
     "L’affichage ajoute un délai (16,7 ms à 60 Hz, 6,9 ms à 144 Hz, 4,1 ms à 240 Hz ; Woods et al., 2015) : comparez vos séances sur le même matériel.",

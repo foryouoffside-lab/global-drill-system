@@ -268,7 +268,7 @@ const guideProps = {
       { tier: 'Tier 4', rank: '일반 수준', stat: '평균 범위', level: '표준', accuracy: '78–87%', percentile: '기본 규칙 익히기' },
       { tier: 'Tier 5', rank: '입문', stat: '기준선', level: '기초', accuracy: '78% 미만', percentile: '천천히 정확하게 시작' },
     ],
-    note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계, 백분위 또는 임상 기준이 아닙니다.',
+    note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계나 백분위가 아닙니다.',
   },
   protocols: {
     title: '속독 테스트 진행 순서',

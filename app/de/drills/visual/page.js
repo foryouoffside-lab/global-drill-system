@@ -139,7 +139,7 @@ const faqSchema = {
 
 faqSchema.mainEntity.push(
   { "@type": "Question", "name": "Wie viele Übungen enthält der Bereich für visuelles Training?", "acceptedAnswer": { "@type": "Answer", "text": "Der Bereich enthält 9 Browser-Drills in drei Schwerpunkten: Reaktion und Impulskontrolle, Zielverfolgung und Augenbewegung sowie Erkennung und Tiefenwahrnehmung. Jede Karte öffnet die passende Übung." } },
-  { "@type": "Question", "name": "Ersetzen visuelle Browser-Drills einen Sehtest beim Augenarzt?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Sie üben wiederholbare Aufgaben zu Reaktion, Verfolgung, Suche und räumlichem Urteil. Sie diagnostizieren weder Sehschärfe noch Augenerkrankungen und ersetzen keine Untersuchung durch Fachpersonal." } }
+  { "@type": "Question", "name": "Was messen visuelle Browser-Drills?", "acceptedAnswer": { "@type": "Answer", "text": "Sie üben wiederholbare Aufgaben zu Reaktion, Verfolgung, Suche und räumlichem Urteil. Vergleiche deine Ergebnisse auf demselben Gerät mit denselben Einstellungen." } }
 );
 
 export default function VisualDrillsPage() {

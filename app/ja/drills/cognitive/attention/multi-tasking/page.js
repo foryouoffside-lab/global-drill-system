@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "マルチタスクテスト | 二重ターゲット追従 | SkillDrills",
-  description: "無料ブラウザで二つのターゲットを同時に追従するマルチタスク練習。医学的診断ではない認知セルフチェックです。",
+  description: "無料ブラウザで二つのターゲットを同時に追従するマルチタスク練習。",
   keywords: ["マルチタスク 練習", "マルチタスク テスト", "二重ターゲット 追従", "並行処理 能力 測定", "タスク切り替え コスト", "認知的柔軟性 テスト", "両視野 追従 訓練", "脳トレ マルチタスク", "注意配分 テスト", "マルチタスク 能力 テスト", "視覚ストリーム 処理", "情報処理速度 測定"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "マルチタスクテスト | 二重ターゲット追従 | SkillDrills",
-    description: "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
+    description: "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "マルチタスクテスト | 二重ターゲット追従 | SkillDrills",
-    description: "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
+    description: "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "description": "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
+  "description": "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。",
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "マルチタスクテスト – 対向ストリーム並行追従ゲーム",
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking",
-  "description": "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
+  "description": "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。",
   "genre": [
     "Action",
     "Brain Game",
@@ -132,7 +132,7 @@ const faqSchema = {
       "name": "マルチタスクテスト（Dual-Target Flow）とは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "画面を2つのレーン（横画面は左右、縦画面は上下）に分け、中央から外側へ反対方向に流れる図形のうち、各レーンに表示された目標図形だけをクリックまたはタップする練習ゲームです。臨床検査ではありません。"
+        "text": "画面を2つのレーン（横画面は左右、縦画面は上下）に分け、中央から外側へ反対方向に流れる図形のうち、各レーンに表示された目標図形だけをクリックまたはタップする練習ゲームです。"
       }
     },
     {
@@ -214,7 +214,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "マルチタスクテスト・二重ターゲット追従",
-  "description": "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
+  "description": "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。",
   "step": [
     {
       "@type": "HowToStep",
@@ -252,7 +252,7 @@ const guideProps = {
   intro: {
     title: "マルチタスクテストのガイド",
     paragraphs: [
-      "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。医学的診断ではない認知セルフチェックです。",
+      "無料のマルチタスクテスト：反対方向に流れる2つの図形の流れから、それぞれの目標図形だけをタップするマルチタスク能力テスト。",
       "異なるルールの課題を切り替えるときに生じる、反応の遅れやエラーの増加のことです。",
       "高度な注意を要する作業では、脳は並列処理ではなく高速な時分割シリアル処理（Pashler, 1994）を行っています。",
     ],
@@ -326,7 +326,7 @@ export default function LocalizedCognitivePage() {
           { text: "誤タップ / 見逃し", highlight: "コンボリセット", result: "-1秒" },
           { text: "目標の変更", highlight: "20秒ごと", result: "表示を再確認" },
         ],
-        aboutTitle: "マルチタスクと二重ターゲット追従", aboutLead: "二つの視覚ストリームを追従する非臨床の認知セルフチェックです。実生活の万能なマルチタスク能力ではなく、練習中の切替速度と両側の正確さを見ます。",
+        aboutTitle: "マルチタスクと二重ターゲット追従", aboutLead: "二つの視覚ストリームを追従する認知トレーニングです。実生活の万能なマルチタスク能力ではなく、練習中の切替速度と両側の正確さを見ます。",
         audienceTitle: "おすすめの人", audienceText: "ゲーム中に複数の画面要素を見る人、学習者、同時に入る情報を整理したい人に向いています。",
         skillsTitle: "鍛える力", skillsText: "両側の視覚追従、周辺ターゲット検出、注意の切替、実行機能の調整を練習します。", flexibilityTitle: "課題切替の速さ", flexibilityText: "レベルが上がると速度とルールが変わるため、二つの流れを素早く正確に切り替えます。"
       }} />

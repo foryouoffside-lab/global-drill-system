@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Teste de Concentração | Atenção Sustentada | SkillDrills",
-  description: "Teste de concentração online grátis de 45 segundos: avalie atenção sustentada, controle inibitório e troca de regras. Não é diagnóstico clínico.",
+  description: "Teste de concentração online grátis de 45 segundos: avalie atenção sustentada, controle inibitório e troca de regras.",
   keywords: [
     "teste de concentração",
     "teste de concentração online grátis",
@@ -23,7 +23,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Concentração | Atenção Sustentada | SkillDrills",
-    description: "Teste de concentração online grátis de 45 segundos: avalie atenção sustentada, controle inibitório e troca de regras. Não é diagnóstico clínico.",
+    description: "Teste de concentração online grátis de 45 segundos: avalie atenção sustentada, controle inibitório e troca de regras.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -32,7 +32,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de Concentração | Atenção Sustentada | SkillDrills",
-    description: "Teste de concentração online grátis de 45 segundos: avalie atenção sustentada, controle inibitório e troca de regras. Não é diagnóstico clínico.",
+    description: "Teste de concentração online grátis de 45 segundos: avalie atenção sustentada, controle inibitório e troca de regras.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -144,7 +144,7 @@ const faqSchema = {
       "name": "O que é o Teste de Atenção Sustentada e Resistência de Concentração?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É um treino de 45 segundos no formato CPT (tarefa de desempenho contínuo): letras e números aparecem em sequência e você reage apenas aos que cumprem a regra ativa (vogais ou números primos), ignorando os demais. Não é um teste clínico nem ferramenta de diagnóstico."
+        "text": "É um treino de 45 segundos no formato CPT (tarefa de desempenho contínuo): letras e números aparecem em sequência e você reage apenas aos que cumprem a regra ativa (vogais ou números primos), ignorando os demais."
       }
     },
     {
@@ -181,10 +181,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Este teste pode detectar TDAH?",
+      "name": "Como melhorar neste teste de concentração?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. É um exercício de treino não clínico: não faz triagem nem diagnóstico de nenhum transtorno de atenção e não substitui a avaliação de um profissional de saúde."
+        "text": "Mantenha a regra ativa em mente (vogais ou números primos), reaja apenas aos itens que a cumprem e deixe passar os demais. Compare suas próprias sessões no mesmo aparelho para acompanhar sua precisão."
       }
     },
     {
@@ -208,7 +208,7 @@ const faqSchema = {
       "name": "O que representam as categorias de pontuação do teste?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "São faixas de prática do SkillDrills baseadas na sua precisão, para comparar suas próprias sessões. Não se baseiam em dados normativos, percentis nem estudos clínicos."
+        "text": "São faixas de prática do SkillDrills baseadas na sua precisão, para comparar suas próprias sessões. Não se baseiam em dados normativos nem percentis."
       }
     },
     {
@@ -264,7 +264,7 @@ const guideProps = {
   intro: {
     title: "Teste de Concentração e Atenção Sustentada: Guia",
     paragraphs: [
-      "Este teste de concentração online grátis de 45 segundos registra atenção sustentada, controle inibitório e troca de regras como uma autoavaliação não clínica. O resultado varia com o estado do dia e a familiaridade e não substitui avaliação profissional.",
+      "Este teste de concentração online grátis de 45 segundos registra atenção sustentada, controle inibitório e troca de regras como uma autoavaliação. O resultado varia com o estado do dia e a familiaridade e não substitui avaliação profissional.",
       "Mackworth (1948) observou em operadores de radar que a detecção de sinais raros cai à medida que o monitoramento se prolonga, e a queda é maior quando os eventos são rápidos (Parasuraman, 1979). Este teste condensa o exercício em 45 segundos.",
       "A cada 10 segundos a regra alterna entre vogais e números primos: é preciso abandonar o critério anterior e aplicar o novo na hora (Monsell, 2003).",
     ],
@@ -272,7 +272,7 @@ const guideProps = {
   benchmarks: {
     title: 'Padrões de Desempenho Cognitivo & Escala de Atenção Sustentada (CPT)',
     headers: ['Nível', 'Classificação', 'Faixa de Rendimento', 'Precisão', 'Marcador de prática'],
-    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas.",
+    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população.",
 
     rows: [
       { tier: 'Faixa 1', rank: 'Muito avançada', stat: 'Ritmo muito alto', accuracy: '98%+', marker: 'Ritmo muito alto com alta precisão' },
@@ -329,10 +329,10 @@ export default function EnhancedPagePt() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <ConcentrationStaminaClient copy={{
-        title: "Teste de Concentração | Atenção Sustentada", subtitle: "Autoavaliação não clínica de foco contínuo, identificação de alvos e controle inibitório",
+        title: "Teste de Concentração | Atenção Sustentada", subtitle: "Autoavaliação de foco contínuo, identificação de alvos e controle inibitório",
         statScore: "Pontos", statTime: "Tempo", statLevel: "Nível", statBest: "Melhor pontuação", ruleLabel: "Regra", vowels: "Vogais (A E I O U)", primes: "Primos (2 3 5 7)", startTitle: "Teste de Concentração", startSubtitle: "Atenção sustentada • Treino no formato CPT", getReady: "Prepare-se", flashTitle: "Flash de erro", soundTitle: "Som", newBest: "Novo recorde", points: "Pontos", accuracy: "Precisão", misses: "Erros", peakLevel: "Nível máximo", playAgain: "Jogar novamente", shareScore: "Compartilhar pontuação", exitDrill: "Sair do treino",
         caption: "Reaja apenas aos estímulos que correspondem à regra ativa e filtre as distrações quando a regra mudar.", rulesTitle: "Instruções e sistema de pontuação", ruleItems: [{ text: "Regra do alvo", highlight: "Muda a cada 10s", result: "Vogais ↔ Primos" }, { text: "Alvo correto", highlight: "+100 PTS", result: "Clique/toque, Espaço ou Enter" }, { text: "Não alvo", highlight: "Inibir", result: "Ignore o diferente" }, { text: "Alarme falso", highlight: "Bloqueio de 1 s", result: "Afeta a precisão" }],
-        aboutTitle: "Sobre o teste de concentração", aboutLead: "A atenção sustentada pode cair durante a observação prolongada de sinais raros. Este teste curto registra troca de regras, identificação de alvos e erros como autoavaliação não clínica.", aboutText: "Atenção sustentada é a capacidade de selecionar sinais relevantes em uma sequência repetitiva. Repita nas mesmas condições e acompanhe a evolução dos pontos e erros.\n\nSono, estresse, tela e familiaridade alteram o resultado; ele não substitui avaliação profissional.", audienceTitle: "Para quem serve?", audienceText: "Para estudantes antes de provas longas, jogadores que querem manter precisão e pessoas que precisam sustentar o foco no trabalho.", skillsTitle: "Habilidades treinadas", skillsText: "Atenção sustentada, identificação de alvos, vigilância sob fadiga e controle de impulsos.", flexibilityTitle: "Flexibilidade cognitiva", flexibilityText: "A troca entre vogais e números primos a cada 10 segundos treina a alternância rápida entre regras."
+        aboutTitle: "Sobre o teste de concentração", aboutLead: "A atenção sustentada pode cair durante a observação prolongada de sinais raros. Este teste curto registra troca de regras, identificação de alvos e erros como autoavaliação.", aboutText: "Atenção sustentada é a capacidade de selecionar sinais relevantes em uma sequência repetitiva. Repita nas mesmas condições e acompanhe a evolução dos pontos e erros.\n\nSono, estresse, tela e familiaridade alteram o resultado; ele não substitui avaliação profissional.", audienceTitle: "Para quem serve?", audienceText: "Para estudantes antes de provas longas, jogadores que querem manter precisão e pessoas que precisam sustentar o foco no trabalho.", skillsTitle: "Habilidades treinadas", skillsText: "Atenção sustentada, identificação de alvos, vigilância sob fadiga e controle de impulsos.", flexibilityTitle: "Flexibilidade cognitiva", flexibilityText: "A troca entre vogais e números primos a cada 10 segundos treina a alternância rápida entre regras."
       }} />
       <DrillGuide {...guideProps} />
       <RelatedDrills />

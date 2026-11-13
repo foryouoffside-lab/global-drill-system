@@ -103,7 +103,7 @@ const guide = {
   intro: [
     'Se a sua mira fica tremendo e escapando do alvo, este treino isola uma parte do problema: segurar a mira estável contra uma força que muda de direção. Um vento aleatório empurra o retículo para fora do centro e você corrige com o mouse para ficar dentro do anel. Cada partida dura 45 segundos.',
     'Movimentos rápidos de mira são descritos como um deslocamento grande seguido de uma correção fina guiada pela visão (Woodworth, 1899). Aqui você repete essa correção sem parar, e quanto menor o anel, mais precisa ela precisa ser (Fitts, 1954).',
-    'Este treino não ajusta sensibilidade, DPI nem hardware, e não mede tremor, equilíbrio ou saúde. Compare resultados só com suas próprias partidas no mesmo mouse, sensibilidade e monitor; taxa de atualização e polling rate afetam o atraso de entrada (Woods et al., 2015).',
+    'Este treino não ajusta sensibilidade, DPI nem hardware. Compare resultados só com suas próprias partidas no mesmo mouse, sensibilidade e monitor; taxa de atualização e polling rate afetam o atraso de entrada (Woods et al., 2015).',
   ],
   benchmarks: {
     title: 'Faixas de prática do SkillDrills',

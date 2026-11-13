@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Tiempo de Reacción de Elección | Velocidad de Decisión",
-  description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual; no es clínico.",
+  description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual.",
   keywords: ["tiempo de reacción de elección", "reacción de elección", "velocidad de decisión", "cambio de regla", "ley de Hick"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Tiempo de Reacción de Elección | Velocidad de Decisión",
-    description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual; no es clínico.",
+    description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Tiempo de Reacción de Elección | Velocidad de Decisión",
-    description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual; no es clínico.",
+    description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -193,10 +193,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿Es una prueba médica?",
+      "name": "¿Cómo comparo mis resultados?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Es un ejercicio de práctica en el navegador, no un diagnóstico, cribado ni test psicotécnico oficial. El resultado también depende del dispositivo y del día; compara tus propias sesiones en el mismo dispositivo."
+        "text": "Es un ejercicio de práctica en el navegador, no un test psicotécnico oficial. El resultado también depende del dispositivo y del día; compara tus propias sesiones en el mismo dispositivo."
       }
     },
     {
@@ -254,13 +254,13 @@ const guideProps = {
     paragraphs: [
       "El tiempo de reacción de elección es el tiempo que tardas en identificar, entre varios estímulos, el que cumple una regla y elegir la respuesta correcta. En este ejercicio gratis aparecen a la vez un objetivo rojo y uno azul, y pulsas el color que indica el aviso superior. Desde el nivel 2 la regla se invierte, así que revísala antes de cada pulsación.",
       "A diferencia de la reacción simple a un único estímulo, la reacción de elección añade la discriminación del estímulo y la selección de la respuesta, por lo que suele ser más lenta (Donders).",
-      "La Ley de Hick-Hyman (Hick, 1952; Hyman, 1953) describe el aumento logarítmico del tiempo de decisión con el número de opciones. El ejercicio muestra puntos, precisión, nivel máximo y mejor combo; no mide milisegundos y no es una prueba clínica.",
+      "La Ley de Hick-Hyman (Hick, 1952; Hyman, 1953) describe el aumento logarítmico del tiempo de decisión con el número de opciones. El ejercicio muestra puntos, precisión, nivel máximo y mejor combo; no mide milisegundos.",
     ],
   },
   benchmarks: {
     title: 'Etapas de práctica SkillDrills (precisión)',
     headers: ['Nivel', 'Rango', 'Tasa de Precisión', 'Marcador de práctica'],
-    note: "Etapas de práctica definidas por SkillDrills para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas.",
+    note: "Etapas de práctica definidas por SkillDrills para comparar tus propias sesiones; no son estadísticas de población.",
     rows: [
       { tier: 'Etapa 1', rank: 'Muy precisa', accuracy: '98%+', marker: 'Casi sin errores, incluso tras los cambios de regla' },
       { tier: 'Etapa 2', rank: 'Avanzada', accuracy: '94-97%', marker: 'Regular' },

@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "¿Qué es un test de memoria visual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aquí es un ejercicio de memoria de trabajo visoespacial: memorizas qué casillas se iluminan en la cuadrícula y luego las pulsas de memoria, sin repetir las posiciones con palabras. Es un juego de práctica gratuito, no una prueba clínica ni un psicotécnico oficial."
+        "text": "Aquí es un ejercicio de memoria de trabajo visoespacial: memorizas qué casillas se iluminan en la cuadrícula y luego las pulsas de memoria, sin repetir las posiciones con palabras. Es un juego de práctica gratuito, no un psicotécnico oficial."
       }
     },
     {
@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "¿Es esto el Visual Patterns Test (VPT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. El Visual Patterns Test (Della Sala et al., 1997) es una prueba neuropsicológica de investigación con patrones en cuadrícula. Este ejercicio es un juego de práctica gratuito con un formato parecido, pero no sigue su procedimiento ni sus normas."
+        "text": "No. El Visual Patterns Test (Della Sala et al., 1997) es una prueba de investigación con patrones en cuadrícula. Este ejercicio es un juego de práctica gratuito con un formato parecido, pero no sigue su procedimiento ni sus normas."
       }
     },
     {
@@ -212,11 +212,10 @@ const faqSchema = {
 const gridGuide = {
   intro: [
   "Este test de memoria visual online muestra durante 1,5 segundos unas casillas iluminadas en una cuadrícula y luego repites el patrón de memoria. Empiezas con 5 casillas en una cuadrícula de 4x4; cada patrón correcto añade una casilla y en la cuadrícula de 5x5 se llega hasta 12 casillas. Se trata de recordar la forma del patrón, no de describirlo con palabras.",
-  "El estudio clínico del span visoespacial fue iniciado por Pietro Corsi (1972) con el test de bloques de Corsi, demostrando que la memoria visoespacial opera en un sistema neural independiente del span de dígitos verbales (Milner, 1971). En 1997, Sergio Della Sala, Robert H. Logie y colaboradores publicaron el Visual Patterns Test (VPT) para aislar la retención de patrones matriciales estáticos respecto a movimientos secuenciales dinámicos. Este ejercicio usa un formato parecido, pero no es el VPT.",
+  "El estudio del span visoespacial fue iniciado por Pietro Corsi (1972) con el test de bloques de Corsi, demostrando que la memoria visoespacial opera en un sistema neural independiente del span de dígitos verbales (Milner, 1971). En 1997, Sergio Della Sala, Robert H. Logie y colaboradores publicaron el Visual Patterns Test (VPT) para aislar la retención de patrones matriciales estáticos respecto a movimientos secuenciales dinámicos. Este ejercicio usa un formato parecido, pero no es el VPT.",
   "En la neurociencia cognitiva moderna, Robert H. Logie (1995) y Alan Baddeley (2000) subdividieron la agenda visoespacial en el 'Caché Visual' (almacén pasivo de forma, color y patrones estáticos) y el 'Escriba Interno' (mecanismo activo de planificación y repaso espacial). Además, investigaciones de Steven J. Luck & Edward K. Vogel (1997) y Nelson Cowan (2001) confirmaron que la memoria de trabajo visual pura está limitada a 3 o 4 elementos independientes. Expandir este límite exige aplicar chunking espacial: agrupar casillas en figuras Gestalt completas.",
   "Cómo funciona: cada patrón se muestra 1,5 segundos. El reloj de 60 segundos solo corre mientras repites el patrón. Un patrón completo suma 150 puntos; una casilla incorrecta termina la ronda sin restar puntos ni tiempo, y aparece un patrón nuevo en el mismo nivel. No se mide el tiempo de reacción.",
-  "Datos: tu puntuación y tu récord se guardan solo en el localStorage del navegador y no se envían a ningún servidor.",
-  "Este ejercicio es un juego cognitivo gratuito orientado a la práctica y el entrenamiento mental; no es un dispositivo médico ni una prueba diagnóstica clínica. Si tienes dudas sobre tu salud cognitiva, consulta con un profesional médico."
+  "Datos: tu puntuación y tu récord se guardan solo en el localStorage del navegador y no se envían a ningún servidor."
 ],
   benchmarks: {
     title: "Franjas de práctica SkillDrills (una partida)",
@@ -227,7 +226,7 @@ const gridGuide = {
       ["Franja inicial", "150 – 450", "1 – 3", "4x4 con 6 a 7 casillas; tras 3 patrones, 5x5"],
       ["Inicio", "0", "0", "Cuadrícula 4x4, 5 casillas"]
     ],
-    note: "Puntos = patrones completos × 150. Las franjas se calculan a partir de las reglas del juego: son referencias de práctica de SkillDrills, no estadísticas de población ni normas clínicas."
+    note: "Puntos = patrones completos × 150. Las franjas se calculan a partir de las reglas del juego: son referencias de práctica de SkillDrills, no estadísticas de población."
   },
   techniques: {
     title: "Técnicas comprobadas para ampliar la memoria visual matricial",

@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Wahlreaktionstest mit Regelwechsel | SkillDrills",
-  description: "Kostenloser Wahlreaktionstest im Browser: Klicke das rote oder blaue Ziel nach einer wechselnden Farbregel. Übung für Entscheidungstempo, kein klinischer Test.",
+  description: "Kostenloser Wahlreaktionstest im Browser: Klicke das rote oder blaue Ziel nach einer wechselnden Farbregel. Übung für Entscheidungstempo.",
   keywords: ["Wahlreaktionstest", "Wahlreaktionstest online", "Wahlreaktionszeit", "Regelwechsel", "Entscheidungstempo", "Entscheidungsgeschwindigkeit"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Wahlreaktionstest mit Regelwechsel | SkillDrills",
-    description: "Kostenloser Wahlreaktionstest im Browser: Klicke das rote oder blaue Ziel nach einer wechselnden Farbregel. Übung für Entscheidungstempo, kein klinischer Test.",
+    description: "Kostenloser Wahlreaktionstest im Browser: Klicke das rote oder blaue Ziel nach einer wechselnden Farbregel. Übung für Entscheidungstempo.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Wahlreaktionstest mit Regelwechsel | SkillDrills",
-    description: "Kostenloser Wahlreaktionstest im Browser: Klicke das rote oder blaue Ziel nach einer wechselnden Farbregel. Übung für Entscheidungstempo, kein klinischer Test.",
+    description: "Kostenloser Wahlreaktionstest im Browser: Klicke das rote oder blaue Ziel nach einer wechselnden Farbregel. Übung für Entscheidungstempo.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -193,10 +193,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Ist das ein medizinischer Test?",
+      "name": "Wie vergleiche ich meine Ergebnisse?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nein. Es ist eine Übung im Browser, keine Diagnose und kein Screening. Ergebnisse hängen auch von Gerät und Tagesform ab; vergleiche am besten deine eigenen Werte auf demselben Gerät."
+        "text": "Ergebnisse hängen auch von Gerät und Tagesform ab; vergleiche am besten deine eigenen Werte auf demselben Gerät."
       }
     },
     {
@@ -254,7 +254,7 @@ const guideProps = {
     paragraphs: [
       "Der Wahlreaktionstest ist eine kostenlose Browser-Übung: Ein rotes und ein blaues Ziel erscheinen gleichzeitig, und du klickst das Ziel, dessen Farbe das Banner oben vorgibt. Ab Stufe 2 wechselt die Regel, darum musst du sie vor jedem Klick prüfen.",
       "Anders als bei einer einfachen Reaktion auf einen einzigen Reiz kommen bei der Wahlreaktion Reizunterscheidung und Antwortauswahl hinzu; sie ist deshalb in der Regel langsamer (Donders).",
-      "Dass die Entscheidungszeit mit der Zahl der Alternativen logarithmisch steigt, beschreibt das Hicksche Gesetz (Hick, 1952). Der Drill zeigt Punkte, Genauigkeit, höchste Stufe und beste Combo, misst keine Millisekunden und ist kein klinischer Test.",
+      "Dass die Entscheidungszeit mit der Zahl der Alternativen logarithmisch steigt, beschreibt das Hicksche Gesetz (Hick, 1952). Der Drill zeigt Punkte, Genauigkeit, höchste Stufe und beste Combo, misst aber keine Millisekunden.",
     ],
   },
   benchmarks: {

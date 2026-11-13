@@ -59,7 +59,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Exercice de 45 secondes dans le navigateur : gardez le curseur (ou le doigt) sur un point qui change de vitesse et de direction. Seule la position du curseur est notée ; pas de mesure du regard par caméra, ni test de la vue ou examen médical.",
+  "description": "Exercice de 45 secondes dans le navigateur : gardez le curseur (ou le doigt) sur un point qui change de vitesse et de direction. Seule la position du curseur est notée ; pas de mesure du regard par caméra.",
   "featureList": [
     "Manche fixe de 45 secondes ; le point change de vitesse et de direction au hasard et rebondit sur les bords",
     "Environ 1 seconde de curseur sur le point (zone de contact généreuse) : +5 points et série +1",
@@ -206,7 +206,7 @@ const faqSchema = {
       "name": "Cet entraînement améliore-t-il ma vue ou ma visée ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un meilleur score montre que vous maîtrisez mieux cette tâche. Aucune amélioration de la vue, du jeu ou du sport n'est garantie, et l'exercice ne remplace pas un examen chez un ophtalmologiste."
+        "text": "Un meilleur score montre que vous maîtrisez mieux cette tâche. Aucune amélioration de la vue, du jeu ou du sport n'est garantie."
       }
     },
     {
@@ -225,7 +225,7 @@ const guideData = {
   intro: [
     "Ce test de poursuite lisse au curseur consiste à suivre du regard un point qui se déplace pendant 45 secondes en gardant le curseur dessus. Seul le temps passé par le curseur sur le point est noté ; vos yeux ne sont pas filmés.",
     "Chaque seconde environ de contact ininterrompu (zone généreuse) rapporte +5 points et allonge la série. Le point change de vitesse et de direction sans prévenir, rebondit sur les bords et devient plus petit et plus rapide quand le score monte. Plus de 2 secondes à côté remet seulement la série à zéro.",
-    "Les yeux suivent en douceur un objet lent ; s'il va trop vite, le regard prend du retard et rattrape par petits sauts (Krauzlis, 2004). L'exercice en fait une simple tâche de curseur et ne mesure ni ne diagnostique l'acuité visuelle ou les mouvements des yeux."
+    "Les yeux suivent en douceur un objet lent ; s'il va trop vite, le regard prend du retard et rattrape par petits sauts (Krauzlis, 2004). L'exercice en fait une simple tâche de curseur."
   ],
   benchmarks: {
     "title": "Paliers d'entraînement SkillDrills (propres à cet exercice, 60 Hz)",

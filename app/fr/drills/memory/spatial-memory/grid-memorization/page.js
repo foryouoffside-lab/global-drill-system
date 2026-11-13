@@ -262,11 +262,10 @@ const gridGuide = {
   heading: "Guide Scientifique de la Mémoire Visuelle & Matrice de Grille",
   intro: [
     "Ce test de mémoire visuelle en ligne affiche pendant 1,5 seconde des cases allumées dans une grille, puis tu reproduis le motif de mémoire. Tu commences avec 5 cases sur une grille 4x4 ; chaque motif réussi ajoute une case, et la grille 5x5 monte jusqu'à 12 cases. Ce sont des motifs à mémoriser par leur forme, sans les décrire avec des mots.",
-    "L'étude clinique de l'empan visuo-spatial a été inaugurée par Pietro Corsi (1972) à travers le test des blocs de Corsi, démontrant que la mémoire visuo-spatiale constitue un système mnésique indépendant de l'empan verbal de chiffres (Milner, 1971). En 1997, Sergio Della Sala, Robert H. Logie et leurs collègues ont publié le Visual Patterns Test (VPT) afin d'isoler la rétention de motifs matriciels statiques des processus de mouvement séquentiel. Cet exercice utilise un format proche, mais ce n'est pas le VPT.",
+    "L'étude de l'empan visuo-spatial a été inaugurée par Pietro Corsi (1972) à travers le test des blocs de Corsi, démontrant que la mémoire visuo-spatiale constitue un système mnésique indépendant de l'empan verbal de chiffres (Milner, 1971). En 1997, Sergio Della Sala, Robert H. Logie et leurs collègues ont publié le Visual Patterns Test (VPT) afin d'isoler la rétention de motifs matriciels statiques des processus de mouvement séquentiel. Cet exercice utilise un format proche, mais ce n'est pas le VPT.",
     "Dans les neurosciences cognitives modernes, Robert H. Logie (1995) et Alan Baddeley (2000) ont subdivisé le calepin visuo-spatial en deux registres : le « cache visuel » (espace passif dédié aux représentations statiques de forme, de couleur et d'agencement) et le « scribe interne » (mécanisme actif de planification motrice et de répétition spatiale). Les recherches pionnières de Steven J. Luck & Edward K. Vogel (1997) et de Nelson Cowan (2001) confirment que la mémoire de travail visuelle brute est strictement plafonnée à 3 ou 4 unités indépendantes : repousser cette limite impose un regroupement spatial en formes gestaltistes (chunking).",
     "Déroulement : chaque motif s'affiche 1,5 seconde. Le chrono de 60 secondes ne tourne que pendant la reproduction. Un motif complet rapporte 150 points et ajoute une case ; une case erronée termine la manche sans perte de points ni de temps, et un nouveau motif apparaît au même niveau. Aucun temps de réaction n'est mesuré.",
-    "Transparence des données et respect de la vie privée : SkillDrills ne collecte aucune donnée agrégée. Vos scores et préférences demeurent stockés exclusivement dans le localStorage de votre navigateur web, garantissant qu'aucune moyenne globale ni profil d'utilisateur n'est publié.",
-    "Cet entraînement est un jeu interactif sur navigateur conçu à des fins d'entraînement personnel et pédagogique. Il ne constitue pas un dispositif médical, un outil d'évaluation clinique, ni un protocole de diagnostic pour le TDAH, les troubles de la mémoire ou les affections neurocognitives. Si vous avez des interrogations sur votre santé cognitive ou vos capacités de mémorisation, consultez un neuropsychologue ou un médecin qualifié."
+    "Transparence des données et respect de la vie privée : SkillDrills ne collecte aucune donnée agrégée. Vos scores et préférences demeurent stockés exclusivement dans le localStorage de votre navigateur web, garantissant qu'aucune moyenne globale ni profil d'utilisateur n'est publié."
   ],
   benchmarks: {
     title: "Repères d'entraînement SkillDrills (une partie)",
@@ -277,7 +276,7 @@ const gridGuide = {
       ["Palier de départ", "150 – 450", "1 – 3", "4x4 avec 6 à 7 cases, passage en 5x5 après 3 motifs"],
       ["Début", "0", "0", "Grille 4x4, 5 cases"]
     ],
-    note: "Points = motifs réussis × 150. Ces paliers sont calculés à partir des règles du jeu : ce sont des repères d'entraînement SkillDrills, pas des statistiques de population ni des normes cliniques."
+    note: "Points = motifs réussis × 150. Ces paliers sont calculés à partir des règles du jeu : ce sont des repères d'entraînement SkillDrills, pas des statistiques de population."
   },
   techniques: {
     title: "Protocoles Scientifiques pour Développer la Mémoire Matricielle",

@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "速読テスト | RSVP読書トレーニング | SkillDrills",
-  description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",
+  description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する読書トレーニングです。",
   keywords: ["速読テスト", "速読テスト 無料", "速読 トレーニング", "RSVP速読", "WPM", "速読 練習"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "速読テスト | RSVP読書トレーニング | SkillDrills",
-    description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",
+    description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する読書トレーニングです。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "速読テスト | RSVP読書トレーニング | SkillDrills",
-    description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",
+    description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する読書トレーニングです。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -261,7 +261,7 @@ const guideProps = {
   benchmarks: {
     title: '認知パフォーマンス標準評価（ベンチマーク）',
     headers: ['等級 (Tier)', '称号 (Rank)', '到達ランク', '正答率'],
-    note: 'この表は練習の目安として編集したもので、統計や診断ではありません。環境によって結果は変わります。',
+    note: 'この表は練習の目安として編集したもので、統計ではありません。環境によって結果は変わります。',
     rows: [
       { tier: 'Tier 1', rank: '超高速情報処理の最上位段階', level: 'マスタリー（極限）', accuracy: '98% 以上' },
       { tier: 'Tier 2', rank: '上級速読スペシャリスト', level: 'ダイヤモンド（優秀）', accuracy: '94–97%' },

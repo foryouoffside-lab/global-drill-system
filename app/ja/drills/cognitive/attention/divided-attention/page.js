@@ -7,13 +7,13 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "注意分割テスト | 二重課題トレーニング | SkillDrills",
-  description: "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。医学的診断ではない認知セルフチェックです。",
+  description: "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。",
   keywords: ["注意分割テスト", "二重課題 トレーニング", "デュアルタスク 練習", "注意の分割", "マルチタスク 脳トレ", "二重課題 テスト", "心理的不応期", "認知ボトルネック", "注意配分 テスト", "動体追従 数字処理",
     "二重課題 認知テスト",
     "注意分割 訓練 無料"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "注意分割テスト | 二重課題トレーニング | SkillDrills",
-    description: "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。医学的診断ではない認知セルフチェックです。",
+    description: "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "注意分割テスト | 二重課題トレーニング | SkillDrills",
-    description: "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。医学的診断ではない認知セルフチェックです。",
+    description: "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -73,7 +73,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "description": "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。医学的診断ではない認知セルフチェックです。",
+  "description": "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。",
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/divided-attention",
   "publisher": {
     "@type": "Organization",
@@ -106,7 +106,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "注意分割テスト – 二重課題視覚追従＆数字照合ゲーム",
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/divided-attention",
-  "description": "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。医学的診断ではない認知セルフチェックです。",
+  "description": "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。",
   "genre": [
     "Action",
     "Brain Game",
@@ -134,7 +134,7 @@ const faqSchema = {
       "name": "注意分割テスト（Divided Attention Test）とは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "2つの情報源に同時に注意を配分する練習ドリルです。ランダムな位置に現れる青い標的をクリックしつつ、右側の数字（0〜9）が偶数のときだけ判定ボタンを押します。臨床検査ではありません。"
+        "text": "2つの情報源に同時に注意を配分する練習ドリルです。ランダムな位置に現れる青い標的をクリックしつつ、右側の数字（0〜9）が偶数のときだけ判定ボタンを押します。"
       }
     },
     {
@@ -216,7 +216,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "注意分割テスト・二重課題トレーニング",
-  "description": "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。医学的診断ではない認知セルフチェックです。",
+  "description": "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。",
   "step": [
     {
       "@type": "HowToStep",
@@ -254,7 +254,7 @@ const guideProps = {
   intro: {
     title: "注意分割テストのガイド",
     paragraphs: [
-      "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。医学的診断ではない認知セルフチェックです。",
+      "無料の注意分割テスト：ランダムな位置に現れる青い標的をクリックしながら、数字ストリームの偶数を判定する二重課題トレーニング。",
       "2つの刺激が短い時間間隔で連続提示された際、中枢の決定ボトルネック（Pashler, 1994）によって2番目の反応が大幅に遅延する生理的現象です。",
       "視覚・空間処理と聴覚・言語処理など、異なる感覚モダリティを用いる課題同士であれば、同一モダリティ同士よりも注意の競合が少なく効率的に分割できるという理論です。",
     ],
@@ -329,7 +329,7 @@ export default function LocalizedCognitivePage() {
           { text: "奇数は無視", highlight: "誤反応なし", result: "奇数では押さない" },
           { text: "ミス / 見落とし", highlight: "コンボリセット", result: "-1秒" },
         ],
-        aboutTitle: "注意分割テストと二重課題トレーニング", aboutLead: "現れる視覚標的のクリックと数字分類を同時に行う、非臨床の認知セルフチェックです。",
+        aboutTitle: "注意分割テストと二重課題トレーニング", aboutLead: "現れる視覚標的のクリックと数字分類を同時に行う、認知トレーニングです。",
         audienceTitle: "おすすめの人", audienceText: "ゲームでミニマップと目標を同時に見る人、学習者、複数の入力を素早く扱う人に向いています。",
         skillsTitle: "鍛える力", skillsText: "二重課題処理、視覚追従、数字判断、注意資源の配分を練習します。", flexibilityTitle: "並列処理", flexibilityText: "二つの情報の流れを切り替えながら、片方の正確さを落とさないよう調整します。"
       }} />

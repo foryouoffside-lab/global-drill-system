@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Go/No-Go-Test online kostenlos | Reaktionshemmung üben | SkillDrills",
-  description: "Go/No-Go-Test kostenlos im Browser: bei Grün sofort klicken, bei Rot nicht drücken. Übt die Reaktionshemmung und zählt Fehlreaktionen und Auslassungen. Kein Diagnosetest.",
+  description: "Go/No-Go-Test kostenlos im Browser: bei Grün sofort klicken, bei Rot nicht drücken. Übt die Reaktionshemmung und zählt Fehlreaktionen und Auslassungen.",
   keywords: [
     "Go/No-Go-Test",
     "Go/No-Go-Test online",
@@ -19,7 +19,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Go/No-Go-Test online kostenlos | Reaktionshemmung üben | SkillDrills",
-    description: "Bei Grün sofort klicken, bei Rot stillhalten. Kostenloser Go/No-Go-Test im Browser für Reaktionshemmung und Fehlreaktionen. Kein Diagnosetest.",
+    description: "Bei Grün sofort klicken, bei Rot stillhalten. Kostenloser Go/No-Go-Test im Browser für Reaktionshemmung und Fehlreaktionen.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go',
     siteName: 'SkillDrills',
@@ -57,7 +57,7 @@ const softwareApplicationSchema = {
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "description": "Browser-Version der Go/No-Go-Aufgabe: Bei grünem Go-Signal klicken, bei rotem No-Go-Signal nicht drücken. Zählt Fehlreaktionen, Auslassungen und Reaktionszeit. Übungswerkzeug, kein medizinischer Test.",
+  "description": "Browser-Version der Go/No-Go-Aufgabe: Bei grünem Go-Signal klicken, bei rotem No-Go-Signal nicht drücken. Zählt Fehlreaktionen, Auslassungen und Reaktionszeit. Übungswerkzeug.",
   "featureList": [
     "Reaktionszeitmessung in Millisekunden mit performance.now()",
     "Signaldauer sinkt mit dem Level von etwa 600 ms auf mindestens 100 ms",
@@ -182,10 +182,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Kann man damit ADHS oder Impulsivität feststellen?",
+      "name": "Warum schwanken meine Ergebnisse?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nein. Das ist ein Übungsspiel im Browser, kein medizinischer Test und keine Diagnose. Ergebnisse hängen auch von Bildschirm, Eingabegerät, Müdigkeit und Konzentration ab. Wer sich wegen Impulsivität oder Aufmerksamkeit Sorgen macht, sollte fachlichen Rat einholen."
+        "text": "Ergebnisse hängen von Bildschirm, Eingabegerät, Müdigkeit und Konzentration ab. Spiele mehrere Runden auf demselben Gerät und vergleiche deine Werte."
       }
     },
     {
@@ -220,7 +220,7 @@ const goNoGoGuide = {
   intro: [
     "Beim Go/No-Go-Test reagiert man auf häufige Signale und hält sich bei seltenen Signalen zurück. Es geht also nicht nur ums schnelle Klicken, sondern darum, im richtigen Moment nicht zu drücken. Das unterscheidet ihn von einem einfachen Reaktionstest.",
     "In dieser Browser-Version erscheint in der Mitte ein grüner Kreis (Go) oder ein roter Kreis (No-Go). Bei Grün klicken oder tippen, bei Rot warten. Klicks ohne Kreis und schnelles Dauerklicken zählen ebenfalls als Fehlreaktion. Mit steigendem Level sinkt die Anzeigedauer von etwa 600 ms auf mindestens 100 ms.",
-    "Die Idee von Wahlreaktionsaufgaben geht auf die Reaktionszeitstudien von Donders (1868) zurück; den Wettlauf zwischen Start- und Stopp-Prozess haben Logan & Cowan (1984) als Modell beschrieben. Die Punktzahl hier ist trotzdem ein Übungsergebnis inklusive Bildschirm, Eingabegerät und Browser und kein medizinischer Test.",
+    "Die Idee von Wahlreaktionsaufgaben geht auf die Reaktionszeitstudien von Donders (1868) zurück; den Wettlauf zwischen Start- und Stopp-Prozess haben Logan & Cowan (1984) als Modell beschrieben. Die Punktzahl hier ist ein Übungsergebnis inklusive Bildschirm, Eingabegerät und Browser.",
     "Gemessen wird mit performance.now() im Browser. Bildwiederholrate und Eingabeverzögerung fließen ins Ergebnis ein (Woods et al., 2015), daher Werte nur auf demselben Gerät vergleichen. Die Daten bleiben im Browser dieses Geräts."
   ],
   benchmarks: {
@@ -267,7 +267,7 @@ const goNoGoGuide = {
     "Bei rotem No-Go-Kreis warten, bis er verschwindet.",
     "Am Ende Fehlreaktionsrate, Durchschnittsreaktion und erreichtes Level ansehen."
   ],
-  audience: "Für alle, die einen Go/No-Go-Test online ausprobieren und neben Tempo auch das bewusste Nicht-Drücken üben wollen, etwa Gamer und Sportler. Nicht geeignet für medizinische Abklärungen.",
+  audience: "Für alle, die einen Go/No-Go-Test online ausprobieren und neben Tempo auch das bewusste Nicht-Drücken üben wollen, etwa Gamer und Sportler.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('donders1868', 'logan1984', 'robertson1997', 'woods2015'),
   related: [

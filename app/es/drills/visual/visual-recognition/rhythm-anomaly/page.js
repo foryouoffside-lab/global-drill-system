@@ -87,7 +87,7 @@ const TIPS = [
   "Compara resultados en el mismo dispositivo y con el mismo brillo de pantalla."
 ];
 const INTRO = [
-  "En este juego, las 36 celdas de una cuadrícula 6x6 parpadean despacio al mismo compás. Solo una celda parpadea a un ritmo más rápido: encuentra la celda fuera de ritmo y haz clic en ella. La sesión dura 45 segundos y se juega gratis en el navegador, con ratón o pantalla táctil. No es un examen de la vista ni una prueba médica.",
+  "En este juego, las 36 celdas de una cuadrícula 6x6 parpadean despacio al mismo compás. Solo una celda parpadea a un ritmo más rápido: encuentra la celda fuera de ritmo y haz clic en ella. La sesión dura 45 segundos y se juega gratis en el navegador, con ratón o pantalla táctil.",
   "La celda distinta tiene cerca del 72 % del periodo de las demás: parpadea unas 1,4 veces más rápido y se ve algo más clara en el pico. Con cada acierto, toda la cuadrícula acelera (periodo de 1,6 s hasta un mínimo de 0,6 s). Al principio es fácil; después hay que notar la diferencia de ritmo más deprisa.",
   "La cuadrícula parpadea entre 0,6 y 2,5 veces por segundo, muy por debajo de la frecuencia crítica de fusión (unos 50 a 60 Hz; De Lange, 1958; Kelly, 1961). Por eso no es un test de parpadeo (CFF), sino una tarea de atención de discriminación temporal visual en la que comparas ritmos. Juzgar si dos estímulos van al mismo compás solo es posible a ritmos mucho más lentos que detectar el parpadeo en sí (Holcombe, 2009)."
 ];
@@ -140,7 +140,7 @@ const softwareApplicationSchema = {
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Juego de 45 segundos en el navegador: encuentra en la cuadrícula 6x6 la celda que parpadea más rápido que las demás. Ratón o táctil, sin valor médico.",
+  "description": "Juego de 45 segundos en el navegador: encuentra en la cuadrícula 6x6 la celda que parpadea más rápido que las demás. Ratón o táctil.",
   "url": PAGE_URL,
   "inLanguage": "es-ES",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },

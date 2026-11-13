@@ -62,7 +62,7 @@ const faqItems = [
   },
   {
     "q": "É um teste de memória visual?",
-    "a": "Não. É um jogo de prática sem diagnóstico nem valores de referência. Os testes de memória da SkillDrills ficam na categoria Memória."
+    "a": "Não. É um jogo de prática sem valores de referência. Os testes de memória da SkillDrills ficam na categoria Memória."
   },
   {
     "q": "Funciona no celular?",
@@ -115,7 +115,7 @@ const guide = {
   "heading": "Memorizar e Traçar Padrões: como jogar e dicas",
   "intro": [
     "Memorizar e Traçar Padrões é um jogo de padrões gratuito no navegador: um caminho aparece rapidamente, você o memoriza e depois traça o caminho de memória com o mouse. Quando o caminho some, comece no nó ciano, passe pelos pontos na ordem lembrada e solte o botão no nó magenta. A proximidade entre o seu traço e o original é calculada como semelhança em porcentagem.",
-    "Cada rodada dura 45 segundos. O nível começa em 1 a cada rodada e sobe com pontos e sequências de acertos; perto do nível 15 o jogo chega a 8 pontos, 0,6 segundo de exibição e 85% de semelhança exigida. Como referência de dificuldade usamos o modelo de memória de trabalho com o seu componente visuoespacial (Baddeley & Hitch, 1974) e estudos que estimam a sua capacidade em cerca de quatro itens (Cowan, 2001). É um jogo de prática, não um teste de memória com diagnóstico ou valores de referência."
+    "Cada rodada dura 45 segundos. O nível começa em 1 a cada rodada e sobe com pontos e sequências de acertos; perto do nível 15 o jogo chega a 8 pontos, 0,6 segundo de exibição e 85% de semelhança exigida. Como referência de dificuldade usamos o modelo de memória de trabalho com o seu componente visuoespacial (Baddeley & Hitch, 1974) e estudos que estimam a sua capacidade em cerca de quatro itens (Cowan, 2001). É um jogo de prática."
   ],
   "techniques": {
     "title": "Dicas para traçar com mais precisão",

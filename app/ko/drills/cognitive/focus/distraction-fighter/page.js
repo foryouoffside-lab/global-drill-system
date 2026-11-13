@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — ko-KR (cognitive/focus/distraction-fighter)
-// PRIMARY:  "스트룹 검사"                    — Top Korean psychological/clinical test query
+// PRIMARY:  "스트룹 검사"                    — Top Korean psychological test query
 //           "스트룹 효과"                    — High volume educational & cognitive query
 // SECONDARY / LSI:
 //           "스트룹 테스트 온라인"           — Direct web tool search intent
@@ -21,7 +21,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "스트룹 테스트 | 선택적 주의력 훈련 | SkillDrills",
-  description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 비임상 자기 점검입니다.",
+  description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 자기 점검입니다.",
   keywords: [
     "스트룹 검사",
     "스트룹 테스트 온라인",
@@ -34,7 +34,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "스트룹 테스트 | 선택적 주의력 훈련 | SkillDrills",
-    description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 비임상 자기 점검입니다.",
+    description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 자기 점검입니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
@@ -43,7 +43,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "스트룹 테스트 | 선택적 주의력 훈련 | SkillDrills",
-    description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 비임상 자기 점검입니다.",
+    description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 자기 점검입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -172,10 +172,10 @@ export default function DistractionFighterPageKo() {
       },
       {
         "@type": "Question",
-        "name": "이 검사로 ADHD나 인지 장애를 진단할 수 있나요?",
+        "name": "점수에 영향을 주는 요소는 무엇인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "아닙니다. 본 사이트의 도구는 두뇌 훈련 및 자기 점검용 웹 기반 드릴이며 의료 진단 기기가 아닙니다. 의학적 진단은 반드시 정신건강의학과 전문의와 상담하시기 바랍니다."
+          "text": "정답 1개는 100점 × 콤보 배율 × 레벨 배율이므로 연속 정답을 이어 가는 것이 가장 중요합니다. 오답이나 타임아웃은 콤보를 초기화하고 1초를 줄이므로, 단어의 뜻이 아니라 글자 색을 정확히 고르는 데 집중하세요."
         }
       },
       {
@@ -241,7 +241,7 @@ export default function DistractionFighterPageKo() {
       "인지 신경과학적으로 성인의 글자 읽기(독해)는 일상적인 반복을 통해 무의식적이고 자동화된(Automatic) 프로세스로 굳어져 있습니다 (MacLeod, 1991). 반면 잉크의 색상을 식별하는 작업은 의식적인 노력을 요구합니다. 자동으로 튀어나오는 반응을 멈추는 과정은 반응 억제 연구에서 '경주(race)'로 설명되기도 합니다 (Logan & Cowan, 1984). 스트룹 과제에서도 자동화된 단어 읽기를 누르지 못하면 실수가 생깁니다.",
       "기능적 뇌 영상 촬영(fMRI) 결과에 따르면, 이러한 인지적 갈등 해결은 주로 전방 대상피질(ACC)과 배외측 전전두피질(DLPFC)의 신경망에 의해 매개됩니다 (Posner & Petersen, 1990). 이 드릴은 그런 간섭 상황을 반복해서 연습하게 해 주지만, 일상 집중력 향상을 보장하지는 않습니다.",
       "타이밍 안내: 이 드릴은 반응 시간을 표시하지 않고 점수, 정확도, 도달 레벨을 기록합니다. 단어별 제한 시간은 사용자 기기에서 브라우저 타이머로 처리됩니다. 브라우저는 Spectre 취약점 방어를 위해 타이머 정밀도를 미세하게 조정(약 1ms)하며, 모니터 주사율(60Hz 시 프레임당 약 16.7ms, 144Hz 시 6.9ms, 240Hz 시 4.1ms)에 따라 화면 갱신이 양자화됩니다 (Woods et al., 2015). 서로 다른 기기 간의 점수 비교보다는 같은 환경에서 자신의 이전 기록과 비교하세요.",
-      "데이터 프라이버시 및 비의료용 면책 안내: SkillDrills는 어떠한 사용자 식별 데이터나 개인 기록도 원격 서버로 수집·전송하지 않습니다. 모든 훈련 점수와 설정값은 사용자의 웹 브라우저 로컬 저장소(localStorage)에만 안전하게 보관됩니다. 본 스트룹 과제는 연습용 무료 브라우저 게임이며, ADHD(주의력결핍 과잉행동장애) 등의 신경학적 질환을 진단하거나 치료하기 위한 의료기기가 아닙니다. 주의력 및 인지 기능에 관한 임상적 상담이 필요한 경우 전문 의료기관을 방문하십시오."
+      "데이터 프라이버시 안내: SkillDrills는 어떠한 사용자 식별 데이터나 개인 기록도 원격 서버로 수집·전송하지 않습니다. 모든 훈련 점수와 설정값은 사용자의 웹 브라우저 로컬 저장소(localStorage)에만 안전하게 보관됩니다. 본 스트룹 과제는 연습용 무료 브라우저 게임입니다."
     ],
     benchmarks: {
       title: "스트룹 테스트 등급 구간 (한 판 점수 기준)",
@@ -255,7 +255,7 @@ export default function DistractionFighterPageKo() {
         ["D", "2,160 – 4,859점"],
         ["F", "2,160점 미만"]
       ],
-      note: "SkillDrills 연습 구간입니다. 결과 화면의 등급 공식(기준 24,000점 대비 비율)으로 직접 계산했으며, 사용자 통계나 임상 기준이 아닙니다. 정답 1개는 100점 × 콤보 배율(최대 3배) × 레벨 배율입니다."
+      note: "SkillDrills 연습 구간입니다. 결과 화면의 등급 공식(기준 24,000점 대비 비율)으로 직접 계산했으며, 사용자 통계가 아닙니다. 정답 1개는 100점 × 콤보 배율(최대 3배) × 레벨 배율입니다."
     },
     techniques: {
       title: "스트룹 간섭 극복을 위한 4가지 인지 전략",

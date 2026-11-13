@@ -139,7 +139,7 @@ const faqSchema = {
 
 faqSchema.mainEntity.push(
   { "@type": "Question", "name": "この視覚トレーニング一覧には何種類のドリルがありますか？", "acceptedAnswer": { "@type": "Answer", "text": "動体視力と反応・衝動抑制、標的追従と眼球運動、視覚認識と奥行き判断の3分野に分かれた9種類のブラウザドリルがあります。カードから各ドリルを開けます。" } },
-  { "@type": "Question", "name": "ブラウザの視覚ドリルは眼科の視力検査の代わりになりますか？", "acceptedAnswer": { "@type": "Answer", "text": "いいえ。画面上の反応、追従、探索、空間判断を繰り返し測る練習であり、視力や眼疾患を診断するものではありません。必要な検査は眼科医や視機能の専門家に相談してください。" } }
+  { "@type": "Question", "name": "ブラウザの視覚ドリルは何を測りますか？", "acceptedAnswer": { "@type": "Answer", "text": "画面上の反応、追従、探索、空間判断を繰り返し測る練習です。同じ端末と設定で記録を比べながら練習してください。" } }
 );
 
 export default function VisualDrillsPage() {

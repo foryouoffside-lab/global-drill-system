@@ -13,7 +13,7 @@ import { pickSources } from '@/lib/drillSources';
 //           "Stroop-Effekt"                  — Academic & psychometric query
 //           "Farb-Wort-Interferenz"          — Classical German scientific term
 //           "Kognitive Inhibition"           — Cognitive mechanism term
-//           "Selektive Aufmerksamkeit Test"  — Diagnostic phrase
+//           "Selektive Aufmerksamkeit Test"  — Secondary phrase
 //           "Konzentrationstest kostenlos"   — Casual brain training query
 //           "Stroop Test online kostenlos"   — High-intent free tool search
 // WINNER TITLE: Stroop-Test Online – Kostenloser Farb-Wort-Test | SkillDrills
@@ -21,7 +21,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Stroop-Test online kostenlos | Farb-Wort-Test | SkillDrills",
-  description: "Stroop-Test online kostenlos: Tippe die Schriftfarbe, nicht das Wort, und übe selektive Aufmerksamkeit. Start mit 45 s, +2 s pro Treffer. Kein klinischer Test.",
+  description: "Stroop-Test online kostenlos: Tippe die Schriftfarbe, nicht das Wort, und übe selektive Aufmerksamkeit. Start mit 45 s, +2 s pro Treffer.",
   keywords: [
     "Stroop-Test",
     "Stroop-Test online",
@@ -35,7 +35,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Stroop-Test online kostenlos | Farb-Wort-Test | SkillDrills",
-    description: "Stroop-Test online kostenlos: Tippe die Schriftfarbe, nicht das Wort, und übe selektive Aufmerksamkeit. Start mit 45 s, +2 s pro Treffer. Kein klinischer Test.",
+    description: "Stroop-Test online kostenlos: Tippe die Schriftfarbe, nicht das Wort, und übe selektive Aufmerksamkeit. Start mit 45 s, +2 s pro Treffer.",
     type: "website",
     url: "https://skilldrills.online/de/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
@@ -44,7 +44,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Stroop-Test online kostenlos | Farb-Wort-Test | SkillDrills",
-    description: "Stroop-Test online kostenlos: Tippe die Schriftfarbe, nicht das Wort, und übe selektive Aufmerksamkeit. Start mit 45 s, +2 s pro Treffer. Kein klinischer Test.",
+    description: "Stroop-Test online kostenlos: Tippe die Schriftfarbe, nicht das Wort, und übe selektive Aufmerksamkeit. Start mit 45 s, +2 s pro Treffer.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -173,10 +173,10 @@ export default function DistractionFighterPageDe() {
       },
       {
         "@type": "Question",
-        "name": "Kann dieser Test ADHS oder kognitive Störungen diagnostizieren?",
+        "name": "Was beeinflusst meine Punktzahl?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nein. Dies ist ein Übungsspiel im Webbrowser, kein medizinisches Diagnoseinstrument. Bei Verdacht auf Aufmerksamkeitsstörungen sollte stets fachärztlicher Rat eingeholt werden."
+          "text": "Jeder Treffer bringt 100 Punkte × Combo-Multiplikator × Stufenfaktor, daher zählt eine lange Serie richtiger Antworten am meisten. Eine falsche Antwort oder ein abgelaufenes Wort setzt die Combo zurück und kostet 1 Sekunde; konzentriere dich also darauf, die Schriftfarbe statt der Wortbedeutung zu wählen."
         }
       },
       {
@@ -242,7 +242,7 @@ export default function DistractionFighterPageDe() {
       "Die neurobiologische Ursache liegt in der asymmetrischen Verarbeitungsgeschwindigkeit: Das semantische Lesen geschriebener Wörter ist im erwachsenen Gehirn durch jahrelange Praxis hochgradig automatisiert (MacLeod, 1991). Die Benennung der reinen Farbe erfordert hingegen willkürliche, kontrollierte visuelle Aufmerksamkeit. Das Stoppen automatischer Reaktionen wird in der Forschung zur Reaktionshemmung als Wettlauf beschrieben (Logan & Cowan, 1984); beim Stroop-Test entsteht ein Fehler, wenn der Leseimpuls nicht rechtzeitig gebremst wird.",
       "Funktionelle Bildgebungsstudien belegen, dass diese kognitive Konfliktlösung primär im vorderen cingulären Kortex (ACC) und im dorsolateralen präfrontalen Kortex (DLPFC) stattfindet (Posner & Petersen, 1990). Dieser Drill lässt dich diesen Konflikt wiederholt üben; eine bessere Konzentration im Alltag ist damit nicht garantiert.",
       "Zeitmessung: Der Drill zeigt keine Reaktionszeiten an, sondern Punkte, Genauigkeit und erreichte Stufe. Das Zeitfenster pro Wort läuft clientseitig über Browser-Timer. Moderne Browser vergröbern Zeitgeber als Sicherheitsmaßnahme gegen spekulative Seitenkanalangriffe wie Spectre auf rund 1 ms, während der Bildschirm Aktualisierungen auf die jeweilige Bildwiederholrate quantisiert: ca. 16,7 ms pro Frame bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz (Woods et al., 2015). Vergleichen Sie Ihre Fortschritte am besten auf demselben Endgerät statt Rohwerte zwischen unterschiedlichen Systemen gegenüberzustellen.",
-      "Datentransparenz und medizinischer Hinweis: SkillDrills erfasst und speichert keinerlei aggregierte Nutzerdaten auf externen Servern. Sämtliche Punktzahlen und Einstellungen verbleiben ausschließlich im lokalen Speicher (localStorage) Ihres Webbrowsers. Diese Übung ist ein kostenloses kognitives Trainingsspiel zu Bildungs- und Unterhaltungszwecken. Sie stellt kein medizinisches Diagnoseinstrument und kein therapeutisches Verfahren für ADHS oder neurologische Aufmerksamkeitsstörungen dar. Bei klinischen Fragestellungen wenden Sie sich bitte an qualifizierte Mediziner oder Therapeuten."
+      "Datentransparenz: SkillDrills erfasst und speichert keinerlei aggregierte Nutzerdaten auf externen Servern. Sämtliche Punktzahlen und Einstellungen verbleiben ausschließlich im lokalen Speicher (localStorage) Ihres Webbrowsers. Diese Übung ist ein kostenloses kognitives Trainingsspiel zu Bildungs- und Unterhaltungszwecken."
     ],
     benchmarks: {
       title: "Stroop-Test: Notenstufen (Punkte pro Runde)",

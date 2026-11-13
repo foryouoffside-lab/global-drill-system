@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Tempo de Reação de Escolha: Teste Online | SkillDrills",
-  description: "Tempo de reação de escolha: toque no alvo vermelho ou azul indicado pela regra que muda e pratique velocidade de decisão. Treino grátis, não exame clínico.",
+  description: "Tempo de reação de escolha: toque no alvo vermelho ou azul indicado pela regra que muda e pratique velocidade de decisão. Treino grátis.",
   keywords: ["tempo de reação de escolha", "reação de escolha", "teste de escolha rápida", "velocidade de decisão", "lei de Hick"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Tempo de Reação de Escolha: Teste Online | SkillDrills",
-    description: "Tempo de reação de escolha: toque no alvo vermelho ou azul indicado pela regra que muda e pratique velocidade de decisão. Treino grátis, não exame clínico.",
+    description: "Tempo de reação de escolha: toque no alvo vermelho ou azul indicado pela regra que muda e pratique velocidade de decisão. Treino grátis.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Tempo de Reação de Escolha: Teste Online | SkillDrills",
-    description: "Tempo de reação de escolha: toque no alvo vermelho ou azul indicado pela regra que muda e pratique velocidade de decisão. Treino grátis, não exame clínico.",
+    description: "Tempo de reação de escolha: toque no alvo vermelho ou azul indicado pela regra que muda e pratique velocidade de decisão. Treino grátis.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -193,10 +193,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "É um exame médico?",
+      "name": "Como comparar meus resultados?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. É um treino no navegador, não um diagnóstico, triagem ou exame psicotécnico oficial. O resultado também depende do aparelho e do dia; compare suas próprias sessões no mesmo aparelho."
+        "text": "É um treino no navegador, não um exame psicotécnico oficial. O resultado também depende do aparelho e do dia; compare suas próprias sessões no mesmo aparelho."
       }
     },
     {
@@ -254,7 +254,7 @@ const guideProps = {
     paragraphs: [
       "O tempo de reação de escolha é o tempo para identificar, entre vários estímulos, aquele que segue a regra e escolher a resposta certa. Neste treino grátis, um alvo vermelho e um azul aparecem juntos e você toca na cor indicada pelo banner. A partir do nível 2 a regra se inverte, então confira a regra antes de cada toque.",
       "Diferente da reação simples a um único estímulo, a reação de escolha acrescenta a discriminação do estímulo e a seleção da resposta, por isso costuma ser mais lenta (Donders).",
-      "A Lei de Hick-Hyman (Hick, 1952; Hyman, 1953) descreve o aumento logarítmico do tempo de decisão com o número de opções. O treino mostra pontos, precisão, nível máximo e melhor combo; não mede milissegundos e não é um exame clínico.",
+      "A Lei de Hick-Hyman (Hick, 1952; Hyman, 1953) descreve o aumento logarítmico do tempo de decisão com o número de opções. O treino mostra pontos, precisão, nível máximo e melhor combo; não mede milissegundos.",
     ],
   },
   benchmarks: {
@@ -267,7 +267,7 @@ const guideProps = {
       { tier: 'Tier 4', rank: 'Em evolução', accuracy: '78-87%', marker: 'Erros concentrados nas trocas de regra' },
       { tier: 'Tier 5', rank: 'Início', accuracy: '< 78%', marker: 'Ponto de partida' },
     ],
-    note: 'Faixas de treino definidas pela SkillDrills para comparar suas próprias sessões; não são percentis de população nem normas clínicas.',
+    note: 'Faixas de treino definidas pela SkillDrills para comparar suas próprias sessões; não são percentis de população.',
   },
   protocols: {
     title: 'Como jogar',

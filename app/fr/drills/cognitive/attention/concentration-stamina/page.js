@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de Concentration | Attention Soutenue | SkillDrills",
-  description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle. Non clinique.",
+  description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle.",
   keywords: [
     "test de concentration",
     "test de concentration gratuit",
@@ -24,7 +24,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Concentration | Attention Soutenue | SkillDrills",
-    description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle. Non clinique.",
+    description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de Concentration | Attention Soutenue | SkillDrills",
-    description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle. Non clinique.",
+    description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -145,7 +145,7 @@ const faqSchema = {
       "name": "Qu'est-ce que le test d'attention soutenue et d'endurance de concentration ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C'est un exercice de 45 secondes au format CPT (tâche de performance continue) : des lettres et des chiffres défilent, vous réagissez seulement à ceux qui respectent la règle active (voyelles ou nombres premiers) et ignorez les autres. Ce n'est pas un test clinique ni un outil de diagnostic."
+        "text": "C'est un exercice de 45 secondes au format CPT (tâche de performance continue) : des lettres et des chiffres défilent, vous réagissez seulement à ceux qui respectent la règle active (voyelles ou nombres premiers) et ignorez les autres."
       }
     },
     {
@@ -182,10 +182,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Ce test peut-il dépister un TDAH ?",
+      "name": "Comment progresser à ce test de concentration ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. C'est un exercice d'entraînement non clinique : il ne dépiste ni ne diagnostique aucun trouble de l'attention et ne remplace pas l'avis d'un professionnel de santé."
+        "text": "Gardez la règle active en tête (voyelles ou nombres premiers), réagissez seulement aux éléments qui la respectent et laissez passer les autres. Comparez vos propres séances sur le même appareil pour suivre votre précision."
       }
     },
     {
@@ -209,7 +209,7 @@ const faqSchema = {
       "name": "Que signifient les paliers de performance indiqués ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ce sont des repères de pratique SkillDrills fondés sur votre précision, pour comparer vos propres séances. Ils ne reposent sur aucune donnée normative ni étude clinique."
+        "text": "Ce sont des repères de pratique SkillDrills fondés sur votre précision, pour comparer vos propres séances. Ils ne reposent sur aucune donnée normative."
       }
     },
     {
@@ -265,7 +265,7 @@ const guideProps = {
   intro: {
     title: "Test de Concentration et Attention Soutenue : Guide",
     paragraphs: [
-      "Ce test gratuit de concentration en 45 secondes mesure l’attention soutenue, l’inhibition et les changements de règle comme une autoévaluation non clinique. Le résultat varie selon l’état du jour et l’habitude et ne remplace pas un avis professionnel.",
+      "Ce test gratuit de concentration en 45 secondes mesure l’attention soutenue, l’inhibition et les changements de règle comme une autoévaluation. Le résultat varie selon l’état du jour et l’habitude et ne remplace pas un avis professionnel.",
       "Mackworth (1948) a observé chez des opérateurs radar que la détection de signaux rares baisse à mesure que la surveillance se prolonge, et ce déclin est plus marqué quand les événements sont rapides (Parasuraman, 1979). Ce test condense l'exercice en 45 secondes.",
       "Toutes les 10 secondes, la règle alterne entre voyelles et nombres premiers : il faut abandonner l'ancien critère et appliquer le nouveau aussitôt (Monsell, 2003).",
     ],
@@ -273,7 +273,7 @@ const guideProps = {
   benchmarks: {
     title: 'Standards de Performance Cognitive & Échelle de Vigilance Continue (CPT)',
     headers: ['Niveau', 'Rang', 'Performance', 'Exactitude', 'Repère de pratique'],
-    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques.",
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population.",
 
     rows: [
       { tier: 'Palier 1', rank: 'Très avancé', stat: 'Rythme très élevé', accuracy: '98%+', marker: 'Rythme très élevé et précis' },
@@ -330,10 +330,10 @@ export default function EnhancedPageFr() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <ConcentrationStaminaClient copy={{
-        title: "Test de Concentration | Attention Soutenue", subtitle: "Autoévaluation non clinique de l’attention continue, du repérage et du contrôle inhibiteur",
+        title: "Test de Concentration | Attention Soutenue", subtitle: "Autoévaluation de l’attention continue, du repérage et du contrôle inhibiteur",
         statScore: "Score", statTime: "Temps", statLevel: "Niveau", statBest: "Meilleur score", ruleLabel: "Règle", vowels: "Voyelles (A E I O U)", primes: "Nombres premiers (2 3 5 7)", startTitle: "Test de Concentration", startSubtitle: "Attention soutenue • Entraînement type CPT", getReady: "Préparez-vous", flashTitle: "Flash d’erreur", soundTitle: "Son", newBest: "Nouveau record", points: "Points", accuracy: "Précision", misses: "Erreurs", peakLevel: "Niveau maximal", playAgain: "Rejouer", shareScore: "Partager le score", exitDrill: "Quitter l’exercice",
         caption: "Réagissez uniquement aux stimuli correspondant à la règle active et filtrez les distractions lors de chaque changement.", rulesTitle: "Consignes et système de score", ruleItems: [{ text: "Règle cible", highlight: "Change toutes les 10 s", result: "Voyelles ↔ Premiers" }, { text: "Bonne cible", highlight: "+100 PTS", result: "Clic/toucher, Espace ou Entrée" }, { text: "Non-cible", highlight: "Inhiber", result: "Ignorez l’élément différent" }, { text: "Fausse alerte", highlight: "Blocage 1 s", result: "Réduit la précision" }],
-        aboutTitle: "À propos du test de concentration", aboutLead: "L’attention soutenue peut diminuer lors de la surveillance prolongée de signaux rares. Ce test court mesure les changements de règle, le repérage et les erreurs comme autoévaluation non clinique.", aboutText: "L’attention soutenue permet de sélectionner les signaux pertinents dans une séquence répétitive. Répétez dans les mêmes conditions et observez l’évolution du score et des erreurs.\n\nLe sommeil, le stress, l’écran et l’habitude influencent le résultat ; ce test ne remplace pas une évaluation professionnelle.", audienceTitle: "À qui s’adresse-t-il ?", audienceText: "Aux étudiants avant de longues épreuves, aux joueurs qui veulent garder leur précision et aux personnes qui doivent rester concentrées longtemps.", skillsTitle: "Compétences entraînées", skillsText: "Attention soutenue, repérage des cibles, vigilance sous fatigue et contrôle des impulsions.", flexibilityTitle: "Flexibilité cognitive", flexibilityText: "Alterner voyelles et nombres premiers toutes les 10 secondes entraîne le changement rapide de règle."
+        aboutTitle: "À propos du test de concentration", aboutLead: "L’attention soutenue peut diminuer lors de la surveillance prolongée de signaux rares. Ce test court mesure les changements de règle, le repérage et les erreurs comme autoévaluation.", aboutText: "L’attention soutenue permet de sélectionner les signaux pertinents dans une séquence répétitive. Répétez dans les mêmes conditions et observez l’évolution du score et des erreurs.\n\nLe sommeil, le stress, l’écran et l’habitude influencent le résultat ; ce test ne remplace pas une évaluation professionnelle.", audienceTitle: "À qui s’adresse-t-il ?", audienceText: "Aux étudiants avant de longues épreuves, aux joueurs qui veulent garder leur précision et aux personnes qui doivent rester concentrées longtemps.", skillsTitle: "Compétences entraînées", skillsText: "Attention soutenue, repérage des cibles, vigilance sous fatigue et contrôle des impulsions.", flexibilityTitle: "Flexibilité cognitive", flexibilityText: "Alterner voyelles et nombres premiers toutes les 10 secondes entraîne le changement rapide de règle."
       }} />
       <DrillGuide {...guideProps} />
       <RelatedDrills />

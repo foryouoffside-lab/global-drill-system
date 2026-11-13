@@ -139,7 +139,7 @@ const faqSchema = {
 
 faqSchema.mainEntity.push(
   { "@type": "Question", "name": "Quantos exercícios existem na categoria de treino visual?", "acceptedAnswer": { "@type": "Answer", "text": "A categoria reúne 9 exercícios no navegador em três focos: reação e controle de impulsos, rastreamento e movimento ocular, além de reconhecimento e profundidade. Cada cartão abre o treino correspondente." } },
-  { "@type": "Question", "name": "Os treinos visuais no navegador substituem um exame de vista?", "acceptedAnswer": { "@type": "Answer", "text": "Não. Eles praticam tarefas repetíveis de tempo visual, rastreamento, busca e julgamento espacial. Não diagnosticam a visão nem doenças oculares e não substituem uma consulta com oftalmologista ou optometrista." } }
+  { "@type": "Question", "name": "O que os treinos visuais no navegador medem?", "acceptedAnswer": { "@type": "Answer", "text": "Eles praticam tarefas repetíveis de tempo visual, rastreamento, busca e julgamento espacial. Compare suas pontuações no mesmo aparelho e com as mesmas configurações." } }
 );
 
 export default function VisualDrillsPage() {

@@ -80,10 +80,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Ces exercices sont-ils un test de vue ?",
+      "name": "Que mesurent ces exercices ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. Ce sont des jeux de timing visuel, de suivi, de recherche et de jugement spatial. Ils ne diagnostiquent ni la vue ni les maladies oculaires et ne remplacent pas un examen chez un ophtalmologue ou un orthoptiste."
+        "text": "Ce sont des jeux de timing visuel, de suivi, de recherche et de jugement spatial. Comparez vos scores sur le même appareil et avec les mêmes réglages."
       }
     },
     {

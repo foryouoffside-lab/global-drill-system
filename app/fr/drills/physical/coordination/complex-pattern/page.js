@@ -62,8 +62,8 @@ const faqItems = [
     "a": "Exactement 45 secondes. Le niveau repart de 1 à chaque partie."
   },
   {
-    "q": "Est-ce un exercice de rééducation, par exemple pour la dyspraxie visuo-spatiale ?",
-    "a": "Non. C'est un jeu d'entraînement à la souris, pas un outil d'évaluation ni de rééducation. Pour un enfant ou un adulte suivi, demandez conseil à l'ergothérapeute ou au professionnel qui l'accompagne."
+    "q": "Comment retracer le parcours plus précisément ?",
+    "a": "À partir de 5 points, découpez le parcours en deux ou trois grandes formes plutôt que de mémoriser chaque point. Avant de glisser, vérifiez que le curseur est bien dans le nœud cyan, et relâchez dans le nœud d'arrivée."
   },
   {
     "q": "Est-ce un test de mémoire visuelle ?",

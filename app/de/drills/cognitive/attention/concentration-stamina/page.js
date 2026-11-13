@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Konzentrationstest | Daueraufmerksamkeit | SkillDrills",
-  description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel. Kein klinischer Diagnosetest.",
+  description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel.",
   keywords: ["Konzentrationstest", "Konzentrationstest online", "Konzentrationstest kostenlos", "Daueraufmerksamkeit Test", "Aufmerksamkeitstest", "Vigilanztest online", "Impulskontrolle Test", "Fokus Test kostenlos", "Gehirntraining Konzentration", "CPT Test online", "Konzentration üben"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Konzentrationstest | Daueraufmerksamkeit | SkillDrills",
-    description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel. Kein klinischer Diagnosetest.",
+    description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Konzentrationstest | Daueraufmerksamkeit | SkillDrills",
-    description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel. Kein klinischer Diagnosetest.",
+    description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -132,7 +132,7 @@ const faqSchema = {
       "name": "Was ist ein Continuous Performance Test (CPT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein CPT ist ein Aufgabenformat, bei dem man in einer schnellen Reizfolge nur auf Zielreize reagiert und alle anderen ignoriert. Dieser Konzentrationstest nutzt das Format als 45-Sekunden-Übung; er ist kein standardisiertes neuropsychologisches Verfahren und kein Diagnosetest."
+        "text": "Ein CPT ist ein Aufgabenformat, bei dem man in einer schnellen Reizfolge nur auf Zielreize reagiert und alle anderen ignoriert. Dieser Konzentrationstest nutzt das Format als 45-Sekunden-Übung."
       }
     },
     {
@@ -252,7 +252,7 @@ const guideProps = {
   intro: {
     title: "Konzentrationstest und Daueraufmerksamkeit: Leitfaden",
     paragraphs: [
-      "Dieser kostenlose Konzentrationstest im Browser erfasst in 45 Sekunden Daueraufmerksamkeit, Impulskontrolle und Regelwechsel als nicht-klinische Selbstprüfung. Die Ergebnisse hängen von Tagesform und Übung ab und ersetzen keine medizinische Diagnostik.",
+      "Dieser kostenlose Konzentrationstest im Browser erfasst in 45 Sekunden Daueraufmerksamkeit, Impulskontrolle und Regelwechsel als Selbstprüfung. Die Ergebnisse hängen von Tagesform und Übung ab.",
       "Mackworth (1948) beobachtete bei Radarbeobachtern, dass die Trefferquote für seltene Signale mit zunehmender Überwachungsdauer sinkt. Eine Runde dieses Tests dauert nur 45 Sekunden; sie bildet diesen Effekt nicht nach, sondern übt Konzentration bei schnellem Reiztempo.",
       "Alle 10 Sekunden wechselt die Zielregel zwischen Vokalen (A E I O U) und Primzahlen (2 3 5 7). So übst du, sofort auf das neue Kriterium umzuschalten (Aufgabenwechsel, Monsell, 2003).",
     ],
@@ -316,10 +316,10 @@ export default function LocalizedCognitivePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <ConcentrationStaminaClient copy={{
-        title: "Konzentrationstest | Daueraufmerksamkeit", subtitle: "Nicht-klinische Selbstprüfung für Daueraufmerksamkeit, Zielerkennung und Impulskontrolle",
+        title: "Konzentrationstest | Daueraufmerksamkeit", subtitle: "Selbstprüfung für Daueraufmerksamkeit, Zielerkennung und Impulskontrolle",
         statScore: "Punkte", statTime: "Restzeit", statLevel: "Level", statBest: "Highscore", ruleLabel: "Regel", vowels: "Vokale (A E I O U)", primes: "Primzahlen (2 3 5 7)", startTitle: "Konzentrationstest", startSubtitle: "Daueraufmerksamkeit • CPT-Training", getReady: "Bereit machen", flashTitle: "Fehlblitz", soundTitle: "Ton", newBest: "Neuer Highscore", points: "Punkte", accuracy: "Genauigkeit", misses: "Fehler", peakLevel: "Höchstes Level", playAgain: "Erneut spielen", shareScore: "Score teilen", exitDrill: "Training beenden",
         caption: "Reagiere nur auf Reize, die zur aktiven Regel passen, und unterdrücke Ablenkungen bei jedem Regelwechsel.", rulesTitle: "Anleitung und Punktesystem", ruleItems: [{ text: "Zielregel", highlight: "Wechselt alle 10 Sekunden", result: "Vokale ↔ Primzahlen" }, { text: "Zieltreffer", highlight: "+100 PKT", result: "Klick/Tippen, Space oder Enter" }, { text: "Kein Ziel", highlight: "Unterdrücken", result: "Nicht reagieren" }, { text: "Fehlreaktion", highlight: "1 s Eingabesperre", result: "Senkt Genauigkeit" }],
-        aboutTitle: "Über den Konzentrationstest", aboutLead: "Bei längerer Überwachung seltener Signale kann Daueraufmerksamkeit sinken. Diese kurze Selbstprüfung erfasst Regelwechsel, Zielerkennung und Fehlreaktionen; sie ist kein klinischer Diagnosetest.", aboutText: "Daueraufmerksamkeit bedeutet, wichtige Signale auch in einer monotonen Reizfolge zuverlässig zu erkennen. Wiederhole den Test unter gleichen Bedingungen und beobachte deinen Verlauf.\n\nSchlaf, Stress, Bildschirm und Vertrautheit beeinflussen das Ergebnis; interpretiere es nicht als medizinische Diagnose.", audienceTitle: "Für wen ist der Test geeignet?", audienceText: "Für Lernende vor langen Prüfungen, Gamer mit konstantem Präzisionsbedarf und Menschen in Berufen mit hoher Wachsamkeit.", skillsTitle: "Trainierte Fähigkeiten", skillsText: "Daueraufmerksamkeit, Zielerkennung, Wachsamkeit unter Ermüdung und Impulskontrolle.", flexibilityTitle: "Kognitive Flexibilität", flexibilityText: "Der Wechsel zwischen Vokalen und Primzahlen alle 10 Sekunden trainiert schnelles Umschalten zwischen Aufgabenregeln."
+        aboutTitle: "Über den Konzentrationstest", aboutLead: "Bei längerer Überwachung seltener Signale kann Daueraufmerksamkeit sinken. Diese kurze Selbstprüfung erfasst Regelwechsel, Zielerkennung und Fehlreaktionen.", aboutText: "Daueraufmerksamkeit bedeutet, wichtige Signale auch in einer monotonen Reizfolge zuverlässig zu erkennen. Wiederhole den Test unter gleichen Bedingungen und beobachte deinen Verlauf.\n\nSchlaf, Stress, Bildschirm und Vertrautheit beeinflussen das Ergebnis.", audienceTitle: "Für wen ist der Test geeignet?", audienceText: "Für Lernende vor langen Prüfungen, Gamer mit konstantem Präzisionsbedarf und Menschen in Berufen mit hoher Wachsamkeit.", skillsTitle: "Trainierte Fähigkeiten", skillsText: "Daueraufmerksamkeit, Zielerkennung, Wachsamkeit unter Ermüdung und Impulskontrolle.", flexibilityTitle: "Kognitive Flexibilität", flexibilityText: "Der Wechsel zwischen Vokalen und Primzahlen alle 10 Sekunden trainiert schnelles Umschalten zwischen Aufgabenregeln."
       }} />
       <DrillGuide {...guideProps} />
       <RelatedDrills />

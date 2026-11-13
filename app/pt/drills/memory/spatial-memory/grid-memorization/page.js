@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "O que é um teste de memória visual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aqui é um exercício de memória de trabalho visoespacial: você memoriza quais células acendem na grade e depois as marca de memória, sem repetir as posições em palavras. É um jogo de treino gratuito, não um teste clínico, psicotécnico ou do Detran."
+        "text": "Aqui é um exercício de memória de trabalho visoespacial: você memoriza quais células acendem na grade e depois as marca de memória, sem repetir as posições em palavras. É um jogo de treino gratuito, não um teste psicotécnico ou do Detran."
       }
     },
     {
@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "Isto é o Visual Patterns Test (VPT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. O Visual Patterns Test (Della Sala et al., 1997) é um instrumento neuropsicológico de pesquisa com padrões em grade. Este exercício é um jogo de treino gratuito com formato parecido, mas não segue o procedimento nem as normas desse teste."
+        "text": "Não. O Visual Patterns Test (Della Sala et al., 1997) é um instrumento de pesquisa com padrões em grade. Este exercício é um jogo de treino gratuito com formato parecido, mas não segue o procedimento nem as normas desse teste."
       }
     },
     {
@@ -212,11 +212,10 @@ const faqSchema = {
 const gridGuide = {
   intro: [
   "Este teste de memória visual online mostra por 1,5 segundo células acesas numa grade, e depois você repete o padrão de memória. Você começa com 5 células numa grade 4x4; cada padrão certo acrescenta uma célula, e na grade 5x5 o desafio vai até 12 células. Serve como treino de memória visual, inclusive para quem pratica para provas de atenção e memória, mas não é um teste psicotécnico oficial.",
-  "A investigação clínica do span visoespacial começou com Pietro Corsi (1972) por meio do Teste dos Blocos de Corsi, que comprovou que a memória espacial opera em redes neurais distintas do span de dígitos verbal (Milner, 1971). Em 1997, Sergio Della Sala, Robert H. Logie e colaboradores publicaram o Visual Patterns Test (VPT) para dissociar a retenção de matrizes estáticas de sequências motoras ativas. Este exercício usa um formato parecido, mas não é o VPT.",
+  "A investigação do span visoespacial começou com Pietro Corsi (1972) por meio do Teste dos Blocos de Corsi, que comprovou que a memória espacial opera em redes neurais distintas do span de dígitos verbal (Milner, 1971). Em 1997, Sergio Della Sala, Robert H. Logie e colaboradores publicaram o Visual Patterns Test (VPT) para dissociar a retenção de matrizes estáticas de sequências motoras ativas. Este exercício usa um formato parecido, mas não é o VPT.",
   "Na neurociência cognitiva moderna, Robert H. Logie (1995) e Alan Baddeley (2000) dividiram o esboço visoespacial em 'Cache Visual' (armazenamento passivo de formas, cores e imagens estáticas) e 'Escriba Interno' (mecanismo ativo de repetição espacial e planejamento motor). Pesquisas de Steven J. Luck & Edward K. Vogel (1997) e Nelson Cowan (2001) confirmaram que a capacidade visual bruta sem agrupamento é limitada a 3 ou 4 itens. Expandir essa marca exige chunking espacial: combinar células acesas em formas Gestalt reconhecíveis.",
   "Como funciona: cada padrão aparece por 1,5 segundo. O relógio de 60 segundos só corre enquanto você repete o padrão. Um padrão completo vale 150 pontos; uma célula errada encerra a rodada sem perder pontos nem tempo, e vem um padrão novo no mesmo nível. Tempo de reação não é medido.",
-  "Dados: sua pontuação e seu recorde ficam salvos apenas no localStorage do navegador e não são enviados a servidores.",
-  "Este exercício é um jogo gratuito voltado ao treino e autoconhecimento cognitivo. Não é dispositivo médico nem instrumento de diagnóstico clínico. Em caso de dúvidas sobre sua saúde cognitiva, procure um profissional habilitado."
+  "Dados: sua pontuação e seu recorde ficam salvos apenas no localStorage do navegador e não são enviados a servidores."
 ],
   benchmarks: {
     title: "Faixas de treino SkillDrills (uma partida)",
@@ -227,7 +226,7 @@ const gridGuide = {
       ["Faixa inicial", "150 – 450", "1 – 3", "4x4 com 6 a 7 células; após 3 padrões, 5x5"],
       ["Início", "0", "0", "Grade 4x4, 5 células"]
     ],
-    note: "Pontos = padrões completos × 150. As faixas são calculadas a partir das regras do jogo: são referências de treino do SkillDrills, não estatísticas populacionais nem normas clínicas."
+    note: "Pontos = padrões completos × 150. As faixas são calculadas a partir das regras do jogo: são referências de treino do SkillDrills, não estatísticas populacionais."
   },
   techniques: {
     title: "Técnicas comprovadas para expandir a memória visual matricial",
@@ -261,7 +260,7 @@ const gridGuide = {
   "Ao apagar da grade, clique rapidamente nas formas memorizadas sobre o tabuleiro.",
   "Avance de grades 4x4 para 5x5 a fim de elevar continuamente seu limite de memória operacional."
 ],
-  audience: "Jogadores de FPS que buscam melhor percepção de minimapa, estudantes de exatas e arquitetura, enxadristas, médicos radiologistas e qualquer pessoa focada em elevar sua memória não-verbal.",
+  audience: "Jogadores de FPS que buscam melhor percepção de minimapa, estudantes de exatas e arquitetura, enxadristas e qualquer pessoa focada em elevar sua memória não-verbal.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971'),
   related: [

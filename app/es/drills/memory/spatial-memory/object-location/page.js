@@ -109,7 +109,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "¿Qué es un test de memoria espacial de localización de objetos?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Es un juego de práctica gratuito de memoria de localización de objetos: memorizas qué objeto estaba en qué casilla y luego encuentras la posición de un objeto pedido. No es una evaluación neuropsicológica ni un psicotécnico oficial; la puntuación es solo una referencia personal de práctica."
+                  "text": "Es un juego de práctica gratuito de memoria de localización de objetos: memorizas qué objeto estaba en qué casilla y luego encuentras la posición de un objeto pedido. No es un psicotécnico oficial; la puntuación es solo una referencia personal de práctica."
             }
       },
       {
@@ -141,7 +141,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "¿Cómo se calcula la puntuación?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Cada posición objetivo encontrada suma 150 puntos. La nota de la pantalla de resultados es una franja de práctica de SkillDrills con 1.000 puntos como referencia superior; no es una media ni una norma clínica."
+                  "text": "Cada posición objetivo encontrada suma 150 puntos. La nota de la pantalla de resultados es una franja de práctica de SkillDrills con 1.000 puntos como referencia superior; no es una media."
             }
       },
       {
@@ -234,8 +234,7 @@ export default function LocalizedObjectLocationPage() {
       "El fundamento empírico de esta evaluación proviene de las investigaciones de Marion Eals e Irwin Silverman (1994), quienes demostraron que recordar la posición de objetos constituye un módulo adaptativo independiente de la rotación espacial euclidiana. Este juego no es su tarea de investigación, sino un ejercicio de formato parecido. Anteriormente, Edward C. Tolman (1948) sentó las bases del mapa cognitivo (Cognitive Map), explicando cómo los seres vivos estructuran representaciones internas de su entorno.",
       "En el campo de la memoria de trabajo, Robert H. Logie (1995) y Alan Baddeley (2000) identificaron que la unión objeto-posición es coordinada por el búfer episódico (Episodic Buffer), que integra datos del caché visual con el escriba interno espacial. Asimismo, Steven J. Luck y Edward K. Vogel (1997) probaron que las conjunciones de características conllevan una alta sobrecarga atencional, y Nelson Cowan (2001) estimó la capacidad del foco de la memoria de trabajo en unos 3 o 4 elementos.",
       "Cómo funciona: la disposición se ve durante 1,5 segundos y luego tienes 8 segundos para responder. Un acierto suma 150 puntos y sube un nivel; un fallo o tiempo agotado termina la ronda sin restar puntos, y aparece una nueva disposición en el mismo nivel. La partida dura 45 segundos en total; no se mide el tiempo de reacción.",
-      "Datos: tu puntuación y tu récord se guardan solo en el localStorage del navegador y no se envían a ningún servidor.",
-      "Este ejercicio es un juego de navegador concebido para entrenamiento y curiosidad intelectual. No es un dispositivo médico ni una prueba diagnóstica para ningún trastorno de salud. Si tienes dudas sobre tu memoria o concentración, consulta con un profesional médico cualificado."
+      "Datos: tu puntuación y tu récord se guardan solo en el localStorage del navegador y no se envían a ningún servidor."
 ],
     benchmarks: {
       title: "Franjas de práctica SkillDrills (una partida)",
@@ -246,7 +245,7 @@ export default function LocalizedObjectLocationPage() {
         ["Franja inicial", "150 – 450", "1 – 3", "Nivel 2 a 4, 3 a 5 objetos, cuadrícula 3x3"],
         ["Inicio", "0", "0", "Nivel 1, 2 objetos, cuadrícula 3x3"]
       ],
-      note: "Puntos = aciertos × 150. Las franjas se calculan a partir de las reglas del juego: son referencias de práctica de SkillDrills, no estadísticas de población ni normas clínicas."
+      note: "Puntos = aciertos × 150. Las franjas se calculan a partir de las reglas del juego: son referencias de práctica de SkillDrills, no estadísticas de población."
     },
     techniques: {
       title: "Estrategias con base científica para potenciar la retención espacial",

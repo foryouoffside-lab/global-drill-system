@@ -186,10 +186,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Mes résultats sont-ils enregistrés ? Ont-ils une valeur médicale ?",
+      "name": "Mes résultats sont-ils enregistrés ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le meilleur score et le niveau maximal sont enregistrés uniquement dans le localStorage de ce navigateur, sans envoi à un serveur. Ce sont des scores d'entraînement : ils ne diagnostiquent ni trouble de la mémoire de travail ni TDAH."
+        "text": "Le meilleur score et le niveau maximal sont enregistrés uniquement dans le localStorage de ce navigateur, sans envoi à un serveur. Ce sont des scores d'entraînement."
       }
     }
   ]
@@ -233,8 +233,7 @@ const guideFr = {
     "Ce test de mémoire de travail est une tâche N-Back en ligne, gratuite : des lettres s'affichent une à une et tu indiques pour chacune si elle est identique à celle d'il y a exactement N étapes. Comme il faut garder en tête les N dernières lettres et mettre la liste à jour à chaque nouvelle lettre, la tâche sollicite surtout la mise à jour de la mémoire de travail (Kirchner, 1958).",
     "Le test commence en 3-back. Les 3 premières lettres sont seulement à retenir ; ensuite, tu réponds 'Identique' ou 'Différente' à chaque lettre. Chaque bonne réponse rapporte +150 points et tous les 1 200 points (8 bonnes réponses) le niveau passe à 4-back, 5-back, etc. La fenêtre de réponse commence à 2 secondes et raccourcit de 0,1 seconde par niveau, jusqu'à 1,2 seconde.",
     "La session dure 45 secondes ; le chronomètre est à l'arrêt pendant que tu retiens les premières lettres. Les erreurs et absences de réponse ne coûtent ni points ni temps et ne font pas baisser le niveau : elles comptent seulement comme ratées dans la précision. C'est un N-Back simple avec des lettres, pas un dual N-Back (position + son). Réponse au clic ou au toucher sur les boutons.",
-    "Transparence des données : les résultats sont enregistrés uniquement dans le localStorage de ce navigateur et ne sont envoyés à aucun serveur. SkillDrills ne publie donc ni moyennes d'utilisateurs ni classements.",
-    "Cet outil est un jeu gratuit d'entraînement dans le navigateur. Ce n'est ni un dispositif médical ni un outil de diagnostic, et les résultats ne renseignent pas sur un trouble de la mémoire, un TDAH ou le QI."
+    "Transparence des données : les résultats sont enregistrés uniquement dans le localStorage de ce navigateur et ne sont envoyés à aucun serveur. SkillDrills ne publie donc ni moyennes d'utilisateurs ni classements."
   ],
   benchmarks: {
     title: "Paliers d'entraînement SkillDrills (points = bonnes réponses × 150)",
@@ -245,7 +244,7 @@ const guideFr = {
       ["Confirmé", "8–15", "1 200–2 250", "4-back atteint, fenêtre de 1,9 s"],
       ["Avancé", "16+", "2 400+", "5-back ou plus, fenêtre de 1,8 s ou moins"]
     ],
-    note: "Ces paliers sont calculés à partir des règles de score du jeu ; ce ne sont ni des normes de population ni des seuils cliniques."
+    note: "Ces paliers sont calculés à partir des règles de score du jeu ; ce ne sont pas des normes de population."
   },
   techniques: {
     title: "Astuces pour le test N-Back",

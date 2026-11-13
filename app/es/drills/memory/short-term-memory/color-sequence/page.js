@@ -120,7 +120,7 @@ export default function SpanishColorSequencePage() {
         "name": "¿Qué funciones de la memoria se ponen en juego al recordar secuencias de colores?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Intervienen sobre todo la memoria de trabajo visual y la agenda visoespacial (Baddeley & Hitch, 1974), además de la atención selectiva y el recuerdo en orden. Es un juego de práctica, no una prueba clínica ni una medida de tu capacidad cognitiva."
+          "text": "Intervienen sobre todo la memoria de trabajo visual y la agenda visoespacial (Baddeley & Hitch, 1974), además de la atención selectiva y el recuerdo en orden. Es un juego de práctica."
         }
       },
       {
@@ -269,10 +269,9 @@ export default function SpanishColorSequencePage() {
       'El juego de secuencias de colores es un ejercicio para practicar la memoria de trabajo visual y la retención del orden. Popularizado por un dispositivo electrónico de Ralph Baer y Howard Morrison (1978), este formato exige la codificación inmediata de estímulos cromáticos dinámicos, su organización en búferes estructurados y su recuperación en estricto orden temporal.',
       'Los límites arquitectónicos de la memoria humana a corto plazo han sido cartografiados exhaustivamente por la psicología cognitiva. Mientras que George A. Miller (1956) identificó el cuello de botella verbal de $7 \\pm 2$ elementos, las investigaciones fundamentales de Nelson Cowan (2001) y Steven J. Luck & Edward K. Vogel (1997) demostraron que la capacidad pura de la memoria de trabajo visual está estrictamente limitada a unas 4 unidades independientes. Sin estrategias estructuradas de recodificación, la retención humana colapsa rápidamente más allá de cuatro elementos secuenciales.',
       'En el modelo multicomponente de memoria de trabajo de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), retener secuencias visuales activa la agenda visoespacial (Visuospatial Sketchpad). Robert H. Logie (1995) subdividió este componente en el retén visual pasivo (que almacena colores y formas) y el escriba interno (que ensaya activamente patrones espaciotemporales). Los ejecutantes avanzados reclutan sistemáticamente el bucle fonológico para crear representaciones de codificación dual (visual y subvocal), que ayuda a sostener la secuencia.',
-      'Qué se registra: en 45 segundos el juego guarda la puntuación, el nivel máximo alcanzado (longitud de la secuencia) y la precisión (porcentaje de rondas acertadas). No mide el tiempo de reacción por pulsación y no es una medida clínica de la memoria operativa.',
+      'Qué se registra: en 45 segundos el juego guarda la puntuación, el nivel máximo alcanzado (longitud de la secuencia) y la precisión (porcentaje de rondas acertadas). No mide el tiempo de reacción por pulsación.',
       'Cómo funciona una ronda: en el nivel N aparecen N + 2 colores de 6 posibles, siempre en una secuencia aleatoria nueva. Cuanto más alto el nivel, menos tiempo se ilumina cada color (de unos 0,7 s hasta un mínimo de 0,25 s). Después tienes 8 segundos para cada pulsación; un color equivocado o el tiempo agotado bajan un nivel.',
-      'Transparencia y privacidad de datos: SkillDrills no recopila datos agregados de usuarios ni métricas de telemetría. Sus puntuaciones y progresiones de nivel permanecen guardadas estrictamente en el almacenamiento local (localStorage) de su navegador web y jamás se envían a servidores externos. Las referencias científicas se citan en el panel inferior; las etapas de la tabla son marcadores editoriales de práctica.',
-      'Aviso médico y descargo de responsabilidad: Este ejercicio es un juego cognitivo web gratuito orientado al entrenamiento mental y la práctica personal. No constituye un dispositivo médico, una herramienta de diagnóstico clínico ni un tratamiento para el deterioro cognitivo o afecciones neurológicas. Si tiene inquietudes sobre su memoria o agudeza cognitiva, consulte a un profesional médico o neuropsicólogo colegiado.'
+      'Transparencia y privacidad de datos: SkillDrills no recopila datos agregados de usuarios ni métricas de telemetría. Sus puntuaciones y progresiones de nivel permanecen guardadas estrictamente en el almacenamiento local (localStorage) de su navegador web y jamás se envían a servidores externos. Las referencias científicas se citan en el panel inferior; las etapas de la tabla son marcadores editoriales de práctica.'
     ],
     benchmarks: {
       title: 'Etapas de práctica en el juego estilo Simón (sesión de 45 segundos)',
@@ -284,7 +283,7 @@ export default function SpanishColorSequencePage() {
         ['Etapa 4', 'Nivel 3 – 4 (5–6 colores)', 'unos 230 – 499 PTS', 'Recuerda color a color, todavía sin agrupar'],
         ['Etapa 5', 'Nivel 1 – 2 (3–4 colores)', 'menos de 230 PTS', 'Aprendiendo las reglas y el ritmo']
       ],
-      note: 'Etapas de práctica de SkillDrills, no estadísticas de población ni normas clínicas. La puntuación corresponde a llegar sin fallos a ese nivel (puntos por ronda = 100 × (1 + 0,1 × nivel)); los fallos bajan el nivel, así que la puntuación real varía.'
+      note: 'Etapas de práctica de SkillDrills, no estadísticas de población. La puntuación corresponde a llegar sin fallos a ese nivel (puntos por ronda = 100 × (1 + 0,1 × nivel)); los fallos bajan el nivel, así que la puntuación real varía.'
     },
     techniques: {
       title: 'Cuatro estrategias para recordar secuencias de colores más largas',

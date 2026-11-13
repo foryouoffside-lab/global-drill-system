@@ -168,7 +168,7 @@ const faqSchema = {
         "name": "Treinar a memória sequencial visual ajuda nos estudos e na produtividade?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Não há garantia. Com prática você tende a melhorar neste jogo, mas a transferência para a memória do dia a dia, os estudos ou o trabalho é discutida na pesquisa. Use como exercício de memória; se tiver preocupação com sua memória, procure um médico."
+          "text": "Não há garantia. Com prática você tende a melhorar neste jogo, mas a transferência para a memória do dia a dia, os estudos ou o trabalho é discutida na pesquisa. Use como exercício de memória."
         }
       },
       {
@@ -194,7 +194,7 @@ const faqSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Como Treinar a Memória Sequencial de Cores Online",
-    "description": "Passo a passo fundamentado em neuropsicologia para codificar, agrupar e reproduzir sequências cromáticas com exatidão.",
+    "description": "Passo a passo fundamentado em psicologia cognitiva para codificar, agrupar e reproduzir sequências cromáticas com exatidão.",
     "step": [
       {
         "@type": "HowToStep",
@@ -288,12 +288,11 @@ const faqSchema = {
     heading: "Guia do jogo estilo Genius online: memória operacional e sequência de cores",
     intro: [
       "Este jogo genius online (estilo Genius, não o produto oficial da Estrela) é um jogo de sequência de cores para praticar a memória operacional visual e a retenção da ordem. Diferente dos jogos tradicionais de encontrar pares estáticos de cartas em tabuleiros, este teste dinâmico desafia a amplitude imediata (span) do cérebro para reter estímulos cromáticos que surgem em ordem temporal estrita.",
-      "A arquitetura da memória humana foi amplamente documentada pela neuropsicologia cognitiva. Enquanto George A. Miller (1956) postulou o limite de $7 \pm 2$ itens para memória verbal, pesquisas contemporâneas em memória puramente visual conduzidas por Nelson Cowan (2001) e pela dupla Steven J. Luck & Edward K. Vogel (1997) comprovaram que a capacidade da memória operacional visual não agrupada é de aproximadamente 4 itens independentes. Sem estratégias ativas de recodificação, a capacidade de retenção imediata sofre colapso além do quarto elemento.",
+      "A arquitetura da memória humana foi amplamente documentada pela psicologia cognitiva. Enquanto George A. Miller (1956) postulou o limite de $7 \pm 2$ itens para memória verbal, pesquisas contemporâneas em memória puramente visual conduzidas por Nelson Cowan (2001) e pela dupla Steven J. Luck & Edward K. Vogel (1997) comprovaram que a capacidade da memória operacional visual não agrupada é de aproximadamente 4 itens independentes. Sem estratégias ativas de recodificação, a capacidade de retenção imediata sofre colapso além do quarto elemento.",
       "Segundo o modelo de memória operacional de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), o processamento de sequências visuais recruta ativamente o esboço visuoespacial (visuospatial sketchpad). Robert H. Logie (1995) subdividiu este componente em cache visual (armazenamento estático temporário de cores e formas) e escriba interno (mecanismo ativo de ensaio de sequências espaciais e temporais). Praticantes experientes conectam esse esboço à alça fonológica, gerando uma codificação dual (visual e subvocal) que ajuda a segurar a sequência.",
       "O que é registrado: em 45 segundos o jogo guarda a pontuação, o nível máximo (tamanho da sequência) e a precisão (porcentagem de rodadas certas). O tempo de reação por toque não é medido.",
       "Como funciona uma rodada: no nível N aparecem N + 2 cores entre 6 possíveis, sempre numa sequência nova e aleatória. Quanto maior o nível, menos tempo cada cor fica acesa (de cerca de 0,7 s até no mínimo 0,25 s). Depois você tem 8 segundos para cada toque; cor errada ou tempo esgotado desce 1 nível.",
-      "Transparência de dados: a SkillDrills não coleta métricas agregadas nem armazena resultados em servidores externos. Suas pontuações permanecem salvas apenas no localStorage do seu navegador, razão pela qual não divulgamos médias populacionais não verificadas. As faixas da tabela abaixo são faixas de prática da SkillDrills calculadas pela pontuação do jogo; os números de pesquisa citados vêm das referências abaixo.",
-      "Isenção de responsabilidade médica: este jogo de navegador é um exercício de memória e entretenimento. Não constitui dispositivo médico, exame diagnóstico ou terapia neurológica, e sua pontuação não reflete diagnóstico clínico. Em caso de dúvidas sobre sua memória ou cognição, consulte um médico especialista ou neuropsicólogo."
+      "Transparência de dados: a SkillDrills não coleta métricas agregadas nem armazena resultados em servidores externos. Suas pontuações permanecem salvas apenas no localStorage do seu navegador, razão pela qual não divulgamos médias populacionais não verificadas. As faixas da tabela abaixo são faixas de prática da SkillDrills calculadas pela pontuação do jogo; os números de pesquisa citados vêm das referências abaixo."
     ],
     benchmarks: {
       title: "Faixas de prática do jogo estilo Genius (SkillDrills, sessão de 45 s)",
@@ -305,7 +304,7 @@ const faqSchema = {
         ["Faixa 4", "Nível 3 a 4 (5 a 6 cores)", "cerca de 230 a 499", "Cores guardadas uma a uma, ainda sem agrupar"],
         ["Faixa 5", "Nível 1 a 2 (3 a 4 cores)", "menos de 230", "Aprendendo as regras e o ritmo"]
       ],
-      note: "Faixas de prática da SkillDrills para comparar suas próprias sessões, não médias de população nem normas clínicas. Os pontos valem para uma sessão sem erros até aquele nível (pontos por rodada = 100 × (1 + 0,1 × nível)); erros descem o nível, então a pontuação real varia."
+      note: "Faixas de prática da SkillDrills para comparar suas próprias sessões, não médias de população. Os pontos valem para uma sessão sem erros até aquele nível (pontos por rodada = 100 × (1 + 0,1 × nível)); erros descem o nível, então a pontuação real varia."
     },
     techniques: {
       title: "Técnicas Baseadas em Evidências para Ampliar a Memória Sequencial",

@@ -255,13 +255,13 @@ const guideProps = {
     paragraphs: [
       "Lectura rápida online con el método RSVP: las palabras aparecen una a una en el mismo punto de la pantalla, con la letra del ORP en rojo. Pulsa el botón cuando aparezca la palabra objetivo del banner; cada 2 aciertos la velocidad sube un nivel, de 250 a 850 palabras por minuto. El texto que se muestra está en inglés.",
       "En la lectura habitual, la mirada salta de palabra en palabra (movimientos sacádicos) y a veces retrocede (Rayner, 1998). RSVP elimina esos saltos, pero a ritmos altos la comprensión puede bajar (Rayner et al., 2016).",
-      "Este ejercicio solo mide si detectas la palabra objetivo: muestra puntos, aciertos, errores, precisión y nivel alcanzado. No es un curso de lectura rápida, no mide comprensión y no es una prueba clínica.",
+      "Este ejercicio solo mide si detectas la palabra objetivo: muestra puntos, aciertos, errores, precisión y nivel alcanzado. No es un curso de lectura rápida, y no mide comprensión.",
     ],
   },
   benchmarks: {
     title: 'Etapas de práctica SkillDrills (nivel alcanzado)',
     headers: ['Nivel', 'Categoría', 'Nivel alcanzado', 'Precisión', 'Marcador de práctica'],
-    note: "Etapas de práctica definidas por SkillDrills para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas, y no miden comprensión.",
+    note: "Etapas de práctica definidas por SkillDrills para comparar tus propias sesiones; no son estadísticas de población, y no miden comprensión.",
     rows: [
       { tier: 'Etapa 1', rank: 'Muy avanzada', stat: 'Nivel 5 (850 PPM)', accuracy: '95%+', marker: 'Flujo más rápido seguido con precisión' },
       { tier: 'Etapa 2', rank: 'Avanzada', stat: 'Nivel 4 (650 PPM)', accuracy: '90-94%', marker: 'Buen seguimiento a alta velocidad' },

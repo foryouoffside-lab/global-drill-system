@@ -151,10 +151,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Este treino serve como exame de visão ou de habilitação?',
+      name: 'O que afeta a minha pontuação?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Não. É um jogo de navegador sem valor médico ou legal. Não substitui exame oftalmológico nem avaliação para a CNH.',
+        text: 'A taxa de atualização da tela, o dispositivo de entrada, a distância de visualização e o cansaço. Compare suas rodadas no mesmo aparelho.',
       },
     },
     {

@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "집중력 테스트 | 지속 주의력 측정 | SkillDrills",
-  description: "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 능력을 확인하세요. 의료 진단이 아닌 자기 점검입니다.",
+  description: "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 능력을 확인하세요.",
   keywords: ["집중력 테스트", "집중력 테스트 무료", "집중력 테스트 사이트", "지속 주의력", "주의력 테스트", "공부 집중력 테스트", "집중력 테스트 게임", "집중력 훈련 게임", "억제 제어", "주의력 측정", "성인 집중력 테스트", "CPT 테스트"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "집중력 테스트 | 지속 주의력 측정 | SkillDrills",
-    description: "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 능력을 확인하세요. 의료 진단이 아닌 자기 점검입니다.",
+    description: "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 능력을 확인하세요.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "집중력 테스트 | 지속 주의력 측정 | SkillDrills",
-    description: "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 능력을 확인하세요. 의료 진단이 아닌 자기 점검입니다.",
+    description: "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 능력을 확인하세요.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "KRW"
   },
-  "description": "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 수행을 기록하는 비임상 자기 점검 도구입니다.",
+  "description": "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 수행을 기록하는 자기 점검 도구입니다.",
   "url": "https://skilldrills.online/ko/drills/cognitive/attention/concentration-stamina",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "집중력 테스트 – 지속 주의력 및 충동 억제 게임",
   "url": "https://skilldrills.online/ko/drills/cognitive/attention/concentration-stamina",
-  "description": "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 수행을 기록하는 비임상 자기 점검 도구입니다.",
+  "description": "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 수행을 기록하는 자기 점검 도구입니다.",
   "genre": [
     "Action",
     "Brain Game",
@@ -132,7 +132,7 @@ const faqSchema = {
       "name": "지속수행검사(CPT, Continuous Performance Test)란?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "지속수행과제(CPT)는 연속으로 나타나는 자극 중 목표 자극에만 반응하고 나머지는 억제하는 과제 형식입니다. 이 훈련은 그 형식을 빌린 45초짜리 연습이며, 의료용 표준 검사나 진단 도구가 아닙니다."
+        "text": "지속수행과제(CPT)는 연속으로 나타나는 자극 중 목표 자극에만 반응하고 나머지는 억제하는 과제 형식입니다. 이 훈련은 그 형식을 빌린 45초짜리 연습입니다."
       }
     },
     {
@@ -214,7 +214,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "집중력 테스트・지속 주의력 검사",
-  "description": "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 수행을 기록하는 비임상 자기 점검 도구입니다.",
+  "description": "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 수행을 기록하는 자기 점검 도구입니다.",
   "step": [
     {
       "@type": "HowToStep",
@@ -252,7 +252,7 @@ const guideProps = {
   intro: {
     title: "집중력 테스트와 지속 주의력 측정 가이드",
     paragraphs: [
-      "이 무료 브라우저 집중력 테스트는 45초 동안 점멸하는 문자·숫자 자극에서 지속 주의력, 오반응 억제, 규칙 전환 수행을 기록하는 비임상 자기 점검 도구입니다. 결과는 당일 컨디션과 익숙함의 영향을 받으며 의료 진단을 대신하지 않습니다.",
+      "이 무료 브라우저 집중력 테스트는 45초 동안 점멸하는 문자·숫자 자극에서 지속 주의력, 오반응 억제, 규칙 전환 수행을 기록하는 자기 점검 도구입니다. 결과는 당일 컨디션과 익숙함의 영향을 받습니다.",
       "레이더 감시 연구(Mackworth, 1948)에서 드문 신호를 오래 감시할수록 탐지 정확도가 떨어지는 각성 저하 현상이 보고되었습니다. 이 훈련은 한 판이 45초로 짧아 그 현상을 재현하기보다, 빠른 자극 속에서 집중을 유지하는 연습에 가깝습니다.",
       "10초마다 표적 규칙이 모음(A E I O U)과 소수(2 3 5 7) 사이에서 바뀌므로, 새 기준으로 즉시 바꿔 판단하는 과제 전환(Monsell, 2003)을 연습하게 됩니다.",
     ],
@@ -317,7 +317,7 @@ export default function LocalizedCognitivePage() {
       />
       <ConcentrationStaminaClient copy={{
         title: "집중력 테스트 | 지속 주의력 측정",
-        subtitle: "점멸 자극 속 지속 집중, 표적 판별, 오반응 억제를 기록하는 비임상 자기 점검",
+        subtitle: "점멸 자극 속 지속 집중, 표적 판별, 오반응 억제를 기록하는 자기 점검",
         statScore: "점수", statTime: "남은 시간", statLevel: "레벨", statBest: "최고 점수",
         ruleLabel: "규칙", vowels: "모음 (A E I O U)", primes: "소수 (2 3 5 7)",
         startTitle: "집중력 테스트", startSubtitle: "지속 주의력 • CPT 방식 집중 훈련", getReady: "준비하세요",
@@ -327,8 +327,8 @@ export default function LocalizedCognitivePage() {
         rulesTitle: "훈련 안내 및 점수 체계",
         ruleItems: [{ text: "표적 규칙", highlight: "10초마다 전환", result: "모음 ↔ 소수" }, { text: "표적 적중", highlight: "+100점", result: "클릭·탭 또는 Space/Enter" }, { text: "비표적", highlight: "억제", result: "일치하지 않으면 무시" }, { text: "오반응", highlight: "1초 입력 잠금", result: "정확도에 반영" }],
         aboutTitle: "집중력 테스트 정보",
-        aboutLead: "희귀한 신호를 오래 감시할수록 지속 주의력이 떨어질 수 있습니다. 이 훈련은 짧은 세션에서 규칙 전환, 표적 판별, 오반응을 기록하며 의료 진단이 아닌 자기 점검을 제공합니다.",
-        aboutText: "지속 주의력은 반복되는 자극 속에서 중요한 신호를 계속 골라내는 능력입니다. 같은 조건으로 반복해 점수와 오반응 변화를 비교하세요.\n\n결과는 수면, 스트레스, 화면 환경, 과제에 대한 익숙함의 영향을 받으므로 진단 결과로 해석하지 마세요.",
+        aboutLead: "희귀한 신호를 오래 감시할수록 지속 주의력이 떨어질 수 있습니다. 이 훈련은 짧은 세션에서 규칙 전환, 표적 판별, 오반응을 기록합니다.",
+        aboutText: "지속 주의력은 반복되는 자극 속에서 중요한 신호를 계속 골라내는 능력입니다. 같은 조건으로 반복해 점수와 오반응 변화를 비교하세요.\n\n결과는 수면, 스트레스, 화면 환경, 과제에 대한 익숙함의 영향을 받습니다.",
         audienceTitle: "누구에게 도움이 되나요?", audienceText: "공부나 시험을 앞둔 학습자, 경기 후반에도 정확도를 유지하려는 게이머, 오래 집중해야 하는 직무의 작업자에게 적합합니다.",
         skillsTitle: "향상되는 능력", skillsText: "지속 주의력, 표적 판별, 피로 상황의 경계, 오반응 억제를 연습합니다.",
         flexibilityTitle: "인지적 유연성", flexibilityText: "10초마다 모음과 소수 규칙이 바뀌어 자극을 새 기준으로 재분류하는 전환 능력을 훈련합니다."

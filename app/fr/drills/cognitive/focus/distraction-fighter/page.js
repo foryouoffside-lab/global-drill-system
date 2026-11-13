@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de Stroop en ligne gratuit | SkillDrills",
-  description: "Test de Stroop en ligne gratuit : choisissez la couleur de l’encre, pas le mot, pour ressentir l’effet Stroop et exercer l’attention sélective. Exercice non clinique.",
+  description: "Test de Stroop en ligne gratuit : choisissez la couleur de l’encre, pas le mot, pour ressentir l’effet Stroop et exercer l’attention sélective.",
   keywords: [
     "test de stroop",
     "test de stroop en ligne",
@@ -24,7 +24,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Stroop en ligne gratuit | SkillDrills",
-    description: "Test de Stroop en ligne gratuit : choisissez la couleur de l’encre, pas le mot, pour ressentir l’effet Stroop et exercer l’attention sélective. Exercice non clinique.",
+    description: "Test de Stroop en ligne gratuit : choisissez la couleur de l’encre, pas le mot, pour ressentir l’effet Stroop et exercer l’attention sélective.",
     url: "https://skilldrills.online/fr/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
     locale: "fr_FR",
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Test de Stroop en ligne gratuit | SkillDrills",
-    description: "Test de Stroop en ligne gratuit : choisissez la couleur de l’encre, pas le mot, pour ressentir l’effet Stroop et exercer l’attention sélective. Exercice non clinique."
+    description: "Test de Stroop en ligne gratuit : choisissez la couleur de l’encre, pas le mot, pour ressentir l’effet Stroop et exercer l’attention sélective."
   }
 };
 
@@ -203,7 +203,7 @@ export default function DistractionFighterPageFR() {
       "Ce décalage provient de la dissymétrie de vitesse entre automatismes et processus contrôlés: lire est une compétence hyper-automatisée chez l adulte (MacLeod, 1991). La recherche sur l inhibition décrit l arrêt d une réponse automatique comme une course (Logan & Cowan, 1984) : dans le test de Stroop, une erreur survient quand la lecture n est pas freinée à temps.",
       "Des études d imagerie associent le cortex cingulaire antérieur et le cortex préfrontal dorsolatéral à la résolution de ce conflit (Posner & Petersen, 1990). Cet exercice fait pratiquer l attention sélective sous contrainte de temps, sans mesurer l activité cérébrale ni garantir de progrès.",
       "Chronométrage : l exercice n affiche pas de temps de réaction, mais un score, une précision et un niveau atteint. La fenêtre de réponse de chaque mot est gérée par les minuteurs du navigateur, sur votre terminal. Les navigateurs intègrent une limitation délibérée pour parer aux failles matérielles de type Spectre (résolution d'environ 1 ms), et votre écran quantifie chaque rafraîchissement: environ 16,7 ms par image à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015). Évaluez votre progression sur un même matériel plutôt que de comparer des valeurs brutes entre configurations hétérogènes.",
-      "Transparence des données et avertissement éducatif: SkillDrills ne collecte aucune donnée agrégée et ne transmet aucun historique à des serveurs tiers. Vos scores et préférences résident exclusivement dans le localStorage de votre navigateur. Ce module constitue un jeu d'entraînement cognitif à vocation pédagogique et ludique; il ne s'agit pas d'un dispositif médical, d'un outil de diagnostic ou de dépistage du TDAH ou d'autres troubles cognitifs."
+      "Transparence des données et avertissement éducatif: SkillDrills ne collecte aucune donnée agrégée et ne transmet aucun historique à des serveurs tiers. Vos scores et préférences résident exclusivement dans le localStorage de votre navigateur. Ce module constitue un jeu d'entraînement cognitif à vocation pédagogique et ludique."
     ],
     benchmarks: {
       title: "Test de Stroop : paliers de note (points par manche)",

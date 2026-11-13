@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Seguimiento de Múltiples Objetos | MOT | SkillDrills",
-  description: "Test gratis de seguimiento de múltiples objetos (MOT): memoriza 3 bolas marcadas y síguelas 60 s entre bolas iguales. No es una prueba médica.",
+  description: "Test gratis de seguimiento de múltiples objetos (MOT): memoriza 3 bolas marcadas y síguelas 60 s entre bolas iguales.",
   keywords: [
     "seguimiento de múltiples objetos",
     "test MOT",
@@ -166,7 +166,7 @@ const faqSchema = {
       "name": "¿Cómo funciona el test de seguimiento de múltiples objetos (MOT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Entre bolas iguales, 3 objetivos se iluminan en verde durante 2 segundos. Después todas las bolas se mueven durante 60 segundos; cuando se detienen, eliges los 3 objetivos y confirmas. Cada objetivo correcto vale 20 puntos, 60 como máximo por ronda. No es una prueba médica de la vista ni de la atención."
+        "text": "Entre bolas iguales, 3 objetivos se iluminan en verde durante 2 segundos. Después todas las bolas se mueven durante 60 segundos; cuando se detienen, eliges los 3 objetivos y confirmas. Cada objetivo correcto vale 20 puntos, 60 como máximo por ronda."
       }
     },
     {
@@ -214,7 +214,7 @@ const faqSchema = {
       "name": "¿Este entrenamiento mejora mi rendimiento en juegos o deportes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Una puntuación mayor indica que dominas mejor esta tarea concreta. No está garantizado que se traslade a juegos, deportes o la conducción, y el ejercicio no sustituye una valoración médica."
+        "text": "Una puntuación mayor indica que dominas mejor esta tarea concreta. No está garantizado que se traslade a juegos, deportes o la conducción."
       }
     },
     {
@@ -233,7 +233,7 @@ const guideData = {
   intro: [
     "En este test de seguimiento de múltiples objetos (MOT) sigues 3 objetivos marcados entre bolas iguales y los señalas al final. La tarea proviene del experimento de Pylyshyn & Storm (1988), adaptado como un juego sencillo en el navegador.",
     "Tras la cuenta atrás, 3 bolas se iluminan en verde durante 2 segundos; después todas las bolas, ya iguales, se mueven durante 60 segundos rebotando en los bordes y entre sí. Cuando se detienen, eliges 3 bolas y confirmas: 20 puntos por objetivo correcto (máx. 60), sin penalización por error. Cuanto mayor es tu récord, más bolas y más velocidad.",
-    "Seguir varios objetos a la vez no depende de mirar rápidamente de uno a otro, sino de mantener la atención repartida entre varias posiciones (Cavanagh & Alvarez, 2005). El test es un juego de práctica: no mide ni diagnostica la atención ni la vista."
+    "Seguir varios objetos a la vez no depende de mirar rápidamente de uno a otro, sino de mantener la atención repartida entre varias posiciones (Cavanagh & Alvarez, 2005). El test es un juego de práctica."
   ],
   benchmarks: {
     "title": "Niveles de práctica SkillDrills (solo para este juego)",

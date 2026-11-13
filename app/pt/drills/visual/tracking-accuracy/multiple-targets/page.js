@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Rastreamento de Múltiplos Objetos | MOT | SkillDrills",
-  description: "Teste grátis de rastreamento de múltiplos objetos (MOT): memorize 3 bolas marcadas e siga-as por 60 s entre bolas iguais. Não é exame médico.",
+  description: "Teste grátis de rastreamento de múltiplos objetos (MOT): memorize 3 bolas marcadas e siga-as por 60 s entre bolas iguais.",
   keywords: [
     "rastreamento de múltiplos objetos",
     "teste MOT",
@@ -166,7 +166,7 @@ const faqSchema = {
       "name": "Como funciona o teste de rastreamento de múltiplos objetos (MOT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Entre bolas iguais, 3 alvos acendem em verde por 2 segundos. Depois todas as bolas se movem por 60 segundos; quando param, você escolhe os 3 alvos e confirma. Cada alvo certo vale 20 pontos, no máximo 60 por rodada. Não é exame médico de visão ou atenção."
+        "text": "Entre bolas iguais, 3 alvos acendem em verde por 2 segundos. Depois todas as bolas se movem por 60 segundos; quando param, você escolhe os 3 alvos e confirma. Cada alvo certo vale 20 pontos, no máximo 60 por rodada."
       }
     },
     {
@@ -214,7 +214,7 @@ const faqSchema = {
       "name": "Esse treino melhora meu desempenho em jogos ou esportes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Uma pontuação maior mostra que você ficou melhor nesta tarefa específica. A transferência para jogos, esportes ou direção não é garantida, e o exercício não substitui avaliação médica."
+        "text": "Uma pontuação maior mostra que você ficou melhor nesta tarefa específica. A transferência para jogos, esportes ou direção não é garantida."
       }
     },
     {
@@ -233,7 +233,7 @@ const guideData = {
   intro: [
     "Neste teste de rastreamento de múltiplos objetos (MOT), você acompanha 3 alvos marcados entre bolas iguais e os aponta no final. A tarefa vem do experimento de Pylyshyn & Storm (1988), adaptado como um jogo simples no navegador.",
     "Depois da contagem regressiva, 3 bolas acendem em verde por 2 segundos; em seguida todas as bolas, agora iguais, se movem por 60 segundos quicando nas bordas e entre si. Quando param, você escolhe 3 bolas e confirma: 20 pontos por alvo certo (máx. 60), sem penalidade por erro. Quanto maior o recorde, mais bolas e mais velocidade.",
-    "Acompanhar vários objetos ao mesmo tempo não depende de olhar rapidamente de um para outro, e sim de manter a atenção distribuída entre várias posições (Cavanagh & Alvarez, 2005). O teste é um jogo de treino: não mede nem diagnostica atenção ou visão."
+    "Acompanhar vários objetos ao mesmo tempo não depende de olhar rapidamente de um para outro, e sim de manter a atenção distribuída entre várias posições (Cavanagh & Alvarez, 2005). O teste é um jogo de treino."
   ],
   benchmarks: {
     "title": "Faixas de treino SkillDrills (só para este jogo)",

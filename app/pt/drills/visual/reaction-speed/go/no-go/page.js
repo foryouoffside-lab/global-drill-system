@@ -57,7 +57,7 @@ const softwareApplicationSchema = {
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/pt/drills/visual/reaction-speed/go/no-go",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
-  "description": "Versão para navegador da tarefa Go/No-Go: clicar no sinal verde Go e não clicar no sinal vermelho No-Go. Conta erros de comissão, omissões e tempo de reação. Ferramenta de treino, não é exame médico.",
+  "description": "Versão para navegador da tarefa Go/No-Go: clicar no sinal verde Go e não clicar no sinal vermelho No-Go. Conta erros de comissão, omissões e tempo de reação. Ferramenta de treino.",
   "featureList": [
     "Tempo de reação medido em milissegundos com performance.now()",
     "Tempo de exibição cai de cerca de 600 ms para no mínimo 100 ms conforme o nível",
@@ -182,10 +182,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Serve para diagnosticar TDAH ou impulsividade?",
+      "name": "Por que meus resultados variam?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. É um jogo de treino no navegador, não um exame médico nem um diagnóstico. O resultado também depende da tela, do mouse, do cansaço e da concentração. Se você tem dúvidas sobre atenção ou impulsividade, procure um profissional de saúde."
+        "text": "O resultado depende da tela, do mouse, do cansaço e da concentração. Jogue várias rodadas no mesmo aparelho e compare suas pontuações."
       }
     },
     {
@@ -220,7 +220,7 @@ const goNoGoGuide = {
   intro: [
     "No teste Go/No-Go você responde aos sinais frequentes e se segura nos sinais raros. Não basta clicar rápido: é preciso não clicar na hora certa. É isso que o diferencia de um teste de reflexo simples.",
     "Nesta versão para navegador aparece no centro um círculo verde (Go) ou vermelho (No-Go). Verde: clique ou toque. Vermelho: espere. Clicar sem círculo ou clicar sem parar também conta como erro. Conforme o nível sobe, o tempo de exibição cai de cerca de 600 ms para no mínimo 100 ms.",
-    "A ideia das tarefas de escolha vem dos estudos de tempo de reação de Donders (1868); a corrida entre iniciar e parar foi modelada por Logan e Cowan (1984). Mesmo assim, a pontuação daqui é um resultado de treino que inclui tela, mouse e navegador, e não um exame médico.",
+    "A ideia das tarefas de escolha vem dos estudos de tempo de reação de Donders (1868); a corrida entre iniciar e parar foi modelada por Logan e Cowan (1984). A pontuação daqui é um resultado de treino que inclui tela, mouse e navegador.",
     "A medição usa performance.now() no navegador. A atualização da tela e o atraso do mouse ou do toque entram no resultado (Woods et al., 2015), então compare pontuações no mesmo aparelho. Os dados ficam no navegador deste aparelho."
   ],
   benchmarks: {
@@ -267,7 +267,7 @@ const goNoGoGuide = {
     "Círculo vermelho No-Go: espere ele sumir sem clicar.",
     "No fim, veja a taxa de erros, a reação média e o nível alcançado."
   ],
-  audience: "Para quem quer fazer o teste Go/No-Go online e treinar, além da velocidade, a capacidade de não clicar: gamers, atletas e curiosos. Não serve para avaliação médica.",
+  audience: "Para quem quer fazer o teste Go/No-Go online e treinar, além da velocidade, a capacidade de não clicar: gamers, atletas e curiosos.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('donders1868', 'logan1984', 'robertson1997', 'woods2015'),
   related: [

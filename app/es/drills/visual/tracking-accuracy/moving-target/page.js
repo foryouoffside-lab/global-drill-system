@@ -17,7 +17,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Predicción de Trayectoria | Objetivo Móvil | SkillDrills",
-    description: "Lee la trayectoria de una esfera que rebota y haz clic antes de que salte a otro sitio. Entrenamiento gratis en el navegador, no es una prueba médica.",
+    description: "Lee la trayectoria de una esfera que rebota y haz clic antes de que salte a otro sitio. Entrenamiento gratis en el navegador.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -167,7 +167,7 @@ const faqSchema = {
       "name": "¿Cómo funciona la predicción de trayectoria de objetivo móvil?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Una esfera avanza en línea recta por la zona de juego y rebota en los bordes. Tras un plazo corto (alrededor de 1 segundo al principio) salta a otro sitio. Tienes que hacer clic sobre ella antes. La ronda empieza con 45 segundos, cada acierto suma +2 s (máximo 60 s) y termina en 0. No es un test de vista ni una prueba médica."
+        "text": "Una esfera avanza en línea recta por la zona de juego y rebota en los bordes. Tras un plazo corto (alrededor de 1 segundo al principio) salta a otro sitio. Tienes que hacer clic sobre ella antes. La ronda empieza con 45 segundos, cada acierto suma +2 s (máximo 60 s) y termina en 0."
       }
     },
     {
@@ -215,7 +215,7 @@ const faqSchema = {
       "name": "¿Este entrenamiento mejora mi vista?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Una puntuación más alta muestra que has mejorado en esta tarea concreta. No está demostrado ningún efecto sobre la agudeza visual, el rendimiento deportivo u otras tareas, y el ejercicio no sustituye una revisión con un oftalmólogo."
+        "text": "Una puntuación más alta muestra que has mejorado en esta tarea concreta. No está demostrado ningún efecto sobre la agudeza visual, el rendimiento deportivo u otras tareas."
       }
     },
     {

@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test Go/No-Go en ligne gratuit | Inhibition de la réponse | SkillDrills",
-  description: "Test Go/No-Go gratuit dans le navigateur : cliquez vite sur le vert, ne touchez à rien sur le rouge. Entraîne l’inhibition de la réponse et compte les erreurs. Pas un diagnostic.",
+  description: "Test Go/No-Go gratuit dans le navigateur : cliquez vite sur le vert, ne touchez à rien sur le rouge. Entraîne l’inhibition de la réponse et compte les erreurs.",
   keywords: [
     "test go no go",
     "test Go/No-Go en ligne",
@@ -18,7 +18,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test Go/No-Go en ligne gratuit | Inhibition de la réponse | SkillDrills",
-    description: "Cliquez sur le vert, retenez-vous sur le rouge. Test Go/No-Go gratuit dans le navigateur pour travailler l’inhibition de la réponse. Pas un diagnostic.",
+    description: "Cliquez sur le vert, retenez-vous sur le rouge. Test Go/No-Go gratuit dans le navigateur pour travailler l’inhibition de la réponse.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go',
     siteName: 'SkillDrills',
@@ -56,7 +56,7 @@ const softwareApplicationSchema = {
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "description": "Version navigateur de la tâche Go/No-Go : cliquer sur le signal vert Go, ne rien faire sur le signal rouge No-Go. Compte les erreurs de commission, les omissions et le temps de réaction. Outil d’entraînement, pas un examen médical.",
+  "description": "Version navigateur de la tâche Go/No-Go : cliquer sur le signal vert Go, ne rien faire sur le signal rouge No-Go. Compte les erreurs de commission, les omissions et le temps de réaction. Outil d’entraînement.",
   "featureList": [
     "Temps de réaction mesuré en millisecondes avec performance.now()",
     "Durée d’affichage qui passe d’environ 600 ms à 100 ms minimum avec le niveau",
@@ -181,10 +181,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Peut-on dépister un TDAH ou l’impulsivité avec ce test ?",
+      "name": "Pourquoi mes résultats varient-ils ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. C’est un jeu d’entraînement dans le navigateur, pas un examen médical ni un diagnostic. Le résultat dépend aussi de l’écran, de la souris, de la fatigue et de la concentration. En cas d’inquiétude sur l’attention ou l’impulsivité, consultez un professionnel de santé."
+        "text": "Le résultat dépend de l’écran, de la souris, de la fatigue et de la concentration. Faites plusieurs parties sur le même appareil et comparez vos scores."
       }
     },
     {
@@ -219,7 +219,7 @@ const goNoGoGuide = {
   intro: [
     "Le test Go/No-Go consiste à répondre aux signaux fréquents et à se retenir face aux signaux rares. Il ne s’agit pas seulement de cliquer vite, mais de savoir ne pas cliquer au bon moment, ce qui le distingue d’un simple test de réaction.",
     "Dans cette version navigateur, un cercle vert (Go) ou rouge (No-Go) apparaît au centre. Vert : cliquez ou touchez. Rouge : attendez. Un clic sans cercle ou des clics en rafale comptent aussi comme erreur. La durée d’affichage passe d’environ 600 ms à 100 ms minimum au fil des niveaux.",
-    "L’idée des tâches de choix remonte aux travaux de Donders (1868) sur le temps de réaction ; la course entre départ et arrêt a été modélisée par Logan et Cowan (1984). Le score obtenu ici reste un résultat d’entraînement qui inclut l’écran, la souris et le navigateur, pas un examen médical.",
+    "L’idée des tâches de choix remonte aux travaux de Donders (1868) sur le temps de réaction ; la course entre départ et arrêt a été modélisée par Logan et Cowan (1984). Le score obtenu ici reste un résultat d’entraînement qui inclut l’écran, la souris et le navigateur.",
     "La mesure utilise performance.now() dans le navigateur. Le rafraîchissement de l’écran et le délai des périphériques s’ajoutent au résultat (Woods et al., 2015) : comparez vos scores sur le même appareil. Les données restent dans le navigateur de cet appareil."
   ],
   benchmarks: {
@@ -266,7 +266,7 @@ const goNoGoGuide = {
     "Cercle rouge No-Go : attendez qu’il disparaisse sans cliquer.",
     "À la fin, regardez le taux d’erreurs, la réaction moyenne et le niveau atteint."
   ],
-  audience: "Pour tester la tâche Go/No-Go en ligne et travailler, en plus de la vitesse, la capacité à ne pas cliquer : joueurs, sportifs et curieux. Ne convient pas à une évaluation médicale.",
+  audience: "Pour tester la tâche Go/No-Go en ligne et travailler, en plus de la vitesse, la capacité à ne pas cliquer : joueurs, sportifs et curieux.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('donders1868', 'logan1984', 'robertson1997', 'woods2015'),
   related: [

@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de multitâche | Suivi double | SkillDrills",
-  description: "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. Non clinique, c’est un auto-test cognitif.",
+  description: "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. C’est un auto-test cognitif.",
   keywords: [
     "test de multitache",
     "test de flexibilite cognitive",
@@ -23,7 +23,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de multitâche | Suivi double | SkillDrills",
-    description: "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. Non clinique, c’est un auto-test cognitif.",
+    description: "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. C’est un auto-test cognitif.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -32,7 +32,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de multitâche | Suivi double | SkillDrills",
-    description: "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. Non clinique, c’est un auto-test cognitif.",
+    description: "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. C’est un auto-test cognitif.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +83,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. Non clinique, c’est un auto-test cognitif.",
+  "description": "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. C’est un auto-test cognitif.",
   "url": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking",
   "publisher": {
     "@type": "Organization",
@@ -116,7 +116,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Jeu de multitâche – suivi de deux flux",
   "url": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking",
-  "description": "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. Non clinique, c’est un auto-test cognitif.",
+  "description": "Test de multitâche gratuit : dans deux flux de symboles opposés, touchez seulement le symbole cible de chaque côté. C’est un auto-test cognitif.",
   "genre": [
     "Action",
     "Jeu Cerebral",
@@ -144,7 +144,7 @@ const faqSchema = {
       "name": "Qu’est-ce que le test de multitâche (Dual-Target Flow) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C’est un exercice d’entraînement : l’écran est divisé en deux couloirs (gauche/droite en paysage, haut/bas en portrait) où des formes partent du centre vers l’extérieur. Vous cliquez ou touchez seulement le symbole cible affiché dans chaque couloir. Ce n’est pas un test clinique."
+        "text": "C’est un exercice d’entraînement : l’écran est divisé en deux couloirs (gauche/droite en paysage, haut/bas en portrait) où des formes partent du centre vers l’extérieur. Vous cliquez ou touchez seulement le symbole cible affiché dans chaque couloir."
       }
     },
     {
@@ -264,7 +264,7 @@ const guideProps = {
   intro: {
     title: "Test de Multitâche et Flexibilité Cognitive",
     paragraphs: [
-      "Ce test de multitâche gratuit vous demande de surveiller deux flux de symboles à la fois et de toucher seulement la cible de chaque couloir. C’est une auto-évaluation non clinique.",
+      "Ce test de multitâche gratuit vous demande de surveiller deux flux de symboles à la fois et de toucher seulement la cible de chaque couloir. C’est une auto-évaluation.",
       "Le coût de changement (switch cost) désigne la baisse passagère de rapidité et de précision lors du passage d’une règle à une autre (Rogers & Monsell, 1995).",
       "Ici, les cibles changent toutes les 20 secondes et deviennent différentes d’un couloir à l’autre à partir du niveau 3 : il faut donc mettre à jour la règle de chaque côté (Pashler, 1994 ; Wickens, 2002).",
     ],
@@ -272,7 +272,7 @@ const guideProps = {
   benchmarks: {
     title: 'Paliers de pratique SkillDrills (précision)',
     headers: ['Palier', 'Rang', 'Evaluation', 'Precision', 'Repère de pratique'],
-    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques.",
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population.",
 
     rows: [
       { tier: 'Palier 1', rank: 'Très avancé', stat: 'Rythme très élevé', accuracy: '98%+', marker: 'Rythme très élevé et précis' },
@@ -339,7 +339,7 @@ export default function EnhancedPage() {
           { text: "Erreur / cible ratée", highlight: "Combo perdu", result: "−1 s" },
           { text: "Changement de cible", highlight: "Toutes les 20 s", result: "Revérifiez le symbole" },
         ],
-        aboutTitle: "À propos du multitâche et du double flux", aboutLead: "Cet auto-test cognitif non clinique associe deux flux visuels et observe la précision pratiquée ainsi que la vitesse de changement attentionnel, sans prétendre mesurer une capacité générale du quotidien.",
+        aboutTitle: "À propos du multitâche et du double flux", aboutLead: "Cet auto-test cognitif associe deux flux visuels et observe la précision pratiquée ainsi que la vitesse de changement attentionnel, sans prétendre mesurer une capacité générale du quotidien.",
         audienceTitle: "Pour qui", audienceText: "Pour les joueurs qui surveillent plusieurs éléments, les apprenants et les personnes qui veulent organiser des informations simultanées.",
         skillsTitle: "Compétences travaillées", skillsText: "Suivi visuel bilatéral, détection périphérique, changement attentionnel et contrôle exécutif.", flexibilityTitle: "Vitesse de changement", flexibilityText: "Chaque niveau modifie le rythme et les formes : passez d’un flux à l’autre sans perdre en précision."
       }} />

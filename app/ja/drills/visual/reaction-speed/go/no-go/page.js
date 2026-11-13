@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Go/No-Go課題｜無料オンライン反応抑制テスト | SkillDrills",
-  description: "Go/No-Go課題をブラウザで無料体験。緑には素早くクリック、赤では押さずに止まる反応抑制の練習です。誤反応と見落としを記録できます。診断用ではありません。",
+  description: "Go/No-Go課題をブラウザで無料体験。緑には素早くクリック、赤では押さずに止まる反応抑制の練習です。誤反応と見落としを記録できます。",
   keywords: [
     "Go/No-Go課題",
     "go no go テスト",
@@ -20,7 +20,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Go/No-Go課題｜無料オンライン反応抑制テスト | SkillDrills",
-    description: "緑には素早くクリック、赤では押さずに止まる。反応抑制と誤反応をブラウザで確認できる無料のGo/No-Go課題です。診断用ではありません。",
+    description: "緑には素早くクリック、赤では押さずに止まる。反応抑制と誤反応をブラウザで確認できる無料のGo/No-Go課題です。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/visual/reaction-speed/go/no-go',
     siteName: 'SkillDrills',
@@ -58,7 +58,7 @@ const softwareApplicationSchema = {
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/ja/drills/visual/reaction-speed/go/no-go",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
-  "description": "緑のGo刺激にはクリックし、赤のNo-Go刺激では押さずに止まるブラウザ版のGo/No-Go課題。誤反応、見落とし、反応時間を記録する練習用ツールで、医学的な検査ではありません。",
+  "description": "緑のGo刺激にはクリックし、赤のNo-Go刺激では押さずに止まるブラウザ版のGo/No-Go課題。誤反応、見落とし、反応時間を記録する練習用ツールです。",
   "featureList": [
     "performance.now() APIによるミリ秒(ms)精度の反応潜時計測",
     "難易度上昇に伴う提示時間の動的短縮（最短100ms）",
@@ -183,10 +183,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "ADHDや衝動性の診断に使えますか？",
+      "name": "結果が毎回変わるのはなぜですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "いいえ。これは練習用のブラウザゲームで、医学的な検査や診断ではありません。結果は画面、入力機器、眠気、集中度でも変わります。衝動性や注意について気になることがある場合は、医療機関などの専門家に相談してください。"
+        "text": "結果は画面、入力機器、眠気、集中度で変わります。同じ端末と近い体調で何度か試し、記録を比べてください。"
       }
     },
     {
@@ -221,7 +221,7 @@ const goNoGoGuide = {
   intro: [
     "Go/No-Go課題は、よく出る合図には反応し、ときどき出る合図では反応を止める課題です。速く押すだけでなく、押してはいけない場面で止まれるかどうかを見る点が、単純な反射神経テストとの違いです。",
     "このブラウザ版では、画面中央に緑の円（Go）か赤の円（No-Go）が出ます。緑はクリックまたはタップ、赤は押さずに待ちます。円が出ていない間のクリックや素早い連打も誤反応として扱われます。レベルが上がると表示時間は約600msから短くなり、最短100msになります。",
-    "選択して反応する課題の考え方はドンデルス（1868）の反応時間研究にさかのぼり、反応を始める処理と止める処理の競争はLogan & Cowan（1984）がモデル化しました。ただし、このスコアは画面、入力機器、ブラウザを含めた練習の結果であり、医学的な検査ではありません。",
+    "選択して反応する課題の考え方はドンデルス（1868）の反応時間研究にさかのぼり、反応を始める処理と止める処理の競争はLogan & Cowan（1984）がモデル化しました。このスコアは画面、入力機器、ブラウザを含めた練習の結果です。",
     "時間の計測はブラウザのperformance.now()で行います。ディスプレイのリフレッシュや入力の遅延が結果に加わるため（Woods et al., 2015）、記録は同じ端末どうしで比べてください。データはこの端末のブラウザ内に保存されます。"
   ],
   benchmarks: {
@@ -268,7 +268,7 @@ const goNoGoGuide = {
     "赤のNo-Goの円が出たら、消えるまで押さずに待ちます。",
     "終了後、誤反応率、平均反応、到達レベルを確認します。"
   ],
-  audience: "Go/No-Go課題をオンラインで試したい方、速さだけでなく「押さない判断」を練習したいゲーマーやスポーツをする方向けです。医学的な評価を目的とする方には向きません。",
+  audience: "Go/No-Go課題をオンラインで試したい方、速さだけでなく「押さない判断」を練習したいゲーマーやスポーツをする方向けです。",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('donders1868', 'logan1984', 'robertson1997', 'woods2015'),
   related: [

@@ -72,7 +72,7 @@ const webApplicationSchema = {
 const faqs = [
   {
     q: "¿Qué hago en estos ejercicios de visión periférica?",
-    a: "Mantienes la vista en el núcleo del centro de la pantalla y haces clic en las amenazas que llegan desde el borde hacia él, antes de que lo alcancen. Así practicas notar movimientos alrededor sin mover los ojos. Es un juego de navegador, no un examen de la vista ni un tratamiento."
+    a: "Mantienes la vista en el núcleo del centro de la pantalla y haces clic en las amenazas que llegan desde el borde hacia él, antes de que lo alcancen. Así practicas notar movimientos alrededor sin mover los ojos. Es un juego de navegador."
   },
   {
     q: "¿En qué se diferencian la visión central y la periférica?",
@@ -92,7 +92,7 @@ const faqs = [
   },
   {
     q: "¿Qué es la visión de túnel?",
-    a: "Bajo estrés o muy concentrado en un punto, solemos percibir peor lo que hay alrededor; a eso se le suele llamar visión de túnel. Este juego practica mantener el centro a la vista sin perder los bordes. No detecta una pérdida de campo visual por enfermedad ni sirve como prueba del carnet de conducir; para eso, acude a un oftalmólogo."
+    a: "Bajo estrés o muy concentrado en un punto, solemos percibir peor lo que hay alrededor; a eso se le suele llamar visión de túnel. Este juego practica mantener el centro a la vista sin perder los bordes."
   },
   {
     q: "¿Este juego amplía mi campo visual?",
@@ -137,7 +137,7 @@ const guideProps = {
     "Estos ejercicios de visión periférica son un juego gratis en el navegador: mantienes la vista en el núcleo central e interceptas las amenazas que llegan desde el borde. Cada acierto suma 2 segundos; un clic en el vacío o una amenaza que toca el núcleo resta 1.",
     "La investigación muestra que se puede desplazar la atención sin mover los ojos (Posner, 1980). Los objetivos con contraste y en movimiento se detectan rápido incluso en la periferia (Treisman & Gelade, 1980). El juego lo convierte en una tarea de clic.",
     "Al principio aparece una amenaza cada 1,4 segundos aproximadamente; con la puntuación se vuelven más rápidas y más frecuentes (hasta 0,20 segundos de intervalo). Para hacer clic ayuda un movimiento amplio seguido de una pequeña corrección final (Woodworth, 1899; Fitts, 1954).",
-    "Los resultados son registros de práctica. No sustituyen un examen de la vista, un diagnóstico ni un tratamiento. Si notas cambios en tu visión, acude a un oftalmólogo."
+    "Los resultados son registros de práctica."
   ],
   benchmarks: {
     title: "Rangos de nota (niveles de práctica de SkillDrills)",
@@ -151,7 +151,7 @@ const guideProps = {
       ["D", "2.160 – 4.859"],
       ["F", "menos de 2.160"]
     ],
-    note: "Niveles de práctica de SkillDrills calculados con la fórmula de nota del juego; no son estadísticas de usuarios, ni percentiles, ni un criterio de examen de la vista."
+    note: "Niveles de práctica de SkillDrills calculados con la fórmula de nota del juego; no son estadísticas de usuarios ni percentiles."
   },
   techniques: {
     title: "4 consejos para sumar más",

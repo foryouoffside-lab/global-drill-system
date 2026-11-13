@@ -17,7 +17,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Intercepter des cibles mobiles | Trajectoire | SkillDrills",
-    description: "Lisez la trajectoire d'une sphère qui rebondit et cliquez-la avant qu'elle ne saute ailleurs. Entraînement gratuit dans le navigateur, pas un test médical.",
+    description: "Lisez la trajectoire d'une sphère qui rebondit et cliquez-la avant qu'elle ne saute ailleurs. Entraînement gratuit dans le navigateur.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -167,7 +167,7 @@ const faqSchema = {
       "name": "Comment fonctionne l'exercice « Intercepter des cibles mobiles » ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une sphère se déplace en ligne droite et rebondit sur les bords de la zone. Après un court délai (environ 1 seconde au début), elle saute à un autre endroit. Vous devez la cliquer avant. La partie commence avec 45 secondes, chaque touche ajoute 2 s (60 s maximum) et elle s'arrête à 0. Ce n'est ni un test de la vue ni un examen médical."
+        "text": "Une sphère se déplace en ligne droite et rebondit sur les bords de la zone. Après un court délai (environ 1 seconde au début), elle saute à un autre endroit. Vous devez la cliquer avant. La partie commence avec 45 secondes, chaque touche ajoute 2 s (60 s maximum) et elle s'arrête à 0."
       }
     },
     {
@@ -215,7 +215,7 @@ const faqSchema = {
       "name": "Cet entraînement améliore-t-il ma vue ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un meilleur score montre que vous progressez dans cette tâche précise. Aucun effet sur l'acuité visuelle, les performances sportives ou d'autres tâches n'est établi, et l'exercice ne remplace pas un examen chez un ophtalmologiste."
+        "text": "Un meilleur score montre que vous progressez dans cette tâche précise. Aucun effet sur l'acuité visuelle, les performances sportives ou d'autres tâches n'est établi."
       }
     },
     {

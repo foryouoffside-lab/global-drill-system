@@ -115,10 +115,10 @@ export default function PathTracingFrenchPage() {
       },
       {
         "@type": "Question",
-        "name": "Est-ce le test de Corsi utilisé en clinique ?",
+        "name": "Est-ce le test des blocs de Corsi ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Non. Le principe est celui de la tâche des blocs de Corsi (Corsi, 1972) : retenir des positions dans leur ordre puis les reproduire. Ici, on utilise une grille carrée, chaque étape mène uniquement à une case voisine (haut, bas, gauche, droite) et aucune case n'est visitée deux fois. C'est un jeu d'entraînement, pas un test clinique ni un outil de diagnostic."
+          "text": "Non. Le principe est celui de la tâche des blocs de Corsi (Corsi, 1972) : retenir des positions dans leur ordre puis les reproduire. Ici, on utilise une grille carrée, chaque étape mène uniquement à une case voisine (haut, bas, gauche, droite) et aucune case n'est visitée deux fois. C'est un jeu d'entraînement."
         }
       },
       {
@@ -163,10 +163,10 @@ export default function PathTracingFrenchPage() {
       },
       {
         "@type": "Question",
-        "name": "Mes résultats sont-ils enregistrés ? Ont-ils une valeur médicale ?",
+        "name": "Mes résultats sont-ils enregistrés ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le meilleur score et le niveau maximal sont enregistrés uniquement dans le localStorage de ce navigateur, sans envoi à un serveur. Les résultats sont des scores d'entraînement et ne disent rien d'un trouble de la mémoire ou de la santé du cerveau."
+          "text": "Le meilleur score et le niveau maximal sont enregistrés uniquement dans le localStorage de ce navigateur, sans envoi à un serveur. Les résultats sont des scores d'entraînement."
         }
       }
     ]
@@ -214,8 +214,7 @@ export default function PathTracingFrenchPage() {
       "Le test des blocs de Corsi en ligne est un jeu gratuit de mémoire de l'ordre : des cases d'une grille s'allument l'une après l'autre, puis tu les touches dans le même ordre. Il reprend le principe de la tâche des blocs de Corsi (Milner, 1971 ; Corsi, 1972) sous forme de parcours sur une grille pour entraîner ton empan visuo-spatial et ta mémoire de travail visuo-spatiale.",
       "Au niveau 1, un parcours de 3 étapes apparaît sur une grille 3x3. Les cases s'allument toutes les 0,5 seconde ; chaque étape mène à une case en haut, en bas, à gauche ou à droite, et aucune case n'est visitée deux fois. Chaque parcours réussi rapporte +150 points, niveau +1 et une étape de plus ; la grille passe en 4x4, 5x5 et 6x6 jusqu'à 7x7.",
       "Le chronomètre de session dure 60 secondes et ne tourne que pendant la saisie. Chaque parcours doit être terminé en 10 secondes. Une mauvaise case ou un dépassement de temps termine la manche sans pénalité ; un nouveau parcours de même longueur suit et le niveau ne baisse pas. Saisie au clic ou au toucher.",
-      "Transparence des données : les résultats sont enregistrés uniquement dans le localStorage de ce navigateur et ne sont envoyés à aucun serveur. SkillDrills ne publie donc ni moyennes d'utilisateurs ni classements.",
-      "Cet outil est un jeu gratuit d'entraînement dans le navigateur. Ce n'est ni le test de Corsi officiel, ni un dispositif médical, ni un outil de diagnostic, et les résultats ne renseignent pas sur un trouble de la mémoire. En cas d'inquiétude, consulte un professionnel de santé."
+      "Transparence des données : les résultats sont enregistrés uniquement dans le localStorage de ce navigateur et ne sont envoyés à aucun serveur. SkillDrills ne publie donc ni moyennes d'utilisateurs ni classements."
     ],
     benchmarks: {
       title: "Paliers d'entraînement SkillDrills (points = parcours réussis × 150)",
@@ -226,7 +225,7 @@ export default function PathTracingFrenchPage() {
         ["Confirmé", "8–12 étapes · 4x4–5x5", "750–1 350", "5 à 9 parcours réussis. Le regroupement par directions devient nécessaire"],
         ["Avancé", "13+ étapes · 6x6–7x7", "1 500+", "10 parcours réussis ou plus. Longs parcours enchaînés en 60 secondes de saisie"]
       ],
-      note: "Ces paliers sont calculés à partir des règles de score du jeu ; ce ne sont ni des normes de population ni des seuils cliniques."
+      note: "Ces paliers sont calculés à partir des règles de score du jeu ; ce ne sont pas des normes de population."
     },
     techniques: {
       title: "Astuces pour les longs parcours",

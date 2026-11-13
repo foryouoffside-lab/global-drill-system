@@ -166,7 +166,7 @@ export default function LocalizedPathTracingPage() {
         "name": "Werden meine Ergebnisse gespeichert?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bestwert und höchstes Level werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Die Ergebnisse sind Übungswerte und sagen nichts über Gedächtnisstörungen oder die Gesundheit des Gehirns aus."
+          "text": "Bestwert und höchstes Level werden nur im localStorage dieses Browsers gespeichert und nicht an einen Server gesendet. Die Ergebnisse sind Übungswerte."
         }
       }
     ]

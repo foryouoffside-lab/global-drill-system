@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de réaction en ligne : temps de réaction en ms",
-  description: "Test de réaction gratuit : cliquez dès que la lumière s'allume et mesurez votre temps de réaction en millisecondes. Outil d'entraînement, pas un test médical.",
+  description: "Test de réaction gratuit : cliquez dès que la lumière s'allume et mesurez votre temps de réaction en millisecondes. Outil d'entraînement.",
   keywords: [
     "test de réaction",
     "test de réaction en ligne",

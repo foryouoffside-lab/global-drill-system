@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 const PAGE_URL = "https://skilldrills.online/fr/drills/visual/visual-recognition/rhythm-anomaly";
 const TITLE = "Test de rythme visuel : la case déphasée | SkillDrills";
-const DESCRIPTION = "Test de rythme visuel : dans une grille 6x6 qui pulse, repérez la seule case qui clignote sur un autre tempo. 45 secondes, gratuit, sans valeur médicale.";
+const DESCRIPTION = "Test de rythme visuel : dans une grille 6x6 qui pulse, repérez la seule case qui clignote sur un autre tempo. 45 secondes, gratuit.";
 const FAQS = [
   [
     "Que mesure ce test de rythme visuel ?",
-    "Il compte combien de fois vous trouvez la case déphasée en 45 secondes (10 points par case), votre meilleure série et vos erreurs. C’est un score d’entraînement à la comparaison de rythmes, pas un diagnostic de la vue ni du système nerveux."
+    "Il compte combien de fois vous trouvez la case déphasée en 45 secondes (10 points par case), votre meilleure série et vos erreurs. C’est un score d’entraînement à la comparaison de rythmes."
   ],
   [
     "Est-ce un test de fréquence critique de fusion (CFF) ?",
@@ -87,7 +87,7 @@ const TIPS = [
   "Comparez vos scores sur le même appareil, avec la même luminosité."
 ];
 const INTRO = [
-  "Dans ce test de rythme visuel, les 36 cases d’une grille 6x6 clignotent lentement sur le même tempo. Une seule case clignote sur un tempo plus rapide : c’est elle qu’il faut cliquer. Une séance dure 45 secondes et se joue gratuitement dans le navigateur, à la souris ou au toucher. Ce n’est ni un examen de la vue ni un test médical.",
+  "Dans ce test de rythme visuel, les 36 cases d’une grille 6x6 clignotent lentement sur le même tempo. Une seule case clignote sur un tempo plus rapide : c’est elle qu’il faut cliquer. Une séance dure 45 secondes et se joue gratuitement dans le navigateur, à la souris ou au toucher.",
   "La case déphasée a une période d’environ 72 % de celle des autres : elle clignote environ 1,4 fois plus vite et devient un peu plus claire au pic. À chaque bonne réponse, toute la grille accélère (période de 1,6 s jusqu’à 0,6 s minimum). Facile au début, l’écart de tempo doit ensuite être repéré plus vite.",
   "La grille clignote environ 0,6 à 2,5 fois par seconde, bien en dessous de la fréquence critique de fusion (environ 50 à 60 Hz ; De Lange, 1958 ; Kelly, 1961). Ce n’est donc pas un test de scintillement (CFF) mais une tâche d’attention où l’on compare des rythmes. Juger si deux stimuli sont en phase n’est possible qu’à des cadences bien plus lentes que la simple détection du scintillement (Holcombe, 2009)."
 ];
@@ -140,7 +140,7 @@ const softwareApplicationSchema = {
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Jeu de 45 secondes dans le navigateur : trouvez dans une grille 6x6 la case qui clignote plus vite que les autres. Souris ou tactile, sans valeur médicale.",
+  "description": "Jeu de 45 secondes dans le navigateur : trouvez dans une grille 6x6 la case qui clignote plus vite que les autres. Souris ou tactile.",
   "url": PAGE_URL,
   "inLanguage": "fr-FR",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
@@ -234,7 +234,7 @@ export default function FrenchRhythmAnomalyPage() {
             </tbody>
           </table>
         </div>
-        <p>{"Paliers d’entraînement SkillDrills : ni statistique de population, ni percentile, ni diagnostic."}</p>
+        <p>{"Paliers d’entraînement SkillDrills : ni statistique de population, ni percentile."}</p>
 
         <h3>{"Conseils"}</h3>
         <ol className="list-decimal pl-5 space-y-2 my-4 text-slate-300">

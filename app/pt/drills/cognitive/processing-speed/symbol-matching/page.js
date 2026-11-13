@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Teste de Símbolos e Dígitos Online Grátis | SkillDrills",
-  description: "Teste gratuito de símbolos e dígitos no navegador: pratique pareamento símbolo-dígito e velocidade de processamento. Inspirado no SDMT, não é clínico.",
+  description: "Teste gratuito de símbolos e dígitos no navegador: pratique pareamento símbolo-dígito e velocidade de processamento. Inspirado no SDMT.",
   keywords: ["teste de símbolos e dígitos", "SDMT online", "teste sdmt online", "pareamento símbolo-dígito", "velocidade de processamento", "busca visual"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Símbolos e Dígitos Online Grátis | SkillDrills",
-    description: "Teste gratuito de símbolos e dígitos no navegador: pratique pareamento símbolo-dígito e velocidade de processamento. Inspirado no SDMT, não é clínico.",
+    description: "Teste gratuito de símbolos e dígitos no navegador: pratique pareamento símbolo-dígito e velocidade de processamento. Inspirado no SDMT.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de Símbolos e Dígitos Online Grátis | SkillDrills",
-    description: "Teste gratuito de símbolos e dígitos no navegador: pratique pareamento símbolo-dígito e velocidade de processamento. Inspirado no SDMT, não é clínico.",
+    description: "Teste gratuito de símbolos e dígitos no navegador: pratique pareamento símbolo-dígito e velocidade de processamento. Inspirado no SDMT.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Treino online grátis inspirado no SDMT: pratique pareamento de símbolos e dígitos, busca visual e memória associativa. Não é o teste clínico.",
+  "description": "Treino online grátis inspirado no SDMT: pratique pareamento de símbolos e dígitos, busca visual e memória associativa.",
   "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/symbol-matching",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Jogo de Correspondência de Símbolos e Dígitos",
   "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/symbol-matching",
-  "description": "Treino online grátis inspirado no SDMT: pratique pareamento de símbolos e dígitos, busca visual e memória associativa. Não é o teste clínico.",
+  "description": "Treino online grátis inspirado no SDMT: pratique pareamento de símbolos e dígitos, busca visual e memória associativa.",
   "genre": [
     "Action",
     "Brain Game",
@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "O que é o teste SDMT (Symbol Digit Modalities Test)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É um teste neuropsicológico criado por Aaron Smith (1973), em que se associam símbolos a dígitos usando uma chave. Este treino usa o mesmo formato, mas não é o SDMT nem um teste clínico."
+        "text": "É um teste criado por Aaron Smith (1973), em que se associam símbolos a dígitos usando uma chave. Este treino usa o mesmo formato, mas não é o SDMT."
       }
     },
     {
@@ -173,15 +173,15 @@ const faqSchema = {
       "name": "O que o resultado mostra?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pontos, precisão, acertos, erros, nível máximo e uma nota de F a S+ comparada a uma referência fixa da SkillDrills. Não é comparável a normas clínicas do SDMT nem a QI."
+        "text": "Pontos, precisão, acertos, erros, nível máximo e uma nota de F a S+ comparada a uma referência fixa da SkillDrills. Não é comparável a normas do SDMT nem a QI."
       }
     },
     {
       "@type": "Question",
-      "name": "É um exame médico ou neuropsicológico?",
+      "name": "Como ler meu resultado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. É um jogo de prática no navegador, sem valor diagnóstico. Se você se preocupa com memória ou raciocínio, procure um profissional de saúde."
+        "text": "No fim da partida você vê pontuação, precisão, acertos, erros, nível máximo e uma nota de F a S+. Compare esses valores com suas próprias partidas anteriores no mesmo aparelho."
       }
     },
     {
@@ -215,7 +215,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Realizar o Teste SDMT de Correspondência de Símbolos",
-  "description": "Treino online grátis inspirado no SDMT: pratique pareamento de símbolos e dígitos, busca visual e memória associativa. Não é o teste clínico.",
+  "description": "Treino online grátis inspirado no SDMT: pratique pareamento de símbolos e dígitos, busca visual e memória associativa.",
   "step": [
     {
       "@type": "HowToStep",
@@ -254,8 +254,8 @@ const guideProps = {
     title: "Teste de Símbolos e Dígitos Online",
     paragraphs: [
       "O teste de símbolos e dígitos é um treino grátis no navegador: a chave no topo associa seis símbolos aos dígitos 1 a 6, um símbolo aparece no centro e você toca no dígito correspondente. A chave é embaralhada a cada sessão. A rodada começa com 45 segundos; cada acerto soma 2 segundos (máx. 60) e cada erro ou tempo esgotado tira 1 segundo.",
-      "Responder do símbolo para o dígito é o formato do SDMT (Smith, 1973); no DSST da escala Wechsler é o contrário (dígito para símbolo). Este treino não é nenhum dos dois testes e seus resultados não se comparam a normas clínicas.",
-      "O resultado mostra pontos, precisão, acertos, erros e nível máximo. É um jogo de prática, não um diagnóstico nem uma avaliação de QI ou neuropsicológica.",
+      "Responder do símbolo para o dígito é o formato do SDMT (Smith, 1973); no DSST da escala Wechsler é o contrário (dígito para símbolo). Este treino não é nenhum dos dois testes e seus resultados não se comparam às normas deles.",
+      "O resultado mostra pontos, precisão, acertos, erros e nível máximo. É um jogo de prática, não uma avaliação de QI.",
     ],
   },
   benchmarks: {
@@ -268,7 +268,7 @@ const guideProps = {
       { tier: 'Tier 4', rank: 'Em evolução', stat: 'Faixa 4', level: 'Faixa 4', accuracy: '78-87%', marker: 'Consulta frequente da chave' },
       { tier: 'Tier 5', rank: 'Ponto de partida', stat: 'Faixa 5', level: 'Faixa 5', accuracy: '< 78%', marker: 'Ponto de partida' },
     ],
-    note: 'Faixas editoriais para comparar suas próprias sessões; não são percentis de população, escores do SDMT clínico nem normas.',
+    note: 'Faixas editoriais para comparar suas próprias sessões; não são percentis de população, escores do SDMT nem normas.',
   },
   protocols: {
     title: 'Como jogar',
@@ -327,8 +327,8 @@ export default function EnhancedPagePt() {
           faqTitle: "Perguntas frequentes",
           readyLabel: "PREPARE-SE",
           labels: { score: "Pontos", time: "Tempo", level: "Nível", bestScore: "Melhor pontuação", timeLeft: "Tempo restante", targetSymbol: "Símbolo-alvo", accuracy: "Precisão", hits: "Acertos", misses: "Erros", peakLevel: "Nível máximo" },
-          aboutLead: "Uma tarefa de símbolos e dígitos pede que você associe sinais a números contra o relógio. Ela treina velocidade de processamento e busca visual, não conhecimento. Este drill é um jogo de prática, não um instrumento clínico.",
-          aboutText: "O formato se inspira nas tarefas de associação do SDMT e do DSST. Confira a chave e escolha o dígito do símbolo-alvo. As rodadas repetidas praticam busca visual, memória associativa e seleção de resposta. A pontuação vale apenas para este jogo e não é diagnóstico médico.",
+          aboutLead: "Uma tarefa de símbolos e dígitos pede que você associe sinais a números contra o relógio. Ela treina velocidade de processamento e busca visual, não conhecimento. Este drill é um jogo de prática.",
+          aboutText: "O formato se inspira nas tarefas de associação do SDMT e do DSST. Confira a chave e escolha o dígito do símbolo-alvo. As rodadas repetidas praticam busca visual, memória associativa e seleção de resposta. A pontuação vale apenas para este jogo.",
           aboutCards: [
             { title: "Para quem serve?", desc: "Para estudantes, profissionais e gamers que querem praticar velocidade de processamento e busca visual." },
             { title: "O que é treinado?", desc: "Busca visual, memória associativa símbolo-dígito, escolha da resposta e atenção sustentada." },

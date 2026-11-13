@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Suivi de Plusieurs Objets | Test MOT | SkillDrills",
-  description: "Test de suivi d'objets multiples (MOT) gratuit : retenez 3 boules marquées et suivez-les 60 s parmi des boules identiques. Pas un test médical.",
+  description: "Test de suivi d'objets multiples (MOT) gratuit : retenez 3 boules marquées et suivez-les 60 s parmi des boules identiques.",
   keywords: [
     "test de suivi d'objets multiples",
     "suivi de plusieurs objets",
@@ -17,7 +17,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Suivi de Plusieurs Objets | Test MOT | SkillDrills",
-    description: "Retenez 3 boules marquées et retrouvez-les après 60 secondes de mouvement. Test MOT gratuit dans le navigateur, sans diagnostic.",
+    description: "Retenez 3 boules marquées et retrouvez-les après 60 secondes de mouvement. Test MOT gratuit dans le navigateur.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/tracking-accuracy/multiple-targets',
     siteName: 'SkillDrills',
@@ -59,7 +59,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Exercice dans le navigateur : parmi des boules identiques, 3 cibles s'allument en vert pendant 2 secondes. Toutes les boules bougent ensuite pendant 60 secondes en rebondissant les unes sur les autres, puis vous désignez les 3 cibles. Ce n'est pas un test diagnostique de la vue ou de l'attention.",
+  "description": "Exercice dans le navigateur : parmi des boules identiques, 3 cibles s'allument en vert pendant 2 secondes. Toutes les boules bougent ensuite pendant 60 secondes en rebondissant les unes sur les autres, puis vous désignez les 3 cibles.",
   "featureList": [
     "Départ avec 8 boules, dont 3 marquées en vert pendant 2 secondes",
     "60 secondes de mouvement : toutes les boules sont identiques et rebondissent sur les bords et entre elles",
@@ -166,7 +166,7 @@ const faqSchema = {
       "name": "Comment se déroule le test de suivi d'objets multiples (MOT) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Parmi des boules identiques, 3 cibles s'allument en vert pendant 2 secondes. Toutes les boules bougent ensuite pendant 60 secondes ; quand elles s'arrêtent, vous désignez les 3 cibles et validez. Chaque cible correcte rapporte 20 points, 60 au maximum par manche. Ce n'est pas un examen médical de la vue ou de l'attention."
+        "text": "Parmi des boules identiques, 3 cibles s'allument en vert pendant 2 secondes. Toutes les boules bougent ensuite pendant 60 secondes ; quand elles s'arrêtent, vous désignez les 3 cibles et validez. Chaque cible correcte rapporte 20 points, 60 au maximum par manche."
       }
     },
     {
@@ -214,7 +214,7 @@ const faqSchema = {
       "name": "Cet entraînement améliore-t-il mes performances en jeu ou en sport ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un meilleur score montre que vous maîtrisez mieux cette tâche précise. Un transfert vers les jeux, le sport ou la conduite n'est pas garanti, et l'exercice ne remplace pas un avis médical."
+        "text": "Un meilleur score montre que vous maîtrisez mieux cette tâche précise. Un transfert vers les jeux, le sport ou la conduite n'est pas garanti."
       }
     },
     {
@@ -233,7 +233,7 @@ const guideData = {
   intro: [
     "Dans ce test de suivi d'objets multiples (MOT), vous suivez 3 cibles marquées parmi des boules identiques, puis vous les désignez à la fin. La tâche reprend l'expérience de Pylyshyn & Storm (1988) sous forme de petit jeu dans le navigateur.",
     "Après le compte à rebours, 3 boules s'allument en vert pendant 2 secondes, puis toutes les boules, devenues identiques, bougent pendant 60 secondes en rebondissant sur les bords et entre elles. Quand elles s'arrêtent, vous choisissez 3 boules et validez : 20 points par cible correcte (60 max), sans pénalité pour une erreur. Plus votre record monte, plus il y a de boules et plus elles vont vite.",
-    "Suivre plusieurs objets à la fois ne repose pas sur des allers-retours rapides du regard, mais sur une attention répartie entre plusieurs positions (Cavanagh & Alvarez, 2005). Ce test est un jeu d'entraînement : il ne mesure ni ne diagnostique l'attention ou la vue."
+    "Suivre plusieurs objets à la fois ne repose pas sur des allers-retours rapides du regard, mais sur une attention répartie entre plusieurs positions (Cavanagh & Alvarez, 2005). Ce test est un jeu d'entraînement."
   ],
   benchmarks: {
     "title": "Paliers d'entraînement SkillDrills (propres à ce jeu)",

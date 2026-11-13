@@ -61,8 +61,8 @@ const faqItems = [
     "a": "Exactement 45 secondes ; le niveau repart de 1 à chaque partie."
   },
   {
-    "q": "Est-ce un bilan de coordination ou un exercice de rééducation ?",
-    "a": "Non. C'est un jeu d'entraînement à la souris, pas une évaluation du développement ou de la motricité et pas un outil de rééducation."
+    "q": "Comment rester dans le couloir ?",
+    "a": "Repérez le nœud d'en face avant de toucher le nœud de départ, gardez un rythme calme et régulier et finissez lentement près de la cible. Avec 4 px de tolérance aux niveaux élevés, ralentir un peu aide à garder la série."
   },
   {
     "q": "Fonctionne-t-il sur mobile ?",
@@ -115,7 +115,7 @@ const guide = {
   "heading": "Coordination visuo-motrice à la souris : règles et conseils",
   "intro": [
     "Cet exercice de coordination visuo-motrice à la souris est un jeu gratuit dans le navigateur : vous guidez le curseur avec précision dans un couloir étroit. Touchez le nœud cyan sur un bord de l'écran, puis suivez la ligne jusqu'au nœud magenta du côté opposé. Chaque trajet est un balayage croisé d'un bord à l'autre ; si vous sortez du couloir, l'essai s'arrête et une nouvelle paire de nœuds apparaît.",
-    "Une partie dure 45 secondes et le niveau repart de 1. En montant, la tolérance du couloir passe de 10 px à 4 px, le rayon des nœuds de 16 px à 8 px, et les nœuds glissent vers les bords. La difficulté suit l'idée de la loi de Fitts (Fitts, 1954) : plus le trajet est long et la cible petite, plus le geste est difficile. C'est un jeu d'entraînement au contrôle de la souris, pas un bilan de coordination ni une rééducation."
+    "Une partie dure 45 secondes et le niveau repart de 1. En montant, la tolérance du couloir passe de 10 px à 4 px, le rayon des nœuds de 16 px à 8 px, et les nœuds glissent vers les bords. La difficulté suit l'idée de la loi de Fitts (Fitts, 1954) : plus le trajet est long et la cible petite, plus le geste est difficile. C'est un jeu d'entraînement au contrôle de la souris."
   ],
   "techniques": {
     "title": "Conseils pour rester dans le couloir",

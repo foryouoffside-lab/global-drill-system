@@ -57,7 +57,7 @@ const softwareApplicationSchema = {
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/es/drills/visual/reaction-speed/go/no-go",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "description": "Versión para navegador de la tarea Go/No-Go: hacer clic en la señal verde Go y no pulsar en la señal roja No-Go. Cuenta errores de comisión, omisiones y tiempo de reacción. Herramienta de práctica, no una prueba médica.",
+  "description": "Versión para navegador de la tarea Go/No-Go: hacer clic en la señal verde Go y no pulsar en la señal roja No-Go. Cuenta errores de comisión, omisiones y tiempo de reacción. Herramienta de práctica.",
   "featureList": [
     "Tiempo de reacción medido en milisegundos con performance.now()",
     "La señal se muestra cada vez menos: de unos 600 ms a un mínimo de 100 ms",
@@ -182,10 +182,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿Sirve para diagnosticar TDAH o impulsividad?",
+      "name": "¿Por qué varían mis resultados?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Es un juego de práctica en el navegador, no una prueba médica ni un diagnóstico. El resultado también depende de la pantalla, el ratón, el cansancio y la concentración. Si te preocupa la atención o la impulsividad, consulta con un profesional sanitario."
+        "text": "El resultado depende de la pantalla, el ratón, el cansancio y la concentración. Juega varias rondas en el mismo dispositivo y compara tus puntuaciones."
       }
     },
     {
@@ -220,7 +220,7 @@ const goNoGoGuide = {
   intro: [
     "En el test Go/No-Go respondes a las señales frecuentes y te contienes ante las poco frecuentes. No basta con pulsar rápido: hay que saber no pulsar en el momento justo. Eso lo diferencia de un test de reacción simple.",
     "En esta versión para navegador aparece en el centro un círculo verde (Go) o rojo (No-Go). Verde: haz clic o toca. Rojo: espera. Pulsar sin círculo o hacer clic sin parar también cuenta como error. Al subir de nivel, la señal dura menos: de unos 600 ms a un mínimo de 100 ms.",
-    "La idea de las tareas de elección viene de los estudios de tiempo de reacción de Donders (1868); la carrera entre iniciar y parar la modelaron Logan y Cowan (1984). Aun así, la puntuación de esta página es un resultado de práctica que incluye pantalla, ratón y navegador, no una prueba médica.",
+    "La idea de las tareas de elección viene de los estudios de tiempo de reacción de Donders (1868); la carrera entre iniciar y parar la modelaron Logan y Cowan (1984). La puntuación de esta página es un resultado de práctica que incluye pantalla, ratón y navegador.",
     "La medición usa performance.now() en el navegador. El refresco de la pantalla y el retardo del ratón o del táctil se suman al resultado (Woods et al., 2015), así que compara puntuaciones en el mismo dispositivo. Los datos se quedan en el navegador de este dispositivo."
   ],
   benchmarks: {
@@ -267,7 +267,7 @@ const goNoGoGuide = {
     "Círculo rojo No-Go: espera a que desaparezca sin pulsar.",
     "Al terminar, revisa la tasa de errores, la reacción media y el nivel alcanzado."
   ],
-  audience: "Para quien quiera probar el test Go/No-Go online y practicar, además de la velocidad, la capacidad de no pulsar: jugadores, deportistas y curiosos. No sirve para una evaluación médica.",
+  audience: "Para quien quiera probar el test Go/No-Go online y practicar, además de la velocidad, la capacidad de no pulsar: jugadores, deportistas y curiosos.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('donders1868', 'logan1984', 'robertson1997', 'woods2015'),
   related: [

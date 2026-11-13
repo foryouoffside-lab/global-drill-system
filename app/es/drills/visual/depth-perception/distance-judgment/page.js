@@ -151,10 +151,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '¿Sirve como examen de la vista o del carnet de conducir?',
+      name: '¿Qué afecta a mi puntuación?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Es un juego de navegador sin valor médico ni legal. No sustituye una revisión oftalmológica ni el reconocimiento para el carnet.',
+        text: 'La frecuencia de actualización de la pantalla, el dispositivo de entrada, la distancia de visión y el cansancio. Compara tus rondas en el mismo dispositivo.',
       },
     },
     {
@@ -170,7 +170,7 @@ const faqSchema = {
       name: '¿Es posible mejorar el cálculo de distancias con entrenamiento?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Es probable que con la práctica mejores tu timing en esta tarea concreta. No hay garantía de efecto fuera de la pantalla. Para cualquier duda sobre tu visión, consulta a un oftalmólogo.',
+        text: 'Es probable que con la práctica mejores tu timing en esta tarea concreta. No hay garantía de efecto fuera de la pantalla.',
       },
     },
     {

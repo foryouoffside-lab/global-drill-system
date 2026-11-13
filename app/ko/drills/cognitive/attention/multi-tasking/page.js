@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "멀티태스킹 테스트 | 이중 표적 추적 | SkillDrills",
-  description: "무료 브라우저 멀티태스킹 테스트로 양쪽 표적 흐름을 함께 추적하세요. 의료 진단이 아닌 인지 자기 점검입니다.",
+  description: "무료 브라우저 멀티태스킹 테스트로 양쪽 표적 흐름을 함께 추적하세요.",
   keywords: ["멀티태스킹 테스트", "이중 표적 추적 훈련", "멀티태스킹 게임", "멀티태스킹 능력 테스트", "멀티태스킹 연습", "병렬 처리 검사", "과제 전환 비용 측정", "주의 전환 훈련", "인지 유연성 테스트", "두뇌 멀티태스킹", "시각 스트림 추적", "분할주의 집중력", "집중력 분할 검사"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "멀티태스킹 테스트 | 이중 표적 추적 | SkillDrills",
-    description: "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+    description: "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "멀티태스킹 테스트 | 이중 표적 추적 | SkillDrills",
-    description: "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+    description: "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "KRW"
   },
-  "description": "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+  "description": "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다.",
   "url": "https://skilldrills.online/ko/drills/cognitive/attention/multi-tasking",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "멀티태스킹 테스트 – 대향 스트림 동시 추적 게임",
   "url": "https://skilldrills.online/ko/drills/cognitive/attention/multi-tasking",
-  "description": "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+  "description": "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다.",
   "genre": [
     "Action",
     "Brain Game",
@@ -132,7 +132,7 @@ const faqSchema = {
       "name": "멀티태스킹 테스트(Dual-Target Flow)란?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "화면을 두 칸(가로 화면은 좌우, 세로 화면은 위아래)으로 나누고, 가운데에서 바깥쪽으로 반대 방향으로 흐르는 도형 중 각 칸에 표시된 목표 기호만 클릭하거나 탭하는 멀티태스킹 연습입니다. 임상 검사가 아닙니다."
+        "text": "화면을 두 칸(가로 화면은 좌우, 세로 화면은 위아래)으로 나누고, 가운데에서 바깥쪽으로 반대 방향으로 흐르는 도형 중 각 칸에 표시된 목표 기호만 클릭하거나 탭하는 멀티태스킹 연습입니다."
       }
     },
     {
@@ -214,7 +214,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "멀티태스킹 테스트・이중 표적 추적 훈련",
-  "description": "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+  "description": "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다.",
   "step": [
     {
       "@type": "HowToStep",
@@ -252,7 +252,7 @@ const guideProps = {
   intro: {
     title: "멀티태스킹 테스트 가이드",
     paragraphs: [
-      "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+      "무료 멀티태스킹 테스트: 반대 방향으로 흐르는 두 도형 흐름에서 각 칸의 목표 기호만 골라 누르는 멀티태스킹 능력 테스트입니다.",
       "서로 다른 규칙을 교대로 처리할 때 뇌의 작업 기억 재구성으로 인해 반응 속도가 지연되는 현상입니다.",
       "복잡한 결정이 필요한 과제에서 뇌는 완전한 병렬 처리가 아닌 극도로 빠른 시분할 교대 처리를 수행합니다(Pashler, 1994).",
     ],
@@ -326,7 +326,7 @@ export default function LocalizedCognitivePage() {
           { text: "오입력 / 놓침", highlight: "콤보 초기화", result: "-1초" },
           { text: "목표 변경", highlight: "20초마다", result: "기호 표시 다시 확인" },
         ],
-        aboutTitle: "멀티태스킹과 이중 표적 흐름", aboutLead: "이 드릴은 두 시각 흐름을 함께 추적하는 비임상 인지 자기 점검으로, 실제 멀티태스킹보다 빠른 주의 전환과 양쪽 정확도에 초점을 둡니다.",
+        aboutTitle: "멀티태스킹과 이중 표적 흐름", aboutLead: "이 드릴은 두 시각 흐름을 함께 추적하는 인지 훈련으로, 실제 멀티태스킹보다 빠른 주의 전환과 양쪽 정확도에 초점을 둡니다.",
         audienceTitle: "추천 대상", audienceText: "게임에서 여러 화면 요소를 보는 플레이어, 학습자, 동시에 들어오는 정보를 정리하고 싶은 사람에게 적합합니다.",
         skillsTitle: "훈련하는 능력", skillsText: "양쪽 시각 추적, 주변 표적 탐지, 주의 전환, 실행 기능 조절을 연습합니다.", flexibilityTitle: "과제 전환 속도", flexibilityText: "레벨이 오를수록 표적 규칙과 속도가 바뀌므로 두 흐름 사이를 빠르고 정확하게 전환해야 합니다."
       }} />

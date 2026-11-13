@@ -207,7 +207,7 @@ const faqSchema = {
       "name": "Treinar com números melhora a memória no dia a dia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não há garantia. Com prática você tende a melhorar neste jogo, mas a transferência para a memória do dia a dia, estudos ou trabalho é discutida na pesquisa. Se tiver preocupação com sua memória, procure um médico."
+        "text": "Não há garantia. Com prática você tende a melhorar neste jogo, mas a transferência para a memória do dia a dia, estudos ou trabalho é discutida na pesquisa."
       }
     },
     {
@@ -223,12 +223,11 @@ const faqSchema = {
 
 const digitSpanGuide = {
   intro: [
-  "O teste de memória numérica mostra rapidamente uma sequência de números que você digita depois na mesma ordem. É uma versão de prática da tarefa de span de dígitos, usada há muito tempo pela psicologia para estudar a memória de curto prazo, e não é um teste clínico nem de QI.",
+  "O teste de memória numérica mostra rapidamente uma sequência de números que você digita depois na mesma ordem. É uma versão de prática da tarefa de span de dígitos, usada há muito tempo pela psicologia para estudar a memória de curto prazo.",
   "A pergunta sobre o tamanho do span ficou famosa com o 'número mágico 7 ± 2' de George A. Miller (1956). Um formato parecido aparece na escala Wechsler (WAIS), mas este jogo não é esse subteste e não calcula escores.",
   "No modelo de memória operacional de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), sequências de números são mantidas pela alça fonológica e somem em cerca de 2 segundos sem repetição. Segundo Nelson Cowan (2001), a capacidade bruta sem repetir nem agrupar fica perto de 4 unidades; para sequências longas, o chunking ajuda.",
   "Como funciona: começa com 3 dígitos; a sequência aparece inteira de uma vez (2,5 s no início, 0,1 s a menos a cada acerto até 0,8 s, 0,2 s a mais após um erro). Depois você tem 8 segundos para digitar no teclado da tela ou do computador. Acerto: +1 dígito (máximo 15); erro ou tempo esgotado: −1 dígito (mínimo 3). O jogo registra pontuação, maior sequência e precisão (porcentagem de rodadas certas); o tempo de reação não é medido.",
-  "Transparência de dados: a SkillDrills não coleta pontuações em servidores; tudo fica no localStorage do seu navegador. Por isso esta página não mostra médias de usuários, percentis nem número de usuários; os números citados vêm dos estudos listados abaixo.",
-  "Aviso: este jogo de prática não é dispositivo médico nem exame diagnóstico. Se tiver preocupação com memória ou concentração, consulte um médico ou neuropsicólogo."
+  "Transparência de dados: a SkillDrills não coleta pontuações em servidores; tudo fica no localStorage do seu navegador. Por isso esta página não mostra médias de usuários, percentis nem número de usuários; os números citados vêm dos estudos listados abaixo."
 ],
   benchmarks: {
     title: "Faixas de prática do teste de memória numérica (SkillDrills, 45 s)",

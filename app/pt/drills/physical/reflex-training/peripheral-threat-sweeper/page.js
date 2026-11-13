@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper';
 const title = "Defesa Radial: Treino de Visão Periférica | SkillDrills";
-const description = "Defesa Radial: olhe para o núcleo central e clique nas ameaças das bordas antes que cheguem. +2 s por acerto, -1 s por erro. Grátis; não é exame de vista.";
+const description = "Defesa Radial: olhe para o núcleo central e clique nas ameaças das bordas antes que cheguem. +2 s por acerto, -1 s por erro. Grátis.";
 
 export const metadata = {
   title,
@@ -92,7 +92,7 @@ const videoGameSchema = {
 const faqs = [
   {
     q: "O que eu faço na Defesa Radial?",
-    a: "Você olha para o núcleo no centro da tela e clica nas ameaças que vêm das bordas em direção a ele, antes que cheguem. É um jeito de praticar perceber movimentos ao redor sem mover os olhos. É um jogo de navegador, não um exame de vista nem tratamento."
+    a: "Você olha para o núcleo no centro da tela e clica nas ameaças que vêm das bordas em direção a ele, antes que cheguem. É um jeito de praticar perceber movimentos ao redor sem mover os olhos. É um jogo de navegador."
   },
   {
     q: "Qual a diferença entre visão central e visão periférica?",
@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     q: "O que é visão de túnel?",
-    a: "Sob estresse ou muito concentrado num ponto, a gente tende a perceber menos o que está em volta; isso costuma ser chamado de visão de túnel. Este jogo pratica manter o centro em foco sem perder as bordas. Ele não detecta perda de campo visual por doença; para isso, procure um oftalmologista."
+    a: "Sob estresse ou muito concentrado num ponto, a gente tende a perceber menos o que está em volta; isso costuma ser chamado de visão de túnel. Este jogo pratica manter o centro em foco sem perder as bordas."
   },
   {
     q: "Este treino aumenta meu campo de visão?",
@@ -154,7 +154,7 @@ const guideProps = {
     "Defesa Radial é um jogo grátis de navegador para treinar a atenção à visão periférica dentro do jogo: você olha para o núcleo no centro e clica nas ameaças que vêm das bordas antes que cheguem nele. Cada acerto dá +2 segundos; cada erro ou ameaça no núcleo tira 1 segundo.",
     "Pesquisas mostram que dá para deslocar a atenção sem mover os olhos (Posner, 1980). Alvos em movimento e de alto contraste chamam atenção rápido mesmo nas bordas (Treisman & Gelade, 1980). O jogo transforma isso numa tarefa de clique.",
     "No começo as ameaças surgem a cada 1,4 segundo, mais ou menos; com a pontuação elas ficam mais rápidas (até 520 px/s) e mais frequentes (até 0,20 segundo de intervalo). Para clicar, ajuda fazer um movimento grande e uma pequena correção final (Woodworth, 1899; Fitts, 1954).",
-    "Os resultados são registros de treino. Não substituem exame de vista, diagnóstico ou tratamento. Se notar mudanças na visão, procure um oftalmologista."
+    "Os resultados são registros de treino."
   ],
   benchmarks: {
     title: "Faixas de pontuação (referência)",
@@ -166,7 +166,7 @@ const guideProps = {
       ["4", "17.000 – 23.999", "Não olhar direto nem com ameaças rápidas"],
       ["5", "24.000 ou mais", "Resolver várias ameaças em sequência"]
     ],
-    note: "Estas faixas são níveis de treino da SkillDrills. Não são estatísticas de usuários, percentis nem critério de exame de vista."
+    note: "Estas faixas são níveis de treino da SkillDrills. Não são estatísticas de usuários nem percentis."
   },
   techniques: {
     title: "4 dicas para pontuar mais",

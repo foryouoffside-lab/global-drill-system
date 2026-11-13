@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de Multitarea | Rastreo Doble | SkillDrills",
-  description: "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. No es un diagnóstico clínico, sino un autocheck.",
+  description: "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. Es un autocheck.",
   keywords: [
     "test de multitarea",
     "test de flexibilidad cognitiva",
@@ -22,7 +22,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Multitarea | Rastreo Doble | SkillDrills",
-    description: "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. No es un diagnóstico clínico, sino un autocheck.",
+    description: "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. Es un autocheck.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -31,7 +31,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de Multitarea | Rastreo Doble | SkillDrills",
-    description: "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. No es un diagnóstico clínico, sino un autocheck.",
+    description: "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. Es un autocheck.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -82,7 +82,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. No es un diagnóstico clínico, sino un autocheck.",
+  "description": "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. Es un autocheck.",
   "url": "https://skilldrills.online/es/drills/cognitive/attention/multi-tasking",
   "publisher": {
     "@type": "Organization",
@@ -115,7 +115,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Juego de Multitarea – Flujo Visual Dual",
   "url": "https://skilldrills.online/es/drills/cognitive/attention/multi-tasking",
-  "description": "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. No es un diagnóstico clínico, sino un autocheck.",
+  "description": "Test de multitarea gratis: en dos flujos de símbolos opuestos, pulsa solo el símbolo objetivo de cada lado. Es un autocheck.",
   "genre": [
     "Accion",
     "Juego Mental",
@@ -143,7 +143,7 @@ const faqSchema = {
       "name": "¿Qué es el Test de Multitarea (Dual-Target Flow)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es un ejercicio de práctica: la pantalla se divide en dos carriles (izquierda/derecha en horizontal, arriba/abajo en vertical) donde las figuras salen del centro hacia fuera. Haces clic o tocas solo el símbolo objetivo que aparece en cada carril. No es un test clínico."
+        "text": "Es un ejercicio de práctica: la pantalla se divide en dos carriles (izquierda/derecha en horizontal, arriba/abajo en vertical) donde las figuras salen del centro hacia fuera. Haces clic o tocas solo el símbolo objetivo que aparece en cada carril."
       }
     },
     {
@@ -263,7 +263,7 @@ const guideProps = {
   intro: {
     title: "Test de Multitarea: Guía",
     paragraphs: [
-      "Este test de multitarea gratis te pide vigilar dos flujos de símbolos a la vez y pulsar solo el objetivo de cada carril. Es una autoevaluación no clínica.",
+      "Este test de multitarea gratis te pide vigilar dos flujos de símbolos a la vez y pulsar solo el objetivo de cada carril. Es una autoevaluación.",
       "El coste de cambio (switch cost) es la demora y el aumento de errores al pasar de una regla a otra en lugar de mantener una sola (Rogers & Monsell, 1995).",
       "Aquí los objetivos cambian cada 20 segundos y son distintos entre carriles desde el nivel 3, así que hay que actualizar la regla de cada lado (Pashler, 1994; Wickens, 2002).",
     ],
@@ -271,7 +271,7 @@ const guideProps = {
   benchmarks: {
     title: 'Etapas de práctica SkillDrills (precisión)',
     headers: ['Nivel', 'Rango', 'Calificacion', 'Precision', 'Marcador de práctica'],
-    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas.",
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población.",
 
     rows: [
       { tier: 'Etapa 1', rank: 'Muy avanzada', stat: 'Ritmo muy alto', accuracy: '98%+', marker: 'Ritmo muy alto con alta precisión' },
@@ -338,7 +338,7 @@ export default function EnhancedPage() {
           { text: "Error / objetivo perdido", highlight: "Combo a cero", result: "−1 s" },
           { text: "Cambio de objetivo", highlight: "Cada 20 s", result: "Revisa el símbolo" },
         ],
-        aboutTitle: "Sobre multitarea y flujo de doble objetivo", aboutLead: "Este autocheck cognitivo no clínico combina dos flujos visuales y observa la precisión practicada y la velocidad de cambio atencional, no una capacidad general para todas las tareas cotidianas.",
+        aboutTitle: "Sobre multitarea y flujo de doble objetivo", aboutLead: "Este autocheck cognitivo combina dos flujos visuales y observa la precisión practicada y la velocidad de cambio atencional, no una capacidad general para todas las tareas cotidianas.",
         audienceTitle: "Para quién sirve", audienceText: "Para jugadores que vigilan varios elementos en pantalla, estudiantes y personas que quieren organizar información simultánea.",
         skillsTitle: "Habilidades entrenadas", skillsText: "Rastreo visual bilateral, detección periférica, cambio atencional y control ejecutivo.", flexibilityTitle: "Velocidad de cambio", flexibilityText: "Cada nivel modifica ritmo y patrones: cambia entre los flujos sin perder precisión."
       }} />

@@ -115,10 +115,10 @@ export default function LocalizedPathTracingPage() {
       },
       {
         "@type": "Question",
-        "name": "É o mesmo teste dos blocos de Corsi usado em clínicas?",
+        "name": "É o mesmo teste dos blocos de Corsi?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Não. O princípio é o da tarefa dos blocos de Corsi (Corsi, 1972): lembrar posições na ordem e reproduzi-las. Aqui, porém, a grade é quadrada, cada passo vai só para um quadrado vizinho (cima, baixo, esquerda, direita) e nenhum quadrado é visitado duas vezes. É um jogo de treino, não um teste clínico nem uma ferramenta de diagnóstico."
+          "text": "Não. O princípio é o da tarefa dos blocos de Corsi (Corsi, 1972): lembrar posições na ordem e reproduzi-las. Aqui, porém, a grade é quadrada, cada passo vai só para um quadrado vizinho (cima, baixo, esquerda, direita) e nenhum quadrado é visitado duas vezes. É um jogo de treino."
         }
       },
       {
@@ -163,10 +163,10 @@ export default function LocalizedPathTracingPage() {
       },
       {
         "@type": "Question",
-        "name": "Meus resultados são salvos? Têm valor médico?",
+        "name": "Meus resultados são salvos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A melhor pontuação e o nível máximo ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. Os resultados são marcas de treino e não indicam problemas de memória nem a saúde do cérebro."
+          "text": "A melhor pontuação e o nível máximo ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. Os resultados são marcas de treino."
         }
       }
     ]
@@ -214,8 +214,7 @@ export default function LocalizedPathTracingPage() {
       "O teste de Corsi online é um jogo grátis de memória de ordem: quadrados de uma grade acendem um depois do outro e, em seguida, você toca neles na mesma ordem. Ele leva o princípio da tarefa dos blocos de Corsi (Milner, 1971; Corsi, 1972) para um percurso na grade e treina a memória sequencial e o span visuoespacial.",
       "No nível 1 aparece um percurso de 3 passos numa grade 3x3. Os quadrados acendem a cada 0,5 segundo; cada passo vai para um quadrado acima, abaixo, à esquerda ou à direita, e nenhum quadrado é visitado duas vezes. Cada percurso concluído vale +150 pontos, nível +1 e um passo a mais; a grade cresce para 4x4, 5x5 e 6x6 até 7x7.",
       "O relógio da sessão tem 60 segundos e só corre durante a resposta. Cada percurso deve ser concluído em 10 segundos. Um quadrado errado ou o fim do tempo encerra a rodada sem desconto; vem um novo percurso do mesmo tamanho e o nível não cai. Resposta por clique ou toque.",
-      "Transparência de dados: os resultados ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. Por isso o SkillDrills não publica médias de usuários nem rankings.",
-      "Esta ferramenta é um jogo grátis de treino no navegador. Não é o teste de Corsi oficial, nem um dispositivo médico, nem uma ferramenta de diagnóstico, e os resultados não indicam problemas de memória. Se tiver preocupações, procure um profissional de saúde."
+      "Transparência de dados: os resultados ficam salvos só no localStorage deste navegador e não são enviados a nenhum servidor. Por isso o SkillDrills não publica médias de usuários nem rankings."
     ],
     benchmarks: {
       title: "Faixas de treino SkillDrills (pontos = percursos concluídos × 150)",
@@ -226,7 +225,7 @@ export default function LocalizedPathTracingPage() {
         ["Intermediário", "8–12 passos · 4x4–5x5", "750–1.350", "5 a 9 percursos concluídos. Agrupar por direções vira necessidade"],
         ["Avançado", "13+ passos · 6x6–7x7", "1.500+", "10 ou mais percursos concluídos. Percursos longos seguidos em 60 segundos de resposta"]
       ],
-      note: "Estas faixas são calculadas a partir das regras de pontuação do jogo; não são normas populacionais nem limites clínicos."
+      note: "Estas faixas são calculadas a partir das regras de pontuação do jogo; não são normas populacionais."
     },
     techniques: {
       title: "Dicas para percursos longos",

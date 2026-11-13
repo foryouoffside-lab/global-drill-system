@@ -7,13 +7,13 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "분할 주의력 테스트 | 이중과제 훈련 | SkillDrills",
-  description: "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+  description: "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다.",
   keywords: ["분할 주의력 테스트", "분할주의력 검사", "이중과제 훈련", "듀얼태스크 연습", "멀티태스킹 뇌 훈련", "주의력 분할", "시지각 동시처리", "인지속도 검사", "뇌 기능 트레이닝",
     "분할주의력훈련",
     "듀얼태스크검사"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "분할 주의력 테스트 | 이중과제 훈련 | SkillDrills",
-    description: "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+    description: "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "분할 주의력 테스트 | 이중과제 훈련 | SkillDrills",
-    description: "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+    description: "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -73,7 +73,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "KRW"
   },
-  "description": "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+  "description": "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다.",
   "url": "https://skilldrills.online/ko/drills/cognitive/attention/divided-attention",
   "publisher": {
     "@type": "Organization",
@@ -106,7 +106,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "주의분할 테스트 – 시각 표적 추적 및 숫자 판별 게임",
   "url": "https://skilldrills.online/ko/drills/cognitive/attention/divided-attention",
-  "description": "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+  "description": "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다.",
   "genre": [
     "Action",
     "Brain Game",
@@ -216,7 +216,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "주의분할 테스트・이중과제 훈련",
-  "description": "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+  "description": "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다.",
   "step": [
     {
       "@type": "HowToStep",
@@ -254,7 +254,7 @@ const guideProps = {
   intro: {
     title: "분할 주의력 테스트 가이드",
     paragraphs: [
-      "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다. 의료 진단이 아닌 인지 자기 점검입니다.",
+      "무료 분할 주의력 테스트: 무작위 위치에 나타나는 파란 표적을 클릭하면서 숫자 흐름의 짝수를 판정하는 이중과제 훈련입니다.",
       "두 번째 자극이 첫 번째 자극 직후에 주어졌을 때, 뇌의 중심 의사결정 기전이 점유되어 두 번째 반응이 지연되는 현상입니다.",
       "공간 시각 과제와 언어/숫자 과제처럼 서로 다른 감각 및 인지 자원을 사용할 때 간섭이 최소화되어 효과적으로 주의를 분할할 수 있다는 이론입니다.",
     ],
@@ -330,7 +330,7 @@ export default function LocalizedCognitivePage() {
           { text: "홀수 무시", highlight: "오입력 없음", result: "홀수에는 누르지 않기" },
           { text: "실수 / 놓침", highlight: "콤보 초기화", result: "-1초" },
         ],
-        aboutTitle: "분할 주의력 테스트와 이중과제 훈련", aboutLead: "이 드릴은 나타나는 시각 표적 클릭과 숫자 분류를 동시에 요구하는 비임상 인지 자기 점검입니다.",
+        aboutTitle: "분할 주의력 테스트와 이중과제 훈련", aboutLead: "이 드릴은 나타나는 시각 표적 클릭과 숫자 분류를 동시에 요구하는 인지 훈련입니다.",
         audienceTitle: "추천 대상", audienceText: "게임 중 미니맵과 목표를 함께 보는 플레이어, 학습자, 여러 입력을 빠르게 처리해야 하는 사람에게 적합합니다.",
         skillsTitle: "훈련하는 능력", skillsText: "이중과제 처리, 시각 추적, 숫자 판단, 주의 자원 배분을 연습합니다.", flexibilityTitle: "병렬 처리", flexibilityText: "두 정보 흐름을 번갈아 확인하면서 한쪽의 정확도가 무너지지 않도록 조절합니다."
       }} />
