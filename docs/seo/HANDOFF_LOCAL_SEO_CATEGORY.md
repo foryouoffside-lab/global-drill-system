@@ -274,3 +274,4 @@ Known prior decisions to respect:
 - 2026-11-13 14:28: NO-CLINICAL SCRUB COMPLETE site-wide (only ko 선별=selection + legal pages + citations remain). Next 15.5.29 installed locally, dev restarted. Running: GSC not-indexed diagnosis, keyword rebuild. Next: prod build audit (worktree), GSC fixes, commit, push.
 - 2026-11-13 14:38 auto-checkpoint (resume per RESUME block)
 - 2026-11-13 14:44 auto-checkpoint (scrub in progress; resume per RESUME block)
+- 2026-11-13 14:48 auto-checkpoint (resume per RESUME block)

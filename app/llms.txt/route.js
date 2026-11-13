@@ -1,6 +1,7 @@
 
 import { DRILLS } from '../../lib/drillsRegistry';
 import { DRILL_SEO } from '../../lib/drillSeo';
+import { LOCALES, LOCALE_META, DEFAULT_LOCALE } from '../../lib/i18n/locales';
 
 // Nothing here depends on the request, so prerender it at build time and let
 // the edge cache serve it. Without this Next treats the route as dynamic.
@@ -124,6 +125,25 @@ export function GET() {
     out.push(`${cat.blurb} Hub: ${BASE_URL}${cat.href}`);
     out.push('');
     for (const d of drills) out.push(line(d));
+    out.push('');
+  }
+
+  out.push('## Localized versions');
+  out.push('');
+  out.push(
+    'Translated home pages, drill directories and category hubs. Drill pages ' +
+      'under each prefix mirror the English URLs above.'
+  );
+  out.push('');
+  for (const loc of LOCALES.filter((l) => l !== DEFAULT_LOCALE)) {
+    const meta = LOCALE_META[loc];
+    out.push(`### ${meta.name} (${meta.native})`);
+    out.push('');
+    out.push(`- [Home (${loc})](${BASE_URL}/${loc})`);
+    out.push(`- [All drills (${loc})](${BASE_URL}/${loc}/drills)`);
+    for (const cat of CATEGORIES) {
+      out.push(`- [${cat.title} (${loc})](${BASE_URL}/${loc}${cat.href})`);
+    }
     out.push('');
   }
 

@@ -5,12 +5,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Divided Attention Test Online | Dual Task | SkillDrills",
-  description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill.",
-  keywords: ["divided attention test online", "dual task test", "dual task training", "multitasking test", "split attention test", "divided attention task", "dual visual tracking test", "simultaneous processing test", "attention sharing test", "cognitive multitasking drill"],
+  title: "Dual Task Test: Divided Attention Drill | SkillDrills",
+  description: "Free dual task test online: tap blue pop-up targets while flagging even digits in a side stream, a divided attention drill that splits focus across two tasks.",
+  keywords: ["dual task test", "divided attention drill", "dual task training", "multitasking test", "split attention test", "divided attention task", "dual visual tracking test", "simultaneous processing test", "attention sharing test", "cognitive multitasking drill"],
   openGraph: {
-    title: "Divided Attention Test Online | Dual Task | SkillDrills",
-    description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill.",
+    title: "Dual Task Test: Divided Attention Drill | SkillDrills",
+    description: "Free dual task test online: tap blue pop-up targets while flagging even digits in a side stream, a divided attention drill that splits focus across two tasks.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -18,8 +18,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Divided Attention Test Online | Dual Task | SkillDrills",
-    description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill.",
+    title: "Dual Task Test: Divided Attention Drill | SkillDrills",
+    description: "Free dual task test online: tap blue pop-up targets while flagging even digits in a side stream, a divided attention drill that splits focus across two tasks.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -53,7 +53,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Divided Attention Test",
+      "name": "Dual Task Test",
       "item": "https://skilldrills.online/drills/cognitive/attention/divided-attention"
     }
   ]
@@ -84,7 +84,7 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Divided Attention Test",
+  "name": "Dual Task Test",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -212,7 +212,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Divided Attention Test",
+  "name": "Dual Task Test",
   "description": "Free divided attention test online. Tap blue targets that pop up on the field while pressing MATCH on even digits in a side stream, in this split-focus drill.",
   "step": [
     {
@@ -249,7 +249,7 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('pashler1994', 'wickens2002', 'strayer2001', 'spelke1976', 'woods2015'),
   intro: {
-    title: "Divided Attention Test",
+    title: "Dual Task Test: Divided Attention Drill",
     paragraphs: [
       "Free divided attention test online. Tap blue targets that pop up on the field while pressing MATCH on even digits in a side stream, in this split-focus drill.",
       "Dual-task research describes a psychological refractory period (Pashler, 1994): when two decisions arrive close together, the second response is delayed. This drill lets you practise that situation.",
@@ -316,7 +316,7 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DividedAttentionClient copy={{ title: "Divided Attention Test", subtitle: "Tap pop-up targets while flagging even digits in a dual-task focus challenge" }} />
+      <DividedAttentionClient copy={{ title: "Dual Task Test", subtitle: "Tap pop-up targets while flagging even digits in a dual-task focus challenge" }} />
       <DrillGuide {...guideProps} />
       <DrillFooter />
     </>

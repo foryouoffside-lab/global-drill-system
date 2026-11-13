@@ -25,11 +25,9 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Reaction Time Test: Light Reflex Drill | SkillDrills",
-  description: "Free reaction time test: click when the light flashes and see your visual reaction time in milliseconds against the 200-250 ms adult range. No sign-up.",
+  title: "Light Reaction Test: Visual Reaction Time | SkillDrills",
+  description: "Free light reaction test: click the moment the light flashes and see your visual reaction time in milliseconds against the 200-250 ms adult range. No sign-up.",
   keywords: [
-    "reaction time test",
-    "online reaction time test",
     "light reaction test",
     "visual reflex test",
     "visual reaction time test",
@@ -45,7 +43,7 @@ export const metadata = {
     "visual training online"
   ],
   openGraph: {
-    title: "Reaction Time Test: Light Reflex Drill | SkillDrills",
+    title: "Light Reaction Test: Visual Reaction Time | SkillDrills",
     description: "Measure simple visual reaction time and millisecond optic-motor latency with this free online Light Reaction reflex drill.",
     type: "website",
     url: "https://skilldrills.online/drills/visual/reaction-speed/light-reaction",
@@ -54,7 +52,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reaction Time Test: Light Reflex Drill | SkillDrills",
+    title: "Light Reaction Test: Visual Reaction Time | SkillDrills",
     description: "Train visual reflex speed, strobe onset latency, and simple reaction time online. Free browser-based Light Reaction drill.",
   },
   robots: { index: true, follow: true },
@@ -74,14 +72,14 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Drills Hub", "item": "https://skilldrills.online/drills" },
     { "@type": "ListItem", "position": 3, "name": "Visual Training", "item": "https://skilldrills.online/drills/visual" },
     { "@type": "ListItem", "position": 4, "name": "Reaction Speed", "item": "https://skilldrills.online/drills/visual/reaction-speed" },
-    { "@type": "ListItem", "position": 5, "name": "Reaction Time Test: Light Reaction", "item": "https://skilldrills.online/drills/visual/reaction-speed/light-reaction" }
+    { "@type": "ListItem", "position": 5, "name": "Light Reaction Test", "item": "https://skilldrills.online/drills/visual/reaction-speed/light-reaction" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
-  "name": "Reaction Time Test: Light Reaction",
+  "name": "Light Reaction Test",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/drills/visual/reaction-speed/light-reaction",
@@ -103,7 +101,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Reaction Time Test: Light Reflex Drill | SkillDrills",
+  "name": "Light Reaction Test: Visual Reaction Time | SkillDrills",
   "alternateName": "Light Reaction Pro",
   "url": "https://skilldrills.online/drills/visual/reaction-speed/light-reaction",
   "dateModified": "2026-09-05",
@@ -121,7 +119,7 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Reaction Time Test: Light Reaction",
+  "name": "Light Reaction Test",
   "url": "https://skilldrills.online/drills/visual/reaction-speed/light-reaction",
   "description": "Free light reaction reflex test. Measure simple visual reaction time and millisecond optical reflex latency online.",
   "genre": ["Action", "Reaction Speed", "Reflex Game"],
@@ -133,7 +131,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to Take the Reaction Time Test (Light Reaction)",
+  "name": "How to Take the Light Reaction Test",
   "dateModified": "2026-09-05",
   "description": "Step-by-step instructions to test and train simple visual reaction time and neuromuscular reflex latency using the Light Reaction strobe protocol.",
   "step": [
@@ -346,7 +344,7 @@ export default function StrobeLatencyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Reaction Time Test: Light Reaction", subtitle: "Click when a central target flashes: a visual reaction time test for clicking when a central target flashes and measuring visual response speed" }} />
+      <StrobeLatencyClient copy={{ title: "Light Reaction Test", subtitle: "Click when a central target flashes: a visual reaction time test for clicking when a central target flashes and measuring visual response speed" }} />
       <DrillGuide guide={lightReactionGuide} />
     </>
   );
