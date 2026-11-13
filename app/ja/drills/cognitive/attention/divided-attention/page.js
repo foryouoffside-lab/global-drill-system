@@ -66,7 +66,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Divided_attention"],
   "name": "注意分割テスト・デュアルタスク訓練ツール",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",

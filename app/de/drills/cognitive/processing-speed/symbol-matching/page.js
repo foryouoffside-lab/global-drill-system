@@ -64,7 +64,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Zahlen-Symbol-Test (SDMT-Übung)",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",

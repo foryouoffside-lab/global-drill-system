@@ -5,8 +5,8 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: "Test mémoire des mots en ligne | Mémoire | SkillDrills",
-  description: "Test gratuit de mémoire des mots : mémorisez une liste, rappelez les mots librement et entraînez votre mémoire verbale dans le navigateur.",
+  title: "Test de mémoire des mots en ligne | Mémoire | SkillDrills",
+  description: "Test de mémoire des mots gratuit : une liste s’affiche 2 secondes, puis tapez les mots retenus dans n’importe quel ordre. De 3 à 12 mots, en 45 s.",
   keywords: [
     "test mémoire des mots",
     "test de mémoire verbale",
@@ -32,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test mémoire des mots en ligne | Mémoire | SkillDrills",
-    description: "Test gratuit de mémoire des mots : mémorisez une liste, rappelez les mots librement et entraînez votre mémoire verbale dans le navigateur.",
+    title: "Test de mémoire des mots en ligne | Mémoire | SkillDrills",
+    description: "Test de mémoire des mots gratuit : une liste s’affiche 2 secondes, puis tapez les mots retenus dans n’importe quel ordre. De 3 à 12 mots, en 45 s.",
     url: "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -41,8 +41,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test mémoire des mots en ligne | Mémoire | SkillDrills",
-    description: "Test gratuit de mémoire des mots : mémorisez une liste, rappelez les mots librement et entraînez votre mémoire verbale dans le navigateur.",
+    title: "Test de mémoire des mots en ligne | Mémoire | SkillDrills",
+    description: "Test de mémoire des mots gratuit : une liste s’affiche 2 secondes, puis tapez les mots retenus dans n’importe quel ordre. De 3 à 12 mots, en 45 s.",
   },
 };
 
@@ -50,50 +50,30 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SkillDrills",
-      "item": "https://skilldrills.online/fr"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Entrainements de Memoire",
-      "item": "https://skilldrills.online/fr/drills/memory"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Memoire a Court Terme",
-      "item": "https://skilldrills.online/fr/drills/memory/short-term-memory"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Test de Memoire Verbale",
-      "item": "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
+    { "@type": "ListItem", "position": 2, "name": "Entraînements de mémoire", "item": "https://skilldrills.online/fr/drills/memory" },
+    { "@type": "ListItem", "position": 3, "name": "Mémoire à court terme", "item": "https://skilldrills.online/fr/drills/memory/short-term-memory" },
+    { "@type": "ListItem", "position": 4, "name": "Test de mémoire des mots", "item": "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall" }
   ]
 };
 
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Test de Memoire Verbale en Ligne (Word Recall)",
+  "name": "Test de mémoire des mots en ligne",
   "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "dateModified": "2026-09-16",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" },
-  "description": "Evaluation neuropsychologique de la memoire verbale a court terme, du rappel libre et des strategies de regroupement semantique."
+  "description": "Exercice gratuit de mémoire des mots : une liste s’affiche 2 secondes, puis vous tapez les mots retenus dans n’importe quel ordre. Ce n’est pas un test clinique."
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test de Memoire Verbale en Ligne (Word Recall)",
+  "name": "Test de mémoire des mots en ligne",
   "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -101,16 +81,16 @@ const webAppSchema = {
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
   "sameAs": ["https://fr.wikipedia.org/wiki/M%C3%A9moire_%C3%A0_court_terme"],
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Jeu de Rappel de Mots – Test de Memoire Verbale",
+  "name": "Test de mémoire des mots – rappel libre",
   "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall",
-  "description": "Exercice cognitif interactif mesurant l empan de rappel libre de listes de mots et la resilience face a l oubli.",
-  "dateModified": "2026-09-16",
+  "description": "Jeu de rappel libre : retenez une liste de mots affichée 2 secondes et retapez-les dans n’importe quel ordre. Départ à 3 mots, un de plus à chaque réussite.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Memory Game", "Cognitive Training", "Brain Training", "Verbal Memory"],
   "playMode": "SinglePlayer",
@@ -122,36 +102,36 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment passer le Test de Memoire Verbale",
-  "description": "Protocole en 4 etapes pour retenir un maximum de mots grace a l imagerie mentale et au regroupement semantique.",
+  "name": "Comment passer le test de mémoire des mots",
+  "description": "Quatre étapes pour retenir une liste affichée 2 secondes et retaper les mots (séance de 45 secondes).",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall#step-1",
-      "name": "Lisez Attentivement la Liste de Mots",
-      "text": "Observez les mots presentes a l ecran pendant la fenetre d exposition en evitant toute distraction."
+      "name": "Regardez la liste 2 secondes",
+      "text": "Toute la liste s’affiche d’un bloc pendant 2 secondes. Lisez-la rapidement."
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall#step-2",
-      "name": "Creez des Liens Visuels et Semantiques",
-      "text": "Imaginez une histoire ou associez les mots par categories pour faciliter leur transfert en memoire temporaire."
+      "name": "Reliez-les dans une scène",
+      "text": "Imaginez tous les mots ensemble dans une courte scène."
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall#step-3",
-      "name": "Restituez les Mots sans Ordre Impose",
-      "text": "Saisissez rapidement au clavier tous les mots dont vous vous souvenez avant la fin du compte a rebours."
+      "name": "Tapez d’abord les derniers mots",
+      "text": "Quand le champ apparaît, tapez d’abord les derniers mots lus. L’ordre n’a pas d’importance."
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall#step-4",
-      "name": "Mesurez Votre Capacite Limite",
-      "text": "Observez le diagnostic detaille base sur l effet de position serielle et la longueur de liste maximale atteinte."
+      "name": "Validez en moins de 12 secondes",
+      "text": "Séparez les mots par des espaces ou des virgules et validez avec Entrée. Vous avez 12 secondes."
     }
   ]
 };
@@ -162,58 +142,26 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu est-ce que le test de rappel libre de mots (Word Recall) ?",
+      "name": "Comment fonctionne ce test de mémoire des mots ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C est une epreuve standard de neuropsychologie cognitive. Le participant memorise une liste de mots et doit ensuite restituer le plus grand nombre possible d elements, quel que soit leur ordre d apparition initial."
+        "text": "Une liste de mots s’affiche d’un bloc pendant 2 secondes. Ensuite, en 12 secondes maximum, vous tapez tous les mots retenus, séparés par des espaces ou des virgules, et validez avec Entrée. L’ordre est libre (rappel libre). On commence à 3 mots ; si tous sont justes sans mot en trop, la liste suivante gagne un mot (12 maximum), sinon elle en perd un (3 minimum). La séance dure 45 secondes."
       }
     },
     {
       "@type": "Question",
-      "name": "Qu est-ce que l effet de position serielle (Murdoch, 1962) ?",
+      "name": "Comment le score est-il calculé ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C est le phenomene selon lequel les premiers mots d une liste (effet de primaute) et les derniers mots (effet de recence) sont nettement mieux retenus que les mots situes au milieu de la sequence."
+        "text": "Seules les manches où vous tapez tous les mots de la liste, sans mot en trop, rapportent des points : 150 × (1 + 0,15 × (mots − 3)). 3 mots = 150 points, 12 mots = environ 353. Une erreur ne coûte ni points ni temps, seulement un mot de longueur."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi oublie-t-on facilement les mots du milieu d une liste ?",
+      "name": "Combien de mots retient-on en moyenne ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les mots centraux subissent une double interférence : l interférence proactive des premiers mots deja enregistres et l interférence retroactive des derniers mots venant saturer le magasin de travail."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment l imagerie mentale aide-t-elle a retenir plus de mots ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La theorie du double codage de Paivio demontre que relier un mot a une image mentale concrete active a la fois les circuits linguistiques de l hemisphere gauche et les circuits visuels de l hemisphere droit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Combien de mots un adulte retient-il habituellement lors d un rappel libre ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sur une liste non structuree de 15 mots, la plupart des adultes retiennent spontanement entre 5 et 8 mots. Avec des techniques de chunking semantique, cette performance peut depasser 12 a 14 mots."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle est la difference entre rappel libre et rappel ordonne ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le rappel libre permet de restituer les mots dans n importe quel ordre, testant la charge globale du reseau lexical. Le rappel ordonne exige de respecter strictement la chronologie, mobilisant davantage le controle executif."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "La subvocalisation ameliore-t-elle le rappel de mots ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, repeter interieurement les mots a voix basse maintient les traces phonologiques actives dans la boucle de Baddeley, prevenant leur effacement spontane apres quelques secondes."
+        "text": "SkillDrills ne collecte pas de données d’utilisateurs et ne donne donc ni moyenne ni percentile. Avec 2 secondes d’affichage et 12 secondes de saisie, ce jeu n’est pas comparable aux tests cliniques de mémoire de mots. Utilisez les paliers ci-dessous et vos propres records."
       }
     },
     {
@@ -221,85 +169,117 @@ const faqSchema = {
       "name": "Le test prend-il en compte les fautes de frappe ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le systeme compare la saisie au lexique reference et accepte les correspondances directes ainsi que les variantes d accentuation courantes pour eviter les penalites motrices inutiles."
+        "text": "Chaque mot doit correspondre exactement à celui de la liste (majuscules et accents ignorés). Une faute de frappe compte comme un mot en trop et le bon mot comme oublié : la manche est perdue."
       }
     },
     {
       "@type": "Question",
-      "name": "Peut-on s entrainer tous les jours pour developper sa memoire verbale ?",
+      "name": "Quelle est la différence entre rappel libre et reconnaissance ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, deux a trois sessions de rappel libre quotidiennes suffisent a renforcer l automatisme des associations lexicales et a developper des strategies mnesiques transposables aux etudes et au travail."
+        "text": "En rappel libre, vous retrouvez les mots en mémoire sans indice ; en reconnaissance, vous choisissez parmi des propositions ce que vous avez vu. Ce test utilise le rappel libre, plus difficile."
       }
     },
     {
       "@type": "Question",
-      "name": "Ce test est-il gratuit et securise ?",
+      "name": "Qu’est-ce que l’effet de position sérielle (Murdock, 1962) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, SkillDrills fournit cet outil 100% gratuitement, sans compte utilisateur, sans publicite invasive et avec sauvegarde locale sur votre appareil."
+        "text": "Les mots du début (primauté) et de la fin (récence) d’une liste sont mieux retenus que ceux du milieu (Murdock, 1962). Ici tous les mots s’affichent ensemble : c’est votre ordre de lecture qui joue ce rôle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi relier les mots dans une scène aide-t-il ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Penser au sens des mots ou les relier entre eux les fait traiter plus en profondeur et mieux retenir (niveaux de traitement, Craik & Lockhart, 1972). Avec seulement 2 secondes, une scène simple est plus réaliste qu’une longue histoire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L’ordre de saisie compte-t-il ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. La manche est réussie si tous les mots de la liste sont présents, dans n’importe quel ordre. Tapez de préférence d’abord les derniers mots lus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "S’entraîner améliore-t-il la mémoire au quotidien ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rien n’est garanti. On progresse en général dans ce jeu précis, mais le transfert à la mémoire du quotidien reste discuté dans la recherche. Ce test n’est pas un outil de diagnostic ; en cas d’inquiétude, consultez un médecin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce test est-il gratuit ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, gratuit, sans compte ni installation. Vos records restent uniquement dans le navigateur."
       }
     }
   ]
 };
 
 const wordRecallGuide = {
-  heading: "Guide Neurocognitif du Rappel Libre et de la Memoire Verbale",
+  heading: "Guide du test de mémoire des mots (rappel libre)",
   intro: [
-    "Le test de mémoire verbale (Word Recall) est un exercice cognitif de précision conçu pour évaluer et développer la mémoire de travail verbale, l'encodage associatif sémantique et la capacité de rappel libre immédiat. L'épreuve de rappel libre constitue l'un des bancs d'essai les plus exigeants de l'architecture cognitive humaine, obligeant le cerveau à récupérer des éléments lexicaux sans aucun indice contextuel, invite extérieure ou choix multiple.",
-    "L'investigation scientifique de la mémoire verbale a débuté avec Hermann Ebbinghaus (1885), qui a modélisé mathématiquement la courbe de l'oubli et les dynamiques de l'apprentissage sériel. En 1958, le psychologue suisse André Rey a standardisé le Test d'Apprentissage Auditivo-Verbal de Rey (RAVLT) afin de quantifier l'empan mnésique immédiat, la sensibilité aux interférences proactives et rétroactives, ainsi que la rétention différée au sein de populations cliniques et saines.",
-    "En 1962, Bennet B. Murdock Jr. a formalisé mathématiquement l'effet de position sérielle dans le rappel libre, dissociant l'effet de primauté (consolidation en mémoire à long terme des premiers items) et l'effet de récence (maintien éphémère dans le tampon phonologique et sensoriel). Par la suite, Fergus I. M. Craik et Robert S. Lockhart (1972) ont posé le cadre des « niveaux de traitement », démontrant qu'un encodage sémantique profond — tel que l'élaboration narrative ou le regroupement thématique — surpasse largement la simple répétition machinale de surface.",
-    "Grâce à une chronométrie numérique de haute précision exécutée dans le navigateur (Woods et al., 2015), cet entraînement mesure à la fois votre empan de mots et votre débit d'extraction lexicale à travers un protocole adaptatif en escalier calibré sur votre véritable capacité verbale.",
-    "Méthodologie de mesure et latence matérielle : Chaque interaction est horodatée localement via l'horloge haute résolution performance.now() du navigateur. Les navigateurs réduisent délibérément la granularité temporelle (~1 ms) pour contrer les failles de temporisation (Spectre), et votre moniteur synchronise chaque actualisation avec sa fréquence de rafraîchissement native (~16,7 ms à 60 Hz, ~6,9 ms à 144 Hz, ~4,1 ms à 240 Hz, Woods et al., 2015). Considérez les variations inférieures à 5 ms comme du bruit instrumental inévitable et comparez vos performances sur un équipement identique.",
-    "Transparence et respect des données privées : SkillDrills ne collecte ni ne stocke aucune donnée télémétrique agrégée. Vos scores, temps de réponse et progressions restent strictement cantonnés dans le stockage local (localStorage) de votre propre appareil et ne sont jamais transmis à des serveurs tiers. Tous les barèmes présentés sont issus des publications scientifiques référencées ci-dessous.",
-    "Avertissement médical et non-diagnostic : Cet exercice est un outil d'entraînement cognitif en ligne gratuit conçu pour la pratique personnelle et la curiosité intellectuelle. Il ne s'agit pas d'un dispositif médical, d'un test neuropsychologique diagnostique ni d'une méthode de rééducation thérapeutique. Si vous avez des inquiétudes concernant votre mémoire ou vos fonctions cognitives, veuillez consulter un médecin ou un neuropsychologue qualifié."
+    "Le test de mémoire des mots affiche brièvement une liste, puis vous tapez dans n’importe quel ordre les mots retenus. C’est une version d’entraînement du rappel libre étudié en psychologie de la mémoire, pas un test clinique ni un outil de diagnostic.",
+    "La recherche sur les listes de mots remonte à Hermann Ebbinghaus (1885). Bennet Murdock (1962) a décrit l’effet de position sérielle en rappel libre — le début et la fin d’une liste sont mieux retenus — et Endel Tulving (1962) a montré que l’on regroupe spontanément les mots.",
+    "Selon les niveaux de traitement (Craik & Lockhart, 1972), les mots traités par leur sens ou reliés entre eux sont en général mieux retenus. Avec l’affichage court de ce jeu, relier vite les mots dans une scène aide.",
+    "Déroulement : départ à 3 mots ; la liste s’affiche d’un bloc pendant 2 secondes. Vous avez ensuite 12 secondes pour taper les mots, séparés par des espaces ou des virgules, et valider avec Entrée. Tous justes sans mot en trop : un mot de plus (12 max) ; un oubli, un mot faux ou le délai dépassé : un de moins (3 min). Le jeu enregistre le score, la plus longue liste et la précision (part de manches réussies) ; le temps de réaction n’est pas mesuré.",
+    "Transparence : SkillDrills ne collecte pas vos résultats sur un serveur ; tout reste dans le localStorage de votre navigateur. Cette page ne donne donc ni moyenne d’utilisateurs, ni percentile, ni nombre d’utilisateurs ; les études citées figurent plus bas.",
+    "Avertissement : ce jeu d’entraînement n’est ni un dispositif médical ni un outil de diagnostic. En cas d’inquiétude sur votre mémoire, consultez un médecin."
   ],
   benchmarks: {
-    title: "Baremes Normatifs de Rappel Libre de Mots (Population Adulte)",
-    headers: ["Palier de Performance", "Mots Restitues (Liste de 15)", "Score Moyen", "Diagnostic Cognitif"],
+    title: "Paliers d’entraînement du test de mémoire des mots (SkillDrills, 45 s)",
+    headers: ["Palier", "Mots atteints", "Score sans erreur jusque-là", "Stratégie typique"],
     rows: [
-      ["Tier 1 (Palier Avance)", "13 – 15 Mots", "1 800+ PTS", "Organisation semantique categorielle spontanee ; elimination de l affaissement central"],
-      ["Tier 2 (Superieur / Tres Bon Rappel)", "10 – 12 Mots", "1 400 – 1 799 PTS", "Usage efficace de l imagerie visuelle ; bonne preservation des mots du milieu"],
-      ["Tier 3 (Moyenne Normative Standard)", "7 – 9 Mots", "900 – 1 399 PTS", "Courbe en U classique de Murdock (1962) ; primaute et recence nettement preservees"],
-      ["Tier 4 (Sous la Moyenne / Effacement)", "5 – 6 Mots", "500 – 899 PTS", "Recuperation quasi exclusive des derniers mots presentes ; saturation rapide de la boucle"],
-      ["Tier 5 (Empan Fragile / Oublis)", "Moins de 5 Mots", "Moins de 500 PTS", "Interference proactive majeure ; difficulte a fixer plus de 2 a 3 concepts consecutifs"]
+      ["Palier 1", "12 mots", "env. 2 160+", "Relie toute la liste dans une scène immédiatement"],
+      ["Palier 2", "10–11 mots", "env. 1 520–2 159", "Regroupe par sens, par 2 ou 3"],
+      ["Palier 3", "8–9 mots", "env. 980–1 519", "Retient le début et la fin, perd le milieu"],
+      ["Palier 4", "6–7 mots", "env. 520–979", "Lit et retient mot par mot"],
+      ["Palier 5", "3–5 mots", "moins de 520", "Découverte de l’affichage de 2 s et de la saisie"]
     ],
-    note: "Baremes adaptes des protocoles de rappel libre de Murdock (1962) et des travaux de Baddeley (1974) sur des listes de 15 mots concrets."
+    note: "Paliers d’entraînement SkillDrills, pas des normes de population. Le score correspond à un parcours sans erreur depuis 3 mots jusqu’à cette longueur (points par manche = 150 × (1 + 0,15 × (mots − 3))). En 45 secondes on joue peu de manches et les erreurs raccourcissent la liste : les scores réels varient."
   },
   techniques: {
-    title: "4 strategies scientifiques pour maximiser le rappel de listes de mots",
+    title: "4 stratégies pour retenir plus de mots",
     items: [
       {
-        name: "Regroupement Semantique par Categories",
-        desc: "Classez mentalement les mots selon des themes communs (animaux, outils, nature, objets) des leur affichage.",
-        tips: "Le regroupement thematique multiplie par deux le nombre d unites de sens memorisables."
+        name: "Une seule scène",
+        desc: "Placez tous les mots dans une image (par ex. « rivière », « bougie », « dragon » → un dragon tenant une bougie au-dessus d’une rivière). Relier par le sens approfondit le traitement (Craik & Lockhart, 1972).",
+        tips: "Gardez la scène simple pour la construire en 2 secondes."
       },
       {
-        name: "Methode de l Histoire Narree (Scenario Mental)",
-        desc: "Inventez une micro-histoire loufoque reliant les mots entre eux au fur et a mesure de leur presentation.",
-        tips: "L emotion et la singularite d une scene renforcent l encodage profond."
+        name: "Regrouper par catégories",
+        desc: "Rassemblez les mots proches : animaux, lieux, objets. On regroupe naturellement les mots (Tulving, 1962).",
+        tips: "Au moment de taper, rappelez-les catégorie par catégorie."
       },
       {
-        name: "Restitution Immediate des Mots Centraux",
-        desc: "A l ouverture de la phase de rappel, commencez par taper les mots du milieu avant que leur trace ne s estompe.",
-        tips: "Inverse la vulnerabilite habituelle de l effet de position serielle."
+        name: "Les derniers d’abord",
+        desc: "Les mots lus en dernier s’effacent vite (récence). Tapez-les en premier, puis retrouvez le début et le milieu (Murdock, 1962).",
+        tips: "L’ordre de saisie n’influence pas le score."
       },
       {
-        name: "Double Codage Visuo-Semantique",
-        desc: "Associez chaque mot a une image visuelle nette et coloree plutot que de vous limiter au son du mot.",
-        tips: "Mobilise les deux hemispheres cerebraux selon la theorie de Paivio."
+        name: "Attention aux fautes de frappe",
+        desc: "Une faute de frappe compte comme mot faux et fait perdre toute la manche. Taper avec précision dans les 12 secondes est essentiel.",
+        tips: "Deviner un mot absent de la liste fait aussi perdre la manche."
       }
     ]
   },
   steps: [
-    "Prenez connaissance de la consigne et fixez l ecran d affichage.",
-    "Lisez chaque mot et associez-le immediatement a une categorie ou une image mentale.",
-    "Des la fin de la presentation, saisissez tous les mots retenus dans la zone de texte.",
-    "Analysez votre score pour identifier vos points forts et equilibrer votre courbe de rappel."
+    "Lancez la séance de 45 secondes et regardez la zone des mots au centre.",
+    "Lisez vite la liste affichée 2 secondes et reliez les mots dans une scène.",
+    "Dans le champ de saisie, tapez d’abord les derniers mots lus.",
+    "Tapez tous les mots, séparés par des espaces ou des virgules, en moins de 12 secondes et validez avec Entrée.",
+    "Les réussites allongent la liste, les erreurs la raccourcissent : comparez votre score et votre plus longue liste à vos propres records."
   ],
-  audience: "Etudiants, professionnels, personnes preparant des concours ou souhaitant entretenir leur agilite verbale et leur plasticite neuronale au quotidien.",
+  audience: "Étudiants, professionnels et curieux qui veulent voir combien de mots ils retiennent.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'woods2015'),
+  sources: pickSources('craik1972', 'murdock1962', 'tulving1962'),
   related: [
     { href: "/fr/drills/memory/short-term-memory/digit-span", label: "Test d Empan de Chiffres" },
     { href: "/fr/drills/memory/short-term-memory/color-sequence", label: "Jeu Simon des Couleurs" },
@@ -336,50 +316,50 @@ export default function FrenchWordRecallPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <WordRecallClient copy={{
-        h1Keyword: "Test de mémoire verbale",
-        h1Suffix: " – Rappel libre de mots",
+        h1Keyword: "Test de mémoire des mots",
+        h1Suffix: " – Rappel libre",
         subtitle: "Mémorisez des mots et rappelez-les librement",
         wordsLabel: "Mots",
         scoreLabel: "Score",
         timeLeftLabel: "Temps",
         recallTitle: "RESTITUEZ LES MOTS",
-        memorizeTitle: "MEMORISEZ LA LISTE",
-        evaluating: "Evaluation...",
-        startTitle: "Test de Memoire Verbale Pro",
+        memorizeTitle: "MÉMORISEZ LA LISTE",
+        evaluating: "Évaluation...",
+        startTitle: "Test de mémoire des mots",
         startSubtitle: "Mémoire verbale • rappel libre de mots",
-        countdownSubtitle: "PREPAREZ-VOUS",
+        countdownSubtitle: "PRÉPAREZ-VOUS",
         newBest: "NOUVEAU RECORD",
         pointsLabel: "Points",
-        statAccuracy: "Precision",
+        statAccuracy: "Précision",
         statPeakWords: "Mots Max",
         statPerfects: "Parfaits",
         btnPlayAgain: "Rejouer",
-        rulesTitle: "Instructions de l Exercice et Bareme",
-        aboutTitle: "A Propos du Test de Memoire Verbale (Word Recall)",
+        rulesTitle: "Règles de l’exercice et barème",
+        aboutTitle: "À propos du test de mémoire des mots",
         rulesItems: [
           {
             num: "1",
             text: "Rappel de Liste",
             highlight: "+150 PTS",
-            result: "Memorisez les mots et tapez-les durant la phase de rappel"
+            result: "Retenez les mots affichés 2 s et tapez-les en 12 s, dans n’importe quel ordre"
           },
           {
             num: "2",
             text: "Bonus de Niveau",
-            highlight: "Jusqu a +135%",
-            result: "Les listes plus longues rapportent beaucoup plus de points"
+            highlight: "Jusqu’à +135 %",
+            result: "Manche = 150 × (1 + 0,15 × (mots − 3)) points"
           },
           {
             num: "3",
-            text: "Erreur / Temps Ecoule",
+            text: "Erreur / temps écoulé",
             highlight: "-1 Mot",
-            result: "Aucune perte de points ; recul d un mot pour recalibrer"
+            result: "Oubli, mot faux ou 12 s dépassées : ni points ni temps perdus, un mot de moins"
           },
           {
             num: "4",
             text: "Ampleur Adaptative",
             highlight: "Ajustement continu",
-            result: "Converge fidelement vers votre limite reelle de memoire verbale"
+            result: "Tous justes +1 mot, erreur −1 mot (3 à 12)"
           }
         ],
         wordBank: [

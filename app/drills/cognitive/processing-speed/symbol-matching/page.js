@@ -56,7 +56,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Symbol Digit Modalities Test",
+      "name": "SDMT-Style Symbol Digit Test",
       "item": "https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching"
     }
   ]
@@ -65,15 +65,15 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Symbol Digit Modalities Test — Cognitive Processing Speed Drill",
-  "applicationCategory": "HealthApplication",
+  "name": "SDMT-Style Symbol Digit Test — Processing Speed Practice Drill",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Free Symbol Digit Modalities Test (SDMT) and symbol matching drill online. Test processing speed, visual scanning efficiency, and short-term associative memory.",
+  "description": "Free SDMT-style symbol matching drill online. A key pairs six symbols with the digits 1 to 6; tap the digit for each symbol as the response window shrinks. Practice, not the SDMT.",
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching",
   "publisher": {
     "@type": "Organization",
@@ -81,13 +81,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Symbol Digit Modalities Test",
+  "name": "SDMT-Style Symbol Digit Test",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -98,15 +98,15 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Symbol Digit Modalities Test – Rapid Symbol Matching Game",
+  "name": "SDMT-Style Symbol Digit Test – Symbol Matching Game",
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching",
-  "description": "Free Symbol Digit Modalities Test (SDMT) and symbol matching drill online. Test processing speed, visual scanning efficiency, and short-term associative memory.",
+  "description": "Free SDMT-style symbol matching drill online. A key pairs six symbols with the digits 1 to 6; tap the digit for each symbol as the response window shrinks. Practice, not the SDMT.",
   "genre": [
     "Action",
     "Brain Game",
@@ -118,7 +118,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -135,7 +135,7 @@ const faqSchema = {
       "name": "What is the Symbol Digit Modalities Test (SDMT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The SDMT is a clinical neuropsychological evaluation developed by Aaron Smith (1973) that measures information processing speed, visual scanning efficiency, and short-term working memory."
+        "text": "The SDMT is a clinical neuropsychological test developed by Aaron Smith (1973), used to assess information processing speed. This drill borrows its symbol-to-digit format but is not the SDMT, uses different symbols and timing, and produces no clinical score."
       }
     },
     {
@@ -143,7 +143,7 @@ const faqSchema = {
       "name": "What is the difference between SDMT and DSST?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In the DSST (Wechsler), you write symbols corresponding to digits. In the SDMT, you match symbols to digits, isolating pure cognitive speed with reduced motor coordination confounding."
+        "text": "In the digit symbol substitution test (DSST) you write the symbol that goes with each digit. In the SDMT you give the digit that goes with each symbol, and it can be answered orally as well as in writing. This drill follows the SDMT direction: see a symbol, tap its digit."
       }
     },
     {
@@ -151,15 +151,15 @@ const faqSchema = {
       "name": "What cognitive domains does symbol matching evaluate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It measures: (1) processing speed, (2) visual scanning efficiency, (3) paired-associate learning, and (4) sustained executive attention."
+        "text": "The drill practises quick visual lookup (finding the symbol in the key), learning the symbol-digit pairs during a run, and keeping a steady pace as the response window shrinks. It reports score, accuracy, hits, misses and peak level; it is not a standardized measure of any cognitive domain."
       }
     },
     {
       "@type": "Question",
-      "name": "What is a normal adult score on the SDMT?",
+      "name": "Can I compare my score with SDMT norms?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In clinical standardizations, healthy adults aged 20–34 typically complete 65–75 correct substitutions within 90 seconds (Smith, 1973; Der & Deary, 2006)."
+        "text": "No. Clinical SDMT norms come from the official test, given under standard conditions by a trained examiner. This drill uses a different format, an on-screen key, a changing clock and a combo multiplier, so its scores cannot be converted into SDMT results."
       }
     },
     {
@@ -175,7 +175,7 @@ const faqSchema = {
       "name": "How does legend memorization accelerate performance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Building direct associative memory bonds between symbols and digits eliminates the latency of re-scanning the legend for every trial."
+        "text": "The key is reshuffled at the start of every run but stays the same during the run. If you learn the pairs in the first few seconds, you can answer without looking back at the key each time, which usually saves time."
       }
     },
     {
@@ -199,7 +199,7 @@ const faqSchema = {
       "name": "How often should I train symbol matching?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A 10-minute session daily provides significant improvements in visual lookup speed and short-term associative memory."
+        "text": "A few runs in one sitting, a few times a week, is enough to track your own trend. Each run starts with 45 seconds; a correct digit scores 100 points times your combo and a level bonus and adds 2 seconds (up to 60), while a wrong digit or a timeout costs 1 second and resets the combo. Scores usually rise with practice on this task, but that does not guarantee gains elsewhere."
       }
     },
     {
@@ -216,14 +216,14 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Symbol Digit Modalities Test",
-  "description": "Free Symbol Digit Modalities Test (SDMT) and symbol matching drill online. Test processing speed, visual scanning efficiency, and short-term associative memory.",
+  "name": "SDMT-Style Symbol Digit Test",
+  "description": "Free SDMT-style symbol matching drill online. A key pairs six symbols with the digits 1 to 6; tap the digit for each symbol as the response window shrinks. Practice, not the SDMT.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "Inspect the Symbol-Digit Key Matrix",
-      "text": "Review the 6 unique symbol-to-digit mappings in the header legend.",
+      "text": "Review the 6 symbol-to-digit pairs in the key bar. The key is reshuffled every run.",
       "url": "https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching#step-1"
     },
     {
@@ -237,14 +237,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Execute Direct Associative Number Tap",
-      "text": "Tap the corresponding number key (1–6) based on working memory or rapid legend scanning.",
+      "text": "Tap the matching on-screen digit button (1-6), from memory or by checking the key.",
       "url": "https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Sustain Continuous Rhythm for Maximum Combo",
-      "text": "Maintain uninterrupted high-speed matching to build your combo multiplier before time expires.",
+      "text": "Each correct digit adds 2 seconds (up to 60) and builds your combo. A wrong digit or a timeout costs 1 second and resets the combo.",
       "url": "https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching#step-4"
     }
   ]
@@ -253,33 +253,35 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('smith1973', 'der2006', 'woods2015'),
   intro: {
-    title: "Symbol Digit Modalities Test",
+    title: "SDMT-Style Symbol Digit Test",
     paragraphs: [
-      "Free Symbol Digit Modalities Test (SDMT) and symbol matching drill online. Test processing speed, visual scanning efficiency, and short-term associative memory.",
-      "In the DSST (Wechsler), you write symbols corresponding to digits. In the SDMT, you match symbols to digits, isolating pure cognitive speed with reduced motor coordination confounding.",
-      "It measures: (1) processing speed, (2) visual scanning efficiency, (3) paired-associate learning, and (4) sustained executive attention.",
+      "Free SDMT-style symbol matching drill online. A key pairs six symbols with the digits 1 to 6; tap the digit for each symbol as the response window shrinks. Practice, not the SDMT.",
+      "In the digit symbol substitution test (DSST) you write the symbol that goes with each digit. In the SDMT you give the digit that goes with each symbol, and it can be answered orally as well as in writing. This drill follows the SDMT direction: see a symbol, tap its digit.",
+      "The drill practises quick visual lookup (finding the symbol in the key), learning the symbol-digit pairs during a run, and keeping a steady pace as the response window shrinks. It reports score, accuracy, hits, misses and peak level; it is not a standardized measure of any cognitive domain.",
     ],
   },
   benchmarks: {
-    title: 'Cognitive Performance Standards & Benchmarks',
-    note: 'Stages are editorial practice markers set by SkillDrills, not population statistics or percentiles.',
-    headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Practice stage'],
+    title: 'SkillDrills Practice Bands',
+    note: 'Bands come from the end-screen grade formula (score compared with a 24,000-point SkillDrills reference). They are practice markers, not SDMT norms, population statistics or percentiles.',
+    headers: ['Grade', 'Label', 'Score'],
     rows: [
-      { tier: 'Tier 1', rank: 'Advanced Mastery Stage', stat: 'Highest tier', level: 'Mastery', accuracy: '98%+', percentile: 'Highest tier' },
-      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },
-      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Above-average tier', level: 'Platinum', accuracy: '88-93%', percentile: 'Above-average tier' },
-      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Mid tier', level: 'Gold', accuracy: '78-87%', percentile: 'Mid tier' },
-      { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
+      ['S+', 'Legendary', '21,660+'],
+      ['S', 'Elite', '17,340-21,659'],
+      ['A', 'Excellent', '13,500-17,339'],
+      ['B', 'Great', '8,640-13,499'],
+      ['C', 'Good', '4,860-8,639'],
+      ['D', 'Keep Going', '2,160-4,859'],
+      ['F', 'Needs Practice', 'Under 2,160'],
     ],
   },
   protocols: {
-    title: 'Core Neuroplastic Optimization Protocols',
-    description: 'Scientifically validated executive function enhancement protocols.',
+    title: 'How to Play',
+    description: 'The four steps of a Symbol Digit Test run.',
     items: [
-      { title: "Inspect the Symbol-Digit Key Matrix", description: "Review the 6 unique symbol-to-digit mappings in the header legend." },
+      { title: "Inspect the Symbol-Digit Key Matrix", description: "Review the 6 symbol-to-digit pairs in the key bar. The key is reshuffled every run." },
       { title: "Foveate on the Central Target Symbol", description: "Instantly identify the active symbol appearing in the central prompt area." },
-      { title: "Execute Direct Associative Number Tap", description: "Tap the corresponding number key (1–6) based on working memory or rapid legend scanning." },
-      { title: "Sustain Continuous Rhythm for Maximum Combo", description: "Maintain uninterrupted high-speed matching to build your combo multiplier before time expires." },
+      { title: "Execute Direct Associative Number Tap", description: "Tap the matching on-screen digit button (1-6), from memory or by checking the key." },
+      { title: "Sustain Continuous Rhythm for Maximum Combo", description: "Each correct digit adds 2 seconds (up to 60) and builds your combo. A wrong digit or a timeout costs 1 second and resets the combo." },
     ],
   },
   faqs: {

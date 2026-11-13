@@ -5,7 +5,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
   title: "Color Memory Game – Simon Sequence Test | SkillDrills",
-  description: "Play the free Color Memory Game online. Challenge your visual working memory with expanding Simon color sequences. No download, plays free in browser.",
+  description: "Play the free Color Memory Game online: Simon-style color sequences that grow one color longer each level. Watch, tap them back in order. No download.",
   keywords: [
     "color memory game",
     "simon game",
@@ -33,7 +33,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Color Memory Game – Simon Sequence Test | SkillDrills",
-    description: "Play the free Color Memory Game online. Challenge your visual working memory with expanding Simon color sequences. No download, plays free in browser.",
+    description: "Play the free Color Memory Game online: Simon-style color sequences that grow one color longer each level. Watch, tap them back in order. No download.",
     url: "https://skilldrills.online/drills/memory/short-term-memory/color-sequence",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -42,7 +42,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Color Memory Game – Simon Sequence Test | SkillDrills",
-    description: "Play the free Color Memory Game online. Challenge your visual working memory with expanding Simon color sequences. No download, plays free in browser.",
+    description: "Play the free Color Memory Game online: Simon-style color sequences that grow one color longer each level. Watch, tap them back in order. No download.",
   },
 };
 
@@ -65,13 +65,13 @@ export default function ColorSequencePage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Short-term_memory", "https://en.wikipedia.org/wiki/Simon_(game)"],
+    "@type": "SoftwareApplication",
     "name": "Color Memory Game",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Free visual working memory drill testing sequential chromatic pattern recall, chunking capacity, and attentional focus across progressive color strings.",
+    "description": "Free Simon-style color sequence game: watch a random sequence of six colors flash, then tap it back in order. Level 1 shows 3 colors and each clear adds one.",
     "genre": "Cognitive Training / Visual Working Memory",
     "url": "https://skilldrills.online/drills/memory/short-term-memory/color-sequence",
     "publisher": {
@@ -100,8 +100,8 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Color Sequence Memory Test",
   "url": "https://skilldrills.online/drills/memory/short-term-memory/color-sequence",
-  "description": "Interactive visual sequence recall game. Test and expand short-term memory capacity by repeating progressive color patterns.",
-  "dateModified": "2026-09-11",
+  "description": "Interactive visual sequence recall game. Watch a random color sequence flash, then reproduce it in order; each clear makes the next sequence one color longer.",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Memory Training", "Brain Games", "Visual Memory", "Sequential Recall"],
   "playMode": "SinglePlayer",
@@ -113,14 +113,22 @@ const videoGameSchema = {
 const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "What is the Color Memory Game?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Color Memory Game is an interactive cognitive training exercise designed to test and expand visual working memory. Players observe an expanding sequential flash of six vibrant colors, hold the exact temporal order in short-term storage, and reproduce the sequence accurately."
+          "text": "Color Memory Game is a free Simon-style sequence game (not the Hasbro product). Six colored pads flash a random sequence one color at a time; you then tap the pads back in the same order. Level 1 shows 3 colors, and each level adds one (sequence length = level + 2). A run lasts 45 seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the Color Memory Game scored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each fully correct sequence scores 100 points times (1 + 0.1 x level), so a level 5 clear is worth 150 points, and moves you up one level. A wrong tap, or 8 seconds without a tap during input, drops you one level and shows a new sequence; no points or time are taken away. The flashes also get faster as the level rises."
         }
       },
       {
@@ -141,10 +149,10 @@ const faqSchema = {
       },
       {
         "@type": "Question",
-        "name": "How does the Simon game mechanic train cognitive function?",
+        "name": "What does a Simon-style sequence game exercise?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The sequential pattern reproduction mechanic popularized by Simon engages both the visual cache (temporary visual storage) and inner scribe (spatial-temporal movement rehearsal), challenging attentional focus and serial position tracking under temporal decay."
+          "text": "Reproducing a sequence of flashes asks you to hold both which colors appeared and in what order. In Logie's (1995) account of the visuospatial sketchpad, that draws on the visual cache (what the colors were) and the inner scribe (rehearsing the sequence of positions)."
         }
       },
       {
@@ -168,15 +176,15 @@ const faqSchema = {
         "name": "How does Color Sequence differ from the Digit Span test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Digit Span uses alphanumeric symbols readily rehearsed via the phonological loop (inner voice). Color Sequence primarily targets the visuospatial sketchpad, requiring spatial or chromatic encoding that cannot be as easily sub-vocalized, isolating distinct neurological working memory pathways."
+          "text": "Digit Span shows numbers, which are easy to rehearse with your inner voice. Color Sequence shows colored pads flashing in turn, so you can remember it as colors, as positions on the pad layout, or by naming the colors to yourself. Many players combine those strategies."
         }
       },
       {
         "@type": "Question",
-        "name": "Can training color sequence memory improve everyday focus and learning?",
+        "name": "Will training color sequence memory improve everyday focus and learning?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Consistent visual working memory drills strengthen sustained visual attention, reduce susceptibility to cognitive distractions, and condition executive control mechanisms needed for multi-step reasoning, coding, reading comprehension, and competitive gameplay."
+          "text": "Not reliably. Practice makes you better at this game, but research on working memory training generally finds that gains transfer poorly to untrained tasks. Treat it as a fun memory challenge, not a guaranteed way to improve focus, school work or gaming."
         }
       },
       {
@@ -184,7 +192,7 @@ const faqSchema = {
         "name": "How does the adaptive difficulty staircase work in this drill?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sequence length scales according to current level (sequence length = level + 2). Successful rounds increment the level by 1, while mistakes reduce the level by 1. This adaptive staircase design ensures training stays calibrated at the boundary of cognitive capacity without punishing errors."
+          "text": "Sequence length = level + 2. A correct sequence moves you up one level; a wrong tap or an 8-second input timeout moves you down one level (never below level 1). Each round is a new random sequence, so the game settles near the longest sequence you can reproduce."
         }
       },
       {
@@ -192,7 +200,7 @@ const faqSchema = {
         "name": "Is this Color Memory Game free and browser-based?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, SkillDrills Color Memory Game is 100% free, runs client-side in your web browser with zero downloads, installs, or account registrations, and times each response with the browser performance.now() clock."
+          "text": "Yes. It is free, runs in your web browser with no download, install or account, and keeps your best score only in your browser's local storage."
         }
       }
     ]
@@ -229,8 +237,8 @@ const faqSchema = {
         "@type": "HowToStep",
         "position": 4,
         "url": "https://skilldrills.online/drills/memory/short-term-memory/color-sequence#step-4",
-        "name": "Consolidate Through Progressive Daily Practice",
-        "text": "Complete 3 to 5 rounds daily to reinforce frontoparietal memory circuits and expand your visual working memory span."
+        "name": "Let the Level Adjust",
+        "text": "A correct sequence adds one color to the next round; a wrong tap or 8 seconds without input removes one. Keep playing until the 45-second clock runs out."
       }
     ]
   };
@@ -238,25 +246,24 @@ const faqSchema = {
   const colorSequenceGuide = {
     heading: "Color Memory Game Guide & Sequential Visual Working Memory",
     intro: [
-      "A color sequence memory game, also known as a Simon game, flashes colors in a pattern that you then repeat in the same order. In this free online version the sequence grows when you succeed and shortens after a miss, so it finds the longest color sequence you can hold in visual working memory.",
+      "A color sequence memory game, often called a Simon-style game, flashes colors in a pattern that you then repeat in the same order. In this free online version each round is a new random sequence of six possible colors: it gets one color longer after a correct round and one shorter after a miss, so it settles near the longest color sequence you can hold in visual working memory.",
       "The architectural limits of human short-term memory have been thoroughly mapped across decades of cognitive psychology. While George A. Miller (1956) identified the informational bottleneck of $7 \\pm 2$ items in verbal rehearsal, seminal work by Nelson Cowan (2001) and Steven J. Luck & Edward K. Vogel (1997) revealed that pure visual working memory capacity is strictly constrained to approximately 4 distinct items. Without structured re-coding strategies, unassisted human recall rapidly collapses beyond four sequential elements.",
-      "According to Alan Baddeley's multi-component model of working memory (Baddeley & Hitch, 1974; Baddeley, 2000), retaining sequential visual arrays engages the Visuospatial Sketchpad (VSSP). Robert H. Logie (1995) further divided the VSSP into the visual cache (which stores passive chromatic representations) and the inner scribe (which actively rehearses spatial-temporal sequences). Advanced performers systematically recruit the phonological loop to create dual-coded representations, effectively doubling buffer capacity.",
-      "With high-precision millisecond chronometry (Woods et al., 2015), this drill measures both sequence span and input latency, providing an accurate benchmark of working memory integrity, processing speed, and mental stamina under time pressure.",
-      "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval, about 16.7 ms per frame at 60 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup.",
+      "According to Alan Baddeley's multi-component model of working memory (Baddeley & Hitch, 1974; Baddeley, 2000), retaining sequential visual arrays engages the Visuospatial Sketchpad (VSSP). Robert H. Logie (1995) further divided the VSSP into the visual cache (which stores passive chromatic representations) and the inner scribe (which actively rehearses spatial-temporal sequences). Naming the colors to yourself adds a verbal trace alongside the visual one, which many players find helps on longer sequences.",
+      "How the game works: a run lasts 45 seconds. Level 1 shows 3 colors and sequence length is always level + 2. Each flash starts at about 0.7 seconds and gets shorter as the level rises. A correct sequence scores 100 x (1 + 0.1 x level) points and moves you up a level; a wrong tap, or 8 seconds without a tap during input, moves you down a level. Nothing is subtracted from your score or clock. Response times are not measured or scored.",
       "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
       "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
     ],
     benchmarks: {
-      title: "Visual Working Memory & Sequence Span Benchmarks",
-      headers: ["Performance Tier", "Sequence Span (Items)", "Difficulty Level", "Cognitive Storage & Recall Profile"],
+      title: "SkillDrills Practice Bands (Color Sequence)",
+      headers: ["Practice Band", "Level", "Sequence Length", "Points per Correct Sequence"],
       rows: [
-        ["Tier 1 (Elite Visual Working Memory)", "Span 9 – 11+ Colors", "Level 7 – 9+", "Effortlessly surpasses Cowan's 4-item bottleneck; executes dual-modal chunking (spatial vectors + sub-vocal rehearsal); sub-400 ms per-input latency"],
-        ["Tier 2 (High Cognitive Capacity)", "Span 7 – 8 Colors", "Level 5 – 6", "Achieves Miller's classic 7-item threshold; constructs 2-to-3 item paired chunks; stable sequence retention with 400 – 550 ms input cadence"],
-        ["Tier 3 (Average Adult Working Memory)", "Span 5 – 6 Colors", "Level 3 – 4", "Normal population baseline; manages basic chunking but vulnerable to serial position interference (middle-element decay); 550 – 750 ms input cadence"],
-        ["Tier 4 (Developing Sequence Buffer)", "Span 4 Colors", "Level 2", "Operates directly at Cowan's raw 4-item capacity limit; struggles when sequences exceed 4 items without verbal aid; 750 – 1,000 ms input cadence"],
-        ["Tier 5 (Novice / Memory Bottleneck)", "Span 3 Colors", "Level 1", "Struggles to hold 3 sequential visual items; high susceptibility to rapid decay and perceptual interference; input cadence exceeding 1,000 ms"]
+        ["Band 1", "Level 1 – 2", "3 – 4 colors", "110 – 120"],
+        ["Band 2", "Level 3 – 4", "5 – 6 colors", "130 – 140"],
+        ["Band 3", "Level 5 – 6", "7 – 8 colors", "150 – 160"],
+        ["Band 4", "Level 7 – 9", "9 – 11 colors", "170 – 190"],
+        ["Band 5", "Level 10+", "12+ colors", "200+"]
       ],
-      note: "Sequence span corresponds to sequence length (level + 2); input cadence measures average decision and tap latency per element during the recall phase (Woods et al., 2015)."
+      note: "SkillDrills practice bands derived from the scoring code (length = level + 2; points = 100 x (1 + 0.1 x level)). They are not population norms: SkillDrills collects no user data, so these bands only help you track your own runs."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Sequence Memory",
@@ -294,7 +301,7 @@ const faqSchema = {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     // Works named in this page's copy, with DOIs so a reader or an answer
     // engine can check the figures rather than take them on trust.
-    sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'luck1997', 'simon1974', 'woods2015'),
+    sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'luck1997', 'simon1974'),
     related: [
       { href: "/drills/memory/short-term-memory/digit-span", label: "Digit Span Memory Test" },
       { href: "/drills/memory/short-term-memory/word-recall", label: "Verbal Memory Test" },

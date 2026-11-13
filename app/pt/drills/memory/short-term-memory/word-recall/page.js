@@ -5,8 +5,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de memória verbal online | Palavras | SkillDrills",
-  description: "Teste grátis de memória verbal: memorize uma lista de palavras, faça a evocação livre e treine sua memória operacional no navegador.",
+  title: "Teste de memória com palavras | Memória verbal | SkillDrills",
+  description: "Teste de memória com palavras grátis: a lista aparece por 2 segundos e você digita as palavras em qualquer ordem. Começa com 3 e vai até 12 palavras.",
   keywords: [
     "teste de memória verbal",
     "teste de memória de palavras",
@@ -32,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Teste de memória verbal online | Palavras | SkillDrills",
-    description: "Teste grátis de memória verbal: memorize uma lista de palavras, faça a evocação livre e treine sua memória operacional no navegador.",
+    title: "Teste de memória com palavras | Memória verbal | SkillDrills",
+    description: "Teste de memória com palavras grátis: a lista aparece por 2 segundos e você digita as palavras em qualquer ordem. Começa com 3 e vai até 12 palavras.",
     url: "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -41,8 +41,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Teste de memória verbal online | Palavras | SkillDrills",
-    description: "Teste grátis de memória verbal: memorize uma lista de palavras, faça a evocação livre e treine sua memória operacional no navegador.",
+    title: "Teste de memória com palavras | Memória verbal | SkillDrills",
+    description: "Teste de memória com palavras grátis: a lista aparece por 2 segundos e você digita as palavras em qualquer ordem. Começa com 3 e vai até 12 palavras.",
   },
 };
 
@@ -56,19 +56,19 @@ export default function LocalizedWordRecallPage() {
       { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treino de Memória", "item": "https://skilldrills.online/pt/drills/memory" },
       { "@type": "ListItem", "position": 3, "name": "Memória de Curto Prazo", "item": "https://skilldrills.online/pt/drills/memory/short-term-memory" },
-      { "@type": "ListItem", "position": 4, "name": "Teste de Memória Verbal", "item": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall" }
+      { "@type": "ListItem", "position": 4, "name": "Teste de memória com palavras", "item": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Teste de Memória Verbal (Evocação Livre de Palavras)",
+    "name": "Teste de memória com palavras",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Avaliação neuropsicológica gratuita no navegador que mede a evocação livre imediata, a codificação semântica associativa e a capacidade da memória verbal operacional.",
+    "description": "Teste de memória com palavras grátis: a lista aparece por 2 segundos e você digita as palavras em qualquer ordem. Começa com 3 e vai até 12 palavras.",
     "genre": "Cognitive Assessment / Verbal Memory",
     "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall",
     "sameAs": ["https://pt.wikipedia.org/wiki/Recorda%C3%A7%C3%A3o_em_mem%C3%B3ria"],
@@ -82,10 +82,10 @@ export default function LocalizedWordRecallPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Teste de Memória Verbal (Evocação Livre de Palavras)",
+    "name": "Teste de memória com palavras",
     "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall",
-    "description": "Avaliação neuropsicológica gratuita no navegador que mede a evocação livre imediata, a codificação semântica associativa e a capacidade da memória verbal operacional.",
-    "dateModified": "2026-09-05",
+    "description": "Teste de memória com palavras grátis: a lista aparece por 2 segundos e você digita as palavras em qualquer ordem. Começa com 3 e vai até 12 palavras.",
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
@@ -95,8 +95,8 @@ export default function LocalizedWordRecallPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Teste de Memória Verbal (Evocação Livre de Palavras)",
-    "description": "Avaliação neuropsicológica gratuita no navegador que mede a evocação livre imediata, a codificação semântica associativa e a capacidade da memória verbal operacional.",
+    "name": "Teste de memória com palavras",
+    "description": "Teste de memória com palavras grátis: a lista aparece por 2 segundos e você digita as palavras em qualquer ordem. Começa com 3 e vai até 12 palavras.",
     "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall",
     "genre": ["Memory Game", "Cognitive Training", "Brain Game"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
@@ -117,211 +117,185 @@ export default function LocalizedWordRecallPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "mainEntity": [
-    {
+      {
         "@type": "Question",
-        "name": "O que é o Teste de Memória Verbal (Word Recall)?",
+        "name": "Como funciona este teste de memória com palavras?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "É uma avaliação neuropsicológica para mensurar a memória verbal de curto prazo, o span da memória de trabalho e a capacidade de evocação livre imediata. O participante estuda uma lista de substantivos e deve resgatá-los sem restrição de ordem."
+          "@type": "Answer",
+          "text": "Uma lista de palavras aparece inteira por 2 segundos. Depois, em até 12 segundos, você digita todas as palavras de que lembra, separadas por espaço ou vírgula, e envia com Enter. A ordem não importa (evocação livre). Começa com 3 palavras; se acertar todas sem palavras extras, ganha 1 palavra (máximo 12), senão perde 1 (mínimo 3). A sessão dura 45 segundos."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "Qual a diferença entre evocação livre e memória de reconhecimento?",
+        "name": "Como a pontuação é calculada?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O reconhecimento apenas pergunta se um item apresentado já foi visto. A evocação livre exige a busca ativa e espontânea de traços mnemônicos internos sem auxílio externo, demandando muito mais esforço cortical e refletindo a real capacidade de armazenamento."
+          "@type": "Answer",
+          "text": "Só pontuam as rodadas em que você digita todas as palavras da lista sem palavras a mais: 150 × (1 + 0,15 × (palavras − 3)). 3 palavras = 150 pontos, 12 palavras = cerca de 353. Errar não tira pontos nem tempo, só reduz 1 palavra."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "Qual é a pontuação média em um teste de evocação de palavras?",
+        "name": "Quantas palavras uma pessoa lembra em média?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Em testes clínicos como o RAVLT, adultos saudáveis relembram de 4 a 6 palavras no primeiro ensaio de uma lista desconhecida. Técnicas mnemônicas de agrupamento podem elevar consideravelmente esse número."
+          "@type": "Answer",
+          "text": "A SkillDrills não coleta dados de usuários, então não mostramos médias nem percentis. Com 2 segundos de exibição e 12 de digitação, este jogo não é comparável a testes clínicos com listas de palavras. Use as faixas de prática abaixo e seus próprios recordes."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "O que é o Teste de Aprendizagem Auditivo-Verbal de Rey (RAVLT)?",
+        "name": "O que acontece se eu digitar errado?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "É um protocolo clínico concebido por André Rey em 1958 para quantificar a taxa de aprendizagem verbal, amplitude de memória imediata, interferência proativa e retroativa, e retenção após intervalo."
+          "@type": "Answer",
+          "text": "Cada palavra precisa ser igual à da lista (maiúsculas e acentos são ignorados). Um erro de digitação conta como palavra extra, e a palavra certa conta como esquecida, então a rodada é perdida."
         }
-    },
-    {
+      },
+      {
+        "@type": "Question",
+        "name": "Qual a diferença entre evocação livre e reconhecimento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Na evocação livre você busca as palavras na memória sem pistas; no reconhecimento escolhe o que já viu entre opções. Este teste de memória verbal usa evocação livre, por isso é mais difícil."
+        }
+      },
+      {
         "@type": "Question",
         "name": "O que é o efeito de posição serial em listas de palavras?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Demonstrado por Bennet B. Murdock Jr. em 1962, indica que a precisão do resgate segue uma curva em U: os primeiros itens beneficiam-se da primazia (consolidação) e os últimos da recência (eco sensorial), deixando os intermediários mais vulneráveis ao esquecimento."
+          "@type": "Answer",
+          "text": "As palavras do começo (primazia) e do fim (recência) de uma lista são lembradas melhor que as do meio (Murdock, 1962). Como aqui todas aparecem juntas, a ordem em que você lê faz esse papel."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "Por que nos esquecemos mais facilmente das palavras do meio?",
+        "name": "Por que ligar as palavras numa cena ajuda?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "As palavras intermediárias sofrem simultaneamente interferência proativa (das palavras anteriores) e interferência retroativa (das palavras seguintes), gerando um gargalo no fluxo da memória operacional."
+          "@type": "Answer",
+          "text": "Pensar no significado ou ligar as palavras faz com que sejam processadas mais a fundo e lembradas melhor (níveis de processamento, Craik & Lockhart, 1972). Com só 2 segundos, uma cena simples é mais realista do que uma história longa."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "Como o encadeamento narrativo amplia a retenção de palavras?",
+        "name": "A ordem das palavras importa na digitação?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "De acordo com os Níveis de Processamento (Craik & Lockhart, 1972), associar palavras isoladas em uma história coerente sintetiza múltiplos itens em um único esquema mental coeso, multiplicando o sucesso no momento do resgate."
+          "@type": "Answer",
+          "text": "Não. A rodada vale se todas as palavras da lista estiverem lá, em qualquer ordem. Vale a pena digitar primeiro as últimas que você leu."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "A ordem das palavras importa na evocação livre?",
+        "name": "Praticar com palavras melhora a memória no dia a dia?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Não. No paradigma de evocação livre, as palavras podem ser digitadas em qualquer ordem arbitrária. A ausência de regras de ordenação permite mensurar o volume de armazenamento independentemente do rastreamento de sequência."
+          "@type": "Answer",
+          "text": "Não há garantia. Com prática você tende a melhorar neste jogo, mas a transferência para o dia a dia é discutida na pesquisa. Este teste não é diagnóstico; se tiver preocupação com sua memória, procure um médico."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "Praticar evocação de palavras melhora a memória em geral?",
+        "name": "Este teste online de memória com palavras é gratuito?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Você aprimorará seu desempenho nesta tarefa e as mnemônicas aprendidas (agrupamento, historinhas mentais) são úteis em estudos e rotinas. Contudo, não representa intervenção médica ou exame de diagnóstico clínico."
+          "@type": "Answer",
+          "text": "Sim, é gratuito, sem cadastro nem instalação. Seus recordes ficam salvos só no navegador."
         }
-    },
-    {
-        "@type": "Question",
-        "name": "Este teste online de memória verbal é gratuito?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sim, o Teste de Memória Verbal do SkillDrills é 100% gratuito, funciona diretamente no navegador sem cadastros ou downloads, e fornece métricas de precisão e amplitude em tempo real."
-        }
-    }
-]
+      }
+    ]
   };
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Como treinar a evocação livre e a capacidade de memória verbal",
-    "description": "Metodologia passo a passo para codificar, vincular narrativamente e recuperar listas progressivas de palavras.",
+    "name": "Como fazer o teste de memória com palavras",
+    "description": "Quatro passos para memorizar uma lista exibida por 2 segundos e digitar as palavras (sessão de 45 segundos).",
     "step": [
-    {
+      {
         "@type": "HowToStep",
-      "position": 1,
-      "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall#step-1",
-        "name": "Leitura e codificação semântica",
-        "text": "Observe as palavras durante a fase de memorização, pronunciando cada uma internamente enquanto constrói uma imagem mental nítida."
-    },
-    {
+        "position": 1,
+        "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall#step-1",
+        "name": "Veja a lista por 2 segundos",
+        "text": "A lista inteira aparece de uma vez por 2 segundos. Leia rápido."
+      },
+      {
         "@type": "HowToStep",
-      "position": 2,
-      "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall#step-2",
-        "name": "Construção de elo narrativo associativo",
-        "text": "Una as palavras em uma micro-história mental contínua (ex.: 'O cavaleiro subiu a montanha segurando uma lanterna dourada') para agrupar as informações."
-    },
-    {
+        "position": 2,
+        "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall#step-2",
+        "name": "Junte numa cena",
+        "text": "Imagine todas as palavras juntas numa cena curta."
+      },
+      {
         "@type": "HowToStep",
-      "position": 3,
-      "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall#step-3",
-        "name": "Descarga imediata de palavras recentes (Recency)",
-        "text": "Assim que a caixa de texto se abrir, digite de imediato as últimas 2 ou 3 palavras enquanto ainda vibram na memória sensorial ecoica."
-    },
-    {
+        "position": 3,
+        "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall#step-3",
+        "name": "Digite primeiro as últimas",
+        "text": "Quando o campo aparecer, digite primeiro as últimas palavras que leu. A ordem não importa."
+      },
+      {
         "@type": "HowToStep",
-      "position": 4,
-      "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall#step-4",
-        "name": "Recuperação da narrativa inicial e envio",
-        "text": "Desenrole sua história mental desde o início para evocar as primeiras palavras, separe-as por espaços e pressione Enter para finalizar."
-    }
-]
+        "position": 4,
+        "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall#step-4",
+        "name": "Envie em até 12 segundos",
+        "text": "Separe as palavras com espaço ou vírgula e envie com Enter. Você tem 12 segundos."
+      }
+    ]
   };
 
   const wordRecallGuide = {
-    heading: "Guia do Teste de Memória Verbal e Evocação Livre",
+    heading: "Guia do teste de memória com palavras (evocação livre)",
     intro: [
-      "O Teste de Memória Verbal (Word Recall) é um exercício neurocognitivo de alta precisão projetado para avaliar e fortalecer a memória de trabalho verbal, a codificação associativa semântica e a capacidade de evocação livre imediata. O paradigma de evocação livre representa um dos desafios mais rigorosos para a arquitetura cognitiva humana, exigindo que o cérebro recupere vocábulos armazenados sem o auxílio de pistas contextuais, lembretes externos ou opções de múltipla escolha.",
-      "A investigação científica da memória verbal teve início com Hermann Ebbinghaus (1885), que formulou matematicamente a curva do esquecimento e a dinâmica do aprendizado serial. Em 1958, o psicólogo suíço André Rey padronizou o Teste de Aprendizagem Auditivo-Verbal de Rey (RAVLT), estabelecendo o padrão global para quantificar o span de memória imediata, a vulnerabilidade a interferências proativas e retroativas, e a retenção tardia em populações clínicas e hígidas.",
-      "Em 1962, Bennet B. Murdock Jr. formalizou matematicamente o efeito de posição serial na evocação livre, distinguindo a operação do efeito de primazia (consolidação na memória de longo prazo dos itens iniciais) e do efeito de recência (manutenção transitória dos últimos itens no buffer fonológico e sensorial). Posteriormente, Fergus I. M. Craik e Robert S. Lockhart (1972) desenvolveram o modelo dos 'Níveis de Processamento', demonstrando que a codificação semântica profunda — como a elaboração narrativa e o agrupamento temático — supera substancialmente a repetição mecânica superficial.",
-      "Com cronometria digital de alta precisão executada no navegador (Woods et al., 2015), este exercício mensura tanto a sua amplitude de retenção de palavras quanto a sua vazão de resgate lexical por meio de um protocolo adaptativo em escada que converge para a sua verdadeira capacidade verbal.",
-      "Metodologia de medição e latência de hardware: Cada evento de interação é registrado localmente por meio do relógio de alta resolução performance.now() do navegador. Os navegadores restringem deliberadamente a granularidade temporal (~1 ms) como salvaguarda contra ataques de temporização (Spectre), e seu monitor quantiza cada atualização visual de acordo com sua taxa de atualização nativa (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz, Woods et al., 2015). Variações inferiores a 5 ms constituem ruído instrumental natural; avalie seu progresso principalmente comparando desempenhos no mesmo equipamento.",
-      "Transparência e privacidade de dados: O SkillDrills não coleta nem armazena quaisquer dados agregados de usuários ou telemetria. Todas as suas pontuações, tempos de reação e avanços de nível permanecem gravados exclusivamente no armazenamento local (localStorage) do seu navegador e jamais são transmitidos a servidores externos. Todos os parâmetros e percentis citados têm como base direta a literatura científica listada nas referências ao final.",
-      "Aviso de saúde e isenção de responsabilidade médica: Este exercício é um jogo cognitivo gratuito executado no navegador voltado para treinamento mental e prática pessoal. Não se trata de um dispositivo médico, ferramenta diagnóstica ou instrumento de intervenção clínica para deficiências cognitivas ou patologias neurológicas. Em caso de dúvidas sobre sua memória ou funções cognitivas, procure orientação de um médico ou neuropsicólogo especializado."
+      "O teste de memória com palavras mostra rapidamente uma lista e depois você digita, em qualquer ordem, as palavras de que lembra. É uma versão de prática da evocação livre estudada pela psicologia da memória e um teste de memória verbal de treino, não um exame clínico nem diagnóstico.",
+      "A pesquisa com listas de palavras começa com Hermann Ebbinghaus (1885). Bennet Murdock (1962) descreveu o efeito de posição serial na evocação livre — começo e fim da lista são lembrados melhor — e Endel Tulving (1962) mostrou que as pessoas agrupam as palavras por conta própria.",
+      "Segundo os níveis de processamento (Craik & Lockhart, 1972), palavras pensadas pelo significado ou ligadas entre si tendem a ficar mais na memória. Com a exibição curta deste jogo, ajuda juntar as palavras rapidamente numa cena.",
+      "Como funciona: começa com 3 palavras; a lista aparece inteira por 2 segundos. Depois você tem 12 segundos para digitar as palavras separadas por espaço ou vírgula e enviar com Enter. Acertou todas sem extras: +1 palavra (máximo 12); faltou alguma, digitou uma errada ou o tempo acabou: −1 palavra (mínimo 3). O jogo registra pontuação, maior lista e precisão (porcentagem de rodadas certas); o tempo de reação não é medido.",
+      "Transparência de dados: a SkillDrills não coleta resultados em servidores; tudo fica no localStorage do navegador. Por isso esta página não mostra médias de usuários, percentis nem número de usuários; os estudos citados estão listados abaixo.",
+      "Aviso: este jogo de prática não é dispositivo médico nem exame diagnóstico. Se tiver preocupação com sua memória, consulte um médico."
     ],
     benchmarks: {
-      title: "Parâmetros Normativos de Evocação Livre Verbal",
-      headers: ["Nível de Desempenho", "Span de Palavras", "Pontuação de Evocação", "Perfil Cognitivo e de Recuperação"],
+      title: "Faixas de prática do teste de memória com palavras (SkillDrills, 45 s)",
+      headers: ["Faixa", "Palavras alcançadas", "Pontos sem erro até lá", "Estratégia típica"],
       rows: [
-        [
-                "Faixa 1",
-                "8 – 11+ Palavras",
-                "1.100+ Pontos",
-                "Mestre em mnemônica; utiliza cadeias narrativas profundas (Craik & Lockhart, 1972); cadência de resgate inferior a 800 ms por palavra"
-        ],
-        [
-                "Faixa 2",
-                "6 – 7 Palavras",
-                "850 – 1.099 Pontos",
-                "Supera a média adulta padrão; agrupa itens em pares ou trios; evocação consistente sob pressão temporal"
-        ],
-        [
-                "Faixa 3",
-                "4 – 5 Palavras",
-                "550 – 849 Pontos",
-                "Média populacional em tentativas iniciais de evocação livre; queda clássica em U nas palavras do meio"
-        ],
-        [
-                "Faixa 4",
-                "3 Palavras",
-                "350 – 549 Pontos",
-                "Depende puramente do eco fonológico sem codificação semântica; dificuldade de ir além do buffer de recência"
-        ],
-        [
-                "Faixa 5",
-                "< 3 Palavras",
-                "< 350 Pontos",
-                "Rápido decaimento do traço de memória; forte interferência proativa; dificuldade de resgate sem pistas"
-        ]
-],
-      note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. O span de palavras reflete o maior comprimento sem erros alcançado na escada adaptativa; as normas refletem o ensaio 1 em adultos (Rey, 1964; Murdock, 1962)."
+        ["Faixa 1", "12 palavras", "cerca de 2.160+", "Junta a lista inteira numa cena na hora"],
+        ["Faixa 2", "10–11 palavras", "cerca de 1.520–2.159", "Agrupa por significado em pares ou trios"],
+        ["Faixa 3", "8–9 palavras", "cerca de 980–1.519", "Lembra começo e fim, perde as do meio"],
+        ["Faixa 4", "6–7 palavras", "cerca de 520–979", "Lê e decora uma palavra por vez"],
+        ["Faixa 5", "3–5 palavras", "menos de 520", "Aprendendo a exibição de 2 s e a digitação"]
+      ],
+      note: "Faixas de prática da SkillDrills, não normas populacionais. Os pontos valem para uma sessão sem erros desde 3 palavras até esse tamanho (pontos por rodada = 150 × (1 + 0,15 × (palavras − 3))). Em 45 segundos cabem poucas rodadas e erros encurtam a lista, então a pontuação real varia."
     },
     techniques: {
-      title: "Protocolos Baseados em Evidências para Expandir a Memória Verbal",
+      title: "Estratégias para lembrar mais palavras",
       items: [
         {
-                "name": "Encadeamento Narrativo Associativo",
-                "desc": "Crie uma micro-história mental inusitada conectando as palavras (Craik & Lockhart, 1972). Ligar 'águia', 'castelo' e 'lanterna' em 'Uma águia segurando uma lanterna acesa pousou no castelo' agrupa 3 itens isolados em uma única cena episódica duradoura.",
-                "tips": "Quanto mais incomum, colorida e fisicamente improvável for a imagem criada, mais marcante será a retenção."
+          "name": "Uma cena só",
+          "desc": "Coloque todas as palavras numa imagem (ex.: 'rio', 'vela', 'dragão' → um dragão segurando uma vela sobre um rio). Ligar pelo significado aprofunda o processamento (Craik & Lockhart, 1972).",
+          "tips": "Mantenha a cena simples para montá-la em 2 segundos."
         },
         {
-                "name": "Codificação Dupla (Imagem Mental + Eco Auditivo)",
-                "desc": "Utilize a teoria da dupla codificação de Allan Paivio visualizando a forma de cada substantivo enquanto pronuncia mentalmente suas sílabas. Criar traços visuais e auditivos simultâneos oferece dois caminhos independentes na recuperação.",
-                "tips": "Visualize a cor e textura do item por meio segundo enquanto pronuncia silenciosamente seu nome."
+          "name": "Agrupar por categoria",
+          "desc": "Junte palavras parecidas: animais, lugares, objetos. As pessoas agrupam palavras naturalmente (Tulving, 1962).",
+          "tips": "Na hora de digitar, lembre categoria por categoria."
         },
         {
-                "name": "Agrupamento Categorial e Semântico",
-                "desc": "Reorganize as palavras mentalmente em categorias lógicas (natureza, construções, metais nobres, ferramentas), independentemente da ordem exibida (Tulving, 1962).",
-                "tips": "Associe palavras por características compartilhadas para gerar facilitação associativa."
+          "name": "As últimas primeiro",
+          "desc": "As palavras recém-lidas somem rápido (recência). Digite-as primeiro e depois recupere o começo e o meio (Murdock, 1962).",
+          "tips": "A ordem da digitação não afeta a pontuação."
         },
         {
-                "name": "Estratégia de Despejo da Recência Primeiro",
-                "desc": "No momento em que a digitação for liberada, escreva de imediato as 2 ou 3 últimas palavras (Murdock, 1962). Elas residem na frágil memória sensorial e decaem em 3 a 5 segundos; descarregá-las primeiro desocupa a mente para resgatar a narrativa inicial.",
-                "tips": "Digite logo as palavras finais que você acabou de ver e depois relaxe para puxar o início da sua história."
+          "name": "Cuidado com erros de digitação",
+          "desc": "Um erro de digitação conta como palavra errada e faz perder a rodada inteira. Digitar com precisão nos 12 segundos é essencial.",
+          "tips": "Chutar uma palavra que não estava na lista também faz perder a rodada."
         }
-]
+      ]
     },
     steps: [
-      "Mantenha o foco visual no centro da área de exibição durante toda a fase de apresentação.",
-      "Conforme as palavras surgirem, conecte-as imediatamente em uma história mental vívida.",
-      "Gere imagens mentais com detalhes nítidos para fixar traços mnemônicos de dupla via.",
-      "Assim que a digitação abrir, envie primeiro os itens finais e depois desdobre sua narrativa.",
-      "Deixe o sistema adaptativo mapear e ampliar progressivamente os limites da sua memória verbal."
-],
-    audience: "Estudantes em preparação para concursos, profissionais e entusiastas do treino cognitivo que buscam expandir a memória de trabalho verbal.",
+      "Inicie a sessão de 45 segundos e olhe para a área das palavras no centro.",
+      "Leia rápido a lista que aparece por 2 segundos e junte as palavras numa cena.",
+      "No campo de texto, digite primeiro as últimas palavras que leu.",
+      "Digite todas as palavras separadas por espaço ou vírgula em até 12 segundos e envie com Enter.",
+      "Acertos aumentam a lista e erros diminuem: compare pontuação e maior lista com seus próprios recordes."
+    ],
+    audience: "Estudantes, concurseiros, profissionais e curiosos que querem saber quantas palavras conseguem memorizar.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('craik1972', 'murdock1962', 'tulving1962', 'woods2015'),
+    sources: pickSources('craik1972', 'murdock1962', 'tulving1962'),
     related: [
       { href: "/pt/drills/memory/short-term-memory/digit-span", label: "Teste de memória de dígitos" },
       { href: "/pt/drills/memory/short-term-memory/color-sequence", label: "Jogo de memória de cores" },
@@ -358,8 +332,8 @@ export default function LocalizedWordRecallPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <WordRecallClient copy={{
-          "h1Keyword": "Teste de memória verbal",
-          "h1Suffix": " – Evocação livre de palavras",
+          "h1Keyword": "Teste de memória com palavras",
+          "h1Suffix": " – Memória verbal",
           "subtitle": "Memorize palavras e faça a evocação livre",
           "statScore": "Pontos",
           "statTime": "Tempo",
@@ -396,19 +370,19 @@ export default function LocalizedWordRecallPage() {
                               "num": "2",
                               "text": "Bônus de Nível",
                               "highlight": "Até +135%",
-                              "result": "Listas maiores concedem significativamente mais pontos por rodada"
+                              "result": "Rodada = 150 × (1 + 0,15 × (palavras − 3)) pontos"
                     },
                     {
                               "num": "3",
                               "text": "Erro / Tempo Esgotado",
                               "highlight": "-1 Palavra",
-                              "result": "Sem perda de pontos; o comprimento se ajusta reduzindo 1 palavra"
+                              "result": "Faltou, errou ou passou de 12 s: sem perder pontos nem tempo, 1 palavra a menos"
                     },
                     {
                               "num": "4",
                               "text": "Span Adaptativo",
                               "highlight": "Sobe e Desce",
-                              "result": "Converge com precisão para seu verdadeiro limiar de memória verbal"
+                              "result": "Todas certas +1 palavra, erro −1 palavra (3 a 12)"
                     }
           ],
           "wordBank": [

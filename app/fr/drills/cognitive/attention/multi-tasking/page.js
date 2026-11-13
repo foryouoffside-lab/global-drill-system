@@ -76,7 +76,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Task_switching_(psychology)", "https://en.wikipedia.org/wiki/Human_multitasking"],
   "name": "Test de multitâche – suivi de deux flux",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",

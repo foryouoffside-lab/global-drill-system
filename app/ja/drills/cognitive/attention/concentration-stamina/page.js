@@ -64,7 +64,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Vigilance_(psychology)", "https://en.wikipedia.org/wiki/Attention"],
   "name": "集中力テスト・持続的注意セルフチェック",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",

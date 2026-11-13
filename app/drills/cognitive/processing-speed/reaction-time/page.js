@@ -63,14 +63,14 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "Choice Reaction Time Test — Neuro Speed & Reflex Drill",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Free choice reaction time test online. Measure decision-making latency, visual discrimination speed, and cognitive flexibility under dynamic rule-switching pressure.",
+  "description": "Free choice reaction time test online. A red and a blue target appear together; tap the one the rule banner names before the pair moves on, while the rule flips and the time window shrinks.",
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/reaction-time",
   "publisher": {
     "@type": "Organization",
@@ -78,7 +78,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -95,7 +95,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/reaction-time",
   "inLanguage": "en-US",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -103,7 +103,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Neuro Speed & Reflex Test – Choice Reaction Game",
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/reaction-time",
-  "description": "Free choice reaction time test online. Measure decision-making latency, visual discrimination speed, and cognitive flexibility under dynamic rule-switching pressure.",
+  "description": "Free choice reaction time test online. A red and a blue target appear together; tap the one the rule banner names before the pair moves on, while the rule flips and the time window shrinks.",
   "genre": [
     "Action",
     "Brain Game",
@@ -115,7 +115,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -164,7 +164,7 @@ const faqSchema = {
       "name": "How does rule switching add cognitive complexity?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Flipping the target colour means you must stop using the old rule and apply the new one. Task-switching studies generally find a slowdown right after a switch, which is why this drill changes the rule during play."
+        "text": "Each trial shows one red and one blue target, and the banner says which to tap. From level 2 the rule flips between RED and BLUE after a run of correct hits, and the run gets shorter as your level climbs (down to 2 hits). Task-switching studies generally find a slowdown right after a switch, which is why this drill changes the rule during play."
       }
     },
     {
@@ -188,7 +188,7 @@ const faqSchema = {
       "name": "How does hardware affect reaction time measurement?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Display refresh latency (16.7ms at 60Hz vs 4.1ms at 240Hz) and mouse polling rate introduce hardware quantization (Woods et al., 2015). Differences under ~5ms reflect measurement noise."
+        "text": "This drill does not report reaction times in milliseconds; it reports score, accuracy, peak level and best combo. Display refresh and input latency still add a few milliseconds to every response in a browser (Woods et al., 2015), so compare your own runs on the same device."
       }
     },
     {
@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "What is the optimal training routine?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Short, regular sessions of a few minutes under the same conditions are easier to compare than one long session. Stop when accuracy drops."
+        "text": "Short, regular sessions under the same conditions are easier to compare than one long session. Each run starts with 45 seconds; every correct tap adds 2 seconds (up to 60), and a wrong tap or a timeout costs 1 second and resets your combo. Stop when accuracy drops."
       }
     },
     {
@@ -214,7 +214,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Choice Reaction Time Test",
-  "description": "Free choice reaction time test online. Measure decision-making latency, visual discrimination speed, and cognitive flexibility under dynamic rule-switching pressure.",
+  "description": "Free choice reaction time test online. A red and a blue target appear together; tap the one the rule banner names before the pair moves on, while the rule flips and the time window shrinks.",
   "step": [
     {
       "@type": "HowToStep",
@@ -234,14 +234,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Execute Ballistic Choice Tap",
-      "text": "Tap or click the valid target with maximum precision before its expiration timer runs out.",
+      "text": "Tap or click the target that matches the rule before the pair times out. Each correct tap adds 2 seconds, up to 60.",
       "url": "https://skilldrills.online/drills/cognitive/processing-speed/reaction-time#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Adapt Instantly to Rule Inversions",
-      "text": "When the rule banner switches, immediately suppress the old rule and tap the newly designated color.",
+      "text": "From level 2 the rule flips between RED and BLUE. A wrong tap or a timeout costs 1 second and resets your combo.",
       "url": "https://skilldrills.online/drills/cognitive/processing-speed/reaction-time#step-4"
     }
   ]
@@ -252,20 +252,23 @@ const guideProps = {
   intro: {
     title: "Choice Reaction Time Test Guide & Decision Speed Benchmarks",
     paragraphs: [
-      "Free choice reaction time test online. Measure decision-making latency, visual discrimination speed, and cognitive flexibility under dynamic rule-switching pressure.",
+      "Free choice reaction time test online. A red and a blue target appear together; tap the one the rule banner names before the pair moves on, while the rule flips and the time window shrinks.",
       "Simple reaction time (SRT) requires responding to a single predictable stimulus. Choice reaction time adds a decision-making stage, so it is slower than simple reaction time (Donders, 1868).",
       "Hick's Law states that choice reaction time increases logarithmically as a function of the number of stimulus-response alternatives available: RT = a + b * log2(n).",
     ],
   },
   benchmarks: {
-    title: 'Accuracy Bands for Your Own Sessions',
-    headers: ['Tier', 'Label', 'Accuracy'],
+    title: 'SkillDrills Practice Bands',
+    note: 'Bands come from the end-screen grade formula (score compared with a 22,000-point SkillDrills reference). They are practice markers, not population statistics or reaction-time norms.',
+    headers: ['Grade', 'Label', 'Score'],
     rows: [
-      { tier: 'Tier 1', rank: 'Very consistent', accuracy: '98%+' },
-      { tier: 'Tier 2', rank: 'Strong', accuracy: '94-97%' },
-      { tier: 'Tier 3', rank: 'Solid', accuracy: '88-93%' },
-      { tier: 'Tier 4', rank: 'Developing', accuracy: '78-87%' },
-      { tier: 'Tier 5', rank: 'Starting out', accuracy: '<78%' },
+      ['S+', 'Legendary', '19,855+'],
+      ['S', 'Elite', '15,895-19,854'],
+      ['A', 'Excellent', '12,375-15,894'],
+      ['B', 'Great', '7,920-12,374'],
+      ['C', 'Good', '4,455-7,919'],
+      ['D', 'Keep Going', '1,980-4,454'],
+      ['F', 'Needs Practice', 'Under 1,980'],
     ],
   },
   protocols: {
@@ -274,8 +277,8 @@ const guideProps = {
     items: [
       { title: "Inspect the Active Rule Banner", description: "Note the active color target rule displayed at the top of the canvas." },
       { title: "Discriminate Target Nodes", description: "As targets spawn across the field, instantly evaluate which node matches the active rule color." },
-      { title: "Execute Ballistic Choice Tap", description: "Tap or click the valid target with maximum precision before its expiration timer runs out." },
-      { title: "Adapt Instantly to Rule Inversions", description: "When the rule banner switches, immediately suppress the old rule and tap the newly designated color." },
+      { title: "Execute Ballistic Choice Tap", description: "Tap or click the target that matches the rule before the pair times out. Each correct tap adds 2 seconds, up to 60." },
+      { title: "Adapt Instantly to Rule Inversions", description: "From level 2 the rule flips between RED and BLUE. A wrong tap or a timeout costs 1 second and resets your combo." },
     ],
   },
   faqs: {

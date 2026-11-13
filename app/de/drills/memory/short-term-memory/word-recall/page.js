@@ -56,19 +56,19 @@ export default function LocalizedWordRecallPage() {
       { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "Gedächtnistraining", "item": "https://skilldrills.online/de/drills/memory" },
       { "@type": "ListItem", "position": 3, "name": "Kurzzeitgedächtnis", "item": "https://skilldrills.online/de/drills/memory/short-term-memory" },
-      { "@type": "ListItem", "position": 4, "name": "Verbaler Gedächtnistest", "item": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall" }
+      { "@type": "ListItem", "position": 4, "name": "Wortgedächtnis Test", "item": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Verbaler Gedächtnistest (Wortlisten-Recall Test)",
+    "name": "Wortgedächtnis Test online",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Kostenloser neuropsychologischer Gedächtnistest im Browser zur Messung von freier Wortwiedergabe, semantischer Enkodierung und verbaler Arbeitsgedächtnisspanne.",
+    "description": "Kostenloser Wortgedächtnis Test: Eine Wortliste ist 2 Sekunden sichtbar, danach tippst du die Wörter in beliebiger Reihenfolge ein. Start mit 3 Wörtern.",
     "genre": "Cognitive Assessment / Verbal Memory",
     "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall",
     "publisher": {
@@ -81,10 +81,10 @@ export default function LocalizedWordRecallPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Verbaler Gedächtnistest (Wortlisten-Recall Test)",
+    "name": "Wortgedächtnis Test online",
     "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall",
-    "description": "Kostenloser neuropsychologischer Gedächtnistest im Browser zur Messung von freier Wortwiedergabe, semantischer Enkodierung und verbaler Arbeitsgedächtnisspanne.",
-    "dateModified": "2026-09-05",
+    "description": "Kostenloser Wortgedächtnis Test: Eine Wortliste ist 2 Sekunden sichtbar, danach tippst du die Wörter in beliebiger Reihenfolge ein. Start mit 3 Wörtern.",
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
@@ -95,8 +95,8 @@ export default function LocalizedWordRecallPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Verbaler Gedächtnistest (Wortlisten-Recall Test)",
-    "description": "Kostenloser neuropsychologischer Gedächtnistest im Browser zur Messung von freier Wortwiedergabe, semantischer Enkodierung und verbaler Arbeitsgedächtnisspanne.",
+    "name": "Wortgedächtnis Test online",
+    "description": "Kostenloser Wortgedächtnis Test: Eine Wortliste ist 2 Sekunden sichtbar, danach tippst du die Wörter in beliebiger Reihenfolge ein. Start mit 3 Wörtern.",
     "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall",
     "genre": ["Memory Game", "Cognitive Training", "Brain Game"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
@@ -117,212 +117,185 @@ export default function LocalizedWordRecallPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "mainEntity": [
-    {
+      {
         "@type": "Question",
-        "name": "Was ist der verbale Gedächtnistest (Word Recall)?",
+        "name": "Wie funktioniert dieser Wortgedächtnis Test?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ein neuropsychologisches Verfahren zur Messung des verbalen Kurzzeitgedächtnisses, der Arbeitsgedächtnisspanne und der unmittelbaren freien Wiedergabe. Teilnehmer prägen sich Wortlisten ein und reproduzieren ohne Reihenfolgebeschränkung so viele Wörter wie möglich."
+          "@type": "Answer",
+          "text": "Eine Wortliste erscheint 2 Sekunden lang auf einmal. Danach tippst du innerhalb von 12 Sekunden alle Wörter, die du behalten hast, getrennt durch Leerzeichen oder Komma, und schickst mit Enter ab. Die Reihenfolge ist egal (freie Wiedergabe). Du startest mit 3 Wörtern; sind alle richtig und kein falsches dabei, kommt ein Wort dazu (maximal 12), sonst fällt eins weg (mindestens 3). Ein Lauf dauert 45 Sekunden."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "Was unterscheidet freie Wiedergabe (Free Recall) von Wiedererkennen (Recognition)?",
+        "name": "Wie wird die Punktzahl berechnet?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wiedererkennen erfordert lediglich die passive Identifikation zuvor gesehener Reize. Freie Wiedergabe verlangt das aktive, ungestützte Auffinden von Gedächtnisspuren im Gehirn, was kognitiv wesentlich anspruchsvoller ist und die wahre Speicherkapazität abbildet."
+          "@type": "Answer",
+          "text": "Nur Runden, in denen du alle Wörter ohne zusätzliche Wörter eingibst, bringen Punkte: 150 × (1 + 0,15 × (Wörter − 3)). 3 Wörter = 150 Punkte, 12 Wörter = rund 353 Punkte. Fehler kosten weder Punkte noch Zeit, nur ein Wort Listenlänge."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "Was ist ein durchschnittliches Ergebnis bei einem Wortabruftest?",
+        "name": "Wie viele Wörter kann man sich durchschnittlich merken?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "In klinischen Standardtests wie dem RAVLT erinnern gesunde Erwachsene im ersten Durchgang einer unbekannten Liste im Schnitt etwa 4 bis 6 Wörter. Mnemotechniken können diese Spanne deutlich erweitern."
+          "@type": "Answer",
+          "text": "SkillDrills sammelt keine Nutzerdaten und nennt daher keine Durchschnitte oder Perzentile. Wegen 2 Sekunden Anzeige und 12 Sekunden Eingabezeit ist das Spiel nicht mit klinischen Wortlisten-Tests vergleichbar. Vergleiche dich mit den Übungsstufen unten und deinen eigenen Bestwerten."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "Was ist der Rey Auditory Verbal Learning Test (RAVLT)?",
+        "name": "Was passiert bei Tippfehlern?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ein 1958 von André Rey entwickelter klinischer Test zur quantitativen Erfassung von Lernrate, verbaler Merkspanne, retroaktiver und proaktiver Interferenz sowie verzögertem Abruf über mehrere Durchgänge."
+          "@type": "Answer",
+          "text": "Jedes Wort muss genau mit der Liste übereinstimmen (Groß-/Kleinschreibung und Akzente werden ignoriert). Ein Tippfehler zählt als falsches Wort, und das richtige Wort gilt als vergessen, also ist die Runde verloren."
         }
-    },
-    {
+      },
+      {
+        "@type": "Question",
+        "name": "Was unterscheidet freie Wiedergabe von Wiedererkennen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bei der freien Wiedergabe holst du die Wörter ohne Hinweise aus dem Gedächtnis; beim Wiedererkennen wählst du Gesehenes aus Vorgaben aus. Dieser Test nutzt freie Wiedergabe und ist daher schwerer."
+        }
+      },
+      {
         "@type": "Question",
         "name": "Was ist der serielle Positionseffekt bei Wortlisten?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "1962 von Bennet B. Murdock Jr. mathematisch beschrieben: Die Wiedergabewahrscheinlichkeit folgt einer U-Kurve. Erste Wörter profitieren vom Primacy-Effekt (Langzeitspeicherung), letzte Wörter vom Recency-Effekt (flüchtiger Echospeicher), während die Mitte am stärksten vergessen wird."
+          "@type": "Answer",
+          "text": "Wörter am Anfang (Primacy) und am Ende (Recency) einer Liste werden besser behalten als die in der Mitte (Murdock, 1962). Da hier alle Wörter gleichzeitig erscheinen, übernimmt deine Lesereihenfolge diese Rolle."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "Warum vergisst man Wörter in der Mitte einer Liste am schnellsten?",
+        "name": "Warum hilft es, Wörter zu einem Bild zu verknüpfen?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mittlere Wörter leiden unter doppelter Interferenz: proaktiver Interferenz durch vorangegangene Wörter und retroaktiver Interferenz durch nachfolgende Wörter, was zu einem Engpass im Arbeitsgedächtnis führt."
+          "@type": "Answer",
+          "text": "Wer über die Bedeutung nachdenkt oder Wörter verbindet, verarbeitet sie tiefer und behält sie meist besser (Verarbeitungstiefe, Craik & Lockhart, 1972). Bei nur 2 Sekunden ist eine einfache gemeinsame Szene realistischer als eine lange Geschichte."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
-        "name": "Wie verbessert narrative Verknüpfung das Behalten von Wörtern?",
+        "name": "Spielt die Reihenfolge bei der Eingabe eine Rolle?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Gemäß dem Levels-of-Processing-Modell (Craik & Lockhart, 1972) überführt tiefe semantische Elaboration isolierte Wörter in ein zusammenhängendes episodisches Schema, was die Wiederauffindbarkeit im Gedächtnis vervielfacht."
+          "@type": "Answer",
+          "text": "Nein. Die Runde zählt, wenn alle Wörter der Liste enthalten sind, egal in welcher Reihenfolge. Es lohnt sich, die zuletzt gelesenen Wörter zuerst zu tippen."
         }
-    },
-    {
-        "@type": "Question",
-        "name": "Spielt die Reihenfolge bei der freien Wiedergabe eine Rolle?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nein. Beim Free-Recall-Paradigma dürfen die Wörter in beliebiger Reihenfolge eingegeben werden. Ohne serielle Restriktionen wird das reine Speichervolumen anstatt der Sequenzkontrolle gemessen."
-        }
-    },
-    {
+      },
+      {
         "@type": "Question",
         "name": "Verbessert dieses Training das Gedächtnis im Alltag?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sie verbessern sich gezielt bei dieser Aufgabe, und erlernte Strategien (Geschichtenmethode, semantische Gruppierung) lassen sich auf Einkaufszettel oder Lernstoff übertragen. Es handelt sich jedoch um kein Medizinprodukt oder Diagnoseinstrument."
+          "@type": "Answer",
+          "text": "Das ist nicht garantiert. Mit Übung wird man in genau diesem Spiel meist besser; ob sich das auf den Alltag überträgt, ist in der Forschung umstritten. Der Test ist kein Diagnoseverfahren; bei Gedächtnissorgen wende dich an eine Ärztin oder einen Arzt."
         }
-    },
-    {
+      },
+      {
         "@type": "Question",
         "name": "Ist dieser Online-Wortgedächtnistest kostenlos?",
         "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja, der SkillDrills Wort-Recall-Test ist zu 100 % kostenlos, läuft vollständig clientseitig im Browser ohne Registrierung und liefert sofortige Auswertungen Ihrer verbalen Gedächtnisleistung."
+          "@type": "Answer",
+          "text": "Ja, kostenlos, ohne Installation und ohne Konto. Deine Bestwerte bleiben nur im Browser gespeichert."
         }
-    }
-]
+      }
+    ]
   };
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Wie man die verbale freie Wiedergabe und Wortspanne trainiert",
-    "description": "Schritt-für-Schritt-Methode zur Verknüpfung von Wortlisten durch narrative Verknüpfung und sofortiges Entladen des Recency-Puffers.",
+    "name": "So funktioniert der Wortgedächtnis Test",
+    "description": "In 4 Schritten eine 2 Sekunden sichtbare Wortliste merken und eintippen (45-Sekunden-Lauf).",
     "step": [
-    {
+      {
         "@type": "HowToStep",
-      "position": 1,
-      "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall#step-1",
-        "name": "Aufmerksamkeitsfokus und semantische Enkodierung",
-        "text": "Fixieren Sie die Wörter in der Präsentationsphase, sprechen Sie jedes Wort innerlich aus und erzeugen Sie eine lebendige visuelle Vorstellung."
-    },
-    {
+        "position": 1,
+        "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall#step-1",
+        "name": "Wortliste 2 Sekunden ansehen",
+        "text": "Die ganze Liste erscheint auf einmal für 2 Sekunden. Lies sie zügig durch."
+      },
+      {
         "@type": "HowToStep",
-      "position": 2,
-      "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall#step-2",
-        "name": "Konstruktion einer assoziativen Minigeschichte",
-        "text": "Verbinden Sie die Wörter zu einer zusammenhängenden, übertriebenen Bildgeschichte (z. B. 'Der Ritter erstieg den Berg mit einer Laterne')."
-    },
-    {
+        "position": 2,
+        "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall#step-2",
+        "name": "Zu einer Szene verbinden",
+        "text": "Stell dir alle Wörter in einer kurzen gemeinsamen Szene vor."
+      },
+      {
         "@type": "HowToStep",
-      "position": 3,
-      "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall#step-3",
-        "name": "Sofortiges Niederschreiben der letzten Wörter (Recency)",
-        "text": "Tippen Sie bei Freigabe des Eingabefeldes sofort die letzten 2-3 Wörter ein, solange sie im flüchtigen echoischen Kurzzeitspeicher liegen."
-    },
-    {
+        "position": 3,
+        "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall#step-3",
+        "name": "Letzte Wörter zuerst tippen",
+        "text": "Sobald das Eingabefeld erscheint, tippe zuerst die zuletzt gelesenen Wörter. Die Reihenfolge ist egal."
+      },
+      {
         "@type": "HowToStep",
-      "position": 4,
-      "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall#step-4",
-        "name": "Abrufen der Geschichte und Absenden",
-        "text": "Rollen Sie anschließend Ihre Eingangsgeschichte von vorne auf, tippen Sie die restlichen Wörter getrennt durch Leerzeichen ein und senden Sie ab."
-    }
-]
+        "position": 4,
+        "url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall#step-4",
+        "name": "Innerhalb von 12 Sekunden absenden",
+        "text": "Trenne die Wörter mit Leerzeichen oder Komma und schicke sie mit Enter ab. Für die Eingabe hast du 12 Sekunden."
+      }
+    ]
   };
 
   const wordRecallGuide = {
-    heading: "Leitfaden zum verbalen Gedächtnistest & Freie Wiedergabe",
+    heading: "Wortgedächtnis Test – Leitfaden zur freien Wiedergabe",
     intro: [
-      "Der verbale Gedächtnistest (Word Recall) ist eine anspruchsvolle kognitive Übung zur Erfassung und Stärkung des verbalen Arbeitsgedächtnisses, der semantischen Assoziationsbildung und der freien Wiedergabekapazität. Die freie Wiedergabe (Free Recall) gilt als einer der härtesten Prüfsteine der menschlichen Kognition, da das Gehirn gespeicherte Begriffe ohne externe Hilfen, Rekognitionshinweise oder Multiple-Choice-Optionen aus dem Gedächtnisspeicher abrufen muss.",
-      "Die wissenschaftliche Erforschung des verbalen Gedächtnisses begann mit Hermann Ebbinghaus (1885), der die mathematische Vergessenskurve und die Dynamik des seriellen Lernens formulierte. 1958 standardisierte der Schweizer Psychologe André Rey den Rey Auditory Verbal Learning Test (RAVLT), um Wortlistenlernen, proaktive und retroaktive Interferenzanfälligkeit sowie verzögerten Abruf in klinischen und gesunden Stichproben zu quantifizieren.",
-      "Bennet B. Murdock Jr. formalisierte 1962 den seriellen Positionseffekt bei freier Wiedergabe und wies die Mechanismen des Primacy-Effekts (Langzeitkonsolidierung der ersten Wörter) und des Recency-Effekts (flüchtige Aufrechterhaltung im sensorisch-echoischen Puffer) nach. Craik & Lockhart (1972) bewiesen im 'Levels of Processing'-Ansatz, dass tiefe semantische Einbettung – wie narrative Verknüpfungen und thematisches Clustern – dem oberflächlichen Wiederholen weit überlegen ist.",
-      "Dank browserbasierter digitaler Hochpräzisionschronometrie (Woods et al., 2015) misst dieser Drill sowohl Ihre Wortspanne als auch Ihre Abrufrate objektiv über ein adaptives Treppenstufenverfahren (Staircase-Protokoll), das sich präzise an Ihre individuelle Leistungsgrenze annähert.",
-      "Messmethodik & Hardwarelatenz: Jedes Interaktionsereignis wird lokal im Browser über performance.now() erfasst. Zu beachten ist, dass moderne Browser Zeitgeber zum Schutz vor Timing-Angriffen (Spectre) auf etwa 1 ms runden und Bildschirme Ereignisse auf ihr jeweiliges Bildwiederholintervall quantisieren – etwa 16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz (Woods et al., 2015). Abweichungen unter 5 ms sind als reguläres Messrauschen zu betrachten; vergleichen Sie eigene Trainingsdurchläufe primär auf identischer Hardware.",
-      "Datentransparenz: SkillDrills erhebt keinerlei aggregierte Nutzerdaten oder zentrale Analysen. Ihre Testergebnisse, Fehlerquoten und Einstellungen werden ausschließlich im lokalen Speicher (LocalStorage) Ihres Browsers gesichert und niemals an externe Server übertragen. Sämtliche Richtwerte und Normen stammen aus den unten zitierten wissenschaftlichen Publikationen.",
-      "Medizinischer Hinweis: Dieser Drill dient als kostenlose kognitive Trainingsübung zu Trainings- und Bildungszwecken. Er stellt kein Medizinprodukt, kein diagnostisches Instrument und kein therapeutisches Verfahren für kognitive Störungen oder neurodegenerative Erkrankungen dar. Bei gesundheitlichen Fragen oder Bedenken bezüglich Ihres Gedächtnisses wenden Sie sich bitte an qualifizierte Ärzte oder neuropsychologisches Fachpersonal."
+      "Der Wortgedächtnis Test zeigt dir kurz eine Wortliste; danach tippst du alle Wörter, die du dir merken konntest, in beliebiger Reihenfolge ein. Er ist eine Übungsversion der freien Wiedergabe aus der Gedächtnispsychologie und kein klinischer Test oder Diagnoseverfahren.",
+      "Die Forschung zu Wortlisten beginnt mit Hermann Ebbinghaus (1885). Bennet Murdock (1962) beschrieb bei freier Wiedergabe den seriellen Positionseffekt – Anfang und Ende einer Liste bleiben besser hängen –, und Endel Tulving (1962) zeigte, dass Menschen Wörter von sich aus zu Gruppen ordnen.",
+      "Nach dem Ansatz der Verarbeitungstiefe (Craik & Lockhart, 1972) bleiben Wörter besser haften, wenn man über ihre Bedeutung nachdenkt oder sie verknüpft. Bei der kurzen Anzeige in diesem Spiel hilft es, die Wörter schnell zu einer Szene zu verbinden.",
+      "So läuft der Test: Start mit 3 Wörtern; die ganze Liste erscheint 2 Sekunden lang auf einmal. Danach hast du 12 Sekunden, um die Wörter getrennt durch Leerzeichen oder Komma einzutippen und mit Enter abzusenden. Sind alle richtig und kein falsches dabei, kommt ein Wort dazu (maximal 12); fehlt eins, ist eins falsch oder läuft die Zeit ab, fällt eins weg (mindestens 3). Aufgezeichnet werden Punktzahl, längste Liste und Trefferquote (Anteil gelöster Runden); Reaktionszeiten werden nicht gemessen.",
+      "Datentransparenz: SkillDrills sammelt keine Ergebnisse auf Servern. Alle Werte bleiben im localStorage deines Browsers, deshalb nennt diese Seite keine Nutzerdurchschnitte, Perzentile oder Nutzerzahlen; die zitierten Studien stehen unten.",
+      "Medizinischer Hinweis: Dieses Übungsspiel ist kein Medizinprodukt und kein Diagnoseverfahren. Bei Sorgen um dein Gedächtnis wende dich an eine Fachärztin oder einen Facharzt."
     ],
     benchmarks: {
-      title: "Normative Benchmarks für verbale freie Wiedergabe",
-      headers: ["Leistungsstufe", "Wortspanne (Anzahl)", "Freie Wiedergabe Punkte", "Kognitives Profil & Abrufverhalten"],
-      note: "Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.",
+      title: "Wortgedächtnis Test – Übungsstufen (SkillDrills, 45-Sekunden-Lauf)",
+      headers: ["Übungsstufe", "Erreichte Wortanzahl", "Punkte bei fehlerfreiem Lauf", "Typische Merkstrategie"],
       rows: [
-        [
-                "Stufe 1",
-                "8 – 11+ Wörter",
-                "1.100+ Punkte",
-                "Mnemotechnischer Meister; nutzt narrative Ketten; überwindet retroaktive Interferenz mühelos; Abruftakt unter 800 ms"
-        ],
-        [
-                "Stufe 2",
-                "6 – 7 Wörter",
-                "850 – 1.099 Punkte",
-                "Übertrifft Standard-Erwachsenennorm; gruppiert Wörter paarweise; stabiler Abruf unter Zeitdruck"
-        ],
-        [
-                "Stufe 3",
-                "4 – 5 Wörter",
-                "550 – 849 Punkte",
-                "Normbereich bei unvertrauten Listen im ersten Durchgang; zeigt typischen U-Kurven-Abfall in der Listenmitte"
-        ],
-        [
-                "Stufe 4",
-                "3 Wörter",
-                "350 – 549 Punkte",
-                "Stützt sich rein auf den phonologischen Echospeicher ohne semantische Kodierung"
-        ],
-        [
-                "Stufe 5",
-                "< 3 Wörter",
-                "< 350 Punkte",
-                "Schneller Zerfall von Gedächtnisspuren; hohe Anfälligkeit für proaktive Interferenz"
-        ]
-],
-      note: "Die Wortspanne gibt die maximale fehlerfreie Listenlänge auf der adaptiven Treppe an; Normwerte spiegeln Durchgang 1 bei Erwachsenen wider (Rey, 1964; Murdock, 1962)."
+        ["Stufe A", "12 Wörter", "ca. 2.160+", "Ganze Liste sofort zu einer Szene verbunden"],
+        ["Stufe B", "10–11 Wörter", "ca. 1.520–2.159", "Wörter nach Bedeutung in 2er/3er-Gruppen"],
+        ["Stufe C", "8–9 Wörter", "ca. 980–1.519", "Anfang und Ende sitzen, Wörter in der Mitte fehlen"],
+        ["Stufe D", "6–7 Wörter", "ca. 520–979", "Wörter einzeln gelesen und gemerkt"],
+        ["Stufe E", "3–5 Wörter", "unter 520", "2-Sekunden-Anzeige und Eingabe kennenlernen"]
+      ],
+      note: "SkillDrills-Übungsstufen, keine Bevölkerungsnormen. Die Punkte gelten für einen fehlerfreien Lauf ab 3 Wörtern bis zu dieser Länge (Punkte pro Runde = 150 × (1 + 0,15 × (Wörter − 3))). In 45 Sekunden sind nur begrenzt viele Runden möglich und Fehler verkürzen die Liste, daher weichen echte Werte ab."
     },
     techniques: {
-      title: "Evidenzbasierte Protokolle zur Erweiterung der verbalen Wortspanne",
+      title: "Strategien, um mehr Wörter zu merken",
       items: [
         {
-                "name": "Narrative Verknüpfung & Assoziationsketten",
-                "desc": "Verbinden Sie unzusammenhängende Wörter zu einer lebhaften, bizarren Minigeschichte (Craik & Lockhart, 1972). 'Adler', 'Schloss' und 'Laterne' zu 'Ein Adler mit brennender Laterne landete auf dem Schloss' verschmilzt 3 Token zu einer Szene.",
-                "tips": "Je übertriebener, farbenfroher und physikalisch unmöglicher das Vorstellungsbild, desto haltbarer die Gedächtnisspur."
+          "name": "Eine gemeinsame Szene bilden",
+          "desc": "Setze alle Wörter in ein Bild (z. B. „Fluss“, „Kerze“, „Drache“ → ein Drache mit Kerze über einem Fluss). Bedeutungsvolles Verknüpfen sorgt für tiefere Verarbeitung (Craik & Lockhart, 1972).",
+          "tips": "Halte die Szene einfach, damit sie in 2 Sekunden steht."
         },
         {
-                "name": "Duale Kodierung (Mentales Bild + Auditiver Echo)",
-                "desc": "Aktivieren Sie Allan Paivios duale Kodierung, indem Sie das Aussehen jedes Substantivs visualisieren und gleichzeitig den Klang innerlich artikulieren.",
-                "tips": "Stellen Sie sich Farbe und Struktur des Gegenstands für eine halbe Sekunde bildhaft vor."
+          "name": "Nach Kategorien ordnen",
+          "desc": "Fasse ähnliche Wörter zusammen, etwa Tiere, Orte, Gegenstände. Menschen gruppieren Wörter von sich aus (Tulving, 1962).",
+          "tips": "Ruf die Wörter auch beim Tippen Kategorie für Kategorie ab."
         },
         {
-                "name": "Kategoriale & Semantische Clusterung",
-                "desc": "Organisieren Sie die Liste mental in Sinneinheiten um (Natur, Bauwerke, Edelmetalle, Werkzeuge), unabhängig von der Einblendreihenfolge (Tulving, 1962).",
-                "tips": "Vergeben Sie mentale Schlagwörter für gemeinsame Eigenschaften."
+          "name": "Die letzten Wörter zuerst",
+          "desc": "Frisch gelesene Wörter verblassen schnell (Recency). Tippe sie zuerst und hol dann Anfang und Mitte zurück (Murdock, 1962).",
+          "tips": "Die Reihenfolge der Eingabe beeinflusst die Wertung nicht."
         },
         {
-                "name": "Recency-First Entladestrategie",
-                "desc": "Tippen Sie bei Beginn der Eingabephase sofort die letzten 2-3 Wörter ein (Murdock, 1962). Diese liegen noch im flüchtigen Echospeicher vor und verblassen nach 3 bis 5 Sekunden.",
-                "tips": "Zuerst die frischesten Wörter abladen, danach entspannt die Anfangsgeschichte abrufen."
+          "name": "Auf Tippfehler achten",
+          "desc": "Ein Tippfehler zählt als falsches Wort und kostet die ganze Runde. Genau tippen ist innerhalb der 12 Sekunden wichtiger als raten.",
+          "tips": "Unsichere Wörter lieber weglassen? Auch ein fehlendes Wort kostet die Runde – tippe, was du sicher weißt, sorgfältig."
         }
-]
+      ]
     },
     steps: [
-      "Richten Sie den Blick auf das Display und fokussieren Sie die Merkphase.",
-      "Verbinden Sie auftauchende Wörter sofort zu einer lebhaften gedanklichen Szene.",
-      "Bauen Sie kontrastreiche visuelle Vorstellungsbilder für duale Gedächtnisspuren auf.",
-      "Tippen Sie im Eingabefenster zuerst die letzten Wörter ein und entfalten Sie dann die Geschichte.",
-      "Lassen Sie die adaptive Treppe Ihre Wortspanne ermitteln und schrittweise erweitern."
-],
-    audience: "Schüler, Studenten, Berufstätige und alle, die ihre sprachliche Merkfähigkeit und ihr verbales Arbeitsgedächtnis gezielt trainieren möchten.",
+      "Starte den 45-Sekunden-Lauf und richte den Blick auf die Wortanzeige in der Mitte.",
+      "Lies die 2 Sekunden lang sichtbare Liste zügig und verbinde die Wörter zu einer Szene.",
+      "Tippe im Eingabefeld zuerst die zuletzt gelesenen Wörter.",
+      "Gib alle Wörter getrennt durch Leerzeichen oder Komma innerhalb von 12 Sekunden ein und sende mit Enter ab.",
+      "Volle Treffer verlängern die Liste, Fehler verkürzen sie: Vergleiche Punktzahl und längste Liste mit deinen eigenen Bestwerten."
+    ],
+    audience: "Schüler, Studierende, Berufstätige und alle, die ausprobieren möchten, wie viele Wörter sie sich merken können.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('craik1972', 'murdock1962', 'tulving1962', 'woods2015'),
+    sources: pickSources('craik1972', 'murdock1962', 'tulving1962'),
     related: [
       { href: "/de/drills/memory/short-term-memory/digit-span", label: "Zahlenspannen-Test" },
       { href: "/de/drills/memory/short-term-memory/color-sequence", label: "Senso-Spiel" },
@@ -397,19 +370,19 @@ export default function LocalizedWordRecallPage() {
                               "num": "2",
                               "text": "Stufen-Bonus",
                               "highlight": "Bis zu +135%",
-                              "result": "Längere Wortlisten bringen deutlich mehr Punkte pro Durchgang"
+                              "result": "Runde = 150 × (1 + 0,15 × (Wörter − 3)) Punkte"
                     },
                     {
                               "num": "3",
                               "text": "Fehlversuch / Timeout",
                               "highlight": "-1 Wort",
-                              "result": "Kein Punkteabzug; die Wortanzahl sinkt adaptiv um 1 Wort"
+                              "result": "Fehlendes/falsches Wort oder 12 s abgelaufen: kein Punkt- oder Zeitabzug, 1 Wort weniger"
                     },
                     {
                               "num": "4",
                               "text": "Adaptive Wortspanne",
                               "highlight": "Steigt & fällt",
-                              "result": "Konvergiert präzise auf Ihre tatsächliche verbale Gedächtnisgrenze"
+                              "result": "Alle richtig +1 Wort, Fehler −1 Wort (3 bis 12)"
                     }
           ],
           "wordBank": [

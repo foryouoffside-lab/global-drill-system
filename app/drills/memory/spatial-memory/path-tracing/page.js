@@ -5,7 +5,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Path Tracing Memory Test – Spatial Span Game | SkillDrills',
-  description: 'Free path tracing memory test. Retrace step sequences on growing grids and measure your spatial span, the Corsi block-tapping skill.',
+  description: 'Free path tracing memory test. Watch a path of adjacent tiles light up, then retrace it in order. Corsi-style spatial span practice on grids from 3x3 to 7x7.',
   keywords: [
     'path tracing memory test',
     'sequence memory test',
@@ -33,7 +33,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Path Tracing Memory Test - Free Spatial Span Game',
-    description: 'Train sequential spatial working memory with the Path Tracing Memory Test. Retrace progressive 3x3 to 7x7 dot trajectories, deploy directional vector chunking, and measure spatial span.',
+    description: 'Free path tracing memory test: watch a path of adjacent tiles light up, then tap it back in order within 10 seconds. Paths start at 3 steps and grow one step per level.',
     type: 'website',
     url: 'https://skilldrills.online/drills/memory/spatial-memory/path-tracing',
     siteName: 'SkillDrills',
@@ -42,7 +42,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Path Tracing Memory Test - Free Spatial Span Game',
-    description: 'Train sequential spatial working memory with the Path Tracing Memory Test. Retrace progressive 3x3 to 7x7 dot trajectories, deploy directional vector chunking, and measure spatial span.',
+    description: 'Free path tracing memory test: watch a path of adjacent tiles light up, then tap it back in order within 10 seconds. Paths start at 3 steps and grow one step per level.',
   },
 };
 
@@ -60,7 +60,7 @@ export default function PathTracingPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Spatial_memory"],
+    "@type": "SoftwareApplication",
     "name": "Path Tracing Memory Test",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",
@@ -70,8 +70,8 @@ export default function PathTracingPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Interactive spatial sequence memory assessment measuring route tracing, directional chunking, and visuospatial working memory span on expanding matrix grids.",
-    "dateModified": "2026-09-05"
+    "description": "Free path memory game: a route of adjacent tiles lights up one step at a time, then you tap it back in the same order. Paths grow from 3 steps on a 3x3 grid up to 7x7 grids.",
+    "dateModified": "2026-11-12"
   };
 
   const webAppSchema = {
@@ -91,14 +91,14 @@ export default function PathTracingPage() {
       "name": "SkillDrills"
     },
     "isAccessibleForFree": true,
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-11-12"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Path Tracing Memory Test",
-    "description": "Interactive spatial sequence memory assessment measuring route tracing, directional chunking, and visuospatial working memory span on expanding matrix grids.",
+    "description": "Free path memory game: a route of adjacent tiles lights up one step at a time, then you tap it back in the same order. Paths grow from 3 steps on a 3x3 grid up to 7x7 grids.",
     "url": "https://skilldrills.online/drills/memory/spatial-memory/path-tracing",
     "genre": ["Memory Game", "Cognitive Training", "Spatial Sequence Memory"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
@@ -119,14 +119,14 @@ export default function PathTracingPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "What is the Path Tracing Memory Test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The Path Tracing Memory Test evaluates sequential visuospatial working memory and route reproduction. Users observe an animated sequence of illuminated tiles across a grid and must retrace the exact path in identical forward order."
+          "text": "It is a free spatial sequence memory game, not a clinical test. A path lights up one tile at a time (one step every 0.5 seconds); each step moves to a tile directly above, below, left or right of the last, never revisiting a tile. You then tap the path back in the same order. Level 1 is 3 steps on a 3x3 grid, and each level adds one step."
         }
       },
       {
@@ -134,7 +134,7 @@ export default function PathTracingPage() {
         "name": "How does the Corsi Block-Tapping Test relate to path tracing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The Corsi Block-Tapping Task (Corsi, 1972) is the foundational neuropsychological assessment for spatial span. Path tracing adapts this paradigm into a computerized matrix format where waypoints light up sequentially, measuring active dynamic trajectory encoding."
+          "text": "The Corsi block-tapping task (Corsi, 1972) is a classic research and clinical measure of spatial span, in which an examiner taps blocks in sequence. Path tracing borrows the idea of reproducing a spatial sequence, but on a grid with adjacent steps and its own timing and scoring. It is Corsi-style practice, not the Corsi test, and gives no normed result."
         }
       },
       {
@@ -142,7 +142,7 @@ export default function PathTracingPage() {
         "name": "What cognitive faculty does sequential path memory measure?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Path tracing tests the 'Inner Scribe' component of visuospatial working memory (Logie, 1995), which is responsible for retaining active movement sequences, spatial planning, and dynamic motor trajectories rather than static visual forms."
+          "text": "In Logie's (1995) account, remembering a sequence of positions draws on the 'inner scribe', the part of visuospatial working memory associated with movement and spatial sequences, rather than the 'visual cache' that holds static patterns."
         }
       },
       {
@@ -155,10 +155,10 @@ export default function PathTracingPage() {
       },
       {
         "@type": "Question",
-        "name": "What is an average adult spatial sequence memory span?",
+        "name": "How is the path tracing game scored?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "According to normative Corsi block studies (Kessels et al., 2000, 2008), healthy adults achieve an average forward spatial span of 5.4 ± 0.9 items. Scores above 8 items represent superior visuospatial chunking."
+          "text": "Each fully correct path scores 150 points and adds one step to the next path. A wrong tile, or not finishing within 10 seconds, scores nothing and loads a new path at the same length; no points or time are deducted. The 60-second clock runs only while you are tapping, not while a path is being shown. SkillDrills collects no user data, so there is no average to compare against."
         }
       },
       {
@@ -166,7 +166,7 @@ export default function PathTracingPage() {
         "name": "How does directional vector chunking improve path recall?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "By compressing multiple individual step coordinates into continuous directional macro-vectors (such as 'two right, one up, diagonal left'), the user reduces cognitive load from six discrete units to two directional chunks, bypassing the 4-item capacity bottleneck."
+          "text": "Because every step goes up, down, left or right, you can remember runs of steps as moves (such as 'two right, one up, two left') or as shapes (an L or a staircase). Grouping a six-step path into two or three moves is much easier than holding six separate tiles."
         }
       },
       {
@@ -182,23 +182,23 @@ export default function PathTracingPage() {
         "name": "Why do longer paths require hierarchical trajectory chunking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nelson Cowan's (2001) working memory model establishes a hard limit of 4 ± 1 unchunked items. Sequences extending to 7–12 steps exceed raw capacity and demand hierarchical grouping into geometric sub-paths to avoid rapid serial decay."
+          "text": "Cowan (2001) argued that working memory holds only about 4 items without grouping. Paths of 7 or more steps go well past that, so grouping them into a few moves or shapes becomes essential."
         }
       },
       {
         "@type": "Question",
-        "name": "How does spatial sequence memory impact real-world navigation and gaming?",
+        "name": "Will this improve navigation or gaming?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sequential spatial memory governs route navigation, recalling turn-by-turn directions, learning dance or athletic choreography, and memorizing patrol routes and tactical rotations in competitive gaming (e.g., MOBAs and FPS games)."
+          "text": "Not reliably. Remembering sequences of positions is part of tasks like following directions or learning routes, but research on memory training generally finds that gains on one game transfer poorly to untrained tasks. Treat it as practice and a challenge, not a guaranteed improvement."
         }
       },
       {
         "@type": "Question",
-        "name": "Can path tracing memory and route recall be improved with deliberate practice?",
+        "name": "Can I get better at path tracing with practice?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Repeated training strengthens the efficiency of the inner scribe, automates directional chunking schemas, reduces saccadic flight hesitation, and enhances motor execution cadence under time constraints."
+          "text": "Yes, at this game. With practice most players get faster at spotting moves and shapes in the path, which lets them reproduce longer paths. That is improvement on this task; it is not evidence of broader memory gains."
         }
       }
     ]
@@ -208,7 +208,7 @@ export default function PathTracingPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "How to Train Sequential Spatial Memory with Path Tracing",
-    "description": "Evidence-based 4-step execution strategy for mastering sequential route retention and expanding forward spatial span.",
+    "description": "Four steps for remembering and retracing a path of adjacent tiles.",
     "step": [
       {
         "@type": "HowToStep",
@@ -216,7 +216,7 @@ export default function PathTracingPage() {
       "url": "https://skilldrills.online/drills/memory/spatial-memory/path-tracing#step-1",
         
         "name": "Fixate Initial Starting Dot & Anticipate Motion Trajectory",
-        "text": "Anchor your gaze on the initial flashing coordinate. Rather than tracking individual tiles with rapid eye jumps, maintain parafoveal awareness across the matrix to perceive the global motion vector."
+        "text": "Watch the first tile that lights up. Steps follow every 0.5 seconds, each to a tile directly above, below, left or right."
       },
       {
         "@type": "HowToStep",
@@ -224,15 +224,15 @@ export default function PathTracingPage() {
       "url": "https://skilldrills.online/drills/memory/spatial-memory/path-tracing#step-2",
         
         "name": "Group Discrete Steps into Directional Vector Chunks",
-        "text": "Mentally compress sequential step coordinates into directional units (e.g., 'right-right-down' or 'L-shape'). Grouping adjacent steps into macro-vectors compresses working memory load below the 4-item threshold."
+        "text": "Mentally group steps into moves or shapes (e.g., 'right-right-down' or 'L-shape') so a long path becomes a few units."
       },
       {
         "@type": "HowToStep",
       "position": 3,
       "url": "https://skilldrills.online/drills/memory/spatial-memory/path-tracing#step-3",
         
-        "name": "Rehearse Dynamic Route via the Inner Scribe",
-        "text": "During the brief retention delay, trace the continuous movement trajectory internally using your motor cortex. Active spatial rehearsal prevents rapid memory trace decay."
+        "name": "Rehearse the Route",
+        "text": "As the last step fades, the input phase starts right away; replay the route in your head as you begin."
       },
       {
         "@type": "HowToStep",
@@ -240,70 +240,68 @@ export default function PathTracingPage() {
       "url": "https://skilldrills.online/drills/memory/spatial-memory/path-tracing#step-4",
         
         "name": "Retrace the Sequence with Deliberate Motor Cadence",
-        "text": "Tap the grid coordinates in exact forward sequence with a steady, rhythmic cadence. Avoid pauses that induce temporal decay, executing the full chunk in a single fluid motor burst."
+        "text": "Tap the tiles in the same order. You have 10 seconds for the whole path, and one wrong tile ends the round."
       }
     ]
   };
 
   const pathTracingGuide = {
     intro: [
-      "A path tracing memory test, based on the Corsi block-tapping task, shows a route across a grid and asks you to retrace it in the same order. In this free online version the grid grows from 3x3 to 7x7 and each level adds one step, so it measures your spatial span.",
-      "During each trial, an animated target illuminates across a sequence of matrix coordinates at standardized 500 ms intervals. Users must encode both spatial coordinates and temporal order, then faithfully retrace the entire route in exact chronological sequence during 60 seconds of active tracing time; path demonstrations are untimed.",
-      "In working memory architecture, Logie (1995) and Alan Baddeley (2000) identified that sequential movement is retained by the Inner Scribe, a dynamic spatial rehearsal loop. George A. Miller (1956) and Herbert A. Simon (1974) proved that sequential performance hinges on directional chunking, while Nelson Cowan (2001) established that unassisted focal working memory is limited to roughly 4 items.",
-      "Standardized normative studies on computerized Corsi block tasks (Kessels et al., 2000) established the healthy adult forward spatial span at 5.4 ± 0.9 steps, showing that sequential retention is highly sensitive to cognitive fatigue, sleep, and executive function.",
-      "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval, about 16.7 ms per frame at 60 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup.",
+      "A path tracing memory test, inspired by the Corsi block-tapping task, shows a route across a grid and asks you to retrace it in the same order. In this free online version each level adds one step (level 1 is 3 steps), and the grid grows from 3x3 to 4x4, 5x5, 6x6 and 7x7 as paths get longer, so you see how long a spatial sequence you can hold.",
+      "During each round a tile lights up every 0.5 seconds; each step moves to an adjacent tile (up, down, left or right) and never revisits one. You then have 10 seconds to tap the whole path in order. A correct path scores 150 points and adds a step; a wrong tile or timeout repeats the length with a new path. The 60-second clock runs only while you are tapping, so demonstrations do not use up your time. Tap speed is not measured or scored.",
+      "In working memory architecture, Logie (1995) and Alan Baddeley (2000) identified that sequential movement is retained by the Inner Scribe, a dynamic spatial rehearsal loop. George A. Miller (1956) and Herbert A. Simon (1974) described how grouping items into chunks extends memory span, and Nelson Cowan (2001) argued that working memory holds roughly 4 items without grouping.",
       "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
       "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
     ],
     benchmarks: {
-      title: "Spatial Path Sequence Span Score Bands",
-      headers: ["Performance Tier", "Span Range & Grid Scale", "Drill Score", "Cognitive Profile & Trajectory Retention"],
+      title: "Path Tracing: SkillDrills Practice Bands",
+      headers: ["Practice Band", "Correct Paths", "Score", "Path Length & Grid Reached"],
       rows: [
-        ["Tier 1 (Exceptional)", "Span 10 – 14+ Steps (6x6–7x7 Grid)", "1,200+ Points", "Visuospatial sequential elite; decomposes complex multi-grid routes into 2–3 directional macro-vectors; flawless inner scribe trajectory buffering; rapid sub-400 ms tapping cadence"],
-        ["Tier 2 (Advanced)", "Span 8 – 9 Steps (5x5–6x6 Grid)", "900 – 1,199 Points", "Exceeds normal population averages; executes robust spatial vector grouping (L-turns, diagonals, zigzag runs); resistant to serial interference; 400 – 600 ms cadence"],
-        ["Tier 3 (Typical)", "Span 5 – 7 Steps (4x4–5x5 Grid)", "600 – 899 Points", "Normative adult baseline (Corsi, 1972; Kessels et al., 2000, 5.4 ± 0.9 span); comfortably manages 5–6 step sequences; begins dropping intermediate turn waypoints on 5x5 grids; 600 – 850 ms cadence"],
-        ["Tier 4 (Developing)", "Span 4 Steps (3x3–4x4 Grid)", "400 – 599 Points", "Operates near unchunked working memory boundary (Cowan, 2001); attempts to recall each dot coordinate independently without spatial vector chunking; 850 – 1,100 ms cadence"],
-        ["Tier 5 (Starting out)", "Span < 4 Steps (3x3 Grid)", "< 400 Points", "Rapid temporal trace decay; vulnerability to order transpositions; struggles to hold sequences beyond 3 steps across the retention delay; tapping cadence exceeding 1,100 ms"]
+        ["Band 1", "0 – 2", "0 – 300", "3 – 5 steps, 3x3"],
+        ["Band 2", "3 – 5", "450 – 750", "6 – 8 steps, 4x4"],
+        ["Band 3", "6 – 9", "900 – 1,350", "9 – 12 steps, 5x5"],
+        ["Band 4", "10 – 13", "1,500 – 1,950", "13 – 16 steps, 6x6"],
+        ["Band 5", "14+", "2,100+", "17+ steps, 7x7"]
       ],
-      note: "Span length and grid scale reflect maximum difficulty cleared during 60 seconds of active tracing; path demonstrations and result reveals are untimed. The bands are an editorial guide, not population norms, because SkillDrills collects no aggregate data; the task design follows (Corsi, 1972; Kessels et al., 2000; Woods et al., 2015)."
+      note: "SkillDrills practice bands derived from the scoring code (150 points per correct path; path length = level + 2; 60-second clock counting tapping time only). They are not population norms or Corsi span scores: SkillDrills collects no user data, so use them only to track your own runs."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Spatial Path Memory",
       items: [
         {
           name: "Directional Vector Chunking (Miller 1956; Simon 1974)",
-          desc: "Mentally group discrete sequential steps into directional macro-vectors. For example, instead of remembering steps 1, 2, 3, 4, 5, encode the path as 'two steps East, one step North, two steps West'. Chunking reduces raw memory tokens by over 60%.",
-          tips: "Look for geometric shapes like L-turns, triangles, and staircases rather than individual dots."
+          desc: "Mentally group discrete sequential steps into directional macro-vectors. For example, instead of remembering steps 1, 2, 3, 4, 5, encode the path as 'two steps East, one step North, two steps West'. Three moves are far easier to hold than five tiles.",
+          tips: "Look for shapes like L-turns, U-turns, and staircases rather than individual tiles."
         },
         {
           name: "Kinesthetic Scribe Trajectory Pre-Planning (Logie 1995)",
-          desc: "Engage the motor cortex during stimulus presentation by mentally tracing the continuous line connecting the tiles. Pre-activating motor planning circuits reinforces passive visual traces through active kinesthetic rehearsal.",
+          desc: "Mentally trace the continuous line connecting the tiles as they light up. Many players find that rehearsing the movement makes the path easier to reproduce.",
           tips: "Feel the movement in your hand before touching the screen."
         },
         {
           name: "Parafoveal Matrix Anchoring",
-          desc: "Keep your central visual fixation anchored on the centroid of the grid rather than making rapid, jerky saccades to each illuminated cell. Parafoveal vision accurately tracks sequential vector motion without saccadic suppression lag.",
+          desc: "Keep your gaze near the center of the grid rather than jumping your eyes to each lit tile; on the small grids you can follow the whole path without moving your eyes much.",
           tips: "Keep your head and eyes still, allowing the flashing dots to register across your visual field."
         },
         {
           name: "Rhythmical Cadence & Pacing",
-          desc: "Retrace the recorded path with steady, rhythmic tapping. Hesitation between clicks allows temporal decay to erode later sequence waypoints. Tap the memorized vector in a single fluent motor burst.",
+          desc: "Retrace the path with steady, rhythmic tapping. You have 10 seconds per path, and long pauses make the later steps easier to forget.",
           tips: "Execute each path in an unbroken rhythmic sequence rather than hesitating between individual cells."
         }
       ]
     },
     steps: [
       "Fixate your gaze on the matrix centroid and watch the animated dot path sequence.",
-      "Mentally chunk individual tile flashes into continuous directional vectors (e.g. 'right-up-right').",
-      "During the brief retention delay, trace the continuous movement trajectory internally with the inner scribe.",
-      "Retrace the exact coordinate sequence in identical forward order with fluid rhythmic tapping.",
-      "Advance through progressive matrices from 3x3 to 7x7 to expand your sequential spatial span."
+      "Mentally chunk individual tile flashes into moves (e.g. 'right-up-right').",
+      "As the last tile fades, replay the route in your head; input starts right away.",
+      "Tap the tiles in the same order within 10 seconds; one wrong tile ends the round.",
+      "Each correct path adds a step, and the grid grows from 3x3 up to 7x7 as paths get longer."
     ],
-    audience: "Competitive gamers mastering patrol routes and ability rotations, STEM students, choreographers, drivers, and individuals seeking to expand sequential spatial working memory.",
+    audience: "Gamers, students and anyone who wants a quick, free spatial sequence memory challenge.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     // Works named in this page's copy, with DOIs so a reader or an answer
     // engine can check the figures rather than take them on trust.
-    sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'cowan2001', 'baddeley2000', 'miller1956', 'simon1974', 'kessels2000', 'woods2015'),
+    sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'cowan2001', 'baddeley2000', 'miller1956', 'simon1974'),
     related: [
       { href: "/drills/memory/spatial-memory/grid-memorization", label: "Visual Memory Test" },
       { href: "/drills/memory/spatial-memory/object-location", label: "Object Location Memory Test" },

@@ -5,7 +5,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Visual Memory Test – Grid Pattern Memory Game | SkillDrills',
-  description: 'Free visual memory test. Memorise grid patterns on expanding boards and track your visual memory span. No sign-up, plays in your browser.',
+  description: 'Free visual memory test. Memorise purple cell patterns flashed for 1.5 seconds on a 4x4, then 5x5 grid, and tap them back. No sign-up, plays in your browser.',
   keywords: [
     'visual memory test',
     'grid memory test',
@@ -15,7 +15,6 @@ export const metadata = {
     'memory matrix test',
     'grid memorization',
     'visual working memory test',
-    'corsi block test online',
     'visual patterns test',
     'spatial working memory test',
     'visual memory human benchmark',
@@ -28,7 +27,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'Visual Memory Test - Free Grid Pattern Memory Game',
-    description: 'Train spatial working memory with the Visual Memory Test. Memorize progressive 4x4 to 5x5 grid patterns in 1.5 seconds, utilize spatial shape chunking, and track visual memory span.',
+    description: 'Free visual memory test: memorize cell patterns flashed for 1.5 seconds, from 5 cells on a 4x4 grid up to 12 cells on a 5x5 grid, then tap them back.',
     type: 'website',
     url: 'https://skilldrills.online/drills/memory/spatial-memory/grid-memorization',
     siteName: 'SkillDrills',
@@ -37,7 +36,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Visual Memory Test - Free Grid Pattern Memory Game',
-    description: 'Train spatial working memory with the Visual Memory Test. Memorize progressive 4x4 to 5x5 grid patterns in 1.5 seconds, utilize spatial shape chunking, and track visual memory span.',
+    description: 'Free visual memory test: memorize cell patterns flashed for 1.5 seconds, from 5 cells on a 4x4 grid up to 12 cells on a 5x5 grid, then tap them back.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -60,18 +59,18 @@ export default function GridMemorizationPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Spatial_memory", "https://en.wikipedia.org/wiki/Short-term_memory"],
+    "@type": "SoftwareApplication",
     "name": "Visual Memory Test (Grid Memorization)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
+    "browserRequirements": "Requires JavaScript",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Interactive spatial working memory assessment testing matrix visual recall, shape chunking, and visuospatial storage capacity.",
-    "dateModified": "2026-09-05"
+    "description": "Free grid pattern memory game: a pattern of purple cells flashes for 1.5 seconds, then you tap the same cells from memory. Patterns grow from 5 cells on a 4x4 grid to 12 on a 5x5 grid.",
+    "dateModified": "2026-11-12"
   };
 
   const webAppSchema = {
@@ -91,14 +90,14 @@ export default function GridMemorizationPage() {
       "name": "SkillDrills"
     },
     "isAccessibleForFree": true,
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-11-12"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Visual Memory Test (Grid Memorization)",
-    "description": "Interactive spatial working memory assessment testing matrix visual recall, shape chunking, and visuospatial storage capacity.",
+    "description": "Free grid pattern memory game: a pattern of purple cells flashes for 1.5 seconds, then you tap the same cells from memory. Patterns grow from 5 cells on a 4x4 grid to 12 on a 5x5 grid.",
     "url": "https://skilldrills.online/drills/memory/spatial-memory/grid-memorization",
     "genre": ["Memory Game", "Cognitive Training", "Brain Game"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
@@ -128,7 +127,7 @@ export default function GridMemorizationPage() {
         "name": "What is a Visual Memory Test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A Visual Memory Test evaluates your visuospatial working memory—specifically your capacity to perceive, encode, and temporarily maintain visual patterns and spatial coordinates without relying on verbal rehearsal."
+          "text": "A visual memory test asks you to hold a visual pattern in mind for a few seconds and reproduce it. This SkillDrills version is a free practice game, not a clinical test: you memorize which grid cells lit up and tap them back."
         }
       },
       {
@@ -136,15 +135,15 @@ export default function GridMemorizationPage() {
         "name": "How does the Grid Memorization drill work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The drill displays an illuminated pattern of cells on a 4x4 or 5x5 grid for 1.5 seconds. Once the grid clears, you must click all previously illuminated cells. Successfully clearing rounds scales up the pattern difficulty."
+          "text": "A pattern of purple cells lights up for 1.5 seconds. When it clears, tap every cell that was lit, in any order; there is no time limit per round. It starts with 5 cells on a 4x4 grid and adds one cell per perfect round up to 7; then the grid becomes 5x5 with 5 cells and grows to a maximum of 12. Each perfect round scores 150 points. The 60-second clock only runs while you are recalling, not while the pattern is shown."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the Visual Patterns Test (VPT)?",
+        "name": "Is this the Visual Patterns Test (VPT)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Developed by Sergio Della Sala, Robert H. Logie, and colleagues in 1997, the Visual Patterns Test (VPT) is a gold-standard neuropsychological assessment that presents 2D matrix grids with filled squares to measure pure visual short-term memory capacity separate from sequential spatial movement."
+          "text": "No. The Visual Patterns Test, developed by Della Sala, Logie and colleagues (1997), is a research and clinical task that also uses grids of filled squares. This drill borrows the general idea but uses its own grid sizes, timing and scoring, and gives no clinical or normed result."
         }
       },
       {
@@ -157,10 +156,10 @@ export default function GridMemorizationPage() {
       },
       {
         "@type": "Question",
-        "name": "What is an average visual memory score on a matrix test?",
+        "name": "How is the grid memory game scored?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Normative adult baselines established by Della Sala et al. (1997, 1999) demonstrate that typical adults reliably recall patterns of 6 to 8 cells on 4x4 to 5x5 matrices. Elite performers exceed 10 to 14 cells using advanced spatial shape chunking."
+          "text": "Every perfect round adds 150 points and makes the next pattern one cell larger (up to 12 cells on 5x5). Tapping a wrong cell ends the round with no points and loads a new pattern at the same size. SkillDrills collects no user data, so it publishes no average scores; compare against your own best."
         }
       },
       {
@@ -168,7 +167,7 @@ export default function GridMemorizationPage() {
         "name": "How does spatial chunking improve visual memory?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Unassisted visual memory has a hard physiological bottleneck of 3 to 4 distinct items (Luck & Vogel, 1997; Cowan, 2001). Spatial chunking bypasses this limit by grouping adjacent illuminated cells into recognizable geometric shapes (e.g., an 'L', square, diagonal, or letter), compressing multiple cells into a single cognitive unit."
+          "text": "Research suggests visual working memory holds only about 3 to 4 separate items at once (Luck & Vogel, 1997; Cowan, 2001). Spatial chunking bypasses this limit by grouping adjacent illuminated cells into recognizable geometric shapes (e.g., an 'L', square, diagonal, or letter), compressing multiple cells into a single cognitive unit."
         }
       },
       {
@@ -184,7 +183,7 @@ export default function GridMemorizationPage() {
         "name": "Why do grid patterns decay so quickly after 1.5 seconds?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sensory visual iconic memory decays within 250 to 500 milliseconds. Without rapid consolidation into working memory through spatial chunking or mental tracing, the visual trace is quickly overwritten by new perceptual input."
+          "text": "Iconic memory, the brief visual afterimage, fades within a fraction of a second. Unless you encode the pattern into working memory, for example as a few shapes, the detail is quickly lost."
         }
       },
       {
@@ -192,15 +191,15 @@ export default function GridMemorizationPage() {
         "name": "Are there score penalties for incorrect clicks?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Tapping an incorrect cell never deducts points or reduces your remaining session timer. The round simply resets at the same difficulty so you can master your current pattern threshold safely."
+          "text": "No. Tapping an incorrect cell ends that round without points, but never deducts points or time. The next round is a new pattern at the same size, so the difficulty never drops."
         }
       },
       {
         "@type": "Question",
-        "name": "How does visual memory transfer to real-world tasks and gaming?",
+        "name": "Will this improve visual memory in real-world tasks or gaming?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Visuospatial working memory directly enhances map awareness, minimap tracking in tactical shooters (CS2, Valorant), reading complex architectural diagrams, spatial navigation, and mental rotation tasks in STEM fields."
+          "text": "Not reliably. You will get better at this game, but research on working memory training generally finds that gains transfer poorly to untrained tasks such as minimap awareness or navigation. Treat it as practice and a challenge, not a guaranteed improvement."
         }
       }
     ]
@@ -210,7 +209,7 @@ export default function GridMemorizationPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "How to Train Visual Memory on Grid Matrices",
-    "description": "Four-step systematic protocol to encode, chunk, and accurately reconstruct spatial grid patterns under time constraints.",
+    "description": "Four steps to encode, chunk, and reconstruct grid patterns flashed for 1.5 seconds.",
     "step": [
       {
         "@type": "HowToStep",
@@ -242,39 +241,38 @@ export default function GridMemorizationPage() {
       "url": "https://skilldrills.online/drills/memory/spatial-memory/grid-memorization#step-4",
         
         "name": "Systematic Matrix Reconstruction",
-        "text": "Click the recognized shape clusters first, then fill in isolated peripheral cells before the visual trace fades."
+        "text": "Tap the recognized shape clusters first, then the isolated cells. There is no per-round time limit, but the 60-second clock runs while you recall."
       }
     ]
   };
 
   const gridGuide = {
     intro: [
-      "A visual memory test flashes a pattern of lit cells on a grid, then asks you to tap the same cells from memory. In this free online version the grid grows from 4x4 to 5x5 as you succeed, and a miss replays the round, so it measures how large a spatial pattern you can hold.",
-      "The clinical study of visuospatial span was pioneered by Pietro Corsi (1972) through the Corsi Block-Tapping Test, which demonstrated that visuospatial memory operates as a distinct neural system from verbal digit span (Milner, 1971). In 1997, Sergio Della Sala, Robert H. Logie, and colleagues developed the Visual Patterns Test (VPT) to specifically isolate static matrix pattern retention from dynamic sequential movement.",
-      "In modern cognitive neuroscience, Robert H. Logie (1995) and Alan Baddeley (2000) subdivided the Visuo-Spatial Sketchpad into the 'Visual Cache' (a passive store for chromatic, brightness, and static matrix representations) and the 'Inner Scribe' (an active mechanism for spatial movement planning and rehearsal). Furthermore, research by Steven J. Luck & Edward K. Vogel (1997) and Nelson Cowan (2001) confirmed that unchunked visual working memory is strictly bounded to 3 to 4 independent items. Expanding matrix span requires spatial chunking—grouping lit cells into holistic Gestalt shapes.",
-      "Calibrated with digital chronometric precision (Woods et al., 2015), this drill features a standardized 1.5-second memorization window and an adaptive staircase progression to measure your exact visuospatial pattern span under high-velocity conditions.",
-      "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval, about 16.7 ms per frame at 60 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup.",
+      "A visual memory test flashes a pattern of lit cells on a grid, then asks you to tap the same cells from memory. In this free online version the pattern starts at 5 cells on a 4x4 grid and grows by one cell per perfect round; after 7 cells the grid becomes 5x5 and grows to 12 cells. A wrong tap loads a new pattern at the same size, so you see how large a spatial pattern you can hold.",
+      "The study of visuospatial span was pioneered by Pietro Corsi (1972) through the Corsi Block-Tapping Test, which demonstrated that visuospatial memory operates as a distinct neural system from verbal digit span (Milner, 1971). In 1997, Sergio Della Sala, Robert H. Logie, and colleagues developed the Visual Patterns Test (VPT) to study static pattern memory separately from sequential movement. This drill is not that test.",
+      "In modern cognitive neuroscience, Robert H. Logie (1995) and Alan Baddeley (2000) subdivided the Visuo-Spatial Sketchpad into the 'Visual Cache' (a passive store for chromatic, brightness, and static matrix representations) and the 'Inner Scribe' (an active mechanism for spatial movement planning and rehearsal). Research by Steven J. Luck & Edward K. Vogel (1997) and Nelson Cowan (2001) suggests that visual working memory holds roughly 3 to 4 separate items. Expanding matrix span requires spatial chunking—grouping lit cells into holistic Gestalt shapes.",
+      "How the game works: each pattern of purple cells is shown for 1.5 seconds. You then tap the lit cells in any order, with no per-round time limit. A perfect round scores 150 points and adds a cell; one wrong tap ends the round and loads a new pattern at the same size. The 60-second clock runs only during recall, so reveals do not use up your time. Click speed is not measured or scored.",
       "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
       "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
     ],
     benchmarks: {
-      title: "Visuospatial Pattern Span Score Bands",
-      headers: ["Performance Tier", "Pattern Span (Cells)", "Drill Score", "Cognitive Storage & Chunking Profile"],
+      title: "Grid Memory: SkillDrills Practice Bands",
+      headers: ["Practice Band", "Perfect Rounds", "Score", "Pattern Reached"],
       rows: [
-        ["Tier 1 (Exceptional)", "Span 10 – 14+ Cells", "1,150+ Points", "Visuospatial elite; decomposes complex patterns into 2-3 geometric Gestalt primitives; flawless visual cache retention; sub-450 ms click cadence"],
-        ["Tier 2 (Advanced)", "Span 8 – 9 Cells", "850 – 1,149 Points", "Exceeds normal adult baseline; executes rapid shape chunking ('L' shapes, triplets); robust against visual interference; 450 – 650 ms cadence"],
-        ["Tier 3 (Typical)", "Span 6 – 7 Cells", "550 – 849 Points", "Normal adult population baseline (Della Sala et al., 1997); manages simple paired clusters; begins dropping peripheral cells on 5x5 grids; 650 – 900 ms cadence"],
-        ["Tier 4 (Developing)", "Span 5 Cells", "350 – 549 Points", "Operates near raw unchunked capacity limits (Cowan, 2001); attempts to memorize cells individually without geometric grouping; 900 – 1,200 ms cadence"],
-        ["Tier 5 (Starting out)", "Span < 5 Cells", "< 350 Points", "Rapid visual trace decay; vulnerability to visual noise; struggles to hold patterns exceeding 4 cells across the 1.5s delay; cadence exceeding 1,200 ms"]
+        ["Band 1", "0 – 2", "0 – 300", "4x4 grid, 5 – 7 cells"],
+        ["Band 2", "3 – 5", "450 – 750", "5x5 grid, 5 – 7 cells"],
+        ["Band 3", "6 – 8", "900 – 1,200", "5x5 grid, 8 – 10 cells"],
+        ["Band 4", "9 – 10", "1,350 – 1,500", "5x5 grid, 11 – 12 cells"],
+        ["Band 5", "11+", "1,650+", "5x5 grid, 12 cells (maximum) repeated"]
       ],
-      note: "Cell span reflects maximum matrix configuration cleared during the 60-second active recall session; memorization and result reveals are untimed. The bands are an editorial guide, not population norms, because SkillDrills collects no aggregate data; the task design follows (Della Sala et al., 1997; Luck & Vogel, 1997; Woods et al., 2015)."
+      note: "SkillDrills practice bands derived from the scoring code (150 points per perfect round; 4x4 from 5 to 7 cells, then 5x5 from 5 to 12 cells; 60-second clock counting recall time only). They are not population norms: SkillDrills collects no user data, so use them only to track your own runs."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Matrix Visual Recall",
       items: [
         {
           name: "Gestalt Spatial Shape Chunking",
-          desc: "Mentally group adjacent lit cells into recognizable geometric primitives such as triangles, lines, squares, or familiar letters (Wertheimer, 1923; Della Sala et al., 1999). Chunking 7 individual coordinates into two recognizable shapes compresses cognitive load by over 60%.",
+          desc: "Mentally group adjacent lit cells into recognizable geometric primitives such as triangles, lines, squares, or familiar letters (Wertheimer, 1923; Della Sala et al., 1999). Remembering 7 cells as two recognizable shapes is far easier than holding 7 separate positions.",
           tips: "Search immediately for connected lines and corner blocks rather than scanning isolated cells."
         },
         {
@@ -284,7 +282,7 @@ export default function GridMemorizationPage() {
         },
         {
           name: "Kinesthetic Scribe Trajectory Encoding",
-          desc: "Engage the 'inner scribe' (Logie, 1995) by mentally tracing a continuous line or trajectory connecting the illuminated cells during the 1.5-second exposure. Motor cortex path pre-planning reinforces passive visual cache representations.",
+          desc: "Engage the 'inner scribe' (Logie, 1995) by mentally tracing a continuous line or trajectory connecting the illuminated cells during the 1.5-second exposure. Many players find that a planned path makes the pattern easier to reproduce.",
           tips: "Follow a sweeping motion (e.g., top-left to bottom-right) to give the pattern directional flow."
         },
         {
@@ -301,11 +299,11 @@ export default function GridMemorizationPage() {
       "When the grid clears, tap the recognized geometric chunks back onto the matrix.",
       "Progress through expanding 4x4 to 5x5 matrices to continuously calibrate your visual working memory ceiling."
     ],
-    audience: "Gamers seeking heightened minimap awareness, STEM students mastering spatial geometry, radiologists, chess players, and individuals aiming to maximize non-verbal visuospatial working memory.",
+    audience: "Gamers, students, chess players and anyone who wants a quick, free visual pattern memory challenge.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     // Works named in this page's copy, with DOIs so a reader or an answer
     // engine can check the figures rather than take them on trust.
-    sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
+    sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971'),
     related: [
       { href: "/drills/memory/spatial-memory/path-tracing", label: "Path Tracing Memory Test" },
       { href: "/drills/memory/spatial-memory/object-location", label: "Object Location Memory Test" },

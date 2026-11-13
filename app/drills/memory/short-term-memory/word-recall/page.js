@@ -5,7 +5,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Verbal Memory Test – Word Recall Game | SkillDrills",
-  description: "Free verbal memory test. Recall word lists, see the serial position effect in your own scores, and learn the encoding tricks that beat it.",
+  description: "Free verbal memory test: study a list of words for 2 seconds, then type back every one. The list grows from 3 to 12 words as you recall it correctly.",
   keywords: [
     "verbal memory test",
     "word recall test",
@@ -13,7 +13,6 @@ export const metadata = {
     "free recall memory test",
     "verbal working memory test",
     "short term verbal memory test",
-    "rey auditory verbal learning test",
     "word list memory test",
     "immediate word recall",
     "how to improve verbal memory",
@@ -30,7 +29,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Verbal Memory Test – Word Recall Game | SkillDrills",
-    description: "Measure and train verbal working memory with our free online Verbal Memory Test. Master narrative linking, study list retention, and build cognitive recall.",
+    description: "Free online verbal memory test: memorize a word list in 2 seconds, then type all the words back in any order. Lists grow from 3 to 12 words.",
     url: "https://skilldrills.online/drills/memory/short-term-memory/word-recall",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -39,7 +38,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Verbal Memory Test – Word Recall Game | SkillDrills",
-    description: "Measure and train verbal working memory with our free online Verbal Memory Test. Master narrative linking, study list retention, and build cognitive recall.",
+    description: "Free online verbal memory test: memorize a word list in 2 seconds, then type all the words back in any order. Lists grow from 3 to 12 words.",
   },
 };
 
@@ -57,14 +56,14 @@ export default function WordRecallPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Free_recall", "https://en.wikipedia.org/wiki/Short-term_memory"],
+    "@type": "SoftwareApplication",
     "name": "Verbal Memory Test",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Free cognitive verbal memory assessment measuring immediate free recall, semantic associative encoding, and narrative chunking capacity across progressive word lists.",
-    "genre": "Cognitive Assessment / Verbal Memory",
+    "description": "Free word recall game: a list of words is shown all at once for 2 seconds, then you type every word back in any order. Lists run from 3 to 12 words.",
+    "genre": "Memory Game / Verbal Memory",
     "url": "https://skilldrills.online/drills/memory/short-term-memory/word-recall",
     "publisher": {
       "@type": "Organization",
@@ -78,8 +77,8 @@ export default function WordRecallPage() {
     "@type": "WebApplication",
     "name": "Verbal Memory Test",
     "url": "https://skilldrills.online/drills/memory/short-term-memory/word-recall",
-    "description": "Free browser-based verbal memory and word recall assessment with adaptive list progression, semantic feedback, and millisecond typing chronometry.",
-    "dateModified": "2026-09-05",
+    "description": "Free browser-based word recall game with a one-up, one-down list length from 3 to 12 words and feedback on which words you got, missed or added.",
+    "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
@@ -90,7 +89,7 @@ export default function WordRecallPage() {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Verbal Memory Test",
-    "description": "Free cognitive verbal memory assessment measuring immediate free recall, semantic associative encoding, and narrative chunking capacity across progressive word lists.",
+    "description": "Free word recall game: a list of words is shown all at once for 2 seconds, then you type every word back in any order. Lists run from 3 to 12 words.",
     "url": "https://skilldrills.online/drills/memory/short-term-memory/word-recall",
     "genre": ["Memory Game", "Cognitive Training", "Brain Game"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
@@ -111,14 +110,14 @@ export default function WordRecallPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-11-12",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "What is the Verbal Memory Test (Word Recall)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The Verbal Memory Test is a neuropsychological assessment evaluating verbal short-term memory, working memory span, and immediate free recall. Participants study a list of distinct nouns, encode them into memory, and retrieve as many as possible without order restrictions."
+          "text": "It is a free word recall game, not a clinical test. A list of words (3 at the start, up to 12) is shown all at once for 2 seconds. You then have 12 seconds to type every word, in any order, separated by spaces or commas, and press Enter. A round counts only if you get every word and add none."
         }
       },
       {
@@ -126,23 +125,15 @@ export default function WordRecallPage() {
         "name": "What is free recall and how does it differ from recognition memory?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Free recall requires active spontaneous retrieval of stored memory traces from internal cues without prompts. Recognition memory presents items and merely asks if they were previously seen. Free recall is significantly more cognitively demanding and provides a truer measure of active verbal memory capacity."
+          "text": "Free recall requires active spontaneous retrieval of stored memory traces from internal cues without prompts. Recognition memory presents items and merely asks if they were previously seen. Free recall is usually harder than recognition, because you must generate the words yourself."
         }
       },
       {
         "@type": "Question",
-        "name": "What is an average score on a word recall test?",
+        "name": "How is the word recall game scored?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "On standard clinical word list assessments such as the RAVLT, healthy adults immediately recall about 4 to 6 words on a first trial of an unfamiliar list, and mnemonic strategies can extend that. Those figures come from a supervised, spoken assessment with set word lists; this drill uses different words, timing and scoring, so your score here is not comparable to them and is not a clinical result."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the Rey Auditory Verbal Learning Test (RAVLT)?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The RAVLT is a clinical neuropsychological evaluation developed by André Rey in 1958. It evaluates verbal learning rate, immediate memory span, retroactive and proactive interference, and retention across multiple trials."
+          "text": "A perfect round (every word, no extras, spelling exact apart from capitals and accents) scores 150 x (1 + 0.15 x (words - 3)) points and adds one word to the next list, up to 12. A missed word, a misspelled or extra word, or the 12-second timeout removes one word (not below 3). Nothing is deducted from your score or the 45-second clock. SkillDrills collects no user data, so there is no average score to compare against."
         }
       },
       {
@@ -150,7 +141,7 @@ export default function WordRecallPage() {
         "name": "What is the serial position effect in word lists?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Described by Bennet B. Murdock Jr. in 1962, the serial position effect shows that memory accuracy follows a U-shaped curve: early words benefit from primacy (rehearsal into secondary memory), while final words benefit from recency (fresh sensory echo), leaving middle words most vulnerable to forgetting."
+          "text": "Described by Bennet B. Murdock Jr. in 1962, the serial position effect shows that memory accuracy follows a U-shaped curve: early words benefit from primacy and final words from recency, leaving middle words most vulnerable to forgetting. That classic result comes from words presented one at a time; in this drill the whole list appears at once, so the order you read it in matters most."
         }
       },
       {
@@ -166,7 +157,7 @@ export default function WordRecallPage() {
         "name": "How does narrative linking improve word recall?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Narrative linking weaves isolated words into a vivid, cohesive storyline. Craik & Lockhart (1972) demonstrated that this deep semantic processing synthesizes multiple independent tokens into a single associative mental schema, dramatically multiplying retrieval success."
+          "text": "Narrative linking weaves isolated words into a vivid, cohesive storyline. Craik & Lockhart's (1972) levels-of-processing account predicts that this kind of meaningful encoding is remembered better than rote repetition. With only 2 seconds to study, a very short story or image works best."
         }
       },
       {
@@ -174,7 +165,7 @@ export default function WordRecallPage() {
         "name": "Does word order matter during free recall testing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. In free recall paradigms, words may be typed or recalled in any arbitrary order. Testing without serial constraints measures total storage and retrieval volume rather than sequential position tracking."
+          "text": "No. You can type the words in any order. Separate them with spaces or commas; capitals and accents are ignored, but spelling must otherwise be exact."
         }
       },
       {
@@ -182,7 +173,7 @@ export default function WordRecallPage() {
         "name": "Does practising word recall improve my memory in general?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You will get better at this task, and mnemonic strategies you learn here -- grouping, narrative linking, imagery -- do transfer to remembering other lists. Broad improvement to memory in general is a much weaker claim: gains on a trained task often fail to generalise to untrained ones. Treat this as practice and a strategy workout, not as a treatment for anything, and note that nothing here can prevent, diagnose or screen for any medical condition."
+          "text": "You will get better at this task, and mnemonic strategies you practise here -- grouping, narrative linking, imagery -- can help with remembering other lists. Broad improvement to memory in general is a much weaker claim: gains on a trained task often fail to generalise to untrained ones. Treat this as practice and a strategy workout, not as a treatment for anything, and note that nothing here can prevent, diagnose or screen for any medical condition."
         }
       },
       {
@@ -190,7 +181,7 @@ export default function WordRecallPage() {
         "name": "Is this online Verbal Memory Test free to use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, SkillDrills Verbal Memory Test is 100% free, runs entirely client-side in your web browser with zero software downloads or registrations, and provides instant accuracy and span metrics."
+          "text": "Yes. It is free, runs in your web browser with no download or account, and shows after each round which words you got, missed or added. Your best score is kept only in your browser's local storage."
         }
       }
     ]
@@ -207,7 +198,7 @@ export default function WordRecallPage() {
       "position": 1,
       "url": "https://skilldrills.online/drills/memory/short-term-memory/word-recall#step-1",
         "name": "Read and Semantically Encode the Word List",
-        "text": "Observe the presented words during the memorization phase, pronouncing each word sub-vocally while forming a mental image."
+        "text": "The whole list appears at once for 2 seconds. Read it quickly, saying each word to yourself while forming a mental image."
       },
       {
         "@type": "HowToStep",
@@ -221,14 +212,14 @@ export default function WordRecallPage() {
       "position": 3,
       "url": "https://skilldrills.online/drills/memory/short-term-memory/word-recall#step-3",
         "name": "Offload Terminal Recency Words Immediately",
-        "text": "When the input box activates, instantly type the final 2 or 3 words while they are still fresh in short-term echoic memory."
+        "text": "When the input box appears you have 12 seconds. Type the words you are least sure of first, while they are still fresh."
       },
       {
         "@type": "HowToStep",
       "position": 4,
       "url": "https://skilldrills.online/drills/memory/short-term-memory/word-recall#step-4",
         "name": "Execute Free Recall Retrieval from Narrative Schema",
-        "text": "Unroll your mental story from the beginning to recall all primary items, separating words with spaces, and submit your round."
+        "text": "Unroll your mental story to recall the rest, separating words with spaces or commas, and press Enter to submit."
       }
     ]
   };
@@ -236,37 +227,36 @@ export default function WordRecallPage() {
   const wordRecallGuide = {
     heading: "Verbal Memory Test Guide & Immediate Free Recall",
     intro: [
-      "A verbal memory test shows a list of words and asks you to type back as many as you can remember. In this free online version the list grows when you recall it correctly and shrinks after a miss, and word order does not matter, so it finds your free-recall word span.",
-      "The scientific study of verbal memory began with Hermann Ebbinghaus (1885), who mathematically formulated the human forgetting curve and the dynamics of serial learning. In 1958, Swiss psychologist André Rey introduced the Rey Auditory Verbal Learning Test (RAVLT), which standardized word list learning to quantify immediate memory span, proactive and retroactive interference, and delayed retrieval across clinical populations.",
-      "In 1962, Bennet B. Murdock Jr. mathematically formalized the Serial Position Effect in free recall, demonstrating the distinct operations of the Primacy Effect (long-term consolidation of initial items) and the Recency Effect (temporary maintenance of terminal items in the sensory echoic buffer). Later, Fergus I. M. Craik & Robert S. Lockhart (1972) established the 'Levels of Processing' framework, proving that deep semantic encoding—such as narrative linking and thematic clustering—vastly outperforms shallow rote rehearsal.",
-      "Featuring high-precision digital chronometry (Woods et al., 2015), this drill measures both word span and retrieval throughput, converging on your true verbal memory capacity through an adaptive staircase protocol.",
-      "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval, about 16.7 ms per frame at 60 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup.",
+      "A verbal memory test shows a list of words and asks you to type back as many as you can remember. In this free online version a list of 3 words is shown all at once for 2 seconds; you then have 12 seconds to type them all. The list grows by one word (up to 12) when you recall it perfectly and shrinks by one after a miss, and word order does not matter, so it settles near your free-recall word span.",
+      "The scientific study of verbal memory began with Hermann Ebbinghaus (1885), who mathematically formulated the human forgetting curve and the dynamics of serial learning. Clinical word-list tests later standardized this kind of task; this drill is not one of them and gives no clinical result.",
+      "In 1962, Bennet B. Murdock Jr. described the serial position curve in free recall: better memory for the first items (primacy) and the last items (recency). Fergus I. M. Craik & Robert S. Lockhart (1972) proposed the 'levels of processing' framework, which holds that meaningful encoding, such as linking words into a story, is usually remembered better than rote repetition.",
+      "How the game works: a run lasts 45 seconds. Each round shows a new random list all at once for 2 seconds, then gives you 12 seconds to type it. A perfect round scores 150 x (1 + 0.15 x (words - 3)) points and adds a word; any missed, misspelled or extra word, or a timeout, removes a word. Nothing is deducted from your score or clock, and typing speed is not measured or scored.",
       "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
       "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
     ],
     benchmarks: {
-      title: "Verbal Free Recall & Word Span Score Bands",
-      headers: ["Performance Tier", "Word Span (Count)", "Free Recall Score", "Cognitive Storage & Retrieval Profile"],
+      title: "Verbal Free Recall: SkillDrills Practice Bands",
+      headers: ["Practice Band", "Peak List Length", "Points per Perfect Round", "What It Takes"],
       rows: [
-        ["Tier 1 (Exceptional)", "Span 8 – 11+ Words", "1,100+ Points", "Mnemonic master; deploys deep semantic narrative chaining (Craik & Lockhart, 1972); effortlessly overcomes retroactive interference; sub-800 ms per-word retrieval cadence"],
-        ["Tier 2 (Advanced)", "Span 6 – 7 Words", "850 – 1,099 Points", "Exceeds standard adult baseline; clusters words into relational pairs or triplets; consistent free recall under time pressure with 800 – 1,100 ms cadence"],
-        ["Tier 3 (Typical)", "Span 4 – 5 Words", "550 – 849 Points", "Normal population average on initial free recall trials; manages basic paired chunking; shows classic serial position dip where middle words drop; 1,100 – 1,500 ms cadence"],
-        ["Tier 4 (Developing)", "Span 3 Words", "350 – 549 Points", "Relies strictly on phonological echo without semantic encoding; struggles to recall words beyond the immediate recency buffer; 1,500 – 2,000 ms cadence"],
-        ["Tier 5 (Starting out)", "Span < 3 Words", "< 350 Points", "Rapid memory trace decay; severe proactive interference; difficulty retrieving words without external recognition prompts; cadence exceeding 2,000 ms"]
+        ["Band 1", "3 – 4 words", "150 – 173", "Reading the list once and typing it back"],
+        ["Band 2", "5 – 6 words", "195 – 218", "Quick grouping or a short story"],
+        ["Band 3", "7 – 8 words", "240 – 263", "Reliable story linking or imagery in 2 seconds"],
+        ["Band 4", "9 – 10 words", "285 – 308", "Fast, consistent encoding with no spelling slips"],
+        ["Band 5", "11 – 12 words", "330 – 353", "Top of the drill (max 12 words)"]
       ],
-      note: "Word span indicates maximum error-free list length achieved on the adaptive staircase; the bands are an editorial guide, not population norms (task design: Rey, 1964; Murdock, 1962; Woods et al., 2015)."
+      note: "SkillDrills practice bands derived from the scoring code (points = 150 x (1 + 0.15 x (words - 3))). They are not population norms: SkillDrills collects no user data, so use them only to track your own runs."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Verbal Free Recall",
       items: [
         {
           name: "Narrative Story Linking & Associative Chaining",
-          desc: "Weave unrelated words into a bizarre, vivid mental micro-story (Craik & Lockhart, 1972; Tulving, 1962). Linking 'eagle', 'castle', and 'lantern' into 'An eagle carrying a burning lantern landed on the castle roof' binds 3 isolated tokens into a single cohesive episodic scene, multiplying recall durability.",
+          desc: "Weave unrelated words into a bizarre, vivid mental micro-story (Craik & Lockhart, 1972; Tulving, 1962). Linking 'eagle', 'castle', and 'lantern' into 'An eagle carrying a burning lantern landed on the castle roof' binds 3 separate words into one scene that is easier to recall.",
           tips: "The more exaggerated, colorful, or physically impossible the narrative image, the more indelible the mental trace."
         },
         {
           name: "Dual-Coding Method (Mental Imagery + Auditory Echo)",
-          desc: "Activate Allan Paivio's dual-coding mechanism by visualizing each noun's physical appearance while pronouncing its phonetic syllables. Creating simultaneous visual and auditory memory traces provides two independent cortical pathways during retrieval.",
+          desc: "Activate Allan Paivio's dual-coding mechanism by visualizing each noun's physical appearance while pronouncing its phonetic syllables. Paivio's dual-coding theory holds that a word stored both as an image and as a sound has two routes back during recall.",
           tips: "Visualize the object's color and texture for half a second while silently articulating its name."
         },
         {
@@ -276,23 +266,23 @@ export default function WordRecallPage() {
         },
         {
           name: "Recency-First Dumping Strategy",
-          desc: "When the recall window opens, type the final 2-3 words immediately (Murdock, 1962). These terminal items reside in fragile short-term sensory memory and decay within 3 to 5 seconds. Offloading the recency buffer first clears working memory to reconstruct your narrative story.",
-          tips: "Type the last words you saw first, then relax and unroll your opening narrative chunk."
+          desc: "When the recall window opens, type the words you feel least sure of immediately (Murdock, 1962), while they are still fresh, then rebuild the rest from your story.",
+          tips: "Type the shakiest words first, then unroll your story; you have 12 seconds."
         }
       ]
     },
     steps: [
-      "Center your gaze on the word display area and focus attention during the presentation phase.",
-      "As words appear, immediately connect them into a vivid mental narrative or thematic clusters.",
+      "Center your gaze on the word display area: the whole list appears at once for 2 seconds.",
+      "As you read the list, connect the words into a vivid mental narrative or thematic clusters.",
       "Form high-contrast visual mental images of each noun to establish dual-coded episodic traces.",
-      "When the input box activates, immediately type the final words from fresh echoic memory, then unroll your story.",
+      "When the input box appears, type the words you are least sure of first, then unroll your story and press Enter.",
       "Allow the adaptive staircase to calibrate your current capacity and progressively expand your verbal memory boundaries."
     ],
-    audience: "Students, professionals, cognitive fitness enthusiasts, and individuals preparing for neuropsychological evaluations (RAVLT, CVLT) seeking to maximize verbal working memory and free recall throughput.",
+    audience: "Students, professionals and anyone who wants a quick, free word memory challenge and a place to practise memory strategies such as story linking and imagery.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     // Works named in this page's copy, with DOIs so a reader or an answer
     // engine can check the figures rather than take them on trust.
-    sources: pickSources('craik1972', 'murdock1962', 'tulving1962', 'woods2015'),
+    sources: pickSources('craik1972', 'murdock1962', 'tulving1962'),
     related: [
       { href: "/drills/memory/short-term-memory/digit-span", label: "Digit Span Memory Test" },
       { href: "/drills/memory/short-term-memory/color-sequence", label: "Color Memory Game" },

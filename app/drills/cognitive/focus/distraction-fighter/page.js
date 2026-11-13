@@ -44,7 +44,7 @@ const webAppSchema = {
   "description": "Free online distraction resistance and inhibitory control game based on the Stroop color-word interference task.",
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const softwareSchema = {
@@ -54,10 +54,10 @@ const softwareSchema = {
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Free online distraction resistance and inhibitory control game. Fight off visual distractors, train Stroop-effect resistance, and strengthen your ability to maintain focus on primary targets in cognitively noisy environments.",
+  "description": "Free online Stroop color-word game: tap the ink color and ignore the word as the trial window shrinks. Non-clinical practice of selective attention and response inhibition.",
   "genre": "Cognitive Brain Training / Inhibitory Control",
   "url": "https://skilldrills.online/drills/cognitive/focus/distraction-fighter",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" }
 };
 
@@ -67,7 +67,7 @@ const videoGameSchema = {
   "name": "Stroop Test Online — Distraction Fighter Game",
   "url": "https://skilldrills.online/drills/cognitive/focus/distraction-fighter",
   "description": "Online color-word interference game based on the Stroop test paradigm. Train cognitive inhibition and selective attention under timed pressure.",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Cognitive Training", "Brain Games", "Stroop Test", "Inhibitory Control"],
   "playMode": "SinglePlayer",
@@ -83,12 +83,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Why are humans so easily distracted?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Humans have an evolved orienting reflex that automatically directs attention toward novel, moving, or salient stimuli — a survival mechanism to detect threats and opportunities. In modern environments, this reflex is constantly triggered by notifications, movement, and bright colors, undermining voluntary focus. Training inhibitory control helps you override this reflex." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Humans have an evolved orienting reflex that automatically directs attention toward novel, moving, or salient stimuli — a survival mechanism to detect threats and opportunities. In modern environments, this reflex is constantly triggered by notifications, movement, and bright colors, undermining voluntary focus. Practising tasks that reward ignoring irrelevant cues is one way to practise staying on task." }
     },
     {
       "@type": "Question",
       "name": "What is the Stroop test and how does it measure distraction resistance?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The Stroop test (1935) requires naming the ink color of color words printed in conflicting colors (e.g., the word 'RED' in blue ink). The interference between the automatic reading response and the voluntary color-naming response measures your cognitive inhibition strength. A longer reaction time or more errors indicates stronger Stroop interference — weaker distraction resistance." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The Stroop test (1935) requires naming the ink color of color words printed in conflicting colors (e.g., the word 'RED' in blue ink). In the lab, interference is measured as the slowdown and extra errors on conflicting trials compared with neutral ones. This drill does not compute that interference score; it gives you a score, a peak level and an accuracy figure for a run of conflicting color words." }
     },
     {
       "@type": "Question",
@@ -98,12 +98,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How can I train my brain to block out distractions?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Effective methods include: (1) Stroop test and Flanker task practice (strengthens top-down inhibitory pathways), (2) mindfulness meditation (a common attention-practice approach), (3) single-tasking practice (training sustained focus without device interruptions), and (4) progressive exposure to distractor-rich environments during deliberate practice. This drill provides direct gamified inhibitory control exercise." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Effective methods include: (1) Stroop and Flanker task practice (practise ignoring a competing cue), (2) mindfulness meditation (a common attention-practice approach), (3) single-tasking practice (training sustained focus without device interruptions), and (4) progressive exposure to distractor-rich environments during deliberate practice. This drill is a game version of one such exercise; gains in the drill are not guaranteed to carry over to everyday focus." }
     },
     {
       "@type": "Question",
       "name": "What is the Flanker task and how does it relate to distraction?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The Eriksen Flanker Task displays a central target surrounded by congruent (same direction) or incongruent (opposite direction) flanker stimuli. The incongruent condition creates response competition — your brain must inhibit the incorrect flanker response to respond correctly to the central target. This resistance to flanker distraction is precisely what this game trains." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The Eriksen Flanker Task displays a central target surrounded by congruent (same direction) or incongruent (opposite direction) flanker stimuli. The incongruent condition creates response competition — your brain must inhibit the incorrect flanker response to respond correctly to the central target. This drill uses the Stroop task, not the Flanker task, but both involve ignoring a competing cue." }
     },
     {
       "@type": "Question",
@@ -113,12 +113,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the orienting reflex and how does it cause distraction?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The orienting reflex is an automatic neurological response to novel stimuli — your brain involuntarily redirects attention to unexpected sounds, movement, or visual changes. Mediated by the superior colliculus and thalamus, it evolved to ensure threat detection. Inhibitory control training helps the prefrontal cortex override this reflex when distraction is unhelpful." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The orienting reflex is an automatic neurological response to novel stimuli — your brain involuntarily redirects attention to unexpected sounds, movement, or visual changes. It is thought to help detect possible threats. Practising a task that rewards ignoring an irrelevant cue is one way to practise staying on task; it does not switch the reflex off." }
     },
     {
       "@type": "Question",
       "name": "How does this distraction fighter game work?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A color word flashes on screen printed in a conflicting ink color (e.g. the word 'BLUE' printed in red ink). You must tap the button matching the ink color, not the word's meaning, suppressing the automatic urge to read the word aloud. Each correct ink-color tap builds your score, while a wrong tap or a timed-out trial counts as an impulse control failure." }
+      "acceptedAnswer": { "@type": "Answer", "text": "A color word flashes on screen printed in a conflicting ink color (e.g. the word 'BLUE' printed in red ink). You must tap the button matching the ink color, not the word's meaning, suppressing the automatic urge to read the word aloud. There are 4 color buttons, rising to 6 from level 4. Each correct tap scores 100 points times your combo multiplier and a level bonus and adds 2 seconds to the clock (starting at 45, capped at 60). A wrong tap or a timed-out trial costs 1 second and resets the combo." }
     },
     {
       "@type": "Question",
@@ -224,16 +224,18 @@ export const metadata = {
 
 const distractionfighterGuide = {
   benchmarks: {
-    title: "Stroop Test Performance Tiers & Interference Benchmarks (45s Session)",
-    headers: ["Skill Tier", "Score (45s)", "Accuracy Rate", "Neurocognitive Interpretation"],
+    title: "SkillDrills Practice Bands",
+    headers: ["Grade", "Label", "Score"],
     rows: [
-      ["Tier 1 (Elite / Master of Inhibition)", "18,000+ PTS", "96%+", "Flawless impulse control; instant suppression of lexical meaning at peak reaction tempo."],
-      ["Tier 2 (Advanced / Tournament Level)", "12,000 – 17,999 PTS", "92% – 95%", "Minimal Stroop interference; stable click cadence with excellent cognitive flexibility."],
-      ["Tier 3 (Competent / Average)", "7,000 – 11,999 PTS", "85% – 91%", "Typical healthy interference latency; occasional hesitation under conflicting color cues."],
-      ["Tier 4 (Intermediate / Basic Focus)", "3,000 – 6,999 PTS", "75% – 84%", "Reading impulse dominance; marked deceleration as stimulus speed escalates."],
-      ["Tier 5 (Novice / High Impulsivity)", "< 3,000 PTS", "< 75%", "Frequent false clicks and timeouts; susceptibility to cognitive fatigue."]
+      ["S+", "Legendary", "21,660+"],
+      ["S", "Elite", "17,340 - 21,659"],
+      ["A", "Excellent", "13,500 - 17,339"],
+      ["B", "Great", "8,640 - 13,499"],
+      ["C", "Good", "4,860 - 8,639"],
+      ["D", "Keep Going", "2,160 - 4,859"],
+      ["F", "Needs Practice", "Under 2,160"]
     ],
-    note: "Scores reflect a 45-second session with dynamically escalating color varieties and contracted reaction windows (Stroop, 1935; Woods et al., 2015)."
+    note: "Bands come from the end-screen grade formula (score compared with a 24,000-point SkillDrills reference). They are practice markers, not population statistics, and they do not measure Stroop interference."
   },
 
   heading: "Stroop Test Guide & the Interference Effect",

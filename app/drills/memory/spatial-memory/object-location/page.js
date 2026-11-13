@@ -5,7 +5,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Object Location Memory Test – Spatial Recall | SkillDrills',
-  description: 'Free object location memory test. Remember what was where on expanding grids and measure your spatial position recall.',
+  description: 'Free object location memory test. Memorise where 2 to 10 objects sit on a 3x3, 4x4 or 5x5 grid for 1.5 seconds, then tap where the target object was.',
   keywords: [
     'object location memory test',
     'spatial position memory',
@@ -17,7 +17,6 @@ export const metadata = {
     'visuospatial working memory test',
     'object location binding',
     'spatial memory training online',
-    'silverman eals object location',
     'visual spatial memory test',
     'where was it memory test',
     'matrix location memory',
@@ -33,7 +32,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Object Location Memory Test - Free Spatial Recall',
-    description: 'Assess and strengthen spatial position memory with the Object Location Memory Test. Memorize object placements on expanding 3x3 to 7x7 matrices in 1.5s and retrieve target coordinates.',
+    description: 'Free object location memory test: see 2 to 10 objects on a 3x3 to 5x5 grid for 1.5 seconds, then tap where the target object was within 8 seconds.',
     type: 'website',
     url: 'https://skilldrills.online/drills/memory/spatial-memory/object-location',
     siteName: 'SkillDrills',
@@ -42,7 +41,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Object Location Memory Test - Free Spatial Recall',
-    description: 'Assess and strengthen spatial position memory with the Object Location Memory Test. Memorize object placements on expanding 3x3 to 7x7 matrices in 1.5s and retrieve target coordinates.',
+    description: 'Free object location memory test: see 2 to 10 objects on a 3x3 to 5x5 grid for 1.5 seconds, then tap where the target object was within 8 seconds.',
   },
 };
 
@@ -60,18 +59,18 @@ export default function ObjectLocationPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Spatial_memory"],
+    "@type": "SoftwareApplication",
     "name": "Object Location Memory Test",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
+    "browserRequirements": "Requires JavaScript",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Interactive spatial position assessment testing visual object-location feature binding, spatial mapping, and matrix position recall.",
-    "dateModified": "2026-09-05"
+    "description": "Free object location memory game: memorize where several objects sit on a grid for 1.5 seconds, then tap the cell where one target object was.",
+    "dateModified": "2026-11-12"
   };
 
   const webAppSchema = {
@@ -91,14 +90,14 @@ export default function ObjectLocationPage() {
       "name": "SkillDrills"
     },
     "isAccessibleForFree": true,
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-11-12"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Object Location Memory Test",
-    "description": "Interactive spatial position assessment testing visual object-location feature binding, spatial mapping, and matrix position recall.",
+    "description": "Free object location memory game: memorize where several objects sit on a grid for 1.5 seconds, then tap the cell where one target object was.",
     "url": "https://skilldrills.online/drills/memory/spatial-memory/object-location",
     "genre": ["Memory Game", "Cognitive Training", "Spatial Memory"],
     "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
@@ -125,7 +124,7 @@ export default function ObjectLocationPage() {
         "name": "What is an Object Location Memory Test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "An Object Location Memory Test evaluates your ability to encode both what an object is (visual identity) and where it is located (spatial coordinate), binding these two cognitive streams into an integrated episodic representation."
+          "text": "An object location memory test asks you to remember both what an object is and where it was. This SkillDrills version is a free practice game, not a clinical test: you memorize a grid of objects, then show where one of them was."
         }
       },
       {
@@ -133,15 +132,15 @@ export default function ObjectLocationPage() {
         "name": "How does the Object Location drill work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The drill presents multiple distinct objects placed across an expanding grid (from 3x3 to 7x7) for 1.5 seconds. Once the grid clears, you are shown a single target object at the top and must click its exact prior coordinate."
+          "text": "Level 1 shows 2 objects on a 3x3 grid for 1.5 seconds; each level adds one object, up to 10. The grid becomes 4x4 at level 8 and 5x5 at level 15. When the objects hide, one target object is shown and you have 8 seconds to tap the cell where it was. A correct tap scores 150 points and moves you up a level. A run lasts 45 seconds."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the Silverman-Eals Object Location Memory test?",
+        "name": "Is this the Silverman-Eals object location task?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Introduced by Marion Eals and Irwin Silverman in 1994, the Silverman-Eals paradigm is a landmark neuropsychological test demonstrating that spatial memory involves two distinct sub-capacities: Euclidean spatial orientation and incidental object-location memory binding."
+          "text": "No. Eals and Silverman (1994) studied memory for object locations using arrays of drawn objects in a research setting. This drill is an unrelated free game with its own grid, timing and scoring, and gives no normed or clinical result."
         }
       },
       {
@@ -149,15 +148,15 @@ export default function ObjectLocationPage() {
         "name": "What is object-location binding in cognitive neuroscience?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Object-location binding is the neurological process by which the brain connects ventral visual stream information ('what', object identity) with dorsal stream spatial coordinates ('where') in the hippocampus and parahippocampal cortex."
+          "text": "Object-location binding is linking an object's identity ('what') with its position ('where'). Research associates the 'what' and 'where' information with different visual pathways and links their combination with medial temporal lobe regions, including the hippocampus."
         }
       },
       {
         "@type": "Question",
-        "name": "What is an average score on an object-location memory test?",
+        "name": "How is the object location game scored?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "On standard clinical assessments such as CANTAB Paired Associates Learning, typical adults accurately locate about 4 to 6 objects across intermediate grids. That is a supervised clinical task with its own materials and scoring; this drill uses a different grid, timing and scoring, so treat your score here as a game result rather than something comparable to a clinical measure."
+          "text": "Each correct tap scores 150 points and adds one object to the next round (up to 10). A wrong tap or the 8-second timeout scores nothing and loads a new layout at the same level; no points or time are deducted. SkillDrills collects no user data, so there is no average score; compare against your own best."
         }
       },
       {
@@ -173,7 +172,7 @@ export default function ObjectLocationPage() {
         "name": "Why is it harder to remember an object's location than a simple pattern?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Feature conjunctions incur higher cognitive binding costs in working memory (Luck & Vogel, 1997). The brain must maintain two distinct feature dimensions simultaneously, doubling the cognitive load compared to raw spatial dot arrays."
+          "text": "You have to hold two kinds of information together, which object and which cell, rather than just which cells were filled. Remembering combinations of features is generally harder than remembering one feature alone."
         }
       },
       {
@@ -181,7 +180,7 @@ export default function ObjectLocationPage() {
         "name": "What brain structures support object location memory?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Object location memory primarily recruits the bilateral hippocampus, parahippocampal gyrus, posterior parietal cortex, and dorsolateral prefrontal cortex (DLPFC) for active spatial coordinate maintenance."
+          "text": "Research links object location memory with the hippocampus and nearby medial temporal regions, along with parietal and prefrontal areas involved in spatial attention and working memory. This game does not measure brain activity."
         }
       },
       {
@@ -189,15 +188,15 @@ export default function ObjectLocationPage() {
         "name": "Are there score or timer penalties for missed clicks?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Tapping an incorrect coordinate never deducts score points or reduces remaining timer seconds. The round replays at the current difficulty so you can consolidate your spatial anchoring strategy."
+          "text": "No. A wrong tap or an 8-second timeout never deducts points or time; it just scores nothing for that round. The next round is a new layout at the same level, so the difficulty never drops. The 45-second clock keeps running throughout."
         }
       },
       {
         "@type": "Question",
-        "name": "How does object location memory transfer to real-world tasks?",
+        "name": "Will this help me remember where I put things?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Object location memory directly improves your ability to remember where you placed keys, parked your car, or stored tools, while enhancing tactical gaming awareness (tracking enemy util, items, and team positions on maps)."
+          "text": "Not reliably. You will get better at this game, but research on memory training generally finds that gains transfer poorly to untrained, everyday tasks such as finding your keys or tracking positions in games. Treat it as practice and a challenge, not a guaranteed improvement."
         }
       }
     ]
@@ -207,7 +206,7 @@ export default function ObjectLocationPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "How to Train Object Location Spatial Memory",
-    "description": "Four-step systematic protocol to encode object identities, bind spatial coordinates, and pinpoint target positions on expanding grids.",
+    "description": "Four steps to encode objects and their positions in 1.5 seconds, then tap where the target object was.",
     "step": [
       {
         "@type": "HowToStep",
@@ -239,32 +238,31 @@ export default function ObjectLocationPage() {
       "url": "https://skilldrills.online/drills/memory/spatial-memory/object-location#step-4",
         
         "name": "Execute Precise Target Localization",
-        "text": "When prompted with the target icon, mentally query your landmark map and tap the exact recalled cell."
+        "text": "When the target icon appears, recall its landmark and tap the cell within 8 seconds. You get one tap per round."
       }
     ]
   };
 
   const objectLocationGuide = {
     intro: [
-      "An object location memory test shows several objects on a grid, hides them, then asks where a given object was. In this free online version the grid grows from 3x3 to 7x7 and each level adds one object, so it measures how many object positions you can hold at once.",
-      "The clinical foundation of object-location testing was established by Marion Eals & Irwin Silverman (1994) in their pioneering research on spatial cognition, demonstrating that memory for object locations operates as a specialized evolutionary mechanism distinct from mental rotation. Earlier, Edward C. Tolman (1948) established the concept of cognitive mapping, showing how organisms form internal spatial models of their environment.",
-      "In working memory architecture, Robert H. Logie (1995) and Alan Baddeley (2000) identified that object-location binding is coordinated by the Episodic Buffer, integrating inputs from the Visual Cache (object identities) with the Inner Scribe (spatial coordinates). Crucially, Steven J. Luck & Edward K. Vogel (1997) proved that feature conjunctions (binding identity to space) impose substantial attentional overhead, while Nelson Cowan (2001) demonstrated that unassisted focal working memory is strictly bounded to 3 to 4 independent item-location pairs.",
-      "Following the chronometric standards set out by Woods et al. (2015), this drill utilizes a fixed 1.5-second memorization window and an adaptive difficulty staircase (scaling from 3x3 up to 7x7 matrices) to measure your precise spatial binding threshold.",
-      "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval, about 16.7 ms per frame at 60 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup.",
+      "An object location memory test shows several objects on a grid, hides them, then asks where a given object was. In this free online version level 1 shows 2 objects on a 3x3 grid; each level adds one object (up to 10), the grid becomes 4x4 at level 8 and 5x5 at level 15, so you see how many object positions you can hold at once.",
+      "Marion Eals & Irwin Silverman (1994) studied memory for object locations and reported that it behaves differently from mental rotation; this drill is not their task. Earlier, Edward C. Tolman (1948) established the concept of cognitive mapping, showing how organisms form internal spatial models of their environment.",
+      "In Baddeley's (2000) model, the episodic buffer combines information from different stores, such as what an object looks like and where it is; Logie (1995) separated the visual cache from the spatial inner scribe. Luck & Vogel (1997) and Cowan (2001) suggest working memory holds only about 3 to 4 items at a time, which is why the later levels become hard.",
+      "How the game works: a run lasts 45 seconds and the clock runs continuously. Each round shows the objects for 1.5 seconds, then a target object; you have 8 seconds and one tap to find its cell. A correct tap scores 150 points and adds an object; a wrong tap or timeout scores nothing and repeats the level with a new layout. Tap speed is not measured or scored.",
       "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
       "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
     ],
     benchmarks: {
-      title: "Object-Location Binding Span Score Bands",
-      headers: ["Performance Tier", "Objects & Grid Scale", "Drill Score", "Cognitive Binding & Spatial Mapping Profile"],
+      title: "Object Location: SkillDrills Practice Bands",
+      headers: ["Practice Band", "Correct Taps", "Score", "Level, Objects & Grid Reached"],
       rows: [
-        ["Tier 1 (Exceptional)", "Level 8 – 10+ (8 – 10+ Objects, 6x6–7x7 Grid)", "1,000+ Points", "Visuospatial elite; deploys rapid quadrantal partitioning and relational landmark anchoring; binds 8+ object-location pairs effortlessly; sub-500 ms target localization"],
-        ["Tier 2 (Advanced)", "Level 6 – 7 (6 – 7 Objects, 5x5–6x6 Grid)", "750 – 999 Points", "Exceeds standard adult baseline; robust semantic-spatial pairing; resists visual retroactive interference on expanding matrices; 500 – 700 ms localization"],
-        ["Tier 3 (Typical)", "Level 4 – 5 (4 – 5 Objects, 4x4–5x5 Grid)", "450 – 749 Points", "Normal population baseline (Eals & Silverman, 1994; CANTAB PAL); manages 4 item-location conjunctions (Cowan's limit); begins losing central items on 5x5 grids; 700 – 950 ms localization"],
-        ["Tier 4 (Developing)", "Level 3 (3 Objects, 3x3–4x4 Grid)", "250 – 449 Points", "Recalls only 2–3 isolated objects; confuses coordinates of adjacent items; struggles when distractor objects are introduced; 950 – 1,300 ms localization"],
-        ["Tier 5 (Starting out)", "Level 1 – 2 (2 Objects, 3x3 Grid)", "< 250 Points", "Rapid visual trace decay; failure of object-to-location binding; difficulty retrieving target coordinates even after minimal 1.5s delays; latency exceeding 1,300 ms"]
+        ["Band 1", "0 – 2", "0 – 300", "Level 1 – 3, 2 – 4 objects, 3x3"],
+        ["Band 2", "3 – 6", "450 – 900", "Level 4 – 7, 5 – 8 objects, 3x3"],
+        ["Band 3", "7 – 10", "1,050 – 1,500", "Level 8 – 11, 9 – 10 objects, 4x4"],
+        ["Band 4", "11 – 13", "1,650 – 1,950", "Level 12 – 14, 10 objects, 4x4"],
+        ["Band 5", "14+", "2,100+", "Level 15+, 10 objects, 5x5"]
       ],
-      note: "Object count and grid scale reflect maximum difficulty cleared in 45-second session; The bands are an editorial guide, not population norms, because SkillDrills collects no aggregate data; the task design follows (Eals & Silverman, 1994; Luck & Vogel, 1997; Woods et al., 2015)."
+      note: "SkillDrills practice bands derived from the scoring code (150 points per correct tap; objects = level + 1, max 10; 4x4 from level 8, 5x5 from level 15; 45-second run). They are not population norms: SkillDrills collects no user data, so use them only to track your own runs."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Object-Location Binding",
@@ -272,7 +270,7 @@ export default function ObjectLocationPage() {
         {
           name: "Relational Landmark Anchoring",
           desc: "Anchor target objects relative to permanent topological landmarks such as the 4 corners, center cell, or outer borders (Tolman, 1948). Remembering 'the diamond is in the top-left corner' anchors the object to a salient spatial beacon, bypassing complex coordinate calculation.",
-          tips: "Immediately categorize which items occupy corner or perimeter cells during the first 500 ms."
+          tips: "Note which items occupy corner or edge cells as soon as the grid appears."
         },
         {
           name: "Semantic-Spatial Associative Pairing",
@@ -281,7 +279,7 @@ export default function ObjectLocationPage() {
         },
         {
           name: "Quadrantal Zoning & Chunking",
-          desc: "Mentally subdivide larger 5x5 or 7x7 grids into 4 distinct quadrants (top-left, top-right, bottom-left, bottom-right). Count how many objects inhabit each zone (e.g. 2 in top-left, 1 in bottom-right) to constrain your search space.",
+          desc: "Mentally subdivide the larger 4x4 and 5x5 grids into 4 distinct quadrants (top-left, top-right, bottom-left, bottom-right). Count how many objects inhabit each zone (e.g. 2 in top-left, 1 in bottom-right) to constrain your search space.",
           tips: "Count items per quadrant first, then identify their specific cell within that sub-grid."
         },
         {
@@ -296,13 +294,13 @@ export default function ObjectLocationPage() {
       "During the 1.5-second display, bind each object to a landmark (corners, borders, center).",
       "Form rapid semantic-spatial pairs connecting the icon identity with its position.",
       "When the grid clears and the target icon appears, query your landmark map and tap the recalled cell.",
-      "Advance through progressive 3x3 to 7x7 matrices to train high-capacity visual binding."
+      "Each correct answer adds an object; the grid grows from 3x3 to 4x4 at level 8 and to 5x5 at level 15."
     ],
-    audience: "Gamers seeking spatial map and cooldown tracking mastery, STEM students, radiologists, drivers, and individuals training visuospatial working memory and cognitive mapping.",
+    audience: "Gamers, students and anyone who wants a quick, free spatial memory challenge.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     // Works named in this page's copy, with DOIs so a reader or an answer
     // engine can check the figures rather than take them on trust.
-    sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994', 'woods2015'),
+    sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994'),
     related: [
       { href: "/drills/memory/spatial-memory/grid-memorization", label: "Visual Memory Test" },
       { href: "/drills/memory/spatial-memory/path-tracing", label: "Path Tracing Memory Test" },

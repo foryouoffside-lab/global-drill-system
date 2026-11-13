@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Divided Attention Test Online | Dual Task | SkillDrills",
-  description: "Free divided attention test online: track a moving target while classifying numbers in a dual-task focus drill. Non-clinical practice.",
+  description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill. Non-clinical practice.",
   keywords: ["divided attention test online", "dual task test", "dual task training", "multitasking test", "split attention test", "divided attention task", "dual visual tracking test", "simultaneous processing test", "attention sharing test", "cognitive multitasking drill"],
   openGraph: {
     title: "Divided Attention Test Online | Dual Task | SkillDrills",
-    description: "Free divided attention test online: track a moving target while classifying numbers in a dual-task focus drill. Non-clinical practice.",
+    description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill. Non-clinical practice.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Divided Attention Test Online | Dual Task | SkillDrills",
-    description: "Free divided attention test online: track a moving target while classifying numbers in a dual-task focus drill. Non-clinical practice.",
+    description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill. Non-clinical practice.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -63,14 +63,14 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Divided_attention"],
   "name": "Divided Attention Test — Dual-Task Split Focus Drill",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test your divided attention and dual-task capacity online. Track moving visual targets while processing numerical streams in this free split-focus drill.",
+  "description": "Free divided attention test online. Tap blue targets that pop up on the field while pressing MATCH on even digits in a side stream, in this split-focus drill.",
   "url": "https://skilldrills.online/drills/cognitive/attention/divided-attention",
   "publisher": {
     "@type": "Organization",
@@ -78,7 +78,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -95,7 +95,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/attention/divided-attention",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -103,7 +103,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Divided Attention Test – Dual-Stream Focus & Tracking Game",
   "url": "https://skilldrills.online/drills/cognitive/attention/divided-attention",
-  "description": "Test your divided attention and dual-task capacity online. Track moving visual targets while processing numerical streams in this free split-focus drill.",
+  "description": "Free divided attention test online. Tap blue targets that pop up on the field while pressing MATCH on even digits in a side stream, in this split-focus drill.",
   "genre": [
     "Action",
     "Brain Game",
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "What is divided attention and what does this test measure?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Divided attention is the cognitive ability to allocate mental resources across two or more independent information channels concurrently. This test measures your ability to simultaneously track moving visuospatial targets while categorizing a continuous numerical stream, quantifying cross-channel accuracy, response latency, and dual-task degradation under time pressure."
+        "text": "Divided attention is handling two streams of information at once. In this drill you tap blue targets that pop up at random spots on the field while watching a digit stream and pressing MATCH only for even digits. The result is a score, a peak level and a dual accuracy figure for the run; it is practice, not a clinical assessment."
       }
     },
     {
@@ -139,7 +139,7 @@ const faqSchema = {
       "name": "What is the Psychological Refractory Period (PRP)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Psychological Refractory Period (Pashler, 1994) is the brief delay in processing that occurs when a second stimulus is presented shortly after a first. Because executive central bottleneck resources cannot be fully shared across two demanding decision stages, response time on the secondary task slows down significantly."
+        "text": "The psychological refractory period (Pashler, 1994) is the delay seen when a second stimulus needs a decision shortly after a first: the second response tends to slow down. Here a target and a new digit often arrive close together, which is why the drill gets harder as the pace rises."
       }
     },
     {
@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "What does Wickens' Multiple Resources Theory tell us about divided attention?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Christopher Wickens (2002) demonstrated that humans can divide attention far more effectively when concurrent tasks use distinct sensory modalities and processing codes. By pairing a visual-spatial target task with an auditory or verbal classification task, interference is mitigated compared to two identical visual tasks."
+        "text": "Christopher Wickens (2002) proposed that two tasks interfere less when they use different resources, for example vision and hearing. Both streams in this drill are visual, so they compete for the same resources by design."
       }
     },
     {
@@ -160,26 +160,26 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "How does this test differ from general multitasking in daily life?",
+      "name": "How does the clock work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Unlike casual workplace multitasking which often involves rapid serial task-switching rather than true concurrent processing, this drill requires real-time simultaneous sensory gating — keeping visual focal tracking engaged while continuously evaluating numeric stream values."
+        "text": "The run starts with 45 seconds. Each clean hit, on a target or on an even digit, adds 2 seconds, up to a maximum of 60. A wrong MATCH (odd digit or a second press on the same digit), an even digit you let pass, or a target that expires costs 1 second and resets your combo. The run ends when the clock reaches zero."
       }
     },
     {
       "@type": "Question",
-      "name": "What is considered an elite score on this test?",
+      "name": "How are the score and grade calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Scores above 15,000 points with an overall accuracy above 92% mark practice stage 5, reflecting strong prefrontal executive control and high working memory throughput."
+        "text": "Each clean hit is worth 100 points times your combo multiplier and a level bonus. The level rises with your score, and higher levels show targets and digits for less time and make targets smaller. The end-screen grade compares your score with a SkillDrills reference score of 24,000 points; it is a practice band, not a population norm."
       }
     },
     {
       "@type": "Question",
-      "name": "How does fatigue affect divided attention?",
+      "name": "Which controls does the drill use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sleep deprivation and mental fatigue disproportionately degrade central executive bandwidth, widening the Psychological Refractory Period and causing tunneling (visual neglect of secondary streams)."
+        "text": "Click or tap the blue targets on the field, and click or tap the MATCH button for even digits. The number channel uses the on-screen button, not a keyboard key. Escape exits the run."
       }
     },
     {
@@ -187,15 +187,15 @@ const faqSchema = {
       "name": "Does monitor refresh rate influence dual-task scores?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A high-refresh display (144Hz or more) shows motion in smaller steps than a 60Hz one, and display timing affects what a browser test can resolve (Woods et al., 2015). It is not required, and whether it changes your score is something to check by comparing your own runs on one setup."
+        "text": "Targets do not move, and the drill does not score reaction time in milliseconds, so refresh rate is not a major factor. A steady frame rate still helps; close heavy background tabs if the display stutters."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the recommended daily training routine?",
+      "name": "What is a reasonable practice routine?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A 10-to-15 minute daily session provides optimal neuroplastic stimulus without inducing central fatigue."
+        "text": "A few runs in one sitting, a few times a week, is enough to see whether your score and accuracy trend upward. Gains in this drill do not guarantee better multitasking elsewhere."
       }
     },
     {
@@ -213,20 +213,20 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Divided Attention Test",
-  "description": "Test your divided attention and dual-task capacity online. Track moving visual targets while processing numerical streams in this free split-focus drill.",
+  "description": "Free divided attention test online. Tap blue targets that pop up on the field while pressing MATCH on even digits in a side stream, in this split-focus drill.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "Initiate the Dual Stream",
-      "text": "Click Start Drill to activate both the primary visuospatial target field and the concurrent numerical side panel.",
+      "text": "Click Start Drill to open the target field and the number panel. The clock starts at 45 seconds.",
       "url": "https://skilldrills.online/drills/cognitive/attention/divided-attention#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Track and Tap Moving Visual Targets",
-      "text": "Monitor the canvas for moving blue target circles and tap each before its decay timer expires (+0.6s).",
+      "name": "Tap the Visual Targets",
+      "text": "Watch the field for blue target circles and tap each before it expires. Each clean hit adds 2 seconds to the clock, up to 60 seconds.",
       "url": "https://skilldrills.online/drills/cognitive/attention/divided-attention#step-2"
     },
     {
@@ -240,7 +240,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Maintain Dual Channel Accuracy",
-      "text": "Sustain clean hits on both channels to build your combo multiplier without dropping targets.",
+      "text": "Clean hits on either channel build your combo multiplier. A wrong MATCH, a missed even digit or an expired target costs 1 second and resets the combo.",
       "url": "https://skilldrills.online/drills/cognitive/attention/divided-attention#step-4"
     }
   ]
@@ -251,31 +251,33 @@ const guideProps = {
   intro: {
     title: "Divided Attention Test",
     paragraphs: [
-      "Test your divided attention and dual-task capacity online. Track moving visual targets while processing numerical streams in this free split-focus drill.",
-      "The Psychological Refractory Period (Pashler, 1994) is the brief delay in processing that occurs when a second stimulus is presented shortly after a first. Because executive central bottleneck resources cannot be fully shared across two demanding decision stages, response time on the secondary task slows down significantly.",
-      "Christopher Wickens (2002) demonstrated that humans can divide attention far more effectively when concurrent tasks use distinct sensory modalities and processing codes. By pairing a visual-spatial target task with an auditory or verbal classification task, interference is mitigated compared to two identical visual tasks.",
+      "Free divided attention test online. Tap blue targets that pop up on the field while pressing MATCH on even digits in a side stream, in this split-focus drill.",
+      "Dual-task research describes a psychological refractory period (Pashler, 1994): when two decisions arrive close together, the second response is delayed. This drill is non-clinical practice of that situation, not a diagnostic test.",
+      "Multiple resource theory (Wickens, 2002) predicts less interference when two tasks draw on different resources, such as vision and hearing. Both channels in this drill are visual, so expect them to compete; that competition is the point of the exercise.",
     ],
   },
   benchmarks: {
-    title: 'Cognitive Performance Standards & Benchmarks',
-    note: 'Stages are editorial practice markers set by SkillDrills, not population statistics or percentiles.',
-    headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Practice stage'],
+    title: 'SkillDrills Practice Bands',
+    note: 'Bands come from the end-screen grade formula (score compared with a 24,000-point SkillDrills reference score). They are practice markers, not population statistics or percentiles.',
+    headers: ['Grade', 'Label', 'Score'],
     rows: [
-      { tier: 'Tier 1', rank: 'Advanced Mastery Stage', stat: 'Highest tier', level: 'Mastery', accuracy: '98%+', percentile: 'Highest tier' },
-      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },
-      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Above-average tier', level: 'Platinum', accuracy: '88-93%', percentile: 'Above-average tier' },
-      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Mid tier', level: 'Gold', accuracy: '78-87%', percentile: 'Mid tier' },
-      { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
+      ['S+', 'Legendary', '21,660+'],
+      ['S', 'Elite', '17,340-21,659'],
+      ['A', 'Excellent', '13,500-17,339'],
+      ['B', 'Great', '8,640-13,499'],
+      ['C', 'Good', '4,860-8,639'],
+      ['D', 'Keep Going', '2,160-4,859'],
+      ['F', 'Needs Practice', 'Under 2,160'],
     ],
   },
   protocols: {
-    title: 'Core Neuroplastic Optimization Protocols',
-    description: 'Scientifically validated executive function enhancement protocols.',
+    title: 'How to Play',
+    description: 'The four steps of a Divided Attention run.',
     items: [
-      { title: "Initiate the Dual Stream", description: "Click Start Drill to activate both the primary visuospatial target field and the concurrent numerical side panel." },
-      { title: "Track and Tap Moving Visual Targets", description: "Monitor the canvas for moving blue target circles and tap each before its decay timer expires (+0.6s)." },
+      { title: "Initiate the Dual Stream", description: "Click Start Drill to open the target field and the number panel. The clock starts at 45 seconds." },
+      { title: "Tap the Visual Targets", description: "Watch the field for blue target circles and tap each before it expires. Each clean hit adds 2 seconds to the clock, up to 60 seconds." },
       { title: "Classify the Numerical Stream Simultaneously", description: "Simultaneously scan the right panel; when an EVEN number appears, tap the MATCH button immediately and ignore odd numbers." },
-      { title: "Maintain Dual Channel Accuracy", description: "Sustain clean hits on both channels to build your combo multiplier without dropping targets." },
+      { title: "Maintain Dual Channel Accuracy", description: "Clean hits on either channel build your combo multiplier. A wrong MATCH, a missed even digit or an expired target costs 1 second and resets the combo." },
     ],
   },
   faqs: {
@@ -314,7 +316,7 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DividedAttentionClient copy={{ title: "Divided Attention Test", subtitle: "Track a moving target while classifying numbers in a dual-task focus challenge" }} />
+      <DividedAttentionClient copy={{ title: "Divided Attention Test", subtitle: "Tap pop-up targets while flagging even digits in a dual-task focus challenge" }} />
       <DrillGuide {...guideProps} />
       <DrillFooter />
     </>

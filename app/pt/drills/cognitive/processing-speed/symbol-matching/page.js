@@ -8,20 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: "Teste de Símbolos e Dígitos | SDMT Online | SkillDrills",
   description: "Teste gratuito de símbolos e dígitos no navegador: pratique pareamento símbolo-dígito e velocidade de processamento. Inspirado no SDMT, não é clínico.",
-  keywords: [
-    "teste de simbolos e digitos",
-    "teste sdmt online",
-    "teste de velocidade de processamento",
-    "substituicao de simbolos e digitos",
-    "teste dsst online",
-    "rastreamento visual cognitivo",
-    "memoria associativa teste",
-    "agilidade mental teste online",
-    "teste neuropsicologico gratis",
-    "teste de atencao e velocidade",
-    "exercicio de processamento visual",
-    "teste cognitivo de simbolos"
-  ],
+  keywords: ["teste de símbolos e dígitos", "SDMT online", "teste sdmt online", "pareamento símbolo-dígito", "velocidade de processamento", "busca visual"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Símbolos e Dígitos | SDMT Online | SkillDrills",
     description: "Teste gratuito de símbolos e dígitos no navegador: pratique pareamento símbolo-dígito e velocidade de processamento. Inspirado no SDMT, não é clínico.",
@@ -77,7 +64,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Teste SDMT – Símbolos e Dígitos",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
@@ -92,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -109,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/symbol-matching",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -129,7 +116,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -146,7 +133,7 @@ const faqSchema = {
       "name": "O que é o teste SDMT (Symbol Digit Modalities Test)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O SDMT é um teste neuropsicológico amplamente usado, desenvolvido por Aaron Smith (1973) para avaliar velocidade de processamento da informação, rastreamento visual e atenção sustentada."
+        "text": "É um teste neuropsicológico criado por Aaron Smith (1973), em que se associam símbolos a dígitos usando uma chave. Este treino usa o mesmo formato, mas não é o SDMT nem um teste clínico."
       }
     },
     {
@@ -154,63 +141,63 @@ const faqSchema = {
       "name": "Qual a diferença entre os testes SDMT e DSST?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No DSST (Wechsler), escrevem-se símbolos para cada dígito. No SDMT, associam-se números a símbolos geométricos, isolando a rapidez cognitiva com menor interferência de destreza motora fina."
+        "text": "No DSST (Wechsler) escreve-se o símbolo de cada dígito. No SDMT diz-se o dígito de cada símbolo. Este treino segue o SDMT: você vê o símbolo e toca no dígito."
       }
     },
     {
       "@type": "Question",
-      "name": "Quais domínios cognitivos são avaliados neste exercício?",
+      "name": "Como funciona este teste de símbolos e dígitos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Avalia-se a velocidade de processamento perceptivo, a exploração visual rápida, a memória operacional associativa e a flexibilidade de transição executiva."
+        "text": "A chave no topo mostra seis símbolos com os dígitos 1 a 6. Quando um símbolo aparece no centro, toque no dígito correspondente. A chave muda a cada sessão e fica fixa durante a rodada."
       }
     },
     {
       "@type": "Question",
-      "name": "Por que o teste SDMT é tão utilizado na neuropsicologia clínica?",
+      "name": "Como funcionam o tempo e as penalidades?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Por sua sensibilidade extrema a pequenas alterações na integridade da substância branca cerebral, fadiga mental e velocidade de transmissão axonal."
+        "text": "A rodada começa com 45 segundos. Cada acerto soma 2 segundos (até 60). Um dígito errado, ou um símbolo que expira (com Target Timeouts ativado), tira 1 segundo e zera o combo. A rodada termina em 0."
       }
     },
     {
       "@type": "Question",
-      "name": "Como a memória de trabalho acelera as pontuações?",
+      "name": "Como são calculados os pontos e o nível?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ao memorizar os pares símbolo-número, o participante deixa de consultar a chave superior a cada rodada, reduzindo a latência a meros tempos de disparo motor."
+        "text": "Cada acerto vale 100 pontos multiplicados pelo combo e pelo nível. Conforme a pontuação sobe, o nível aumenta e o tempo para responder cada símbolo diminui."
       }
     },
     {
       "@type": "Question",
-      "name": "É normal sentir cansaço mental após a sessão de teste?",
+      "name": "O que o resultado mostra?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. A demanda contínua por atenção visual focada e decodificação rápida mobiliza intensamente os circuitos do lobo parietal e pré-frontal."
+        "text": "Pontos, precisão, acertos, erros, nível máximo e uma nota de F a S+ comparada a uma referência fixa da SkillDrills. Não é comparável a normas clínicas do SDMT nem a QI."
       }
     },
     {
       "@type": "Question",
-      "name": "Como o desempenho no SDMT se correlaciona com jogos e esports?",
+      "name": "É um exame médico ou neuropsicológico?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Jogadores de elite processam sinais visuais periféricos e ícones de interface com maior rapidez, conferindo vantagem crítica em tomadas de decisão sob pressão."
+        "text": "Não. É um jogo de prática no navegador, sem valor diagnóstico. Se você se preocupa com memória ou raciocínio, procure um profissional de saúde."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual é a frequência de treinamento diário recomendada?",
+      "name": "Como melhorar a pontuação?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Uma a duas sessões diárias de 5 a 10 minutos são ideais para consolidar a agilidade de emparelhamento sem saturar a memória operacional."
+        "text": "Decore a chave nos primeiros segundos, mantenha o olhar perto da chave e priorize a precisão, porque cada erro custa 1 segundo e o combo."
       }
     },
     {
       "@type": "Question",
-      "name": "A velocidade de processamento no SDMT declina com a idade?",
+      "name": "Treinar deixa meu processamento mais rápido?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, há um declínio gradual a partir dos 30 anos (Der & Deary, 2006). Práticas cognitivas deliberadas preservam a eficiência sináptica por longos períodos."
+        "text": "Sua pontuação nesta tarefa costuma subir com a prática. Não há garantia de que isso acelere outras tarefas do dia a dia."
       }
     },
     {
@@ -218,7 +205,7 @@ const faqSchema = {
       "name": "Este teste online de símbolos e dígitos é gratuito?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, o SkillDrills disponibiliza esta ferramenta sem custos, de forma direta no navegador, sem necessidade de registro ou instalação."
+        "text": "Sim, é grátis, direto no navegador, sem cadastro nem instalação, no computador ou no celular."
       }
     }
   ]
@@ -234,7 +221,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 1,
       "name": "Consulte a Chave Superior de Mapeamento",
-      "text": "Examine a tabela de referência que associa cada símbolo geométrico a um dígito numérico específico.",
+      "text": "Veja a chave que associa cada um dos seis símbolos a um dígito de 1 a 6.",
       "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/symbol-matching#step-1"
     },
     {
@@ -248,14 +235,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Pressione o Dígito Correto",
-      "text": "Digite no teclado numérico ou clique no botão correspondente o mais rápido possível sem cometer erros.",
+      "text": "Toque ou clique no botão do dígito correspondente na tela. Erro ou tempo esgotado custam 1 segundo e o combo.",
       "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/symbol-matching#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Memorize os Pares para Ganhar Ritmo",
-      "text": "Conforme internaliza o mapeamento, responda diretamente pela memória associativa para maximizar o escore.",
+      "text": "A chave fica igual durante a sessão: decorar os pares reduz as consultas. Com o nível, sobra menos tempo por símbolo.",
       "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/symbol-matching#step-4"
     }
   ]
@@ -264,11 +251,11 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('smith1973', 'der2006', 'woods2015'),
   intro: {
-    title: "Neurociência do Teste SDMT & Velocidade de Processamento da Informação",
+    title: "Teste de Símbolos e Dígitos – SDMT Online",
     paragraphs: [
-      "O Teste de Modalidades de Dígitos e Símbolos (SDMT - Symbol Digit Modalities Test) é uma avaliação neurocognitiva consagrada na literatura clínica para medir a velocidade de processamento mental (Smith, 1973).",
-      "Enquanto o DSST tradicional da escala Wechsler exige transcrição manual com caneta, o formato digital de correspondência rápida isola a velocidade perceptiva cortical pura, reduzindo a interferência de limitações motoras periféricas.",
-      "O teste recruta simultaneamente a velocidade de decodificação no córtex visual primário, a memória de trabalho no córtex pré-frontal e a atenção seletiva orientada pelo lobo parietal (Der & Deary, 2006; Woods et al., 2015).",
+      "O teste de símbolos e dígitos é um treino grátis no navegador: a chave no topo associa seis símbolos aos dígitos 1 a 6, um símbolo aparece no centro e você toca no dígito correspondente. A chave é embaralhada a cada sessão. A rodada começa com 45 segundos; cada acerto soma 2 segundos (máx. 60) e cada erro ou tempo esgotado tira 1 segundo.",
+      "Responder do símbolo para o dígito é o formato do SDMT (Smith, 1973); no DSST da escala Wechsler é o contrário (dígito para símbolo). Este treino não é nenhum dos dois testes e seus resultados não se comparam a normas clínicas.",
+      "O resultado mostra pontos, precisão, acertos, erros e nível máximo. É um jogo de prática, não um diagnóstico nem uma avaliação de QI ou neuropsicológica.",
     ],
   },
   benchmarks: {
@@ -276,21 +263,21 @@ const guideProps = {
     headers: ['Nível', 'Classificação', 'Faixa de Rendimento', 'Precisão', 'Leitura'],
     rows: [
       { tier: 'Tier 1', rank: 'Muito rápida', stat: 'Faixa 1', level: 'Faixa 1', accuracy: '98%+', marker: 'Rara; repita para confirmar' },
-      { tier: 'Tier 2', rank: 'Rápida', stat: 'Faixa 2', level: 'Faixa 2', accuracy: '94-97%', marker: 'Acima da faixa típica' },
+      { tier: 'Tier 2', rank: 'Rápida', stat: 'Faixa 2', level: 'Faixa 2', accuracy: '94-97%', marker: 'Consistente' },
       { tier: 'Tier 3', rank: 'Boa', stat: 'Faixa 3', level: 'Faixa 3', accuracy: '88-93%', marker: 'Treinada' },
-      { tier: 'Tier 4', rank: 'Típica', stat: 'Faixa 4', level: 'Faixa 4', accuracy: '78-87%', marker: 'Faixa típica' },
+      { tier: 'Tier 4', rank: 'Em evolução', stat: 'Faixa 4', level: 'Faixa 4', accuracy: '78-87%', marker: 'Consulta frequente da chave' },
       { tier: 'Tier 5', rank: 'Ponto de partida', stat: 'Faixa 5', level: 'Faixa 5', accuracy: '< 78%', marker: 'Ponto de partida' },
     ],
     note: 'Faixas editoriais para comparar suas próprias sessões; não são percentis de população, escores do SDMT clínico nem normas.',
   },
   protocols: {
-    title: 'Protocolos de Treinamento e Otimização Perceptiva',
-    description: 'Orientações práticas para maximizar a velocidade de varredura visual e associação rápida.',
+    title: 'Como jogar',
+    description: 'Os quatro passos de cada rodada.',
     items: [
-      { title: "Consulte a Chave Superior de Mapeamento", description: "Examine a tabela de referência que associa cada símbolo geométrico a um dígito numérico específico." },
+      { title: "Consulte a Chave Superior de Mapeamento", description: "Veja a chave que associa cada um dos seis símbolos a um dígito de 1 a 6." },
       { title: "Identifique o Símbolo Central Ativo", description: "Observe o símbolo apresentado na área central de foco e determine imediatamente seu número correspondente." },
-      { title: "Pressione o Dígito Correto", description: "Digite no teclado numérico ou clique no botão correspondente o mais rápido possível sem cometer erros." },
-      { title: "Memorize os Pares para Ganhar Ritmo", description: "Conforme internaliza o mapeamento, responda diretamente pela memória associativa para maximizar o escore." },
+      { title: "Pressione o Dígito Correto", description: "Toque ou clique no botão do dígito correspondente na tela. Erro ou tempo esgotado custam 1 segundo e o combo." },
+      { title: "Memorize os Pares para Ganhar Ritmo", description: "A chave fica igual durante a sessão: decorar os pares reduz as consultas. Com o nível, sobra menos tempo por símbolo." },
     ],
   },
   faqs: {
@@ -333,7 +320,7 @@ export default function EnhancedPagePt() {
         copy={{
           title: "Teste de Símbolos e Dígitos",
           subtitle: "Encontre rapidamente a correspondência entre símbolos e dígitos e treine o processamento",
-          startTitle: "Pareamento Símbolo-Dígito",
+          startTitle: "Teste de Símbolos e Dígitos",
           stageCaption: "Compare o símbolo-alvo com a chave acima e toque no dígito correspondente.",
           rulesTitle: "Instruções do drill e pontuação",
           aboutTitle: "O que é o teste de símbolos e dígitos?",
@@ -349,9 +336,9 @@ export default function EnhancedPagePt() {
           ],
           rulesItems: [
             { num: "1", text: "Chave símbolo-dígito", highlight: "6 relações", result: "Consulte a chave superior" },
-            { num: "2", text: "Símbolo-alvo", highlight: "+100 pontos", result: "Multiplicadores de combo e nível" },
-            { num: "3", text: "Dígito errado", highlight: "Zera o combo", result: "Perde tempo se a penalidade estiver ativa" },
-            { num: "4", text: "Sequência e penalidade", highlight: "Tempo·toques errados", result: "Ativo: −0,8 segundo" }
+            { num: "2", text: "Símbolo-alvo", highlight: "+100 pontos", result: "Combo × nível, +2 s (máx. 60 s)" },
+            { num: "3", text: "Dígito errado", highlight: "Zera o combo", result: "−1 segundo" },
+            { num: "4", text: "Tempo esgotado", highlight: "Janela encurta", result: "−1 s e combo zerado" }
           ],
           faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
         }}

@@ -62,15 +62,15 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Vigilance_(psychology)", "https://en.wikipedia.org/wiki/Attention"],
-  "name": "Concentration Stamina — Continuous Performance Attention Test",
-  "applicationCategory": "HealthApplication",
+  "name": "Concentration Stamina — CPT-Style Attention Drill",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Free attention span test online. Measure continuous visual focus, vigilance decay, and rule-switching stamina under speed pressure in this cognitive stamina drill.",
+  "description": "Free attention span test online. A 45-second sustained-attention drill: respond to vowels or primes, ignore everything else, and keep up as the rule flips every 10 seconds and the pace rises.",
   "url": "https://skilldrills.online/drills/cognitive/attention/concentration-stamina",
   "publisher": {
     "@type": "Organization",
@@ -78,7 +78,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -95,7 +95,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/attention/concentration-stamina",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -103,7 +103,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Concentration Stamina – Sustained Vigilance & Focus Game",
   "url": "https://skilldrills.online/drills/cognitive/attention/concentration-stamina",
-  "description": "Free attention span test online. Measure continuous visual focus, vigilance decay, and rule-switching stamina under speed pressure in this cognitive stamina drill.",
+  "description": "Free attention span test online. A 45-second sustained-attention drill: respond to vowels or primes, ignore everything else, and keep up as the rule flips every 10 seconds and the pace rises.",
   "genre": [
     "Action",
     "Brain Game",
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "What is the Attention Span Test (Concentration Stamina)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "This is a digital Continuous Performance Test (CPT) designed to measure sustained attention, vigilance decrement, and task-set switching endurance over high-density visual stimulus sequences."
+        "text": "It is a free, non-clinical drill in the style of a continuous performance test (CPT). Letters and digits flash one at a time for 45 seconds; you respond only to items that match the active rule and hold back on everything else. It is practice, not a diagnostic or ADHD screening tool."
       }
     },
     {
@@ -139,15 +139,15 @@ const faqSchema = {
       "name": "What is vigilance decrement (Mackworth, 1948)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Norman Mackworth discovered during radar watch studies that human signal detection efficiency systematically degrades after 20-30 minutes of continuous monitoring due to habituation and cognitive resource depletion."
+        "text": "In radar-watch style experiments, Norman Mackworth found that signal detection declines over a long monitoring session, with much of the drop appearing within the first half hour. A 45-second run cannot measure that kind of long-session decline; this drill trains staying on task under a rising pace instead."
       }
     },
     {
       "@type": "Question",
-      "name": "How does dynamic rule switching challenge mental stamina?",
+      "name": "How does the rule switching work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Every 10 seconds the target classification rule shifts between Vowels and Prime Numbers, forcing the prefrontal cortex to clear working memory buffers and overcome task-set inertia (Monsell, 2003)."
+        "text": "Every 10 seconds the target rule flips between Vowels (A, E, I, O, U) and Prime digits (2, 3, 5, 7). An item that was a target a moment ago can become a non-target, so you have to update the rule you are applying instead of responding by habit (task switching is reviewed in Monsell, 2003)."
       }
     },
     {
@@ -155,39 +155,39 @@ const faqSchema = {
       "name": "What is the difference between selective and sustained attention?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Selective attention filters out distractions to focus on one target at a specific instant (Broadbent, 1958), whereas sustained attention is the endurance required to maintain that vigilance over prolonged operational periods."
+        "text": "Selective attention is picking the relevant item out of competing ones at a given moment (Broadbent, 1958); sustained attention is keeping that focus going over time. This drill asks for both: pick out the targets, and keep doing it for the whole run."
       }
     },
     {
       "@type": "Question",
-      "name": "What does false alarm rate indicate in CPT tests?",
+      "name": "What happens on a false alarm or a missed target?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A high false alarm rate (tapping on non-target stimuli) indicates impulsive responding and deficient inhibitory control in the prefrontal cortex (Robertson et al., 1997)."
+        "text": "Responding to a non-target is a false alarm: it flashes red and locks your input for 1 second. Letting a target disappear without responding counts as a miss. Both lower your accuracy, which is hits divided by hits plus false alarms plus misses. There is no time penalty; the 45-second clock never changes."
       }
     },
     {
       "@type": "Question",
-      "name": "How can cognitive endurance be trained?",
+      "name": "How is the score and grade calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Gradually extending high-concentration intervals with progressive difficulty conditioning trains the central executive network to resist fatigue and maintain vigilance."
+        "text": "Each correct hit is worth 100 points. The level rises as your score grows, and each level shows items for a shorter time with a shorter gap between them. The end-screen grade compares your score with a SkillDrills reference score of 4,000 points; it is a practice band, not a population norm or percentile."
       }
     },
     {
       "@type": "Question",
-      "name": "Does caffeine or physical exercise improve attention span?",
+      "name": "Which controls does the drill use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Moderate aerobic exercise enhances cerebral perfusion and executive vigilance, while controlled caffeine intake elevates central arousal without jitter."
+        "text": "Click or tap the play area, or press Space or Enter, when a target is shown. Escape exits the run."
       }
     },
     {
       "@type": "Question",
-      "name": "How does hardware latency impact continuous performance testing?",
+      "name": "Does my monitor or device affect the result?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "High-resolution timers and consistent 144Hz+ displays eliminate stimulus onset jitter (Woods et al., 2015), ensuring accurate latency scoring."
+        "text": "The drill does not score reaction time in milliseconds, so refresh rate matters far less than in aim drills. A steady frame rate still helps you see short flashes; close heavy background tabs if the display stutters."
       }
     },
     {
@@ -195,7 +195,7 @@ const faqSchema = {
       "name": "How often should I practice concentration stamina?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "10 to 15 minutes daily before deep work or study sessions provides peak neural priming."
+        "text": "A few runs in one sitting, spread across the week, is a reasonable routine. Track your own score and accuracy over time; improvement in this drill does not guarantee better focus in other tasks."
       }
     },
     {
@@ -203,7 +203,7 @@ const faqSchema = {
       "name": "Is this tool free and accessible on all devices?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, SkillDrills provides this test completely free directly in modern desktop and mobile browsers."
+        "text": "Yes. It is free and runs in modern desktop and mobile browsers with no sign-up. Scores are saved only in your browser."
       }
     }
   ]
@@ -213,7 +213,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Attention Span Test",
-  "description": "Free attention span test online. Measure continuous visual focus, vigilance decay, and rule-switching stamina under speed pressure in this cognitive stamina drill.",
+  "description": "Free attention span test online. A 45-second sustained-attention drill: respond to vowels or primes, ignore everything else, and keep up as the rule flips every 10 seconds and the pace rises.",
   "step": [
     {
       "@type": "HowToStep",
@@ -233,14 +233,14 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Execute Precise Inhibitory Control",
-      "text": "Tap spacebar or click immediately on valid targets while actively suppressing responses to distractors.",
+      "text": "Click, tap, or press Space or Enter on valid targets, and hold back on every non-target. A false alarm locks input for 1 second.",
       "url": "https://skilldrills.online/drills/cognitive/attention/concentration-stamina#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Adapt Instantly to Rule Switches",
-      "text": "When the rule flips every 10 seconds, clear working memory immediately and apply the new criterion.",
+      "text": "When the rule flips every 10 seconds, switch to the new criterion straight away. The run lasts 45 seconds.",
       "url": "https://skilldrills.online/drills/cognitive/attention/concentration-stamina#step-4"
     }
   ]
@@ -251,31 +251,33 @@ const guideProps = {
   intro: {
     title: "Attention Span Test – Concentration Stamina",
     paragraphs: [
-      "Free attention span test online. Measure continuous visual focus, vigilance decay, and rule-switching stamina under speed pressure in this cognitive stamina drill.",
-      "Norman Mackworth discovered during radar watch studies that human signal detection efficiency systematically degrades after 20-30 minutes of continuous monitoring due to habituation and cognitive resource depletion.",
-      "Every 10 seconds the target classification rule shifts between Vowels and Prime Numbers, forcing the prefrontal cortex to clear working memory buffers and overcome task-set inertia (Monsell, 2003).",
+      "Free attention span test online. A 45-second sustained-attention drill: respond to vowels or primes, ignore everything else, and keep up as the rule flips every 10 seconds and the pace rises.",
+      "In radar-watch style experiments, Norman Mackworth found that signal detection declines over a long monitoring session. A 45-second run does not measure that decline; it trains staying on task as the pace rises.",
+      "Every 10 seconds the target rule flips between Vowels and Prime digits, so you must update the rule you apply instead of responding by habit (Monsell, 2003). The drill is non-clinical practice, not a diagnostic test.",
     ],
   },
   benchmarks: {
-    title: 'Cognitive Performance Standards & Benchmarks',
-    note: 'Stages are editorial practice markers set by SkillDrills, not population statistics or percentiles.',
-    headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Practice stage'],
+    title: 'SkillDrills Practice Bands',
+    note: 'Bands come from the end-screen grade formula (score compared with a 4,000-point SkillDrills reference). They are practice markers, not population statistics or percentiles.',
+    headers: ['Grade', 'Label', 'Score in a 45s run'],
     rows: [
-      { tier: 'Tier 1', rank: 'Advanced Mastery Stage', stat: 'Highest tier', level: 'Mastery', accuracy: '98%+', percentile: 'Highest tier' },
-      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },
-      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Above-average tier', level: 'Platinum', accuracy: '88-93%', percentile: 'Above-average tier' },
-      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Mid tier', level: 'Gold', accuracy: '78-87%', percentile: 'Mid tier' },
-      { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
+      ['S+', 'Legendary', '3,610+'],
+      ['S', 'Elite', '2,890-3,609'],
+      ['A', 'Excellent', '2,250-2,889'],
+      ['B', 'Great', '1,440-2,249'],
+      ['C', 'Good', '810-1,439'],
+      ['D', 'Keep Going', '360-809'],
+      ['F', 'Needs Practice', 'Under 360'],
     ],
   },
   protocols: {
-    title: 'Core Neuroplastic Optimization Protocols',
-    description: 'Scientifically validated executive function enhancement protocols.',
+    title: 'How to Play',
+    description: 'The four steps of a Concentration Stamina run.',
     items: [
       { title: "Launch Drill and Calibrate Focal Vision", description: "Center your vision on the central display and observe the active rule banner." },
       { title: "Discriminate Target Stimuli", description: "Evaluate each flashing symbol against the active rule (e.g., Vowels: A, E, I, O, U or Primes: 2, 3, 5, 7)." },
-      { title: "Execute Precise Inhibitory Control", description: "Tap spacebar or click immediately on valid targets while actively suppressing responses to distractors." },
-      { title: "Adapt Instantly to Rule Switches", description: "When the rule flips every 10 seconds, clear working memory immediately and apply the new criterion." },
+      { title: "Execute Precise Inhibitory Control", description: "Click, tap, or press Space or Enter on valid targets, and hold back on every non-target. A false alarm locks input for 1 second." },
+      { title: "Adapt Instantly to Rule Switches", description: "When the rule flips every 10 seconds, switch to the new criterion straight away. The run lasts 45 seconds." },
     ],
   },
   faqs: {

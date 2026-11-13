@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
-  description: "Free multitasking test online: track two visual streams and maintain accuracy during a dual-task focus drill. Non-clinical practice.",
+  description: "Free multitasking test online: watch two lanes of moving shapes and tap only each lane's target shape in a dual-task focus drill. Non-clinical practice.",
   keywords: ["multitasking test online", "dual task test", "divided attention test", "dual stream tracking", "task switching test", "cognitive flexibility test", "multitasking brain game", "parallel visual tracking", "executive function drill", "dual target training"],
   openGraph: {
     title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
-    description: "Free multitasking test online: track two visual streams and maintain accuracy during a dual-task focus drill. Non-clinical practice.",
+    description: "Free multitasking test online: watch two lanes of moving shapes and tap only each lane's target shape in a dual-task focus drill. Non-clinical practice.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
-    description: "Free multitasking test online: track two visual streams and maintain accuracy during a dual-task focus drill. Non-clinical practice.",
+    description: "Free multitasking test online: watch two lanes of moving shapes and tap only each lane's target shape in a dual-task focus drill. Non-clinical practice.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -63,14 +63,14 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Task_switching_(psychology)", "https://en.wikipedia.org/wiki/Human_multitasking"],
   "name": "Multitasking Test — Dual-Target Attention Drill",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test your multitasking ability online with this free dual-target attention drill. Track simultaneous visual streams and process dual inputs under speed pressure.",
+  "description": "Free multitasking test online. Shapes flow outward through two lanes; tap the ones that match each lane's target shape while the pace rises and the targets change.",
   "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking",
   "publisher": {
     "@type": "Organization",
@@ -78,7 +78,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -95,7 +95,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -103,7 +103,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Multitasking Test – Dual-Stream Target Flow Game",
   "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking",
-  "description": "Test your multitasking ability online with this free dual-target attention drill. Track simultaneous visual streams and process dual inputs under speed pressure.",
+  "description": "Free multitasking test online. Shapes flow outward through two lanes; tap the ones that match each lane's target shape while the pace rises and the targets change.",
   "genre": [
     "Action",
     "Brain Game",
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "What is the Multitasking Test (Dual-Target Flow)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "This drill challenges the brain to track two independent visual streams flowing in opposing directions, testing bilateral hemispheric attention and concurrent target identification."
+        "text": "It is a free, non-clinical dual-task drill. Shapes flow outward from the center through two lanes (left and right, or top and bottom on a portrait phone), and you tap only the shapes that match each lane's current target. It is practice, not a psychometric or job-aptitude test."
       }
     },
     {
@@ -139,7 +139,7 @@ const faqSchema = {
       "name": "What is switch cost in task switching (Rogers & Monsell, 1995)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Switch cost is the measurable degradation in speed and accuracy that occurs when shifting between disparate cognitive task rules rather than repeating the same task."
+        "text": "Switch cost is the loss of speed and accuracy when you change from one task rule to another instead of repeating the same one. In this drill the lane targets change every 20 seconds, and from level 3 the two lanes use different targets, so you keep updating what counts as a hit."
       }
     },
     {
@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "Are humans capable of true concurrent multitasking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cognitive neuroscience demonstrates that for complex, non-automated tasks, the human brain executes rapid time-sliced serial processing rather than genuine concurrent parallel computation (Pashler, 1994)."
+        "text": "For demanding tasks, research on dual-task interference suggests that decisions are largely handled one at a time, so a second decision waits for the first (Pashler, 1994). That bottleneck is what makes two fast lanes hard."
       }
     },
     {
@@ -155,31 +155,31 @@ const faqSchema = {
       "name": "What did Ophir, Nass & Wagner (2009) discover about heavy media multitaskers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They discovered that habitual multitaskers often exhibit higher susceptibility to distraction and worse task-switching efficiency due to impaired attentional filtering."
+        "text": "In their study, people who reported heavy media multitasking did worse on some filtering and task-switching measures than light multitaskers. The finding is correlational and has been debated since; it does not show that multitasking causes the difference."
       }
     },
     {
       "@type": "Question",
-      "name": "How does bilateral hemispheric tracking work?",
+      "name": "How do the two lanes and targets work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Streaming shapes across left and right visual fields activates both occipital-parietal pathways simultaneously, testing cross-corpus-callosum coordination under time constraints."
+        "text": "Each lane has its own target shape shown in the HUD. At first both lanes share the same target; from level 3 they get different ones. Both targets are re-drawn every 20 seconds. About a third of the shapes in each lane are targets."
       }
     },
     {
       "@type": "Question",
-      "name": "What strategies maximize score in dual-stream flow?",
+      "name": "How are the score, clock and grade calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Adopt an expanded soft-focus gaze centered between streams, using peripheral vision to identify shape matches before committing motor taps."
+        "text": "The clock starts at 45 seconds. Each correct tap is worth 100 points times your combo multiplier and a level bonus, and adds 2 seconds up to a maximum of 60. Tapping a non-target or letting a target leave the screen costs 1 second and resets the combo. Accuracy is correct taps divided by correct taps plus mistakes. The grade compares your score with a SkillDrills reference score of 24,000 points; it is a practice band, not a population norm."
       }
     },
     {
       "@type": "Question",
-      "name": "How does level progression challenge executive control?",
+      "name": "How does level progression work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Stream velocities increase, target shapes diversify, and decay windows shorten as your combo increases, demanding elite sensory throughput."
+        "text": "Your level rises continuously with your score. Higher levels make shapes move faster and spawn more often, and a long combo speeds things up a little more. There is no level cap; the run ends when the clock reaches zero."
       }
     },
     {
@@ -195,7 +195,7 @@ const faqSchema = {
       "name": "How long should a multitasking training session last?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "10 to 15 minutes of deliberate dual-stream practice optimizes synaptic plasticity without inducing severe cognitive strain."
+        "text": "A few runs in one sitting is enough to see your score trend. Improvement in this drill does not guarantee better multitasking at work or school."
       }
     },
     {
@@ -213,34 +213,34 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Multitasking Test",
-  "description": "Test your multitasking ability online with this free dual-target attention drill. Track simultaneous visual streams and process dual inputs under speed pressure.",
+  "description": "Free multitasking test online. Shapes flow outward through two lanes; tap the ones that match each lane's target shape while the pace rises and the targets change.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Expand Gaze Across Dual Flow Channels",
-      "text": "Center your vision between the two opposing streams to monitor both channels simultaneously.",
+      "name": "Watch Both Lanes",
+      "text": "Center your gaze between the two lanes so you can watch both at once.",
       "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Identify Target Templates",
-      "text": "Check the active TOP and BOTTOM target templates shown in the upper HUD.",
+      "name": "Check the Lane Targets",
+      "text": "Check the target shape for each lane in the HUD. Both targets change every 20 seconds.",
       "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Execute Rapid Matching Taps",
-      "text": "Tap or click incoming shapes that match either active template before they exit the active playfield.",
+      "name": "Tap Matching Shapes",
+      "text": "Tap or click shapes that match their own lane's target before they leave the screen. Each clean hit adds 2 seconds, up to 60.",
       "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Sustain High-Flow Bilateral Tracking",
-      "text": "Maintain rhythmic coordination as stream velocities accelerate, building your combo multiplier.",
+      "name": "Keep the Combo Going",
+      "text": "Keep your combo going as the shapes speed up. Tapping a non-target or letting a target escape costs 1 second and resets the combo.",
       "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking#step-4"
     }
   ]
@@ -251,31 +251,33 @@ const guideProps = {
   intro: {
     title: "Multitasking Test",
     paragraphs: [
-      "Test your multitasking ability online with this free dual-target attention drill. Track simultaneous visual streams and process dual inputs under speed pressure.",
+      "Free multitasking test online. Shapes flow outward through two lanes; tap the ones that match each lane's target shape while the pace rises and the targets change.",
       "Switch cost is the measurable degradation in speed and accuracy that occurs when shifting between disparate cognitive task rules rather than repeating the same task.",
-      "Cognitive neuroscience demonstrates that for complex, non-automated tasks, the human brain executes rapid time-sliced serial processing rather than genuine concurrent parallel computation (Pashler, 1994).",
+      "For demanding tasks, dual-task research suggests decisions are largely handled one at a time (Pashler, 1994). This drill is non-clinical practice of that situation, not a psychometric test.",
     ],
   },
   benchmarks: {
-    title: 'Cognitive Performance Standards & Benchmarks',
-    note: 'Stages are editorial practice markers set by SkillDrills, not population statistics or percentiles.',
-    headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Practice stage'],
+    title: 'SkillDrills Practice Bands',
+    note: 'Bands come from the end-screen grade formula (score compared with a 24,000-point SkillDrills reference score). They are practice markers, not population statistics or percentiles.',
+    headers: ['Grade', 'Label', 'Score'],
     rows: [
-      { tier: 'Tier 1', rank: 'Advanced Mastery Stage', stat: 'Highest tier', level: 'Mastery', accuracy: '98%+', percentile: 'Highest tier' },
-      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },
-      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Above-average tier', level: 'Platinum', accuracy: '88-93%', percentile: 'Above-average tier' },
-      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Mid tier', level: 'Gold', accuracy: '78-87%', percentile: 'Mid tier' },
-      { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
+      ['S+', 'Legendary', '21,660+'],
+      ['S', 'Elite', '17,340-21,659'],
+      ['A', 'Excellent', '13,500-17,339'],
+      ['B', 'Great', '8,640-13,499'],
+      ['C', 'Good', '4,860-8,639'],
+      ['D', 'Keep Going', '2,160-4,859'],
+      ['F', 'Needs Practice', 'Under 2,160'],
     ],
   },
   protocols: {
-    title: 'Core Neuroplastic Optimization Protocols',
-    description: 'Scientifically validated executive function enhancement protocols.',
+    title: 'How to Play',
+    description: 'The four steps of a Multitasking Test run.',
     items: [
-      { title: "Expand Gaze Across Dual Flow Channels", description: "Center your vision between the two opposing streams to monitor both channels simultaneously." },
-      { title: "Identify Target Templates", description: "Check the active TOP and BOTTOM target templates shown in the upper HUD." },
-      { title: "Execute Rapid Matching Taps", description: "Tap or click incoming shapes that match either active template before they exit the active playfield." },
-      { title: "Sustain High-Flow Bilateral Tracking", description: "Maintain rhythmic coordination as stream velocities accelerate, building your combo multiplier." },
+      { title: "Watch Both Lanes", description: "Center your gaze between the two lanes so you can watch both at once." },
+      { title: "Check the Lane Targets", description: "Check the target shape for each lane in the HUD. Both targets change every 20 seconds." },
+      { title: "Tap Matching Shapes", description: "Tap or click shapes that match their own lane's target before they leave the screen. Each clean hit adds 2 seconds, up to 60." },
+      { title: "Keep the Combo Going", description: "Keep your combo going as the shapes speed up. Tapping a non-target or letting a target escape costs 1 second and resets the combo." },
     ],
   },
   faqs: {

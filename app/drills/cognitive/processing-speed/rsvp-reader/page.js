@@ -6,14 +6,14 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Reading Speed Test Online | RSVP Reader | SkillDrills",
-  description: "Free reading speed test online using RSVP: train fixed-point word recognition, measure WPM, and practise reading fluency in your browser. Non-clinical.",
+  description: "Free reading speed test online using RSVP: words flash at one point from 250 to 850 WPM and you catch the target word. Practise fast word recognition. Non-clinical.",
   keywords: ["reading speed test online", "reading speed test", "rsvp speed reader", "rapid serial visual presentation", "speed reading test", "wpm reading test", "words per minute test", "reading fluency test", "optimal recognition point", "visual reading speed",
     "speed reading app free",
     "reading comprehension speed",
     "text processing drill"],
   openGraph: {
     title: "Reading Speed Test Online | RSVP Reader | SkillDrills",
-    description: "Free reading speed test online using RSVP: train fixed-point word recognition, measure WPM, and practise reading fluency in your browser. Non-clinical.",
+    description: "Free reading speed test online using RSVP: words flash at one point from 250 to 850 WPM and you catch the target word. Practise fast word recognition. Non-clinical.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Reading Speed Test Online | RSVP Reader | SkillDrills",
-    description: "Free reading speed test online using RSVP: train fixed-point word recognition, measure WPM, and practise reading fluency in your browser. Non-clinical.",
+    description: "Free reading speed test online using RSVP: words flash at one point from 250 to 850 WPM and you catch the target word. Practise fast word recognition. Non-clinical.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -66,14 +66,14 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation"],
   "name": "RSVP Speed Reader — Reading Speed & Lexical Test",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Free RSVP speed reader and reading speed test. Test visual token processing speed, eliminate saccadic eye movements, and train rapid lexical comprehension up to 850 WPM.",
+  "description": "Free RSVP speed reader and reading speed test. Words flash one at a time at a fixed point, from 250 up to 850 WPM, and you tap when the target word appears. It does not test comprehension.",
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader",
   "publisher": {
     "@type": "Organization",
@@ -81,7 +81,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const webApplicationSchema = {
@@ -98,7 +98,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-12"
 };
 
 const videoGameSchema = {
@@ -106,7 +106,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "RSVP Speed Reader – High-Throughput Lexical Presentation Game",
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader",
-  "description": "Free RSVP speed reader and reading speed test. Test visual token processing speed, eliminate saccadic eye movements, and train rapid lexical comprehension up to 850 WPM.",
+  "description": "Free RSVP speed reader and reading speed test. Words flash one at a time at a fixed point, from 250 up to 850 WPM, and you tap when the target word appears. It does not test comprehension.",
   "genre": [
     "Educational",
     "Brain Game",
@@ -118,7 +118,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -135,7 +135,7 @@ const faqSchema = {
       "name": "What is RSVP (Rapid Serial Visual Presentation)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "RSVP is a reading technique where words flash one at a time at a single focal point, eliminating the time required for saccadic eye movements and allowing speeds exceeding 800 WPM."
+        "text": "RSVP (rapid serial visual presentation) flashes words one at a time at a single point, so your eyes do not have to move along a line. This drill runs from 250 to 850 WPM; research on RSVP finds comprehension tends to fall as the rate rises."
       }
     },
     {
@@ -151,7 +151,7 @@ const faqSchema = {
       "name": "Why does traditional reading have a speed limit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Traditional reading is constrained by eye movement mechanics: up to 80% of reading time is spent executing 20–40ms saccades and correcting for regressions (Rayner, 2016)."
+        "text": "In normal reading the eyes alternate between brief fixations and quick jumps (saccades), with occasional backward regressions (Rayner, 1998; Rayner et al., 2016). Most reading time is spent in fixations, so removing eye movements alone does not make reading several times faster."
       }
     },
     {
@@ -159,7 +159,7 @@ const faqSchema = {
       "name": "What is the average reading speed for adults?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The average adult reading speed on printed text is 200–250 words per minute (WPM). Trained speed readers can process 400–600 WPM with good comprehension."
+        "text": "Normal reading of prose is often cited at about 200-300 words per minute (Rayner, 1998). In this drill the WPM is set by your level, not measured from your reading, so the speed you reach is a drill result, not your reading speed on a page."
       }
     },
     {
@@ -167,7 +167,7 @@ const faqSchema = {
       "name": "What speed tiers are available in this drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Level 1 starts at 250 WPM, progressing through Level 2 (350 WPM), Level 3 (480 WPM), Level 4 (650 WPM), up to Level 5 (850 WPM)."
+        "text": "Level 1 starts at 250 WPM, progressing through Level 2 (350 WPM), Level 3 (480 WPM), Level 4 (650 WPM), up to Level 5 (850 WPM). Every 2 target words caught (200 points) move you up one level."
       }
     },
     {
@@ -175,7 +175,7 @@ const faqSchema = {
       "name": "How does target word detection verify comprehension?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Requiring users to tap when an upcoming target word appears proves that lexical identity is actively decoded rather than passively blurred past."
+        "text": "Tapping when the target word appears shows you recognised that word in the stream. It does not check that you understood the passage. Each catch is worth 100 points; a wrong tap or a missed target lowers accuracy, and a wrong tap locks the button for 1 second. The run lasts 45 seconds."
       }
     },
     {
@@ -191,7 +191,7 @@ const faqSchema = {
       "name": "Does screen refresh rate affect RSVP reading?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "High refresh rates (144Hz+) ensure consistent frame presentation timing without dropped word intervals (Woods et al., 2015)."
+        "text": "Browser display timing is tied to the refresh rate (Woods et al., 2015), so word durations are rounded to whole frames. A higher refresh rate rounds less, but any modern display works; close heavy background tabs if words stutter."
       }
     },
     {
@@ -217,7 +217,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "RSVP Speed Reader",
-  "description": "Free RSVP speed reader and reading speed test. Test visual token processing speed, eliminate saccadic eye movements, and train rapid lexical comprehension up to 850 WPM.",
+  "description": "Free RSVP speed reader and reading speed test. Words flash one at a time at a fixed point, from 250 up to 850 WPM, and you tap when the target word appears. It does not test comprehension.",
   "step": [
     {
       "@type": "HowToStep",
@@ -230,21 +230,21 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 2,
       "name": "Fixate on the Central ORP Anchor",
-      "text": "Keep your eyes locked on the colored pivot character at the focal center with zero saccades.",
+      "text": "Keep your eyes on the highlighted letter at the center of the stream.",
       "url": "https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Process High-Velocity Lexical Tokens",
-      "text": "Allow words to stream across your fovea while maintaining semantic comprehension.",
+      "text": "Let the words flash past at the current speed. Every 2 catches raise the level, from 250 up to 850 WPM.",
       "url": "https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Trigger Target Detection Instantly",
-      "text": "Tap Target Detected the exact moment the active word flashes into the focal stream.",
+      "text": "Tap TARGET DETECTED while the target word is on screen. A wrong tap locks the button for 1 second. The run lasts 45 seconds.",
       "url": "https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader#step-4"
     }
   ]
@@ -255,31 +255,33 @@ const guideProps = {
   intro: {
     title: "Reading Speed Test",
     paragraphs: [
-      "Free RSVP speed reader and reading speed test. Test visual token processing speed, eliminate saccadic eye movements, and train rapid lexical comprehension up to 850 WPM.",
+      "Free RSVP speed reader and reading speed test. Words flash one at a time at a fixed point, from 250 up to 850 WPM, and you tap when the target word appears. It does not test comprehension.",
       "The ORP is the specific character location within a word (typically just left of center) where the eye can identify the full lexical token with minimal fixation time (Rayner, 1998).",
-      "Traditional reading is constrained by eye movement mechanics: up to 80% of reading time is spent executing 20–40ms saccades and correcting for regressions (Rayner, 2016).",
+      "In normal reading the eyes alternate between brief fixations and quick jumps (saccades), with occasional backward regressions (Rayner, 1998; Rayner et al., 2016). Most reading time is spent in fixations, so removing eye movements alone does not make reading several times faster.",
     ],
   },
   benchmarks: {
-    title: 'Cognitive Performance Standards & Benchmarks',
-    note: 'Stages are editorial practice markers set by SkillDrills, not population statistics or percentiles.',
-    headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Practice stage'],
+    title: 'SkillDrills Practice Bands',
+    note: 'Bands come from the end-screen grade formula (score compared with a 2,500-point SkillDrills reference). Each catch is 100 points. They are practice markers, not population statistics or reading-speed norms.',
+    headers: ['Grade', 'Label', 'Score (catches)'],
     rows: [
-      { tier: 'Tier 1', rank: 'Advanced Mastery Stage', stat: 'Highest tier', level: 'Mastery', accuracy: '98%+', percentile: 'Highest tier' },
-      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },
-      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Above-average tier', level: 'Platinum', accuracy: '88-93%', percentile: 'Above-average tier' },
-      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Mid tier', level: 'Gold', accuracy: '78-87%', percentile: 'Mid tier' },
-      { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
+      ['S+', 'Legendary', '2,300+ (23+)'],
+      ['S', 'Elite', '1,900-2,200 (19-22)'],
+      ['A', 'Excellent', '1,500-1,800 (15-18)'],
+      ['B', 'Great', '900-1,400 (9-14)'],
+      ['C', 'Good', '600-800 (6-8)'],
+      ['D', 'Keep Going', '300-500 (3-5)'],
+      ['F', 'Needs Practice', 'Under 300 (0-2)'],
     ],
   },
   protocols: {
-    title: 'Core Neuroplastic Optimization Protocols',
-    description: 'Scientifically validated executive function enhancement protocols.',
+    title: 'How to Play',
+    description: 'The four steps of a Reading Speed Test run.',
     items: [
       { title: "Inspect the Upcoming Target Word", description: "Note the designated target word displayed in the top banner." },
-      { title: "Fixate on the Central ORP Anchor", description: "Keep your eyes locked on the colored pivot character at the focal center with zero saccades." },
-      { title: "Process High-Velocity Lexical Tokens", description: "Allow words to stream across your fovea while maintaining semantic comprehension." },
-      { title: "Trigger Target Detection Instantly", description: "Tap Target Detected the exact moment the active word flashes into the focal stream." },
+      { title: "Fixate on the Central ORP Anchor", description: "Keep your eyes on the highlighted letter at the center of the stream." },
+      { title: "Process High-Velocity Lexical Tokens", description: "Let the words flash past at the current speed. Every 2 catches raise the level, from 250 up to 850 WPM." },
+      { title: "Trigger Target Detection Instantly", description: "Tap TARGET DETECTED while the target word is on screen. A wrong tap locks the button for 1 second. The run lasts 45 seconds." },
     ],
   },
   faqs: {

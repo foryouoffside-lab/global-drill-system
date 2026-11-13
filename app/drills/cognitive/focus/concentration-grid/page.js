@@ -84,8 +84,8 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-20",
-  "educationalUse": ["Visual Search Speed", "Peripheral Span Expansion", "Saccadic Efficiency", "Sustained Attention"]
+  "dateModified": "2026-11-12",
+  "educationalUse": ["Visual Search Practice", "Peripheral Scanning Practice", "Sustained Attention Practice"]
 };
 
 const softwareSchema = {
@@ -98,7 +98,7 @@ const softwareSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "An interactive web-based cognitive trainer that tests visual search speed and sustained attention by tapping sequential numbers on expanding grids.",
   "genre": "Cognitive Training / Visual Search",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
@@ -148,7 +148,7 @@ const faqSchema = {
       "name": "What is the Schulte Table and Concentration Grid drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Schulte Table is a classic psychodiagnostic test invented by Walter Schulte (1962) to assess visual search rate, attention allocation, and mental fatigue. The Concentration Grid is its sports psychology counterpart (Harris & Harris, 1984), challenging athletes to find sequential numbers under strict time pressure. SkillDrills unites both by providing expanding, dynamically rotated grids within a single 45-second continuous run."
+        "text": "A Schulte table is a grid of shuffled numbers, named after the German psychiatrist Walter Schulte, that you find and tap in ascending order. The concentration grid is a similar focus exercise from sports psychology (Harris & Harris, 1984). This drill starts at 3x3, grows one size per cleared grid up to 8x8 (7x7 on very narrow phones), tilts the numbers slightly from 5x5 onward, and runs on one 45-second clock. It is practice, not a psychodiagnostic test."
       }
     },
     {
@@ -156,7 +156,7 @@ const faqSchema = {
       "name": "How does this drill improve peripheral vision and speed reading?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "By keeping your gaze anchored near the grid center and expanding your perceptual span (Rayner, 1998), you train your parafoveal visual field to recognize numeric features without moving your central fovea to every single tile. This reduces total saccadic fixations, a foundational skill in speed reading and situational athletic scanning."
+        "text": "The drill practises finding numbers quickly while keeping your gaze near the grid center and noticing upcoming numbers before you reach them. Reading research shows how much text the eyes take in around each fixation (Rayner, 1998), but there is no good evidence that grid practice by itself makes you read faster, so treat any carry-over to reading or sport as unproven."
       }
     },
     {
@@ -164,7 +164,7 @@ const faqSchema = {
       "name": "Why do the numbers rotate at larger grid sizes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "From the 5x5 grid onward, each number tile is rendered with slight random rotation. This removes reliance on familiar canonical bounding boxes and forces genuine top-down feature integration (Treisman & Gelade, 1980; Wolfe, 2007), keeping visual search difficulty climbing as grid density increases."
+        "text": "From the 5x5 grid onward each number is tilted by a small random angle (up to about 12 degrees on 5x5 and 6x6, about 20 degrees from 7x7). Tilted numbers are a little harder to recognise at a glance, which keeps the search from getting easier as the grids grow (visual search is reviewed in Treisman & Gelade, 1980; Wolfe, 2007)."
       }
     },
     {
@@ -180,7 +180,7 @@ const faqSchema = {
       "name": "How is the performance score calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Score is awarded for each correct sequential tap, with faster taps earning a larger latency bonus. In addition, completing an entire grid awards a substantial clear bonus scaled by the grid dimension (e.g., 3x3, 4x4, 5x5...)."
+        "text": "Each correct tap is worth 100 points plus a speed bonus of up to 120 points, which shrinks the longer you take after your previous correct tap and reaches zero at 1.2 seconds. Clearing a whole grid adds a bonus of 500 points scaled by grid size (500 on 3x3, about 889 on 4x4, about 1,389 on 5x5, and so on)."
       }
     },
     {
@@ -204,7 +204,7 @@ const faqSchema = {
       "name": "What is considered an elite score on this drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An elite (S+ Grade) score is 8,000+ points, which requires clearing through the 6x6 grid and advancing into 7x7+ matrices with sustained sub-300ms per-digit recognition and 98%+ accuracy."
+        "text": "The end-screen grade compares your score with a SkillDrills reference score of 8,000 points. S+ starts at 7,220 points, S at 5,780 and A at 4,500. The grade depends on score only; accuracy is shown separately. These are practice bands, not population norms."
       }
     },
     {
@@ -240,25 +240,26 @@ const concentrationGridGuide = {
   heading: "Schulte Table Trainer Guide & Visual Search Benchmarks",
   intro: [
     "A Schulte table is a grid of shuffled numbers that you tap in ascending order as fast as you can, a classic test of visual search speed and attention. This free online version expands from 3x3 to 8x8 inside one continuous 45-second run, so you practise scanning, not just one fixed grid.",
-    "The Schulte table is a seminal psychodiagnostic paradigm developed by German psychiatrist Walter Schulte (1962) to measure visual search efficiency, selective attention allocation, and mental fatigue resistance. In its traditional implementation, numbers from 1 to 25 are randomly dispersed across a 5x5 grid, requiring the subject to locate each numeral in strict ascending sequence while attempting to hold visual fixation near the grid center.",
-    "In applied sports psychology, the exercise evolved into the 'concentration grid' (Harris & Harris, 1984), widely used by elite coaches in tennis, baseball, and motor sports to train visual scanning velocity and present-moment cognitive discipline under timed stress. An event-related potential study of 27 children aged 8-11 searching Schulte grids found that searching for numbers in sequence took longer than locating a single target, and that adding a second colour slowed both, with matching differences in the recorded ERP signal (Lu et al., 2022).",
-    "The SkillDrills Schulte Table Trainer elevates this classic protocol into a modern dynamic continuous performance task. Rather than presenting an isolated static matrix, the drill dynamically expands the grid architecture from 3x3 up to 8x8 as each stage is completed, while introducing rotational perturbations from 5x5 onward. This tests the outer limits of your perceptual span and foveal-parafoveal coordination within a fixed 45-second window.",
+    "The Schulte table is named after the German psychiatrist Walter Schulte. In its traditional form, the numbers 1 to 25 are shuffled across a 5x5 grid and you find each one in ascending order, usually while trying to keep your gaze near the center.",
+    "Sports psychology describes a similar 'concentration grid' exercise (Harris & Harris, 1984) as a simple focus drill for athletes. An event-related potential study of 27 children aged 8-11 searching Schulte grids found that searching for numbers in sequence took longer than locating a single target, and that adding a second colour slowed both, with matching differences in the recorded ERP signal (Lu et al., 2022).",
+    "The SkillDrills version does not stop at one grid. It starts at 3x3 and grows one size each time you clear a grid, up to 8x8 (7x7 on very narrow phones), tilts the numbers slightly from 5x5 onward, and runs on one fixed 45-second clock with no time bonuses or penalties.",
     "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval, about 16.7 ms per frame at 60 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup.",
     "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
     "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health. If you have concerns about your attention, memory or thinking, speak to a qualified clinician."
   ],
   benchmarks: {
-    title: "Schulte Table & Grid Scanning Performance Tiers",
-    headers: ["Grade Tier", "Score Range", "Peak Grid", "Search Latency", "Cognitive Classification"],
+    title: "SkillDrills Practice Bands",
+    headers: ["Grade", "Label", "Score in a 45s run"],
     rows: [
-      ["S+ (Elite)", "8,000+ PTS", "7x7+ (49+ tiles)", "< 300 ms / target", "World-class visual scanning rate, exceptional peripheral span, and instant rotational invariance."],
-      ["S (Master)", "6,000 – 7,999 PTS", "6x6 (36 tiles)", "300 – 450 ms / target", "Superior visual search efficiency; seamless parafoveal previewing and minimal fixation pause."],
-      ["A (Advanced)", "4,500 – 5,999 PTS", "5x5 (25 tiles)", "450 – 600 ms / target", "Strong visual field processing; consistent paired chunking across medium-density matrices."],
-      ["B (Proficient)", "3,000 – 4,499 PTS", "4x4 (16 tiles)", "600 – 800 ms / target", "Above-average search discipline; occasional central refixation pauses on larger grids."],
-      ["C (Intermediate)", "1,800 – 2,999 PTS", "3x3 (9 tiles)", "800 – 1,100 ms / target", "Standard baseline performance; relies predominantly on central foveal saccades."],
-      ["D (Developing)", "< 1,800 PTS", "3x3 (partial)", "> 1,100 ms / target", "Visual crowding interference; high saccadic count and slow target discrimination."]
+      ["S+", "Legendary", "7,220+"],
+      ["S", "Elite", "5,780 - 7,219"],
+      ["A", "Excellent", "4,500 - 5,779"],
+      ["B", "Great", "2,880 - 4,499"],
+      ["C", "Good", "1,620 - 2,879"],
+      ["D", "Keep Going", "720 - 1,619"],
+      ["F", "Needs Practice", "Under 720"]
     ],
-    note: "These tiers serve as an editorial and literature-grounded reference framework (Lu et al., 2022; Treisman & Gelade, 1980; Rayner, 1998; Wolfe, 2007). Individual scores vary based on monitor refresh rate, mouse vs touch input, and ocular fatigue."
+    note: "Bands come from the end-screen grade formula (score compared with an 8,000-point SkillDrills reference). They are practice markers, not population statistics or percentiles, and scores vary with device and input method."
   },
   techniques: {
     title: "Evidence-Based Techniques for Peak Grid Performance",
@@ -275,12 +276,12 @@ const concentrationGridGuide = {
       },
       {
         name: "Feature Integration & Guided Search (Wolfe, 2007)",
-        desc: "Top-down cognitive expectations bias preattentive visual saliency maps (Wolfe, 2007; Treisman & Gelade, 1980). Holding the target digit's topological shape in active working memory primes visual cortex feature detectors to notice matching features ahead of random scanning.",
+        desc: "Guided search models propose that knowing what you are looking for steers attention toward matching features (Wolfe, 2007; Treisman & Gelade, 1980). Holding the next number's shape in mind before you scan may help you spot it sooner.",
         tips: "Mentally visualize the next numeral's distinct geometry before scanning the board."
       },
       {
         name: "Rotational Invariance & Invariant Feature Extraction",
-        desc: "Rotating number tiles disrupts canonical spatial orientation, preventing automatic shape template matching. The visual system must recruit ventral stream inferotemporal pathways to compute rotation-invariant representations.",
+        desc: "From 5x5 onward the numbers are tilted slightly, so they no longer match the upright shape you expect. Recognising them by their distinctive parts keeps your search steady.",
         tips: "Identify structural invariant landmarks (e.g. the loop of a 6/9, the horizontal crossbar of a 4)."
       }
     ]
@@ -292,7 +293,7 @@ const concentrationGridGuide = {
     "Advance through expanding grids: clear smaller boards swiftly to unlock larger 5x5, 6x6, and 7x7 layouts.",
     "Sustain visual discipline: navigate rotated number tiles without breaking your scanning rhythm across the full 45 seconds."
   ],
-  audience: "Speed readers, competitive athletes, esports players, and cognitive fitness enthusiasts seeking to widen peripheral visual span, improve visual search efficiency, and build mental focus stamina.",
+  audience: "Anyone who enjoys timed visual search puzzles: students, gamers, athletes and brain-game fans who want a quick, repeatable focus exercise.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('lu2022', 'treisman1980', 'rayner1998', 'rayner2016', 'wolfe2007', 'woods2015'),
   related: [
@@ -312,7 +313,7 @@ const videoGameSchema = {
   "name": "Concentration Grid – Schulte Table Trainer Online",
   "url": "https://skilldrills.online/drills/cognitive/focus/concentration-grid",
   "description": "Sequential number search on expanding Schulte tables and concentration grids. Train peripheral vision and visual search speed.",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-12",
   "gamePlatform": "Web Browser",
   "genre": ["Cognitive Training", "Visual Search", "Schulte Table", "Concentration Grid"],
   "playMode": "SinglePlayer",

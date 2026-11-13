@@ -5,10 +5,9 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'N-Back Test – Working Memory Training Game | SkillDrills',
-  description: 'Free N-back working memory test. Track whether the current letter matches the one n steps back at 2-back, 3-back and beyond.',
+  description: 'Free N-back working memory test. Decide whether each letter matches the one n steps back, starting at 3-back and moving up every 8 correct answers.',
   keywords: [
     'n-back test',
-    'dual n-back',
     'n-back task',
     'working memory test',
     '3-back test',
@@ -18,8 +17,6 @@ export const metadata = {
     'n back memory test',
     'n-back task online',
     'working memory capacity test',
-    'fluid intelligence n-back',
-    'dual n back test online',
     'cognitive n-back test',
     'free n-back training',
     'n-back test free',
@@ -28,7 +25,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'N-Back Test - Free Working Memory Training Game',
-    description: 'Train executive working memory with the N-Back Memory Test. Test continuous information updating at 3-back, 4-back, and beyond. Measure working memory capacity, cognitive control, and target recognition accuracy.',
+    description: 'Free single n-back letter test: decide MATCH or NO MATCH for each letter against the one n steps back. Starts at 3-back and moves up every 8 correct answers.',
     type: 'website',
     url: 'https://skilldrills.online/drills/memory/working-memory/n-back',
     siteName: 'SkillDrills',
@@ -37,7 +34,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'N-Back Test - Free Working Memory Training Game',
-    description: 'Train executive working memory with the N-Back Memory Test. Test continuous information updating at 3-back, 4-back, and beyond. Measure working memory capacity, cognitive control, and target recognition accuracy.',
+    description: 'Free single n-back letter test: decide MATCH or NO MATCH for each letter against the one n steps back. Starts at 3-back and moves up every 8 correct answers.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -60,7 +57,7 @@ export default function NBackPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/N-back", "https://en.wikipedia.org/wiki/Working_memory"],
+    "@type": "SoftwareApplication",
     "name": "N-Back Working Memory Test",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",
@@ -70,8 +67,8 @@ export default function NBackPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Interactive N-Back working memory assessment measuring information updating, central executive control, and dynamic working memory capacity.",
-    "dateModified": "2026-09-05"
+    "description": "Free single n-back letter game: for each letter, decide whether it matches the letter shown n steps earlier. Starts at 3-back; every 8 correct answers adds one level.",
+    "dateModified": "2026-11-12"
   };
 
   const webAppSchema = {
@@ -91,7 +88,7 @@ export default function NBackPage() {
       "name": "SkillDrills"
     },
     "isAccessibleForFree": true,
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-11-12"
   };
 
   const faqSchema = {
@@ -103,7 +100,7 @@ export default function NBackPage() {
         "name": "What is the N-Back Working Memory Test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The N-Back test is a classic neurocognitive assessment that measures continuous working memory updating. Participants observe a sequential stream of stimuli and indicate whether the current item matches the one presented N steps earlier."
+          "text": "The n-back task is a classic research task for working memory updating: you watch a stream of items and decide whether the current one matches the item n steps earlier. This SkillDrills version is a free single n-back game with letters, not a clinical test. It starts at 3-back; you answer each letter with the MATCH or NO MATCH button (no keyboard keys) within the display window."
         }
       },
       {
@@ -111,7 +108,7 @@ export default function NBackPage() {
         "name": "Who invented the N-Back task and what was its original purpose?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Wayne K. Kirchner invented the N-Back task in 1958 to investigate age-related differences in the short-term retention of rapidly changing information, proving that older adults experienced significant difficulties in dynamic memory updating."
+          "text": "Wayne K. Kirchner described the n-back task in 1958, in a study of age differences in short-term retention of rapidly changing information; he reported that older participants found the task harder than younger ones."
         }
       },
       {
@@ -119,7 +116,7 @@ export default function NBackPage() {
         "name": "What cognitive faculty does N-Back primarily assess?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "N-Back primarily tests working memory updating and executive control—the ability to continuously monitor incoming data, discard obsolete representations from focal attention, and encode new information into an active buffer."
+          "text": "N-back is mainly used to study working memory updating: keeping track of the last few items while new ones keep arriving and old ones drop out."
         }
       },
       {
@@ -140,18 +137,18 @@ export default function NBackPage() {
       },
       {
         "@type": "Question",
-        "name": "What is a normal adult score on the 3-Back test?",
+        "name": "How is this n-back game scored and levelled?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "This drill has no population norm, because SkillDrills collects no aggregate data. In research N-back tasks accuracy falls as n rises, and most people find 3-back clearly harder than 2-back. Compare your accuracy and level with your own earlier runs on the same device."
+          "text": "Each correct MATCH or NO MATCH answer scores 150 points; every 8 correct answers (1,200 points) raises the level by one (3-back, then 4-back, 5-back...) and shortens the letter window by 0.1 s, from 2.0 s down to 1.2 s. A wrong answer or no answer in time scores nothing; nothing is deducted. The 45-second clock pauses while the first n letters are shown for memorizing. There is no population norm, because SkillDrills collects no user data."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the difference between single N-Back and Dual N-Back?",
+        "name": "Is this dual n-back?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Single N-Back presents one stimulus stream (e.g., visual letters). Dual N-Back presents two independent sensory streams simultaneously (typically visual grid positions and auditory spoken consonants), requiring divided executive updating across both modalities."
+          "text": "No. This is single n-back: one stream of letters on screen. Dual n-back presents two streams at once (typically grid positions and spoken letters) and asks for a match decision on each; this drill does not include a dual mode."
         }
       },
       {
@@ -159,7 +156,7 @@ export default function NBackPage() {
         "name": "How does sub-vocal articulatory rehearsal assist in N-Back performance?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sub-vocalization recruits the phonological loop (Baddeley, 1986). By mentally chanting the active N-item sequence like an internal sliding queue (e.g., 'C-K-M' becoming 'K-M-R'), you maintain active trace activation against rapid decay."
+          "text": "Sub-vocalization recruits the phonological loop (Baddeley, 1986). Mentally repeating the last n letters like a sliding queue (e.g., 'C-K-M' becoming 'K-M-R') helps keep them available for the next comparison."
         }
       },
       {
@@ -167,15 +164,15 @@ export default function NBackPage() {
         "name": "Why does performance decline significantly at 4-Back and 5-Back?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "According to Nelson Cowan's (2001) working memory model, human focal attention has a capacity ceiling of 4 ± 1 unchunked units. At 4-back and 5-back, items exceed this fundamental processing boundary, resulting in interference and intrusion errors."
+          "text": "Cowan (2001) argued that working memory holds only about 4 items without grouping. At 4-back and 5-back you must keep that many letters in order while updating them, and the letter window is also shorter, so errors rise quickly."
         }
       },
       {
         "@type": "Question",
-        "name": "How does working memory updating transfer to real-world tasks?",
+        "name": "Will n-back training improve real-world performance?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Working memory updating supports complex real-time decision making, tracking multiple shifting variables in financial analysis, reading comprehension, software debugging, and tactical adaptability in competitive sports and gaming."
+          "text": "Not reliably. You will get better at n-back with practice, but meta-analyses of working memory training generally find that gains transfer poorly to untrained tasks such as reading, work or gaming. Treat it as practice and a challenge, not a guaranteed improvement."
         }
       }
     ]
@@ -185,7 +182,7 @@ export default function NBackPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "How to Train Working Memory Updating with N-Back",
-    "description": "Evidence-based 4-step execution strategy for mastering continuous working memory updating on N-Back tasks.",
+    "description": "Four steps for keeping track of the last n letters and answering MATCH or NO MATCH.",
     "step": [
       {
         "@type": "HowToStep",
@@ -217,7 +214,7 @@ export default function NBackPage() {
       "url": "https://skilldrills.online/drills/memory/working-memory/n-back#step-4",
         
         "name": "Maintain Consistent Attentional Rhythm Without Lapsing",
-        "text": "Pace your breathing and avoid lingering on missed judgments. In continuous stream tasks, dwelling on a mistake causes cascading loss of subsequent buffer positions."
+        "text": "Answer every letter with the MATCH or NO MATCH button before its window ends (2.0 s at first, down to 1.2 s). If you miss one, move on; dwelling on a mistake makes you lose the next letters too."
       }
     ]
   };
@@ -227,8 +224,8 @@ export default function NBackPage() {
     "@type": "VideoGame",
     "name": "N-Back Test – Working Memory Training Game",
     "url": "https://skilldrills.online/drills/memory/working-memory/n-back",
-    "description": "Continuous information updating and working memory assessment at 2-back, 3-back, and beyond.",
-    "dateModified": "2026-09-11",
+    "description": "Single n-back letter game starting at 3-back, with one level added every 8 correct answers and a response window that shrinks from 2.0 to 1.2 seconds.",
+    "dateModified": "2026-11-12",
     "gamePlatform": "Web Browser",
     "genre": ["Cognitive Training", "Working Memory", "N-Back Test", "Brain Training"],
     "playMode": "SinglePlayer",
@@ -273,82 +270,64 @@ export default function NBackPage() {
 
       <DrillGuide
         lead={[
-          "An N-back test shows a stream of letters and asks whether the current letter matches the one shown n steps earlier. In this free online version you start at 3-back and the letters speed up from 2000 ms to 1200 ms as you level up, so it trains working-memory updating, not just storage.",
-          "Unlike passive span tests that measure raw storage capacity, the N-Back task requires participants to continuously update a dynamic mental buffer. As letters appear in rapid succession, users must decide whether the current letter matches the one presented exactly N steps earlier (starting at 3-back, progressing to 4-back and beyond), constantly ejecting old tokens and encoding new stimuli.",
-          "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval, about 16.7 ms per frame at 60 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware.",
+          "An N-back test shows a stream of letters and asks whether the current letter matches the one shown n steps earlier. In this free online version you start at 3-back, move up one level every 8 correct answers, and each letter's response window shrinks from 2.0 to 1.2 seconds as you level up, so it exercises working-memory updating, not just storage.",
+          "Unlike passive span tests that measure raw storage capacity, the N-Back task requires participants to continuously update a dynamic mental buffer. As letters appear in rapid succession, users must decide whether the current letter matches the one presented exactly N steps earlier (starting at 3-back, progressing to 4-back and beyond), constantly dropping old letters and adding new ones. About a third of letters are matches. This is single n-back with letters only, answered with on-screen buttons; there is no dual mode and no keyboard control.",
+          "How the game works: a run lasts 45 seconds, and the clock pauses while the first n letters are shown for memorizing. Each correct answer scores 150 points; a wrong answer or a timeout scores nothing and nothing is deducted. Response speed is not measured or scored, beyond answering inside the window.",
           "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
           "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health. If you have concerns about your memory or thinking, speak to a qualified clinician."
         ]}
         metrics={[
           {
             label: "Peak N-Back Level",
-            desc: "Highest N-back depth achieved (3-Back baseline, 4-Back advanced, 5-Back+ elite)."
+            desc: "Highest n-back level reached: 3-back at the start, 4-back after 8 correct answers, 5-back after 16, and so on."
           },
           {
             label: "Total Drill Score",
-            desc: "Cumulative points accumulated (+150 PTS per correct match/non-match judgment over 45 seconds of active play without negative penalties). The initial N-letter memorization sequence is untimed."
+            desc: "Cumulative points (+150 per correct MATCH or NO MATCH answer over the 45-second run; nothing is deducted). The clock pauses while the first n letters are shown for memorizing."
           },
           {
             label: "Target Judgment Accuracy",
-            desc: "Percentage of correct match/non-match decisions versus false-alarm and miss errors across the session."
+            desc: "Percentage of correct MATCH / NO MATCH answers out of all answers, with timeouts counted as errors."
           },
-          {
-            label: "Working Memory Updating Rate",
-            desc: "Decision velocity and reaction latency during stimulus exposure windows reflecting executive processing efficiency."
-          }
         ]}
         benchmarks={[
           {
-            tier: "Tier 1: Exceptional",
-            range: "4-Back to 5-Back+ Level (1,200+ Points)",
-            desc: "Executive elite; maintains a rolling 4-to-5 item mental FIFO queue; instantaneous token replacement; sub-600 ms response latency; accuracy exceeding 92%."
+            tier: "SkillDrills Practice Band 1",
+            range: "3-Back, 0 – 1,050 Points",
+            desc: "0 – 7 correct answers. Still at the starting level; letter window 2.0 s."
           },
           {
-            tier: "Tier 2: Advanced",
-            range: "Solid 3-Back with 4-Back Transitions (900 – 1,199 Points)",
-            desc: "Exceeds standard adult baseline; sustains continuous 3-back updating with minimal intrusion errors; successfully transitions into 4-back trials; 80% – 91% accuracy."
+            tier: "SkillDrills Practice Band 2",
+            range: "4-Back, 1,200 – 2,250 Points",
+            desc: "8 – 15 correct answers. Reached 4-back; letter window 1.9 s."
           },
           {
-            tier: "Tier 3: Typical",
-            range: "Stable 3-Back (600 – 899 Points)",
-            desc: "maintains a 3-item sub-vocal buffer; occasionally drops oldest token during rapid presentation; 65% – 79% accuracy."
-          },
-          {
-            tier: "Tier 4: Developing",
-            range: "Inconsistent 3-Back (400 – 599 Points)",
-            desc: "Struggles with continuous 3-item FIFO updating; frequent 2-back vs. 3-back confusion (lure intrusion errors); accuracy near chance on match trials (50% – 64%)."
-          },
-          {
-            tier: "Tier 5: Starting out",
-            range: "Sub-3-Back (< 400 Points)",
-            desc: "Severe working memory updating bottleneck; unable to maintain 3 sequential items in active buffer across transitions; frequent timeouts and accuracy below 50%."
+            tier: "SkillDrills Practice Band 3",
+            range: "5-Back or Higher, 2,400+ Points",
+            desc: "16+ correct answers. Reached 5-back; letter window 1.8 s or shorter. Practice bands come from the scoring code (150 points per correct answer, one level per 8 correct); they are not population norms, because SkillDrills collects no user data."
           }
         ]}
         science={[
           {
             title: "Wayne K. Kirchner (1958): Origins of the N-Back Paradigm",
-            body: "Kirchner introduced the n-back task in his seminal 1958 study on rapidly changing information retention across aging populations. He discovered that while simple short-term retention remained relatively intact, the active requirement to dynamically discard outdated items and append new items revealed significant cognitive bottlenecks."
+            body: "Kirchner introduced the n-back task in a 1958 study of age differences in short-term retention of rapidly changing information, reporting that older participants found keeping up with the changing items harder."
           },
           {
             title: "Alan Baddeley (1986, 2000): Central Executive Control",
-            body: "In Baddeley's multicomponent working memory model, N-back stands as the primary paradigm evaluating the Central Executive. It demands simultaneous coordination between phonological loop rehearsal and active attentional gating in the dorsolateral prefrontal cortex (DLPFC)."
+            body: "In Baddeley's multicomponent model, tasks like n-back are often described as drawing on the central executive, which controls attention and updating, together with the phonological loop used to rehearse the letters."
           },
           {
             title: "Adele Diamond (2013): Executive Functions Triad",
-            body: "Diamond identified working memory updating, inhibitory control, and cognitive flexibility as the foundational triad of human executive function. N-back uniquely taxes all three by requiring continuous buffer updating, inhibition of 1-back/2-back lures, and flexible mental reconfiguration."
+            body: "Diamond's review describes working memory, inhibitory control and cognitive flexibility as core executive functions. N-back mainly exercises working memory updating, and resisting 'lure' letters that match a nearer position also calls on inhibition."
           },
           {
-            title: "Susanne M. Jaeggi et al. (2008): Fluid Intelligence Transfer (PNAS)",
-            body: "Jaeggi and colleagues' landmark PNAS paper demonstrated that intensive training on adaptive N-back tasks led to significant gains in fluid intelligence (Gf) as measured by Raven's Advanced Progressive Matrices, proving that working memory capacity is plastic and trainable."
+            title: "Jaeggi et al. (2008) and Later Meta-Analyses: The Transfer Debate",
+            body: "Jaeggi and colleagues (2008) reported that training on adaptive dual n-back was followed by gains on a fluid-reasoning test. Later meta-analyses (for example Melby-Lervåg and Hulme, 2013) found little reliable evidence that working memory training transfers to reasoning or IQ, so improvement on this game should not be expected to raise intelligence."
           },
           {
-            title: "Nelson Cowan (2001, 2010): The 4 ± 1 Capacity Constraint",
-            body: "Cowan's working memory model establishes that focal conscious attention can hold approximately 4 unbundled items. Moving from 3-back to 4-back pushes performance directly against this biological limit, explaining why 4-back requires advanced chunking and sub-vocal chaining."
+            title: "Nelson Cowan (2001): About Four Items",
+            body: "Cowan argued that the focus of attention holds roughly 4 items when grouping is prevented. That helps explain why moving from 3-back to 4-back feels like a big jump."
           },
-          {
-            title: "David L. Woods et al. (2015): Chronometric Standards & Signal Detection",
-            body: "Woods et al. validated computerized cognitive chronometry, standardizing hit rate, false alarm rate, and sensitivity index (d') metrics alongside millisecond-accurate display intervals via performance.now()."
-          }
         ]}
         protocols={[
           {
@@ -357,11 +336,11 @@ export default function NBackPage() {
           },
           {
             title: "Inhibitory Gating Against Familiarity Lures (Diamond 2013)",
-            body: "Watch out for 'lures'—letters that match the item from 1 step or 2 steps ago rather than 3 steps ago. Familiarity produces an automatic impulse to click 'Match'. Use deliberate prefrontal inhibition to check the exact serial tag before responding."
+            body: "Watch out for 'lures'—letters that match the item from 1 step or 2 steps ago rather than 3 steps ago. Familiarity produces an impulse to press MATCH. Check the exact position before answering."
           },
           {
-            title: "Dual-Modality Phonological-Spatial Binding",
-            body: "Complement your subvocal loop by visualizing three horizontal slots in front of you. Shift each letter one slot to the left as new letters appear. Dual-coding across phonological and visuospatial buffers strengthens trace durability."
+            title: "Verbal Loop Plus Visual Slots",
+            body: "Complement your subvocal loop by visualizing three horizontal slots in front of you. Shift each letter one slot to the left as new letters appear. Some players find that combining the spoken loop with a visual picture of the slots helps."
           },
           {
             title: "Paced Attentional Reset",
@@ -370,49 +349,8 @@ export default function NBackPage() {
         ]}
         // Works named in this page's copy, with DOIs so a reader or an answer
         // engine can check the figures rather than take them on trust.
-        sources={pickSources('baddeley1974', 'baddeley1986', 'cowan2001', 'woods2015')}
-        faqs={[
-          {
-            q: "What is the N-Back Working Memory Test?",
-            a: "The N-Back test is a classic neurocognitive assessment that measures continuous working memory updating. Participants observe a sequential stream of stimuli and indicate whether the current item matches the one presented N steps earlier."
-          },
-          {
-            q: "Who invented the N-Back task and what was its original purpose?",
-            a: "Wayne K. Kirchner invented the N-Back task in 1958 to investigate age-related differences in the short-term retention of rapidly changing information, proving that older adults experienced significant difficulties in dynamic memory updating."
-          },
-          {
-            q: "What cognitive faculty does N-Back primarily assess?",
-            a: "N-Back primarily tests working memory updating and executive control—the ability to continuously monitor incoming data, discard obsolete representations from focal attention, and encode new information into an active buffer."
-          },
-          {
-            q: "How does N-Back differ from simple digit span or short-term memory tests?",
-            a: "Simple span tests measure passive short-term storage (holding items statically until recall). N-Back requires active manipulation and updating: with every new stimulus, the oldest item must be dropped and the newest appended while maintaining serial order."
-          },
-          {
-            q: "Can N-Back training improve fluid intelligence (IQ)?",
-            a: "Jaeggi et al. (2008) reported that adaptive N-back training improved fluid intelligence on non-verbal reasoning tasks, but later meta-analyses (for example Melby-Lervåg and Hulme, 2013) found little evidence that working memory training transfers to reasoning. Treat N-back as practice for the task itself, and do not expect an IQ gain."
-          },
-          {
-            q: "What is a normal adult score on the 3-Back test?",
-            a: "This drill has no population norm, because SkillDrills collects no aggregate data. In research N-back tasks accuracy falls as n rises, and most people find 3-back clearly harder than 2-back. Compare your accuracy and level with your own earlier runs on the same device."
-          },
-          {
-            q: "What is the difference between single N-Back and Dual N-Back?",
-            a: "Single N-Back presents one stimulus stream (e.g., visual letters). Dual N-Back presents two independent sensory streams simultaneously (typically visual grid positions and auditory spoken consonants), requiring divided executive updating across both modalities."
-          },
-          {
-            q: "How does sub-vocal articulatory rehearsal assist in N-Back performance?",
-            a: "Sub-vocalization recruits the phonological loop (Baddeley, 1986). By mentally chanting the active N-item sequence like an internal sliding queue (e.g., 'C-K-M' becoming 'K-M-R'), you maintain active trace activation against rapid decay."
-          },
-          {
-            q: "Why does performance decline significantly at 4-Back and 5-Back?",
-            a: "According to Nelson Cowan's (2001) working memory model, human focal attention has a capacity ceiling of 4 ± 1 unchunked units. At 4-back and 5-back, items exceed this fundamental processing boundary, resulting in interference and intrusion errors."
-          },
-          {
-            q: "How does working memory updating transfer to real-world tasks?",
-            a: "Working memory updating supports complex real-time decision making, tracking multiple shifting variables in financial analysis, reading comprehension, software debugging, and tactical adaptability in competitive sports and gaming."
-          }
-        ]}
+        sources={pickSources('baddeley1974', 'baddeley1986', 'cowan2001')}
+        faqs={faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text }))}
         related={[
           {
             href: "/drills/memory/spatial-memory/path-tracing",
