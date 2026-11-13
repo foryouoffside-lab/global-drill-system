@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "Misst die Übung meine Augenbewegungen oder einen Score?",
-    "a": "Nein. Der Browser weiß nicht, wohin du schaust, und es gibt weder Klicks noch Trefferwertung. Es gibt keinen Score; gespeichert wird nur die Zahl abgeschlossener Durchgänge in diesem Browser. Ob dein Blick wie geplant bleibt, kontrollierst du selbst."
+    "a": "Nein. Der Browser weiß nicht, wohin du schaust, und es gibt weder Klicks noch Trefferwertung. Eine Note gibt es nicht. Folgst du dem Ziel mit dem Pointer, zeigt das Ende, wie lange der Pointer auf dem Ziel lag und wie weit er im Mittel von der Zielmitte entfernt war; gemessen wird der Pointer, nicht deine Augen. Ob dein Blick wie geplant bleibt, kontrollierst du selbst."
   },
   {
     "q": "Welche Einstellungen gibt es?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "Bei der prädiktiven Blickverfolgung folgst du einem Ziel, das zu einem neuen Punkt gleitet und dabei abbremst, und versuchst vorherzusehen, wo es stehen bleibt. Bei Tempo 1,0 wird etwa alle 2,2 Sekunden ein zufälliger Zielpunkt gewählt; ohne Ziellinie musst du ihn allein aus der Bewegung erschließen.",
     "Die glatte Augenfolgebewegung setzt erst kurz nach Bewegungsbeginn ein; Erwartung kann diese Verzögerung verringern (Kowler, 1989; Barnes, 2008). Die Übung wiederholt Situationen, in denen solche Erwartung gefragt ist.",
-    "Der Browser kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen – nicht, wohin deine Augen tatsächlich blicken. Es gibt keinen Score und keinen Genauigkeitswert. Vergleiche deshalb dein Gefühl von Ruhe und Konzentration bei gleichem Bildschirm, Abstand und gleichen Einstellungen. Bildwiederholrate und Anzeigeverzögerung beeinflussen, wie die Bewegung aussieht (Woods et al., 2015)."
+    "Der Browser kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen – nicht, wohin deine Augen tatsächlich blicken. Angezeigt wird nur der Abstand des Pointers zum Ziel, keine Messung der Augen. Vergleiche deshalb auch dein Gefühl von Ruhe und Konzentration bei gleichem Bildschirm, Abstand und gleichen Einstellungen. Bildwiederholrate und Anzeigeverzögerung beeinflussen, wie die Bewegung aussieht (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Übungsstufen (SkillDrills-Orientierung)",
@@ -203,7 +203,7 @@ export default function GermanPredictivePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <PredictivePursuitClient copy={{"title": "Prädiktive Blickverfolgung", "subtitle": "Vorhersehen, wo das Ziel zum Stehen kommt", "description": "Prädiktive Blickverfolgung: Etwa alle 2,2 Sekunden (Tempo 1,0) gleitet das Ziel zu einem neuen Punkt und bremst ab. Sieh vorher, wo es anhält; Hide Line blendet die Ziellinie aus. Kein Klicken, kein Score; der Browser zeichnet deinen Blick nicht auf."}} />
+      <PredictivePursuitClient copy={{"title": "Prädiktive Blickverfolgung", "subtitle": "Vorhersehen, wo das Ziel zum Stehen kommt", "description": "Prädiktive Blickverfolgung: Etwa alle 2,2 Sekunden (Tempo 1,0) gleitet das Ziel zu einem neuen Punkt und bremst ab. Sieh vorher, wo es anhält; Hide Line blendet die Ziellinie aus. Kein Klicken nötig; am Ende siehst du den Abstand des Pointers zum Ziel, deinen Blick zeichnet der Browser nicht auf."}} />
 
       <DrillGuide guide={guideProps} />
 

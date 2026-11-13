@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "Misst die Übung meine Augenbewegungen oder einen Score?",
-    "a": "Nein. Der Browser weiß nicht, wohin du schaust, und es gibt weder Klicks noch Trefferwertung. Es gibt keinen Score; gespeichert wird nur die Zahl abgeschlossener Durchgänge in diesem Browser. Ob dein Blick wie geplant bleibt, kontrollierst du selbst."
+    "a": "Nein. Der Browser weiß nicht, wohin du schaust, und es gibt weder Klicks noch Trefferwertung. Am Ende zeigt die Seite nur Zeigerwerte (Zeit auf dem Ziel, Abstand des Zeigers zum Zielmittelpunkt), nicht die Augenposition; gespeichert wird nur die Zahl abgeschlossener Durchgänge in diesem Browser. Ob dein Blick wie geplant bleibt, kontrollierst du selbst."
   },
   {
     "q": "Welche Einstellungen gibt es?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "Bei der Blickfolge bei plötzlichem Kurswechsel folgst du einem Ziel, das geradlinig läuft, an den Rändern abprallt und ohne Vorwarnung Richtung und Tempo ändert. Die Wechsel kommen zufällig und häufig; das Ziel springt nicht, und der Bildschirm bewegt sich nicht.",
     "Ändert ein bewegtes Ziel abrupt die Richtung, kommt die glatte Augenfolgebewegung zu spät, und schnelle Korrekturbewegungen mischen sich ein (Robinson, 1965; Krauzlis, 2004). Die Übung wiederholt genau solche Neuanpassungen.",
-    "Der Browser kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen – nicht, wohin deine Augen tatsächlich blicken. Es gibt keinen Score und keinen Genauigkeitswert. Vergleiche deshalb dein Gefühl von Ruhe und Konzentration bei gleichem Bildschirm, Abstand und gleichen Einstellungen. Bildwiederholrate und Anzeigeverzögerung beeinflussen, wie die Bewegung aussieht (Woods et al., 2015)."
+    "Der Browser kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen – nicht, wohin deine Augen tatsächlich blicken. Angezeigt werden nur Zeigerwerte zur Zeit auf dem Ziel und zum Abstand vom Zielmittelpunkt, kein Wert für die Augen. Vergleiche deshalb dein Gefühl von Ruhe und Konzentration bei gleichem Bildschirm, Abstand und gleichen Einstellungen. Bildwiederholrate und Anzeigeverzögerung beeinflussen, wie die Bewegung aussieht (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Übungsstufen (SkillDrills-Orientierung)",
@@ -203,7 +203,7 @@ export default function GermanSpatialShiftPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SpatialShiftPursuitClient copy={{"title": "Blickfolge bei plötzlichem Kurswechsel", "subtitle": "Einem Ziel folgen, das ohne Vorwarnung Richtung und Tempo ändert", "description": "Blickfolge bei plötzlichem Kurswechsel: Das Ziel läuft geradlinig, prallt ab und ändert zu zufälligen Zeitpunkten Richtung und Tempo. Hide Line blendet die Richtungslinie aus. Kein Klicken, kein Score; der Browser zeichnet deinen Blick nicht auf."}} />
+      <SpatialShiftPursuitClient copy={{"title": "Blickfolge bei plötzlichem Kurswechsel", "subtitle": "Einem Ziel folgen, das ohne Vorwarnung Richtung und Tempo ändert", "description": "Blickfolge bei plötzlichem Kurswechsel: Das Ziel läuft geradlinig, prallt ab und ändert zu zufälligen Zeitpunkten Richtung und Tempo. Hide Line blendet die Richtungslinie aus. Kein Klicken; am Ende siehst du den Abstand deines Zeigers zum Ziel, aber der Browser zeichnet deinen Blick nicht auf."}} />
 
       <DrillGuide guide={guideProps} />
 

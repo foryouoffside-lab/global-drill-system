@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     "q": "O exercício mede o movimento dos meus olhos?",
-    "a": "Não. O navegador não vê o seu olhar; conhece apenas a posição desenhada do alvo e os ajustes. O cursor é só um apoio e não prova para onde você olha. Não há pontuação."
+    "a": "Não. O navegador não vê o seu olhar; conhece apenas a posição desenhada do alvo, os ajustes e o ponteiro. O cursor é só um apoio e não prova para onde você olha. No fim, a tela resume apenas a distância do ponteiro ao alvo."
   },
   {
     "q": "O que muda com a velocidade aleatória?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guia: Exercício Ocular em Oito",
   "intro": [
     "No exercício ocular em oito, o alvo percorre sem parar um oito deitado (lemniscata). A trajetória combina movimentos horizontais e verticais e cruza o centro a cada volta, então você pratica manter o olhar no alvo sem interrupção ao passar pelo meio (Barnes, 2008). Ocultar a linha ou ativar a velocidade aleatória deixa a volta mais difícil de prever.",
-    "O navegador conhece apenas a posição desenhada do alvo e seus ajustes, não para onde seus olhos estão olhando. Não há pontuação: só as sessões concluídas são contadas. O resultado é um registro de prática repetível, não uma medida clínica nem um teste de visão.",
+    "O navegador conhece a posição desenhada do alvo, seus ajustes e o ponteiro, não para onde seus olhos estão olhando. No fim, a tela mostra o tempo com o ponteiro sobre o alvo e a distância média até o centro, sem nota. O resultado é um registro de prática repetível, não uma medida clínica nem um teste de visão.",
     "Use uma distância confortável e compare sempre a mesma tela e o mesmo navegador. Taxa de atualização e dispositivo de entrada mudam a exibição (Woods et al., 2015). Pare se sentir dor, tontura, náusea ou visão embaçada persistente."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Acompanhar o alvo num oito deitado",
-          description: "Exercício ocular em oito: acompanhe um alvo num oito deitado que cruza o centro. O navegador não registra seu olhar e não há pontuação; veja o resultado como registro de prática, não como exame médico.",
+          description: "Exercício ocular em oito: acompanhe um alvo num oito deitado que cruza o centro. O navegador não registra seu olhar, apenas a distância do ponteiro ao alvo; veja o resultado como registro de prática, não como exame médico.",
         }}
       />
       <DrillGuide guide={guideProps} />

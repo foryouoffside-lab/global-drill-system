@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "O exercício mede os movimentos dos olhos ou dá pontuação?",
-    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. Não existe pontuação: apenas o número de sessões concluídas fica guardado neste navegador. Manter o olhar onde o exercício pede depende de si."
+    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. Não há nota. Se seguir o alvo com o ponteiro, o ecrã final mostra quanto tempo ele esteve sobre o alvo e a distância média ao centro; é o ponteiro que é medido, não os seus olhos. Manter o olhar onde o exercício pede depende de si."
   },
   {
     "q": "Que definições posso mudar?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "O rastreamento ocular senoidal consiste em seguir com o olhar um alvo que vai e volta da esquerda para a direita, subindo e descendo numa curva senoidal fixa. A velocidade horizontal é constante e o alvo inverte o sentido nas margens do ecrã.",
     "O seguimento suave dos olhos acompanha um alvo lento quase à mesma velocidade, mas atrasa-se com mais facilidade quando o alvo acelera (Robinson, 1965). Aqui varia a velocidade e acompanha um movimento que muda entre os picos e o meio da onda.",
-    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Não há pontuação nem percentagem de precisão: compare antes o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
+    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Só é mostrada a distância do ponteiro ao alvo, não uma medida dos olhos: compare também o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Etapas de prática (referência SkillDrills)",
@@ -203,7 +203,7 @@ export default function PortugueseSineWavePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SineWavePursuitClient copy={{"title": "Rastreamento ocular senoidal", "subtitle": "Seguir um alvo numa trajetória em onda", "description": "Rastreamento ocular senoidal: o alvo vai e volta da esquerda para a direita, subindo e descendo numa curva em onda fixa. Hide Line esconde a curva. Sem cliques nem pontuação; o navegador não regista o seu olhar."}} />
+      <SineWavePursuitClient copy={{"title": "Rastreamento ocular senoidal", "subtitle": "Seguir um alvo numa trajetória em onda", "description": "Rastreamento ocular senoidal: o alvo vai e volta da esquerda para a direita, subindo e descendo numa curva em onda fixa. Hide Line esconde a curva. Sem cliques; o ecrã final mostra a distância do ponteiro ao alvo, e o navegador não regista o seu olhar."}} />
 
       <DrillGuide guide={guideProps} />
 

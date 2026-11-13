@@ -9,7 +9,7 @@ import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
 import { drawTacticalTarget } from '../../../../lib/canvasFx';
-import { createBackdropCache, isFrameSkippable } from '../trackingCanvas';
+import { createBackdropCache, isFrameSkippable, createPursuitMetrics, samplePursuit, summarizePursuit, type PursuitSummary } from '../trackingCanvas';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { setTargetCursor } from '@/lib/canvasCursor';
@@ -41,7 +41,7 @@ const saveData = (data: { totalSessions: number }) => {
   } catch (e) {}
 };
 
-export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string } } = {}) {
+export default function GhostingSuppressPursuitClient({ copy }: { copy?: Record<string, string | undefined> } = {}) {
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -65,6 +65,8 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
   // Session Stats
   const [uiTimeLeft, setUiTimeLeft] = useState<number>(60);
   const [totalTrials, setTotalTrials] = useState<number>(0);
+  const [pursuitSummary, setPursuitSummary] = useState<PursuitSummary | null>(null);
+  const pursuitRef = useRef(createPursuitMetrics());
 
   // DOM & Physics Refs
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -189,6 +191,7 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
     if (animationRef.current) cancelAnimationFrame(animationRef.current);
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
+    setPursuitSummary(summarizePursuit(pursuitRef.current));
     setGameState('gameOver');
 
     setTotalTrials((prev) => {
@@ -202,6 +205,7 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
   const enterDrill = useCallback(async () => {
     setIsFullscreen(true);
     mousePosRef.current = { x: 0, y: 0, active: false };
+    pursuitRef.current = createPursuitMetrics();
 
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
@@ -275,7 +279,7 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
 
     const updateSize = () => {
       if (!container) return;
-      const rect = container.getBoundingClientRect();
+      const rect = cvs.getBoundingClientRect();
       canvasWidth = rect.width;
       canvasHeight = rect.height;
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -397,6 +401,7 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
         ctx.globalAlpha = 1.0;
       }
 
+      samplePursuit(pursuitRef.current, deltaTimeMs, mousePosRef.current, trackingState.current.px, trackingState.current.py, targetSize);
       drawTacticalTarget(ctx, trackingState.current.px, trackingState.current.py, targetSize, targetColor, glowEffect);
       setTargetCursor(canvasRef.current, gameState === 'playing' ? mousePosRef.current : null, [{ x: trackingState.current.px, y: trackingState.current.py, radius: targetSize }]);
 
@@ -535,7 +540,7 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
                 active: true,
               };
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 cursor-default`} 
+            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default`} 
           />
 
           {/* START CARD */}
@@ -584,7 +589,7 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
                   SESSION COMPLETE
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-400 text-center font-bold">
-                  Smooth Pursuit Calibrated
+                  {copy?.calibrated || 'Pointer tracking summary'}
                 </div>
               </div>
 
@@ -593,6 +598,17 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
                 
                 {/* 4 Stat Tiles */}
                 <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { label: copy?.timeOnTarget || 'Time on target', value: pursuitSummary?.timeOnTargetPct, unit: '%', sub: null },
+                    { label: copy?.meanError || 'Mean distance error', value: pursuitSummary?.meanErrorPx, unit: ' px', sub: pursuitSummary?.meanErrorRadiusPct },
+                    { label: copy?.rmsError || 'RMS distance error', value: pursuitSummary?.rmsErrorPx, unit: ' px', sub: pursuitSummary?.rmsErrorRadiusPct },
+                  ].map((m) => (
+                    <div key={m.label} className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
+                      <p className="text-sm sm:text-base font-black text-white tabular-nums">{m.value == null ? '—' : `${m.value.toFixed(m.unit === '%' ? 1 : 0)}${m.unit}`}</p>
+                      {m.sub != null && <p className="text-[9px] text-slate-500 tabular-nums">{Math.round(m.sub)}% {copy?.ofRadius || 'of target radius'}</p>}
+                      <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{m.label}</p>
+                    </div>
+                  ))}
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{selectedDuration}s</p>
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Session Time</p>
@@ -605,11 +621,8 @@ export default function GhostingSuppressPursuitClient({ copy }: { copy?: { title
                     <p className="text-sm sm:text-base font-black text-white">{totalTrials}</p>
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Sessions Completed</p>
                   </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-xs sm:text-sm font-black text-white">{randomSpeed ? 'Enabled' : 'Fixed'}</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Speed Acceleration</p>
-                  </div>
                 </div>
+                <p className="text-[9px] leading-snug text-slate-500">{copy?.metricsNote || 'Pointer distance to the target centre, time-weighted. Eye position is not recorded.'}</p>
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">

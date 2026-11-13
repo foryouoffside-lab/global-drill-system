@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "L’exercice mesure-t-il mes mouvements oculaires ou un score ?",
-    "a": "Non. Le navigateur ne sait pas où vous regardez et il n’y a ni clic ni détection de touche. Il n’y a pas de score : seul le nombre de séances terminées est enregistré dans ce navigateur. C’est à vous de garder le regard là où l’exercice le demande."
+    "a": "Non. Le navigateur ne sait pas où vous regardez et il n’y a ni clic ni détection de touche. En fin de séance, la page affiche seulement des valeurs du pointeur (temps sur la cible, distance au centre), pas des yeux ; seul le nombre de séances terminées est enregistré dans ce navigateur. C’est à vous de garder le regard là où l’exercice le demande."
   },
   {
     "q": "Quels réglages sont disponibles ?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "La poursuite oculaire de la cible qui saute est un exercice dans le navigateur : vous retrouvez des yeux une cible qui change soudain de place. Elle avance en ligne droite, rebondit sur les bords et, à la vitesse 1,0x, saute environ toutes les 1,2 seconde vers un point aléatoire en conservant sa direction et sa vitesse.",
     "Suivre en douceur une cible en mouvement et porter rapidement le regard vers une cible éloignée (saccade) sont décrits comme deux mouvements oculaires distincts (Rashbass, 1961 ; Krauzlis, 2004). Ici, les deux alternent sans cesse.",
-    "Le navigateur connaît seulement la position où la cible est dessinée et vos réglages, pas l’endroit où vos yeux regardent réellement. Il n’affiche ni score ni précision : comparez plutôt votre aisance et votre concentration avec le même écran, la même distance et les mêmes réglages. La fréquence de rafraîchissement et la latence d’affichage changent aussi le rendu du mouvement (Woods et al., 2015)."
+    "Le navigateur connaît seulement la position où la cible est dessinée et vos réglages, pas l’endroit où vos yeux regardent réellement. Il n’affiche que des valeurs du pointeur (temps sur la cible, distance au centre), rien sur les yeux : comparez plutôt votre aisance et votre concentration avec le même écran, la même distance et les mêmes réglages. La fréquence de rafraîchissement et la latence d’affichage changent aussi le rendu du mouvement (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Étapes de pratique (repères SkillDrills)",
@@ -203,7 +203,7 @@ export default function FrenchMomentumTeleportPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <MomentumTeleportPursuitClient copy={{"title": "Poursuite oculaire : cible qui saute", "subtitle": "Retrouver une cible déplacée qui garde sa trajectoire", "description": "Poursuite oculaire : la cible avance en ligne droite et saute environ toutes les 1,2 seconde (à 1,0x) vers un point aléatoire, en gardant sa direction et sa vitesse. Pas de clic ni de score, seulement le regard ; le navigateur n’enregistre pas vos yeux."}} />
+      <MomentumTeleportPursuitClient copy={{"title": "Poursuite oculaire : cible qui saute", "subtitle": "Retrouver une cible déplacée qui garde sa trajectoire", "description": "Poursuite oculaire : la cible avance en ligne droite et saute environ toutes les 1,2 seconde (à 1,0x) vers un point aléatoire, en gardant sa direction et sa vitesse. Pas de clic ; la page indique ensuite la distance du pointeur à la cible, mais le navigateur n’enregistre pas vos yeux."}} />
 
       <DrillGuide guide={guideProps} />
 

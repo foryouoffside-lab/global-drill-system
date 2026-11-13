@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     "q": "Mesure-t-il le mouvement de mes yeux ?",
-    "a": "Non. Le navigateur ne voit pas votre regard ; il connaît seulement la position dessinée de la cible et vos réglages. Le curseur n'est qu'une aide et ne prouve pas où vous regardez. Il n'y a pas de score."
+    "a": "Non. Le navigateur ne voit pas votre regard ; il connaît seulement la position dessinée de la cible et vos réglages. Le curseur n'est qu'une aide et ne prouve pas où vous regardez. En fin de séance, la page affiche seulement des valeurs du pointeur (temps sur la cible, distance au centre)."
   },
   {
     "q": "Que change la vitesse aléatoire ?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guide : Poursuite oculaire : cible qui esquive",
   "intro": [
     "Dans cette poursuite oculaire avec une cible qui esquive, la cible avance en ligne droite et repart environ toutes les 0,5 seconde (0,35 à 0,65 s avec la vitesse aléatoire) dans une nouvelle direction au hasard ; elle rebondit sur les bords. Après chaque virage, l'œil prend du retard jusqu'à ce qu'une saccade de rattrapage comble l'écart et que la poursuite reprenne (Rashbass, 1961 ; Krauzlis, 2004).",
-    "Le navigateur connaît seulement la position dessinée de la cible et vos réglages, pas l'endroit où regardent vos yeux. Il n'y a pas de score : seules les séances terminées sont comptées. Le résultat est un repère d'entraînement reproductible, pas une mesure clinique ni un test de vue.",
+    "Le navigateur connaît seulement la position dessinée de la cible et vos réglages, pas l'endroit où regardent vos yeux. La page affiche seulement des valeurs du pointeur (temps sur la cible, distance au centre) et compte les séances terminées. Le résultat est un repère d'entraînement reproductible, pas une mesure clinique ni un test de vue.",
     "Gardez une distance confortable et comparez toujours le même écran et le même navigateur. La fréquence d'affichage et le périphérique d'entrée changent le rendu (Woods et al., 2015). Arrêtez en cas de douleur, vertige, nausée ou vision floue persistante."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Lignes droites et virages brusques",
-          description: "Poursuite oculaire avec une cible qui esquive : elle change brusquement de direction environ toutes les 0,5 s. Le navigateur n'enregistre pas votre regard et il n'y a pas de score ; c'est un repère d'entraînement, pas un examen médical.",
+          description: "Poursuite oculaire avec une cible qui esquive : elle change brusquement de direction environ toutes les 0,5 s. La page indique ensuite la distance du pointeur à la cible, mais le navigateur n'enregistre pas votre regard ; c'est un repère d'entraînement, pas un examen médical.",
         }}
       />
       <DrillGuide guide={guideProps} />

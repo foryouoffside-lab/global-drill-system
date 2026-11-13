@@ -116,7 +116,7 @@ const faqs = [
   },
   {
     "q": "¿Mide el movimiento de mis ojos?",
-    "a": "No. El navegador no ve tu mirada; solo conoce la posición dibujada del objetivo y los ajustes. El cursor es solo una ayuda y no demuestra hacia dónde miras. No hay puntuación."
+    "a": "No. El navegador no ve tu mirada; solo conoce la posición dibujada del objetivo, los ajustes y el puntero. El cursor es solo una ayuda y no demuestra hacia dónde miras. Al final solo se resume la distancia del puntero al objetivo."
   },
   {
     "q": "¿Qué cambia la velocidad aleatoria?",
@@ -156,7 +156,7 @@ const guideProps = {
   "heading": "Guía: Seguimiento con Imágenes Fantasma",
   "intro": [
     "En el seguimiento con imágenes fantasma, el objetivo avanza a velocidad constante en línea recta y rebota en los bordes. Si activas la estela, la página dibuja detrás anillos tenues que se desvanecen (desactivada por defecto). El objetivo es mantener la mirada en el objetivo sólido sin seguir las copias.",
-    "El navegador solo conoce la posición dibujada del objetivo y tus ajustes, no hacia dónde miran tus ojos. No hay puntuación: solo se cuentan las sesiones completadas. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
+    "El navegador conoce la posición dibujada del objetivo, tus ajustes y el puntero, no hacia dónde miran tus ojos. Al final se muestra el tiempo con el puntero sobre el objetivo y su distancia media al centro, sin nota. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
     "Usa una distancia cómoda y compara siempre la misma pantalla y el mismo navegador. La frecuencia de refresco y el dispositivo de entrada cambian la imagen (Woods et al., 2015). Para si notas dolor, mareo, náuseas o visión borrosa persistente."
   ],
   "benchmarks": {
@@ -257,7 +257,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Mirar el objetivo, no su estela",
-          description: "Seguimiento con imágenes fantasma: sigue un objetivo con estela opcional. No es un test de ghosting del monitor. El navegador no registra tu mirada y no hay puntuación.",
+          description: "Seguimiento con imágenes fantasma: sigue un objetivo con estela opcional. No es un test de ghosting del monitor. El navegador no registra tu mirada, solo la distancia del puntero al objetivo.",
         }}
       />
       <DrillGuide guide={guideProps} />

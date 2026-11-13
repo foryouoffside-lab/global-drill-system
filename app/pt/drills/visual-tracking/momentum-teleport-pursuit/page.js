@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "O exercício mede os movimentos dos olhos ou dá pontuação?",
-    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. Não existe pontuação: apenas o número de sessões concluídas fica guardado neste navegador. Manter o olhar onde o exercício pede depende de si."
+    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. No fim, a página mostra apenas valores do ponteiro (tempo sobre o alvo e distância ao centro), não dos olhos; apenas o número de sessões concluídas fica guardado neste navegador. Manter o olhar onde o exercício pede depende de si."
   },
   {
     "q": "Que definições posso mudar?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "O rastreamento de alvo teleportado é um exercício no navegador em que reencontra com o olhar um alvo que muda de lugar de repente. O alvo avança em linha reta, ressalta nas margens e, à velocidade 1,0x, teleporta-se cerca de cada 1,2 segundos para um ponto aleatório, mantendo a direção e a velocidade.",
     "Acompanhar suavemente um alvo em movimento e levar o olhar depressa até um alvo distante (sacada) são descritos como movimentos oculares diferentes (Rashbass, 1961; Krauzlis, 2004). Aqui, os dois alternam constantemente.",
-    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Não há pontuação nem percentagem de precisão: compare antes o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
+    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Mostra apenas valores do ponteiro (tempo sobre o alvo e distância ao centro), nada sobre os olhos: compare antes o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Etapas de prática (referência SkillDrills)",
@@ -203,7 +203,7 @@ export default function PortugueseMomentumTeleportPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <MomentumTeleportPursuitClient copy={{"title": "Rastreamento de Alvo Teleportado", "subtitle": "Reencontrar um alvo que salta mas mantém o rumo", "description": "Rastreamento de alvo teleportado: o alvo avança em linha reta e teleporta-se cerca de cada 1,2 segundos (a 1,0x) para um ponto aleatório, mantendo direção e velocidade. Sem cliques nem pontuação, só o olhar; o navegador não regista os seus olhos."}} />
+      <MomentumTeleportPursuitClient copy={{"title": "Rastreamento de Alvo Teleportado", "subtitle": "Reencontrar um alvo que salta mas mantém o rumo", "description": "Rastreamento de alvo teleportado: o alvo avança em linha reta e teleporta-se cerca de cada 1,2 segundos (a 1,0x) para um ponto aleatório, mantendo direção e velocidade. Sem cliques; no fim vê a distância do ponteiro ao alvo, mas o navegador não regista os seus olhos."}} />
 
       <DrillGuide guide={guideProps} />
 

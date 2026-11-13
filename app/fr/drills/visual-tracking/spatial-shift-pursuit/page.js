@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "L’exercice mesure-t-il mes mouvements oculaires ou un score ?",
-    "a": "Non. Le navigateur ne sait pas où vous regardez et il n’y a ni clic ni détection de touche. Il n’y a pas de score : seul le nombre de séances terminées est enregistré dans ce navigateur. C’est à vous de garder le regard là où l’exercice le demande."
+    "a": "Non. Le navigateur ne sait pas où vous regardez et il n’y a ni clic ni détection de touche. En fin de séance, la page affiche seulement des valeurs du pointeur (temps sur la cible, distance au centre), pas des yeux ; seul le nombre de séances terminées est enregistré dans ce navigateur. C’est à vous de garder le regard là où l’exercice le demande."
   },
   {
     "q": "Quels réglages sont disponibles ?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "La poursuite visuelle à trajectoire changeante consiste à suivre des yeux une cible qui avance en ligne droite, rebondit sur les bords et change sans prévenir de direction et de vitesse. Les changements sont aléatoires et fréquents ; la cible ne saute pas et l’écran ne bouge pas.",
     "Quand une cible change brusquement de direction, la poursuite lisse arrive en retard et de rapides mouvements de correction s’y ajoutent (Robinson, 1965 ; Krauzlis, 2004). L’exercice répète ces réajustements.",
-    "Le navigateur connaît seulement la position où la cible est dessinée et vos réglages, pas l’endroit où vos yeux regardent réellement. Il n’affiche ni score ni précision : comparez plutôt votre aisance et votre concentration avec le même écran, la même distance et les mêmes réglages. La fréquence de rafraîchissement et la latence d’affichage changent aussi le rendu du mouvement (Woods et al., 2015)."
+    "Le navigateur connaît seulement la position où la cible est dessinée et vos réglages, pas l’endroit où vos yeux regardent réellement. Il n’affiche que des valeurs du pointeur (temps sur la cible, distance au centre), rien sur les yeux : comparez plutôt votre aisance et votre concentration avec le même écran, la même distance et les mêmes réglages. La fréquence de rafraîchissement et la latence d’affichage changent aussi le rendu du mouvement (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Étapes de pratique (repères SkillDrills)",
@@ -203,7 +203,7 @@ export default function FrenchSpatialShiftPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SpatialShiftPursuitClient copy={{"title": "Poursuite visuelle à trajectoire changeante", "subtitle": "Suivre une cible qui change de direction et de vitesse sans prévenir", "description": "Poursuite visuelle à trajectoire changeante : la cible avance en ligne droite, rebondit et change à des moments aléatoires de direction et de vitesse. Hide Line masque le trait de direction. Pas de clic ni de score ; le navigateur n’enregistre pas votre regard."}} />
+      <SpatialShiftPursuitClient copy={{"title": "Poursuite visuelle à trajectoire changeante", "subtitle": "Suivre une cible qui change de direction et de vitesse sans prévenir", "description": "Poursuite visuelle à trajectoire changeante : la cible avance en ligne droite, rebondit et change à des moments aléatoires de direction et de vitesse. Hide Line masque le trait de direction. Pas de clic ; la page indique ensuite la distance du pointeur à la cible, mais le navigateur n’enregistre pas votre regard."}} />
 
       <DrillGuide guide={guideProps} />
 

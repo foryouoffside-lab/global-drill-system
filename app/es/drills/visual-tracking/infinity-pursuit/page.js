@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     "q": "¿Mide el movimiento de mis ojos?",
-    "a": "No. El navegador no ve tu mirada; solo conoce la posición dibujada del objetivo y los ajustes. El cursor es solo una ayuda y no demuestra hacia dónde miras. No hay puntuación."
+    "a": "No. El navegador no ve tu mirada; solo conoce la posición dibujada del objetivo, los ajustes y el puntero. El cursor es solo una ayuda y no demuestra hacia dónde miras. Al final solo se resume la distancia del puntero al objetivo."
   },
   {
     "q": "¿Qué cambia la velocidad aleatoria?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guía: Ejercicio Ocular en Figura Ocho",
   "intro": [
     "En el ejercicio ocular en figura ocho, el objetivo recorre una y otra vez un ocho tumbado (lemniscata). La trayectoria combina movimientos horizontales y verticales y cruza el centro en cada vuelta, así que practicas mantener la mirada en el objetivo sin cortes al pasar por el medio (Barnes, 2008). Ocultar la línea o activar la velocidad aleatoria hace la vuelta más difícil de anticipar.",
-    "El navegador solo conoce la posición dibujada del objetivo y tus ajustes, no hacia dónde miran tus ojos. No hay puntuación: solo se cuentan las sesiones completadas. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
+    "El navegador conoce la posición dibujada del objetivo, tus ajustes y el puntero, no hacia dónde miran tus ojos. Al final se muestra el tiempo con el puntero sobre el objetivo y su distancia media al centro, sin nota. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
     "Usa una distancia cómoda y compara siempre la misma pantalla y el mismo navegador. La frecuencia de refresco y el dispositivo de entrada cambian la imagen (Woods et al., 2015). Para si notas dolor, mareo, náuseas o visión borrosa persistente."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Seguir el objetivo en un ocho tumbado",
-          description: "Ejercicio ocular en figura ocho: sigue un objetivo en un ocho tumbado que cruza el centro. El navegador no registra tu mirada y no hay puntuación; toma el resultado como registro de práctica, no como prueba médica.",
+          description: "Ejercicio ocular en figura ocho: sigue un objetivo en un ocho tumbado que cruza el centro. El navegador no registra tu mirada, solo la distancia del puntero al objetivo; toma el resultado como registro de práctica, no como prueba médica.",
         }}
       />
       <DrillGuide guide={guideProps} />

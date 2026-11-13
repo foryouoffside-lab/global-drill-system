@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     "q": "Misst die Übung meine Augenbewegungen?",
-    "a": "Nein. Der Browser kann deinen Blick nicht sehen und kennt nur die gezeichnete Zielposition und die Einstellungen. Der Cursor ist nur eine Hilfe und beweist nicht, wohin du schaust. Einen Score gibt es nicht."
+    "a": "Nein. Der Browser kann deinen Blick nicht sehen und kennt nur die gezeichnete Zielposition und die Einstellungen. Der Cursor ist nur eine Hilfe und beweist nicht, wohin du schaust. Am Ende zeigt die Seite nur Zeigerwerte (Zeit auf dem Ziel, Abstand zum Zielmittelpunkt)."
   },
   {
     "q": "Was ändert das Zufallstempo?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Anleitung: Korrektursakkaden üben: Ziel schlägt Haken",
   "intro": [
     "Bei dieser Übung, mit der du Korrektursakkaden üben kannst, läuft das Ziel geradeaus und wechselt etwa alle 0,5 Sekunden (mit Zufallstempo 0,35 bis 0,65 s) abrupt Richtung und Tempo; an den Rändern prallt es ab. Nach so einem Schnitt hinken die Augen hinterher, bis eine schnelle Korrekturbewegung den Abstand schließt und die glatte Blickfolge wieder einsetzt (Rashbass, 1961; Krauzlis, 2004).",
-    "Der Browser kennt nur die gezeichnete Zielposition und deine Einstellungen, nicht die Position deiner Augen. Es gibt keinen Score, gezählt werden nur abgeschlossene Sessions. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
+    "Der Browser kennt nur die gezeichnete Zielposition und deine Einstellungen, nicht die Position deiner Augen. Angezeigt werden nur Zeigerwerte (Zeit auf dem Ziel, Abstand zum Zielmittelpunkt); gezählt werden nur abgeschlossene Sessions. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
     "Nutze einen bequemen Abstand und vergleiche nur Sessions auf demselben Bildschirm und Browser. Bildwiederholrate und Eingabegerät beeinflussen die Darstellung (Woods et al., 2015). Brich bei Schmerzen, Schwindel, Übelkeit oder anhaltend verschwommenem Sehen ab."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Gerade Bahnen, abrupte Richtungswechsel",
-          description: "Korrektursakkaden üben: Das Ziel wechselt etwa alle 0,5 Sekunden abrupt die Richtung. Der Browser zeichnet deinen Blick nicht auf und es gibt keinen Score; das Ergebnis ist ein Übungsprotokoll, kein medizinischer Test.",
+          description: "Korrektursakkaden üben: Das Ziel wechselt etwa alle 0,5 Sekunden abrupt die Richtung. Am Ende siehst du den Abstand deines Zeigers zum Ziel, aber der Browser zeichnet deinen Blick nicht auf; das Ergebnis ist ein Übungsprotokoll, kein medizinischer Test.",
         }}
       />
       <DrillGuide guide={guideProps} />

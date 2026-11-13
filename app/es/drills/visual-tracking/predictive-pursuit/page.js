@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "¿El ejercicio mide mis movimientos oculares o da una puntuación?",
-    "a": "No. El navegador no sabe hacia dónde miras y no hay clics ni detección de aciertos. No hay puntuación: solo se guarda en este navegador el número de sesiones completadas. Mantener la mirada donde pide el ejercicio depende de ti."
+    "a": "No. El navegador no sabe hacia dónde miras y no hay clics ni detección de aciertos. No hay nota. Si sigues el objetivo con el puntero, al final verás cuánto tiempo estuvo sobre el objetivo y su distancia media al centro; se mide el puntero, no tus ojos. Mantener la mirada donde pide el ejercicio depende de ti."
   },
   {
     "q": "¿Qué ajustes puedo cambiar?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "El seguimiento ocular predictivo consiste en seguir con la vista un objetivo que se desliza hacia un nuevo punto y frena hasta parar, anticipando dónde quedará. A velocidad 1,0x se elige un destino aleatorio cada 2,2 segundos aproximadamente; sin la línea de destino, tienes que deducirlo por el movimiento.",
     "El seguimiento suave de los ojos arranca con un pequeño retraso tras el inicio del movimiento; la anticipación ayuda a reducir ese retraso (Kowler, 1989; Barnes, 2008). El ejercicio repite situaciones en las que esa anticipación es útil.",
-    "El navegador solo conoce la posición donde se dibuja el objetivo y tus ajustes, no hacia dónde miran realmente tus ojos. No hay puntuación ni porcentaje de precisión: compara tu comodidad y concentración con la misma pantalla, distancia y ajustes. La frecuencia de refresco y el retardo de la pantalla también cambian cómo se ve el movimiento (Woods et al., 2015)."
+    "El navegador solo conoce la posición donde se dibuja el objetivo y tus ajustes, no hacia dónde miran realmente tus ojos. Solo se muestra la distancia del puntero al objetivo, no una medida de los ojos: compara también tu comodidad y concentración con la misma pantalla, distancia y ajustes. La frecuencia de refresco y el retardo de la pantalla también cambian cómo se ve el movimiento (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Etapas de práctica (guía de SkillDrills)",
@@ -203,7 +203,7 @@ export default function SpanishPredictivePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <PredictivePursuitClient copy={{"title": "Seguimiento ocular predictivo", "subtitle": "Anticipar dónde se detendrá el objetivo", "description": "Seguimiento ocular predictivo: cada 2,2 segundos aprox. (a 1,0x) el objetivo se desliza hacia un nuevo punto y frena hasta parar. Anticipa dónde queda; Hide Line oculta la línea de destino. Sin clics ni puntuación; el navegador no registra tu mirada."}} />
+      <PredictivePursuitClient copy={{"title": "Seguimiento ocular predictivo", "subtitle": "Anticipar dónde se detendrá el objetivo", "description": "Seguimiento ocular predictivo: cada 2,2 segundos aprox. (a 1,0x) el objetivo se desliza hacia un nuevo punto y frena hasta parar. Anticipa dónde queda; Hide Line oculta la línea de destino. Sin clics; al final verás la distancia del puntero al objetivo, y el navegador no registra tu mirada."}} />
 
       <DrillGuide guide={guideProps} />
 

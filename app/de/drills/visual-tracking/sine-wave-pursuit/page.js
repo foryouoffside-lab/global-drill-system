@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "Misst die Übung meine Augenbewegungen oder einen Score?",
-    "a": "Nein. Der Browser weiß nicht, wohin du schaust, und es gibt weder Klicks noch Trefferwertung. Es gibt keinen Score; gespeichert wird nur die Zahl abgeschlossener Durchgänge in diesem Browser. Ob dein Blick wie geplant bleibt, kontrollierst du selbst."
+    "a": "Nein. Der Browser weiß nicht, wohin du schaust, und es gibt weder Klicks noch Trefferwertung. Eine Note gibt es nicht. Folgst du dem Ziel mit dem Pointer, zeigt das Ende, wie lange der Pointer auf dem Ziel lag und wie weit er im Mittel von der Zielmitte entfernt war; gemessen wird der Pointer, nicht deine Augen. Ob dein Blick wie geplant bleibt, kontrollierst du selbst."
   },
   {
     "q": "Welche Einstellungen gibt es?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "Bei der Sinuswellen-Blickverfolgung folgst du mit den Augen einem Ziel, das auf einer festen Sinuskurve von links nach rechts und zurück pendelt und dabei auf- und absteigt. Das Seitwärtstempo ist konstant, an den Rändern kehrt das Ziel um.",
     "Langsamen Zielen folgt die glatte Augenfolgebewegung fast im gleichen Tempo, bei schnelleren fällt der Blick leichter zurück (Robinson, 1965). Hier variierst du das Tempo und folgst der wechselnden Bewegung an Wellenberg und Wellenmitte.",
-    "Der Browser kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen – nicht, wohin deine Augen tatsächlich blicken. Es gibt keinen Score und keinen Genauigkeitswert. Vergleiche deshalb dein Gefühl von Ruhe und Konzentration bei gleichem Bildschirm, Abstand und gleichen Einstellungen. Bildwiederholrate und Anzeigeverzögerung beeinflussen, wie die Bewegung aussieht (Woods et al., 2015)."
+    "Der Browser kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen – nicht, wohin deine Augen tatsächlich blicken. Angezeigt wird nur der Abstand des Pointers zum Ziel, keine Messung der Augen. Vergleiche deshalb auch dein Gefühl von Ruhe und Konzentration bei gleichem Bildschirm, Abstand und gleichen Einstellungen. Bildwiederholrate und Anzeigeverzögerung beeinflussen, wie die Bewegung aussieht (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Übungsstufen (SkillDrills-Orientierung)",
@@ -203,7 +203,7 @@ export default function GermanSineWavePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SineWavePursuitClient copy={{"title": "Sinuswellen-Blickverfolgung", "subtitle": "Einem Ziel auf einer Wellenbahn folgen", "description": "Sinuswellen-Blickverfolgung: Das Ziel pendelt von links nach rechts und zurück und steigt dabei auf einer festen Wellenbahn auf und ab. Hide Line blendet die Kurve aus. Kein Klicken, kein Score; der Browser zeichnet deinen Blick nicht auf."}} />
+      <SineWavePursuitClient copy={{"title": "Sinuswellen-Blickverfolgung", "subtitle": "Einem Ziel auf einer Wellenbahn folgen", "description": "Sinuswellen-Blickverfolgung: Das Ziel pendelt von links nach rechts und zurück und steigt dabei auf einer festen Wellenbahn auf und ab. Hide Line blendet die Kurve aus. Kein Klicken nötig; am Ende siehst du den Abstand des Pointers zum Ziel, deinen Blick zeichnet der Browser nicht auf."}} />
 
       <DrillGuide guide={guideProps} />
 

@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "¿El ejercicio mide mis movimientos oculares o da una puntuación?",
-    "a": "No. El navegador no sabe hacia dónde miras y no hay clics ni detección de aciertos. No hay puntuación: solo se guarda en este navegador el número de sesiones completadas. Mantener la mirada donde pide el ejercicio depende de ti."
+    "a": "No. El navegador no sabe hacia dónde miras y no hay clics ni detección de aciertos. Al final solo se muestran datos del puntero (tiempo sobre el objetivo y distancia al centro), no de los ojos; en este navegador solo se guarda el número de sesiones completadas. Mantener la mirada donde pide el ejercicio depende de ti."
   },
   {
     "q": "¿Qué ajustes puedo cambiar?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "El seguimiento visual con cambio espacial consiste en seguir con la vista un objetivo que avanza en línea recta, rebota en los bordes y cambia sin aviso de dirección y velocidad. Los cambios son aleatorios y frecuentes; el objetivo no salta y la pantalla no se mueve.",
     "Cuando un objetivo cambia bruscamente de dirección, el seguimiento suave llega tarde y se suman movimientos rápidos de corrección (Robinson, 1965; Krauzlis, 2004). El ejercicio repite esos reajustes.",
-    "El navegador solo conoce la posición donde se dibuja el objetivo y tus ajustes, no hacia dónde miran realmente tus ojos. No hay puntuación ni porcentaje de precisión: compara tu comodidad y concentración con la misma pantalla, distancia y ajustes. La frecuencia de refresco y el retardo de la pantalla también cambian cómo se ve el movimiento (Woods et al., 2015)."
+    "El navegador solo conoce la posición donde se dibuja el objetivo y tus ajustes, no hacia dónde miran realmente tus ojos. Solo se muestran datos del puntero (tiempo sobre el objetivo y distancia al centro), no de los ojos: compara tu comodidad y concentración con la misma pantalla, distancia y ajustes. La frecuencia de refresco y el retardo de la pantalla también cambian cómo se ve el movimiento (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Etapas de práctica (guía de SkillDrills)",
@@ -203,7 +203,7 @@ export default function SpanishSpatialShiftPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SpatialShiftPursuitClient copy={{"title": "Seguimiento visual con cambio espacial", "subtitle": "Seguir un objetivo que cambia de dirección y velocidad sin aviso", "description": "Seguimiento visual con cambio espacial: el objetivo avanza en línea recta, rebota y cambia en momentos aleatorios de dirección y velocidad. Hide Line oculta la línea de dirección. Sin clics ni puntuación; el navegador no registra tu mirada."}} />
+      <SpatialShiftPursuitClient copy={{"title": "Seguimiento visual con cambio espacial", "subtitle": "Seguir un objetivo que cambia de dirección y velocidad sin aviso", "description": "Seguimiento visual con cambio espacial: el objetivo avanza en línea recta, rebota y cambia en momentos aleatorios de dirección y velocidad. Hide Line oculta la línea de dirección. Sin clics; al final verás la distancia del puntero al objetivo, pero el navegador no registra tu mirada."}} />
 
       <DrillGuide guide={guideProps} />
 

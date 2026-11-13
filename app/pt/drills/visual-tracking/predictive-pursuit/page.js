@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "O exercício mede os movimentos dos olhos ou dá pontuação?",
-    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. Não existe pontuação: apenas o número de sessões concluídas fica guardado neste navegador. Manter o olhar onde o exercício pede depende de si."
+    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. Não há nota. Se seguir o alvo com o ponteiro, o ecrã final mostra quanto tempo ele esteve sobre o alvo e a distância média ao centro; é o ponteiro que é medido, não os seus olhos. Manter o olhar onde o exercício pede depende de si."
   },
   {
     "q": "Que definições posso mudar?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "O rastreamento visual preditivo consiste em seguir com o olhar um alvo que desliza para um novo ponto e abranda até parar, antecipando onde ele vai ficar. À velocidade 1,0x é escolhido um destino aleatório a cada 2,2 segundos, aproximadamente; sem a linha de destino, tem de o deduzir pelo movimento.",
     "O seguimento suave dos olhos arranca com um pequeno atraso depois de o movimento começar; a antecipação ajuda a reduzir esse atraso (Kowler, 1989; Barnes, 2008). O exercício repete situações em que essa antecipação é útil.",
-    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Não há pontuação nem percentagem de precisão: compare antes o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
+    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Só é mostrada a distância do ponteiro ao alvo, não uma medida dos olhos: compare também o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Etapas de prática (referência SkillDrills)",
@@ -203,7 +203,7 @@ export default function PortuguesePredictivePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <PredictivePursuitClient copy={{"title": "Rastreamento visual preditivo", "subtitle": "Antecipar onde o alvo vai parar", "description": "Rastreamento visual preditivo: a cada 2,2 segundos, aprox. (a 1,0x), o alvo desliza para um novo ponto e abranda até parar. Antecipe onde ele fica; Hide Line esconde a linha de destino. Sem cliques nem pontuação; o navegador não regista o seu olhar."}} />
+      <PredictivePursuitClient copy={{"title": "Rastreamento visual preditivo", "subtitle": "Antecipar onde o alvo vai parar", "description": "Rastreamento visual preditivo: a cada 2,2 segundos, aprox. (a 1,0x), o alvo desliza para um novo ponto e abranda até parar. Antecipe onde ele fica; Hide Line esconde a linha de destino. Sem cliques; o ecrã final mostra a distância do ponteiro ao alvo, e o navegador não regista o seu olhar."}} />
 
       <DrillGuide guide={guideProps} />
 

@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     "q": "Misst die Übung meine Augenbewegungen?",
-    "a": "Nein. Der Browser kann deinen Blick nicht sehen und kennt nur die gezeichnete Zielposition und die Einstellungen. Der Cursor ist nur eine Hilfe und beweist nicht, wohin du schaust. Einen Score gibt es nicht."
+    "a": "Nein. Der Browser kann deinen Blick nicht sehen und kennt nur die gezeichnete Zielposition und die Einstellungen. Der Cursor ist nur eine Hilfe und beweist nicht, wohin du schaust. Am Ende siehst du nur den Abstand des Pointers zum Ziel, keine Note."
   },
   {
     "q": "Was ändert das Zufallstempo?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Anleitung: Richtungswechsel verfolgen: Zufallsbahn-Übung",
   "intro": [
     "Bei dieser Übung zum Richtungswechsel verfolgen bekommt das Ziel in jedem Frame einen kleinen zufälligen Stoß, ändert so laufend Richtung und Tempo und prallt an den Rändern ab. Weil es keine feste Bahn gibt, lässt sich die Bewegung kaum vorhersagen: Läuft das Ziel davon, holt eine schnelle Aufholbewegung der Augen es meist zurück in den zentralen Blick (Krauzlis, 2004).",
-    "Der Browser kennt nur die gezeichnete Zielposition und deine Einstellungen, nicht die Position deiner Augen. Es gibt keinen Score, gezählt werden nur abgeschlossene Sessions. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
+    "Der Browser kennt nur die gezeichnete Zielposition und deine Einstellungen, nicht die Position deiner Augen. Angezeigt werden nur der Abstand des Pointers zum Ziel und die Zahl abgeschlossener Sessions. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
     "Nutze einen bequemen Abstand und vergleiche nur Sessions auf demselben Bildschirm und Browser. Bildwiederholrate und Eingabegerät beeinflussen die Darstellung (Woods et al., 2015). Brich bei Schmerzen, Schwindel, Übelkeit oder anhaltend verschwommenem Sehen ab."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Unvorhersehbare Bewegung mit den Augen halten",
-          description: "Richtungswechsel verfolgen: Ein Ziel ändert laufend zufällig Richtung und Tempo. Der Browser zeichnet deinen Blick nicht auf und es gibt keinen Score; betrachte das Ergebnis als Übungsprotokoll, nicht als medizinischen Test.",
+          description: "Richtungswechsel verfolgen: Ein Ziel ändert laufend zufällig Richtung und Tempo. Der Browser zeichnet deinen Blick nicht auf und misst nur den Abstand des Pointers zum Ziel; betrachte das Ergebnis als Übungsprotokoll, nicht als medizinischen Test.",
         }}
       />
       <DrillGuide guide={guideProps} />

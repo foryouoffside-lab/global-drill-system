@@ -229,16 +229,14 @@ const guide = {
     "Oscillating gaze rapidly between separated nodes imposes significant neurological overhead. Each saccadic transit incurs a latency of 20 to 50 milliseconds and triggers saccadic suppression—a brief threshold elevation during which visual processing is partially blind. Split-Screen Tracking conditions a stable central anchor coupled with multifocal covert attention (Cavanagh & Alvarez, 2005; Green & Bavelier, 2006). By coupling a vertical trajectory on the left with a horizontal trajectory on the right, this drill prevents Gestalt common fate grouping and trains true dual-stream cognitive processing."
   ],
   benchmarks: {
-    title: "Divided Attention & Bilateral Pursuit Tracking Benchmarks",
-    headers: ["Performance Tier", "Target Velocity", "Gaze Anchor Stability", "Hemifield Symmetry Error", "Cognitive Population Tier"],
+    title: "Time-on-Target Practice Bands",
+    headers: ["Practice band", "Time on target", "What to compare", "Next step"],
     rows: [
-      ["Elite (Pro Esports / Jet Aviators)", "3.5x – 5.0x+", "Rock-solid central anchor; 0 intrusive saccades", "< 3% error discrepancy (perfect bimodal lock)", "Top 1.5%"],
-      ["Advanced (Competitive Rank)", "2.5x – 3.5x", "Highly stable anchor; rare micro-saccades", "< 7% discrepancy (consistent dual monitoring)", "Top 8%"],
-      ["Competent (Healthy Adult)", "1.8x – 2.5x", "Central focus maintained; minor saccades at velocity peaks", "< 12% discrepancy (mild single-side bias)", "Top 25%"],
-      ["Developing (Divided Inefficiency)", "1.2x – 1.8x", "Frequent involuntary saccades toward faster node", "15% – 25% error lag on non-dominant hemifield", "Middle 45%"],
-      ["Novice (Attention Tunneling)", "0.5x – 1.2x", "Constant ballistic gaze switching between screens", "> 25% complete tracking loss on one target", "Baseline Tier"]
+      ["Building", "Under 40%", "Time on target at the same speed and size", "Lower the speed or show the path"],
+      ["Steady", "40–70%", "Mean distance error at the same settings", "Repeat the same setup"],
+      ["Consistent", "Over 70%", "Whether it holds when one setting changes", "Add one challenge: speed, hidden path or random speed"]
     ],
-    note: "※ Calibrated based on MOT capacity thresholds (Pylyshyn & Storm, 1988) and bilateral hemifield resource models (Alvarez & Cavanagh, 2005) on 1080p displays at 50–70 cm viewing distance."
+    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms, percentiles or clinical values, and the page measures the pointer, not your eyes."
   },
   techniques: {
     title: "Four Core Techniques for Dual-Stream Divided Attention",

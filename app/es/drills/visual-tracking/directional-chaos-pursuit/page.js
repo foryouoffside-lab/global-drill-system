@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     "q": "¿Mide el movimiento de mis ojos?",
-    "a": "No. El navegador no ve tu mirada; solo conoce la posición dibujada del objetivo y los ajustes. El cursor es solo una ayuda y no demuestra hacia dónde miras. No hay puntuación."
+    "a": "No. El navegador no ve tu mirada; solo conoce la posición dibujada del objetivo y los ajustes. El cursor es solo una ayuda y no demuestra hacia dónde miras. Al final solo verás la distancia del puntero al objetivo, sin nota."
   },
   {
     "q": "¿Qué cambia la velocidad aleatoria?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guía: Seguimiento ocular con cambios de dirección",
   "intro": [
     "En este seguimiento ocular con cambios de dirección, el objetivo recibe en cada fotograma un pequeño impulso aleatorio: su dirección y su velocidad cambian todo el tiempo y rebota en los bordes. Sin trayectoria fija no se puede anticipar del todo; cuando se adelanta, una sacada de corrección suele devolverlo a la visión central (Krauzlis, 2004).",
-    "El navegador solo conoce la posición dibujada del objetivo y tus ajustes, no hacia dónde miran tus ojos. No hay puntuación: solo se cuentan las sesiones completadas. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
+    "El navegador solo conoce la posición dibujada del objetivo y tus ajustes, no hacia dónde miran tus ojos. Solo se muestran la distancia del puntero al objetivo y las sesiones completadas. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
     "Usa una distancia cómoda y compara siempre la misma pantalla y el mismo navegador. La frecuencia de refresco y el dispositivo de entrada cambian la imagen (Woods et al., 2015). Para si notas dolor, mareo, náuseas o visión borrosa persistente."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Seguir con la mirada un objetivo imprevisible",
-          description: "Seguimiento ocular con cambios de dirección: el objetivo cambia de dirección y velocidad al azar todo el tiempo. El navegador no registra tu mirada y no hay puntuación; toma el resultado como registro de práctica, no como prueba médica.",
+          description: "Seguimiento ocular con cambios de dirección: el objetivo cambia de dirección y velocidad al azar todo el tiempo. El navegador no registra tu mirada y solo mide la distancia del puntero al objetivo; toma el resultado como registro de práctica, no como prueba médica.",
         }}
       />
       <DrillGuide guide={guideProps} />

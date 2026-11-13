@@ -116,7 +116,7 @@ const faqs = [
   },
   {
     "q": "Misst die Übung meine Augenbewegungen?",
-    "a": "Nein. Der Browser kann deinen Blick nicht sehen und kennt nur die gezeichnete Zielposition und die Einstellungen. Der Cursor ist nur eine Hilfe und beweist nicht, wohin du schaust. Einen Score gibt es nicht."
+    "a": "Nein. Der Browser kann deinen Blick nicht sehen und kennt nur die gezeichnete Zielposition, die Einstellungen und den Pointer. Der Cursor ist nur eine Hilfe und beweist nicht, wohin du schaust. Am Ende wird nur der Abstand des Pointers zum Ziel zusammengefasst."
   },
   {
     "q": "Was ändert das Zufallstempo?",
@@ -156,7 +156,7 @@ const guideProps = {
   "heading": "Anleitung: Blickstabilität trainieren: Ziel mit Geisterspur",
   "intro": [
     "Bei dieser Übung, mit der du Blickstabilität trainieren kannst, läuft das Ziel mit gleichmäßigem Tempo geradeaus und prallt an den Rändern ab. Schaltest du die Spur ein, zeichnet die Seite blasse, verblassende Ringe hinter das Ziel (standardmäßig aus). Ziel ist, den Blick auf dem festen Ziel zu halten und den Kopien nicht zu folgen.",
-    "Der Browser kennt nur die gezeichnete Zielposition und deine Einstellungen, nicht die Position deiner Augen. Es gibt keinen Score, gezählt werden nur abgeschlossene Sessions. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
+    "Der Browser kennt die gezeichnete Zielposition, deine Einstellungen und den Pointer, nicht die Position deiner Augen. Am Ende siehst du, wie lange der Pointer auf dem Ziel lag und wie weit er im Mittel von der Zielmitte entfernt war, ohne Bewertung. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
     "Nutze einen bequemen Abstand und vergleiche nur Sessions auf demselben Bildschirm und Browser. Bildwiederholrate und Eingabegerät beeinflussen die Darstellung (Woods et al., 2015). Brich bei Schmerzen, Schwindel, Übelkeit oder anhaltend verschwommenem Sehen ab."
   ],
   "benchmarks": {
@@ -257,7 +257,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Das Ziel halten, nicht die Spur",
-          description: "Blickstabilität trainieren: Verfolge ein Ziel mit optionaler Geisterspur. Das ist kein Monitor-Ghosting-Test. Der Browser zeichnet deinen Blick nicht auf und es gibt keinen Score; das Ergebnis ist ein Übungsprotokoll.",
+          description: "Blickstabilität trainieren: Verfolge ein Ziel mit optionaler Geisterspur. Das ist kein Monitor-Ghosting-Test. Der Browser zeichnet deinen Blick nicht auf, nur den Abstand des Pointers zum Ziel; das Ergebnis ist ein Übungsprotokoll.",
         }}
       />
       <DrillGuide guide={guideProps} />

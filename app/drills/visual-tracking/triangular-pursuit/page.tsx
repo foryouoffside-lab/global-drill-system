@@ -253,16 +253,14 @@ const faqSchema = {
 
 const guide = {
   benchmarks: {
-    title: "Triangular Pursuit Performance Standards (Velocity & Vertex Accuracy)",
-    headers: ["Skill Tier", "Pursuit Speed Multiplier", "Vertex Landing Error", "Turnaround Saccadic Latency", "Population Percentile"],
+    title: "Time-on-Target Practice Bands",
+    headers: ["Practice band", "Time on target", "What to compare", "Next step"],
     rows: [
-      ["Elite / Master of Vector Dynamics", "3.5x - 5.0x+", "< 12 px (tight vertex adhesion)", "< 110 ms (feedforward braking)", "Top 1.5%"],
-      ["Master / High Vector Control", "2.5x - 3.5x", "< 22 px (minimal micro-saccades)", "< 140 ms (clean corner handling)", "Top 8%"],
-      ["Advanced / Competitive Athlete", "1.8x - 2.5x", "< 38 px (rapid reacquisition)", "< 180 ms (stable direction shifts)", "Top 25%"],
-      ["Intermediate / Regular Practitioner", "1.2x - 1.8x", "38 - 70 px (corner cutting / overshoot)", "180 - 240 ms (corrective saccades)", "Middle 45%"],
-      ["Novice / Untrained", "0.5x - 1.2x", "> 70 px (vertex trajectory loss)", "> 250 ms (pronounced overshoot)", "Baseline"]
+      ["Building", "Under 40%", "Time on target at the same speed and size", "Lower the speed or show the path"],
+      ["Steady", "40–70%", "Mean distance error at the same settings", "Repeat the same setup"],
+      ["Consistent", "Over 70%", "Whether it holds when one setting changes", "Add one challenge: speed, hidden path or random speed"]
     ],
-    note: "Benchmarks based on catch-up saccadic dynamics (de Brouwer et al., 2002) and acute-turnaround trajectory control (Heinen et al., 2005)."
+    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms, percentiles or clinical values, and the page measures the pointer, not your eyes."
   },
 
   heading: "Triangular Pursuit - Ocular Motor Training Standards",

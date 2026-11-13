@@ -9,7 +9,7 @@ import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
 import { drawTacticalTarget } from '../../../../lib/canvasFx';
-import { createBackdropCache, isFrameSkippable } from '../trackingCanvas';
+import { createBackdropCache, isFrameSkippable, createPursuitMetrics, samplePursuit, summarizePursuit, type PursuitSummary } from '../trackingCanvas';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { setTargetCursor } from '@/lib/canvasCursor';
@@ -41,7 +41,7 @@ const saveData = (data: { totalSessions: number }) => {
   } catch (e) {}
 };
 
-export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string } } = {}) {
+export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string; [key: string]: string | undefined } } = {}) {
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -65,6 +65,8 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
   // Session Stats
   const [uiTimeLeft, setUiTimeLeft] = useState<number>(60);
   const [totalTrials, setTotalTrials] = useState<number>(0);
+  const [pursuitSummary, setPursuitSummary] = useState<PursuitSummary | null>(null);
+  const pursuitRef = useRef(createPursuitMetrics());
 
   // DOM & Physics Refs
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -188,6 +190,7 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
     if (animationRef.current) cancelAnimationFrame(animationRef.current);
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
+    setPursuitSummary(summarizePursuit(pursuitRef.current));
     setGameState('gameOver');
 
     setTotalTrials((prev) => {
@@ -201,6 +204,7 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
   const enterDrill = useCallback(async () => {
     setIsFullscreen(true);
     mousePosRef.current = { x: 0, y: 0, active: false };
+    pursuitRef.current = createPursuitMetrics();
 
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
@@ -274,7 +278,7 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
 
     const updateSize = () => {
       if (!container) return;
-      const rect = container.getBoundingClientRect();
+      const rect = cvs.getBoundingClientRect();
       canvasWidth = rect.width;
       canvasHeight = rect.height;
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -323,14 +327,10 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
       const scaledDt = dt * effectiveSpeed;
 
       // Random Velocity Spatial Shift Logic
-      const shiftChance = randomSpeed ? 0.03 : 0.015;
-      if (Math.random() < shiftChance) {
+      const shiftRate = randomSpeed ? 1.8 : 0.9;
+      if (Math.random() < 1 - Math.exp(-shiftRate * dt)) {
         trackingState.current.vx *= (Math.random() > 0.5 ? 1 : -1) * (0.8 + Math.random() * 0.5);
         trackingState.current.vy *= (Math.random() > 0.5 ? 1 : -1) * (0.8 + Math.random() * 0.5);
-
-        const maxS = 18;
-        trackingState.current.vx = Math.max(Math.min(trackingState.current.vx, maxS), -maxS);
-        trackingState.current.vy = Math.max(Math.min(trackingState.current.vy, maxS), -maxS);
       }
 
       // Smooth Position Movement
@@ -353,6 +353,10 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
         trackingState.current.py = H - targetSize;
         trackingState.current.vy *= -1.02;
       }
+
+      const maxS = 18;
+      trackingState.current.vx = Math.max(Math.min(trackingState.current.vx, maxS), -maxS);
+      trackingState.current.vy = Math.max(Math.min(trackingState.current.vy, maxS), -maxS);
 
       // Clear Canvas Background (Pure White in Day Mode `#ffffff`, Deep Black in Night Mode `#050508`)
       const backdropKey = `${W}x${H}:${isDay ? 'day' : 'night'}`;
@@ -406,6 +410,7 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
         ctx.globalAlpha = 1.0;
       }
 
+      samplePursuit(pursuitRef.current, deltaTimeMs, mousePosRef.current, trackingState.current.px, trackingState.current.py, targetSize);
       drawTacticalTarget(ctx, trackingState.current.px, trackingState.current.py, targetSize, targetColor, glowEffect);
       setTargetCursor(canvasRef.current, gameState === 'playing' ? mousePosRef.current : null, [{ x: trackingState.current.px, y: trackingState.current.py, radius: targetSize }]);
 
@@ -544,7 +549,7 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
                 active: true,
               };
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 cursor-default`} 
+            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default`} 
           />
 
           {/* START CARD */}
@@ -593,7 +598,7 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
                   SESSION COMPLETE
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-400 text-center font-bold">
-                  Smooth Pursuit Calibrated
+                  Pointer tracking summary
                 </div>
               </div>
 
@@ -602,6 +607,17 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
                 
                 {/* 4 Stat Tiles */}
                 <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { label: copy?.timeOnTarget || 'Time on target', value: pursuitSummary?.timeOnTargetPct, unit: '%', sub: null },
+                    { label: copy?.meanError || 'Mean distance error', value: pursuitSummary?.meanErrorPx, unit: ' px', sub: pursuitSummary?.meanErrorRadiusPct },
+                    { label: copy?.rmsError || 'RMS distance error', value: pursuitSummary?.rmsErrorPx, unit: ' px', sub: pursuitSummary?.rmsErrorRadiusPct },
+                  ].map((m) => (
+                    <div key={m.label} className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
+                      <p className="text-sm sm:text-base font-black text-white tabular-nums">{m.value == null ? '—' : `${m.value.toFixed(m.unit === '%' ? 1 : 0)}${m.unit}`}</p>
+                      {m.sub != null && <p className="text-[9px] text-slate-500 tabular-nums">{Math.round(m.sub)}% {copy?.ofRadius || 'of target radius'}</p>}
+                      <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{m.label}</p>
+                    </div>
+                  ))}
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{selectedDuration}s</p>
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Session Time</p>
@@ -614,11 +630,8 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
                     <p className="text-sm sm:text-base font-black text-white">{totalTrials}</p>
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Sessions Completed</p>
                   </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-xs sm:text-sm font-black text-white">{randomSpeed ? 'Enabled' : 'Fixed'}</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Speed Acceleration</p>
-                  </div>
                 </div>
+                <p className="text-[9px] leading-snug text-slate-500">{copy?.metricsNote || 'Pointer distance to the target centre, time-weighted. Eye position is not recorded.'}</p>
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">

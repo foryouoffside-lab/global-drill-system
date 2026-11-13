@@ -9,7 +9,7 @@ import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
 import { drawTacticalTarget } from '../../../../lib/canvasFx';
-import { createBackdropCache, isFrameSkippable } from '../trackingCanvas';
+import { createBackdropCache, isFrameSkippable, createPursuitMetrics, samplePursuit, summarizePursuit, type PursuitSummary } from '../trackingCanvas';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { setTargetCursor } from '@/lib/canvasCursor';
@@ -41,7 +41,7 @@ const saveData = (data: { totalSessions: number }) => {
   } catch (e) {}
 };
 
-export default function PredictivePursuitClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string } } = {}) {
+export default function PredictivePursuitClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string; [key: string]: string | undefined } } = {}) {
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -65,6 +65,8 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
   // Session Stats
   const [uiTimeLeft, setUiTimeLeft] = useState<number>(60);
   const [totalTrials, setTotalTrials] = useState<number>(0);
+  const [pursuitSummary, setPursuitSummary] = useState<PursuitSummary | null>(null);
+  const pursuitRef = useRef(createPursuitMetrics());
 
   // DOM & Physics Refs
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -76,6 +78,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
 
   const trackingState = useRef({
     travelT: 0,
+    cycleTime: 2.2,
     travel: 0,
     landed: 0,
     sx: 0,
@@ -192,6 +195,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
     if (animationRef.current) cancelAnimationFrame(animationRef.current);
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
+    setPursuitSummary(summarizePursuit(pursuitRef.current));
     setGameState('gameOver');
 
     setTotalTrials((prev) => {
@@ -205,6 +209,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
   const enterDrill = useCallback(async () => {
     setIsFullscreen(true);
     mousePosRef.current = { x: 0, y: 0, active: false };
+    pursuitRef.current = createPursuitMetrics();
 
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
@@ -219,6 +224,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
     const h = cvs ? cvs.height : 450;
     trackingState.current = {
       travelT: 0,
+      cycleTime: 2.2,
       travel: 1.5,
       landed: 0,
       sx: w * 0.2,
@@ -281,7 +287,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
 
     const updateSize = () => {
       if (!container) return;
-      const rect = container.getBoundingClientRect();
+      const rect = cvs.getBoundingClientRect();
       canvasWidth = rect.width;
       canvasHeight = rect.height;
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -357,9 +363,8 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
 
       // Update Predictive Trajectory State
       trackingState.current.travelT += scaledDt;
-      const cycleTime = randomSpeed ? 1.8 + Math.random() * 1.2 : 2.2;
-
-      if (trackingState.current.travelT > cycleTime) {
+      if (trackingState.current.travelT > trackingState.current.cycleTime) {
+        trackingState.current.cycleTime = randomSpeed ? 1.8 + Math.random() * 1.2 : 2.2;
         trackingState.current.travel = 1.5;
         trackingState.current.travelT = 0;
         trackingState.current.landed = 0;
@@ -369,8 +374,9 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
 
       if (trackingState.current.travel > 0) {
         trackingState.current.travel -= scaledDt;
-        trackingState.current.sx += (trackingState.current.tx - trackingState.current.sx) * scaledDt * 3.5;
-        trackingState.current.sy += (trackingState.current.ty - trackingState.current.sy) * scaledDt * 3.5;
+        const ease = 1 - Math.exp(-3.5 * scaledDt);
+        trackingState.current.sx += (trackingState.current.tx - trackingState.current.sx) * ease;
+        trackingState.current.sy += (trackingState.current.ty - trackingState.current.sy) * ease;
       } else {
         trackingState.current.landed = 0.3;
       }
@@ -394,6 +400,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
       }
 
       drawTacticalTarget(ctx, trackingState.current.sx, trackingState.current.sy, targetSize, targetColor, glowEffect);
+      samplePursuit(pursuitRef.current, deltaTimeMs, mousePosRef.current, trackingState.current.sx, trackingState.current.sy, targetSize);
       setTargetCursor(canvasRef.current, gameState === 'playing' ? mousePosRef.current : null, [{ x: trackingState.current.sx, y: trackingState.current.sy, radius: targetSize }]);
 
       // CRT Scanlines Overlay
@@ -531,7 +538,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
                 active: true,
               };
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 cursor-default`} 
+            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default`} 
           />
 
           {/* START CARD */}
@@ -580,7 +587,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
                   SESSION COMPLETE
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-400 text-center font-bold">
-                  Smooth Pursuit Calibrated
+                  {copy?.calibrated || 'Pointer tracking summary'}
                 </div>
               </div>
 
@@ -589,6 +596,17 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
                 
                 {/* 4 Stat Tiles */}
                 <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { label: copy?.timeOnTarget || 'Time on target', value: pursuitSummary?.timeOnTargetPct, unit: '%', sub: null },
+                    { label: copy?.meanError || 'Mean distance error', value: pursuitSummary?.meanErrorPx, unit: ' px', sub: pursuitSummary?.meanErrorRadiusPct },
+                    { label: copy?.rmsError || 'RMS distance error', value: pursuitSummary?.rmsErrorPx, unit: ' px', sub: pursuitSummary?.rmsErrorRadiusPct },
+                  ].map((m) => (
+                    <div key={m.label} className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
+                      <p className="text-sm sm:text-base font-black text-white tabular-nums">{m.value == null ? '—' : `${m.value.toFixed(m.unit === '%' ? 1 : 0)}${m.unit}`}</p>
+                      {m.sub != null && <p className="text-[9px] text-slate-500 tabular-nums">{Math.round(m.sub)}% {copy?.ofRadius || 'of target radius'}</p>}
+                      <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{m.label}</p>
+                    </div>
+                  ))}
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{selectedDuration}s</p>
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Session Time</p>
@@ -601,11 +619,8 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
                     <p className="text-sm sm:text-base font-black text-white">{totalTrials}</p>
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Sessions Completed</p>
                   </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-xs sm:text-sm font-black text-white">{randomSpeed ? 'Enabled' : 'Fixed'}</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Speed Acceleration</p>
-                  </div>
                 </div>
+                <p className="text-[9px] leading-snug text-slate-500">{copy?.metricsNote || 'Pointer distance to the target centre, time-weighted. Eye position is not recorded.'}</p>
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">
@@ -667,7 +682,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <p className="text-sm text-slate-300 leading-relaxed">
-                {copy?.description || "Predictive eye tracking drills condition internal cognitive forward models to drive smooth pursuit ahead of physiological retinal slip latencies (Barnes, 2008; Robinson, 1965). Extrapolating target velocity vectors and anticipating landing coordinates enables continuous gaze synchronization without lagging behind moving objects (Bennett & Barnes, 2003; Kowler, 1989). Pursuit tracks accurately to roughly 30°/s once locked on (Krauzlis, 2004), but it starts late, so prediction is what covers the gap before the eye is up to speed."}
+                {copy?.description || "Every few seconds the target glides to a new point and slows to a stop. Anticipate where it will land and follow it with your eyes and the pointer. The end screen reports how long the pointer stayed on the target and its average distance from the target centre; the browser does not record eye position, so this is a practice record, not an eye test."}
               </p>
             </DrillAccordion>
           </div>

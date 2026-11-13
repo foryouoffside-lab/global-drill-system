@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "¿El ejercicio mide mis movimientos oculares o da una puntuación?",
-    "a": "No. El navegador no sabe hacia dónde miras y no hay clics ni detección de aciertos. No hay puntuación: solo se guarda en este navegador el número de sesiones completadas. Mantener la mirada donde pide el ejercicio depende de ti."
+    "a": "No. El navegador no sabe hacia dónde miras y no hay clics ni detección de aciertos. Al final solo se muestran datos del puntero (tiempo sobre el objetivo y distancia al centro), no de los ojos; en este navegador solo se guarda el número de sesiones completadas. Mantener la mirada donde pide el ejercicio depende de ti."
   },
   {
     "q": "¿Qué ajustes puedo cambiar?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "El seguimiento de blanco teletransportado es un ejercicio en el navegador en el que reencuentras con la vista un blanco que cambia de lugar de golpe. El blanco avanza en línea recta, rebota en los bordes y, a velocidad 1,0x, se teletransporta cada 1,2 segundos aproximadamente a un punto aleatorio, manteniendo dirección y velocidad.",
     "Seguir con suavidad un objeto en movimiento y llevar la mirada rápidamente a un objeto lejano (sacada) se describen como movimientos oculares distintos (Rashbass, 1961; Krauzlis, 2004). Aquí ambos se alternan continuamente.",
-    "El navegador solo conoce la posición donde se dibuja el objetivo y tus ajustes, no hacia dónde miran realmente tus ojos. No hay puntuación ni porcentaje de precisión: compara tu comodidad y concentración con la misma pantalla, distancia y ajustes. La frecuencia de refresco y el retardo de la pantalla también cambian cómo se ve el movimiento (Woods et al., 2015)."
+    "El navegador solo conoce la posición donde se dibuja el objetivo y tus ajustes, no hacia dónde miran realmente tus ojos. Solo se muestran datos del puntero (tiempo sobre el objetivo y distancia al centro), no de los ojos: compara tu comodidad y concentración con la misma pantalla, distancia y ajustes. La frecuencia de refresco y el retardo de la pantalla también cambian cómo se ve el movimiento (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Etapas de práctica (guía de SkillDrills)",
@@ -203,7 +203,7 @@ export default function SpanishMomentumTeleportPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <MomentumTeleportPursuitClient copy={{"title": "Seguimiento de Blanco Teletransportado", "subtitle": "Reencontrar un blanco que salta pero mantiene el rumbo", "description": "Seguimiento de blanco teletransportado: el blanco avanza en línea recta y se teletransporta cada 1,2 segundos aprox. (a 1,0x) a un punto aleatorio, manteniendo dirección y velocidad. Sin clics ni puntuación, solo la vista; el navegador no registra tus ojos."}} />
+      <MomentumTeleportPursuitClient copy={{"title": "Seguimiento de Blanco Teletransportado", "subtitle": "Reencontrar un blanco que salta pero mantiene el rumbo", "description": "Seguimiento de blanco teletransportado: el blanco avanza en línea recta y se teletransporta cada 1,2 segundos aprox. (a 1,0x) a un punto aleatorio, manteniendo dirección y velocidad. Sin clics; al final verás la distancia del puntero al objetivo, pero el navegador no registra tus ojos."}} />
 
       <DrillGuide guide={guideProps} />
 

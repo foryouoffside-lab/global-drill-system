@@ -226,20 +226,8 @@ const guide = {
     "Peripheral Ping Pursuit is a free peripheral vision training game. You keep your eyes on the centre crosshair and notice dots that flash at the edges without looking away from the middle. Choose the duration and speed, press start, and hold your gaze steady. It is watch-only: no clicking, no score.",
     "The human retina is characterized by functional division of labor: high-acuity foveal vision occupies only the central 1° to 2° of the visual field (parvocellular pathway), while the vast majority of our visual space is processed by the peripheral retina, dominated by rod photoreceptors and the magnocellular pathway specialized for motion and luminance dynamics (Wolfe, 1994; Leigh & Zee, 2015). Under natural instinct, the brain fires ballistic saccades toward any eccentric flash.",
     "Peripheral Ping Pursuit conditions the vital cognitive skill of covert spatial attention—the ability to expand your functional visual field and notice transient events across peripheral sectors without moving your eyes away from the centre crosshair (Posner, 1980; Eriksen & St. James, 1986). By enforcing strict foveal fixation on the central target, this drill trains the frontal eye field to tonically suppress involuntary saccades while conditioning magnocellular pathways to register eccentric flashes instantly (Findlay & Walker, 1999).",
-    "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores remain stored strictly in local browser storage."
+    "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). Only the number of completed sessions is saved, in this browser's local storage."
   ],
-  benchmarks: {
-    title: "Useful Field of View (UFOV) & Peripheral Latency Benchmarks",
-    headers: ["Performance Tier", "Useful Field of View (UFOV %)", "Peripheral Reaction Latency", "Central Tracking Stability", "Neurophysiological Profile"],
-    rows: [
-      ["Elite (Esports / Pro Athletes)", "> 92%", "< 280 ms", "> 95%", "Flawless foveal decoupling; panoramic spatial awareness with zero central gaze deviation."],
-      ["Advanced (Competitive Rank)", "85% – 92%", "280 – 340 ms", "90% – 95%", "Excellent covert attention distribution; minimal peripheral reaction lag during pursuit."],
-      ["Competent (Healthy Adult)", "75% – 84%", "341 – 410 ms", "82% – 89%", "Solid dual-task capability; slight attentional tunnel vision under higher target velocities."],
-      ["Developing (Elevated Lag)", "60% – 74%", "411 – 500 ms", "70% – 81%", "Noticeable latency delay; periodic involuntary micro-saccades toward peripheral stimuli."],
-      ["Novice (Motor Refinement)", "< 60%", "> 500 ms", "< 70%", "Pronounced tunnel vision; frequent breakdown of central pursuit upon peripheral ping appearance."]
-    ],
-    note: "※ Reference values derived from standardized oculomotor tests at 50–70 cm viewing distance across 60-second dual-task sessions. Only trials maintaining central target pursuit are scored."
-  },
   techniques: {
     title: "Four Core Techniques for Expanding Peripheral Visual Awareness",
     items: [

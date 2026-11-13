@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     "q": "Misst die Übung meine Augenbewegungen?",
-    "a": "Nein. Der Browser kann deinen Blick nicht sehen und kennt nur die gezeichnete Zielposition und die Einstellungen. Der Cursor ist nur eine Hilfe und beweist nicht, wohin du schaust. Einen Score gibt es nicht."
+    "a": "Nein. Der Browser kann deinen Blick nicht sehen und kennt nur die gezeichnete Zielposition, die Einstellungen und den Pointer. Der Cursor ist nur eine Hilfe und beweist nicht, wohin du schaust. Am Ende wird nur der Abstand des Pointers zum Ziel zusammengefasst."
   },
   {
     "q": "Was ändert das Zufallstempo?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Anleitung: Liegende Acht Augenübung",
   "intro": [
     "Bei der Liegende Acht Augenübung läuft das Ziel immer wieder eine liegende Acht (Lemniskate) ab. Die Bahn verbindet waagerechte und senkrechte Bewegung und kreuzt in jeder Runde die Bildmitte, sodass du übst, den Blick auch beim Überqueren der Mitte ohne Unterbrechung zu führen (Barnes, 2008). Linie ausblenden oder Zufallstempo machen die Schleife schwerer vorherzusehen.",
-    "Der Browser kennt nur die gezeichnete Zielposition und deine Einstellungen, nicht die Position deiner Augen. Es gibt keinen Score, gezählt werden nur abgeschlossene Sessions. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
+    "Der Browser kennt die gezeichnete Zielposition, deine Einstellungen und den Pointer, nicht die Position deiner Augen. Am Ende siehst du, wie lange der Pointer auf dem Ziel lag und wie weit er im Mittel von der Zielmitte entfernt war, ohne Bewertung. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
     "Nutze einen bequemen Abstand und vergleiche nur Sessions auf demselben Bildschirm und Browser. Bildwiederholrate und Eingabegerät beeinflussen die Darstellung (Woods et al., 2015). Brich bei Schmerzen, Schwindel, Übelkeit oder anhaltend verschwommenem Sehen ab."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Blickfolge auf der Achterschleife",
-          description: "Liegende Acht Augenübung: Verfolge ein Ziel auf einer Achterschleife über die Bildmitte. Der Browser zeichnet deinen Blick nicht auf und es gibt keinen Score; das Ergebnis ist ein Übungsprotokoll, kein medizinischer Test.",
+          description: "Liegende Acht Augenübung: Verfolge ein Ziel auf einer Achterschleife über die Bildmitte. Der Browser zeichnet deinen Blick nicht auf, nur den Abstand des Pointers zum Ziel; das Ergebnis ist ein Übungsprotokoll, kein medizinischer Test.",
         }}
       />
       <DrillGuide guide={guideProps} />

@@ -214,7 +214,7 @@ const faqSchema = {
       "name": "How does Ghosting Suppress Pursuit differ from Constant Slow Pursuit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Constant Slow Pursuit follows predictable Lissajous curves to calibrate smooth pursuit gain. Ghosting Suppress Pursuit introduces trailing visual clutter rings and wall bounces, specifically conditioning attentional filtering and fixation steadiness under visual noise."
+        "text": "Constant Slow Pursuit follows a predictable Lissajous curve. Ghosting Suppress Pursuit introduces trailing visual clutter rings and wall bounces, specifically conditioning attentional filtering and fixation steadiness under visual noise."
       }
     },
     {
@@ -265,16 +265,14 @@ const guide = {
   ],
   
   benchmarks: {
-    title: "Fixation Stability & Ghosting Suppression Benchmarks",
-    headers: ["Performance Tier", "Speed Multiplier", "Fixation Stability Under Visual Ghosting", "Neuromotor & Ocular Profile"],
+    title: "Time-on-Target Practice Bands",
+    headers: ["Practice band", "Time on target", "What to compare", "Next step"],
     rows: [
-      ["Tier 1: Apex Fixation Lock", "2.0x+", "Gaze remains immovably anchored on the target core despite trailing ghosting artifacts and sharp wall rebounds.", "Flawless cortical motion deblurring and microsaccadic precision (Burr, 1980; Martinez-Conde et al., 2004); elite esports tracking standard."],
-      ["Tier 2: Superior Fixation Acuity", "1.4x – 1.9x", "Target contour cleanly isolated at high speed; minimal visual distraction from trailing ghost rings.", "Exceptional sensorimotor gating; rapid suppression of visual clutter in particle-dense competitive scenarios."],
-      ["Tier 3: Solid Baseline", "1.0x – 1.3x", "Steady pursuit across normal speeds; slight momentary hesitation during abrupt trajectory rebounds.", "Typical normative range for healthy adults; fully sufficient for recreational gaming and daily visual tasks."],
-      ["Tier 4: Gaze Drift", "0.7x – 0.9x", "Gaze frequently gets pulled backward toward trailing afterimages; target core repeatedly slips from fovea.", "Delayed cortical visual noise suppression; targeted training at lower speed tiers strongly recommended."],
-      ["Tier 5: Novice / Fixation Loss", "< 0.7x", "Eyes wander erratically between the primary target and trailing ghost rings; frequent target loss.", "Foundational fixation stability practice required at reduced speeds with strict head immobilization."]
+      ["Building", "Under 40%", "Time on target at the same speed and size", "Lower the speed or show the path"],
+      ["Steady", "40–70%", "Mean distance error at the same settings", "Repeat the same setup"],
+      ["Consistent", "Over 70%", "Whether it holds when one setting changes", "Add one challenge: speed, hidden path or random speed"]
     ],
-    note: "Benchmarks derived from neurophysiological studies on foveal fixation control, microsaccade dynamics, and cortical suppression of motion smear (Burr, 1980; Martinez-Conde et al., 2004; Rolfs, 2009; Krauzlis, 2004)."
+    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms, percentiles or clinical values, and the page measures the pointer, not your eyes."
   },
   faqs: [
     {
@@ -299,7 +297,7 @@ const guide = {
     },
     {
         "q": "How does Ghosting Suppress Pursuit differ from Constant Slow Pursuit?",
-        "a": "Constant Slow Pursuit follows predictable Lissajous curves to calibrate smooth pursuit gain. Ghosting Suppress Pursuit introduces trailing visual clutter rings and wall bounces, specifically conditioning attentional filtering and fixation steadiness under visual noise."
+        "a": "Constant Slow Pursuit follows a predictable Lissajous curve. Ghosting Suppress Pursuit introduces trailing visual clutter rings and wall bounces, specifically conditioning attentional filtering and fixation steadiness under visual noise."
     },
     {
         "q": "How long should I practice visual fixation stability daily?",

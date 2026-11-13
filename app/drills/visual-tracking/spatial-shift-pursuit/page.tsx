@@ -228,18 +228,6 @@ const guide = {
     "Seminal investigations by Findlay & Gilchrist (1999) and Kahlon & Lisberger (1996) demonstrated that visual motion inputs are initially registered in eye-centered (retinotopic) coordinate systems. When the entire visual environment undergoes a sudden frame shift, retinotopic coordinates break down. The posterior parietal cortex (PPC) intervenes by integrating retinal signals with efference copy motor commands to execute rapid coordinate transformations into head-centered (craniotopic) and space-fixed (allocentric) reference maps.",
     "Driven by this remapped spatial representation, the central nervous system deploys a synchronized two-stage response: first, a high-velocity ballistic catch-up saccade (peaking up to 500°/s) closes the spatial gap to the remapped target position. Instantaneously upon saccadic landing, the oculomotor apparatus must execute a seamless pursuit handshake—matching the target's current velocity vector without hesitation (Rashbass, 1961). Spatial Shift Pursuit systematically trains this critical neuromuscular circuit to ensure uninterrupted target tracking."
   ],
-  benchmarks: {
-    title: "Spatial Shift Re-Centering & Coordinate Recovery Benchmarks",
-    headers: ["Performance Tier", "Re-Centering Latency (ms)", "Spatial Tracking Accuracy (%)", "Post-Saccadic Stability", "Adaptive Ocular Profile"],
-    rows: [
-      ["Elite (Pro Esports / Fighter Pilots)", "< 220 ms", "> 95%", "> 96% (Instant Lock-on)", "Flawless parietal coordinate remapping; instantaneous transition from saccade to unity pursuit."],
-      ["Advanced (Competitive Rank)", "220 – 280 ms", "88% – 94%", "90% – 95%", "High spatial flexibility; rapid gaze re-acquisition with minimal target drift."],
-      ["Competent (Healthy Adult)", "281 – 360 ms", "78% – 87%", "80% – 89%", "Consistent target recovery; minor hesitation during simultaneous spatial rotations."],
-      ["Developing (Elevated Latency)", "361 – 450 ms", "65% – 77%", "68% – 79%", "Noticeable disorientation during sudden shifts; requires multiple corrective saccades."],
-      ["Novice (Motor Refinement)", "> 450 ms", "< 65%", "< 68%", "Loss of reference frame lock; severe target loss and reactive ocular searching."]
-    ],
-    note: "※ Measured on 1080p displays at 50–70 cm viewing distance across 1.0x–1.5x velocities with randomized frame shifts. Evaluated based on re-centering latency and post-saccadic pursuit lock."
-  },
   techniques: {
     title: "Four Core Strategies for Adaptive Spatial Shift Tracking",
     items: [

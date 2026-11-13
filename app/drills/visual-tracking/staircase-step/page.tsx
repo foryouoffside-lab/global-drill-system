@@ -229,16 +229,14 @@ const guide = {
     "Modern digital habits—such as reading horizontal text, smartphone scrolling, and widescreen monitors—disproportionately stimulate horizontal ocular pathways, leaving vertical midbrain circuits chronically under-conditioned. Staircase Step counteracts this deficit by guiding targets across multi-tiered orthogonal ramps and vertical steps, combining diagonal smooth pursuit with precise re-targeting saccades at right-angle corners (Collewijn & Tamminga, 1984; Lisberger, 2010)."
   ],
   benchmarks: {
-    title: "Vertical Smooth Pursuit & Stepped Saccade Benchmarks",
-    headers: ["Performance Tier", "Target Velocity", "Edge Re-Targeting Precision", "Vertical Pursuit Gain", "Cognitive Population Tier"],
+    title: "Time-on-Target Practice Bands",
+    headers: ["Practice band", "Time on target", "What to compare", "Next step"],
     rows: [
-      ["Elite (Pro Esports / Fighter Pilots)", "3.5x – 5.0x+", "Flawless corner lock; zero overshoot at steps", "0.92 – 0.98 (instant synchronization)", "Top 1.5%"],
-      ["Advanced (Competitive Rank)", "2.5x – 3.5x", "Immediate foveation via single micro-saccade", "0.85 – 0.92 (highly stable gaze)", "Top 8%"],
-      ["Competent (Healthy Adult)", "1.8x – 2.5x", "Consistent ramp tracking; minor corner hesitation", "0.75 – 0.85 (solid control)", "Top 25%"],
-      ["Developing (Vertical Lag)", "1.2x – 1.8x", "Noticeable lag on upward steps; involuntary neck tilting", "0.60 – 0.75 (frequent catch-up saccades)", "Middle 45%"],
-      ["Novice (Motor Refinement)", "0.5x – 1.2x", "Tracking loss at orthogonal step edges; head follows target", "< 0.60 (erratic saccadic jumping)", "Baseline Tier"]
+      ["Building", "Under 40%", "Time on target at the same speed and size", "Lower the speed or show the path"],
+      ["Steady", "40–70%", "Mean distance error at the same settings", "Repeat the same setup"],
+      ["Consistent", "Over 70%", "Whether it holds when one setting changes", "Add one challenge: speed, hidden path or random speed"]
     ],
-    note: "※ Based on vertical pursuit latency metrics (Rottach et al., 1996) and midbrain riMLF burst-neuron dynamics (Büttner-Ennever & Horn, 1997) on 1080p displays at 50–70 cm viewing distance."
+    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms, percentiles or clinical values, and the page measures the pointer, not your eyes."
   },
   techniques: {
     title: "Four Core Techniques for Vertical Stepped Tracking Mastery",

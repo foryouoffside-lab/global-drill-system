@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "¿El ejercicio mide mis movimientos oculares o da una puntuación?",
-    "a": "No. El navegador no sabe hacia dónde miras y no hay clics ni detección de aciertos. No hay puntuación: solo se guarda en este navegador el número de sesiones completadas. Mantener la mirada donde pide el ejercicio depende de ti."
+    "a": "No. El navegador no sabe hacia dónde miras y no hay clics ni detección de aciertos. No hay nota. Si sigues el objetivo con el puntero, al final verás cuánto tiempo estuvo sobre el objetivo y su distancia media al centro; se mide el puntero, no tus ojos. Mantener la mirada donde pide el ejercicio depende de ti."
   },
   {
     "q": "¿Qué ajustes puedo cambiar?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "El seguimiento ocular sinusoidal consiste en seguir con la vista un objetivo que va y viene de izquierda a derecha subiendo y bajando por una curva sinusoidal fija. La velocidad horizontal es constante y el objetivo cambia de sentido en los bordes de la pantalla.",
     "El seguimiento suave de los ojos acompaña un objetivo lento casi a su misma velocidad, pero se queda atrás con más facilidad cuando acelera (Robinson, 1965). Aquí varías la velocidad y sigues un movimiento que cambia entre las crestas y el centro de la onda.",
-    "El navegador solo conoce la posición donde se dibuja el objetivo y tus ajustes, no hacia dónde miran realmente tus ojos. No hay puntuación ni porcentaje de precisión: compara tu comodidad y concentración con la misma pantalla, distancia y ajustes. La frecuencia de refresco y el retardo de la pantalla también cambian cómo se ve el movimiento (Woods et al., 2015)."
+    "El navegador solo conoce la posición donde se dibuja el objetivo y tus ajustes, no hacia dónde miran realmente tus ojos. Solo se muestra la distancia del puntero al objetivo, no una medida de los ojos: compara también tu comodidad y concentración con la misma pantalla, distancia y ajustes. La frecuencia de refresco y el retardo de la pantalla también cambian cómo se ve el movimiento (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Etapas de práctica (guía de SkillDrills)",
@@ -203,7 +203,7 @@ export default function SpanishSineWavePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SineWavePursuitClient copy={{"title": "Seguimiento ocular sinusoidal", "subtitle": "Seguir un objetivo por una trayectoria en onda", "description": "Seguimiento ocular sinusoidal: el objetivo va y viene de izquierda a derecha subiendo y bajando por una curva en onda fija. Hide Line oculta la curva. Sin clics ni puntuación; el navegador no registra tu mirada."}} />
+      <SineWavePursuitClient copy={{"title": "Seguimiento ocular sinusoidal", "subtitle": "Seguir un objetivo por una trayectoria en onda", "description": "Seguimiento ocular sinusoidal: el objetivo va y viene de izquierda a derecha subiendo y bajando por una curva en onda fija. Hide Line oculta la curva. Sin clics; al final verás la distancia del puntero al objetivo, y el navegador no registra tu mirada."}} />
 
       <DrillGuide guide={guideProps} />
 

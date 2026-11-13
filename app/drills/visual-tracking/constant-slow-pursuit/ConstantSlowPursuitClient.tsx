@@ -9,7 +9,7 @@ import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
 import { drawTacticalTarget } from '../../../../lib/canvasFx';
-import { createBackdropCache, isFrameSkippable } from '../trackingCanvas';
+import { createBackdropCache, isFrameSkippable, createPursuitMetrics, samplePursuit, summarizePursuit, type PursuitSummary } from '../trackingCanvas';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { getConstantSlowPursuitUi } from '@/lib/i18n/drills/constantSlowPursuitNative';
@@ -75,6 +75,8 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
   // Session Stats
   const [uiTimeLeft, setUiTimeLeft] = useState<number>(60);
   const [totalTrials, setTotalTrials] = useState<number>(0);
+  const [pursuitSummary, setPursuitSummary] = useState<PursuitSummary | null>(null);
+  const pursuitRef = useRef(createPursuitMetrics());
 
   // DOM & Physics Refs
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -196,6 +198,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
     if (animationRef.current) cancelAnimationFrame(animationRef.current);
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
+    setPursuitSummary(summarizePursuit(pursuitRef.current));
     setGameState('gameOver');
 
     setTotalTrials((prev) => {
@@ -219,6 +222,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
     trackingState.current.angle = 0;
     trackingState.current.trail = [];
     mousePosRef.current = { x: 0, y: 0, active: false };
+    pursuitRef.current = createPursuitMetrics();
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO with Audio Cues
     setGameState('countdown');
@@ -273,7 +277,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
 
     const updateSize = () => {
       if (!container) return;
-      const rect = container.getBoundingClientRect();
+      const rect = cvs.getBoundingClientRect();
       canvasWidth = rect.width;
       canvasHeight = rect.height;
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -363,6 +367,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
 
       // Target position
       const targetPos = getLissajous(trackingState.current.angle, W, H);
+      samplePursuit(pursuitRef.current, deltaTimeMs, mousePosRef.current, targetPos.x, targetPos.y, targetSize);
 
       // Gaze Trail Effect (matching directional-chaos-pursuit)
       if (trailEffect) {
@@ -521,7 +526,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
                 active: true,
               };
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 ${
+            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none ${
               gameState === 'playing' ? 'cursor-default pointer-events-auto' : 'pointer-events-none'
             }`}
           />
@@ -582,6 +587,17 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
                 
                 {/* 4 Stat Tiles */}
                 <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { label: ui.timeOnTarget, value: pursuitSummary?.timeOnTargetPct, unit: '%', sub: null },
+                    { label: ui.meanError, value: pursuitSummary?.meanErrorPx, unit: ' px', sub: pursuitSummary?.meanErrorRadiusPct },
+                    { label: ui.rmsError, value: pursuitSummary?.rmsErrorPx, unit: ' px', sub: pursuitSummary?.rmsErrorRadiusPct },
+                  ].map((m) => (
+                    <div key={m.label} className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
+                      <p className="text-sm sm:text-base font-black text-white tabular-nums">{m.value == null ? '—' : `${m.value.toFixed(m.unit === '%' ? 1 : 0)}${m.unit}`}</p>
+                      {m.sub != null && <p className="text-[9px] text-slate-500 tabular-nums">{Math.round(m.sub)}% {ui.ofRadius}</p>}
+                      <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{m.label}</p>
+                    </div>
+                  ))}
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{selectedDuration}s</p>
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{ui.sessionTime}</p>
@@ -594,11 +610,8 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<stri
                     <p className="text-sm sm:text-base font-black text-white">{totalTrials}</p>
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{ui.sessionsCompleted}</p>
                   </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-xs sm:text-sm font-black text-white">{randomSpeed ? ui.enabled : ui.fixed}</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{ui.acceleration}</p>
-                  </div>
                 </div>
+                <p className="text-[9px] leading-snug text-slate-500">{ui.metricsNote}</p>
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">

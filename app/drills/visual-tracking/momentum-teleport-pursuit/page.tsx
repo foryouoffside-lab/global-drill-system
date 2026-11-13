@@ -226,20 +226,8 @@ const guide = {
     "Momentum Teleport Pursuit is a free browser drill where a target keeps moving in its direction but sometimes jumps to a new place on screen. You find it again as fast as you can and carry on following its motion. Choose a speed and duration, press start, and track the target.",
     "In natural dynamic environments, targets do not always move along unbroken, predictable paths. Rapid object deflections, sudden spatial repositioning, and visual occlusions force the human visual system to constantly coordinate two distinct ocular motor subsystems: ballistic saccades to locate the displaced object, and smooth pursuit to match its continuous velocity (Rashbass, 1961; Findlay & Walker, 1999).",
     "Momentum Teleport Pursuit isolates this exact neuromuscular mechanism. The target's spatial coordinates jump abruptly across the screen while its directional velocity vector is conserved. To excel, your oculomotor system must execute an accurate catch-up saccade to re-center the fovea, then instantaneously engage feedforward smooth pursuit to track the target without velocity lag (Bahill et al., 1980; Barnes, 2008).",
-    "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores remain stored strictly in local browser storage."
+    "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). Only the number of completed sessions is saved, in this browser's local storage."
   ],
-  benchmarks: {
-    title: "Teleport Re-acquisition & Momentum Tracking Benchmarks",
-    headers: ["Performance Tier", "Re-acquisition Latency", "Landing Overshoot", "Velocity Match Gain", "Neurophysiological Profile"],
-    rows: [
-      ["Elite (Pro Aiming / Esports)", "< 140 ms", "< 3% (pinpoint foveal lock)", "97%+", "Flawless ballistic trajectory. Instantaneous post-saccadic pursuit lock with zero oscillatory searching."],
-      ["Advanced (Competitive Rank)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Rapid spatial re-acquisition. Minimal corrective micro-saccade with high velocity fidelity on landing."],
-      ["Competent (Healthy Adult)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Solid baseline reflex. Normal sensory refractory pause following saccade before steady pursuit engagement."],
-      ["Developing (Elevated Lag)", "241 – 320 ms", "15% – 24%", "68% – 79%", "Noticeable target acquisition latency. Frequent overshoot requiring multiple corrective glissades."],
-      ["Novice (Motor Refinement)", "> 320 ms", "> 24%", "< 68%", "Struggles with large angular displacements. Saccadic dysmetria and compensatory head movements present."]
-    ],
-    note: "※ Reference values derived from oculomotor pursuit studies at 50–70 cm viewing distance across 1.0x–2.0x target velocities during 60-second intervals. Re-acquisition latency measures time elapsed from target teleportation to foveal stabilization."
-  },
   techniques: {
     title: "Four Essential Principles for Rapid Target Re-acquisition",
     items: [

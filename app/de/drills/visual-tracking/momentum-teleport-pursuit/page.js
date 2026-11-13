@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "Misst die Übung meine Augenbewegungen oder einen Score?",
-    "a": "Nein. Der Browser weiß nicht, wohin du schaust, und es gibt weder Klicks noch Trefferwertung. Es gibt keinen Score; gespeichert wird nur die Zahl abgeschlossener Durchgänge in diesem Browser. Ob dein Blick wie geplant bleibt, kontrollierst du selbst."
+    "a": "Nein. Der Browser weiß nicht, wohin du schaust, und es gibt weder Klicks noch Trefferwertung. Am Ende zeigt die Seite nur Zeigerwerte (Zeit auf dem Ziel, Abstand des Zeigers zum Zielmittelpunkt), nicht die Augenposition; gespeichert wird nur die Zahl abgeschlossener Durchgänge in diesem Browser. Ob dein Blick wie geplant bleibt, kontrollierst du selbst."
   },
   {
     "q": "Welche Einstellungen gibt es?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "„Springendes Ziel verfolgen“ ist eine Browserübung, in der du ein Ziel mit den Augen wiederfindest, nachdem es plötzlich versetzt wurde. Das Ziel läuft geradlinig, prallt an den Rändern ab und springt bei Tempo 1,0 etwa alle 1,2 Sekunden an eine zufällige Stelle – Richtung und Tempo bleiben dabei gleich.",
     "Das ruhige Mitführen des Blicks bei einem bewegten Ziel und der schnelle Blicksprung (Sakkade) zu einem entfernten Ziel werden als getrennte Augenbewegungen beschrieben (Rashbass, 1961; Krauzlis, 2004). Hier wechseln sich beide ständig ab.",
-    "Der Browser kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen – nicht, wohin deine Augen tatsächlich blicken. Es gibt keinen Score und keinen Genauigkeitswert. Vergleiche deshalb dein Gefühl von Ruhe und Konzentration bei gleichem Bildschirm, Abstand und gleichen Einstellungen. Bildwiederholrate und Anzeigeverzögerung beeinflussen, wie die Bewegung aussieht (Woods et al., 2015)."
+    "Der Browser kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen – nicht, wohin deine Augen tatsächlich blicken. Angezeigt werden nur Zeigerwerte zur Zeit auf dem Ziel und zum Abstand vom Zielmittelpunkt, kein Wert für die Augen. Vergleiche deshalb dein Gefühl von Ruhe und Konzentration bei gleichem Bildschirm, Abstand und gleichen Einstellungen. Bildwiederholrate und Anzeigeverzögerung beeinflussen, wie die Bewegung aussieht (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Übungsstufen (SkillDrills-Orientierung)",
@@ -203,7 +203,7 @@ export default function GermanMomentumTeleportPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <MomentumTeleportPursuitClient copy={{"title": "Springendes Ziel verfolgen", "subtitle": "Wiederfinden, wenn das Ziel plötzlich versetzt wird", "description": "Springendes Ziel verfolgen: Das Ziel läuft geradlinig und springt etwa alle 1,2 Sekunden (Tempo 1,0) an eine zufällige Stelle, wobei Richtung und Tempo erhalten bleiben. Kein Klicken, kein Score – nur die Augen. Der Browser zeichnet deinen Blick nicht auf."}} />
+      <MomentumTeleportPursuitClient copy={{"title": "Springendes Ziel verfolgen", "subtitle": "Wiederfinden, wenn das Ziel plötzlich versetzt wird", "description": "Springendes Ziel verfolgen: Das Ziel läuft geradlinig und springt etwa alle 1,2 Sekunden (Tempo 1,0) an eine zufällige Stelle, wobei Richtung und Tempo erhalten bleiben. Kein Klicken; am Ende siehst du den Abstand deines Zeigers zum Ziel. Der Browser zeichnet deinen Blick nicht auf."}} />
 
       <DrillGuide guide={guideProps} />
 

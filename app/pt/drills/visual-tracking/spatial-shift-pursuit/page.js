@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "O exercício mede os movimentos dos olhos ou dá pontuação?",
-    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. Não existe pontuação: apenas o número de sessões concluídas fica guardado neste navegador. Manter o olhar onde o exercício pede depende de si."
+    "a": "Não. O navegador não sabe para onde está a olhar e não há cliques nem deteção de acertos. No fim, a página mostra apenas valores do ponteiro (tempo sobre o alvo e distância ao centro), não dos olhos; apenas o número de sessões concluídas fica guardado neste navegador. Manter o olhar onde o exercício pede depende de si."
   },
   {
     "q": "Que definições posso mudar?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "O rastreamento visual com mudança espacial consiste em seguir com o olhar um alvo que avança em linha reta, ressalta nas margens e muda de direção e velocidade sem aviso. As mudanças são aleatórias e frequentes; o alvo não salta e o ecrã não se mexe.",
     "Quando um alvo muda bruscamente de direção, o seguimento suave chega atrasado e juntam-se movimentos rápidos de correção (Robinson, 1965; Krauzlis, 2004). O exercício repete esses reajustes.",
-    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Não há pontuação nem percentagem de precisão: compare antes o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
+    "O navegador só conhece a posição onde o alvo é desenhado e as suas definições, não o sítio para onde os seus olhos realmente olham. Mostra apenas valores do ponteiro (tempo sobre o alvo e distância ao centro), nada sobre os olhos: compare antes o seu conforto e concentração com o mesmo ecrã, distância e definições. A taxa de atualização e o atraso do ecrã também mudam a forma como o movimento aparece (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Etapas de prática (referência SkillDrills)",
@@ -203,7 +203,7 @@ export default function PortugueseSpatialShiftPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SpatialShiftPursuitClient copy={{"title": "Rastreamento visual com mudança espacial", "subtitle": "Seguir um alvo que muda de direção e velocidade sem aviso", "description": "Rastreamento visual com mudança espacial: o alvo avança em linha reta, ressalta e muda em momentos aleatórios de direção e velocidade. Hide Line esconde a linha de direção. Sem cliques nem pontuação; o navegador não regista o seu olhar."}} />
+      <SpatialShiftPursuitClient copy={{"title": "Rastreamento visual com mudança espacial", "subtitle": "Seguir um alvo que muda de direção e velocidade sem aviso", "description": "Rastreamento visual com mudança espacial: o alvo avança em linha reta, ressalta e muda em momentos aleatórios de direção e velocidade. Hide Line esconde a linha de direção. Sem cliques; no fim vê a distância do ponteiro ao alvo, mas o navegador não regista o seu olhar."}} />
 
       <DrillGuide guide={guideProps} />
 

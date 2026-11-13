@@ -820,7 +820,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
               isNewBest={isNewBest}
               stats={[
                 { label: 'Accuracy', value: analytics.accuracy, suffix: '%' },
-                { label: 'Avg Error', value: `±${analytics.avgReactionTime}`, suffix: 'ms' },
+                { label: 'Avg Error', value: analytics.successfulHits > 0 ? `±${analytics.avgReactionTime}` : '—', suffix: analytics.successfulHits > 0 ? 'ms' : '' },
                 { label: 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
                 { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
               ]}

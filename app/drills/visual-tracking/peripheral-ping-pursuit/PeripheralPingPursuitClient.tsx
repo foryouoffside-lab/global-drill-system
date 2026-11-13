@@ -283,7 +283,7 @@ export default function PeripheralPingPursuitClient({ copy }: { copy?: { title?:
 
     const updateSize = () => {
       if (!container) return;
-      const rect = container.getBoundingClientRect();
+      const rect = cvs.getBoundingClientRect();
       canvasWidth = rect.width;
       canvasHeight = rect.height;
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -357,7 +357,7 @@ export default function PeripheralPingPursuitClient({ copy }: { copy?: { title?:
       }
 
       // Peripheral Target Spawn & Flash Logic
-      const spawnChance = 0.025 * effectiveSpeed;
+      const spawnChance = 1 - Math.exp(-1.5 * effectiveSpeed * dt);
       if (!trackingState.current.active && Math.random() < spawnChance) {
         trackingState.current.tx = targetSize * 2 + Math.random() * (W - targetSize * 4);
         trackingState.current.ty = targetSize * 2 + Math.random() * (H - targetSize * 4);
@@ -527,7 +527,7 @@ export default function PeripheralPingPursuitClient({ copy }: { copy?: { title?:
                 active: true,
               };
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 cursor-default`} 
+            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default`} 
           />
 
           {/* START CARD */}
@@ -576,7 +576,7 @@ export default function PeripheralPingPursuitClient({ copy }: { copy?: { title?:
                   SESSION COMPLETE
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-400 text-center font-bold">
-                  Smooth Pursuit Calibrated
+                  Pointer tracking summary
                 </div>
               </div>
 

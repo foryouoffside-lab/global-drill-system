@@ -116,7 +116,7 @@ const faqs = [
   },
   {
     "q": "Mesure-t-il le mouvement de mes yeux ?",
-    "a": "Non. Le navigateur ne voit pas votre regard ; il connaît seulement la position dessinée de la cible et vos réglages. Le curseur n'est qu'une aide et ne prouve pas où vous regardez. Il n'y a pas de score."
+    "a": "Non. Le navigateur ne voit pas votre regard ; il connaît seulement la position dessinée de la cible, vos réglages et le pointeur. Le curseur n'est qu'une aide et ne prouve pas où vous regardez. La fin de séance résume seulement la distance du pointeur à la cible."
   },
   {
     "q": "Que change la vitesse aléatoire ?",
@@ -156,7 +156,7 @@ const guideProps = {
   "heading": "Guide : Poursuite avec traînée visuelle",
   "intro": [
     "Dans cette poursuite avec traînée visuelle, la cible avance à vitesse constante en ligne droite et rebondit sur les bords. Si vous activez la traînée, la page dessine derrière elle des anneaux pâles qui s'estompent (désactivée par défaut). Le but : garder le regard sur la cible pleine, sans suivre les copies.",
-    "Le navigateur connaît seulement la position dessinée de la cible et vos réglages, pas l'endroit où regardent vos yeux. Il n'y a pas de score : seules les séances terminées sont comptées. Le résultat est un repère d'entraînement reproductible, pas une mesure clinique ni un test de vue.",
+    "Le navigateur connaît la position dessinée de la cible, vos réglages et le pointeur, pas l'endroit où regardent vos yeux. À la fin, l'écran affiche le temps passé avec le pointeur sur la cible et sa distance moyenne au centre, sans note. Le résultat est un repère d'entraînement reproductible, pas une mesure clinique ni un test de vue.",
     "Gardez une distance confortable et comparez toujours le même écran et le même navigateur. La fréquence d'affichage et le périphérique d'entrée changent le rendu (Woods et al., 2015). Arrêtez en cas de douleur, vertige, nausée ou vision floue persistante."
   ],
   "benchmarks": {
@@ -257,7 +257,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Fixer la cible, pas sa traînée",
-          description: "Poursuite avec traînée visuelle : suivez une cible dotée d'une traînée optionnelle. Ce n'est pas un test de ghosting d'écran. Le navigateur n'enregistre pas votre regard et il n'y a pas de score.",
+          description: "Poursuite avec traînée visuelle : suivez une cible dotée d'une traînée optionnelle. Ce n'est pas un test de ghosting d'écran. Le navigateur n'enregistre pas votre regard, seulement la distance du pointeur à la cible.",
         }}
       />
       <DrillGuide guide={guideProps} />

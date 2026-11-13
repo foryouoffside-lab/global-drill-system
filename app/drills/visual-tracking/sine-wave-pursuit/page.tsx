@@ -77,7 +77,7 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Harmonic visual tracking application conditioning smooth pursuit velocity gain and zero-phase cerebellar synchronization along sinusoidal trajectories."
+  "description": "Browser practice task: follow a target along a sinusoidal path with the pointer; the end screen reports pointer-to-target distance, not eye movement."
 };
 
 const webAppSchema = {
@@ -214,7 +214,7 @@ const faqSchema = {
       "name": "How frequently should I practice sine wave pursuit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Short sessions of 5 to 10 minutes conducted 3 to 5 times per week enhance velocity gain and eliminate corrective saccades within 3 to 4 weeks (Barnes, 2008)."
+        "text": "Short sessions of 5 to 10 minutes with breaks are a comfortable starting point. The page does not measure eye velocity or saccades, so compare sessions by pointer time on target at the same settings, and stop if your eyes feel strained."
       }
     }
   ]
@@ -229,16 +229,14 @@ const guide = {
     "When tracking frequency or velocity exceeds physiological limits, pursuit gain collapses. As demonstrated by Rashbass (1961) and Bahill et al. (1980), when eye velocity lags target speed, the visual system resorts to stuttered catch-up saccades. Sine Wave Pursuit conditions the extraocular neuromuscular apparatus to sustain seamless unity gain (1.0) without saccadic disruptions."
   ],
   benchmarks: {
-    title: "Sinusoidal Smooth Pursuit & Velocity Gain Benchmarks",
-    headers: ["Performance Tier", "Pursuit Velocity Gain", "Phase Lag Latency", "Catch-Up Saccades per Cycle", "Ocular Motor Profile"],
+    title: "SkillDrills Practice Bands (Time on Target)",
+    headers: ["Practice Band", "Time on Target", "What to Try Next"],
     rows: [
-      ["Elite (Esports / Pro Athletes)", "0.96 – 1.02", "< 15 ms (Synchronous)", "0 – 1 (Seamless Flow)", "Flawless cerebellar rhythm synchronization; zero phase lag and pristine foveal lock."],
-      ["Advanced (Competitive Rank)", "0.90 – 0.95", "15 – 30 ms", "2 – 3", "High trajectory fidelity; minimal corrective micro-saccades at directional turning points."],
-      ["Competent (Healthy Adult)", "0.82 – 0.89", "31 – 50 ms", "4 – 5", "Solid harmonic tracking; noticeable phase lag and minor drifting at higher frequencies."],
-      ["Developing (Elevated Lag)", "0.70 – 0.81", "51 – 80 ms", "6 – 8", "Instability at crests and troughs; frequent catch-up saccades to recover lagging gaze."],
-      ["Novice (Motor Refinement)", "< 0.70", "> 80 ms", "> 9", "Inability to predict harmonic rhythm; purely reactive tracking with constant saccadic stutter."]
+      ["Settling in", "< 40%", "Keep speed at 1.0x or lower and repeat until the pointer stays near the target."],
+      ["Holding", "40% – 70%", "Keep the same settings for a few sessions so results stay comparable."],
+      ["Steady", "> 70%", "Raise speed by 0.5x or turn on Hide Line, then repeat."]
     ],
-    note: "※ Measured on 1080p displays at 50–70 cm viewing distance across 1.0x–1.5x velocities. Evaluated based on velocity gain ratio and absence of disruptive corrective saccades."
+    note: "※ SkillDrills practice bands, not norms or percentiles. Time on target is the share of time the pointer is inside the target radius; it depends on target size, speed, screen and input device, and does not measure eye movement."
   },
   techniques: {
     title: "Four Core Techniques for Harmonic Sinusoidal Tracking",

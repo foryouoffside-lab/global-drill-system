@@ -6,19 +6,17 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Predictive Eye Tracking Drill – Pursuit | SkillDrills",
-  description: "Free browser drill: follow a target along its path, estimate where it will reappear when it is hidden, and check your guess. No sign-up.",
+  description: "Free browser drill: the target glides to a new point every few seconds and stops. Anticipate where it lands and follow it with the pointer. No sign-up.",
   keywords: [
     "predictive eye tracking drill",
     "predictive pursuit",
     "predictive smooth pursuit",
     "trajectory anticipation drill",
-    "occlusion prediction training",
     "anticipatory eye tracking",
     "predictive gaze shifts",
     "motion prediction eye exercise",
     "visual anticipation training",
     "predictive tracking test",
-    "feedforward ocular control",
     "esports lead aim practice"
   ],
   alternates: {
@@ -28,7 +26,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Predictive Eye Tracking Drill – Pursuit | SkillDrills",
-    description: "Free browser drill: follow a target along its path, estimate where it will reappear when it is hidden, and check your guess. No sign-up.",
+    description: "Free browser drill: the target glides to a new point every few seconds and stops. Anticipate where it lands and follow it with the pointer. No sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/predictive-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -37,7 +35,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Predictive Eye Tracking Drill – Pursuit | SkillDrills",
-    description: "Free browser drill: follow a target along its path, estimate where it will reappear when it is hidden, and check your guess. No sign-up.",
+    description: "Free browser drill: the target glides to a new point every few seconds and stops. Anticipate where it lands and follow it with the pointer. No sign-up.",
   },
 };
 
@@ -77,7 +75,7 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Interactive visual training protocol assessing internal forward model extrapolation and feedforward smooth pursuit during visual occlusion."
+  "description": "Browser practice task: anticipate where a gliding target will stop and follow it; reports pointer-to-target distance, not eye movement."
 };
 
 const webAppSchema = {
@@ -94,7 +92,7 @@ const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "Predictive Pursuit",
-  "description": "Visual tracking agility exercise conditioning feedforward gaze trajectory extrapolation through periodic target occlusions.",
+  "description": "Visual tracking exercise: follow a target that glides to a new point every few seconds and anticipate where it stops.",
   "genre": ["Visual Training", "Predictive Tracking", "Reflex Training"],
   "playMode": "SinglePlayer",
   "gamePlatform": "Web Browser"
@@ -103,32 +101,32 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to Train Trajectory Anticipation with Predictive Pursuit",
-  "description": "Step-by-step oculomotor protocol to condition internal cerebellar forward models during target occlusion.",
+  "name": "How to Practise Trajectory Anticipation with Predictive Pursuit",
+  "description": "Steps to practise anticipating where a moving target will stop.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Encode Initial Trajectory Vector",
-      "text": "Position yourself 50-70 cm from the screen. Lock onto the moving target during the first 200 ms to encode its direction and velocity."
+      "name": "Set Up the Session",
+      "text": "Sit about 50-70 cm from the screen. Choose a duration (30-120 s) and speed; start at 1.0x with the destination line visible."
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Engage Internal Forward Modeling",
-      "text": "When the target vanishes into occlusion, maintain smooth pursuit motion along the predicted trajectory without stopping your eyes."
+      "name": "Read the Start of Each Glide",
+      "text": "About every 2.2 seconds at 1.0x, the target picks a new point and starts gliding toward it. Use the first part of the movement to judge its direction."
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Suppress Disorganized Search Saccades",
-      "text": "Resist the reflexive urge to make erratic saccades searching for the lost target. Maintain steady feedforward velocity."
+      "name": "Look Ahead to the Landing Point",
+      "text": "The target slows as it nears the new point and then stops. Move your eyes and the pointer toward where you expect it to stop, then hold on it until the next glide."
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Execute Precise Emergence Intercept",
-      "text": "Position your fovea exactly at the target emergence point just as the target re-appears from the occluded sector."
+      "name": "Review the End Screen and Adjust",
+      "text": "The end screen shows time on target and mean and RMS pointer distance. Repeat at the same settings, then raise speed or turn on Hide Line one change at a time."
     }
   ]
 };
@@ -142,63 +140,63 @@ const faqSchema = {
       "name": "What is the Predictive Pursuit drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Predictive Pursuit drill conditions internal forward models by requiring your eyes to extrapolate moving target trajectories across temporary visual occlusions and guide gaze without visual feedback (Barnes, 2008)."
+        "text": "A free browser drill in which a target glides to a new random point every few seconds, slows down and stops. You anticipate where it will land and follow it with your eyes and the pointer."
       }
     },
     {
       "@type": "Question",
-      "name": "How does predictive pursuit overcome biological latency?",
+      "name": "How often does the target move, and does it ever disappear?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Visual feedback loop delay is approximately 130 to 150 ms. Predictive pursuit bypasses feedback lag by utilizing cerebellar feedforward motor commands based on learned trajectory velocity (Robinson, 1965)."
+        "text": "At 1.0x a new destination is chosen about every 2.2 seconds; higher speeds shorten the cycle and Random Speed varies it. The target is always visible: it never hides or vanishes."
       }
     },
     {
       "@type": "Question",
-      "name": "What neurological mechanisms maintain tracking during target occlusion?",
+      "name": "What does Hide Line do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The frontal eye fields (FEF) and supplementary eye fields (SEF) preserve velocity representations in ocular working memory, driving smooth pursuit motor centers even when visual retinal input ceases (Bennett & Barnes, 2003)."
+        "text": "By default a faint line runs from the target to its next destination. Hide Line removes it, so you have to judge the landing point from the direction and speed of the glide alone."
       }
     },
     {
       "@type": "Question",
-      "name": "How does this drill improve lead aiming in competitive FPS games?",
+      "name": "What does the end screen measure?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "When enemies break line of sight behind cover, smoke, or corners, players with trained feedforward models place crosshairs precisely at the emergence point ahead of time rather than reacting post-emergence."
+        "text": "It reports time on target (share of time the pointer was inside the target radius) and the mean and RMS distance from the pointer to the target centre, time-weighted. It measures the pointer, not your eyes."
       }
     },
     {
       "@type": "Question",
-      "name": "How does predictive pursuit benefit traditional athletic performance?",
+      "name": "Does the drill track my eye movements?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In baseball, cricket, and tennis, high-velocity balls exceed human visual tracking speed. Elite athletes use predictive pursuit to project intercept coordinates before the ball reaches striking distance (Kowler, 1989)."
+        "text": "No. The browser cannot see where you look. Following with the pointer gives a rough, repeatable record, but it is not an eye-tracking or vision test."
       }
     },
     {
       "@type": "Question",
-      "name": "Why should I suppress searching saccades when targets disappear?",
+      "name": "How should I read the practice bands?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Searching saccades produce retinal smear and saccadic suppression, destroying velocity matching. Continuous smooth pursuit maintains velocity continuity for flawless re-acquisition (Krauzlis, 2004)."
+        "text": "They are SkillDrills practice suggestions based on time on target, not norms or percentiles. Use them to decide when to keep the same settings and when to make the drill harder."
       }
     },
     {
       "@type": "Question",
-      "name": "What is occlusion gain in oculomotor testing?",
+      "name": "Why does my time on target drop during each glide?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Occlusion gain measures the ratio of eye velocity during occlusion relative to target velocity before occlusion. Ideal gain approaches 1.0, signifying zero deceleration during invisibility."
+        "text": "The target moves fastest at the start of a glide, so the pointer usually trails it until it slows near the landing point. Looking ahead to the landing point helps the pointer arrive sooner."
       }
     },
     {
       "@type": "Question",
-      "name": "How does monitor refresh rate affect motion extrapolation accuracy?",
+      "name": "Does my screen affect the results?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "High refresh displays provide more frequent visual samples prior to occlusion, allowing cerebellar circuits to calculate precise speed vectors with minimal variance (Woods et al., 2015)."
+        "text": "Yes. Refresh rate, display latency, screen size and input device all change how the motion looks and how the pointer responds (Woods et al., 2015). Compare sessions on the same setup and settings."
       }
     },
     {
@@ -211,10 +209,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Can older adults improve predictive tracking through practice?",
+      "name": "How long should a session be?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. While reflexive latency slightly increases with age, experience-based cerebellar forward models remain highly plastic and improve substantially with structured training (Kowler, 1989)."
+        "text": "A few 60-second sessions with breaks is a comfortable start. Stop if your eyes feel tired, dry or sore, or if you feel dizzy or get a headache."
       }
     }
   ]
@@ -223,45 +221,43 @@ const faqSchema = {
 const guide = {
   heading: "Predictive Pursuit - Ocular Motor Training Standards",
   intro: [
-    "Predictive Pursuit is a free browser drill that practises anticipating motion. You follow a target along its path, and part of the time it is hidden, so you estimate where it will reappear and compare your guess with what happens. Pick a speed and duration, press start, and track the target.",
-    "The human visual system faces a fundamental physiological barrier: sensorimotor processing latency requires approximately 130 to 150 milliseconds for retinal photoreceptor activations to navigate cortical pathways and trigger extraocular muscle contractions. Were visual tracking governed purely by closed-loop feedback, the fovea would suffer constant retinal slip, perpetually lagging behind moving targets. The evolutionary solution to this latency trap is predictive smooth pursuit.",
-    "Pioneering research by David Robinson (1965) and Barnes (2008) established that the cerebellum, operating in tight synchrony with frontal eye fields (FEF), extracts velocity and directional vectors during the initial 100 to 200 ms of target flight. Based on these vectors, the brain constructs an internal forward model whose feedforward motor pulses drive extraocular muscles at the exact anticipated target speed, completely eliminating biological transit delay.",
-    "In competitive sports and esports, targets frequently suffer visual occlusion behind physical obstacles, terrain, or smokescreens. Research by Bennett & Barnes (2003) demonstrated that frontal working memory stores velocity vectors and sustains oculomotor pursuit autonomously for up to two seconds during total sensory dropout. Predictive Pursuit isolates and conditions this vital feedforward capacity."
+    "Predictive Pursuit is a free browser drill that practises anticipating motion. Every few seconds the target glides to a new point and slows to a stop, so you look ahead to where it will land; Hide Line removes the destination line. Pick a speed and duration, press start, and follow the target with your eyes and the pointer; the end screen reports pointer-to-target distance.",
+    "Each cycle has two parts: a glide that starts fast and eases off as the target nears its new point, and a pause where it sits still until the next destination is chosen. At 1.0x a cycle lasts about 2.2 seconds; higher speeds shorten it and Random Speed varies it between cycles.",
+    "With the line visible you can see the destination before the target gets there. With Hide Line on, only the direction and speed of the start of the glide tell you where it will stop. Eyes can move ahead of a target whose motion is expected (Kowler, 1989); this drill gives you a simple, repeatable way to practise that.",
+    "The browser does not record eye position. If you follow with the pointer, the end screen shows time on target and the mean and RMS pointer distance from the target centre, weighted by time. Treat these as a practice record for comparing sessions on the same screen and settings, not as an eye test."
   ],
   benchmarks: {
-    title: "Trajectory Extrapolation & Occlusion Precision Benchmarks",
-    headers: ["Performance Tier", "Extrapolation Accuracy (%)", "Emergence Landing Error", "Occlusion Pursuit Gain", "Predictive Profile"],
+    title: "SkillDrills Practice Bands (Time on Target)",
+    headers: ["Practice Band", "Time on Target", "What to Try Next"],
     rows: [
-      ["Elite (Esports / Pro Athletes)", "> 94%", "< 15 px (Pinpoint Emergence)", "0.95 – 1.02", "Flawless cerebellar forward model; lead positioning without corrective glissades."],
-      ["Advanced (Competitive Rank)", "86% – 93%", "15 – 28 px", "0.88 – 0.94", "Excellent vector extrapolation; minimal post-emergence micro-saccadic adjustment."],
-      ["Competent (Healthy Adult)", "76% – 85%", "29 – 45 px", "0.78 – 0.87", "Solid predictive baseline; mild trajectory drift during extended occlusion durations."],
-      ["Developing (Elevated Lag)", "62% – 75%", "46 – 65 px", "0.65 – 0.77", "Predominantly reactive gaze control; noticeable deceleration during occlusion."],
-      ["Novice (Motor Refinement)", "< 62%", "> 65 px", "< 0.65", "Gaze arrests upon occlusion; severe re-acquisition delay upon target re-emergence."]
+      ["Settling in", "< 40%", "Keep speed at 1.0x or lower and repeat until the pointer stays near the target."],
+      ["Holding", "40% – 70%", "Keep the same settings for a few sessions so results stay comparable."],
+      ["Steady", "> 70%", "Raise speed by 0.5x or turn on Hide Line, then repeat."]
     ],
-    note: "※ Values based on 1080p resolution tests at 50–70 cm viewing distance at 1.0x–1.5x velocities. Evaluated based on foveal arrival accuracy at target emergence point without corrective saccades."
+    note: "※ SkillDrills practice bands, not norms or percentiles. Time on target is the share of time the pointer is inside the target radius; it depends on target size, speed, screen and input device, and does not measure eye movement."
   },
   techniques: {
-    title: "Four Core Techniques for Flawless Trajectory Extrapolation",
+    title: "Four Techniques for Anticipating the Landing Point",
     items: [
       {
-        name: "Initial Vector Encoding",
-        desc: "Fixate the target with intense focus during the first 100 to 200 ms of motion. The cerebellum requires clean velocity and acceleration parameters to build an accurate mental simulation (Barnes, 2008).",
-        tips: "Do not focus on graphic styling; track how fast the reticle glides relative to background reference coordinates."
+        name: "Read the First Part of the Glide",
+        desc: "The direction of the first part of each glide is the best clue to the landing point, especially with Hide Line on.",
+        tips: "Watch which way the target sets off before trying to follow it closely."
       },
       {
-        name: "Mental Vector Extrapolation",
-        desc: "When the target vanishes into occlusion, never arrest eye velocity. Sustain continuous gaze travel along the projected trajectory toward the anticipated emergence zone.",
-        tips: "Do not look where the target disappeared; project your visual axis forward into empty space."
+        name: "Look Ahead, Then Wait",
+        desc: "Move your eyes toward where the glide is heading instead of chasing the target from behind, then hold steady while it slows and stops.",
+        tips: "Aim to arrive at the landing point a little before the target does."
       },
       {
-        name: "Saccadic Suppression Control",
-        desc: "During sensory loss, the brain reflexively attempts searching saccades. Saccades induce visual blur and destroy pursuit momentum. Maintain smooth, disciplined feedforward travel (Krauzlis, 2004).",
-        tips: "Imagine your eyes sliding along an invisible magnetic rail through the darkness."
+        name: "Use the Pause",
+        desc: "Between glides the target sits still. Keep the pointer on it and relax your gaze so you are ready for the next cycle.",
+        tips: "A steady pointer during the pause raises time on target without extra effort."
       },
       {
-        name: "Anticipatory Emergence Arrest",
-        desc: "Calculate the exact boundary where the target will re-emerge. Match your eye position to target exit timing so the fovea lands in lockstep with the visible object.",
-        tips: "Arrive at the exit coordinate a fraction of a millisecond early rather than falling behind."
+        name: "Change One Setting at a Time",
+        desc: "Raise speed, turn on Hide Line or enable Random Speed separately, so a change in time on target can be traced to one setting.",
+        tips: "Repeat a setting for a few sessions before making it harder."
       }
     ]
   },
@@ -269,7 +265,7 @@ const guide = {
     q: item.name,
     a: item.acceptedAnswer.text
   })),
-  sources: pickSources('robinson1965', 'kowler1989', 'krauzlis2004', 'barnes2008', 'woods2015'),
+  sources: pickSources('kowler1989', 'woods2015'),
   related: [
     { href: "/drills/visual-tracking/constant-slow-pursuit", label: "Smooth Pursuit Eye Exercise (Constant Slow)" },
     { href: "/drills/visual-tracking/directional-chaos-pursuit", label: "Directional Chaos Pursuit (Erratic Motion)" },
@@ -290,7 +286,7 @@ export default function PredictivePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <PredictivePursuitClient copy={{ title: "Predictive Pursuit", subtitle: "Predictive eye tracking drill for reading target trajectories, anticipating motion, and improving visual interception timing" }} />
+      <PredictivePursuitClient copy={{ title: "Predictive Pursuit", subtitle: "Predictive eye tracking drill: anticipate where a gliding target will stop" }} />
       <DrillGuide guide={guide} />
       <DrillFooter />
     </>

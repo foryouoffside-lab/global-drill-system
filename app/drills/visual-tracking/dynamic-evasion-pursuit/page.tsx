@@ -246,7 +246,7 @@ const faqSchema = {
       "name": "Are session metrics stored locally on SkillDrills?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "All performance metrics, high scores, and tracking accuracies are stored exclusively in your browser's local storage."
+        "text": "Only the number of completed sessions is saved, in your browser's local storage. The pointer summary on the end screen is shown once and not stored."
       }
     }
   ]
@@ -260,22 +260,10 @@ const guide = {
     
       "Predictable pursuit pathways enable the brain to use feedforward anticipatory motor commands, tracking targets with very little lag (Bahill et al., 1980). However, real-world competitive encounters—such as an opposing player executing an evasive strafe or a ball deflecting off an opponent—feature abrupt trajectory disruptions where feedforward models fail.",
       "Dynamic Evasion Pursuit isolates reactive gaze re-acquisition. Targets move along straight paths before executing sharp, unannounced directional cuts. When the target cuts, smooth pursuit velocity matching fails instantly, producing retinal position error that triggers a rapid catch-up saccade to re-center the fovea (Rashbass, 1961; Krauzlis, 2004; Barnes, 2008).",
-    "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores remain stored strictly in local browser storage."
+    "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). Only the number of completed sessions is saved, in this browser's local storage."
   
   ],
   
-  benchmarks: {
-    title: "Reactive Evasive Target Pursuit & Saccadic Recentering Benchmarks",
-    headers: ["Performance Tier", "Speed Multiplier", "Saccadic Recentering at Evasive Breaks", "Neuromotor & Ocular Profile"],
-    rows: [
-      ["Tier 1: Apex Reactive Tracking", "2.0x+", "Corrective saccade lands quickly and smooth pursuit resumes at once.", "Strongest recovery in this drill's tiers; a practice target, not a clinical or esports standard."],
-      ["Tier 2: Superior Visual Agility", "1.4x – 1.9x", "Fast, reliable recentering within 1–2 video frames; seamless re-engagement of smooth pursuit velocity.", "Highly trained extraocular motor control; rapid mastery over abrupt evasive opponent strafes."],
-      ["Tier 3: Solid Baseline", "1.0x – 1.3x", "Consistent tracking along linear segments; slight latency delay during acute evasive breaks.", "Normative range for healthy adults; fully sufficient for daily visual tasks, driving, and recreational gaming."],
-      ["Tier 4: Delayed Refixation", "0.7x – 0.9x", "Target escapes foveal capture on nearly every evasive maneuver; multiple corrective saccades needed to recover.", "Elevated sensorimotor processing latency during direction breaks; foundational practice at low speeds recommended."],
-      ["Tier 5: Novice / Instability", "< 0.7x", "Gaze lags severely behind target, lingering along the discarded trajectory.", "Foundational ocular motor coordination requires development at slow speeds with strict head stabilization."]
-    ],
-    note: "Benchmarks derived from neurophysiological studies on saccadic latency, retinal slip compensation, and pursuit re-acquisition under abrupt directional evasion (Bahill et al., 1980; Rashbass, 1961; Krauzlis, 2004; Barnes, 2008)."
-  },
   faqs: [
     {
         "q": "What is the Dynamic Evasion Pursuit drill?",
@@ -315,7 +303,7 @@ const guide = {
     },
     {
         "q": "Are session metrics stored locally on SkillDrills?",
-        "a": "All performance metrics, high scores, and tracking accuracies are stored exclusively in your browser's local storage."
+        "a": "Only the number of completed sessions is saved, in your browser's local storage. The pointer summary on the end screen is shown once and not stored."
     }
 ],
   sources: pickSources('bahill1980', 'rashbass1961', 'krauzlis2004', 'robinson1965', 'barnes2008', 'woods2015'),

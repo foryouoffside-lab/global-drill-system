@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     "q": "O exercício mede o movimento dos meus olhos?",
-    "a": "Não. O navegador não vê o seu olhar; conhece apenas a posição desenhada do alvo e os ajustes. O cursor é só um apoio e não prova para onde você olha. Não há pontuação."
+    "a": "Não. O navegador não vê o seu olhar; conhece apenas a posição desenhada do alvo e os ajustes. O cursor é só um apoio e não prova para onde você olha. No fim, a página mostra só valores do ponteiro (tempo sobre o alvo e distância ao centro)."
   },
   {
     "q": "O que muda com a velocidade aleatória?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guia: Alvo que Muda de Direção sem Aviso",
   "intro": [
     "No exercício do alvo que muda de direção sem aviso, o alvo anda em linha reta e, a cada 0,5 segundo mais ou menos (0,35 a 0,65 s com velocidade aleatória), vira para uma nova direção e velocidade ao acaso; nas bordas, ele quica. Depois da virada o olho fica para trás até que uma sacada de correção feche a distância e o acompanhamento suave recomece (Rashbass, 1961; Krauzlis, 2004).",
-    "O navegador conhece apenas a posição desenhada do alvo e seus ajustes, não para onde seus olhos estão olhando. Não há pontuação: só as sessões concluídas são contadas. O resultado é um registro de prática repetível, não uma medida clínica nem um teste de visão.",
+    "O navegador conhece apenas a posição desenhada do alvo e seus ajustes, não para onde seus olhos estão olhando. A página mostra só valores do ponteiro (tempo sobre o alvo e distância ao centro) e conta as sessões concluídas. O resultado é um registro de prática repetível, não uma medida clínica nem um teste de visão.",
     "Use uma distância confortável e compare sempre a mesma tela e o mesmo navegador. Taxa de atualização e dispositivo de entrada mudam a exibição (Woods et al., 2015). Pare se sentir dor, tontura, náusea ou visão embaçada persistente."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Linhas retas e viradas bruscas",
-          description: "Alvo que muda de direção sem aviso: ele vira bruscamente a cada 0,5 s, mais ou menos. O navegador não registra seu olhar e não há pontuação; veja o resultado como registro de prática, não como exame médico.",
+          description: "Alvo que muda de direção sem aviso: ele vira bruscamente a cada 0,5 s, mais ou menos. No fim você vê a distância do ponteiro ao alvo, mas o navegador não registra seu olhar; veja o resultado como registro de prática, não como exame médico.",
         }}
       />
       <DrillGuide guide={guideProps} />

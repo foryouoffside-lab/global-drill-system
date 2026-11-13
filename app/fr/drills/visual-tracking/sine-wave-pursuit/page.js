@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     "q": "L’exercice mesure-t-il mes mouvements oculaires ou un score ?",
-    "a": "Non. Le navigateur ne sait pas où vous regardez et il n’y a ni clic ni détection de touche. Il n’y a pas de score : seul le nombre de séances terminées est enregistré dans ce navigateur. C’est à vous de garder le regard là où l’exercice le demande."
+    "a": "Non. Le navigateur ne sait pas où vous regardez et il n’y a ni clic ni détection de touche. Il n’y a pas de note. Si vous suivez la cible avec le pointeur, l’écran final indique combien de temps il est resté sur la cible et sa distance moyenne au centre ; c’est le pointeur qui est mesuré, pas vos yeux. C’est à vous de garder le regard là où l’exercice le demande."
   },
   {
     "q": "Quels réglages sont disponibles ?",
@@ -122,7 +122,7 @@ const guideProps = {
   "intro": [
     "L’exercice de poursuite oculaire sinusoïdale consiste à suivre des yeux une cible qui fait des allers-retours de gauche à droite en montant et descendant sur une courbe sinusoïdale fixe. Sa vitesse horizontale est constante et elle fait demi-tour aux bords de l’écran.",
     "La poursuite lisse suit une cible lente presque à sa vitesse, mais prend plus facilement du retard quand la cible accélère (Robinson, 1965). Ici, vous variez la vitesse et suivez un mouvement qui change entre les sommets et le milieu de la vague.",
-    "Le navigateur connaît seulement la position où la cible est dessinée et vos réglages, pas l’endroit où vos yeux regardent réellement. Il n’affiche ni score ni précision : comparez plutôt votre aisance et votre concentration avec le même écran, la même distance et les mêmes réglages. La fréquence de rafraîchissement et la latence d’affichage changent aussi le rendu du mouvement (Woods et al., 2015)."
+    "Le navigateur connaît seulement la position où la cible est dessinée et vos réglages, pas l’endroit où vos yeux regardent réellement. Il affiche seulement la distance du pointeur à la cible, pas une mesure des yeux : comparez aussi votre aisance et votre concentration avec le même écran, la même distance et les mêmes réglages. La fréquence de rafraîchissement et la latence d’affichage changent aussi le rendu du mouvement (Woods et al., 2015)."
   ],
   "benchmarks": {
     "title": "Étapes de pratique (repères SkillDrills)",
@@ -203,7 +203,7 @@ export default function FrenchSineWavePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SineWavePursuitClient copy={{"title": "Exercice de poursuite oculaire sinusoïdale", "subtitle": "Suivre une cible sur une trajectoire en vague", "description": "Poursuite oculaire sinusoïdale : la cible fait des allers-retours de gauche à droite en montant et descendant sur une courbe en vague fixe. Hide Line masque la courbe. Pas de clic ni de score ; le navigateur n’enregistre pas votre regard."}} />
+      <SineWavePursuitClient copy={{"title": "Exercice de poursuite oculaire sinusoïdale", "subtitle": "Suivre une cible sur une trajectoire en vague", "description": "Poursuite oculaire sinusoïdale : la cible fait des allers-retours de gauche à droite en montant et descendant sur une courbe en vague fixe. Hide Line masque la courbe. Pas de clic ; l’écran final indique la distance du pointeur à la cible, et le navigateur n’enregistre pas votre regard."}} />
 
       <DrillGuide guide={guideProps} />
 

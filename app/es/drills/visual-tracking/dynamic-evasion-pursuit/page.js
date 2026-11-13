@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     "q": "¿Mide el movimiento de mis ojos?",
-    "a": "No. El navegador no ve tu mirada; solo conoce la posición dibujada del objetivo y los ajustes. El cursor es solo una ayuda y no demuestra hacia dónde miras. No hay puntuación."
+    "a": "No. El navegador no ve tu mirada; solo conoce la posición dibujada del objetivo y los ajustes. El cursor es solo una ayuda y no demuestra hacia dónde miras. Al final solo se muestran datos del puntero (tiempo sobre el objetivo y distancia al centro)."
   },
   {
     "q": "¿Qué cambia la velocidad aleatoria?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guía: Objetivo que Cambia de Dirección sin Aviso",
   "intro": [
     "En el ejercicio del objetivo que cambia de dirección sin aviso, el objetivo avanza en línea recta y, aproximadamente cada 0,5 segundos (0,35 a 0,65 s con velocidad aleatoria), gira hacia una nueva dirección y velocidad al azar; en los bordes rebota. Tras cada giro el ojo se queda atrás hasta que una sacada de corrección cierra la distancia y vuelve el seguimiento suave (Rashbass, 1961; Krauzlis, 2004).",
-    "El navegador solo conoce la posición dibujada del objetivo y tus ajustes, no hacia dónde miran tus ojos. No hay puntuación: solo se cuentan las sesiones completadas. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
+    "El navegador solo conoce la posición dibujada del objetivo y tus ajustes, no hacia dónde miran tus ojos. Solo se muestran datos del puntero (tiempo sobre el objetivo y distancia al centro) y se cuentan las sesiones completadas. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
     "Usa una distancia cómoda y compara siempre la misma pantalla y el mismo navegador. La frecuencia de refresco y el dispositivo de entrada cambian la imagen (Woods et al., 2015). Para si notas dolor, mareo, náuseas o visión borrosa persistente."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Líneas rectas y giros bruscos",
-          description: "Objetivo que cambia de dirección sin aviso: gira bruscamente aproximadamente cada 0,5 s. El navegador no registra tu mirada y no hay puntuación; toma el resultado como registro de práctica, no como prueba médica.",
+          description: "Objetivo que cambia de dirección sin aviso: gira bruscamente aproximadamente cada 0,5 s. Al final verás la distancia del puntero al objetivo, pero el navegador no registra tu mirada; toma el resultado como registro de práctica, no como prueba médica.",
         }}
       />
       <DrillGuide guide={guideProps} />

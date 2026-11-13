@@ -214,7 +214,7 @@ const faqSchema = {
       "name": "How does this drill transfer to traditional sports performance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In tennis, soccer, cricket, and basketball, balls travel in complex curved arcs involving Magnus effect bends and dip angles. Smooth pursuit calibration across dual axes ensures continuous visual clarity throughout flight."
+        "text": "In tennis, soccer, cricket, and basketball, balls travel in complex curved arcs involving Magnus effect bends and dip angles. Following a curve that changes direction on both axes is a way to practise keeping such paths in view."
       }
     },
     {
@@ -265,16 +265,14 @@ const guide = {
   ],
   
   benchmarks: {
-    title: "Figure-8 Infinity Pursuit Performance Benchmarks",
-    headers: ["Performance Tier", "Pursuit Gain (Velocity Ratio)", "Midline Saccade Rate", "Trajectory Precision", "Neurophysiological Profile"],
+    title: "Time-on-Target Practice Bands",
+    headers: ["Practice band", "Time on target", "What to compare", "Next step"],
     rows: [
-      ["Tier 1: Apex (Elite Athletes & Esports)", "0.96 – 1.02", "< 2% (Seamless Glide)", "98%+", "Flawless binocular coordination; zero saccadic disruption at midline crossing; cerebellar forward model perfectly synchronized (Barnes, 2008)."],
-      ["Tier 2: Superior (Competitive Level)", "0.90 – 0.95", "2% – 5%", "92% – 97%", "Superior smooth pursuit stability; minimal phase lag only at extreme lateral apexes; steady foveal locking (Krauzlis, 2004)."],
-      ["Tier 3: Solid Baseline (Healthy Adults)", "0.80 – 0.89", "6% – 12%", "82% – 91%", "Solid everyday functional baseline; occasional catch-up saccades across the central intersection or tight apex turns."],
-      ["Tier 4: Developing (Elevated Latency / Fatigue)", "0.68 – 0.79", "13% – 22%", "70% – 81%", "Noticeable pursuit lag; recurrent intrusive saccades; signs of extraocular fatigue or involuntary head movement compensation."],
-      ["Tier 5: Novice / Instability", "< 0.68", "> 22%", "< 70%", "Smooth pursuit decouples frequently; visual search replaces continuous gliding; dedicated low-speed binocular practice recommended."]
+      ["Building", "Under 40%", "Time on target at the same speed and size", "Lower the speed or show the path"],
+      ["Steady", "40–70%", "Mean distance error at the same settings", "Repeat the same setup"],
+      ["Consistent", "Over 70%", "Whether it holds when one setting changes", "Add one challenge: speed, hidden path or random speed"]
     ],
-    note: "Reference standards based on oculomotor tracking studies at 50–70 cm viewing distance. Pursuit gain represents ocular angular velocity divided by target velocity (ideal = 1.0) according to Barnes (2008) and Leigh & Zee (2015)."
+    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms, percentiles or clinical values, and the page measures the pointer, not your eyes."
   },
   faqs: [
     {
@@ -299,7 +297,7 @@ const guide = {
     },
     {
         "q": "How does this drill transfer to traditional sports performance?",
-        "a": "In tennis, soccer, cricket, and basketball, balls travel in complex curved arcs involving Magnus effect bends and dip angles. Smooth pursuit calibration across dual axes ensures continuous visual clarity throughout flight."
+        "a": "In tennis, soccer, cricket, and basketball, balls travel in complex curved arcs involving Magnus effect bends and dip angles. Following a curve that changes direction on both axes is a way to practise keeping such paths in view."
     },
     {
         "q": "How long should I practice figure-8 eye tracking each day?",
