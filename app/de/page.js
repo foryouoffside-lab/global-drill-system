@@ -85,7 +85,7 @@ export default function LocalizedHomePage() {
           'visual-tracking': { name: 'Visuelles Tracking', description: 'Smooth Pursuit, kontinuierliches Pfad-Tracking und Trajektorien-Vorhersage' },
           'reaction-speed': { name: 'Reaktionsgeschwindigkeit', description: 'Einfache und Wahlreaktionszeit-Kalibrierung und Reflexantwort' },
         },
-        featuresH2: 'Engine-Diagnostik & Funktionen',
+        featuresH2: 'Engine-Details & Funktionen',
         featuresSub: 'Für hohe Bildwiederholraten und sofortige Reaktion in jedem modernen Browser gebaut.',
         features: [
           { title: 'Live-Sitzungswerte', description: 'Latenz-, Präzisions- und Genauigkeitswerte aktualisieren sich während des Spiels. Die Messwerte sind durch Display und Eingabegerät begrenzt' },

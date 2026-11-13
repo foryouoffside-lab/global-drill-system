@@ -85,7 +85,7 @@ export default function LocalizedHomePage() {
           'visual-tracking': { name: '시각 트래킹', description: '부드러운 추적 안구운동, 연속 경로 트래킹, 궤적 예측' },
           'reaction-speed': { name: '반응속도', description: '단순 반응 및 선택 반응 지연시간 캘리브레이션과 반사 응답' },
         },
-        featuresH2: '엔진 진단 & 기능',
+        featuresH2: '엔진 상세 & 기능',
         featuresSub: '모든 최신 브라우저에서 고주사율과 즉각적인 반응을 구현하도록 설계.',
         features: [
           { title: '실시간 세션 지표', description: '플레이하는 동안 지연시간, 정밀도, 정확도 수치가 갱신됩니다. 측정값은 모니터와 입력 장치의 한계를 받습니다' },

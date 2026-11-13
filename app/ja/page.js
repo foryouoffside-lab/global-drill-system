@@ -87,7 +87,7 @@ export default function JapaneseHomePage() {
           'visual-tracking': { name: '視覚追従・トラッキング', description: '追従性眼球運動、連続的な軌道トラッキング、軌道予測' },
           'reaction-speed': { name: '反射神経', description: '単純反応・選択反応のレイテンシ較正と反射応答' },
         },
-        featuresH2: 'エンジン診断＆機能',
+        featuresH2: 'エンジン詳細＆機能',
         featuresSub: '高リフレッシュレートと即応性を重視し、あらゆる最新ブラウザで動作するよう設計。',
         features: [
           { title: 'セッション中の計測値', description: 'プレイ中にレイテンシ・精度・正確性の数値が更新されます。測定値はディスプレイと入力機器の限界を受けます' },

@@ -94,7 +94,7 @@ export default function FrenchHomePage() {
           'visual-tracking': { name: 'Suivi visuel', description: 'Poursuite lisse, suivi de trajectoire continu et prédiction de trajectoire' },
           'reaction-speed': { name: 'Vitesse de réaction', description: 'Calibrage du temps de réaction simple et de choix, et réponse réflexe' },
         },
-        featuresH2: 'Diagnostics moteur & fonctionnalités',
+        featuresH2: 'Détails du moteur & fonctionnalités',
         featuresSub: 'Conçu pour les hauts taux de rafraîchissement et une réponse tactile instantanée dans tous les navigateurs modernes.',
         features: [
           { title: 'Statistiques de session en direct', description: 'Latence, précision et exactitude se mettent à jour pendant que vous jouez. Les mesures dépendent de votre écran et de votre périphérique d\'entrée' },

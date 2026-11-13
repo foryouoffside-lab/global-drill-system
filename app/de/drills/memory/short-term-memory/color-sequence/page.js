@@ -12,7 +12,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 //                   "Simon Says Spiel Online" — International classic query
 //                   "Farben Reihenfolge merken" — Natural descriptive German query
 //                   "Sequenzgedächtnis Test" — Cognitive testing phrase
-//                   "Visuelles Arbeitsgedächtnis" — Neuropsychological term
+//                   "Visuelles Arbeitsgedächtnis" — Memory term
 //                   "Kurzzeitgedächtnis Test Online" — General memory search
 //                   "Gedächtnistraining Farben" — Brain training query
 //                   "Farbmuster merken" — Pattern memory term

@@ -468,7 +468,7 @@ export default function HomePageClient({ copy = {}, faqs = [] }) {
         </div>
       </section>
 
-      {/* 3. DIAGNOSTIC PROFILE (Returning Users) */}
+      {/* 3. PERFORMANCE PROFILE (Returning Users) */}
       {profile && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <Reveal>
@@ -481,7 +481,7 @@ export default function HomePageClient({ copy = {}, faqs = [] }) {
                     <Brain className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-tight">{t('profileH2', 'Your Diagnostic Profile')}</h2>
+                    <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-tight">{t('profileH2', 'Your Performance Profile')}</h2>
                     <p className="text-xs text-ink-3">{t('profileSub', 'Local browser progression aggregated across completed drills')}</p>
                   </div>
                 </div>
@@ -585,7 +585,7 @@ export default function HomePageClient({ copy = {}, faqs = [] }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center mb-14 space-y-3">
             <h2 id="features-heading" className="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">
-              {t('featuresH2', 'Engine Diagnostics & Features')}
+              {t('featuresH2', 'Engine Details & Features')}
             </h2>
             <p className="text-ink-2 max-w-2xl mx-auto text-sm sm:text-base">
               {t('featuresSub', 'Built for high-refresh rates and instant tactile response in all modern browsers.')}

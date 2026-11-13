@@ -88,7 +88,7 @@ export default function PortugueseHomePage() {
           'visual-tracking': { name: 'Rastreamento visual', description: 'Perseguição suave, rastreamento contínuo de trajetória e previsão de trajetória' },
           'reaction-speed': { name: 'Velocidade de reação', description: 'Calibração de latência de reação simples e de escolha, e resposta reflexa' },
         },
-        featuresH2: 'Diagnóstico do motor e recursos',
+        featuresH2: 'Detalhes do motor e recursos',
         featuresSub: 'Construído para altas taxas de atualização e resposta tátil instantânea em qualquer navegador moderno.',
         features: [
           { title: 'Estatísticas da sessão ao vivo', description: 'Latência, precisão e exatidão são atualizadas enquanto você joga. As medições são limitadas pela tela e pelo dispositivo de entrada' },
