@@ -291,3 +291,4 @@ Known prior decisions to respect:
 - 2026-11-13 14:54 auto-checkpoint (scrub in progress; resume per RESUME block)
 - 2026-11-13 14:58 auto-checkpoint (resume per RESUME block)
 - 2026-11-13 15:04 auto-checkpoint (scrub in progress; resume per RESUME block)
+- 2026-11-13 15:18 OWNER PAUSED. At pause: running agents = final prod build+audit (worktree wt-deps @7900658e), live-site crawl (scratchpad qa_live -> docs/qa/live_crawl_2026-11-13.md), keyword registry rebuild+snapshot. On return: check those outputs (rerun if missing), fix crawl findings, then push + verify + sitemap resubmit (GSC+Bing) + next 100 Bing URLs from docs/seo/research/_bing_pending_2026-11-13.txt. See RESUME block (2026-11-13 ~16:30).
