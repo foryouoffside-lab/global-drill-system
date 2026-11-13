@@ -5,7 +5,12 @@ Trigger for a new chat: `Continue docs/seo/HANDOFF_LOCAL_SEO_CATEGORY.md`
 Read this file first, then `docs/seo/HANDOFF_DEMAND_RESEARCH.md` (tooling + rules), `docs/seo/GLOBAL_PAGE_SEO_AEO_GEO_STANDARD.md`, `docs/seo/NO_TRANSLATION_NATIVE_SEARCH_MANDATE.md`.
 Update the LOG section at the end of every step. Never leave work only in chat.
 
-## >>> RESUME HERE (2026-11-13 ~16:30 IST save) - do these in order <<<
+## >>> RESUME HERE (2026-11-13 ~17:30 IST) <<<
+
+DONE this session: (a) no-clinical re-grep clean (only "patiently", exempt citations, a code comment, ko 선별=select); lastmod regen (649 routes, no change); prod build 737 OK in wt-deps @75c75ae0; audit 646/647 + home (about = known false positive); keyword registry rebuilt against prod :3100 (637 rows, 0 blank; keyword_tracker DEV defaults to :3000 - override k.DEV when dev is down); snapshot 28 rewritten (2026-11-13_28d.csv). Pushing to main now.
+NEXT: cache-busted live verify; GSC sitemap submit; Bing SubmitFeed + next 100 from _bing_pending_2026-11-13.txt; (b) live Playwright crawl -> docs/qa/live_crawl_2026-11-13.md.
+
+## (older) RESUME HERE (2026-11-13 ~16:30 IST save) - do these in order <<<
 
 LIVE: pushed a3a77719 (all categories + visual-tracking metrics + no-clinical pass 1 + security + Next 15.5.29). Verified live 14:43. Bing: 100 URLs submitted, 315 queued in docs/seo/research/_bing_pending_2026-11-13.txt (100/day). Sitemap resubmitted to GSC + Bing 2026-11-13.
 LOCAL, NOT PUSHED (committed via checkpoints): crawlable locale links (LanguageSwitcher <Link> always in DOM + SiteFooter + RelatedDrills language rows), per-URL sitemap lastmod (lib/sitemapLastmod.json from scripts/seo/gen_lastmod.mjs - rerun before each deploy), 3 de-dup retitles (light-reaction, divided-attention -> Dual Task Test, visual-tracking-speed-test), hub anchors renamed in lib/drillsRegistry.js + lib/drillsNav.js, llms.txt locale section, SiteSchemas sameAs, homepage headings, baselines docs/seo/baselines/2026-11-13 (+ scripts/seo/baseline_compare.py, baseline_pull.py).
