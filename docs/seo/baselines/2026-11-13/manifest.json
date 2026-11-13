@@ -1,0 +1,182 @@
+{
+  "pulled": "2026-11-13",
+  "site": "https://skilldrills.online/",
+  "files": {
+    "google_query_country_28d.csv": {
+      "rows": 1413,
+      "range": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "google_page_country_28d.csv": {
+      "rows": 585,
+      "range": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "google_page_query_28d.csv": {
+      "rows": 869,
+      "range": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "google_country_28d.csv": {
+      "rows": 150,
+      "range": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "google_device_28d.csv": {
+      "rows": 3,
+      "range": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "google_daily_28d.csv": {
+      "rows": 28,
+      "range": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "google_query_28d.csv": {
+      "rows": 676,
+      "range": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "google_page_28d.csv": {
+      "rows": 191,
+      "range": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "google_search_appearance_28d.csv": {
+      "rows": 0,
+      "range": [
+        "2026-10-14",
+        "2026-11-10"
+      ]
+    },
+    "google_query_country_90d.csv": {
+      "rows": 2196,
+      "range": [
+        "2026-08-13",
+        "2026-11-10"
+      ]
+    },
+    "google_page_country_90d.csv": {
+      "rows": 891,
+      "range": [
+        "2026-08-13",
+        "2026-11-10"
+      ]
+    },
+    "google_page_query_90d.csv": {
+      "rows": 1242,
+      "range": [
+        "2026-08-13",
+        "2026-11-10"
+      ]
+    },
+    "google_country_90d.csv": {
+      "rows": 175,
+      "range": [
+        "2026-08-13",
+        "2026-11-10"
+      ]
+    },
+    "google_device_90d.csv": {
+      "rows": 3,
+      "range": [
+        "2026-08-13",
+        "2026-11-10"
+      ]
+    },
+    "google_daily_90d.csv": {
+      "rows": 90,
+      "range": [
+        "2026-08-13",
+        "2026-11-10"
+      ]
+    },
+    "google_query_90d.csv": {
+      "rows": 925,
+      "range": [
+        "2026-08-13",
+        "2026-11-10"
+      ]
+    },
+    "google_page_90d.csv": {
+      "rows": 211,
+      "range": [
+        "2026-08-13",
+        "2026-11-10"
+      ]
+    },
+    "google_search_appearance_90d.csv": {
+      "rows": 0,
+      "range": [
+        "2026-08-13",
+        "2026-11-10"
+      ]
+    },
+    "bing_query_stats.csv": {
+      "rows": 1973,
+      "range": [
+        "2026-05-15",
+        "2026-11-06"
+      ],
+      "status": "ok"
+    },
+    "bing_page_stats.csv": {
+      "rows": 818,
+      "range": [
+        "2026-05-15",
+        "2026-11-06"
+      ],
+      "status": "ok"
+    },
+    "bing_rank_traffic_daily.csv": {
+      "rows": 185,
+      "range": [
+        "2026-05-10",
+        "2026-11-10"
+      ],
+      "status": "ok"
+    },
+    "bing_crawl_stats.csv": {
+      "rows": 176,
+      "range": [
+        "2026-05-13",
+        "2026-11-07"
+      ],
+      "status": "ok"
+    },
+    "keyword_snapshot_28d.csv": {
+      "copied_from": "docs/seo/keywords/snapshots/2026-11-13_28d.csv"
+    },
+    "google_index_status.jsonl": {
+      "copied_from": "docs/qa/gsc_index_2026-11-13.jsonl"
+    }
+  },
+  "notes": [
+    "Bing Webmaster API exposes no country dimension for query/page/traffic stats; Bing country split unavailable."
+  ],
+  "gsc_end_date": "2026-11-10",
+  "gsc_28d": [
+    "2026-10-14",
+    "2026-11-10"
+  ],
+  "gsc_90d": [
+    "2026-08-13",
+    "2026-11-10"
+  ]
+}
