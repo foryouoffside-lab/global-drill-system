@@ -105,7 +105,7 @@ const faqSchema = {
       "name": "How long should you practice eye tracking drills each day?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use short, comfortable blocks with breaks rather than chasing a fixed prescription. Stop for pain, dizziness, nausea, persistent blur, double vision, or unusual symptoms; seek professional advice if symptoms persist."
+        "text": "Use short, comfortable blocks with breaks. Stop for pain, dizziness, nausea, persistent blur, double vision, or anything that feels unusual."
       }
     },
     {

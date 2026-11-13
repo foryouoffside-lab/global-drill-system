@@ -148,7 +148,7 @@ const faqSchema = {
       "name": "What is the Schulte Table and Concentration Grid drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Schulte table is a grid of shuffled numbers, named after the German psychiatrist Walter Schulte, that you find and tap in ascending order. The concentration grid is a similar focus exercise from sports psychology (Harris & Harris, 1984). This drill starts at 3x3, grows one size per cleared grid up to 8x8 (7x7 on very narrow phones), tilts the numbers slightly from 5x5 onward, and runs on one 45-second clock."
+        "text": "A Schulte table is a grid of shuffled numbers, named after Walter Schulte, that you find and tap in ascending order. The concentration grid is a similar focus exercise from sports psychology (Harris & Harris, 1984). This drill starts at 3x3, grows one size per cleared grid up to 8x8 (7x7 on very narrow phones), tilts the numbers slightly from 5x5 onward, and runs on one 45-second clock."
       }
     },
     {
@@ -240,7 +240,7 @@ const concentrationGridGuide = {
   heading: "Schulte Table Trainer Guide & Visual Search Benchmarks",
   intro: [
     "A Schulte table is a grid of shuffled numbers that you tap in ascending order as fast as you can, a classic test of visual search speed and attention. This free online version expands from 3x3 to 8x8 inside one continuous 45-second run, so you practise scanning, not just one fixed grid.",
-    "The Schulte table is named after the German psychiatrist Walter Schulte. In its traditional form, the numbers 1 to 25 are shuffled across a 5x5 grid and you find each one in ascending order, usually while trying to keep your gaze near the center.",
+    "The Schulte table is named after Walter Schulte. In its traditional form, the numbers 1 to 25 are shuffled across a 5x5 grid and you find each one in ascending order, usually while trying to keep your gaze near the center.",
     "Sports psychology describes a similar 'concentration grid' exercise (Harris & Harris, 1984) as a simple focus drill for athletes. An event-related potential study of 27 children aged 8-11 searching Schulte grids found that searching for numbers in sequence took longer than locating a single target, and that adding a second colour slowed both, with matching differences in the recorded ERP signal (Lu et al., 2022).",
     "The SkillDrills version does not stop at one grid. It starts at 3x3 and grows one size each time you clear a grid, up to 8x8 (7x7 on very narrow phones), tilts the numbers slightly from 5x5 onward, and runs on one fixed 45-second clock with no time bonuses or penalties.",
     "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval, about 16.7 ms per frame at 60 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup.",

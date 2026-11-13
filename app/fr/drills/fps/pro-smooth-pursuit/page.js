@@ -122,7 +122,7 @@ export default function ProSmoothPursuitPage() {
       },
       {
         "@type": "Question",
-        "name": "Quelle est la différence neurologique entre poursuite visuelle et saccades ?",
+        "name": "Quelle est la différence entre poursuite visuelle et saccades ?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Les saccades (flicks) sont des mouvements balistiques brusques régulés par le colliculus supérieur, tandis que le Smooth Pursuit mobilise le cortex visuel temporal médian (aire MT/V5) et le cervelet pour moduler une vitesse constante et continue sans coupures perceptives."

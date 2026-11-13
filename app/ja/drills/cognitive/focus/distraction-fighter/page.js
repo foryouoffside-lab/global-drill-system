@@ -270,7 +270,7 @@ export default function JapaneseDistractionFighterPage() {
       />
 
       <DrillGuide
-        eyebrow="認知神経心理学 & 前頭前野実行機能"
+        eyebrow="集中力 & 実行機能"
         title="ストループテストの科学：自動化された言語処理と認知的抑制の葛藤"
         sources={sources}
       >

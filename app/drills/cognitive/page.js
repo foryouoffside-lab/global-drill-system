@@ -118,7 +118,7 @@ const faqSchema = {
       "name": "What is a Schulte table used for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Schulte table is a grid of shuffled numbers that you find and tap in ascending order, named after the German psychiatrist Walter Schulte. It is a popular visual search and focus exercise. Our version starts at 3x3, grows one size per cleared grid up to 8x8, and runs on one 45-second clock. There is no good evidence that it widens your visual field or speeds up reading."
+        "text": "A Schulte table is a grid of shuffled numbers that you find and tap in ascending order, named after Walter Schulte. It is a popular visual search and focus exercise. Our version starts at 3x3, grows one size per cleared grid up to 8x8, and runs on one 45-second clock. There is no good evidence that it widens your visual field or speeds up reading."
       }
     },
     {

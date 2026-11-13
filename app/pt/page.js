@@ -54,7 +54,7 @@ export default function PortugueseHomePage() {
         hudSubPixel: 'MOTOR SUB-PIXEL',
         methodologyBadge: 'Paradigmas cognitivos e motores',
         methodologyH2: 'Baseado em ciência cognitiva e mecânica de esports',
-        methodologyBody: 'Cada treino é modelado diretamente com base em testes psicométricos validados e nas exigências motoras dos esports competitivos, isolando vias neurológicas de estímulo-resposta e a coordenação olho-mão.',
+        methodologyBody: 'Cada treino é modelado diretamente com base em testes psicométricos validados e nas exigências motoras dos esports competitivos, isolando habilidades de estímulo-resposta e a coordenação olho-mão.',
         pillDigitSpan: 'Amplitude de dígitos',
         pillDigitSpanSub: 'Memória de trabalho',
         pillNBack: 'Tarefa N-back',

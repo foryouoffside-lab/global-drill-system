@@ -142,7 +142,7 @@ const faqs = [
   },
   {
     q: 'Kann das Training die Lesegeschwindigkeit steigern?',
-    a: 'Beim Lesen springt der Blick zwar von Wort zu Wort, aber ein Bildschirmspiel ist keine Leseübung. Eine schnellere Lesegeschwindigkeit ist nicht belegt. Bei anhaltenden Leseproblemen oder Augenbeschwerden wende dich an eine augenärztliche Praxis.',
+    a: 'Beim Lesen springt der Blick zwar von Wort zu Wort, aber ein Bildschirmspiel ist keine Leseübung. Eine schnellere Lesegeschwindigkeit ist nicht belegt.',
   },
   {
     q: 'Wie oft sollte ich üben?',
@@ -168,7 +168,7 @@ const saccadicGuide = {
     'Bei diesem Augentraining erscheinen Ziele nacheinander an verschiedenen Stellen des Bildschirms. Du führst den Blick in einem Sprung zum Ziel und klickst es an. Solche schnellen Blicksprünge heißen Sakkaden; sie passieren ständig beim Lesen und beim Absuchen eines Bildes (Rayner, 1998).',
     'Während einer Sakkade wird die visuelle Verarbeitung abgeschwächt, und landet der Blick neben dem Ziel, folgt eine kleine Korrektur (Leigh & Zee, 2015). Deshalb lohnt es sich, zuerst auf eine saubere Landung statt auf reines Tempo zu achten.',
     'Grenzen der Messung: Der Browser kennt deine Blickposition nicht und erfasst nur Zeitpunkt und Ort des Klicks. Im Ergebnis stecken Handbewegung, Mausverzögerung und Bildintervall (etwa 16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,2 ms bei 240 Hz; Woods et al., 2015). Es ist keine Sakkadenlatenz und keine Aussage über die Augengesundheit.',
-    'Übe am selben Gerät, mit gleichem Abstand und gleicher Haltung und vergleiche nur deine eigenen Durchgänge. Bei Schmerzen oder Sehstörungen lass dich augenärztlich untersuchen.',
+    'Übe am selben Gerät, mit gleichem Abstand und gleicher Haltung und vergleiche nur deine eigenen Durchgänge.',
   ],
   benchmarks: {
     title: 'Übungsstufen zur Orientierung',

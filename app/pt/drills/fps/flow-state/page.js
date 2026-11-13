@@ -296,7 +296,7 @@ export default function FlowStatePtPage() {
       ]
     },
     scientificPrinciples: {
-      title: "Fundamentos Psiconeurológicos do Estado de Flow",
+      title: "Fundamentos do Estado de Flow",
       items: [
         {
           name: "Teoria do Canal de Flow (Csikszentmihalyi)",

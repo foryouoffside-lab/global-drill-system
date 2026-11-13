@@ -153,7 +153,7 @@ const faqSchema = {
       "name": "O que é a Tabela de Schulte e qual a sua utilidade?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Tabela de Schulte leva o nome do psiquiatra alemão Walter Schulte: uma grade com números embaralhados que devem ser encontrados em ordem crescente. Hoje é usada sobretudo como exercício de busca visual e foco, inclusive em cursos de leitura dinâmica. Esta versão online é um treino, não um teste psicológico."
+        "text": "A Tabela de Schulte leva o nome de Walter Schulte: uma grade com números embaralhados que devem ser encontrados em ordem crescente. Hoje é usada sobretudo como exercício de busca visual e foco, inclusive em cursos de leitura dinâmica. Esta versão online é um treino, não um teste psicológico."
       }
     },
     {
@@ -234,7 +234,7 @@ const faqSchema = {
 const concentrationGridGuidePt = {
   heading: "Guia da Tabela de Schulte, Leitura Dinâmica e Foco Visual",
   intro: [
-    "A Tabela de Schulte é um exercício clássico de busca visual e foco, que leva o nome do psiquiatra alemão Walter Schulte. Em sua implementação tradicional, números de 1 a 25 são dispersos aleatoriamente em uma matriz 5x5, exigindo que o indivíduo localize cada numeral em sequência estritamente crescente enquanto mantém a fixação visual próxima ao centro da grade.",
+    "A Tabela de Schulte é um exercício clássico de busca visual e foco, que leva o nome de Walter Schulte. Em sua implementação tradicional, números de 1 a 25 são dispersos aleatoriamente em uma matriz 5x5, exigindo que o indivíduo localize cada numeral em sequência estritamente crescente enquanto mantém a fixação visual próxima ao centro da grade.",
     "Na psicologia esportiva aplicada, esse exercício evoluiu para a denominada 'grade de concentração' (Harris & Harris, 1984), descrita em manuais de psicologia do esporte como exercício de varredura visual e concentração sob pressão de tempo. Um estudo de potenciais relacionados a eventos (ERP) com 27 crianças de 8 a 11 anos examinando tabelas de Schulte constatou que a busca por números em sequência exigiu maior tempo do que localizar um alvo isolado, e que a inclusão de uma segunda cor desacelerou ambos os processos, com diferenças proporcionais nos registros do sinal ERP (Lu et al., 2022).",
     "A tabela de Schulte online da SkillDrills transforma a folha estática em uma rodada contínua de 45 segundos. A grade cresce de 3x3 até 8x8 a cada etapa concluída (7x7 em telas com menos de 380 px), com dígitos levemente girados a partir de 5x5. Assim você pratica percorrer uma área cada vez maior dentro de uma janela fixa de 45 segundos.",
     "Metodologia de mensuração: cada interação é registrada com carimbo de alta precisão através do relógio performance.now() da API do navegador, processado integralmente no dispositivo do usuário — nenhuma pontuação é transmitida externamente. Os cronômetros dos navegadores são deliberadamente discretizados como mitigação de segurança contra vulnerabilidades do tipo Spectre (geralmente em torno de 1 ms), e a exibição quantiza cada transição à taxa de atualização do monitor, correspondendo a aproximadamente 16,7 ms por quadro a 60 Hz (Woods et al., 2015). Para análises comparativas de evolução, preserve as mesmas condições de hardware.",

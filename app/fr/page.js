@@ -60,7 +60,7 @@ export default function FrenchHomePage() {
         hudSubPixel: 'MOTEUR SUB-PIXEL',
         methodologyBadge: 'Paradigmes cognitifs et moteurs',
         methodologyH2: 'Fondé sur les sciences cognitives et la mécanique esport',
-        methodologyBody: 'Chaque exercice est modelé directement sur des tests psychométriques validés et les exigences motrices de l\'esport compétitif — isolant des voies neurologiques stimulus-réponse distinctes et la coordination œil-main.',
+        methodologyBody: 'Chaque exercice est modelé directement sur des tests psychométriques validés et les exigences motrices de l\'esport compétitif — isolant des capacités stimulus-réponse distinctes et la coordination œil-main.',
         pillDigitSpan: 'Empan chiffré',
         pillDigitSpanSub: 'Mémoire de travail',
         pillNBack: 'Tâche N-back',

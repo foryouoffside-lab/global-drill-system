@@ -206,7 +206,7 @@ const faqSchema = {
       "name": "Verbessert das Training Sehkraft oder Aim?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Eine höhere Punktzahl zeigt, dass du in dieser Aufgabe geübter bist. Bessere Sehkraft, Spiel- oder Sportleistung ist nicht garantiert, und die Übung ersetzt keine augenärztliche Untersuchung."
+        "text": "Eine höhere Punktzahl zeigt, dass du in dieser Aufgabe geübter bist. Bessere Sehkraft, Spiel- oder Sportleistung ist nicht garantiert."
       }
     },
     {

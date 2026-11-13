@@ -876,8 +876,8 @@ export default function CrossBodyMovementClient({ copy = {} } = {}) {
                         desc: "Competitive gamers training large 180° flick resets, athletic coordination trainees building bilateral integration, and desk workers restoring upper-limb motor mobility."
                       },
                       {
-                        title: "Neurological Benefits",
-                        desc: "Interhemispheric neural activation, cross-midline spatial integration, agonist-antagonist deceleration control, and precision diagonal trajectory tracking."
+                        title: "Coordination Benefits",
+                        desc: "Cross-midline spatial integration, agonist-antagonist deceleration control, and precision diagonal trajectory tracking."
                       },
                       {
                         title: "Dynamic Difficulty",

@@ -115,7 +115,7 @@ export default function ProSmoothPursuitJaPage() {
       },
       {
         "@type": "Question",
-        "name": "滑走性眼球運動とサッカード（跳躍運動）の神経学的な違いは？",
+        "name": "滑走性眼球運動とサッカード（跳躍運動）の違いは？",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Rashbass（1961）の研究により、両者は異なる神経経路で制御されることが証明されています。サッカードは位置のズレに反応する開放ループ運動ですが、滑走性眼球運動はMT/V5野を通じた速度情報（網膜スリップ）によって継続的にフィードバック制御されます（Krauzlis, 2004）。"

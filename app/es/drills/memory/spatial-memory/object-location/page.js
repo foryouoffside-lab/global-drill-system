@@ -133,7 +133,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "¿Qué es el 'Feature Binding' en neurociencia cognitiva?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "El proceso neurológico por el cual la vía visual ventral (procesamiento del objeto) y la vía dorsal (procesamiento espacial) se integran en el hipocampo formando una representación episódica unificada."
+                  "text": "El proceso por el cual la vía visual ventral (procesamiento del objeto) y la vía dorsal (procesamiento espacial) se integran en el hipocampo formando una representación episódica unificada."
             }
       },
       {

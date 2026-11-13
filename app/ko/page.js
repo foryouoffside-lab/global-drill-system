@@ -51,7 +51,7 @@ export default function LocalizedHomePage() {
         hudSubPixel: '서브픽셀 엔진',
         methodologyBadge: '인지 및 운동 패러다임',
         methodologyH2: '인지과학과 e스포츠 메커니즘에 기반한 설계',
-        methodologyBody: '모든 드릴은 검증된 심리측정 테스트와 경쟁 e스포츠에서 요구되는 운동 능력을 기반으로 설계되어, 신경학적 자극-반응 경로와 손-눈 협응 메커니즘을 각각 독립적으로 훈련합니다.',
+        methodologyBody: '모든 드릴은 검증된 심리측정 테스트와 경쟁 e스포츠에서 요구되는 운동 능력을 기반으로 설계되어, 자극-반응 능력과 손-눈 협응 메커니즘을 각각 독립적으로 훈련합니다.',
         pillDigitSpan: '숫자 폭 과제',
         pillDigitSpanSub: '작업 기억력',
         pillNBack: 'N-백 과제',

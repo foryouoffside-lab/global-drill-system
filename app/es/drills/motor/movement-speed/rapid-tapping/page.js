@@ -249,7 +249,7 @@ const guideProps = {
   intro: {
     title: 'Medición de la velocidad de clic y fundamentación científica',
     paragraphs: [
-      'El CPS Test mide cuántos clicks por segundo puedes hacer con el ratón; este test de clicks dura 45 segundos y muestra tu CPS promedio y el CPS en directo de los últimos 2 segundos. La pulsación sostenida con un solo dedo alcanza típicamente entre 5 y 7 clics por segundo, respaldado en la norma neuropsicológica de 50 a 55 pulsaciones en 10 segundos para el dedo índice dominante en adultos saludables (Halstead, 1947; Todor & Kyprie, 1980). Las ráfagas rápidas que superan este umbral funcionan como secuencias motoras preprogramadas en circuito abierto (Keele, 1968).',
+      'El CPS Test mide cuántos clicks por segundo puedes hacer con el ratón; este test de clicks dura 45 segundos y muestra tu CPS promedio y el CPS en directo de los últimos 2 segundos. La pulsación sostenida con un solo dedo alcanza típicamente entre 5 y 7 clics por segundo, en línea con la referencia de 50 a 55 pulsaciones en 10 segundos para el dedo índice dominante en adultos saludables (Halstead, 1947; Todor & Kyprie, 1980). Las ráfagas rápidas que superan este umbral funcionan como secuencias motoras preprogramadas en circuito abierto (Keele, 1968).',
       'Precisión de la medición y sincronización de pantalla: el temporizador utiliza performance.now() del navegador con resolución de ~1 ms. Los monitores actualizan fotogramas a 16,7 ms (60 Hz), 6,9 ms (144 Hz) o 4,1 ms (240 Hz, Woods et al., 2015), mientras que la tasa de sondeo del ratón (polling rate) introduce entre 1 y 8 ms. Variaciones inferiores a 5 ms son ruido de muestreo instrumental. SkillDrills almacena todos los registros localmente en el navegador.',
     ],
   },

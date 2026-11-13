@@ -51,7 +51,7 @@ export default function LocalizedHomePage() {
         hudSubPixel: 'SUBPIXEL-ENGINE',
         methodologyBadge: 'Kognitive & motorische Modelle',
         methodologyH2: 'Basiert auf Kognitionswissenschaft & Esports-Mechanik',
-        methodologyBody: 'Jede Übung basiert auf validierten psychometrischen Tests und den motorischen Anforderungen im kompetitiven Esport — sie isoliert einzelne neurologische Reiz-Reaktions-Pfade und die Hand-Auge-Koordination.',
+        methodologyBody: 'Jede Übung basiert auf validierten psychometrischen Tests und den motorischen Anforderungen im kompetitiven Esport — sie isoliert einzelne Reiz-Reaktions-Fähigkeiten und die Hand-Auge-Koordination.',
         pillDigitSpan: 'Zahlenspanne',
         pillDigitSpanSub: 'Arbeitsgedächtnis',
         pillNBack: 'N-Back-Aufgabe',

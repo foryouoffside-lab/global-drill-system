@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "기호 숫자 양식 검사(SDMT, Symbol Digit Modalities Test)란?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aaron Smith(1973)가 만든 신경심리 검사로, 기호-숫자 대응표를 보고 기호에 맞는 숫자를 답합니다. 이 드릴은 그 형식만 참고한 연습용 게임이며 SDMT가 아닙니다."
+        "text": "Aaron Smith(1973)가 만든 고전적인 주의력 과제로, 기호-숫자 대응표를 보고 기호에 맞는 숫자를 답합니다. 이 드릴은 그 형식만 참고한 연습용 게임이며 SDMT가 아닙니다."
       }
     },
     {

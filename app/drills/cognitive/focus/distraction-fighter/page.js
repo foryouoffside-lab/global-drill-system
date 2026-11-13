@@ -113,7 +113,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the orienting reflex and how does it cause distraction?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The orienting reflex is an automatic neurological response to novel stimuli — your brain involuntarily redirects attention to unexpected sounds, movement, or visual changes. It is thought to help detect possible threats. Practising a task that rewards ignoring an irrelevant cue is one way to practise staying on task; it does not switch the reflex off." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The orienting reflex is an automatic response to novel stimuli — your brain involuntarily redirects attention to unexpected sounds, movement, or visual changes. It is thought to help detect possible threats. Practising a task that rewards ignoring an irrelevant cue is one way to practise staying on task; it does not switch the reflex off." }
     },
     {
       "@type": "Question",

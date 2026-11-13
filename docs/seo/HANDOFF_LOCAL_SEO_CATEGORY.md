@@ -277,3 +277,4 @@ Known prior decisions to respect:
 - 2026-11-13 14:48 auto-checkpoint (resume per RESUME block)
 - 2026-11-13 14:54 auto-checkpoint (scrub in progress; resume per RESUME block)
 - 2026-11-13 14:58 auto-checkpoint (resume per RESUME block)
+- 2026-11-13 15:04 auto-checkpoint (scrub in progress; resume per RESUME block)

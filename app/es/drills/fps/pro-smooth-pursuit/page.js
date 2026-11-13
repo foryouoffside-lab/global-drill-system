@@ -122,7 +122,7 @@ export default function ProSmoothPursuitPage() {
       },
       {
         "@type": "Question",
-        "name": "¿Cuál es la diferencia neurológica entre seguimiento suave y movimientos sacádicos?",
+        "name": "¿Cuál es la diferencia entre seguimiento suave y movimientos sacádicos?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Los movimientos sacádicos (flicks) son impulsos balísticos directos regulados por el colículo superior, mientras que el Smooth Pursuit es gestionado por la corteza temporal media (área MT/V5) y el cerebelo para computar velocidad y mantener aceleración continua sin interrupciones visuales."

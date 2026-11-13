@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "SDMT（Symbol Digit Modalities Test）とは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aaron Smith（1973）が作った神経心理学的検査で、記号と数字の対応表を見て記号に合う数字を答えます。このドリルはその形式を参考にした練習用ゲームで、SDMTそのものではありません。"
+        "text": "Aaron Smith（1973）が作った古典的な注意課題で、記号と数字の対応表を見て記号に合う数字を答えます。このドリルはその形式を参考にした練習用ゲームで、SDMTそのものではありません。"
       }
     },
     {

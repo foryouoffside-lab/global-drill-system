@@ -104,7 +104,7 @@ const faqSchema = {
       "name": "Como a tabela de Schulte ajuda na velocidade de leitura e visão periférica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A tabela de Schulte é uma grade de números embaralhados, associada ao psiquiatra Walter Schulte, que você percorre a partir do 1 em ordem crescente; a versão 5×5 é a mais conhecida. No SkillDrills, a grade começa em 3×3 e aumenta a cada tabela concluída. Manter o olhar no centro e achar o próximo número com a visão periférica é uma boa estratégia de prática, mas nenhum ganho numérico em visão periférica ou leitura é garantido: acompanhe o seu próprio tempo."
+        "text": "A tabela de Schulte é uma grade de números embaralhados, associada a Walter Schulte, que você percorre a partir do 1 em ordem crescente; a versão 5×5 é a mais conhecida. No SkillDrills, a grade começa em 3×3 e aumenta a cada tabela concluída. Manter o olhar no centro e achar o próximo número com a visão periférica é uma boa estratégia de prática, mas nenhum ganho numérico em visão periférica ou leitura é garantido: acompanhe o seu próprio tempo."
       }
     },
     {

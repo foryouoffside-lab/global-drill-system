@@ -203,7 +203,7 @@ const faqSchema = {
       "name": "What is the Horse-Race Model of response inhibition?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Formalized by Gordon Logan and colleagues (1984), the Horse-Race Model posits that response inhibition is a race between two independent neurological processes: a 'Go process' (driving motor execution toward threshold) and a 'Stop process' (driving prefrontal motor braking). If the Go process crosses threshold first, a commission error occurs; if the Stop process finishes first, the action is successfully inhibited."
+        "text": "Formalized by Gordon Logan and colleagues (1984), the Horse-Race Model posits that response inhibition is a race between two independent processes: a 'Go process' (driving motor execution toward threshold) and a 'Stop process' (driving prefrontal motor braking). If the Go process crosses threshold first, a commission error occurs; if the Stop process finishes first, the action is successfully inhibited."
       }
     },
     {

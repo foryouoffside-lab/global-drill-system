@@ -122,7 +122,7 @@ export default function ProSmoothPursuitPage() {
       },
       {
         "@type": "Question",
-        "name": "Qual é a diferença neurológica entre o rastreamento suave e os movimentos sacádicos?",
+        "name": "Qual é a diferença entre o rastreamento suave e os movimentos sacádicos?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Os movimentos sacádicos (flicks) são impulsos balísticos rápidos de ponto a ponto controlados pelo córtex frontal e colículo superior, enquanto o Smooth Pursuit envolve circuitos corticais do córtex temporal médio (área MT/V5) e do cerebelo para calcular velocidade e manter aceleração fluida contínua sem saltos visuais."

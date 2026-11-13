@@ -174,7 +174,7 @@ const faqSchema = {
       name: 'Quais são os limites neuromusculares do toque com um único dedo?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Estudos neuropsicológicos (Halstead 1947, Todor & Kyprie 1980) demonstram que toques voluntários do indicador dominante chegam a cerca de 5,5 a 7,0 Hz (~55 toques em 10 segundos) devido ao período refratário do comando motor central. Ultrapassar 10 CPS exige técnicas como ressonância de vibração ou alternância de dedos.',
+        text: 'Estudos (Halstead 1947, Todor & Kyprie 1980) demonstram que toques voluntários do indicador dominante chegam a cerca de 5,5 a 7,0 Hz (~55 toques em 10 segundos) devido ao período refratário do comando motor central. Ultrapassar 10 CPS exige técnicas como ressonância de vibração ou alternância de dedos.',
       },
     },
     {

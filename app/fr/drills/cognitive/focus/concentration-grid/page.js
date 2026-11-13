@@ -139,7 +139,7 @@ const faqSchema = {
       "name": "Qu est-ce qu une table de Schulte et quel est son but?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Conçue par le psychiatre Walter Schulte, c est une grille de chiffres disposés aléatoirement à retrouver dans l ordre croissant. Elle sert d exercice de recherche visuelle et de concentration ; cette version en ligne n est pas un test psychologique."
+        "text": "Conçue par Walter Schulte, c est une grille de chiffres disposés aléatoirement à retrouver dans l ordre croissant. Elle sert d exercice de recherche visuelle et de concentration ; cette version en ligne n est pas un test psychologique."
       }
     },
     {
@@ -257,7 +257,7 @@ const copyFr = {
 const concentrationGridGuideFr = {
   heading: "Guide Complet de la Table de Schulte et Psychologie de l Attention Visuelle",
   intro: [
-    "La table de Schulte (Schulte Table) est un exercice classique de recherche visuelle et de concentration, nommé d après le psychiatre allemand Walter Schulte. Dans son format traditionnel, les chiffres de 1 à 25 sont dispersés aléatoirement sur une grille 5x5, le participant devant pointer chaque valeur dans l ordre croissant tout en fixant le centre géométrique de la matrice.",
+    "La table de Schulte (Schulte Table) est un exercice classique de recherche visuelle et de concentration, nommé d après Walter Schulte. Dans son format traditionnel, les chiffres de 1 à 25 sont dispersés aléatoirement sur une grille 5x5, le participant devant pointer chaque valeur dans l ordre croissant tout en fixant le centre géométrique de la matrice.",
     "En psychologie du sport appliquée, cet exercice a évolué pour devenir la 'grille de concentration' (Harris & Harris, 1984), décrite dans des manuels de psychologie du sport comme un exercice pour travailler la vitesse d exploration et la discipline mentale sous pression temporelle. Une étude en potentiels évoqués cognitifs (ERP) menée chez des enfants de 8 à 11 ans a révélé que la recherche séquentielle de chiffres active des composantes neuronales nettement plus exigeantes que le repérage isolé, un effet amplifié par l ajout de distracteurs chromatiques (Lu et al., 2022).",
     "Le simulateur de SkillDrills transforme cette table statique en une manche continue de 45 secondes. Plutôt qu une matrice statique isolée, la grille s élargit dynamiquement de 3x3 jusqu à 8x8 au fil des réussites, tout en introduisant des perturbations de rotation dès le niveau 5x5. Sur petit écran (moins de 380 px de large), la grille plafonne à 7x7. Vous vous entraînez ainsi à balayer un champ de plus en plus large dans une fenêtre stricte de 45 secondes (Treisman & Gelade, 1980 ; Wolfe, 2007).",
     "Méthodologie chronométrique : chaque action tactile ou clic est horodatée via l horloge haute résolution performance.now() du navigateur directement sur votre terminal. Les navigateurs intègrent une atténuation délibérée pour parer aux failles matérielles de type Spectre (résolution d environ 1 ms), et votre écran quantifie chaque affichage selon sa fréquence de rafraîchissement (environ 16,7 ms par image à 60 Hz, Woods et al., 2015). Évaluez votre progression sur un même matériel.",

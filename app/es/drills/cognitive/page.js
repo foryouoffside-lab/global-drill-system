@@ -104,7 +104,7 @@ const faqSchema = {
       "name": "¿Cómo ayuda la tabla de Schulte a la velocidad de lectura y procesamiento visual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La tabla de Schulte es una cuadrícula de números desordenados, asociada al psiquiatra Walter Schulte, que recorres desde el 1 en orden ascendente; la versión 5×5 es la más conocida. En SkillDrills la cuadrícula empieza en 3×3 y crece con cada tabla completada. Mantener la mirada en el centro y buscar el siguiente número con la visión periférica es una buena estrategia de práctica, pero no hay una mejora garantizada en la lectura ni fuera de la pantalla: sigue tu propio tiempo."
+        "text": "La tabla de Schulte es una cuadrícula de números desordenados, asociada a Walter Schulte, que recorres desde el 1 en orden ascendente; la versión 5×5 es la más conocida. En SkillDrills la cuadrícula empieza en 3×3 y crece con cada tabla completada. Mantener la mirada en el centro y buscar el siguiente número con la visión periférica es una buena estrategia de práctica, pero no hay una mejora garantizada en la lectura ni fuera de la pantalla: sigue tu propio tiempo."
       }
     },
     {

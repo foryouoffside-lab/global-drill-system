@@ -215,7 +215,7 @@ const faqSchema = {
       "name": "Verbessert das Training meine Sehkraft?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Eine höhere Punktzahl zeigt, dass du in genau dieser Aufgabe besser geworden bist. Eine Wirkung auf die Sehschärfe, auf Sportleistung oder andere Aufgaben ist damit nicht belegt, und die Übung ersetzt keine augenärztliche Untersuchung."
+        "text": "Eine höhere Punktzahl zeigt, dass du in genau dieser Aufgabe besser geworden bist. Eine Wirkung auf die Sehschärfe, auf Sportleistung oder andere Aufgaben ist damit nicht belegt."
       }
     },
     {

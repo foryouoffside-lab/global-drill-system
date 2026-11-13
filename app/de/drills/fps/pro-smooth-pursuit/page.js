@@ -117,7 +117,7 @@ export default function GermanProSmoothPursuitPage() {
       },
       {
         "@type": "Question",
-        "name": "Wie unterscheidet sich Smooth Pursuit neurologisch von Sakkaden?",
+        "name": "Wie unterscheidet sich Smooth Pursuit von Sakkaden?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Cyril Rashbass wies 1961 nach, dass Sakkaden und Blickfolgebewegungen (Smooth Pursuit) über voneinander unabhängige neuronale Schaltkreise gesteuert werden. Sakkaden sind ballistische Sprünge, ausgelöst durch Positionsfehler. Smooth Pursuit hingegen ist ein geschlossener Regelkreis, der auf Netzhaut-Geschwindigkeitsschlupf reagiert und über die Hirnareale MT/V5 und frontale Augenfelder vermittelt wird (Krauzlis, 2004)."

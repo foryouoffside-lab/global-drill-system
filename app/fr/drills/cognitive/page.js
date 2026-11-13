@@ -104,7 +104,7 @@ const faqSchema = {
       "name": "Quels sont les bénéfices de la table de Schulte pour la vitesse de lecture et le champ visuel ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La table de Schulte est une grille de nombres mélangés, associée au psychiatre Walter Schulte, que l'on parcourt de 1 dans l'ordre croissant ; la version 5×5 est la plus connue. Dans SkillDrills, la grille commence en 3×3 et s'agrandit à chaque table terminée. Garder le regard au centre et repérer le nombre suivant en vision périphérique est une bonne stratégie d'exercice, mais aucun gain chiffré sur le champ visuel ou la lecture n'est garanti : suivez plutôt votre propre temps de résolution."
+        "text": "La table de Schulte est une grille de nombres mélangés, associée à Walter Schulte, que l'on parcourt de 1 dans l'ordre croissant ; la version 5×5 est la plus connue. Dans SkillDrills, la grille commence en 3×3 et s'agrandit à chaque table terminée. Garder le regard au centre et repérer le nombre suivant en vision périphérique est une bonne stratégie d'exercice, mais aucun gain chiffré sur le champ visuel ou la lecture n'est garanti : suivez plutôt votre propre temps de résolution."
       }
     },
     {

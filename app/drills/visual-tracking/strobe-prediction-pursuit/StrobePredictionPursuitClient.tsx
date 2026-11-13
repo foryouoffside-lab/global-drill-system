@@ -653,7 +653,7 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
         </div>
 
         {!isFullscreen && <DrillAccordion id="about" title="About Occlusion Prediction Pursuit" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
-          <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Occlusion Prediction Pursuit is a browser practice task: follow a moving point, estimate its continuing direction during a brief covered interval, then compare the reappearance with your estimate. It does not track eye position; the summary is based on pointer position. Keep the task comfortable and stop for pain, dizziness, nausea, persistent blur, double vision, or unusual visual symptoms."}</p>
+          <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Occlusion Prediction Pursuit is a browser practice task: follow a moving point, estimate its continuing direction during a brief covered interval, then compare the reappearance with your estimate. It does not track eye position; the summary is based on pointer position. Keep the task comfortable and stop for pain, dizziness, nausea, persistent blur, double vision, or unusual visual discomfort."}</p>
         </DrillAccordion>}
 
         {/* SITE FOOTER */}

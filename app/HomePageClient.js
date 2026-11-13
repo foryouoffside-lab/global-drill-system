@@ -430,7 +430,7 @@ export default function HomePageClient({ copy = {}, faqs = [] }) {
                 </h2>
 
                 <p className="text-sm sm:text-base text-ink-2 leading-relaxed">
-                  {t('methodologyBody', 'Every drill is modeled directly on validated psychometric tests and competitive esports motor demands—isolating distinct neurological stimulus-response pathways and hand-eye coordination mechanics.')}
+                  {t('methodologyBody', 'Every drill is modeled directly on validated psychometric tests and competitive esports motor demands—isolating distinct stimulus-response skills and hand-eye coordination mechanics.')}
                 </p>
 
                 {/* Paradigm Pills */}

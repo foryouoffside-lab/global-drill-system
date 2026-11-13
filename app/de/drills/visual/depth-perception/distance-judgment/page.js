@@ -160,10 +160,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Wann sollte ich mein räumliches Sehen augenärztlich prüfen lassen?',
+      name: 'Was beeinflusst mein Ergebnis in dieser Übung?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Bei Doppelbildern, häufigem Danebengreifen, Schielen oder unterschiedlicher Sehstärke beider Augen (Anisometropie) lass die Augen untersuchen. Ein schlechtes Ergebnis in dieser Übung ist kein Befund; Müdigkeit, Bildschirm und Eingabegerät beeinflussen es.',
+        text: 'Müdigkeit, Bildschirm und Eingabegerät beeinflussen das Ergebnis. Vergleiche deine Durchgänge deshalb am selben Gerät, mit gleichem Abstand und gleicher Haltung.',
       },
     },
     {
@@ -171,7 +171,7 @@ const faqSchema = {
       name: 'Kann man Entfernungsschätzung und Abfang-Timing üben?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Das Abfang-Timing in dieser Übung kannst du durch Wiederholung vermutlich verbessern, weil du Rückmeldung zu jedem Versuch bekommst. Ein Übertrag auf Straßenverkehr oder Sport ist nicht belegt, und anatomische Ursachen gehören in augenärztliche Hände.',
+        text: 'Das Abfang-Timing in dieser Übung kannst du durch Wiederholung vermutlich verbessern, weil du Rückmeldung zu jedem Versuch bekommst. Ein Übertrag auf Straßenverkehr oder Sport ist nicht belegt.',
       },
     },
     {
@@ -212,7 +212,7 @@ const faqSchema = {
 const distanceGuideDe = {
   heading: 'Entfernung schätzen: Tiefenwahrnehmung und Abfang-Timing üben',
   intro: [
-    'Tiefenwahrnehmung ist die Fähigkeit, Entfernungen und die räumliche Reihenfolge von Objekten zu beurteilen. Dazu nutzt das Gehirn binokulare Hinweise (Stereosehen) und monokulare Hinweise wie Größenänderung, Überdeckung und Bewegungsparallaxe. Diese Übung ist kein Test des Stereosehens und keine augenärztliche Untersuchung.',
+    'Tiefenwahrnehmung ist die Fähigkeit, Entfernungen und die räumliche Reihenfolge von Objekten zu beurteilen. Dazu nutzt das Gehirn binokulare Hinweise (Stereosehen) und monokulare Hinweise wie Größenänderung, Überdeckung und Bewegungsparallaxe.',
     'Auf deinem flachen Bildschirm fehlt die binokulare Disparität, die der klassische Howard-Dolman-Apparat (Howard, 1919) misst. Hier siehst du nur einen monokularen Hinweis: Eine Kugel wächst entlang eines virtuellen Tunnels auf den Zielring zu. Aus dieser Größenzunahme lässt sich die Time-to-Contact (τ) ableiten (Lee, 1976; Regan & Beverley, 1978). Du übst, den Klick genau in dem Moment zu setzen, in dem die Kugel den Ring ausfüllt, bei stetig steigendem Tempo.',
     'Eine Runde dauert 45 Sekunden. Der Zielring liegt jedes Mal auf einer anderen Tiefe. Bis 7 % Abweichung gibt es 150 Punkte, bis 16 % 100 Punkte; alle 750 Punkte steigt das Level, die Kugel kommt schneller und die Grenzen schrumpfen bis auf 4 % und 10 %. Fehlklicks kosten nichts.',
     'Bildwiederholrate und Eingabelatenz beeinflussen den Klickzeitpunkt (Woods et al., 2015). Vergleiche Ergebnisse daher nur auf demselben Gerät. Bestwerte bleiben im lokalen Speicher deines Browsers.'
@@ -312,7 +312,7 @@ const copyDe = {
   aboutTitle: 'Über die Übung zur Entfernungsschätzung',
   overviewTitle: 'Was misst diese Übung?',
   overviewLead: 'Die Übung misst, wie genau du den Zeitpunkt der Deckung einer herannahenden Kugel mit dem Zielring einschätzt.',
-  overviewBody: 'Sie nutzt die optische Expansionsrate (Looming) als Hinweis und wertet den Klick als prozentualen Timing-Fehler. Sie ist kein Sehtest und ersetzt keine augenärztliche Untersuchung.',
+  overviewBody: 'Sie nutzt die optische Expansionsrate (Looming) als Hinweis und wertet den Klick als prozentualen Timing-Fehler.',
   aboutCards: [
     { iconBg: 'bg-blue-600', title: 'Zielgruppe', text: 'Gamer, Ballsportler und alle, die Abfang-Timing am Bildschirm üben möchten.' },
     { iconBg: 'bg-cyan-600', title: 'Trainierte Fähigkeiten', text: 'Optisches Looming, Time-to-Contact Berechnung, Auge-Hand-Timing und räumliche Antizipation.' },

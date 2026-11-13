@@ -126,8 +126,8 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Stop when symptoms appear",
-      "text": "Take a break or stop for pain, dizziness, nausea, persistent blur, double vision, or unusual visual symptoms."
+      "name": "Stop when it feels uncomfortable",
+      "text": "Take a break or stop for pain, dizziness, nausea, persistent blur, double vision, or unusual visual discomfort."
     }
   ]
 };
@@ -137,15 +137,15 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     ["What is Occlusion Prediction Pursuit?", "It is a browser task in which a moving point is briefly covered and then shown again. You observe the visible path and compare the reappearance with your estimate; the page does not measure eye position."],
-    ["Is this a strobe-light or strobe-glasses exercise?", "No. It is a controlled target-occlusion task, not a simulation of stroboscopic eyewear or a recommendation to use it. It should remain comfortable and should be stopped if visual symptoms appear."],
+    ["Is this a strobe-light or strobe-glasses exercise?", "No. It is a controlled target-occlusion task, not a simulation of stroboscopic eyewear or a recommendation to use it. It should remain comfortable and should be stopped if it becomes uncomfortable."],
     ["Does the drill measure smooth-pursuit gain or visual acuity?", "No. The browser knows the point's drawn position and your settings, but it cannot see your eyes. Results are pointer-based task and setup records."],
     ["What should I watch during the covered interval?", "Keep a relaxed estimate of the point's continuing direction. Do not force a large eye or head movement, and treat a mismatch simply as feedback on your estimate."],
     ["What does the end screen record?", "The summary is based on pointer position: how long the pointer stayed on the target and its average distance from the target centre, reported separately for the visible and covered phases. Eye position is not recorded."],
     ["How should I compare sessions?", "Compare only sessions made on the same screen, browser and settings. Change one setting at a time and read the visible-phase and covered-phase distances side by side to see how your estimate holds while the point is hidden."],
     ["Can it improve sports or gaming performance?", "Transfer is not established by this browser task. It can provide repeatable practice for observing moving targets, but it does not promise a sport, gaming, or eyesight benefit."],
     ["How should I set the difficulty?", "Start with the slowest comfortable setting and a visible path. Change one variable at a time, keep the session short, and return to the previous setting if comfort or control drops."],
-    ["How long should I practise?", "Use short blocks with breaks and stop when the task becomes uncomfortable. There is no universal prescription for this browser exercise."],
-    ["When should I stop and seek advice?", "Stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual visual symptoms. Seek professional advice if symptoms persist or recur outside the task."]
+    ["How long should I practise?", "Use short blocks with breaks and stop when the task becomes uncomfortable. Shorter, regular sessions are easier to compare."],
+    ["When should I stop?", "Stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual visual discomfort."]
   ].map(([name, text]) => ({
     "@type": "Question",
     name,
@@ -158,17 +158,17 @@ const guide = {
   intro: [
     "This browser exercise presents one moving point, briefly covers it, and then shows it again. The task is designed as repeatable visual-motion practice for observing direction and estimating a short continuation; it is not a simulation of stroboscopic equipment.",
     "During occlusion, the point continues along its programmed path. A user can make a calm prediction and compare it with the reappearance, but the browser cannot determine where the eyes were looking or whether a mismatch came from vision, attention, input, or display timing.",
-    "Use a comfortable distance, neutral posture, normal blinking, and short sessions. Keep the path visible while learning the task, change only one setting at a time, and stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual symptoms."
+    "Use a comfortable distance, neutral posture, normal blinking, and short sessions. Keep the path visible while learning the task, change only one setting at a time, and stop for pain, dizziness, nausea, persistent blur, double vision, headache, or anything that feels unusual."
   ],
   benchmarks: {
     title: "Controlled-Occlusion Practice Bands",
     headers: ["Practice band", "Speed setting", "What to compare", "Comfort check", "Use"],
     rows: [
-      ["Orientation", "0.5x–1.0x", "Can you describe the continuing direction?", "No symptom increase", "Learn the task"],
+      ["Orientation", "0.5x–1.0x", "Can you describe the continuing direction?", "Still comfortable", "Learn the task"],
       ["Steady", "1.0x–2.0x", "Does the estimate stay consistent?", "Relaxed eyes and posture", "Repeat the same setup"],
       ["Variable", "2.0x–3.0x", "Does one changed setting alter comfort?", "Short block with breaks", "Add one challenge"],
       ["Advanced practice", "3.0x+", "Compare only like-for-like sessions", "Stop before strain", "Optional challenge"],
-      ["Reference", "Any setting", "Record duration, device, and symptoms", "Comfort is the gate", "Personal baseline"]
+      ["Reference", "Any setting", "Record duration, device, and comfort", "Comfort is the gate", "Personal baseline"]
     ],
     note: "These are practice bands for this browser exercise, not population norms, percentiles, or eye-movement measurements."
   },
@@ -191,9 +191,9 @@ const guide = {
         tips: "Compare like-for-like sessions on the same display and browser."
       },
       {
-        name: "Use a symptom stop rule",
-        desc: "Keep sessions short and stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual visual symptoms.",
-        tips: "Seek professional advice if symptoms persist or recur outside the task."
+        name: "Use a comfort stop rule",
+        desc: "Keep sessions short and stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual visual discomfort.",
+        tips: "Take a break and return to an easier setting next time."
       }
     ]
   },

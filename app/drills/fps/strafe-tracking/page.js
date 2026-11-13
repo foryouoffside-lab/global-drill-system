@@ -131,10 +131,10 @@ export default function StrafeTrackingPage() {
       },
       {
         "@type": "Question",
-        "name": "What is the neurological delay in reacting to an unpredictable strafe reversal?",
+        "name": "What is the delay in reacting to an unpredictable strafe reversal?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "As demonstrated by Michael I. Posner (1990) and David L. Woods et al. (2015), the neurological latency to detect a visual velocity reversal, disengage attention, and activate opposing agonist motor units typically ranges from 180 ms to 240 ms in elite human performers."
+          "text": "As demonstrated by Michael I. Posner (1990) and David L. Woods et al. (2015), the latency to detect a visual velocity reversal, disengage attention, and activate opposing agonist motor units typically ranges from 180 ms to 240 ms in elite human performers."
         }
       },
       {
@@ -230,7 +230,7 @@ export default function StrafeTrackingPage() {
     intro: [
       "A strafe tracking aim trainer teaches you to keep your crosshair on an opponent who strafes left and right and reverses direction. This drill sends a target on unpredictable ADAD paths while you hold fire and follow it. It scores how long you stay on target, which helps Apex, Overwatch 2, Valorant and CS2 gunfights.",
       "Strafe Tracking Aim Trainer is a specialized neuromuscular conditioning drill engineered to isolate and refine reactive lateral tracking against unpredictable ADAD evasion. In modern competitive first-person shooters—most notably Apex Legends, Overwatch 2, The Finals, and Call of Duty—gunfight outcomes depend on tracking uptime: the continuous percentage of time your crosshair remains locked on an enemy while they execute rapid direction shifts, crouch spams, and erratic strafes.",
-      "The neurological foundation of visual motion pursuit was elucidated by Richard J. Krauzlis (2004), detailing how the brain coordinates smooth pursuit eye movements through reciprocal circuits connecting the primary visual motion cortex (MT/V5), the medial superior temporal area (MST), and the frontal eye field (FEF). When a target moves, these structures compute real-time retinal velocity error to drive ocular and manual motor systems in synchronized pursuit.",
+      "The foundation of visual motion pursuit was elucidated by Richard J. Krauzlis (2004), detailing how the brain coordinates smooth pursuit eye movements through reciprocal circuits connecting the primary visual motion cortex (MT/V5), the medial superior temporal area (MST), and the frontal eye field (FEF). When a target moves, these structures compute real-time retinal velocity error to drive ocular and manual motor systems in synchronized pursuit.",
       "In a classical discovery in visual psychophysics, Cyril Rashbass (1961) demonstrated that smooth pursuit and saccadic movements are governed by distinct physiological subsystems: saccades respond to positional displacement, whereas smooth pursuit responds exclusively to retinal velocity (slip). In gunfights, players who attempt to 'predict' reversals frequently trigger involuntary catch-up saccades, resulting in overshooting and erratic aim stutter.",
       "By synthesizing Michael I. Posner's (1990) orienting attention model, C. Shawn Green & Daphne Bavelier's (2003) spatial tracking paradigms, and low-latency digital chronometry (Woods et al., 2015), this drill conditions players to suppress premature guesswork, eliminate forearm tension, and achieve pure reactive smooth pursuit across dynamic velocity vectors.",
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."

@@ -154,7 +154,7 @@ const faqSchema = {
       "name": "¿Qué es una tabla de Schulte y para qué sirve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La tabla de Schulte lleva el nombre del psiquiatra alemán Walter Schulte: una cuadrícula con números desordenados que hay que encontrar en orden ascendente. Hoy se usa sobre todo como ejercicio de búsqueda visual y concentración, también en cursos de lectura rápida. Esta versión online es un ejercicio, no un test psicológico."
+        "text": "La tabla de Schulte lleva el nombre de Walter Schulte: una cuadrícula con números desordenados que hay que encontrar en orden ascendente. Hoy se usa sobre todo como ejercicio de búsqueda visual y concentración, también en cursos de lectura rápida. Esta versión online es un ejercicio, no un test psicológico."
       }
     },
     {
@@ -235,7 +235,7 @@ const faqSchema = {
 const concentrationGridGuideEs = {
   heading: "Guía Completa de la Tabla de Schulte y Psicología de la Atención Visual",
   intro: [
-    "La Tabla de Schulte es un ejercicio clásico de búsqueda visual y concentración que lleva el nombre del psiquiatra alemán Walter Schulte. Su formato tradicional exige localizar los números del 1 al 25 en orden estrictamente ascendente sobre una matriz de 5x5 manteniendo la fijación en el centro.",
+    "La Tabla de Schulte es un ejercicio clásico de búsqueda visual y concentración que lleva el nombre de Walter Schulte. Su formato tradicional exige localizar los números del 1 al 25 en orden estrictamente ascendente sobre una matriz de 5x5 manteniendo la fijación en el centro.",
     "En la psicología del deporte aplicada, este ejercicio evolucionó hacia la denominada 'cuadrícula de concentración' (Harris & Harris, 1984), descrita en manuales de psicología del deporte como ejercicio de barrido ocular y concentración bajo presión de tiempo. Un estudio de potenciales relacionados con eventos (ERP) en niños de 8 a 11 años reveló que la búsqueda secuencial activa componentes neuronales sensiblemente más lentos que la localización simple, acentuándose la latencia ante estímulos dicromáticos (Lu et al., 2022).",
     "La tabla de Schulte online de SkillDrills convierte la hoja estática en una ronda continua de 45 segundos. La cuadrícula crece desde 3x3 hasta 8x8 a medida que completas fases (7x7 en pantallas de menos de 380 px), con dígitos ligeramente girados desde 5x5. Así practicas recorrer un área cada vez mayor dentro de una ventana fija de 45 segundos (Treisman & Gelade, 1980; Wolfe, 2007).",
     "Metodología de cronometría: cada evento de pulsación se registra con el reloj de alta resolución performance.now() del navegador en su propio dispositivo. Los navegadores web aplican una atenuación deliberada por motivos de seguridad (mitigación de Spectre a ~1 ms) y la pantalla cuantiza las actualizaciones a su tasa de refresco: aproximadamente 16,7 ms por fotograma a 60 Hz (Woods et al., 2015). Se recomienda evaluar progresos en el mismo dispositivo.",

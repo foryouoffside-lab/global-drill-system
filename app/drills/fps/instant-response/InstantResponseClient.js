@@ -102,14 +102,14 @@ const ABOUT_SECTIONS = [
     icon: Zap,
     title: "Speed Bonus & Trigger Discipline",
     paragraphs: [
-      "Sub-150ms reactions earn up to +150 speed bonus points, directly rewarding high neurological processing speed. Pre-firing during idle states or clicking dim feints breaks your combo multiplier, forcing absolute trigger discipline under extreme speed constraints."
+      "Sub-150ms reactions earn up to +150 speed bonus points, directly rewarding fast processing speed. Pre-firing during idle states or clicking dim feints breaks your combo multiplier, forcing absolute trigger discipline under extreme speed constraints."
     ]
   }
 ];
 
 const FAQ_ITEMS = [
   { q: "What is FPS reaction training?", a: "FPS reaction training involves specific drills designed to improve your ability to detect, process, and react to visual stimuli and unexpected threats in a competitive gaming environment." },
-  { q: "How do professional FPS players react so quickly?", a: "Pros combine lower hardware input latency with trained visual anticipation, crosshair placement, and high-speed neurological processing." },
+  { q: "How do professional FPS players react so quickly?", a: "Pros combine lower hardware input latency with trained visual anticipation, crosshair placement, and fast visual processing." },
   { q: "Can visual reaction speed be trained?", a: "Yes, consistent exposure to visual reflex stimuli strengthens the brain's neural pathways, reducing the delay between detection and trigger execution." },
   { q: "Does this drill help in Valorant?", a: "Yes. In Valorant, holding defensive angles requires fast visual stimulus reaction to click peeking opponents instantly." },
   { q: "Does this drill help in CS2?", a: "Absolutely. CS2 gunfights are won in milliseconds. Improving visual stimulus response speed directly translates to winning quick-peek engagements." },

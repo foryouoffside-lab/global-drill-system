@@ -155,7 +155,7 @@ const faqSchema = {
       name: 'What is motor inhibition in human performance?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Motor inhibition is the neurological capacity of the central nervous system to suppress or arrest an ongoing motor command (Logan et al. 1984). It relies on fast-acting antagonist muscle recruitment to overcome limb inertia.',
+        text: 'Motor inhibition is the capacity to suppress or arrest an ongoing motor command (Logan et al. 1984). It relies on fast-acting antagonist muscle recruitment to overcome limb inertia.',
       },
     },
     {

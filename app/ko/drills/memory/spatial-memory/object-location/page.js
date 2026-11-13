@@ -133,7 +133,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "인지 신경과학에서 '특징 결합(Object-Location Binding)'이란 무엇인가요?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "뇌의 복측 시각 경로('무엇'을 식별)와 배측 시각 경로('어디'를 처리)에서 전달된 정보가 해마 및 해마곁이랑에서 하나의 통합된 에피소드 표상으로 결합되는 신경학적 과정입니다."
+                  "text": "뇌의 복측 시각 경로('무엇'을 식별)와 배측 시각 경로('어디'를 처리)에서 전달된 정보가 해마 및 해마곁이랑에서 하나의 통합된 에피소드 표상으로 결합되는 과정입니다."
             }
       },
       {

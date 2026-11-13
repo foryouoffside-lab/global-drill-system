@@ -162,7 +162,7 @@ const faqSchema = {
       "name": "What is saccadic suppression?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Saccadic suppression is the neurological phenomenon where the brain temporarily suspends visual processing during a saccade (~20–40 ms) so that you do not experience motion blur during rapid eye jumps."
+        "text": "Saccadic suppression is the phenomenon where the brain temporarily suspends visual processing during a saccade (~20–40 ms) so that you do not experience motion blur during rapid eye jumps."
       }
     },
     {

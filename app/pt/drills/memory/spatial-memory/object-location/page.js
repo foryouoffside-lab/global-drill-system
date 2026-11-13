@@ -133,7 +133,7 @@ export default function LocalizedObjectLocationPage() {
             "name": "O que significa 'Feature Binding' em neurociência cognitiva?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "É o mecanismo neurológico pelo qual a via visual ventral (que identifica o objeto) e a via dorsal (que computa a posição no espaço) convergem no hipocampo e no córtex para-hipocampal gerando uma memória integrada."
+                  "text": "É o mecanismo pelo qual a via visual ventral (que identifica o objeto) e a via dorsal (que computa a posição no espaço) convergem no hipocampo e no córtex para-hipocampal gerando uma memória integrada."
             }
       },
       {
