@@ -5,17 +5,17 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — pursuit-tracker (visual-pursuit-tracker)
-// PRIMARY:  "smooth pursuit test"           — Foundational ocular motor diagnostic search (~1,100 searches/mo)
-//           "smooth pursuit eye tracking"   — High-intent clinical and athletic testing term
+// PRIMARY:  "smooth pursuit test"           — Foundational ocular motor search (~1,100 searches/mo)
+//           "smooth pursuit eye tracking"   — High-intent athletic testing term
 //           "visual pursuit test"           — General visual assessment query
 // SECONDARY / LSI:
-//           "smooth pursuit eye movement test" — Clinical neuro-ophthalmology phrase
+//           "smooth pursuit eye movement test" — Eye-movement phrase
 //           "smooth pursuit training"       — Action-oriented sports vision and cognitive rehabilitation query
 //           "eye tracking accuracy test"    — Performance hardware and gaze calibration query
 //           "dynamic visual pursuit"        — Kinetic tracking psychophysics query
 //           "pursuit aim trainer"           — Competitive gaming and esports tracking term
 //           "visual tracking exercises"     — High-volume user exercise query
-//           "smooth pursuit exercises"      — Vision therapy and rehabilitation term
+//           "smooth pursuit exercises"      — Vision exercise term
 //           "continuous visual tracking test" — Temporal tracking continuity query
 //           "smooth pursuit latency"        — Physiological chronometry and research term
 // LOCALES:
@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "Can smooth pursuit eye tracking be trained and improved?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, practice can improve your score on this task. Whether it changes eye-movement measures such as pursuit gain cannot be read from a cursor score, so use it as practice, not as a diagnostic."
+        "text": "Yes, practice can improve your score on this task. Whether it changes eye-movement measures such as pursuit gain cannot be read from a cursor score, so use it as practice."
       }
     },
     {
@@ -387,7 +387,7 @@ export default function AutoPursuitPage() {
           <div>
             <h4 className="font-semibold text-white">Can smooth pursuit eye tracking be trained and improved?</h4>
             <p className="text-slate-300 mt-1">
-              Yes, practice can improve your score on this task. Whether it changes eye-movement measures such as pursuit gain cannot be read from a cursor score, so use it as practice, not as a diagnostic.
+              Yes, practice can improve your score on this task. Whether it changes eye-movement measures such as pursuit gain cannot be read from a cursor score, so use it as practice.
             </p>
           </div>
           <div>

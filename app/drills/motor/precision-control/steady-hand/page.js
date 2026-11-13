@@ -167,7 +167,7 @@ const faqSchema = {
       name: 'Can steady hand drills help digital artists and gamers?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The drill resembles movements from digital illustration and esports tracking, where the pointer has to stay calm on a narrow line. How much that transfers varies from person to person. The game is not a medical tremor test.',
+        text: 'The drill resembles movements from digital illustration and esports tracking, where the pointer has to stay calm on a narrow line. How much that transfers varies from person to person.',
       },
     },
     {

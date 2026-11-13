@@ -100,7 +100,7 @@ export default function NBackPage() {
         "name": "What is the N-Back Working Memory Test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The n-back task is a classic research task for working memory updating: you watch a stream of items and decide whether the current one matches the item n steps earlier. This SkillDrills version is a free single n-back game with letters, not a clinical test. It starts at 3-back; you answer each letter with the MATCH or NO MATCH button (no keyboard keys) within the display window."
+          "text": "The n-back task is a classic research task for working memory updating: you watch a stream of items and decide whether the current one matches the item n steps earlier. This SkillDrills version is a free single n-back game with letters. It starts at 3-back; you answer each letter with the MATCH or NO MATCH button (no keyboard keys) within the display window."
         }
       },
       {
@@ -273,8 +273,7 @@ export default function NBackPage() {
           "An N-back test shows a stream of letters and asks whether the current letter matches the one shown n steps earlier. In this free online version you start at 3-back, move up one level every 8 correct answers, and each letter's response window shrinks from 2.0 to 1.2 seconds as you level up, so it exercises working-memory updating, not just storage.",
           "Unlike passive span tests that measure raw storage capacity, the N-Back task requires participants to continuously update a dynamic mental buffer. As letters appear in rapid succession, users must decide whether the current letter matches the one presented exactly N steps earlier (starting at 3-back, progressing to 4-back and beyond), constantly dropping old letters and adding new ones. About a third of letters are matches. This is single n-back with letters only, answered with on-screen buttons; there is no dual mode and no keyboard control.",
           "How the game works: a run lasts 45 seconds, and the clock pauses while the first n letters are shown for memorizing. Each correct answer scores 150 points; a wrong answer or a timeout scores nothing and nothing is deducted. Response speed is not measured or scored, beyond answering inside the window.",
-          "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
-          "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health. If you have concerns about your memory or thinking, speak to a qualified clinician."
+          "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below."
         ]}
         metrics={[
           {

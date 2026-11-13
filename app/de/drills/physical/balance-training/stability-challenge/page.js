@@ -61,8 +61,8 @@ const faqs = [
     a: 'Das Level steigt alle 250 Punkte und zusätzlich bei langen Serien im Ring, ohne Obergrenze. Der Ring schrumpft von 45 px bis auf mindestens 16 px, und die Windstärke beginnt bei 250 und wächst weiter (850 auf Level 15).',
   },
   {
-    q: 'Misst der Test Gleichgewicht oder Gesundheit?',
-    a: 'Nein. Es ist ein Mausspiel und misst oder diagnostiziert weder Gleichgewicht noch Gesundheitszustand. Wenn dich körperliche Beschwerden beunruhigen, wende dich an medizinisches Fachpersonal.',
+    q: 'Wie vergleiche ich meine Ergebnisse?',
+    a: 'Vergleiche deine Ergebnisse nur mit eigenen Runden auf derselben Maus, Empfindlichkeit und demselben Monitor; Bildwiederholrate und Polling-Rate beeinflussen die Eingabeverzögerung.',
   },
   {
     q: 'Wie wird die Note berechnet?',
@@ -107,7 +107,7 @@ const guide = {
   intro: [
     'Beim Maus-Stabilitätstest schiebt ein Wind mit zufällig wechselnder Richtung dein Fadenkreuz aus der Bildmitte. Du gleichst die Wind-Drift mit der Maus aus und hältst das Fadenkreuz im Ring. Eine Runde dauert fest 45 Sekunden.',
     'Schnelle Zielbewegungen werden als grobe Bewegung mit anschließender, visuell gesteuerter Feinkorrektur beschrieben (Woodworth, 1899). Dieser Drill lässt dich diese Feinkorrektur ohne Pause wiederholen; je kleiner der Ring, desto genauer muss sie sein (Fitts, 1954).',
-    'Es ist ein Spiel für Cursor-Stabilität und misst weder Gleichgewicht noch Gesundheit. Vergleiche deine Ergebnisse nur mit eigenen Runden auf derselben Maus, Empfindlichkeit und demselben Monitor; Bildwiederholrate und Polling-Rate beeinflussen die Eingabeverzögerung (Woods et al., 2015).',
+    'Es ist ein Spiel für Cursor-Stabilität. Vergleiche deine Ergebnisse nur mit eigenen Runden auf derselben Maus, Empfindlichkeit und demselben Monitor; Bildwiederholrate und Polling-Rate beeinflussen die Eingabeverzögerung (Woods et al., 2015).',
   ],
   benchmarks: {
     title: 'SkillDrills-Übungsstufen',
@@ -121,7 +121,7 @@ const guide = {
       ['D', '1.530 – 3.442', 'Weiter so'],
       ['F', 'unter 1.530', 'Übung nötig'],
     ],
-    note: 'Die Noten vergleichen die Endpunktzahl mit dem Referenzwert von 17.000 Punkten. Es sind SkillDrills-Übungsstufen, keine Nutzerstatistik, keine Perzentile und keine medizinischen Normen.',
+    note: 'Die Noten vergleichen die Endpunktzahl mit dem Referenzwert von 17.000 Punkten. Es sind SkillDrills-Übungsstufen, keine Nutzerstatistik und keine Perzentile.',
   },
   techniques: {
     title: 'Vier Tipps, um länger im Ring zu bleiben',

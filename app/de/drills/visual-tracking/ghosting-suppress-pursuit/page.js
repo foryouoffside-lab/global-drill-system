@@ -104,7 +104,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Was ist die Übung Blickstabilität trainieren mit Geisterspur?",
-    "a": "Eine Browser-Übung: Du verfolgst ein gerade laufendes Ziel und lässt dich von der optionalen Ringspur nicht ablenken. Dauer (30 bis 120 Sekunden), Tempo, Zielgröße und Linie sind einstellbar. Kein Sehtest, keine Therapie."
+    "a": "Eine Browser-Übung: Du verfolgst ein gerade laufendes Ziel und lässt dich von der optionalen Ringspur nicht ablenken. Dauer (30 bis 120 Sekunden), Tempo, Zielgröße und Linie sind einstellbar. Das Ergebnis basiert auf der Zeigerposition."
   },
   {
     "q": "Ist das ein Monitor-Ghosting-Test?",
@@ -132,7 +132,7 @@ const faqs = [
   },
   {
     "q": "Verbessert die Übung meine Sehkraft oder meine Aim?",
-    "a": "Das kann niemand garantieren. Die Übung ist ein Training im Verfolgen eines bewegten Ziels und verspricht weder bessere Sehkraft noch die Behandlung von Augenproblemen noch besseres Zielen in Shootern. Bei Beschwerden zum Augenarzt."
+    "a": "Das kann niemand garantieren. Die Übung ist ein Training im Verfolgen eines bewegten Ziels und verspricht weder bessere Sehkraft noch besseres Zielen in Shootern. Vergleiche deine Sessions auf demselben Bildschirm mit denselben Einstellungen."
   },
   {
     "q": "Beeinflussen Bildschirm und Umgebung das Ergebnis?",
@@ -156,7 +156,7 @@ const guideProps = {
   "heading": "Anleitung: Blickstabilität trainieren: Ziel mit Geisterspur",
   "intro": [
     "Bei dieser Übung, mit der du Blickstabilität trainieren kannst, läuft das Ziel mit gleichmäßigem Tempo geradeaus und prallt an den Rändern ab. Schaltest du die Spur ein, zeichnet die Seite blasse, verblassende Ringe hinter das Ziel (standardmäßig aus). Ziel ist, den Blick auf dem festen Ziel zu halten und den Kopien nicht zu folgen.",
-    "Der Browser kennt die gezeichnete Zielposition, deine Einstellungen und den Pointer, nicht die Position deiner Augen. Am Ende siehst du, wie lange der Pointer auf dem Ziel lag und wie weit er im Mittel von der Zielmitte entfernt war, ohne Bewertung. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
+    "Der Browser kennt die gezeichnete Zielposition, deine Einstellungen und den Pointer, nicht die Position deiner Augen. Am Ende siehst du, wie lange der Pointer auf dem Ziel lag und wie weit er im Mittel von der Zielmitte entfernt war, ohne Bewertung. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll auf Basis der Zeigerposition.",
     "Nutze einen bequemen Abstand und vergleiche nur Sessions auf demselben Bildschirm und Browser. Bildwiederholrate und Eingabegerät beeinflussen die Darstellung (Woods et al., 2015). Brich bei Schmerzen, Schwindel, Übelkeit oder anhaltend verschwommenem Sehen ab."
   ],
   "benchmarks": {

@@ -8,7 +8,7 @@ const trackingDrillCount = trackingDrills.length;
 
 const legacyMetadata = {
   title: `Free Eye Tracking Training - Smooth Pursuit Drills`,
-  description: `Free browser-based visual motion practice with ${trackingDrillCount} smooth-pursuit and tracking drills. No sign-up required; not a clinical eye test or treatment.`,
+  description: `Free browser-based visual motion practice with ${trackingDrillCount} smooth-pursuit and tracking drills. No sign-up required; results are based on pointer position.`,
   keywords: [
     'eye tracking training online', 'free eye tracking training', 'eye tracking exercises',
     'smooth pursuit eye movement', 'smooth pursuit training', 'pursuit eye training',
@@ -26,7 +26,7 @@ const legacyMetadata = {
   ],
   openGraph: {
     title: `Free Eye Tracking Training Online - ${trackingDrillCount} Smooth Pursuit Drills | SkillDrills`,
-    description: `Free browser-based visual motion practice with ${trackingDrillCount} smooth-pursuit drills. Not a clinical eye test or treatment.`,
+    description: `Free browser-based visual motion practice with ${trackingDrillCount} smooth-pursuit drills. Results are based on pointer position.`,
     type: 'website',
     url: 'https://skilldrills.online/drills/visual-tracking',
     siteName: 'SkillDrills',
@@ -73,7 +73,7 @@ const faqSchema = {
       "name": "What is predictive pursuit, and how does the brain track occluded targets?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Predictive pursuit describes using recent motion information to anticipate a target during a brief controlled occlusion. These drills provide a practice task; they do not measure the brain or guarantee a clinical or sport-performance change."
+        "text": "Predictive pursuit describes using recent motion information to anticipate a target during a brief controlled occlusion. These drills provide a practice task; they do not measure the brain or guarantee a sport-performance change."
       }
     },
     {
@@ -86,10 +86,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Can these drills replace vision therapy or concussion care?",
+      "name": "What do these drills record, and how should you use the result?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. A browser animation is not an assessment or rehabilitation plan. Anyone with concussion symptoms, double vision, persistent dizziness, eye pain, or a diagnosed visual disorder should follow a qualified clinician’s advice and stop if symptoms worsen."
+        "text": "Each session records your settings and the pointer position relative to the target: time on target and average distance from the target centre. Eye position is not recorded. Compare results only between sessions on the same screen, browser and settings, and change one setting at a time."
       }
     },
     {
@@ -97,7 +97,7 @@ const faqSchema = {
       "name": "What is gaze stability, and how does it relate to the Vestibulo-Ocular Reflex (VOR)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Gaze stability means keeping a visual target clear while the visual scene or head position changes. These drills keep the head still and therefore do not test the vestibulo-ocular reflex (VOR) or diagnose visual-vestibular function."
+        "text": "Gaze stability means keeping a visual target clear while the visual scene or head position changes. These drills keep the head still and therefore do not train or measure the vestibulo-ocular reflex (VOR)."
       }
     },
     {
@@ -113,7 +113,7 @@ const faqSchema = {
       "name": "Why do high refresh rate monitors (144Hz to 360Hz) matter for visual tracking drills?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Refresh rate and browser load affect how smooth the animation appears, but a higher refresh rate does not make the task a clinical measurement. The drills now use time-based motion, a capped render loop, and cached canvas layers to reduce avoidable frame work."
+        "text": "Refresh rate and browser load affect how smooth the animation appears, but a higher refresh rate does not change what the task records: pointer position relative to the target. The drills now use time-based motion, a capped render loop, and cached canvas layers to reduce avoidable frame work."
       }
     }
   ]

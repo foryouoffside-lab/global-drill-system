@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 //           "millisecond latency test"      — High-precision chronometry query
 //           "visual reflex drill"           — Training-specific intent
 //           "strobe latency test online"    — Direct browser query
-//           "optical reaction test"         — Clinical vision science query
+//           "optical reaction test"         — Vision science query
 //           "reflex training drill"         — Athletic and gamer reflex workout
 //           "visual reaction speed test"    — Direct testing query
 // LOCALES:
@@ -269,7 +269,7 @@ const lightReactionGuide = {
     title: "Visual reaction latency bands (editorial guide)",
     headers: ["Performance Band", "Mean Reaction Latency", "Score & Combo Threshold", "Neuromuscular & Reflex Profile"],
     rows: [
-      ["Tier 1: Apex Neural Reflex", "< 180 ms Latency", "Score: 15,000+ | Combo 28x+", "Fastest band in this drill. A practice target, not a clinical or athletic standard."],
+      ["Tier 1: Apex Neural Reflex", "< 180 ms Latency", "Score: 15,000+ | Combo 28x+", "Fastest band in this drill. A practice target."],
       ["Tier 2: Superior Visual Reflex", "180 – 219 ms Latency", "Score: 10,500 – 14,999 | Combo 18x+", "Rapid optic-motor coupling; consistent latencies under 220 ms with minimal temporal drift across long sessions."],
       ["Tier 3: Solid Baseline Reflex", "220 – 259 ms Latency", "Score: 6,000 – 10,499 | Combo 10x+", "Healthy adult baseline; typical unprimed visual motor response with occasional variance under fatigue."],
       ["Tier 4: Moderate Response Delay", "260 – 319 ms Latency", "Score: 2,500 – 5,999 | Combo 5x+", "Extended cognitive processing latency; susceptible to display lag, ocular fatigue, or mild attention lapses."],

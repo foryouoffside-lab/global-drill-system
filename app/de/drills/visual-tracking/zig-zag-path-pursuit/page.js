@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/de/drills/visual-tracking/zig-zag-path-pursuit';
 const title = "Blickfolge Übungen: Zickzack-Bahn | SkillDrills";
-const description = "Blickfolge Übungen auf einer Zickzack-Bahn: Ein Ziel läuft in steilen Kehren auf und ab, von links nach rechts und zurück. Kostenlos im Browser, kein Augentest.";
+const description = "Blickfolge Übungen auf einer Zickzack-Bahn: Ein Ziel läuft in steilen Kehren auf und ab, von links nach rechts und zurück. Kostenlos im Browser.";
 
 export const metadata = {
   title,
@@ -91,7 +91,7 @@ const faqs = [
   { q: "Misst die Übung meine Augenbewegungen?", a: "Nein. Der Browser kann nicht erkennen, wohin du schaust. Er kennt nur die Position, an der das Ziel gezeichnet wird, deine Einstellungen und die Pointer-Position. Du musst weder klicken noch tippen; das Ergebnis ist ein Übungsprotokoll für dich selbst." },
   { q: "Gibt es eine Punktzahl oder Bewertung?", a: "Eine Bewertung gibt es nicht. Am Ende siehst du den Zeitanteil mit dem Pointer auf dem Ziel, den mittleren und den RMS-Abstand des Pointers zur Zielmitte, Dauer, Geschwindigkeitsfaktor und die Zahl deiner bisherigen Durchgänge (in diesem Browser gespeichert). Gemessen wird der Pointer, nicht deine Augen. Wenn du Zielverluste zählen willst, notiere sie selbst." },
   { q: "Welche Einstellungen gibt es?", a: "Dauer 30, 45, 60, 90 oder 120 Sekunden, Geschwindigkeit 0,5- bis 9,0-fach, Zielgröße 10 bis 50 px. Außerdem lassen sich die Linie (Zickzackbahn) ausblenden, Zufallstempo, Leuchtspur, Glow, Scanlines, heller oder dunkler Hintergrund und die Zielfarbe umschalten. Mit Esc beendest du den Durchgang jederzeit." },
-  { q: "Verbessert das meine Sehkraft oder mein Aim?", a: "Das kann niemand garantieren. Die Übung ist ein Spiel, bei dem du ein bewegtes Ziel mit den Augen verfolgst. Sie ist kein Sehtest, keine Therapie und verspricht kein besseres Aim in Shootern. Bei Beschwerden mit den Augen wende dich an eine Augenärztin oder einen Augenarzt." },
+  { q: "Verbessert das meine Sehkraft oder mein Aim?", a: "Das kann niemand garantieren. Die Übung ist ein Spiel, bei dem du ein bewegtes Ziel mit den Augen verfolgst, und verspricht kein besseres Aim in Shootern. Vergleiche deine Sessions auf demselben Bildschirm mit denselben Einstellungen." },
   { q: "Beeinflusst mein Bildschirm das Ergebnis?", a: "Ja. Bildwiederholrate, Helligkeit, Kontrast, Bildschirmgröße und Abstand verändern, wie das Ziel aussieht (Woods et al., 2015). Vergleiche deshalb nur Durchgänge mit gleichem Bildschirm, Browser und gleichen Einstellungen." },
   { q: "Wie lange sollte ich üben?", a: "Mehrere kurze Durchgänge von etwa 60 Sekunden, insgesamt 5 bis 10 Minuten, mit Pausen dazwischen. Hör sofort auf bei müden, trockenen oder schmerzenden Augen, Schwindel, Übelkeit oder Kopfschmerzen." }
 ];
@@ -121,7 +121,7 @@ const guide = {
       ["4", "Linie aus", "Die nächste Kehre vorhersehen"],
       ["5", "Zufallstempo", "Bei wechselnder Geschwindigkeit dranbleiben"]
     ],
-    note: "Übungsstufen von SkillDrills zur Orientierung. Keine Sehtest-Normen, keine Nutzerstatistik, keine Perzentile.",
+    note: "Übungsstufen von SkillDrills zur Orientierung. Keine offiziellen Normen, keine Nutzerstatistik, keine Perzentile.",
   },
   techniques: {
     title: "Tipps für die Übung",

@@ -846,7 +846,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
                     {t('saccadicGallery.aboutP1', 'Saccadic Gallery trains rapid eye movements between fixation points. In competitive games, saccadic speed influences how quickly your gaze reaches targets across different screen regions.')}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    {t('saccadicGallery.aboutP2', 'Repeatedly shifting focus across timed nodes develops visual acquisition and hand-eye coordination without claiming to diagnose or treat an eye condition.')}
+                    {t('saccadicGallery.aboutP2', 'Repeatedly shifting focus across timed nodes develops visual acquisition and hand-eye coordination.')}
                   </p>
                 </section>
 

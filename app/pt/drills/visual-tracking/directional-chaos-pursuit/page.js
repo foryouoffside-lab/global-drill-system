@@ -104,7 +104,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "O que é o rastreamento com mudanças de direção?",
-    "a": "Um exercício no navegador em que você acompanha com os olhos um alvo que muda de direção de forma imprevisível. Duração (30 a 120 segundos), velocidade, tamanho e linha são ajustáveis. Não é teste de visão nem tratamento."
+    "a": "Um exercício no navegador em que você acompanha com os olhos um alvo que muda de direção de forma imprevisível. Duração (30 a 120 segundos), velocidade, tamanho e linha são ajustáveis. O resultado se baseia na posição do ponteiro."
   },
   {
     "q": "Como o alvo se move?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guia: Rastreamento com Mudanças de Direção",
   "intro": [
     "Neste rastreamento com mudanças de direção, o alvo recebe a cada quadro um pequeno impulso aleatório: direção e velocidade mudam o tempo todo e ele quica nas bordas da tela. Sem trajetória fixa, não dá para prever o movimento; quando o alvo se adianta, uma sacada de correção costuma trazê-lo de volta à visão central (Krauzlis, 2004).",
-    "O navegador conhece apenas a posição desenhada do alvo e seus ajustes, não para onde seus olhos estão olhando. Só a distância do ponteiro ao alvo e as sessões concluídas são exibidas. O resultado é um registro de prática repetível, não uma medida clínica nem um teste de visão.",
+    "O navegador conhece apenas a posição desenhada do alvo e seus ajustes, não para onde seus olhos estão olhando. Só a distância do ponteiro ao alvo e as sessões concluídas são exibidas. O resultado é um registro de prática repetível, baseado na posição do ponteiro.",
     "Use uma distância confortável e compare sempre a mesma tela e o mesmo navegador. Taxa de atualização e dispositivo de entrada mudam a exibição (Woods et al., 2015). Pare se sentir dor, tontura, náusea ou visão embaçada persistente."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Acompanhar um alvo imprevisível com os olhos",
-          description: "Rastreamento com mudanças de direção: o alvo muda de direção e velocidade ao acaso o tempo todo. O navegador não registra seu olhar e só mede a distância do ponteiro ao alvo; veja o resultado como registro de prática, não como exame médico.",
+          description: "Rastreamento com mudanças de direção: o alvo muda de direção e velocidade ao acaso o tempo todo. O navegador não registra seu olhar e só mede a distância do ponteiro ao alvo; veja o resultado como registro de prática baseado no ponteiro.",
         }}
       />
       <DrillGuide guide={guideProps} />

@@ -6,11 +6,11 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Zahlen-Symbol-Test | SDMT Verarbeitungsgeschwindigkeit",
+  title: "Zahlen-Symbol-Test online | Verarbeitungsgeschwindigkeit",
   description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
   keywords: ["Zahlen-Symbol-Test", "SDMT online", "Symbol-Ziffern-Zuordnung", "Verarbeitungsgeschwindigkeit üben", "visuelle Suche"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Zahlen-Symbol-Test | SDMT Verarbeitungsgeschwindigkeit",
+    title: "Zahlen-Symbol-Test online | Verarbeitungsgeschwindigkeit",
     description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/processing-speed/symbol-matching',
@@ -19,7 +19,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Zahlen-Symbol-Test | SDMT Verarbeitungsgeschwindigkeit",
+    title: "Zahlen-Symbol-Test online | Verarbeitungsgeschwindigkeit",
     description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
   },
   robots: { index: true, follow: true },
@@ -251,7 +251,7 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('smith1973', 'der2006', 'woods2015'),
   intro: {
-    title: "Zahlen-Symbol-Test – SDMT-Übung",
+    title: "Zahlen-Symbol-Test – Übung zur Verarbeitungsgeschwindigkeit",
     paragraphs: [
       "Der kostenlose Zahlen-Symbol-Test zeigt oben einen Schlüssel aus sechs Symbolen und den Ziffern 1 bis 6. Erscheint in der Mitte ein Symbol, tippst du die passende Zifferntaste. Der Schlüssel wird jede Sitzung neu gemischt. Ein Durchgang startet mit 45 Sekunden, jeder Treffer bringt 2 Sekunden (max. 60), Fehler und Zeitüberschreitungen kosten 1 Sekunde.",
       "Vom Symbol zur Ziffer zu antworten entspricht dem SDMT (Smith, 1973); beim DSST ist es umgekehrt (Ziffer zu Symbol). Dieser Drill ist keiner der beiden Tests, und seine Werte sind nicht mit klinischen Normen vergleichbar.",

@@ -61,8 +61,8 @@ const faqItems = [
     "a": "Genau 45 Sekunden; das Level beginnt jede Runde bei 1."
   },
   {
-    "q": "Misst das Spiel meine Koordination medizinisch?",
-    "a": "Nein. Es ist ein Übungsspiel für die Mausführung, kein Test zur Beurteilung motorischer Fähigkeiten oder Entwicklung und keine Therapie."
+    "q": "Wie bleibe ich im Korridor?",
+    "a": "Schau zuerst auf den Zielknoten, halte ein ruhiges, gleichmäßiges Tempo und bremse kurz vor dem Ziel ab. Bei 4 px Toleranz auf hohen Levels lohnt sich etwas weniger Tempo für eine längere Serie."
   },
   {
     "q": "Funktioniert es auf dem Handy?",
@@ -115,7 +115,7 @@ const guide = {
   "heading": "Koordinationstest mit der Maus: Anleitung und Tipps",
   "intro": [
     "Der Koordinationstest mit der Maus ist ein kostenloses Browser-Spiel, in dem du den Cursor präzise durch einen schmalen Korridor führst. Berühre den cyanfarbenen Knoten an einem Bildschirmrand und fahre dann entlang der Verbindungslinie zum magentafarbenen Knoten auf der Gegenseite. Verlässt du den Korridor, endet der Versuch und ein neues Knotenpaar erscheint. Jede Bahn ist eine Überkreuzbewegung von einem Bildschirmrand zum anderen, bei der saubere Korridor-Führung zählt.",
-    "Eine Runde dauert 45 Sekunden, das Level startet jedes Mal bei 1. Mit steigendem Level sinkt die Korridor-Toleranz von 10 px auf 4 px, der Knotenradius von 16 px auf 8 px, und die Knoten rücken an den Rand. Als Referenz diente das Fitts'sche Gesetz (Fitts, 1954): Je weiter der Weg und je kleiner das Ziel, desto schwieriger die Bewegung. Trotz des Namens ist es ein Übungsspiel für die Mausführung, kein diagnostischer Koordinationstest."
+    "Eine Runde dauert 45 Sekunden, das Level startet jedes Mal bei 1. Mit steigendem Level sinkt die Korridor-Toleranz von 10 px auf 4 px, der Knotenradius von 16 px auf 8 px, und die Knoten rücken an den Rand. Als Referenz diente das Fitts'sche Gesetz (Fitts, 1954): Je weiter der Weg und je kleiner das Ziel, desto schwieriger die Bewegung. Es ist ein Übungsspiel für die Mausführung."
   ],
   "techniques": {
     "title": "Tipps, um im Korridor zu bleiben",

@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Comment la cible bouge-t-elle dans la poursuite oculaire sinusoïdale ?",
-    "a": "La cible fait des allers-retours à vitesse horizontale constante entre environ 5 % et 95 % de la largeur de l’écran (environ 220 pixels par seconde à 1,0x) et suit une courbe sinusoïdale fixe dont l’amplitude vaut environ 28 % de la hauteur de l’écran. Aux bords, elle fait demi-tour sur la même courbe. C’est un exercice du regard dans le navigateur, pas un examen de la vue."
+    "a": "La cible fait des allers-retours à vitesse horizontale constante entre environ 5 % et 95 % de la largeur de l’écran (environ 220 pixels par seconde à 1,0x) et suit une courbe sinusoïdale fixe dont l’amplitude vaut environ 28 % de la hauteur de l’écran. Aux bords, elle fait demi-tour sur la même courbe. C’est un exercice du regard dans le navigateur."
   },
   {
     "q": "Pourquoi la vitesse verticale change-t-elle sans cesse ?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Est-ce que ma vue ou ma visée vont s’améliorer ?",
-    "a": "Rien n’est garanti. Ce n’est ni un examen de la vue ni une thérapie, mais un outil pour s’exercer à regarder une cible. Il ne promet ni meilleure acuité ni meilleure visée. En cas de gêne visuelle, consultez un professionnel."
+    "a": "Rien n’est garanti. C’est un outil pour s’exercer à regarder une cible ; il ne promet ni meilleure acuité ni meilleure visée. Comparez vos séances sur le même écran avec les mêmes réglages."
   },
   {
     "q": "Combien de temps s’entraîner ?",

@@ -104,7 +104,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "¿Qué es el seguimiento con imágenes fantasma?",
-    "a": "Un ejercicio en el navegador: sigues con los ojos un objetivo en línea recta sin dejarte arrastrar por la estela opcional. Duración (30 a 120 segundos), velocidad, tamaño y línea son ajustables. No es un test de visión ni un tratamiento."
+    "a": "Un ejercicio en el navegador: sigues con los ojos un objetivo en línea recta sin dejarte arrastrar por la estela opcional. Duración (30 a 120 segundos), velocidad, tamaño y línea son ajustables. El resultado se basa en la posición del puntero."
   },
   {
     "q": "¿Es un test de ghosting del monitor?",
@@ -156,7 +156,7 @@ const guideProps = {
   "heading": "Guía: Seguimiento con Imágenes Fantasma",
   "intro": [
     "En el seguimiento con imágenes fantasma, el objetivo avanza a velocidad constante en línea recta y rebota en los bordes. Si activas la estela, la página dibuja detrás anillos tenues que se desvanecen (desactivada por defecto). El objetivo es mantener la mirada en el objetivo sólido sin seguir las copias.",
-    "El navegador conoce la posición dibujada del objetivo, tus ajustes y el puntero, no hacia dónde miran tus ojos. Al final se muestra el tiempo con el puntero sobre el objetivo y su distancia media al centro, sin nota. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
+    "El navegador conoce la posición dibujada del objetivo, tus ajustes y el puntero, no hacia dónde miran tus ojos. Al final se muestra el tiempo con el puntero sobre el objetivo y su distancia media al centro, sin nota. El resultado es un registro de práctica repetible, basado en la posición del puntero.",
     "Usa una distancia cómoda y compara siempre la misma pantalla y el mismo navegador. La frecuencia de refresco y el dispositivo de entrada cambian la imagen (Woods et al., 2015). Para si notas dolor, mareo, náuseas o visión borrosa persistente."
   ],
   "benchmarks": {

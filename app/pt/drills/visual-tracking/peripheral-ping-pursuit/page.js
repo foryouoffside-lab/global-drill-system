@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Isto melhora a minha visão ou a minha mira?",
-    "a": "Não há garantia. Não é um exame de visão nem uma terapia, mas uma ferramenta para praticar o olhar sobre um alvo. Não promete melhor acuidade nem melhor pontaria. Se notar algum problema nos olhos, consulte um profissional."
+    "a": "Não há garantia. É uma ferramenta para praticar o olhar sobre um alvo e não promete melhor acuidade nem melhor pontaria. Compare as sessões no mesmo ecrã e com as mesmas definições."
   },
   {
     "q": "Quanto tempo devo praticar?",

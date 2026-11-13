@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/fr/drills/visual-tracking/strobe-prediction-pursuit';
 const title = "Poursuite stroboscopique : cible clignotante | SkillDrills";
-const description = "Poursuite stroboscopique : une cible rebondit sur les bords et disparaît à intervalles réguliers. Anticipez sa position. Exercice gratuit, pas un test de vue.";
+const description = "Poursuite stroboscopique : une cible rebondit sur les bords et disparaît à intervalles réguliers. Anticipez sa position. Exercice gratuit dans le navigateur.";
 
 export const metadata = {
   title,
@@ -91,7 +91,7 @@ const faqs = [
   { q: "L'exercice mesure-t-il mes mouvements oculaires ?", a: "Non. Le navigateur ne sait pas où vous regardez : il connaît seulement la position où la cible est dessinée et vos réglages. Aucun clic ni toucher n'est nécessaire ; le résultat est un repère de pratique pour vous-même." },
   { q: "Y a-t-il un score ou une note ?", a: "Pas de note. À la fin, l'écran indique combien de temps le pointeur est resté sur la cible et sa distance moyenne au centre, séparément pour les phases visible et masquée, ainsi que la durée, le multiplicateur de vitesse et le nombre total de séances (enregistré dans ce navigateur). C'est le pointeur qui est mesuré, pas vos yeux." },
   { q: "Quels réglages sont disponibles ?", a: "Durée de 30, 45, 60, 90 ou 120 secondes, vitesse de 0,5x à 9,0x, taille de cible de 10 à 50 px. Vous pouvez aussi masquer la ligne (contour pendant la phase invisible), activer la vitesse aléatoire, la traînée, le halo, les lignes de balayage, le fond clair ou sombre et changer la couleur de la cible. La touche Échap arrête la séance à tout moment." },
-  { q: "Est-ce que cela améliore la vue ou la visée ?", a: "Rien ne le garantit. C'est un exercice où l'on suit une cible mobile des yeux ; ce n'est ni un examen de la vue, ni un traitement, et il ne promet pas une meilleure visée dans les jeux de tir. En cas de gêne visuelle, consultez un ophtalmologiste." },
+  { q: "Est-ce que cela améliore la vue ou la visée ?", a: "Rien ne le garantit. C'est un exercice où l'on suit une cible mobile des yeux ; il ne promet pas une meilleure visée dans les jeux de tir. Comparez vos séances sur le même écran avec les mêmes réglages." },
   { q: "L'écran influence-t-il le résultat ?", a: "Oui. La fréquence de rafraîchissement, la luminosité, le contraste, la taille de l'écran et la distance changent la façon dont la cible apparaît (Woods et al., 2015). Comparez uniquement des séances faites sur le même écran, le même navigateur et avec les mêmes réglages." },
   { q: "Combien de temps faut-il s'entraîner ?", a: "Quelques séances d'environ 60 secondes, 5 à 10 minutes au total, avec des pauses. Arrêtez immédiatement en cas d'yeux fatigués, secs ou douloureux, de vertiges, de nausées ou de maux de tête." }
 ];
@@ -108,7 +108,7 @@ const guide = {
   intro: [
     "La poursuite stroboscopique est un exercice gratuit dans le navigateur : une cible se déplace en ligne droite, rebondit sur les bords de l'écran et disparaît à intervalles réguliers. Elle est visible environ deux tiers de chaque cycle et cachée environ un tiers.",
     "Pendant qu'elle est invisible, la cible continue dans la même direction et à la même vitesse. Par défaut, un contour discret indique sa position ; si vous masquez la ligne, le contour disparaît aussi. Après le compte à rebours 3-2-1, la cible bouge pendant la durée choisie (30 à 120 secondes, 60 par défaut). Il n'y a rien à cliquer ; si vous suivez la cible avec le pointeur, l'écran final indique la distance du pointeur à la cible.",
-    "Le navigateur n'enregistre pas votre regard. Considérez le résultat comme un repère de pratique personnel, pas comme un test de vision ou d'attention. Ce n'est pas non plus un entraînement avec des lunettes stroboscopiques, qui occultent tout le champ de vision.",
+    "Le navigateur n'enregistre pas votre regard. Considérez le résultat comme un repère de pratique personnel, basé sur la position du pointeur. Ce n'est pas non plus un entraînement avec des lunettes stroboscopiques, qui occultent tout le champ de vision.",
     "Comparez vos séances sur le même écran et à la même distance ; la fréquence de rafraîchissement et la latence d'affichage influencent la fluidité de la cible (Woods et al., 2015). Arrêtez en cas de douleur, de vertiges, de nausées ou de vision floue persistante."
   ],
   benchmarks: {
@@ -121,7 +121,7 @@ const guide = {
       ["4", "Ligne masquée", "Franchir la phase invisible par anticipation seule"],
       ["5", "Vitesse aléatoire", "Ajuster l'anticipation à une vitesse variable"]
     ],
-    note: "Paliers de pratique SkillDrills à titre indicatif. Ce ne sont ni des normes d'examen de la vue, ni des statistiques d'utilisateurs, ni des percentiles.",
+    note: "Paliers de pratique SkillDrills à titre indicatif. Ce ne sont ni des normes officielles, ni des statistiques d'utilisateurs, ni des percentiles.",
   },
   techniques: {
     title: "Conseils pratiques",

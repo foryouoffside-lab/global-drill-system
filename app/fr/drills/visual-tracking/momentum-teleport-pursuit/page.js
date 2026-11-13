@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Comment fonctionne la poursuite oculaire de la cible qui saute ?",
-    "a": "La cible avance en ligne droite à vitesse et direction constantes et rebondit sur les bords. À la vitesse 1,0x, elle saute environ toutes les 1,2 seconde vers une position aléatoire, sans changer de direction ni de vitesse. Vous la retrouvez des yeux et continuez à la suivre. C’est un exercice dans le navigateur, pas un examen de la vue ni une thérapie."
+    "a": "La cible avance en ligne droite à vitesse et direction constantes et rebondit sur les bords. À la vitesse 1,0x, elle saute environ toutes les 1,2 seconde vers une position aléatoire, sans changer de direction ni de vitesse. Vous la retrouvez des yeux et continuez à la suivre. C’est un exercice dans le navigateur."
   },
   {
     "q": "Peut-on prévoir où la cible va sauter ?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Est-ce que ma vue ou ma visée vont s’améliorer ?",
-    "a": "Rien n’est garanti. Ce n’est ni un examen de la vue ni une thérapie, mais un outil pour s’exercer à regarder une cible. Il ne promet ni meilleure acuité ni meilleure visée. En cas de gêne visuelle, consultez un professionnel."
+    "a": "Rien n’est garanti. C’est un outil pour s’exercer à regarder une cible ; il ne promet ni meilleure acuité ni meilleure visée. Comparez vos séances sur le même écran avec les mêmes réglages."
   },
   {
     "q": "Combien de temps s’entraîner ?",

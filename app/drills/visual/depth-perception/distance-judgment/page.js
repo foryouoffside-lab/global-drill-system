@@ -176,15 +176,15 @@ const faqSchema = {
       "name": "Can you improve depth perception with training?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Practice usually makes you better at the specific task you practise. This drill lets you practise timing an intercept from optical expansion; it does not treat or change two-eye vision, and gains in the drill are not a guarantee of gains elsewhere."
+        "text": "Practice usually makes you better at the specific task you practise. This drill lets you practise timing an intercept from optical expansion; gains in the drill are not a guarantee of gains elsewhere."
       }
     },
     {
       "@type": "Question",
-      "name": "Is an online depth perception test diagnostic for clinical eye conditions?",
+      "name": "What affects your score on the distance judgment drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. It is not a clinical eye test. A flat monitor cannot show each eye a different image, so this drill only uses single-eye cues such as perspective and how fast the target grows. If you are concerned about your depth perception or eyesight, see an optometrist or ophthalmologist."
+        "text": "A flat monitor cannot show each eye a different image, so this drill uses single-eye cues such as perspective and how fast the target grows. Your score also varies with fatigue, display refresh rate and viewing distance, so compare runs on the same device and screen."
       }
     },
     {
@@ -217,7 +217,7 @@ const faqSchema = {
 const distanceGuide = {
   heading: "How the Distance Judgment Depth Perception Test Works",
   intro: [
-    "The Distance Judgment depth perception test asks you to judge how far away an approaching target is and intercept it in time. It relies on how fast the target grows on screen, not on stereo vision, so it is a timing drill, not a clinical eye test. Start, watch the target approach, and act when it is in range.",
+    "The Distance Judgment depth perception test asks you to judge how far away an approaching target is and intercept it in time. It relies on how fast the target grows on screen, not on stereo vision, so it is a timing drill. Start, watch the target approach, and act when it is in range.",
     "Depth perception is the visual and neurological faculty that enables organisms to perceive the world in three dimensions and accurately judge the distance, spatial volume, and trajectory of objects. In dynamic sports (such as baseball, tennis, and motorsports), aviation, tactical driving, and competitive esports, split-second distance estimation determines the difference between a clean interception and a catastrophic collision.",
     "The drill is built on optical expansion research (Lee, 1976; Regan & Beverley, 1978): the rate at which an approaching object's image grows tells you its time-to-contact. A sphere moves down a perspective tunnel toward a fixed reference ring, and approach speed rises from about 2.2 s to 0.5 s per pass as you level up.",
     "Timing & Measurement Methodology: All intercept deviations are captured client-side using the high-resolution performance.now() API. Deviation is computed as the relative percentage error (|Actual Diameter - Target Diameter| / Target Diameter). Hardware latency adds display quantization delay (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz, ~4.1 ms at 240 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1000 Hz), as documented by Woods et al. (2015). Compare runs on the same hardware setup for consistent longitudinal tracking.",
@@ -231,7 +231,7 @@ const distanceGuide = {
       ["Solid", "750 – 1,499", "Level 2", "Reliable Close and Perfect intercepts at moderate speeds; some early or late clicks as speed rises."],
       ["Building", "Under 750", "Level 1", "Still learning the timing; clicks often land before or after the sphere matches the ring."]
     ],
-    note: "SkillDrills practice bands based on the drill's own scoring (level up every 750 points; 1,500 points is the S+ target). They are not population norms or a clinical standard. Results vary with fatigue, display refresh rate, and viewing distance."
+    note: "SkillDrills practice bands based on the drill's own scoring (level up every 750 points; 1,500 points is the S+ target). They are not population norms. Results vary with fatigue, display refresh rate, and viewing distance."
   },
   techniques: {
     title: "How to train distance judgment",

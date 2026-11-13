@@ -5,8 +5,8 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: "Juego Simón online | Secuencia de colores | SkillDrills",
-  description: "Juego Simón online gratis, estilo Simon: memoriza la secuencia de colores que se ilumina y repítela en 6 botones. Empieza con 3 colores, +1 por acierto.",
+  title: "Juego de secuencia de colores estilo Simón | SkillDrills",
+  description: "Juego de secuencia de colores estilo Simón, gratis: memoriza los colores que se iluminan y repítelos en 6 botones. Empieza con 3 colores, +1 por acierto.",
   keywords: [
     "juego Simón",
     "Simón online",
@@ -34,8 +34,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Juego Simón online | Secuencia de colores | SkillDrills",
-    description: "Juego Simón online gratis, estilo Simon: memoriza la secuencia de colores que se ilumina y repítela en 6 botones. Empieza con 3 colores, +1 por acierto.",
+    title: "Juego de secuencia de colores estilo Simón | SkillDrills",
+    description: "Juego de secuencia de colores estilo Simón, gratis: memoriza los colores que se iluminan y repítelos en 6 botones. Empieza con 3 colores, +1 por acierto.",
     url: "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -43,8 +43,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Juego Simón online | Secuencia de colores | SkillDrills",
-    description: "Juego Simón online gratis, estilo Simon: memoriza la secuencia de colores que se ilumina y repítela en 6 botones. Empieza con 3 colores, +1 por acierto.",
+    title: "Juego de secuencia de colores estilo Simón | SkillDrills",
+    description: "Juego de secuencia de colores estilo Simón, gratis: memoriza los colores que se iluminan y repítelos en 6 botones. Empieza con 3 colores, +1 por acierto.",
   },
 };
 
@@ -56,14 +56,14 @@ export default function SpanishColorSequencePage() {
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
       { "@type": "ListItem", "position": 2, "name": "Entrenamientos de memoria", "item": "https://skilldrills.online/es/drills/memory" },
       { "@type": "ListItem", "position": 3, "name": "Memoria a corto plazo", "item": "https://skilldrills.online/es/drills/memory" },
-      { "@type": "ListItem", "position": 4, "name": "Juego Simón de colores", "item": "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence" }
+      { "@type": "ListItem", "position": 4, "name": "Juego de colores estilo Simón", "item": "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Juego Simón Online",
+    "name": "Juego de secuencia de colores estilo Simón",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
     "dateModified": "2026-11-12",
@@ -81,21 +81,20 @@ export default function SpanishColorSequencePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Juego Simón Online",
+    "name": "Juego de secuencia de colores estilo Simón",
     "url": "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence",
     "description": "Juego estilo Simon gratuito en el navegador, con 6 botones de colores: la secuencia gana un color por acierto y pierde uno por fallo.",
     "dateModified": "2026-11-12",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "sameAs": ["https://es.wikipedia.org/wiki/Simon_%28juego%29"]
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Juego Simón – Secuencia de colores",
+    "name": "Secuencia de colores estilo Simón",
     "url": "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence",
     "description": "Juego de memoria estilo Simon: los colores se iluminan uno a uno en el círculo central y los repites en el mismo orden con 6 botones.",
     "genre": ["Juego de memoria", "Entrenamiento mental", "Puzzle"],
@@ -110,7 +109,7 @@ export default function SpanishColorSequencePage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Qué es el juego Simón y cómo se juega online?",
+        "name": "¿Qué es este juego estilo Simón y cómo se juega online?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Es un juego de memoria estilo Simon, inspirado en el aparato electrónico de 1978 (no es el producto oficial de Hasbro). Los colores se iluminan uno a uno en el círculo central y tú los repites pulsando los 6 botones de colores en el mismo orden. El nivel 1 tiene 3 colores (longitud = nivel + 2); acertar sube un nivel y fallar baja uno. Cada ronda es una secuencia aleatoria nueva y la sesión dura 45 segundos."
@@ -134,7 +133,7 @@ export default function SpanishColorSequencePage() {
       },
       {
         "@type": "Question",
-        "name": "¿Qué es el chunking y cómo lo aplico en el juego Simón?",
+        "name": "¿Qué es el chunking y cómo lo aplico en este juego?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "El chunking (Miller, 1956) consiste en unir elementos sueltos en bloques con sentido. Si divides seis colores en dos grupos de tres, como rojo-azul-verde y amarillo-violeta-naranja, solo tienes que retener dos bloques en lugar de seis elementos."
@@ -142,10 +141,10 @@ export default function SpanishColorSequencePage() {
       },
       {
         "@type": "Question",
-        "name": "¿Por qué hay 6 colores en vez de los 4 del Simon original?",
+        "name": "¿Por qué hay 6 colores en vez de los 4 del juego electrónico clásico?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El violeta y el naranja amplían el juego a 6 paneles, así que cada paso tiene más opciones posibles y la secuencia es más difícil de adivinar. Es una variante pensada para quien ya domina el Simón clásico de 4 colores."
+          "text": "El violeta y el naranja amplían el juego a 6 paneles, así que cada paso tiene más opciones posibles y la secuencia es más difícil de adivinar. Es una variante pensada para quien ya domina el clásico juego de 4 colores."
         }
       },
       {
@@ -194,8 +193,8 @@ export default function SpanishColorSequencePage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Cómo jugar al juego Simón de memoria de colores",
-    "description": "Cuatro pasos para repetir secuencias de colores cada vez más largas en el juego Simón online.",
+    "name": "Cómo jugar al juego de memoria de colores estilo Simón",
+    "description": "Cuatro pasos para repetir secuencias de colores cada vez más largas en este juego estilo Simón.",
     "step": [
       {
         "@type": "HowToStep",
@@ -229,7 +228,7 @@ export default function SpanishColorSequencePage() {
   };
 
   const esCopy = {
-    title: 'Juego Simón online',
+    title: 'Juego de secuencia de colores estilo Simón',
     subtitle: 'Juego estilo Simon: memoriza los colores y repite la secuencia exacta',
     caption: 'Los colores se iluminan uno a uno en el círculo central. Repítelos en el mismo orden; cada acierto alarga la siguiente secuencia en un color.',
     statScore: 'Puntuación',
@@ -249,7 +248,7 @@ export default function SpanishColorSequencePage() {
     rule4Text: 'Dificultad adaptativa',
     rule4Highlight: 'Dinámica',
     rule4Result: 'Nivel N = N + 2 colores; los destellos se aceleran con cada nivel',
-    aboutTitle: 'Sobre el juego Simón de secuencia de colores',
+    aboutTitle: 'Sobre el juego de secuencia de colores estilo Simón',
     overviewTitle: '¿Qué se practica con el juego de memoria de colores?',
     overviewLead: 'La memoria de trabajo visual retiene unos 4 elementos independientes a la vez (Luck & Vogel, 1997; Cowan, 2001). Una secuencia de colores que se alarga permite practicar cerca de ese límite.',
     aboutIntro: [
@@ -264,10 +263,10 @@ export default function SpanishColorSequencePage() {
   };
 
   const esColorSequenceGuide = {
-    heading: 'Guía del juego Simón y la memoria de trabajo visual',
+    heading: 'Guía del juego de colores estilo Simón y la memoria de trabajo visual',
     intro: [
-      'El juego Simón online consiste en ver una secuencia de colores, uno a uno, y repetirla en el mismo orden; cada ronda superada alarga la siguiente secuencia en un color. Esta versión estilo Simon tiene 6 botones y sesiones de 45 segundos. Practica la memoria de trabajo visual y el chunking, y sirve para comparar tus propias puntuaciones en el mismo dispositivo.',
-      'El juego de secuencias de colores es un ejercicio para practicar la memoria de trabajo visual y la retención del orden. Popularizado por el dispositivo electrónico Simon, de Ralph Baer y Howard Morrison (1978), este formato exige la codificación inmediata de estímulos cromáticos dinámicos, su organización en búferes estructurados y su recuperación en estricto orden temporal.',
+      'Este juego de colores estilo Simón consiste en ver una secuencia de colores, uno a uno, y repetirla en el mismo orden; cada ronda superada alarga la siguiente secuencia en un color. Esta versión estilo Simon tiene 6 botones y sesiones de 45 segundos. Practica la memoria de trabajo visual y el chunking, y sirve para comparar tus propias puntuaciones en el mismo dispositivo.',
+      'El juego de secuencias de colores es un ejercicio para practicar la memoria de trabajo visual y la retención del orden. Popularizado por un dispositivo electrónico de Ralph Baer y Howard Morrison (1978), este formato exige la codificación inmediata de estímulos cromáticos dinámicos, su organización en búferes estructurados y su recuperación en estricto orden temporal.',
       'Los límites arquitectónicos de la memoria humana a corto plazo han sido cartografiados exhaustivamente por la psicología cognitiva. Mientras que George A. Miller (1956) identificó el cuello de botella verbal de $7 \\pm 2$ elementos, las investigaciones fundamentales de Nelson Cowan (2001) y Steven J. Luck & Edward K. Vogel (1997) demostraron que la capacidad pura de la memoria de trabajo visual está estrictamente limitada a unas 4 unidades independientes. Sin estrategias estructuradas de recodificación, la retención humana colapsa rápidamente más allá de cuatro elementos secuenciales.',
       'En el modelo multicomponente de memoria de trabajo de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), retener secuencias visuales activa la agenda visoespacial (Visuospatial Sketchpad). Robert H. Logie (1995) subdividió este componente en el retén visual pasivo (que almacena colores y formas) y el escriba interno (que ensaya activamente patrones espaciotemporales). Los ejecutantes avanzados reclutan sistemáticamente el bucle fonológico para crear representaciones de codificación dual (visual y subvocal), que ayuda a sostener la secuencia.',
       'Qué se registra: en 45 segundos el juego guarda la puntuación, el nivel máximo alcanzado (longitud de la secuencia) y la precisión (porcentaje de rondas acertadas). No mide el tiempo de reacción por pulsación y no es una medida clínica de la memoria operativa.',
@@ -276,7 +275,7 @@ export default function SpanishColorSequencePage() {
       'Aviso médico y descargo de responsabilidad: Este ejercicio es un juego cognitivo web gratuito orientado al entrenamiento mental y la práctica personal. No constituye un dispositivo médico, una herramienta de diagnóstico clínico ni un tratamiento para el deterioro cognitivo o afecciones neurológicas. Si tiene inquietudes sobre su memoria o agudeza cognitiva, consulte a un profesional médico o neuropsicólogo colegiado.'
     ],
     benchmarks: {
-      title: 'Etapas de práctica en el juego Simón (sesión de 45 segundos)',
+      title: 'Etapas de práctica en el juego estilo Simón (sesión de 45 segundos)',
       headers: ['Etapa', 'Nivel alcanzado', 'Puntos sin fallos hasta ese nivel', 'Estrategia de memoria'],
       rows: [
         ['Etapa 1', 'Nivel 11+ (13+ colores)', 'unos 1.550+ PTS', 'Nombra los colores y los agrupa en bloques'],

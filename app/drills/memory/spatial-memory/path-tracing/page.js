@@ -126,7 +126,7 @@ export default function PathTracingPage() {
         "name": "What is the Path Tracing Memory Test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It is a free spatial sequence memory game, not a clinical test. A path lights up one tile at a time (one step every 0.5 seconds); each step moves to a tile directly above, below, left or right of the last, never revisiting a tile. You then tap the path back in the same order. Level 1 is 3 steps on a 3x3 grid, and each level adds one step."
+          "text": "It is a free spatial sequence memory game. A path lights up one tile at a time (one step every 0.5 seconds); each step moves to a tile directly above, below, left or right of the last, never revisiting a tile. You then tap the path back in the same order. Level 1 is 3 steps on a 3x3 grid, and each level adds one step."
         }
       },
       {
@@ -134,7 +134,7 @@ export default function PathTracingPage() {
         "name": "How does the Corsi Block-Tapping Test relate to path tracing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The Corsi block-tapping task (Corsi, 1972) is a classic research and clinical measure of spatial span, in which an examiner taps blocks in sequence. Path tracing borrows the idea of reproducing a spatial sequence, but on a grid with adjacent steps and its own timing and scoring. It is Corsi-style practice, not the Corsi test, and gives no normed result."
+          "text": "The Corsi block-tapping task (Corsi, 1972) is a classic research measure of spatial span, in which an examiner taps blocks in sequence. Path tracing borrows the idea of reproducing a spatial sequence, but on a grid with adjacent steps and its own timing and scoring. It is Corsi-style practice, not the Corsi test, and gives no normed result."
         }
       },
       {
@@ -250,8 +250,7 @@ export default function PathTracingPage() {
       "A path tracing memory test, inspired by the Corsi block-tapping task, shows a route across a grid and asks you to retrace it in the same order. In this free online version each level adds one step (level 1 is 3 steps), and the grid grows from 3x3 to 4x4, 5x5, 6x6 and 7x7 as paths get longer, so you see how long a spatial sequence you can hold.",
       "During each round a tile lights up every 0.5 seconds; each step moves to an adjacent tile (up, down, left or right) and never revisits one. You then have 10 seconds to tap the whole path in order. A correct path scores 150 points and adds a step; a wrong tile or timeout repeats the length with a new path. The 60-second clock runs only while you are tapping, so demonstrations do not use up your time. Tap speed is not measured or scored.",
       "In working memory architecture, Logie (1995) and Alan Baddeley (2000) identified that sequential movement is retained by the Inner Scribe, a dynamic spatial rehearsal loop. George A. Miller (1956) and Herbert A. Simon (1974) described how grouping items into chunks extends memory span, and Nelson Cowan (2001) argued that working memory holds roughly 4 items without grouping.",
-      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
-      "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
+      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below."
     ],
     benchmarks: {
       title: "Path Tracing: SkillDrills Practice Bands",

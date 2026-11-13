@@ -127,7 +127,7 @@ export default function GridMemorizationPage() {
         "name": "What is a Visual Memory Test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A visual memory test asks you to hold a visual pattern in mind for a few seconds and reproduce it. This SkillDrills version is a free practice game, not a clinical test: you memorize which grid cells lit up and tap them back."
+          "text": "A visual memory test asks you to hold a visual pattern in mind for a few seconds and reproduce it. This SkillDrills version is a free practice game: you memorize which grid cells lit up and tap them back."
         }
       },
       {
@@ -143,7 +143,7 @@ export default function GridMemorizationPage() {
         "name": "Is this the Visual Patterns Test (VPT)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. The Visual Patterns Test, developed by Della Sala, Logie and colleagues (1997), is a research and clinical task that also uses grids of filled squares. This drill borrows the general idea but uses its own grid sizes, timing and scoring, and gives no clinical or normed result."
+          "text": "No. The Visual Patterns Test, developed by Della Sala, Logie and colleagues (1997), is a research task that also uses grids of filled squares. This drill borrows the general idea but uses its own grid sizes, timing and scoring, and gives no normed result."
         }
       },
       {
@@ -252,8 +252,7 @@ export default function GridMemorizationPage() {
       "The study of visuospatial span was pioneered by Pietro Corsi (1972) through the Corsi Block-Tapping Test, which demonstrated that visuospatial memory operates as a distinct neural system from verbal digit span (Milner, 1971). In 1997, Sergio Della Sala, Robert H. Logie, and colleagues developed the Visual Patterns Test (VPT) to study static pattern memory separately from sequential movement. This drill is not that test.",
       "In modern cognitive neuroscience, Robert H. Logie (1995) and Alan Baddeley (2000) subdivided the Visuo-Spatial Sketchpad into the 'Visual Cache' (a passive store for chromatic, brightness, and static matrix representations) and the 'Inner Scribe' (an active mechanism for spatial movement planning and rehearsal). Research by Steven J. Luck & Edward K. Vogel (1997) and Nelson Cowan (2001) suggests that visual working memory holds roughly 3 to 4 separate items. Expanding matrix span requires spatial chunking—grouping lit cells into holistic Gestalt shapes.",
       "How the game works: each pattern of purple cells is shown for 1.5 seconds. You then tap the lit cells in any order, with no per-round time limit. A perfect round scores 150 points and adds a cell; one wrong tap ends the round and loads a new pattern at the same size. The 60-second clock runs only during recall, so reveals do not use up your time. Click speed is not measured or scored.",
-      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
-      "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
+      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below."
     ],
     benchmarks: {
       title: "Grid Memory: SkillDrills Practice Bands",

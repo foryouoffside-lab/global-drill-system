@@ -86,7 +86,7 @@ const faqSchema = {
       "name": "What is cognitive training?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cognitive training means practising structured mental tasks, such as keeping attention on a stream of items, ignoring a distracting cue, or matching symbols quickly. The drills on this page are short, timed browser games for attention, focus and processing speed. They are practice tools, not medical treatment or a clinical assessment."
+        "text": "Cognitive training means practising structured mental tasks, such as keeping attention on a stream of items, ignoring a distracting cue, or matching symbols quickly. The drills on this page are short, timed browser games for attention, focus and processing speed."
       }
     },
     {
@@ -142,7 +142,7 @@ const faqSchema = {
       "name": "Do brain-training games actually work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The research separates near transfer (getting better at the trained task and close variants) from far transfer (gains in unrelated abilities). Near transfer is common; far transfer, for example to IQ or everyday functioning, is not well supported. These drills are not a diagnosis, screening or treatment for ADHD, dementia or any other condition."
+        "text": "The research separates near transfer (getting better at the trained task and close variants) from far transfer (gains in unrelated abilities). Near transfer is common; far transfer, for example to IQ or everyday functioning, is not well supported."
       }
     }
   ]

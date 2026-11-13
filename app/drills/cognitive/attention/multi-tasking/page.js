@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
-  description: "Free multitasking test online: watch two lanes of moving shapes and tap only each lane's target shape in a dual-task focus drill. Non-clinical practice.",
+  description: "Free multitasking test online: watch two lanes of moving shapes and tap only each lane's target shape in a dual-task focus drill.",
   keywords: ["multitasking test online", "dual task test", "divided attention test", "dual stream tracking", "task switching test", "cognitive flexibility test", "multitasking brain game", "parallel visual tracking", "executive function drill", "dual target training"],
   openGraph: {
     title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
-    description: "Free multitasking test online: watch two lanes of moving shapes and tap only each lane's target shape in a dual-task focus drill. Non-clinical practice.",
+    description: "Free multitasking test online: watch two lanes of moving shapes and tap only each lane's target shape in a dual-task focus drill.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
-    description: "Free multitasking test online: watch two lanes of moving shapes and tap only each lane's target shape in a dual-task focus drill. Non-clinical practice.",
+    description: "Free multitasking test online: watch two lanes of moving shapes and tap only each lane's target shape in a dual-task focus drill.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "What is the Multitasking Test (Dual-Target Flow)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It is a free, non-clinical dual-task drill. Shapes flow outward from the center through two lanes (left and right, or top and bottom on a portrait phone), and you tap only the shapes that match each lane's current target. It is practice, not a psychometric or job-aptitude test."
+        "text": "It is a free dual-task drill. Shapes flow outward from the center through two lanes (left and right, or top and bottom on a portrait phone), and you tap only the shapes that match each lane's current target. It is practice, not a psychometric or job-aptitude test."
       }
     },
     {
@@ -253,7 +253,7 @@ const guideProps = {
     paragraphs: [
       "Free multitasking test online. Shapes flow outward through two lanes; tap the ones that match each lane's target shape while the pace rises and the targets change.",
       "Switch cost is the measurable degradation in speed and accuracy that occurs when shifting between disparate cognitive task rules rather than repeating the same task.",
-      "For demanding tasks, dual-task research suggests decisions are largely handled one at a time (Pashler, 1994). This drill is non-clinical practice of that situation, not a psychometric test.",
+      "For demanding tasks, dual-task research suggests decisions are largely handled one at a time (Pashler, 1994). This drill lets you practise that situation.",
     ],
   },
   benchmarks: {

@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: "Saccadic Gallery - Online Saccadic Eye Exercises",
   description: "Free saccadic eye exercises online. Train rapid eye jumps between fixed targets to build faster visual scanning and sharper target acquisition.",
-  keywords: ["saccadic eye exercises", "saccades", "saccadic eye movements", "saccadic training", "saccadic gallery", "visual tracking exercises", "saccadic eye movement training", "esports vision training", "saccadic training online", "saccadic tracking exercises", "saccadic latency", "saccadic dysmetria", "express saccades", "ocular coordination training", "how to improve saccadic eye movement", "vision therapy exercises online", "free eye exercises game", "sports vision drills free", "cognitive eye warmup"],
+  keywords: ["saccadic eye exercises", "saccades", "saccadic eye movements", "saccadic training", "saccadic gallery", "visual tracking exercises", "saccadic eye movement training", "esports vision training", "saccadic training online", "saccadic tracking exercises", "saccadic latency", "express saccades", "ocular coordination training", "how to improve saccadic eye movement", "free eye exercises game", "sports vision drills free", "cognitive eye warmup"],
   openGraph: {
     title: "Saccadic Gallery - Online Saccadic Eye Exercises",
     description: "Free saccadic eye exercises online. Train rapid eye jumps between fixed targets to build faster visual scanning and sharper target acquisition.",
@@ -167,10 +167,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What is saccadic dysmetria?",
+      "name": "Why do my eyes overshoot or undershoot a target?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Saccadic dysmetria occurs when the eyes either undershoot (hypometria) or overshoot (hypermetria) a visual target, requiring corrective secondary micro-saccades to achieve clear foveal focus."
+        "text": "A fast eye jump does not always land exactly on the target: the eyes can stop slightly short or go slightly past it, and a small corrective saccade then brings the target into clear focus."
       }
     },
     {

@@ -10,7 +10,7 @@ import { pickSources } from '@/lib/drillSources';
 //           "mot test online"                — Direct browser testing intent
 // SECONDARY / LSI:
 //           "multiple target tracking"       — Broad multi-target query
-//           "visual attention test"          — Clinical and neuropsychological search
+//           "visual attention test"          — Attention research search
 //           "multiple object tracking game"  — Gamified cognitive exercise query
 //           "divided attention test"         — Dual-task & distributed attention query
 //           "3d mot test"                    — Sports vision & athletic evaluation query
@@ -92,7 +92,7 @@ const softwareApplicationSchema = {
   "description": "Interactive Multiple Object Tracking (MOT) drill measuring divided visual attention, multifocal spatial indexing, and visual working memory under dynamic 2D elastic collision physics.",
   "featureList": [
     "Configurable tracking durations (15s to 60s) and elastic 2D collision dynamics",
-    "Dynamic target identification phase with instantaneous accuracy diagnostics",
+    "Dynamic target identification phase with instantaneous accuracy feedback",
     "Adjustable ball velocity and distractor counts (4 to 10 total spheres)",
     "Strict client-side local performance storage with zero external telemetry"
   ],

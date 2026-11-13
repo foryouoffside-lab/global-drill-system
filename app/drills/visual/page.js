@@ -86,10 +86,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Is the Depth Perception Test a medical eye test?",
+      "name": "How does the Depth Perception Test work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. It asks you to judge relative distances on a screen. It does not diagnose eyesight or stereo vision problems and does not replace an eye examination by an optometrist or ophthalmologist."
+        "text": "It asks you to judge relative distances on a screen, using cues such as perspective and how fast an approaching target grows."
       }
     },
     {
@@ -97,7 +97,7 @@ const faqSchema = {
       "name": "What is a Go/No-Go test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Go/No-Go test asks you to respond quickly to some stimuli (go) and hold back on others (no-go). It is a standard way to study response inhibition; here it is a browser practice task, not a clinical measure."
+        "text": "A Go/No-Go test asks you to respond quickly to some stimuli (go) and hold back on others (no-go). It is a standard way to study response inhibition; here it is a browser practice task."
       }
     },
     {
@@ -150,10 +150,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Do visual browser drills replace an eye examination?",
+      "name": "What do visual browser drills measure?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. These drills measure repeatable browser tasks such as visual timing, tracking, search and spatial judgment. They do not diagnose eyesight or eye disease. See a qualified eye-care professional for any vision concern."
+        "text": "These drills measure repeatable browser tasks such as visual timing, tracking, search and spatial judgment. Compare your scores on the same device and settings over repeated sessions."
       }
     }
   ]

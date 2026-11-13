@@ -85,7 +85,7 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "マウストレースゲーム・精密軌跡追従テスト – スムーストラッキング診断",
+  "name": "マウストレースゲーム・精密軌跡追従テスト – スムーストラッキング測定",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "HTML5 Canvas, Pointer Lock API, modern web browser",
@@ -218,7 +218,7 @@ const howToSchema = {
   "@type": "HowTo",
   "inLanguage": "ja-JP",
   "dateModified": "2026-11-09",
-  "name": "マウストレースゲーム・精密軌跡追従テスト – スムーストラッキング診断",
+  "name": "マウストレースゲーム・精密軌跡追従テスト – スムーストラッキング測定",
   "description": "流れる波形ラインにカーソルを沿わせ続けるカーソル追従テスト（マウストレースゲーム）。ラインの上下22ピクセル以内にいる間だけスコアが加算されます。",
   "step": [
     {
@@ -255,7 +255,7 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('accot1997', 'krauzlis2004', 'rashbass1961', 'woodworth1899', 'woods2015'),
   intro: {
-    title: "マウストレースゲーム・精密軌跡追従テスト – スムーストラッキング診断",
+    title: "マウストレースゲーム・精密軌跡追従テスト – スムーストラッキング測定",
     paragraphs: [
       "カーソル追従テストは、流れる波形ラインからカーソルを外さずに45秒間たどり続けるマウストレースゲームです。波は右から左へ流れ、時間とともに速く、上下に大きくなります。",
       "クリック測定が瞬間的な位置合わせであるのに対し、トラッキングは時々刻々と変化する目標速度に合わせて手の速度を同調させ続ける連続閉ループ制御です。",

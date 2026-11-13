@@ -83,8 +83,7 @@ export default function PortugueseColorSequencePage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
-    "sameAs": ["https://pt.wikipedia.org/wiki/Genius_%28jogo%29"]
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
   };
 
   

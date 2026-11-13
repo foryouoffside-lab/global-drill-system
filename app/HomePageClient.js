@@ -119,7 +119,7 @@ const features = [
   {
     icon: Shield,
     title: 'Established Paradigms',
-    description: 'Built on established cognitive psychology tasks and esports training patterns. Not a clinical test.',
+    description: 'Built on established cognitive psychology tasks and esports training patterns.',
     gradient: 'from-purple-400 to-violet-500',
   },
   {

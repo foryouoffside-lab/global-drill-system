@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/de/drills/visual-tracking/strobe-prediction-pursuit';
 const title = "Stroboskop-Tracking: blinkendes Ziel verfolgen | SkillDrills";
-const description = "Stroboskop-Tracking: Ein Ziel prallt von den Bildschirmrändern ab und verschwindet regelmäßig. Sag seine Position voraus. Kostenlose Browserübung, kein Sehtest.";
+const description = "Stroboskop-Tracking: Ein Ziel prallt von den Bildschirmrändern ab und verschwindet regelmäßig. Sag seine Position voraus. Kostenlose Browserübung.";
 
 export const metadata = {
   title,
@@ -91,7 +91,7 @@ const faqs = [
   { q: "Misst die Übung meine Augenbewegungen?", a: "Nein. Der Browser kann nicht erkennen, wohin du schaust. Er kennt nur die Position, an der das Ziel gezeichnet wird, und deine Einstellungen. Du musst weder klicken noch tippen; das Ergebnis ist ein Übungsprotokoll für dich selbst." },
   { q: "Gibt es eine Punktzahl oder Bewertung?", a: "Eine Note gibt es nicht. Am Ende siehst du, wie lange der Pointer auf dem Ziel lag und wie weit er im Mittel von der Zielmitte entfernt war, getrennt für sichtbare und verdeckte Phasen, dazu Dauer, Geschwindigkeitsfaktor und die Zahl deiner Durchgänge (in diesem Browser gespeichert). Gemessen wird der Pointer, nicht deine Augen." },
   { q: "Welche Einstellungen gibt es?", a: "Dauer 30, 45, 60, 90 oder 120 Sekunden, Geschwindigkeit 0,5- bis 9,0-fach, Zielgröße 10 bis 50 px. Außerdem lassen sich die Linie (Umriss in der unsichtbaren Phase) ausblenden, Zufallstempo, Leuchtspur, Glow, Scanlines, heller oder dunkler Hintergrund und die Zielfarbe umschalten. Mit Esc beendest du den Durchgang jederzeit." },
-  { q: "Verbessert das meine Sehkraft oder mein Aim?", a: "Das kann niemand garantieren. Die Übung ist ein Spiel, bei dem du ein bewegtes Ziel mit den Augen verfolgst. Sie ist kein Sehtest, keine Therapie und verspricht kein besseres Aim in Shootern. Bei Beschwerden mit den Augen wende dich an eine Augenärztin oder einen Augenarzt." },
+  { q: "Verbessert das meine Sehkraft oder mein Aim?", a: "Das kann niemand garantieren. Die Übung ist ein Spiel, bei dem du ein bewegtes Ziel mit den Augen verfolgst, und verspricht kein besseres Aim in Shootern. Vergleiche deine Sessions auf demselben Bildschirm mit denselben Einstellungen." },
   { q: "Beeinflusst mein Bildschirm das Ergebnis?", a: "Ja. Bildwiederholrate, Helligkeit, Kontrast, Bildschirmgröße und Abstand verändern, wie das Ziel aussieht (Woods et al., 2015). Vergleiche deshalb nur Durchgänge mit gleichem Bildschirm, Browser und gleichen Einstellungen." },
   { q: "Wie lange sollte ich üben?", a: "Mehrere kurze Durchgänge von etwa 60 Sekunden, insgesamt 5 bis 10 Minuten, mit Pausen dazwischen. Hör sofort auf bei müden, trockenen oder schmerzenden Augen, Schwindel, Übelkeit oder Kopfschmerzen." }
 ];
@@ -121,7 +121,7 @@ const guide = {
       ["4", "Linie aus", "Die unsichtbare Phase nur per Vorhersage überbrücken"],
       ["5", "Zufallstempo", "Die Vorhersage an wechselndes Tempo anpassen"]
     ],
-    note: "Übungsstufen von SkillDrills zur Orientierung. Keine Sehtest-Normen, keine Nutzerstatistik, keine Perzentile.",
+    note: "Übungsstufen von SkillDrills zur Orientierung. Keine offiziellen Normen, keine Nutzerstatistik, keine Perzentile.",
   },
   techniques: {
     title: "Tipps für die Übung",

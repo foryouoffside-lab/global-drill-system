@@ -671,7 +671,7 @@ export default function SineWavePursuitClient({ copy }: { copy?: { title?: strin
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <p className="text-sm text-slate-300 leading-relaxed">
-                {copy?.description || "The target moves left and right along a fixed sine wave, speeding up and slowing down through each curve. Follow it with your eyes and the pointer. The end screen reports how long the pointer stayed on the target and its average distance from the target centre; the browser does not record eye position, so this is a practice record, not an eye test."}
+                {copy?.description || "The target moves left and right along a fixed sine wave, speeding up and slowing down through each curve. Follow it with your eyes and the pointer. The end screen reports how long the pointer stayed on the target and its average distance from the target centre; the browser does not record eye position, so the summary is based on pointer position."}
               </p>
             </DrillAccordion>
           </div>

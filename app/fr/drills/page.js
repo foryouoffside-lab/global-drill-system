@@ -126,7 +126,7 @@ const faqSchema = {
       "name": "Par quel exercice commencer ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": `Pour la vitesse de clic, ouvrez le test CPS. Pour la visée, l’aim trainer en ligne. Pour les réflexes, le test de réaction ou le jeu de réflexes. Pour la mémoire, les exercices de la catégorie mémoire, comme le jeu Simon.`
+        "text": `Pour la vitesse de clic, ouvrez le test CPS. Pour la visée, l’aim trainer en ligne. Pour les réflexes, le test de réaction ou le jeu de réflexes. Pour la mémoire, les exercices de la catégorie mémoire, comme le jeu de couleurs façon Simon.`
       }
     },
     {

@@ -85,7 +85,7 @@ const dodgeGuide = {
     "O jogo de desviar com o mouse (Quick Dodge) é um jogo de navegador em que projéteis vermelhos vêm de todas as bordas na direção do cursor e você foge deles movendo o mouse. O objetivo é não ser atingido; quanto mais desvios seguidos, maior o multiplicador de combo.",
     "Cada projétil mira na posição do cursor quando surge e depois segue reto. Quem fica parado é atingido; quem dá um passo para o lado escapa. Movimentos rápidos são planejados antes de começar (Kawato, 1999), então vale decidir o destino assim que o projétil aparece.",
     "Com o nível, os projéteis ficam mais rápidos, mais frequentes e maiores. Quanto menores os espaços livres, mais precisão o movimento exige (Fitts, 1954). Ser atingido limpa a tela e só zera o combo.",
-    "Os resultados são registros de prática dentro do SkillDrills, não um exame médico nem medida de desempenho esportivo. Taxa de atualização e periférico influenciam a latência (Woods et al., 2015); compare pontuações com o mesmo equipamento.",
+    "Os resultados são registros de prática dentro do SkillDrills. Taxa de atualização e periférico influenciam a latência (Woods et al., 2015); compare pontuações com o mesmo equipamento.",
   ],
   benchmarks: {
     title: 'Faixas de nota (faixas de prática SkillDrills)',

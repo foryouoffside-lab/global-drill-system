@@ -92,7 +92,7 @@ const videoGameSchema = {
 const faqs = [
   {
     q: "Was mache ich in diesem Spiel?",
-    a: "Du schaust auf den Kern in der Bildschirmmitte und klickst Ziele an, die vom Rand auf ihn zukommen, bevor sie ihn erreichen. So übst du, Bewegungen am Rand zu bemerken, ohne den Blick zu bewegen. Es ist ein Browserspiel, kein Sehtest und keine Therapie."
+    a: "Du schaust auf den Kern in der Bildschirmmitte und klickst Ziele an, die vom Rand auf ihn zukommen, bevor sie ihn erreichen. So übst du, Bewegungen am Rand zu bemerken, ohne den Blick zu bewegen. Es ist ein Browserspiel."
   },
   {
     q: "Was ist der Unterschied zwischen zentralem und peripherem Sehen?",
@@ -154,7 +154,7 @@ const guideProps = {
     "Peripheral Threat Sweeper ist ein kostenloses peripheres Blickfeld Spiel im Browser: Du schaust auf den Kern in der Mitte und fängst Ziele ab, die vom Rand auf ihn zukommen. Ein Treffer bringt +2 Sekunden, ein Fehlklick oder ein Ziel im Kern kostet 1 Sekunde.",
     "Forschung zeigt, dass man die Aufmerksamkeit verschieben kann, ohne die Augen zu bewegen (Posner, 1980). Kontrastreiche, bewegte Ziele fallen auch am Rand schnell auf (Treisman & Gelade, 1980). Das Spiel macht daraus eine Klickaufgabe.",
     "Anfangs erscheinen Ziele etwa alle 1,4 Sekunden, mit steigender Punktzahl werden sie schneller (bis 520 px/s) und kommen dichter (minimal 0,20 Sekunden Abstand). Beim Klicken hilft eine große Bewegung mit kleiner Schlusskorrektur (Woodworth, 1899; Fitts, 1954).",
-    "Die Ergebnisse sind Übungswerte. Sie ersetzen keinen Sehtest, keine Diagnose und keine Behandlung. Wenn dir Veränderungen beim Sehen auffallen, geh zur Augenärztin oder zum Augenarzt."
+    "Die Ergebnisse sind Übungswerte."
   ],
   benchmarks: {
     title: "Orientierung: Punktebereiche",
@@ -166,7 +166,7 @@ const guideProps = {
       ["4", "17.000 – 23.999", "Auch bei schnellen Zielen nicht hinschauen"],
       ["5", "ab 24.000", "Mehrere Ziele nacheinander abarbeiten"]
     ],
-    note: "Diese Bereiche sind SkillDrills-Übungsstufen. Sie sind keine Nutzerstatistik, keine Perzentile und kein Sehtest-Maßstab."
+    note: "Diese Bereiche sind SkillDrills-Übungsstufen. Sie sind keine Nutzerstatistik und keine Perzentile."
   },
   techniques: {
     title: "4 Tipps für mehr Punkte",

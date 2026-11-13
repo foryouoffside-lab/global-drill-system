@@ -784,7 +784,7 @@ export default function PathTracingClient({ copy = null }) {
                     <Brain className="w-4 h-4 text-amber-400" /> What Is Path Tracing Training?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Path Tracing Training</strong> is an advanced spatial sequence memory drill designed to measure route tracing capacity. The <strong>Path Tracing drill</strong> demonstrates animated step paths on 3x3 to 7x7 matrices, testing your ability to lock in and retrace directional routes in exact order. Each step moves to an adjacent tile and never revisits one, so it works like a Corsi-style block-tapping task (Milner, 1971; Corsi, 1972) laid out on a grid; it is practice, not the clinical test.
+                    <strong>Path Tracing Training</strong> is an advanced spatial sequence memory drill designed to measure route tracing capacity. The <strong>Path Tracing drill</strong> demonstrates animated step paths on 3x3 to 7x7 matrices, testing your ability to lock in and retrace directional routes in exact order. Each step moves to an adjacent tile and never revisits one, so it works like a Corsi-style block-tapping task (Milner, 1971; Corsi, 1972) laid out on a grid.
                   </p>
                   <p className="text-sm leading-relaxed">
                     The 60-second clock runs only while you retrace; the path demonstration is untimed. Grouping steps into <strong>directional chunks</strong> is the main strategy for holding longer paths.

@@ -11,10 +11,10 @@ const baseMetadata = buildVisualTrackingHubMetadata('de', 'https://skilldrills.o
 export const metadata = {
   ...baseMetadata,
   title: 'Visuelles Tracking: Blickverfolgung üben | SkillDrills',
-  description: 'Blickverfolgung üben im Browser: 15 kostenlose Tracking-Drills mit Sinuswelle, liegender Acht, Zickzack, Sprüngen und Randreizen. Kein Sehtest, ohne Anmeldung.',
+  description: 'Blickverfolgung üben im Browser: 15 kostenlose Tracking-Drills mit Sinuswelle, liegender Acht, Zickzack, Sprüngen und Randreizen. Ohne Anmeldung.',
   keywords: ['Blickverfolgung üben', 'visuelles Tracking', 'Augenfolgebewegung', 'bewegte Ziele verfolgen', 'Tracking-Übungen im Browser', 'Bahnvorhersage', 'peripheres Sehen', 'kostenlose Browser-Drills'],
-  openGraph: { ...baseMetadata.openGraph, title: 'Visuelles Tracking: Blickverfolgung üben | SkillDrills', description: 'Blickverfolgung üben im Browser: 15 kostenlose Tracking-Drills mit Sinuswelle, liegender Acht, Zickzack, Sprüngen und Randreizen. Kein Sehtest, ohne Anmeldung.', images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Visuelles Tracking: Blickverfolgung üben' }] },
-  twitter: { ...baseMetadata.twitter, title: 'Visuelles Tracking: Blickverfolgung üben | SkillDrills', description: 'Blickverfolgung üben im Browser: 15 kostenlose Tracking-Drills mit Sinuswelle, liegender Acht, Zickzack, Sprüngen und Randreizen. Kein Sehtest, ohne Anmeldung.' },
+  openGraph: { ...baseMetadata.openGraph, title: 'Visuelles Tracking: Blickverfolgung üben | SkillDrills', description: 'Blickverfolgung üben im Browser: 15 kostenlose Tracking-Drills mit Sinuswelle, liegender Acht, Zickzack, Sprüngen und Randreizen. Ohne Anmeldung.', images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Visuelles Tracking: Blickverfolgung üben' }] },
+  twitter: { ...baseMetadata.twitter, title: 'Visuelles Tracking: Blickverfolgung üben | SkillDrills', description: 'Blickverfolgung üben im Browser: 15 kostenlose Tracking-Drills mit Sinuswelle, liegender Acht, Zickzack, Sprüngen und Randreizen. Ohne Anmeldung.' },
 };
 
 const breadcrumbSchema = {

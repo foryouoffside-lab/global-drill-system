@@ -643,7 +643,7 @@ export default function TriangularPursuitClient({ copy }: { copy?: Record<string
             onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
           >
             <p className="text-sm text-slate-300 leading-relaxed">
-              {copy?.description || "Triangular Pursuit is a browser practice task: a target loops a triangle (top centre, bottom right, bottom left), spending the same time on each side, and you follow it with your eyes through each sharp corner. It does not record where you look and is not an eye test (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007). Smooth pursuit tracks accurately to roughly 30°/s along a straight edge, but a corner exceeds that in an instant, so each vertex is closed by a catch-up saccade rather than by pursuit (Krauzlis, 2004)."}
+              {copy?.description || "Triangular Pursuit is a browser practice task: a target loops a triangle (top centre, bottom right, bottom left), spending the same time on each side, and you follow it with your eyes through each sharp corner. It does not record where you look (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007). Smooth pursuit tracks accurately to roughly 30°/s along a straight edge, but a corner exceeds that in an instant, so each vertex is closed by a catch-up saccade rather than by pursuit (Krauzlis, 2004)."}
             </p>
           </DrillAccordion>
         )}

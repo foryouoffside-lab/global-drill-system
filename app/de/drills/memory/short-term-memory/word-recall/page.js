@@ -298,7 +298,7 @@ export default function LocalizedWordRecallPage() {
     sources: pickSources('craik1972', 'murdock1962', 'tulving1962'),
     related: [
       { href: "/de/drills/memory/short-term-memory/digit-span", label: "Zahlenspannen-Test" },
-      { href: "/de/drills/memory/short-term-memory/color-sequence", label: "Senso-Spiel" },
+      { href: "/de/drills/memory/short-term-memory/color-sequence", label: "Farbsequenz-Spiel im Senso-Stil" },
       { href: "/de/drills/memory/spatial-memory/grid-memorization", label: "Visueller Gedächtnistest" },
       { href: "/de/drills/memory/spatial-memory/object-location", label: "Objekt-Ortungstest" },
       { href: "/de/drills/memory/working-memory/n-back", label: "3-Back-Arbeitsgedächtnistest" }

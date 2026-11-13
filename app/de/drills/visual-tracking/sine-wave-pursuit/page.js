@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Wie bewegt sich das Ziel bei der Sinuswellen-Blickverfolgung?",
-    "a": "Das Ziel pendelt mit gleichbleibendem Seitwärtstempo zwischen etwa 5 % und 95 % der Bildschirmbreite (bei Tempo 1,0 rund 220 Pixel pro Sekunde) und folgt dabei einer festen Sinuskurve mit einer Ausschlaghöhe von etwa 28 % der Bildschirmhöhe. An den Rändern kehrt es um und läuft dieselbe Kurve zurück. Eine reine Blickübung im Browser, kein Sehtest."
+    "a": "Das Ziel pendelt mit gleichbleibendem Seitwärtstempo zwischen etwa 5 % und 95 % der Bildschirmbreite (bei Tempo 1,0 rund 220 Pixel pro Sekunde) und folgt dabei einer festen Sinuskurve mit einer Ausschlaghöhe von etwa 28 % der Bildschirmhöhe. An den Rändern kehrt es um und läuft dieselbe Kurve zurück. Eine reine Blickübung im Browser."
   },
   {
     "q": "Warum ändert sich das Tempo nach oben und unten ständig?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Werden meine Sehkraft oder mein Aim besser?",
-    "a": "Das ist nicht garantiert. Die Übung ist kein Sehtest und keine Therapie, sondern ein Werkzeug zum Üben des Hinschauens. Sie verspricht weder bessere Sehschärfe noch besseres Zielen. Bei Beschwerden an den Augen wende dich an eine Fachperson."
+    "a": "Das ist nicht garantiert. Die Übung ist ein Werkzeug zum Üben des Hinschauens und verspricht weder bessere Sehschärfe noch besseres Zielen. Vergleiche deine Sessions auf demselben Bildschirm mit denselben Einstellungen."
   },
   {
     "q": "Wie lange sollte ich üben?",

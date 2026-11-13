@@ -1,0 +1,12 @@
+# Owner rule (2026-11-13): NO clinical / medical wording anywhere - not even disclaimers
+Remove every mention of clinical/medical concepts from user-visible copy, metadata (title/description/keywords/openGraph), JSON-LD, FAQ, HowTo, guide sections, card names/taglines, labels:
+clinical/clinique/klinisch/clínico/임상/臨床, diagnosis/diagnostic/진단/診断, therapy/therapist/Therapie/thérapie/terapia/치료/療法, concussion (all langs), medical/médical/medizinisch/médico/의료/医療/医学, ADHD/TDAH/ADHS, dementia/démence/Demenz/demencia/demência/치매/認知症, neuropsychological/neuropsych*, screening/dépistage/cribado/rastreio/선별/スクリーニング (when health sense), eye exam/eye test (as medical), optometrist/ophthalmologist, patient, MCI, "healthcare professional", "consult a doctor".
+This INCLUDES negations/disclaimers ("this is not a medical test", "not a diagnosis", "does not replace therapy", "consult a doctor"): delete the clause/sentence; do NOT replace it with another disclaimer. Keep copy general and positive: what the drill is, how it plays, what the result shows, how to practise.
+- A FAQ question that exists only for a clinical topic: replace the whole Q+A with a general one (e.g. how often to practise, how to read the result, what affects the score). Keep FAQ count; visible FAQ and JSON-LD must stay identical (same array).
+- Keep titles/H1/primary keywords unless they contain such a term.
+- Do NOT add new factual claims; do not change logic. No new code comments.
+- Do NOT edit: app/terms, app/privacy (legal), citation titles/journal names in source lists (lib/drillSources.js entries and "Sources/References" lists - leave the bibliographic text as published), middleware.js.
+- Never commit/build/start servers (dev server on :3000). After each edited page: `bash docs/seo/tools/aud.sh <path without leading slash>` must print OK (retry once on 404/500).
+- Edit-gate block: `node .claude/hooks/debug-gate.js ack <session_id>` then retry once.
+Check pattern (grep -iE): clinical|clinique|klinisch|clínic|임상|臨床|diagnos|진단|診断|therap|療法|치료|concuss|concusi|Gehirnerschütterung|commotion cérébrale|뇌진탕|脳震盪|medical|médical|medizinisch|médic|의료|医療|医学|ADHD|TDAH|ADHS|dementia|démence|Demenz|demencia|demência|치매|認知症|neuropsych|screening|dépistage|cribado|rastreio|선별|スクリーニング|optometr|ophthalm
+Done = your scope greps clean except sources/legal. Final reply <=120 words: files changed, FAQ replacements, audits OK, leftovers.

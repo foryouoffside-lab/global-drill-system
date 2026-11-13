@@ -19,7 +19,7 @@ export const metadata = {
     "ocular motor training",
     "foveal centering drill",
     "fps teleport tracking",
-    "dynamic visual acuity test"
+    "dynamic visual tracking drill"
   ],
   alternates: {
     canonical: "https://skilldrills.online/drills/visual-tracking/momentum-teleport-pursuit",

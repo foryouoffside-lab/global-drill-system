@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO (2026-11-10, docs/seo/research/physical-2026-11/fr.md)
-// Primary: jeu de vision périphérique (no-demand descriptive; AC is medical).
+// Primary: jeu de vision périphérique (no-demand descriptive).
 // Game framing only: no eye-test, visual-field or UFOV-expansion claims.
 // Fixed +0.6 s -> +2 s (cap 60 s) and the forced -1 s penalty.
 // ============================================================
@@ -92,7 +92,7 @@ const faqs = [
   },
   {
     q: "Qu’appelle-t-on la vision en tunnel ?",
-    a: "Sous stress ou très concentré sur un point, on perçoit souvent moins bien ce qui l’entoure ; on parle couramment de vision en tunnel. Ce jeu fait pratiquer le fait de garder le centre en vue sans perdre les bords. Il ne détecte pas une perte de champ visuel d’origine médicale : pour cela, consultez un ophtalmologiste."
+    a: "Sous stress ou très concentré sur un point, on perçoit souvent moins bien ce qui l’entoure ; on parle couramment de vision en tunnel. Ce jeu fait pratiquer le fait de garder le centre en vue sans perdre les bords."
   },
   {
     q: "Ce jeu élargit-il mon champ visuel ?",
@@ -137,7 +137,7 @@ const guideProps = {
     "Ce jeu de vision périphérique gratuit se joue dans le navigateur : vous gardez les yeux sur le noyau central et interceptez les menaces qui arrivent des bords. Une prise rapporte 2 secondes ; un clic dans le vide ou une menace qui touche le noyau en coûte 1.",
     "La recherche montre qu’on peut déplacer son attention sans bouger les yeux (Posner, 1980). Les cibles contrastées et en mouvement se repèrent vite, même en périphérie (Treisman & Gelade, 1980). Le jeu en fait une tâche de clic.",
     "Au début, une menace apparaît environ toutes les 1,4 seconde ; avec le score, elles deviennent plus rapides et plus fréquentes (jusqu’à 0,20 seconde d’intervalle). Pour cliquer, un grand mouvement suivi d’une petite correction finale aide (Woodworth, 1899 ; Fitts, 1954).",
-    "Les résultats sont des scores d’entraînement. Ils ne remplacent ni un examen de la vue, ni un diagnostic, ni un traitement. Si vous remarquez un changement de votre vision, consultez un ophtalmologiste."
+    "Les résultats sont des scores d’entraînement."
   ],
   benchmarks: {
     title: "Paliers de note (paliers d’entraînement SkillDrills)",

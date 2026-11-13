@@ -104,7 +104,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "O que é o rastreamento com rastros fantasma?",
-    "a": "Um exercício no navegador: você acompanha com os olhos um alvo em linha reta sem se deixar puxar pelo rastro opcional. Duração (30 a 120 segundos), velocidade, tamanho e linha são ajustáveis. Não é teste de visão nem tratamento."
+    "a": "Um exercício no navegador: você acompanha com os olhos um alvo em linha reta sem se deixar puxar pelo rastro opcional. Duração (30 a 120 segundos), velocidade, tamanho e linha são ajustáveis. O resultado se baseia na posição do ponteiro."
   },
   {
     "q": "É um teste de ghosting do monitor?",
@@ -156,7 +156,7 @@ const guideProps = {
   "heading": "Guia: Rastreamento com Rastros Fantasma",
   "intro": [
     "No rastreamento com rastros fantasma, o alvo anda em velocidade constante em linha reta e quica nas bordas. Se você ativar o rastro, a página desenha atrás dele anéis claros que vão sumindo (desligado por padrão). O objetivo é manter o olhar no alvo sólido sem seguir as cópias.",
-    "O navegador conhece a posição desenhada do alvo, seus ajustes e o ponteiro, não para onde seus olhos estão olhando. No fim, a tela mostra o tempo com o ponteiro sobre o alvo e a distância média até o centro, sem nota. O resultado é um registro de prática repetível, não uma medida clínica nem um teste de visão.",
+    "O navegador conhece a posição desenhada do alvo, seus ajustes e o ponteiro, não para onde seus olhos estão olhando. No fim, a tela mostra o tempo com o ponteiro sobre o alvo e a distância média até o centro, sem nota. O resultado é um registro de prática repetível, baseado na posição do ponteiro.",
     "Use uma distância confortável e compare sempre a mesma tela e o mesmo navegador. Taxa de atualização e dispositivo de entrada mudam a exibição (Woods et al., 2015). Pare se sentir dor, tontura, náusea ou visão embaçada persistente."
   ],
   "benchmarks": {

@@ -85,7 +85,7 @@ const gridGuide = {
     'Esquivar casillas en la cuadrícula es un juego de navegador: en una cuadrícula 3x3 sacas el cursor de las casillas marcadas en naranja antes de que exploten. No hay objetos volando: eliges una de las 9 casillas, así que decidir rápido y detenerte con precisión cuentan por igual.',
     'Al subir de nivel, el aviso baja de 1,4 a 0,45 segundos y hasta 7 de las 9 casillas se vuelven peligrosas. Al final solo quedan 2 casillas seguras y no hay tiempo para revisar una por una. Como en los experimentos de señales de atención de Posner (Posner, 1980), ayuda leer de un vistazo el contraste entre casillas que parpadean y casillas oscuras.',
     'Un movimiento rápido combina un gran impulso y una pequeña corrección final (Woodworth, 1899). Elegir la casilla correcta y pasarte del borde cuenta igualmente como impacto: practica detenerte dentro de la casilla.',
-    'Los resultados son marcas de práctica propias de SkillDrills, no un examen médico, ni una prueba de la vista, ni una medida de rendimiento deportivo. Compara tus puntuaciones con el mismo ratón, la misma sensibilidad y la misma pantalla.',
+    'Los resultados son marcas de práctica propias de SkillDrills. Compara tus puntuaciones con el mismo ratón, la misma sensibilidad y la misma pantalla.',
   ],
   benchmarks: {
     title: 'Tramos de nota (tramos de práctica SkillDrills)',
@@ -133,7 +133,7 @@ export default function DynamicGridEvasionPageEs() {
           ],
           aboutTitle: '¿Qué es el juego de esquivar casillas en la cuadrícula?',
           aboutHeading: 'Salir de las casillas de peligro de una cuadrícula 3x3',
-          aboutText: 'En este juego, casillas de una cuadrícula 3x3 parpadean en naranja antes de explotar y tú llevas el cursor a tiempo a una casilla segura. Al subir de nivel, el aviso se acorta y hay más casillas de peligro. Se trata de decidir rápido y frenar el ratón con precisión, no de una medición médica.',
+          aboutText: 'En este juego, casillas de una cuadrícula 3x3 parpadean en naranja antes de explotar y tú llevas el cursor a tiempo a una casilla segura. Al subir de nivel, el aviso se acorta y hay más casillas de peligro. Se trata de decidir rápido y frenar el ratón con precisión.',
           aboutCards: [
             { title: 'Para quién', desc: 'Para quien disfruta de los juegos de esquivar en una cuadrícula o quiere practicar reaccionar a un aviso con el ratón.' },
             { title: 'Qué practicas', desc: 'Distinguir casillas de peligro y seguras, elegir la más cercana y detener el cursor dentro.' },

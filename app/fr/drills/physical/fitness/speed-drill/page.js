@@ -70,7 +70,7 @@ const videoGameSchema = {
 };
 
 const faqs = [
-  { q: 'Comment fonctionne ce jeu de clic ?', a: 'Des cibles rondes se déplacent à l’écran et rétrécissent ; vous devez les cliquer avant qu’elles disparaissent. Chaque touche combine repérage, déplacement du curseur et précision du clic, et le score et le combo sont enregistrés. C’est un jeu d’entraînement dans le navigateur, pas un examen médical des réflexes.' },
+  { q: 'Comment fonctionne ce jeu de clic ?', a: 'Des cibles rondes se déplacent à l’écran et rétrécissent ; vous devez les cliquer avant qu’elles disparaissent. Chaque touche combine repérage, déplacement du curseur et précision du clic, et le score et le combo sont enregistrés. C’est un jeu d’entraînement dans le navigateur.' },
   { q: 'Pourquoi les cibles deviennent-elles de plus en plus petites ?', a: 'Une cible plus petite est plus difficile à toucher, comme le décrit la loi de Fitts (Fitts, 1954). Chaque cible rétrécit après son apparition et disparaît à 4 px de rayon : plus vous cliquez tard, plus c’est dur (si l’option de délai est désactivée, les cibles ne rétrécissent pas). L’idéal est de toucher tôt, tant que la cible est grande.' },
   { q: 'Comment sont calculés les points et le temps ?', a: 'Chaque touche rapporte 100 points multipliés par le combo et le niveau, et ajoute 2 secondes au temps restant (60 secondes au maximum). La partie commence avec 45 secondes et le niveau monte tous les 1 750 points. Si une cible disparaît ou si vous cliquez dans le vide, le combo repart à zéro et 1 seconde est retirée.' },
   { q: 'Le jeu mesure-t-il les clics par seconde ?', a: 'Non. Le jeu ne compte ni le nombre ni la vitesse de vos clics. Chaque cible doit être touchée d’un clic précis, et un clic dans le vide retire 1 seconde : cliquer en rafale vous pénalise.' },
@@ -110,7 +110,7 @@ const speedGuide = {
       'Le Speed Drill est un jeu de clic dans le navigateur : des cibles rondes se déplacent à l’écran et rétrécissent jusqu’à disparaître, et vous devez les toucher avant. Chaque clic combine recherche, déplacement du curseur et précision – un autre exercice qu’un simple test de temps de réaction.',
       'Viser vite à la souris se décrit souvent en deux phases : un grand mouvement puis une petite correction finale (Woodworth, 1899). La loi de Fitts (Fitts, 1954) explique pourquoi les petites cibles sont plus difficiles. Comme les cibles rétrécissent sans cesse, mieux vaut lancer le grand mouvement tôt.',
       'Des cibles mobiles claires et contrastées attirent l’œil même en bord de champ visuel (Treisman & Gelade, 1980). Plutôt que de fixer un point, regardez tout l’écran pour repérer plus vite les nouvelles cibles.',
-      'Comparez vos résultats avec la même souris, la même sensibilité et le même écran ; la fréquence d’affichage et le périphérique influencent la latence (Woods et al., 2015). Les chiffres sont des relevés d’entraînement, pas une mesure médicale ni un classement de joueurs.',
+      'Comparez vos résultats avec la même souris, la même sensibilité et le même écran ; la fréquence d’affichage et le périphérique influencent la latence (Woods et al., 2015). Les chiffres sont des relevés d’entraînement.',
     ],
   },
   benchmarks: {

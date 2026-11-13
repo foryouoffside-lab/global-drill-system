@@ -66,22 +66,22 @@ const RULES_ITEMS = [
   { num: "4", text: "Timeout", highlight: "Window Shrinks", result: "−1s and combo reset" }
 ];
 
-const ABOUT_TEXT = `Symbol Matching uses the symbol-to-digit format of the Symbol Digit Modalities Test (SDMT): a key bar pairs six symbols with the digits 1 to 6, one symbol is shown, and you tap the digit it maps to. It is a practice drill, not the SDMT itself and not a clinical test.
+const ABOUT_TEXT = `Symbol Matching uses the symbol-to-digit format of the Symbol Digit Modalities Test (SDMT): a key bar pairs six symbols with the digits 1 to 6, one symbol is shown, and you tap the digit it maps to. It is a practice drill, not the SDMT itself.
 
 The key is reshuffled every session, so you have to look it up rather than rely on a memorised layout. The response window for each symbol gets shorter as your level climbs.
 
 The run starts with a 45-second clock. Each correct digit adds 2 seconds (up to 60); a wrong digit or a timed-out symbol costs 1 second and resets your combo.`;
 
 const FAQ_ITEMS = [
-  { q: "What is the Digit Symbol Substitution Test (DSST)?", a: "The Digit Symbol Substitution Test (DSST) is a classic neuropsychological test from the Wechsler Adult Intelligence Scale (WAIS). A legend at the top maps digits (1-9) to unique symbols. You must rapidly scan rows of digits below and write or select the corresponding symbol for each. It measures processing speed, visual scanning efficiency, short-term associative memory, and executive attention." },
+  { q: "What is the Digit Symbol Substitution Test (DSST)?", a: "The Digit Symbol Substitution Test (DSST) is a classic test from the Wechsler Adult Intelligence Scale (WAIS). A legend at the top maps digits (1-9) to unique symbols. You must rapidly scan rows of digits below and write or select the corresponding symbol for each. It measures processing speed, visual scanning efficiency, short-term associative memory, and executive attention." },
   { q: "What does the symbol matching test measure?", a: "Symbol matching measures: (1) Processing speed — how quickly your brain can look up and apply the digit-to-symbol mapping, (2) Visual scanning — efficient eye movement across the legend and test items, (3) Associative learning — binding digit-symbol pairs in short-term memory, (4) Executive attention — sustaining the task over repeated monotonous items, and (5) Motor speed — the time to indicate your response." },
-  { q: "What is the difference between DSST and SDMT?", a: "In the DSST (Wechsler), you look at a digit and must write the corresponding symbol. In the SDMT (Symbol Digit Modalities Test by Smith, 1973), you look at a symbol and must write or say the corresponding digit. The SDMT is often preferred in clinical settings because oral administration (saying numbers aloud) removes motor speed as a confounding variable, isolating pure cognitive processing speed." },
-  { q: "Is this symbol matching drill a medical or screening test?", a: "No. This is a free browser game built on the same symbol-substitution format as the DSST and SDMT, but it is not those instruments and is not a screening or diagnostic test for any condition. The clinical versions use different materials, timing and scoring, and are administered and interpreted by trained professionals. Nothing you score here tells you anything about your health. If you are concerned about your memory or thinking, speak to a doctor." },
+  { q: "What is the difference between DSST and SDMT?", a: "In the DSST (Wechsler), you look at a digit and must write the corresponding symbol. In the SDMT (Symbol Digit Modalities Test by Smith, 1973), you look at a symbol and must write or say the corresponding digit. Because the SDMT can be answered orally (saying numbers aloud), it removes motor speed as a confounding variable, isolating cognitive processing speed." },
+  { q: "What affects my symbol matching score?", a: "Correct digits raise your combo and add 2 seconds to the clock (up to 60), while a wrong digit or a timed-out symbol costs 1 second and resets your combo. The response window shrinks as your level climbs, so steady accuracy keeps the run going longer than rushing." },
   { q: "How can I improve my cognitive processing speed?", a: "Practice on a task like this makes you faster at that task. General habits such as enough sleep and regular exercise support everyday alertness, but no drill guarantees a faster brain overall." },
   { q: "What is processing speed and why does it matter?", a: "Processing speed is how quickly you can take in simple information and respond to it. Many everyday tasks, such as scanning a list or reacting to a sign, depend on it. This drill gives you one narrow, repeatable task for practising it." },
   { q: "Will practising this drill make me faster at everyday tasks?", a: "You will get faster at this drill with practice. Whether that carries over to unrelated everyday tasks is far less certain -- gains on a trained cognitive task often fail to generalise to untrained ones. Treat your score as a measure of how well you do this particular task, not as a general index of how your brain works." },
   { q: "What strategies help improve symbol matching speed?", a: "Key strategies: (1) Learn the key in the first few seconds, since it stays fixed for the whole run, (2) keep your eyes near the key bar so lookups are short, (3) favour accuracy, because a wrong digit costs a second and your combo, (4) practise regularly; scores on this drill usually rise with repetition." },
-  { q: "How is my score shown?", a: "At the end you see your score, accuracy, hits, misses and peak level, plus a letter grade against a fixed SkillDrills benchmark. These are drill results, not clinical norms, and they are not comparable to DSST or SDMT scores." },
+  { q: "How is my score shown?", a: "At the end you see your score, accuracy, hits, misses and peak level, plus a letter grade against a fixed SkillDrills benchmark. These are drill results and are not comparable to DSST or SDMT scores." },
   { q: "Is this symbol matching test free to play online?", a: "Yes. The Symbol Matching drill on SkillDrills is completely free. No registration, downloads, or subscriptions required. It runs directly in your browser on desktop and mobile and shows your results after each session." }
 ];
 
@@ -641,7 +641,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
               icon={Target}
               accent="cyan"
               title={copy?.startTitle || "Symbol Matching"}
-              subtitle="SDMT Paradigm • Visual Search"
+              subtitle={copy?.startSubtitle || "Symbol Digit • Visual Search"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -707,7 +707,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
                 <section>
                   <div className="space-y-4">
                     <p className="text-sm leading-relaxed text-gray-300">
-                      {copy?.aboutLead || 'A symbol-substitution task asks you to match symbols to digits against the clock, measuring processing speed rather than knowledge. This drill borrows the format of established symbol-digit tasks as a game, not as a clinical instrument.'}
+                      {copy?.aboutLead || 'A symbol-substitution task asks you to match symbols to digits against the clock, measuring processing speed rather than knowledge. This drill borrows the format of established symbol-digit tasks as a game.'}
                     </p>
                     {aboutText.split('\n\n').map((para, i) => (
                       <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>

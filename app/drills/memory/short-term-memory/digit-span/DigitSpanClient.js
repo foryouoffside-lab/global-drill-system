@@ -755,7 +755,7 @@ export default function DigitSpanClient({ copy = null }) {
                     <Brain className="w-4 h-4 text-purple-400" /> What Is Digit Span Training?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Digit span</strong> tasks are a long-standing way psychologists study short-term memory capacity. The <strong>Digit Span drill</strong> is a free practice version, not a clinical or IQ test: it shows a random digit string (3 to 15 digits) and you type it back in the same order.
+                    <strong>Digit span</strong> tasks are a long-standing way psychologists study short-term memory capacity. The <strong>Digit Span drill</strong> is a free practice version: it shows a random digit string (3 to 15 digits) and you type it back in the same order.
                   </p>
                   <p className="text-sm leading-relaxed">
                     By practicing <strong>numerical recall chunking</strong>, you can practice holding longer number strings under time pressure.

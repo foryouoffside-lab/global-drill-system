@@ -174,7 +174,7 @@ export default function DistractionFighterPagePT() {
         "name": "Como a pontuação de precisão é calculada?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cada acerto vale 100 pontos × multiplicador de combo (até 3x) × fator de nível e soma 2 segundos ao relógio (máx. 60 s). Um erro ou palavra expirada (opção Tempo-limite ativada, padrão) zera o combo e tira 1 segundo. A precisão é acertos ÷ (acertos + erros + expiradas). As palavras de cor aparecem por enquanto em inglês (RED, BLUE…)."
+          "text": "Cada acerto vale 100 pontos × multiplicador de combo (até 3x) × fator de nível e soma 2 segundos ao relógio (máx. 60 s). Um erro ou palavra expirada (opção Tempo-limite ativada, padrão) zera o combo e tira 1 segundo. A precisão é acertos ÷ (acertos + erros + expiradas). As palavras de cor aparecem em português (VERMELHO, AZUL…)."
         }
       },
       {
@@ -297,7 +297,7 @@ export default function DistractionFighterPagePT() {
             { title: "Controle Inibitório", desc: "Suprima o impulso de leitura e isole a percepção cromática sob pressão de tempo crescente.", color: "bg-purple-600" }
           ],
           rulesItems: [
-            { num: "1", text: "Palavra de cor (em inglês)", highlight: "escolha a tinta", result: "ignore a palavra" },
+            { num: "1", text: "Palavra de cor (em português)", highlight: "escolha a tinta", result: "ignore a palavra" },
             { num: "2", text: "Acerto", highlight: "100 × combo × nível", result: "+2 s (máx. 60 s)" },
             { num: "3", text: "Erro / palavra expirada", highlight: "combo zerado", result: "-1 s" },
             { num: "4", text: "Nível maior", highlight: "janela mais curta", result: "6 cores a partir do nív. 4" }

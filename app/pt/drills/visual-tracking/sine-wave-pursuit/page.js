@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Como se move o alvo no rastreamento ocular senoidal?",
-    "a": "O alvo vai e volta com velocidade horizontal constante entre cerca de 5% e 95% da largura do ecrã (cerca de 220 píxeis por segundo a 1,0x) e segue uma curva senoidal fixa com amplitude de cerca de 28% da altura do ecrã. Nas margens inverte o sentido e percorre a mesma curva de volta. É um exercício do olhar no navegador, não um exame de visão."
+    "a": "O alvo vai e volta com velocidade horizontal constante entre cerca de 5% e 95% da largura do ecrã (cerca de 220 píxeis por segundo a 1,0x) e segue uma curva senoidal fixa com amplitude de cerca de 28% da altura do ecrã. Nas margens inverte o sentido e percorre a mesma curva de volta. É um exercício do olhar no navegador."
   },
   {
     "q": "Porque é que a velocidade vertical muda sempre?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Isto melhora a minha visão ou a minha mira?",
-    "a": "Não há garantia. Não é um exame de visão nem uma terapia, mas uma ferramenta para praticar o olhar sobre um alvo. Não promete melhor acuidade nem melhor pontaria. Se notar algum problema nos olhos, consulte um profissional."
+    "a": "Não há garantia. É uma ferramenta para praticar o olhar sobre um alvo e não promete melhor acuidade nem melhor pontaria. Compare as sessões no mesmo ecrã e com as mesmas definições."
   },
   {
     "q": "Quanto tempo devo praticar?",

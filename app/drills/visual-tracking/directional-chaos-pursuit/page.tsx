@@ -267,7 +267,7 @@ const guide = {
     title: "Directional Chaos Pursuit & Saccadic Recovery Benchmarks",
     headers: ["Performance Tier", "Speed Multiplier", "Gaze Recovery & Tracking Continuity", "Neuromotor & Ocular Profile"],
     rows: [
-      ["Tier 1: Apex Reactive Pursuit", "2.0x+", "Quick catch-up eye movement after each trajectory change and an immediate return to following the target.", "Strongest recovery in this drill's tiers; a practice target, not a clinical or esports standard."],
+      ["Tier 1: Apex Reactive Pursuit", "2.0x+", "Quick catch-up eye movement after each trajectory change and an immediate return to following the target.", "Strongest recovery in this drill's tiers; a practice target, not an esports standard."],
       ["Tier 2: Superior Saccadic Recovery", "1.4x – 1.9x", "High-velocity re-centering with minimal oscillatory overshoot; smooth pursuit resumes in <180 ms.", "Exceptional extraocular coordination; rapid adaptation to erratic, non-linear directional switches."],
       ["Tier 3: Solid Baseline", "1.0x – 1.3x", "Consistent tracking across standard turns; minor latency lag on acute angle rebounds.", "Typical adult baseline; adequate for casual gaming, driving, and general sports reactions."],
       ["Tier 4: Delayed Refixation", "0.7x – 0.9x", "Target regularly escapes foveal capture; multiple secondary corrective saccades required.", "Elevated sensorimotor processing latency during direction shifts; benefits from sub-1.0x training."],

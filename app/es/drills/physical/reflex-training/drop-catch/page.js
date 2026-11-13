@@ -92,7 +92,7 @@ const dropGuide = {
     'Drop Catch es un juego gratis de navegador para atrapar objetos que caen: los objetivos bajan desde arriba, haces clic solo en los verdes y dejas pasar los señuelos rojos. Atrapa los verdes, evita los rojos: cada captura suma +2 segundos y cada error resta 1 segundo.',
     'Cuando primero hay que distinguir entre estímulos, se responde por lo general más despacio que en una reacción simple (Donders, 1868). Además, un modelo describe una carrera entre el impulso de hacer clic y la orden de parar (Logan et al., 1984). El juego permite notar ambas ideas jugando.',
     'Lee (1976) estudió cómo se estima el tiempo que falta para que llegue un objeto que se acerca. La velocidad de caída sube con el nivel de unos 400 a 1.250 px/s: cuanto más tarde decides, más difícil es.',
-    'La puntuación es un resultado de práctica, no un test médico de reacción ni una evaluación deportiva. Compara tus resultados en el mismo equipo y la misma pantalla.',
+    'La puntuación es un resultado de práctica. Compara tus resultados en el mismo equipo y la misma pantalla.',
   ],
   benchmarks: {
     title: 'Orientación: tramos de puntuación',

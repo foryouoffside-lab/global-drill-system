@@ -62,7 +62,7 @@ const faqItems = [
   },
   {
     "q": "Ist das ein Test des visuellen Gedächtnisses?",
-    "a": "Nein, es ist ein Übungsspiel ohne Diagnose oder Normwerte. Für klassische Gedächtnistests gibt es eigene Seiten im Memory-Bereich von SkillDrills."
+    "a": "Nein, es ist ein Übungsspiel ohne Normwerte. Für klassische Gedächtnistests gibt es eigene Seiten im Memory-Bereich von SkillDrills."
   },
   {
     "q": "Funktioniert es auf dem Handy?",
@@ -115,7 +115,7 @@ const guide = {
   "heading": "Muster merken Spiel: Anleitung und Tipps",
   "intro": [
     "Das Muster merken Spiel ist ein kostenloses Browser-Spiel: Ein Pfad blitzt kurz auf, du merkst ihn dir und zeichnest ihn danach mit der Maus nach. Sobald der Pfad verschwindet, startest du im cyanfarbenen Knoten, fährst die Punkte in der gemerkten Reihenfolge ab und lässt die Maustaste im magentafarbenen Endknoten los. Wie nah deine Linie am Original liegt, wird als Übereinstimmung in Prozent berechnet.",
-    "Eine Runde dauert 45 Sekunden. Das Level beginnt jede Runde bei 1 und steigt mit Punkten und Serien; um Level 15 erreicht das Spiel 8 Punkte, 0,6 Sekunden Anzeigezeit und 85 % geforderte Übereinstimmung. Als Referenz für die Schwierigkeit dienten das Arbeitsgedächtnismodell mit seinem visuell-räumlichen Notizblock (Baddeley & Hitch, 1974) und Befunde, nach denen dort etwa vier Einheiten Platz haben (Cowan, 2001). Das Spiel ist eine Übung, kein Gedächtnistest mit Diagnose oder Normwerten."
+    "Eine Runde dauert 45 Sekunden. Das Level beginnt jede Runde bei 1 und steigt mit Punkten und Serien; um Level 15 erreicht das Spiel 8 Punkte, 0,6 Sekunden Anzeigezeit und 85 % geforderte Übereinstimmung. Als Referenz für die Schwierigkeit dienten das Arbeitsgedächtnismodell mit seinem visuell-räumlichen Notizblock (Baddeley & Hitch, 1974) und Befunde, nach denen dort etwa vier Einheiten Platz haben (Cowan, 2001). Das Spiel ist eine Übung ohne Normwerte."
   ],
   "techniques": {
     "title": "Tipps für genaueres Nachzeichnen",

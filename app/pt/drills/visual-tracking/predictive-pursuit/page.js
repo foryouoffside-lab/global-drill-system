@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Como se move o alvo no rastreamento visual preditivo?",
-    "a": "À velocidade 1,0x, um ponto aleatório do ecrã passa a ser o novo destino a cada 2,2 segundos, aproximadamente. O alvo arranca depressa nessa direção, abranda aos poucos, para em cerca de 1,5 segundos e espera pelo destino seguinte. Não há oclusão nem desaparecimento. É um exercício do olhar no navegador, não um exame de visão."
+    "a": "À velocidade 1,0x, um ponto aleatório do ecrã passa a ser o novo destino a cada 2,2 segundos, aproximadamente. O alvo arranca depressa nessa direção, abranda aos poucos, para em cerca de 1,5 segundos e espera pelo destino seguinte. Não há oclusão nem desaparecimento. É um exercício do olhar no navegador."
   },
   {
     "q": "O que se antecipa, exatamente?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Isto melhora a minha visão ou a minha mira?",
-    "a": "Não há garantia. Não é um exame de visão nem uma terapia, mas uma ferramenta para praticar o olhar sobre um alvo. Não promete melhor acuidade nem melhor pontaria. Se notar algum problema nos olhos, consulte um profissional."
+    "a": "Não há garantia. É uma ferramenta para praticar o olhar sobre um alvo e não promete melhor acuidade nem melhor pontaria. Compare as sessões no mesmo ecrã e com as mesmas definições."
   },
   {
     "q": "Quanto tempo devo praticar?",

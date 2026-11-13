@@ -213,16 +213,6 @@ export default function AboutPage() {
             </p>
           </Section>
 
-          <Section title="Not medical or diagnostic">
-            <p>
-              These drills are training and entertainment tools. They are not a medical device, not
-              a clinical assessment, and not a diagnostic test for any condition. Nothing here
-              diagnoses, treats, prevents or screens for anything, and a score should never be used
-              to reason about your health. If you are concerned about your vision, reaction speed
-              or cognition, talk to a qualified clinician.
-            </p>
-          </Section>
-
           <Section title="Start training">
             <p>
               All {DRILL_COUNT} drills are free and open at{' '}

@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Choice Reaction Test Online | Decision Speed | SkillDrills",
-  description: "Free choice reaction test online: match targets to a changing rule and practise decision speed, visual discrimination, and accuracy. Non-clinical.",
+  description: "Free choice reaction test online: match targets to a changing rule and practise decision speed, visual discrimination, and accuracy.",
   keywords: ["choice reaction test online", "choice reaction time test", "reaction time test", "reaction time test online", "decision speed test", "visual reaction time", "cognitive processing speed", "Hick's law test", "reaction test browser"],
   openGraph: {
     title: "Choice Reaction Test Online | Decision Speed | SkillDrills",
-    description: "Free choice reaction test online: match targets to a changing rule and practise decision speed, visual discrimination, and accuracy. Non-clinical.",
+    description: "Free choice reaction test online: match targets to a changing rule and practise decision speed, visual discrimination, and accuracy.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Choice Reaction Test Online | Decision Speed | SkillDrills",
-    description: "Free choice reaction test online: match targets to a changing rule and practise decision speed, visual discrimination, and accuracy. Non-clinical.",
+    description: "Free choice reaction test online: match targets to a changing rule and practise decision speed, visual discrimination, and accuracy.",
   },
   robots: { index: true, follow: true },
   alternates: {

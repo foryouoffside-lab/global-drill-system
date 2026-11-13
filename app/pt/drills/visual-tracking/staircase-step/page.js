@@ -92,7 +92,7 @@ const faqs = [
   { q: "O exercício mede os movimentos dos meus olhos?", a: "Não. O navegador não sabe para onde você está olhando; ele só conhece a posição em que o alvo é desenhado, as suas configurações e a posição do ponteiro. Não é preciso clicar nem tocar; o resultado é um registro de prática para você mesmo." },
   { q: "Tem pontuação ou nota?", a: "Não há nota. No fim, a tela mostra a porcentagem de tempo com o ponteiro sobre o alvo, a distância média e RMS do ponteiro ao centro do alvo, a duração, o multiplicador de velocidade e o total de sessões (salvo neste navegador). Isso mede o ponteiro, não os seus olhos. Se quiser contar quantas vezes perdeu o alvo, anote por conta própria." },
   { q: "Quais configurações existem?", a: "Duração de 30, 45, 60, 90 ou 120 segundos, velocidade de 0,5x a 9,0x e tamanho do alvo de 10 a 50 px. Também dá para ocultar a linha (trajeto em zigue-zague), ligar velocidade aleatória, rastro, brilho, linhas de varredura, fundo claro ou escuro e trocar a cor do alvo. A tecla Esc encerra a sessão a qualquer momento." },
-  { q: "Isso melhora a visão ou a mira?", a: "Não há garantia. É um exercício em que você acompanha um alvo em movimento com os olhos; não é exame de vista, não é tratamento e não promete mira melhor em jogos de tiro. Se sentir algum problema nos olhos, procure um oftalmologista." },
+  { q: "Isso melhora a visão ou a mira?", a: "Não há garantia. É um exercício em que você acompanha um alvo em movimento com os olhos e não promete mira melhor em jogos de tiro. Compare as sessões na mesma tela e com as mesmas configurações." },
   { q: "A tela influencia o resultado?", a: "Sim. Taxa de atualização, brilho, contraste, tamanho da tela e distância mudam a forma como o alvo aparece (Woods et al., 2015). Compare apenas sessões feitas na mesma tela, no mesmo navegador e com as mesmas configurações." },
   { q: "Quanto tempo devo praticar?", a: "Algumas sessões de cerca de 60 segundos, de 5 a 10 minutos no total, com pausas. Pare na hora se sentir olhos cansados, secos ou doloridos, tontura, enjoo ou dor de cabeça." }
 ];
@@ -109,7 +109,7 @@ const guide = {
   intro: [
     "O rastreamento ocular vertical é um treino grátis no navegador: um alvo vai da esquerda para a direita em zigue-zague enquanto desce, degrau por degrau, do alto até a parte de baixo da tela. Lá embaixo, ele volta a subir pelo mesmo caminho. O trajeto liga 8 pontos e ocupa cerca de 60% da largura da tela.",
     "Depois da contagem 3-2-1, o alvo se move pelo tempo escolhido (30 a 120 segundos, padrão 60). Não é preciso clicar nem apertar nada; no fim, a tela mostra a distância do ponteiro ao alvo, não a posição dos seus olhos. Em 1,0x, cada trajeto leva cerca de 4,5 segundos.",
-    "O navegador não registra para onde você olha. Trate o resultado como um registro de prática pessoal, não como teste de visão ou de atenção.",
+    "O navegador não registra para onde você olha. Trate o resultado como um registro de prática pessoal, baseado na posição do ponteiro.",
     "Compare sessões na mesma tela e à mesma distância; a taxa de atualização e o atraso de exibição influenciam a fluidez do alvo (Woods et al., 2015). Pare se sentir dor, tontura, enjoo ou visão embaçada persistente."
   ],
   benchmarks: {
@@ -122,7 +122,7 @@ const guide = {
       ["4", "Linha oculta", "Prever a próxima virada"],
       ["5", "Velocidade aleatória", "Acompanhar mesmo com mudanças de velocidade"]
     ],
-    note: "Etapas de prática da SkillDrills apenas como orientação. Não são normas de exame de vista, estatísticas de usuários nem percentis.",
+    note: "Etapas de prática da SkillDrills apenas como orientação. Não são normas oficiais, estatísticas de usuários nem percentis.",
   },
   techniques: {
     title: "Dicas de prática",

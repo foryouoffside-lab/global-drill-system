@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Werden meine Sehkraft oder mein Aim besser?",
-    "a": "Das ist nicht garantiert. Die Übung ist kein Sehtest und keine Therapie, sondern ein Werkzeug zum Üben des Hinschauens. Sie verspricht weder bessere Sehschärfe noch besseres Zielen. Bei Beschwerden an den Augen wende dich an eine Fachperson."
+    "a": "Das ist nicht garantiert. Die Übung ist ein Werkzeug zum Üben des Hinschauens und verspricht weder bessere Sehschärfe noch besseres Zielen. Vergleiche deine Sessions auf demselben Bildschirm mit denselben Einstellungen."
   },
   {
     "q": "Wie lange sollte ich üben?",

@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Wie bewegt sich das Ziel bei der prädiktiven Blickverfolgung?",
-    "a": "Bei Tempo 1,0 wird etwa alle 2,2 Sekunden ein zufälliger Punkt auf dem Bildschirm zum neuen Ziel. Das Ziel startet zügig dorthin, wird immer langsamer, kommt innerhalb von etwa 1,5 Sekunden zum Stehen und wartet auf den nächsten Punkt. Es gibt keine Verdeckung und kein Verschwinden. Eine reine Blickübung im Browser, kein Sehtest."
+    "a": "Bei Tempo 1,0 wird etwa alle 2,2 Sekunden ein zufälliger Punkt auf dem Bildschirm zum neuen Ziel. Das Ziel startet zügig dorthin, wird immer langsamer, kommt innerhalb von etwa 1,5 Sekunden zum Stehen und wartet auf den nächsten Punkt. Es gibt keine Verdeckung und kein Verschwinden. Eine reine Blickübung im Browser."
   },
   {
     "q": "Was genau wird vorhergesagt?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Werden meine Sehkraft oder mein Aim besser?",
-    "a": "Das ist nicht garantiert. Die Übung ist kein Sehtest und keine Therapie, sondern ein Werkzeug zum Üben des Hinschauens. Sie verspricht weder bessere Sehschärfe noch besseres Zielen. Bei Beschwerden an den Augen wende dich an eine Fachperson."
+    "a": "Das ist nicht garantiert. Die Übung ist ein Werkzeug zum Üben des Hinschauens und verspricht weder bessere Sehschärfe noch besseres Zielen. Vergleiche deine Sessions auf demselben Bildschirm mit denselben Einstellungen."
   },
   {
     "q": "Wie lange sollte ich üben?",

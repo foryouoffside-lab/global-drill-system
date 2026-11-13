@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 // SEO (2026-11-10, docs/seo/research/physical-2026-11/es.md)
 // Primary: Ejercicios de visión periférica (no-demand descriptive).
-// Dropped "Test" (clinical/DGT field-test intent) and UFOV-expansion claims.
+// Dropped "Test" (DGT field-test intent) and UFOV-expansion claims.
 // Visual peripheral-ping-pursuit keeps "Fijación Central".
 // ============================================================
 

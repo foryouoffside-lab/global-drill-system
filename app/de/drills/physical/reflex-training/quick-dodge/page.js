@@ -85,7 +85,7 @@ const dodgeGuide = {
     "Das Dodge Game (Quick Dodge) ist ein Maus-Ausweichspiel im Browser: Rote Geschosse fliegen von allen Bildschirmrändern auf deinen Zeiger zu, und du weichst ihnen mit der Maus aus. Ziel ist, nicht getroffen zu werden; je mehr Ausweicher in Folge, desto höher der Combo-Multiplikator.",
     "Jedes Geschoss zielt beim Erscheinen auf deine Zeigerposition und fliegt dann geradeaus. Wer stillhält, wird getroffen; wer kurz zur Seite geht, entkommt. Schnelle Bewegungen werden vorab geplant (Kawato, 1999), daher lohnt es sich, beim Erscheinen eines Geschosses das Ziel schon festzulegen.",
     "Mit steigendem Level werden die Geschosse schneller, häufiger und größer. Je enger die freien Lücken, desto genauer musst du dich bewegen (Fitts, 1954). Ein Treffer leert den Bildschirm und setzt nur die Combo zurück.",
-    "Die Ergebnisse sind Übungswerte innerhalb von SkillDrills, kein medizinischer Test und keine Messung sportlicher Leistung. Bildwiederholrate und Eingabegerät beeinflussen die Latenz (Woods et al., 2015); vergleiche Werte daher mit derselben Ausstattung.",
+    "Die Ergebnisse sind Übungswerte innerhalb von SkillDrills. Bildwiederholrate und Eingabegerät beeinflussen die Latenz (Woods et al., 2015); vergleiche Werte daher mit derselben Ausstattung.",
   ],
   benchmarks: {
     title: 'Bewertungsstufen (SkillDrills-Übungsbereiche)',

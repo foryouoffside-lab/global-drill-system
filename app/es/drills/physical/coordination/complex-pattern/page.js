@@ -61,8 +61,8 @@ const faqItems = [
     a: 'Exactamente 45 segundos. El nivel vuelve a empezar en 1 en cada ronda.',
   },
   {
-    q: '¿Es un test de memoria con resultados clínicos?',
-    a: 'No. Es un juego de práctica sin diagnóstico ni valores de referencia. Los tests de memoria clásicos tienen sus propias páginas en la sección de memoria de SkillDrills.',
+    q: '¿Cómo puedo trazar la ruta con más precisión?',
+    a: 'A partir de 5 puntos ayuda recordar la ruta como dos o tres formas grandes en lugar de punto por punto. Empieza dentro del nodo cian, suelta en el nodo final y frena antes de cada esquina.',
   },
   {
     q: '¿Funciona en el móvil?',

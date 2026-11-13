@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Wie bewegt sich das Ziel bei dieser Übung?",
-    "a": "Das Ziel läuft geradlinig, prallt an den Rändern ab und wird bei jedem Abprall etwas schneller (etwa 2 %). Zu zufälligen Zeitpunkten ändern sich ohne Vorwarnung Richtung und Tempo: Die waagrechte und die senkrechte Richtung kehren sich jeweils um oder bleiben, das Tempo ändert sich um den Faktor 0,8 bis 1,3. Es gibt keine Sprünge und kein Wackeln des Bildschirms. Eine reine Blickübung, kein Sehtest."
+    "a": "Das Ziel läuft geradlinig, prallt an den Rändern ab und wird bei jedem Abprall etwas schneller (etwa 2 %). Zu zufälligen Zeitpunkten ändern sich ohne Vorwarnung Richtung und Tempo: Die waagrechte und die senkrechte Richtung kehren sich jeweils um oder bleiben, das Tempo ändert sich um den Faktor 0,8 bis 1,3. Es gibt keine Sprünge und kein Wackeln des Bildschirms. Eine reine Blickübung."
   },
   {
     "q": "Wie oft wechselt der Kurs?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Werden meine Sehkraft oder mein Aim besser?",
-    "a": "Das ist nicht garantiert. Die Übung ist kein Sehtest und keine Therapie, sondern ein Werkzeug zum Üben des Hinschauens. Sie verspricht weder bessere Sehschärfe noch besseres Zielen. Bei Beschwerden an den Augen wende dich an eine Fachperson."
+    "a": "Das ist nicht garantiert. Die Übung ist ein Werkzeug zum Üben des Hinschauens und verspricht weder bessere Sehschärfe noch besseres Zielen. Vergleiche deine Sessions auf demselben Bildschirm mit denselben Einstellungen."
   },
   {
     "q": "Wie lange sollte ich üben?",

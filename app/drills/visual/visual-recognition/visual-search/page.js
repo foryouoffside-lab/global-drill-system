@@ -9,7 +9,7 @@ import { pickSources } from '@/lib/drillSources';
 //           "conjunctive visual search"     — Attentional theory and target isolation query
 // SECONDARY / LSI:
 //           "feature search test"          — Feature integration vs conjunctive comparison
-//           "visual scanning test"         — Clinical and occupational scanning speed
+//           "visual scanning test"         — Occupational scanning speed
 //           "target discrimination drill"  — Actionable sports vision query
 //           "visual search task"           — Experimental cognitive psychology paradigm
 //           "visual inspection test"       — Occupational and quality control inspection

@@ -104,7 +104,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Qu'est-ce que l'exercice des yeux en huit couché ?",
-    "a": "Un exercice dans le navigateur où vous suivez des yeux une cible sur un huit couché. Durée (30 à 120 secondes), vitesse, taille et ligne sont réglables. Ce n'est ni un test de vue ni une thérapie."
+    "a": "Un exercice dans le navigateur où vous suivez des yeux une cible sur un huit couché. Durée (30 à 120 secondes), vitesse, taille et ligne sont réglables. Le résultat repose sur la position du pointeur."
   },
   {
     "q": "Pourquoi un huit couché ?",
@@ -128,7 +128,7 @@ const faqs = [
   },
   {
     "q": "Cet exercice améliore-t-il ma vue ou mon aim ?",
-    "a": "Rien ne le garantit. C'est un exercice pour suivre une cible des yeux ; il ne promet ni meilleure vue, ni traitement d'un trouble visuel, ni meilleure visée en FPS. En cas de gêne oculaire, consultez un professionnel."
+    "a": "Rien ne le garantit. C'est un exercice pour suivre une cible des yeux ; il ne promet ni meilleure vue ni meilleure visée en FPS. Comparez vos séances sur le même écran avec les mêmes réglages."
   },
   {
     "q": "L'écran et l'environnement comptent-ils ?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guide : Exercice des yeux en huit couché",
   "intro": [
     "Dans l'exercice des yeux en huit couché, la cible parcourt en boucle un huit couché (lemniscate). La trajectoire combine mouvements horizontaux et verticaux et traverse le centre à chaque tour : vous vous exercez à garder le regard sur la cible sans interruption au passage du centre (Barnes, 2008). Masquer la ligne ou activer la vitesse aléatoire rend la boucle plus difficile à anticiper.",
-    "Le navigateur connaît la position dessinée de la cible, vos réglages et le pointeur, pas l'endroit où regardent vos yeux. À la fin, l'écran affiche le temps passé avec le pointeur sur la cible et sa distance moyenne au centre, sans note. Le résultat est un repère d'entraînement reproductible, pas une mesure clinique ni un test de vue.",
+    "Le navigateur connaît la position dessinée de la cible, vos réglages et le pointeur, pas l'endroit où regardent vos yeux. À la fin, l'écran affiche le temps passé avec le pointeur sur la cible et sa distance moyenne au centre, sans note. Le résultat est un repère d'entraînement reproductible, basé sur la position du pointeur.",
     "Gardez une distance confortable et comparez toujours le même écran et le même navigateur. La fréquence d'affichage et le périphérique d'entrée changent le rendu (Woods et al., 2015). Arrêtez en cas de douleur, vertige, nausée ou vision floue persistante."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Poursuite visuelle sur une boucle en huit",
-          description: "Exercice des yeux en huit couché : suivez une cible sur une boucle en huit qui traverse le centre. Le navigateur n'enregistre pas votre regard, seulement la distance du pointeur à la cible ; c'est un repère d'entraînement, pas un examen médical.",
+          description: "Exercice des yeux en huit couché : suivez une cible sur une boucle en huit qui traverse le centre. Le navigateur n'enregistre pas votre regard, seulement la distance du pointeur à la cible ; c'est un repère d'entraînement basé sur le pointeur.",
         }}
       />
       <DrillGuide guide={guideProps} />

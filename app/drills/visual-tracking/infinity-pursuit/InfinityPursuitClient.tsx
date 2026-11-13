@@ -660,7 +660,7 @@ export default function InfinityPursuitClient({ copy }: { copy?: Record<string, 
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <p className="text-sm text-slate-300 leading-relaxed">
-                {copy?.description || "The target loops along a figure-8 (lemniscate) path, so your eyes follow horizontal and vertical motion and cross the centre on every lap (Barnes, 2008). Hide the line or turn on Random Speed to make the loop harder to anticipate. The browser does not record where you look and there is no score; this is a practice exercise, not an eye test or therapy."}
+                {copy?.description || "The target loops along a figure-8 (lemniscate) path, so your eyes follow horizontal and vertical motion and cross the centre on every lap (Barnes, 2008). Hide the line or turn on Random Speed to make the loop harder to anticipate. The browser does not record where you look and there is no score; this is a practice exercise."}
               </p>
             </DrillAccordion>
           </div>

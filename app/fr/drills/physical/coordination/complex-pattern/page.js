@@ -67,7 +67,7 @@ const faqItems = [
   },
   {
     "q": "Est-ce un test de mémoire visuelle ?",
-    "a": "Non, il n'y a ni diagnostic ni normes. Les tests de mémoire de SkillDrills se trouvent dans la catégorie Mémoire."
+    "a": "Non, c'est un jeu d'entraînement sans normes. Les tests de mémoire de SkillDrills se trouvent dans la catégorie Mémoire."
   },
   {
     "q": "Est-ce gratuit ? Fonctionne-t-il sur mobile ?",
@@ -116,7 +116,7 @@ const guide = {
   "heading": "Jeu visuo-spatial : règles et conseils",
   "intro": [
     "Ce jeu visuo-spatial gratuit se joue dans le navigateur : un parcours s'affiche brièvement, vous le mémorisez, puis vous le retracez à la souris. Quand il disparaît, partez du nœud cyan, passez par les points dans l'ordre retenu et relâchez le bouton dans le nœud magenta. La proximité entre votre tracé et l'original est calculée en pourcentage de similarité.",
-    "Une partie dure 45 secondes. Le niveau repart de 1 à chaque partie et monte avec les points et les séries ; vers le niveau 15, le jeu atteint 8 points, 0,6 seconde d'affichage et 85 % de similarité demandée. La difficulté s'appuie sur le modèle de la mémoire de travail visuelle et son calepin visuo-spatial (Baddeley & Hitch, 1974) et sur les travaux qui estiment sa capacité à environ quatre éléments (Cowan, 2001). C'est un jeu d'entraînement, pas un test de mémoire avec diagnostic ou normes."
+    "Une partie dure 45 secondes. Le niveau repart de 1 à chaque partie et monte avec les points et les séries ; vers le niveau 15, le jeu atteint 8 points, 0,6 seconde d'affichage et 85 % de similarité demandée. La difficulté s'appuie sur le modèle de la mémoire de travail visuelle et son calepin visuo-spatial (Baddeley & Hitch, 1974) et sur les travaux qui estiment sa capacité à environ quatre éléments (Cowan, 2001). C'est un jeu d'entraînement."
   ],
   "techniques": {
     "title": "Conseils pour retracer plus précisément",

@@ -31,4 +31,4 @@ snapshot ~28 days later, then compare.
 ## Baselines
 
 - `snapshots/2026-11-12_28d.csv`: fps, physical, reaction-speed, motor only (before the physical deploy).
-- `snapshots/2026-11-13_28d.csv`: full baseline, all categories, EN + 6 locales.
+- `snapshots/2026-11-13_28d.csv`: **current baseline** (taken 2026-11-13, GSC window 2026-10-14..2026-11-10), 637 rows, all categories, EN + 6 locales. Compare future snapshots against this file.

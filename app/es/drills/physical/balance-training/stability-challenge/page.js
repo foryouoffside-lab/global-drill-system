@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: 'Si mi mira tiembla en los juegos, ¿esto lo corrige?',
-    a: 'No directamente. Una mira que tiembla en un juego suele deberse a la sensibilidad, los DPI, la configuración o el hardware, y este ejercicio no cambia nada de eso. Tampoco mide ni diagnostica el equilibrio, los temblores ni la salud: es un juego de pequeñas correcciones continuas con el ratón.',
+    a: 'No directamente. Una mira que tiembla en un juego suele deberse a la sensibilidad, los DPI, la configuración o el hardware, y este ejercicio no cambia nada de eso. Es un juego de pequeñas correcciones continuas con el ratón.',
   },
   {
     q: '¿Cómo se asigna la nota?',
@@ -121,7 +121,7 @@ const guide = {
       ['D', '1.530 – 3.442', 'Sigue así'],
       ['F', 'menos de 1.530', 'Necesita práctica'],
     ],
-    note: 'La nota compara la puntuación final con la referencia de 17.000 puntos. Son niveles de práctica de SkillDrills, no estadísticas de usuarios, percentiles ni normas médicas.',
+    note: 'La nota compara la puntuación final con la referencia de 17.000 puntos. Son niveles de práctica de SkillDrills, no estadísticas de usuarios ni percentiles.',
   },
   techniques: {
     title: 'Cuatro consejos para seguir más tiempo en el anillo',

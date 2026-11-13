@@ -6,25 +6,22 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test SDMT en ligne : symboles et chiffres | SkillDrills",
-  description: "Jeu gratuit inspiré du SDMT : associez chaque symbole à un chiffre à l’aide de la clé affichée et entraînez votre vitesse de traitement. Non clinique.",
+  title: "Test symboles-chiffres en ligne gratuit | SkillDrills",
+  description: "Test symboles-chiffres gratuit : associez chaque symbole à un chiffre à l’aide de la clé affichée et entraînez votre vitesse de traitement. Non clinique.",
   keywords: [
     "test symboles et chiffres",
-    "test sdmt en ligne",
     "vitesse de traitement cognitif test",
     "substitution symboles chiffres",
-    "test dsst en ligne",
     "balayage visuel cognitif",
     "memoire associative test",
     "agilite mentale test gratuit",
-    "evaluation neuropsychologique gratuite",
     "test attention et rapidite",
     "exercice appariement de symboles",
     "test cognitif de symboles"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test SDMT en ligne : symboles et chiffres | SkillDrills",
-    description: "Jeu gratuit inspiré du SDMT : associez chaque symbole à un chiffre à l’aide de la clé affichée et entraînez votre vitesse de traitement. Non clinique.",
+    title: "Test symboles-chiffres en ligne gratuit | SkillDrills",
+    description: "Test symboles-chiffres gratuit : associez chaque symbole à un chiffre à l’aide de la clé affichée et entraînez votre vitesse de traitement. Non clinique.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -32,8 +29,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test SDMT en ligne : symboles et chiffres | SkillDrills",
-    description: "Jeu gratuit inspiré du SDMT : associez chaque symbole à un chiffre à l’aide de la clé affichée et entraînez votre vitesse de traitement. Non clinique.",
+    title: "Test symboles-chiffres en ligne gratuit | SkillDrills",
+    description: "Test symboles-chiffres gratuit : associez chaque symbole à un chiffre à l’aide de la clé affichée et entraînez votre vitesse de traitement. Non clinique.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -67,7 +64,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Test SDMT Symboles",
+      "name": "Test symboles-chiffres",
       "item": "https://skilldrills.online/fr/drills/cognitive/processing-speed/symbol-matching"
     }
   ]
@@ -76,7 +73,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Test SDMT en ligne : symboles et chiffres",
+  "name": "Test symboles-chiffres en ligne",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": {
@@ -84,7 +81,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Jeu gratuit inspiré du SDMT dans le navigateur : associez des symboles à des chiffres avec la clé affichée. Entraînement, pas un test clinique.",
+  "description": "Jeu symboles-chiffres gratuit dans le navigateur : associez des symboles à des chiffres avec la clé affichée. Entraînement, pas un test clinique.",
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/symbol-matching",
   "publisher": {
     "@type": "Organization",
@@ -98,7 +95,7 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test SDMT en Ligne",
+  "name": "Test symboles-chiffres en ligne",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Nécessite un navigateur moderne avec support JavaScript",
@@ -117,7 +114,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Jeu d’appariement symboles et chiffres",
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/symbol-matching",
-  "description": "Jeu gratuit inspiré du SDMT dans le navigateur : associez des symboles à des chiffres avec la clé affichée. Entraînement, pas un test clinique.",
+  "description": "Jeu symboles-chiffres gratuit dans le navigateur : associez des symboles à des chiffres avec la clé affichée. Entraînement, pas un test clinique.",
   "genre": [
     "Action",
     "Brain Game",
@@ -143,18 +140,18 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu’est-ce que le test SDMT (Symbol Digit Modalities Test) ?",
+      "name": "Qu’est-ce qu’un test symboles-chiffres ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le SDMT est un test neuropsychologique créé par Aaron Smith (1973) : on associe des symboles à des chiffres le plus vite possible. Cet exercice s’en inspire mais n’est pas le test officiel."
+        "text": "Une clé associe des symboles à des chiffres : on retrouve le plus vite possible le chiffre de chaque symbole affiché. Ici, c’est un jeu d’entraînement, pas un test officiel."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la différence entre le SDMT et le DSST ?",
+      "name": "Comment répond-on dans cet exercice ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dans le DSST de Wechsler, on dessine à la main les symboles correspondant à des chiffres. Dans le SDMT, on associe des symboles à des chiffres, ici en appuyant sur le chiffre correspondant."
+        "text": "On regarde le symbole cible, on cherche sa paire dans la clé, puis on appuie sur le chiffre correspondant. Il n’y a rien à écrire ni à dire à voix haute."
       }
     },
     {
@@ -170,7 +167,7 @@ const faqSchema = {
       "name": "Quelles capacités cet exercice sollicite-t-il ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La recherche visuelle, la vitesse de traitement, la mémoire associative symbole-chiffre et l’attention soutenue (Smith, 1973)."
+        "text": "La recherche visuelle, la vitesse de traitement, la mémoire associative symbole-chiffre et l’attention soutenue."
       }
     },
     {
@@ -202,7 +199,7 @@ const faqSchema = {
       "name": "Que montre le résultat ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Score, exactitude, réussites, erreurs, niveau maximal et une note de F à S+ par rapport à une référence fixe de SkillDrills. Ces valeurs ne sont pas comparables aux normes cliniques du SDMT."
+        "text": "Score, exactitude, réussites, erreurs, niveau maximal et une note de F à S+ par rapport à une référence fixe de SkillDrills. Ces valeurs ne sont pas comparables à des normes cliniques."
       }
     },
     {
@@ -228,7 +225,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Comment jouer au test symboles et chiffres",
-  "description": "Jeu gratuit inspiré du SDMT dans le navigateur : associez des symboles à des chiffres avec la clé affichée. Entraînement, pas un test clinique.",
+  "description": "Jeu symboles-chiffres gratuit dans le navigateur : associez des symboles à des chiffres avec la clé affichée. Entraînement, pas un test clinique.",
   "step": [
     {
       "@type": "HowToStep",
@@ -262,12 +259,12 @@ const howToSchema = {
 };
 
 const guideProps = {
-  sources: pickSources('smith1973', 'der2006', 'woods2015'),
+  sources: pickSources('der2006', 'woods2015'),
   intro: {
-    title: "Test SDMT en ligne : comment fonctionne l’exercice",
+    title: "Test symboles-chiffres en ligne : comment fonctionne l’exercice",
     paragraphs: [
-      "Ce test SDMT en ligne est un jeu gratuit : une clé associe des symboles à des chiffres, un symbole cible s’affiche et vous appuyez sur le bon chiffre le plus vite possible. Il s’inspire du Symbol Digit Modalities Test (Smith, 1973) pour entraîner la vitesse de traitement. Ce n’est pas un test clinique.",
-      "Le SDMT d’origine est un instrument de neuropsychologie. Cette version n’a pas été étalonnée ni validée cliniquement : son score ne vaut que pour cet exercice et ne constitue pas un diagnostic.",
+      "Ce test symboles-chiffres en ligne est un jeu gratuit : une clé associe des symboles à des chiffres, un symbole cible s’affiche et vous appuyez sur le bon chiffre le plus vite possible pour entraîner la vitesse de traitement. Ce n’est pas un test clinique.",
+      "Cette version n’a pas été étalonnée ni validée cliniquement : son score ne vaut que pour cet exercice et ne constitue pas un diagnostic.",
       "La tâche sollicite la recherche visuelle, la mémoire associative et la sélection de réponse. La vitesse de traitement ralentit en moyenne avec l’âge (Der & Deary, 2006) ; l’écran et l’appareil ajoutent leur propre délai de mesure (Woods et al., 2015).",
     ],
   },
@@ -330,9 +327,10 @@ export default function EnhancedPageFr() {
       />
       <SymbolMatchingClient
         copy={{
-          title: "Test SDMT symboles et chiffres",
+          title: "Test symboles-chiffres en ligne",
           subtitle: "Trouvez rapidement la correspondance entre symboles et chiffres et entraînez le traitement",
           startTitle: "Appariement symbole-chiffre",
+          startSubtitle: "Symboles-chiffres • Recherche visuelle",
           stageCaption: "Comparez le symbole cible avec la clé supérieure, puis appuyez sur le chiffre correspondant.",
           rulesTitle: "Instructions de l’exercice et score",
           aboutTitle: "Qu’est-ce que le test symboles chiffres ?",
@@ -340,7 +338,7 @@ export default function EnhancedPageFr() {
           readyLabel: "PRÉPAREZ-VOUS",
           labels: { score: "Score", time: "Temps", level: "Niveau", bestScore: "Meilleur score", timeLeft: "Temps restant", targetSymbol: "Symbole cible", accuracy: "Précision", hits: "Réussites", misses: "Erreurs", peakLevel: "Niveau maximal" },
           aboutLead: "Une tâche symboles-chiffres demande d’associer des signes à des nombres dans un temps limité. Elle entraîne la vitesse de traitement et la recherche visuelle, pas les connaissances. Cet exercice est un jeu d’entraînement, pas un outil clinique.",
-          aboutText: "Le format s’inspire des tâches d’association du SDMT et du DSST. Consultez la clé puis sélectionnez le chiffre correspondant au symbole cible. Les séries répétées travaillent la recherche visuelle, la mémoire associative et la sélection de réponse. Le score concerne uniquement ce jeu et ne constitue pas un diagnostic médical.",
+          aboutText: "Le format s’inspire des tâches d’association symboles-chiffres. Consultez la clé puis sélectionnez le chiffre correspondant au symbole cible. Les séries répétées travaillent la recherche visuelle, la mémoire associative et la sélection de réponse. Le score concerne uniquement ce jeu et ne constitue pas un diagnostic médical.",
           aboutCards: [
             { title: "À qui s’adresse cet exercice ?", desc: "Aux étudiants, professionnels et joueurs qui souhaitent entraîner vitesse de traitement et recherche visuelle." },
             { title: "Quelles capacités sont entraînées ?", desc: "Recherche visuelle, mémoire associative symbole-chiffre, sélection de réponse et attention soutenue." },

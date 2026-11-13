@@ -92,7 +92,7 @@ const dropGuide = {
     'Drop Catch est un jeu de navigateur gratuit où il faut attraper les cibles qui tombent : des cibles descendent du haut de l’écran, vous cliquez seulement les vertes et laissez passer les leurres rouges. Une prise rapporte +2 secondes, une erreur coûte 1 seconde. C’est un jeu de réflexe avec la souris, pas un test de la règle.',
     'Quand il faut d’abord distinguer entre plusieurs stimuli, on répond en général plus lentement qu’à une réaction simple (Donders, 1868). Un modèle décrit aussi une course entre l’impulsion de cliquer et l’arrêt (Logan et al., 1984). Le jeu fait sentir ces deux idées de façon ludique.',
     'Lee (1976) a étudié comment on estime le temps avant l’arrivée d’un objet qui approche. La vitesse de chute monte avec le niveau d’environ 400 à 1 250 px/s : plus vous décidez tard, plus c’est difficile.',
-    'Le score est un résultat d’entraînement, pas un test médical de réaction ni une évaluation sportive. Comparez vos résultats sur le même appareil et le même écran.',
+    'Le score est un résultat d’entraînement. Comparez vos résultats sur le même appareil et le même écran.',
   ],
   benchmarks: {
     title: 'Repères : tranches de score',

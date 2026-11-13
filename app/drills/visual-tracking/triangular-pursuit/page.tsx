@@ -18,7 +18,7 @@ export const metadata = {
     "gaze stability practice online",
     "ocular motor training athletics",
     "retinal slip velocity correction",
-    "reaction speed eye test"
+    "reaction speed eye drill"
   ],
   alternates: {
     canonical: "https://skilldrills.online/drills/visual-tracking/triangular-pursuit",
@@ -260,7 +260,7 @@ const guide = {
       ["Steady", "40–70%", "Mean distance error at the same settings", "Repeat the same setup"],
       ["Consistent", "Over 70%", "Whether it holds when one setting changes", "Add one challenge: speed, hidden path or random speed"]
     ],
-    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms, percentiles or clinical values, and the page measures the pointer, not your eyes."
+    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms or percentiles, and the page measures the pointer, not your eyes."
   },
 
   heading: "Triangular Pursuit - Ocular Motor Training Standards",

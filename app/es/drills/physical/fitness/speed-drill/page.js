@@ -70,7 +70,7 @@ const videoGameSchema = {
 };
 
 const faqs = [
-  { q: '¿Cómo funciona el Test de Clic Rápido?', a: 'Objetivos redondos se mueven por la pantalla y se encogen; tienes que hacer clic en ellos antes de que desaparezcan. Cada acierto combina localizar el objetivo, mover el cursor y hacer un clic preciso, y se guardan la puntuación y la racha. Es un juego de práctica en el navegador, no una prueba médica de reflejos.' },
+  { q: '¿Cómo funciona el Test de Clic Rápido?', a: 'Objetivos redondos se mueven por la pantalla y se encogen; tienes que hacer clic en ellos antes de que desaparezcan. Cada acierto combina localizar el objetivo, mover el cursor y hacer un clic preciso, y se guardan la puntuación y la racha. Es un juego de práctica en el navegador.' },
   { q: '¿Por qué los objetivos son cada vez más pequeños?', a: 'Un objetivo más pequeño es más difícil de acertar, como describe la ley de Fitts (Fitts, 1954). Cada objetivo se encoge desde que aparece y desaparece al llegar a 4 px de radio: cuanto más tarde hagas clic, más difícil (con la opción de tiempo límite desactivada, los objetivos no se encogen). Lo mejor es acertar pronto, mientras el objetivo aún es grande.' },
   { q: '¿Cómo se calculan los puntos y el tiempo?', a: 'Cada acierto da 100 puntos multiplicados por la racha y el nivel, y suma 2 segundos al tiempo restante (máximo 60 segundos). La partida empieza con 45 segundos y el nivel sube cada 1.750 puntos. Si un objetivo desaparece o haces clic en el vacío, la racha vuelve a cero y se resta 1 segundo.' },
   { q: '¿Mide los clics por segundo?', a: 'No. El juego no cuenta cuántos clics haces ni a qué velocidad. Cada objetivo hay que acertarlo con un clic preciso, y un clic en el vacío resta 1 segundo, así que hacer clics sin parar te perjudica.' },
@@ -110,7 +110,7 @@ const speedGuide = {
       'El Speed Drill es un juego de clic rápido en objetivos que se encogen: objetivos redondos se mueven por la pantalla y se hacen más pequeños hasta desaparecer, y tienes que acertarlos antes. Cada clic combina búsqueda, movimiento del cursor y precisión; es un ejercicio distinto de un simple test de tiempo de reacción y no cuenta clics por segundo.',
       'Apuntar rápido con el ratón suele describirse en dos fases: un movimiento amplio y una pequeña corrección final (Woodworth, 1899). La ley de Fitts (Fitts, 1954) explica por qué los objetivos pequeños son más difíciles. Como aquí los objetivos se encogen sin parar, conviene iniciar el movimiento amplio pronto.',
       'Los objetivos móviles claros y con contraste llaman la atención incluso en el borde del campo visual (Treisman & Gelade, 1980). En lugar de fijar la vista en un punto, mira toda la pantalla para detectar antes los objetivos nuevos.',
-      'Compara resultados con el mismo ratón, la misma sensibilidad y el mismo monitor; la frecuencia de refresco y el dispositivo influyen en la latencia (Woods et al., 2015). Las cifras son registros de práctica, no una medición médica ni una clasificación de jugadores.',
+      'Compara resultados con el mismo ratón, la misma sensibilidad y el mismo monitor; la frecuencia de refresco y el dispositivo influyen en la latencia (Woods et al., 2015). Las cifras son registros de práctica.',
     ],
   },
   benchmarks: {

@@ -70,7 +70,7 @@ const videoGameSchema = {
 };
 
 const faqs = [
-  { q: 'Worum geht es bei „Schrumpfende Ziele klicken“?', a: 'Runde Ziele bewegen sich über den Bildschirm und schrumpfen dabei. Sie müssen sie anklicken, bevor sie verschwinden. Ziele finden, den Cursor hinbewegen und genau klicken fließen in jeden Treffer ein; Punkte und Combo werden gespeichert. Das ist ein Übungsspiel im Browser, kein medizinischer Reaktionstest.' },
+  { q: 'Worum geht es bei „Schrumpfende Ziele klicken“?', a: 'Runde Ziele bewegen sich über den Bildschirm und schrumpfen dabei. Sie müssen sie anklicken, bevor sie verschwinden. Ziele finden, den Cursor hinbewegen und genau klicken fließen in jeden Treffer ein; Punkte und Combo werden gespeichert. Das ist ein Übungsspiel im Browser.' },
   { q: 'Warum werden die Ziele immer kleiner?', a: 'Kleinere Ziele sind schwerer zu treffen – das beschreibt das Fitts-Gesetz (Fitts, 1954). Jedes Ziel schrumpft nach dem Erscheinen weiter und verschwindet bei einem Radius von 4 px; wer spät klickt, hat es also schwerer (mit ausgeschalteter Timeout-Einstellung schrumpfen die Ziele nicht). Am besten treffen Sie früh, solange das Ziel noch groß ist.' },
   { q: 'Wie werden Punkte und Zeit berechnet?', a: 'Jeder Treffer bringt 100 Punkte mal Combo- und Level-Faktor und verlängert die Restzeit um 2 Sekunden (höchstens 60 Sekunden). Die Runde startet mit 45 Sekunden, alle 1.750 Punkte steigt das Level. Verschwindet ein Ziel oder klicken Sie daneben, wird die Combo zurückgesetzt und 1 Sekunde abgezogen.' },
   { q: 'Misst das Spiel Klicks pro Sekunde?', a: 'Nein. Das Spiel zählt weder Klickanzahl noch Klicktempo. Jedes Ziel muss einzeln und genau getroffen werden, und ein Klick ins Leere kostet 1 Sekunde – schnelles Dauerklicken schadet also eher.' },
@@ -110,7 +110,7 @@ const speedGuide = {
       'Im Speed Drill klicken Sie schrumpfende Ziele, bevor sie verschwinden: runde Ziele bewegen sich über den Bildschirm und werden dabei kleiner. Jeder Klick verbindet Suchen, Cursorbewegung und Genauigkeit – eine andere Übung als ein einfacher Reaktionszeittest.',
       'Schnelles Zielen mit der Maus wird oft in zwei Phasen beschrieben: eine große Bewegung und eine kleine Korrektur am Ende (Woodworth, 1899). Dass kleinere Ziele schwerer zu treffen sind, erklärt das Fitts-Gesetz (Fitts, 1954). Weil die Ziele hier ständig schrumpfen, lohnt es sich, die große Bewegung früh zu starten.',
       'Helle, kontrastreiche bewegte Ziele fallen auch am Rand des Blickfelds auf (Treisman & Gelade, 1980). Wer nicht auf einen Punkt starrt, sondern den ganzen Bildschirm im Blick behält, findet neue Ziele schneller.',
-      'Vergleichen Sie Ergebnisse mit derselben Maus, Empfindlichkeit und demselben Monitor; Bildwiederholrate und Eingabegerät beeinflussen die Verzögerung (Woods et al., 2015). Die Werte sind Übungsstände, keine medizinische Messung und keine Spielerwertung.',
+      'Vergleichen Sie Ergebnisse mit derselben Maus, Empfindlichkeit und demselben Monitor; Bildwiederholrate und Eingabegerät beeinflussen die Verzögerung (Woods et al., 2015). Die Werte sind Übungsstände.',
     ],
   },
   benchmarks: {

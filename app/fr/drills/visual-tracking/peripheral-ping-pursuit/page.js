@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Est-ce que ma vue ou ma visée vont s’améliorer ?",
-    "a": "Rien n’est garanti. Ce n’est ni un examen de la vue ni une thérapie, mais un outil pour s’exercer à regarder une cible. Il ne promet ni meilleure acuité ni meilleure visée. En cas de gêne visuelle, consultez un professionnel."
+    "a": "Rien n’est garanti. C’est un outil pour s’exercer à regarder une cible ; il ne promet ni meilleure acuité ni meilleure visée. Comparez vos séances sur le même écran avec les mêmes réglages."
   },
   {
     "q": "Combien de temps s’entraîner ?",

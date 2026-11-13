@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "¿Cómo se mueve el objetivo en el seguimiento ocular sinusoidal?",
-    "a": "El objetivo va y viene con velocidad horizontal constante entre el 5 % y el 95 % del ancho de la pantalla, aproximadamente (unos 220 píxeles por segundo a 1,0x), y sigue una curva sinusoidal fija con una amplitud de cerca del 28 % de la altura de la pantalla. En los bordes cambia de sentido y recorre la misma curva de vuelta. Es un ejercicio de la mirada en el navegador, no un examen de la vista."
+    "a": "El objetivo va y viene con velocidad horizontal constante entre el 5 % y el 95 % del ancho de la pantalla, aproximadamente (unos 220 píxeles por segundo a 1,0x), y sigue una curva sinusoidal fija con una amplitud de cerca del 28 % de la altura de la pantalla. En los bordes cambia de sentido y recorre la misma curva de vuelta. Es un ejercicio de la mirada en el navegador."
   },
   {
     "q": "¿Por qué cambia todo el tiempo la velocidad vertical?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "¿Mejorará mi vista o mi puntería?",
-    "a": "No está garantizado. No es un examen de la vista ni una terapia, sino una herramienta para practicar la mirada sobre un objetivo. No promete mejor agudeza visual ni mejor puntería. Si notas molestias en los ojos, consulta a un profesional."
+    "a": "No está garantizado. Es una herramienta para practicar la mirada sobre un objetivo y no promete mejor agudeza visual ni mejor puntería. Compara tus sesiones en la misma pantalla y con los mismos ajustes."
   },
   {
     "q": "¿Cuánto tiempo debo practicar?",
@@ -148,7 +148,7 @@ const guideProps = {
         "Añadir Hide Line o Random Speed, de uno en uno"
       ]
     ],
-    "note": "Etapas de práctica sugeridas por SkillDrills: no son baremos clínicos, estadísticas de usuarios ni percentiles."
+    "note": "Etapas de práctica sugeridas por SkillDrills: no son baremos oficiales, estadísticas de usuarios ni percentiles."
   },
   "techniques": {
     "title": "Consejos de ejecución",

@@ -5,15 +5,14 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "SDMT-Style Symbol Digit Test Online | SkillDrills",
-  description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
+  title: "Symbol Digit Test Online – Processing Speed | SkillDrills",
+  description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser.",
   keywords: ["symbol matching test online", "symbol matching test", "symbol digit modalities test", "sdmt test online", "digit symbol substitution test", "dsst test online", "processing speed test", "cognitive processing speed", "visual scanning test", "associative memory test",
     "sdmt cognitive assessment",
-    "symbol matching speed game",
-    "free neuropsychological test online"],
+    "symbol matching speed game"],
   openGraph: {
-    title: "SDMT-Style Symbol Digit Test Online | SkillDrills",
-    description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
+    title: "Symbol Digit Test Online – Processing Speed | SkillDrills",
+    description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -21,8 +20,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "SDMT-Style Symbol Digit Test Online | SkillDrills",
-    description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
+    title: "Symbol Digit Test Online – Processing Speed | SkillDrills",
+    description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -109,8 +108,7 @@ const videoGameSchema = {
   "description": "Free SDMT-style symbol matching drill online. A key pairs six symbols with the digits 1 to 6; tap the digit for each symbol as the response window shrinks. Practice, not the SDMT.",
   "genre": [
     "Action",
-    "Brain Game",
-    "Neuropsychological Training"
+    "Brain Game"
   ],
   "gamePlatform": [
     "Web Browser",
@@ -135,7 +133,7 @@ const faqSchema = {
       "name": "What is the Symbol Digit Modalities Test (SDMT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The SDMT is a clinical neuropsychological test developed by Aaron Smith (1973), used to assess information processing speed. This drill borrows its symbol-to-digit format but is not the SDMT, uses different symbols and timing, and produces no clinical score."
+        "text": "The SDMT is a test developed by Aaron Smith (1973) to measure information processing speed. This drill borrows its symbol-to-digit format but is not the SDMT and uses different symbols and timing."
       }
     },
     {
@@ -159,15 +157,15 @@ const faqSchema = {
       "name": "Can I compare my score with SDMT norms?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Clinical SDMT norms come from the official test, given under standard conditions by a trained examiner. This drill uses a different format, an on-screen key, a changing clock and a combo multiplier, so its scores cannot be converted into SDMT results."
+        "text": "No. SDMT norms come from the official test, given under standard conditions by a trained examiner. This drill uses a different format, an on-screen key, a changing clock and a combo multiplier, so its scores cannot be converted into SDMT results."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this an official medical diagnostic test?",
+      "name": "How do I read my symbol matching result?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. This is a free cognitive training game based on the same paradigm. It does not provide medical diagnoses and should not be used as clinical evaluation."
+        "text": "At the end you see your score, accuracy, hits, misses and peak level, plus a letter grade against a fixed SkillDrills benchmark. Compare your own runs on the same device to see how your speed and accuracy change with practice."
       }
     },
     {
@@ -253,7 +251,7 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('smith1973', 'der2006', 'woods2015'),
   intro: {
-    title: "SDMT-Style Symbol Digit Test",
+    title: "Symbol Digit Test Online",
     paragraphs: [
       "Free SDMT-style symbol matching drill online. A key pairs six symbols with the digits 1 to 6; tap the digit for each symbol as the response window shrinks. Practice, not the SDMT.",
       "In the digit symbol substitution test (DSST) you write the symbol that goes with each digit. In the SDMT you give the digit that goes with each symbol, and it can be answered orally as well as in writing. This drill follows the SDMT direction: see a symbol, tap its digit.",
@@ -320,7 +318,7 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <SymbolMatchingClient copy={{ title: "Symbol Digit Test (SDMT-Style)", subtitle: "SDMT-style symbol matching for processing speed, visual scanning, and associative working memory" }} />
+      <SymbolMatchingClient copy={{ title: "Symbol Digit Test", subtitle: "Symbol-to-digit matching for processing speed, visual scanning, and associative working memory" }} />
       <DrillGuide {...guideProps} />
       <DrillFooter />
     </>

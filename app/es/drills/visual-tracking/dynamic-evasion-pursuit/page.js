@@ -104,7 +104,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "¿Qué es el ejercicio del objetivo que cambia de dirección sin aviso?",
-    "a": "Un ejercicio en el navegador en el que sigues con los ojos un objetivo que gira bruscamente a intervalos cortos. Duración (30 a 120 segundos), velocidad, tamaño y línea son ajustables. No es un test de visión ni un tratamiento."
+    "a": "Un ejercicio en el navegador en el que sigues con los ojos un objetivo que gira bruscamente a intervalos cortos. Duración (30 a 120 segundos), velocidad, tamaño y línea son ajustables. El resultado se basa en la posición del puntero."
   },
   {
     "q": "¿El objetivo huye de mi cursor?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guía: Objetivo que Cambia de Dirección sin Aviso",
   "intro": [
     "En el ejercicio del objetivo que cambia de dirección sin aviso, el objetivo avanza en línea recta y, aproximadamente cada 0,5 segundos (0,35 a 0,65 s con velocidad aleatoria), gira hacia una nueva dirección y velocidad al azar; en los bordes rebota. Tras cada giro el ojo se queda atrás hasta que una sacada de corrección cierra la distancia y vuelve el seguimiento suave (Rashbass, 1961; Krauzlis, 2004).",
-    "El navegador solo conoce la posición dibujada del objetivo y tus ajustes, no hacia dónde miran tus ojos. Solo se muestran datos del puntero (tiempo sobre el objetivo y distancia al centro) y se cuentan las sesiones completadas. El resultado es un registro de práctica repetible, no una medida clínica ni un test de visión.",
+    "El navegador solo conoce la posición dibujada del objetivo y tus ajustes, no hacia dónde miran tus ojos. Solo se muestran datos del puntero (tiempo sobre el objetivo y distancia al centro) y se cuentan las sesiones completadas. El resultado es un registro de práctica repetible, basado en la posición del puntero.",
     "Usa una distancia cómoda y compara siempre la misma pantalla y el mismo navegador. La frecuencia de refresco y el dispositivo de entrada cambian la imagen (Woods et al., 2015). Para si notas dolor, mareo, náuseas o visión borrosa persistente."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Líneas rectas y giros bruscos",
-          description: "Objetivo que cambia de dirección sin aviso: gira bruscamente aproximadamente cada 0,5 s. Al final verás la distancia del puntero al objetivo, pero el navegador no registra tu mirada; toma el resultado como registro de práctica, no como prueba médica.",
+          description: "Objetivo que cambia de dirección sin aviso: gira bruscamente aproximadamente cada 0,5 s. Al final verás la distancia del puntero al objetivo, pero el navegador no registra tu mirada; toma el resultado como registro de práctica basado en el puntero.",
         }}
       />
       <DrillGuide guide={guideProps} />

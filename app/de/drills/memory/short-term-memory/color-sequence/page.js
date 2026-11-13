@@ -21,8 +21,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 // ============================================================
 
 export const metadata = {
-  title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
-  description: 'Senso Spiel online kostenlos: Merke dir die aufleuchtende Farbfolge aus 6 Farben und tippe sie in gleicher Reihenfolge nach. Start mit 3 Farben, 45 Sekunden.',
+  title: 'Farbsequenz-Spiel im Senso-Stil online | SkillDrills',
+  description: 'Kostenloses Farbsequenz-Spiel im Senso-Stil: Merke dir die aufleuchtende Farbfolge aus 6 Farben und tippe sie in gleicher Reihenfolge nach. Start mit 3 Farben.',
   keywords: [
     'senso online kostenlos',
     'farbsequenz spiel',
@@ -49,8 +49,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
-    description: 'Senso Spiel online kostenlos: Merke dir die aufleuchtende Farbfolge aus 6 Farben und tippe sie in gleicher Reihenfolge nach. Start mit 3 Farben, 45 Sekunden.',
+    title: 'Farbsequenz-Spiel im Senso-Stil online | SkillDrills',
+    description: 'Kostenloses Farbsequenz-Spiel im Senso-Stil: Merke dir die aufleuchtende Farbfolge aus 6 Farben und tippe sie in gleicher Reihenfolge nach. Start mit 3 Farben.',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -58,13 +58,13 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
-    description: 'Senso Spiel online kostenlos: Merke dir die aufleuchtende Farbfolge aus 6 Farben und tippe sie in gleicher Reihenfolge nach. Start mit 3 Farben, 45 Sekunden.',
+    title: 'Farbsequenz-Spiel im Senso-Stil online | SkillDrills',
+    description: 'Kostenloses Farbsequenz-Spiel im Senso-Stil: Merke dir die aufleuchtende Farbfolge aus 6 Farben und tippe sie in gleicher Reihenfolge nach. Start mit 3 Farben.',
   },
 };
 
 const copyDe = {
-  title: 'Senso-Spiel online',
+  title: 'Farbsequenz-Spiel im Senso-Stil',
   subtitle: 'Farbfolge merken und in gleicher Reihenfolge nachtippen – im Stil von Senso',
   caption: 'Im Kreis leuchtet eine Farbe nach der anderen auf. Tippe die Farbtasten danach in derselben Reihenfolge. Jede gelöste Runde macht die nächste, neue Folge um eine Farbe länger.',
   statScore: 'Punkte',
@@ -84,8 +84,8 @@ const copyDe = {
   rule4Text: 'Adaptive Schwierigkeit',
   rule4Highlight: 'Dynamisch',
   rule4Result: 'Stufe L = L + 2 Farben; Anzeige wird mit jeder Stufe schneller',
-  aboutTitle: 'Über das Senso-Spiel & Visuelles Arbeitsgedächtnis',
-  overviewTitle: 'Was trainiert das Farben-Merkspiel (Senso / Simon)?',
+  aboutTitle: 'Über das Farbsequenz-Spiel im Senso-Stil & Visuelles Arbeitsgedächtnis',
+  overviewTitle: 'Was trainiert das Farben-Merkspiel im Senso-Stil?',
   overviewLead: 'Das visuelle Arbeitsgedächtnis kann im Normalzustand nur etwa vier isolierte Einheiten gleichzeitig speichern (Luck & Vogel, 1997; Cowan, 2001). Eine länger werdende Farbfolge ist eine Übung genau an dieser Grenze.',
   aboutCards: [
     { title: 'Für wen geeignet?', text: 'Schüler, Studierende, E-Sportler und Senioren, die ihr kurzzeitiges visuelles Erinnerungsvermögen und ihre Konzentration stärken möchten.' },
@@ -102,14 +102,14 @@ export default function GermanColorSequencePage() {
       { '@type': 'ListItem', position: 1, name: 'SkillDrills Home', item: 'https://skilldrills.online/de' },
       { '@type': 'ListItem', position: 2, name: 'Gedächtnis-Training', item: 'https://skilldrills.online/de/drills/memory' },
       { '@type': 'ListItem', position: 3, name: 'Kurzzeitgedächtnis', item: 'https://skilldrills.online/de/drills/memory/short-term-memory' },
-      { '@type': 'ListItem', position: 4, name: 'Senso Spiel', item: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence' },
+      { '@type': 'ListItem', position: 4, name: 'Farbsequenz-Spiel im Senso-Stil', item: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence' },
     ],
   };
 
   const softwareSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Senso Spiel online – Farbfolge merken',
+    name: 'Farbsequenz-Spiel im Senso-Stil – Farbfolge merken',
     applicationCategory: 'EducationalApplication',
     operatingSystem: 'Web Browser',
     dateModified: '2026-11-12',
@@ -127,7 +127,7 @@ export default function GermanColorSequencePage() {
   const webAppSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'Senso Spiel Online',
+    name: 'Farbsequenz-Spiel im Senso-Stil',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence',
     description: 'Kostenloses Farbfolgen-Merkspiel im Browser mit 6 Farben: Start mit 3 Farben, jede gelöste Runde eine Farbe mehr, jeder Fehler eine weniger.',
     dateModified: '2026-11-12',
@@ -140,7 +140,7 @@ export default function GermanColorSequencePage() {
   const videoGameSchema = {
     '@context': 'https://schema.org',
     '@type': 'VideoGame',
-    name: 'Senso Spiel – Farben merken',
+    name: 'Farben-Merkspiel im Senso-Stil',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence',
     description: 'Farbfolgen-Merkspiel im Stil von Senso: Farben leuchten nacheinander im zentralen Kreis auf und werden über 6 Farbtasten in derselben Reihenfolge nachgetippt.',
     genre: ['Memory Game', 'Brain Training', 'Puzzle'],
@@ -155,7 +155,7 @@ export default function GermanColorSequencePage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Wie funktioniert dieses Senso Spiel online?',
+        name: 'Wie funktioniert dieses Farbsequenz-Spiel im Senso-Stil?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Es ist ein Merkspiel im Stil des elektronischen Klassikers Senso (international Simon), nicht das Originalprodukt. Im zentralen Kreis leuchtet eine Farbe nach der anderen auf; danach tippst du die 6 Farbtasten in derselben Reihenfolge. Stufe 1 hat 3 Farben (Länge = Stufe + 2). Eine gelöste Runde hebt die Stufe um 1, ein Fehler senkt sie um 1. Jede Runde ist eine neue Zufallsfolge, eine Sitzung dauert 45 Sekunden.',
@@ -219,7 +219,7 @@ export default function GermanColorSequencePage() {
       },
       {
         '@type': 'Question',
-        name: 'Ist das Senso-Spiel für Touchscreens und Smartphones optimiert?',
+        name: 'Ist das Farbsequenz-Spiel für Touchscreens und Smartphones optimiert?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Ja, die Farbtasten lassen sich per Touch auf Smartphone und Tablet sowie per Mausklick am PC bedienen.',
@@ -227,7 +227,7 @@ export default function GermanColorSequencePage() {
       },
       {
         '@type': 'Question',
-        name: 'Ist dieses Online-Senso-Spiel kostenlos und ohne Installation spielbar?',
+        name: 'Ist dieses Farbsequenz-Spiel im Senso-Stil kostenlos und ohne Installation spielbar?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Ja, das Spiel ist kostenlos und braucht weder Registrierung noch Download. Alle Bestwerte bleiben lokal in deinem Browser.',
@@ -239,8 +239,8 @@ export default function GermanColorSequencePage() {
   const howToSchema = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
-    name: 'Anleitung zum Senso-Farben-Merkspiel',
-    description: 'In 4 Schritten die visuelle Merkspanne und Sequenzerinnerung im Senso-Spiel trainieren.',
+    name: 'Anleitung zum Farben-Merkspiel im Senso-Stil',
+    description: 'In 4 Schritten die visuelle Merkspanne und Sequenzerinnerung im Farbsequenz-Spiel trainieren.',
     step: [
       {
         '@type': 'HowToStep',
@@ -274,9 +274,9 @@ export default function GermanColorSequencePage() {
   };
 
   const sensoGuide = {
-    heading: 'Leitfaden zum Senso-Farbsequenzspiel & Arbeitsgedächtnis',
+    heading: 'Leitfaden zum Farbsequenz-Spiel im Senso-Stil & Arbeitsgedächtnis',
     intro: [
-      'Das Wiedergeben von Farbfolgen ist eine der bekanntesten Übungen für das visuelle und serielle Arbeitsgedächtnis. Bekannt geworden durch Ralph H. Baers und Howard J. Morrisons elektronisches Senso-Spiel (1978), fordert dieses adaptive Paradigma die sofortige Speicherung, strukturierte Pufferung und exakte Rekonstruktion dynamischer Reizketten in präziser zeitlicher Reihenfolge.',
+      'Das Wiedergeben von Farbfolgen ist eine der bekanntesten Übungen für das visuelle und serielle Arbeitsgedächtnis. Bekannt geworden durch ein elektronisches Spielgerät von Ralph H. Baer und Howard J. Morrison (1978), fordert dieses adaptive Paradigma die sofortige Speicherung, strukturierte Pufferung und exakte Rekonstruktion dynamischer Reizketten in präziser zeitlicher Reihenfolge.',
       'Die neurokognitive Architektur des menschlichen Kurzzeitgedächtnisses wurde über Jahrzehnte hinweg tiefgehend erforscht. Während George A. Miller (1956) den verbalen Flaschenhals von $7 \\pm 2$ Informationseinheiten identifizierte, wiesen Nelson Cowan (2001) sowie Steven J. Luck & Edward K. Vogel (1997) nach, dass das reine visuelle Arbeitsgedächtnis strikt auf etwa 4 distinkte Objekte begrenzt ist. Ohne aktive Rekodierungsstrategien bricht die menschliche Merkspanne jenseits von vier sequentiellen Elementen rapide ein.',
       'Im Mehrkomponenten-Modell des Arbeitsgedächtnisses von Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000) rekrutiert die serielle Reizverarbeitung den visuell-räumlichen Notizblock (Visuospatial Sketchpad). Robert H. Logie (1995) unterteilte diesen weiter in den passiven visuellen Cache (Farben und Formen) und den aktiven \'Inner Scribe\' (räumlich-zeitliche Bewegungsmuster). Geübte Anwender koppeln diesen Pfad zudem an die phonologische Schleife, um die Folge durch duale Enkodierung (visuell und subvokal) zusätzlich zu stützen.',
       'Das Spiel zeichnet in 45 Sekunden die Punktzahl, die höchste erreichte Stufe (Länge der Farbfolge) und die Trefferquote (Anteil gelöster Runden) auf. Reaktionszeiten pro Eingabe werden nicht gemessen.',
@@ -285,7 +285,7 @@ export default function GermanColorSequencePage() {
       'Medizinischer Hinweis: Diese Web-Anwendung ist ein kostenloses Trainings- und Übungsspiel zur geistigen Fitness. Sie stellt kein medizinisches Diagnoseinstrument, Screening-Verfahren oder Therapiewerkzeug dar. Bei klinischen Bedenken bezüglich Ihrer Gedächtnisleistung oder Konzentrationsfähigkeit konsultieren Sie bitte einen qualifizierten Facharzt oder Neuropsychologen.'
     ],
     benchmarks: {
-      title: 'Senso Spiel online – Übungsstufen (SkillDrills, 45-Sekunden-Lauf)',
+      title: 'Farbsequenz-Spiel im Senso-Stil – Übungsstufen (SkillDrills, 45-Sekunden-Lauf)',
       headers: ['Übungsstufe', 'Erreichte Stufe', 'Punkte bei fehlerfreiem Lauf', 'Typische Merkstrategie'],
       rows: [
         ['Stufe A', 'Level 11+ (13+ Farben)', 'ca. 1.550+ PTS', 'Farbnamen mitsprechen und Chunking kombiniert'],

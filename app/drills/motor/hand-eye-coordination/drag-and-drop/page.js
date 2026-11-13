@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — drag-and-drop (motor-drag-and-drop)
-// PRIMARY:  "drag and drop test"          — Core diagnostic / motor precision query (~1,400 searches/mo)
+// PRIMARY:  "drag and drop test"          — Core motor precision query (~1,400 searches/mo)
 //           "drag and drop mouse trainer" — Specialized training phrase
 // SECONDARY / LSI:
 //           "drag and drop precision"     — Spatial accuracy and stability term
@@ -14,7 +14,7 @@ import { pickSources } from '@/lib/drillSources';
 //           "cursor control test"         — General motor coordination query
 //           "mouse coordination test"     — Fine motor evaluation query
 //           "mouse dragging practice"     — Habitual skill drill search
-//           "fine motor control test"     — Clinical and ergonomics search
+//           "fine motor control test"     — Ergonomics search
 //           "mouse stopping power"        — Sensorimotor deceleration term
 //           "deceleration aim drill"      — FPS braking and target tracking query
 //           "inventory drag drill"        — Tactical gaming interface manipulation
@@ -167,7 +167,7 @@ const faqSchema = {
       name: 'How do professional UI/UX designers and video editors benefit from dragging drills?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Digital artists, CAD users and video editors drag constantly: timeline playheads, keyframes and bezier handles. The drill practises the same controlled carry and accurate release. It is a practice game, not an ergonomic or medical intervention.',
+        text: 'Digital artists, CAD users and video editors drag constantly: timeline playheads, keyframes and bezier handles. The drill practises the same controlled carry and accurate release.',
       },
     },
     {

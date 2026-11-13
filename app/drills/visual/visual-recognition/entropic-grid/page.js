@@ -5,19 +5,19 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — entropic-grid (visual-entropic-grid)
-// PRIMARY:  "concentration grid test"        — Classic attentional diagnostic & athletic search (~1,200 searches/mo)
+// PRIMARY:  "concentration grid test"        — Classic attentional & athletic search (~1,200 searches/mo)
 //           "visual search test"             — Foundational cognitive psychophysics query
 //           "concentration grid online free" — Direct free tool user intent
 // SECONDARY / LSI:
-//           "visual search task"             — Laboratory and clinical neuropsychological testing
-//           "visual scanning test"           — Occupational therapy and vision assessment phrase
+//           "visual search task"             — Laboratory testing
+//           "visual scanning test"           — Vision assessment phrase
 //           "cognitive focus grid"           — Mental concentration and sports psychology query
 //           "attention concentration test"   — General attention measurement phrase
 //           "visual noise filtering"         — Perceptual distraction suppression search
 //           "visual recognition test"        — Pattern identification and reading speed query
 //           "feature search test"            — Preattentive vs serial search psychophysics
 //           "perceptual speed test"          — Cognitive processing rate benchmark
-//           "visual cancellation test"       — Clinical cancellation task alternative
+//           "visual cancellation test"       — Cancellation task alternative
 // LOCALES:
 //           ja: "集中力グリッド テスト" (Concentration Grid Test)
 //           ko: "집중력 그리드 검사" (Concentration Grid Test)

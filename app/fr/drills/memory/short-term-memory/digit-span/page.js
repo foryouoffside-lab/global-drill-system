@@ -21,7 +21,6 @@ export const metadata = {
     "boucle phonologique",
     "empan mnésique",
     "répéter une suite de chiffres",
-    "test neuropsychologique chiffres",
     "regroupement des chiffres"
   ],
   alternates: {
@@ -282,7 +281,7 @@ const digitSpanGuide = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995'),
   related: [
-    { href: "/fr/drills/memory/short-term-memory/color-sequence", label: "Jeu Simon des Couleurs" },
+    { href: "/fr/drills/memory/short-term-memory/color-sequence", label: "Jeu de couleurs façon Simon" },
     { href: "/fr/drills/memory/short-term-memory/word-recall", label: "Test de Memoire Verbale" },
     { href: "/fr/drills/memory/spatial-memory/grid-memorization", label: "Memoire Spatiale sur Grille" },
     { href: "/fr/drills/memory/spatial-memory/object-location", label: "Localisation d Objets" },

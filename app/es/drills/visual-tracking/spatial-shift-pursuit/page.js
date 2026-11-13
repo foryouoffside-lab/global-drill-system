@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "¿Cómo se mueve el objetivo en el seguimiento visual con cambio espacial?",
-    "a": "El objetivo avanza en línea recta, rebota en los bordes y acelera un poco en cada rebote (alrededor del 2 %). En momentos aleatorios cambia sin aviso de dirección y velocidad: el sentido horizontal y el vertical se invierten o no, y la velocidad se multiplica por 0,8 a 1,3. No hay saltos ni movimiento de la pantalla. Es un ejercicio de la mirada, no un examen de la vista."
+    "a": "El objetivo avanza en línea recta, rebota en los bordes y acelera un poco en cada rebote (alrededor del 2 %). En momentos aleatorios cambia sin aviso de dirección y velocidad: el sentido horizontal y el vertical se invierten o no, y la velocidad se multiplica por 0,8 a 1,3. No hay saltos ni movimiento de la pantalla. Es un ejercicio de la mirada."
   },
   {
     "q": "¿Con qué frecuencia cambia la trayectoria?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "¿Mejorará mi vista o mi puntería?",
-    "a": "No está garantizado. No es un examen de la vista ni una terapia, sino una herramienta para practicar la mirada sobre un objetivo. No promete mejor agudeza visual ni mejor puntería. Si notas molestias en los ojos, consulta a un profesional."
+    "a": "No está garantizado. Es una herramienta para practicar la mirada sobre un objetivo y no promete mejor agudeza visual ni mejor puntería. Compara tus sesiones en la misma pantalla y con los mismos ajustes."
   },
   {
     "q": "¿Cuánto tiempo debo practicar?",
@@ -148,7 +148,7 @@ const guideProps = {
         "Añadir Hide Line o Random Speed, de uno en uno"
       ]
     ],
-    "note": "Etapas de práctica sugeridas por SkillDrills: no son baremos clínicos, estadísticas de usuarios ni percentiles."
+    "note": "Etapas de práctica sugeridas por SkillDrills: no son baremos oficiales, estadísticas de usuarios ni percentiles."
   },
   "techniques": {
     "title": "Consejos de ejecución",

@@ -461,7 +461,7 @@ export default function ColorSequenceClient({ copy = null }) {
               {copy?.title || t('colorSequence.title', 'Color Memory Game')}
             </h1>
             <p data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1">
-              {copy?.subtitle || t('colorSequence.subtitle', 'Simon Game Online & Visual Working Memory Sequence Test')}
+              {copy?.subtitle || t('colorSequence.subtitle', 'Simon-Style Color Sequence Game & Visual Working Memory Test')}
             </p>
           </div>
         )}

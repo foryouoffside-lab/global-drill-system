@@ -150,7 +150,7 @@ const dropGuide = {
     "Drop Catch é um jogo grátis de pegar alvos em queda no navegador: alvos caem do alto da tela, você clica só nos verdes e deixa as iscas vermelhas passarem. Cada acerto dá +2 segundos; cada erro tira 1 segundo.",
     "Quando é preciso distinguir estímulos antes de responder, a resposta costuma demorar mais do que uma reação simples (Donders, 1868). Um modelo também descreve uma corrida entre o impulso de clicar e o de parar (Logan et al., 1984). O jogo transforma as duas coisas em desafio.",
     "Como as pessoas estimam o tempo até um objeto chegar foi estudado por Lee (1976). A velocidade de queda sobe com o nível, de cerca de 400 para 1.250 px/s; quanto mais você demora para decidir, mais difícil fica.",
-    "A pontuação é um registro de treino, não um teste médico de tempo de reação nem uma avaliação de atleta. Compare resultados no mesmo equipamento e monitor."
+    "A pontuação é um registro de treino. Compare resultados no mesmo equipamento e monitor."
   ],
   benchmarks: {
     title: "Faixas de pontuação (referência)",

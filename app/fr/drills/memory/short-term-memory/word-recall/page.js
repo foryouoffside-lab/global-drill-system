@@ -20,7 +20,6 @@ export const metadata = {
     "mémoire de travail verbale",
     "test de mémoire gratuit",
     "regroupement sémantique",
-    "test neuropsychologique mots",
     "mémoriser des mots"
   ],
   alternates: {
@@ -282,7 +281,7 @@ const wordRecallGuide = {
   sources: pickSources('craik1972', 'murdock1962', 'tulving1962'),
   related: [
     { href: "/fr/drills/memory/short-term-memory/digit-span", label: "Test d Empan de Chiffres" },
-    { href: "/fr/drills/memory/short-term-memory/color-sequence", label: "Jeu Simon des Couleurs" },
+    { href: "/fr/drills/memory/short-term-memory/color-sequence", label: "Jeu de couleurs façon Simon" },
     { href: "/fr/drills/memory/spatial-memory/grid-memorization", label: "Memoire Spatiale sur Grille" },
     { href: "/fr/drills/memory/working-memory/n-back", label: "Test Dual N-Back" }
   ]

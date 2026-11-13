@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Como se move o alvo no rastreamento visual com mudança espacial?",
-    "a": "O alvo avança em linha reta, ressalta nas margens e fica um pouco mais rápido a cada ressalto (cerca de 2%). Em momentos aleatórios muda, sem aviso, de direção e velocidade: o sentido horizontal e o vertical invertem-se ou não, e a velocidade é multiplicada por 0,8 a 1,3. Não há saltos nem movimento do ecrã. É um exercício do olhar, não um exame de visão."
+    "a": "O alvo avança em linha reta, ressalta nas margens e fica um pouco mais rápido a cada ressalto (cerca de 2%). Em momentos aleatórios muda, sem aviso, de direção e velocidade: o sentido horizontal e o vertical invertem-se ou não, e a velocidade é multiplicada por 0,8 a 1,3. Não há saltos nem movimento do ecrã. É um exercício do olhar."
   },
   {
     "q": "Com que frequência muda a trajetória?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Isto melhora a minha visão ou a minha mira?",
-    "a": "Não há garantia. Não é um exame de visão nem uma terapia, mas uma ferramenta para praticar o olhar sobre um alvo. Não promete melhor acuidade nem melhor pontaria. Se notar algum problema nos olhos, consulte um profissional."
+    "a": "Não há garantia. É uma ferramenta para praticar o olhar sobre um alvo e não promete melhor acuidade nem melhor pontaria. Compare as sessões no mesmo ecrã e com as mesmas definições."
   },
   {
     "q": "Quanto tempo devo praticar?",

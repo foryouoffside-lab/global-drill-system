@@ -54,7 +54,7 @@ const softwareSchema = {
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Free online Stroop color-word game: tap the ink color and ignore the word as the trial window shrinks. Non-clinical practice of selective attention and response inhibition.",
+  "description": "Free online Stroop color-word game: tap the ink color and ignore the word as the trial window shrinks. Practice of selective attention and response inhibition.",
   "genre": "Cognitive Brain Training / Inhibitory Control",
   "url": "https://skilldrills.online/drills/cognitive/focus/distraction-fighter",
   "dateModified": "2026-11-12",
@@ -122,8 +122,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Can this Stroop drill diagnose or treat ADHD?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. This is a free browser game, not a medical device, a diagnostic instrument, or a treatment for any condition. Stroop tasks are used in research and in clinical settings, but this is not a clinical version, and your score here says nothing about whether you or anyone else has ADHD. If you have concerns about attention or focus, speak to a qualified clinician." }
+      "name": "What affects my score in this Stroop drill?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Only correct ink-color taps score, and each one is multiplied by your combo and level, so a long streak is worth far more than raw speed. A wrong tap or a timed-out trial resets the combo and costs 1 second, so naming the ink accurately as the trial window shrinks matters most." }
     },
     {
       "@type": "Question",
@@ -172,7 +172,7 @@ const howToSchema = {
 
 export const metadata = {
   title: "Stroop Test Online | Color-Word Interference | SkillDrills",
-  description: "Free Stroop test online: choose the ink color, ignore the word, and practice selective attention and response inhibition. Non-clinical.",
+  description: "Free Stroop test online: choose the ink color, ignore the word, and practice selective attention and response inhibition.",
   keywords: [
     "stroop test online",
     "stroop effect test",
@@ -208,7 +208,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Stroop Test Online | Color-Word Interference | SkillDrills",
-    description: "Free Stroop test online: choose the ink color, ignore the word, and practice selective attention and response inhibition. Non-clinical.",
+    description: "Free Stroop test online: choose the ink color, ignore the word, and practice selective attention and response inhibition.",
     url: "https://skilldrills.online/drills/cognitive/focus/distraction-fighter",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -217,7 +217,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Stroop Test Online | Color-Word Interference | SkillDrills",
-    description: "Free Stroop test online: choose the ink color, ignore the word, and practice selective attention and response inhibition. Non-clinical.",
+    description: "Free Stroop test online: choose the ink color, ignore the word, and practice selective attention and response inhibition.",
   },
 };
 
@@ -244,7 +244,6 @@ const distractionfighterGuide = {
     "Half a century of follow-up work established that the interference is essentially universal in healthy adults, that it shrinks with practice but never disappears, and that it is asymmetric: colour never interferes with reading the way reading interferes with colour naming (MacLeod, 1991). Reading is the more automatic process, so it wins unless inhibition holds it back -- and stopping a response you have already begun is its own process, racing the one that started it (Logan &amp; Cowan, 1984).",
     "Timing methodology: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup.",
     "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work listed in the References panel below.",
-    "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health. If you have concerns about your attention, memory or thinking, speak to a qualified clinician.",
   ],
   // Works named in this page's copy, with DOIs so a reader or an answer
   // engine can check the figures rather than take them on trust.

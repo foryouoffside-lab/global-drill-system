@@ -6,14 +6,14 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Reading Speed Test Online | RSVP Reader | SkillDrills",
-  description: "Free reading speed test online using RSVP: words flash at one point from 250 to 850 WPM and you catch the target word. Practise fast word recognition. Non-clinical.",
+  description: "Free reading speed test online using RSVP: words flash at one point from 250 to 850 WPM and you catch the target word. Practise fast word recognition.",
   keywords: ["reading speed test online", "reading speed test", "rsvp speed reader", "rapid serial visual presentation", "speed reading test", "wpm reading test", "words per minute test", "reading fluency test", "optimal recognition point", "visual reading speed",
     "speed reading app free",
     "reading comprehension speed",
     "text processing drill"],
   openGraph: {
     title: "Reading Speed Test Online | RSVP Reader | SkillDrills",
-    description: "Free reading speed test online using RSVP: words flash at one point from 250 to 850 WPM and you catch the target word. Practise fast word recognition. Non-clinical.",
+    description: "Free reading speed test online using RSVP: words flash at one point from 250 to 850 WPM and you catch the target word. Practise fast word recognition.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Reading Speed Test Online | RSVP Reader | SkillDrills",
-    description: "Free reading speed test online using RSVP: words flash at one point from 250 to 850 WPM and you catch the target word. Practise fast word recognition. Non-clinical.",
+    description: "Free reading speed test online using RSVP: words flash at one point from 250 to 850 WPM and you catch the target word. Practise fast word recognition.",
   },
   robots: { index: true, follow: true },
   alternates: {

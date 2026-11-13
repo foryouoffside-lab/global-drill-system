@@ -11,10 +11,10 @@ import { pickSources } from '@/lib/drillSources';
 // SECONDARY / LSI:
 //           "target tracking drill"          — Systematic visual tracking protocol
 //           "kinetic visual tracking game"   — Interactive motor tracking query
-//           "visual pursuit tracking"        — Smooth pursuit optometric query
+//           "visual pursuit tracking"        — Smooth pursuit query
 //           "kinetic intercept drill"        — Ballistic intercept training query
 //           "hand-eye tracking game"         — Motor coordination query
-//           "smooth pursuit eye test"        — Neuro-ophthalmology pursuit search
+//           "smooth pursuit eye test"        — Pursuit search
 //           "dynamic visual tracking test"   — Sports vision evaluation term
 //           "moving target aim trainer"      — Competitive esports aim query
 //           "ballistic intercept test"       — Predictive trajectory interception term

@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "¿Cómo funciona el seguimiento de blanco teletransportado?",
-    "a": "El blanco avanza en línea recta con dirección y velocidad constantes y rebota en los bordes. A velocidad 1,0x se teletransporta aproximadamente cada 1,2 segundos a una posición aleatoria, sin cambiar dirección ni velocidad. Lo reencuentras con la vista y sigues su movimiento. Es un ejercicio en el navegador, no un examen de la vista ni una terapia."
+    "a": "El blanco avanza en línea recta con dirección y velocidad constantes y rebota en los bordes. A velocidad 1,0x se teletransporta aproximadamente cada 1,2 segundos a una posición aleatoria, sin cambiar dirección ni velocidad. Lo reencuentras con la vista y sigues su movimiento. Es un ejercicio en el navegador."
   },
   {
     "q": "¿Se puede prever adónde saltará el blanco?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "¿Mejorará mi vista o mi puntería?",
-    "a": "No está garantizado. No es un examen de la vista ni una terapia, sino una herramienta para practicar la mirada sobre un objetivo. No promete mejor agudeza visual ni mejor puntería. Si notas molestias en los ojos, consulta a un profesional."
+    "a": "No está garantizado. Es una herramienta para practicar la mirada sobre un objetivo y no promete mejor agudeza visual ni mejor puntería. Compara tus sesiones en la misma pantalla y con los mismos ajustes."
   },
   {
     "q": "¿Cuánto tiempo debo practicar?",
@@ -148,7 +148,7 @@ const guideProps = {
         "Añadir Hide Line o Random Speed, de uno en uno"
       ]
     ],
-    "note": "Etapas de práctica sugeridas por SkillDrills: no son baremos clínicos, estadísticas de usuarios ni percentiles."
+    "note": "Etapas de práctica sugeridas por SkillDrills: no son baremos oficiales, estadísticas de usuarios ni percentiles."
   },
   "techniques": {
     "title": "Consejos de ejecución",

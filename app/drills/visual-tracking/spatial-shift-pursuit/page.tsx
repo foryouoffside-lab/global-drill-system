@@ -155,7 +155,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What is the neurological role of catch-up saccades in smooth pursuit?",
+      "name": "What role do catch-up saccades play in smooth pursuit?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "When a moving target jumps beyond foveal tolerance, smooth pursuit cannot accelerate fast enough to bridge the distance. The superior colliculus triggers a ballistic catch-up saccade to reposition the fovea before pursuit re-engages (Findlay & Walker, 1999; Rashbass, 1961)."

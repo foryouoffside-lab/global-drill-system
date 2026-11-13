@@ -662,7 +662,7 @@ export default function ZigZagPathPursuitClient({ copy }: { copy?: Record<string
             onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
           >
             <p className="text-sm text-slate-300 leading-relaxed">
-              {copy?.description || "Zig-Zag Path Pursuit is a browser practice task: a target swings up and down through seven sharp turns from the left edge to the right, then returns the same way, and you follow it with your eyes only. It does not record where you look and is not an eye test (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007). Pursuit holds to roughly 30°/s on each straight leg, and every reversal exceeds it, so the eye alternates between smooth tracking and catch-up saccades (Krauzlis, 2004)."}
+              {copy?.description || "Zig-Zag Path Pursuit is a browser practice task: a target swings up and down through seven sharp turns from the left edge to the right, then returns the same way, and you follow it with your eyes only. It does not record where you look (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007). Pursuit holds to roughly 30°/s on each straight leg, and every reversal exceeds it, so the eye alternates between smooth tracking and catch-up saccades (Krauzlis, 2004)."}
             </p>
           </DrillAccordion>
         )}

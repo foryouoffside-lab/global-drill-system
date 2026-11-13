@@ -124,7 +124,7 @@ export default function ObjectLocationPage() {
         "name": "What is an Object Location Memory Test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "An object location memory test asks you to remember both what an object is and where it was. This SkillDrills version is a free practice game, not a clinical test: you memorize a grid of objects, then show where one of them was."
+          "text": "An object location memory test asks you to remember both what an object is and where it was. This SkillDrills version is a free practice game: you memorize a grid of objects, then show where one of them was."
         }
       },
       {
@@ -140,7 +140,7 @@ export default function ObjectLocationPage() {
         "name": "Is this the Silverman-Eals object location task?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Eals and Silverman (1994) studied memory for object locations using arrays of drawn objects in a research setting. This drill is an unrelated free game with its own grid, timing and scoring, and gives no normed or clinical result."
+          "text": "No. Eals and Silverman (1994) studied memory for object locations using arrays of drawn objects in a research setting. This drill is an unrelated free game with its own grid, timing and scoring, and gives no normed result."
         }
       },
       {
@@ -249,8 +249,7 @@ export default function ObjectLocationPage() {
       "Marion Eals & Irwin Silverman (1994) studied memory for object locations and reported that it behaves differently from mental rotation; this drill is not their task. Earlier, Edward C. Tolman (1948) established the concept of cognitive mapping, showing how organisms form internal spatial models of their environment.",
       "In Baddeley's (2000) model, the episodic buffer combines information from different stores, such as what an object looks like and where it is; Logie (1995) separated the visual cache from the spatial inner scribe. Luck & Vogel (1997) and Cowan (2001) suggest working memory holds only about 3 to 4 items at a time, which is why the later levels become hard.",
       "How the game works: a run lasts 45 seconds and the clock runs continuously. Each round shows the objects for 1.5 seconds, then a target object; you have 8 seconds and one tap to find its cell. A correct tap scores 150 points and adds an object; a wrong tap or timeout scores nothing and repeats the level with a new layout. Tap speed is not measured or scored.",
-      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
-      "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
+      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below."
     ],
     benchmarks: {
       title: "Object Location: SkillDrills Practice Bands",

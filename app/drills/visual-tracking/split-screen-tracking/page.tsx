@@ -226,7 +226,7 @@ const guide = {
     "Split-Screen Tracking is a free divided attention test in your browser. Two targets move at once, one on a horizontal path and one on a vertical path, and you track both at the same time. Choose a speed and duration, press start, and keep both targets in view.",
     "The human visual apparatus is physiologically constrained by the microscopic dimensions of the fovea centralis, which covers a high-acuity field of only 1 to 2 degrees. When two distinct targets move concurrently across spatially separated planes, optical foveation of both points simultaneously is biologically impossible. The central nervous system faces an executive dilemma: oscillate gaze rhythmically via ballistic saccades, or establish a central gaze anchor and expand covert spatial attention bimodally across both visual hemifields.",
     "Seminal multiple object tracking (MOT) research by Pylyshyn & Storm (1988) demonstrated that the primate brain utilizes visual indexing mechanisms (FINSTs) to track multiple entities concurrently without serial focal scanning. Expanding on this, Alvarez & Cavanagh (2005) proved that visual tracking resources are segregated across the cerebral hemispheres: dividing one target to the left visual field (right hemisphere) and one to the right visual field (left hemisphere) yields a measurable 'bilateral field advantage', avoiding intra-hemispheric attentional bottlenecks.",
-    "Oscillating gaze rapidly between separated nodes imposes significant neurological overhead. Each saccadic transit incurs a latency of 20 to 50 milliseconds and triggers saccadic suppression—a brief threshold elevation during which visual processing is partially blind. Split-Screen Tracking conditions a stable central anchor coupled with multifocal covert attention (Cavanagh & Alvarez, 2005; Green & Bavelier, 2006). By coupling a vertical trajectory on the left with a horizontal trajectory on the right, this drill prevents Gestalt common fate grouping and trains true dual-stream cognitive processing."
+    "Oscillating gaze rapidly between separated nodes imposes a significant processing cost. Each saccadic transit incurs a latency of 20 to 50 milliseconds and triggers saccadic suppression—a brief threshold elevation during which visual processing is partially blind. Split-Screen Tracking conditions a stable central anchor coupled with multifocal covert attention (Cavanagh & Alvarez, 2005; Green & Bavelier, 2006). By coupling a vertical trajectory on the left with a horizontal trajectory on the right, this drill prevents Gestalt common fate grouping and trains true dual-stream cognitive processing."
   ],
   benchmarks: {
     title: "Time-on-Target Practice Bands",
@@ -236,7 +236,7 @@ const guide = {
       ["Steady", "40–70%", "Mean distance error at the same settings", "Repeat the same setup"],
       ["Consistent", "Over 70%", "Whether it holds when one setting changes", "Add one challenge: speed, hidden path or random speed"]
     ],
-    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms, percentiles or clinical values, and the page measures the pointer, not your eyes."
+    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms or percentiles, and the page measures the pointer, not your eyes."
   },
   techniques: {
     title: "Four Core Techniques for Dual-Stream Divided Attention",
@@ -306,7 +306,7 @@ export default function SplitScreenTrackingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <SplitScreenTrackingClient copy={{ title: "Split-Screen Tracking", subtitle: "Divided attention eye test for tracking two moving targets across horizontal and vertical paths at the same time" }} />
+      <SplitScreenTrackingClient copy={{ title: "Split-Screen Tracking", subtitle: "Divided attention practice for tracking two moving targets across horizontal and vertical paths at the same time" }} />
       <DrillGuide guide={guide} />
       <DrillFooter />
     </>

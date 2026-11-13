@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 // SEO RESEARCH FINDINGS — rhythm-anomaly (visual-rhythm-anomaly)
 // PRIMARY:  "visual timing test"             — Foundational temporal psychophysics search (~1,100 searches/mo)
-//           "temporal discrimination test"   — Clinical neurological and perceptual test term
+//           "temporal discrimination test"   — Perceptual test term
 //           "visual rhythm test"             — Action-oriented rhythm drill search
 // SECONDARY / LSI:
 //           "flicker detection test"         — Critical flicker fusion and sensitivity search
@@ -17,7 +17,7 @@ import { pickSources } from '@/lib/drillSources';
 //           "visual rhythm drill"            — Interactive training query
 //           "visual anomaly detection"       — Pattern and motion mismatch identification
 //           "temporal processing test"       — Cognitive timing and chronometry query
-//           "visual flicker test"            — Medical and perceptual flicker test
+//           "visual flicker test"            — Perceptual flicker test
 // LOCALES:
 //           ja: "視覚リズム テスト" (Visual Rhythm Test)
 //           ko: "시각 리듬 검사" (Visual Rhythm Test)

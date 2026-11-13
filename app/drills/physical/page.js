@@ -19,7 +19,7 @@ export const metadata = {
     'dodge game online', 'pattern memory game', 'mouse precision test',
     'balance exercises online', 'stability training game', 'click speed test',
     'free fitness drills online', 'online fitness games', 'motor fitness training',
-    'physical therapy exercises online', 'rehabilitation training game', 'sports training drills',
+    'sports training drills',
     'skilldrills physical', 'skilldrills fitness', 'skilldrills reflex',
     'no download physical training', 'browser fitness drills', 'instant motor training',
     '11 free drills', 'physical skill games', 'body training online free',
@@ -174,7 +174,7 @@ const faqSchema = {
       "name": "What does Peripheral Threat Sweeper train?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It trains noticing and responding to targets that appear toward the edge of the screen while you keep looking at the centre. It is a screen task, not an eye test or a medical vision assessment."
+        "text": "It trains noticing and responding to targets that appear toward the edge of the screen while you keep looking at the centre."
       }
     },
     {

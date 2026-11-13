@@ -110,7 +110,7 @@ const FAQ_ITEMS = [
   { q: "Can distraction-resistance training help with open-office productivity?", a: "Not proven. Scores on this drill usually rise with practice, but evidence that Stroop practice transfers to focus in a noisy office is limited. Treat it as a short warm-up, not a productivity fix." },
   { q: "What is the orienting reflex and how does it cause distraction?", a: "The orienting reflex is an automatic neurological response to novel stimuli — your brain involuntarily redirects attention to unexpected sounds, movement, or visual changes. Mediated by the superior colliculus and thalamus, it evolved to ensure threat detection. Inhibitory control training helps the prefrontal cortex override this reflex when distraction is unhelpful." },
   { q: "How does this distraction fighter game work?", a: "A color word flashes on screen printed in a conflicting ink color (e.g. the word 'BLUE' printed in red ink). You must tap the button matching the ink color, not the word's meaning, suppressing the automatic urge to read the word aloud. Each correct ink-color tap scores 100 points × combo × level and adds 2 seconds (clock capped at 60s); a wrong tap or a timed-out trial resets your combo and costs 1 second. The clock starts at 45 seconds and the run ends at zero." },
-  { q: "Can this Stroop drill diagnose or treat ADHD?", a: "No. This is a free browser game, not a medical device, a diagnostic instrument, or a treatment for any condition. Stroop tasks are used in research and in clinical settings, but this is not a clinical version, and your score here says nothing about whether you or anyone else has ADHD. If you have concerns about attention or focus, speak to a qualified clinician." },
+  { q: "What affects my score in this Stroop drill?", a: "Only correct ink-color taps score, and each one is multiplied by your combo and level, so a long streak is worth far more than raw speed. A wrong tap or a timed-out trial resets the combo and costs 1 second, so naming the ink accurately as the trial window shrinks matters most." },
   { q: "Is this distraction-fighter game free to play?", a: "Yes. The Distraction Fighter drill on SkillDrills is completely free. No sign-up, no downloads, no subscriptions. It runs entirely in your browser on both desktop and mobile devices." }
 ];
 
@@ -118,6 +118,9 @@ const COLOR_TRANSLATIONS = {
   ja: { Red: '赤', Blue: '青', Green: '緑', Yellow: '黄', Purple: '紫', Orange: '橙' },
   de: { Red: 'Rot', Blue: 'Blau', Green: 'Grün', Yellow: 'Gelb', Purple: 'Lila', Orange: 'Orange' },
   ko: { Red: '빨강', Blue: '파랑', Green: '초록', Yellow: '노랑', Purple: '보라', Orange: '주황' },
+  fr: { Red: 'Rouge', Blue: 'Bleu', Green: 'Vert', Yellow: 'Jaune', Purple: 'Violet', Orange: 'Orange' },
+  pt: { Red: 'Vermelho', Blue: 'Azul', Green: 'Verde', Yellow: 'Amarelo', Purple: 'Roxo', Orange: 'Laranja' },
+  es: { Red: 'Rojo', Blue: 'Azul', Green: 'Verde', Yellow: 'Amarillo', Purple: 'Morado', Orange: 'Naranja' },
 };
 
 export default function DistractionFighterClient({ faqs, copy }) {

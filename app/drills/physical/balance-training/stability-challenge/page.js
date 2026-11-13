@@ -5,7 +5,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — stability-challenge (physical-stability-challenge)
-// PRIMARY:  "mouse stability test"        — Focused browser diagnostic intent (volume unmeasured)
+// PRIMARY:  "mouse stability test"        — Focused browser test intent (volume unmeasured)
 //           "aim stability trainer"       — Core training phrase (volume unmeasured)
 // SECONDARY / LSI:
 //           "cursor stability challenge"  — Interactive drill query

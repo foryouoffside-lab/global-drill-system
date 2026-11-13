@@ -224,7 +224,7 @@ const guide = {
     "Predictive Pursuit is a free browser drill that practises anticipating motion. Every few seconds the target glides to a new point and slows to a stop, so you look ahead to where it will land; Hide Line removes the destination line. Pick a speed and duration, press start, and follow the target with your eyes and the pointer; the end screen reports pointer-to-target distance.",
     "Each cycle has two parts: a glide that starts fast and eases off as the target nears its new point, and a pause where it sits still until the next destination is chosen. At 1.0x a cycle lasts about 2.2 seconds; higher speeds shorten it and Random Speed varies it between cycles.",
     "With the line visible you can see the destination before the target gets there. With Hide Line on, only the direction and speed of the start of the glide tell you where it will stop. Eyes can move ahead of a target whose motion is expected (Kowler, 1989); this drill gives you a simple, repeatable way to practise that.",
-    "The browser does not record eye position. If you follow with the pointer, the end screen shows time on target and the mean and RMS pointer distance from the target centre, weighted by time. Treat these as a practice record for comparing sessions on the same screen and settings, not as an eye test."
+    "The browser does not record eye position. If you follow with the pointer, the end screen shows time on target and the mean and RMS pointer distance from the target centre, weighted by time. Treat these as a practice record for comparing sessions on the same screen and settings."
   ],
   benchmarks: {
     title: "SkillDrills Practice Bands (Time on Target)",

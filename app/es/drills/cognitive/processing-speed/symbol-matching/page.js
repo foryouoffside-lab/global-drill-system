@@ -6,11 +6,11 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Símbolos y Dígitos | SDMT Online | SkillDrills",
+  title: "Test de Símbolos y Dígitos Online Gratis | SkillDrills",
   description: "Test gratuito de símbolos y dígitos: practica el emparejamiento símbolo-dígito y la velocidad de procesamiento. Inspirado en SDMT, no es clínico.",
   keywords: ["test de símbolos y dígitos", "SDMT online", "test sdmt online", "sdmt test de símbolos y dígitos", "velocidad de procesamiento", "búsqueda visual"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de Símbolos y Dígitos | SDMT Online | SkillDrills",
+    title: "Test de Símbolos y Dígitos Online Gratis | SkillDrills",
     description: "Test gratuito de símbolos y dígitos: practica el emparejamiento símbolo-dígito y la velocidad de procesamiento. Inspirado en SDMT, no es clínico.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/processing-speed/symbol-matching',
@@ -19,7 +19,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de Símbolos y Dígitos | SDMT Online | SkillDrills",
+    title: "Test de Símbolos y Dígitos Online Gratis | SkillDrills",
     description: "Test gratuito de símbolos y dígitos: practica el emparejamiento símbolo-dígito y la velocidad de procesamiento. Inspirado en SDMT, no es clínico.",
   },
   robots: { index: true, follow: true },
@@ -251,7 +251,7 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('smith1973', 'der2006', 'woods2015'),
   intro: {
-    title: "Test de Símbolos y Dígitos – SDMT Online",
+    title: "Test de Símbolos y Dígitos Online",
     paragraphs: [
       "El test de símbolos y dígitos es un ejercicio gratis en el navegador: la clave superior asocia seis símbolos a los dígitos 1 a 6, aparece un símbolo en el centro y pulsas el dígito que le corresponde. La clave se mezcla en cada sesión. La ronda empieza con 45 segundos; cada acierto suma 2 segundos (máx. 60) y cada error o tiempo agotado resta 1 segundo.",
       "Responder del símbolo al dígito es el formato del SDMT (Smith, 1973); en el DSST de Wechsler es al revés (del dígito al símbolo). Este ejercicio no es ninguno de los dos tests y sus resultados no se comparan con baremos clínicos.",

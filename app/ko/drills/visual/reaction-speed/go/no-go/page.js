@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "고노고 과제 (Go/No-Go) 무료 온라인 반응 억제 테스트 | SkillDrills",
-  description: "고노고 과제를 브라우저에서 무료로 해 보세요. 초록 원은 바로 클릭, 빨간 원은 누르지 않고 참는 반응 억제 연습입니다. 오반응과 놓침을 기록합니다. 의료 진단용이 아닙니다.",
+  description: "고노고 과제를 브라우저에서 무료로 해 보세요. 초록 원은 바로 클릭, 빨간 원은 누르지 않고 참는 반응 억제 연습입니다. 오반응과 놓침을 기록합니다.",
   keywords: [
     "고노고 과제",
     "고노고 테스트",
@@ -20,7 +20,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "고노고 과제 (Go/No-Go) 무료 온라인 반응 억제 테스트 | SkillDrills",
-    description: "초록 원은 바로 클릭, 빨간 원은 참기. 반응 억제와 오반응을 브라우저에서 확인하는 무료 고노고 과제입니다. 의료 진단용이 아닙니다.",
+    description: "초록 원은 바로 클릭, 빨간 원은 참기. 반응 억제와 오반응을 브라우저에서 확인하는 무료 고노고 과제입니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/visual/reaction-speed/go/no-go',
     siteName: 'SkillDrills',
@@ -58,7 +58,7 @@ const softwareApplicationSchema = {
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/ko/drills/visual/reaction-speed/go/no-go",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
-  "description": "초록 Go 신호에는 클릭하고 빨간 No-Go 신호에는 누르지 않고 참는 브라우저용 고노고 과제입니다. 오반응, 놓침, 반응 시간을 기록하는 연습 도구이며 의료 검사가 아닙니다.",
+  "description": "초록 Go 신호에는 클릭하고 빨간 No-Go 신호에는 누르지 않고 참는 브라우저용 고노고 과제입니다. 오반응, 놓침, 반응 시간을 기록하는 연습 도구입니다.",
   "featureList": [
     "performance.now() API로 반응 시간을 ms 단위로 기록",
     "레벨이 오르면 신호 표시 시간이 약 600ms에서 최소 100ms까지 짧아짐",
@@ -183,10 +183,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "ADHD나 충동성 진단에 쓸 수 있나요?",
+      "name": "결과가 매번 다른 이유는 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "아니요. 연습용 브라우저 게임이며 의료 검사나 진단이 아닙니다. 결과는 화면, 입력 기기, 졸음, 집중도에 따라서도 달라집니다. 충동성이나 주의력이 걱정된다면 의료 전문가와 상담하세요."
+        "text": "결과는 화면, 입력 기기, 졸음, 집중도에 따라 달라집니다. 같은 기기와 비슷한 컨디션에서 여러 번 해 보고 기록을 비교하세요."
       }
     },
     {
@@ -221,7 +221,7 @@ const goNoGoGuide = {
   intro: [
     "고노고 과제(Go/No-Go)는 자주 나오는 신호에는 반응하고, 가끔 나오는 신호에서는 반응을 멈추는 과제입니다. 빨리 누르는 것뿐 아니라 누르면 안 되는 순간에 멈출 수 있는지를 본다는 점이 단순 반응속도 테스트와 다릅니다.",
     "이 브라우저 버전에서는 화면 중앙에 초록 원(Go) 또는 빨간 원(No-Go)이 나옵니다. 초록은 클릭하거나 탭하고, 빨강은 누르지 않고 기다립니다. 원이 없을 때의 클릭이나 빠른 연타도 오반응으로 처리됩니다. 레벨이 오르면 표시 시간이 약 600ms에서 짧아져 최소 100ms가 됩니다.",
-    "선택해서 반응하는 과제의 발상은 돈더스(1868)의 반응 시간 연구로 거슬러 올라가며, 반응을 시작하는 과정과 멈추는 과정의 경쟁은 Logan & Cowan(1984)이 모델로 정리했습니다. 다만 이 점수는 화면, 입력 기기, 브라우저를 포함한 연습 결과이며 의료 검사가 아닙니다.",
+    "선택해서 반응하는 과제의 발상은 돈더스(1868)의 반응 시간 연구로 거슬러 올라가며, 반응을 시작하는 과정과 멈추는 과정의 경쟁은 Logan & Cowan(1984)이 모델로 정리했습니다. 이 점수는 화면, 입력 기기, 브라우저를 포함한 연습 결과입니다.",
     "시간은 브라우저의 performance.now()로 잽니다. 디스플레이 갱신과 입력 지연이 결과에 더해지므로(Woods et al., 2015) 같은 기기끼리 기록을 비교하세요. 데이터는 이 기기의 브라우저 안에 저장됩니다."
   ],
   benchmarks: {
@@ -268,7 +268,7 @@ const goNoGoGuide = {
     "빨간 No-Go 원이 나오면 사라질 때까지 누르지 않고 기다립니다.",
     "끝나면 오반응률, 평균 반응, 도달 레벨을 확인합니다."
   ],
-  audience: "고노고 과제를 온라인으로 해 보고 싶은 분, 빠르기뿐 아니라 '누르지 않는 판단'을 연습하고 싶은 게이머와 운동하는 분께 맞습니다. 의료적 평가가 목적이라면 맞지 않습니다.",
+  audience: "고노고 과제를 온라인으로 해 보고 싶은 분, 빠르기뿐 아니라 '누르지 않는 판단'을 연습하고 싶은 게이머와 운동하는 분께 맞습니다.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('donders1868', 'logan1984', 'robertson1997', 'woods2015'),
   related: [

@@ -691,7 +691,7 @@ export default function StaircaseStepClient({ copy }: { copy?: Record<string, st
             </DrillAccordion>
             {(locale === 'en' || copy?.description) && (
               <DrillAccordion id="about" title="About Staircase Step" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
-                <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Staircase Step is a browser practice task: a target zig-zags left and right as it steps from the top of the screen to the bottom, then climbs back the same way, and you follow it with your eyes only. It does not record where you look and is not an eye test (Rottach et al., 1996; Ke et al., 2013). Vertical pursuit is measurably worse than horizontal in the same observers (Rottach et al., 1996), and pursuit takes roughly 100 ms to begin after a target starts moving (Lisberger, 2010)."}</p>
+                <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Staircase Step is a browser practice task: a target zig-zags left and right as it steps from the top of the screen to the bottom, then climbs back the same way, and you follow it with your eyes only. It does not record where you look (Rottach et al., 1996; Ke et al., 2013). Vertical pursuit is measurably worse than horizontal in the same observers (Rottach et al., 1996), and pursuit takes roughly 100 ms to begin after a target starts moving (Lisberger, 2010)."}</p>
               </DrillAccordion>
             )}
           </div>

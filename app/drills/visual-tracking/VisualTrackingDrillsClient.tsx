@@ -177,7 +177,7 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
             {t('hubs.visual-tracking.desc', 'Browser-based visual motion practice for following moving points, predictable paths, and controlled re-acquisition tasks.')}
           </p>
           <p className="mt-3 max-w-3xl text-xs text-ink-3 leading-relaxed">
-            These drills record browser task settings and pointer activity, not eye position. They are practice tools—not vision tests, diagnoses, or treatment—and should be stopped if they cause pain, dizziness, nausea, persistent blur, or unusual visual symptoms.
+            These drills record browser task settings and pointer activity, not eye position. Use them as practice tools, and stop if they cause pain, dizziness, nausea, persistent blur, or unusual visual symptoms.
           </p>
         </div>
 

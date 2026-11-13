@@ -85,7 +85,7 @@ const gridGuide = {
     "Das Raster-Ausweichspiel ist ein Browserspiel, in dem du den Mauszeiger im 3x3-Raster aus orange gewarnten Gefahrenfeldern bringst, bevor sie explodieren. Du weichst also keinen fliegenden Objekten aus, sondern wählst eines von 9 Feldern. Schnelle Entscheidung und sauberes Abbremsen gehören beide dazu.",
     "Mit steigendem Level schrumpft die Warnzeit von 1,4 auf 0,45 Sekunden, und es werden bis zu 7 der 9 Felder zu Gefahrenfeldern. Später bleiben nur 2 sichere Felder, und für ein Feld-für-Feld-Prüfen ist keine Zeit. Wie bei Posners Hinweisreiz-Versuchen (Posner, 1980) hilft es, den Kontrast zwischen blinkenden und dunklen Feldern auf einen Blick zu lesen.",
     "Schnelle Bewegungen bestehen aus einem großen Anfangsimpuls und einer kleinen Korrektur am Ende (Woodworth, 1899). Wer das richtige Feld wählt, aber über die Feldgrenze hinausschießt, wird trotzdem getroffen; also übe, innerhalb des Feldes zu stoppen.",
-    "Die Ergebnisse sind Übungswerte innerhalb von SkillDrills, kein medizinischer Test, kein Sehtest und keine Messung sportlicher Leistung. Vergleiche Werte nur mit derselben Maus, Empfindlichkeit und demselben Monitor.",
+    "Die Ergebnisse sind Übungswerte innerhalb von SkillDrills. Vergleiche Werte nur mit derselben Maus, Empfindlichkeit und demselben Monitor.",
   ],
   benchmarks: {
     title: 'Bewertungsstufen (SkillDrills-Übungsbereiche)',
@@ -133,7 +133,7 @@ export default function DynamicGridEvasionPageDe() {
           ],
           aboutTitle: "Was ist das Raster-Ausweichspiel?",
           aboutHeading: "Gefahrenfeldern im 3x3-Raster ausweichen",
-          aboutText: "Im Raster-Ausweichspiel blinken Felder eines 3x3-Rasters orange, bevor sie explodieren. Du bringst den Mauszeiger rechtzeitig in ein sicheres Feld. Mit steigendem Level wird die Warnzeit kürzer und es gibt mehr Gefahrenfelder. Es geht um schnelles Entscheiden und präzises Abbremsen der Maus, nicht um eine medizinische Messung.",
+          aboutText: "Im Raster-Ausweichspiel blinken Felder eines 3x3-Rasters orange, bevor sie explodieren. Du bringst den Mauszeiger rechtzeitig in ein sicheres Feld. Mit steigendem Level wird die Warnzeit kürzer und es gibt mehr Gefahrenfelder. Es geht um schnelles Entscheiden und präzises Abbremsen der Maus.",
           aboutCards: [
             { title: "Für wen", desc: "Für alle, die ein Ausweichspiel im Raster mögen oder schnelles Reagieren auf Warnungen üben wollen." },
             { title: "Was du übst", desc: "Gefahrenfelder und sichere Felder unterscheiden, das nächste Feld wählen, den Zeiger im Feld stoppen." },

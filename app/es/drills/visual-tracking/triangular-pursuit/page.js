@@ -90,7 +90,7 @@ const faqs = [
   { q: "¿El ejercicio mide los movimientos de mis ojos?", a: "No. El navegador no sabe hacia dónde miras; solo conoce la posición en la que se dibuja el objetivo, tus ajustes y la posición del puntero. No hace falta hacer clic ni tocar la pantalla; el resultado es un registro de práctica para ti." },
   { q: "¿Hay puntuación o nota?", a: "No hay nota. Al terminar, la pantalla muestra el porcentaje de tiempo con el puntero sobre el objetivo, la distancia media y RMS del puntero al centro del objetivo, la duración, el multiplicador de velocidad y el total de sesiones (guardado en este navegador). Mide el puntero, no tus ojos. Si quieres contar cuántas veces pierdes el objetivo, apúntalo tú." },
   { q: "¿Qué ajustes hay?", a: "Duración de 30, 45, 60, 90 o 120 segundos, velocidad de 0,5x a 9,0x y tamaño del objetivo de 10 a 50 px. También puedes ocultar la línea (contorno del triángulo), activar velocidad aleatoria, estela, brillo, líneas de escaneo, fondo claro u oscuro y cambiar el color del objetivo. La tecla Esc termina la sesión en cualquier momento." },
-  { q: "¿Mejora la vista o la puntería?", a: "No hay garantía. Es un ejercicio en el que sigues con los ojos un objetivo en movimiento; no es un examen de la vista ni un tratamiento, y no promete mejor puntería en juegos de disparos. Si notas molestias en los ojos, consulta a un oftalmólogo." },
+  { q: "¿Mejora la vista o la puntería?", a: "No hay garantía. Es un ejercicio en el que sigues con los ojos un objetivo en movimiento y no promete mejor puntería en juegos de disparos. Compara tus sesiones en la misma pantalla y con los mismos ajustes." },
   { q: "¿Influye la pantalla en el resultado?", a: "Sí. La frecuencia de actualización, el brillo, el contraste, el tamaño de la pantalla y la distancia cambian cómo se ve el objetivo (Woods et al., 2015). Compara solo sesiones hechas en la misma pantalla, el mismo navegador y con los mismos ajustes." },
   { q: "¿Cuánto tiempo debo practicar?", a: "Unas cuantas sesiones de unos 60 segundos, de 5 a 10 minutos en total, con pausas. Para enseguida si notas los ojos cansados, secos o doloridos, mareo, náuseas o dolor de cabeza." }
 ];
@@ -107,7 +107,7 @@ const guide = {
   intro: [
     "El seguimiento visual triangular es un ejercicio gratis en el navegador: un objetivo recorre un triángulo sin parar, de arriba en el centro hacia abajo a la derecha, luego abajo a la izquierda y de vuelta arriba. Los tramos rectos se alternan con cambios bruscos de dirección en las esquinas.",
     "Cada lado dura lo mismo (unos 1,5 segundos a 1,0x); por eso, en la base, que es más larga, el objetivo va algo más rápido. Tras la cuenta atrás 3-2-1, el objetivo se mueve durante el tiempo elegido (de 30 a 120 segundos, 60 por defecto). No hay que hacer clic ni pulsar nada; al final se muestra la distancia del puntero al objetivo, no la posición de tus ojos.",
-    "El navegador no registra hacia dónde miras. Trata el resultado como un registro de práctica personal, no como una prueba de vista o de atención.",
+    "El navegador no registra hacia dónde miras. Trata el resultado como un registro de práctica personal, basado en la posición del puntero.",
     "Compara sesiones en la misma pantalla y a la misma distancia; la frecuencia de actualización y el retardo de imagen influyen en la fluidez del objetivo (Woods et al., 2015). Para si sientes dolor, mareo, náuseas o visión borrosa persistente."
   ],
   benchmarks: {
@@ -120,7 +120,7 @@ const guide = {
       ["4", "Línea oculta", "Prever la siguiente esquina sin contorno"],
       ["5", "Velocidad aleatoria", "Seguir aunque cambie la velocidad"]
     ],
-    note: "Etapas de práctica de SkillDrills solo como orientación. No son normas de examen visual, estadísticas de usuarios ni percentiles.",
+    note: "Etapas de práctica de SkillDrills solo como orientación. No son normas oficiales, estadísticas de usuarios ni percentiles.",
   },
   techniques: {
     title: "Consejos de práctica",

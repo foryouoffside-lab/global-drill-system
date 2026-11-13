@@ -223,7 +223,7 @@ const reactionGuide = {
   intro: [
     "This is a time-estimation game, not a reaction time test. A target time between one and eight seconds is shown briefly, it disappears, and you click when you judge that the time has passed. The drill reports the gap between your click and the target in milliseconds. To test how fast you react to a visual signal, use the Light Reaction Test instead.",
     "Every click is timestamped with the browser's performance.now() clock, entirely on your device. Your display quantizes what you see to its refresh interval: about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.2 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz.",
-    "Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup. This is a practice tool, not a clinical measurement."
+    "Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
   ],
   benchmarks: {
     title: "How Timing Error Is Rated",

@@ -85,7 +85,7 @@ const dodgeGuide = {
     "Ce jeu d’esquive à la souris (Quick Dodge) se joue dans le navigateur : des projectiles rouges arrivent de tous les bords vers votre curseur et vous les évitez en bougeant la souris. Le but est de ne pas être touché ; plus les esquives s’enchaînent, plus le multiplicateur de combo monte.",
     "Chaque projectile vise la position du curseur à son apparition, puis file tout droit. Rester immobile, c’est être touché ; un pas de côté suffit souvent. Les mouvements rapides sont planifiés avant de démarrer (Kawato, 1999) : décidez où aller dès qu’un projectile apparaît.",
     "Avec le niveau, les projectiles deviennent plus rapides, plus fréquents et plus gros. Plus les espaces libres rétrécissent, plus le mouvement doit être précis (Fitts, 1954). Être touché vide l’écran et remet seulement le combo à zéro.",
-    "Les résultats sont des relevés d’entraînement propres à SkillDrills, pas un examen médical ni une mesure de performance sportive. La fréquence d’écran et le périphérique influent sur la latence (Woods et al., 2015) : comparez vos scores avec le même matériel.",
+    "Les résultats sont des relevés d’entraînement propres à SkillDrills. La fréquence d’écran et le périphérique influent sur la latence (Woods et al., 2015) : comparez vos scores avec le même matériel.",
   ],
   benchmarks: {
     title: 'Paliers de note (paliers d’entraînement SkillDrills)',

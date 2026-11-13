@@ -23,7 +23,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Schulte Table Online | Concentration Grid | SkillDrills",
-  description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning. Non-clinical.",
+  description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning.",
   keywords: [
     "schulte table online",
     "schulte table trainer",
@@ -42,7 +42,7 @@ export const metadata = {
   ],
   openGraph: {
     title: "Schulte Table Online | Concentration Grid | SkillDrills",
-    description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning. Non-clinical.",
+    description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning.",
     type: "website",
     url: "https://skilldrills.online/drills/cognitive/focus/concentration-grid",
     siteName: "SkillDrills",
@@ -51,7 +51,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Schulte Table Online | Concentration Grid | SkillDrills",
-    description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning. Non-clinical.",
+    description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -148,7 +148,7 @@ const faqSchema = {
       "name": "What is the Schulte Table and Concentration Grid drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Schulte table is a grid of shuffled numbers, named after the German psychiatrist Walter Schulte, that you find and tap in ascending order. The concentration grid is a similar focus exercise from sports psychology (Harris & Harris, 1984). This drill starts at 3x3, grows one size per cleared grid up to 8x8 (7x7 on very narrow phones), tilts the numbers slightly from 5x5 onward, and runs on one 45-second clock. It is practice, not a psychodiagnostic test."
+        "text": "A Schulte table is a grid of shuffled numbers, named after the German psychiatrist Walter Schulte, that you find and tap in ascending order. The concentration grid is a similar focus exercise from sports psychology (Harris & Harris, 1984). This drill starts at 3x3, grows one size per cleared grid up to 8x8 (7x7 on very narrow phones), tilts the numbers slightly from 5x5 onward, and runs on one 45-second clock."
       }
     },
     {
@@ -217,10 +217,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Can this drill diagnose ADHD or attentional disorders?",
+      "name": "How can I improve my Schulte table score?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. This drill is an athletic and educational cognitive performance trainer, not a medical or neuropsychological diagnostic tool. It does not screen for, treat, or prevent ADHD, dyslexia, or any cognitive condition. If you have medical concerns about attention, consult a certified clinical neuropsychologist."
+        "text": "Scan the whole grid from a point near the center instead of hunting cell by cell, and compare your own runs on the same device. The grid grows one size each time you clear it and the 45-second clock never resets, so clearing the small grids quickly leaves more time for the larger ones."
       }
     },
     {
@@ -244,8 +244,7 @@ const concentrationGridGuide = {
     "Sports psychology describes a similar 'concentration grid' exercise (Harris & Harris, 1984) as a simple focus drill for athletes. An event-related potential study of 27 children aged 8-11 searching Schulte grids found that searching for numbers in sequence took longer than locating a single target, and that adding a second colour slowed both, with matching differences in the recorded ERP signal (Lu et al., 2022).",
     "The SkillDrills version does not stop at one grid. It starts at 3x3 and grows one size each time you clear a grid, up to 8x8 (7x7 on very narrow phones), tilts the numbers slightly from 5x5 onward, and runs on one fixed 45-second clock with no time bonuses or penalties.",
     "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval, about 16.7 ms per frame at 60 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup.",
-    "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
-    "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health. If you have concerns about your attention, memory or thinking, speak to a qualified clinician."
+    "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below."
   ],
   benchmarks: {
     title: "SkillDrills Practice Bands",

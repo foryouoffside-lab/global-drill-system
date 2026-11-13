@@ -150,7 +150,7 @@ const dropGuide = {
     "Drop Catch ist ein kostenloses Browserspiel zum Fallende-Ziele-Fangen: Von oben fallen Ziele herunter, du klickst nur die grünen und lässt rote Köder durchfallen. Ein Fang bringt +2 Sekunden, ein Fehler kostet 1 Sekunde.",
     "Wer erst zwischen Reizen unterscheiden muss, reagiert in der Regel langsamer als bei einer einfachen Reaktion (Donders, 1868). Außerdem beschreibt ein Modell einen Wettlauf zwischen dem Impuls zu klicken und dem Stoppen (Logan et al., 1984). Das Spiel macht beides spielerisch erfahrbar.",
     "Wie Menschen die Zeit bis zum Eintreffen eines sich nähernden Objekts abschätzen, untersucht Lee (1976). Die Fallgeschwindigkeit steigt mit dem Level von etwa 400 auf 1.250 px/s – je später du entscheidest, desto schwerer wird es.",
-    "Die Punkte sind ein Übungsergebnis, kein medizinischer Reaktionstest und keine Sportlerbewertung. Vergleiche Ergebnisse auf demselben Gerät und Monitor."
+    "Die Punkte sind ein Übungsergebnis. Vergleiche Ergebnisse auf demselben Gerät und Monitor."
   ],
   benchmarks: {
     title: "Orientierung: Punktebereiche",

@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Divided Attention Test Online | Dual Task | SkillDrills",
-  description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill. Non-clinical practice.",
+  description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill.",
   keywords: ["divided attention test online", "dual task test", "dual task training", "multitasking test", "split attention test", "divided attention task", "dual visual tracking test", "simultaneous processing test", "attention sharing test", "cognitive multitasking drill"],
   openGraph: {
     title: "Divided Attention Test Online | Dual Task | SkillDrills",
-    description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill. Non-clinical practice.",
+    description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Divided Attention Test Online | Dual Task | SkillDrills",
-    description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill. Non-clinical practice.",
+    description: "Free divided attention test online: tap pop-up targets while flagging even digits in a dual-task focus drill.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "What is divided attention and what does this test measure?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Divided attention is handling two streams of information at once. In this drill you tap blue targets that pop up at random spots on the field while watching a digit stream and pressing MATCH only for even digits. The result is a score, a peak level and a dual accuracy figure for the run; it is practice, not a clinical assessment."
+        "text": "Divided attention is handling two streams of information at once. In this drill you tap blue targets that pop up at random spots on the field while watching a digit stream and pressing MATCH only for even digits. The result is a score, a peak level and a dual accuracy figure for the run."
       }
     },
     {
@@ -252,7 +252,7 @@ const guideProps = {
     title: "Divided Attention Test",
     paragraphs: [
       "Free divided attention test online. Tap blue targets that pop up on the field while pressing MATCH on even digits in a side stream, in this split-focus drill.",
-      "Dual-task research describes a psychological refractory period (Pashler, 1994): when two decisions arrive close together, the second response is delayed. This drill is non-clinical practice of that situation, not a diagnostic test.",
+      "Dual-task research describes a psychological refractory period (Pashler, 1994): when two decisions arrive close together, the second response is delayed. This drill lets you practise that situation.",
       "Multiple resource theory (Wickens, 2002) predicts less interference when two tasks draw on different resources, such as vision and hearing. Both channels in this drill are visual, so expect them to compete; that competition is the point of the exercise.",
     ],
   },

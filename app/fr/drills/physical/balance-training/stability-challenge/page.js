@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: 'Mon viseur qui tremble en jeu, cet exercice le corrige-t-il ?',
-    a: 'Pas directement. Un viseur qui tremble en jeu vient souvent de la sensibilité, du DPI, des réglages ou du matériel, que cet exercice ne modifie pas. Il ne mesure ni ne diagnostique non plus l’équilibre, les tremblements ou la santé : c’est un jeu de petites corrections continues à la souris.',
+    a: 'Pas directement. Un viseur qui tremble en jeu vient souvent de la sensibilité, du DPI, des réglages ou du matériel, que cet exercice ne modifie pas. C’est un jeu de petites corrections continues à la souris.',
   },
   {
     q: 'Comment la note est-elle attribuée ?',
@@ -117,7 +117,7 @@ const guide = {
       ['D', '1 530 – 3 442', 'Continuez'],
       ['F', 'moins de 1 530', 'À travailler'],
     ],
-    note: 'La note compare le score final à la référence de 17 000 points. Ce sont des paliers d’entraînement SkillDrills, pas des statistiques d’utilisateurs, des centiles ou des normes médicales.',
+    note: 'La note compare le score final à la référence de 17 000 points. Ce sont des paliers d’entraînement SkillDrills, pas des statistiques d’utilisateurs ni des centiles.',
   },
   techniques: {
     title: 'Quatre conseils pour rester plus longtemps dans l’anneau',

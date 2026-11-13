@@ -11,10 +11,10 @@ const baseMetadata = buildVisualTrackingHubMetadata('fr', 'https://skilldrills.o
 export const metadata = {
   ...baseMetadata,
   title: 'Poursuite oculaire : exercices en ligne | SkillDrills',
-  description: 'Poursuite oculaire : 15 exercices en ligne gratuits pour suivre une cible en sinusoïde, en huit, en zigzag ou par sauts. Pas un test de vue.',
+  description: 'Poursuite oculaire : 15 exercices en ligne gratuits pour suivre une cible en sinusoïde, en huit, en zigzag ou par sauts. Sans inscription.',
   keywords: ['poursuite oculaire', 'exercices poursuite oculaire', 'suivi visuel', 'suivi de cible', 'suivre une cible mobile', 'prédiction de trajectoire', 'vision périphérique', 'exercices dans le navigateur'],
-  openGraph: { ...baseMetadata.openGraph, title: 'Poursuite oculaire : exercices en ligne | SkillDrills', description: 'Poursuite oculaire : 15 exercices en ligne gratuits pour suivre une cible en sinusoïde, en huit, en zigzag ou par sauts. Pas un test de vue.', images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Poursuite oculaire : exercices en ligne' }] },
-  twitter: { ...baseMetadata.twitter, title: 'Poursuite oculaire : exercices en ligne | SkillDrills', description: 'Poursuite oculaire : 15 exercices en ligne gratuits pour suivre une cible en sinusoïde, en huit, en zigzag ou par sauts. Pas un test de vue.' },
+  openGraph: { ...baseMetadata.openGraph, title: 'Poursuite oculaire : exercices en ligne | SkillDrills', description: 'Poursuite oculaire : 15 exercices en ligne gratuits pour suivre une cible en sinusoïde, en huit, en zigzag ou par sauts. Sans inscription.', images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Poursuite oculaire : exercices en ligne' }] },
+  twitter: { ...baseMetadata.twitter, title: 'Poursuite oculaire : exercices en ligne | SkillDrills', description: 'Poursuite oculaire : 15 exercices en ligne gratuits pour suivre une cible en sinusoïde, en huit, en zigzag ou par sauts. Sans inscription.' },
 };
 
 const breadcrumbSchema = {

@@ -120,7 +120,7 @@ export default function DigitSpanPage() {
         "name": "What is the Digit Span test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A digit span test shows a string of digits and asks you to repeat it in order; psychologists have long used the format to study short-term memory. This SkillDrills version is a free practice game, not a clinical test: a random string of 3 to 15 digits is shown all at once, then you type it back in forward order."
+          "text": "A digit span test shows a string of digits and asks you to repeat it in order; psychologists have long used the format to study short-term memory. This SkillDrills version is a free practice game: a random string of 3 to 15 digits is shown all at once, then you type it back in forward order."
         }
       },
       {
@@ -144,7 +144,7 @@ export default function DigitSpanPage() {
         "name": "Is this the WAIS Digit Span subtest?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. The Wechsler Adult Intelligence Scale includes a digit span subtest that a trained examiner administers and scores against norms. This drill is an unrelated free practice game: it uses its own timing and scoring and gives no scaled score, IQ or clinical result."
+          "text": "No. The Wechsler Adult Intelligence Scale includes a digit span subtest that a trained examiner administers and scores against norms. This drill is an unrelated free practice game: it uses its own timing and scoring and gives no scaled score or IQ result."
         }
       },
       {
@@ -243,11 +243,10 @@ export default function DigitSpanPage() {
     heading: "Digit Span Test Guide: How Working Memory Span Works",
     intro: [
       "A digit span test shows a string of numbers and asks you to enter them back in order. In this free online version the string starts at 3 digits, grows by one digit when you succeed (up to 15) and shrinks by one after a miss, so it settles near the longest sequence you can hold: your digit span. Miller (1956) put the typical limit near seven.",
-      "The theoretical foundation of digit span began with George A. Miller's seminal 1956 paper, 'The Magical Number Seven, Plus or Minus Two', which identified human immediate memory span as approximately seven discrete informational items. David Wechsler (1939, 1955, 2008) later included digit span tasks in his intelligence scales. This drill is not that subtest and gives no clinical or IQ score.",
+      "The theoretical foundation of digit span began with George A. Miller's seminal 1956 paper, 'The Magical Number Seven, Plus or Minus Two', which identified human immediate memory span as approximately seven discrete informational items. David Wechsler (1939, 1955, 2008) later included digit span tasks in his intelligence scales. This drill is not that subtest and gives no IQ score.",
       "According to Alan Baddeley's multicomponent working memory model (Baddeley & Hitch, 1974; Baddeley, 1986, 2000), numerical strings are temporarily maintained in the Phonological Loop. The phonological store holds sound-based traces that fade within a couple of seconds unless refreshed by silent rehearsal (the 'inner voice'). Nelson Cowan (2001) argued that when rehearsal and grouping are prevented, capacity is closer to about four items, so longer spans depend heavily on chunking.",
       "How the game works: a run lasts 45 seconds. Each round shows a new random digit string all at once (2.5 s at first, 0.1 s shorter after each correct answer, never under 0.8 s). You then have 8 seconds to type it and press Enter. Correct answers score 100 x (1 + 0.1 x (digits - 3)) points and add a digit; a wrong answer or timeout removes a digit. Nothing is deducted from your score or clock, and typing speed is not measured or scored.",
-      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
-      "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
+      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below."
     ],
     benchmarks: {
       title: "What Is a Good Digit Span? SkillDrills Practice Bands",

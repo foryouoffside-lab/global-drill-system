@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: 'Este treino corrige mira tremendo no jogo ou tremor na mão?',
-    a: 'Não. Mira tremendo em jogos costuma vir de sensibilidade, DPI, configuração ou hardware, e isto não ajusta nada disso. Também não mede nem diagnostica tremor, equilíbrio ou saúde. É um jogo para praticar correções pequenas e contínuas com o mouse.',
+    a: 'Não. Mira tremendo em jogos costuma vir de sensibilidade, DPI, configuração ou hardware, e isto não ajusta nada disso. É um jogo para praticar correções pequenas e contínuas com o mouse.',
   },
   {
     q: 'Como a nota é definida?',
@@ -117,7 +117,7 @@ const guide = {
       ['D', '1.530 – 3.442', 'Continue tentando'],
       ['F', 'menos de 1.530', 'Precisa praticar'],
     ],
-    note: 'A nota compara a pontuação final com a referência de 17.000 pontos. São faixas de prática do SkillDrills, não estatísticas de usuários, percentis ou critérios médicos.',
+    note: 'A nota compara a pontuação final com a referência de 17.000 pontos. São faixas de prática do SkillDrills, não estatísticas de usuários nem percentis.',
   },
   techniques: {
     title: 'Quatro dicas para ficar mais tempo no anel',

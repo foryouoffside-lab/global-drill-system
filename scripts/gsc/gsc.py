@@ -15,8 +15,8 @@ Then any of:
     python scripts/gsc/gsc.py csv <queries|pages> [days]
 
 Secrets live outside the repo. Override with env vars:
-    GSC_CREDENTIALS  default C:/Users/sangmesh/Desktop/credentials.json
-    GSC_TOKEN        default C:/Users/sangmesh/Desktop/gsc-token.json
+    GSC_CREDENTIALS  default ~/Desktop/credentials.json
+    GSC_TOKEN        default ~/Desktop/gsc-token.json
 """
 import os
 import sys
@@ -40,11 +40,11 @@ SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
 # could run again. Reads keep working untouched if this token never exists.
 WRITE_SCOPES = ["https://www.googleapis.com/auth/webmasters"]
 CREDENTIALS = os.environ.get(
-    "GSC_CREDENTIALS", r"C:\Users\sangmesh\Desktop\credentials.json"
+    "GSC_CREDENTIALS", os.path.expanduser("~/Desktop/credentials.json")
 )
-TOKEN = os.environ.get("GSC_TOKEN", r"C:\Users\sangmesh\Desktop\gsc-token.json")
+TOKEN = os.environ.get("GSC_TOKEN", os.path.expanduser("~/Desktop/gsc-token.json"))
 WRITE_TOKEN = os.environ.get(
-    "GSC_WRITE_TOKEN", r"C:\Users\sangmesh\Desktop\gsc-write-token.json"
+    "GSC_WRITE_TOKEN", os.path.expanduser("~/Desktop/gsc-write-token.json")
 )
 SITE = os.environ.get("GSC_SITE", "https://skilldrills.online/")
 

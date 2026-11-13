@@ -85,7 +85,7 @@ const dodgeGuide = {
     'Este juego de esquivar con el ratón (Quick Dodge) se juega en el navegador: proyectiles rojos llegan desde todos los bordes hacia tu cursor y los evitas moviendo el ratón o el mouse. El objetivo es que no te alcancen; cuantas más esquivas seguidas, más sube el multiplicador de combo.',
     'Cada proyectil apunta a la posición del cursor cuando aparece y luego va recto. Quedarse quieto significa recibir el impacto; un paso al lado suele bastar. Los movimientos rápidos se planifican antes de empezar (Kawato, 1999): decide adónde ir en cuanto aparece un proyectil.',
     'Al subir de nivel, los proyectiles son más rápidos, más frecuentes y más grandes. Cuanto más pequeños los huecos libres, más preciso debe ser el movimiento (Fitts, 1954). Un impacto vacía la pantalla y solo reinicia el combo.',
-    'Los resultados son marcas de práctica propias de SkillDrills, no un examen médico ni una medida de rendimiento deportivo. La frecuencia de la pantalla y el periférico influyen en la latencia (Woods et al., 2015): compara tus puntuaciones con el mismo equipo.',
+    'Los resultados son marcas de práctica propias de SkillDrills. La frecuencia de la pantalla y el periférico influyen en la latencia (Woods et al., 2015): compara tus puntuaciones con el mismo equipo.',
   ],
   benchmarks: {
     title: 'Tramos de nota (tramos de práctica SkillDrills)',

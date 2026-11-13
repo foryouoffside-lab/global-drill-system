@@ -9,11 +9,11 @@ import { pickSources } from '@/lib/drillSources';
 //           "bilateral coordination exercises" / "cross midline exercises"
 // SECONDARY / LSI:
 //           "bilateral coordination exercises"  — Motor integration phrase
-//           "cross midline exercises"           — Neuromotor occupational therapy phrase
+//           "cross midline exercises"           — Neuromotor exercise phrase
 //           "bilateral integration training"    — Neuro-developmental query
 //           "hand eye coordination exercises"   — General physical coordination
 //           "motor coordination game"           — Gamified motor skill term
-//           "hand eye coordination test"        — Diagnostic evaluation query
+//           "hand eye coordination test"        — Evaluation query
 //           "cross body coordination"           — Physical coordination query
 //           "fine motor skills game"            — Motor precision query
 //           "diagonal movement training"        — Diagonal mouse trajectory phrase

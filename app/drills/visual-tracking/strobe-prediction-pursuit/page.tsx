@@ -5,7 +5,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Occlusion Prediction Pursuit | SkillDrills",
-  description: "Practise visual prediction during controlled target occlusion in a browser. Free tracking practice; not a clinical eye test or treatment.",
+  description: "Practise visual prediction during controlled target occlusion in a browser. Free tracking practice with a pointer-based summary.",
   keywords: [
     "occlusion prediction pursuit",
     "visual motion occlusion practice",
@@ -27,7 +27,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Occlusion Prediction Pursuit | SkillDrills",
-    description: "Practise visual prediction during controlled target occlusion in a browser. Not a clinical eye test or treatment.",
+    description: "Practise visual prediction during controlled target occlusion in a browser. Results are based on pointer position.",
     url: "https://skilldrills.online/drills/visual-tracking/strobe-prediction-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -36,7 +36,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Occlusion Prediction Pursuit | SkillDrills",
-    description: "Practise visual prediction during controlled target occlusion in a browser. Not a clinical eye test or treatment.",
+    description: "Practise visual prediction during controlled target occlusion in a browser. Results are based on pointer position.",
   },
 };
 
@@ -137,11 +137,11 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     ["What is Occlusion Prediction Pursuit?", "It is a browser task in which a moving point is briefly covered and then shown again. You observe the visible path and compare the reappearance with your estimate; the page does not measure eye position."],
-    ["Is this a strobe-light or strobe-glasses exercise?", "No. It is a controlled target-occlusion task, not a simulation of medical equipment or a recommendation for stroboscopic eyewear. It should remain comfortable and should be stopped if visual symptoms appear."],
-    ["Does the drill measure smooth-pursuit gain or visual acuity?", "No. The browser knows the point's drawn position and your settings, but it cannot see your eyes. Results are task and setup records, not clinical measurements."],
-    ["What should I watch during the covered interval?", "Keep a relaxed estimate of the point's continuing direction. Do not force a large eye or head movement, and do not treat a mismatch as evidence of a visual disorder."],
-    ["Can this diagnose a tracking or binocular problem?", "No. Diagnosis requires an appropriate history and examination by a qualified eye-care professional. This page cannot assess binocular coordination, vestibular function, or eye health."],
-    ["Can this replace vision therapy or concussion rehabilitation?", "No. Use clinician-directed care for concussion, double vision, persistent dizziness, eye pain, or another diagnosed condition. Stop this task if symptoms worsen."],
+    ["Is this a strobe-light or strobe-glasses exercise?", "No. It is a controlled target-occlusion task, not a simulation of stroboscopic eyewear or a recommendation to use it. It should remain comfortable and should be stopped if visual symptoms appear."],
+    ["Does the drill measure smooth-pursuit gain or visual acuity?", "No. The browser knows the point's drawn position and your settings, but it cannot see your eyes. Results are pointer-based task and setup records."],
+    ["What should I watch during the covered interval?", "Keep a relaxed estimate of the point's continuing direction. Do not force a large eye or head movement, and treat a mismatch simply as feedback on your estimate."],
+    ["What does the end screen record?", "The summary is based on pointer position: how long the pointer stayed on the target and its average distance from the target centre, reported separately for the visible and covered phases. Eye position is not recorded."],
+    ["How should I compare sessions?", "Compare only sessions made on the same screen, browser and settings. Change one setting at a time and read the visible-phase and covered-phase distances side by side to see how your estimate holds while the point is hidden."],
     ["Can it improve sports or gaming performance?", "Transfer is not established by this browser task. It can provide repeatable practice for observing moving targets, but it does not promise a sport, gaming, or eyesight benefit."],
     ["How should I set the difficulty?", "Start with the slowest comfortable setting and a visible path. Change one variable at a time, keep the session short, and return to the previous setting if comfort or control drops."],
     ["How long should I practise?", "Use short blocks with breaks and stop when the task becomes uncomfortable. There is no universal prescription for this browser exercise."],
@@ -156,7 +156,7 @@ const faqSchema = {
 const guide = {
   heading: "Occlusion Prediction Pursuit - Controlled Target Prediction Practice",
   intro: [
-    "This browser exercise presents one moving point, briefly covers it, and then shows it again. The task is designed as repeatable visual-motion practice for observing direction and estimating a short continuation; it is not a clinical intervention, diagnostic test, or simulation of stroboscopic equipment.",
+    "This browser exercise presents one moving point, briefly covers it, and then shows it again. The task is designed as repeatable visual-motion practice for observing direction and estimating a short continuation; it is not a simulation of stroboscopic equipment.",
     "During occlusion, the point continues along its programmed path. A user can make a calm prediction and compare it with the reappearance, but the browser cannot determine where the eyes were looking or whether a mismatch came from vision, attention, input, or display timing.",
     "Use a comfortable distance, neutral posture, normal blinking, and short sessions. Keep the path visible while learning the task, change only one setting at a time, and stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual symptoms."
   ],
@@ -170,7 +170,7 @@ const guide = {
       ["Advanced practice", "3.0x+", "Compare only like-for-like sessions", "Stop before strain", "Optional challenge"],
       ["Reference", "Any setting", "Record duration, device, and symptoms", "Comfort is the gate", "Personal baseline"]
     ],
-    note: "These are practice bands for this browser exercise, not clinical norms, population percentiles, or eye-movement measurements."
+    note: "These are practice bands for this browser exercise, not population norms, percentiles, or eye-movement measurements."
   },
   techniques: {
     title: "Four Core Techniques for Controlled Occlusion Practice",
@@ -240,7 +240,7 @@ export default function StrobePredictionPursuitPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <StrobePredictionPursuitClient copy={{ title: "Occlusion Prediction Pursuit", subtitle: "Controlled visual prediction drill with a brief covered interval; not a clinical eye test" }} />
+      <StrobePredictionPursuitClient copy={{ title: "Occlusion Prediction Pursuit", subtitle: "Controlled visual prediction drill with a brief covered interval" }} />
       <DrillGuide guide={guide} />
     </>
   );

@@ -60,7 +60,7 @@ const faqSchema = {
       "name": "How do motor skills drills help hand-eye coordination?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They give you repeatable aiming, tracing and click tasks that pair what you see with how you move the mouse. Practice usually improves the tasks you train; how far that carries into sport or daily life varies by person, and these drills are not a clinical test."
+        "text": "They give you repeatable aiming, tracing and click tasks that pair what you see with how you move the mouse. Practice usually improves the tasks you train; how far that carries into sport or daily life varies by person."
       }
     },
     {
@@ -89,10 +89,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Are these motor skills tests clinical or diagnostic?",
+      "name": "How often should I practise the motor drills?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. They are free browser practice tools for mouse and keyboard skill. They do not assess motor development or medical conditions; for those concerns see a qualified clinician."
+        "text": "Short, regular sessions work best: a few minutes of focused practice on most days, with the same mouse, sensitivity and screen each time, so your scores stay comparable from session to session."
       }
     },
     {

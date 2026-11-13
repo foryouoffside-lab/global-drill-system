@@ -1,9 +1,9 @@
-import sys, re, json, html, urllib.request
+import sys, re, json, html, os, urllib.request
 
 BAD = re.compile(r"spacebar|space bar|barra de espa|Leertaste|barre d.espace|スペースキー|スペースバー|스페이스|aggregateRating|sub-millisecond", re.I)
 
 for path in sys.argv[1:]:
-    url = "http://localhost:3000/" + path.lstrip("/")
+    url = os.environ.get("AUDIT_BASE", "http://localhost:3000/") + path.lstrip("/")
     try:
         s = urllib.request.urlopen(url, timeout=180).read().decode("utf8")
     except Exception as e:

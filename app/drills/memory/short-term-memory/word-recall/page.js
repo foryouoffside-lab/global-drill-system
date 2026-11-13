@@ -117,7 +117,7 @@ export default function WordRecallPage() {
         "name": "What is the Verbal Memory Test (Word Recall)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It is a free word recall game, not a clinical test. A list of words (3 at the start, up to 12) is shown all at once for 2 seconds. You then have 12 seconds to type every word, in any order, separated by spaces or commas, and press Enter. A round counts only if you get every word and add none."
+          "text": "It is a free word recall game. A list of words (3 at the start, up to 12) is shown all at once for 2 seconds. You then have 12 seconds to type every word, in any order, separated by spaces or commas, and press Enter. A round counts only if you get every word and add none."
         }
       },
       {
@@ -173,7 +173,7 @@ export default function WordRecallPage() {
         "name": "Does practising word recall improve my memory in general?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You will get better at this task, and mnemonic strategies you practise here -- grouping, narrative linking, imagery -- can help with remembering other lists. Broad improvement to memory in general is a much weaker claim: gains on a trained task often fail to generalise to untrained ones. Treat this as practice and a strategy workout, not as a treatment for anything, and note that nothing here can prevent, diagnose or screen for any medical condition."
+          "text": "You will get better at this task, and mnemonic strategies you practise here -- grouping, narrative linking, imagery -- can help with remembering other lists. Broad improvement to memory in general is a much weaker claim: gains on a trained task often fail to generalise to untrained ones. Treat this as practice and a strategy workout."
         }
       },
       {
@@ -228,11 +228,10 @@ export default function WordRecallPage() {
     heading: "Verbal Memory Test Guide & Immediate Free Recall",
     intro: [
       "A verbal memory test shows a list of words and asks you to type back as many as you can remember. In this free online version a list of 3 words is shown all at once for 2 seconds; you then have 12 seconds to type them all. The list grows by one word (up to 12) when you recall it perfectly and shrinks by one after a miss, and word order does not matter, so it settles near your free-recall word span.",
-      "The scientific study of verbal memory began with Hermann Ebbinghaus (1885), who mathematically formulated the human forgetting curve and the dynamics of serial learning. Clinical word-list tests later standardized this kind of task; this drill is not one of them and gives no clinical result.",
+      "The scientific study of verbal memory began with Hermann Ebbinghaus (1885), who mathematically formulated the human forgetting curve and the dynamics of serial learning.",
       "In 1962, Bennet B. Murdock Jr. described the serial position curve in free recall: better memory for the first items (primacy) and the last items (recency). Fergus I. M. Craik & Robert S. Lockhart (1972) proposed the 'levels of processing' framework, which holds that meaningful encoding, such as linking words into a story, is usually remembered better than rote repetition.",
       "How the game works: a run lasts 45 seconds. Each round shows a new random list all at once for 2 seconds, then gives you 12 seconds to type it. A perfect round scores 150 x (1 + 0.15 x (words - 3)) points and adds a word; any missed, misspelled or extra word, or a timeout, removes a word. Nothing is deducted from your score or clock, and typing speed is not measured or scored.",
-      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
-      "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
+      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below."
     ],
     benchmarks: {
       title: "Verbal Free Recall: SkillDrills Practice Bands",

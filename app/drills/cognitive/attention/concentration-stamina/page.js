@@ -6,11 +6,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Attention Span Test Online | Sustained Focus | SkillDrills",
-  description: "Free browser attention span test for sustained focus, target detection, response inhibition, and rule switching. Non-clinical practice.",
+  description: "Free browser attention span test for sustained focus, target detection, response inhibition, and rule switching.",
   keywords: ["attention span test online", "attention test online", "sustained attention test", "concentration test online", "continuous performance test", "vigilance test", "response inhibition test", "focus training", "cognitive endurance drill", "rule switching test"],
   openGraph: {
     title: "Attention Span Test Online | Sustained Focus | SkillDrills",
-    description: "Free browser attention span test for sustained focus, target detection, response inhibition, and rule switching. Non-clinical practice.",
+    description: "Free browser attention span test for sustained focus, target detection, response inhibition, and rule switching.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Attention Span Test Online | Sustained Focus | SkillDrills",
-    description: "Free browser attention span test for sustained focus, target detection, response inhibition, and rule switching. Non-clinical practice.",
+    description: "Free browser attention span test for sustained focus, target detection, response inhibition, and rule switching.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "What is the Attention Span Test (Concentration Stamina)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It is a free, non-clinical drill in the style of a continuous performance test (CPT). Letters and digits flash one at a time for 45 seconds; you respond only to items that match the active rule and hold back on everything else. It is practice, not a diagnostic or ADHD screening tool."
+        "text": "It is a free drill in the style of a continuous performance test (CPT). Letters and digits flash one at a time for 45 seconds; you respond only to items that match the active rule and hold back on everything else."
       }
     },
     {
@@ -253,7 +253,7 @@ const guideProps = {
     paragraphs: [
       "Free attention span test online. A 45-second sustained-attention drill: respond to vowels or primes, ignore everything else, and keep up as the rule flips every 10 seconds and the pace rises.",
       "In radar-watch style experiments, Norman Mackworth found that signal detection declines over a long monitoring session. A 45-second run does not measure that decline; it trains staying on task as the pace rises.",
-      "Every 10 seconds the target rule flips between Vowels and Prime digits, so you must update the rule you apply instead of responding by habit (Monsell, 2003). The drill is non-clinical practice, not a diagnostic test.",
+      "Every 10 seconds the target rule flips between Vowels and Prime digits, so you must update the rule you apply instead of responding by habit (Monsell, 2003).",
     ],
   },
   benchmarks: {

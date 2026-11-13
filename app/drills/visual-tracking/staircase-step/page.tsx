@@ -155,7 +155,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What is the neurological role of the riMLF in vertical gaze?",
+      "name": "What role does the riMLF play in vertical gaze?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The rostral interstitial nucleus of the medial longitudinal fasciculus (riMLF) houses burst neurons that generate high-velocity upward and downward vertical saccades, coordinating superior and inferior rectus muscle activation."
@@ -236,7 +236,7 @@ const guide = {
       ["Steady", "40–70%", "Mean distance error at the same settings", "Repeat the same setup"],
       ["Consistent", "Over 70%", "Whether it holds when one setting changes", "Add one challenge: speed, hidden path or random speed"]
     ],
-    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms, percentiles or clinical values, and the page measures the pointer, not your eyes."
+    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms or percentiles, and the page measures the pointer, not your eyes."
   },
   techniques: {
     title: "Four Core Techniques for Vertical Stepped Tracking Mastery",

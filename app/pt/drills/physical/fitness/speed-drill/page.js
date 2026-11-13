@@ -70,7 +70,7 @@ const videoGameSchema = {
 };
 
 const faqs = [
-  { q: 'Como funciona o jogo de clicar em alvos rápidos?', a: 'Alvos redondos se movem pela tela e encolhem; você precisa clicar neles antes que sumam. Cada acerto junta encontrar o alvo, levar o cursor até ele e clicar com precisão, e a pontuação e o combo ficam registrados. É um jogo de prática no navegador, não um exame médico de reação.' },
+  { q: 'Como funciona o jogo de clicar em alvos rápidos?', a: 'Alvos redondos se movem pela tela e encolhem; você precisa clicar neles antes que sumam. Cada acerto junta encontrar o alvo, levar o cursor até ele e clicar com precisão, e a pontuação e o combo ficam registrados. É um jogo de prática no navegador.' },
   { q: 'Por que os alvos ficam cada vez menores?', a: 'Alvos menores são mais difíceis de acertar, como descreve a Lei de Fitts (Fitts, 1954). Cada alvo encolhe depois de aparecer e some ao chegar a 4 px de raio, então clicar tarde fica mais difícil (com a opção de tempo limite desligada, os alvos não encolhem). O ideal é acertar cedo, enquanto o alvo ainda está grande.' },
   { q: 'Como são calculados os pontos e o tempo?', a: 'Cada acerto vale 100 pontos multiplicados pelo combo e pelo nível e soma 2 segundos ao tempo restante (máximo de 60 segundos). A partida começa com 45 segundos e o nível sobe a cada 1.750 pontos. Se um alvo some ou você clica no vazio, o combo zera e 1 segundo é descontado.' },
   { q: 'O jogo mede cliques por segundo?', a: 'Não. O jogo não conta quantos cliques você dá nem a velocidade deles. Cada alvo precisa ser acertado com um clique preciso, e clicar no vazio tira 1 segundo – então clicar sem parar só atrapalha.' },
@@ -110,7 +110,7 @@ const speedGuide = {
       'O Speed Drill é um jogo de clicar em alvos rápidos no navegador: alvos redondos se movem pela tela e encolhem até sumir, e você precisa acertá-los antes disso. Cada clique junta busca, movimento do cursor e precisão – um treino diferente de um teste simples de tempo de reação.',
       'Mirar rápido com o mouse costuma ser descrito em duas fases: um movimento grande e uma pequena correção no fim (Woodworth, 1899). A Lei de Fitts (Fitts, 1954) explica por que alvos menores são mais difíceis. Como aqui os alvos encolhem o tempo todo, vale começar o movimento grande cedo.',
       'Alvos em movimento, claros e com bom contraste chamam atenção até na borda do campo de visão (Treisman & Gelade, 1980). Em vez de fixar o olhar num ponto, olhe a tela toda para encontrar novos alvos mais rápido.',
-      'Compare resultados com o mesmo mouse, sensibilidade e monitor; taxa de atualização e dispositivo de entrada influenciam o atraso (Woods et al., 2015). Os números são registros de prática, não medição médica nem ranking de jogadores.',
+      'Compare resultados com o mesmo mouse, sensibilidade e monitor; taxa de atualização e dispositivo de entrada influenciam o atraso (Woods et al., 2015). Os números são registros de prática.',
     ],
   },
   benchmarks: {

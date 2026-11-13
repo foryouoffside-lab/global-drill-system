@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Comment la cible se déplace-t-elle en poursuite oculaire prédictive ?",
-    "a": "À la vitesse 1,0x, un point aléatoire de l’écran devient la nouvelle destination environ toutes les 2,2 secondes. La cible part vite vers ce point, ralentit progressivement, s’arrête en 1,5 seconde environ et attend la destination suivante. Il n’y a ni masquage ni disparition. C’est un exercice du regard dans le navigateur, pas un examen de la vue."
+    "a": "À la vitesse 1,0x, un point aléatoire de l’écran devient la nouvelle destination environ toutes les 2,2 secondes. La cible part vite vers ce point, ralentit progressivement, s’arrête en 1,5 seconde environ et attend la destination suivante. Il n’y a ni masquage ni disparition. C’est un exercice du regard dans le navigateur."
   },
   {
     "q": "Qu’est-ce qu’on anticipe exactement ?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Est-ce que ma vue ou ma visée vont s’améliorer ?",
-    "a": "Rien n’est garanti. Ce n’est ni un examen de la vue ni une thérapie, mais un outil pour s’exercer à regarder une cible. Il ne promet ni meilleure acuité ni meilleure visée. En cas de gêne visuelle, consultez un professionnel."
+    "a": "Rien n’est garanti. C’est un outil pour s’exercer à regarder une cible ; il ne promet ni meilleure acuité ni meilleure visée. Comparez vos séances sur le même écran avec les mêmes réglages."
   },
   {
     "q": "Combien de temps s’entraîner ?",

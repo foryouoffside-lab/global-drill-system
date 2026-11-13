@@ -42,7 +42,7 @@ export default function LanguageSwitcher() {
     // Save choice
     try {
       localStorage.setItem('skilldrills_locale', newLocale);
-      document.cookie = `skilldrills_locale=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
+      document.cookie = `skilldrills_locale=${newLocale}; path=/; max-age=31536000; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
     } catch {}
 
     // Only 11 routes are localized, so this resolves to the nearest localized

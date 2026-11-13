@@ -73,3 +73,9 @@ bing-*.csv
 graphify-out/cost.json
 graphify-out/cache/
 graphify-out/.graphify_root
+
+# raw Search Console exports (repo is public)
+docs/seo/**/gsc_*.json
+docs/seo/**/gsc_*.jsonl
+docs/seo/**/gsc_*.tsv
+docs/seo/**/gsc_pageopps.txt

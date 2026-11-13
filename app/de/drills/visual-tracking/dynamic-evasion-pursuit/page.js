@@ -128,7 +128,7 @@ const faqs = [
   },
   {
     "q": "Verbessert die Übung meine Sehkraft oder meine Aim?",
-    "a": "Das kann niemand garantieren. Die Übung ist ein Training im Verfolgen eines bewegten Ziels und verspricht weder bessere Sehkraft noch die Behandlung von Augenproblemen noch besseres Zielen in Shootern. Bei Beschwerden zum Augenarzt."
+    "a": "Das kann niemand garantieren. Die Übung ist ein Training im Verfolgen eines bewegten Ziels und verspricht weder bessere Sehkraft noch besseres Zielen in Shootern. Vergleiche deine Sessions auf demselben Bildschirm mit denselben Einstellungen."
   },
   {
     "q": "Beeinflussen Bildschirm und Umgebung das Ergebnis?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Anleitung: Korrektursakkaden üben: Ziel schlägt Haken",
   "intro": [
     "Bei dieser Übung, mit der du Korrektursakkaden üben kannst, läuft das Ziel geradeaus und wechselt etwa alle 0,5 Sekunden (mit Zufallstempo 0,35 bis 0,65 s) abrupt Richtung und Tempo; an den Rändern prallt es ab. Nach so einem Schnitt hinken die Augen hinterher, bis eine schnelle Korrekturbewegung den Abstand schließt und die glatte Blickfolge wieder einsetzt (Rashbass, 1961; Krauzlis, 2004).",
-    "Der Browser kennt nur die gezeichnete Zielposition und deine Einstellungen, nicht die Position deiner Augen. Angezeigt werden nur Zeigerwerte (Zeit auf dem Ziel, Abstand zum Zielmittelpunkt); gezählt werden nur abgeschlossene Sessions. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll, kein klinischer Messwert und kein Sehtest.",
+    "Der Browser kennt nur die gezeichnete Zielposition und deine Einstellungen, nicht die Position deiner Augen. Angezeigt werden nur Zeigerwerte (Zeit auf dem Ziel, Abstand zum Zielmittelpunkt); gezählt werden nur abgeschlossene Sessions. Das Ergebnis ist deshalb ein wiederholbares Übungsprotokoll auf Basis der Zeigerposition.",
     "Nutze einen bequemen Abstand und vergleiche nur Sessions auf demselben Bildschirm und Browser. Bildwiederholrate und Eingabegerät beeinflussen die Darstellung (Woods et al., 2015). Brich bei Schmerzen, Schwindel, Übelkeit oder anhaltend verschwommenem Sehen ab."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Gerade Bahnen, abrupte Richtungswechsel",
-          description: "Korrektursakkaden üben: Das Ziel wechselt etwa alle 0,5 Sekunden abrupt die Richtung. Am Ende siehst du den Abstand deines Zeigers zum Ziel, aber der Browser zeichnet deinen Blick nicht auf; das Ergebnis ist ein Übungsprotokoll, kein medizinischer Test.",
+          description: "Korrektursakkaden üben: Das Ziel wechselt etwa alle 0,5 Sekunden abrupt die Richtung. Am Ende siehst du den Abstand deines Zeigers zum Ziel, aber der Browser zeichnet deinen Blick nicht auf; das Ergebnis ist ein Übungsprotokoll für deine eigenen Sitzungen.",
         }}
       />
       <DrillGuide guide={guideProps} />

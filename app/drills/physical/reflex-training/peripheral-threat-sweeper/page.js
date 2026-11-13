@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 //           "peripheral threat sweeper"     — Specific interactive drill phrase (volume unmeasured)
 // SECONDARY / LSI:
 //           "peripheral vision training"    — High-intent practice query (volume unmeasured)
-//           "useful field of view test"     — Clinical & sports vision term (volume unmeasured)
+//           "useful field of view test"     — Sports vision term (volume unmeasured)
 //           "visual motor integration drill" — Coordination training phrase (volume unmeasured)
 //           "spatial awareness drill"       — General athletic awareness query (volume unmeasured)
 //           "peripheral reaction test"      — Reaction speed variant (volume unmeasured)
@@ -38,7 +38,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: 'Peripheral Vision Test | Free Drill | SkillDrills',
   description:
-    'Free peripheral vision test game: keep your gaze centered and spot threats at the edge of view. Practice only, not a medical visual field test.',
+    'Free peripheral vision test game: keep your gaze centered and spot threats at the edge of view.',
   keywords: [
     'peripheral vision test',
     'peripheral vision training',
@@ -142,7 +142,7 @@ const faqSchema = {
       name: 'What is peripheral vision training?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Peripheral vision training means structured exercises in which you keep your gaze fixed and respond to things that appear off-center. This drill is a browser game for practice and is not a medical visual field test or a diagnostic for any eye condition.',
+        text: 'Peripheral vision training means structured exercises in which you keep your gaze fixed and respond to things that appear off-center. This drill is a browser game for practice.',
       },
     },
     {
@@ -225,7 +225,7 @@ const videoGameSchema = {
   '@type': 'VideoGame',
   name: 'Peripheral Threat Sweeper',
   url: 'https://skilldrills.online/drills/physical/reflex-training/peripheral-threat-sweeper',
-  description: 'Free online peripheral vision test game. Practise spotting threats at the edge of view while keeping your gaze centered. Not a medical test.',
+  description: 'Free online peripheral vision test game. Practise spotting threats at the edge of view while keeping your gaze centered.',
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',

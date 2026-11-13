@@ -174,7 +174,7 @@ export default function DistractionFighterPageFR() {
         "name": "Comment le calcul de points s effectue-t-il?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Chaque bonne réponse rapporte 100 points × multiplicateur de combo (jusqu à 3x) × facteur de niveau, et ajoute 2 secondes au chrono (60 s max). Une erreur ou un mot expiré (option Délai activée, par défaut) remet le combo à zéro et retire 1 seconde. Les mots de couleur s affichent pour l instant en anglais (RED, BLUE…)."
+          "text": "Chaque bonne réponse rapporte 100 points × multiplicateur de combo (jusqu à 3x) × facteur de niveau, et ajoute 2 secondes au chrono (60 s max). Une erreur ou un mot expiré (option Délai activée, par défaut) remet le combo à zéro et retire 1 seconde. Les mots de couleur s affichent en français (ROUGE, BLEU…)."
         }
       },
       {
@@ -297,7 +297,7 @@ export default function DistractionFighterPageFR() {
             { title: "Contrôle Inhibiteur", desc: "Freinez le réflexe de lecture et ciblez les teintes avec précision sous cadence rapide.", color: "bg-purple-600" }
           ],
           rulesItems: [
-            { num: "1", text: "Mot de couleur (en anglais)", highlight: "choisir l encre", result: "ignorer le mot" },
+            { num: "1", text: "Mot de couleur (en français)", highlight: "choisir l encre", result: "ignorer le mot" },
             { num: "2", text: "Bonne réponse", highlight: "100 × combo × niveau", result: "+2 s (60 s max)" },
             { num: "3", text: "Erreur / mot expiré", highlight: "combo à zéro", result: "-1 s" },
             { num: "4", text: "Niveau supérieur", highlight: "délai plus court", result: "6 couleurs dès niv. 4" }

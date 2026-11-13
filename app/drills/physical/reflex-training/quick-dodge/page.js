@@ -21,7 +21,7 @@ import { pickSources } from '@/lib/drillSources';
 //           "mouse evasion game"        — Gameplay query (volume unmeasured)
 //           "obstacle evasion drill"    — Athletic & reflex drill query (volume unmeasured)
 //           "kinetic evasion trainer"   — Biomechanical intent query (volume unmeasured)
-//           "hand eye coordination dodge test" — Diagnostic phrase (volume unmeasured)
+//           "hand eye coordination dodge test" — Test phrase (volume unmeasured)
 // LOCALES:  ja (反射 神経 回避 ゲーム), ko (반사 신경 회피 게임), de (reflex ausweichspiel online)
 // PAA TARGETS:
 //   - What is a Reflex Game Online?

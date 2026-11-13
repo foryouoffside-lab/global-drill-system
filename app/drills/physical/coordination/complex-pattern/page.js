@@ -8,7 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 // PRIMARY:  "visual memory test"         — Interactive recall intent (volume unmeasured)
 //           "pattern memory game"        — Core browser game phrase (volume unmeasured)
 // SECONDARY / LSI:
-//           "pattern memory test"        — Diagnostic evaluation query
+//           "pattern memory test"        — Evaluation query
 //           "visual memory game"         — Gamified recall phrase
 //           "spatial memory game"        — Spatial cognitive domain
 //           "working memory training"    — Working memory capacity query

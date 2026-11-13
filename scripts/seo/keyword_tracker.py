@@ -50,15 +50,15 @@ def _pages():
 def _static_title(path):
     src = open(path, encoding="utf-8").read()
     i = src.find("export const metadata")
-    m = re.search(r"\btitle:\s*(?:(['\"`])(.*?)\1|([A-Z_]+)\b)", src[i:]) if i >= 0 else None
-    if m and m.group(3):
-        m2 = re.search(r"const\s+" + m.group(3) + r"\s*=\s*(['\"`])(.*?)\1", src)
+    m = re.search(r"\btitle:\s*(?:(['\"`])(.*?)\1|([A-Za-z_]\w*)\b)|\b(title),", src[i:]) if i >= 0 else None
+    if m and (m.group(3) or m.group(4)):
+        m2 = re.search(r"const\s+" + (m.group(3) or m.group(4)) +r"\s*=\s*(['\"`])(.*?)\1", src)
         return m2.group(2) if m2 and "${" not in m2.group(2) else ""
     return m.group(2) if m and "${" not in m.group(2) else ""
 
 
 def _fetch_title(url):
-    for _ in range(2):
+    for _ in range(3):
         try:
             with urllib.request.urlopen(DEV + urllib.parse.quote(url), timeout=300) as r:
                 m = re.search(r"<title[^>]*>(.*?)</title>", r.read().decode("utf-8", "replace"), re.S)
@@ -112,7 +112,7 @@ def _maps():
 
 def build():
     pages = _pages()
-    with ThreadPoolExecutor(3) as ex:
+    with ThreadPoolExecutor(2) as ex:
         for p, t in zip(pages, ex.map(lambda p: _fetch_title(p["url"]), pages)):
             p["title"], p["title_src"] = (t, "live") if t else (_static_title(p["file"]), "page.js")
     logged = {}

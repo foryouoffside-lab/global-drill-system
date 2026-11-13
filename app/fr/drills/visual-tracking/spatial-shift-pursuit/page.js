@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Comment la cible se déplace-t-elle dans cet exercice ?",
-    "a": "La cible avance en ligne droite, rebondit sur les bords et accélère légèrement à chaque rebond (environ 2 %). À des moments aléatoires, elle change sans prévenir de direction et de vitesse : le sens horizontal et le sens vertical s’inversent ou non, et la vitesse est multipliée par 0,8 à 1,3. Il n’y a ni saut ni mouvement de l’écran. C’est un exercice du regard, pas un examen de la vue."
+    "a": "La cible avance en ligne droite, rebondit sur les bords et accélère légèrement à chaque rebond (environ 2 %). À des moments aléatoires, elle change sans prévenir de direction et de vitesse : le sens horizontal et le sens vertical s’inversent ou non, et la vitesse est multipliée par 0,8 à 1,3. Il n’y a ni saut ni mouvement de l’écran. C’est un exercice du regard."
   },
   {
     "q": "À quelle fréquence la trajectoire change-t-elle ?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Est-ce que ma vue ou ma visée vont s’améliorer ?",
-    "a": "Rien n’est garanti. Ce n’est ni un examen de la vue ni une thérapie, mais un outil pour s’exercer à regarder une cible. Il ne promet ni meilleure acuité ni meilleure visée. En cas de gêne visuelle, consultez un professionnel."
+    "a": "Rien n’est garanti. C’est un outil pour s’exercer à regarder une cible ; il ne promet ni meilleure acuité ni meilleure visée. Comparez vos séances sur le même écran avec les mêmes réglages."
   },
   {
     "q": "Combien de temps s’entraîner ?",

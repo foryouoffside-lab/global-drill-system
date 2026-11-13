@@ -175,7 +175,7 @@ export default function DistractionFighterPageES() {
         "name": "¿Cómo pondera el sistema la puntuación final?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cada acierto vale 100 puntos × multiplicador de combo (hasta 3x) × factor de nivel y suma 2 segundos al reloj (máx. 60 s). Un error o una palabra caducada (opción Tiempo límite activada, por defecto) reinicia el combo y resta 1 segundo. La precisión es aciertos ÷ (aciertos + errores + caducadas). Por ahora las palabras de color se muestran en inglés (RED, BLUE…)."
+          "text": "Cada acierto vale 100 puntos × multiplicador de combo (hasta 3x) × factor de nivel y suma 2 segundos al reloj (máx. 60 s). Un error o una palabra caducada (opción Tiempo límite activada, por defecto) reinicia el combo y resta 1 segundo. La precisión es aciertos ÷ (aciertos + errores + caducadas). Las palabras de color se muestran en español (ROJO, AZUL…)."
         }
       },
       {
@@ -298,7 +298,7 @@ export default function DistractionFighterPageES() {
             { title: "Control Inhibitorio", desc: "Suprima el impulso reflejo de lectura e identifique los colores con rapidez y precisión.", color: "bg-purple-600" }
           ],
           rulesItems: [
-            { num: "1", text: "Palabra de color (en inglés)", highlight: "elige la tinta", result: "ignora la palabra" },
+            { num: "1", text: "Palabra de color (en español)", highlight: "elige la tinta", result: "ignora la palabra" },
             { num: "2", text: "Acierto", highlight: "100 × combo × nivel", result: "+2 s (máx. 60 s)" },
             { num: "3", text: "Error / palabra caducada", highlight: "combo a cero", result: "-1 s" },
             { num: "4", text: "Nivel superior", highlight: "ventana más corta", result: "6 colores desde nivel 4" }

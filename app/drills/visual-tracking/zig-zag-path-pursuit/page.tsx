@@ -18,7 +18,7 @@ export const metadata = {
     "gaze stability practice online",
     "ocular motor training athletics",
     "feedforward braking eye exercise",
-    "reaction speed eye test"
+    "reaction speed eye drill"
   ],
   alternates: {
     canonical: "https://skilldrills.online/drills/visual-tracking/zig-zag-path-pursuit",
@@ -260,7 +260,7 @@ const guide = {
       ["Steady", "40–70%", "Mean distance error at the same settings", "Repeat the same setup"],
       ["Consistent", "Over 70%", "Whether it holds when one setting changes", "Add one challenge: speed, hidden path or random speed"]
     ],
-    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms, percentiles or clinical values, and the page measures the pointer, not your eyes."
+    note: "SkillDrills practice bands for this browser exercise, based on the end-screen time on target. They are not norms or percentiles, and the page measures the pointer, not your eyes."
   },
 
   heading: "Zig-Zag Path Pursuit - Ocular Motor Training Standards",
@@ -268,7 +268,7 @@ const guide = {
     "Zig-Zag Path Pursuit is a free eye tracking drill. A target moves along a saw-tooth path with sharp direction changes, and you follow it without overshooting the turns. Pick a speed and duration, press start, and keep following the target along the zig-zag.",
     
     
-    "Ocular motor tracking across multi-segment zig-zag polylines represents one of the most demanding coordination challenges in sports vision and neuro-optometry. Unlike cardinal horizontal or vertical movements, diagonal trajectory tracking requires continuous proportional innervation of distinct muscle pairings across horizontal pontine premotor centers (paramedian pontine reticular formation, PPRF) and vertical midbrain premotor centers (rostral interstitial nucleus of the medial longitudinal fasciculus, riMLF).",
+    "Ocular motor tracking across multi-segment zig-zag polylines represents one of the most demanding coordination challenges in sports vision and visual-motor research. Unlike cardinal horizontal or vertical movements, diagonal trajectory tracking requires continuous proportional innervation of distinct muscle pairings across horizontal pontine premotor centers (paramedian pontine reticular formation, PPRF) and vertical midbrain premotor centers (rostral interstitial nucleus of the medial longitudinal fasciculus, riMLF).",
     "The primary neurocomputational stressor occurs at the acute inflection vertices where the trajectory reverses direction. As a target sharply deflects, instantaneous retinal slip escalates dramatically while foveal position error spikes. Seminal research by de Brouwer et al. (2002) and Heinen et al. (2005) demonstrated that catch-up saccades are triggered through a shared neural computational loop in the superior colliculus and frontal eye fields (FEF) that integrates both positional offset and velocity error to execute precise corrective snaps.",
     "Without targeted conditioning, the oculomotor system exhibits excessive gaze overshoot or corner-cutting shortcuts, resulting in prolonged re-acquisition latencies and unstable visual resolution. Regular exposure to multi-angle zig-zag trajectories engages cerebellar forward internal models (Barnes, 2008; Krauzlis, 2004; Orban de Xivry & Lefèvre, 2007), enabling predictive deceleration into vertices, minimized saccadic overshoot, and accelerated pursuit re-engagement along exiting diagonal vectors.",
     "The Zig-Zag Path Pursuit drill isolates and conditions these critical sensorimotor pathways. By following a target along continuous alternating zig-zag paths, users train dynamic smooth pursuit velocity matching and crisp vertex re-anchoring. Advanced toggles such as 'Hide Line' remove spatial guidelines to test raw real-time visual estimation, while 'Random Speed' introduces unpredictable acceleration profiles to condition reactive visual flexibility.",

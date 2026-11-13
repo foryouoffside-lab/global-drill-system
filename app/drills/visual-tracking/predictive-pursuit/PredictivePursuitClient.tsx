@@ -684,7 +684,7 @@ export default function PredictivePursuitClient({ copy }: { copy?: { title?: str
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <p className="text-sm text-slate-300 leading-relaxed">
-                {copy?.description || "Every few seconds the target glides to a new point and slows to a stop. Anticipate where it will land and follow it with your eyes and the pointer. The end screen reports how long the pointer stayed on the target and its average distance from the target centre; the browser does not record eye position, so this is a practice record, not an eye test."}
+                {copy?.description || "Every few seconds the target glides to a new point and slows to a stop. Anticipate where it will land and follow it with your eyes and the pointer. The end screen reports how long the pointer stayed on the target and its average distance from the target centre; the browser does not record eye position, so the summary is based on pointer position."}
               </p>
             </DrillAccordion>
           </div>

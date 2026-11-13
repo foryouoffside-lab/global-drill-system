@@ -104,7 +104,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Qu'est-ce que la poursuite oculaire avec une cible qui esquive ?",
-    "a": "Un exercice dans le navigateur : vous suivez des yeux une cible qui change brusquement de direction à intervalles courts. Durée (30 à 120 secondes), vitesse, taille et ligne sont réglables. Ce n'est ni un test de vue ni une thérapie."
+    "a": "Un exercice dans le navigateur : vous suivez des yeux une cible qui change brusquement de direction à intervalles courts. Durée (30 à 120 secondes), vitesse, taille et ligne sont réglables. Le résultat repose sur la position du pointeur."
   },
   {
     "q": "La cible fuit-elle mon curseur ?",
@@ -128,7 +128,7 @@ const faqs = [
   },
   {
     "q": "Cet exercice améliore-t-il ma vue ou mon aim ?",
-    "a": "Rien ne le garantit. C'est un exercice pour suivre une cible des yeux ; il ne promet ni meilleure vue, ni traitement d'un trouble visuel, ni meilleure visée en FPS. En cas de gêne oculaire, consultez un professionnel."
+    "a": "Rien ne le garantit. C'est un exercice pour suivre une cible des yeux ; il ne promet ni meilleure vue ni meilleure visée en FPS. Comparez vos séances sur le même écran avec les mêmes réglages."
   },
   {
     "q": "L'écran et l'environnement comptent-ils ?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guide : Poursuite oculaire : cible qui esquive",
   "intro": [
     "Dans cette poursuite oculaire avec une cible qui esquive, la cible avance en ligne droite et repart environ toutes les 0,5 seconde (0,35 à 0,65 s avec la vitesse aléatoire) dans une nouvelle direction au hasard ; elle rebondit sur les bords. Après chaque virage, l'œil prend du retard jusqu'à ce qu'une saccade de rattrapage comble l'écart et que la poursuite reprenne (Rashbass, 1961 ; Krauzlis, 2004).",
-    "Le navigateur connaît seulement la position dessinée de la cible et vos réglages, pas l'endroit où regardent vos yeux. La page affiche seulement des valeurs du pointeur (temps sur la cible, distance au centre) et compte les séances terminées. Le résultat est un repère d'entraînement reproductible, pas une mesure clinique ni un test de vue.",
+    "Le navigateur connaît seulement la position dessinée de la cible et vos réglages, pas l'endroit où regardent vos yeux. La page affiche seulement des valeurs du pointeur (temps sur la cible, distance au centre) et compte les séances terminées. Le résultat est un repère d'entraînement reproductible, basé sur la position du pointeur.",
     "Gardez une distance confortable et comparez toujours le même écran et le même navigateur. La fréquence d'affichage et le périphérique d'entrée changent le rendu (Woods et al., 2015). Arrêtez en cas de douleur, vertige, nausée ou vision floue persistante."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Lignes droites et virages brusques",
-          description: "Poursuite oculaire avec une cible qui esquive : elle change brusquement de direction environ toutes les 0,5 s. La page indique ensuite la distance du pointeur à la cible, mais le navigateur n'enregistre pas votre regard ; c'est un repère d'entraînement, pas un examen médical.",
+          description: "Poursuite oculaire avec une cible qui esquive : elle change brusquement de direction environ toutes les 0,5 s. La page indique ensuite la distance du pointeur à la cible, mais le navigateur n'enregistre pas votre regard ; c'est un repère d'entraînement basé sur le pointeur.",
         }}
       />
       <DrillGuide guide={guideProps} />

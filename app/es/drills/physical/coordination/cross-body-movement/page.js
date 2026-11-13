@@ -61,8 +61,8 @@ const faqItems = [
     a: 'Exactamente 45 segundos; el nivel vuelve a empezar en 1 en cada ronda.',
   },
   {
-    q: '¿Mide mi coordinación de forma médica u oficial?',
-    a: 'No. Es un juego de práctica con un solo cursor para el manejo del ratón, no una prueba oficial, ni una evaluación del desarrollo motor, ni una terapia.',
+    q: '¿Cómo puedo no salirme del pasillo?',
+    a: 'Mira primero el nodo de destino, mantén una velocidad tranquila y constante y frena justo antes del final. Con 4 px de tolerancia en niveles altos compensa ir algo más lento para alargar la racha.',
   },
   {
     q: '¿Funciona en el móvil?',
@@ -115,7 +115,7 @@ const guide = {
   heading: 'Test de coordinación ojo-mano: instrucciones y consejos',
   intro: [
     'Este test de coordinación ojo-mano es un juego gratis de navegador en el que llevas el cursor con precisión por un pasillo estrecho. Toca el nodo cian en un borde de la pantalla y sigue la línea hasta el nodo magenta del lado opuesto. Si te sales del pasillo, el intento termina y aparece un nuevo par de nodos. Cada recorrido cruza la pantalla de un borde al otro y lo que cuenta es mantener el cursor dentro.',
-    'Una ronda dura 45 segundos y el nivel empieza siempre en 1. Al subir de nivel, la tolerancia del pasillo baja de 10 px a 4 px, el radio de los nodos de 16 px a 8 px y los nodos se acercan al borde. Como referencia se usó la ley de Fitts (Fitts, 1954): cuanto más largo el recorrido y más pequeño el objetivo, más difícil el movimiento. Pese al nombre, es un juego de práctica con el ratón, no un test diagnóstico de coordinación.',
+    'Una ronda dura 45 segundos y el nivel empieza siempre en 1. Al subir de nivel, la tolerancia del pasillo baja de 10 px a 4 px, el radio de los nodos de 16 px a 8 px y los nodos se acercan al borde. Como referencia se usó la ley de Fitts (Fitts, 1954): cuanto más largo el recorrido y más pequeño el objetivo, más difícil el movimiento. Es un juego de práctica con el ratón.',
   ],
   techniques: {
     title: 'Consejos para no salirte del pasillo',

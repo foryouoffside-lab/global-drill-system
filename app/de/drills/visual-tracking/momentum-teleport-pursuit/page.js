@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Was passiert bei „Springendes Ziel verfolgen“?",
-    "a": "Das Ziel bewegt sich mit fester Richtung und festem Tempo geradlinig und prallt an den Rändern ab. Bei Tempo 1,0 springt es etwa alle 1,2 Sekunden an eine zufällige Stelle; Richtung und Tempo bleiben dabei erhalten. Du findest es mit den Augen wieder und folgst der Bewegung weiter. Es ist eine Browserübung, kein Sehtest und keine Therapie."
+    "a": "Das Ziel bewegt sich mit fester Richtung und festem Tempo geradlinig und prallt an den Rändern ab. Bei Tempo 1,0 springt es etwa alle 1,2 Sekunden an eine zufällige Stelle; Richtung und Tempo bleiben dabei erhalten. Du findest es mit den Augen wieder und folgst der Bewegung weiter. Es ist eine Browserübung."
   },
   {
     "q": "Kann ich vorhersehen, wohin das Ziel springt?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Werden meine Sehkraft oder mein Aim besser?",
-    "a": "Das ist nicht garantiert. Die Übung ist kein Sehtest und keine Therapie, sondern ein Werkzeug zum Üben des Hinschauens. Sie verspricht weder bessere Sehschärfe noch besseres Zielen. Bei Beschwerden an den Augen wende dich an eine Fachperson."
+    "a": "Das ist nicht garantiert. Die Übung ist ein Werkzeug zum Üben des Hinschauens und verspricht weder bessere Sehschärfe noch besseres Zielen. Vergleiche deine Sessions auf demselben Bildschirm mit denselben Einstellungen."
   },
   {
     "q": "Wie lange sollte ich üben?",

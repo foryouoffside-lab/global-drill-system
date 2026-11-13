@@ -626,13 +626,13 @@ export default function GhostLinkClient({ copy } = {}) {
   const rankName = analytics.grade?.label || 'Master Tracker';
   const rankColor = analytics.grade?.color || 'text-purple-400';
 
-  let diagnostics = "Outstanding multiple object tracking capacity! Your visual attention spans smoothly across active vectors.";
+  let feedback = "Outstanding multiple object tracking capacity! Your visual attention spans smoothly across active vectors.";
   if (correctCount < 2) {
-diagnostics = "Low target identification accuracy. Anchor your gaze centrally and track target coordinates peripherally to avoid losing targets during collisions.";
+feedback = "Low target identification accuracy. Anchor your gaze centrally and track target coordinates peripherally to avoid losing targets during collisions.";
   } else if (accuracy < 60) {
-    diagnostics = "Low precision rates. Take your time during the identification phase to prevent false selections.";
+    feedback = "Low precision rates. Take your time during the identification phase to prevent false selections.";
   } else if (customScore < 40) {
-    diagnostics = "Improve your score by tracking all 3 target indices successfully to earn the maximum 60-point bonus.";
+    feedback = "Improve your score by tracking all 3 target indices successfully to earn the maximum 60-point bonus.";
   }
 
   return (

@@ -18,7 +18,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "동체시력 키우는 게임 | 이동 표적 요격 | SkillDrills",
-    description: "움직이는 표적의 궤적을 읽고 사라지기 전에 클릭해 맞히는 무료 브라우저 동체시력 키우는 게임입니다. 의료 검사가 아닙니다.",
+    description: "움직이는 표적의 궤적을 읽고 사라지기 전에 클릭해 맞히는 무료 브라우저 동체시력 키우는 게임입니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -56,7 +56,7 @@ const softwareApplicationSchema = {
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/ko/drills/visual/tracking-accuracy/moving-target",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
-  "description": "벽에 튕겨 다니다 일정 시간이 지나면 다른 위치로 순간이동하는 구체를 클릭해 맞히는 브라우저 연습 게임입니다. 진단이나 측정 도구가 아닙니다.",
+  "description": "벽에 튕겨 다니다 일정 시간이 지나면 다른 위치로 순간이동하는 구체를 클릭해 맞히는 브라우저 연습 게임입니다.",
   "featureList": [
     "벽에 반사되며 움직이고 제한 시간이 끝나면 새 위치로 이동하는 표적",
     "명중 150점 × 콤보 배율 × 레벨 보너스, 명중마다 +2초(최대 60초)",
@@ -184,7 +184,7 @@ const faqSchema = {
       "name": "이 게임으로 동체시력이 좋아지나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "게임 안에서 점수가 오르는 것은 이 과제에 익숙해졌다는 뜻입니다. 실제 시력, 스포츠 경기력이나 다른 과제로의 향상을 보장하지는 않으며, 시력 검사나 의료 진단을 대신하지 않습니다."
+        "text": "게임 안에서 점수가 오르는 것은 이 과제에 익숙해졌다는 뜻입니다. 실제 시력, 스포츠 경기력이나 다른 과제로의 향상을 보장하지는 않습니다."
       }
     },
     {

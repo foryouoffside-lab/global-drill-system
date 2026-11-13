@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/pt/drills/visual-tracking/strobe-prediction-pursuit';
 const title = "Treino visual estroboscópico | SkillDrills";
-const description = "Treino visual estroboscópico: um alvo rebate nas bordas da tela e some em intervalos regulares. Preveja onde ele está. Treino grátis, não é exame de vista.";
+const description = "Treino visual estroboscópico: um alvo rebate nas bordas da tela e some em intervalos regulares. Preveja onde ele está. Treino grátis no navegador.";
 
 export const metadata = {
   title,
@@ -91,7 +91,7 @@ const faqs = [
   { q: "O exercício mede os movimentos dos meus olhos?", a: "Não. O navegador não sabe para onde você está olhando; ele só conhece a posição em que o alvo é desenhado e as suas configurações. Não é preciso clicar nem tocar; o resultado é um registro de prática para você mesmo." },
   { q: "Tem pontuação ou nota?", a: "Não há nota. No fim, a tela mostra quanto tempo o ponteiro ficou sobre o alvo e a distância média até o centro, separadas para as fases visível e oculta, além da duração, do multiplicador de velocidade e do total de sessões (salvo neste navegador). O que é medido é o ponteiro, não os seus olhos." },
   { q: "Quais configurações existem?", a: "Duração de 30, 45, 60, 90 ou 120 segundos, velocidade de 0,5x a 9,0x e tamanho do alvo de 10 a 50 px. Também dá para ocultar a linha (contorno na fase invisível), ligar velocidade aleatória, rastro, brilho, linhas de varredura, fundo claro ou escuro e trocar a cor do alvo. A tecla Esc encerra a sessão a qualquer momento." },
-  { q: "Isso melhora a visão ou a mira?", a: "Não há garantia. É um exercício em que você acompanha um alvo em movimento com os olhos; não é exame de vista, não é tratamento e não promete mira melhor em jogos de tiro. Se sentir algum problema nos olhos, procure um oftalmologista." },
+  { q: "Isso melhora a visão ou a mira?", a: "Não há garantia. É um exercício em que você acompanha um alvo em movimento com os olhos e não promete mira melhor em jogos de tiro. Compare as sessões na mesma tela e com as mesmas configurações." },
   { q: "A tela influencia o resultado?", a: "Sim. Taxa de atualização, brilho, contraste, tamanho da tela e distância mudam a forma como o alvo aparece (Woods et al., 2015). Compare apenas sessões feitas na mesma tela, no mesmo navegador e com as mesmas configurações." },
   { q: "Quanto tempo devo praticar?", a: "Algumas sessões de cerca de 60 segundos, de 5 a 10 minutos no total, com pausas. Pare na hora se sentir olhos cansados, secos ou doloridos, tontura, enjoo ou dor de cabeça." }
 ];
@@ -108,7 +108,7 @@ const guide = {
   intro: [
     "O treino visual estroboscópico é um exercício grátis no navegador: um alvo se move em linha reta, rebate nas bordas da tela e some em intervalos regulares. Ele fica visível por cerca de dois terços de cada ciclo e escondido por cerca de um terço.",
     "Enquanto está invisível, o alvo continua na mesma direção e velocidade. Por padrão, um contorno discreto mostra a posição; se você ocultar a linha, o contorno também some. Depois da contagem 3-2-1, o alvo se move pelo tempo escolhido (30 a 120 segundos, padrão 60). Não é preciso clicar; se você seguir o alvo com o ponteiro, a tela final mostra a distância do ponteiro até o alvo.",
-    "O navegador não registra para onde você olha. Trate o resultado como um registro de prática pessoal, não como teste de visão ou de atenção. Também não é um treino com óculos estroboscópicos, que bloqueiam todo o campo de visão.",
+    "O navegador não registra para onde você olha. Trate o resultado como um registro de prática pessoal, baseado na posição do ponteiro. Também não é um treino com óculos estroboscópicos, que bloqueiam todo o campo de visão.",
     "Compare sessões na mesma tela e à mesma distância; a taxa de atualização e o atraso de exibição influenciam a fluidez do alvo (Woods et al., 2015). Pare se sentir dor, tontura, enjoo ou visão embaçada persistente."
   ],
   benchmarks: {
@@ -121,7 +121,7 @@ const guide = {
       ["4", "Linha oculta", "Atravessar a fase invisível só com a previsão"],
       ["5", "Velocidade aleatória", "Ajustar a previsão a uma velocidade variável"]
     ],
-    note: "Etapas de prática da SkillDrills apenas como orientação. Não são normas de exame de vista, estatísticas de usuários nem percentis.",
+    note: "Etapas de prática da SkillDrills apenas como orientação. Não são normas oficiais, estatísticas de usuários nem percentis.",
   },
   techniques: {
     title: "Dicas de prática",

@@ -128,10 +128,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "브라우저 시각 훈련이 임상 시각 훈련이나 스포츠 비전 트레이닝을 대신할 수 있나요?",
+      "name": "시각 드릴 기록은 어떻게 비교하면 좋나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "대신할 수 없습니다. 무료 브라우저 연습과 개인 기록 도구이며, 효과가 임상적으로 입증된 것은 아닙니다. 시력이나 안구 운동에 걱정이 있다면 안과 전문의와 상담하세요."
+        "text": "같은 기기와 설정에서 여러 세션의 기록을 비교하세요. 화면 주사율, 입력 지연, 피로에 따라 결과가 달라질 수 있습니다."
       }
     }
   ]
@@ -139,7 +139,7 @@ const faqSchema = {
 
 faqSchema.mainEntity.push(
   { "@type": "Question", "name": "이 시각 훈련 목록에는 몇 가지 드릴이 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "목록에는 반응·충동 억제, 목표 추적·안구 움직임, 시각 인식·거리 판단의 세 영역으로 나뉜 9개 브라우저 드릴이 있습니다. 카드를 선택하면 해당 드릴을 열 수 있습니다." } },
-  { "@type": "Question", "name": "브라우저 시각 드릴이 안과 시력검사를 대신할 수 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "아닙니다. 화면에서 반응, 추적, 탐색과 공간 판단을 반복 측정하는 훈련이며 시력이나 안질환을 진단하지 않습니다. 필요한 검사는 안과 전문의에게 상담하세요." } }
+  { "@type": "Question", "name": "브라우저 시각 드릴은 무엇을 측정하나요?", "acceptedAnswer": { "@type": "Answer", "text": "화면에서 반응, 추적, 탐색과 공간 판단을 반복 측정하는 훈련입니다. 같은 기기에서 기록을 비교하며 연습하세요." } }
 );
 
 export default function VisualDrillsPage() {

@@ -104,7 +104,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Qu'est-ce que l'exercice de poursuite oculaire chaotique ?",
-    "a": "Un exercice dans le navigateur où vous suivez des yeux une cible aux changements de direction imprévisibles. Durée (30 à 120 secondes), vitesse, taille et ligne sont réglables. Ce n'est ni un test de vue ni une thérapie."
+    "a": "Un exercice dans le navigateur où vous suivez des yeux une cible aux changements de direction imprévisibles. Durée (30 à 120 secondes), vitesse, taille et ligne sont réglables. Le résultat repose sur la position du pointeur."
   },
   {
     "q": "Comment la cible se déplace-t-elle ?",
@@ -128,7 +128,7 @@ const faqs = [
   },
   {
     "q": "Cet exercice améliore-t-il ma vue ou mon aim ?",
-    "a": "Rien ne le garantit. C'est un exercice pour suivre une cible des yeux ; il ne promet ni meilleure vue, ni traitement d'un trouble visuel, ni meilleure visée en FPS. En cas de gêne oculaire, consultez un professionnel."
+    "a": "Rien ne le garantit. C'est un exercice pour suivre une cible des yeux ; il ne promet ni meilleure vue ni meilleure visée en FPS. Comparez vos séances sur le même écran avec les mêmes réglages."
   },
   {
     "q": "L'écran et l'environnement comptent-ils ?",
@@ -152,7 +152,7 @@ const guideProps = {
   "heading": "Guide : Exercice de poursuite oculaire chaotique",
   "intro": [
     "Dans cet exercice de poursuite oculaire chaotique, la cible reçoit à chaque image une petite impulsion aléatoire : sa direction et sa vitesse changent en permanence et elle rebondit sur les bords. Sans trajectoire fixe, impossible de l'anticiper vraiment ; quand elle prend de l'avance, une saccade de rattrapage la ramène en général dans le regard central (Krauzlis, 2004).",
-    "Le navigateur connaît seulement la position dessinée de la cible et vos réglages, pas l'endroit où regardent vos yeux. Seules la distance du pointeur à la cible et les séances terminées sont affichées. Le résultat est un repère d'entraînement reproductible, pas une mesure clinique ni un test de vue.",
+    "Le navigateur connaît seulement la position dessinée de la cible et vos réglages, pas l'endroit où regardent vos yeux. Seules la distance du pointeur à la cible et les séances terminées sont affichées. Le résultat est un repère d'entraînement reproductible, basé sur la position du pointeur.",
     "Gardez une distance confortable et comparez toujours le même écran et le même navigateur. La fréquence d'affichage et le périphérique d'entrée changent le rendu (Woods et al., 2015). Arrêtez en cas de douleur, vertige, nausée ou vision floue persistante."
   ],
   "benchmarks": {
@@ -253,7 +253,7 @@ export default function LocalizedPage() {
         copy={{
           title: name,
           subtitle: "Garder des yeux une cible imprévisible",
-          description: "Exercice de poursuite oculaire chaotique : la cible change sans cesse de direction et de vitesse. Le navigateur n'enregistre pas votre regard et mesure seulement la distance du pointeur à la cible ; voyez le résultat comme un repère d'entraînement, pas comme un examen médical.",
+          description: "Exercice de poursuite oculaire chaotique : la cible change sans cesse de direction et de vitesse. Le navigateur n'enregistre pas votre regard et mesure seulement la distance du pointeur à la cible ; voyez le résultat comme un repère d'entraînement basé sur le pointeur.",
         }}
       />
       <DrillGuide guide={guideProps} />

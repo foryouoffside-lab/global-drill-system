@@ -85,7 +85,7 @@ const gridGuide = {
     "Ce jeu d’évitement sur grille est un jeu de navigateur : sur une grille 3x3, vous sortez le curseur des cases signalées en orange avant qu’elles n’explosent. Pas d’objets qui volent : vous choisissez l’une des 9 cases, donc la décision rapide et l’arrêt précis comptent autant l’un que l’autre.",
     "Au fil des niveaux, l’avertissement passe de 1,4 à 0,45 seconde et jusqu’à 7 cases sur 9 deviennent piégées. En fin de partie il ne reste que 2 cases sûres, sans temps pour vérifier case par case. Comme dans les expériences d’indices attentionnels de Posner (Posner, 1980), il aide de lire d’un coup d’œil le contraste entre cases qui clignotent et cases sombres.",
     "Un mouvement rapide combine une grande impulsion et une petite correction finale (Woodworth, 1899). Choisir la bonne case puis dépasser son bord compte quand même comme touché : entraînez-vous à vous arrêter dans la case.",
-    "Les résultats sont des relevés d’entraînement propres à SkillDrills, pas un examen médical, un test de la vue ni une mesure de performance sportive. Comparez vos scores avec la même souris, la même sensibilité et le même écran.",
+    "Les résultats sont des relevés d’entraînement propres à SkillDrills. Comparez vos scores avec la même souris, la même sensibilité et le même écran.",
   ],
   benchmarks: {
     title: 'Paliers de note (paliers d’entraînement SkillDrills)',
@@ -133,7 +133,7 @@ export default function DynamicGridEvasionPageFr() {
           ],
           aboutTitle: "Qu’est-ce que le jeu d’évitement sur grille ?",
           aboutHeading: "Éviter les cases piégées d’une grille 3x3",
-          aboutText: "Dans ce jeu d’évitement sur grille, des cases d’une grille 3x3 clignotent en orange avant d’exploser et vous amenez le curseur à temps dans une case sûre. Au fil des niveaux, l’avertissement raccourcit et les cases piégées se multiplient. Il s’agit de décider vite et de freiner la souris avec précision, pas d’une mesure médicale.",
+          aboutText: "Dans ce jeu d’évitement sur grille, des cases d’une grille 3x3 clignotent en orange avant d’exploser et vous amenez le curseur à temps dans une case sûre. Au fil des niveaux, l’avertissement raccourcit et les cases piégées se multiplient. Il s’agit de décider vite et de freiner la souris avec précision.",
           aboutCards: [
             { title: "Pour qui", desc: "Pour qui aime les jeux d’évitement sur grille ou veut s’exercer à réagir à un avertissement avec la souris." },
             { title: "Ce que vous travaillez", desc: "Distinguer cases piégées et sûres, choisir la plus proche, arrêter le curseur à l’intérieur." },

@@ -4,7 +4,7 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: "Color Memory Game – Simon Sequence Test | SkillDrills",
+  title: "Color Memory Game – Simon-Style Sequence Test | SkillDrills",
   description: "Play the free Color Memory Game online: Simon-style color sequences that grow one color longer each level. Watch, tap them back in order. No download.",
   keywords: [
     "color memory game",
@@ -32,7 +32,7 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Color Memory Game – Simon Sequence Test | SkillDrills",
+    title: "Color Memory Game – Simon-Style Sequence Test | SkillDrills",
     description: "Play the free Color Memory Game online: Simon-style color sequences that grow one color longer each level. Watch, tap them back in order. No download.",
     url: "https://skilldrills.online/drills/memory/short-term-memory/color-sequence",
     siteName: 'SkillDrills',
@@ -41,14 +41,14 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Color Memory Game – Simon Sequence Test | SkillDrills",
+    title: "Color Memory Game – Simon-Style Sequence Test | SkillDrills",
     description: "Play the free Color Memory Game online: Simon-style color sequences that grow one color longer each level. Watch, tap them back in order. No download.",
   },
 };
 
 const copyEn = {
   title: "Color Memory Game",
-  subtitle: "Simon Game Online & Visual Working Memory Sequence Test",
+  subtitle: "Simon-Style Color Sequence Game & Visual Working Memory Test",
 };
 
 export default function ColorSequencePage() {
@@ -250,8 +250,7 @@ const faqSchema = {
       "The architectural limits of human short-term memory have been thoroughly mapped across decades of cognitive psychology. While George A. Miller (1956) identified the informational bottleneck of $7 \\pm 2$ items in verbal rehearsal, seminal work by Nelson Cowan (2001) and Steven J. Luck & Edward K. Vogel (1997) revealed that pure visual working memory capacity is strictly constrained to approximately 4 distinct items. Without structured re-coding strategies, unassisted human recall rapidly collapses beyond four sequential elements.",
       "According to Alan Baddeley's multi-component model of working memory (Baddeley & Hitch, 1974; Baddeley, 2000), retaining sequential visual arrays engages the Visuospatial Sketchpad (VSSP). Robert H. Logie (1995) further divided the VSSP into the visual cache (which stores passive chromatic representations) and the inner scribe (which actively rehearses spatial-temporal sequences). Naming the colors to yourself adds a verbal trace alongside the visual one, which many players find helps on longer sequences.",
       "How the game works: a run lasts 45 seconds. Level 1 shows 3 colors and sequence length is always level + 2. Each flash starts at about 0.7 seconds and gets shorter as the level rises. A correct sequence scores 100 x (1 + 0.1 x level) points and moves you up a level; a wrong tap, or 8 seconds without a tap during input, moves you down a level. Nothing is subtracted from your score or clock. Response times are not measured or scored.",
-      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
-      "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
+      "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below."
     ],
     benchmarks: {
       title: "SkillDrills Practice Bands (Color Sequence)",

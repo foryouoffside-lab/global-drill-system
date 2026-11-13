@@ -85,7 +85,7 @@ const gridGuide = {
     "O jogo de esquiva em grade é um jogo de navegador em que você tira o cursor das casas avisadas em laranja numa grade 3x3 antes que explodam. Em vez de fugir de objetos voando, você escolhe uma de 9 casas, então decisão rápida e parada precisa contam juntas.",
     "Conforme o nível sobe, o aviso encolhe de 1,4 para 0,45 segundo e até 7 das 9 casas viram perigo. No fim sobram só 2 casas seguras e não há tempo de checar uma por uma. Como nos experimentos de pistas de atenção de Posner (Posner, 1980), ajuda ler de uma vez o contraste entre casas piscando e casas escuras.",
     "Movimentos rápidos têm um impulso grande e uma correção pequena no final (Woodworth, 1899). Escolher a casa certa e passar da borda ainda conta como acerto da explosão, por isso treine parar dentro da casa.",
-    "Os resultados são registros de prática dentro do SkillDrills, não um exame médico, teste de visão ou medida de desempenho esportivo. Compare pontuações sempre com o mesmo mouse, sensibilidade e monitor.",
+    "Os resultados são registros de prática dentro do SkillDrills. Compare pontuações sempre com o mesmo mouse, sensibilidade e monitor.",
   ],
   benchmarks: {
     title: 'Faixas de nota (faixas de prática SkillDrills)',
@@ -133,7 +133,7 @@ export default function DynamicGridEvasionPagePt() {
           ],
           aboutTitle: "O que é o jogo de esquiva em grade?",
           aboutHeading: "Fuja das casas que explodem na grade 3x3",
-          aboutText: "No jogo de esquiva em grade, casas de uma grade 3x3 piscam em laranja antes de explodir e você leva o cursor a tempo para uma casa segura. Com o nível, o aviso fica mais curto e há mais casas perigosas. O foco é decidir rápido e frear o mouse com precisão, não uma medida médica.",
+          aboutText: "No jogo de esquiva em grade, casas de uma grade 3x3 piscam em laranja antes de explodir e você leva o cursor a tempo para uma casa segura. Com o nível, o aviso fica mais curto e há mais casas perigosas. O foco é decidir rápido e frear o mouse com precisão.",
           aboutCards: [
             { title: "Para quem", desc: "Para quem gosta de jogos de esquiva em grade ou quer treinar reação a avisos com o mouse." },
             { title: "O que você treina", desc: "Separar casas perigosas e seguras, escolher a mais próxima e parar o cursor dentro dela." },

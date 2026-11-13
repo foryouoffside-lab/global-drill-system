@@ -81,7 +81,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "Como funciona o rastreamento de alvo teleportado?",
-    "a": "O alvo avança em linha reta com direção e velocidade constantes e ressalta nas margens. À velocidade 1,0x, teleporta-se cerca de cada 1,2 segundos para uma posição aleatória, mantendo a direção e a velocidade. Reencontra-o com o olhar e continua a segui-lo. É um exercício no navegador, não um exame de visão nem uma terapia."
+    "a": "O alvo avança em linha reta com direção e velocidade constantes e ressalta nas margens. À velocidade 1,0x, teleporta-se cerca de cada 1,2 segundos para uma posição aleatória, mantendo a direção e a velocidade. Reencontra-o com o olhar e continua a segui-lo. É um exercício no navegador."
   },
   {
     "q": "Dá para prever para onde o alvo vai saltar?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     "q": "Isto melhora a minha visão ou a minha mira?",
-    "a": "Não há garantia. Não é um exame de visão nem uma terapia, mas uma ferramenta para praticar o olhar sobre um alvo. Não promete melhor acuidade nem melhor pontaria. Se notar algum problema nos olhos, consulte um profissional."
+    "a": "Não há garantia. É uma ferramenta para praticar o olhar sobre um alvo e não promete melhor acuidade nem melhor pontaria. Compare as sessões no mesmo ecrã e com as mesmas definições."
   },
   {
     "q": "Quanto tempo devo praticar?",

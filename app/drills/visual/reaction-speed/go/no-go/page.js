@@ -6,12 +6,12 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 // SEO RESEARCH FINDINGS — go/no-go (visual-no-go)
 // PRIMARY:  "go no go test"                 — Global high-intent neurocognitive term (~1,400 searches/mo)
-//           "impulse control test"          — Clinical and behavioral search intent
-//           "response inhibition test"      — Neuropsychological standard query
+//           "impulse control test"          — Behavioral search intent
+//           "response inhibition test"      — Standard research query
 // SECONDARY / LSI:
 //           "go no go test online"          — Direct browser search
 //           "go no go task"                 — Experimental psychology paradigm
-//           "continuous performance test go no go" — CPT clinical variant
+//           "continuous performance test go no go" — CPT variant
 //           "sustained attention response task" — SART paradigm (Robertson et al., 1997)
 //           "sart test"                     — Acronym search query
 //           "trigger discipline drill"      — Tactical FPS gaming query
@@ -270,7 +270,7 @@ const goNoGoGuide = {
     title: "Response inhibition bands (editorial guide)",
     headers: ["Performance Band", "Commission Error Rate (CER)", "Score & Combo Threshold", "Neuromuscular & Executive Profile"],
     rows: [
-      ["Tier 1: Apex Executive Braking", "< 2.0% CER", "Score: 16,000+ | Combo 30x+", "Fewest false alarms in this drill's bands. A practice target, not a clinical measure."],
+      ["Tier 1: Apex Executive Braking", "< 2.0% CER", "Score: 16,000+ | Combo 30x+", "Fewest false alarms in this drill's bands. A practice target."],
       ["Tier 2: Superior Response Inhibition", "2.0% – 4.9% CER", "Score: 11,000 – 15,999 | Combo 20x+", "High-tier trigger discipline; rapid recovery from chromatic switches with minimal anticipation drift."],
       ["Tier 3: Solid Baseline Inhibition", "5.0% – 9.9% CER", "Score: 6,500 – 10,999 | Combo 12x+", "Healthy adult baseline; reliable Go target execution with occasional false alarm slips under high-frequency pacing."],
       ["Tier 4: Moderate Impulsivity", "10.0% – 18.0% CER", "Score: 3,000 – 6,499 | Combo 6x+", "Elevated prepotent motor priming; tendency to initiate finger flexion on visual onset before color identity verification."],
