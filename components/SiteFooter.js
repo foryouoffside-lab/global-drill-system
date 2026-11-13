@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Sparkles } from 'lucide-react';
 import { DRILLS, DESKTOP_ONLY_CATEGORIES } from '@/lib/drillsNav';
 import { SITE_CATEGORIES, getCategoryCount } from '@/lib/siteCategories';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { LOCALES, LOCALE_META, localizedPath } from '@/lib/i18n/locales';
 
 // The footer is the last chance to answer "who runs this and can I trust it".
 // Privacy, terms and account deletion pages already existed but were reachable
@@ -35,6 +37,7 @@ export default function SiteFooter() {
   const { locale, localizeHref } = useTranslation();
   const copy = FOOTER_COPY[locale] || FOOTER_COPY.en;
   const totalDrills = DRILLS.length;
+  const pathname = usePathname() || '/';
 
   return (
     <footer className="bg-canvas border-t border-hairline text-ink-2 py-14 relative overflow-hidden">
@@ -112,6 +115,20 @@ export default function SiteFooter() {
             ))}
           </nav>
         </div>
+        <nav aria-label="Languages" className="pt-4 flex flex-wrap items-center justify-center sm:justify-end gap-x-4 gap-y-2 text-xs text-ink-3">
+          {LOCALES.map((loc) => (
+            <Link
+              key={loc}
+              href={localizedPath(loc, pathname)}
+              hrefLang={loc}
+              lang={loc}
+              prefetch={false}
+              className={loc === locale ? 'text-ink-1' : 'hover:text-ink-1 transition-colors'}
+            >
+              {LOCALE_META[loc].native}
+            </Link>
+          ))}
+        </nav>
       </div>
     </footer>
   );

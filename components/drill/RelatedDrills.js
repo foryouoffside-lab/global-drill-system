@@ -7,7 +7,7 @@ import { DRILLS } from '@/lib/drillsNav';
 import { getRelatedDrills } from '@/lib/relatedDrills';
 import { DRILL_SEO, getDrillSeo } from '@/lib/drillSeo';
 import { useTranslation } from '@/lib/i18n/useTranslation';
-import { stripLocale, hasLocalizedRoute } from '@/lib/i18n/locales';
+import { stripLocale, hasLocalizedRoute, localizedPath, LOCALES, LOCALE_META } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 
 // Keyword-bearing cross-links between drill pages.
@@ -122,6 +122,21 @@ export default function RelatedDrills() {
             </Link>
           </p>
         )}
+
+        <nav aria-label="Languages" className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs text-gray-500">
+          {LOCALES.map((loc) => (
+            <Link
+              key={loc}
+              href={localizedPath(loc, pathname || '/')}
+              hrefLang={loc}
+              lang={loc}
+              prefetch={false}
+              className={loc === locale ? 'text-gray-300' : 'hover:text-gray-300 transition-colors'}
+            >
+              {LOCALE_META[loc].native}
+            </Link>
+          ))}
+        </nav>
       </div>
     </section>
   );

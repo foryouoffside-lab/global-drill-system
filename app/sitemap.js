@@ -21,6 +21,7 @@
 //     earn or realistically can earn, measured in Search Console.
 
 import { DRILLS } from '../lib/drillsRegistry';
+import LASTMOD from '../lib/sitemapLastmod.json';
 import { LOCALES, DEFAULT_LOCALE, LOCALIZED_ROUTES, hasLocalizedRoute, localeUrl, getAlternateLanguages } from '../lib/i18n/locales';
 
 const BASE_URL = 'https://skilldrills.online';
@@ -730,7 +731,7 @@ const entry = (path, lastModified, changeFrequency, priority, route = path) => {
   const languages = getAlternateLanguages(route);
   return {
     url: `${BASE_URL}${path}`,
-    lastModified,
+    lastModified: LASTMOD[path] ?? lastModified,
     changeFrequency,
     priority,
     ...(Object.keys(languages).length > 2 && { alternates: { languages } }),
