@@ -5,7 +5,20 @@ Trigger for a new chat: `Continue docs/seo/HANDOFF_LOCAL_SEO_CATEGORY.md`
 Read this file first, then `docs/seo/HANDOFF_DEMAND_RESEARCH.md` (tooling + rules), `docs/seo/GLOBAL_PAGE_SEO_AEO_GEO_STANDARD.md`, `docs/seo/NO_TRANSLATION_NATIVE_SEARCH_MANDATE.md`.
 Update the LOG section at the end of every step. Never leave work only in chat.
 
-## >>> RESUME HERE (2026-11-13 13:50 IST save, 5h limit; resets 16:10 IST) - do these in order <<<
+## >>> RESUME HERE (2026-11-13 ~16:30 IST save) - do these in order <<<
+
+LIVE: pushed a3a77719 (all categories + visual-tracking metrics + no-clinical pass 1 + security + Next 15.5.29). Verified live 14:43. Bing: 100 URLs submitted, 315 queued in docs/seo/research/_bing_pending_2026-11-13.txt (100/day). Sitemap resubmitted to GSC + Bing 2026-11-13.
+LOCAL, NOT PUSHED (committed via checkpoints): crawlable locale links (LanguageSwitcher <Link> always in DOM + SiteFooter + RelatedDrills language rows), per-URL sitemap lastmod (lib/sitemapLastmod.json from scripts/seo/gen_lastmod.mjs - rerun before each deploy), 3 de-dup retitles (light-reaction, divided-attention -> Dual Task Test, visual-tracking-speed-test), hub anchors renamed in lib/drillsRegistry.js + lib/drillsNav.js, llms.txt locale section, SiteSchemas sameAs, homepage headings, baselines docs/seo/baselines/2026-11-13 (+ scripts/seo/baseline_compare.py, baseline_pull.py).
+RUNNING at save (resume if died):
+ a) wider no-clinical sweep (neuropsych/神経心理/신경심리/patient/rehab/Alzheimer/...; pattern in that agent brief = NO_CLINICAL_BRIEF + CJK variants). Re-grep app/ components/ lib/ for: neuropsych|神経心理|신경심리|neurolog|psychiatr|patient|Alzheimer|rehabilit|リハビリ|재활|cognitive decline|認知機能低下|disorder|症状|증상 and fix leftovers.
+ b) live-site Playwright crawl -> docs/qa/live_crawl_2026-11-13.md (scratchpad qa_live/).
+ c) keyword registry rebuild + snapshot (scripts/seo/keyword_tracker.py build; snapshot 28).
+THEN: rerun `node scripts/seo/gen_lastmod.mjs`, prod build+audit in worktree scratchpad/wt-deps (see earlier block), commit, push, verify live (cache-busted), `python scripts/gsc/gsc.py submit https://skilldrills.online/sitemap.xml`, Bing SubmitFeed + next 100 URLs from pending file.
+OWNER WANTS: me to do indexing (not lists). Chrome extension is NOT permitted on search.google.com -> owner must allow it for Request Indexing clicks. AI visibility: robots already allow all AI bots; llms.txt done.
+Dev server: NODE_OPTIONS='--inspect=9555 --max-old-space-size=6144' npx next dev -p 3000 (OOM crashed at default heap).
+Index diagnosis: docs/qa/gsc_not_indexed_2026-11-13.md (207 indexed / 441 not; causes: no crawlable locale links, bulk lastmod, low authority). Re-inspect ~2026-12-04.
+
+## (older) RESUME HERE (2026-11-13 13:50 IST save, 5h limit; resets 16:10 IST) - do these in order <<<
 
 STATE: all work committed LOCALLY on main (WIP commit "wip: save before limit - no-clinical scrub partial"), NOT pushed. 22+ unpushed commits = physical + visual + visual-tracking + cognitive/memory + security fixes + Next 15.5.29 (package.json/lock staged in this commit; run `npm install` before restarting dev).
 OWNER RULES (2026-11-13): decide on owner's behalf; NO clinical/medical wording anywhere incl. disclaimers (memory feedback_no_clinical_wording.md); drills professional = precise metrics, general wording. Brief for scrub: docs/qa/NO_CLINICAL_BRIEF.md.
