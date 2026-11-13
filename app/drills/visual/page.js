@@ -81,7 +81,7 @@ const faqSchema = {
       "name": "What visual drills are in this hub?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The hub has nine browser drills: Depth Perception Test, Chroma-Sync Lab (go/no-go), Strobe-Latency Lab (light reaction), Kinetic Intercept, Ghost-Link Tracking, Auto-Pursuit, Entropic Grid, Rhythm Anomaly and Visual Search."
+        "text": "The hub has nine browser drills: Depth Perception Test, Chroma-Sync Lab (go/no-go), Light Reaction Test, Kinetic Intercept, Multiple Object Tracking Test, Auto-Pursuit, Entropic Grid, Rhythm Anomaly and Visual Search."
       }
     },
     {
@@ -105,7 +105,7 @@ const faqSchema = {
       "name": "What is multiple object tracking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Multiple object tracking asks you to follow several moving targets among identical distractors. Ghost-Link Tracking uses this task format to practise sustained visual attention across moving objects."
+        "text": "Multiple object tracking asks you to follow several moving targets among identical distractors. The Multiple Object Tracking Test uses this task format to practise sustained visual attention across moving objects."
       }
     },
     {
@@ -145,7 +145,7 @@ const faqSchema = {
       "name": "Which visual drill should I start with?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Start with Strobe-Latency Lab for a simple visual reaction baseline, Chroma-Sync Lab for response control, Auto-Pursuit or Kinetic Intercept for tracking, and Visual Search for scanning."
+        "text": "Start with the Light Reaction Test for a simple visual reaction baseline, Chroma-Sync Lab for response control, Auto-Pursuit or Kinetic Intercept for tracking, and Visual Search for scanning."
       }
     },
     {
