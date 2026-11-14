@@ -1,4 +1,5 @@
 import './../styles/globals.css';
+import { Fragment } from 'react';
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteHeader from '@/components/SiteHeader';
@@ -140,7 +141,13 @@ export default function RootLayout({ children }) {
         <ZoomGuard />
         <SiteHeader />
         <main id="main-content">
-          {children}
+          {/* Keyed Fragment on purpose - do not unwrap, do not drop the key.
+              When a Flight row/chunk is still loading at hydration time, React
+              19.2 (bundled by Next 15.5) replays <main> with its hydration
+              cursor already inside it and throws #418, client-rendering the
+              whole root (which also resets <html lang> to en). Replaying a
+              keyed Fragment instead is safe. Fixed upstream in React 19.3. */}
+          <Fragment key="page">{children}</Fragment>
         </main>
         <div id="drill-footer-root" />
         
