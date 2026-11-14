@@ -5,7 +5,13 @@ Trigger for a new chat: `Continue docs/seo/HANDOFF_LOCAL_SEO_CATEGORY.md`
 Read this file first, then `docs/seo/HANDOFF_DEMAND_RESEARCH.md` (tooling + rules), `docs/seo/GLOBAL_PAGE_SEO_AEO_GEO_STANDARD.md`, `docs/seo/NO_TRANSLATION_NATIVE_SEARCH_MANDATE.md`.
 Update the LOG section at the end of every step. Never leave work only in chat.
 
-## >>> RESUME HERE (2026-11-13 ~19:30 IST, save before possible internet cut) <<<
+## >>> RESUME HERE (2026-11-14) <<<
+
+DONE 2026-11-14: (1) Bing: 100 more submitted; 255 left in _bing_pending_2026-11-13.txt (quota 100/day, submit next batch 2026-11-15). (2) Live crawl COMPLETE: docs/qa/live_crawl_2026-11-13.md (648/648 200; only real issue = #418 on 46 pages; rest = network artifacts or by design).
+IN PROGRESS: (3) #418 root cause. Key evidence: every #418 page ends with html lang="en" (root client re-render); non-#418 pages keep locale lang. A background agent is investigating with dev/prod repro; if it's lost, re-run it from the brief in this block + the crawl report. Fix in main agent, re-crawl the 46 affected routes x several loads, commit, push.
+OWNER Q: /delete-account h1 says "Delete your Flint account" - intended?
+
+## (older) RESUME HERE (2026-11-13 ~19:30 IST, save before possible internet cut) <<<
 
 LIVE: fdbdd200 deployed + verified (live sitemap == local prod build). GSC sitemap resubmitted (648 URLs, 0 errors). Bing SubmitFeed OK. Owner: SKIP GSC Request-Indexing; check index results ~2026-11-20.
 TODO tomorrow:
@@ -306,3 +312,4 @@ Known prior decisions to respect:
 - 2026-11-13 14:58 auto-checkpoint (resume per RESUME block)
 - 2026-11-13 15:04 auto-checkpoint (scrub in progress; resume per RESUME block)
 - 2026-11-13 15:18 OWNER PAUSED. At pause: running agents = final prod build+audit (worktree wt-deps @7900658e), live-site crawl (scratchpad qa_live -> docs/qa/live_crawl_2026-11-13.md), keyword registry rebuild+snapshot. On return: check those outputs (rerun if missing), fix crawl findings, then push + verify + sitemap resubmit (GSC+Bing) + next 100 Bing URLs from docs/seo/research/_bing_pending_2026-11-13.txt. See RESUME block (2026-11-13 ~16:30).
+- 2026-11-14: Bing +100 (255 left, quota 0 today). Live crawl finished + analyzed -> docs/qa/live_crawl_2026-11-13.md: 648/648 200, #418 on 46 (7%), all with html lang reset to en; other categories network artifacts/by design. #418 root-cause agent launched.
