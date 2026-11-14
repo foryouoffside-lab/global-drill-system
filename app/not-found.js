@@ -4,7 +4,7 @@ import { SearchX } from 'lucide-react';
 export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-canvas px-4">
-      <div className="w-full max-w-lg text-center bg-surface-1 border border-hairline rounded-2xl p-8 sm:p-12 shadow-xl">
+      <div className="w-full max-w-lg text-center bg-surface-1 border border-hairline rounded-2xl p-8 sm:p-10 shadow-xl">
         <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
           <SearchX className="w-8 h-8 text-blue-500" aria-hidden="true" />
         </div>
@@ -31,19 +31,19 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/"
-            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all transform hover:scale-[1.02]"
+            className="px-5 py-3 whitespace-nowrap bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all transform hover:scale-[1.02]"
           >
             Go Home
           </Link>
           <Link
             href="/drills"
-            className="px-6 py-3 bg-surface-2 text-ink-1 rounded-lg font-semibold border border-hairline hover:border-hairline-2 transition-all"
+            className="px-5 py-3 whitespace-nowrap bg-surface-2 text-ink-1 rounded-lg font-semibold border border-hairline hover:border-hairline-2 transition-all"
           >
             Browse All Drills
           </Link>
           <Link
             href="/drills/fps"
-            className="px-6 py-3 bg-surface-2 text-ink-1 rounded-lg font-semibold border border-hairline hover:border-hairline-2 transition-all"
+            className="px-5 py-3 whitespace-nowrap bg-surface-2 text-ink-1 rounded-lg font-semibold border border-hairline hover:border-hairline-2 transition-all"
           >
             FPS Drills
           </Link>

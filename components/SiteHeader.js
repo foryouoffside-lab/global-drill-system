@@ -222,6 +222,15 @@ export default function SiteHeader() {
                           </div>
                         </button>
                       ))}
+                      {/* Pad the last row so the grid's hairline background
+                          doesn't show as empty grey cells (2 cols sm, 4 cols lg). */}
+                      {Array.from({ length: (4 - (Math.min(results.length, 8) % 4)) % 4 }, (_, k) => (
+                        <div
+                          key={`pad-${k}`}
+                          aria-hidden="true"
+                          className={`bg-[#0D1018] ${k === 0 && Math.min(results.length, 8) % 2 === 1 ? 'hidden sm:block' : 'hidden lg:block'}`}
+                        />
+                      ))}
                     </div>
                     {results.length > 8 && (
                       <button

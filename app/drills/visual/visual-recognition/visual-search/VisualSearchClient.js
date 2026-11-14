@@ -18,6 +18,7 @@ import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { useGradeLabel } from '@/lib/i18n/useGradeLabel';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
@@ -66,6 +67,7 @@ const SEARCH_PAIRS = [
 
 export default function VisualSearchClient({ copy } = {}) {
   const { locale } = useTranslation();
+  const gradeLabel = useGradeLabel();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -563,7 +565,7 @@ export default function VisualSearchClient({ copy } = {}) {
                   {analytics.grade.letter}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
+                  {gradeLabel(analytics.grade.label)}
                 </div>
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore.toLocaleString()}

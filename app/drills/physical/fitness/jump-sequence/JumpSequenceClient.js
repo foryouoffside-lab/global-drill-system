@@ -25,6 +25,7 @@ import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { useGradeLabel } from '@/lib/i18n/useGradeLabel';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -110,6 +111,7 @@ const getLevelConfig = (level, combo = 0) => {
 // ============================================================
 export default function JumpSequenceClient({ copy = {} } = {}) {
   const { locale, t: i18nT } = useTranslation();
+  const gradeLabel = useGradeLabel();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -837,7 +839,7 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
                   {analytics.grade.letter}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {i18nT(`ui.grade${analytics.grade.label.toLowerCase().replace(/(^|\s)(\w)/g, (_, _s, c) => c.toUpperCase())}`, analytics.grade.label)}
+                  {gradeLabel(analytics.grade.label)}
                 </div>
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}

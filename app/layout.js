@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteHeader from '@/components/SiteHeader';
 import ZoomGuard from '@/components/ZoomGuard';
+import HtmlLangSync from '@/components/HtmlLangSync';
 import SiteSchemas from '@/components/SiteSchemas';
 import { DRILLS } from '@/lib/drillsRegistry';
 
@@ -139,6 +140,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="font-sans antialiased">
         <ZoomGuard />
+        <HtmlLangSync />
         <SiteHeader />
         <main id="main-content">
           {/* Keyed Fragment on purpose - do not unwrap, do not drop the key.

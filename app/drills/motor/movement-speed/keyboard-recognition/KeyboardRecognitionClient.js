@@ -21,6 +21,7 @@ import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
 
 import { KEYBOARD_RECOGNITION_I18N } from '@/lib/i18n/drills/keyboardRecognition';
+import { useGradeLabel } from '@/lib/i18n/useGradeLabel';
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
@@ -166,6 +167,7 @@ Fake prompts require you to freeze rather than react, training the same response
 // MAIN COMPONENT
 // ============================================================
 export default function KeyboardRecognitionClient({ copy = null }) {
+  const gradeLabel = useGradeLabel();
   const { t, locale } = useTranslation(KEYBOARD_RECOGNITION_I18N);
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -905,7 +907,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
                   {analytics.grade.letter}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
+                  {gradeLabel(analytics.grade.label)}
                 </div>
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}

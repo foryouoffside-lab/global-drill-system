@@ -22,6 +22,7 @@ import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { useGradeLabel } from '@/lib/i18n/useGradeLabel';
 
 const DRILL_DURATION = 45; // 45 seconds duration
 const POINTS_PER_HIT = 150;
@@ -48,6 +49,7 @@ const saveData = (data) => {
 };
 
 export default function NBackClient({ copy = null }) {
+  const gradeLabel = useGradeLabel();
   const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -574,7 +576,7 @@ export default function NBackClient({ copy = null }) {
                   {analytics.grade?.grade || analytics.grade?.letter || 'C'}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade?.label || 'Good Effort'}
+                  {gradeLabel(analytics.grade?.label || 'Keep Going')}
                 </div>
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}

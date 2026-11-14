@@ -24,6 +24,7 @@ import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { useGradeLabel } from '@/lib/i18n/useGradeLabel';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -91,6 +92,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function StabilityChallengeClient({ copy = {} } = {}) {
+  const gradeLabel = useGradeLabel();
   const { locale, t: i18nT } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -712,7 +714,7 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
                   {analytics.grade.letter}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {i18nT(`ui.grade${analytics.grade.label.toLowerCase().replace(/(^|\s)(\w)/g, (_, _s, c) => c.toUpperCase())}`, analytics.grade.label)}
+                  {gradeLabel(analytics.grade.label)}
                 </div>
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}
