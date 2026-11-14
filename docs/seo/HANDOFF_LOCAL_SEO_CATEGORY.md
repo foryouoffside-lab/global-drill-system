@@ -9,7 +9,7 @@ Update the LOG section at the end of every step. Never leave work only in chat.
 
 DONE 2026-11-14: (1) Bing: 100 more submitted; 255 left in _bing_pending_2026-11-13.txt (quota 100/day, submit next batch 2026-11-15). (2) Live crawl COMPLETE: docs/qa/live_crawl_2026-11-13.md (648/648 200; only real issue = #418 on 46 pages; rest = network artifacts or by design).
 IN PROGRESS: (3) #418 root cause. Key evidence: every #418 page ends with html lang="en" (root client re-render); non-#418 pages keep locale lang. A background agent is investigating with dev/prod repro; if it's lost, re-run it from the brief in this block + the crawl report. Fix in main agent, re-crawl the 46 affected routes x several loads, commit, push.
-OWNER Q: /delete-account h1 says "Delete your Flint account" - intended?
+OWNER: app renamed Flint -> Cogzo (delete-account/privacy/terms, local, not pushed). #418: 2 agents (local repro+fix; live header evidence).
 
 ## (older) RESUME HERE (2026-11-13 ~19:30 IST, save before possible internet cut) <<<
 
