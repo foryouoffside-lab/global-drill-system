@@ -19,6 +19,11 @@ const walk = (dir) => {
 };
 
 walk(appDir);
+for (const route of Object.keys(map)) {
+  const m = route.match(/^\/(pt|es|ja|de|ko|fr)(\/.*)$/);
+  const shared = m && map[m[2]];
+  if (shared && shared > map[route]) map[route] = shared;
+}
 const sorted = Object.fromEntries(Object.entries(map).sort(([a], [b]) => a.localeCompare(b)));
 writeFileSync(join(root, 'lib', 'sitemapLastmod.json'), JSON.stringify(sorted, null, 2) + '\n');
 console.log(`${Object.keys(sorted).length} routes`);
