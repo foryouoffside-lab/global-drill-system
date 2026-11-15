@@ -30,7 +30,7 @@ const MULTILINGUAL = {
 // they asked for, or hreflang stops meaning anything and the locale trees
 // compete with each other. This is what keeps the geo routing compatible with
 // the "no hard IP auto-redirect" rule in CLAUDE.md section 10.
-const BOT = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|vkshare|whatsapp|telegram|discord|preview|headless|lighthouse|pagespeed|gtmetrix|chrome-lighthouse|ia_archiver|semrush|ahrefs|duckduck|yandex|baidu|applebot|petalbot|gptbot|claudebot|perplexity|oai-searchbot|google-extended/i;
+const BOT = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|vkshare|whatsapp|telegram|discord|preview|headless|lighthouse|pagespeed|gtmetrix|chrome-lighthouse|ia_archiver|semrush|ahrefs|duckduck|yandex|baidu|applebot|petalbot|gptbot|claudebot|perplexity|oai-searchbot|google-extended|yeti|daum/i;
 
 function fromAcceptLanguage(header) {
   if (!header) return null;
