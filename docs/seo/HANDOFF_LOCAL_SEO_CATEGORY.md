@@ -5,6 +5,8 @@
 - NEXT: re-run Korea daily (country=kor, by page) around 2026-11-18..20 and compare with the 11-03..11-09 baseline (216 + 127 clicks/week on those two pages). Consider Naver Search Advisor for Korean traffic.
 - Perf: a9f84ed2 + 078ec7c3 live; all 96 English pages median 61 fps on desktop and 4x-throttled phone, 0 below 50. Lastmod generator fixed (f30822bb).
 - Bing: next 100 from _bing_pending_2026-11-13.txt on 2026-11-16 (155 left).
+- NAVER Search Advisor: owner account verified 2026-11-15 (HTML file public/naverb8875fdcb2bcd66724f7dca7458c01c3.html - do not delete), sitemap submitted. Yeti/Daum crawlers added to middleware BOT list (a70e61e3). Check Naver report ~2026-11-22.
+- Next-drill link on all 79 end screens (b0276da2); Bing title fixes concentration-grid + steady-hand; all 82 drills played to end on live, 0 errors.
 
 ## (older) RESUME HERE (2026-11-15)
 
