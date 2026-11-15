@@ -32,3 +32,16 @@ snapshot ~28 days later, then compare.
 
 - `snapshots/2026-11-12_28d.csv`: fps, physical, reaction-speed, motor only (before the physical deploy).
 - `snapshots/2026-11-13_28d.csv`: **current baseline** (taken 2026-11-13, GSC window 2026-10-14..2026-11-10), 637 rows, all categories, EN + 6 locales. Compare future snapshots against this file.
+
+## Dated baselines (before/after comparisons)
+
+`python scripts/seo/baseline.py` saves `baselines/<date>/`: Google (last 28 days ending 3 days ago) by day,
+country, page, query and country+page, plus Bing page and query totals.
+`python scripts/seo/baseline.py compare 2026-11-15 <later-date>` diffs two of them.
+
+Baseline 2026-11-15 was taken right after these changes, so compare against it:
+- Korea Google drop from 2026-11-10; Request indexing for /ko/drills/fps and /ko/drills/reaction-speed (2026-11-15)
+- Naver Search Advisor verified + sitemap submitted (2026-11-15)
+- Bing retitle: /drills/cognitive/focus/concentration-grid ("concentration grids"), steady-hand description
+- Next-drill link on every drill end screen; site-wide perf fixes (engagement, not rankings)
+Re-run around 2026-11-22 and 2026-12-15. Keyword-level: `keyword_tracker.py snapshot 28` then `compare`.
