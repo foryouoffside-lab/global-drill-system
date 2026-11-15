@@ -1,5 +1,6 @@
 'use client';
 
+import NextDrillLink from '@/components/drill/NextDrillLink';
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { 
   Zap, ZapOff, Volume2, VolumeX,
@@ -868,6 +869,7 @@ feedback = "Low target identification accuracy. Anchor your gaze centrally and t
                       <LogOut className="w-4 h-4 text-red-400" />
                     </button>
                   </div>
+                  <NextDrillLink />
 
                 </div>
               </div>

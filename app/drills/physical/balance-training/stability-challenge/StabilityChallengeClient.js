@@ -1,4 +1,5 @@
 'use client';
+import NextDrillLink from '@/components/drill/NextDrillLink';
 import { isIdleFrameSkippable } from '@/lib/performance';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
@@ -768,6 +769,7 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>
                 </div>
+                <NextDrillLink />
 
               </div>
             </div>

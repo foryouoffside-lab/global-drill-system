@@ -1,5 +1,6 @@
 'use client';
 
+import NextDrillLink from '@/components/drill/NextDrillLink';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   Brain, RefreshCw, TrendingUp, Volume2, VolumeX,
@@ -618,6 +619,7 @@ export default function VisualSearchClient({ copy } = {}) {
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>
                 </div>
+                <NextDrillLink />
 
               </div>
             </div>

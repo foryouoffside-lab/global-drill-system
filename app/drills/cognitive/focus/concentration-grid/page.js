@@ -22,8 +22,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Schulte Table Online | Concentration Grid | SkillDrills",
-  description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning.",
+  title: "Concentration Grids Online: Schulte Table Test | SkillDrills",
+  description: "Play concentration grids online for free: find the numbers in order as fast as you can on a Schulte table that grows each round. Runs in your browser, no sign-up.",
   keywords: [
     "schulte table online",
     "schulte table trainer",
@@ -41,8 +41,8 @@ export const metadata = {
     "saccadic eye movement training"
   ],
   openGraph: {
-    title: "Schulte Table Online | Concentration Grid | SkillDrills",
-    description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning.",
+    title: "Concentration Grids Online: Schulte Table Test | SkillDrills",
+    description: "Play concentration grids online for free: find the numbers in order as fast as you can on a Schulte table that grows each round. Runs in your browser, no sign-up.",
     type: "website",
     url: "https://skilldrills.online/drills/cognitive/focus/concentration-grid",
     siteName: "SkillDrills",
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Schulte Table Online | Concentration Grid | SkillDrills",
-    description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning.",
+    title: "Concentration Grids Online: Schulte Table Test | SkillDrills",
+    description: "Play concentration grids online for free: find the numbers in order as fast as you can on a Schulte table that grows each round. Runs in your browser, no sign-up.",
   },
   robots: { index: true, follow: true },
   alternates: {

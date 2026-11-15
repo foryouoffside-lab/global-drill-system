@@ -1,5 +1,6 @@
 'use client';
 
+import NextDrillLink from '@/components/drill/NextDrillLink';
 import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { Play, RefreshCw, Timer, Share2, LogOut, Check, Sun, Moon, Volume2, VolumeX, Target, Trophy, TrendingUp, Zap } from 'lucide-react';
@@ -671,6 +672,7 @@ export default function SplitScreenTrackingClient({ copy }: { copy?: Record<stri
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>
                 </div>
+                <NextDrillLink />
 
               </div>
             </div>

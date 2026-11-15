@@ -1,5 +1,6 @@
 'use client';
 
+import NextDrillLink from '@/components/drill/NextDrillLink';
 import { useTranslation } from '@/lib/i18n/useTranslation';
 
 import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
@@ -664,6 +665,7 @@ export default function SpatialShiftPursuitClient({ copy }: { copy?: { title?: s
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>
                 </div>
+                <NextDrillLink />
 
               </div>
             </div>

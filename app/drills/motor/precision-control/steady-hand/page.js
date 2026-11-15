@@ -11,7 +11,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Steady Hand Game | Mouse Precision Test | SkillDrills',
-  description: 'Free browser test for cursor precision, steady-hand control, and narrow-path tracing. Each lap in a row adds more bends to the path.',
+  description: 'Free steady hand game online: guide your cursor along a winding path without touching the walls. Each clean lap adds more bends; a touch resets your streak.',
   keywords: [
     'steady hand game', 'mouse precision test', 'cursor control test',
     'mouse path tracing', 'hand steadiness test', 'fine motor control test mouse',
@@ -20,7 +20,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'Steady Hand Game | Mouse Precision Test | SkillDrills',
-    description: 'Free browser test for cursor precision, steady-hand control, and narrow-path tracing. Each lap in a row adds more bends to the path.',
+    description: 'Free steady hand game online: guide your cursor along a winding path without touching the walls. Each clean lap adds more bends; a touch resets your streak.',
     type: 'article',
     url: 'https://skilldrills.online/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Steady Hand Game | Mouse Precision Test | SkillDrills',
-    description: 'Free browser test for cursor precision, steady-hand control, and narrow-path tracing. Each lap in a row adds more bends to the path.',
+    description: 'Free steady hand game online: guide your cursor along a winding path without touching the walls. Each clean lap adds more bends; a touch resets your streak.',
   },
   robots: { index: true, follow: true },
   alternates: {

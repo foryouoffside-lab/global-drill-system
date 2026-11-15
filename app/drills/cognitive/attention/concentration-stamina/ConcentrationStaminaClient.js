@@ -1,5 +1,6 @@
 'use client';
 
+import NextDrillLink from '@/components/drill/NextDrillLink';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   Brain, Volume2, VolumeX, Eye, Zap, ZapOff,
@@ -638,6 +639,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
                     <ArrowLeft className="w-4 h-4 text-red-400" />
                   </button>
                 </div>
+                <NextDrillLink />
 
               </div>
             </div>

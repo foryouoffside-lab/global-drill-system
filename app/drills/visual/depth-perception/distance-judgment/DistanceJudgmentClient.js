@@ -1,5 +1,6 @@
 'use client';
 
+import NextDrillLink from '@/components/drill/NextDrillLink';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 import { 
@@ -729,6 +730,7 @@ export default function DistanceJudgmentClient({ copy = null }) {
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>
                 </div>
+                <NextDrillLink />
 
               </div>
             </div>
