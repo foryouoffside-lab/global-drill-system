@@ -1,4 +1,5 @@
 'use client';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // Symbol Matching — animated card preview.
 // The drill's SDMT (Symbol Digit Modalities) board on a 5.2s loop:
@@ -19,6 +20,7 @@ const KEY_PAIRS = [
 ];
 
 export default function SymbolMatchingPreview() {
+  const { p } = useTranslation();
   return (
     <div className="sm-prev" aria-hidden="true">
       <div className="sm-prev-grid-bg" />
@@ -26,7 +28,7 @@ export default function SymbolMatchingPreview() {
       <div className="sm-prev-board">
         {/* Top: Center Target Symbol Prompt (Fits clean between top-left and top-right badges) */}
         <div className="sm-prev-target-wrap">
-          <span className="sm-prev-target-label">TARGET SYMBOL</span>
+          <span className="sm-prev-target-label">{p('TARGET SYMBOL')}</span>
           <div className="sm-prev-target-card">
             <span className="sm-prev-target-sym sm-prev-sym-1 font-serif">Ω</span>
             <span className="sm-prev-target-sym sm-prev-sym-2 font-serif">Σ</span>

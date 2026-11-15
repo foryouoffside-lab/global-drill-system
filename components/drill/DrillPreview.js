@@ -289,7 +289,7 @@ function DrillPreviewComponent({ href, accent = 'amber', icon: Icon, className =
       for (const entry of entries) {
         const { width, height } = entry.contentRect;
         if (width > 0 && height > 0) {
-          dpr = Math.min(window.devicePixelRatio || 1, 2);
+          dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1 : 2);
           cssWidth = width;
           cssHeight = height;
           canvas.width = Math.round(width * dpr);
@@ -341,7 +341,7 @@ function DrillPreviewComponent({ href, accent = 'amber', icon: Icon, className =
   const [onScreen, setOnScreen] = useState(false);
   useEffect(() => {
     if (!DedicatedPreview || !containerRef.current) return;
-    const io = new IntersectionObserver(([e]) => setOnScreen(e.isIntersecting), { rootMargin: '80px', threshold: 0.01 });
+    const io = new IntersectionObserver(([e]) => setOnScreen(e.intersectionRatio >= 0.6), { threshold: [0, 0.6] });
     io.observe(containerRef.current);
     return () => io.disconnect();
   }, [DedicatedPreview]);

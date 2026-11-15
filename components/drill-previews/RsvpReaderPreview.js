@@ -1,4 +1,5 @@
 'use client';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // RSVP Speed Reader — animated card preview.
 // The drill's Rapid Serial Visual Presentation stream on a 4.5s loop:
@@ -20,6 +21,7 @@ const WORDS = [
 ];
 
 export default function RsvpReaderPreview() {
+  const { p } = useTranslation();
   return (
     <div className="rsvp-prev" aria-hidden="true">
       {/* Background 40px grid */}
@@ -27,7 +29,7 @@ export default function RsvpReaderPreview() {
 
       {/* Target Word Banner Top Center */}
       <div className="rsvp-prev-banner">
-        <span className="rsvp-prev-banner-label">TARGET WORD:</span>
+        <span className="rsvp-prev-banner-label">{p('TARGET WORD:')}</span>
         <span className="rsvp-prev-banner-target">BRAIN</span>
       </div>
 
@@ -45,7 +47,7 @@ export default function RsvpReaderPreview() {
       {/* Target Detected Action Button */}
       <div className="rsvp-prev-btn-wrap">
         <div className="rsvp-prev-btn">
-          TARGET DETECTED
+          {p('TARGET DETECTED')}
         </div>
       </div>
     </div>

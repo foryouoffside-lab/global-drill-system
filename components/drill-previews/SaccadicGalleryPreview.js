@@ -47,7 +47,7 @@ export default function SaccadicGalleryPreview() {
       width = rect.width;
       height = rect.height;
       if (width === 0 || height === 0) return;
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1 : 2);
       canvas.width = Math.round(width * dpr);
       canvas.height = Math.round(height * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);

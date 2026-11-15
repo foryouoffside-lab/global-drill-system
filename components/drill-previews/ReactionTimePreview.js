@@ -1,4 +1,5 @@
 'use client';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // Reaction Time (Elite Neuro-Switch) — animated card preview.
 // The drill's dynamic choice discrimination test on a 5.6s loop:
@@ -11,6 +12,7 @@
 // Elements, shapes, and colors are lifted directly from EliteNeuroSwitchClient.js.
 
 export default function ReactionTimePreview() {
+  const { p } = useTranslation();
   return (
     <div className="rt-prev" aria-hidden="true">
       {/* Background 40px grid matching EliteNeuroSwitchClient */}
@@ -19,12 +21,12 @@ export default function ReactionTimePreview() {
       {/* Dynamic Rule Banner Top Center */}
       <div className="rt-prev-banner-wrap">
         <div className="rt-prev-banner rt-prev-banner-r1">
-          <span className="rt-prev-banner-label">RULE:</span>
-          <span className="rt-prev-banner-text text-red-400">TAP RED TARGET</span>
+          <span className="rt-prev-banner-label">{p('RULE:')}</span>
+          <span className="rt-prev-banner-text text-red-400">{p('TAP RED TARGET')}</span>
         </div>
         <div className="rt-prev-banner rt-prev-banner-r2">
-          <span className="rt-prev-banner-label">RULE:</span>
-          <span className="rt-prev-banner-text text-cyan-400">TAP BLUE TARGET</span>
+          <span className="rt-prev-banner-label">{p('RULE:')}</span>
+          <span className="rt-prev-banner-text text-cyan-400">{p('TAP BLUE TARGET')}</span>
         </div>
       </div>
 

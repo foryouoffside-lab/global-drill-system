@@ -21,7 +21,7 @@ export default function ReactionTimeTestPreview() {
     let height = 0;
 
     const updateSize = () => {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1 : 2);
       const rect = container.getBoundingClientRect();
       width = Math.round(rect.width);
       height = Math.round(rect.height);

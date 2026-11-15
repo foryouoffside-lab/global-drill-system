@@ -137,7 +137,7 @@ export default function JumpSequencePreview() {
       const rect = container.getBoundingClientRect();
       if (rect.width === 0 || rect.height === 0) return;
 
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1 : 2);
       width = rect.width;
       height = rect.height;
 
