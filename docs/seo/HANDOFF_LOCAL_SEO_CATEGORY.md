@@ -1,4 +1,12 @@
-## RESUME HERE (2026-11-15)
+## RESUME HERE (2026-11-15 late)
+
+- GSC re-authed (read + write tokens on Desktop). Finding: clicks grew 4.5x month-over-month (413 -> 1,863), then KOREA ONLY collapsed overnight 2026-11-09 -> 11-10 (~1.4k impr/day -> ~40; /ko/drills/fps and /ko/drills/reaction-speed to 0 impressions). Japan/US flat. No manual action (owner checked). ko URLs still indexed, last crawled before the 11-08/09 retarget.
+- Owner clicked Request indexing for /ko/drills/fps and /ko/drills/reaction-speed on 2026-11-15; sitemap resubmitted (648 URLs, downloaded same minute).
+- NEXT: re-run Korea daily (country=kor, by page) around 2026-11-18..20 and compare with the 11-03..11-09 baseline (216 + 127 clicks/week on those two pages). Consider Naver Search Advisor for Korean traffic.
+- Perf: a9f84ed2 + 078ec7c3 live; all 96 English pages median 61 fps on desktop and 4x-throttled phone, 0 below 50. Lastmod generator fixed (f30822bb).
+- Bing: next 100 from _bing_pending_2026-11-13.txt on 2026-11-16 (155 left).
+
+## (older) RESUME HERE (2026-11-15)
 
 DONE 2026-11-15: WIP site-audit branch reviewed (nothing half-done), `npx next build` OK (737/737), prod server checked at 390/768/1024/1440 on /drills + /ko/drills: one switcher, menu button now visible 640-1023px (was a nav-less gap), no overflow, 0 console errors; 404 has 0 `/_not-found` links. Squashed to main + pushed. Bing: 100 more submitted, 155 left (next batch 2026-11-16).
 Live verified (7d728a4e). Then drill-slice audit done as one Playwright scan of all 648 live URLs (no errors/overflow/h1/lang issues; only English leaks on localized pages). Fixed: shared phrase fallback `lib/i18n/drillPhrases.js` wired into `t()` + new `p()` (useTranslation), DrillAccordion titles, ZigZag start card, Time Left/Best Score/HUD on ~50 drill clients, missing dict keys (ui.goToDrill, hubs.*.startCta, es/de disciplines), keyboard-recognition options, keyboard-tester drillNames entry, 3 drill start titles, recoil/grid/entropic subtitles, aim-trainer level table, tracking-hub safety note, footer aria-label. Engagement: DrillResultCard now shows a localized "Next drill" link (41 drills) - verified end-to-end (play -> card -> click -> lands).
