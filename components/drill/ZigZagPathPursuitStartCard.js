@@ -63,7 +63,7 @@ export default function ZigZagPathPursuitStartCard({
   const { t, p } = useTranslation();
   return (
     <div
-      className="absolute inset-0 flex items-center justify-center z-40 bg-black/90 backdrop-blur-md p-2 sm:p-3 overflow-y-auto"
+      className="absolute inset-0 flex items-center justify-center z-40 bg-black/90 p-2 sm:p-3 overflow-y-auto"
       onPointerDown={(e) => e.stopPropagation()}
     >
       <div className="relative w-full max-w-[380px] max-h-full overflow-y-auto rounded-[24px] border border-white/10 bg-gradient-to-b from-[#0d0d18] to-[#0a0a13] shadow-[0_20px_60px_rgba(0,0,0,.7)] my-auto mx-auto font-sans">
@@ -77,7 +77,7 @@ export default function ZigZagPathPursuitStartCard({
 
           {/* Badge */}
           <div className="relative w-16 h-16 mx-auto mb-0.5 flex-shrink-0">
-            <div className="absolute inset-0 rounded-full border border-red-500/20 animate-spin" style={{ animationDuration: '10s' }} />
+            <div className="absolute inset-0 rounded-full border border-red-500/20" />
             <div className="absolute inset-[6px] rounded-full border border-red-500/10" />
             <div className="absolute inset-3 rounded-2xl bg-gradient-to-br from-red-600 to-rose-600 flex items-center justify-center shadow-[0_0_28px_rgba(239,68,68,.4)]">
               <Sliders className="w-6 h-6 text-white" />

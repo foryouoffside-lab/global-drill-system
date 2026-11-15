@@ -248,7 +248,7 @@ export default function FpsStartCard({
 
   return (
     <div
-      className="absolute inset-0 flex items-center justify-center z-40 bg-black/90 backdrop-blur-md p-2 sm:p-3 overflow-y-auto"
+      className="absolute inset-0 flex items-center justify-center z-40 bg-black/90 p-2 sm:p-3 overflow-y-auto"
       onPointerDown={(e) => e.stopPropagation()}
     >
       <div className={`relative w-full ${maxWidthClassName} max-h-[92vh] sm:max-h-[88vh] overflow-y-auto rounded-[24px] border border-white/10 bg-gradient-to-b from-[#0d0d18] to-[#0a0a13] shadow-[0_20px_60px_rgba(0,0,0,.7)] my-auto mx-auto font-sans`}>
@@ -262,7 +262,7 @@ export default function FpsStartCard({
 
           {Icon && (
             <div className="relative w-16 h-16 mx-auto mb-0.5 flex-shrink-0">
-              <div className={`absolute inset-0 rounded-full border ${a.ring} animate-spin`} style={{ animationDuration: '10s' }} />
+              <div className={`absolute inset-0 rounded-full border ${a.ring}`} />
               <div className={`absolute inset-[6px] rounded-full border ${a.ringInner}`} />
               <div className={`absolute inset-3 rounded-2xl bg-gradient-to-br ${a.badgeGradient} flex items-center justify-center ${a.badgeGlow}`}>
                 <Icon className="w-6 h-6 text-white" />

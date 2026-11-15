@@ -538,7 +538,7 @@ export default function ConcentrationGridClient({ copy = null }) {
 
           {/* RESULT CARD (36/64 SPLIT, VERTICALLY CENTERED) */}
           {phase === 'ended' && endSummary && gradeInfo && (
-            <div className="absolute inset-0 z-50 flex bg-[#050508]/98 backdrop-blur-xl select-none font-sans" onPointerDown={(e) => e.stopPropagation()}>
+            <div className="absolute inset-0 z-50 flex bg-[#050508]/98 select-none font-sans" onPointerDown={(e) => e.stopPropagation()}>
               {/* Left 36% Grade Section */}
               <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/10 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(6,182,212,.12), transparent 70%)' }}>
                 {endSummary.isNewBest && (

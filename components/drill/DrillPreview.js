@@ -9,7 +9,7 @@
  * respects prefers-reduced-motion, and falls back gracefully to permanent floor icon.
  */
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Play } from 'lucide-react';
 import { previewTicker } from '@/lib/previewTicker';
@@ -338,6 +338,14 @@ function DrillPreviewComponent({ href, accent = 'amber', icon: Icon, className =
     };
   }, [href, accent, previewConfig, DedicatedPreview]);
 
+  const [onScreen, setOnScreen] = useState(false);
+  useEffect(() => {
+    if (!DedicatedPreview || !containerRef.current) return;
+    const io = new IntersectionObserver(([e]) => setOnScreen(e.isIntersecting), { rootMargin: '80px', threshold: 0.01 });
+    io.observe(containerRef.current);
+    return () => io.disconnect();
+  }, [DedicatedPreview]);
+
   if (DedicatedPreview) {
     return (
       <div
@@ -346,7 +354,7 @@ function DrillPreviewComponent({ href, accent = 'amber', icon: Icon, className =
         tabIndex={-1}
         className={wrapperClass}
       >
-        <DedicatedPreview />
+        {onScreen && <DedicatedPreview />}
       </div>
     );
   }

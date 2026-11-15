@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { DRILLS } from '@/lib/drillsNav';
 import { getRelatedDrills } from '@/lib/relatedDrills';
@@ -9,6 +9,7 @@ import { DRILL_SEO, getDrillSeo } from '@/lib/drillSeo';
 import { useTranslation } from '@/lib/i18n/useTranslation';
 import { stripLocale, hasLocalizedRoute, localizedPath, LOCALES, LOCALE_META } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
+import { drillAudio } from '@/lib/drillAudio';
 
 // Keyword-bearing cross-links between drill pages.
 //
@@ -56,6 +57,7 @@ export default function RelatedDrills() {
   const cleanPath = stripLocale(pathname || '');
   const drill = DRILLS.find((d) => d.href === cleanPath);
   const related = useMemo(() => (drill ? getRelatedDrills(drill.href, 6) : []), [drill]);
+  useEffect(() => { if (drill) drillAudio.prewarm(); }, [drill]);
   if (!drill || related.length === 0) return null;
 
   const hub = CATEGORY_HUB[drill.category];

@@ -25,7 +25,6 @@ import AdjacentHubs from "@/components/AdjacentHubs";
 import { useTranslation } from '@/lib/i18n/useTranslation';
 import { hasLocalizedRoute } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
-import { isIdleFrameSkippable } from '@/lib/performance';
 import { getMemoryHubUi } from '@/lib/i18n/memoryHubNative';
 
 const memDrills = DRILLS.filter(d => d.category === 'memory');
@@ -122,20 +121,10 @@ export default function MemoryClient({ faqs = [], copy = null }) {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    let animationFrameId;
-
     const resize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const columns = Math.floor(canvas.width / 24);
-    const dropPositions = Array(columns).fill(0);
-
-    // If reduced-motion is requested, render a static poster frame and skip RAF
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const columns = Math.floor(canvas.width / 24);
       ctx.fillStyle = "rgba(8, 13, 26, 0.15)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "rgba(99, 102, 241, 0.08)";
@@ -147,53 +136,10 @@ export default function MemoryClient({ faqs = [], copy = null }) {
           }
         }
       }
-      return () => {
-        window.removeEventListener("resize", resize);
-      };
-    }
-
-    let isVisible = true;
-    const observer = new IntersectionObserver(([entry]) => {
-      isVisible = entry.isIntersecting;
-    });
-    observer.observe(canvas);
-
-    let lastTime = 0;
-    const draw = (timestamp) => {
-      if (!timestamp) timestamp = 0;
-      if (!isVisible || isIdleFrameSkippable(false, timestamp, lastTime)) {
-        animationFrameId = requestAnimationFrame(draw);
-        return;
-      }
-      lastTime = timestamp;
-      ctx.fillStyle = "rgba(8, 13, 26, 0.15)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "rgba(99, 102, 241, 0.12)";
-      ctx.font = "12px monospace";
-
-      dropPositions.forEach((y, x) => {
-        const text = Math.random() > 0.5 ? "1" : "0";
-        const xCoord = x * 24;
-        ctx.fillText(text, xCoord, y);
-
-        if (y > canvas.height && Math.random() > 0.985) {
-          dropPositions[x] = 0;
-        } else {
-          dropPositions[x] = y + 16;
-        }
-      });
-
-      animationFrameId = requestAnimationFrame(draw);
     };
-
-    animationFrameId = requestAnimationFrame(draw);
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      observer.disconnect();
-      window.removeEventListener("resize", resize);
-    };
+    resize();
+    window.addEventListener("resize", resize);
+    return () => window.removeEventListener("resize", resize);
   }, [isClient]);
 
   return (
@@ -201,7 +147,7 @@ export default function MemoryClient({ faqs = [], copy = null }) {
       <canvas
         style={{ touchAction: "none" }}
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-20"
+        className="fixed inset-0 w-screen h-screen pointer-events-none z-0 opacity-20"
       />
 
       {/* Layered premium background: hub-tinted mesh blobs */}

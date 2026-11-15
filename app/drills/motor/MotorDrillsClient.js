@@ -195,10 +195,13 @@ export default function MotorDrillsClient({ faqs = [] }) {
     window.addEventListener('resize', resize);
 
     let mouse = { x: -100, y: -100 };
+    let moved = false;
     const handleMouseMove = (e) => {
       const rect = canvas.getBoundingClientRect();
       mouse.x = e.clientX - rect.left;
       mouse.y = e.clientY - rect.top;
+      moved = true;
+      if (!animationFrameId) animationFrameId = requestAnimationFrame(draw);
     };
     window.addEventListener('mousemove', handleMouseMove);
 
@@ -211,10 +214,11 @@ export default function MotorDrillsClient({ faqs = [] }) {
       lastTime = time;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      if (mouse.x > 0 && mouse.y > 0) {
+      if (moved && mouse.x > 0 && mouse.y > 0) {
         trail.push({ x: mouse.x, y: mouse.y, age: 0 });
       }
-      if (trail.length > 20) trail.shift();
+      moved = false;
+      while (trail.length && (trail.length > 20 || trail[0].age >= 20)) trail.shift();
 
       if (mouse.x > 0 && mouse.y > 0) {
         ctx.strokeStyle = 'rgba(16, 185, 129, 0.08)';
@@ -240,7 +244,7 @@ export default function MotorDrillsClient({ faqs = [] }) {
         ctx.fill();
       });
 
-      animationFrameId = requestAnimationFrame(draw);
+      animationFrameId = trail.length ? requestAnimationFrame(draw) : 0;
     };
     animationFrameId = requestAnimationFrame(draw);
 
@@ -258,7 +262,7 @@ export default function MotorDrillsClient({ faqs = [] }) {
       <canvas
         style={{ touchAction: 'none' }}
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-40"
+        className="fixed inset-0 w-screen h-screen pointer-events-none z-0 opacity-40"
       />
 
       {/* Layered ambient lighting: Emerald + Teal glow + subtle grid mesh */}

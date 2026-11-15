@@ -27,7 +27,6 @@ import { useTranslation } from "@/lib/i18n/useTranslation";
 import { getHubCopy, drillCountLabel } from "@/lib/i18n/hubCopy";
 import { hasLocalizedRoute } from "@/lib/i18n/locales";
 import { getLocalizedDrill } from "@/lib/i18n/drillNames";
-import { isIdleFrameSkippable } from "@/lib/performance";
 
 const cogDrills = DRILLS.filter((d) => d.category === "cognitive");
 
@@ -127,71 +126,24 @@ export default function CognitiveHubClient({ faqs = [] }) {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    let animationFrameId;
+    const particles = Array.from({ length: 35 }, (_, i) => ({
+      fx: Math.random(),
+      fy: Math.random(),
+      radius: Math.random() * 2 + 1,
+      color: i % 2 === 0 ? "rgba(168, 85, 247, " : "rgba(129, 140, 248, ",
+    }));
 
-    const resize = () => {
+    const draw = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const particles = [];
-    const count = 35;
-    for (let i = 0; i < count; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
-        radius: Math.random() * 2 + 1,
-        color: i % 2 === 0 ? "rgba(168, 85, 247, " : "rgba(129, 140, 248, ",
-      });
-    }
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color + "0.3)";
-        ctx.fill();
-      });
-      return () => {
-        window.removeEventListener("resize", resize);
-      };
-    }
-
-    let isVisible = true;
-    const observer = new IntersectionObserver(([entry]) => {
-      isVisible = entry.isIntersecting;
-    });
-    observer.observe(canvas);
-
-    let lastTime = 0;
-    const draw = (timestamp) => {
-      if (!timestamp) timestamp = 0;
-      if (!isVisible || isIdleFrameSkippable(false, timestamp, lastTime)) {
-        animationFrameId = requestAnimationFrame(draw);
-        return;
-      }
-      lastTime = timestamp;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((p, index) => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
+      const pts = particles.map((p) => ({ ...p, x: p.fx * canvas.width, y: p.fy * canvas.height }));
+      pts.forEach((p, index) => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color + "0.35)";
         ctx.fill();
-
-        for (let j = index + 1; j < particles.length; j++) {
-          const p2 = particles[j];
+        for (let j = index + 1; j < pts.length; j++) {
+          const p2 = pts[j];
           const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
           if (dist < 125) {
             ctx.beginPath();
@@ -203,17 +155,11 @@ export default function CognitiveHubClient({ faqs = [] }) {
           }
         }
       });
-
-      animationFrameId = requestAnimationFrame(draw);
     };
 
-    animationFrameId = requestAnimationFrame(draw);
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      observer.disconnect();
-      window.removeEventListener("resize", resize);
-    };
+    draw();
+    window.addEventListener("resize", draw);
+    return () => window.removeEventListener("resize", draw);
   }, [isClient]);
 
   return (
@@ -221,7 +167,7 @@ export default function CognitiveHubClient({ faqs = [] }) {
       <canvas
         style={{ touchAction: "none" }}
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-25"
+        className="fixed inset-0 w-screen h-screen pointer-events-none z-0 opacity-25"
       />
 
       {/* Layered premium background: hub-tinted mesh blobs */}

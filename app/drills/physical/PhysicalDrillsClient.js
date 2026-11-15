@@ -19,7 +19,6 @@ import {
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getDrillTagline, sortByInterest } from '@/lib/drillCatalog';
 import { getDifficultyRank } from '@/lib/scoringEngine';
-import { isIdleFrameSkippable } from '@/lib/performance';
 import SiteFooter from '@/components/SiteFooter';
 import Reveal from '@/components/Reveal';
 import AdjacentHubs from '@/components/AdjacentHubs';
@@ -373,61 +372,31 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    let animationFrameId;
-    let lastTime = performance.now();
+    const streams = Array.from({ length: 18 }, () => ({
+      fx: Math.random(),
+      fy: Math.random(),
+      length: Math.random() * 80 + 40,
+      opacity: Math.random() * 0.12 + 0.04,
+    }));
 
-    const resize = () => {
+    const draw = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    window.addEventListener('resize', resize);
-
-    const streams = [];
-    const count = 18;
-    for (let i = 0; i < count; i++) {
-      streams.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        length: Math.random() * 80 + 40,
-        speed: Math.random() * 2.5 + 1.5,
-        opacity: Math.random() * 0.12 + 0.04,
-      });
-    }
-
-    const draw = (time) => {
-      if (isIdleFrameSkippable(false, time, lastTime)) {
-        animationFrameId = requestAnimationFrame(draw);
-        return;
-      }
-      lastTime = time;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      streams.forEach((s) => {
-        ctx.strokeStyle = `rgba(251, 113, 133, ${s.opacity})`;
-        ctx.lineWidth = 1.5;
+      ctx.lineWidth = 1.5;
+      streams.forEach((st) => {
+        const x = st.fx * canvas.width;
+        const y = st.fy * canvas.height;
+        ctx.strokeStyle = `rgba(251, 113, 133, ${st.opacity})`;
         ctx.beginPath();
-        ctx.moveTo(s.x, s.y);
-        ctx.lineTo(s.x + s.length, s.y + s.length * 0.5);
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + st.length, y + st.length * 0.5);
         ctx.stroke();
-
-        s.x += s.speed;
-        s.y += s.speed * 0.5;
-
-        if (s.x > canvas.width || s.y > canvas.height) {
-          s.x = -s.length;
-          s.y = Math.random() * canvas.height - s.length;
-        }
       });
-
-      animationFrameId = requestAnimationFrame(draw);
     };
-    animationFrameId = requestAnimationFrame(draw);
 
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', resize);
-    };
+    draw();
+    window.addEventListener('resize', draw);
+    return () => window.removeEventListener('resize', draw);
   }, [isClient]);
 
 
@@ -438,7 +407,7 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
       <canvas
         style={{ touchAction: 'none' }}
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-25"
+        className="fixed inset-0 w-screen h-screen pointer-events-none z-0 opacity-25"
       />
 
       {/* Layered ambient lighting: Rose + Amber glow + subtle grid mesh */}

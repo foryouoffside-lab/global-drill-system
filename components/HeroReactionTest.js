@@ -85,7 +85,7 @@ export default function HeroReactionTest({ copy = {} }) {
       {/* Cockpit header */}
       <div className="flex items-center justify-between pb-4 mb-5 border-b border-white/5 text-2xs font-mono text-ink-3">
         <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+          <span className="inline-block w-2 h-2 rounded-full bg-cyan-400" />
           <span className="font-bold text-ink-2 tracking-wider uppercase">{copy.hudTitle ?? 'Latency Telemetry'}</span>
         </div>
         <span className="px-2 py-0.5 rounded-full bg-white/5 text-ink-3 border border-white/10 uppercase tracking-widest text-[10px]">
