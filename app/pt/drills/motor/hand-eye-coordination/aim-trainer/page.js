@@ -307,35 +307,35 @@ export default function AimTrainerPortuguesePage() {
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Faixa 1 (Muito alta)</td>
                 <td className="p-2.5 border border-white/10">&gt; 48.000 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 12+</td>
+                <td className="p-2.5 border border-white/10">Nível 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95% (Combo 25+)</td>
                 <td className="p-2.5 border border-white/10">Pontuação muito alta no treino</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Faixa 2 (Alta)</td>
                 <td className="p-2.5 border border-white/10">32.000 – 47.999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 9–11</td>
+                <td className="p-2.5 border border-white/10">Nível 9–11</td>
                 <td className="p-2.5 border border-white/10">88% – 94% (Combo 18–24)</td>
                 <td className="p-2.5 border border-white/10">Pontuação alta</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-blue-400">Faixa 3 (Boa)</td>
                 <td className="p-2.5 border border-white/10">18.000 – 31.999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 6–8</td>
+                <td className="p-2.5 border border-white/10">Nível 6–8</td>
                 <td className="p-2.5 border border-white/10">78% – 87% (Combo 12–17)</td>
                 <td className="p-2.5 border border-white/10">Pontuação boa</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-amber-400">Faixa 4 (Intermediária)</td>
                 <td className="p-2.5 border border-white/10">8.000 – 17.999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 3–5</td>
+                <td className="p-2.5 border border-white/10">Nível 3–5</td>
                 <td className="p-2.5 border border-white/10">65% – 77% (Combo 6–11)</td>
                 <td className="p-2.5 border border-white/10">Em desenvolvimento</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-rose-400">Faixa 5 (Inicial)</td>
                 <td className="p-2.5 border border-white/10">&lt; 8.000 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 1–2</td>
+                <td className="p-2.5 border border-white/10">Nível 1–2</td>
                 <td className="p-2.5 border border-white/10">&lt; 65% (Combo &lt; 6)</td>
                 <td className="p-2.5 border border-white/10">Cliques Ansiosos / Imprecisão</td>
               </tr>

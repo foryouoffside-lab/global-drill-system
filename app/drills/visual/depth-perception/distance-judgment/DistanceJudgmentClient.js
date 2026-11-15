@@ -51,7 +51,7 @@ const saveData = (data) => {
 };
 
 export default function DistanceJudgmentClient({ copy = null }) {
-  const { t } = useTranslation();
+  const { t, p } = useTranslation();
   const gradeLabel = useGradeLabel();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -567,7 +567,7 @@ export default function DistanceJudgmentClient({ copy = null }) {
               <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">L{level}</div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{copy?.statBestScore || "Best Score"}</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{p(copy?.statBestScore || 'Best Score')}</div>
               <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
           </div>

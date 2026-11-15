@@ -307,35 +307,35 @@ export default function AimTrainerSpanishPage() {
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Tier 1 (Élite)</td>
                 <td className="p-2.5 border border-white/10">&gt; 48.000 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 12+</td>
+                <td className="p-2.5 border border-white/10">Nivel 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95% (Combo 25+)</td>
                 <td className="p-2.5 border border-white/10">Rango más alto de práctica</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Tier 2 (Experto)</td>
                 <td className="p-2.5 border border-white/10">32.000 – 47.999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 9–11</td>
+                <td className="p-2.5 border border-white/10">Nivel 9–11</td>
                 <td className="p-2.5 border border-white/10">88% – 94% (Combo 18–24)</td>
                 <td className="p-2.5 border border-white/10">Rango alto</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-blue-400">Tier 3 (Medio)</td>
                 <td className="p-2.5 border border-white/10">18.000 – 31.999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 6–8</td>
+                <td className="p-2.5 border border-white/10">Nivel 6–8</td>
                 <td className="p-2.5 border border-white/10">78% – 87% (Combo 12–17)</td>
                 <td className="p-2.5 border border-white/10">Puntería estable</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-amber-400">Tier 4 (Básico)</td>
                 <td className="p-2.5 border border-white/10">8.000 – 17.999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 3–5</td>
+                <td className="p-2.5 border border-white/10">Nivel 3–5</td>
                 <td className="p-2.5 border border-white/10">65% – 77% (Combo 6–11)</td>
                 <td className="p-2.5 border border-white/10">En Proceso / Errores Frecuentes</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-rose-400">Tier 5 (Inicial)</td>
                 <td className="p-2.5 border border-white/10">&lt; 8.000 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 1–2</td>
+                <td className="p-2.5 border border-white/10">Nivel 1–2</td>
                 <td className="p-2.5 border border-white/10">&lt; 65% (Combo &lt; 6)</td>
                 <td className="p-2.5 border border-white/10">Puntería Inestable / Disparos Apresurados</td>
               </tr>

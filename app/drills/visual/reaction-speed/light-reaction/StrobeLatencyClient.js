@@ -105,7 +105,7 @@ function draw2dLightTarget(ctx, x, y, targetState) {
 }
 
 export default function StrobeLatencyClient({ copy } = {}) {
-  const { locale } = useTranslation();
+  const { locale, p } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -599,7 +599,7 @@ export default function StrobeLatencyClient({ copy } = {}) {
               <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">L{uiLevel}</div>
             </div>
             <div className="bg-[#0c0c16] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{p('Best Score')}</div>
               <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
           </div>
@@ -628,7 +628,7 @@ export default function StrobeLatencyClient({ copy } = {}) {
 
               {/* TOP-RIGHT: TIME LEFT */}
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{p('Time Left')}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>

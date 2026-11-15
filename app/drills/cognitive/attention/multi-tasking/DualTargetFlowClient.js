@@ -93,7 +93,7 @@ By streaming geometric shapes through two separate lanes (left and right, or top
 As your score increases, the shapes move faster and spawn more often; from level 3 the two lanes get different target shapes, and both templates change every 20 seconds.`;
 
 export default function DualTargetFlowClient({ copy } = {}) {
-  const { locale } = useTranslation();
+  const { locale, p } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -662,7 +662,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
               { label: copy?.statScore || 'Score', value: uiScore, tone: 'text-blue-400' },
               { label: copy?.statTime || 'Time', value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
               { label: copy?.statLevel || 'Level', value: `L${uiLevel}`, tone: 'text-blue-400' },
-              { label: copy?.statBest || 'Best Score', value: bestScore, tone: 'text-amber-400' },
+              { label: p(copy?.statBest || 'Best Score'), value: bestScore, tone: 'text-amber-400' },
             ].map((s) => (
               <div key={s.label} className="rounded-lg border border-white/[0.06] bg-white/[0.015] px-2 py-2 text-center">
                 <div className="text-[9.5px] uppercase font-semibold text-slate-500 tracking-[0.12em]">{s.label}</div>
@@ -692,7 +692,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
                 </div>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.timeLeft || 'Time Left'}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{p(copy?.timeLeft || 'Time Left')}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>

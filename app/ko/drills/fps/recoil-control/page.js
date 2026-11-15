@@ -242,6 +242,7 @@ export default function RecoilControlKoPage() {
   };
 
   const copyKo = {
+    bottomCaption: "반동에 맞춰 마우스를 부드럽게 아래로 당겨 연사를 표적에 유지하세요.",
     h1Keyword: "반동 연습 사이트",
     h1Suffix: " - 반동 제어·스프레이 컨트롤",
     statScore: "점수",

@@ -49,7 +49,7 @@ const saveData = (data) => {
 
 export default function PathTracingClient({ copy = null }) {
   const gradeLabel = useGradeLabel();
-  const { locale } = useTranslation();
+  const { locale, p } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -508,7 +508,7 @@ export default function PathTracingClient({ copy = null }) {
               { label: copy?.statScore || "Score", val: uiScore, color: "text-amber-400" },
               { label: copy?.statTime || "Time", val: `${uiTimeLeft}s`, highlight: uiTimeLeft <= 10 },
               { label: copy?.statLevel || "Level", val: `${copy?.levelPrefix || "Lv."} ${level}`, color: "text-indigo-400" },
-              { label: copy?.statBestScore || "Best Score", val: bestScore, color: "text-purple-400" },
+              { label: p(copy?.statBestScore || 'Best Score'), val: bestScore, color: "text-purple-400" },
             ].map((s, i) => (
               <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-0.5">{s.label}</div>

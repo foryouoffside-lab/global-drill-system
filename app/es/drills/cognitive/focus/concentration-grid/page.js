@@ -302,6 +302,7 @@ const concentrationGridGuideEs = {
 };
 
 const copyEs = {
+  subtitle: "Encuentra los números en orden para entrenar la búsqueda visual rápida y la concentración",
   h1Keyword: "Tabla de Schulte",
   h1Suffix: " Online – Rejilla de Concentración",
   caption: "Pulsa los números en orden ascendente en tablas de Schulte que crecen con cada cuadrícula completada. Practica búsqueda visual y concentración durante 45 segundos.",

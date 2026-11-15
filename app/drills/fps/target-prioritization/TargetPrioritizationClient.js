@@ -114,7 +114,7 @@ const ABOUT_SECTIONS = [
 // MAIN COMPONENT
 // ============================================================
 export default function TargetPrioritizationClient({ copy = null }) {
-  const { locale, t } = useTranslation();
+  const { locale, t, p } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -811,7 +811,7 @@ export default function TargetPrioritizationClient({ copy = null }) {
               { label: copy?.statScore || "Score", val: score },
               { label: copy?.statTime || "Time", val: `${timeLeft}s`, highlight: timeLeft <= 10 },
               { label: copy?.statAccuracy || "Accuracy", val: `${accuracy}%`, color: "text-blue-400" },
-              { label: copy?.statBestScore || "Best Score", val: bestScore, color: "text-amber-400" },
+              { label: p(copy?.statBestScore || 'Best Score'), val: bestScore, color: "text-amber-400" },
             ].map((s, i) => (
               <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-0.5">{s.label}</div>

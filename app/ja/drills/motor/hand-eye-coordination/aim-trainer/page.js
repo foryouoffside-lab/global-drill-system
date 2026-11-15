@@ -310,35 +310,35 @@ export default function AimTrainerJapanesePage() {
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Tier 1 (最上位段階)</td>
                 <td className="p-2.5 border border-white/10">&gt; 48,000 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 12+</td>
+                <td className="p-2.5 border border-white/10">レベル 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95% (コンボ25+)</td>
                 <td className="p-2.5 border border-white/10">最上位段階の目安</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Tier 2 (エキスパート)</td>
                 <td className="p-2.5 border border-white/10">32,000 – 47,999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 9–11</td>
+                <td className="p-2.5 border border-white/10">レベル 9–11</td>
                 <td className="p-2.5 border border-white/10">88% – 94% (コンボ18–24)</td>
                 <td className="p-2.5 border border-white/10">上級の目安</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-blue-400">Tier 3 (中級)</td>
                 <td className="p-2.5 border border-white/10">18,000 – 31,999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 6–8</td>
+                <td className="p-2.5 border border-white/10">レベル 6–8</td>
                 <td className="p-2.5 border border-white/10">78% – 87% (コンボ12–17)</td>
                 <td className="p-2.5 border border-white/10">安定した中間段階</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-amber-400">Tier 4 (初級)</td>
                 <td className="p-2.5 border border-white/10">8,000 – 17,999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 3–5</td>
+                <td className="p-2.5 border border-white/10">レベル 3–5</td>
                 <td className="p-2.5 border border-white/10">65% – 77% (コンボ6–11)</td>
                 <td className="p-2.5 border border-white/10">エイム習得段階・ブレや空振り傾向あり</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-rose-400">Tier 5 (入門)</td>
                 <td className="p-2.5 border border-white/10">&lt; 8,000 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 1–2</td>
+                <td className="p-2.5 border border-white/10">レベル 1–2</td>
                 <td className="p-2.5 border border-white/10">&lt; 65% (コンボ&lt;6)</td>
                 <td className="p-2.5 border border-white/10">高ジッター・焦りによる連打過多</td>
               </tr>

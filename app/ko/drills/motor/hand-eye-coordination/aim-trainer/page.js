@@ -300,35 +300,35 @@ export default function AimTrainerKoreanPage() {
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Tier 1 (최상위 단계)</td>
                 <td className="p-2.5 border border-white/10">&gt; 48,000 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 12+</td>
+                <td className="p-2.5 border border-white/10">레벨 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95% (콤보 25+)</td>
                 <td className="p-2.5 border border-white/10">최상위 참고 구간</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Tier 2 (고수)</td>
                 <td className="p-2.5 border border-white/10">32,000 – 47,999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 9–11</td>
+                <td className="p-2.5 border border-white/10">레벨 9–11</td>
                 <td className="p-2.5 border border-white/10">88% – 94% (콤보 18–24)</td>
                 <td className="p-2.5 border border-white/10">상급 참고 구간</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-blue-400">Tier 3 (중급)</td>
                 <td className="p-2.5 border border-white/10">18,000 – 31,999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 6–8</td>
+                <td className="p-2.5 border border-white/10">레벨 6–8</td>
                 <td className="p-2.5 border border-white/10">78% – 87% (콤보 12–17)</td>
                 <td className="p-2.5 border border-white/10">안정적인 중간 구간</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-amber-400">Tier 4 (초급)</td>
                 <td className="p-2.5 border border-white/10">8,000 – 17,999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 3–5</td>
+                <td className="p-2.5 border border-white/10">레벨 3–5</td>
                 <td className="p-2.5 border border-white/10">65% – 77% (콤보 6–11)</td>
                 <td className="p-2.5 border border-white/10">연습 단계 / 미스 다수 발생</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-rose-400">Tier 5 (입문)</td>
                 <td className="p-2.5 border border-white/10">&lt; 8,000 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 1–2</td>
+                <td className="p-2.5 border border-white/10">레벨 1–2</td>
                 <td className="p-2.5 border border-white/10">&lt; 65% (콤보 &lt; 6)</td>
                 <td className="p-2.5 border border-white/10">에임 흔들림 심함 / 조급한 클릭 성향</td>
               </tr>

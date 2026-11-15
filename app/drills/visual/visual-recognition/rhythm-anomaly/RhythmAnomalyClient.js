@@ -84,7 +84,7 @@ class GameErrorBoundary extends React.Component {
 // MAIN COMPONENT
 // ==========================================
 export default function RhythmAnomalyClient({ copy } = {}) {
-  const { locale } = useTranslation();
+  const { locale, p } = useTranslation();
   const gradeLabel = useGradeLabel();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -597,7 +597,7 @@ export default function RhythmAnomalyClient({ copy } = {}) {
               <div className="text-base sm:text-lg font-black text-indigo-400 tabular-nums">L{speedLevel}</div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-3 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{p('Best Score')}</div>
               <div className="text-base sm:text-lg font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
           </div>

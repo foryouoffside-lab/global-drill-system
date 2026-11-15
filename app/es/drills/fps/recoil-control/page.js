@@ -244,6 +244,7 @@ export default function RecoilControlPage() {
   };
 
   const copyEs = {
+    bottomCaption: "Baja el ratón con suavidad al ritmo del retroceso para mantener las ráfagas sobre el objetivo.",
     h1Keyword: "Control de Retroceso",
     h1Suffix: " – Entrenamiento de Spray FPS",
     caption: "Entrenamiento gratis de control de retroceso: mantén el clic sobre un objetivo en movimiento y baja el ratón en sentido contrario al patrón de spray para dejar las balas en cabeza y pecho.",

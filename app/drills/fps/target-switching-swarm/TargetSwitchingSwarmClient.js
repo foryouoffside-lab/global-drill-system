@@ -3,6 +3,7 @@ import { isIdleFrameSkippable } from '@/lib/performance';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import Link from 'next/link';
 
 import {
@@ -111,7 +112,7 @@ const ABOUT_SECTIONS = [
 // MAIN COMPONENT
 // ============================================================
 export default function TargetSwitchingSwarmClient({ copy = null }) {
-  const { locale, t } = useTranslation();
+  const { locale, t, p } = useTranslation();
   const [gameState, setGameState] = useState('start');
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -768,7 +769,7 @@ export default function TargetSwitchingSwarmClient({ copy = null }) {
               { label: copy?.statScore || "Score", val: score },
               { label: copy?.statTime || "Time", val: `${timeLeft}s`, highlight: timeLeft <= 10 },
               { label: copy?.statAccuracy || "Accuracy", val: `${accuracy}%`, color: "text-cyan-400" },
-              { label: copy?.statBestScore || "Best Score", val: bestScore, color: "text-amber-400" },
+              { label: p(copy?.statBestScore || 'Best Score'), val: bestScore, color: "text-amber-400" },
             ].map((s, i) => (
               <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-0.5">{s.label}</div>
@@ -855,7 +856,7 @@ export default function TargetSwitchingSwarmClient({ copy = null }) {
             <FpsStartCard
               icon={Crosshair}
               accent="cyan"
-              title={copy?.startTitle || "Target Switching Swarm"}
+              title={getLocalizedDrill('/drills/fps/target-switching-swarm', locale, copy?.startTitle || "Target Switching Swarm").name}
               subtitle={copy?.startSubtitle || "Hardware Raw Input • Endless Level Progression"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}

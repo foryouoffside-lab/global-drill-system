@@ -68,6 +68,16 @@ const trackingCategories = [
   },
 ];
 
+const SAFETY_NOTE = {
+  "en": "These drills record browser task settings and pointer activity, not eye position. Use them as practice tools, and stop if they cause pain, dizziness, nausea, persistent blur, or unusual visual discomfort.",
+  "pt": "Estes treinos registram as configurações da tarefa e o movimento do ponteiro, não a posição dos olhos. Use-os como prática e pare se sentir dor, tontura, náusea, visão embaçada persistente ou desconforto visual incomum.",
+  "es": "Estos ejercicios registran los ajustes de la tarea y el movimiento del puntero, no la posición de los ojos. Úsalos como práctica y detente si notas dolor, mareo, náuseas, visión borrosa persistente o una molestia visual inusual.",
+  "ja": "このドリルが記録するのはタスク設定とポインターの動きで、目の位置は記録しません。練習用として使い、痛み・めまい・吐き気・続くかすみ目・いつもと違う見えづらさを感じたら中止してください。",
+  "de": "Diese Drills speichern Aufgabeneinstellungen und Zeigerbewegungen, nicht die Augenposition. Nutze sie als Übung und hör auf, wenn Schmerzen, Schwindel, Übelkeit, anhaltend verschwommenes Sehen oder ungewohnte Sehbeschwerden auftreten.",
+  "ko": "이 훈련은 과제 설정과 포인터 움직임을 기록하며 눈의 위치는 기록하지 않습니다. 연습용으로 사용하고, 통증·어지러움·메스꺼움·계속되는 흐림·평소와 다른 시각적 불편이 있으면 중단하세요.",
+  "fr": "Ces exercices enregistrent les réglages de la tâche et les mouvements du pointeur, pas la position des yeux. Utilisez-les pour vous entraîner et arrêtez en cas de douleur, de vertige, de nausée, de vision floue persistante ou de gêne visuelle inhabituelle."
+};
+
 export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array<{ q: string; a: string }> }) {
   const { locale, localizeHref, t } = useTranslation();
   const hubCopy = getHubCopy('visual-tracking', locale);
@@ -177,7 +187,7 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
             {t('hubs.visual-tracking.desc', 'Browser-based visual motion practice for following moving points, predictable paths, and controlled re-acquisition tasks.')}
           </p>
           <p className="mt-3 max-w-3xl text-xs text-ink-3 leading-relaxed">
-            These drills record browser task settings and pointer activity, not eye position. Use them as practice tools, and stop if they cause pain, dizziness, nausea, persistent blur, or unusual visual discomfort.
+            {(SAFETY_NOTE as Record<string, string>)[locale] || SAFETY_NOTE.en}
           </p>
         </div>
 

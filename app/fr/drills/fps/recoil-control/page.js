@@ -244,6 +244,7 @@ export default function RecoilControlPage() {
   };
 
   const copyFr = {
+    bottomCaption: "Tirez la souris vers le bas en douceur au rythme du recul pour garder vos rafales sur la cible.",
     h1Keyword: "Contrôle du Recul",
     h1Suffix: " – Entraînement Spray FPS",
     caption: "Entraînement gratuit au contrôle du recul : maintenez le clic sur une cible mobile et descendez la souris à l'opposé du motif de spray pour garder vos balles sur la tête et le torse.",

@@ -1,7 +1,8 @@
 ## RESUME HERE (2026-11-15)
 
 DONE 2026-11-15: WIP site-audit branch reviewed (nothing half-done), `npx next build` OK (737/737), prod server checked at 390/768/1024/1440 on /drills + /ko/drills: one switcher, menu button now visible 640-1023px (was a nav-less gap), no overflow, 0 console errors; 404 has 0 `/_not-found` links. Squashed to main + pushed. Bing: 100 more submitted, 155 left (next batch 2026-11-16).
-Next: verify live (cache-bust) /ko/drills trust strip + header at 768px; Bing next 100 on 2026-11-16; GSC index check ~2026-11-20; optional rerun of 3 drill-slice audit agents (none made changes).
+Live verified (7d728a4e). Then drill-slice audit done as one Playwright scan of all 648 live URLs (no errors/overflow/h1/lang issues; only English leaks on localized pages). Fixed: shared phrase fallback `lib/i18n/drillPhrases.js` wired into `t()` + new `p()` (useTranslation), DrillAccordion titles, ZigZag start card, Time Left/Best Score/HUD on ~50 drill clients, missing dict keys (ui.goToDrill, hubs.*.startCta, es/de disciplines), keyboard-recognition options, keyboard-tester drillNames entry, 3 drill start titles, recoil/grid/entropic subtitles, aim-trainer level table, tracking-hub safety note, footer aria-label. Engagement: DrillResultCard now shows a localized "Next drill" link (41 drills) - verified end-to-end (play -> card -> click -> lands).
+Left: cognitive hub preview mockups (components/drill-previews) still English; DE/FR scan hits are loanwords. Bing next 100 on 2026-11-16 (155 left); GSC index check ~2026-11-20.
 
 ## (older) RESUME HERE (2026-11-14 late) - live-site audit, STOPPED mid-run
 

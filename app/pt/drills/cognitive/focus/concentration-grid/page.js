@@ -301,6 +301,7 @@ const concentrationGridGuidePt = {
 };
 
 const copyPt = {
+  subtitle: "Encontre os números em ordem para treinar a busca visual rápida e o foco",
   h1Keyword: "Tabela de Schulte",
   h1Suffix: " Online – Grade de Concentração",
   caption: "Toque nos números em ordem crescente em tabelas de Schulte que crescem a cada grade concluída. Pratique busca visual e foco por 45 segundos.",

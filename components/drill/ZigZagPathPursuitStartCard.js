@@ -60,7 +60,7 @@ export default function ZigZagPathPursuitStartCard({
   onStart,
   copy = {},
 }) {
-  const { t } = useTranslation();
+  const { t, p } = useTranslation();
   return (
     <div
       className="absolute inset-0 flex items-center justify-center z-40 bg-black/90 backdrop-blur-md p-2 sm:p-3 overflow-y-auto"
@@ -85,13 +85,13 @@ export default function ZigZagPathPursuitStartCard({
           </div>
 
           <p className="text-[10px] text-red-400/80 uppercase tracking-[0.15em] font-semibold text-center -mt-1">
-            {copy.setup || 'Drill Setup'}
+            {p(copy.setup || 'Drill Setup')}
           </p>
 
           {/* Session Duration */}
           <div className="bg-white/[0.03] border border-white/5 p-3 rounded-xl text-left">
             <span className="text-[10px] font-bold text-slate-300 uppercase tracking-wider block mb-1.5">
-              {copy.sessionTime || 'Session Time'}
+              {p(copy.sessionTime || 'Session Time')}
             </span>
             <div className="grid grid-cols-5 gap-1">
               {DURATIONS.map((dur) => (
@@ -118,7 +118,7 @@ export default function ZigZagPathPursuitStartCard({
                 <div className="w-5 h-5 rounded-md bg-red-500/10 flex items-center justify-center">
                   <SlidersHorizontal className="w-3 h-3 text-red-400" />
                 </div>
-                {copy.targetSpeed || 'Target Speed'}
+                {p(copy.targetSpeed || 'Target Speed')}
               </span>
               <span className="text-red-400 font-bold text-xs bg-red-500/10 border border-red-500/20 rounded-md px-2 py-0.5">
                 {speedMultiplier.toFixed(1)}x
@@ -156,7 +156,7 @@ export default function ZigZagPathPursuitStartCard({
                   <div className="w-5 h-5 rounded-md bg-red-500/10 flex items-center justify-center">
                     <Ruler className="w-3 h-3 text-red-400" />
                   </div>
-                  {copy.size || 'Size'}
+                  {p(copy.size || 'Size')}
                 </span>
                 <span className="text-red-400 font-bold text-[11px]">{targetSize}px</span>
               </div>
@@ -173,7 +173,7 @@ export default function ZigZagPathPursuitStartCard({
                 <div className="w-5 h-5 rounded-md bg-red-500/10 flex items-center justify-center">
                   <Palette className="w-3 h-3 text-red-400" />
                 </div>
-                {copy.color || 'Color'}
+                {p(copy.color || 'Color')}
               </span>
               <div className="flex items-center justify-between">
                 {COLOR_PRESETS.map((c) => (
@@ -193,29 +193,29 @@ export default function ZigZagPathPursuitStartCard({
           {/* Toggles */}
           <div className="bg-white/[0.03] border border-white/5 p-3 rounded-xl flex flex-col gap-2 text-left">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold text-slate-300 uppercase">{copy.hideLine || 'Hide Line'}</span>
+              <span className="text-[10px] font-bold text-slate-300 uppercase">{p(copy.hideLine || 'Hide Line')}</span>
               <Toggle checked={mathInvisible} onChange={onMathInvisibleToggle} />
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold text-slate-300 uppercase">{copy.randomSpeed || 'Random Speed'}</span>
+              <span className="text-[10px] font-bold text-slate-300 uppercase">{p(copy.randomSpeed || 'Random Speed')}</span>
               <Toggle checked={randomSpeed} onChange={onRandomSpeedToggle} />
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold text-slate-300 uppercase">{copy.gazeTrail || 'Gaze Trail'}</span>
+              <span className="text-[10px] font-bold text-slate-300 uppercase">{p(copy.gazeTrail || 'Gaze Trail')}</span>
               <Toggle checked={trailEffect} onChange={onTrailEffectToggle} />
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold text-slate-300 uppercase">{copy.neonGlow || 'Neon Glow'}</span>
+              <span className="text-[10px] font-bold text-slate-300 uppercase">{p(copy.neonGlow || 'Neon Glow')}</span>
               <Toggle checked={glowEffect} onChange={onGlowEffectToggle} />
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold text-slate-300 uppercase">{copy.scanlines || 'Scanlines'}</span>
+              <span className="text-[10px] font-bold text-slate-300 uppercase">{p(copy.scanlines || 'Scanlines')}</span>
               <Toggle checked={scanlinesActive} onChange={onScanlinesToggle} />
             </div>
             <div className="flex items-center justify-between pt-2 border-t border-white/5">
               <span className="text-[10px] font-bold text-slate-300 uppercase flex items-center gap-1.5">
                 {dayMode ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-blue-400" />}
-                {copy.dayMode || 'Day Mode'}
+                {p(copy.dayMode || 'Day Mode')}
               </span>
               <Toggle checked={dayMode} onChange={onDayModeToggle} activeClass="bg-amber-500" />
             </div>
@@ -233,7 +233,7 @@ export default function ZigZagPathPursuitStartCard({
           {isMobile && (
             <div className="text-[10px] font-medium text-amber-400/90 flex items-center justify-center gap-1.5 text-center">
               <RotateCw className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-              <span>{copy.rotateMobile || 'Rotate mobile for a better experience'}</span>
+              <span>{p(copy.rotateMobile || 'Rotate mobile for a better experience')}</span>
             </div>
           )}
         </div>

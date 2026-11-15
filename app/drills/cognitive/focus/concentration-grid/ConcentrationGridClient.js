@@ -82,7 +82,7 @@ Because the session runs on a single fixed 45-second clock with no time bonuses 
 // MAIN COMPONENT
 // ============================================================
 export default function ConcentrationGridClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, p } = useTranslation();
   const [phase, setPhase] = useState('start'); // 'start' | 'countdown' | 'playing' | 'ended'
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
@@ -425,7 +425,7 @@ export default function ConcentrationGridClient({ copy = null }) {
               { label: copy?.statScore || 'Score', value: score, tone: 'text-cyan-400' },
               { label: copy?.statTime || 'Time', value: `${Math.ceil(timeRemaining)}s`, tone: timeRemaining <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
               { label: copy?.statGridSize || 'Grid Size', value: `${gridSize}×${gridSize}`, tone: 'text-indigo-400' },
-              { label: copy?.statBest || 'Best Score', value: bestScore, tone: 'text-amber-400' },
+              { label: p(copy?.statBest || 'Best Score'), value: bestScore, tone: 'text-amber-400' },
             ].map((s) => (
               <div key={s.label} className="rounded-lg border border-white/[0.06] bg-white/[0.015] px-2 py-2 text-center">
                 <div className="text-[9.5px] uppercase font-semibold text-slate-500 tracking-[0.12em]">{s.label}</div>

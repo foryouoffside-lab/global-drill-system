@@ -218,6 +218,7 @@ const faqSchema = {
 };
 
 const copyFr = {
+  subtitle: "Trouvez les nombres dans l’ordre pour entraîner la recherche visuelle rapide et la concentration",
   h1Keyword: "Table de Schulte",
   h1Suffix: " en Ligne – Grille de Concentration",
   caption: "Touchez les numéros dans l ordre séquentiel strict sur des grilles de Schulte en expansion continue. Entraînez votre vision périphérique, vitesse d exploration visuelle et endurance attentionnelle.",

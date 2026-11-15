@@ -33,6 +33,8 @@ const FOOTER_COPY = {
   fr: { description: (count) => `${count} exercices gratuits pour la visée, les réflexes, la mémoire, la concentration et la coordination. Ils fonctionnent dans le navigateur et vos scores restent sur votre appareil.`, free: 'Gratuit · sans compte · sans installation', categories: 'Catégories d’entraînement', privacy: 'Confidentialité', terms: 'Conditions', deleteData: 'Supprimer les données', allDrills: 'Tous les exercices', search: 'Recherche', about: 'À propos', drills: 'exercices', desktop: 'ordinateur' },
 };
 
+const NAV_LABEL = { en: 'Site and legal links', pt: 'Links do site e legais', es: 'Enlaces del sitio y legales', ja: 'サイトと規約のリンク', de: 'Seiten- und Rechtslinks', ko: '사이트 및 약관 링크', fr: 'Liens du site et mentions légales' };
+
 // Category ids -> the header's translated nav labels.
 const HEADER_KEYS = {
   fps: 'fps', cognitive: 'cognitive', memory: 'memory', motor: 'motor', physical: 'physical',
@@ -115,7 +117,7 @@ export default function SiteFooter() {
         {/* Bottom bar */}
         <div className="pt-7 flex flex-col sm:flex-row items-center justify-between text-xs text-ink-3 gap-4">
           <p>&copy; {new Date().getFullYear()} SkillDrills</p>
-          <nav aria-label="Site and legal links" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          <nav aria-label={NAV_LABEL[locale] || NAV_LABEL.en} className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             {[...SITE_LINKS, ...LEGAL_LINKS].map((link) => (
               <Link key={link.href} href={localizeHref(link.href)} className="hover:text-ink-1 transition-colors">
                 {copy[link.key]}

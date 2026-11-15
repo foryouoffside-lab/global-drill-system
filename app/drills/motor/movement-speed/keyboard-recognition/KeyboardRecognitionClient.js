@@ -980,19 +980,19 @@ export default function KeyboardRecognitionClient({ copy = null }) {
                 <div>
                   <label className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider block mb-1.5">{t('keyboardRecognition.gameplayMode', 'Gameplay Mode')}</label>
                   <select value={trainingMode} onChange={(e) => setTrainingMode(e.target.value)} className="w-full text-xs font-bold bg-[#040609] border border-white/10 rounded-lg p-2 text-white focus:outline-none focus:border-emerald-500 transition-colors">
-                    <option value="dynamic">Dynamic Mixed Progression</option><option value="single">Single Key Recognition</option>
-                    <option value="letters">Letters Only (A-Z)</option><option value="numbers">Numbers Only (0-9)</option>
-                    <option value="mix">Letters + Numbers Mix</option><option value="gaming">Gaming Keys Only</option>
-                    <option value="short_seq">Short Sequences</option><option value="long_seq">Long Sequences</option>
-                    <option value="memory">Memory Recall Mode</option><option value="fake">Inhibition Traps</option>
+                    <option value="dynamic">{t('keyboardRecognition.opt.dynamic', "Dynamic Mixed Progression")}</option><option value="single">{t('keyboardRecognition.opt.single', "Single Key Recognition")}</option>
+                    <option value="letters">{t('keyboardRecognition.opt.letters', "Letters Only (A-Z)")}</option><option value="numbers">{t('keyboardRecognition.opt.numbers', "Numbers Only (0-9)")}</option>
+                    <option value="mix">{t('keyboardRecognition.opt.mix', "Letters + Numbers Mix")}</option><option value="gaming">{t('keyboardRecognition.opt.gaming', "Gaming Keys Only")}</option>
+                    <option value="short_seq">{t('keyboardRecognition.opt.short_seq', "Short Sequences")}</option><option value="long_seq">{t('keyboardRecognition.opt.long_seq', "Long Sequences")}</option>
+                    <option value="memory">{t('keyboardRecognition.opt.memory', "Memory Recall Mode")}</option><option value="fake">{t('keyboardRecognition.opt.fake', "Inhibition Traps")}</option>
                   </select>
                 </div>
                 <div>
                   <label className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider block mb-1.5">{t('keyboardRecognition.difficulty', 'Difficulty')}</label>
                   <select value={difficultySetting} onChange={(e) => setDifficultySetting(e.target.value)} className="w-full text-xs font-bold bg-[#040609] border border-white/10 rounded-lg p-2 text-white focus:outline-none focus:border-emerald-500 transition-colors">
-                    <option value="adaptive">Adaptive Engine</option><option value="easy">Easy (1.5x Time)</option>
-                    <option value="medium">Medium (1.0x Time)</option><option value="hard">Hard (0.75x Time)</option>
-                    <option value="expert">Expert (0.55x extreme)</option>
+                    <option value="adaptive">{t('keyboardRecognition.opt.adaptive', "Adaptive Engine")}</option><option value="easy">{t('keyboardRecognition.opt.easy', "Easy (1.5x Time)")}</option>
+                    <option value="medium">{t('keyboardRecognition.opt.medium', "Medium (1.0x Time)")}</option><option value="hard">{t('keyboardRecognition.opt.hard', "Hard (0.75x Time)")}</option>
+                    <option value="expert">{t('keyboardRecognition.opt.expert', "Expert (0.55x extreme)")}</option>
                   </select>
                 </div>
                 <div>

@@ -142,7 +142,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function MicroCorrectionClient({ copy = null }) {
-  const { locale, t } = useTranslation();
+  const { locale, t, p } = useTranslation();
   const [gameState, setGameState] = useState('start'); // start | countdown | playing | gameOver
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -842,7 +842,7 @@ export default function MicroCorrectionClient({ copy = null }) {
               { label: copy?.statScore || "Score", value: score },
               { label: copy?.statTime || "Time", value: `${timeLeft}s`, color: timeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
               { label: copy?.statAccuracy || "Accuracy", value: `${accuracy}%`, color: 'text-cyan-400' },
-              { label: copy?.statBestScore || "Best Score", value: bestScore, color: 'text-amber-400' },
+              { label: p(copy?.statBestScore || 'Best Score'), value: bestScore, color: 'text-amber-400' },
             ].map((card, i) => (
               <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>

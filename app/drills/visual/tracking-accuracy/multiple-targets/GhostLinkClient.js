@@ -13,6 +13,7 @@ import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import { drillAudio } from '../../../../../lib/drillAudio';
@@ -76,7 +77,7 @@ class GameErrorBoundary extends React.Component {
 // MAIN COMPONENT
 // ==========================================
 export default function GhostLinkClient({ copy } = {}) {
-  const { locale } = useTranslation();
+  const { locale, p } = useTranslation();
   // === UI State ===
   const [openAccordion, setOpenAccordion] = useState(null);
 
@@ -660,7 +661,7 @@ feedback = "Low target identification accuracy. Anchor your gaze centrally and t
               { label: 'Score', value: customScore, color: 'text-purple-400' },
               { label: 'Time', value: phase === 'TRACKING' ? `${localTimeRemaining}s` : '-', color: localTimeRemaining <= 10 && phase === 'TRACKING' ? 'text-red-400 animate-pulse' : 'text-white' },
               { label: 'Phase', value: phase === 'IDENTIFY' ? 'WAIT' : phase, color: 'text-cyan-400' },
-              { label: 'Best Score', value: bestScore || 0, color: 'text-amber-400' },
+              { label: p('Best Score'), value: bestScore || 0, color: 'text-amber-400' },
             ].map((card) => (
               <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
@@ -688,7 +689,7 @@ feedback = "Low target identification accuracy. Anchor your gaze centrally and t
                   <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{customScore}</p>
                 </div>
                 <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{p('Time Left')}</p>
                   <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${localTimeRemaining <= 10 && phase === 'TRACKING' ? 'text-red-400 animate-pulse' : 'text-white'}`}>
                     {phase === 'TRACKING' ? `${localTimeRemaining}s` : '-'}
                   </p>
@@ -771,7 +772,7 @@ feedback = "Low target identification accuracy. Anchor your gaze centrally and t
               <FpsStartCard
                 icon={Brain}
                 accent="purple"
-                title="Multiple Targets"
+                title={getLocalizedDrill('/drills/visual/tracking-accuracy/multiple-targets', locale, 'Multiple Targets').name}
                 subtitle="Multi-Object Tracking • Visual Working Memory"
                 isTouchOnlyDevice={false}
                 onStart={enterDrill}
@@ -825,7 +826,7 @@ feedback = "Low target identification accuracy. Anchor your gaze centrally and t
                     </div>
                     <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                       <p className="text-sm sm:text-base font-black text-amber-400">{bestScore || 0}</p>
-                      <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Best Score</p>
+                      <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{p('Best Score')}</p>
                     </div>
                   </div>
 

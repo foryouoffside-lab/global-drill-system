@@ -1,4 +1,6 @@
 'use client';
+
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import { isIdleFrameSkippable } from '@/lib/performance';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
@@ -37,6 +39,7 @@ const RULES_ITEMS = [
 // MAIN COMPONENT
 // ============================================================
 export default function SteadyHandClient({ copy = null }) {
+  const { p } = useTranslation();
   // === UI & Viewport State ===
   const [gameState, setGameState] = useState('start'); 
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -651,7 +654,7 @@ export default function SteadyHandClient({ copy = null }) {
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
               { label: copy?.statLaps || "Laps Cleared", val: analytics.laps || (gameState === 'playing' ? engine.current.laps : 0), color: "text-cyan-400" },
-              { label: copy?.statTime || "Time Left", val: `${timeLeft}s`, highlight: timeLeft <= 10 },
+              { label: p(copy?.statTime || 'Time Left'), val: `${timeLeft}s`, highlight: timeLeft <= 10 },
               { label: copy?.statStreak || "Current Streak", val: gameState === 'playing' ? engine.current.streak : 0, color: "text-emerald-400" },
               { label: copy?.statBest || "Best Laps", val: bestScore, color: "text-amber-400" },
             ].map((s, i) => (

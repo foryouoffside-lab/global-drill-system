@@ -244,6 +244,7 @@ export default function RecoilControlPage() {
   };
 
   const copyPt = {
+    bottomCaption: "Puxe o mouse para baixo de forma suave junto com o recuo da arma para manter as rajadas no alvo.",
     h1Keyword: "Controle de Recoil",
     h1Suffix: " – Treino de Spray FPS",
     caption: "Treino grátis de controle de recoil: segure o clique num alvo em movimento e puxe o mouse no sentido inverso ao padrão de spray para manter os tiros na cabeça e no tronco.",

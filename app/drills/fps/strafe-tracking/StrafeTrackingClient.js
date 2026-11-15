@@ -95,7 +95,7 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 export default function StrafeTrackingClient({ copy = null }) {
-  const { t } = useTranslation();
+  const { t, p } = useTranslation();
   const [gameState, setGameState] = useState('start');
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -745,9 +745,9 @@ export default function StrafeTrackingClient({ copy = null }) {
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
               { label: copy?.statStatus || 'Status', value: gameState === 'playing' ? (copy?.statusTracking || 'TRACKING') : gameState === 'gameOver' ? (copy?.statusComplete || 'COMPLETE') : (copy?.statusStandby || 'STANDBY'), color: 'text-green-400' },
-              { label: copy?.statTime || 'Time Left', value: `${timeLeft}s`, color: timeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: p(copy?.statTime || 'Time Left'), value: `${timeLeft}s`, color: timeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
               { label: copy?.statAccuracy || 'Accuracy', value: `${accuracy}%`, color: 'text-green-400' },
-              { label: copy?.statBest || 'Best Score', value: bestScore, color: 'text-yellow-400' },
+              { label: p(copy?.statBest || 'Best Score'), value: bestScore, color: 'text-yellow-400' },
             ].map((card) => (
               <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>

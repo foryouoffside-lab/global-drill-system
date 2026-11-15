@@ -301,6 +301,7 @@ const concentrationGridGuideJa = {
 };
 
 const copyJa = {
+  subtitle: "数字を順番に探して、素早い視覚探索と集中力を鍛えます",
   h1Keyword: "シュルテテーブル",
   h1Suffix: " – 無料オンライン周辺視野・集中力グリッド",
   caption: "拡大するシュルテテーブル上で連続する数字を素早くタップ。速読に必要な周辺視野の拡大、視覚探索速度、持続的集中力をトレーニングします。",

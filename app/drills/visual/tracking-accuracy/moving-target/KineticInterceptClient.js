@@ -20,6 +20,7 @@ import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
@@ -66,7 +67,7 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 export default function KineticInterceptClient({ copy } = {}) {
-  const { locale } = useTranslation();
+  const { locale, p } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -578,7 +579,7 @@ export default function KineticInterceptClient({ copy } = {}) {
               </div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-3 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{p('Best Score')}</div>
               <div className="text-base sm:text-lg font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
           </div>
@@ -604,7 +605,7 @@ export default function KineticInterceptClient({ copy } = {}) {
                 </div>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{p('Time Left')}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -656,7 +657,7 @@ export default function KineticInterceptClient({ copy } = {}) {
             <FpsStartCard
               icon={Move}
               accent="orange"
-              title="Moving Target Pro"
+              title={getLocalizedDrill('/drills/visual/tracking-accuracy/moving-target', locale, 'Moving Target Pro').name}
               subtitle="Kinetic Visual Tracking • Intercept Accuracy"
               isTouchOnlyDevice={false}
               onStart={enterDrill}

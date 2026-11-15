@@ -76,7 +76,7 @@ const RULES_ITEMS = [
 // MAIN COMPONENT
 // ============================================================
 export default function TracingClient({ copy } = {}) {
-  const { locale } = useTranslation();
+  const { locale, p } = useTranslation();
   // === UI & Viewport State ===
   const [gameState, setGameState] = useState('start'); 
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -681,9 +681,9 @@ export default function TracingClient({ copy } = {}) {
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
               { label: copy?.statFlowScore || "Flow Score", val: score },
-              { label: copy?.statTimeLeft || "Time Left", val: `${timeLeft}s`, highlight: timeLeft <= 10 },
+              { label: p(copy?.statTimeLeft || 'Time Left'), val: `${timeLeft}s`, highlight: timeLeft <= 10 },
               { label: copy?.statFlowIntegrity || "Flow Integrity", val: `${flowState}%`, color: "text-emerald-400" },
-              { label: copy?.statBestScore || "Best Score", val: bestScore, color: "text-amber-400" },
+              { label: p(copy?.statBestScore || 'Best Score'), val: bestScore, color: "text-amber-400" },
             ].map((s, i) => (
               <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-0.5">{s.label}</div>

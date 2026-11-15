@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslation } from '@/lib/i18n/useTranslation';
+
 import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { Activity, Play, RefreshCw, Timer, Share2, LogOut, Check, Sun, Moon, Volume2, VolumeX, Users, TrendingUp, Target, Trophy, Zap } from 'lucide-react';
@@ -43,6 +45,7 @@ const saveData = (data: { totalSessions: number }) => {
 };
 
 export default function SineWavePursuitClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string; [key: string]: string | undefined } } = {}) {
+  const { p } = useTranslation();
   const pm = usePursuitMetricsLabels();
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
@@ -443,23 +446,23 @@ export default function SineWavePursuitClient({ copy }: { copy?: { title?: strin
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Status</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{p('Status')}</div>
               <div className="text-lg sm:text-xl font-black text-red-400 tabular-nums">
-                {gameState === 'playing' ? 'TRACKING' : gameState === 'gameOver' ? 'COMPLETE' : 'STANDBY'}
+                {gameState === 'playing' ? p('TRACKING') : gameState === 'gameOver' ? p('COMPLETE') : p('STANDBY')}
               </div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time Left</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{p('Time Left')}</div>
               <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 && gameState === 'playing' ? 'text-red-400 animate-pulse' : 'text-white'}`}>
                 {uiTimeLeft}s
               </div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Speed</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{p('Speed')}</div>
               <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">{speedMultiplier.toFixed(1)}x</div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Sessions</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{p('Sessions')}</div>
               <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{totalTrials}</div>
             </div>
           </div>
@@ -478,7 +481,7 @@ export default function SineWavePursuitClient({ copy }: { copy?: { title?: strin
           {/* IN-BOX OVERLAY HUD: LABELLED TIMER, AS EVERY OTHER DRILL */}
           {gameState === 'playing' && (
             <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-              <p className={`text-[10px] font-semibold uppercase tracking-wider ${dayMode ? 'text-slate-500' : 'text-white/50'}`}>Time Left</p>
+              <p className={`text-[10px] font-semibold uppercase tracking-wider ${dayMode ? 'text-slate-500' : 'text-white/50'}`}>{p('Time Left')}</p>
               <p className={`text-3xl sm:text-4xl font-black font-sans tabular-nums leading-none ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : (dayMode ? 'text-slate-900' : 'text-white/90')}`}>
                 {uiTimeLeft}s
               </p>
@@ -560,7 +563,7 @@ export default function SineWavePursuitClient({ copy }: { copy?: { title?: strin
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" accent="#ef4444" />
+            <DrillCountdown value={countdownValue} subtitle={p('GET READY')} accent="#ef4444" />
           )}
 
           {/* END SCREEN */}
@@ -598,15 +601,15 @@ export default function SineWavePursuitClient({ copy }: { copy?: { title?: strin
                   ))}
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{selectedDuration}s</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Session Time</p>
+                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{p('Session Time')}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{speedMultiplier.toFixed(1)}x</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Base Speed</p>
+                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{p('Base Speed')}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{totalTrials}</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Sessions Completed</p>
+                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{p('Sessions Completed')}</p>
                   </div>
                 </div>
                 <p className="text-[9px] leading-snug text-slate-500">{pm.metricsNote}</p>
@@ -618,13 +621,13 @@ export default function SineWavePursuitClient({ copy }: { copy?: { title?: strin
                     onClick={enterDrill} 
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {p('Play Again')}
                   </button>
                   <button 
                     type="button"
                     onClick={sharePage} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Drill Link"
+                    title={p('Share Drill Link')}
                   >
                     <Share2 className="w-4 h-4" />
                   </button>
@@ -632,7 +635,7 @@ export default function SineWavePursuitClient({ copy }: { copy?: { title?: strin
                     type="button"
                     onClick={handleExitDrill} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Return to Options"
+                    title={p('Return to Options')}
                   >
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>
