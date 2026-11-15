@@ -1,3 +1,28 @@
+## RESUME HERE (2026-11-15)
+
+DONE 2026-11-15: WIP site-audit branch reviewed (nothing half-done), `npx next build` OK (737/737), prod server checked at 390/768/1024/1440 on /drills + /ko/drills: one switcher, menu button now visible 640-1023px (was a nav-less gap), no overflow, 0 console errors; 404 has 0 `/_not-found` links. Squashed to main + pushed. Bing: 100 more submitted, 155 left (next batch 2026-11-16).
+Next: verify live (cache-bust) /ko/drills trust strip + header at 768px; Bing next 100 on 2026-11-16; GSC index check ~2026-11-20; optional rerun of 3 drill-slice audit agents (none made changes).
+
+## (older) RESUME HERE (2026-11-14 late) - live-site audit, STOPPED mid-run
+
+State: local branch `wip/site-audit-2026-11-14` (NOT pushed, NOT built, NOT verified). `main` == origin/main (0b92fba5), live is fine.
+
+What the WIP commit holds:
+- app/drills/layout.js - keyed `<Fragment key="drill-page">` around children (same #418 guard as app/layout.js). Lead's change, low risk.
+- Unfinished edits from the "non-drill pages + shared" audit agent (stopped before it reported):
+  - components/SiteHeader.js - localized search "no match"/"see all"/Desktop/Drills copy; mobile right controls `sm:hidden` -> `lg:hidden` (CHECK: 640-1023px header may now show duplicate controls)
+  - components/SiteFooter.js - localized category names; /_not-found path guard
+  - components/LanguageSwitcher.js - "Select Language" via t('header.selectLanguage'); /_not-found guard (CHECK the dictionary key exists in all 7 locales)
+  - components/drill/DrillGlobalSettings.js, app/drills/DrillsDirectoryClient.js - unreviewed
+- The 3 drill-slice agents (fps+motor, physical+visual+tracking, cognitive+memory+reaction) had made NO file changes yet. The fps agent was about to add missing locale keys to 3 `copy` objects.
+
+Next steps:
+1. `git checkout wip/site-audit-2026-11-14`, review `git show --stat HEAD` + the diff, revert anything half-done.
+2. `npx next build` in the worktree (never `npm run build`), `npx next start -p 3100`, check header at 390/768/1024/1440 and the 404 page language links.
+3. If good: squash into a proper commit, merge to main, push, verify live (cache-bust).
+4. Optionally rerun the 4 audit agents (prompts: one slice each, edit only own dirs, Playwright headless, no builds/commits).
+5. Bing: next 100 from docs/seo/research/_bing_pending_2026-11-13.txt on/after 2026-11-15 (255 left). GSC index check ~2026-11-20.
+
 # HANDOFF - Indexing fix + one-category-at-a-time local-language SEO (started 2026-11-07)
 
 Trigger for a new chat: `Continue docs/seo/HANDOFF_LOCAL_SEO_CATEGORY.md`

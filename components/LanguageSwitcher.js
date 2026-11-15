@@ -5,11 +5,16 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Globe, ChevronDown, Check } from 'lucide-react';
 import { LOCALES, LOCALE_META, DEFAULT_LOCALE, localizedPath } from '@/lib/i18n/locales';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const pathname = usePathname();
+  const { t } = useTranslation();
+  // The 404 page is prerendered as /_not-found, which would otherwise leak
+  // into the server HTML as a dead language link.
+  const rawPathname = usePathname();
+  const pathname = rawPathname === '/_not-found' ? '/' : rawPathname;
 
   // Detect current active locale from pathname
   let currentLocale = DEFAULT_LOCALE;
@@ -61,7 +66,7 @@ export default function LanguageSwitcher() {
 
       <div className={`${isOpen ? '' : 'hidden '}absolute right-0 mt-2 w-52 rounded-xl bg-neutral-900 border border-white/10 shadow-2xl overflow-hidden z-50 py-1 divide-y divide-white/5`}>
         <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-          <Globe className="w-3 h-3 text-blue-400" /> Select Language
+          <Globe className="w-3 h-3 text-blue-400" /> {t('header.selectLanguage', 'Select Language')}
         </div>
         <div className="py-1">
           {LOCALES.map((loc) => {

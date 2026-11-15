@@ -33,11 +33,19 @@ const FOOTER_COPY = {
   fr: { description: (count) => `${count} exercices gratuits pour la visée, les réflexes, la mémoire, la concentration et la coordination. Ils fonctionnent dans le navigateur et vos scores restent sur votre appareil.`, free: 'Gratuit · sans compte · sans installation', categories: 'Catégories d’entraînement', privacy: 'Confidentialité', terms: 'Conditions', deleteData: 'Supprimer les données', allDrills: 'Tous les exercices', search: 'Recherche', about: 'À propos', drills: 'exercices', desktop: 'ordinateur' },
 };
 
+// Category ids -> the header's translated nav labels.
+const HEADER_KEYS = {
+  fps: 'fps', cognitive: 'cognitive', memory: 'memory', motor: 'motor', physical: 'physical',
+  visual: 'visual', 'visual-tracking': 'tracking', 'reaction-speed': 'reaction',
+};
+
 export default function SiteFooter() {
-  const { locale, localizeHref } = useTranslation();
+  const { locale, localizeHref, t } = useTranslation();
   const copy = FOOTER_COPY[locale] || FOOTER_COPY.en;
   const totalDrills = DRILLS.length;
-  const pathname = usePathname() || '/';
+  const rawPathname = usePathname() || '/';
+  // The 404 page is prerendered as /_not-found; never emit that as a link.
+  const pathname = rawPathname === '/_not-found' ? '/' : rawPathname;
 
   return (
     <footer className="bg-canvas border-t border-hairline text-ink-2 py-14 relative overflow-hidden">
@@ -88,7 +96,7 @@ export default function SiteFooter() {
                     <div className="flex items-center gap-2 mb-1">
                       <Icon className={`w-4 h-4 ${cat.accent}`} />
                       <span className="text-xs font-semibold text-ink-1 group-hover:text-blue-400 transition-colors truncate">
-                        {cat.name}
+                        {locale === 'en' ? cat.name : t(`header.${HEADER_KEYS[cat.cat]}`, cat.name)}
                       </span>
                     </div>
                     <div className="flex items-center justify-between gap-2">

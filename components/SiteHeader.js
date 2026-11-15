@@ -24,10 +24,22 @@ const navCategories = [
   { id: 'reaction', name: 'Reaction', href: '/drills/reaction-speed', color: 'text-amber-400', activeBg: 'bg-amber-500/10 border-amber-500/30 text-amber-400' },
 ];
 
+// Dropdown/menu chrome that the shared dictionary does not cover.
+const HEADER_COPY = {
+  en: { noMatch: 'No drills matching', seeAll: (n) => `See all ${n} results`, desktop: 'Desktop', drills: 'Drills' },
+  pt: { noMatch: 'Nenhum treino encontrado para', seeAll: (n) => `Ver todos os ${n} resultados`, desktop: 'Computador', drills: 'treinos' },
+  es: { noMatch: 'Ningún ejercicio coincide con', seeAll: (n) => `Ver los ${n} resultados`, desktop: 'Ordenador', drills: 'ejercicios' },
+  ja: { noMatch: '該当するドリルがありません:', seeAll: (n) => `${n}件の結果をすべて表示`, desktop: 'PC向け', drills: 'ドリル' },
+  de: { noMatch: 'Keine Drills gefunden für', seeAll: (n) => `Alle ${n} Ergebnisse anzeigen`, desktop: 'Desktop', drills: 'Drills' },
+  ko: { noMatch: '검색 결과 없음:', seeAll: (n) => `결과 ${n}개 모두 보기`, desktop: '데스크톱', drills: '훈련' },
+  fr: { noMatch: 'Aucun exercice ne correspond à', seeAll: (n) => `Voir les ${n} résultats`, desktop: 'Ordinateur', drills: 'exercices' },
+};
+
 export default function SiteHeader() {
   const router = useRouter();
   const pathname = usePathname();
-  const { t, localizeHref } = useTranslation();
+  const { t, localizeHref, locale } = useTranslation();
+  const copy = HEADER_COPY[locale] || HEADER_COPY.en;
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -241,13 +253,13 @@ export default function SiteHeader() {
                         }}
                         className="w-full p-3 text-center text-sm font-semibold text-blue-400 hover:text-blue-300 bg-[#0D1018] border-t border-hairline flex items-center justify-center gap-1"
                       >
-                        See all {results.length} results <ChevronRight className="w-3.5 h-3.5" />
+                        {copy.seeAll(results.length)} <ChevronRight className="w-3.5 h-3.5" />
                       </button>
                     )}
                   </>
                 ) : (
                   <div className="bg-[#0D1018] p-4 text-center text-xs sm:text-sm text-ink-3">
-                    No drills matching &ldquo;<span className="text-white">{query}</span>&rdquo;
+                    {copy.noMatch} &ldquo;<span className="text-white">{query}</span>&rdquo;
                   </div>
                 )}
               </div>
@@ -290,12 +302,12 @@ export default function SiteHeader() {
           </nav>
 
           {/* Mobile Right Controls */}
-          <div className="flex items-center gap-1 sm:hidden">
+          <div className="flex items-center gap-1 lg:hidden">
             <LanguageSwitcher />
             {!isSearchPage && <button
               type="button"
               onClick={() => setMobileSearchExpanded(!mobileSearchExpanded)}
-              className="p-2 text-ink-3 hover:text-white rounded-lg min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="sm:hidden p-2 text-ink-3 hover:text-white rounded-lg min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Toggle search input"
             >
               {mobileSearchExpanded ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
@@ -332,7 +344,7 @@ export default function SiteHeader() {
                     <span className="truncate">{label}</span>
                     {isDesktopOnly && (
                       <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 shrink-0">
-                        Desktop
+                        {copy.desktop}
                       </span>
                     )}
                   </span>
@@ -345,7 +357,7 @@ export default function SiteHeader() {
               onClick={() => setMobileMenuOpen(false)}
               className="col-span-2 mt-2 px-3 py-2.5 text-center text-xs font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl shadow-lg"
             >
-              {t('header.allHubs', 'All Hubs Directory')} ({totalDrillsCount} Drills)
+              {t('header.allHubs', 'All Hubs Directory')} ({totalDrillsCount} {copy.drills})
             </Link>
           </div>
         )}

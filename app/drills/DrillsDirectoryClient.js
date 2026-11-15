@@ -10,15 +10,83 @@ import DrillGlobalSettings from '@/components/drill/DrillGlobalSettings';
 import { DRILLS, DESKTOP_ONLY_CATEGORIES } from '@/lib/drillsRegistry';
 import { SITE_CATEGORIES, getCategoryCount, getCategoryDrills } from '@/lib/siteCategories';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 
-const trustStrip = [
-  { icon: ShieldCheck, label: 'No sign-up, ever' },
-  { icon: MousePointerClick, label: 'Instant start, zero installs' },
-  { icon: Activity, label: '100% runs in your browser' },
-];
+const trustIcons = [ShieldCheck, MousePointerClick, Activity];
+
+// Card chrome for the localized /<locale>/drills directories. Taglines are
+// keyed by category id; English falls back to lib/siteCategories.js.
+const DIRECTORY_COPY = {
+  en: {
+    trust: ['No sign-up, ever', 'Instant start, zero installs', '100% runs in your browser'],
+    desktop: 'Desktop', count: (n) => `${n} Drills`, explore: (n) => `Explore ${n} Drills`, sessionPrefs: 'Session preferences',
+    taglines: {},
+  },
+  pt: {
+    trust: ['Sem cadastro', 'Começa na hora, sem instalar', '100% no navegador'],
+    desktop: 'Computador', count: (n) => `${n} treinos`, explore: (n) => `Ver ${n} treinos`, sessionPrefs: 'Preferências da sessão',
+    taglines: {
+      fps: 'Flicks, tracking e controle de recoil', cognitive: 'Foco, atenção e velocidade de processamento',
+      memory: 'Sequências de dígitos e memória espacial', motor: 'Precisão do mouse e velocidade de clique',
+      physical: 'Reflexos, equilíbrio e coordenação', visual: 'Visão periférica e percepção de profundidade',
+      'visual-tracking': 'Perseguição visual e estabilidade do olhar', 'reaction-speed': 'Testes de tempo de reação e reflexos',
+    },
+  },
+  es: {
+    trust: ['Sin registro', 'Empieza al instante, sin instalar', '100% en tu navegador'],
+    desktop: 'Ordenador', count: (n) => `${n} ejercicios`, explore: (n) => `Ver ${n} ejercicios`, sessionPrefs: 'Preferencias de la sesión',
+    taglines: {
+      fps: 'Flicks, tracking y control del retroceso', cognitive: 'Concentración, atención y velocidad de procesamiento',
+      memory: 'Series de dígitos, secuencias y memoria espacial', motor: 'Precisión del ratón y velocidad de clic',
+      physical: 'Reflejos, equilibrio y coordinación', visual: 'Visión periférica y percepción de profundidad',
+      'visual-tracking': 'Seguimiento visual y estabilidad de la mirada', 'reaction-speed': 'Tests de tiempo de reacción y reflejos',
+    },
+  },
+  ja: {
+    trust: ['登録不要', 'インストール不要ですぐ開始', 'ブラウザだけで動作'],
+    desktop: 'PC向け', count: (n) => `${n}種`, explore: (n) => `${n}種のドリルを見る`, sessionPrefs: 'セッション設定',
+    taglines: {
+      fps: 'フリック・トラッキング・リコイル制御', cognitive: '集中力・注意力・処理速度',
+      memory: '数字の記憶・順序・空間記憶', motor: 'マウス精度とクリック速度',
+      physical: '反射・バランス・協調性', visual: '周辺視野と奥行き知覚',
+      'visual-tracking': '追従視と視線の安定', 'reaction-speed': '反応速度テストと反射ドリル',
+    },
+  },
+  de: {
+    trust: ['Keine Anmeldung', 'Sofort starten, nichts installieren', '100 % im Browser'],
+    desktop: 'Desktop', count: (n) => `${n} Drills`, explore: (n) => `${n} Drills ansehen`, sessionPrefs: 'Sitzungseinstellungen',
+    taglines: {
+      fps: 'Flicks, Tracking und Rückstoßkontrolle', cognitive: 'Fokus, Aufmerksamkeit und Verarbeitungstempo',
+      memory: 'Zahlenspanne, Sequenzen und räumliches Erinnern', motor: 'Mauspräzision und Klickgeschwindigkeit',
+      physical: 'Reflexe, Balance und Koordination', visual: 'Peripheres Sehen und Tiefenwahrnehmung',
+      'visual-tracking': 'Blickverfolgung und ruhiger Blick', 'reaction-speed': 'Reaktionstests und Reflex-Drills',
+    },
+  },
+  ko: {
+    trust: ['회원가입 없음', '설치 없이 바로 시작', '브라우저에서 100% 실행'],
+    desktop: '데스크톱', count: (n) => `${n}개 훈련`, explore: (n) => `훈련 ${n}개 보기`, sessionPrefs: '세션 설정',
+    taglines: {
+      fps: '플릭, 트래킹, 반동 제어', cognitive: '집중력, 주의력, 처리 속도',
+      memory: '숫자 폭, 순서, 공간 기억', motor: '마우스 정확도와 클릭 속도',
+      physical: '반사신경, 균형, 협응력', visual: '주변 시야와 깊이 지각',
+      'visual-tracking': '시선 추적과 시선 안정', 'reaction-speed': '반응속도 테스트와 반사신경 드릴',
+    },
+  },
+  fr: {
+    trust: ['Sans inscription', 'Démarrage immédiat, rien à installer', '100 % dans le navigateur'],
+    desktop: 'Ordinateur', count: (n) => `${n} exercices`, explore: (n) => `Voir les ${n} exercices`, sessionPrefs: 'Préférences de session',
+    taglines: {
+      fps: 'Flicks, tracking et contrôle du recul', cognitive: 'Concentration, attention et vitesse de traitement',
+      memory: 'Empan de chiffres, séquences et mémoire spatiale', motor: 'Précision de la souris et vitesse de clic',
+      physical: 'Réflexes, équilibre et coordination', visual: 'Vision périphérique et perception de la profondeur',
+      'visual-tracking': 'Poursuite visuelle et stabilité du regard', 'reaction-speed': 'Tests de temps de réaction et réflexes',
+    },
+  },
+};
 
 export default function DrillsDirectoryClient({ faqs = [] }) {
-  const { t, localizeHref } = useTranslation();
+  const { t, localizeHref, locale } = useTranslation();
+  const copy = DIRECTORY_COPY[locale] || DIRECTORY_COPY.en;
   const [isMobile, setIsMobile] = useState(false);
 
   const totalDrills = DRILLS.length;
@@ -79,12 +147,12 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
 
           {/* Trust Strip */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-2">
-            {trustStrip.map((item, i) => {
-              const Icon = item.icon;
+            {copy.trust.map((label, i) => {
+              const Icon = trustIcons[i];
               return (
                 <div key={i} className="flex items-center gap-1.5 text-2xs sm:text-xs font-mono font-semibold text-ink-3 uppercase tracking-wider">
                   <Icon className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>{item.label}</span>
+                  <span>{label}</span>
                 </div>
               );
             })}
@@ -117,11 +185,11 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
                       <div className="flex items-center gap-1.5">
                         {isDesktopOnly && (
                           <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
-                            Desktop
+                            {copy.desktop}
                           </span>
                         )}
                         <span className="px-3.5 py-1 rounded-full text-xs font-semibold text-white/90 bg-white/5 border border-white/15">
-                          {drillCount} Drills
+                          {copy.count(drillCount)}
                         </span>
                       </div>
                     </div>
@@ -132,7 +200,7 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
                         {catTitle}
                       </h2>
                       <p className="text-sm text-zinc-400 font-normal mt-1 leading-snug">
-                        {cat.tagline || cat.blurb}
+                        {copy.taglines[cat.cat] || cat.tagline || cat.blurb}
                       </p>
                     </div>
 
@@ -148,7 +216,7 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
                           >
                             <RowIcon className={`w-4 h-4 ${cat.accent} shrink-0`} />
                             <span className="text-sm font-medium text-zinc-200 group-hover/item:text-white truncate">
-                              {drill.name}
+                              {getLocalizedDrill(drill.href, locale, drill.name).name}
                             </span>
                           </Link>
                         );
@@ -162,7 +230,7 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
                       href={catHref}
                       className={`w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r ${cat.color} hover:brightness-110 active:scale-[0.98] text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition-all mt-2`}
                     >
-                      <span>Explore {drillCount} Drills</span>
+                      <span>{copy.explore(drillCount)}</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -175,7 +243,7 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
         {/* Session preferences */}
         <div className="max-w-2xl mx-auto pb-4">
           <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-ink-3 mb-3 text-center">
-            Session preferences
+            {copy.sessionPrefs}
           </h2>
           <DrillGlobalSettings />
         </div>
